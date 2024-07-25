@@ -9,9 +9,9 @@
     <link rel="apple-touch-icon" sizes="72x72" href="../images/apple-touch-icon-72x72.png"/>
     <link rel="apple-touch-icon" sizes="114x114" href="../images/apple-touch-icon-114x114.png"/>
     <link rel="stylesheet" href="../css/normalize.css">
-    <link rel="stylesheet" href="../css/base.css?updated=1692866946">
+    <link rel="stylesheet" href="../css/base.css?updated=1721907182">
     <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../css/template.css?updated=1692866946">
+    <link rel="stylesheet" href="../css/template.css?updated=1721907182">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0/css/all.min.css" integrity="sha256-ybRkN9dBjhcS2qrW1z+hfCxq+1aBdwyQM5wlQoQVt/0=" crossorigin="anonymous" />
             <script src="https://cdn.jsdelivr.net/npm/css-vars-ponyfill@2"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0/js/all.min.js" integrity="sha256-0vuk8LXoyrmCjp1f0O300qo1M75ZQyhH9X3J6d+scmk=" crossorigin="anonymous"></script>
@@ -125,6 +125,7 @@
                         <ul class="phpdocumentor-list">
                                     <li><a href="../packages/Automattic-WooCommerce.html"><abbr title="\Automattic\WooCommerce">WooCommerce</abbr></a></li>
                             </ul>
+                                <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/WooCommerceBlocks.html"><abbr title="\WooCommerceBlocks">WooCommerceBlocks</abbr></a></h3>
                         </section>
     
     <section class="phpdocumentor-sidebar__category">
@@ -214,6 +215,9 @@ if ( ! class_exists( &#039;WC_Admin_Settings&#039;, false ) ) :
 				$settings[] = include __DIR__ . &#039;/settings/class-wc-settings-accounts.php&#039;;
 				$settings[] = include __DIR__ . &#039;/settings/class-wc-settings-emails.php&#039;;
 				$settings[] = include __DIR__ . &#039;/settings/class-wc-settings-integrations.php&#039;;
+				if ( \Automattic\WooCommerce\Admin\Features\Features::is_enabled( &#039;launch-your-store&#039; ) ) {
+					$settings[] = include __DIR__ . &#039;/settings/class-wc-settings-site-visibility.php&#039;;
+				}
 				$settings[] = include __DIR__ . &#039;/settings/class-wc-settings-advanced.php&#039;;
 
 				self::$settings = apply_filters( &#039;woocommerce_get_settings_pages&#039;, $settings );
@@ -397,6 +401,12 @@ if ( ! class_exists( &#039;WC_Admin_Settings&#039;, false ) ) :
 				if ( ! isset( $value[&#039;placeholder&#039;] ) ) {
 					$value[&#039;placeholder&#039;] = &#039;&#039;;
 				}
+				if ( ! isset( $value[&#039;row_class&#039;] ) ) {
+					$value[&#039;row_class&#039;] = &#039;&#039;;
+				}
+				if ( ! empty( $value[&#039;row_class&#039;] ) &amp;&amp; substr( $value[&#039;row_class&#039;], 0, 16 ) !== &#039;wc-settings-row-&#039; ) {
+					$value[&#039;row_class&#039;] = &#039;wc-settings-row-&#039; . $value[&#039;row_class&#039;];
+				}
 				if ( ! isset( $value[&#039;suffix&#039;] ) ) {
 					$value[&#039;suffix&#039;] = &#039;&#039;;
 				}
@@ -438,7 +448,10 @@ if ( ! class_exists( &#039;WC_Admin_Settings&#039;, false ) ) :
 						break;
 
 					case &#039;info&#039;:
-						echo &#039;&lt;tr&gt;&lt;th scope=&quot;row&quot; class=&quot;titledesc&quot;/&gt;&lt;td style=&quot;&#039; . esc_attr( $value[&#039;css&#039;] ) . &#039;&quot;&gt;&#039;;
+						?&gt;&lt;tr class=&quot;&lt;?php echo esc_attr( $value[&#039;row_class&#039;] ); ?&gt;&quot;&gt;
+							&lt;th scope=&quot;row&quot; class=&quot;titledesc&quot;&gt;&lt;?php echo esc_html( $value[&#039;title&#039;] ); ?&gt;&lt;/th&gt;
+							&lt;td style=&quot;&lt;?php echo esc_attr( $value[&#039;css&#039;] ); ?&gt;&quot;&gt;
+						&lt;?php
 						echo wp_kses_post( wpautop( wptexturize( $value[&#039;text&#039;] ) ) );
 						echo &#039;&lt;/td&gt;&lt;/tr&gt;&#039;;
 						break;
@@ -469,7 +482,8 @@ if ( ! class_exists( &#039;WC_Admin_Settings&#039;, false ) ) :
 					case &#039;tel&#039;:
 						$option_value = $value[&#039;value&#039;];
 
-						?&gt;&lt;tr valign=&quot;top&quot;&gt;
+						?&gt;
+						&lt;tr class=&quot;&lt;?php echo esc_attr( $value[&#039;row_class&#039;] ); ?&gt;&quot;&gt;
 							&lt;th scope=&quot;row&quot; class=&quot;titledesc&quot;&gt;
 								&lt;label for=&quot;&lt;?php echo esc_attr( $value[&#039;id&#039;] ); ?&gt;&quot;&gt;&lt;?php echo esc_html( $value[&#039;title&#039;] ); ?&gt; &lt;?php echo $tooltip_html; // WPCS: XSS ok. ?&gt;&lt;/label&gt;
 							&lt;/th&gt;
@@ -494,7 +508,7 @@ if ( ! class_exists( &#039;WC_Admin_Settings&#039;, false ) ) :
 						$option_value = $value[&#039;value&#039;];
 
 						?&gt;
-						&lt;tr valign=&quot;top&quot;&gt;
+						&lt;tr class=&quot;&lt;?php echo esc_attr( $value[&#039;row_class&#039;] ); ?&gt;&quot;&gt;
 							&lt;th scope=&quot;row&quot; class=&quot;titledesc&quot;&gt;
 								&lt;label for=&quot;&lt;?php echo esc_attr( $value[&#039;id&#039;] ); ?&gt;&quot;&gt;&lt;?php echo esc_html( $value[&#039;title&#039;] ); ?&gt; &lt;?php echo $tooltip_html; // WPCS: XSS ok. ?&gt;&lt;/label&gt;
 							&lt;/th&gt;
@@ -522,7 +536,7 @@ if ( ! class_exists( &#039;WC_Admin_Settings&#039;, false ) ) :
 						$option_value = $value[&#039;value&#039;];
 
 						?&gt;
-						&lt;tr valign=&quot;top&quot;&gt;
+						&lt;tr class=&quot;&lt;?php echo esc_attr( $value[&#039;row_class&#039;] ); ?&gt;&quot;&gt;
 							&lt;th scope=&quot;row&quot; class=&quot;titledesc&quot;&gt;
 								&lt;label for=&quot;&lt;?php echo esc_attr( $value[&#039;id&#039;] ); ?&gt;&quot;&gt;&lt;?php echo esc_html( $value[&#039;title&#039;] ); ?&gt; &lt;?php echo $tooltip_html; // WPCS: XSS ok. ?&gt;&lt;/label&gt;
 							&lt;/th&gt;
@@ -548,7 +562,7 @@ if ( ! class_exists( &#039;WC_Admin_Settings&#039;, false ) ) :
 						$option_value = $value[&#039;value&#039;];
 
 						?&gt;
-						&lt;tr valign=&quot;top&quot;&gt;
+						&lt;tr class=&quot;&lt;?php echo esc_attr( $value[&#039;row_class&#039;] ); ?&gt;&quot;&gt;
 							&lt;th scope=&quot;row&quot; class=&quot;titledesc&quot;&gt;
 								&lt;label for=&quot;&lt;?php echo esc_attr( $value[&#039;id&#039;] ); ?&gt;&quot;&gt;&lt;?php echo esc_html( $value[&#039;title&#039;] ); ?&gt; &lt;?php echo $tooltip_html; // WPCS: XSS ok. ?&gt;&lt;/label&gt;
 							&lt;/th&gt;
@@ -591,7 +605,7 @@ if ( ! class_exists( &#039;WC_Admin_Settings&#039;, false ) ) :
 						$show_desc_at_end = $value[&#039;desc_at_end&#039;] ?? false;
 
 						?&gt;
-						&lt;tr valign=&quot;top&quot;&gt;
+						&lt;tr class=&quot;&lt;?php echo esc_attr( $value[&#039;row_class&#039;] ); ?&gt;&quot;&gt;
 							&lt;th scope=&quot;row&quot; class=&quot;titledesc&quot;&gt;
 								&lt;label for=&quot;&lt;?php echo esc_attr( $value[&#039;id&#039;] ); ?&gt;&quot;&gt;&lt;?php echo esc_html( $value[&#039;title&#039;] ); ?&gt; &lt;?php echo $tooltip_html; // WPCS: XSS ok. ?&gt;&lt;/label&gt;
 							&lt;/th&gt;
@@ -611,7 +625,10 @@ if ( ! class_exists( &#039;WC_Admin_Settings&#039;, false ) ) :
 												name=&quot;&lt;?php echo esc_attr( $value[&#039;field_name&#039;] ); ?&gt;&quot;
 												value=&quot;&lt;?php echo esc_attr( $key ); ?&gt;&quot;
 												type=&quot;radio&quot;
-												&lt;?php if( in_array( $key, $disabled_values ) ) { echo &#039;disabled&#039;; } ?&gt;
+												&lt;?php
+												if ( in_array( $key, $disabled_values, true ) ) {
+													echo &#039;disabled&#039;; }
+												?&gt;
 												style=&quot;&lt;?php echo esc_attr( $value[&#039;css&#039;] ); ?&gt;&quot;
 												class=&quot;&lt;?php echo esc_attr( $value[&#039;class&#039;] ); ?&gt;&quot;
 												&lt;?php echo implode( &#039; &#039;, $custom_attributes ); // WPCS: XSS ok. ?&gt;
@@ -651,14 +668,18 @@ if ( ! class_exists( &#039;WC_Admin_Settings&#039;, false ) ) :
 						if ( &#039;option&#039; === $value[&#039;show_if_checked&#039;] ) {
 							$visibility_class[] = &#039;show_options_if_checked&#039;;
 						}
+						if ( $value[&#039;row_class&#039;] ) {
+							$visibility_class[] = $value[&#039;row_class&#039;];
+						}
 
-						$must_disable = $value[&#039;disabled&#039;] ?? false;
+						$container_class = implode( &#039; &#039;, $visibility_class );
+						$must_disable    = $value[&#039;disabled&#039;] ?? false;
 
 						if ( ! isset( $value[&#039;checkboxgroup&#039;] ) || &#039;start&#039; === $value[&#039;checkboxgroup&#039;] ) {
 							$has_tooltip             = isset( $value[&#039;tooltip&#039;] ) &amp;&amp; &#039;&#039; !== $value[&#039;tooltip&#039;];
 							$tooltip_container_class = $has_tooltip ? &#039;with-tooltip&#039; : &#039;&#039;;
 							?&gt;
-								&lt;tr valign=&quot;top&quot; class=&quot;&lt;?php echo esc_attr( implode( &#039; &#039;, $visibility_class ) ); ?&gt;&quot;&gt;
+								&lt;tr class=&quot;&lt;?php echo esc_attr( $container_class ); ?&gt;&quot;&gt;
 									&lt;th scope=&quot;row&quot; class=&quot;titledesc&quot;&gt;&lt;?php echo esc_html( $value[&#039;title&#039;] ); ?&gt;&lt;/th&gt;
 									&lt;td class=&quot;forminp forminp-checkbox &lt;?php echo esc_html( $tooltip_container_class ); ?&gt;&quot;&gt;
 										&lt;?php if ( $has_tooltip ) : ?&gt;
@@ -668,7 +689,7 @@ if ( ! class_exists( &#039;WC_Admin_Settings&#039;, false ) ) :
 							&lt;?php
 						} else {
 							?&gt;
-								&lt;fieldset class=&quot;&lt;?php echo esc_attr( implode( &#039; &#039;, $visibility_class ) ); ?&gt;&quot;&gt;
+								&lt;fieldset class=&quot;&lt;?php echo esc_attr( $container_class ); ?&gt;&quot;&gt;
 							&lt;?php
 						}
 
@@ -723,7 +744,7 @@ if ( ! class_exists( &#039;WC_Admin_Settings&#039;, false ) ) :
 						}
 
 						?&gt;
-						&lt;tr valign=&quot;top&quot;&gt;
+						&lt;tr class=&quot;&lt;?php echo esc_attr( $value[&#039;row_class&#039;] ); ?&gt;&quot;&gt;
 							&lt;th scope=&quot;row&quot; class=&quot;titledesc&quot;&gt;
 							&lt;label&gt;&lt;?php echo esc_html( $value[&#039;title&#039;] ); ?&gt; &lt;?php echo $tooltip_html . $disabled_message; // WPCS: XSS ok. ?&gt;&lt;/label&gt;
 						&lt;/th&gt;
@@ -757,7 +778,7 @@ if ( ! class_exists( &#039;WC_Admin_Settings&#039;, false ) ) :
 						}
 
 						?&gt;
-						&lt;tr valign=&quot;top&quot; class=&quot;single_select_page&quot;&gt;
+						&lt;tr class=&quot;single_select_page &lt;?php echo esc_attr( $value[&#039;row_class&#039;] ); ?&gt;&quot;&gt;
 							&lt;th scope=&quot;row&quot; class=&quot;titledesc&quot;&gt;
 								&lt;label&gt;&lt;?php echo esc_html( $value[&#039;title&#039;] ); ?&gt; &lt;?php echo $tooltip_html; // WPCS: XSS ok. ?&gt;&lt;/label&gt;
 							&lt;/th&gt;
@@ -782,7 +803,7 @@ if ( ! class_exists( &#039;WC_Admin_Settings&#039;, false ) ) :
 							);
 						}
 						?&gt;
-						&lt;tr valign=&quot;top&quot; class=&quot;single_select_page&quot;&gt;
+						&lt;tr class=&quot;single_select_page &lt;?php echo esc_attr( $value[&#039;row_class&#039;] ); ?&gt;&quot;&gt;
 							&lt;th scope=&quot;row&quot; class=&quot;titledesc&quot;&gt;
 								&lt;label for=&quot;&lt;?php echo esc_attr( $value[&#039;id&#039;] ); ?&gt;&quot;&gt;&lt;?php echo esc_html( $value[&#039;title&#039;] ); ?&gt; &lt;?php echo $tooltip_html; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?&gt;&lt;/label&gt;
 							&lt;/th&gt;
@@ -822,7 +843,7 @@ if ( ! class_exists( &#039;WC_Admin_Settings&#039;, false ) ) :
 							$state   = &#039;*&#039;;
 						}
 						?&gt;
-						&lt;tr valign=&quot;top&quot;&gt;
+						&lt;tr class=&quot;&lt;?php echo esc_attr( $value[&#039;row_class&#039;] ); ?&gt;&quot;&gt;
 							&lt;th scope=&quot;row&quot; class=&quot;titledesc&quot;&gt;
 								&lt;label for=&quot;&lt;?php echo esc_attr( $value[&#039;id&#039;] ); ?&gt;&quot;&gt;&lt;?php echo esc_html( $value[&#039;title&#039;] ); ?&gt; &lt;?php echo $tooltip_html; // WPCS: XSS ok. ?&gt;&lt;/label&gt;
 							&lt;/th&gt;
@@ -846,7 +867,7 @@ if ( ! class_exists( &#039;WC_Admin_Settings&#039;, false ) ) :
 
 						asort( $countries );
 						?&gt;
-						&lt;tr valign=&quot;top&quot;&gt;
+						&lt;tr class=&quot;&lt;?php echo esc_attr( $value[&#039;row_class&#039;] ); ?&gt;&quot;&gt;
 							&lt;th scope=&quot;row&quot; class=&quot;titledesc&quot;&gt;
 								&lt;label for=&quot;&lt;?php echo esc_attr( $value[&#039;id&#039;] ); ?&gt;&quot;&gt;&lt;?php echo esc_html( $value[&#039;title&#039;] ); ?&gt; &lt;?php echo $tooltip_html; // WPCS: XSS ok. ?&gt;&lt;/label&gt;
 							&lt;/th&gt;
@@ -875,7 +896,7 @@ if ( ! class_exists( &#039;WC_Admin_Settings&#039;, false ) ) :
 						);
 						$option_value = wc_parse_relative_date_option( $value[&#039;value&#039;] );
 						?&gt;
-						&lt;tr valign=&quot;top&quot;&gt;
+						&lt;tr class=&quot;&lt;?php echo esc_attr( $value[&#039;row_class&#039;] ); ?&gt;&quot;&gt;
 							&lt;th scope=&quot;row&quot; class=&quot;titledesc&quot;&gt;
 								&lt;label for=&quot;&lt;?php echo esc_attr( $value[&#039;id&#039;] ); ?&gt;&quot;&gt;&lt;?php echo esc_html( $value[&#039;title&#039;] ); ?&gt; &lt;?php echo $tooltip_html; // WPCS: XSS ok. ?&gt;&lt;/label&gt;
 							&lt;/th&gt;
@@ -904,6 +925,15 @@ if ( ! class_exists( &#039;WC_Admin_Settings&#039;, false ) ) :
 						&lt;?php
 						break;
 
+					case &#039;slotfill_placeholder&#039;:
+						?&gt;
+						&lt;div
+							id=&quot;&lt;?php echo esc_attr( $value[&#039;id&#039;] ); ?&gt;&quot;
+							class=&quot;&lt;?php echo esc_attr( $value[&#039;class&#039;] ); ?&gt;&quot;
+						&gt;
+						&lt;/div&gt;
+						&lt;?php
+						break;
 					// Default: run an action.
 					default:
 						do_action( &#039;woocommerce_admin_field_&#039; . $value[&#039;type&#039;], $value );
@@ -933,16 +963,18 @@ if ( ! class_exists( &#039;WC_Admin_Settings&#039;, false ) ) :
 				$description = $value[&#039;desc&#039;];
 			}
 
+			$error_class = ( ! empty( $value[&#039;description_is_error&#039;] ) ) ? &#039;is-error&#039; : &#039;&#039;;
+
 			if ( $description &amp;&amp; in_array( $value[&#039;type&#039;], array( &#039;textarea&#039;, &#039;radio&#039; ), true ) ) {
 				$description = &#039;&lt;p style=&quot;margin-top:0&quot;&gt;&#039; . wp_kses_post( $description ) . &#039;&lt;/p&gt;&#039;;
 			} elseif ( $description &amp;&amp; in_array( $value[&#039;type&#039;], array( &#039;checkbox&#039; ), true ) ) {
 				$description = wp_kses_post( $description );
 			} elseif ( $description ) {
-				$description = &#039;&lt;p class=&quot;description&quot;&gt;&#039; . wp_kses_post( $description ) . &#039;&lt;/p&gt;&#039;;
+				$description = &#039;&lt;p class=&quot;description &#039; . $error_class . &#039;&quot;&gt;&#039; . wp_kses_post( $description ) . &#039;&lt;/p&gt;&#039;;
 			}
 
 			if ( $tooltip_html &amp;&amp; in_array( $value[&#039;type&#039;], array( &#039;checkbox&#039; ), true ) ) {
-				$tooltip_html = &#039;&lt;p class=&quot;description&quot;&gt;&#039; . $tooltip_html . &#039;&lt;/p&gt;&#039;;
+				$tooltip_html = &#039;&lt;p class=&quot;description &#039; . $error_class . &#039;&quot;&gt;&#039; . $tooltip_html . &#039;&lt;/p&gt;&#039;;
 			} elseif ( $tooltip_html ) {
 				$tooltip_html = wc_help_tip( $tooltip_html );
 			}
@@ -1139,7 +1171,7 @@ endif;
 
     <footer class="phpdocumentor phpdocumentor-footer">
     <div class="phpdocumentor-section">
-        <span>WooCommerce Code Reference API documentation generated by <a href="http://www.phpdoc.org/">phpDocumentor</a> on August 24th, 2023 at 08:49 am.</span>
+        <span>WooCommerce Code Reference API documentation generated by <a href="http://www.phpdoc.org/">phpDocumentor</a> on July 25th, 2024 at 11:33 am.</span>
     </div>
 </footer>
 
@@ -1151,7 +1183,7 @@ endif;
             'searchIndex': '..\/js\/searchIndex.json'
         };
     </script>
-    <script src="../js/searchIndex.js?updated=1692866946"></script>
-    <script src="../js/search.js?updated=1692866946"></script>
+    <script src="../js/searchIndex.js?updated=1721907182"></script>
+    <script src="../js/search.js?updated=1721907182"></script>
 </body>
 </html>

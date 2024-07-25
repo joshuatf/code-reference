@@ -9,9 +9,9 @@
     <link rel="apple-touch-icon" sizes="72x72" href="../images/apple-touch-icon-72x72.png"/>
     <link rel="apple-touch-icon" sizes="114x114" href="../images/apple-touch-icon-114x114.png"/>
     <link rel="stylesheet" href="../css/normalize.css">
-    <link rel="stylesheet" href="../css/base.css?updated=1692866948">
+    <link rel="stylesheet" href="../css/base.css?updated=1721907183">
     <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../css/template.css?updated=1692866948">
+    <link rel="stylesheet" href="../css/template.css?updated=1721907183">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0/css/all.min.css" integrity="sha256-ybRkN9dBjhcS2qrW1z+hfCxq+1aBdwyQM5wlQoQVt/0=" crossorigin="anonymous" />
             <script src="https://cdn.jsdelivr.net/npm/css-vars-ponyfill@2"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0/js/all.min.js" integrity="sha256-0vuk8LXoyrmCjp1f0O300qo1M75ZQyhH9X3J6d+scmk=" crossorigin="anonymous"></script>
@@ -125,6 +125,7 @@
                         <ul class="phpdocumentor-list">
                                     <li><a href="../packages/Automattic-WooCommerce.html"><abbr title="\Automattic\WooCommerce">WooCommerce</abbr></a></li>
                             </ul>
+                                <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/WooCommerceBlocks.html"><abbr title="\WooCommerceBlocks">WooCommerceBlocks</abbr></a></h3>
                         </section>
     
     <section class="phpdocumentor-sidebar__category">
@@ -337,15 +338,15 @@ abstract class WC_REST_Controller extends WP_REST_Controller {
 		$limit = apply_filters( &#039;woocommerce_rest_batch_items_limit&#039;, 100, $this-&gt;get_normalized_rest_base() );
 		$total = 0;
 
-		if ( ! empty( $items[&#039;create&#039;] ) ) {
+		if ( ! empty( $items[&#039;create&#039;] ) &amp;&amp; is_countable( $items[&#039;create&#039;] ) ) {
 			$total += count( $items[&#039;create&#039;] );
 		}
 
-		if ( ! empty( $items[&#039;update&#039;] ) ) {
+		if ( ! empty( $items[&#039;update&#039;] ) &amp;&amp; is_countable( $items[&#039;update&#039;] ) ) {
 			$total += count( $items[&#039;update&#039;] );
 		}
 
-		if ( ! empty( $items[&#039;delete&#039;] ) ) {
+		if ( ! empty( $items[&#039;delete&#039;] ) &amp;&amp; is_countable( $items[&#039;delete&#039;] ) ) {
 			$total += count( $items[&#039;delete&#039;] );
 		}
 
@@ -592,26 +593,14 @@ abstract class WC_REST_Controller extends WP_REST_Controller {
 	 * Validate textarea based settings.
 	 *
 	 * @since 3.0.0
+	 * @since 9.0.0 No longer allows storing IFRAME, which was allowed for &quot;ShareThis&quot; integration no longer found in core.
 	 * @param string $value Value.
 	 * @param array  $setting Setting.
 	 * @return string
 	 */
 	public function validate_setting_textarea_field( $value, $setting ) {
 		$value = is_null( $value ) ? &#039;&#039; : $value;
-		return wp_kses(
-			trim( stripslashes( $value ) ),
-			array_merge(
-				array(
-					&#039;iframe&#039; =&gt; array(
-						&#039;src&#039;   =&gt; true,
-						&#039;style&#039; =&gt; true,
-						&#039;id&#039;    =&gt; true,
-						&#039;class&#039; =&gt; true,
-					),
-				),
-				wp_kses_allowed_html( &#039;post&#039; )
-			)
-		);
+		return wp_kses_post( trim( stripslashes( $value ) ) );
 	}
 
 	/**
@@ -648,7 +637,7 @@ abstract class WC_REST_Controller extends WP_REST_Controller {
 					&#039;type&#039;        =&gt; &#039;array&#039;,
 					&#039;context&#039;     =&gt; array( &#039;view&#039;, &#039;edit&#039; ),
 					&#039;items&#039;       =&gt; array(
-						&#039;type&#039;    =&gt; &#039;object&#039;,
+						&#039;type&#039; =&gt; &#039;object&#039;,
 					),
 				),
 				&#039;update&#039; =&gt; array(
@@ -656,7 +645,7 @@ abstract class WC_REST_Controller extends WP_REST_Controller {
 					&#039;type&#039;        =&gt; &#039;array&#039;,
 					&#039;context&#039;     =&gt; array( &#039;view&#039;, &#039;edit&#039; ),
 					&#039;items&#039;       =&gt; array(
-						&#039;type&#039;    =&gt; &#039;object&#039;,
+						&#039;type&#039; =&gt; &#039;object&#039;,
 					),
 				),
 				&#039;delete&#039; =&gt; array(
@@ -664,7 +653,7 @@ abstract class WC_REST_Controller extends WP_REST_Controller {
 					&#039;type&#039;        =&gt; &#039;array&#039;,
 					&#039;context&#039;     =&gt; array( &#039;view&#039;, &#039;edit&#039; ),
 					&#039;items&#039;       =&gt; array(
-						&#039;type&#039;    =&gt; &#039;integer&#039;,
+						&#039;type&#039; =&gt; &#039;integer&#039;,
 					),
 				),
 			),
@@ -735,7 +724,7 @@ abstract class WC_REST_Controller extends WP_REST_Controller {
 		// Return the list of all requested fields which appear in the schema.
 		$this-&gt;_fields = array_reduce(
 			$requested_fields,
-			function( $response_fields, $field ) use ( $fields ) {
+			function ( $response_fields, $field ) use ( $fields ) {
 				if ( in_array( $field, $fields, true ) ) {
 					$response_fields[] = $field;
 					return $response_fields;
@@ -777,7 +766,7 @@ abstract class WC_REST_Controller extends WP_REST_Controller {
 		if ( ! empty( $include ) ) {
 			$meta_data = array_filter(
 				$meta_data,
-				function( WC_Meta_Data $item ) use ( $include ) {
+				function ( WC_Meta_Data $item ) use ( $include ) {
 					$data = $item-&gt;get_data();
 					return in_array( $data[&#039;key&#039;], $include, true );
 				}
@@ -785,7 +774,7 @@ abstract class WC_REST_Controller extends WP_REST_Controller {
 		} elseif ( ! empty( $exclude ) ) {
 			$meta_data = array_filter(
 				$meta_data,
-				function( WC_Meta_Data $item ) use ( $exclude ) {
+				function ( WC_Meta_Data $item ) use ( $exclude ) {
 					$data = $item-&gt;get_data();
 					return ! in_array( $data[&#039;key&#039;], $exclude, true );
 				}
@@ -806,7 +795,7 @@ abstract class WC_REST_Controller extends WP_REST_Controller {
 
     <footer class="phpdocumentor phpdocumentor-footer">
     <div class="phpdocumentor-section">
-        <span>WooCommerce Code Reference API documentation generated by <a href="http://www.phpdoc.org/">phpDocumentor</a> on August 24th, 2023 at 08:49 am.</span>
+        <span>WooCommerce Code Reference API documentation generated by <a href="http://www.phpdoc.org/">phpDocumentor</a> on July 25th, 2024 at 11:33 am.</span>
     </div>
 </footer>
 
@@ -818,7 +807,7 @@ abstract class WC_REST_Controller extends WP_REST_Controller {
             'searchIndex': '..\/js\/searchIndex.json'
         };
     </script>
-    <script src="../js/searchIndex.js?updated=1692866948"></script>
-    <script src="../js/search.js?updated=1692866948"></script>
+    <script src="../js/searchIndex.js?updated=1721907183"></script>
+    <script src="../js/search.js?updated=1721907183"></script>
 </body>
 </html>

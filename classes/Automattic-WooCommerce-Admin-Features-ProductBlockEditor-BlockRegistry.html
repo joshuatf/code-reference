@@ -9,9 +9,9 @@
     <link rel="apple-touch-icon" sizes="72x72" href="../images/apple-touch-icon-72x72.png"/>
     <link rel="apple-touch-icon" sizes="114x114" href="../images/apple-touch-icon-114x114.png"/>
     <link rel="stylesheet" href="../css/normalize.css">
-    <link rel="stylesheet" href="../css/base.css?updated=1692867001">
+    <link rel="stylesheet" href="../css/base.css?updated=1721907203">
     <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../css/template.css?updated=1692867001">
+    <link rel="stylesheet" href="../css/template.css?updated=1721907203">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0/css/all.min.css" integrity="sha256-ybRkN9dBjhcS2qrW1z+hfCxq+1aBdwyQM5wlQoQVt/0=" crossorigin="anonymous" />
             <script src="https://cdn.jsdelivr.net/npm/css-vars-ponyfill@2"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0/js/all.min.js" integrity="sha256-0vuk8LXoyrmCjp1f0O300qo1M75ZQyhH9X3J6d+scmk=" crossorigin="anonymous"></script>
@@ -119,6 +119,7 @@
                         <ul class="phpdocumentor-list">
                                     <li><a href="../packages/Automattic-WooCommerce.html"><abbr title="\Automattic\WooCommerce">WooCommerce</abbr></a></li>
                             </ul>
+                                <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/WooCommerceBlocks.html"><abbr title="\WooCommerceBlocks">WooCommerceBlocks</abbr></a></h3>
                         </section>
     
     <section class="phpdocumentor-sidebar__category">
@@ -183,25 +184,60 @@
 
 <dl class="phpdocumentor-table-of-contents">
             <dt class="phpdocumentor-table-of-contents__entry -constant -public">
-    <a href="../classes/Automattic-WooCommerce-Admin-Features-ProductBlockEditor-BlockRegistry.html#constant_BLOCKS_DIR">BLOCKS_DIR</a>
+    <a href="../classes/Automattic-WooCommerce-Admin-Features-ProductBlockEditor-BlockRegistry.html#constant_GENERIC_BLOCKS">GENERIC_BLOCKS</a>
     <span>
-        &nbsp;= &#039;product-editor/blocks&#039;                    </span>
+        &nbsp;= array(&#039;woocommerce/conditional&#039;, &#039;woocommerce/product-checkbox-field&#039;, &#039;woocommerce/product-collapsible&#039;, &#039;woocommerce/product-radio-field&#039;, &#039;woocommerce/product-pricing-field&#039;, &#039;woocommerce/product-section&#039;, &#039;woocommerce/product-section-description&#039;, &#039;woocommerce/product-subsection&#039;, &#039;woocommerce/product-subsection-description&#039;, &#039;woocommerce/product-details-section-description&#039;, &#039;woocommerce/product-tab&#039;, &#039;woocommerce/product-toggle-field&#039;, &#039;woocommerce/product-taxonomy-field&#039;, &#039;woocommerce/product-text-field&#039;, &#039;woocommerce/product-text-area-field&#039;, &#039;woocommerce/product-number-field&#039;, &#039;woocommerce/product-linked-list-field&#039;, &#039;woocommerce/product-select-field&#039;)                    </span>
 </dt>
-<dd>The directory where blocks are stored after build.</dd>
+<dd>Array of all available generic blocks.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -constant -public">
-    <a href="../classes/Automattic-WooCommerce-Admin-Features-ProductBlockEditor-BlockRegistry.html#constant_PRODUCT_BLOCKS">PRODUCT_BLOCKS</a>
+    <a href="../classes/Automattic-WooCommerce-Admin-Features-ProductBlockEditor-BlockRegistry.html#constant_GENERIC_BLOCKS_DIR">GENERIC_BLOCKS_DIR</a>
     <span>
-        &nbsp;= [&#039;woocommerce/conditional&#039;, &#039;woocommerce/product-category-field&#039;, &#039;woocommerce/product-checkbox-field&#039;, &#039;woocommerce/product-collapsible&#039;, &#039;woocommerce/product-description-field&#039;, &#039;woocommerce/product-images-field&#039;, &#039;woocommerce/product-inventory-email-field&#039;, &#039;woocommerce/product-sku-field&#039;, &#039;woocommerce/product-name-field&#039;, &#039;woocommerce/product-pricing-field&#039;, &#039;woocommerce/product-radio-field&#039;, &#039;woocommerce/product-regular-price-field&#039;, &#039;woocommerce/product-sale-price-field&#039;, &#039;woocommerce/product-schedule-sale-fields&#039;, &#039;woocommerce/product-section&#039;, &#039;woocommerce/product-shipping-class-field&#039;, &#039;woocommerce/product-shipping-dimensions-fields&#039;, &#039;woocommerce/product-summary-field&#039;, &#039;woocommerce/product-tab&#039;, &#039;woocommerce/product-inventory-quantity-field&#039;, &#039;woocommerce/product-toggle-field&#039;, &#039;woocommerce/product-variations-fields&#039;]                    </span>
+        &nbsp;= &#039;product-editor/blocks/generic&#039;                    </span>
 </dt>
-<dd>Array of all available product blocks.</dd>
+<dd>Generic blocks directory.</dd>
 
-                    <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a href="../classes/Automattic-WooCommerce-Admin-Features-ProductBlockEditor-BlockRegistry.html#method_init">init()</a>
+            <dt class="phpdocumentor-table-of-contents__entry -constant -public">
+    <a href="../classes/Automattic-WooCommerce-Admin-Features-ProductBlockEditor-BlockRegistry.html#constant_PRODUCT_FIELDS_BLOCKS">PRODUCT_FIELDS_BLOCKS</a>
     <span>
-                        &nbsp;: mixed    </span>
+        &nbsp;= array(&#039;woocommerce/product-catalog-visibility-field&#039;, &#039;woocommerce/product-custom-fields&#039;, &#039;woocommerce/product-custom-fields-toggle-field&#039;, &#039;woocommerce/product-description-field&#039;, &#039;woocommerce/product-downloads-field&#039;, &#039;woocommerce/product-images-field&#039;, &#039;woocommerce/product-inventory-email-field&#039;, &#039;woocommerce/product-sku-field&#039;, &#039;woocommerce/product-name-field&#039;, &#039;woocommerce/product-regular-price-field&#039;, &#039;woocommerce/product-sale-price-field&#039;, &#039;woocommerce/product-schedule-sale-fields&#039;, &#039;woocommerce/product-shipping-class-field&#039;, &#039;woocommerce/product-shipping-dimensions-fields&#039;, &#039;woocommerce/product-summary-field&#039;, &#039;woocommerce/product-tag-field&#039;, &#039;woocommerce/product-inventory-quantity-field&#039;, &#039;woocommerce/product-variation-items-field&#039;, &#039;woocommerce/product-password-field&#039;, &#039;woocommerce/product-list-field&#039;, &#039;woocommerce/product-has-variations-notice&#039;, &#039;woocommerce/product-single-variation-notice&#039;)                    </span>
 </dt>
-<dd>Initialize all blocks.</dd>
+<dd>Array of all available product fields blocks.</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -constant -public">
+    <a href="../classes/Automattic-WooCommerce-Admin-Features-ProductBlockEditor-BlockRegistry.html#constant_PRODUCT_FIELDS_BLOCKS_DIR">PRODUCT_FIELDS_BLOCKS_DIR</a>
+    <span>
+        &nbsp;= &#039;product-editor/blocks/product-fields&#039;                    </span>
+</dt>
+<dd>Product fields blocks directory.</dd>
+
+                <dt class="phpdocumentor-table-of-contents__entry -property -private">
+    <a href="../classes/Automattic-WooCommerce-Admin-Features-ProductBlockEditor-BlockRegistry.html#property_instance">$instance</a>
+    <span>
+                &nbsp;: <a href="../classes/Automattic-WooCommerce-Admin-Features-ProductBlockEditor-BlockRegistry.html"><abbr title="\Automattic\WooCommerce\Admin\Features\ProductBlockEditor\BlockRegistry">BlockRegistry</abbr></a>            </span>
+</dt>
+<dd>Singleton instance.</dd>
+
+                <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a href="../classes/Automattic-WooCommerce-Admin-Features-ProductBlockEditor-BlockRegistry.html#method_get_instance">get_instance()</a>
+    <span>
+                        &nbsp;: <a href="../classes/Automattic-WooCommerce-Admin-Features-ProductBlockEditor-BlockRegistry.html"><abbr title="\Automattic\WooCommerce\Admin\Features\ProductBlockEditor\BlockRegistry">BlockRegistry</abbr></a>    </span>
+</dt>
+<dd>Get the singleton instance.</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a href="../classes/Automattic-WooCommerce-Admin-Features-ProductBlockEditor-BlockRegistry.html#method_is_registered">is_registered()</a>
+    <span>
+                        &nbsp;: bool    </span>
+</dt>
+<dd>Check if a block is registered.</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a href="../classes/Automattic-WooCommerce-Admin-Features-ProductBlockEditor-BlockRegistry.html#method_register_block_type_from_metadata">register_block_type_from_metadata()</a>
+    <span>
+                        &nbsp;: <abbr title="\WP_Block_Type">WP_Block_Type</abbr>|false    </span>
+</dt>
+<dd>Register a block type from metadata stored in the block.json file.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="../classes/Automattic-WooCommerce-Admin-Features-ProductBlockEditor-BlockRegistry.html#method_register_categories">register_categories()</a>
@@ -209,6 +245,34 @@
                         &nbsp;: mixed    </span>
 </dt>
 <dd>Register product related block categories.</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a href="../classes/Automattic-WooCommerce-Admin-Features-ProductBlockEditor-BlockRegistry.html#method_unregister">unregister()</a>
+    <span>
+                        &nbsp;: mixed    </span>
+</dt>
+<dd>Unregister a block.</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -protected">
+    <a href="../classes/Automattic-WooCommerce-Admin-Features-ProductBlockEditor-BlockRegistry.html#method___construct">__construct()</a>
+    <span>
+                        &nbsp;: mixed    </span>
+</dt>
+<dd>Constructor</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -private">
+    <a href="../classes/Automattic-WooCommerce-Admin-Features-ProductBlockEditor-BlockRegistry.html#method_augment_attributes">augment_attributes()</a>
+    <span>
+                        &nbsp;: mixed    </span>
+</dt>
+<dd>Augment the attributes of a block by adding attributes that are used by the product editor.</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -private">
+    <a href="../classes/Automattic-WooCommerce-Admin-Features-ProductBlockEditor-BlockRegistry.html#method_augment_uses_context">augment_uses_context()</a>
+    <span>
+                        &nbsp;: mixed    </span>
+</dt>
+<dd>Augment the uses_context of a block by adding attributes that are used by the product editor.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -private">
     <a href="../classes/Automattic-WooCommerce-Admin-Features-ProductBlockEditor-BlockRegistry.html#method_get_file_path">get_file_path()</a>
@@ -249,24 +313,24 @@
             <a href="#constants" class="headerlink"><i class="fas fa-link"></i></a>
         </h3>
                     <article class="phpdocumentor-element -constant -public ">
-    <h4 class="phpdocumentor-element__name" id="constant_BLOCKS_DIR">
-        BLOCKS_DIR
-        <a href="#constant_BLOCKS_DIR" class="headerlink"><i class="fas fa-link"></i></a>
+    <h4 class="phpdocumentor-element__name" id="constant_GENERIC_BLOCKS">
+        GENERIC_BLOCKS
+        <a href="#constant_GENERIC_BLOCKS" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
 
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/Features/ProductBlockEditor/BlockRegistry.php"><a href="../files/woocommerce-src-admin-features-productblockeditor-blockregistry.html#source-view.17">src/Admin/Features/ProductBlockEditor/BlockRegistry.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/Features/ProductBlockEditor/BlockRegistry.php"><a href="../files/woocommerce-src-admin-features-productblockeditor-blockregistry.html#source-view.26">src/Admin/Features/ProductBlockEditor/BlockRegistry.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">17</span>
+    <span class="phpdocumentor-element-found-in__line">26</span>
 </aside>
 
-        <p class="phpdocumentor-summary">The directory where blocks are stored after build.</p>
+        <p class="phpdocumentor-summary">Array of all available generic blocks.</p>
 
     <code class="phpdocumentor-signature phpdocumentor-code ">
     <span class="phpdocumentor-signature__visibility">public</span>
     <span class="phpdocumentor-signature__type">mixed</span>
-    <span class="phpdocumentor-signature__name">BLOCKS_DIR</span>
-    = <span class="phpdocumentor-signature__default-value">&#039;product-editor/blocks&#039;</span>
+    <span class="phpdocumentor-signature__name">GENERIC_BLOCKS</span>
+    = <span class="phpdocumentor-signature__default-value">array(&#039;woocommerce/conditional&#039;, &#039;woocommerce/product-checkbox-field&#039;, &#039;woocommerce/product-collapsible&#039;, &#039;woocommerce/product-radio-field&#039;, &#039;woocommerce/product-pricing-field&#039;, &#039;woocommerce/product-section&#039;, &#039;woocommerce/product-section-description&#039;, &#039;woocommerce/product-subsection&#039;, &#039;woocommerce/product-subsection-description&#039;, &#039;woocommerce/product-details-section-description&#039;, &#039;woocommerce/product-tab&#039;, &#039;woocommerce/product-toggle-field&#039;, &#039;woocommerce/product-taxonomy-field&#039;, &#039;woocommerce/product-text-field&#039;, &#039;woocommerce/product-text-area-field&#039;, &#039;woocommerce/product-number-field&#039;, &#039;woocommerce/product-linked-list-field&#039;, &#039;woocommerce/product-select-field&#039;)</span>
 </code>
 
 
@@ -276,9 +340,63 @@
 
 </article>
                     <article class="phpdocumentor-element -constant -public ">
-    <h4 class="phpdocumentor-element__name" id="constant_PRODUCT_BLOCKS">
-        PRODUCT_BLOCKS
-        <a href="#constant_PRODUCT_BLOCKS" class="headerlink"><i class="fas fa-link"></i></a>
+    <h4 class="phpdocumentor-element__name" id="constant_GENERIC_BLOCKS_DIR">
+        GENERIC_BLOCKS_DIR
+        <a href="#constant_GENERIC_BLOCKS_DIR" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/Features/ProductBlockEditor/BlockRegistry.php"><a href="../files/woocommerce-src-admin-features-productblockeditor-blockregistry.html#source-view.18">src/Admin/Features/ProductBlockEditor/BlockRegistry.php</a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">18</span>
+</aside>
+
+        <p class="phpdocumentor-summary">Generic blocks directory.</p>
+
+    <code class="phpdocumentor-signature phpdocumentor-code ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+    <span class="phpdocumentor-signature__type">mixed</span>
+    <span class="phpdocumentor-signature__name">GENERIC_BLOCKS_DIR</span>
+    = <span class="phpdocumentor-signature__default-value">&#039;product-editor/blocks/generic&#039;</span>
+</code>
+
+
+        <section class="phpdocumentor-description"></section>
+
+    
+
+</article>
+                    <article class="phpdocumentor-element -constant -public ">
+    <h4 class="phpdocumentor-element__name" id="constant_PRODUCT_FIELDS_BLOCKS">
+        PRODUCT_FIELDS_BLOCKS
+        <a href="#constant_PRODUCT_FIELDS_BLOCKS" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/Features/ProductBlockEditor/BlockRegistry.php"><a href="../files/woocommerce-src-admin-features-productblockeditor-blockregistry.html#source-view.50">src/Admin/Features/ProductBlockEditor/BlockRegistry.php</a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">50</span>
+</aside>
+
+        <p class="phpdocumentor-summary">Array of all available product fields blocks.</p>
+
+    <code class="phpdocumentor-signature phpdocumentor-code ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+    <span class="phpdocumentor-signature__type">mixed</span>
+    <span class="phpdocumentor-signature__name">PRODUCT_FIELDS_BLOCKS</span>
+    = <span class="phpdocumentor-signature__default-value">array(&#039;woocommerce/product-catalog-visibility-field&#039;, &#039;woocommerce/product-custom-fields&#039;, &#039;woocommerce/product-custom-fields-toggle-field&#039;, &#039;woocommerce/product-description-field&#039;, &#039;woocommerce/product-downloads-field&#039;, &#039;woocommerce/product-images-field&#039;, &#039;woocommerce/product-inventory-email-field&#039;, &#039;woocommerce/product-sku-field&#039;, &#039;woocommerce/product-name-field&#039;, &#039;woocommerce/product-regular-price-field&#039;, &#039;woocommerce/product-sale-price-field&#039;, &#039;woocommerce/product-schedule-sale-fields&#039;, &#039;woocommerce/product-shipping-class-field&#039;, &#039;woocommerce/product-shipping-dimensions-fields&#039;, &#039;woocommerce/product-summary-field&#039;, &#039;woocommerce/product-tag-field&#039;, &#039;woocommerce/product-inventory-quantity-field&#039;, &#039;woocommerce/product-variation-items-field&#039;, &#039;woocommerce/product-password-field&#039;, &#039;woocommerce/product-list-field&#039;, &#039;woocommerce/product-has-variations-notice&#039;, &#039;woocommerce/product-single-variation-notice&#039;)</span>
+</code>
+
+
+        <section class="phpdocumentor-description"></section>
+
+    
+
+</article>
+                    <article class="phpdocumentor-element -constant -public ">
+    <h4 class="phpdocumentor-element__name" id="constant_PRODUCT_FIELDS_BLOCKS_DIR">
+        PRODUCT_FIELDS_BLOCKS_DIR
+        <a href="#constant_PRODUCT_FIELDS_BLOCKS_DIR" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
 
     <aside class="phpdocumentor-element-found-in">
@@ -287,13 +405,13 @@
     <span class="phpdocumentor-element-found-in__line">22</span>
 </aside>
 
-        <p class="phpdocumentor-summary">Array of all available product blocks.</p>
+        <p class="phpdocumentor-summary">Product fields blocks directory.</p>
 
     <code class="phpdocumentor-signature phpdocumentor-code ">
     <span class="phpdocumentor-signature__visibility">public</span>
     <span class="phpdocumentor-signature__type">mixed</span>
-    <span class="phpdocumentor-signature__name">PRODUCT_BLOCKS</span>
-    = <span class="phpdocumentor-signature__default-value">[&#039;woocommerce/conditional&#039;, &#039;woocommerce/product-category-field&#039;, &#039;woocommerce/product-checkbox-field&#039;, &#039;woocommerce/product-collapsible&#039;, &#039;woocommerce/product-description-field&#039;, &#039;woocommerce/product-images-field&#039;, &#039;woocommerce/product-inventory-email-field&#039;, &#039;woocommerce/product-sku-field&#039;, &#039;woocommerce/product-name-field&#039;, &#039;woocommerce/product-pricing-field&#039;, &#039;woocommerce/product-radio-field&#039;, &#039;woocommerce/product-regular-price-field&#039;, &#039;woocommerce/product-sale-price-field&#039;, &#039;woocommerce/product-schedule-sale-fields&#039;, &#039;woocommerce/product-section&#039;, &#039;woocommerce/product-shipping-class-field&#039;, &#039;woocommerce/product-shipping-dimensions-fields&#039;, &#039;woocommerce/product-summary-field&#039;, &#039;woocommerce/product-tab&#039;, &#039;woocommerce/product-inventory-quantity-field&#039;, &#039;woocommerce/product-toggle-field&#039;, &#039;woocommerce/product-variations-fields&#039;]</span>
+    <span class="phpdocumentor-signature__name">PRODUCT_FIELDS_BLOCKS_DIR</span>
+    = <span class="phpdocumentor-signature__default-value">&#039;product-editor/blocks/product-fields&#039;</span>
 </code>
 
 
@@ -305,6 +423,44 @@
             </section>
 
         
+    <section class="phpdocumentor-properties">
+        <h3 class="phpdocumentor-elements__header" id="properties">
+            Properties
+            <a href="#properties" class="headerlink"><i class="fas fa-link"></i></a>
+        </h3>
+                    <article
+        class="
+            phpdocumentor-element
+            -property
+            -private
+            -static                                            "
+>
+    <h4 class="phpdocumentor-element__name" id="property_instance">
+        $instance
+        <a href="#property_instance" class="headerlink"><i class="fas fa-link"></i></a>
+        <span class="phpdocumentor-element__modifiers">
+                                </span>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/Features/ProductBlockEditor/BlockRegistry.php"><a href="../files/woocommerce-src-admin-features-productblockeditor-blockregistry.html#source-view.80">src/Admin/Features/ProductBlockEditor/BlockRegistry.php</a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">80</span>
+</aside>
+
+        <p class="phpdocumentor-summary">Singleton instance.</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">private</span>
+    <span class="phpdocumentor-signature__static">static</span>    <span class="phpdocumentor-signature__type"><a href="../classes/Automattic-WooCommerce-Admin-Features-ProductBlockEditor-BlockRegistry.html"><abbr title="\Automattic\WooCommerce\Admin\Features\ProductBlockEditor\BlockRegistry">BlockRegistry</abbr></a></span>
+    <span class="phpdocumentor-signature__name">$instance</span>
+     = <span class="phpdocumentor-signature__default-value">null</span></code>
+
+        <section class="phpdocumentor-description"></section>
+
+    
+
+</article>
+            </section>
 
             <section class="phpdocumentor-methods">
         <h3 class="phpdocumentor-elements__header" id="methods">
@@ -315,23 +471,23 @@
         class="phpdocumentor-element
             -method
             -public
-                                                        "
+                                    -static                    "
 >
-    <h4 class="phpdocumentor-element__name" id="method_init">
-        init()
-        <a href="#method_init" class="headerlink"><i class="fas fa-link"></i></a>
+    <h4 class="phpdocumentor-element__name" id="method_get_instance">
+        get_instance()
+        <a href="#method_get_instance" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/Features/ProductBlockEditor/BlockRegistry.php"><a href="../files/woocommerce-src-admin-features-productblockeditor-blockregistry.html#source-view.59">src/Admin/Features/ProductBlockEditor/BlockRegistry.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/Features/ProductBlockEditor/BlockRegistry.php"><a href="../files/woocommerce-src-admin-features-productblockeditor-blockregistry.html#source-view.85">src/Admin/Features/ProductBlockEditor/BlockRegistry.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">59</span>
+    <span class="phpdocumentor-element-found-in__line">85</span>
 </aside>
 
-        <p class="phpdocumentor-summary">Initialize all blocks.</p>
+        <p class="phpdocumentor-summary">Get the singleton instance.</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                <span class="phpdocumentor-signature__name">init</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
+            <span class="phpdocumentor-signature__static">static</span>    <span class="phpdocumentor-signature__name">get_instance</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><a href="../classes/Automattic-WooCommerce-Admin-Features-ProductBlockEditor-BlockRegistry.html"><abbr title="\Automattic\WooCommerce\Admin\Features\ProductBlockEditor\BlockRegistry">BlockRegistry</abbr></a></span></code>
 
         <section class="phpdocumentor-description"></section>
 
@@ -339,8 +495,97 @@
     
 
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">mixed</span>
+    <span class="phpdocumentor-signature__response_type"><a href="../classes/Automattic-WooCommerce-Admin-Features-ProductBlockEditor-BlockRegistry.html"><abbr title="\Automattic\WooCommerce\Admin\Features\ProductBlockEditor\BlockRegistry">BlockRegistry</abbr></a></span>
             &mdash; <span class="phpdocumentor-return-value__description"></span>
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_is_registered">
+        is_registered()
+        <a href="#method_is_registered" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/Features/ProductBlockEditor/BlockRegistry.php"><a href="../files/woocommerce-src-admin-features-productblockeditor-blockregistry.html#source-view.227">src/Admin/Features/ProductBlockEditor/BlockRegistry.php</a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">227</span>
+</aside>
+
+        <p class="phpdocumentor-summary">Check if a block is registered.</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                <span class="phpdocumentor-signature__name">is_registered</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$block_name</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">bool</span></code>
+
+        <section class="phpdocumentor-description"></section>
+
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$block_name</span>
+                : <span class="phpdocumentor-signature__argument__return-type">string</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"><p>Block name.</p>
+</section>
+
+            </dd>
+            </dl>
+
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">bool</span>
+            &mdash; <span class="phpdocumentor-return-value__description"></span>
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_register_block_type_from_metadata">
+        register_block_type_from_metadata()
+        <a href="#method_register_block_type_from_metadata" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/Features/ProductBlockEditor/BlockRegistry.php"><a href="../files/woocommerce-src-admin-features-productblockeditor-blockregistry.html#source-view.254">src/Admin/Features/ProductBlockEditor/BlockRegistry.php</a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">254</span>
+</aside>
+
+        <p class="phpdocumentor-summary">Register a block type from metadata stored in the block.json file.</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                <span class="phpdocumentor-signature__name">register_block_type_from_metadata</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$file_or_folder</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><abbr title="\WP_Block_Type">WP_Block_Type</abbr>|false</span></code>
+
+        <section class="phpdocumentor-description"></section>
+
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$file_or_folder</span>
+                : <span class="phpdocumentor-signature__argument__return-type">string</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"><p>Path to the JSON file with metadata definition for the block or
+path to the folder where the <code class="prettyprint">block.json</code> file is located.</p>
+</section>
+
+            </dd>
+            </dl>
+
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type"><abbr title="\WP_Block_Type">WP_Block_Type</abbr>|false</span>
+            &mdash; <span class="phpdocumentor-return-value__description">The registered block type on success, or false on failure.</span>
     
 </article>
                     <article
@@ -354,9 +599,9 @@
         <a href="#method_register_categories" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/Features/ProductBlockEditor/BlockRegistry.php"><a href="../files/woocommerce-src-admin-features-productblockeditor-blockregistry.html#source-view.79">src/Admin/Features/ProductBlockEditor/BlockRegistry.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/Features/ProductBlockEditor/BlockRegistry.php"><a href="../files/woocommerce-src-admin-features-productblockeditor-blockregistry.html#source-view.129">src/Admin/Features/ProductBlockEditor/BlockRegistry.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">79</span>
+    <span class="phpdocumentor-element-found-in__line">129</span>
 </aside>
 
         <p class="phpdocumentor-summary">Register product related block categories.</p>
@@ -399,6 +644,170 @@
                     <article
         class="phpdocumentor-element
             -method
+            -public
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_unregister">
+        unregister()
+        <a href="#method_unregister" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/Features/ProductBlockEditor/BlockRegistry.php"><a href="../files/woocommerce-src-admin-features-productblockeditor-blockregistry.html#source-view.238">src/Admin/Features/ProductBlockEditor/BlockRegistry.php</a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">238</span>
+</aside>
+
+        <p class="phpdocumentor-summary">Unregister a block.</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                <span class="phpdocumentor-signature__name">unregister</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$block_name</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
+
+        <section class="phpdocumentor-description"></section>
+
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$block_name</span>
+                : <span class="phpdocumentor-signature__argument__return-type">string</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"><p>Block name.</p>
+</section>
+
+            </dd>
+            </dl>
+
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">mixed</span>
+            &mdash; <span class="phpdocumentor-return-value__description"></span>
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -protected
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method___construct">
+        __construct()
+        <a href="#method___construct" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/Features/ProductBlockEditor/BlockRegistry.php"><a href="../files/woocommerce-src-admin-features-productblockeditor-blockregistry.html#source-view.96">src/Admin/Features/ProductBlockEditor/BlockRegistry.php</a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">96</span>
+</aside>
+
+        <p class="phpdocumentor-summary">Constructor</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">protected</span>
+                <span class="phpdocumentor-signature__name">__construct</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
+
+        <section class="phpdocumentor-description"></section>
+
+    
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">mixed</span>
+            &mdash; <span class="phpdocumentor-return-value__description"></span>
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -private
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_augment_attributes">
+        augment_attributes()
+        <a href="#method_augment_attributes" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/Features/ProductBlockEditor/BlockRegistry.php"><a href="../files/woocommerce-src-admin-features-productblockeditor-blockregistry.html#source-view.161">src/Admin/Features/ProductBlockEditor/BlockRegistry.php</a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">161</span>
+</aside>
+
+        <p class="phpdocumentor-summary">Augment the attributes of a block by adding attributes that are used by the product editor.</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">private</span>
+                <span class="phpdocumentor-signature__name">augment_attributes</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__name">$attributes</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
+
+        <section class="phpdocumentor-description"></section>
+
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$attributes</span>
+                : <span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"><p>Block attributes.</p>
+</section>
+
+            </dd>
+            </dl>
+
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">mixed</span>
+            &mdash; <span class="phpdocumentor-return-value__description"></span>
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -private
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_augment_uses_context">
+        augment_uses_context()
+        <a href="#method_augment_uses_context" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/Features/ProductBlockEditor/BlockRegistry.php"><a href="../files/woocommerce-src-admin-features-productblockeditor-blockregistry.html#source-view.196">src/Admin/Features/ProductBlockEditor/BlockRegistry.php</a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">196</span>
+</aside>
+
+        <p class="phpdocumentor-summary">Augment the uses_context of a block by adding attributes that are used by the product editor.</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">private</span>
+                <span class="phpdocumentor-signature__name">augment_uses_context</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__name">$uses_context</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
+
+        <section class="phpdocumentor-description"></section>
+
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$uses_context</span>
+                : <span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"><p>Block uses_context.</p>
+</section>
+
+            </dd>
+            </dl>
+
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">mixed</span>
+            &mdash; <span class="phpdocumentor-return-value__description"></span>
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
             -private
                                                         "
 >
@@ -407,16 +816,16 @@
         <a href="#method_get_file_path" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/Features/ProductBlockEditor/BlockRegistry.php"><a href="../files/woocommerce-src-admin-features-productblockeditor-blockregistry.html#source-view.52">src/Admin/Features/ProductBlockEditor/BlockRegistry.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/Features/ProductBlockEditor/BlockRegistry.php"><a href="../files/woocommerce-src-admin-features-productblockeditor-blockregistry.html#source-view.107">src/Admin/Features/ProductBlockEditor/BlockRegistry.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">52</span>
+    <span class="phpdocumentor-element-found-in__line">107</span>
 </aside>
 
         <p class="phpdocumentor-summary">Get a file path for a given block file.</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">private</span>
-                <span class="phpdocumentor-signature__name">get_file_path</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$path</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
+                <span class="phpdocumentor-signature__name">get_file_path</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$path</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$dir</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
 
         <section class="phpdocumentor-description"></section>
 
@@ -428,6 +837,15 @@
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
                     <section class="phpdocumentor-description"><p>File path.</p>
+</section>
+
+            </dd>
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$dir</span>
+                : <span class="phpdocumentor-signature__argument__return-type">string</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"><p>File directory.</p>
 </section>
 
             </dd>
@@ -451,16 +869,16 @@
         <a href="#method_register_block" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/Features/ProductBlockEditor/BlockRegistry.php"><a href="../files/woocommerce-src-admin-features-productblockeditor-blockregistry.html#source-view.113">src/Admin/Features/ProductBlockEditor/BlockRegistry.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/Features/ProductBlockEditor/BlockRegistry.php"><a href="../files/woocommerce-src-admin-features-productblockeditor-blockregistry.html#source-view.215">src/Admin/Features/ProductBlockEditor/BlockRegistry.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">113</span>
+    <span class="phpdocumentor-element-found-in__line">215</span>
 </aside>
 
         <p class="phpdocumentor-summary">Register a single block.</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">private</span>
-                <span class="phpdocumentor-signature__name">register_block</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$block_name</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><abbr title="\Automattic\WooCommerce\Admin\Features\ProductBlockEditor\WP_Block_Type">WP_Block_Type</abbr>|false</span></code>
+                <span class="phpdocumentor-signature__name">register_block</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$block_name</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$block_dir</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><abbr title="\Automattic\WooCommerce\Admin\Features\ProductBlockEditor\WP_Block_Type">WP_Block_Type</abbr>|false</span></code>
 
         <section class="phpdocumentor-description"></section>
 
@@ -472,6 +890,15 @@
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
                     <section class="phpdocumentor-description"><p>Block name.</p>
+</section>
+
+            </dd>
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$block_dir</span>
+                : <span class="phpdocumentor-signature__argument__return-type">string</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"><p>Block directory.</p>
 </section>
 
             </dd>
@@ -495,9 +922,9 @@
         <a href="#method_register_product_blocks" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/Features/ProductBlockEditor/BlockRegistry.php"><a href="../files/woocommerce-src-admin-features-productblockeditor-blockregistry.html#source-view.67">src/Admin/Features/ProductBlockEditor/BlockRegistry.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/Features/ProductBlockEditor/BlockRegistry.php"><a href="../files/woocommerce-src-admin-features-productblockeditor-blockregistry.html#source-view.114">src/Admin/Features/ProductBlockEditor/BlockRegistry.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">67</span>
+    <span class="phpdocumentor-element-found-in__line">114</span>
 </aside>
 
         <p class="phpdocumentor-summary">Register all the product blocks.</p>
@@ -527,9 +954,9 @@
         <a href="#method_remove_block_prefix" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/Features/ProductBlockEditor/BlockRegistry.php"><a href="../files/woocommerce-src-admin-features-productblockeditor-blockregistry.html#source-view.98">src/Admin/Features/ProductBlockEditor/BlockRegistry.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/Features/ProductBlockEditor/BlockRegistry.php"><a href="../files/woocommerce-src-admin-features-productblockeditor-blockregistry.html#source-view.148">src/Admin/Features/ProductBlockEditor/BlockRegistry.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">98</span>
+    <span class="phpdocumentor-element-found-in__line">148</span>
 </aside>
 
         <p class="phpdocumentor-summary">Get the block name without the &quot;woocommerce/&quot; prefix.</p>
@@ -571,7 +998,7 @@
 
     <footer class="phpdocumentor phpdocumentor-footer">
     <div class="phpdocumentor-section">
-        <span>WooCommerce Code Reference API documentation generated by <a href="http://www.phpdoc.org/">phpDocumentor</a> on August 24th, 2023 at 08:50 am.</span>
+        <span>WooCommerce Code Reference API documentation generated by <a href="http://www.phpdoc.org/">phpDocumentor</a> on July 25th, 2024 at 11:33 am.</span>
     </div>
 </footer>
 
@@ -583,7 +1010,7 @@
             'searchIndex': '..\/js\/searchIndex.json'
         };
     </script>
-    <script src="../js/searchIndex.js?updated=1692867001"></script>
-    <script src="../js/search.js?updated=1692867001"></script>
+    <script src="../js/searchIndex.js?updated=1721907203"></script>
+    <script src="../js/search.js?updated=1721907203"></script>
 </body>
 </html>

@@ -9,9 +9,9 @@
     <link rel="apple-touch-icon" sizes="72x72" href="../images/apple-touch-icon-72x72.png"/>
     <link rel="apple-touch-icon" sizes="114x114" href="../images/apple-touch-icon-114x114.png"/>
     <link rel="stylesheet" href="../css/normalize.css">
-    <link rel="stylesheet" href="../css/base.css?updated=1692866972">
+    <link rel="stylesheet" href="../css/base.css?updated=1721907194">
     <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../css/template.css?updated=1692866972">
+    <link rel="stylesheet" href="../css/template.css?updated=1721907194">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0/css/all.min.css" integrity="sha256-ybRkN9dBjhcS2qrW1z+hfCxq+1aBdwyQM5wlQoQVt/0=" crossorigin="anonymous" />
             <script src="https://cdn.jsdelivr.net/npm/css-vars-ponyfill@2"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0/js/all.min.js" integrity="sha256-0vuk8LXoyrmCjp1f0O300qo1M75ZQyhH9X3J6d+scmk=" crossorigin="anonymous"></script>
@@ -119,6 +119,7 @@
                         <ul class="phpdocumentor-list">
                                     <li><a href="../packages/Automattic-WooCommerce.html"><abbr title="\Automattic\WooCommerce">WooCommerce</abbr></a></li>
                             </ul>
+                                <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/WooCommerceBlocks.html"><abbr title="\WooCommerceBlocks">WooCommerceBlocks</abbr></a></h3>
                         </section>
     
     <section class="phpdocumentor-sidebar__category">
@@ -152,12 +153,15 @@
         </div>
     
     
+            <span class="phpdocumentor-element__extends">
+            Uses
+                            <abbr title="\Automattic\WooCommerce\Internal\Traits\AccessiblePrivateMethods">AccessiblePrivateMethods</abbr>                    </span>
     </h2>
 
         <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-woocommerce.php"><a href="../files/woocommerce-includes-class-woocommerce.html#source-view.29">includes/class-woocommerce.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-woocommerce.php"><a href="../files/woocommerce-includes-class-woocommerce.html#source-view.39">includes/class-woocommerce.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">29</span>
+    <span class="phpdocumentor-element-found-in__line">39</span>
 </aside>
 
             <p class="phpdocumentor-summary">Main WooCommerce Class.</p>
@@ -194,7 +198,7 @@
                 <dt class="phpdocumentor-table-of-contents__entry -property -public">
     <a href="../classes/WooCommerce.html#property_api">$api</a>
     <span>
-                &nbsp;: <a href="../classes/WC-API.html"><abbr title="\WC_API">WC_API</abbr></a>            </span>
+                &nbsp;: <abbr title="\WC_API">WC_API</abbr>            </span>
 </dt>
 <dd>API instance</dd>
 
@@ -339,6 +343,14 @@
 <dd>Add woocommerce_inbox_variant for the Remote Inbox Notification.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a href="../classes/WooCommerce.html#method_add_woocommerce_remote_variant">add_woocommerce_remote_variant()</a>
+    <span>
+                        &nbsp;: mixed    </span>
+</dt>
+<dd>Add woocommerce_remote_variant_assignment used to determine cohort
+or group assignment for Remote Spec Engines.</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="../classes/WooCommerce.html#method_ajax_url">ajax_url()</a>
     <span>
                         &nbsp;: string    </span>
@@ -388,6 +400,13 @@ from the `includes` directory.</dd>
                         &nbsp;: <a href="../classes/WC-Checkout.html"><abbr title="\WC_Checkout">WC_Checkout</abbr></a>    </span>
 </dt>
 <dd>Get Checkout Class.</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a href="../classes/WooCommerce.html#method_convert_woocommerce_slug">convert_woocommerce_slug()</a>
+    <span>
+                        &nbsp;: string    </span>
+</dt>
+<dd>Converts the WooCommerce slug to the correct slug for the current version.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="../classes/WooCommerce.html#method_deactivated_plugin">deactivated_plugin()</a>
@@ -472,6 +491,13 @@ from the `includes` directory.</dd>
                         &nbsp;: bool    </span>
 </dt>
 <dd>Returns true if the request is a non-legacy REST API request.</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a href="../classes/WooCommerce.html#method_is_store_api_request">is_store_api_request()</a>
+    <span>
+                        &nbsp;: bool    </span>
+</dt>
+<dd>Returns true if the request is a store REST API request.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="../classes/WooCommerce.html#method_is_wc_admin_active">is_wc_admin_active()</a>
@@ -622,6 +648,13 @@ Based on presence of a basic WC Admin function.</dd>
 <dd>Load &amp; enqueue active webhooks.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -private">
+    <a href="../classes/WooCommerce.html#method_register_wp_admin_settings">register_wp_admin_settings()</a>
+    <span>
+                        &nbsp;: mixed    </span>
+</dt>
+<dd>Register WC settings from WP-API to the REST API.</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -private">
     <a href="../classes/WooCommerce.html#method_theme_support_includes">theme_support_includes()</a>
     <span>
                         &nbsp;: mixed    </span>
@@ -645,7 +678,7 @@ Based on presence of a basic WC Admin function.</dd>
             phpdocumentor-element
             -property
             -public
-                                                        "
+                        -deprecated                                "
 >
     <h4 class="phpdocumentor-element__name" id="property_api">
         $api
@@ -654,22 +687,37 @@ Based on presence of a basic WC Admin function.</dd>
                                 </span>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-woocommerce.php"><a href="../files/woocommerce-includes-class-woocommerce.html#source-view.74">includes/class-woocommerce.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-woocommerce.php"><a href="../files/woocommerce-includes-class-woocommerce.html#source-view.88">includes/class-woocommerce.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">74</span>
+    <span class="phpdocumentor-element-found-in__line">88</span>
 </aside>
 
         <p class="phpdocumentor-summary">API instance</p>
 
-    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <code class="phpdocumentor-code phpdocumentor-signature phpdocumentor-signature--deprecated">
     <span class="phpdocumentor-signature__visibility">public</span>
-        <span class="phpdocumentor-signature__type"><a href="../classes/WC-API.html"><abbr title="\WC_API">WC_API</abbr></a></span>
+        <span class="phpdocumentor-signature__type"><abbr title="\WC_API">WC_API</abbr></span>
     <span class="phpdocumentor-signature__name">$api</span>
     </code>
 
         <section class="phpdocumentor-description"></section>
 
     
+    <h5 class="phpdocumentor-tag-list__heading" id="tags">
+        Tags
+        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
+    </h5>
+    <dl class="phpdocumentor-tag-list">
+                                    <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">deprecated</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                            <span class="phpdocumentor-tag-link">9.0.0</span>
+                                                                                                        <section class="phpdocumentor-description"><p>The Legacy REST API has been removed from WooCommerce core. This property will be null unless the WooCommerce Legacy REST API plugin is installed.</p>
+</section>
+
+                </dd>
+                        </dl>
 
 </article>
                     <article
@@ -686,9 +734,9 @@ Based on presence of a basic WC Admin function.</dd>
                                 </span>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-woocommerce.php"><a href="../files/woocommerce-includes-class-woocommerce.html#source-view.102">includes/class-woocommerce.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-woocommerce.php"><a href="../files/woocommerce-includes-class-woocommerce.html#source-view.116">includes/class-woocommerce.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">102</span>
+    <span class="phpdocumentor-element-found-in__line">116</span>
 </aside>
 
         <p class="phpdocumentor-summary">Cart instance.</p>
@@ -719,9 +767,9 @@ ull</span></code>
                                 </span>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-woocommerce.php"><a href="../files/woocommerce-includes-class-woocommerce.html#source-view.88">includes/class-woocommerce.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-woocommerce.php"><a href="../files/woocommerce-includes-class-woocommerce.html#source-view.102">includes/class-woocommerce.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">88</span>
+    <span class="phpdocumentor-element-found-in__line">102</span>
 </aside>
 
         <p class="phpdocumentor-summary">Countries instance.</p>
@@ -752,9 +800,9 @@ ull</span></code>
                                 </span>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-woocommerce.php"><a href="../files/woocommerce-includes-class-woocommerce.html#source-view.109">includes/class-woocommerce.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-woocommerce.php"><a href="../files/woocommerce-includes-class-woocommerce.html#source-view.123">includes/class-woocommerce.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">109</span>
+    <span class="phpdocumentor-element-found-in__line">123</span>
 </aside>
 
         <p class="phpdocumentor-summary">Customer instance.</p>
@@ -785,9 +833,9 @@ ull</span></code>
                                 </span>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-woocommerce.php"><a href="../files/woocommerce-includes-class-woocommerce.html#source-view.45">includes/class-woocommerce.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-woocommerce.php"><a href="../files/woocommerce-includes-class-woocommerce.html#source-view.57">includes/class-woocommerce.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">45</span>
+    <span class="phpdocumentor-element-found-in__line">57</span>
 </aside>
 
         <p class="phpdocumentor-summary">WooCommerce Schema version.</p>
@@ -832,9 +880,9 @@ ull</span></code>
                                 </span>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-woocommerce.php"><a href="../files/woocommerce-includes-class-woocommerce.html#source-view.130">includes/class-woocommerce.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-woocommerce.php"><a href="../files/woocommerce-includes-class-woocommerce.html#source-view.144">includes/class-woocommerce.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">130</span>
+    <span class="phpdocumentor-element-found-in__line">144</span>
 </aside>
 
         <p class="phpdocumentor-summary">Array of deprecated hook handlers.</p>
@@ -864,9 +912,9 @@ ull</span></code>
                                 </span>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-woocommerce.php"><a href="../files/woocommerce-includes-class-woocommerce.html#source-view.95">includes/class-woocommerce.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-woocommerce.php"><a href="../files/woocommerce-includes-class-woocommerce.html#source-view.109">includes/class-woocommerce.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">95</span>
+    <span class="phpdocumentor-element-found-in__line">109</span>
 </aside>
 
         <p class="phpdocumentor-summary">Integrations instance.</p>
@@ -897,9 +945,9 @@ ull</span></code>
                                 </span>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-woocommerce.php"><a href="../files/woocommerce-includes-class-woocommerce.html#source-view.116">includes/class-woocommerce.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-woocommerce.php"><a href="../files/woocommerce-includes-class-woocommerce.html#source-view.130">includes/class-woocommerce.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">116</span>
+    <span class="phpdocumentor-element-found-in__line">130</span>
 </aside>
 
         <p class="phpdocumentor-summary">Order factory instance.</p>
@@ -930,9 +978,9 @@ ull</span></code>
                                 </span>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-woocommerce.php"><a href="../files/woocommerce-includes-class-woocommerce.html#source-view.81">includes/class-woocommerce.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-woocommerce.php"><a href="../files/woocommerce-includes-class-woocommerce.html#source-view.95">includes/class-woocommerce.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">81</span>
+    <span class="phpdocumentor-element-found-in__line">95</span>
 </aside>
 
         <p class="phpdocumentor-summary">Product factory instance.</p>
@@ -963,9 +1011,9 @@ ull</span></code>
                                 </span>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-woocommerce.php"><a href="../files/woocommerce-includes-class-woocommerce.html#source-view.67">includes/class-woocommerce.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-woocommerce.php"><a href="../files/woocommerce-includes-class-woocommerce.html#source-view.79">includes/class-woocommerce.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">67</span>
+    <span class="phpdocumentor-element-found-in__line">79</span>
 </aside>
 
         <p class="phpdocumentor-summary">Query instance.</p>
@@ -996,9 +1044,9 @@ ull</span></code>
                                 </span>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-woocommerce.php"><a href="../files/woocommerce-includes-class-woocommerce.html#source-view.60">includes/class-woocommerce.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-woocommerce.php"><a href="../files/woocommerce-includes-class-woocommerce.html#source-view.72">includes/class-woocommerce.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">60</span>
+    <span class="phpdocumentor-element-found-in__line">72</span>
 </aside>
 
         <p class="phpdocumentor-summary">Session instance.</p>
@@ -1029,9 +1077,9 @@ ull</span></code>
                                 </span>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-woocommerce.php"><a href="../files/woocommerce-includes-class-woocommerce.html#source-view.123">includes/class-woocommerce.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-woocommerce.php"><a href="../files/woocommerce-includes-class-woocommerce.html#source-view.137">includes/class-woocommerce.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">123</span>
+    <span class="phpdocumentor-element-found-in__line">137</span>
 </aside>
 
         <p class="phpdocumentor-summary">Structured data instance.</p>
@@ -1062,9 +1110,9 @@ ull</span></code>
                                 </span>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-woocommerce.php"><a href="../files/woocommerce-includes-class-woocommerce.html#source-view.36">includes/class-woocommerce.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-woocommerce.php"><a href="../files/woocommerce-includes-class-woocommerce.html#source-view.48">includes/class-woocommerce.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">36</span>
+    <span class="phpdocumentor-element-found-in__line">48</span>
 </aside>
 
         <p class="phpdocumentor-summary">WooCommerce version.</p>
@@ -1073,7 +1121,7 @@ ull</span></code>
     <span class="phpdocumentor-signature__visibility">public</span>
         <span class="phpdocumentor-signature__type">string</span>
     <span class="phpdocumentor-signature__name">$version</span>
-     = <span class="phpdocumentor-signature__default-value">&#039;8.0.2&#039;</span></code>
+     = <span class="phpdocumentor-signature__default-value">&#039;9.1.2&#039;</span></code>
 
         <section class="phpdocumentor-description"></section>
 
@@ -1094,9 +1142,9 @@ ull</span></code>
                                 </span>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-woocommerce.php"><a href="../files/woocommerce-includes-class-woocommerce.html#source-view.53">includes/class-woocommerce.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-woocommerce.php"><a href="../files/woocommerce-includes-class-woocommerce.html#source-view.65">includes/class-woocommerce.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">53</span>
+    <span class="phpdocumentor-element-found-in__line">65</span>
 </aside>
 
         <p class="phpdocumentor-summary">The single instance of the class.</p>
@@ -1145,9 +1193,9 @@ ull</span></code>
         <a href="#method___clone" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-woocommerce.php"><a href="../files/woocommerce-includes-class-woocommerce.html#source-view.154">includes/class-woocommerce.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-woocommerce.php"><a href="../files/woocommerce-includes-class-woocommerce.html#source-view.168">includes/class-woocommerce.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">154</span>
+    <span class="phpdocumentor-element-found-in__line">168</span>
 </aside>
 
         <p class="phpdocumentor-summary">Cloning is forbidden.</p>
@@ -1191,9 +1239,9 @@ ull</span></code>
         <a href="#method___construct" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-woocommerce.php"><a href="../files/woocommerce-includes-class-woocommerce.html#source-view.182">includes/class-woocommerce.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-woocommerce.php"><a href="../files/woocommerce-includes-class-woocommerce.html#source-view.196">includes/class-woocommerce.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">182</span>
+    <span class="phpdocumentor-element-found-in__line">196</span>
 </aside>
 
         <p class="phpdocumentor-summary">WooCommerce Constructor.</p>
@@ -1223,9 +1271,9 @@ ull</span></code>
         <a href="#method___get" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-woocommerce.php"><a href="../files/woocommerce-includes-class-woocommerce.html#source-view.173">includes/class-woocommerce.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-woocommerce.php"><a href="../files/woocommerce-includes-class-woocommerce.html#source-view.187">includes/class-woocommerce.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">173</span>
+    <span class="phpdocumentor-element-found-in__line">187</span>
 </aside>
 
         <p class="phpdocumentor-summary">Auto-load in-accessible properties on demand.</p>
@@ -1267,9 +1315,9 @@ ull</span></code>
         <a href="#method___wakeup" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-woocommerce.php"><a href="../files/woocommerce-includes-class-woocommerce.html#source-view.163">includes/class-woocommerce.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-woocommerce.php"><a href="../files/woocommerce-includes-class-woocommerce.html#source-view.177">includes/class-woocommerce.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">163</span>
+    <span class="phpdocumentor-element-found-in__line">177</span>
 </aside>
 
         <p class="phpdocumentor-summary">Unserializing instances of this class is forbidden.</p>
@@ -1313,9 +1361,9 @@ ull</span></code>
         <a href="#method_activated_plugin" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-woocommerce.php"><a href="../files/woocommerce-includes-class-woocommerce.html#source-view.915">includes/class-woocommerce.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-woocommerce.php"><a href="../files/woocommerce-includes-class-woocommerce.html#source-view.1014">includes/class-woocommerce.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">915</span>
+    <span class="phpdocumentor-element-found-in__line">1014</span>
 </aside>
 
         <p class="phpdocumentor-summary">Ran when any plugin is activated.</p>
@@ -1371,9 +1419,9 @@ ull</span></code>
         <a href="#method_add_image_sizes" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-woocommerce.php"><a href="../files/woocommerce-includes-class-woocommerce.html#source-view.766">includes/class-woocommerce.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-woocommerce.php"><a href="../files/woocommerce-includes-class-woocommerce.html#source-view.864">includes/class-woocommerce.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">766</span>
+    <span class="phpdocumentor-element-found-in__line">864</span>
 </aside>
 
         <p class="phpdocumentor-summary">Add WC Image sizes to WP.</p>
@@ -1423,9 +1471,9 @@ woocommerce_single - Used on single product pages for the main image.</p>
         <a href="#method_add_woocommerce_inbox_variant" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-woocommerce.php"><a href="../files/woocommerce-includes-class-woocommerce.html#source-view.269">includes/class-woocommerce.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-woocommerce.php"><a href="../files/woocommerce-includes-class-woocommerce.html#source-view.309">includes/class-woocommerce.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">269</span>
+    <span class="phpdocumentor-element-found-in__line">309</span>
 </aside>
 
         <p class="phpdocumentor-summary">Add woocommerce_inbox_variant for the Remote Inbox Notification.</p>
@@ -1435,7 +1483,42 @@ woocommerce_single - Used on single product pages for the main image.</p>
                 <span class="phpdocumentor-signature__name">add_woocommerce_inbox_variant</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
 
         <section class="phpdocumentor-description"><p>P2 post can be found at https://wp.me/paJDYF-1uJ.</p>
+<p>This will no longer be used. The more flexible add_woocommerce_remote_variant
+below will be used instead.</p>
 </section>
+
+    
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">mixed</span>
+            &mdash; <span class="phpdocumentor-return-value__description"></span>
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_add_woocommerce_remote_variant">
+        add_woocommerce_remote_variant()
+        <a href="#method_add_woocommerce_remote_variant" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-woocommerce.php"><a href="../files/woocommerce-includes-class-woocommerce.html#source-view.320">includes/class-woocommerce.php</a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">320</span>
+</aside>
+
+        <p class="phpdocumentor-summary">Add woocommerce_remote_variant_assignment used to determine cohort
+or group assignment for Remote Spec Engines.</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                <span class="phpdocumentor-signature__name">add_woocommerce_remote_variant</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
+
+        <section class="phpdocumentor-description"></section>
 
     
     
@@ -1456,9 +1539,9 @@ woocommerce_single - Used on single product pages for the main image.</p>
         <a href="#method_ajax_url" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-woocommerce.php"><a href="../files/woocommerce-includes-class-woocommerce.html#source-view.811">includes/class-woocommerce.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-woocommerce.php"><a href="../files/woocommerce-includes-class-woocommerce.html#source-view.909">includes/class-woocommerce.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">811</span>
+    <span class="phpdocumentor-element-found-in__line">909</span>
 </aside>
 
         <p class="phpdocumentor-summary">Get Ajax URL.</p>
@@ -1488,9 +1571,9 @@ woocommerce_single - Used on single product pages for the main image.</p>
         <a href="#method_api_request_url" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-woocommerce.php"><a href="../files/woocommerce-includes-class-woocommerce.html#source-view.822">includes/class-woocommerce.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-woocommerce.php"><a href="../files/woocommerce-includes-class-woocommerce.html#source-view.920">includes/class-woocommerce.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">822</span>
+    <span class="phpdocumentor-element-found-in__line">920</span>
 </aside>
 
         <p class="phpdocumentor-summary">Return the WC API URL for a given request.</p>
@@ -1541,9 +1624,9 @@ woocommerce_single - Used on single product pages for the main image.</p>
         <a href="#method_build_dependencies_notice" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-woocommerce.php"><a href="../files/woocommerce-includes-class-woocommerce.html#source-view.1006">includes/class-woocommerce.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-woocommerce.php"><a href="../files/woocommerce-includes-class-woocommerce.html#source-view.1105">includes/class-woocommerce.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1006</span>
+    <span class="phpdocumentor-element-found-in__line">1105</span>
 </aside>
 
         <p class="phpdocumentor-summary">Output a admin notice when build dependencies not met.</p>
@@ -1573,9 +1656,9 @@ woocommerce_single - Used on single product pages for the main image.</p>
         <a href="#method_build_dependencies_satisfied" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-woocommerce.php"><a href="../files/woocommerce-includes-class-woocommerce.html#source-view.987">includes/class-woocommerce.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-woocommerce.php"><a href="../files/woocommerce-includes-class-woocommerce.html#source-view.1086">includes/class-woocommerce.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">987</span>
+    <span class="phpdocumentor-element-found-in__line">1086</span>
 </aside>
 
         <p class="phpdocumentor-summary">Check if plugin assets are built and minified</p>
@@ -1605,9 +1688,9 @@ woocommerce_single - Used on single product pages for the main image.</p>
         <a href="#method_call_function" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-woocommerce.php"><a href="../files/woocommerce-includes-class-woocommerce.html#source-view.1045">includes/class-woocommerce.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-woocommerce.php"><a href="../files/woocommerce-includes-class-woocommerce.html#source-view.1144">includes/class-woocommerce.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1045</span>
+    <span class="phpdocumentor-element-found-in__line">1144</span>
 </aside>
 
         <p class="phpdocumentor-summary">Call a user function. This should be used to execute any non-idempotent function, especially
@@ -1675,9 +1758,9 @@ can be easily mocked by using WC_Unit_Test_Case::register_legacy_proxy_function_
         <a href="#method_call_static" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-woocommerce.php"><a href="../files/woocommerce-includes-class-woocommerce.html#source-view.1064">includes/class-woocommerce.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-woocommerce.php"><a href="../files/woocommerce-includes-class-woocommerce.html#source-view.1163">includes/class-woocommerce.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1064</span>
+    <span class="phpdocumentor-element-found-in__line">1163</span>
 </aside>
 
         <p class="phpdocumentor-summary">Call a static method in a class. This should be used to execute any non-idempotent method in classes
@@ -1754,9 +1837,9 @@ can be easily mocked by using WC_Unit_Test_Case::register_legacy_proxy_static_mo
         <a href="#method_checkout" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-woocommerce.php"><a href="../files/woocommerce-includes-class-woocommerce.html#source-view.951">includes/class-woocommerce.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-woocommerce.php"><a href="../files/woocommerce-includes-class-woocommerce.html#source-view.1050">includes/class-woocommerce.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">951</span>
+    <span class="phpdocumentor-element-found-in__line">1050</span>
 </aside>
 
         <p class="phpdocumentor-summary">Get Checkout Class.</p>
@@ -1781,14 +1864,73 @@ can be easily mocked by using WC_Unit_Test_Case::register_legacy_proxy_static_mo
             -public
                                                         "
 >
+    <h4 class="phpdocumentor-element__name" id="method_convert_woocommerce_slug">
+        convert_woocommerce_slug()
+        <a href="#method_convert_woocommerce_slug" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-woocommerce.php"><a href="../files/woocommerce-includes-class-woocommerce.html#source-view.1224">includes/class-woocommerce.php</a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">1224</span>
+</aside>
+
+        <p class="phpdocumentor-summary">Converts the WooCommerce slug to the correct slug for the current version.</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                <span class="phpdocumentor-signature__name">convert_woocommerce_slug</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$slug</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">string</span></code>
+
+        <section class="phpdocumentor-description"><p>This ensures that when the plugin is installed in a different folder name, the correct slug is used so that dependent plugins can be installed/activated.</p>
+</section>
+
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$slug</span>
+                : <span class="phpdocumentor-signature__argument__return-type">string</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"><p>The plugin slug to convert.</p>
+</section>
+
+            </dd>
+            </dl>
+
+    
+    <h5 class="phpdocumentor-tag-list__heading" id="tags">
+        Tags
+        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
+    </h5>
+    <dl class="phpdocumentor-tag-list">
+                                    <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">since</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                            <span class="phpdocumentor-tag-link">9.0.0</span>
+                                                                                                        <section class="phpdocumentor-description"></section>
+
+                </dd>
+                        </dl>
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">string</span>
+            &mdash; <span class="phpdocumentor-return-value__description"></span>
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                                        "
+>
     <h4 class="phpdocumentor-element__name" id="method_deactivated_plugin">
         deactivated_plugin()
         <a href="#method_deactivated_plugin" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-woocommerce.php"><a href="../files/woocommerce-includes-class-woocommerce.html#source-view.931">includes/class-woocommerce.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-woocommerce.php"><a href="../files/woocommerce-includes-class-woocommerce.html#source-view.1030">includes/class-woocommerce.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">931</span>
+    <span class="phpdocumentor-element-found-in__line">1030</span>
 </aside>
 
         <p class="phpdocumentor-summary">Ran when any plugin is deactivated.</p>
@@ -1844,9 +1986,9 @@ can be easily mocked by using WC_Unit_Test_Case::register_legacy_proxy_static_mo
         <a href="#method_frontend_includes" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-woocommerce.php"><a href="../files/woocommerce-includes-class-woocommerce.html#source-view.650">includes/class-woocommerce.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-woocommerce.php"><a href="../files/woocommerce-includes-class-woocommerce.html#source-view.748">includes/class-woocommerce.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">650</span>
+    <span class="phpdocumentor-element-found-in__line">748</span>
 </aside>
 
         <p class="phpdocumentor-summary">Include required frontend files.</p>
@@ -1876,9 +2018,9 @@ can be easily mocked by using WC_Unit_Test_Case::register_legacy_proxy_static_mo
         <a href="#method_get_global" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-woocommerce.php"><a href="../files/woocommerce-includes-class-woocommerce.html#source-view.1093">includes/class-woocommerce.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-woocommerce.php"><a href="../files/woocommerce-includes-class-woocommerce.html#source-view.1192">includes/class-woocommerce.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1093</span>
+    <span class="phpdocumentor-element-found-in__line">1192</span>
 </aside>
 
         <p class="phpdocumentor-summary">Gets the value of a global.</p>
@@ -1920,9 +2062,9 @@ can be easily mocked by using WC_Unit_Test_Case::register_legacy_proxy_static_mo
         <a href="#method_get_instance_of" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-woocommerce.php"><a href="../files/woocommerce-includes-class-woocommerce.html#source-view.1083">includes/class-woocommerce.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-woocommerce.php"><a href="../files/woocommerce-includes-class-woocommerce.html#source-view.1182">includes/class-woocommerce.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1083</span>
+    <span class="phpdocumentor-element-found-in__line">1182</span>
 </aside>
 
         <p class="phpdocumentor-summary">Gets an instance of a given legacy class.</p>
@@ -1999,9 +2141,9 @@ can be easily mocked by using WC_Unit_Test_Case::register_legacy_proxy_class_moc
         <a href="#method_include_template_functions" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-woocommerce.php"><a href="../files/woocommerce-includes-class-woocommerce.html#source-view.668">includes/class-woocommerce.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-woocommerce.php"><a href="../files/woocommerce-includes-class-woocommerce.html#source-view.766">includes/class-woocommerce.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">668</span>
+    <span class="phpdocumentor-element-found-in__line">766</span>
 </aside>
 
         <p class="phpdocumentor-summary">Function used to Init WooCommerce Template Functions - This makes them pluggable by plugins and themes.</p>
@@ -2031,9 +2173,9 @@ can be easily mocked by using WC_Unit_Test_Case::register_legacy_proxy_class_moc
         <a href="#method_includes" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-woocommerce.php"><a href="../files/woocommerce-includes-class-woocommerce.html#source-view.422">includes/class-woocommerce.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-woocommerce.php"><a href="../files/woocommerce-includes-class-woocommerce.html#source-view.517">includes/class-woocommerce.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">422</span>
+    <span class="phpdocumentor-element-found-in__line">517</span>
 </aside>
 
         <p class="phpdocumentor-summary">Include required core files used in admin and on the frontend.</p>
@@ -2063,9 +2205,9 @@ can be easily mocked by using WC_Unit_Test_Case::register_legacy_proxy_class_moc
         <a href="#method_init" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-woocommerce.php"><a href="../files/woocommerce-includes-class-woocommerce.html#source-view.675">includes/class-woocommerce.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-woocommerce.php"><a href="../files/woocommerce-includes-class-woocommerce.html#source-view.773">includes/class-woocommerce.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">675</span>
+    <span class="phpdocumentor-element-found-in__line">773</span>
 </aside>
 
         <p class="phpdocumentor-summary">Init WooCommerce when WordPress Initialises.</p>
@@ -2095,9 +2237,9 @@ can be easily mocked by using WC_Unit_Test_Case::register_legacy_proxy_class_moc
         <a href="#method_init_jetpack_connection_config" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-woocommerce.php"><a href="../files/woocommerce-includes-class-woocommerce.html#source-view.212">includes/class-woocommerce.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-woocommerce.php"><a href="../files/woocommerce-includes-class-woocommerce.html#source-view.226">includes/class-woocommerce.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">212</span>
+    <span class="phpdocumentor-element-found-in__line">226</span>
 </aside>
 
         <p class="phpdocumentor-summary">Initiali Jetpack Connection Config.</p>
@@ -2127,9 +2269,9 @@ can be easily mocked by using WC_Unit_Test_Case::register_legacy_proxy_class_moc
         <a href="#method_initialize_cart" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-woocommerce.php"><a href="../files/woocommerce-includes-class-woocommerce.html#source-view.873">includes/class-woocommerce.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-woocommerce.php"><a href="../files/woocommerce-includes-class-woocommerce.html#source-view.973">includes/class-woocommerce.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">873</span>
+    <span class="phpdocumentor-element-found-in__line">973</span>
 </aside>
 
         <p class="phpdocumentor-summary">Initialize the customer and cart objects and setup customer saving on shutdown.</p>
@@ -2138,7 +2280,8 @@ can be easily mocked by using WC_Unit_Test_Case::register_legacy_proxy_class_moc
     <span class="phpdocumentor-signature__visibility">public</span>
                 <span class="phpdocumentor-signature__name">initialize_cart</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">void</span></code>
 
-        <section class="phpdocumentor-description"></section>
+        <section class="phpdocumentor-description"><p>Note, wc()-&gt;customer is session based. Changes to customer data via this property are not persisted to the database automatically.</p>
+</section>
 
     
     
@@ -2173,9 +2316,9 @@ can be easily mocked by using WC_Unit_Test_Case::register_legacy_proxy_class_moc
         <a href="#method_initialize_session" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-woocommerce.php"><a href="../files/woocommerce-includes-class-woocommerce.html#source-view.891">includes/class-woocommerce.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-woocommerce.php"><a href="../files/woocommerce-includes-class-woocommerce.html#source-view.990">includes/class-woocommerce.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">891</span>
+    <span class="phpdocumentor-element-found-in__line">990</span>
 </aside>
 
         <p class="phpdocumentor-summary">Initialize the session class.</p>
@@ -2219,9 +2362,9 @@ can be easily mocked by using WC_Unit_Test_Case::register_legacy_proxy_class_moc
         <a href="#method_instance" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-woocommerce.php"><a href="../files/woocommerce-includes-class-woocommerce.html#source-view.142">includes/class-woocommerce.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-woocommerce.php"><a href="../files/woocommerce-includes-class-woocommerce.html#source-view.156">includes/class-woocommerce.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">142</span>
+    <span class="phpdocumentor-element-found-in__line">156</span>
 </aside>
 
         <p class="phpdocumentor-summary">Main WooCommerce Instance.</p>
@@ -2281,9 +2424,9 @@ can be easily mocked by using WC_Unit_Test_Case::register_legacy_proxy_class_moc
         <a href="#method_is_rest_api_request" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-woocommerce.php"><a href="../files/woocommerce-includes-class-woocommerce.html#source-view.377">includes/class-woocommerce.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-woocommerce.php"><a href="../files/woocommerce-includes-class-woocommerce.html#source-view.459">includes/class-woocommerce.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">377</span>
+    <span class="phpdocumentor-element-found-in__line">459</span>
 </aside>
 
         <p class="phpdocumentor-summary">Returns true if the request is a non-legacy REST API request.</p>
@@ -2323,14 +2466,46 @@ can be easily mocked by using WC_Unit_Test_Case::register_legacy_proxy_class_moc
             -public
                                                         "
 >
+    <h4 class="phpdocumentor-element__name" id="method_is_store_api_request">
+        is_store_api_request()
+        <a href="#method_is_store_api_request" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-woocommerce.php"><a href="../files/woocommerce-includes-class-woocommerce.html#source-view.480">includes/class-woocommerce.php</a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">480</span>
+</aside>
+
+        <p class="phpdocumentor-summary">Returns true if the request is a store REST API request.</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                <span class="phpdocumentor-signature__name">is_store_api_request</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">bool</span></code>
+
+        <section class="phpdocumentor-description"></section>
+
+    
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">bool</span>
+            &mdash; <span class="phpdocumentor-return-value__description"></span>
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                                        "
+>
     <h4 class="phpdocumentor-element__name" id="method_is_wc_admin_active">
         is_wc_admin_active()
         <a href="#method_is_wc_admin_active" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-woocommerce.php"><a href="../files/woocommerce-includes-class-woocommerce.html#source-view.1027">includes/class-woocommerce.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-woocommerce.php"><a href="../files/woocommerce-includes-class-woocommerce.html#source-view.1126">includes/class-woocommerce.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1027</span>
+    <span class="phpdocumentor-element-found-in__line">1126</span>
 </aside>
 
         <p class="phpdocumentor-summary">Is the WooCommerce Admin actively included in the WooCommerce core?
@@ -2361,9 +2536,9 @@ Based on presence of a basic WC Admin function.</p>
         <a href="#method_load_plugin_textdomain" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-woocommerce.php"><a href="../files/woocommerce-includes-class-woocommerce.html#source-view.715">includes/class-woocommerce.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-woocommerce.php"><a href="../files/woocommerce-includes-class-woocommerce.html#source-view.813">includes/class-woocommerce.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">715</span>
+    <span class="phpdocumentor-element-found-in__line">813</span>
 </aside>
 
         <p class="phpdocumentor-summary">Load Localisation files.</p>
@@ -2397,9 +2572,9 @@ Based on presence of a basic WC Admin function.</p>
         <a href="#method_load_rest_api" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-woocommerce.php"><a href="../files/woocommerce-includes-class-woocommerce.html#source-view.396">includes/class-woocommerce.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-woocommerce.php"><a href="../files/woocommerce-includes-class-woocommerce.html#source-view.491">includes/class-woocommerce.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">396</span>
+    <span class="phpdocumentor-element-found-in__line">491</span>
 </aside>
 
         <p class="phpdocumentor-summary">Load REST API.</p>
@@ -2429,9 +2604,9 @@ Based on presence of a basic WC Admin function.</p>
         <a href="#method_log_errors" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-woocommerce.php"><a href="../files/woocommerce-includes-class-woocommerce.html#source-view.280">includes/class-woocommerce.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-woocommerce.php"><a href="../files/woocommerce-includes-class-woocommerce.html#source-view.332">includes/class-woocommerce.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">280</span>
+    <span class="phpdocumentor-element-found-in__line">332</span>
 </aside>
 
         <p class="phpdocumentor-summary">Ensures fatal errors are logged so they can be picked up in the status report.</p>
@@ -2475,9 +2650,9 @@ Based on presence of a basic WC Admin function.</p>
         <a href="#method_mailer" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-woocommerce.php"><a href="../files/woocommerce-includes-class-woocommerce.html#source-view.978">includes/class-woocommerce.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-woocommerce.php"><a href="../files/woocommerce-includes-class-woocommerce.html#source-view.1077">includes/class-woocommerce.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">978</span>
+    <span class="phpdocumentor-element-found-in__line">1077</span>
 </aside>
 
         <p class="phpdocumentor-summary">Email Class.</p>
@@ -2507,9 +2682,9 @@ Based on presence of a basic WC Admin function.</p>
         <a href="#method_on_plugins_loaded" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-woocommerce.php"><a href="../files/woocommerce-includes-class-woocommerce.html#source-view.198">includes/class-woocommerce.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-woocommerce.php"><a href="../files/woocommerce-includes-class-woocommerce.html#source-view.212">includes/class-woocommerce.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">198</span>
+    <span class="phpdocumentor-element-found-in__line">212</span>
 </aside>
 
         <p class="phpdocumentor-summary">When WP has loaded all plugins, trigger the `woocommerce_loaded` hook.</p>
@@ -2556,9 +2731,9 @@ the load order. See #21524 for details.</p>
         <a href="#method_payment_gateways" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-woocommerce.php"><a href="../files/woocommerce-includes-class-woocommerce.html#source-view.960">includes/class-woocommerce.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-woocommerce.php"><a href="../files/woocommerce-includes-class-woocommerce.html#source-view.1059">includes/class-woocommerce.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">960</span>
+    <span class="phpdocumentor-element-found-in__line">1059</span>
 </aside>
 
         <p class="phpdocumentor-summary">Get gateways class.</p>
@@ -2588,9 +2763,9 @@ the load order. See #21524 for details.</p>
         <a href="#method_plugin_path" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-woocommerce.php"><a href="../files/woocommerce-includes-class-woocommerce.html#source-view.790">includes/class-woocommerce.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-woocommerce.php"><a href="../files/woocommerce-includes-class-woocommerce.html#source-view.888">includes/class-woocommerce.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">790</span>
+    <span class="phpdocumentor-element-found-in__line">888</span>
 </aside>
 
         <p class="phpdocumentor-summary">Get the plugin path.</p>
@@ -2620,9 +2795,9 @@ the load order. See #21524 for details.</p>
         <a href="#method_plugin_url" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-woocommerce.php"><a href="../files/woocommerce-includes-class-woocommerce.html#source-view.781">includes/class-woocommerce.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-woocommerce.php"><a href="../files/woocommerce-includes-class-woocommerce.html#source-view.879">includes/class-woocommerce.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">781</span>
+    <span class="phpdocumentor-element-found-in__line">879</span>
 </aside>
 
         <p class="phpdocumentor-summary">Get the plugin url.</p>
@@ -2652,9 +2827,9 @@ the load order. See #21524 for details.</p>
         <a href="#method_queue" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-woocommerce.php"><a href="../files/woocommerce-includes-class-woocommerce.html#source-view.942">includes/class-woocommerce.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-woocommerce.php"><a href="../files/woocommerce-includes-class-woocommerce.html#source-view.1041">includes/class-woocommerce.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">942</span>
+    <span class="phpdocumentor-element-found-in__line">1041</span>
 </aside>
 
         <p class="phpdocumentor-summary">Get queue instance.</p>
@@ -2684,9 +2859,9 @@ the load order. See #21524 for details.</p>
         <a href="#method_setup_environment" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-woocommerce.php"><a href="../files/woocommerce-includes-class-woocommerce.html#source-view.731">includes/class-woocommerce.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-woocommerce.php"><a href="../files/woocommerce-includes-class-woocommerce.html#source-view.829">includes/class-woocommerce.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">731</span>
+    <span class="phpdocumentor-element-found-in__line">829</span>
 </aside>
 
         <p class="phpdocumentor-summary">Ensure theme and server variable compatibility and setup image sizes.</p>
@@ -2716,9 +2891,9 @@ the load order. See #21524 for details.</p>
         <a href="#method_shipping" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-woocommerce.php"><a href="../files/woocommerce-includes-class-woocommerce.html#source-view.969">includes/class-woocommerce.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-woocommerce.php"><a href="../files/woocommerce-includes-class-woocommerce.html#source-view.1068">includes/class-woocommerce.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">969</span>
+    <span class="phpdocumentor-element-found-in__line">1068</span>
 </aside>
 
         <p class="phpdocumentor-summary">Get shipping class.</p>
@@ -2748,9 +2923,9 @@ the load order. See #21524 for details.</p>
         <a href="#method_template_path" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-woocommerce.php"><a href="../files/woocommerce-includes-class-woocommerce.html#source-view.799">includes/class-woocommerce.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-woocommerce.php"><a href="../files/woocommerce-includes-class-woocommerce.html#source-view.897">includes/class-woocommerce.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">799</span>
+    <span class="phpdocumentor-element-found-in__line">897</span>
 </aside>
 
         <p class="phpdocumentor-summary">Get the template path.</p>
@@ -2780,9 +2955,9 @@ the load order. See #21524 for details.</p>
         <a href="#method_wpdb_table_fix" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-woocommerce.php"><a href="../files/woocommerce-includes-class-woocommerce.html#source-view.905">includes/class-woocommerce.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-woocommerce.php"><a href="../files/woocommerce-includes-class-woocommerce.html#source-view.1004">includes/class-woocommerce.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">905</span>
+    <span class="phpdocumentor-element-found-in__line">1004</span>
 </aside>
 
         <p class="phpdocumentor-summary">Set tablenames inside WPDB object.</p>
@@ -2812,9 +2987,9 @@ the load order. See #21524 for details.</p>
         <a href="#method_add_thumbnail_support" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-woocommerce.php"><a href="../files/woocommerce-includes-class-woocommerce.html#source-view.745">includes/class-woocommerce.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-woocommerce.php"><a href="../files/woocommerce-includes-class-woocommerce.html#source-view.843">includes/class-woocommerce.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">745</span>
+    <span class="phpdocumentor-element-found-in__line">843</span>
 </aside>
 
         <p class="phpdocumentor-summary">Ensure post thumbnail support is turned on.</p>
@@ -2844,9 +3019,9 @@ the load order. See #21524 for details.</p>
         <a href="#method_define" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-woocommerce.php"><a href="../files/woocommerce-includes-class-woocommerce.html#source-view.362">includes/class-woocommerce.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-woocommerce.php"><a href="../files/woocommerce-includes-class-woocommerce.html#source-view.444">includes/class-woocommerce.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">362</span>
+    <span class="phpdocumentor-element-found-in__line">444</span>
 </aside>
 
         <p class="phpdocumentor-summary">Define constant if not already set.</p>
@@ -2897,9 +3072,9 @@ the load order. See #21524 for details.</p>
         <a href="#method_define_constants" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-woocommerce.php"><a href="../files/woocommerce-includes-class-woocommerce.html#source-view.304">includes/class-woocommerce.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-woocommerce.php"><a href="../files/woocommerce-includes-class-woocommerce.html#source-view.375">includes/class-woocommerce.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">304</span>
+    <span class="phpdocumentor-element-found-in__line">375</span>
 </aside>
 
         <p class="phpdocumentor-summary">Define WC Constants.</p>
@@ -2929,9 +3104,9 @@ the load order. See #21524 for details.</p>
         <a href="#method_define_tables" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-woocommerce.php"><a href="../files/woocommerce-includes-class-woocommerce.html#source-view.338">includes/class-woocommerce.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-woocommerce.php"><a href="../files/woocommerce-includes-class-woocommerce.html#source-view.420">includes/class-woocommerce.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">338</span>
+    <span class="phpdocumentor-element-found-in__line">420</span>
 </aside>
 
         <p class="phpdocumentor-summary">Register custom tables within $wpdb object.</p>
@@ -2961,9 +3136,9 @@ the load order. See #21524 for details.</p>
         <a href="#method_init_hooks" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-woocommerce.php"><a href="../files/woocommerce-includes-class-woocommerce.html#source-view.228">includes/class-woocommerce.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-woocommerce.php"><a href="../files/woocommerce-includes-class-woocommerce.html#source-view.242">includes/class-woocommerce.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">228</span>
+    <span class="phpdocumentor-element-found-in__line">242</span>
 </aside>
 
         <p class="phpdocumentor-summary">Hook into actions and filters.</p>
@@ -3007,9 +3182,9 @@ the load order. See #21524 for details.</p>
         <a href="#method_is_request" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-woocommerce.php"><a href="../files/woocommerce-includes-class-woocommerce.html#source-view.406">includes/class-woocommerce.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-woocommerce.php"><a href="../files/woocommerce-includes-class-woocommerce.html#source-view.501">includes/class-woocommerce.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">406</span>
+    <span class="phpdocumentor-element-found-in__line">501</span>
 </aside>
 
         <p class="phpdocumentor-summary">What type of request is this?</p>
@@ -3051,9 +3226,9 @@ the load order. See #21524 for details.</p>
         <a href="#method_load_webhooks" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-woocommerce.php"><a href="../files/woocommerce-includes-class-woocommerce.html#source-view.850">includes/class-woocommerce.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-woocommerce.php"><a href="../files/woocommerce-includes-class-woocommerce.html#source-view.948">includes/class-woocommerce.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">850</span>
+    <span class="phpdocumentor-element-found-in__line">948</span>
 </aside>
 
         <p class="phpdocumentor-summary">Load &amp; enqueue active webhooks.</p>
@@ -3092,14 +3267,61 @@ the load order. See #21524 for details.</p>
             -private
                                                         "
 >
+    <h4 class="phpdocumentor-element__name" id="method_register_wp_admin_settings">
+        register_wp_admin_settings()
+        <a href="#method_register_wp_admin_settings" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-woocommerce.php"><a href="../files/woocommerce-includes-class-woocommerce.html#source-view.1203">includes/class-woocommerce.php</a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">1203</span>
+</aside>
+
+        <p class="phpdocumentor-summary">Register WC settings from WP-API to the REST API.</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">private</span>
+                <span class="phpdocumentor-signature__name">register_wp_admin_settings</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
+
+        <section class="phpdocumentor-description"><p>This method used to be part of the now removed Legacy REST API.</p>
+</section>
+
+    
+    
+    <h5 class="phpdocumentor-tag-list__heading" id="tags">
+        Tags
+        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
+    </h5>
+    <dl class="phpdocumentor-tag-list">
+                                    <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">since</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                            <span class="phpdocumentor-tag-link">9.0.0</span>
+                                                                                                        <section class="phpdocumentor-description"></section>
+
+                </dd>
+                        </dl>
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">mixed</span>
+            &mdash; <span class="phpdocumentor-return-value__description"></span>
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -private
+                                                        "
+>
     <h4 class="phpdocumentor-element__name" id="method_theme_support_includes">
         theme_support_includes()
         <a href="#method_theme_support_includes" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-woocommerce.php"><a href="../files/woocommerce-includes-class-woocommerce.html#source-view.601">includes/class-woocommerce.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-woocommerce.php"><a href="../files/woocommerce-includes-class-woocommerce.html#source-view.699">includes/class-woocommerce.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">601</span>
+    <span class="phpdocumentor-element-found-in__line">699</span>
 </aside>
 
         <p class="phpdocumentor-summary">Include classes for theme support.</p>
@@ -3143,7 +3365,7 @@ the load order. See #21524 for details.</p>
 
     <footer class="phpdocumentor phpdocumentor-footer">
     <div class="phpdocumentor-section">
-        <span>WooCommerce Code Reference API documentation generated by <a href="http://www.phpdoc.org/">phpDocumentor</a> on August 24th, 2023 at 08:49 am.</span>
+        <span>WooCommerce Code Reference API documentation generated by <a href="http://www.phpdoc.org/">phpDocumentor</a> on July 25th, 2024 at 11:33 am.</span>
     </div>
 </footer>
 
@@ -3155,7 +3377,7 @@ the load order. See #21524 for details.</p>
             'searchIndex': '..\/js\/searchIndex.json'
         };
     </script>
-    <script src="../js/searchIndex.js?updated=1692866973"></script>
-    <script src="../js/search.js?updated=1692866973"></script>
+    <script src="../js/searchIndex.js?updated=1721907194"></script>
+    <script src="../js/search.js?updated=1721907194"></script>
 </body>
 </html>

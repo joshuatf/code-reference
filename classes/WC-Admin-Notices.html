@@ -9,9 +9,9 @@
     <link rel="apple-touch-icon" sizes="72x72" href="../images/apple-touch-icon-72x72.png"/>
     <link rel="apple-touch-icon" sizes="114x114" href="../images/apple-touch-icon-114x114.png"/>
     <link rel="stylesheet" href="../css/normalize.css">
-    <link rel="stylesheet" href="../css/base.css?updated=1692866960">
+    <link rel="stylesheet" href="../css/base.css?updated=1721907190">
     <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../css/template.css?updated=1692866960">
+    <link rel="stylesheet" href="../css/template.css?updated=1721907190">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0/css/all.min.css" integrity="sha256-ybRkN9dBjhcS2qrW1z+hfCxq+1aBdwyQM5wlQoQVt/0=" crossorigin="anonymous" />
             <script src="https://cdn.jsdelivr.net/npm/css-vars-ponyfill@2"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0/js/all.min.js" integrity="sha256-0vuk8LXoyrmCjp1f0O300qo1M75ZQyhH9X3J6d+scmk=" crossorigin="anonymous"></script>
@@ -119,6 +119,7 @@
                         <ul class="phpdocumentor-list">
                                     <li><a href="../packages/Automattic-WooCommerce.html"><abbr title="\Automattic\WooCommerce">WooCommerce</abbr></a></li>
                             </ul>
+                                <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/WooCommerceBlocks.html"><abbr title="\WooCommerceBlocks">WooCommerceBlocks</abbr></a></h3>
                         </section>
     
     <section class="phpdocumentor-sidebar__category">
@@ -159,9 +160,9 @@
     </h2>
 
         <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/admin/class-wc-admin-notices.php"><a href="../files/woocommerce-includes-admin-class-wc-admin-notices.html#source-view.18">includes/admin/class-wc-admin-notices.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/admin/class-wc-admin-notices.php"><a href="../files/woocommerce-includes-admin-class-wc-admin-notices.html#source-view.20">includes/admin/class-wc-admin-notices.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">18</span>
+    <span class="phpdocumentor-element-found-in__line">20</span>
 </aside>
 
             <p class="phpdocumentor-summary">WC_Admin_Notices Class.</p>
@@ -189,11 +190,18 @@
 <dd>Array of notices - name =&gt; callback.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -property -private">
+    <a href="../classes/WC-Admin-Notices.html#property_is_multisite">$is_multisite</a>
+    <span>
+                &nbsp;: bool            </span>
+</dt>
+<dd>Stores a flag indicating if the code is running in a multisite setup.</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -property -private">
     <a href="../classes/WC-Admin-Notices.html#property_notices">$notices</a>
     <span>
                 &nbsp;: array&lt;string|int, mixed&gt;            </span>
 </dt>
-<dd>Stores notices.</dd>
+<dd>Local notices cache.</dd>
 
                 <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="../classes/WC-Admin-Notices.html#method_add_custom_notice">add_custom_notice()</a>
@@ -256,7 +264,7 @@
     <span>
                         &nbsp;: array&lt;string|int, mixed&gt;    </span>
 </dt>
-<dd>Get notices</dd>
+<dd>Get the value of the locally cached notices array for the current site.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="../classes/WC-Admin-Notices.html#method_has_notice">has_notice()</a>
@@ -277,7 +285,7 @@
     <span>
                         &nbsp;: mixed    </span>
 </dt>
-<dd>Constructor.</dd>
+<dd>Initializes the class.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="../classes/WC-Admin-Notices.html#method_install_notice">install_notice()</a>
@@ -347,7 +355,7 @@
     <span>
                         &nbsp;: mixed    </span>
 </dt>
-<dd>Remove all notices.</dd>
+<dd>Remove all notices from the locally cached notices array.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="../classes/WC-Admin-Notices.html#method_remove_notice">remove_notice()</a>
@@ -355,6 +363,13 @@
                         &nbsp;: mixed    </span>
 </dt>
 <dd>Remove a notice from being displayed.</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a href="../classes/WC-Admin-Notices.html#method_remove_notices">remove_notices()</a>
+    <span>
+                        &nbsp;: void    </span>
+</dt>
+<dd>Remove a given set of notices.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="../classes/WC-Admin-Notices.html#method_reset_admin_notices">reset_admin_notices()</a>
@@ -382,7 +397,7 @@
     <span>
                         &nbsp;: mixed    </span>
 </dt>
-<dd>Store notices to DB</dd>
+<dd>Store the locally cached notices to DB.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="../classes/WC-Admin-Notices.html#method_template_file_check_notice">template_file_check_notice()</a>
@@ -411,6 +426,13 @@
                         &nbsp;: mixed    </span>
 </dt>
 <dd>Notice about uploads directory begin unprotected.</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a href="../classes/WC-Admin-Notices.html#method_user_has_dismissed_notice">user_has_dismissed_notice()</a>
+    <span>
+                        &nbsp;: bool    </span>
+</dt>
+<dd>Check if a given user has dismissed a given admin notice.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="../classes/WC-Admin-Notices.html#method_wp_php_min_requirements_notice">wp_php_min_requirements_notice()</a>
@@ -448,20 +470,26 @@
 <dd>Hide a single notice.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -private">
-    <a href="../classes/WC-Admin-Notices.html#method_maybe_add_php74_required_notice">maybe_add_php74_required_notice()</a>
+    <a href="../classes/WC-Admin-Notices.html#method_maybe_add_legacy_api_removal_notice">maybe_add_legacy_api_removal_notice()</a>
     <span>
                         &nbsp;: mixed    </span>
 </dt>
-<dd>Add an admin notice about the bump of the required PHP version in WooCommerce 8.2
-if the current PHP version is too old.</dd>
+<dd>Add an admin notice about unsupported webhooks with Legacy API payload if at least one of these exist
+and the Legacy REST API plugin is not installed.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -private">
-    <a href="../classes/WC-Admin-Notices.html#method_maybe_remove_php74_required_notice">maybe_remove_php74_required_notice()</a>
+    <a href="../classes/WC-Admin-Notices.html#method_maybe_remove_legacy_api_removal_notice">maybe_remove_legacy_api_removal_notice()</a>
     <span>
                         &nbsp;: mixed    </span>
 </dt>
-<dd>Remove the admin notice about the bump of the required PHP version in WooCommerce 8.2
-if the current PHP version is good.</dd>
+<dd>Remove the admin notice about the unsupported webhooks if the Legacy REST API plugin is installed.</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -private">
+    <a href="../classes/WC-Admin-Notices.html#method_set_notices">set_notices()</a>
+    <span>
+                        &nbsp;: mixed    </span>
+</dt>
+<dd>Set the locally cached notices array for the current site.</dd>
 
         </dl>
 
@@ -489,9 +517,9 @@ if the current PHP version is good.</dd>
                                 </span>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/admin/class-wc-admin-notices.php"><a href="../files/woocommerce-includes-admin-class-wc-admin-notices.html#source-view.34">includes/admin/class-wc-admin-notices.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/admin/class-wc-admin-notices.php"><a href="../files/woocommerce-includes-admin-class-wc-admin-notices.html#source-view.39">includes/admin/class-wc-admin-notices.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">34</span>
+    <span class="phpdocumentor-element-found-in__line">39</span>
 </aside>
 
         <p class="phpdocumentor-summary">Array of notices - name =&gt; callback.</p>
@@ -500,7 +528,39 @@ if the current PHP version is good.</dd>
     <span class="phpdocumentor-signature__visibility">private</span>
     <span class="phpdocumentor-signature__static">static</span>    <span class="phpdocumentor-signature__type">array&lt;string|int, mixed&gt;</span>
     <span class="phpdocumentor-signature__name">$core_notices</span>
-     = <span class="phpdocumentor-signature__default-value">array(&#039;update&#039; =&gt; &#039;update_notice&#039;, &#039;template_files&#039; =&gt; &#039;template_file_check_notice&#039;, &#039;legacy_shipping&#039; =&gt; &#039;legacy_shipping_notice&#039;, &#039;no_shipping_methods&#039; =&gt; &#039;no_shipping_methods_notice&#039;, &#039;regenerating_thumbnails&#039; =&gt; &#039;regenerating_thumbnails_notice&#039;, &#039;regenerating_lookup_table&#039; =&gt; &#039;regenerating_lookup_table_notice&#039;, &#039;no_secure_connection&#039; =&gt; &#039;secure_connection_notice&#039;, WC_PHP_MIN_REQUIREMENTS_NOTICE =&gt; &#039;wp_php_min_requirements_notice&#039;, &#039;maxmind_license_key&#039; =&gt; &#039;maxmind_missing_license_key_notice&#039;, &#039;redirect_download_method&#039; =&gt; &#039;redirect_download_method_notice&#039;, &#039;uploads_directory_is_unprotected&#039; =&gt; &#039;uploads_directory_is_unprotected_notice&#039;, &#039;base_tables_missing&#039; =&gt; &#039;base_tables_missing_notice&#039;, &#039;download_directories_sync_complete&#039; =&gt; &#039;download_directories_sync_complete&#039;)</span></code>
+     = <span class="phpdocumentor-signature__default-value">array(&#039;update&#039; =&gt; &#039;update_notice&#039;, &#039;template_files&#039; =&gt; &#039;template_file_check_notice&#039;, &#039;legacy_shipping&#039; =&gt; &#039;legacy_shipping_notice&#039;, &#039;no_shipping_methods&#039; =&gt; &#039;no_shipping_methods_notice&#039;, &#039;regenerating_thumbnails&#039; =&gt; &#039;regenerating_thumbnails_notice&#039;, &#039;regenerating_lookup_table&#039; =&gt; &#039;regenerating_lookup_table_notice&#039;, &#039;no_secure_connection&#039; =&gt; &#039;secure_connection_notice&#039;, &#039;maxmind_license_key&#039; =&gt; &#039;maxmind_missing_license_key_notice&#039;, &#039;redirect_download_method&#039; =&gt; &#039;redirect_download_method_notice&#039;, &#039;uploads_directory_is_unprotected&#039; =&gt; &#039;uploads_directory_is_unprotected_notice&#039;, &#039;base_tables_missing&#039; =&gt; &#039;base_tables_missing_notice&#039;, &#039;download_directories_sync_complete&#039; =&gt; &#039;download_directories_sync_complete&#039;)</span></code>
+
+        <section class="phpdocumentor-description"></section>
+
+    
+
+</article>
+                    <article
+        class="
+            phpdocumentor-element
+            -property
+            -private
+            -static                                            "
+>
+    <h4 class="phpdocumentor-element__name" id="property_is_multisite">
+        $is_multisite
+        <a href="#property_is_multisite" class="headerlink"><i class="fas fa-link"></i></a>
+        <span class="phpdocumentor-element__modifiers">
+                                </span>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/admin/class-wc-admin-notices.php"><a href="../files/woocommerce-includes-admin-class-wc-admin-notices.html#source-view.59">includes/admin/class-wc-admin-notices.php</a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">59</span>
+</aside>
+
+        <p class="phpdocumentor-summary">Stores a flag indicating if the code is running in a multisite setup.</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">private</span>
+    <span class="phpdocumentor-signature__static">static</span>    <span class="phpdocumentor-signature__type">bool</span>
+    <span class="phpdocumentor-signature__name">$is_multisite</span>
+    </code>
 
         <section class="phpdocumentor-description"></section>
 
@@ -521,12 +581,12 @@ if the current PHP version is good.</dd>
                                 </span>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/admin/class-wc-admin-notices.php"><a href="../files/woocommerce-includes-admin-class-wc-admin-notices.html#source-view.27">includes/admin/class-wc-admin-notices.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/admin/class-wc-admin-notices.php"><a href="../files/woocommerce-includes-admin-class-wc-admin-notices.html#source-view.32">includes/admin/class-wc-admin-notices.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">27</span>
+    <span class="phpdocumentor-element-found-in__line">32</span>
 </aside>
 
-        <p class="phpdocumentor-summary">Stores notices.</p>
+        <p class="phpdocumentor-summary">Local notices cache.</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">private</span>
@@ -534,7 +594,9 @@ if the current PHP version is good.</dd>
     <span class="phpdocumentor-signature__name">$notices</span>
      = <span class="phpdocumentor-signature__default-value">array()</span></code>
 
-        <section class="phpdocumentor-description"></section>
+        <section class="phpdocumentor-description"><p>DON'T manipulate this field directly!
+Always use get_notices and set_notices instead.</p>
+</section>
 
     
 
@@ -557,9 +619,9 @@ if the current PHP version is good.</dd>
         <a href="#method_add_custom_notice" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/admin/class-wc-admin-notices.php"><a href="../files/woocommerce-includes-admin-class-wc-admin-notices.html#source-view.296">includes/admin/class-wc-admin-notices.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/admin/class-wc-admin-notices.php"><a href="../files/woocommerce-includes-admin-class-wc-admin-notices.html#source-view.360">includes/admin/class-wc-admin-notices.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">296</span>
+    <span class="phpdocumentor-element-found-in__line">360</span>
 </aside>
 
         <p class="phpdocumentor-summary">Add a custom notice.</p>
@@ -610,9 +672,9 @@ if the current PHP version is good.</dd>
         <a href="#method_add_maxmind_missing_license_key_notice" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/admin/class-wc-admin-notices.php"><a href="../files/woocommerce-includes-admin-class-wc-admin-notices.html#source-view.524">includes/admin/class-wc-admin-notices.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/admin/class-wc-admin-notices.php"><a href="../files/woocommerce-includes-admin-class-wc-admin-notices.html#source-view.557">includes/admin/class-wc-admin-notices.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">524</span>
+    <span class="phpdocumentor-element-found-in__line">557</span>
 </aside>
 
         <p class="phpdocumentor-summary">Add MaxMind missing license key notice.</p>
@@ -656,9 +718,9 @@ if the current PHP version is good.</dd>
         <a href="#method_add_min_version_notice" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/admin/class-wc-admin-notices.php"><a href="../files/woocommerce-includes-admin-class-wc-admin-notices.html#source-view.469">includes/admin/class-wc-admin-notices.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/admin/class-wc-admin-notices.php"><a href="../files/woocommerce-includes-admin-class-wc-admin-notices.html#source-view.535">includes/admin/class-wc-admin-notices.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">469</span>
+    <span class="phpdocumentor-element-found-in__line">535</span>
 </aside>
 
         <p class="phpdocumentor-summary">Add notice about minimum PHP and WordPress requirement.</p>
@@ -702,9 +764,9 @@ if the current PHP version is good.</dd>
         <a href="#method_add_notice" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/admin/class-wc-admin-notices.php"><a href="../files/woocommerce-includes-admin-class-wc-admin-notices.html#source-view.176">includes/admin/class-wc-admin-notices.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/admin/class-wc-admin-notices.php"><a href="../files/woocommerce-includes-admin-class-wc-admin-notices.html#source-view.203">includes/admin/class-wc-admin-notices.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">176</span>
+    <span class="phpdocumentor-element-found-in__line">203</span>
 </aside>
 
         <p class="phpdocumentor-summary">Show a notice.</p>
@@ -755,9 +817,9 @@ if the current PHP version is good.</dd>
         <a href="#method_add_notices" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/admin/class-wc-admin-notices.php"><a href="../files/woocommerce-includes-admin-class-wc-admin-notices.html#source-view.257">includes/admin/class-wc-admin-notices.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/admin/class-wc-admin-notices.php"><a href="../files/woocommerce-includes-admin-class-wc-admin-notices.html#source-view.319">includes/admin/class-wc-admin-notices.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">257</span>
+    <span class="phpdocumentor-element-found-in__line">319</span>
 </aside>
 
         <p class="phpdocumentor-summary">Add notices + styles if needed.</p>
@@ -787,9 +849,9 @@ if the current PHP version is good.</dd>
         <a href="#method_add_redirect_download_method_notice" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/admin/class-wc-admin-notices.php"><a href="../files/woocommerce-includes-admin-class-wc-admin-notices.html#source-view.541">includes/admin/class-wc-admin-notices.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/admin/class-wc-admin-notices.php"><a href="../files/woocommerce-includes-admin-class-wc-admin-notices.html#source-view.574">includes/admin/class-wc-admin-notices.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">541</span>
+    <span class="phpdocumentor-element-found-in__line">574</span>
 </aside>
 
         <p class="phpdocumentor-summary">Add notice about Redirect-only download method, nudging user to switch to a different method instead.</p>
@@ -819,9 +881,9 @@ if the current PHP version is good.</dd>
         <a href="#method_base_tables_missing_notice" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/admin/class-wc-admin-notices.php"><a href="../files/woocommerce-includes-admin-class-wc-admin-notices.html#source-view.615">includes/admin/class-wc-admin-notices.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/admin/class-wc-admin-notices.php"><a href="../files/woocommerce-includes-admin-class-wc-admin-notices.html#source-view.648">includes/admin/class-wc-admin-notices.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">615</span>
+    <span class="phpdocumentor-element-found-in__line">648</span>
 </aside>
 
         <p class="phpdocumentor-summary">Notice about base tables missing.</p>
@@ -851,9 +913,9 @@ if the current PHP version is good.</dd>
         <a href="#method_download_directories_sync_complete" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/admin/class-wc-admin-notices.php"><a href="../files/woocommerce-includes-admin-class-wc-admin-notices.html#source-view.552">includes/admin/class-wc-admin-notices.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/admin/class-wc-admin-notices.php"><a href="../files/woocommerce-includes-admin-class-wc-admin-notices.html#source-view.585">includes/admin/class-wc-admin-notices.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">552</span>
+    <span class="phpdocumentor-element-found-in__line">585</span>
 </aside>
 
         <p class="phpdocumentor-summary">Notice about the completion of the product downloads sync, with further advice for the site operator.</p>
@@ -883,12 +945,12 @@ if the current PHP version is good.</dd>
         <a href="#method_get_notices" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/admin/class-wc-admin-notices.php"><a href="../files/woocommerce-includes-admin-class-wc-admin-notices.html#source-view.99">includes/admin/class-wc-admin-notices.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/admin/class-wc-admin-notices.php"><a href="../files/woocommerce-includes-admin-class-wc-admin-notices.html#source-view.111">includes/admin/class-wc-admin-notices.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">99</span>
+    <span class="phpdocumentor-element-found-in__line">111</span>
 </aside>
 
-        <p class="phpdocumentor-summary">Get notices</p>
+        <p class="phpdocumentor-summary">Get the value of the locally cached notices array for the current site.</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
@@ -915,9 +977,9 @@ if the current PHP version is good.</dd>
         <a href="#method_has_notice" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/admin/class-wc-admin-notices.php"><a href="../files/woocommerce-includes-admin-class-wc-admin-notices.html#source-view.208">includes/admin/class-wc-admin-notices.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/admin/class-wc-admin-notices.php"><a href="../files/woocommerce-includes-admin-class-wc-admin-notices.html#source-view.257">includes/admin/class-wc-admin-notices.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">208</span>
+    <span class="phpdocumentor-element-found-in__line">257</span>
 </aside>
 
         <p class="phpdocumentor-summary">See if a notice is being shown.</p>
@@ -959,9 +1021,9 @@ if the current PHP version is good.</dd>
         <a href="#method_hide_notices" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/admin/class-wc-admin-notices.php"><a href="../files/woocommerce-includes-admin-class-wc-admin-notices.html#source-view.215">includes/admin/class-wc-admin-notices.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/admin/class-wc-admin-notices.php"><a href="../files/woocommerce-includes-admin-class-wc-admin-notices.html#source-view.264">includes/admin/class-wc-admin-notices.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">215</span>
+    <span class="phpdocumentor-element-found-in__line">264</span>
 </aside>
 
         <p class="phpdocumentor-summary">Hide a notice if the GET variable is set.</p>
@@ -991,12 +1053,12 @@ if the current PHP version is good.</dd>
         <a href="#method_init" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/admin/class-wc-admin-notices.php"><a href="../files/woocommerce-includes-admin-class-wc-admin-notices.html#source-view.53">includes/admin/class-wc-admin-notices.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/admin/class-wc-admin-notices.php"><a href="../files/woocommerce-includes-admin-class-wc-admin-notices.html#source-view.64">includes/admin/class-wc-admin-notices.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">53</span>
+    <span class="phpdocumentor-element-found-in__line">64</span>
 </aside>
 
-        <p class="phpdocumentor-summary">Constructor.</p>
+        <p class="phpdocumentor-summary">Initializes the class.</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
@@ -1023,9 +1085,9 @@ if the current PHP version is good.</dd>
         <a href="#method_install_notice" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/admin/class-wc-admin-notices.php"><a href="../files/woocommerce-includes-admin-class-wc-admin-notices.html#source-view.348">includes/admin/class-wc-admin-notices.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/admin/class-wc-admin-notices.php"><a href="../files/woocommerce-includes-admin-class-wc-admin-notices.html#source-view.413">includes/admin/class-wc-admin-notices.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">348</span>
+    <span class="phpdocumentor-element-found-in__line">413</span>
 </aside>
 
         <p class="phpdocumentor-summary">If we have just installed, show a message with the install pages button.</p>
@@ -1069,9 +1131,9 @@ if the current PHP version is good.</dd>
         <a href="#method_legacy_shipping_notice" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/admin/class-wc-admin-notices.php"><a href="../files/woocommerce-includes-admin-class-wc-admin-notices.html#source-view.395">includes/admin/class-wc-admin-notices.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/admin/class-wc-admin-notices.php"><a href="../files/woocommerce-includes-admin-class-wc-admin-notices.html#source-view.460">includes/admin/class-wc-admin-notices.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">395</span>
+    <span class="phpdocumentor-element-found-in__line">460</span>
 </aside>
 
         <p class="phpdocumentor-summary">Show a notice asking users to convert to shipping zones.</p>
@@ -1115,9 +1177,9 @@ if the current PHP version is good.</dd>
         <a href="#method_maxmind_missing_license_key_notice" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/admin/class-wc-admin-notices.php"><a href="../files/woocommerce-includes-admin-class-wc-admin-notices.html#source-view.572">includes/admin/class-wc-admin-notices.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/admin/class-wc-admin-notices.php"><a href="../files/woocommerce-includes-admin-class-wc-admin-notices.html#source-view.605">includes/admin/class-wc-admin-notices.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">572</span>
+    <span class="phpdocumentor-element-found-in__line">605</span>
 </aside>
 
         <p class="phpdocumentor-summary">Display MaxMind missing license key notice.</p>
@@ -1161,9 +1223,9 @@ if the current PHP version is good.</dd>
         <a href="#method_no_shipping_methods_notice" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/admin/class-wc-admin-notices.php"><a href="../files/woocommerce-includes-admin-class-wc-admin-notices.html#source-view.416">includes/admin/class-wc-admin-notices.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/admin/class-wc-admin-notices.php"><a href="../files/woocommerce-includes-admin-class-wc-admin-notices.html#source-view.481">includes/admin/class-wc-admin-notices.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">416</span>
+    <span class="phpdocumentor-element-found-in__line">481</span>
 </aside>
 
         <p class="phpdocumentor-summary">No shipping methods.</p>
@@ -1193,9 +1255,9 @@ if the current PHP version is good.</dd>
         <a href="#method_output_custom_notices" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/admin/class-wc-admin-notices.php"><a href="../files/woocommerce-includes-admin-class-wc-admin-notices.html#source-view.304">includes/admin/class-wc-admin-notices.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/admin/class-wc-admin-notices.php"><a href="../files/woocommerce-includes-admin-class-wc-admin-notices.html#source-view.368">includes/admin/class-wc-admin-notices.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">304</span>
+    <span class="phpdocumentor-element-found-in__line">368</span>
 </aside>
 
         <p class="phpdocumentor-summary">Output any stored custom notices.</p>
@@ -1225,9 +1287,9 @@ if the current PHP version is good.</dd>
         <a href="#method_prepare_note_with_nonce" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/admin/class-wc-admin-notices.php"><a href="../files/woocommerce-includes-admin-class-wc-admin-notices.html#source-view.81">includes/admin/class-wc-admin-notices.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/admin/class-wc-admin-notices.php"><a href="../files/woocommerce-includes-admin-class-wc-admin-notices.html#source-view.93">includes/admin/class-wc-admin-notices.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">81</span>
+    <span class="phpdocumentor-element-found-in__line">93</span>
 </aside>
 
         <p class="phpdocumentor-summary">Parses query to create nonces when available.</p>
@@ -1283,9 +1345,9 @@ if the current PHP version is good.</dd>
         <a href="#method_redirect_download_method_notice" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/admin/class-wc-admin-notices.php"><a href="../files/woocommerce-includes-admin-class-wc-admin-notices.html#source-view.589">includes/admin/class-wc-admin-notices.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/admin/class-wc-admin-notices.php"><a href="../files/woocommerce-includes-admin-class-wc-admin-notices.html#source-view.622">includes/admin/class-wc-admin-notices.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">589</span>
+    <span class="phpdocumentor-element-found-in__line">622</span>
 </aside>
 
         <p class="phpdocumentor-summary">Notice about Redirect-Only download method.</p>
@@ -1329,9 +1391,9 @@ if the current PHP version is good.</dd>
         <a href="#method_regenerating_lookup_table_notice" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/admin/class-wc-admin-notices.php"><a href="../files/woocommerce-includes-admin-class-wc-admin-notices.html#source-view.454">includes/admin/class-wc-admin-notices.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/admin/class-wc-admin-notices.php"><a href="../files/woocommerce-includes-admin-class-wc-admin-notices.html#source-view.520">includes/admin/class-wc-admin-notices.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">454</span>
+    <span class="phpdocumentor-element-found-in__line">520</span>
 </aside>
 
         <p class="phpdocumentor-summary">Notice shown when regenerating thumbnails background process is running.</p>
@@ -1375,9 +1437,9 @@ if the current PHP version is good.</dd>
         <a href="#method_regenerating_thumbnails_notice" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/admin/class-wc-admin-notices.php"><a href="../files/woocommerce-includes-admin-class-wc-admin-notices.html#source-view.434">includes/admin/class-wc-admin-notices.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/admin/class-wc-admin-notices.php"><a href="../files/woocommerce-includes-admin-class-wc-admin-notices.html#source-view.500">includes/admin/class-wc-admin-notices.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">434</span>
+    <span class="phpdocumentor-element-found-in__line">500</span>
 </aside>
 
         <p class="phpdocumentor-summary">Notice shown when regenerating thumbnails background process is running.</p>
@@ -1407,12 +1469,12 @@ if the current PHP version is good.</dd>
         <a href="#method_remove_all_notices" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/admin/class-wc-admin-notices.php"><a href="../files/woocommerce-includes-admin-class-wc-admin-notices.html#source-view.106">includes/admin/class-wc-admin-notices.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/admin/class-wc-admin-notices.php"><a href="../files/woocommerce-includes-admin-class-wc-admin-notices.html#source-view.142">includes/admin/class-wc-admin-notices.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">106</span>
+    <span class="phpdocumentor-element-found-in__line">142</span>
 </aside>
 
-        <p class="phpdocumentor-summary">Remove all notices.</p>
+        <p class="phpdocumentor-summary">Remove all notices from the locally cached notices array.</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
@@ -1439,9 +1501,9 @@ if the current PHP version is good.</dd>
         <a href="#method_remove_notice" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/admin/class-wc-admin-notices.php"><a href="../files/woocommerce-includes-admin-class-wc-admin-notices.html#source-view.191">includes/admin/class-wc-admin-notices.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/admin/class-wc-admin-notices.php"><a href="../files/woocommerce-includes-admin-class-wc-admin-notices.html#source-view.218">includes/admin/class-wc-admin-notices.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">191</span>
+    <span class="phpdocumentor-element-found-in__line">218</span>
 </aside>
 
         <p class="phpdocumentor-summary">Remove a notice from being displayed.</p>
@@ -1487,14 +1549,69 @@ if the current PHP version is good.</dd>
             -public
                                     -static                    "
 >
+    <h4 class="phpdocumentor-element__name" id="method_remove_notices">
+        remove_notices()
+        <a href="#method_remove_notices" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/admin/class-wc-admin-notices.php"><a href="../files/woocommerce-includes-admin-class-wc-admin-notices.html#source-view.238">includes/admin/class-wc-admin-notices.php</a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">238</span>
+</aside>
+
+        <p class="phpdocumentor-summary">Remove a given set of notices.</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+            <span class="phpdocumentor-signature__static">static</span>    <span class="phpdocumentor-signature__name">remove_notices</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;|string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$names_array_or_regex</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type">bool&nbsp;</span><span class="phpdocumentor-signature__argument__name">$force_save</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">false</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">void</span></code>
+
+        <section class="phpdocumentor-description"><p>An array of notice names or a regular expression string can be passed, in the later case
+all the notices whose name matches the regular expression will be removed.</p>
+</section>
+
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$names_array_or_regex</span>
+                : <span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;|string</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"><p>An array of notice names, or a string representing a regular expression.</p>
+</section>
+
+            </dd>
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$force_save</span>
+                : <span class="phpdocumentor-signature__argument__return-type">bool</span>
+                 = <span class="phpdocumentor-signature__argument__default-value">false</span>            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"><p>Force saving inside this method instead of at the 'shutdown'.</p>
+</section>
+
+            </dd>
+            </dl>
+
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">void</span>
+            &mdash; <span class="phpdocumentor-return-value__description"></span>
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                    -static                    "
+>
     <h4 class="phpdocumentor-element__name" id="method_reset_admin_notices">
         reset_admin_notices()
         <a href="#method_reset_admin_notices" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/admin/class-wc-admin-notices.php"><a href="../files/woocommerce-includes-admin-class-wc-admin-notices.html#source-view.113">includes/admin/class-wc-admin-notices.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/admin/class-wc-admin-notices.php"><a href="../files/woocommerce-includes-admin-class-wc-admin-notices.html#source-view.149">includes/admin/class-wc-admin-notices.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">113</span>
+    <span class="phpdocumentor-element-found-in__line">149</span>
 </aside>
 
         <p class="phpdocumentor-summary">Reset notices for themes when switched or a new version of WC is installed.</p>
@@ -1524,9 +1641,9 @@ if the current PHP version is good.</dd>
         <a href="#method_secure_connection_notice" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/admin/class-wc-admin-notices.php"><a href="../files/woocommerce-includes-admin-class-wc-admin-notices.html#source-view.441">includes/admin/class-wc-admin-notices.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/admin/class-wc-admin-notices.php"><a href="../files/woocommerce-includes-admin-class-wc-admin-notices.html#source-view.507">includes/admin/class-wc-admin-notices.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">441</span>
+    <span class="phpdocumentor-element-found-in__line">507</span>
 </aside>
 
         <p class="phpdocumentor-summary">Notice about secure connection.</p>
@@ -1556,9 +1673,9 @@ if the current PHP version is good.</dd>
         <a href="#method_simplify_commerce_notice" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/admin/class-wc-admin-notices.php"><a href="../files/woocommerce-includes-admin-class-wc-admin-notices.html#source-view.657">includes/admin/class-wc-admin-notices.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/admin/class-wc-admin-notices.php"><a href="../files/woocommerce-includes-admin-class-wc-admin-notices.html#source-view.690">includes/admin/class-wc-admin-notices.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">657</span>
+    <span class="phpdocumentor-element-found-in__line">690</span>
 </aside>
 
         <p class="phpdocumentor-summary">Simplify Commerce is no longer in core.</p>
@@ -1603,12 +1720,12 @@ if the current PHP version is good.</dd>
         <a href="#method_store_notices" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/admin/class-wc-admin-notices.php"><a href="../files/woocommerce-includes-admin-class-wc-admin-notices.html#source-view.90">includes/admin/class-wc-admin-notices.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/admin/class-wc-admin-notices.php"><a href="../files/woocommerce-includes-admin-class-wc-admin-notices.html#source-view.102">includes/admin/class-wc-admin-notices.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">90</span>
+    <span class="phpdocumentor-element-found-in__line">102</span>
 </aside>
 
-        <p class="phpdocumentor-summary">Store notices to DB</p>
+        <p class="phpdocumentor-summary">Store the locally cached notices to DB.</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
@@ -1635,9 +1752,9 @@ if the current PHP version is good.</dd>
         <a href="#method_template_file_check_notice" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/admin/class-wc-admin-notices.php"><a href="../files/woocommerce-includes-admin-class-wc-admin-notices.html#source-view.355">includes/admin/class-wc-admin-notices.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/admin/class-wc-admin-notices.php"><a href="../files/woocommerce-includes-admin-class-wc-admin-notices.html#source-view.420">includes/admin/class-wc-admin-notices.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">355</span>
+    <span class="phpdocumentor-element-found-in__line">420</span>
 </aside>
 
         <p class="phpdocumentor-summary">Show a notice highlighting bad template files.</p>
@@ -1667,9 +1784,9 @@ if the current PHP version is good.</dd>
         <a href="#method_theme_check_notice" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/admin/class-wc-admin-notices.php"><a href="../files/woocommerce-includes-admin-class-wc-admin-notices.html#source-view.666">includes/admin/class-wc-admin-notices.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/admin/class-wc-admin-notices.php"><a href="../files/woocommerce-includes-admin-class-wc-admin-notices.html#source-view.699">includes/admin/class-wc-admin-notices.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">666</span>
+    <span class="phpdocumentor-element-found-in__line">699</span>
 </aside>
 
         <p class="phpdocumentor-summary">Show the Theme Check notice.</p>
@@ -1714,9 +1831,9 @@ if the current PHP version is good.</dd>
         <a href="#method_update_notice" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/admin/class-wc-admin-notices.php"><a href="../files/woocommerce-includes-admin-class-wc-admin-notices.html#source-view.323">includes/admin/class-wc-admin-notices.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/admin/class-wc-admin-notices.php"><a href="../files/woocommerce-includes-admin-class-wc-admin-notices.html#source-view.387">includes/admin/class-wc-admin-notices.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">323</span>
+    <span class="phpdocumentor-element-found-in__line">387</span>
 </aside>
 
         <p class="phpdocumentor-summary">If we need to update the database, include a message with the DB update button.</p>
@@ -1746,9 +1863,9 @@ if the current PHP version is good.</dd>
         <a href="#method_uploads_directory_is_unprotected_notice" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/admin/class-wc-admin-notices.php"><a href="../files/woocommerce-includes-admin-class-wc-admin-notices.html#source-view.603">includes/admin/class-wc-admin-notices.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/admin/class-wc-admin-notices.php"><a href="../files/woocommerce-includes-admin-class-wc-admin-notices.html#source-view.636">includes/admin/class-wc-admin-notices.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">603</span>
+    <span class="phpdocumentor-element-found-in__line">636</span>
 </aside>
 
         <p class="phpdocumentor-summary">Notice about uploads directory begin unprotected.</p>
@@ -1787,19 +1904,86 @@ if the current PHP version is good.</dd>
             -public
                                     -static                    "
 >
+    <h4 class="phpdocumentor-element__name" id="method_user_has_dismissed_notice">
+        user_has_dismissed_notice()
+        <a href="#method_user_has_dismissed_notice" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/admin/class-wc-admin-notices.php"><a href="../files/woocommerce-includes-admin-class-wc-admin-notices.html#source-view.312">includes/admin/class-wc-admin-notices.php</a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">312</span>
+</aside>
+
+        <p class="phpdocumentor-summary">Check if a given user has dismissed a given admin notice.</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+            <span class="phpdocumentor-signature__static">static</span>    <span class="phpdocumentor-signature__name">user_has_dismissed_notice</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$name</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type">int|null&nbsp;</span><span class="phpdocumentor-signature__argument__name">$user_id</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">bool</span></code>
+
+        <section class="phpdocumentor-description"></section>
+
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$name</span>
+                : <span class="phpdocumentor-signature__argument__return-type">string</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"><p>The name of the admin notice to check.</p>
+</section>
+
+            </dd>
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$user_id</span>
+                : <span class="phpdocumentor-signature__argument__return-type">int|null</span>
+                 = <span class="phpdocumentor-signature__argument__default-value">null</span>            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"><p>User id, or null for the current user.</p>
+</section>
+
+            </dd>
+            </dl>
+
+    
+    <h5 class="phpdocumentor-tag-list__heading" id="tags">
+        Tags
+        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
+    </h5>
+    <dl class="phpdocumentor-tag-list">
+                                    <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">since</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                            <span class="phpdocumentor-tag-link">8.5.0</span>
+                                                                                                        <section class="phpdocumentor-description"></section>
+
+                </dd>
+                        </dl>
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">bool</span>
+            &mdash; <span class="phpdocumentor-return-value__description">True if the user has dismissed the notice.</span>
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+            -deprecated                        -static                    "
+>
     <h4 class="phpdocumentor-element__name" id="method_wp_php_min_requirements_notice">
         wp_php_min_requirements_notice()
         <a href="#method_wp_php_min_requirements_notice" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/admin/class-wc-admin-notices.php"><a href="../files/woocommerce-includes-admin-class-wc-admin-notices.html#source-view.481">includes/admin/class-wc-admin-notices.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/admin/class-wc-admin-notices.php"><a href="../files/woocommerce-includes-admin-class-wc-admin-notices.html#source-view.549">includes/admin/class-wc-admin-notices.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">481</span>
+    <span class="phpdocumentor-element-found-in__line">549</span>
 </aside>
 
         <p class="phpdocumentor-summary">Notice about WordPress and PHP minimum requirements.</p>
 
-    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <code class="phpdocumentor-code phpdocumentor-signature -deprecated">
     <span class="phpdocumentor-signature__visibility">public</span>
             <span class="phpdocumentor-signature__static">static</span>    <span class="phpdocumentor-signature__name">wp_php_min_requirements_notice</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">void</span></code>
 
@@ -1813,6 +1997,15 @@ if the current PHP version is good.</dd>
     </h5>
     <dl class="phpdocumentor-tag-list">
                                     <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">deprecated</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                            <span class="phpdocumentor-tag-link">8.2.0</span>
+                                                                                                        <section class="phpdocumentor-description"><p>WordPress and PHP minimum requirements notices are no longer shown.</p>
+</section>
+
+                </dd>
+                                                <dt class="phpdocumentor-tag-list__entry">
                     <span class="phpdocumentor-tag__name">since</span>
                 </dt>
                 <dd class="phpdocumentor-tag-list__definition">
@@ -1838,9 +2031,9 @@ if the current PHP version is good.</dd>
         <a href="#method_is_plugin_active" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/admin/class-wc-admin-notices.php"><a href="../files/woocommerce-includes-admin-class-wc-admin-notices.html#source-view.645">includes/admin/class-wc-admin-notices.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/admin/class-wc-admin-notices.php"><a href="../files/woocommerce-includes-admin-class-wc-admin-notices.html#source-view.678">includes/admin/class-wc-admin-notices.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">645</span>
+    <span class="phpdocumentor-element-found-in__line">678</span>
 </aside>
 
         <p class="phpdocumentor-summary">Wrapper for is_plugin_active.</p>
@@ -1882,9 +2075,9 @@ if the current PHP version is good.</dd>
         <a href="#method_is_ssl" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/admin/class-wc-admin-notices.php"><a href="../files/woocommerce-includes-admin-class-wc-admin-notices.html#source-view.633">includes/admin/class-wc-admin-notices.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/admin/class-wc-admin-notices.php"><a href="../files/woocommerce-includes-admin-class-wc-admin-notices.html#source-view.666">includes/admin/class-wc-admin-notices.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">633</span>
+    <span class="phpdocumentor-element-found-in__line">666</span>
 </aside>
 
         <p class="phpdocumentor-summary">Determine if the store is running SSL.</p>
@@ -1928,9 +2121,9 @@ if the current PHP version is good.</dd>
         <a href="#method_is_uploads_directory_protected" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/admin/class-wc-admin-notices.php"><a href="../files/woocommerce-includes-admin-class-wc-admin-notices.html#source-view.676">includes/admin/class-wc-admin-notices.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/admin/class-wc-admin-notices.php"><a href="../files/woocommerce-includes-admin-class-wc-admin-notices.html#source-view.709">includes/admin/class-wc-admin-notices.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">676</span>
+    <span class="phpdocumentor-element-found-in__line">709</span>
 </aside>
 
         <p class="phpdocumentor-summary">Check if uploads directory is protected.</p>
@@ -1974,9 +2167,9 @@ if the current PHP version is good.</dd>
         <a href="#method_hide_notice" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/admin/class-wc-admin-notices.php"><a href="../files/woocommerce-includes-admin-class-wc-admin-notices.html#source-view.246">includes/admin/class-wc-admin-notices.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/admin/class-wc-admin-notices.php"><a href="../files/woocommerce-includes-admin-class-wc-admin-notices.html#source-view.295">includes/admin/class-wc-admin-notices.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">246</span>
+    <span class="phpdocumentor-element-found-in__line">295</span>
 </aside>
 
         <p class="phpdocumentor-summary">Hide a single notice.</p>
@@ -2013,25 +2206,24 @@ if the current PHP version is good.</dd>
             -private
                                     -static                    "
 >
-    <h4 class="phpdocumentor-element__name" id="method_maybe_add_php74_required_notice">
-        maybe_add_php74_required_notice()
-        <a href="#method_maybe_add_php74_required_notice" class="headerlink"><i class="fas fa-link"></i></a>
+    <h4 class="phpdocumentor-element__name" id="method_maybe_add_legacy_api_removal_notice">
+        maybe_add_legacy_api_removal_notice()
+        <a href="#method_maybe_add_legacy_api_removal_notice" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/admin/class-wc-admin-notices.php"><a href="../files/woocommerce-includes-admin-class-wc-admin-notices.html#source-view.134">includes/admin/class-wc-admin-notices.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/admin/class-wc-admin-notices.php"><a href="../files/woocommerce-includes-admin-class-wc-admin-notices.html#source-view.166">includes/admin/class-wc-admin-notices.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">134</span>
+    <span class="phpdocumentor-element-found-in__line">166</span>
 </aside>
 
-        <p class="phpdocumentor-summary">Add an admin notice about the bump of the required PHP version in WooCommerce 8.2
-if the current PHP version is too old.</p>
+        <p class="phpdocumentor-summary">Add an admin notice about unsupported webhooks with Legacy API payload if at least one of these exist
+and the Legacy REST API plugin is not installed.</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">private</span>
-            <span class="phpdocumentor-signature__static">static</span>    <span class="phpdocumentor-signature__name">maybe_add_php74_required_notice</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
+            <span class="phpdocumentor-signature__static">static</span>    <span class="phpdocumentor-signature__name">maybe_add_legacy_api_removal_notice</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
 
-        <section class="phpdocumentor-description"><p>TODO: Remove this method in WooCommerce 8.2.</p>
-</section>
+        <section class="phpdocumentor-description"></section>
 
     
     
@@ -2047,27 +2239,69 @@ if the current PHP version is too old.</p>
             -private
                                     -static                    "
 >
-    <h4 class="phpdocumentor-element__name" id="method_maybe_remove_php74_required_notice">
-        maybe_remove_php74_required_notice()
-        <a href="#method_maybe_remove_php74_required_notice" class="headerlink"><i class="fas fa-link"></i></a>
+    <h4 class="phpdocumentor-element__name" id="method_maybe_remove_legacy_api_removal_notice">
+        maybe_remove_legacy_api_removal_notice()
+        <a href="#method_maybe_remove_legacy_api_removal_notice" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/admin/class-wc-admin-notices.php"><a href="../files/woocommerce-includes-admin-class-wc-admin-notices.html#source-view.162">includes/admin/class-wc-admin-notices.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/admin/class-wc-admin-notices.php"><a href="../files/woocommerce-includes-admin-class-wc-admin-notices.html#source-view.191">includes/admin/class-wc-admin-notices.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">162</span>
+    <span class="phpdocumentor-element-found-in__line">191</span>
 </aside>
 
-        <p class="phpdocumentor-summary">Remove the admin notice about the bump of the required PHP version in WooCommerce 8.2
-if the current PHP version is good.</p>
+        <p class="phpdocumentor-summary">Remove the admin notice about the unsupported webhooks if the Legacy REST API plugin is installed.</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">private</span>
-            <span class="phpdocumentor-signature__static">static</span>    <span class="phpdocumentor-signature__name">maybe_remove_php74_required_notice</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
+            <span class="phpdocumentor-signature__static">static</span>    <span class="phpdocumentor-signature__name">maybe_remove_legacy_api_removal_notice</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
 
-        <section class="phpdocumentor-description"><p>TODO: Remove this method in WooCommerce 8.2.</p>
-</section>
+        <section class="phpdocumentor-description"></section>
 
     
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">mixed</span>
+            &mdash; <span class="phpdocumentor-return-value__description"></span>
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -private
+                                    -static                    "
+>
+    <h4 class="phpdocumentor-element__name" id="method_set_notices">
+        set_notices()
+        <a href="#method_set_notices" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/admin/class-wc-admin-notices.php"><a href="../files/woocommerce-includes-admin-class-wc-admin-notices.html#source-view.131">includes/admin/class-wc-admin-notices.php</a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">131</span>
+</aside>
+
+        <p class="phpdocumentor-summary">Set the locally cached notices array for the current site.</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">private</span>
+            <span class="phpdocumentor-signature__static">static</span>    <span class="phpdocumentor-signature__name">set_notices</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__name">$notices</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
+
+        <section class="phpdocumentor-description"></section>
+
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$notices</span>
+                : <span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"><p>New value for the locally cached notices array.</p>
+</section>
+
+            </dd>
+            </dl>
+
     
 
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
@@ -2086,7 +2320,7 @@ if the current PHP version is good.</p>
 
     <footer class="phpdocumentor phpdocumentor-footer">
     <div class="phpdocumentor-section">
-        <span>WooCommerce Code Reference API documentation generated by <a href="http://www.phpdoc.org/">phpDocumentor</a> on August 24th, 2023 at 08:49 am.</span>
+        <span>WooCommerce Code Reference API documentation generated by <a href="http://www.phpdoc.org/">phpDocumentor</a> on July 25th, 2024 at 11:33 am.</span>
     </div>
 </footer>
 
@@ -2098,7 +2332,7 @@ if the current PHP version is good.</p>
             'searchIndex': '..\/js\/searchIndex.json'
         };
     </script>
-    <script src="../js/searchIndex.js?updated=1692866960"></script>
-    <script src="../js/search.js?updated=1692866960"></script>
+    <script src="../js/searchIndex.js?updated=1721907190"></script>
+    <script src="../js/search.js?updated=1721907190"></script>
 </body>
 </html>

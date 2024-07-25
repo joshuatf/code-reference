@@ -9,9 +9,9 @@
     <link rel="apple-touch-icon" sizes="72x72" href="../images/apple-touch-icon-72x72.png"/>
     <link rel="apple-touch-icon" sizes="114x114" href="../images/apple-touch-icon-114x114.png"/>
     <link rel="stylesheet" href="../css/normalize.css">
-    <link rel="stylesheet" href="../css/base.css?updated=1692866947">
+    <link rel="stylesheet" href="../css/base.css?updated=1721907182">
     <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../css/template.css?updated=1692866947">
+    <link rel="stylesheet" href="../css/template.css?updated=1721907182">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0/css/all.min.css" integrity="sha256-ybRkN9dBjhcS2qrW1z+hfCxq+1aBdwyQM5wlQoQVt/0=" crossorigin="anonymous" />
             <script src="https://cdn.jsdelivr.net/npm/css-vars-ponyfill@2"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0/js/all.min.js" integrity="sha256-0vuk8LXoyrmCjp1f0O300qo1M75ZQyhH9X3J6d+scmk=" crossorigin="anonymous"></script>
@@ -125,6 +125,7 @@
                         <ul class="phpdocumentor-list">
                                     <li><a href="../packages/Automattic-WooCommerce.html"><abbr title="\Automattic\WooCommerce">WooCommerce</abbr></a></li>
                             </ul>
+                                <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/WooCommerceBlocks.html"><abbr title="\WooCommerceBlocks">WooCommerceBlocks</abbr></a></h3>
                         </section>
     
     <section class="phpdocumentor-sidebar__category">
@@ -166,6 +167,7 @@
  * @version 2.1.0
  */
 
+use Automattic\WooCommerce\Utilities\DiscountsUtil;
 use Automattic\WooCommerce\Utilities\NumberUtil;
 
 defined( &#039;ABSPATH&#039; ) || exit;
@@ -255,7 +257,7 @@ class WC_Cart extends WC_Legacy_Cart {
 	 */
 	public function __construct() {
 		$this-&gt;session  = new WC_Cart_Session( $this );
-		$this-&gt;fees_api = new WC_Cart_Fees( $this );
+		$this-&gt;fees_api = new WC_Cart_Fees();
 
 		// Register hooks for the objects.
 		$this-&gt;session-&gt;init();
@@ -277,6 +279,8 @@ class WC_Cart extends WC_Legacy_Cart {
 	public function __clone() {
 		$this-&gt;session  = clone $this-&gt;session;
 		$this-&gt;fees_api = clone $this-&gt;fees_api;
+
+		$this-&gt;session-&gt;set_cart( $this );
 	}
 
 	/*
@@ -824,7 +828,7 @@ class WC_Cart extends WC_Legacy_Cart {
 	public function get_cart_contents_weight() {
 		$weight = 0.0;
 
-		foreach ( $this-&gt;get_cart() as $cart_item_key =&gt; $values ) {
+		foreach ( $this-&gt;get_cart() as $values ) {
 			if ( $values[&#039;data&#039;]-&gt;has_weight() ) {
 				$weight += (float) $values[&#039;data&#039;]-&gt;get_weight() * $values[&#039;quantity&#039;];
 			}
@@ -841,7 +845,7 @@ class WC_Cart extends WC_Legacy_Cart {
 	public function get_cart_item_quantities() {
 		$quantities = array();
 
-		foreach ( $this-&gt;get_cart() as $cart_item_key =&gt; $values ) {
+		foreach ( $this-&gt;get_cart() as $values ) {
 			$product = $values[&#039;data&#039;];
 			$quantities[ $product-&gt;get_stock_managed_by_id() ] = isset( $quantities[ $product-&gt;get_stock_managed_by_id() ] ) ? $quantities[ $product-&gt;get_stock_managed_by_id() ] + $values[&#039;quantity&#039;] : $values[&#039;quantity&#039;];
 		}
@@ -914,9 +918,9 @@ class WC_Cart extends WC_Legacy_Cart {
 	public function check_cart_item_stock() {
 		$error                    = new WP_Error();
 		$product_qty_in_cart      = $this-&gt;get_cart_item_quantities();
-		$current_session_order_id = isset( WC()-&gt;session-&gt;order_awaiting_payment ) ? absint( WC()-&gt;session-&gt;order_awaiting_payment ) : 0;
+		$current_session_order_id = isset( WC()-&gt;session-&gt;order_awaiting_payment ) ? absint( WC()-&gt;session-&gt;order_awaiting_payment ) : absint( WC()-&gt;session-&gt;get( &#039;store_api_draft_order&#039;, 0 ) );
 
-		foreach ( $this-&gt;get_cart() as $cart_item_key =&gt; $values ) {
+		foreach ( $this-&gt;get_cart() as $values ) {
 			$product = $values[&#039;data&#039;];
 
 			// Check stock based on stock-status.
@@ -975,7 +979,7 @@ class WC_Cart extends WC_Legacy_Cart {
 		$cross_sells = array();
 		$in_cart     = array();
 		if ( ! $this-&gt;is_empty() ) {
-			foreach ( $this-&gt;get_cart() as $cart_item_key =&gt; $values ) {
+			foreach ( $this-&gt;get_cart() as $values ) {
 				if ( $values[&#039;quantity&#039;] &gt; 0 ) {
 					$cross_sells = array_merge( $values[&#039;data&#039;]-&gt;get_cross_sell_ids(), $cross_sells );
 					$in_cart[]   = $values[&#039;product_id&#039;];
@@ -1065,7 +1069,7 @@ class WC_Cart extends WC_Legacy_Cart {
 	public function get_cart_item_tax_classes() {
 		$found_tax_classes = array();
 
-		foreach ( WC()-&gt;cart-&gt;get_cart() as $item ) {
+		foreach ( $this-&gt;get_cart() as $item ) {
 			if ( $item[&#039;data&#039;] &amp;&amp; ( $item[&#039;data&#039;]-&gt;is_taxable() || $item[&#039;data&#039;]-&gt;is_shipping_taxable() ) ) {
 				$found_tax_classes[] = $item[&#039;data&#039;]-&gt;get_tax_class();
 			}
@@ -1082,7 +1086,7 @@ class WC_Cart extends WC_Legacy_Cart {
 	public function get_cart_item_tax_classes_for_shipping() {
 		$found_tax_classes = array();
 
-		foreach ( WC()-&gt;cart-&gt;get_cart() as $item ) {
+		foreach ( $this-&gt;get_cart() as $item ) {
 			if ( $item[&#039;data&#039;] &amp;&amp; ( $item[&#039;data&#039;]-&gt;is_shipping_taxable() ) ) {
 				$found_tax_classes[] = $item[&#039;data&#039;]-&gt;get_tax_class();
 			}
@@ -1693,7 +1697,7 @@ class WC_Cart extends WC_Legacy_Cart {
 		}
 		$needs_shipping = false;
 
-		foreach ( $this-&gt;get_cart_contents() as $cart_item_key =&gt; $values ) {
+		foreach ( $this-&gt;get_cart_contents() as $values ) {
 			if ( $values[&#039;data&#039;]-&gt;needs_shipping() ) {
 				$needs_shipping = true;
 				break;
@@ -1728,10 +1732,30 @@ class WC_Cart extends WC_Legacy_Cart {
 				return false;
 			}
 			$country_fields = WC()-&gt;countries-&gt;get_address_fields( $country, &#039;shipping_&#039; );
-			if ( isset( $country_fields[&#039;shipping_state&#039;] ) &amp;&amp; $country_fields[&#039;shipping_state&#039;][&#039;required&#039;] &amp;&amp; ! $this-&gt;get_customer()-&gt;get_shipping_state() ) {
+			/**
+			 * Filter to not require shipping state for shipping calculation, even if it is required at checkout.
+			 * This can be used to allow shipping calculations to be done without a state.
+			 *
+			 * @since 8.4.0
+			 *
+			 * @param bool $show_state Whether to use the state field. Default true.
+			 */
+			$state_enabled  = apply_filters( &#039;woocommerce_shipping_calculator_enable_state&#039;, true );
+			$state_required = isset( $country_fields[&#039;shipping_state&#039;] ) &amp;&amp; $country_fields[&#039;shipping_state&#039;][&#039;required&#039;];
+			if ( $state_enabled &amp;&amp; $state_required &amp;&amp; ! $this-&gt;get_customer()-&gt;get_shipping_state() ) {
 				return false;
 			}
-			if ( isset( $country_fields[&#039;shipping_postcode&#039;] ) &amp;&amp; $country_fields[&#039;shipping_postcode&#039;][&#039;required&#039;] &amp;&amp; ! $this-&gt;get_customer()-&gt;get_shipping_postcode() ) {
+			/**
+			 * Filter to not require shipping postcode for shipping calculation, even if it is required at checkout.
+			 * This can be used to allow shipping calculations to be done without a postcode.
+			 *
+			 * @since 8.4.0
+			 *
+			 * @param bool $show_postcode Whether to use the postcode field. Default true.
+			 */
+			$postcode_enabled  = apply_filters( &#039;woocommerce_shipping_calculator_enable_postcode&#039;, true );
+			$postcode_required = isset( $country_fields[&#039;shipping_postcode&#039;] ) &amp;&amp; $country_fields[&#039;shipping_postcode&#039;][&#039;required&#039;];
+			if ( $postcode_enabled &amp;&amp; $postcode_required &amp;&amp; ! $this-&gt;get_customer()-&gt;get_shipping_postcode() ) {
 				return false;
 			}
 		}
@@ -1804,7 +1828,7 @@ class WC_Cart extends WC_Legacy_Cart {
 				// Limit to defined email addresses.
 				$restrictions = $coupon-&gt;get_email_restrictions();
 
-				if ( is_array( $restrictions ) &amp;&amp; 0 &lt; count( $restrictions ) &amp;&amp; ! $this-&gt;is_coupon_emails_allowed( $check_emails, $restrictions ) ) {
+				if ( is_array( $restrictions ) &amp;&amp; 0 &lt; count( $restrictions ) &amp;&amp; ! DiscountsUtil::is_coupon_emails_allowed( $check_emails, $restrictions ) ) {
 					$coupon-&gt;add_coupon_message( WC_Coupon::E_WC_COUPON_NOT_YOURS_REMOVED );
 					$this-&gt;remove_coupon( $code );
 				}
@@ -1831,29 +1855,18 @@ class WC_Cart extends WC_Legacy_Cart {
 	 *
 	 * @param array $check_emails Array of customer email addresses.
 	 * @param array $restrictions Array of allowed email addresses.
+	 *
 	 * @return bool
+	 * @deprecated 9.0.0 In favor of static method Automattic\WooCommerce\Utilities\DiscountsUtil::is_coupon_emails_allowed.
 	 */
 	public function is_coupon_emails_allowed( $check_emails, $restrictions ) {
+		wc_doing_it_wrong(
+			&#039;WC_Cart::is_coupon_emails_allowed&#039;,
+			__( &#039;This method has been deprecated and will be removed soon. Use Automattic\WooCommerce\Utilities\DiscountsUtil::is_coupon_emails_allowed instead.&#039;, &#039;woocommerce&#039; ),
+			&#039;9.0.0&#039;
+		);
 
-		foreach ( $check_emails as $check_email ) {
-			// With a direct match we return true.
-			if ( in_array( $check_email, $restrictions, true ) ) {
-				return true;
-			}
-
-			// Go through the allowed emails and return true if the email matches a wildcard.
-			foreach ( $restrictions as $restriction ) {
-				// Convert to PHP-regex syntax.
-				$regex = &#039;/^&#039; . str_replace( &#039;*&#039;, &#039;(.+)?&#039;, $restriction ) . &#039;$/&#039;;
-				preg_match( $regex, $check_email, $match );
-				if ( ! empty( $match ) ) {
-					return true;
-				}
-			}
-		}
-
-		// No matches, this one isn&#039;t allowed.
-		return false;
+		return DiscountsUtil::is_coupon_emails_allowed( $check_emails, $restrictions );
 	}
 
 
@@ -2311,7 +2324,7 @@ class WC_Cart extends WC_Legacy_Cart {
 
     <footer class="phpdocumentor phpdocumentor-footer">
     <div class="phpdocumentor-section">
-        <span>WooCommerce Code Reference API documentation generated by <a href="http://www.phpdoc.org/">phpDocumentor</a> on August 24th, 2023 at 08:49 am.</span>
+        <span>WooCommerce Code Reference API documentation generated by <a href="http://www.phpdoc.org/">phpDocumentor</a> on July 25th, 2024 at 11:33 am.</span>
     </div>
 </footer>
 
@@ -2323,7 +2336,7 @@ class WC_Cart extends WC_Legacy_Cart {
             'searchIndex': '..\/js\/searchIndex.json'
         };
     </script>
-    <script src="../js/searchIndex.js?updated=1692866947"></script>
-    <script src="../js/search.js?updated=1692866947"></script>
+    <script src="../js/searchIndex.js?updated=1721907182"></script>
+    <script src="../js/search.js?updated=1721907182"></script>
 </body>
 </html>

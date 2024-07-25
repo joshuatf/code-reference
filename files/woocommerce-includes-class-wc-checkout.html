@@ -9,9 +9,9 @@
     <link rel="apple-touch-icon" sizes="72x72" href="../images/apple-touch-icon-72x72.png"/>
     <link rel="apple-touch-icon" sizes="114x114" href="../images/apple-touch-icon-114x114.png"/>
     <link rel="stylesheet" href="../css/normalize.css">
-    <link rel="stylesheet" href="../css/base.css?updated=1692866947">
+    <link rel="stylesheet" href="../css/base.css?updated=1721907182">
     <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../css/template.css?updated=1692866947">
+    <link rel="stylesheet" href="../css/template.css?updated=1721907182">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0/css/all.min.css" integrity="sha256-ybRkN9dBjhcS2qrW1z+hfCxq+1aBdwyQM5wlQoQVt/0=" crossorigin="anonymous" />
             <script src="https://cdn.jsdelivr.net/npm/css-vars-ponyfill@2"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0/js/all.min.js" integrity="sha256-0vuk8LXoyrmCjp1f0O300qo1M75ZQyhH9X3J6d+scmk=" crossorigin="anonymous"></script>
@@ -125,6 +125,7 @@
                         <ul class="phpdocumentor-list">
                                     <li><a href="../packages/Automattic-WooCommerce.html"><abbr title="\Automattic\WooCommerce">WooCommerce</abbr></a></li>
                             </ul>
+                                <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/WooCommerceBlocks.html"><abbr title="\WooCommerceBlocks">WooCommerceBlocks</abbr></a></h3>
                         </section>
     
     <section class="phpdocumentor-sidebar__category">
@@ -578,7 +579,10 @@ class WC_Checkout {
 				}
 			}
 
-			$order-&gt;hold_applied_coupons( $data[&#039;billing_email&#039;] );
+			if ( isset( $data[&#039;billing_email&#039;] ) ) {
+				$order-&gt;hold_applied_coupons( $data[&#039;billing_email&#039;] );
+			}
+
 			$order-&gt;set_created_via( &#039;checkout&#039; );
 			$order-&gt;set_cart_hash( $cart_hash );
 			/**
@@ -849,10 +853,8 @@ class WC_Checkout {
 				)
 			);
 
-			// Avoid storing used_by - it&#039;s not needed and can get large.
-			$coupon_data = $coupon-&gt;get_data();
-			unset( $coupon_data[&#039;used_by&#039;] );
-			$item-&gt;add_meta_data( &#039;coupon_data&#039;, $coupon_data );
+			$coupon_info = $coupon-&gt;get_short_info();
+			$item-&gt;add_meta_data( &#039;coupon_info&#039;, $coupon_info );
 
 			/**
 			 * Action hook to adjust item before save.
@@ -905,7 +907,7 @@ class WC_Checkout {
 		);
 		// phpcs:enable WordPress.Security.NonceVerification.Missing
 
-		$skipped = array();
+		$skipped        = array();
 		$form_was_shown = isset( $_POST[&#039;woocommerce-process-checkout-nonce&#039;] ); // phpcs:disable WordPress.Security.NonceVerification.Missing
 
 		foreach ( $this-&gt;get_checkout_fields() as $fieldset_key =&gt; $fieldset ) {
@@ -937,6 +939,9 @@ class WC_Checkout {
 							$value = wc_sanitize_textarea( $value );
 							break;
 						case &#039;password&#039;:
+							if ( $data[&#039;createaccount&#039;] &amp;&amp; &#039;account_password&#039; === $key ) {
+								$value = wp_slash( $value ); // Passwords are encrypted with slashes on account creation, so we need to slash here too.
+							}
 							break;
 						default:
 							$value = wc_clean( $value );
@@ -1174,6 +1179,9 @@ class WC_Checkout {
 
 		if ( is_array( $data[&#039;shipping_method&#039;] ) ) {
 			foreach ( $data[&#039;shipping_method&#039;] as $i =&gt; $value ) {
+				if ( ! is_string( $value ) ) {
+					continue;
+				}
 				$chosen_shipping_methods[ $i ] = $value;
 			}
 		}
@@ -1200,8 +1208,13 @@ class WC_Checkout {
 			return;
 		}
 
-		// Store Order ID in session so it can be re-used after payment failure.
+		// Store Order ID in session, so it can be re-used after payment failure.
 		WC()-&gt;session-&gt;set( &#039;order_awaiting_payment&#039;, $order_id );
+
+		// We save the session early because if the payment gateway hangs
+		// the request will never finish, thus the session data will never be saved,
+		// and this can lead to duplicate orders if the user submits the order again.
+		WC()-&gt;session-&gt;save_data();
 
 		// Process Payment.
 		$result = $available_gateways[ $payment_method ]-&gt;process_payment( $order_id );
@@ -1218,6 +1231,7 @@ class WC_Checkout {
 				exit;
 			}
 
+			// Using wp_send_json will gracefully handle any problem encoding data.
 			wp_send_json( $result );
 		}
 	}
@@ -1432,6 +1446,7 @@ class WC_Checkout {
 				 * since it could be empty see:
 				 * https://github.com/woocommerce/woocommerce/issues/24631
 				 */
+
 				if ( apply_filters( &#039;woocommerce_cart_needs_payment&#039;, $order-&gt;needs_payment(), WC()-&gt;cart ) ) {
 					$this-&gt;process_order_payment( $order_id, $posted_data[&#039;payment_method&#039;] );
 				} else {
@@ -1448,7 +1463,7 @@ class WC_Checkout {
 	 * Get a posted address field after sanitization and validation.
 	 *
 	 * @param string $key  Field key.
-	 * @param string $type Type of address. Available options: &#039;billing&#039; or &#039;shipping&#039;.
+	 * @param string $type Type of address; &#039;billing&#039; or &#039;shipping&#039;.
 	 * @return string
 	 */
 	public function get_posted_address_data( $key, $type = &#039;billing&#039; ) {
@@ -1521,7 +1536,7 @@ class WC_Checkout {
 
     <footer class="phpdocumentor phpdocumentor-footer">
     <div class="phpdocumentor-section">
-        <span>WooCommerce Code Reference API documentation generated by <a href="http://www.phpdoc.org/">phpDocumentor</a> on August 24th, 2023 at 08:49 am.</span>
+        <span>WooCommerce Code Reference API documentation generated by <a href="http://www.phpdoc.org/">phpDocumentor</a> on July 25th, 2024 at 11:33 am.</span>
     </div>
 </footer>
 
@@ -1533,7 +1548,7 @@ class WC_Checkout {
             'searchIndex': '..\/js\/searchIndex.json'
         };
     </script>
-    <script src="../js/searchIndex.js?updated=1692866947"></script>
-    <script src="../js/search.js?updated=1692866947"></script>
+    <script src="../js/searchIndex.js?updated=1721907182"></script>
+    <script src="../js/search.js?updated=1721907182"></script>
 </body>
 </html>

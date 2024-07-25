@@ -9,9 +9,9 @@
     <link rel="apple-touch-icon" sizes="72x72" href="../images/apple-touch-icon-72x72.png"/>
     <link rel="apple-touch-icon" sizes="114x114" href="../images/apple-touch-icon-114x114.png"/>
     <link rel="stylesheet" href="../css/normalize.css">
-    <link rel="stylesheet" href="../css/base.css?updated=1692866947">
+    <link rel="stylesheet" href="../css/base.css?updated=1721907183">
     <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../css/template.css?updated=1692866947">
+    <link rel="stylesheet" href="../css/template.css?updated=1721907183">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0/css/all.min.css" integrity="sha256-ybRkN9dBjhcS2qrW1z+hfCxq+1aBdwyQM5wlQoQVt/0=" crossorigin="anonymous" />
             <script src="https://cdn.jsdelivr.net/npm/css-vars-ponyfill@2"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0/js/all.min.js" integrity="sha256-0vuk8LXoyrmCjp1f0O300qo1M75ZQyhH9X3J6d+scmk=" crossorigin="anonymous"></script>
@@ -125,6 +125,7 @@
                         <ul class="phpdocumentor-list">
                                     <li><a href="../packages/Automattic-WooCommerce.html"><abbr title="\Automattic\WooCommerce">WooCommerce</abbr></a></li>
                             </ul>
+                                <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/WooCommerceBlocks.html"><abbr title="\WooCommerceBlocks">WooCommerceBlocks</abbr></a></h3>
                         </section>
     
     <section class="phpdocumentor-sidebar__category">
@@ -295,6 +296,12 @@ class WC_Product_Data_Store_CPT extends WC_Data_Store_WP implements WC_Object_Da
 		if ( $id &amp;&amp; ! is_wp_error( $id ) ) {
 			$product-&gt;set_id( $id );
 
+			// get the post object so that we can set the status
+			// to the correct value; it is possible that the status was
+			// changed by the woocommerce_new_product_data filter above.
+			$post_object = get_post( $product-&gt;get_id() );
+			$product-&gt;set_status( $post_object-&gt;post_status );
+
 			$this-&gt;update_post_meta( $product, true );
 			$this-&gt;update_terms( $product, true );
 			$this-&gt;update_visibility( $product, true );
@@ -360,7 +367,7 @@ class WC_Product_Data_Store_CPT extends WC_Data_Store_WP implements WC_Object_Da
 		$changes = $product-&gt;get_changes();
 
 		// Only update the post when the post data changes.
-		if ( array_intersect( array( &#039;description&#039;, &#039;short_description&#039;, &#039;name&#039;, &#039;parent_id&#039;, &#039;reviews_allowed&#039;, &#039;status&#039;, &#039;menu_order&#039;, &#039;date_created&#039;, &#039;date_modified&#039;, &#039;slug&#039; ), array_keys( $changes ) ) ) {
+		if ( array_intersect( array( &#039;description&#039;, &#039;short_description&#039;, &#039;name&#039;, &#039;parent_id&#039;, &#039;reviews_allowed&#039;, &#039;status&#039;, &#039;menu_order&#039;, &#039;date_created&#039;, &#039;date_modified&#039;, &#039;slug&#039;, &#039;post_password&#039; ), array_keys( $changes ) ) ) {
 			$post_data = array(
 				&#039;post_content&#039;   =&gt; $product-&gt;get_description( &#039;edit&#039; ),
 				&#039;post_excerpt&#039;   =&gt; $product-&gt;get_short_description( &#039;edit&#039; ),
@@ -429,7 +436,8 @@ class WC_Product_Data_Store_CPT extends WC_Data_Store_WP implements WC_Object_Da
 
 		$product-&gt;apply_changes();
 
-		do_action( &#039;woocommerce_update_product&#039;, $product-&gt;get_id(), $product );
+		// phpcs:ignore WooCommerce.Commenting.CommentHooks.MissingHookComment
+		do_action( &#039;woocommerce_update_product&#039;, $product-&gt;get_id(), $product, $changes );
 	}
 
 	/**
@@ -804,7 +812,15 @@ class WC_Product_Data_Store_CPT extends WC_Data_Store_WP implements WC_Object_Da
 				}
 			}
 
-			if ( in_array( &#039;date_on_sale_from&#039;, $this-&gt;updated_props, true ) || in_array( &#039;date_on_sale_to&#039;, $this-&gt;updated_props, true ) || in_array( &#039;regular_price&#039;, $this-&gt;updated_props, true ) || in_array( &#039;sale_price&#039;, $this-&gt;updated_props, true ) || in_array( &#039;product_type&#039;, $this-&gt;updated_props, true ) ) {
+			/**
+			 * It&#039;s tempting to add a check for `_price` in the updated props, so that when `wc_scheduled_sales` is called, we don&#039;t have to rely on `date_on_sale_from` being present in the list of updated props.
+			 *
+			 * However, it has a side effect of overriding the `_price` meta value with the `_sale_price` meta value when product is in sale, or with `_regular_price` meta value when product is not in sale. This is not desirable, because `_price` can also be set as a temporary active price for a product, and we don&#039;t want to override it.
+			 *
+			 * If we want to preserve previous sales schedules, a better way would be to store them in dedicated meta keys as logs.
+			 */
+			$product_price_props = array( &#039;date_on_sale_from&#039;, &#039;date_on_sale_to&#039;, &#039;regular_price&#039;, &#039;sale_price&#039;, &#039;product_type&#039; );
+			if ( count( array_intersect( $product_price_props, $this-&gt;updated_props ) ) &gt; 0 ) {
 				if ( $product-&gt;is_on_sale( &#039;edit&#039; ) ) {
 					update_post_meta( $product-&gt;get_id(), &#039;_price&#039;, $product-&gt;get_sale_price( &#039;edit&#039; ) );
 					$product-&gt;set_price( $product-&gt;get_sale_price( &#039;edit&#039; ) );
@@ -1248,6 +1264,11 @@ class WC_Product_Data_Store_CPT extends WC_Data_Store_WP implements WC_Object_Da
 	 * @return int Matching variation ID or 0.
 	 */
 	public function find_matching_product_variation( $product, $match_attributes = array() ) {
+		if ( &#039;variation&#039; === $product-&gt;get_type() ) {
+			// Can&#039;t get a variation of a variation.
+			return 0;
+		}
+
 		global $wpdb;
 
 		$meta_attribute_names = array();
@@ -1337,9 +1358,11 @@ class WC_Product_Data_Store_CPT extends WC_Data_Store_WP implements WC_Object_Da
 	 * @todo   Add to interface in 4.0.
 	 * @param  WC_Product $product Variable product.
 	 * @param  int        $limit Limit the number of created variations.
+	 * @param  array      $default_values Key value pairs to set on created variations.
+	 * @param  array      $metadata Key value pairs to set as meta data on created variations.
 	 * @return int        Number of created variations.
 	 */
-	public function create_all_product_variations( $product, $limit = -1 ) {
+	public function create_all_product_variations( $product, $limit = -1, $default_values = array(), $metadata = array() ) {
 		$count = 0;
 
 		if ( ! $product ) {
@@ -1368,13 +1391,17 @@ class WC_Product_Data_Store_CPT extends WC_Data_Store_WP implements WC_Object_Da
 				continue;
 			}
 			$variation = wc_get_product_object( &#039;variation&#039; );
+			$variation-&gt;set_props( $default_values );
+			foreach ( $metadata as $meta ) {
+				$variation-&gt;add_meta_data( $meta[&#039;key&#039;], $meta[&#039;value&#039;] );
+			}
 			$variation-&gt;set_parent_id( $product-&gt;get_id() );
 			$variation-&gt;set_attributes( $possible_attribute );
 			$variation_id = $variation-&gt;save();
 
 			do_action( &#039;product_variation_linked&#039;, $variation_id );
 
-			$count ++;
+			++$count;
 
 			if ( $limit &gt; 0 &amp;&amp; $count &gt;= $limit ) {
 				break;
@@ -2021,6 +2048,12 @@ class WC_Product_Data_Store_CPT extends WC_Data_Store_WP implements WC_Object_Da
 				&#039;field&#039;    =&gt; &#039;slug&#039;,
 				&#039;terms&#039;    =&gt; $query_vars[&#039;category&#039;],
 			);
+		} elseif ( ! empty( $query_vars[&#039;product_category_id&#039;] ) ) {
+			$wp_query_args[&#039;tax_query&#039;][] = array(
+				&#039;taxonomy&#039; =&gt; &#039;product_cat&#039;,
+				&#039;field&#039;    =&gt; &#039;term_id&#039;,
+				&#039;terms&#039;    =&gt; $query_vars[&#039;product_category_id&#039;],
+			);
 		}
 
 		// Handle product tags.
@@ -2030,6 +2063,12 @@ class WC_Product_Data_Store_CPT extends WC_Data_Store_WP implements WC_Object_Da
 				&#039;taxonomy&#039; =&gt; &#039;product_tag&#039;,
 				&#039;field&#039;    =&gt; &#039;slug&#039;,
 				&#039;terms&#039;    =&gt; $query_vars[&#039;tag&#039;],
+			);
+		} elseif ( ! empty( $query_vars[&#039;product_tag_id&#039;] ) ) {
+			$wp_query_args[&#039;tax_query&#039;][] = array(
+				&#039;taxonomy&#039; =&gt; &#039;product_tag&#039;,
+				&#039;field&#039;    =&gt; &#039;term_id&#039;,
+				&#039;terms&#039;    =&gt; $query_vars[&#039;product_tag_id&#039;],
 			);
 		}
 
@@ -2242,7 +2281,7 @@ class WC_Product_Data_Store_CPT extends WC_Data_Store_WP implements WC_Object_Da
 				&#039;onsale&#039;         =&gt; $sale_price &amp;&amp; $price === $sale_price ? 1 : 0,
 				&#039;stock_quantity&#039; =&gt; $stock,
 				&#039;stock_status&#039;   =&gt; get_post_meta( $id, &#039;_stock_status&#039;, true ),
-				&#039;rating_count&#039;   =&gt; array_sum( (array) get_post_meta( $id, &#039;_wc_rating_count&#039;, true ) ),
+				&#039;rating_count&#039;   =&gt; array_sum( array_map( &#039;intval&#039;, (array) get_post_meta( $id, &#039;_wc_rating_count&#039;, true ) ) ),
 				&#039;average_rating&#039; =&gt; get_post_meta( $id, &#039;_wc_average_rating&#039;, true ),
 				&#039;total_sales&#039;    =&gt; get_post_meta( $id, &#039;total_sales&#039;, true ),
 				&#039;tax_status&#039;     =&gt; get_post_meta( $id, &#039;_tax_status&#039;, true ),
@@ -2277,7 +2316,7 @@ class WC_Product_Data_Store_CPT extends WC_Data_Store_WP implements WC_Object_Da
 		global $wpdb;
 		return $wpdb-&gt;prepare(
 			&quot;
-			SELECT COALESCE ( MAX( meta_value ), 0 ) FROM $wpdb-&gt;postmeta as meta_table
+			SELECT COALESCE( MAX( meta_value ), 0 ) FROM $wpdb-&gt;postmeta as meta_table
 			WHERE meta_table.meta_key = &#039;_stock&#039;
 			AND meta_table.post_id = %d
 			&quot;,
@@ -2295,7 +2334,7 @@ class WC_Product_Data_Store_CPT extends WC_Data_Store_WP implements WC_Object_Da
 
     <footer class="phpdocumentor phpdocumentor-footer">
     <div class="phpdocumentor-section">
-        <span>WooCommerce Code Reference API documentation generated by <a href="http://www.phpdoc.org/">phpDocumentor</a> on August 24th, 2023 at 08:49 am.</span>
+        <span>WooCommerce Code Reference API documentation generated by <a href="http://www.phpdoc.org/">phpDocumentor</a> on July 25th, 2024 at 11:33 am.</span>
     </div>
 </footer>
 
@@ -2307,7 +2346,7 @@ class WC_Product_Data_Store_CPT extends WC_Data_Store_WP implements WC_Object_Da
             'searchIndex': '..\/js\/searchIndex.json'
         };
     </script>
-    <script src="../js/searchIndex.js?updated=1692866947"></script>
-    <script src="../js/search.js?updated=1692866947"></script>
+    <script src="../js/searchIndex.js?updated=1721907183"></script>
+    <script src="../js/search.js?updated=1721907183"></script>
 </body>
 </html>

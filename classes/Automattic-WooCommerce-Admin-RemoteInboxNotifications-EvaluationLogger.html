@@ -9,9 +9,9 @@
     <link rel="apple-touch-icon" sizes="72x72" href="../images/apple-touch-icon-72x72.png"/>
     <link rel="apple-touch-icon" sizes="114x114" href="../images/apple-touch-icon-114x114.png"/>
     <link rel="stylesheet" href="../css/normalize.css">
-    <link rel="stylesheet" href="../css/base.css?updated=1692867004">
+    <link rel="stylesheet" href="../css/base.css?updated=1721907204">
     <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../css/template.css?updated=1692867004">
+    <link rel="stylesheet" href="../css/template.css?updated=1721907204">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0/css/all.min.css" integrity="sha256-ybRkN9dBjhcS2qrW1z+hfCxq+1aBdwyQM5wlQoQVt/0=" crossorigin="anonymous" />
             <script src="https://cdn.jsdelivr.net/npm/css-vars-ponyfill@2"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0/js/all.min.js" integrity="sha256-0vuk8LXoyrmCjp1f0O300qo1M75ZQyhH9X3J6d+scmk=" crossorigin="anonymous"></script>
@@ -119,6 +119,7 @@
                         <ul class="phpdocumentor-list">
                                     <li><a href="../packages/Automattic-WooCommerce.html"><abbr title="\Automattic\WooCommerce">WooCommerce</abbr></a></li>
                             </ul>
+                                <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/WooCommerceBlocks.html"><abbr title="\WooCommerceBlocks">WooCommerceBlocks</abbr></a></h3>
                         </section>
     
     <section class="phpdocumentor-sidebar__category">
@@ -147,6 +148,9 @@
         <h2 class="phpdocumentor-content__title">
     EvaluationLogger
 
+        <span class="phpdocumentor-element__extends">
+        extends <a href="../classes/Automattic-WooCommerce-Admin-DeprecatedClassFacade.html"><abbr title="\Automattic\WooCommerce\Admin\DeprecatedClassFacade">DeprecatedClassFacade</abbr></a>
+    </span>
     
             <div class="phpdocumentor-element__package">
             in package
@@ -162,9 +166,9 @@
     </h2>
 
         <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/RemoteInboxNotifications/EvaluationLogger.php"><a href="../files/woocommerce-src-admin-remoteinboxnotifications-evaluationlogger.html#source-view.10">src/Admin/RemoteInboxNotifications/EvaluationLogger.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/RemoteInboxNotifications/EvaluationLogger.php"><a href="../files/woocommerce-src-admin-remoteinboxnotifications-evaluationlogger.html#source-view.13">src/Admin/RemoteInboxNotifications/EvaluationLogger.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">10</span>
+    <span class="phpdocumentor-element-found-in__line">13</span>
 </aside>
 
             <p class="phpdocumentor-summary">Class EvaluationLogger</p>
@@ -172,6 +176,20 @@
     <section class="phpdocumentor-description"></section>
 
 
+    <h5 class="phpdocumentor-tag-list__heading" id="tags">
+        Tags
+        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
+    </h5>
+    <dl class="phpdocumentor-tag-list">
+                                    <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">deprecated</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                            <span class="phpdocumentor-tag-link">8.8.0</span>
+                                                                                                        <section class="phpdocumentor-description"></section>
+
+                </dd>
+                        </dl>
 
 
 
@@ -184,54 +202,61 @@
 </h3>
 
 <dl class="phpdocumentor-table-of-contents">
-                <dt class="phpdocumentor-table-of-contents__entry -property -private">
-    <a href="../classes/Automattic-WooCommerce-Admin-RemoteInboxNotifications-EvaluationLogger.html#property_logger">$logger</a>
+                <dt class="phpdocumentor-table-of-contents__entry -property -protected">
+    <a href="../classes/Automattic-WooCommerce-Admin-RemoteInboxNotifications-EvaluationLogger.html#property_deprecated_in_version">$deprecated_in_version</a>
     <span>
-                &nbsp;: <abbr title="\Automattic\WooCommerce\Admin\RemoteInboxNotifications\WC_Logger_Interface">WC_Logger_Interface</abbr>|null            </span>
+                &nbsp;: string            </span>
 </dt>
-<dd>Logger class to use.</dd>
+<dd>The version that this class was deprecated in.</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -property -protected">
+    <a href="../classes/Automattic-WooCommerce-Admin-RemoteInboxNotifications-EvaluationLogger.html#property_facade_over_classname">$facade_over_classname</a>
+    <span>
+                &nbsp;: string            </span>
+</dt>
+<dd>The name of the non-deprecated class that this facade covers.</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -property -protected">
+    <a href="../classes/Automattic-WooCommerce-Admin-DeprecatedClassFacade.html#property_instance">$instance</a>
+    <span>
+                &nbsp;: object            </span>
+</dt>
+<dd>The instance that this facade covers over.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -property -private">
-    <a href="../classes/Automattic-WooCommerce-Admin-RemoteInboxNotifications-EvaluationLogger.html#property_results">$results</a>
+    <a href="../classes/Automattic-WooCommerce-Admin-DeprecatedClassFacade.html#property_logged_messages">$logged_messages</a>
     <span>
                 &nbsp;: array&lt;string|int, mixed&gt;            </span>
 </dt>
-<dd>Results of rules in the given spec.</dd>
-
-            <dt class="phpdocumentor-table-of-contents__entry -property -private">
-    <a href="../classes/Automattic-WooCommerce-Admin-RemoteInboxNotifications-EvaluationLogger.html#property_slug">$slug</a>
-    <span>
-                &nbsp;: string            </span>
-</dt>
-<dd>Slug of the spec.</dd>
-
-            <dt class="phpdocumentor-table-of-contents__entry -property -private">
-    <a href="../classes/Automattic-WooCommerce-Admin-RemoteInboxNotifications-EvaluationLogger.html#property_source">$source</a>
-    <span>
-                &nbsp;: string            </span>
-</dt>
-<dd>Logger source.</dd>
+<dd>Static array of logged messages.</dd>
 
                 <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a href="../classes/Automattic-WooCommerce-Admin-RemoteInboxNotifications-EvaluationLogger.html#method___construct">__construct()</a>
+    <a href="../classes/Automattic-WooCommerce-Admin-DeprecatedClassFacade.html#method___call">__call()</a>
     <span>
                         &nbsp;: mixed    </span>
 </dt>
-<dd>EvaluationLogger constructor.</dd>
+<dd>Executes when calling any function on an instance of this class.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a href="../classes/Automattic-WooCommerce-Admin-RemoteInboxNotifications-EvaluationLogger.html#method_add_result">add_result()</a>
+    <a href="../classes/Automattic-WooCommerce-Admin-DeprecatedClassFacade.html#method___callStatic">__callStatic()</a>
     <span>
                         &nbsp;: mixed    </span>
 </dt>
-<dd>Add evaluation result of a rule.</dd>
+<dd>Executes when calling any static function on this class.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a href="../classes/Automattic-WooCommerce-Admin-RemoteInboxNotifications-EvaluationLogger.html#method_log">log()</a>
+    <a href="../classes/Automattic-WooCommerce-Admin-DeprecatedClassFacade.html#method___construct">__construct()</a>
     <span>
                         &nbsp;: mixed    </span>
 </dt>
-<dd>Log the results.</dd>
+<dd>Constructor.</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -private">
+    <a href="../classes/Automattic-WooCommerce-Admin-DeprecatedClassFacade.html#method_log_deprecation">log_deprecation()</a>
+    <span>
+                        &nbsp;: mixed    </span>
+</dt>
+<dd>Log a deprecation to the error log.</dd>
 
         </dl>
 
@@ -249,27 +274,91 @@
         class="
             phpdocumentor-element
             -property
-            -private
-                                                        "
+            -protected
+            -static                                            "
 >
-    <h4 class="phpdocumentor-element__name" id="property_logger">
-        $logger
-        <a href="#property_logger" class="headerlink"><i class="fas fa-link"></i></a>
+    <h4 class="phpdocumentor-element__name" id="property_deprecated_in_version">
+        $deprecated_in_version
+        <a href="#property_deprecated_in_version" class="headerlink"><i class="fas fa-link"></i></a>
         <span class="phpdocumentor-element__modifiers">
                                 </span>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/RemoteInboxNotifications/EvaluationLogger.php"><a href="../files/woocommerce-src-admin-remoteinboxnotifications-evaluationlogger.html#source-view.30">src/Admin/RemoteInboxNotifications/EvaluationLogger.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/RemoteInboxNotifications/EvaluationLogger.php"><a href="../files/woocommerce-src-admin-remoteinboxnotifications-evaluationlogger.html#source-view.26">src/Admin/RemoteInboxNotifications/EvaluationLogger.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">30</span>
+    <span class="phpdocumentor-element-found-in__line">26</span>
 </aside>
 
-        <p class="phpdocumentor-summary">Logger class to use.</p>
+        <p class="phpdocumentor-summary">The version that this class was deprecated in.</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
-    <span class="phpdocumentor-signature__visibility">private</span>
-        <span class="phpdocumentor-signature__type"><abbr title="\Automattic\WooCommerce\Admin\RemoteInboxNotifications\WC_Logger_Interface">WC_Logger_Interface</abbr>|null</span>
-    <span class="phpdocumentor-signature__name">$logger</span>
+    <span class="phpdocumentor-signature__visibility">protected</span>
+    <span class="phpdocumentor-signature__static">static</span>    <span class="phpdocumentor-signature__type">string</span>
+    <span class="phpdocumentor-signature__name">$deprecated_in_version</span>
+     = <span class="phpdocumentor-signature__default-value">&#039;8.8.0&#039;</span></code>
+
+        <section class="phpdocumentor-description"></section>
+
+    
+
+</article>
+                    <article
+        class="
+            phpdocumentor-element
+            -property
+            -protected
+            -static                                            "
+>
+    <h4 class="phpdocumentor-element__name" id="property_facade_over_classname">
+        $facade_over_classname
+        <a href="#property_facade_over_classname" class="headerlink"><i class="fas fa-link"></i></a>
+        <span class="phpdocumentor-element__modifiers">
+                                </span>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/RemoteInboxNotifications/EvaluationLogger.php"><a href="../files/woocommerce-src-admin-remoteinboxnotifications-evaluationlogger.html#source-view.19">src/Admin/RemoteInboxNotifications/EvaluationLogger.php</a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">19</span>
+</aside>
+
+        <p class="phpdocumentor-summary">The name of the non-deprecated class that this facade covers.</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">protected</span>
+    <span class="phpdocumentor-signature__static">static</span>    <span class="phpdocumentor-signature__type">string</span>
+    <span class="phpdocumentor-signature__name">$facade_over_classname</span>
+     = <span class="phpdocumentor-signature__default-value">&#039;Automattic\WooCommerce\Admin\RemoteSpecs\RuleProcessors\EvaluationLogger&#039;</span></code>
+
+        <section class="phpdocumentor-description"></section>
+
+    
+
+</article>
+                    <article
+        class="
+            phpdocumentor-element
+            -property
+            -protected
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="property_instance">
+        $instance
+        <a href="#property_instance" class="headerlink"><i class="fas fa-link"></i></a>
+        <span class="phpdocumentor-element__modifiers">
+                                </span>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/DeprecatedClassFacade.php"><a href="../files/woocommerce-src-admin-deprecatedclassfacade.html#source-view.34">src/Admin/DeprecatedClassFacade.php</a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">34</span>
+</aside>
+
+        <p class="phpdocumentor-summary">The instance that this facade covers over.</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">protected</span>
+        <span class="phpdocumentor-signature__type">object</span>
+    <span class="phpdocumentor-signature__name">$instance</span>
     </code>
 
         <section class="phpdocumentor-description"></section>
@@ -282,91 +371,27 @@
             phpdocumentor-element
             -property
             -private
-                                                        "
+            -static                                            "
 >
-    <h4 class="phpdocumentor-element__name" id="property_results">
-        $results
-        <a href="#property_results" class="headerlink"><i class="fas fa-link"></i></a>
+    <h4 class="phpdocumentor-element__name" id="property_logged_messages">
+        $logged_messages
+        <a href="#property_logged_messages" class="headerlink"><i class="fas fa-link"></i></a>
         <span class="phpdocumentor-element__modifiers">
                                 </span>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/RemoteInboxNotifications/EvaluationLogger.php"><a href="../files/woocommerce-src-admin-remoteinboxnotifications-evaluationlogger.html#source-view.23">src/Admin/RemoteInboxNotifications/EvaluationLogger.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/DeprecatedClassFacade.php"><a href="../files/woocommerce-src-admin-deprecatedclassfacade.html#source-view.55">src/Admin/DeprecatedClassFacade.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">23</span>
+    <span class="phpdocumentor-element-found-in__line">55</span>
 </aside>
 
-        <p class="phpdocumentor-summary">Results of rules in the given spec.</p>
+        <p class="phpdocumentor-summary">Static array of logged messages.</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">private</span>
-        <span class="phpdocumentor-signature__type">array&lt;string|int, mixed&gt;</span>
-    <span class="phpdocumentor-signature__name">$results</span>
+    <span class="phpdocumentor-signature__static">static</span>    <span class="phpdocumentor-signature__type">array&lt;string|int, mixed&gt;</span>
+    <span class="phpdocumentor-signature__name">$logged_messages</span>
      = <span class="phpdocumentor-signature__default-value">array()</span></code>
-
-        <section class="phpdocumentor-description"></section>
-
-    
-
-</article>
-                    <article
-        class="
-            phpdocumentor-element
-            -property
-            -private
-                                                        "
->
-    <h4 class="phpdocumentor-element__name" id="property_slug">
-        $slug
-        <a href="#property_slug" class="headerlink"><i class="fas fa-link"></i></a>
-        <span class="phpdocumentor-element__modifiers">
-                                </span>
-    </h4>
-    <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/RemoteInboxNotifications/EvaluationLogger.php"><a href="../files/woocommerce-src-admin-remoteinboxnotifications-evaluationlogger.html#source-view.16">src/Admin/RemoteInboxNotifications/EvaluationLogger.php</a></abbr>
-    :
-    <span class="phpdocumentor-element-found-in__line">16</span>
-</aside>
-
-        <p class="phpdocumentor-summary">Slug of the spec.</p>
-
-    <code class="phpdocumentor-code phpdocumentor-signature ">
-    <span class="phpdocumentor-signature__visibility">private</span>
-        <span class="phpdocumentor-signature__type">string</span>
-    <span class="phpdocumentor-signature__name">$slug</span>
-    </code>
-
-        <section class="phpdocumentor-description"></section>
-
-    
-
-</article>
-                    <article
-        class="
-            phpdocumentor-element
-            -property
-            -private
-                                                        "
->
-    <h4 class="phpdocumentor-element__name" id="property_source">
-        $source
-        <a href="#property_source" class="headerlink"><i class="fas fa-link"></i></a>
-        <span class="phpdocumentor-element__modifiers">
-                                </span>
-    </h4>
-    <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/RemoteInboxNotifications/EvaluationLogger.php"><a href="../files/woocommerce-src-admin-remoteinboxnotifications-evaluationlogger.html#source-view.37">src/Admin/RemoteInboxNotifications/EvaluationLogger.php</a></abbr>
-    :
-    <span class="phpdocumentor-element-found-in__line">37</span>
-</aside>
-
-        <p class="phpdocumentor-summary">Logger source.</p>
-
-    <code class="phpdocumentor-code phpdocumentor-signature ">
-    <span class="phpdocumentor-signature__visibility">private</span>
-        <span class="phpdocumentor-signature__type">string</span>
-    <span class="phpdocumentor-signature__name">$source</span>
-     = <span class="phpdocumentor-signature__default-value">&#039;&#039;</span></code>
 
         <section class="phpdocumentor-description"></section>
 
@@ -386,55 +411,131 @@
             -public
                                                         "
 >
+    <h4 class="phpdocumentor-element__name" id="method___call">
+        __call()
+        <a href="#method___call" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/DeprecatedClassFacade.php"><a href="../files/woocommerce-src-admin-deprecatedclassfacade.html#source-view.90">src/Admin/DeprecatedClassFacade.php</a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">90</span>
+</aside>
+
+        <p class="phpdocumentor-summary">Executes when calling any function on an instance of this class.</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                <span class="phpdocumentor-signature__name">__call</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$name</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__name">$arguments</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
+
+        <section class="phpdocumentor-description"></section>
+
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$name</span>
+                : <span class="phpdocumentor-signature__argument__return-type">string</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"><p>The name of the function being called.</p>
+</section>
+
+            </dd>
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$arguments</span>
+                : <span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"><p>An array of the arguments to the function call.</p>
+</section>
+
+            </dd>
+            </dl>
+
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">mixed</span>
+            &mdash; <span class="phpdocumentor-return-value__description"></span>
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                    -static                    "
+>
+    <h4 class="phpdocumentor-element__name" id="method___callStatic">
+        __callStatic()
+        <a href="#method___callStatic" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/DeprecatedClassFacade.php"><a href="../files/woocommerce-src-admin-deprecatedclassfacade.html#source-view.108">src/Admin/DeprecatedClassFacade.php</a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">108</span>
+</aside>
+
+        <p class="phpdocumentor-summary">Executes when calling any static function on this class.</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+            <span class="phpdocumentor-signature__static">static</span>    <span class="phpdocumentor-signature__name">__callStatic</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$name</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__name">$arguments</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
+
+        <section class="phpdocumentor-description"></section>
+
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$name</span>
+                : <span class="phpdocumentor-signature__argument__return-type">string</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"><p>The name of the function being called.</p>
+</section>
+
+            </dd>
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$arguments</span>
+                : <span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"><p>An array of the arguments to the function call.</p>
+</section>
+
+            </dd>
+            </dl>
+
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">mixed</span>
+            &mdash; <span class="phpdocumentor-return-value__description"></span>
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                                        "
+>
     <h4 class="phpdocumentor-element__name" id="method___construct">
         __construct()
         <a href="#method___construct" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/RemoteInboxNotifications/EvaluationLogger.php"><a href="../files/woocommerce-src-admin-remoteinboxnotifications-evaluationlogger.html#source-view.46">src/Admin/RemoteInboxNotifications/EvaluationLogger.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/DeprecatedClassFacade.php"><a href="../files/woocommerce-src-admin-deprecatedclassfacade.html#source-view.60">src/Admin/DeprecatedClassFacade.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">46</span>
+    <span class="phpdocumentor-element-found-in__line">60</span>
 </aside>
 
-        <p class="phpdocumentor-summary">EvaluationLogger constructor.</p>
+        <p class="phpdocumentor-summary">Constructor.</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                <span class="phpdocumentor-signature__name">__construct</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$slug</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type">null&nbsp;</span><span class="phpdocumentor-signature__argument__name">$source</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type"><a href="../classes/WC-Logger-Interface.html"><abbr title="\WC_Logger_Interface">WC_Logger_Interface</abbr></a>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$logger</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
+                <span class="phpdocumentor-signature__name">__construct</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
 
         <section class="phpdocumentor-description"></section>
 
-        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
-    <dl class="phpdocumentor-argument-list">
-                    <dt class="phpdocumentor-argument-list__entry">
-                <span class="phpdocumentor-signature__argument__name">$slug</span>
-                : <span class="phpdocumentor-signature__argument__return-type">string</span>
-                            </dt>
-            <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"><p>Slug of a spec that is being evaluated.</p>
-</section>
-
-            </dd>
-                    <dt class="phpdocumentor-argument-list__entry">
-                <span class="phpdocumentor-signature__argument__name">$source</span>
-                : <span class="phpdocumentor-signature__argument__return-type">null</span>
-                 = <span class="phpdocumentor-signature__argument__default-value">null</span>            </dt>
-            <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"><p>Logger source.</p>
-</section>
-
-            </dd>
-                    <dt class="phpdocumentor-argument-list__entry">
-                <span class="phpdocumentor-signature__argument__name">$logger</span>
-                : <span class="phpdocumentor-signature__argument__return-type"><a href="../classes/WC-Logger-Interface.html"><abbr title="\WC_Logger_Interface">WC_Logger_Interface</abbr></a></span>
-                 = <span class="phpdocumentor-signature__argument__default-value">null</span>            </dt>
-            <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"><p>Logger class to use.</p>
-</section>
-
-            </dd>
-            </dl>
-
+    
     
 
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
@@ -445,81 +546,40 @@
                     <article
         class="phpdocumentor-element
             -method
-            -public
-                                                        "
+            -private
+                                    -static                    "
 >
-    <h4 class="phpdocumentor-element__name" id="method_add_result">
-        add_result()
-        <a href="#method_add_result" class="headerlink"><i class="fas fa-link"></i></a>
+    <h4 class="phpdocumentor-element__name" id="method_log_deprecation">
+        log_deprecation()
+        <a href="#method_log_deprecation" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/RemoteInboxNotifications/EvaluationLogger.php"><a href="../files/woocommerce-src-admin-remoteinboxnotifications-evaluationlogger.html#source-view.65">src/Admin/RemoteInboxNotifications/EvaluationLogger.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/DeprecatedClassFacade.php"><a href="../files/woocommerce-src-admin-deprecatedclassfacade.html#source-view.69">src/Admin/DeprecatedClassFacade.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">65</span>
+    <span class="phpdocumentor-element-found-in__line">69</span>
 </aside>
 
-        <p class="phpdocumentor-summary">Add evaluation result of a rule.</p>
+        <p class="phpdocumentor-summary">Log a deprecation to the error log.</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
-    <span class="phpdocumentor-signature__visibility">public</span>
-                <span class="phpdocumentor-signature__name">add_result</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$rule_type</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">bool&nbsp;</span><span class="phpdocumentor-signature__argument__name">$result</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
+    <span class="phpdocumentor-signature__visibility">private</span>
+            <span class="phpdocumentor-signature__static">static</span>    <span class="phpdocumentor-signature__name">log_deprecation</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$function</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
 
         <section class="phpdocumentor-description"></section>
 
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
     <dl class="phpdocumentor-argument-list">
                     <dt class="phpdocumentor-argument-list__entry">
-                <span class="phpdocumentor-signature__argument__name">$rule_type</span>
+                <span class="phpdocumentor-signature__argument__name">$function</span>
                 : <span class="phpdocumentor-signature__argument__return-type">string</span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"><p>name of the rule being tested.</p>
-</section>
-
-            </dd>
-                    <dt class="phpdocumentor-argument-list__entry">
-                <span class="phpdocumentor-signature__argument__name">$result</span>
-                : <span class="phpdocumentor-signature__argument__return-type">bool</span>
-                            </dt>
-            <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"><p>result of a given rule.</p>
+                    <section class="phpdocumentor-description"><p>The name of the deprecated function being called.</p>
 </section>
 
             </dd>
             </dl>
 
-    
-
-        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">mixed</span>
-            &mdash; <span class="phpdocumentor-return-value__description"></span>
-    
-</article>
-                    <article
-        class="phpdocumentor-element
-            -method
-            -public
-                                                        "
->
-    <h4 class="phpdocumentor-element__name" id="method_log">
-        log()
-        <a href="#method_log" class="headerlink"><i class="fas fa-link"></i></a>
-    </h4>
-    <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/RemoteInboxNotifications/EvaluationLogger.php"><a href="../files/woocommerce-src-admin-remoteinboxnotifications-evaluationlogger.html#source-view.78">src/Admin/RemoteInboxNotifications/EvaluationLogger.php</a></abbr>
-    :
-    <span class="phpdocumentor-element-found-in__line">78</span>
-</aside>
-
-        <p class="phpdocumentor-summary">Log the results.</p>
-
-    <code class="phpdocumentor-code phpdocumentor-signature ">
-    <span class="phpdocumentor-signature__visibility">public</span>
-                <span class="phpdocumentor-signature__name">log</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
-
-        <section class="phpdocumentor-description"></section>
-
-    
     
 
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
@@ -538,7 +598,7 @@
 
     <footer class="phpdocumentor phpdocumentor-footer">
     <div class="phpdocumentor-section">
-        <span>WooCommerce Code Reference API documentation generated by <a href="http://www.phpdoc.org/">phpDocumentor</a> on August 24th, 2023 at 08:50 am.</span>
+        <span>WooCommerce Code Reference API documentation generated by <a href="http://www.phpdoc.org/">phpDocumentor</a> on July 25th, 2024 at 11:33 am.</span>
     </div>
 </footer>
 
@@ -550,7 +610,7 @@
             'searchIndex': '..\/js\/searchIndex.json'
         };
     </script>
-    <script src="../js/searchIndex.js?updated=1692867004"></script>
-    <script src="../js/search.js?updated=1692867004"></script>
+    <script src="../js/searchIndex.js?updated=1721907204"></script>
+    <script src="../js/search.js?updated=1721907204"></script>
 </body>
 </html>

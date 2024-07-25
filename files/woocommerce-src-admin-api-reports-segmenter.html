@@ -9,9 +9,9 @@
     <link rel="apple-touch-icon" sizes="72x72" href="../images/apple-touch-icon-72x72.png"/>
     <link rel="apple-touch-icon" sizes="114x114" href="../images/apple-touch-icon-114x114.png"/>
     <link rel="stylesheet" href="../css/normalize.css">
-    <link rel="stylesheet" href="../css/base.css?updated=1692866951">
+    <link rel="stylesheet" href="../css/base.css?updated=1721907184">
     <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../css/template.css?updated=1692866951">
+    <link rel="stylesheet" href="../css/template.css?updated=1721907184">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0/css/all.min.css" integrity="sha256-ybRkN9dBjhcS2qrW1z+hfCxq+1aBdwyQM5wlQoQVt/0=" crossorigin="anonymous" />
             <script src="https://cdn.jsdelivr.net/npm/css-vars-ponyfill@2"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0/js/all.min.js" integrity="sha256-0vuk8LXoyrmCjp1f0O300qo1M75ZQyhH9X3J6d+scmk=" crossorigin="anonymous"></script>
@@ -125,6 +125,7 @@
                         <ul class="phpdocumentor-list">
                                     <li><a href="../packages/Automattic-WooCommerce.html"><abbr title="\Automattic\WooCommerce">WooCommerce</abbr></a></li>
                             </ul>
+                                <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/WooCommerceBlocks.html"><abbr title="\WooCommerceBlocks">WooCommerceBlocks</abbr></a></h3>
                         </section>
     
     <section class="phpdocumentor-sidebar__category">
@@ -525,6 +526,7 @@ class Segmenter {
 
 			if (
 				isset( $this-&gt;query_args[&#039;product_includes&#039;] ) &amp;&amp;
+				is_array( $this-&gt;query_args[&#039;product_includes&#039;] ) &amp;&amp;
 				count( $this-&gt;query_args[&#039;product_includes&#039;] ) === 1
 			) {
 				$args[&#039;parent&#039;] = $this-&gt;query_args[&#039;product_includes&#039;][0];
@@ -700,6 +702,87 @@ class Segmenter {
 	}
 
 	/**
+	 * Calculate segments for totals where the segmenting property is bound to product (e.g. category, product_id, variation_id).
+	 *
+	 * @param array  $segmenting_selections SELECT part of segmenting SQL query--one for &#039;product_level&#039; and one for &#039;order_level&#039;.
+	 * @param string $segmenting_from FROM part of segmenting SQL query.
+	 * @param string $segmenting_where WHERE part of segmenting SQL query.
+	 * @param string $segmenting_groupby GROUP BY part of segmenting SQL query.
+	 * @param string $segmenting_dimension_name Name of the segmenting dimension.
+	 * @param string $table_name Name of SQL table which is the stats table for orders.
+	 * @param array  $totals_query Array of SQL clauses for totals query.
+	 * @param string $unique_orders_table Name of temporary SQL table that holds unique orders.
+	 *
+	 * @return array
+	 */
+	protected function get_product_related_totals_segments( $segmenting_selections, $segmenting_from, $segmenting_where, $segmenting_groupby, $segmenting_dimension_name, $table_name, $totals_query, $unique_orders_table ) {
+		return array();
+	}
+
+	/**
+	 * Calculate segments for intervals where the segmenting property is bound to product (e.g. category, product_id, variation_id).
+	 *
+	 * @param array  $segmenting_selections SELECT part of segmenting SQL query--one for &#039;product_level&#039; and one for &#039;order_level&#039;.
+	 * @param string $segmenting_from FROM part of segmenting SQL query.
+	 * @param string $segmenting_where WHERE part of segmenting SQL query.
+	 * @param string $segmenting_groupby GROUP BY part of segmenting SQL query.
+	 * @param string $segmenting_dimension_name Name of the segmenting dimension.
+	 * @param string $table_name Name of SQL table which is the stats table for orders.
+	 * @param array  $intervals_query Array of SQL clauses for intervals query.
+	 * @param string $unique_orders_table Name of temporary SQL table that holds unique orders.
+	 *
+	 * @return array
+	 */
+	protected function get_product_related_intervals_segments( $segmenting_selections, $segmenting_from, $segmenting_where, $segmenting_groupby, $segmenting_dimension_name, $table_name, $intervals_query, $unique_orders_table ) {
+		return array();
+	}
+
+	/**
+	 * Calculate segments for totals query where the segmenting property is bound to order (e.g. coupon or customer type).
+	 *
+	 * @param string $segmenting_select SELECT part of segmenting SQL query.
+	 * @param string $segmenting_from FROM part of segmenting SQL query.
+	 * @param string $segmenting_where WHERE part of segmenting SQL query.
+	 * @param string $segmenting_groupby GROUP BY part of segmenting SQL query.
+	 * @param string $table_name Name of SQL table which is the stats table for orders.
+	 * @param array  $totals_query Array of SQL clauses for intervals query.
+	 *
+	 * @return array
+	 */
+	protected function get_order_related_totals_segments( $segmenting_select, $segmenting_from, $segmenting_where, $segmenting_groupby, $table_name, $totals_query ) {
+		return array();
+	}
+
+	/**
+	 * Calculate segments for intervals query where the segmenting property is bound to order (e.g. coupon or customer type).
+	 *
+	 * @param string $segmenting_select SELECT part of segmenting SQL query.
+	 * @param string $segmenting_from FROM part of segmenting SQL query.
+	 * @param string $segmenting_where WHERE part of segmenting SQL query.
+	 * @param string $segmenting_groupby GROUP BY part of segmenting SQL query.
+	 * @param string $table_name Name of SQL table which is the stats table for orders.
+	 * @param array  $intervals_query Array of SQL clauses for intervals query.
+	 *
+	 * @return array
+	 */
+	protected function get_order_related_intervals_segments( $segmenting_select, $segmenting_from, $segmenting_where, $segmenting_groupby, $table_name, $intervals_query ) {
+		return array();
+	}
+
+	/**
+	 * Return array of segments formatted for REST response.
+	 *
+	 * @param string $type Type of segments to return--&#039;totals&#039; or &#039;intervals&#039;.
+	 * @param array  $query_params SQL query parameter array.
+	 * @param string $table_name Name of main SQL table for the data store (used as basis for JOINS).
+	 *
+	 * @return array
+	 */
+	protected function get_segments( $type, $query_params, $table_name ) {
+		return array();
+	}
+
+	/**
 	 * Calculate segments for segmenting property bound to product (e.g. category, product_id, variation_id).
 	 *
 	 * @param string $type Type of segments to return--&#039;totals&#039; or &#039;intervals&#039;.
@@ -807,7 +890,7 @@ class Segmenter {
 
     <footer class="phpdocumentor phpdocumentor-footer">
     <div class="phpdocumentor-section">
-        <span>WooCommerce Code Reference API documentation generated by <a href="http://www.phpdoc.org/">phpDocumentor</a> on August 24th, 2023 at 08:49 am.</span>
+        <span>WooCommerce Code Reference API documentation generated by <a href="http://www.phpdoc.org/">phpDocumentor</a> on July 25th, 2024 at 11:33 am.</span>
     </div>
 </footer>
 
@@ -819,7 +902,7 @@ class Segmenter {
             'searchIndex': '..\/js\/searchIndex.json'
         };
     </script>
-    <script src="../js/searchIndex.js?updated=1692866951"></script>
-    <script src="../js/search.js?updated=1692866951"></script>
+    <script src="../js/searchIndex.js?updated=1721907184"></script>
+    <script src="../js/search.js?updated=1721907184"></script>
 </body>
 </html>

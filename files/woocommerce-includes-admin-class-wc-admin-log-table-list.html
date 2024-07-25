@@ -9,9 +9,9 @@
     <link rel="apple-touch-icon" sizes="72x72" href="../images/apple-touch-icon-72x72.png"/>
     <link rel="apple-touch-icon" sizes="114x114" href="../images/apple-touch-icon-114x114.png"/>
     <link rel="stylesheet" href="../css/normalize.css">
-    <link rel="stylesheet" href="../css/base.css?updated=1692866946">
+    <link rel="stylesheet" href="../css/base.css?updated=1721907182">
     <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../css/template.css?updated=1692866946">
+    <link rel="stylesheet" href="../css/template.css?updated=1721907182">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0/css/all.min.css" integrity="sha256-ybRkN9dBjhcS2qrW1z+hfCxq+1aBdwyQM5wlQoQVt/0=" crossorigin="anonymous" />
             <script src="https://cdn.jsdelivr.net/npm/css-vars-ponyfill@2"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0/js/all.min.js" integrity="sha256-0vuk8LXoyrmCjp1f0O300qo1M75ZQyhH9X3J6d+scmk=" crossorigin="anonymous"></script>
@@ -125,6 +125,7 @@
                         <ul class="phpdocumentor-list">
                                     <li><a href="../packages/Automattic-WooCommerce.html"><abbr title="\Automattic\WooCommerce">WooCommerce</abbr></a></li>
                             </ul>
+                                <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/WooCommerceBlocks.html"><abbr title="\WooCommerceBlocks">WooCommerceBlocks</abbr></a></h3>
                         </section>
     
     <section class="phpdocumentor-sidebar__category">
@@ -174,6 +175,12 @@ if ( ! class_exists( &#039;WP_List_Table&#039; ) ) {
 }
 
 class WC_Admin_Log_Table_List extends WP_List_Table {
+	/**
+	 * The key for the user option of how many list table items to display per page.
+	 *
+	 * @const string
+	 */
+	public const PER_PAGE_USER_OPTION_KEY = &#039;woocommerce_status_log_items_per_page&#039;;
 
 	/**
 	 * Initialize the log table list.
@@ -194,40 +201,19 @@ class WC_Admin_Log_Table_List extends WP_List_Table {
 	 * @global wpdb $wpdb
 	 */
 	public function level_dropdown() {
+		$labels = WC_Log_Levels::get_all_level_labels();
 
-		$levels = array(
-			array(
-				&#039;value&#039; =&gt; WC_Log_Levels::EMERGENCY,
-				&#039;label&#039; =&gt; __( &#039;Emergency&#039;, &#039;woocommerce&#039; ),
-			),
-			array(
-				&#039;value&#039; =&gt; WC_Log_Levels::ALERT,
-				&#039;label&#039; =&gt; __( &#039;Alert&#039;, &#039;woocommerce&#039; ),
-			),
-			array(
-				&#039;value&#039; =&gt; WC_Log_Levels::CRITICAL,
-				&#039;label&#039; =&gt; __( &#039;Critical&#039;, &#039;woocommerce&#039; ),
-			),
-			array(
-				&#039;value&#039; =&gt; WC_Log_Levels::ERROR,
-				&#039;label&#039; =&gt; __( &#039;Error&#039;, &#039;woocommerce&#039; ),
-			),
-			array(
-				&#039;value&#039; =&gt; WC_Log_Levels::WARNING,
-				&#039;label&#039; =&gt; __( &#039;Warning&#039;, &#039;woocommerce&#039; ),
-			),
-			array(
-				&#039;value&#039; =&gt; WC_Log_Levels::NOTICE,
-				&#039;label&#039; =&gt; __( &#039;Notice&#039;, &#039;woocommerce&#039; ),
-			),
-			array(
-				&#039;value&#039; =&gt; WC_Log_Levels::INFO,
-				&#039;label&#039; =&gt; __( &#039;Info&#039;, &#039;woocommerce&#039; ),
-			),
-			array(
-				&#039;value&#039; =&gt; WC_Log_Levels::DEBUG,
-				&#039;label&#039; =&gt; __( &#039;Debug&#039;, &#039;woocommerce&#039; ),
-			),
+		$levels = array_reduce(
+			array_keys( $labels ),
+			function( $carry, $item ) use ( $labels ) {
+				$carry[] = array(
+					&#039;value&#039; =&gt; $item,
+					&#039;label&#039; =&gt; $labels[ $item ],
+				);
+
+				return $carry;
+			},
+			array()
 		);
 
 		$selected_level = isset( $_REQUEST[&#039;level&#039;] ) ? $_REQUEST[&#039;level&#039;] : &#039;&#039;;
@@ -250,6 +236,40 @@ class WC_Admin_Log_Table_List extends WP_List_Table {
 	}
 
 	/**
+	 * Generates the table rows.
+	 *
+	 * @return void
+	 */
+	public function display_rows() {
+		foreach ( $this-&gt;items as $log ) {
+			$this-&gt;single_row( $log );
+			if ( ! empty( $log[&#039;context&#039;] ) ) {
+				$this-&gt;context_row( $log );
+			}
+		}
+	}
+
+	/**
+	 * Render the additional table row that contains extra log context data.
+	 *
+	 * @param array $log Log entry data.
+	 *
+	 * @return void
+	 */
+	protected function context_row( $log ) {
+		// Maintains alternating row background colors.
+		?&gt;
+		&lt;tr style=&quot;display: none&quot;&gt;&lt;td&gt;&lt;/td&gt;&lt;/tr&gt;
+		&lt;tr id=&quot;log-context-&lt;?php echo esc_attr( $log[&#039;log_id&#039;] ); ?&gt;&quot; class=&quot;log-context&quot;&gt;
+			&lt;td colspan=&quot;&lt;?php echo esc_attr( $this-&gt;get_column_count() ); ?&gt;&quot;&gt;
+				&lt;p&gt;&lt;strong&gt;&lt;?php esc_html_e( &#039;Additional context&#039;, &#039;woocommerce&#039; ); ?&gt;&lt;/strong&gt;&lt;/p&gt;
+				&lt;pre&gt;&lt;?php echo esc_html( $log[&#039;context&#039;] ); ?&gt;&lt;/pre&gt;
+			&lt;/td&gt;
+		&lt;/tr&gt;
+		&lt;?php
+	}
+
+	/**
 	 * Get list columns.
 	 *
 	 * @return array
@@ -261,6 +281,7 @@ class WC_Admin_Log_Table_List extends WP_List_Table {
 			&#039;level&#039;     =&gt; __( &#039;Level&#039;, &#039;woocommerce&#039; ),
 			&#039;message&#039;   =&gt; __( &#039;Message&#039;, &#039;woocommerce&#039; ),
 			&#039;source&#039;    =&gt; __( &#039;Source&#039;, &#039;woocommerce&#039; ),
+			&#039;context&#039;   =&gt; __( &#039;Context&#039;, &#039;woocommerce&#039; ),
 		);
 	}
 
@@ -297,16 +318,7 @@ class WC_Admin_Log_Table_List extends WP_List_Table {
 	 */
 	public function column_level( $log ) {
 		$level_key = WC_Log_Levels::get_severity_level( $log[&#039;level&#039;] );
-		$levels    = array(
-			&#039;emergency&#039; =&gt; __( &#039;Emergency&#039;, &#039;woocommerce&#039; ),
-			&#039;alert&#039;     =&gt; __( &#039;Alert&#039;, &#039;woocommerce&#039; ),
-			&#039;critical&#039;  =&gt; __( &#039;Critical&#039;, &#039;woocommerce&#039; ),
-			&#039;error&#039;     =&gt; __( &#039;Error&#039;, &#039;woocommerce&#039; ),
-			&#039;warning&#039;   =&gt; __( &#039;Warning&#039;, &#039;woocommerce&#039; ),
-			&#039;notice&#039;    =&gt; __( &#039;Notice&#039;, &#039;woocommerce&#039; ),
-			&#039;info&#039;      =&gt; __( &#039;Info&#039;, &#039;woocommerce&#039; ),
-			&#039;debug&#039;     =&gt; __( &#039;Debug&#039;, &#039;woocommerce&#039; ),
-		);
+		$levels    = WC_Log_Levels::get_all_level_labels();
 
 		if ( ! isset( $levels[ $level_key ] ) ) {
 			return &#039;&#039;;
@@ -324,7 +336,10 @@ class WC_Admin_Log_Table_List extends WP_List_Table {
 	 * @return string
 	 */
 	public function column_message( $log ) {
-		return esc_html( $log[&#039;message&#039;] );
+		return sprintf(
+			&#039;&lt;pre&gt;%s&lt;/pre&gt;&#039;,
+			esc_html( $log[&#039;message&#039;] )
+		);
 	}
 
 	/**
@@ -335,6 +350,36 @@ class WC_Admin_Log_Table_List extends WP_List_Table {
 	 */
 	public function column_source( $log ) {
 		return esc_html( $log[&#039;source&#039;] );
+	}
+
+	/**
+	 * Context column.
+	 *
+	 * @param array $log Log entry data.
+	 *
+	 * @return string
+	 */
+	public function column_context( $log ) {
+		$content = &#039;&#039;;
+
+		if ( ! empty( $log[&#039;context&#039;] ) ) {
+			ob_start();
+			?&gt;
+				&lt;button
+					class=&quot;log-toggle button button-secondary button-small&quot;
+					data-log-id=&quot;&lt;?php echo esc_attr( $log[&#039;log_id&#039;] ); ?&gt;&quot;
+					data-toggle-status=&quot;off&quot;
+					data-label-show=&quot;&lt;?php esc_attr_e( &#039;Show context&#039;, &#039;woocommerce&#039; ); ?&gt;&quot;
+					data-label-hide=&quot;&lt;?php esc_attr_e( &#039;Hide context&#039;, &#039;woocommerce&#039; ); ?&gt;&quot;
+				&gt;
+					&lt;span class=&quot;dashicons dashicons-arrow-down-alt2&quot;&gt;&lt;/span&gt;
+					&lt;span class=&quot;log-toggle-label screen-reader-text&quot;&gt;&lt;?php esc_html_e( &#039;Show context&#039;, &#039;woocommerce&#039; ); ?&gt;&lt;/span&gt;
+				&lt;/button&gt;
+			&lt;?php
+			$content = ob_get_clean();
+		}
+
+		return $content;
 	}
 
 	/**
@@ -422,7 +467,10 @@ class WC_Admin_Log_Table_List extends WP_List_Table {
 
 		$this-&gt;prepare_column_headers();
 
-		$per_page = $this-&gt;get_items_per_page( &#039;woocommerce_status_log_items_per_page&#039;, 10 );
+		$per_page = $this-&gt;get_items_per_page(
+			self::PER_PAGE_USER_OPTION_KEY,
+			$this-&gt;get_per_page_default()
+		);
 
 		$where  = $this-&gt;get_items_query_where();
 		$order  = $this-&gt;get_items_query_order();
@@ -430,7 +478,7 @@ class WC_Admin_Log_Table_List extends WP_List_Table {
 		$offset = $this-&gt;get_items_query_offset();
 
 		$query_items = &quot;
-			SELECT log_id, timestamp, level, message, source
+			SELECT log_id, timestamp, level, message, source, context
 			FROM {$wpdb-&gt;prefix}woocommerce_log
 			{$where} {$order} {$limit} {$offset}
 		&quot;;
@@ -459,7 +507,11 @@ class WC_Admin_Log_Table_List extends WP_List_Table {
 	protected function get_items_query_limit() {
 		global $wpdb;
 
-		$per_page = $this-&gt;get_items_per_page( &#039;woocommerce_status_log_items_per_page&#039;, 10 );
+		$per_page = $this-&gt;get_items_per_page(
+			self::PER_PAGE_USER_OPTION_KEY,
+			$this-&gt;get_per_page_default()
+		);
+
 		return $wpdb-&gt;prepare( &#039;LIMIT %d&#039;, $per_page );
 	}
 
@@ -473,7 +525,10 @@ class WC_Admin_Log_Table_List extends WP_List_Table {
 	protected function get_items_query_offset() {
 		global $wpdb;
 
-		$per_page     = $this-&gt;get_items_per_page( &#039;woocommerce_status_log_items_per_page&#039;, 10 );
+		$per_page     = $this-&gt;get_items_per_page(
+			self::PER_PAGE_USER_OPTION_KEY,
+			$this-&gt;get_per_page_default()
+		);
 		$current_page = $this-&gt;get_pagenum();
 		if ( 1 &lt; $current_page ) {
 			$offset = $per_page * ( $current_page - 1 );
@@ -549,6 +604,15 @@ class WC_Admin_Log_Table_List extends WP_List_Table {
 			$this-&gt;get_sortable_columns(),
 		);
 	}
+
+	/**
+	 * Helper to get the default value for the per_page arg.
+	 *
+	 * @return int
+	 */
+	public function get_per_page_default(): int {
+		return 20;
+	}
 }
 </code></pre>
             </article>
@@ -560,7 +624,7 @@ class WC_Admin_Log_Table_List extends WP_List_Table {
 
     <footer class="phpdocumentor phpdocumentor-footer">
     <div class="phpdocumentor-section">
-        <span>WooCommerce Code Reference API documentation generated by <a href="http://www.phpdoc.org/">phpDocumentor</a> on August 24th, 2023 at 08:49 am.</span>
+        <span>WooCommerce Code Reference API documentation generated by <a href="http://www.phpdoc.org/">phpDocumentor</a> on July 25th, 2024 at 11:33 am.</span>
     </div>
 </footer>
 
@@ -572,7 +636,7 @@ class WC_Admin_Log_Table_List extends WP_List_Table {
             'searchIndex': '..\/js\/searchIndex.json'
         };
     </script>
-    <script src="../js/searchIndex.js?updated=1692866946"></script>
-    <script src="../js/search.js?updated=1692866946"></script>
+    <script src="../js/searchIndex.js?updated=1721907182"></script>
+    <script src="../js/search.js?updated=1721907182"></script>
 </body>
 </html>

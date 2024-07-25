@@ -9,9 +9,9 @@
     <link rel="apple-touch-icon" sizes="72x72" href="../images/apple-touch-icon-72x72.png"/>
     <link rel="apple-touch-icon" sizes="114x114" href="../images/apple-touch-icon-114x114.png"/>
     <link rel="stylesheet" href="../css/normalize.css">
-    <link rel="stylesheet" href="../css/base.css?updated=1692866952">
+    <link rel="stylesheet" href="../css/base.css?updated=1721907186">
     <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../css/template.css?updated=1692866952">
+    <link rel="stylesheet" href="../css/template.css?updated=1721907186">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0/css/all.min.css" integrity="sha256-ybRkN9dBjhcS2qrW1z+hfCxq+1aBdwyQM5wlQoQVt/0=" crossorigin="anonymous" />
             <script src="https://cdn.jsdelivr.net/npm/css-vars-ponyfill@2"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0/js/all.min.js" integrity="sha256-0vuk8LXoyrmCjp1f0O300qo1M75ZQyhH9X3J6d+scmk=" crossorigin="anonymous"></script>
@@ -125,6 +125,7 @@
                         <ul class="phpdocumentor-list">
                                     <li><a href="../packages/Automattic-WooCommerce.html"><abbr title="\Automattic\WooCommerce">WooCommerce</abbr></a></li>
                             </ul>
+                                <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/WooCommerceBlocks.html"><abbr title="\WooCommerceBlocks">WooCommerceBlocks</abbr></a></h3>
                         </section>
     
     <section class="phpdocumentor-sidebar__category">
@@ -163,6 +164,7 @@
 namespace Automattic\WooCommerce\Utilities;
 
 use Automattic\WooCommerce\Internal\Traits\AccessiblePrivateMethods;
+use Automattic\WooCommerce\Internal\Utilities\PluginInstaller;
 use Automattic\WooCommerce\Proxies\LegacyProxy;
 
 /**
@@ -194,11 +196,20 @@ class PluginUtil {
 	private $woocommerce_aware_active_plugins = null;
 
 	/**
+	 * List of plugins excluded from feature compatibility warnings in UI.
+	 *
+	 * @var string[]
+	 */
+	private $plugins_excluded_from_compatibility_ui;
+
+	/**
 	 * Creates a new instance of the class.
 	 */
 	public function __construct() {
 		self::add_action( &#039;activated_plugin&#039;, array( $this, &#039;handle_plugin_de_activation&#039; ), 10, 0 );
 		self::add_action( &#039;deactivated_plugin&#039;, array( $this, &#039;handle_plugin_de_activation&#039; ), 10, 0 );
+
+		$this-&gt;plugins_excluded_from_compatibility_ui = array( &#039;woocommerce-legacy-rest-api/woocommerce-legacy-rest-api.php&#039; );
 	}
 
 	/**
@@ -330,32 +341,71 @@ class PluginUtil {
 	}
 
 	/**
-	 * Util function to generate warning string for incompatible features based on active plugins.
+	 * Utility method to generate warning string for incompatible features based on active plugins.
+	 *
+	 * Additionally, this method will manually print a warning message on the HPOS feature if both
+	 * the Legacy REST API and HPOS are active.
 	 *
 	 * @param string $feature_id Feature id.
 	 * @param array  $plugin_feature_info Array of plugin feature info. See FeaturesControllers-&gt;get_compatible_plugins_for_feature() for details.
 	 *
 	 * @return string Warning string.
 	 */
-	public function generate_incompatible_plugin_feature_warning( string $feature_id, array $plugin_feature_info ) : string {
+	public function generate_incompatible_plugin_feature_warning( string $feature_id, array $plugin_feature_info ): string {
 		$feature_warning    = &#039;&#039;;
 		$incompatibles      = array_merge( $plugin_feature_info[&#039;incompatible&#039;], $plugin_feature_info[&#039;uncertain&#039;] );
 		$incompatibles      = array_filter( $incompatibles, &#039;is_plugin_active&#039; );
+		$incompatibles      = array_values( array_diff( $incompatibles, $this-&gt;get_plugins_excluded_from_compatibility_ui() ) );
 		$incompatible_count = count( $incompatibles );
+
+		$feature_warnings = array();
+		if ( &#039;custom_order_tables&#039; === $feature_id &amp;&amp; &#039;yes&#039; === get_option( &#039;woocommerce_api_enabled&#039; ) ) {
+			if ( is_plugin_active( &#039;woocommerce-legacy-rest-api/woocommerce-legacy-rest-api.php&#039; ) ) {
+				$legacy_api_and_hpos_incompatibility_warning_text =
+					sprintf(
+						// translators: %s is a URL.
+						__( &#039;⚠ &lt;b&gt;&lt;a target=&quot;_blank&quot; href=&quot;%s&quot;&gt;The Legacy REST API plugin&lt;/a&gt; is installed and active on this site.&lt;/b&gt; Please be aware that the WooCommerce Legacy REST API is &lt;b&gt;not&lt;/b&gt; compatible with HPOS.&#039;, &#039;woocommerce&#039; ),
+						&#039;https://wordpress.org/plugins/woocommerce-legacy-rest-api/&#039;
+					);
+			} else {
+				$legacy_api_and_hpos_incompatibility_warning_text =
+				sprintf(
+					// translators: %s is a URL.
+					__( &#039;⚠ &lt;b&gt;&lt;a target=&quot;_blank&quot; href=&quot;%s&quot;&gt;The Legacy REST API&lt;/a&gt; is active on this site.&lt;/b&gt; Please be aware that the WooCommerce Legacy REST API is &lt;b&gt;not&lt;/b&gt; compatible with HPOS.&#039;, &#039;woocommerce&#039; ),
+					admin_url( &#039;admin.php?page=wc-settings&amp;tab=advanced&amp;section=legacy_api&#039; )
+				);
+			}
+
+			/**
+			 * Filter to modify the warning text that appears in the HPOS section of the features settings page
+			 * when both the Legacy REST API is active (via WooCommerce core or via the Legacy REST API plugin)
+			 * and the orders table is in use as the primary data store for orders.
+			 *
+			 * @param string $legacy_api_and_hpos_incompatibility_warning_text Original warning text.
+			 * @returns string|null Actual warning text to use, or null to suppress the warning.
+			 *
+			 * @since 8.9.0
+			 */
+			$legacy_api_and_hpos_incompatibility_warning_text = apply_filters( &#039;woocommerce_legacy_api_and_hpos_incompatibility_warning_text&#039;, $legacy_api_and_hpos_incompatibility_warning_text );
+
+			if ( ! is_null( $legacy_api_and_hpos_incompatibility_warning_text ) ) {
+				$feature_warnings[] = $legacy_api_and_hpos_incompatibility_warning_text . &quot;\n&quot;;
+			}
+		}
+
 		if ( $incompatible_count &gt; 0 ) {
 			if ( 1 === $incompatible_count ) {
 				/* translators: %s = printable plugin name */
-				$feature_warning = sprintf( __( &#039;⚠ 1 Incompatible plugin detected (%s).&#039;, &#039;woocommerce&#039; ), $this-&gt;get_plugin_name( $incompatibles[0] ) );
+				$feature_warnings[] = sprintf( __( &#039;⚠ 1 Incompatible plugin detected (%s).&#039;, &#039;woocommerce&#039; ), $this-&gt;get_plugin_name( $incompatibles[0] ) );
 			} elseif ( 2 === $incompatible_count ) {
-				$feature_warning = sprintf(
+				$feature_warnings[] = sprintf(
 					/* translators: %1\$s, %2\$s = printable plugin names */
 					__( &#039;⚠ 2 Incompatible plugins detected (%1$s and %2$s).&#039;, &#039;woocommerce&#039; ),
 					$this-&gt;get_plugin_name( $incompatibles[0] ),
 					$this-&gt;get_plugin_name( $incompatibles[1] )
 				);
 			} else {
-
-				$feature_warning = sprintf(
+				$feature_warnings[] = sprintf(
 					/* translators: %1\$s, %2\$s = printable plugin names, %3\$d = plugins count */
 					_n(
 						&#039;⚠ Incompatible plugins detected (%1$s, %2$s and %3$d other).&#039;,
@@ -376,18 +426,26 @@ class PluginUtil {
 				),
 				admin_url( &#039;plugins.php&#039; )
 			);
-			$extra_desc_tip           = &#039;&lt;br&gt;&#039; . sprintf(
+			$feature_warnings[]       = sprintf(
 				/* translators: %1$s opening link tag %2$s closing link tag. */
 				__( &#039;%1$sView and manage%2$s&#039;, &#039;woocommerce&#039; ),
 				&#039;&lt;a href=&quot;&#039; . esc_url( $incompatible_plugins_url ) . &#039;&quot;&gt;&#039;,
 				&#039;&lt;/a&gt;&#039;
 			);
-
-			$feature_warning .= $extra_desc_tip;
-
 		}
 
-		return $feature_warning;
+		return str_replace( &quot;\n&quot;, &#039;&lt;br&gt;&#039;, implode( &quot;\n&quot;, $feature_warnings ) );
+	}
+
+	/**
+	 * Get the names of the plugins that are excluded from the feature compatibility UI.
+	 * These plugins won&#039;t be considered as incompatible with any existing feature for the purposes
+	 * of displaying compatibility warning in UI, even if they declare incompatibilities explicitly.
+	 *
+	 * @return string[] Plugin names relative to the root plugins directory.
+	 */
+	public function get_plugins_excluded_from_compatibility_ui() {
+		return $this-&gt;plugins_excluded_from_compatibility_ui;
 	}
 }
 </code></pre>
@@ -400,7 +458,7 @@ class PluginUtil {
 
     <footer class="phpdocumentor phpdocumentor-footer">
     <div class="phpdocumentor-section">
-        <span>WooCommerce Code Reference API documentation generated by <a href="http://www.phpdoc.org/">phpDocumentor</a> on August 24th, 2023 at 08:49 am.</span>
+        <span>WooCommerce Code Reference API documentation generated by <a href="http://www.phpdoc.org/">phpDocumentor</a> on July 25th, 2024 at 11:33 am.</span>
     </div>
 </footer>
 
@@ -412,7 +470,7 @@ class PluginUtil {
             'searchIndex': '..\/js\/searchIndex.json'
         };
     </script>
-    <script src="../js/searchIndex.js?updated=1692866952"></script>
-    <script src="../js/search.js?updated=1692866952"></script>
+    <script src="../js/searchIndex.js?updated=1721907186"></script>
+    <script src="../js/search.js?updated=1721907186"></script>
 </body>
 </html>

@@ -9,9 +9,9 @@
     <link rel="apple-touch-icon" sizes="72x72" href="../images/apple-touch-icon-72x72.png"/>
     <link rel="apple-touch-icon" sizes="114x114" href="../images/apple-touch-icon-114x114.png"/>
     <link rel="stylesheet" href="../css/normalize.css">
-    <link rel="stylesheet" href="../css/base.css?updated=1692866947">
+    <link rel="stylesheet" href="../css/base.css?updated=1721907182">
     <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../css/template.css?updated=1692866947">
+    <link rel="stylesheet" href="../css/template.css?updated=1721907182">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0/css/all.min.css" integrity="sha256-ybRkN9dBjhcS2qrW1z+hfCxq+1aBdwyQM5wlQoQVt/0=" crossorigin="anonymous" />
             <script src="https://cdn.jsdelivr.net/npm/css-vars-ponyfill@2"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0/js/all.min.js" integrity="sha256-0vuk8LXoyrmCjp1f0O300qo1M75ZQyhH9X3J6d+scmk=" crossorigin="anonymous"></script>
@@ -125,6 +125,7 @@
                         <ul class="phpdocumentor-list">
                                     <li><a href="../packages/Automattic-WooCommerce.html"><abbr title="\Automattic\WooCommerce">WooCommerce</abbr></a></li>
                             </ul>
+                                <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/WooCommerceBlocks.html"><abbr title="\WooCommerceBlocks">WooCommerceBlocks</abbr></a></h3>
                         </section>
     
     <section class="phpdocumentor-sidebar__category">
@@ -549,7 +550,23 @@ class WC_Order extends WC_Abstract_Order {
 
 		if ( $status_transition ) {
 			try {
-				do_action( &#039;woocommerce_order_status_&#039; . $status_transition[&#039;to&#039;], $this-&gt;get_id(), $this );
+				/**
+				 * Fires when order status is changed.
+				 *
+				 * @since 1.0.0
+				 *
+				 * @param int Order ID.
+				 * @param WC_Order $order Order object.
+				 * @param array $status_transition {
+				 *      Status transition data.
+				 *
+				 *      @type string $from Order status from.
+				 *      @type string $to Order status to
+				 *      @type string $note Order note.
+				 *      @type boolean $manual True if the order is manually changed.
+				 * }
+				 */
+				do_action( &#039;woocommerce_order_status_&#039; . $status_transition[&#039;to&#039;], $this-&gt;get_id(), $this, $status_transition );
 
 				if ( ! empty( $status_transition[&#039;from&#039;] ) ) {
 					/* translators: 1: old order status 2: new order status */
@@ -714,18 +731,27 @@ class WC_Order extends WC_Abstract_Order {
 	 *
 	 * @since  3.0.0
 	 * @param  string $prop Name of prop to get.
-	 * @param  string $address billing or shipping.
+	 * @param  string $address_type Type of address; &#039;billing&#039; or &#039;shipping&#039;.
 	 * @param  string $context What the value is for. Valid values are view and edit.
 	 * @return mixed
 	 */
-	protected function get_address_prop( $prop, $address = &#039;billing&#039;, $context = &#039;view&#039; ) {
+	protected function get_address_prop( $prop, $address_type = &#039;billing&#039;, $context = &#039;view&#039; ) {
 		$value = null;
 
-		if ( array_key_exists( $prop, $this-&gt;data[ $address ] ) ) {
-			$value = isset( $this-&gt;changes[ $address ][ $prop ] ) ? $this-&gt;changes[ $address ][ $prop ] : $this-&gt;data[ $address ][ $prop ];
+		if ( array_key_exists( $prop, $this-&gt;data[ $address_type ] ) ) {
+			$value = isset( $this-&gt;changes[ $address_type ][ $prop ] ) ? $this-&gt;changes[ $address_type ][ $prop ] : $this-&gt;data[ $address_type ][ $prop ];
 
 			if ( &#039;view&#039; === $context ) {
-				$value = apply_filters( $this-&gt;get_hook_prefix() . $address . &#039;_&#039; . $prop, $value, $this );
+				/**
+				 * Filter: &#039;woocommerce_order_get_[billing|shipping]_[prop]&#039;
+				 *
+				 * Allow developers to change the returned value for any order address property.
+				 *
+				 * @since 3.6.0
+				 * @param string   $value The address property value.
+				 * @param WC_Order $order The order object being read.
+				 */
+				$value = apply_filters( $this-&gt;get_hook_prefix() . $address_type . &#039;_&#039; . $prop, $value, $this );
 			}
 		}
 		return $value;
@@ -1053,11 +1079,20 @@ class WC_Order extends WC_Abstract_Order {
 	 * Note: Merges raw data with get_prop data so changes are returned too.
 	 *
 	 * @since  2.4.0
-	 * @param  string $type Billing or shipping. Anything else besides &#039;billing&#039; will return shipping address.
+	 * @param  string $address_type Type of address; &#039;billing&#039; or &#039;shipping&#039;.
 	 * @return array The stored address after filter.
 	 */
-	public function get_address( $type = &#039;billing&#039; ) {
-		return apply_filters( &#039;woocommerce_get_order_address&#039;, array_merge( $this-&gt;data[ $type ], $this-&gt;get_prop( $type, &#039;view&#039; ) ), $type, $this );
+	public function get_address( $address_type = &#039;billing&#039; ) {
+		/**
+		 * Filter: &#039;woocommerce_get_order_address&#039;
+		 *
+		 * Allow developers to change the returned value for an order&#039;s billing or shipping address.
+		 *
+		 * @since 2.4.0
+		 * @param array  $address_data The raw address data merged with the data from get_prop.
+		 * @param string $address_type Type of address; &#039;billing&#039; or &#039;shipping&#039;.
+		 */
+		return apply_filters( &#039;woocommerce_get_order_address&#039;, array_merge( $this-&gt;data[ $address_type ], $this-&gt;get_prop( $address_type, &#039;view&#039; ) ), $address_type, $this );
 	}
 
 	/**
@@ -1224,17 +1259,17 @@ class WC_Order extends WC_Abstract_Order {
 	 *
 	 * @since 3.0.0
 	 * @param string $prop Name of prop to set.
-	 * @param string $address Name of address to set. billing or shipping.
+	 * @param string $address_type Type of address; &#039;billing&#039; or &#039;shipping&#039;.
 	 * @param mixed  $value Value of the prop.
 	 */
-	protected function set_address_prop( $prop, $address, $value ) {
-		if ( array_key_exists( $prop, $this-&gt;data[ $address ] ) ) {
+	protected function set_address_prop( $prop, $address_type, $value ) {
+		if ( array_key_exists( $prop, $this-&gt;data[ $address_type ] ) ) {
 			if ( true === $this-&gt;object_read ) {
-				if ( $value !== $this-&gt;data[ $address ][ $prop ] || ( isset( $this-&gt;changes[ $address ] ) &amp;&amp; array_key_exists( $prop, $this-&gt;changes[ $address ] ) ) ) {
-					$this-&gt;changes[ $address ][ $prop ] = $value;
+				if ( $value !== $this-&gt;data[ $address_type ][ $prop ] || ( isset( $this-&gt;changes[ $address_type ] ) &amp;&amp; array_key_exists( $prop, $this-&gt;changes[ $address_type ] ) ) ) {
+					$this-&gt;changes[ $address_type ][ $prop ] = $value;
 				}
 			} else {
-				$this-&gt;data[ $address ][ $prop ] = $value;
+				$this-&gt;data[ $address_type ][ $prop ] = $value;
 			}
 		}
 	}
@@ -1941,6 +1976,15 @@ class WC_Order extends WC_Abstract_Order {
 	 * @return string
 	 */
 	public function get_cancel_order_url( $redirect = &#039;&#039; ) {
+		/**
+		 * Filter the URL to cancel the order in the frontend.
+		 *
+		 * @since 2.2.0
+		 *
+		 * @param string $url
+		 * @param WC_Order $order Order data.
+		 * @param string $redirect Redirect URL.
+		 */
 		return apply_filters(
 			&#039;woocommerce_get_cancel_order_url&#039;,
 			wp_nonce_url(
@@ -1954,7 +1998,9 @@ class WC_Order extends WC_Abstract_Order {
 					$this-&gt;get_cancel_endpoint()
 				),
 				&#039;woocommerce-cancel_order&#039;
-			)
+			),
+			$this,
+			$redirect
 		);
 	}
 
@@ -1965,6 +2011,15 @@ class WC_Order extends WC_Abstract_Order {
 	 * @return string The unescaped cancel-order URL.
 	 */
 	public function get_cancel_order_url_raw( $redirect = &#039;&#039; ) {
+		/**
+		 * Filter the raw URL to cancel the order in the frontend.
+		 *
+		 * @since 2.2.0
+		 *
+		 * @param string $url
+		 * @param WC_Order $order Order data.
+		 * @param string $redirect Redirect URL.
+		 */
 		return apply_filters(
 			&#039;woocommerce_get_cancel_order_url_raw&#039;,
 			add_query_arg(
@@ -1976,7 +2031,9 @@ class WC_Order extends WC_Abstract_Order {
 					&#039;_wpnonce&#039;     =&gt; wp_create_nonce( &#039;woocommerce-cancel_order&#039; ),
 				),
 				$this-&gt;get_cancel_endpoint()
-			)
+			),
+			$this,
+			$redirect
 		);
 	}
 
@@ -2403,9 +2460,15 @@ class WC_Order extends WC_Abstract_Order {
 		$refunds = $this-&gt;get_refunds();
 		if ( $refunds ) {
 			foreach ( $refunds as $id =&gt; $refund ) {
+				$reason = trim( $refund-&gt;get_reason() );
+
+				if ( strlen( $reason ) &gt; 0 ) {
+					$reason = &quot;&lt;br&gt;&lt;small&gt;$reason&lt;/small&gt;&quot;;
+				}
+
 				$total_rows[ &#039;refund_&#039; . $id ] = array(
-					&#039;label&#039; =&gt; $refund-&gt;get_reason() ? $refund-&gt;get_reason() : __( &#039;Refund&#039;, &#039;woocommerce&#039; ) . &#039;:&#039;,
-					&#039;value&#039; =&gt; wc_price( &#039;-&#039; . $refund-&gt;get_amount(), array( &#039;currency&#039; =&gt; $this-&gt;get_currency() ) ),
+					&#039;label&#039; =&gt; __( &#039;Refund&#039;, &#039;woocommerce&#039; ) . &#039;:&#039;,
+					&#039;value&#039; =&gt; wc_price( &#039;-&#039; . $refund-&gt;get_amount(), array( &#039;currency&#039; =&gt; $this-&gt;get_currency() ) ) . $reason,
 				);
 			}
 		}
@@ -2463,7 +2526,7 @@ class WC_Order extends WC_Abstract_Order {
 
     <footer class="phpdocumentor phpdocumentor-footer">
     <div class="phpdocumentor-section">
-        <span>WooCommerce Code Reference API documentation generated by <a href="http://www.phpdoc.org/">phpDocumentor</a> on August 24th, 2023 at 08:49 am.</span>
+        <span>WooCommerce Code Reference API documentation generated by <a href="http://www.phpdoc.org/">phpDocumentor</a> on July 25th, 2024 at 11:33 am.</span>
     </div>
 </footer>
 
@@ -2475,7 +2538,7 @@ class WC_Order extends WC_Abstract_Order {
             'searchIndex': '..\/js\/searchIndex.json'
         };
     </script>
-    <script src="../js/searchIndex.js?updated=1692866947"></script>
-    <script src="../js/search.js?updated=1692866947"></script>
+    <script src="../js/searchIndex.js?updated=1721907182"></script>
+    <script src="../js/search.js?updated=1721907182"></script>
 </body>
 </html>

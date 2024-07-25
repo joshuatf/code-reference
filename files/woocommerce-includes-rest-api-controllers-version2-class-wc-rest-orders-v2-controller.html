@@ -9,9 +9,9 @@
     <link rel="apple-touch-icon" sizes="72x72" href="../images/apple-touch-icon-72x72.png"/>
     <link rel="apple-touch-icon" sizes="114x114" href="../images/apple-touch-icon-114x114.png"/>
     <link rel="stylesheet" href="../css/normalize.css">
-    <link rel="stylesheet" href="../css/base.css?updated=1692866948">
+    <link rel="stylesheet" href="../css/base.css?updated=1721907183">
     <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../css/template.css?updated=1692866948">
+    <link rel="stylesheet" href="../css/template.css?updated=1721907183">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0/css/all.min.css" integrity="sha256-ybRkN9dBjhcS2qrW1z+hfCxq+1aBdwyQM5wlQoQVt/0=" crossorigin="anonymous" />
             <script src="https://cdn.jsdelivr.net/npm/css-vars-ponyfill@2"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0/js/all.min.js" integrity="sha256-0vuk8LXoyrmCjp1f0O300qo1M75ZQyhH9X3J6d+scmk=" crossorigin="anonymous"></script>
@@ -125,6 +125,7 @@
                         <ul class="phpdocumentor-list">
                                     <li><a href="../packages/Automattic-WooCommerce.html"><abbr title="\Automattic\WooCommerce">WooCommerce</abbr></a></li>
                             </ul>
+                                <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/WooCommerceBlocks.html"><abbr title="\WooCommerceBlocks">WooCommerceBlocks</abbr></a></h3>
                         </section>
     
     <section class="phpdocumentor-sidebar__category">
@@ -446,6 +447,25 @@ class WC_REST_Orders_V2_Controller extends WC_REST_CRUD_Controller {
 			);
 		}
 
+		// Add additional applied coupon information.
+		if ( $item instanceof WC_Order_Item_Coupon ) {
+			$temp_coupon = new WC_Coupon();
+			$coupon_info = $item-&gt;get_meta( &#039;coupon_info&#039;, true );
+			if ( $coupon_info ) {
+				$temp_coupon-&gt;set_short_info( $coupon_info );
+			} else {
+				$coupon_meta = $item-&gt;get_meta( &#039;coupon_data&#039;, true );
+				if ( $coupon_meta ) {
+					$temp_coupon-&gt;set_props( (array) $coupon_meta );
+
+				}
+			}
+
+			$data[&#039;discount_type&#039;]  = $temp_coupon-&gt;get_discount_type();
+			$data[&#039;nominal_amount&#039;] = (float) $temp_coupon-&gt;get_amount();
+			$data[&#039;free_shipping&#039;]  = $temp_coupon-&gt;get_free_shipping();
+		}
+
 		$data[&#039;meta_data&#039;] = array_map(
 			array( $this, &#039;merge_meta_item_with_formatted_meta_display_attributes&#039; ),
 			$data[&#039;meta_data&#039;],
@@ -753,15 +773,19 @@ class WC_REST_Orders_V2_Controller extends WC_REST_CRUD_Controller {
 		}
 
 		if ( isset( $request[&#039;customer&#039;] ) ) {
-			if ( ! empty( $args[&#039;meta_query&#039;] ) ) {
-				$args[&#039;meta_query&#039;] = array(); // phpcs:ignore WordPress.DB.SlowDBQuery.slow_db_query_meta_query
-			}
+			if ( OrderUtil::custom_orders_table_usage_is_enabled() ) {
+				$args[&#039;customer_id&#039;] = $request[&#039;customer&#039;];
+			} else {
+				if ( ! empty( $args[&#039;meta_query&#039;] ) ) {
+					$args[&#039;meta_query&#039;] = array(); // phpcs:ignore WordPress.DB.SlowDBQuery.slow_db_query_meta_query
+				}
 
-			$args[&#039;meta_query&#039;][] = array(
-				&#039;key&#039;   =&gt; &#039;_customer_user&#039;,
-				&#039;value&#039; =&gt; $request[&#039;customer&#039;],
-				&#039;type&#039;  =&gt; &#039;NUMERIC&#039;,
-			);
+				$args[&#039;meta_query&#039;][] = array(
+					&#039;key&#039;   =&gt; &#039;_customer_user&#039;,
+					&#039;value&#039; =&gt; $request[&#039;customer&#039;],
+					&#039;type&#039;  =&gt; &#039;NUMERIC&#039;,
+				);
+			}
 		}
 
 		// Search by product.
@@ -961,7 +985,7 @@ class WC_REST_Orders_V2_Controller extends WC_REST_CRUD_Controller {
 	 *
 	 * @param WC_Order $order  Order data.
 	 * @param array    $posted Posted data.
-	 * @param string   $type   Address type.
+	 * @param string   $type   Type of address; &#039;billing&#039; or &#039;shipping&#039;.
 	 */
 	protected function update_address( $order, $posted, $type = &#039;billing&#039; ) {
 		foreach ( $posted as $key =&gt; $value ) {
@@ -1063,6 +1087,11 @@ class WC_REST_Orders_V2_Controller extends WC_REST_CRUD_Controller {
 
 		$this-&gt;maybe_set_item_props( $item, array( &#039;name&#039;, &#039;quantity&#039;, &#039;total&#039;, &#039;subtotal&#039;, &#039;tax_class&#039; ), $posted );
 		$this-&gt;maybe_set_item_meta_data( $item, $posted );
+
+		if ( &#039;update&#039; === $action ) {
+			require_once WC_ABSPATH . &#039;includes/admin/wc-admin-functions.php&#039;;
+			wc_maybe_adjust_line_item_product_stock( $item );
+		}
 
 		return $item;
 	}
@@ -1753,7 +1782,7 @@ class WC_REST_Orders_V2_Controller extends WC_REST_CRUD_Controller {
 							),
 							&#039;rate_id&#039;            =&gt; array(
 								&#039;description&#039; =&gt; __( &#039;Tax rate ID.&#039;, &#039;woocommerce&#039; ),
-								&#039;type&#039;        =&gt; &#039;string&#039;,
+								&#039;type&#039;        =&gt; &#039;integer&#039;,
 								&#039;context&#039;     =&gt; array( &#039;view&#039;, &#039;edit&#039; ),
 								&#039;readonly&#039;    =&gt; true,
 							),
@@ -2006,29 +2035,47 @@ class WC_REST_Orders_V2_Controller extends WC_REST_CRUD_Controller {
 					&#039;items&#039;       =&gt; array(
 						&#039;type&#039;       =&gt; &#039;object&#039;,
 						&#039;properties&#039; =&gt; array(
-							&#039;id&#039;           =&gt; array(
+							&#039;id&#039;             =&gt; array(
 								&#039;description&#039; =&gt; __( &#039;Item ID.&#039;, &#039;woocommerce&#039; ),
 								&#039;type&#039;        =&gt; &#039;integer&#039;,
 								&#039;context&#039;     =&gt; array( &#039;view&#039;, &#039;edit&#039; ),
 								&#039;readonly&#039;    =&gt; true,
 							),
-							&#039;code&#039;         =&gt; array(
+							&#039;code&#039;           =&gt; array(
 								&#039;description&#039; =&gt; __( &#039;Coupon code.&#039;, &#039;woocommerce&#039; ),
 								&#039;type&#039;        =&gt; &#039;mixed&#039;,
 								&#039;context&#039;     =&gt; array( &#039;view&#039;, &#039;edit&#039; ),
 							),
-							&#039;discount&#039;     =&gt; array(
+							&#039;discount&#039;       =&gt; array(
 								&#039;description&#039; =&gt; __( &#039;Discount total.&#039;, &#039;woocommerce&#039; ),
 								&#039;type&#039;        =&gt; &#039;string&#039;,
 								&#039;context&#039;     =&gt; array( &#039;view&#039;, &#039;edit&#039; ),
 							),
-							&#039;discount_tax&#039; =&gt; array(
+							&#039;discount_tax&#039;   =&gt; array(
 								&#039;description&#039; =&gt; __( &#039;Discount total tax.&#039;, &#039;woocommerce&#039; ),
 								&#039;type&#039;        =&gt; &#039;string&#039;,
 								&#039;context&#039;     =&gt; array( &#039;view&#039;, &#039;edit&#039; ),
 								&#039;readonly&#039;    =&gt; true,
 							),
-							&#039;meta_data&#039;    =&gt; array(
+							&#039;discount_type&#039;  =&gt; array(
+								&#039;description&#039; =&gt; __( &#039;Discount type.&#039;, &#039;woocommerce&#039; ),
+								&#039;type&#039;        =&gt; &#039;string&#039;,
+								&#039;context&#039;     =&gt; array( &#039;view&#039; ),
+								&#039;readonly&#039;    =&gt; true,
+							),
+							&#039;nominal_amount&#039; =&gt; array(
+								&#039;description&#039; =&gt; __( &#039;Discount amount as defined in the coupon (absolute value or a percent, depending on the discount type).&#039;, &#039;woocommerce&#039; ),
+								&#039;type&#039;        =&gt; &#039;number&#039;,
+								&#039;context&#039;     =&gt; array( &#039;view&#039; ),
+								&#039;readonly&#039;    =&gt; true,
+							),
+							&#039;free_shipping&#039;  =&gt; array(
+								&#039;description&#039; =&gt; __( &#039;Whether the coupon grants free shipping or not.&#039;, &#039;woocommerce&#039; ),
+								&#039;type&#039;        =&gt; &#039;boolean&#039;,
+								&#039;context&#039;     =&gt; array( &#039;view&#039; ),
+								&#039;readonly&#039;    =&gt; true,
+							),
+							&#039;meta_data&#039;      =&gt; array(
 								&#039;description&#039; =&gt; __( &#039;Meta data.&#039;, &#039;woocommerce&#039; ),
 								&#039;type&#039;        =&gt; &#039;array&#039;,
 								&#039;context&#039;     =&gt; array( &#039;view&#039;, &#039;edit&#039; ),
@@ -2225,7 +2272,7 @@ class WC_REST_Orders_V2_Controller extends WC_REST_CRUD_Controller {
 
     <footer class="phpdocumentor phpdocumentor-footer">
     <div class="phpdocumentor-section">
-        <span>WooCommerce Code Reference API documentation generated by <a href="http://www.phpdoc.org/">phpDocumentor</a> on August 24th, 2023 at 08:49 am.</span>
+        <span>WooCommerce Code Reference API documentation generated by <a href="http://www.phpdoc.org/">phpDocumentor</a> on July 25th, 2024 at 11:33 am.</span>
     </div>
 </footer>
 
@@ -2237,7 +2284,7 @@ class WC_REST_Orders_V2_Controller extends WC_REST_CRUD_Controller {
             'searchIndex': '..\/js\/searchIndex.json'
         };
     </script>
-    <script src="../js/searchIndex.js?updated=1692866948"></script>
-    <script src="../js/search.js?updated=1692866948"></script>
+    <script src="../js/searchIndex.js?updated=1721907183"></script>
+    <script src="../js/search.js?updated=1721907183"></script>
 </body>
 </html>

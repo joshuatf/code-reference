@@ -9,9 +9,9 @@
     <link rel="apple-touch-icon" sizes="72x72" href="../images/apple-touch-icon-72x72.png"/>
     <link rel="apple-touch-icon" sizes="114x114" href="../images/apple-touch-icon-114x114.png"/>
     <link rel="stylesheet" href="../css/normalize.css">
-    <link rel="stylesheet" href="../css/base.css?updated=1692866947">
+    <link rel="stylesheet" href="../css/base.css?updated=1721907183">
     <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../css/template.css?updated=1692866947">
+    <link rel="stylesheet" href="../css/template.css?updated=1721907183">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0/css/all.min.css" integrity="sha256-ybRkN9dBjhcS2qrW1z+hfCxq+1aBdwyQM5wlQoQVt/0=" crossorigin="anonymous" />
             <script src="https://cdn.jsdelivr.net/npm/css-vars-ponyfill@2"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0/js/all.min.js" integrity="sha256-0vuk8LXoyrmCjp1f0O300qo1M75ZQyhH9X3J6d+scmk=" crossorigin="anonymous"></script>
@@ -125,6 +125,7 @@
                         <ul class="phpdocumentor-list">
                                     <li><a href="../packages/Automattic-WooCommerce.html"><abbr title="\Automattic\WooCommerce">WooCommerce</abbr></a></li>
                             </ul>
+                                <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/WooCommerceBlocks.html"><abbr title="\WooCommerceBlocks">WooCommerceBlocks</abbr></a></h3>
                         </section>
     
     <section class="phpdocumentor-sidebar__category">
@@ -163,11 +164,13 @@
  */
 
 use Automattic\Jetpack\Constants;
+use Automattic\WooCommerce\Proxies\LegacyProxy;
 
 if ( ! defined( &#039;ABSPATH&#039; ) ) {
 	exit;
 }
 
+// phpcs:disable Squiz.Classes.ClassFileName.NoMatch, Squiz.Classes.ValidClassName.NotCamelCaps -- Backward compatibility.
 /**
  * Abstract Order Data Store: Stored in CPT.
  *
@@ -236,6 +239,13 @@ abstract class Abstract_WC_Order_Data_Store_CPT extends WC_Data_Store_WP impleme
 		}
 
 		$id = wp_insert_post(
+			/**
+			 * Filters the data for a new order before it is inserted into the database.
+			 *
+			 * @param array $data Array of data for the new order.
+			 *
+			 * @since 3.3.0
+			 */
 			apply_filters(
 				&#039;woocommerce_new_order_data&#039;,
 				array(
@@ -271,7 +281,7 @@ abstract class Abstract_WC_Order_Data_Store_CPT extends WC_Data_Store_WP impleme
 	 * @param int $order_id The order id to check.
 	 * @return bool True if an order exists with the given name.
 	 */
-	public function order_exists( $order_id ) : bool {
+	public function order_exists( $order_id ): bool {
 		if ( ! $order_id ) {
 			return false;
 		}
@@ -291,7 +301,7 @@ abstract class Abstract_WC_Order_Data_Store_CPT extends WC_Data_Store_WP impleme
 		$order-&gt;set_defaults();
 		$post_object = get_post( $order-&gt;get_id() );
 		if ( ! $order-&gt;get_id() || ! $post_object || ! in_array( $post_object-&gt;post_type, wc_get_order_types(), true ) ) {
-			throw new Exception( __( &#039;Invalid order.&#039;, &#039;woocommerce&#039; ) );
+			throw new Exception( esc_html__( &#039;Invalid order.&#039;, &#039;woocommerce&#039; ) );
 		}
 
 		$this-&gt;set_order_props(
@@ -447,7 +457,7 @@ abstract class Abstract_WC_Order_Data_Store_CPT extends WC_Data_Store_WP impleme
 				/**
 				 * Fires immediately after an order is deleted.
 				 *
-				 * @since
+				 * @since 2.7.0
 				 *
 				 * @param int $order_id ID of the order that has been deleted.
 				 */
@@ -473,7 +483,7 @@ abstract class Abstract_WC_Order_Data_Store_CPT extends WC_Data_Store_WP impleme
 				/**
 				 * Fires immediately after an order is trashed.
 				 *
-				 * @since
+				 * @since 2.7.0
 				 *
 				 * @param int      $order_id ID of the order that has been trashed.
 				 */
@@ -501,6 +511,13 @@ abstract class Abstract_WC_Order_Data_Store_CPT extends WC_Data_Store_WP impleme
 		$order_status = $order-&gt;get_status( &#039;edit&#039; );
 
 		if ( ! $order_status ) {
+			/**
+			 * Filters the default order status to use when creating a new order.
+			 *
+			 * @param string $order_status Default order status.
+			 *
+			 * @since 3.7.0
+			 */
 			$order_status = apply_filters( &#039;woocommerce_default_order_status&#039;, &#039;pending&#039; );
 		}
 
@@ -508,7 +525,7 @@ abstract class Abstract_WC_Order_Data_Store_CPT extends WC_Data_Store_WP impleme
 		$valid_statuses = get_post_stati();
 
 		// Add a wc- prefix to the status, but exclude some core statuses which should not be prefixed.
-		// @todo In the future this should only happen based on `wc_is_order_status`, but in order to
+		// In the future this should only happen based on `wc_is_order_status`, but in order to
 		// preserve back-compatibility this happens to all statuses except a select few. A doing_it_wrong
 		// Notice will be needed here, followed by future removal.
 		if ( ! in_array( $post_status, array( &#039;auto-draft&#039;, &#039;draft&#039;, &#039;trash&#039; ), true ) &amp;&amp; in_array( &#039;wc-&#039; . $post_status, $valid_statuses, true ) ) {
@@ -536,7 +553,7 @@ abstract class Abstract_WC_Order_Data_Store_CPT extends WC_Data_Store_WP impleme
 	protected function get_post_title() {
 		// @codingStandardsIgnoreStart
 		/* translators: %s: Order date */
-		return sprintf( __( &#039;Order &amp;ndash; %s&#039;, &#039;woocommerce&#039; ), (new DateTime(&#039;now&#039;))-&gt;format( _x( &#039;M d, Y @ h:i A&#039;, &#039;Order date parsed by DateTime::format&#039;, &#039;woocommerce&#039; ) ) );
+		return sprintf( __( &#039;Order &amp;ndash; %s&#039;, &#039;woocommerce&#039; ), ( new DateTime( &#039;now&#039; ) )-&gt;format( _x( &#039;M d, Y @ h:i A&#039;, &#039;Order date parsed by DateTime::format&#039;, &#039;woocommerce&#039; ) ) );
 		// @codingStandardsIgnoreEnd
 	}
 
@@ -622,6 +639,14 @@ abstract class Abstract_WC_Order_Data_Store_CPT extends WC_Data_Store_WP impleme
 			}
 		}
 
+		/**
+		 * Action fired after updating order properties.
+		 *
+		 * @param WC_Abstract_Order $order Order object.
+		 * @param string[]          $updated_props Array of updated properties.
+		 *
+		 * @since 2.7.0
+		 */
 		do_action( &#039;woocommerce_order_object_updated_props&#039;, $order, $updated_props );
 	}
 
@@ -646,6 +671,11 @@ abstract class Abstract_WC_Order_Data_Store_CPT extends WC_Data_Store_WP impleme
 	 */
 	public function read_items( $order, $type ) {
 		global $wpdb;
+
+		// When the order is not yet saved, we cannot get the items from DB. Trying to do so will risk reading items of different orders that were saved incorrectly.
+		if ( 0 === $order-&gt;get_id() ) {
+			return array();
+		}
 
 		// Get from cache if available.
 		$items = 0 &lt; $order-&gt;get_id() ? wp_cache_get( &#039;order-items-&#039; . $order-&gt;get_id(), &#039;orders&#039; ) : false;
@@ -764,13 +794,15 @@ abstract class Abstract_WC_Order_Data_Store_CPT extends WC_Data_Store_WP impleme
 	 */
 	public function delete_items( $order, $type = null ) {
 		global $wpdb;
+
 		if ( ! empty( $type ) ) {
-			$wpdb-&gt;query( $wpdb-&gt;prepare( &quot;DELETE FROM itemmeta USING {$wpdb-&gt;prefix}woocommerce_order_itemmeta itemmeta INNER JOIN {$wpdb-&gt;prefix}woocommerce_order_items items WHERE itemmeta.order_item_id = items.order_item_id AND items.order_id = %d AND items.order_item_type = %s&quot;, $order-&gt;get_id(), $type ) );
+			$wpdb-&gt;query( $wpdb-&gt;prepare( &quot;DELETE itemmeta FROM {$wpdb-&gt;prefix}woocommerce_order_itemmeta as itemmeta INNER JOIN {$wpdb-&gt;prefix}woocommerce_order_items as items WHERE itemmeta.order_item_id = items.order_item_id AND items.order_id = %d AND items.order_item_type = %s&quot;, $order-&gt;get_id(), $type ) );
 			$wpdb-&gt;query( $wpdb-&gt;prepare( &quot;DELETE FROM {$wpdb-&gt;prefix}woocommerce_order_items WHERE order_id = %d AND order_item_type = %s&quot;, $order-&gt;get_id(), $type ) );
 		} else {
-			$wpdb-&gt;query( $wpdb-&gt;prepare( &quot;DELETE FROM itemmeta USING {$wpdb-&gt;prefix}woocommerce_order_itemmeta itemmeta INNER JOIN {$wpdb-&gt;prefix}woocommerce_order_items items WHERE itemmeta.order_item_id = items.order_item_id and items.order_id = %d&quot;, $order-&gt;get_id() ) );
+			$wpdb-&gt;query( $wpdb-&gt;prepare( &quot;DELETE itemmeta FROM {$wpdb-&gt;prefix}woocommerce_order_itemmeta as itemmeta INNER JOIN {$wpdb-&gt;prefix}woocommerce_order_items as items WHERE itemmeta.order_item_id = items.order_item_id and items.order_id = %d&quot;, $order-&gt;get_id() ) );
 			$wpdb-&gt;query( $wpdb-&gt;prepare( &quot;DELETE FROM {$wpdb-&gt;prefix}woocommerce_order_items WHERE order_id = %d&quot;, $order-&gt;get_id() ) );
 		}
+
 		$this-&gt;clear_caches( $order );
 	}
 
@@ -863,7 +895,9 @@ abstract class Abstract_WC_Order_Data_Store_CPT extends WC_Data_Store_WP impleme
 	 *
 	 * @param WC_Abstract_Order $order Order object.
 	 */
-	private function update_order_meta_from_object( $order ) {
+	protected function update_order_meta_from_object( $order ) {
+		global $wpdb;
+
 		if ( is_null( $order-&gt;get_meta() ) ) {
 			return;
 		}
@@ -872,15 +906,42 @@ abstract class Abstract_WC_Order_Data_Store_CPT extends WC_Data_Store_WP impleme
 
 		foreach ( $order-&gt;get_meta_data() as $meta_data ) {
 			if ( isset( $existing_meta_data[ $meta_data-&gt;key ] ) ) {
-				if ( $existing_meta_data[ $meta_data-&gt;key ] === $meta_data-&gt;value ) {
+				// We don&#039;t know if the meta is single or array, so we assume it to be an array.
+				$meta_value = is_array( $meta_data-&gt;value ) ? $meta_data-&gt;value : array( $meta_data-&gt;value );
+
+				if ( $existing_meta_data[ $meta_data-&gt;key ] === $meta_value ) {
 					unset( $existing_meta_data[ $meta_data-&gt;key ] );
 					continue;
 				}
 
-				unset( $existing_meta_data[ $meta_data-&gt;key ] );
-				delete_post_meta( $order-&gt;get_id(), $meta_data-&gt;key );
+				if ( is_array( $existing_meta_data[ $meta_data-&gt;key ] ) ) {
+					$value_index = array_search( maybe_serialize( $meta_data-&gt;value ), $existing_meta_data[ $meta_data-&gt;key ], true );
+					if ( false !== $value_index ) {
+						unset( $existing_meta_data[ $meta_data-&gt;key ][ $value_index ] );
+						if ( 0 === count( $existing_meta_data[ $meta_data-&gt;key ] ) ) {
+							unset( $existing_meta_data[ $meta_data-&gt;key ] );
+						}
+						continue;
+					}
+				}
 			}
-			add_post_meta( $order-&gt;get_id(), $meta_data-&gt;key, $meta_data-&gt;value, false );
+			if ( is_object( $meta_data-&gt;value ) &amp;&amp; &#039;__PHP_Incomplete_Class&#039; === get_class( $meta_data-&gt;value ) ) {
+				$meta_value = maybe_serialize( $meta_data-&gt;value );
+				$result     = $wpdb-&gt;insert(
+					_get_meta_table( &#039;post&#039; ),
+					array(
+						&#039;post_id&#039;    =&gt; $order-&gt;get_id(),
+						&#039;meta_key&#039;   =&gt; $meta_data-&gt;key, // phpcs:ignore WordPress.DB.SlowDBQuery.slow_db_query_meta_key
+						&#039;meta_value&#039; =&gt; $meta_value, // phpcs:ignore WordPress.DB.SlowDBQuery.slow_db_query_meta_value
+					),
+					array( &#039;%d&#039;, &#039;%s&#039;, &#039;%s&#039; )
+				);
+				wp_cache_delete( $order-&gt;get_id(), &#039;post_meta&#039; );
+				$logger = wc_get_container()-&gt;get( LegacyProxy::class )-&gt;call_function( &#039;wc_get_logger&#039; );
+				$logger-&gt;warning( sprintf( &#039;encountered an order meta value of type __PHP_Incomplete_Class during `update_order_meta_from_object` in order with ID %d: &quot;%s&quot;&#039;, $order-&gt;get_id(), var_export( $meta_value, true ) ) ); // phpcs:ignore WordPress.PHP.DevelopmentFunctions.error_log_var_export
+			} else {
+				add_post_meta( $order-&gt;get_id(), $meta_data-&gt;key, $meta_data-&gt;value, false );
+			}
 		}
 
 		// Find remaining meta that was deleted from the order but still present in the associated post.
@@ -892,7 +953,11 @@ abstract class Abstract_WC_Order_Data_Store_CPT extends WC_Data_Store_WP impleme
 		);
 
 		foreach ( $keys_to_delete as $meta_key ) {
-			delete_post_meta( $order-&gt;get_id(), $meta_key );
+			if ( isset( $existing_meta_data[ $meta_key ] ) ) {
+				foreach ( $existing_meta_data[ $meta_key ] as $meta_value ) {
+					delete_post_meta( $order-&gt;get_id(), $meta_key, maybe_unserialize( $meta_value ) );
+				}
+			}
 		}
 
 		$this-&gt;update_post_meta( $order );
@@ -908,7 +973,7 @@ abstract class Abstract_WC_Order_Data_Store_CPT extends WC_Data_Store_WP impleme
 
     <footer class="phpdocumentor phpdocumentor-footer">
     <div class="phpdocumentor-section">
-        <span>WooCommerce Code Reference API documentation generated by <a href="http://www.phpdoc.org/">phpDocumentor</a> on August 24th, 2023 at 08:49 am.</span>
+        <span>WooCommerce Code Reference API documentation generated by <a href="http://www.phpdoc.org/">phpDocumentor</a> on July 25th, 2024 at 11:33 am.</span>
     </div>
 </footer>
 
@@ -920,7 +985,7 @@ abstract class Abstract_WC_Order_Data_Store_CPT extends WC_Data_Store_WP impleme
             'searchIndex': '..\/js\/searchIndex.json'
         };
     </script>
-    <script src="../js/searchIndex.js?updated=1692866947"></script>
-    <script src="../js/search.js?updated=1692866947"></script>
+    <script src="../js/searchIndex.js?updated=1721907183"></script>
+    <script src="../js/search.js?updated=1721907183"></script>
 </body>
 </html>

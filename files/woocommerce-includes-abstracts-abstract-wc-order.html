@@ -9,9 +9,9 @@
     <link rel="apple-touch-icon" sizes="72x72" href="../images/apple-touch-icon-72x72.png"/>
     <link rel="apple-touch-icon" sizes="114x114" href="../images/apple-touch-icon-114x114.png"/>
     <link rel="stylesheet" href="../css/normalize.css">
-    <link rel="stylesheet" href="../css/base.css?updated=1692866945">
+    <link rel="stylesheet" href="../css/base.css?updated=1721907182">
     <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../css/template.css?updated=1692866945">
+    <link rel="stylesheet" href="../css/template.css?updated=1721907182">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0/css/all.min.css" integrity="sha256-ybRkN9dBjhcS2qrW1z+hfCxq+1aBdwyQM5wlQoQVt/0=" crossorigin="anonymous" />
             <script src="https://cdn.jsdelivr.net/npm/css-vars-ponyfill@2"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0/js/all.min.js" integrity="sha256-0vuk8LXoyrmCjp1f0O300qo1M75ZQyhH9X3J6d+scmk=" crossorigin="anonymous"></script>
@@ -125,6 +125,7 @@
                         <ul class="phpdocumentor-list">
                                     <li><a href="../packages/Automattic-WooCommerce.html"><abbr title="\Automattic\WooCommerce">WooCommerce</abbr></a></li>
                             </ul>
+                                <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/WooCommerceBlocks.html"><abbr title="\WooCommerceBlocks">WooCommerceBlocks</abbr></a></h3>
                         </section>
     
     <section class="phpdocumentor-sidebar__category">
@@ -1522,8 +1523,7 @@ abstract class WC_Abstract_Order extends WC_Abstract_Legacy_Order {
 			} else {
 
 				// If we do not have a coupon ID (was it virtual? has it been deleted?) we must create a temporary coupon using what data we have stored during checkout.
-				$coupon_object = new WC_Coupon();
-				$coupon_object-&gt;set_props( (array) $coupon_item-&gt;get_meta( &#039;coupon_data&#039;, true ) );
+				$coupon_object = $this-&gt;get_temporary_coupon( $coupon_item );
 				$coupon_object-&gt;set_code( $coupon_code );
 				$coupon_object-&gt;set_virtual( true );
 
@@ -1532,7 +1532,7 @@ abstract class WC_Abstract_Order extends WC_Abstract_Legacy_Order {
 
 					// If the order originally had prices including tax, remove the discount + discount tax.
 					if ( $this-&gt;get_prices_include_tax() ) {
-						$coupon_object-&gt;set_amount( $coupon_item-&gt;get_discount() + $coupon_item-&gt;get_discount_tax() );
+						$coupon_object-&gt;set_amount( (float) $coupon_item-&gt;get_discount() + (float) $coupon_item-&gt;get_discount_tax() );
 					} else {
 						$coupon_object-&gt;set_amount( $coupon_item-&gt;get_discount() );
 					}
@@ -1557,6 +1557,35 @@ abstract class WC_Abstract_Order extends WC_Abstract_Legacy_Order {
 
 		// Recalculate totals and taxes.
 		$this-&gt;calculate_totals( true );
+	}
+
+	/**
+	 * Get a coupon object populated from order line item metadata, to be used when reapplying coupons
+	 * if the original coupon no longer exists.
+	 *
+	 * @since 8.7.0
+	 *
+	 * @param WC_Order_Item_Coupon $coupon_item The order item corresponding to the coupon to reapply.
+	 * @returns WC_Coupon Coupon object populated from order line item metadata, or empty if no such metadata exists (should never happen).
+	 */
+	private function get_temporary_coupon( WC_Order_Item_Coupon $coupon_item ): WC_Coupon {
+		$coupon_object = new WC_Coupon();
+
+		// Since WooCommerce 8.7 a succint &#039;coupon_info&#039; line item meta entry is created
+		// whenever a coupon is applied to an order. Previously a more verbose &#039;coupon_data&#039; was created.
+
+		$coupon_info = $coupon_item-&gt;get_meta( &#039;coupon_info&#039;, true );
+		if ( $coupon_info ) {
+			$coupon_object-&gt;set_short_info( $coupon_info );
+			return $coupon_object;
+		}
+
+		$coupon_data = $coupon_item-&gt;get_meta( &#039;coupon_data&#039;, true );
+		if ( $coupon_data ) {
+			$coupon_object-&gt;set_props( (array) $coupon_data );
+		}
+
+		return $coupon_object;
 	}
 
 	/**
@@ -1618,11 +1647,8 @@ abstract class WC_Abstract_Order extends WC_Abstract_Legacy_Order {
 					$coupon_id = wc_get_coupon_id_by_code( $coupon_code );
 					$coupon    = new WC_Coupon( $coupon_id );
 
-					// Avoid storing used_by - it&#039;s not needed and can get large.
-					$coupon_data = $coupon-&gt;get_data();
-					unset( $coupon_data[&#039;used_by&#039;] );
-
-					$coupon_item-&gt;add_meta_data( &#039;coupon_data&#039;, $coupon_data );
+					$coupon_info = $coupon-&gt;get_short_info();
+					$coupon_item-&gt;add_meta_data( &#039;coupon_info&#039;, $coupon_info );
 				} else {
 					$coupon_item = $this-&gt;get_item( $item_id, false );
 				}
@@ -1777,7 +1803,7 @@ abstract class WC_Abstract_Order extends WC_Abstract_Legacy_Order {
 		$shipping_total = 0;
 
 		foreach ( $this-&gt;get_shipping_methods() as $shipping ) {
-			$shipping_total += $shipping-&gt;get_total();
+			$shipping_total += (float) $shipping-&gt;get_total();
 		}
 
 		$this-&gt;set_shipping_total( $shipping_total );
@@ -1940,8 +1966,9 @@ abstract class WC_Abstract_Order extends WC_Abstract_Legacy_Order {
 		return array_reduce(
 			$this-&gt;get_fees(),
 			function( $carry, $item ) {
-				return $carry + $item-&gt;get_total();
-			}
+				return $carry + (float) $item-&gt;get_total();
+			},
+			0.0
 		);
 	}
 
@@ -1972,7 +1999,7 @@ abstract class WC_Abstract_Order extends WC_Abstract_Legacy_Order {
 					$tax_amount = wc_round_tax_total( $tax_amount );
 				}
 
-				$shipping_taxes[ $tax_rate_id ] = isset( $shipping_taxes[ $tax_rate_id ] ) ? $shipping_taxes[ $tax_rate_id ] + $tax_amount : $tax_amount;
+				$shipping_taxes[ $tax_rate_id ] = isset( $shipping_taxes[ $tax_rate_id ] ) ? (float) $shipping_taxes[ $tax_rate_id ] + $tax_amount : $tax_amount;
 			}
 		}
 
@@ -2050,7 +2077,7 @@ abstract class WC_Abstract_Order extends WC_Abstract_Legacy_Order {
 		$cart_total_tax    = 0;
 
 		$cart_subtotal = $this-&gt;get_cart_subtotal_for_order();
-		$cart_total    = $this-&gt;get_cart_total_for_order();
+		$cart_total    = (float) $this-&gt;get_cart_total_for_order();
 
 		// Sum shipping costs.
 		foreach ( $this-&gt;get_shipping_methods() as $shipping ) {
@@ -2061,7 +2088,7 @@ abstract class WC_Abstract_Order extends WC_Abstract_Legacy_Order {
 
 		// Sum fee costs.
 		foreach ( $this-&gt;get_fees() as $item ) {
-			$fee_total = $item-&gt;get_total();
+			$fee_total = (float) $item-&gt;get_total();
 
 			if ( 0 &gt; $fee_total ) {
 				$max_discount = NumberUtil::round( $cart_total + $fees_total + $shipping_total, wc_get_price_decimals() ) * -1;
@@ -2070,7 +2097,7 @@ abstract class WC_Abstract_Order extends WC_Abstract_Legacy_Order {
 					$item-&gt;set_total( $max_discount );
 				}
 			}
-			$fees_total += $item-&gt;get_total();
+			$fees_total += (float) $item-&gt;get_total();
 		}
 
 		// Calculate taxes for items, shipping, discounts. Note; this also triggers save().
@@ -2093,7 +2120,7 @@ abstract class WC_Abstract_Order extends WC_Abstract_Legacy_Order {
 
 		$this-&gt;set_discount_total( NumberUtil::round( $cart_subtotal - $cart_total, wc_get_price_decimals() ) );
 		$this-&gt;set_discount_tax( wc_round_tax_total( $cart_subtotal_tax - $cart_total_tax ) );
-		$this-&gt;set_total( NumberUtil::round( $cart_total + $fees_total + $this-&gt;get_shipping_total() + $this-&gt;get_cart_tax() + $this-&gt;get_shipping_tax(), wc_get_price_decimals() ) );
+		$this-&gt;set_total( NumberUtil::round( $cart_total + $fees_total + (float) $this-&gt;get_shipping_total() + (float) $this-&gt;get_cart_tax() + (float) $this-&gt;get_shipping_tax(), wc_get_price_decimals() ) );
 
 		do_action( &#039;woocommerce_order_after_calculate_totals&#039;, $and_taxes, $this );
 
@@ -2115,9 +2142,9 @@ abstract class WC_Abstract_Order extends WC_Abstract_Legacy_Order {
 
 		if ( is_callable( array( $item, &#039;get_subtotal&#039; ) ) &amp;&amp; $item-&gt;get_quantity() ) {
 			if ( $inc_tax ) {
-				$subtotal = ( $item-&gt;get_subtotal() + $item-&gt;get_subtotal_tax() ) / $item-&gt;get_quantity();
+				$subtotal = ( (float) $item-&gt;get_subtotal() + (float) $item-&gt;get_subtotal_tax() ) / $item-&gt;get_quantity();
 			} else {
-				$subtotal = floatval( $item-&gt;get_subtotal() ) / $item-&gt;get_quantity();
+				$subtotal = ( (float) $item-&gt;get_subtotal() ) / $item-&gt;get_quantity();
 			}
 
 			$subtotal = $round ? NumberUtil::round( $subtotal, wc_get_price_decimals() ) : $subtotal;
@@ -2139,9 +2166,9 @@ abstract class WC_Abstract_Order extends WC_Abstract_Legacy_Order {
 
 		if ( is_callable( array( $item, &#039;get_subtotal&#039; ) ) ) {
 			if ( $inc_tax ) {
-				$subtotal = $item-&gt;get_subtotal() + $item-&gt;get_subtotal_tax();
+				$subtotal = (float) $item-&gt;get_subtotal() + (float) $item-&gt;get_subtotal_tax();
 			} else {
-				$subtotal = $item-&gt;get_subtotal();
+				$subtotal = (float) $item-&gt;get_subtotal();
 			}
 
 			$subtotal = $round ? NumberUtil::round( $subtotal, wc_get_price_decimals() ) : $subtotal;
@@ -2163,9 +2190,9 @@ abstract class WC_Abstract_Order extends WC_Abstract_Legacy_Order {
 
 		if ( is_callable( array( $item, &#039;get_total&#039; ) ) &amp;&amp; $item-&gt;get_quantity() ) {
 			if ( $inc_tax ) {
-				$total = ( $item-&gt;get_total() + $item-&gt;get_total_tax() ) / $item-&gt;get_quantity();
+				$total = ( (float) $item-&gt;get_total() + (float) $item-&gt;get_total_tax() ) / $item-&gt;get_quantity();
 			} else {
-				$total = floatval( $item-&gt;get_total() ) / $item-&gt;get_quantity();
+				$total = ( (float) $item-&gt;get_total() ) / $item-&gt;get_quantity();
 			}
 
 			$total = $round ? NumberUtil::round( $total, wc_get_price_decimals() ) : $total;
@@ -2187,7 +2214,7 @@ abstract class WC_Abstract_Order extends WC_Abstract_Legacy_Order {
 
 		if ( is_callable( array( $item, &#039;get_total&#039; ) ) ) {
 			// Check if we need to add line tax to the line total.
-			$total = $inc_tax ? $item-&gt;get_total() + $item-&gt;get_total_tax() : $item-&gt;get_total();
+			$total = $inc_tax ? (float) $item-&gt;get_total() + (float) $item-&gt;get_total_tax() : (float) $item-&gt;get_total();
 
 			// Check if we need to round.
 			$total = $round ? NumberUtil::round( $total, wc_get_price_decimals() ) : $total;
@@ -2270,14 +2297,14 @@ abstract class WC_Abstract_Order extends WC_Abstract_Legacy_Order {
 	 */
 	public function get_subtotal_to_display( $compound = false, $tax_display = &#039;&#039; ) {
 		$tax_display = $tax_display ? $tax_display : get_option( &#039;woocommerce_tax_display_cart&#039; );
-		$subtotal    = $this-&gt;get_cart_subtotal_for_order();
+		$subtotal    = (float) $this-&gt;get_cart_subtotal_for_order();
 
 		if ( ! $compound ) {
 
 			if ( &#039;incl&#039; === $tax_display ) {
 				$subtotal_taxes = 0;
 				foreach ( $this-&gt;get_items() as $item ) {
-					$subtotal_taxes += self::round_line_tax( $item-&gt;get_subtotal_tax(), false );
+					$subtotal_taxes += self::round_line_tax( (float) $item-&gt;get_subtotal_tax(), false );
 				}
 				$subtotal += wc_round_tax_total( $subtotal_taxes );
 			}
@@ -2293,18 +2320,18 @@ abstract class WC_Abstract_Order extends WC_Abstract_Legacy_Order {
 			}
 
 			// Add Shipping Costs.
-			$subtotal += $this-&gt;get_shipping_total();
+			$subtotal += (float) $this-&gt;get_shipping_total();
 
 			// Remove non-compound taxes.
 			foreach ( $this-&gt;get_taxes() as $tax ) {
 				if ( $tax-&gt;is_compound() ) {
 					continue;
 				}
-				$subtotal = $subtotal + $tax-&gt;get_tax_total() + $tax-&gt;get_shipping_tax_total();
+				$subtotal = $subtotal + (float) $tax-&gt;get_tax_total() + (float) $tax-&gt;get_shipping_tax_total();
 			}
 
 			// Remove discounts.
-			$subtotal = $subtotal - $this-&gt;get_total_discount();
+			$subtotal = $subtotal - (float) $this-&gt;get_total_discount();
 			$subtotal = wc_price( $subtotal, array( &#039;currency&#039; =&gt; $this-&gt;get_currency() ) );
 		}
 
@@ -2433,7 +2460,7 @@ abstract class WC_Abstract_Order extends WC_Abstract_Legacy_Order {
 				}
 				$total_rows[ &#039;fee_&#039; . $fee-&gt;get_id() ] = array(
 					&#039;label&#039; =&gt; $fee-&gt;get_name() . &#039;:&#039;,
-					&#039;value&#039; =&gt; wc_price( &#039;excl&#039; === $tax_display ? $fee-&gt;get_total() : $fee-&gt;get_total() + $fee-&gt;get_total_tax(), array( &#039;currency&#039; =&gt; $this-&gt;get_currency() ) ),
+					&#039;value&#039; =&gt; wc_price( &#039;excl&#039; === $tax_display ? (float) $fee-&gt;get_total() : (float) $fee-&gt;get_total() + (float) $fee-&gt;get_total_tax(), array( &#039;currency&#039; =&gt; $this-&gt;get_currency() ) ),
 				);
 			}
 		}
@@ -2569,7 +2596,7 @@ abstract class WC_Abstract_Order extends WC_Abstract_Legacy_Order {
 
     <footer class="phpdocumentor phpdocumentor-footer">
     <div class="phpdocumentor-section">
-        <span>WooCommerce Code Reference API documentation generated by <a href="http://www.phpdoc.org/">phpDocumentor</a> on August 24th, 2023 at 08:49 am.</span>
+        <span>WooCommerce Code Reference API documentation generated by <a href="http://www.phpdoc.org/">phpDocumentor</a> on July 25th, 2024 at 11:33 am.</span>
     </div>
 </footer>
 
@@ -2581,7 +2608,7 @@ abstract class WC_Abstract_Order extends WC_Abstract_Legacy_Order {
             'searchIndex': '..\/js\/searchIndex.json'
         };
     </script>
-    <script src="../js/searchIndex.js?updated=1692866945"></script>
-    <script src="../js/search.js?updated=1692866945"></script>
+    <script src="../js/searchIndex.js?updated=1721907182"></script>
+    <script src="../js/search.js?updated=1721907182"></script>
 </body>
 </html>

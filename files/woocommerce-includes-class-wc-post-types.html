@@ -9,9 +9,9 @@
     <link rel="apple-touch-icon" sizes="72x72" href="../images/apple-touch-icon-72x72.png"/>
     <link rel="apple-touch-icon" sizes="114x114" href="../images/apple-touch-icon-114x114.png"/>
     <link rel="stylesheet" href="../css/normalize.css">
-    <link rel="stylesheet" href="../css/base.css?updated=1692866947">
+    <link rel="stylesheet" href="../css/base.css?updated=1721907182">
     <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../css/template.css?updated=1692866947">
+    <link rel="stylesheet" href="../css/template.css?updated=1721907182">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0/css/all.min.css" integrity="sha256-ybRkN9dBjhcS2qrW1z+hfCxq+1aBdwyQM5wlQoQVt/0=" crossorigin="anonymous" />
             <script src="https://cdn.jsdelivr.net/npm/css-vars-ponyfill@2"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0/js/all.min.js" integrity="sha256-0vuk8LXoyrmCjp1f0O300qo1M75ZQyhH9X3J6d+scmk=" crossorigin="anonymous"></script>
@@ -125,6 +125,7 @@
                         <ul class="phpdocumentor-list">
                                     <li><a href="../packages/Automattic-WooCommerce.html"><abbr title="\Automattic\WooCommerce">WooCommerce</abbr></a></li>
                             </ul>
+                                <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/WooCommerceBlocks.html"><abbr title="\WooCommerceBlocks">WooCommerceBlocks</abbr></a></h3>
                         </section>
     
     <section class="phpdocumentor-sidebar__category">
@@ -168,6 +169,7 @@
 defined( &#039;ABSPATH&#039; ) || exit;
 
 use Automattic\WooCommerce\Internal\DataStores\Orders\CustomOrdersTableController;
+use Automattic\WooCommerce\Admin\Features\Features;
 
 /**
  * Post types Class.
@@ -265,6 +267,7 @@ class WC_Post_Types {
 						&#039;not_found&#039;             =&gt; __( &#039;No categories found&#039;, &#039;woocommerce&#039; ),
 						&#039;item_link&#039;             =&gt; __( &#039;Product Category Link&#039;, &#039;woocommerce&#039; ),
 						&#039;item_link_description&#039; =&gt; __( &#039;A link to a product category.&#039;, &#039;woocommerce&#039; ),
+						&#039;template_name&#039;         =&gt; _x( &#039;Products by Category&#039;, &#039;Template name&#039;, &#039;woocommerce&#039; ),
 					),
 					&#039;show_in_rest&#039;          =&gt; true,
 					&#039;show_ui&#039;               =&gt; true,
@@ -310,6 +313,7 @@ class WC_Post_Types {
 						&#039;not_found&#039;                  =&gt; __( &#039;No tags found&#039;, &#039;woocommerce&#039; ),
 						&#039;item_link&#039;                  =&gt; __( &#039;Product Tag Link&#039;, &#039;woocommerce&#039; ),
 						&#039;item_link_description&#039;      =&gt; __( &#039;A link to a product tag.&#039;, &#039;woocommerce&#039; ),
+						&#039;template_name&#039;              =&gt; _x( &#039;Products by Tag&#039;, &#039;Template name&#039;, &#039;woocommerce&#039; ),
 					),
 					&#039;show_in_rest&#039;          =&gt; true,
 					&#039;show_ui&#039;               =&gt; true,
@@ -526,6 +530,73 @@ class WC_Post_Types {
 			)
 		);
 
+		// Register the product form post type wne the feature is enabled.
+		if ( Features::is_enabled( &#039;product-editor-template-system&#039; ) ) {
+			register_post_type(
+				&#039;product_form&#039;,
+				/**
+				 * Allow developers to customize the product form post type registration arguments.
+				 *
+				 * @since 9.1.0
+				 * @param array $args The default post type registration arguments.
+				 */
+				apply_filters(
+					&#039;woocommerce_register_post_type_product_form&#039;,
+					array(
+						&#039;labels&#039;
+						=&gt; array(
+							&#039;name&#039;                  =&gt; __( &#039;Product Forms&#039;, &#039;woocommerce&#039; ),
+							&#039;singular_name&#039;         =&gt; __( &#039;Product Form&#039;, &#039;woocommerce&#039; ),
+							&#039;all_items&#039;             =&gt; __( &#039;All Product Form&#039;, &#039;woocommerce&#039; ),
+							&#039;menu_name&#039;             =&gt; _x( &#039;Product Forms&#039;, &#039;Admin menu name&#039;, &#039;woocommerce&#039; ),
+							&#039;add_new&#039;               =&gt; __( &#039;Add New&#039;, &#039;woocommerce&#039; ),
+							&#039;add_new_item&#039;          =&gt; __( &#039;Add new product form&#039;, &#039;woocommerce&#039; ),
+							&#039;edit&#039;                  =&gt; __( &#039;Edit&#039;, &#039;woocommerce&#039; ),
+							&#039;edit_item&#039;             =&gt; __( &#039;Edit product form&#039;, &#039;woocommerce&#039; ),
+							&#039;new_item&#039;              =&gt; __( &#039;New product form&#039;, &#039;woocommerce&#039; ),
+							&#039;view_item&#039;             =&gt; __( &#039;View product form&#039;, &#039;woocommerce&#039; ),
+							&#039;view_items&#039;            =&gt; __( &#039;View product forms&#039;, &#039;woocommerce&#039; ),
+							&#039;search_items&#039;          =&gt; __( &#039;Search product forms&#039;, &#039;woocommerce&#039; ),
+							&#039;not_found&#039;             =&gt; __( &#039;No product forms found&#039;, &#039;woocommerce&#039; ),
+							&#039;not_found_in_trash&#039;    =&gt; __( &#039;No product forms found in trash&#039;, &#039;woocommerce&#039; ),
+							&#039;parent&#039;                =&gt; __( &#039;Parent product form&#039;, &#039;woocommerce&#039; ),
+							&#039;featured_image&#039;        =&gt; __( &#039;Product form image&#039;, &#039;woocommerce&#039; ),
+							&#039;set_featured_image&#039;    =&gt; __( &#039;Set product form image&#039;, &#039;woocommerce&#039; ),
+							&#039;remove_featured_image&#039; =&gt; __( &#039;Remove product form image&#039;, &#039;woocommerce&#039; ),
+							&#039;use_featured_image&#039;    =&gt; __( &#039;Use as product form image&#039;, &#039;woocommerce&#039; ),
+							&#039;insert_into_item&#039;      =&gt; __( &#039;Insert into product form&#039;, &#039;woocommerce&#039; ),
+							&#039;uploaded_to_this_item&#039; =&gt; __( &#039;Uploaded to this product form&#039;, &#039;woocommerce&#039; ),
+							&#039;filter_items_list&#039;     =&gt; __( &#039;Filter product forms&#039;, &#039;woocommerce&#039; ),
+							&#039;items_list_navigation&#039; =&gt; __( &#039;Product forms navigation&#039;, &#039;woocommerce&#039; ),
+							&#039;items_list&#039;            =&gt; __( &#039;Product forms list&#039;, &#039;woocommerce&#039; ),
+							&#039;item_link&#039;             =&gt; __( &#039;Product form Link&#039;, &#039;woocommerce&#039; ),
+							&#039;item_link_description&#039; =&gt; __( &#039;A link to a product form.&#039;, &#039;woocommerce&#039; ),
+						),
+						&#039;description&#039;         =&gt; __( &#039;This is where you can set up product forms for various product types in your dashboard.&#039;, &#039;woocommerce&#039; ),
+						&#039;public&#039;              =&gt; true,
+						&#039;menu_icon&#039;           =&gt; &#039;dashicons-forms&#039;,
+						&#039;capability_type&#039;     =&gt; &#039;product&#039;,
+						&#039;map_meta_cap&#039;        =&gt; true,
+						&#039;publicly_queryable&#039;  =&gt; true,
+						&#039;hierarchical&#039;        =&gt; false, // Hierarchical causes memory issues - WP loads all records!
+						&#039;rewrite&#039;             =&gt; $permalinks[&#039;product_rewrite_slug&#039;] ? array(
+							&#039;slug&#039;       =&gt; $permalinks[&#039;product_rewrite_slug&#039;],
+							&#039;with_front&#039; =&gt; false,
+							&#039;feeds&#039;      =&gt; true,
+						) : false,
+						&#039;query_var&#039;           =&gt; true,
+						&#039;supports&#039;            =&gt; $supports,
+						&#039;has_archive&#039;         =&gt; $has_archive,
+						&#039;show_in_rest&#039;        =&gt; true,
+						&#039;show_ui&#039;             =&gt; true,
+						&#039;show_in_menu&#039;        =&gt; true,
+						&#039;exclude_from_search&#039; =&gt; true,
+						&#039;show_in_nav_menus&#039;   =&gt; false,
+					)
+				)
+			);
+		}
+
 		register_post_type(
 			&#039;product_variation&#039;,
 			apply_filters(
@@ -592,7 +663,6 @@ class WC_Post_Types {
 					&#039;public&#039;                           =&gt; false,
 					&#039;hierarchical&#039;                     =&gt; false,
 					&#039;supports&#039;                         =&gt; false,
-					&#039;exclude_from_orders_screen&#039;       =&gt; false,
 					&#039;add_order_meta_boxes&#039;             =&gt; false,
 					&#039;exclude_from_order_count&#039;         =&gt; true,
 					&#039;exclude_from_order_views&#039;         =&gt; false,
@@ -852,7 +922,7 @@ WC_Post_types::init();
 
     <footer class="phpdocumentor phpdocumentor-footer">
     <div class="phpdocumentor-section">
-        <span>WooCommerce Code Reference API documentation generated by <a href="http://www.phpdoc.org/">phpDocumentor</a> on August 24th, 2023 at 08:49 am.</span>
+        <span>WooCommerce Code Reference API documentation generated by <a href="http://www.phpdoc.org/">phpDocumentor</a> on July 25th, 2024 at 11:33 am.</span>
     </div>
 </footer>
 
@@ -864,7 +934,7 @@ WC_Post_types::init();
             'searchIndex': '..\/js\/searchIndex.json'
         };
     </script>
-    <script src="../js/searchIndex.js?updated=1692866947"></script>
-    <script src="../js/search.js?updated=1692866947"></script>
+    <script src="../js/searchIndex.js?updated=1721907182"></script>
+    <script src="../js/search.js?updated=1721907182"></script>
 </body>
 </html>

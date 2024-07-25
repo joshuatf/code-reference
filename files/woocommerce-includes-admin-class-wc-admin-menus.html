@@ -9,9 +9,9 @@
     <link rel="apple-touch-icon" sizes="72x72" href="../images/apple-touch-icon-72x72.png"/>
     <link rel="apple-touch-icon" sizes="114x114" href="../images/apple-touch-icon-114x114.png"/>
     <link rel="stylesheet" href="../css/normalize.css">
-    <link rel="stylesheet" href="../css/base.css?updated=1692866946">
+    <link rel="stylesheet" href="../css/base.css?updated=1721907182">
     <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../css/template.css?updated=1692866946">
+    <link rel="stylesheet" href="../css/template.css?updated=1721907182">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0/css/all.min.css" integrity="sha256-ybRkN9dBjhcS2qrW1z+hfCxq+1aBdwyQM5wlQoQVt/0=" crossorigin="anonymous" />
             <script src="https://cdn.jsdelivr.net/npm/css-vars-ponyfill@2"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0/js/all.min.js" integrity="sha256-0vuk8LXoyrmCjp1f0O300qo1M75ZQyhH9X3J6d+scmk=" crossorigin="anonymous"></script>
@@ -125,6 +125,7 @@
                         <ul class="phpdocumentor-list">
                                     <li><a href="../packages/Automattic-WooCommerce.html"><abbr title="\Automattic\WooCommerce">WooCommerce</abbr></a></li>
                             </ul>
+                                <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/WooCommerceBlocks.html"><abbr title="\WooCommerceBlocks">WooCommerceBlocks</abbr></a></h3>
                         </section>
     
     <section class="phpdocumentor-sidebar__category">
@@ -163,10 +164,16 @@
  * @version 2.5.0
  */
 
+use Automattic\WooCommerce\Admin\Features\Features;
+use Automattic\WooCommerce\Admin\PageController;
+use Automattic\WooCommerce\Internal\Admin\Marketplace;
 use Automattic\WooCommerce\Internal\Admin\Orders\COTRedirectionController;
 use Automattic\WooCommerce\Internal\Admin\Orders\PageController as Custom_Orders_PageController;
+use Automattic\WooCommerce\Internal\Admin\Logging\PageController as LoggingPageController;
+use Automattic\WooCommerce\Internal\Admin\Logging\FileV2\{ FileListTable, SearchListTable };
+use Automattic\WooCommerce\Internal\Admin\WCAdminAssets;
 use Automattic\WooCommerce\Internal\DataStores\Orders\CustomOrdersTableController;
-use Automattic\WooCommerce\Admin\Features\Features;
+use Automattic\WooCommerce\Utilities\FeaturesUtil;
 
 defined( &#039;ABSPATH&#039; ) || exit;
 
@@ -178,6 +185,13 @@ if ( class_exists( &#039;WC_Admin_Menus&#039;, false ) ) {
  * WC_Admin_Menus Class.
  */
 class WC_Admin_Menus {
+
+	/**
+	 * The CSS classes used to hide the submenu items in navigation.
+	 *
+	 * @var string
+	 */
+	const HIDE_CSS_CLASS = &#039;hide-if-js&#039;;
 
 	/**
 	 * Hook in tabs.
@@ -193,8 +207,23 @@ class WC_Admin_Menus {
 		add_action( &#039;admin_menu&#039;, array( $this, &#039;settings_menu&#039; ), 50 );
 		add_action( &#039;admin_menu&#039;, array( $this, &#039;status_menu&#039; ), 60 );
 
+		/**
+		 * Controls whether we add a submenu item for the WooCommerce Addons page.
+		 * Woo Express uses this filter.
+		 *
+		 * @since 8.2.1
+		 *
+		 * @param bool $show_addons_page If the addons page should be included.
+		 */
 		if ( apply_filters( &#039;woocommerce_show_addons_page&#039;, true ) ) {
-			add_action( &#039;admin_menu&#039;, array( $this, &#039;addons_menu&#039; ), 70 );
+			if ( FeaturesUtil::feature_is_enabled( &#039;marketplace&#039; ) ) {
+				$container = wc_get_container();
+				$container-&gt;get( Marketplace::class );
+
+				add_action( &#039;admin_menu&#039;, array( $this, &#039;addons_my_subscriptions&#039; ), 70 );
+			} else {
+				add_action( &#039;admin_menu&#039;, array( $this, &#039;addons_menu&#039; ), 70 );
+			}
 		}
 
 		add_filter( &#039;menu_order&#039;, array( $this, &#039;menu_order&#039; ) );
@@ -315,7 +344,18 @@ class WC_Admin_Menus {
 	 * Add menu item.
 	 */
 	public function status_menu() {
-		add_submenu_page( &#039;woocommerce&#039;, __( &#039;WooCommerce status&#039;, &#039;woocommerce&#039; ), __( &#039;Status&#039;, &#039;woocommerce&#039; ), &#039;manage_woocommerce&#039;, &#039;wc-status&#039;, array( $this, &#039;status_page&#039; ) );
+		$status_page = add_submenu_page( &#039;woocommerce&#039;, __( &#039;WooCommerce status&#039;, &#039;woocommerce&#039; ), __( &#039;Status&#039;, &#039;woocommerce&#039; ), &#039;manage_woocommerce&#039;, &#039;wc-status&#039;, array( $this, &#039;status_page&#039; ) );
+
+		add_action(
+			&#039;load-&#039; . $status_page,
+			function () {
+				if ( &#039;logs&#039; === filter_input( INPUT_GET, &#039;tab&#039; ) ) {
+					// Initialize the logging page controller early so that it can hook into things.
+					wc_get_container()-&gt;get( LoggingPageController::class );
+				}
+			},
+			1
+		);
 	}
 
 	/**
@@ -326,6 +366,18 @@ class WC_Admin_Menus {
 		/* translators: %s: extensions count */
 		$menu_title = sprintf( __( &#039;Extensions %s&#039;, &#039;woocommerce&#039; ), $count_html );
 		add_submenu_page( &#039;woocommerce&#039;, __( &#039;WooCommerce extensions&#039;, &#039;woocommerce&#039; ), $menu_title, &#039;manage_woocommerce&#039;, &#039;wc-addons&#039;, array( $this, &#039;addons_page&#039; ) );
+	}
+
+	/**
+	 * Registers the wc-addons page within the WooCommerce menu.
+	 * Temporary measure till we convert the whole page to React.
+	 *
+	 * @return void
+	 */
+	public function addons_my_subscriptions() {
+		add_submenu_page( &#039;woocommerce&#039;, __( &#039;WooCommerce extensions&#039;, &#039;woocommerce&#039; ), null, &#039;manage_woocommerce&#039;, &#039;wc-addons&#039;, array( $this, &#039;addons_page&#039; ) );
+		// Temporarily hide the submenu item we&#039;ve just added.
+		$this-&gt;hide_submenu_page( &#039;woocommerce&#039;, &#039;wc-addons&#039; );
 	}
 
 	/**
@@ -427,7 +479,15 @@ class WC_Admin_Menus {
 	 * @param int      $value  The number of rows to use.
 	 */
 	public function set_screen_option( $status, $option, $value ) {
-		if ( in_array( $option, array( &#039;woocommerce_keys_per_page&#039;, &#039;woocommerce_webhooks_per_page&#039; ), true ) ) {
+		$screen_options = array(
+			&#039;woocommerce_keys_per_page&#039;,
+			&#039;woocommerce_webhooks_per_page&#039;,
+			FileListTable::PER_PAGE_USER_OPTION_KEY,
+			SearchListTable::PER_PAGE_USER_OPTION_KEY,
+			WC_Admin_Log_Table_List::PER_PAGE_USER_OPTION_KEY,
+		);
+
+		if ( in_array( $option, $screen_options, true ) ) {
 			return $value;
 		}
 
@@ -466,7 +526,7 @@ class WC_Admin_Menus {
 	 * Init the addons page.
 	 */
 	public function addons_page() {
-		WC_Admin_Addons::output();
+		WC_Admin_Addons::handle_legacy_marketplace_redirects();
 	}
 
 	/**
@@ -526,7 +586,7 @@ class WC_Admin_Menus {
 							&lt;input type=&quot;hidden&quot; class=&quot;menu-item-classes&quot; name=&quot;menu-item[&lt;?php echo esc_attr( $i ); ?&gt;][menu-item-classes]&quot; /&gt;
 						&lt;/li&gt;
 						&lt;?php
-						$i--;
+						--$i;
 					endforeach;
 					?&gt;
 				&lt;/ul&gt;
@@ -583,7 +643,7 @@ class WC_Admin_Menus {
 	 * Maybe add new management product experience.
 	 */
 	public function maybe_add_new_product_management_experience() {
-		if ( Features::is_enabled( &#039;new-product-management-experience&#039; ) || \Automattic\WooCommerce\Utilities\FeaturesUtil::feature_is_enabled( &#039;product_block_editor&#039; ) ) {
+		if ( FeaturesUtil::feature_is_enabled( &#039;product_block_editor&#039; ) ) {
 			global $submenu;
 			if ( isset( $submenu[&#039;edit.php?post_type=product&#039;][10] ) ) {
 				// Disable phpcs since we need to override submenu classes.
@@ -593,6 +653,58 @@ class WC_Admin_Menus {
 				// phps:enableWordPress.Variables.GlobalVariables.OverrideProhibited
 			}
 		}
+	}
+
+	/**
+	 * Hide the submenu page based on slug and return the item that was hidden.
+	 *
+	 * Borrowed from Jetpack&#039;s Base_Admin_Menu class.
+	 *
+	 * Instead of actually removing the submenu item, a safer approach is to hide it and filter it in the API response.
+	 * In this manner we&#039;ll avoid breaking third-party plugins depending on items that no longer exist.
+	 *
+	 * A false|array value is returned to be consistent with remove_submenu_page() function
+	 *
+	 * @param string $menu_slug The parent menu slug.
+	 * @param string $submenu_slug The submenu slug that should be hidden.
+	 * @return false|array
+	 */
+	public function hide_submenu_page( $menu_slug, $submenu_slug ) {
+		global $submenu;
+
+		if ( ! isset( $submenu[ $menu_slug ] ) ) {
+			return false;
+		}
+
+		foreach ( $submenu[ $menu_slug ] as $i =&gt; $item ) {
+			if ( $submenu_slug !== $item[2] ) {
+				continue;
+			}
+
+			$this-&gt;hide_submenu_element( $i, $menu_slug, $item );
+
+			return $item;
+		}
+
+		return false;
+	}
+
+	/**
+	 * Apply the hide-if-js CSS class to a submenu item.
+	 *
+	 * Borrowed from Jetpack&#039;s Base_Admin_Menu class.
+	 *
+	 * @param int    $index The position of a submenu item in the submenu array.
+	 * @param string $parent_slug The parent slug.
+	 * @param array  $item The submenu item.
+	 */
+	public function hide_submenu_element( $index, $parent_slug, $item ) {
+		global $submenu;
+
+		$css_classes = empty( $item[4] ) ? self::HIDE_CSS_CLASS : $item[4] . &#039; &#039; . self::HIDE_CSS_CLASS;
+
+		// phpcs:ignore WordPress.WP.GlobalVariablesOverride.Prohibited
+		$submenu [ $parent_slug ][ $index ][4] = $css_classes;
 	}
 }
 
@@ -607,7 +719,7 @@ return new WC_Admin_Menus();
 
     <footer class="phpdocumentor phpdocumentor-footer">
     <div class="phpdocumentor-section">
-        <span>WooCommerce Code Reference API documentation generated by <a href="http://www.phpdoc.org/">phpDocumentor</a> on August 24th, 2023 at 08:49 am.</span>
+        <span>WooCommerce Code Reference API documentation generated by <a href="http://www.phpdoc.org/">phpDocumentor</a> on July 25th, 2024 at 11:33 am.</span>
     </div>
 </footer>
 
@@ -619,7 +731,7 @@ return new WC_Admin_Menus();
             'searchIndex': '..\/js\/searchIndex.json'
         };
     </script>
-    <script src="../js/searchIndex.js?updated=1692866946"></script>
-    <script src="../js/search.js?updated=1692866946"></script>
+    <script src="../js/searchIndex.js?updated=1721907182"></script>
+    <script src="../js/search.js?updated=1721907182"></script>
 </body>
 </html>

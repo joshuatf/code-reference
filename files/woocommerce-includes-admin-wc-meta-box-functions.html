@@ -9,9 +9,9 @@
     <link rel="apple-touch-icon" sizes="72x72" href="../images/apple-touch-icon-72x72.png"/>
     <link rel="apple-touch-icon" sizes="114x114" href="../images/apple-touch-icon-114x114.png"/>
     <link rel="stylesheet" href="../css/normalize.css">
-    <link rel="stylesheet" href="../css/base.css?updated=1692866946">
+    <link rel="stylesheet" href="../css/base.css?updated=1721907182">
     <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../css/template.css?updated=1692866946">
+    <link rel="stylesheet" href="../css/template.css?updated=1721907182">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0/css/all.min.css" integrity="sha256-ybRkN9dBjhcS2qrW1z+hfCxq+1aBdwyQM5wlQoQVt/0=" crossorigin="anonymous" />
             <script src="https://cdn.jsdelivr.net/npm/css-vars-ponyfill@2"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0/js/all.min.js" integrity="sha256-0vuk8LXoyrmCjp1f0O300qo1M75ZQyhH9X3J6d+scmk=" crossorigin="anonymous"></script>
@@ -125,6 +125,7 @@
                         <ul class="phpdocumentor-list">
                                     <li><a href="../packages/Automattic-WooCommerce.html"><abbr title="\Automattic\WooCommerce">WooCommerce</abbr></a></li>
                             </ul>
+                                <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/WooCommerceBlocks.html"><abbr title="\WooCommerceBlocks">WooCommerceBlocks</abbr></a></h3>
                         </section>
     
     <section class="phpdocumentor-sidebar__category">
@@ -341,9 +342,9 @@
         <a href="#function_woocommerce_wp_select" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/admin/wc-meta-box-functions.php"><a href="../files/woocommerce-includes-admin-wc-meta-box-functions.html#source-view.193">includes/admin/wc-meta-box-functions.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/admin/wc-meta-box-functions.php"><a href="../files/woocommerce-includes-admin-wc-meta-box-functions.html#source-view.220">includes/admin/wc-meta-box-functions.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">193</span>
+    <span class="phpdocumentor-element-found-in__line">220</span>
 </aside>
 
         <p class="phpdocumentor-summary">Output a select input box.</p>
@@ -386,9 +387,9 @@
         <a href="#function_woocommerce_wp_radio" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/admin/wc-meta-box-functions.php"><a href="../files/woocommerce-includes-admin-wc-meta-box-functions.html#source-view.250">includes/admin/wc-meta-box-functions.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/admin/wc-meta-box-functions.php"><a href="../files/woocommerce-includes-admin-wc-meta-box-functions.html#source-view.278">includes/admin/wc-meta-box-functions.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">250</span>
+    <span class="phpdocumentor-element-found-in__line">278</span>
 </aside>
 
         <p class="phpdocumentor-summary">Output a radio input box.</p>
@@ -431,9 +432,9 @@
         <a href="#function_woocommerce_wp_note" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/admin/wc-meta-box-functions.php"><a href="../files/woocommerce-includes-admin-wc-meta-box-functions.html#source-view.294">includes/admin/wc-meta-box-functions.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/admin/wc-meta-box-functions.php"><a href="../files/woocommerce-includes-admin-wc-meta-box-functions.html#source-view.322">includes/admin/wc-meta-box-functions.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">294</span>
+    <span class="phpdocumentor-element-found-in__line">322</span>
 </aside>
 
         <p class="phpdocumentor-summary">Output a note.</p>
@@ -627,7 +628,14 @@ function woocommerce_wp_checkbox( $field, WC_Data $data = null ) {
 	$field[&#039;name&#039;]          = isset( $field[&#039;name&#039;] ) ? $field[&#039;name&#039;] : $field[&#039;id&#039;];
 	$field[&#039;desc_tip&#039;]      = isset( $field[&#039;desc_tip&#039;] ) ? $field[&#039;desc_tip&#039;] : false;
 
-	// Custom attribute handling
+	/**
+	 * These values are what get passed vis $_POST depending on if the field is checked or not. If no unchecked_value is
+	 * provided, the $_POST will not be set. This maintains backwards compatibility where consumers would use `isset`.
+	 */
+	$field[&#039;checked_value&#039;]   = isset( $field[&#039;checked_value&#039;] ) ? $field[&#039;checked_value&#039;] : $field[&#039;cbvalue&#039;];
+	$field[&#039;unchecked_value&#039;] = isset( $field[&#039;unchecked_value&#039;] ) ? $field[&#039;unchecked_value&#039;] : null;
+
+	// Custom attribute handling.
 	$custom_attributes = array();
 
 	if ( ! empty( $field[&#039;custom_attributes&#039;] ) &amp;&amp; is_array( $field[&#039;custom_attributes&#039;] ) ) {
@@ -637,6 +645,14 @@ function woocommerce_wp_checkbox( $field, WC_Data $data = null ) {
 		}
 	}
 
+	if ( ! empty( $field[&#039;style&#039;] ) ) {
+		$custom_attributes[] = &#039;style=&quot;&#039; . esc_attr( $field[&#039;style&#039;] ) . &#039;&quot;&#039;;
+	}
+
+	if ( ! empty( $field[&#039;class&#039;] ) ) {
+		$custom_attributes[] = &#039;class=&quot;&#039; . esc_attr( $field[&#039;class&#039;] ) . &#039;&quot;&#039;;
+	}
+
 	echo &#039;&lt;p class=&quot;form-field &#039; . esc_attr( $field[&#039;id&#039;] ) . &#039;_field &#039; . esc_attr( $field[&#039;wrapper_class&#039;] ) . &#039;&quot;&gt;
 		&lt;label for=&quot;&#039; . esc_attr( $field[&#039;id&#039;] ) . &#039;&quot;&gt;&#039; . wp_kses_post( $field[&#039;label&#039;] ) . &#039;&lt;/label&gt;&#039;;
 
@@ -644,7 +660,19 @@ function woocommerce_wp_checkbox( $field, WC_Data $data = null ) {
 		echo wc_help_tip( $field[&#039;description&#039;] );
 	}
 
-	echo &#039;&lt;input type=&quot;checkbox&quot; class=&quot;&#039; . esc_attr( $field[&#039;class&#039;] ) . &#039;&quot; style=&quot;&#039; . esc_attr( $field[&#039;style&#039;] ) . &#039;&quot; name=&quot;&#039; . esc_attr( $field[&#039;name&#039;] ) . &#039;&quot; id=&quot;&#039; . esc_attr( $field[&#039;id&#039;] ) . &#039;&quot; value=&quot;&#039; . esc_attr( $field[&#039;cbvalue&#039;] ) . &#039;&quot; &#039; . checked( $field[&#039;value&#039;], $field[&#039;cbvalue&#039;], false ) . &#039;  &#039; . implode( &#039; &#039;, $custom_attributes ) . &#039;/&gt; &#039;;
+	// Output a hidden field so a value is POSTed if the box is not checked.
+	if ( ! is_null( $field[&#039;unchecked_value&#039;] ) ) {
+		printf( &#039;&lt;input type=&quot;hidden&quot; name=&quot;%1$s&quot; value=&quot;%2$s&quot; /&gt;&#039;, esc_attr( $field[&#039;name&#039;] ), esc_attr( $field[&#039;unchecked_value&#039;] ) );
+	}
+
+	printf(
+		&#039;&lt;input type=&quot;checkbox&quot; name=&quot;%1$s&quot; id=&quot;%2$s&quot; value=&quot;%3$s&quot; %4$s %5$s /&gt;&#039;,
+		esc_attr( $field[&#039;name&#039;] ),
+		esc_attr( $field[&#039;id&#039;] ),
+		esc_attr( $field[&#039;checked_value&#039;] ),
+		checked( $field[&#039;value&#039;], $field[&#039;checked_value&#039;], false ),
+		implode( &#039; &#039;, $custom_attributes ) // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+	);
 
 	if ( ! empty( $field[&#039;description&#039;] ) &amp;&amp; false === $field[&#039;desc_tip&#039;] ) {
 		echo &#039;&lt;span class=&quot;description&quot;&gt;&#039; . wp_kses_post( $field[&#039;description&#039;] ) . &#039;&lt;/span&gt;&#039;;
@@ -663,7 +691,8 @@ function woocommerce_wp_select( $field, WC_Data $data = null ) {
 	global $post;
 
 	$field = wp_parse_args(
-		$field, array(
+		$field,
+		array(
 			&#039;class&#039;             =&gt; &#039;select short&#039;,
 			&#039;style&#039;             =&gt; &#039;&#039;,
 			&#039;wrapper_class&#039;     =&gt; &#039;&#039;,
@@ -784,7 +813,7 @@ function woocommerce_wp_note( $field ) {
 
     <footer class="phpdocumentor phpdocumentor-footer">
     <div class="phpdocumentor-section">
-        <span>WooCommerce Code Reference API documentation generated by <a href="http://www.phpdoc.org/">phpDocumentor</a> on August 24th, 2023 at 08:49 am.</span>
+        <span>WooCommerce Code Reference API documentation generated by <a href="http://www.phpdoc.org/">phpDocumentor</a> on July 25th, 2024 at 11:33 am.</span>
     </div>
 </footer>
 
@@ -796,7 +825,7 @@ function woocommerce_wp_note( $field ) {
             'searchIndex': '..\/js\/searchIndex.json'
         };
     </script>
-    <script src="../js/searchIndex.js?updated=1692866946"></script>
-    <script src="../js/search.js?updated=1692866946"></script>
+    <script src="../js/searchIndex.js?updated=1721907182"></script>
+    <script src="../js/search.js?updated=1721907182"></script>
 </body>
 </html>

@@ -9,9 +9,9 @@
     <link rel="apple-touch-icon" sizes="72x72" href="../images/apple-touch-icon-72x72.png"/>
     <link rel="apple-touch-icon" sizes="114x114" href="../images/apple-touch-icon-114x114.png"/>
     <link rel="stylesheet" href="../css/normalize.css">
-    <link rel="stylesheet" href="../css/base.css?updated=1692866945">
+    <link rel="stylesheet" href="../css/base.css?updated=1721907182">
     <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../css/template.css?updated=1692866945">
+    <link rel="stylesheet" href="../css/template.css?updated=1721907182">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0/css/all.min.css" integrity="sha256-ybRkN9dBjhcS2qrW1z+hfCxq+1aBdwyQM5wlQoQVt/0=" crossorigin="anonymous" />
             <script src="https://cdn.jsdelivr.net/npm/css-vars-ponyfill@2"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0/js/all.min.js" integrity="sha256-0vuk8LXoyrmCjp1f0O300qo1M75ZQyhH9X3J6d+scmk=" crossorigin="anonymous"></script>
@@ -125,6 +125,7 @@
                         <ul class="phpdocumentor-list">
                                     <li><a href="../packages/Automattic-WooCommerce.html"><abbr title="\Automattic\WooCommerce">WooCommerce</abbr></a></li>
                             </ul>
+                                <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/WooCommerceBlocks.html"><abbr title="\WooCommerceBlocks">WooCommerceBlocks</abbr></a></h3>
                         </section>
     
     <section class="phpdocumentor-sidebar__category">
@@ -165,6 +166,7 @@
 
 use Automattic\Jetpack\Constants;
 use Automattic\WooCommerce\Admin\Features\Features;
+use Automattic\WooCommerce\Internal\Admin\Analytics;
 use Automattic\WooCommerce\Internal\Admin\WCAdminAssets;
 
 if ( ! defined( &#039;ABSPATH&#039; ) ) {
@@ -184,6 +186,7 @@ if ( ! class_exists( &#039;WC_Admin_Assets&#039;, false ) ) :
 		public function __construct() {
 			add_action( &#039;admin_enqueue_scripts&#039;, array( $this, &#039;admin_styles&#039; ) );
 			add_action( &#039;admin_enqueue_scripts&#039;, array( $this, &#039;admin_scripts&#039; ) );
+			add_action( &#039;enqueue_block_editor_assets&#039;, array( $this, &#039;enqueue_block_editor_assets&#039; ) );
 		}
 
 		/**
@@ -302,7 +305,7 @@ if ( ! class_exists( &#039;WC_Admin_Assets&#039;, false ) ) :
 			wp_register_script( &#039;wc-backbone-modal&#039;, WC()-&gt;plugin_url() . &#039;/assets/js/admin/backbone-modal&#039; . $suffix . &#039;.js&#039;, array( &#039;underscore&#039;, &#039;backbone&#039;, &#039;wp-util&#039; ), $version );
 			wp_register_script( &#039;wc-shipping-zones&#039;, WC()-&gt;plugin_url() . &#039;/assets/js/admin/wc-shipping-zones&#039; . $suffix . &#039;.js&#039;, array( &#039;jquery&#039;, &#039;wp-util&#039;, &#039;underscore&#039;, &#039;backbone&#039;, &#039;jquery-ui-sortable&#039;, &#039;wc-enhanced-select&#039;, &#039;wc-backbone-modal&#039; ), $version );
 			wp_register_script( &#039;wc-shipping-zone-methods&#039;, WC()-&gt;plugin_url() . &#039;/assets/js/admin/wc-shipping-zone-methods&#039; . $suffix . &#039;.js&#039;, array( &#039;jquery&#039;, &#039;wp-util&#039;, &#039;underscore&#039;, &#039;backbone&#039;, &#039;jquery-ui-sortable&#039;, &#039;wc-backbone-modal&#039; ), $version );
-			wp_register_script( &#039;wc-shipping-classes&#039;, WC()-&gt;plugin_url() . &#039;/assets/js/admin/wc-shipping-classes&#039; . $suffix . &#039;.js&#039;, array( &#039;jquery&#039;, &#039;wp-util&#039;, &#039;underscore&#039;, &#039;backbone&#039; ), $version );
+			wp_register_script( &#039;wc-shipping-classes&#039;, WC()-&gt;plugin_url() . &#039;/assets/js/admin/wc-shipping-classes&#039; . $suffix . &#039;.js&#039;, array( &#039;jquery&#039;, &#039;wp-util&#039;, &#039;underscore&#039;, &#039;backbone&#039;, &#039;wc-backbone-modal&#039; ), $version, array( &#039;in_footer&#039; =&gt; false ) );
 			wp_register_script( &#039;wc-clipboard&#039;, WC()-&gt;plugin_url() . &#039;/assets/js/admin/wc-clipboard&#039; . $suffix . &#039;.js&#039;, array( &#039;jquery&#039; ), $version );
 			wp_register_script( &#039;select2&#039;, WC()-&gt;plugin_url() . &#039;/assets/js/select2/select2.full&#039; . $suffix . &#039;.js&#039;, array( &#039;jquery&#039; ), &#039;4.0.3&#039; );
 			wp_register_script( &#039;selectWoo&#039;, WC()-&gt;plugin_url() . &#039;/assets/js/selectWoo/selectWoo.full&#039; . $suffix . &#039;.js&#039;, array( &#039;jquery&#039; ), &#039;1.0.6&#039; );
@@ -386,7 +389,7 @@ if ( ! class_exists( &#039;WC_Admin_Assets&#039;, false ) ) :
 						&#039;gateway_toggle&#039; =&gt; current_user_can( &#039;manage_woocommerce&#039; ) ? wp_create_nonce( &#039;woocommerce-toggle-payment-gateway-enabled&#039; ) : null,
 					),
 					&#039;urls&#039;                              =&gt; array(
-						&#039;add_product&#039;     =&gt; Features::is_enabled( &#039;new-product-management-experience&#039; ) || \Automattic\WooCommerce\Utilities\FeaturesUtil::feature_is_enabled( &#039;product_block_editor&#039; ) ? esc_url_raw( admin_url( &#039;admin.php?page=wc-admin&amp;path=/add-product&#039; ) ) : null,
+						&#039;add_product&#039;     =&gt; \Automattic\WooCommerce\Utilities\FeaturesUtil::feature_is_enabled( &#039;product_block_editor&#039; ) ? esc_url_raw( admin_url( &#039;admin.php?page=wc-admin&amp;path=/add-product&#039; ) ) : null,
 						&#039;import_products&#039; =&gt; current_user_can( &#039;import&#039; ) ? esc_url_raw( admin_url( &#039;edit.php?post_type=product&amp;page=product_importer&#039; ) ) : null,
 						&#039;export_products&#039; =&gt; current_user_can( &#039;export&#039; ) ? esc_url_raw( admin_url( &#039;edit.php?post_type=product&amp;page=product_exporter&#039; ) ) : null,
 					),
@@ -525,74 +528,77 @@ if ( ! class_exists( &#039;WC_Admin_Assets&#039;, false ) ) :
 				}
 
 				$params = array(
-					&#039;remove_item_notice&#039;                 =&gt; $remove_item_notice,
-					&#039;remove_fee_notice&#039;                  =&gt; $remove_fee_notice,
-					&#039;remove_shipping_notice&#039;             =&gt; $remove_shipping_notice,
-					&#039;i18n_select_items&#039;                  =&gt; __( &#039;Please select some items.&#039;, &#039;woocommerce&#039; ),
-					&#039;i18n_do_refund&#039;                     =&gt; __( &#039;Are you sure you wish to process this refund? This action cannot be undone.&#039;, &#039;woocommerce&#039; ),
-					&#039;i18n_delete_refund&#039;                 =&gt; __( &#039;Are you sure you wish to delete this refund? This action cannot be undone.&#039;, &#039;woocommerce&#039; ),
-					&#039;i18n_delete_tax&#039;                    =&gt; __( &#039;Are you sure you wish to delete this tax column? This action cannot be undone.&#039;, &#039;woocommerce&#039; ),
-					&#039;remove_item_meta&#039;                   =&gt; __( &#039;Remove this item meta?&#039;, &#039;woocommerce&#039; ),
-					&#039;name_label&#039;                         =&gt; __( &#039;Name&#039;, &#039;woocommerce&#039; ),
-					&#039;remove_label&#039;                       =&gt; __( &#039;Remove&#039;, &#039;woocommerce&#039; ),
-					&#039;click_to_toggle&#039;                    =&gt; __( &#039;Click to toggle&#039;, &#039;woocommerce&#039; ),
-					&#039;values_label&#039;                       =&gt; __( &#039;Value(s)&#039;, &#039;woocommerce&#039; ),
-					&#039;text_attribute_tip&#039;                 =&gt; __( &#039;Enter some text, or some attributes by pipe (|) separating values.&#039;, &#039;woocommerce&#039; ),
-					&#039;visible_label&#039;                      =&gt; __( &#039;Visible on the product page&#039;, &#039;woocommerce&#039; ),
-					&#039;used_for_variations_label&#039;          =&gt; __( &#039;Used for variations&#039;, &#039;woocommerce&#039; ),
-					&#039;new_attribute_prompt&#039;               =&gt; __( &#039;Enter a name for the new attribute term:&#039;, &#039;woocommerce&#039; ),
-					&#039;calc_totals&#039;                        =&gt; __( &#039;Recalculate totals? This will calculate taxes based on the customers country (or the store base country) and update totals.&#039;, &#039;woocommerce&#039; ),
-					&#039;copy_billing&#039;                       =&gt; __( &#039;Copy billing information to shipping information? This will remove any currently entered shipping information.&#039;, &#039;woocommerce&#039; ),
-					&#039;load_billing&#039;                       =&gt; __( &quot;Load the customer&#039;s billing information? This will remove any currently entered billing information.&quot;, &#039;woocommerce&#039; ),
-					&#039;load_shipping&#039;                      =&gt; __( &quot;Load the customer&#039;s shipping information? This will remove any currently entered shipping information.&quot;, &#039;woocommerce&#039; ),
-					&#039;featured_label&#039;                     =&gt; __( &#039;Featured&#039;, &#039;woocommerce&#039; ),
-					&#039;prices_include_tax&#039;                 =&gt; esc_attr( get_option( &#039;woocommerce_prices_include_tax&#039; ) ),
-					&#039;tax_based_on&#039;                       =&gt; esc_attr( get_option( &#039;woocommerce_tax_based_on&#039; ) ),
-					&#039;round_at_subtotal&#039;                  =&gt; esc_attr( get_option( &#039;woocommerce_tax_round_at_subtotal&#039; ) ),
-					&#039;no_customer_selected&#039;               =&gt; __( &#039;No customer selected&#039;, &#039;woocommerce&#039; ),
-					&#039;plugin_url&#039;                         =&gt; WC()-&gt;plugin_url(),
-					&#039;ajax_url&#039;                           =&gt; admin_url( &#039;admin-ajax.php&#039; ),
-					&#039;order_item_nonce&#039;                   =&gt; wp_create_nonce( &#039;order-item&#039; ),
-					&#039;add_attribute_nonce&#039;                =&gt; wp_create_nonce( &#039;add-attribute&#039; ),
-					&#039;save_attributes_nonce&#039;              =&gt; wp_create_nonce( &#039;save-attributes&#039; ),
-					&#039;add_attributes_and_variations&#039;      =&gt; wp_create_nonce( &#039;add-attributes-and-variations&#039; ),
-					&#039;calc_totals_nonce&#039;                  =&gt; wp_create_nonce( &#039;calc-totals&#039; ),
-					&#039;get_customer_details_nonce&#039;         =&gt; wp_create_nonce( &#039;get-customer-details&#039; ),
-					&#039;search_products_nonce&#039;              =&gt; wp_create_nonce( &#039;search-products&#039; ),
-					&#039;grant_access_nonce&#039;                 =&gt; wp_create_nonce( &#039;grant-access&#039; ),
-					&#039;revoke_access_nonce&#039;                =&gt; wp_create_nonce( &#039;revoke-access&#039; ),
-					&#039;add_order_note_nonce&#039;               =&gt; wp_create_nonce( &#039;add-order-note&#039; ),
-					&#039;delete_order_note_nonce&#039;            =&gt; wp_create_nonce( &#039;delete-order-note&#039; ),
-					&#039;calendar_image&#039;                     =&gt; WC()-&gt;plugin_url() . &#039;/assets/images/calendar.png&#039;,
-					&#039;post_id&#039;                            =&gt; $this-&gt;is_order_meta_box_screen( $screen_id ) &amp;&amp; isset( $order_or_post_object ) ? \Automattic\WooCommerce\Utilities\OrderUtil::get_post_or_order_id( $order_or_post_object ) : $post_id,
-					&#039;base_country&#039;                       =&gt; WC()-&gt;countries-&gt;get_base_country(),
-					&#039;currency_format_num_decimals&#039;       =&gt; wc_get_price_decimals(),
-					&#039;currency_format_symbol&#039;             =&gt; get_woocommerce_currency_symbol( $currency ),
-					&#039;currency_format_decimal_sep&#039;        =&gt; esc_attr( wc_get_price_decimal_separator() ),
-					&#039;currency_format_thousand_sep&#039;       =&gt; esc_attr( wc_get_price_thousand_separator() ),
-					&#039;currency_format&#039;                    =&gt; esc_attr( str_replace( array( &#039;%1$s&#039;, &#039;%2$s&#039; ), array( &#039;%s&#039;, &#039;%v&#039; ), get_woocommerce_price_format() ) ), // For accounting JS.
-					&#039;rounding_precision&#039;                 =&gt; wc_get_rounding_precision(),
-					&#039;tax_rounding_mode&#039;                  =&gt; wc_get_tax_rounding_mode(),
-					&#039;product_types&#039;                      =&gt; array_unique( array_merge( array( &#039;simple&#039;, &#039;grouped&#039;, &#039;variable&#039;, &#039;external&#039; ), array_keys( wc_get_product_types() ) ) ),
-					&#039;i18n_download_permission_fail&#039;      =&gt; __( &#039;Could not grant access - the user may already have permission for this file or billing email is not set. Ensure the billing email is set, and the order has been saved.&#039;, &#039;woocommerce&#039; ),
-					&#039;i18n_permission_revoke&#039;             =&gt; __( &#039;Are you sure you want to revoke access to this download?&#039;, &#039;woocommerce&#039; ),
-					&#039;i18n_tax_rate_already_exists&#039;       =&gt; __( &#039;You cannot add the same tax rate twice!&#039;, &#039;woocommerce&#039; ),
-					&#039;i18n_delete_note&#039;                   =&gt; __( &#039;Are you sure you wish to delete this note? This action cannot be undone.&#039;, &#039;woocommerce&#039; ),
-					&#039;i18n_apply_coupon&#039;                  =&gt; __( &#039;Enter a coupon code to apply. Discounts are applied to line totals, before taxes.&#039;, &#039;woocommerce&#039; ),
-					&#039;i18n_add_fee&#039;                       =&gt; __( &#039;Enter a fixed amount or percentage to apply as a fee.&#039;, &#039;woocommerce&#039; ),
-					&#039;i18n_attribute_name_placeholder&#039;    =&gt; __( &#039;New attribute&#039;, &#039;woocommerce&#039; ),
-					&#039;i18n_product_simple_tip&#039;            =&gt; __( &#039;&lt;b&gt;Simple –&lt;/b&gt; covers the vast majority of any products you may sell. Simple products are shipped and have no options. For example, a book.&#039;, &#039;woocommerce&#039; ),
-					&#039;i18n_product_grouped_tip&#039;           =&gt; __( &#039;&lt;b&gt;Grouped –&lt;/b&gt; a collection of related products that can be purchased individually and only consist of simple products. For example, a set of six drinking glasses.&#039;, &#039;woocommerce&#039; ),
-					&#039;i18n_product_external_tip&#039;          =&gt; __( &#039;&lt;b&gt;External or Affiliate –&lt;/b&gt; one that you list and describe on your website but is sold elsewhere.&#039;, &#039;woocommerce&#039; ),
-					&#039;i18n_product_variable_tip&#039;          =&gt; __( &#039;&lt;b&gt;Variable –&lt;/b&gt; a product with variations, each of which may have a different SKU, price, stock option, etc. For example, a t-shirt available in different colors and/or sizes.&#039;, &#039;woocommerce&#039; ),
-					&#039;i18n_product_other_tip&#039;             =&gt; __( &#039;Product types define available product details and attributes, such as downloadable files and variations. They’re also used for analytics and inventory management.&#039;, &#039;woocommerce&#039; ),
-					&#039;i18n_product_description_tip&#039;       =&gt; __( &#039;Describe this product. What makes it unique? What are its most important features?&#039;, &#039;woocommerce&#039; ),
-					&#039;i18n_product_short_description_tip&#039; =&gt; __( &#039;Summarize this product in 1-2 short sentences. We’ll show it at the top of the page.&#039;, &#039;woocommerce&#039; ),
-					&#039;i18n_save_attribute_variation_tip&#039;  =&gt; __( &#039;Make sure you enter the name and values for each attribute.&#039;, &#039;woocommerce&#039; ),
+					&#039;remove_item_notice&#039;                              =&gt; $remove_item_notice,
+					&#039;remove_fee_notice&#039;                               =&gt; $remove_fee_notice,
+					&#039;remove_shipping_notice&#039;                          =&gt; $remove_shipping_notice,
+					&#039;i18n_select_items&#039;                               =&gt; __( &#039;Please select some items.&#039;, &#039;woocommerce&#039; ),
+					&#039;i18n_do_refund&#039;                                  =&gt; __( &#039;Are you sure you wish to process this refund? This action cannot be undone.&#039;, &#039;woocommerce&#039; ),
+					&#039;i18n_delete_refund&#039;                              =&gt; __( &#039;Are you sure you wish to delete this refund? This action cannot be undone.&#039;, &#039;woocommerce&#039; ),
+					&#039;i18n_delete_tax&#039;                                 =&gt; __( &#039;Are you sure you wish to delete this tax column? This action cannot be undone.&#039;, &#039;woocommerce&#039; ),
+					&#039;remove_item_meta&#039;                                =&gt; __( &#039;Remove this item meta?&#039;, &#039;woocommerce&#039; ),
+					&#039;name_label&#039;                                      =&gt; __( &#039;Name&#039;, &#039;woocommerce&#039; ),
+					&#039;remove_label&#039;                                    =&gt; __( &#039;Remove&#039;, &#039;woocommerce&#039; ),
+					&#039;click_to_toggle&#039;                                 =&gt; __( &#039;Click to toggle&#039;, &#039;woocommerce&#039; ),
+					&#039;values_label&#039;                                    =&gt; __( &#039;Value(s)&#039;, &#039;woocommerce&#039; ),
+					&#039;text_attribute_tip&#039;                              =&gt; __( &#039;Enter some text, or some attributes by pipe (|) separating values.&#039;, &#039;woocommerce&#039; ),
+					&#039;visible_label&#039;                                   =&gt; __( &#039;Visible on the product page&#039;, &#039;woocommerce&#039; ),
+					&#039;used_for_variations_label&#039;                       =&gt; __( &#039;Used for variations&#039;, &#039;woocommerce&#039; ),
+					&#039;new_attribute_prompt&#039;                            =&gt; __( &#039;Enter a name for the new attribute term:&#039;, &#039;woocommerce&#039; ),
+					&#039;calc_totals&#039;                                     =&gt; __( &#039;Recalculate totals? This will calculate taxes based on the customers country (or the store base country) and update totals.&#039;, &#039;woocommerce&#039; ),
+					&#039;copy_billing&#039;                                    =&gt; __( &#039;Copy billing information to shipping information? This will remove any currently entered shipping information.&#039;, &#039;woocommerce&#039; ),
+					&#039;load_billing&#039;                                    =&gt; __( &quot;Load the customer&#039;s billing information? This will remove any currently entered billing information.&quot;, &#039;woocommerce&#039; ),
+					&#039;load_shipping&#039;                                   =&gt; __( &quot;Load the customer&#039;s shipping information? This will remove any currently entered shipping information.&quot;, &#039;woocommerce&#039; ),
+					&#039;featured_label&#039;                                  =&gt; __( &#039;Featured&#039;, &#039;woocommerce&#039; ),
+					&#039;prices_include_tax&#039;                              =&gt; esc_attr( get_option( &#039;woocommerce_prices_include_tax&#039; ) ),
+					&#039;tax_based_on&#039;                                    =&gt; esc_attr( get_option( &#039;woocommerce_tax_based_on&#039; ) ),
+					&#039;round_at_subtotal&#039;                               =&gt; esc_attr( get_option( &#039;woocommerce_tax_round_at_subtotal&#039; ) ),
+					&#039;no_customer_selected&#039;                            =&gt; __( &#039;No customer selected&#039;, &#039;woocommerce&#039; ),
+					&#039;plugin_url&#039;                                      =&gt; WC()-&gt;plugin_url(),
+					&#039;ajax_url&#039;                                        =&gt; admin_url( &#039;admin-ajax.php&#039; ),
+					&#039;order_item_nonce&#039;                                =&gt; wp_create_nonce( &#039;order-item&#039; ),
+					&#039;add_attribute_nonce&#039;                             =&gt; wp_create_nonce( &#039;add-attribute&#039; ),
+					&#039;save_attributes_nonce&#039;                           =&gt; wp_create_nonce( &#039;save-attributes&#039; ),
+					&#039;add_attributes_and_variations&#039;                   =&gt; wp_create_nonce( &#039;add-attributes-and-variations&#039; ),
+					&#039;calc_totals_nonce&#039;                               =&gt; wp_create_nonce( &#039;calc-totals&#039; ),
+					&#039;get_customer_details_nonce&#039;                      =&gt; wp_create_nonce( &#039;get-customer-details&#039; ),
+					&#039;search_products_nonce&#039;                           =&gt; wp_create_nonce( &#039;search-products&#039; ),
+					&#039;grant_access_nonce&#039;                              =&gt; wp_create_nonce( &#039;grant-access&#039; ),
+					&#039;revoke_access_nonce&#039;                             =&gt; wp_create_nonce( &#039;revoke-access&#039; ),
+					&#039;add_order_note_nonce&#039;                            =&gt; wp_create_nonce( &#039;add-order-note&#039; ),
+					&#039;delete_order_note_nonce&#039;                         =&gt; wp_create_nonce( &#039;delete-order-note&#039; ),
+					&#039;calendar_image&#039;                                  =&gt; WC()-&gt;plugin_url() . &#039;/assets/images/calendar.png&#039;,
+					&#039;post_id&#039;                                         =&gt; $this-&gt;is_order_meta_box_screen( $screen_id ) &amp;&amp; isset( $order_or_post_object ) ? \Automattic\WooCommerce\Utilities\OrderUtil::get_post_or_order_id( $order_or_post_object ) : $post_id,
+					&#039;base_country&#039;                                    =&gt; WC()-&gt;countries-&gt;get_base_country(),
+					&#039;currency_format_num_decimals&#039;                    =&gt; wc_get_price_decimals(),
+					&#039;currency_format_symbol&#039;                          =&gt; get_woocommerce_currency_symbol( $currency ),
+					&#039;currency_format_decimal_sep&#039;                     =&gt; esc_attr( wc_get_price_decimal_separator() ),
+					&#039;currency_format_thousand_sep&#039;                    =&gt; esc_attr( wc_get_price_thousand_separator() ),
+					&#039;currency_format&#039;                                 =&gt; esc_attr( str_replace( array( &#039;%1$s&#039;, &#039;%2$s&#039; ), array( &#039;%s&#039;, &#039;%v&#039; ), get_woocommerce_price_format() ) ), // For accounting JS.
+					&#039;rounding_precision&#039;                              =&gt; wc_get_rounding_precision(),
+					&#039;tax_rounding_mode&#039;                               =&gt; wc_get_tax_rounding_mode(),
+					&#039;product_types&#039;                                   =&gt; array_unique( array_merge( array( &#039;simple&#039;, &#039;grouped&#039;, &#039;variable&#039;, &#039;external&#039; ), array_keys( wc_get_product_types() ) ) ),
+					&#039;i18n_download_permission_fail&#039;                   =&gt; __( &#039;Could not grant access - the user may already have permission for this file or billing email is not set. Ensure the billing email is set, and the order has been saved.&#039;, &#039;woocommerce&#039; ),
+					&#039;i18n_permission_revoke&#039;                          =&gt; __( &#039;Are you sure you want to revoke access to this download?&#039;, &#039;woocommerce&#039; ),
+					&#039;i18n_tax_rate_already_exists&#039;                    =&gt; __( &#039;You cannot add the same tax rate twice!&#039;, &#039;woocommerce&#039; ),
+					&#039;i18n_delete_note&#039;                                =&gt; __( &#039;Are you sure you wish to delete this note? This action cannot be undone.&#039;, &#039;woocommerce&#039; ),
+					&#039;i18n_apply_coupon&#039;                               =&gt; __( &#039;Enter a coupon code to apply. Discounts are applied to line totals, before taxes.&#039;, &#039;woocommerce&#039; ),
+					&#039;i18n_add_fee&#039;                                    =&gt; __( &#039;Enter a fixed amount or percentage to apply as a fee.&#039;, &#039;woocommerce&#039; ),
+					&#039;i18n_attribute_name_placeholder&#039;                 =&gt; __( &#039;New attribute&#039;, &#039;woocommerce&#039; ),
+					&#039;i18n_product_simple_tip&#039;                         =&gt; __( &#039;&lt;b&gt;Simple –&lt;/b&gt; covers the vast majority of any products you may sell. Simple products are shipped and have no options. For example, a book.&#039;, &#039;woocommerce&#039; ),
+					&#039;i18n_product_grouped_tip&#039;                        =&gt; __( &#039;&lt;b&gt;Grouped –&lt;/b&gt; a collection of related products that can be purchased individually and only consist of simple products. For example, a set of six drinking glasses.&#039;, &#039;woocommerce&#039; ),
+					&#039;i18n_product_external_tip&#039;                       =&gt; __( &#039;&lt;b&gt;External or Affiliate –&lt;/b&gt; one that you list and describe on your website but is sold elsewhere.&#039;, &#039;woocommerce&#039; ),
+					&#039;i18n_product_variable_tip&#039;                       =&gt; __( &#039;&lt;b&gt;Variable –&lt;/b&gt; a product with variations, each of which may have a different SKU, price, stock option, etc. For example, a t-shirt available in different colors and/or sizes.&#039;, &#039;woocommerce&#039; ),
+					&#039;i18n_product_other_tip&#039;                          =&gt; __( &#039;Product types define available product details and attributes, such as downloadable files and variations. They’re also used for analytics and inventory management.&#039;, &#039;woocommerce&#039; ),
+					&#039;i18n_product_description_tip&#039;                    =&gt; __( &#039;Describe this product. What makes it unique? What are its most important features?&#039;, &#039;woocommerce&#039; ),
+					&#039;i18n_product_short_description_tip&#039;              =&gt; __( &#039;Summarize this product in 1-2 short sentences. We’ll show it at the top of the page.&#039;, &#039;woocommerce&#039; ),
+					&#039;i18n_save_attribute_variation_tip&#039;               =&gt; __( &#039;Make sure you enter the name and values for each attribute.&#039;, &#039;woocommerce&#039; ),
 					/* translators: %1$s: maximum file size */
-					&#039;i18n_product_image_tip&#039;             =&gt; sprintf( __( &#039;For best results, upload JPEG or PNG files that are 1000 by 1000 pixels or larger. Maximum upload file size: %1$s.&#039;, &#039;woocommerce&#039; ) , size_format( wp_max_upload_size() ) ),
+					&#039;i18n_product_image_tip&#039;                          =&gt; sprintf( __( &#039;For best results, upload JPEG or PNG files that are 1000 by 1000 pixels or larger. Maximum upload file size: %1$s.&#039;, &#039;woocommerce&#039; ), size_format( wp_max_upload_size() ) ),
 					&#039;i18n_remove_used_attribute_confirmation_message&#039; =&gt; __( &#039;If you remove this attribute, customers will no longer be able to purchase some variations of this product.&#039;, &#039;woocommerce&#039; ),
-					&#039;i18n_add_attribute_error_notice&#039;    =&gt; __( &#039;Adding new attribute failed.&#039;, &#039;woocommerce&#039; ),
+					&#039;i18n_add_attribute_error_notice&#039;                 =&gt; __( &#039;Adding new attribute failed.&#039;, &#039;woocommerce&#039; ),
+					/* translators: %s: WC_DELIMITER */
+					&#039;i18n_attributes_default_placeholder&#039;             =&gt; sprintf( esc_attr__( &#039;Enter some descriptive text. Use “%s” to separate different values.&#039;, &#039;woocommerce&#039; ), esc_attr( WC_DELIMITER ) ),
+					&#039;i18n_attributes_used_for_variations_placeholder&#039; =&gt; sprintf( esc_attr__( &#039;Enter options for customers to choose from, f.e. “Blue” or “Large”. Use “%s” to separate different options.&#039;, &#039;woocommerce&#039; ), esc_attr( WC_DELIMITER ) )
 				);
 
 				wp_localize_script( &#039;wc-admin-meta-boxes&#039;, &#039;woocommerce_admin_meta_boxes&#039;, $params );
@@ -707,6 +713,107 @@ if ( ! class_exists( &#039;WC_Admin_Assets&#039;, false ) ) :
 				wp_enqueue_script( &#039;marketplace-suggestions&#039; );
 			}
 
+			// Marketplace promotions.
+			if ( in_array( $screen_id, array( &#039;woocommerce_page_wc-admin&#039; ), true ) ) {
+
+				$promotions = WC_Admin_Marketplace_Promotions::get_active_promotions();
+
+				if ( false === $promotions ) {
+					return;
+				}
+
+				wp_add_inline_script(
+					&#039;wc-admin-app&#039;,
+					&#039;window.wcMarketplace = &#039; . wp_json_encode( array( &#039;promotions&#039; =&gt; $promotions ) ),
+					&#039;before&#039;
+				);
+			}
+		}
+
+		/**
+		 * Enqueue a script in the block editor.
+		 * Similar to `WCAdminAssets::register_script()` but without enqueuing unnecessary dependencies.
+		 *
+		 * @return void
+		 */
+		private function enqueue_block_editor_script( $script_path_name, $script_name ) {
+			$script_assets_filename = WCAdminAssets::get_script_asset_filename( $script_path_name, $script_name );
+			$script_assets          = require WC_ADMIN_ABSPATH . WC_ADMIN_DIST_JS_FOLDER .  $script_path_name . &#039;/&#039; . $script_assets_filename;
+
+			wp_enqueue_script(
+				&#039;wc-admin-&#039; . $script_name,
+				WCAdminAssets::get_url( $script_path_name . &#039;/&#039; . $script_name, &#039;js&#039; ),
+				$script_assets[&#039;dependencies&#039;],
+				WCAdminAssets::get_file_version( &#039;js&#039;, $script_assets[&#039;version&#039;] ),
+				true
+			);
+		}
+
+		/**
+		 * Enqueue block editor assets.
+		 *
+		 * @return void
+		 */
+		public function enqueue_block_editor_assets() {
+			$settings_tabs = apply_filters(&#039;woocommerce_settings_tabs_array&#039;, []);
+
+			if ( is_array( $settings_tabs ) &amp;&amp; count( $settings_tabs ) &gt; 0  ) {
+				$formatted_settings_tabs = array();
+				foreach ($settings_tabs as $key =&gt; $label) {
+					if (
+						is_string( $key ) &amp;&amp; $key !== &quot;&quot; &amp;&amp;
+						is_string( $label ) &amp;&amp; $label !== &quot;&quot;
+					) {
+						$formatted_settings_tabs[] = array(
+							&#039;key&#039;   =&gt; $key,
+							&#039;label&#039; =&gt; wp_strip_all_tags( $label ),
+						);
+					}
+				}
+
+				self::enqueue_block_editor_script( &#039;wp-admin-scripts&#039;, &#039;command-palette&#039; );
+				wp_localize_script(
+					&#039;wc-admin-command-palette&#039;,
+					&#039;wcCommandPaletteSettings&#039;,
+					array(
+						&#039;settingsTabs&#039;    =&gt; $formatted_settings_tabs,
+					)
+				);
+			}
+
+			$admin_features_disabled = apply_filters( &#039;woocommerce_admin_disabled&#039;, false );
+			if ( ! $admin_features_disabled ) {
+				$analytics_reports = Analytics::get_report_pages();
+				if ( is_array( $analytics_reports ) &amp;&amp; count( $analytics_reports ) &gt; 0 ) {
+					$formatted_analytics_reports = array_map( function( $report ) {
+						if ( ! is_array( $report ) ) {
+							return null;
+						}
+						$title = array_key_exists( &#039;title&#039;, $report ) ? $report[&#039;title&#039;] : &#039;&#039;;
+						$path = array_key_exists( &#039;path&#039;, $report ) ? $report[&#039;path&#039;] : &#039;&#039;;
+						if (
+							is_string( $title ) &amp;&amp; $title !== &quot;&quot; &amp;&amp;
+							is_string( $path ) &amp;&amp; $path !== &quot;&quot;
+						) {
+							return array(
+								&#039;title&#039; =&gt; wp_strip_all_tags( $title ),
+								&#039;path&#039; =&gt; $path,
+							);
+						}
+						return null;
+					}, $analytics_reports );
+					$formatted_analytics_reports = array_filter( $formatted_analytics_reports, &#039;is_array&#039; );
+
+					self::enqueue_block_editor_script( &#039;wp-admin-scripts&#039;, &#039;command-palette-analytics&#039; );
+					wp_localize_script(
+						&#039;wc-admin-command-palette-analytics&#039;,
+						&#039;wcCommandPaletteAnalytics&#039;,
+						array(
+							&#039;reports&#039;    =&gt; $formatted_analytics_reports,
+						)
+					);
+				}
+			}
 		}
 
 		/**
@@ -744,7 +851,7 @@ return new WC_Admin_Assets();
 
     <footer class="phpdocumentor phpdocumentor-footer">
     <div class="phpdocumentor-section">
-        <span>WooCommerce Code Reference API documentation generated by <a href="http://www.phpdoc.org/">phpDocumentor</a> on August 24th, 2023 at 08:49 am.</span>
+        <span>WooCommerce Code Reference API documentation generated by <a href="http://www.phpdoc.org/">phpDocumentor</a> on July 25th, 2024 at 11:33 am.</span>
     </div>
 </footer>
 
@@ -756,7 +863,7 @@ return new WC_Admin_Assets();
             'searchIndex': '..\/js\/searchIndex.json'
         };
     </script>
-    <script src="../js/searchIndex.js?updated=1692866945"></script>
-    <script src="../js/search.js?updated=1692866945"></script>
+    <script src="../js/searchIndex.js?updated=1721907182"></script>
+    <script src="../js/search.js?updated=1721907182"></script>
 </body>
 </html>

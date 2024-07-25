@@ -9,9 +9,9 @@
     <link rel="apple-touch-icon" sizes="72x72" href="../images/apple-touch-icon-72x72.png"/>
     <link rel="apple-touch-icon" sizes="114x114" href="../images/apple-touch-icon-114x114.png"/>
     <link rel="stylesheet" href="../css/normalize.css">
-    <link rel="stylesheet" href="../css/base.css?updated=1692866950">
+    <link rel="stylesheet" href="../css/base.css?updated=1721907184">
     <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../css/template.css?updated=1692866950">
+    <link rel="stylesheet" href="../css/template.css?updated=1721907184">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0/css/all.min.css" integrity="sha256-ybRkN9dBjhcS2qrW1z+hfCxq+1aBdwyQM5wlQoQVt/0=" crossorigin="anonymous" />
             <script src="https://cdn.jsdelivr.net/npm/css-vars-ponyfill@2"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0/js/all.min.js" integrity="sha256-0vuk8LXoyrmCjp1f0O300qo1M75ZQyhH9X3J6d+scmk=" crossorigin="anonymous"></script>
@@ -125,6 +125,7 @@
                         <ul class="phpdocumentor-list">
                                     <li><a href="../packages/Automattic-WooCommerce.html"><abbr title="\Automattic\WooCommerce">WooCommerce</abbr></a></li>
                             </ul>
+                                <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/WooCommerceBlocks.html"><abbr title="\WooCommerceBlocks">WooCommerceBlocks</abbr></a></h3>
                         </section>
     
     <section class="phpdocumentor-sidebar__category">
@@ -218,6 +219,29 @@ class OnboardingThemes extends \WC_REST_Data_Controller {
 				&#039;schema&#039; =&gt; array( $this, &#039;get_item_schema&#039; ),
 			)
 		);
+
+		register_rest_route(
+			$this-&gt;namespace,
+			&#039;/&#039; . $this-&gt;rest_base . &#039;/recommended&#039;,
+			array(
+				&#039;methods&#039;             =&gt; &#039;GET&#039;,
+				&#039;callback&#039;            =&gt; array( $this, &#039;get_recommended_themes&#039; ),
+				&#039;permission_callback&#039; =&gt; array( $this, &#039;get_item_permissions_check&#039; ),
+				&#039;args&#039;                =&gt; array(
+					&#039;industry&#039; =&gt; array(
+						&#039;type&#039;        =&gt; &#039;string&#039;,
+						&#039;description&#039; =&gt; &#039;Limits the results to themes relevant for this industry (optional)&#039;,
+					),
+					&#039;currency&#039; =&gt; array(
+						&#039;type&#039;        =&gt; &#039;string&#039;,
+						&#039;enum&#039;        =&gt; array( &#039;USD&#039;, &#039;AUD&#039;, &#039;CAD&#039;, &#039;EUR&#039;, &#039;GBP&#039; ),
+						&#039;default&#039;     =&gt; &#039;USD&#039;,
+						&#039;description&#039; =&gt; &#039;Returns pricing in this currency (optional, default: USD)&#039;,
+					),
+				),
+				&#039;schema&#039;              =&gt; array( $this, &#039;get_recommended_item_schema&#039; ),
+			)
+		);
 	}
 
 	/**
@@ -240,12 +264,7 @@ class OnboardingThemes extends \WC_REST_Data_Controller {
 	 * @return WP_Error|array Theme installation status.
 	 */
 	public function install_theme( $request ) {
-		$allowed_themes = Themes::get_allowed_themes();
-		$theme          = sanitize_text_field( $request[&#039;theme&#039;] );
-
-		if ( ! in_array( $theme, $allowed_themes, true ) ) {
-			return new \WP_Error( &#039;woocommerce_rest_invalid_theme&#039;, __( &#039;Invalid theme.&#039;, &#039;woocommerce&#039; ), 404 );
-		}
+		$theme = sanitize_text_field( $request[&#039;theme&#039;] );
 
 		$installed_themes = wp_get_themes();
 
@@ -277,7 +296,7 @@ class OnboardingThemes extends \WC_REST_Data_Controller {
 			return new \WP_Error(
 				&#039;woocommerce_rest_theme_install&#039;,
 				sprintf(
-					/* translators: %s: theme slug (example: woocommerce-services) */
+				/* translators: %s: theme slug (example: woocommerce-services) */
 					__( &#039;The requested theme `%s` could not be installed. Theme API call failed.&#039;, &#039;woocommerce&#039; ),
 					$theme
 				),
@@ -292,7 +311,7 @@ class OnboardingThemes extends \WC_REST_Data_Controller {
 			return new \WP_Error(
 				&#039;woocommerce_rest_theme_install&#039;,
 				sprintf(
-					/* translators: %s: theme slug (example: woocommerce-services) */
+				/* translators: %s: theme slug (example: woocommerce-services) */
 					__( &#039;The requested theme `%s` could not be installed.&#039;, &#039;woocommerce&#039; ),
 					$theme
 				),
@@ -314,11 +333,7 @@ class OnboardingThemes extends \WC_REST_Data_Controller {
 	 * @return WP_Error|array Theme activation status.
 	 */
 	public function activate_theme( $request ) {
-		$allowed_themes = Themes::get_allowed_themes();
-		$theme          = sanitize_text_field( $request[&#039;theme&#039;] );
-		if ( ! in_array( $theme, $allowed_themes, true ) ) {
-			return new \WP_Error( &#039;woocommerce_rest_invalid_theme&#039;, __( &#039;Invalid theme.&#039;, &#039;woocommerce&#039; ), 404 );
-		}
+		$theme = sanitize_text_field( $request[&#039;theme&#039;] );
 
 		require_once ABSPATH . &#039;wp-admin/includes/theme.php&#039;;
 
@@ -339,6 +354,338 @@ class OnboardingThemes extends \WC_REST_Data_Controller {
 			&#039;name&#039;   =&gt; $installed_themes[ $theme ]-&gt;get( &#039;Name&#039; ),
 			&#039;status&#039; =&gt; &#039;success&#039;,
 		) );
+	}
+
+	/**
+	 * Get recommended themes.
+	 *
+	 * @param  WP_REST_Request $request Full details about the request.
+	 * @return WP_Error|array Theme activation status.
+	 */
+	public function get_recommended_themes( $request ) {
+		// Check if &quot;industry&quot; and &quot;currency&quot; parameters are provided in the request.
+		$industry = $request-&gt;get_param( &#039;industry&#039; );
+		$currency = $request-&gt;get_param( &#039;currency&#039; ) ?? &#039;USD&#039;;
+
+		// Return empty response if marketplace suggestions are disabled.
+		if (
+			/**
+			 * Filter allow marketplace suggestions.
+			 *
+			 * User can disable all suggestions via filter.
+			 *
+			 * @since 8.3.0
+			 */
+			! apply_filters( &#039;woocommerce_allow_marketplace_suggestions&#039;, true ) ||
+			get_option( &#039;woocommerce_show_marketplace_suggestions&#039;, &#039;yes&#039; ) === &#039;no&#039;
+		) {
+
+			/**
+			 * Filter the onboarding recommended themes response.
+			 *
+			 * @since 8.3.0
+			 *
+			 * @param array $response The recommended themes response.
+			 * @param array $filtered_themes The filtered themes.
+			 * @param string $industry The industry to filter by (if provided).
+			 * @param string $currency The currency to convert prices to. (USD, AUD, CAD, EUR, GBP).
+			 *
+			 * @return array
+			 */
+			return apply_filters(
+				&#039;__experimental_woocommerce_rest_get_recommended_themes&#039;,
+				array(
+					&#039;themes&#039; =&gt; array(),
+					&#039;_links&#039; =&gt; array(
+						&#039;browse_all&#039; =&gt; array(
+							&#039;href&#039; =&gt; home_url( &#039;/wp-admin/themes.php&#039; ),
+						),
+					),
+				),
+				$industry,
+				$currency
+			);
+		}
+
+		$in_app_purchase_params               = \WC_Admin_Addons::get_in_app_purchase_url_params();
+		$in_app_purchase_params[&#039;wccom-back&#039;] = rawurlencode( &#039;/wp-admin/admin.php?page=wc-admin&amp;path=/customize-store&#039; );
+
+		$core_themes = array(
+			array(
+				&#039;name&#039;           =&gt; &#039;Twenty Twenty-Four&#039;,
+				&#039;price&#039;          =&gt; __( &#039;Free&#039;, &#039;woocommerce&#039; ),
+				&#039;is_free&#039;        =&gt; true,
+				&#039;color_palettes&#039; =&gt; array(
+					array(
+						&#039;title&#039;     =&gt; &#039;Black and white&#039;,
+						&#039;primary&#039;   =&gt; &#039;#FEFBF3&#039;,
+						&#039;secondary&#039; =&gt; &#039;#7F7E7A&#039;,
+					),
+					array(
+						&#039;title&#039;     =&gt; &#039;Brown Sugar&#039;,
+						&#039;primary&#039;   =&gt; &#039;#EFEBE0&#039;,
+						&#039;secondary&#039; =&gt; &#039;#AC6239&#039;,
+					),
+					array(
+						&#039;title&#039;     =&gt; &#039;Midnight&#039;,
+						&#039;primary&#039;   =&gt; &#039;#161514&#039;,
+						&#039;secondary&#039; =&gt; &#039;#AFADA7&#039;,
+					),
+					array(
+						&#039;title&#039;     =&gt; &#039;Olive&#039;,
+						&#039;primary&#039;   =&gt; &#039;#FEFBF3&#039;,
+						&#039;secondary&#039; =&gt; &#039;#7F7E7A&#039;,
+					),
+				),
+				&#039;total_palettes&#039; =&gt; 0,
+				&#039;slug&#039;           =&gt; &#039;twentytwentyfour&#039;,
+				&#039;thumbnail_url&#039;  =&gt; &#039;https://i0.wp.com/themes.svn.wordpress.org/twentytwentyfour/1.0/screenshot.png&#039;,
+				&#039;link_url&#039;       =&gt; &#039;https://wordpress.org/themes/twentytwentyfour/&#039;,
+			),
+			array(
+				&#039;name&#039;           =&gt; &#039;Highline&#039;,
+				/* translators: %d: price */
+				&#039;price&#039;          =&gt; sprintf( __( &#039;$%d/year&#039;, &#039;woocommerce&#039; ), 79 ),
+				&#039;is_free&#039;        =&gt; false,
+				&#039;color_palettes&#039; =&gt; array(
+					array(
+						&#039;title&#039;     =&gt; &#039;Primary&#039;,
+						&#039;primary&#039;   =&gt; &#039;#211f1d&#039;,
+						&#039;secondary&#039; =&gt; &#039;#211f1d&#039;,
+					),
+					array(
+						&#039;title&#039;     =&gt; &#039;Additional color&#039;,
+						&#039;primary&#039;   =&gt; &#039;#aaaaaa&#039;,
+						&#039;secondary&#039; =&gt; &#039;#aaaaaa&#039;,
+					),
+					array(
+						&#039;title&#039;     =&gt; &#039;Accent Background&#039;,
+						&#039;primary&#039;   =&gt; &#039;#b04b3c&#039;,
+						&#039;secondary&#039; =&gt; &#039;#b04b3c&#039;,
+					),
+					array(
+						&#039;title&#039;     =&gt; &#039;Secondary Background&#039;,
+						&#039;primary&#039;   =&gt; &#039;#dabfa1&#039;,
+						&#039;secondary&#039; =&gt; &#039;#dabfa1&#039;,
+					),
+				),
+				&#039;total_palettes&#039; =&gt; 9,
+				&#039;slug&#039;           =&gt; &#039;highline&#039;,
+				&#039;thumbnail_url&#039;  =&gt; &#039;https://woocommerce.com/wp-content/uploads/2023/12/Featured-image-538x403-1.png&#039;,
+				&#039;link_url&#039;       =&gt; add_query_arg( $in_app_purchase_params, &#039;https://woocommerce.com/products/highline/&#039; ),
+			),
+			array(
+				&#039;name&#039;           =&gt; &#039;Luminate&#039;,
+				/* translators: %d: price */
+				&#039;price&#039;          =&gt; sprintf( __( &#039;$%d/year&#039;, &#039;woocommerce&#039; ), 79 ),
+				&#039;is_free&#039;        =&gt; false,
+				&#039;color_palettes&#039; =&gt; array(
+					array(
+						&#039;title&#039;     =&gt; &#039;Primary&#039;,
+						&#039;primary&#039;   =&gt; &#039;#242a2e&#039;,
+						&#039;secondary&#039; =&gt; &#039;#242a2e&#039;,
+					),
+					array(
+						&#039;title&#039;     =&gt; &#039;Lite&#039;,
+						&#039;primary&#039;   =&gt; &#039;#f6f5f2&#039;,
+						&#039;secondary&#039; =&gt; &#039;#f6f5f2&#039;,
+					),
+					array(
+						&#039;title&#039;     =&gt; &#039;Grey&#039;,
+						&#039;primary&#039;   =&gt; &#039;#a5a5a5&#039;,
+						&#039;secondary&#039; =&gt; &#039;#a5a5a5&#039;,
+					),
+					array(
+						&#039;title&#039;     =&gt; &#039;Lite Grey&#039;,
+						&#039;primary&#039;   =&gt; &#039;#e4e4e1&#039;,
+						&#039;secondary&#039; =&gt; &#039;#e4e4e1&#039;,
+					),
+				),
+				&#039;total_palettes&#039; =&gt; 5,
+				&#039;slug&#039;           =&gt; &#039;luminate&#039;,
+				&#039;thumbnail_url&#039;  =&gt; &#039;https://woocommerce.com/wp-content/uploads/2022/07/Featured-image-538x403-2.png&#039;,
+				&#039;link_url&#039;       =&gt; add_query_arg( $in_app_purchase_params, &#039;https://woocommerce.com/products/luminate/&#039; ),
+			),
+			array(
+				&#039;name&#039;           =&gt; &#039;Nokul&#039;,
+				/* translators: %d: price */
+				&#039;price&#039;          =&gt; sprintf( __( &#039;$%d/year&#039;, &#039;woocommerce&#039; ), 79 ),
+				&#039;is_free&#039;        =&gt; false,
+				&#039;color_palettes&#039; =&gt; array(
+					array(
+						&#039;title&#039;     =&gt; &#039;Foreground and background&#039;,
+						&#039;primary&#039;   =&gt; &#039;#000000&#039;,
+						&#039;secondary&#039; =&gt; &#039;#f1eee2&#039;,
+					),
+					array(
+						&#039;title&#039;     =&gt; &#039;Foreground and secondary&#039;,
+						&#039;primary&#039;   =&gt; &#039;#000000&#039;,
+						&#039;secondary&#039; =&gt; &#039;#999999&#039;,
+					),
+					array(
+						&#039;title&#039;     =&gt; &#039;Foreground and accent&#039;,
+						&#039;primary&#039;   =&gt; &#039;#000000&#039;,
+						&#039;secondary&#039; =&gt; &#039;#d82f16&#039;,
+					),
+					array(
+						&#039;title&#039;     =&gt; &#039;Primary and background&#039;,
+						&#039;primary&#039;   =&gt; &#039;#d9d0bf&#039;,
+						&#039;secondary&#039; =&gt; &#039;#f1eee2&#039;,
+					),
+				),
+				&#039;total_palettes&#039; =&gt; 6,
+				&#039;slug&#039;           =&gt; &#039;nokul&#039;,
+				&#039;thumbnail_url&#039;  =&gt; &#039;https://woocommerce.com/wp-content/uploads/2022/11/Product-logo.jpg&#039;,
+				&#039;link_url&#039;       =&gt; add_query_arg( $in_app_purchase_params, &#039;https://woocommerce.com/products/nokul/&#039; ),
+			),
+		);
+
+		// To be implemented: 1. Fetch themes from the marketplace API. 2. Convert prices to the requested currency.
+		// These are Dotcom themes.
+		$default_themes = array(
+			array(
+				&#039;name&#039;           =&gt; &#039;Tsubaki&#039;,
+				&#039;price&#039;          =&gt; __( &#039;Free&#039;, &#039;woocommerce&#039; ),
+				&#039;is_free&#039;        =&gt; true,
+				&#039;color_palettes&#039; =&gt; array(),
+				&#039;total_palettes&#039; =&gt; 0,
+				&#039;slug&#039;           =&gt; &#039;tsubaki&#039;,
+				&#039;thumbnail_url&#039;  =&gt; &#039;https://i0.wp.com/s2.wp.com/wp-content/themes/premium/tsubaki/screenshot.png&#039;,
+				&#039;link_url&#039;       =&gt; &#039;https://wordpress.com/theme/tsubaki/&#039;,
+			),
+			array(
+				&#039;name&#039;           =&gt; &#039;Tazza&#039;,
+				&#039;price&#039;          =&gt; __( &#039;Free&#039;, &#039;woocommerce&#039; ),
+				&#039;is_free&#039;        =&gt; true,
+				&#039;color_palettes&#039; =&gt; array(),
+				&#039;total_palettes&#039; =&gt; 0,
+				&#039;slug&#039;           =&gt; &#039;tazza&#039;,
+				&#039;thumbnail_url&#039;  =&gt; &#039;https://i0.wp.com/s2.wp.com/wp-content/themes/premium/tazza/screenshot.png&#039;,
+				&#039;link_url&#039;       =&gt; &#039;https://wordpress.com/theme/tazza/&#039;,
+			),
+			array(
+				&#039;name&#039;           =&gt; &#039;Amulet&#039;,
+				&#039;price&#039;          =&gt; __( &#039;Free&#039;, &#039;woocommerce&#039; ),
+				&#039;is_free&#039;        =&gt; true,
+				&#039;color_palettes&#039; =&gt; array(
+					array(
+						&#039;title&#039;     =&gt; &#039;Default&#039;,
+						&#039;primary&#039;   =&gt; &#039;#FEFBF3&#039;,
+						&#039;secondary&#039; =&gt; &#039;#7F7E7A&#039;,
+					),
+					array(
+						&#039;title&#039;     =&gt; &#039;Brown Sugar&#039;,
+						&#039;primary&#039;   =&gt; &#039;#EFEBE0&#039;,
+						&#039;secondary&#039; =&gt; &#039;#AC6239&#039;,
+					),
+					array(
+						&#039;title&#039;     =&gt; &#039;Midnight&#039;,
+						&#039;primary&#039;   =&gt; &#039;#161514&#039;,
+						&#039;secondary&#039; =&gt; &#039;#AFADA7&#039;,
+					),
+					array(
+						&#039;title&#039;     =&gt; &#039;Olive&#039;,
+						&#039;primary&#039;   =&gt; &#039;#FEFBF3&#039;,
+						&#039;secondary&#039; =&gt; &#039;#7F7E7A&#039;,
+					),
+				),
+				&#039;total_palettes&#039; =&gt; 5,
+				&#039;slug&#039;           =&gt; &#039;amulet&#039;,
+				&#039;thumbnail_url&#039;  =&gt; &#039;https://i0.wp.com/s2.wp.com/wp-content/themes/premium/amulet/screenshot.png&#039;,
+				&#039;link_url&#039;       =&gt; &#039;https://wordpress.com/theme/amulet/&#039;,
+			),
+			array(
+				&#039;name&#039;           =&gt; &#039;Zaino&#039;,
+				&#039;price&#039;          =&gt; __( &#039;Free&#039;, &#039;woocommerce&#039; ),
+				&#039;is_free&#039;        =&gt; true,
+				&#039;color_palettes&#039; =&gt; array(
+					array(
+						&#039;title&#039;     =&gt; &#039;Default&#039;,
+						&#039;primary&#039;   =&gt; &#039;#202124&#039;,
+						&#039;secondary&#039; =&gt; &#039;#E3CBC0&#039;,
+					),
+					array(
+						&#039;title&#039;     =&gt; &#039;Aubergine&#039;,
+						&#039;primary&#039;   =&gt; &#039;#1B1031&#039;,
+						&#039;secondary&#039; =&gt; &#039;#E1746D&#039;,
+					),
+					array(
+						&#039;title&#039;     =&gt; &#039;Block out&#039;,
+						&#039;primary&#039;   =&gt; &#039;#FF5252&#039;,
+						&#039;secondary&#039; =&gt; &#039;#252525&#039;,
+					),
+					array(
+						&#039;title&#039;     =&gt; &#039;Canary&#039;,
+						&#039;primary&#039;   =&gt; &#039;#FDFF85&#039;,
+						&#039;secondary&#039; =&gt; &#039;#353535&#039;,
+					),
+				),
+				&#039;total_palettes&#039; =&gt; 11,
+				&#039;slug&#039;           =&gt; &#039;zaino&#039;,
+				&#039;thumbnail_url&#039;  =&gt; &#039;https://i0.wp.com/s2.wp.com/wp-content/themes/premium/zaino/screenshot.png&#039;,
+				&#039;link_url&#039;       =&gt; &#039;https://wordpress.com/theme/zaino/&#039;,
+			),
+		);
+
+		$ai_connection_enabled = get_option( &#039;woocommerce_blocks_allow_ai_connection&#039; );
+		$themes                = $ai_connection_enabled ? $default_themes : $core_themes;
+
+		// To be implemented: Filter themes based on industry.
+		if ( $industry ) {
+			$filtered_themes = array_filter(
+				$themes,
+				function ( $theme ) use ( $industry ) {
+					// Filter themes by industry.
+					// Example: return $theme[&#039;industry&#039;] === $industry;.
+					return true;
+				}
+			);
+		} else {
+			$filtered_themes = $themes;
+		}
+
+		$response = array(
+			&#039;themes&#039; =&gt; $filtered_themes,
+			&#039;_links&#039; =&gt; array(
+				&#039;browse_all&#039; =&gt; array(
+					&#039;href&#039; =&gt; admin_url( &#039;themes.php&#039; ),
+				),
+			),
+		);
+
+		/**
+		 * Filter the onboarding recommended themes response.
+		 *
+		 * @since 8.3.0
+		 *
+		 * @param array $response The recommended themes response.
+		 * @param array $filtered_themes The filtered themes.
+		 * @param string $industry The industry to filter by (if provided).
+		 * @param string $currency The currency to convert prices to. (USD, AUD, CAD, EUR, GBP).
+		 *
+		 * @return array
+		 */
+		$filtered_response = apply_filters(
+			&#039;__experimental_woocommerce_rest_get_recommended_themes&#039;,
+			$response,
+			$industry,
+			$currency
+		);
+
+		/**
+		 * Loop through themes checking to see if any are currently active
+		 */
+		$active_theme = get_stylesheet();
+
+		foreach ( $filtered_response[&#039;themes&#039;] as &amp;$theme ) {
+			if ( $theme[&#039;slug&#039;] === $active_theme ) {
+				$theme[&#039;is_active&#039;] = true;
+			} else {
+				$theme[&#039;is_active&#039;] = false;
+			}
+		}
+
+		return $filtered_response;
 	}
 
 	/**
@@ -375,6 +722,88 @@ class OnboardingThemes extends \WC_REST_Data_Controller {
 
 		return $this-&gt;add_additional_fields_schema( $schema );
 	}
+
+	/**
+	 * Get the recommended themes schema, conforming to JSON Schema.
+	 *
+	 * @return array
+	 */
+	public function get_recommended_item_schema() {
+		$schema = array(
+			&#039;$schema&#039;    =&gt; &#039;http://json-schema.org/draft-04/schema#&#039;,
+			&#039;title&#039;      =&gt; &#039;onboarding_theme&#039;,
+			&#039;type&#039;       =&gt; &#039;object&#039;,
+			&#039;properties&#039; =&gt; array(
+				&#039;themes&#039; =&gt; array(
+					&#039;type&#039;  =&gt; &#039;array&#039;,
+					&#039;items&#039; =&gt; array(
+						&#039;type&#039;       =&gt; &#039;object&#039;,
+						&#039;properties&#039; =&gt; array(
+							&#039;name&#039;           =&gt; array(
+								&#039;type&#039;        =&gt; &#039;string&#039;,
+								&#039;description&#039; =&gt; &#039;Theme Name&#039;,
+							),
+							&#039;price&#039;          =&gt; array(
+								&#039;type&#039;        =&gt; &#039;string&#039;,
+								&#039;description&#039; =&gt; &#039;Price&#039;,
+							),
+							&#039;is_free&#039;        =&gt; array(
+								&#039;type&#039;        =&gt; &#039;boolean&#039;,
+								&#039;description&#039; =&gt; &#039;Whether theme is free&#039;,
+							),
+							&#039;is_active&#039;      =&gt; array(
+								&#039;type&#039;        =&gt; &#039;boolean&#039;,
+								&#039;description&#039; =&gt; &#039;Whether theme is active&#039;,
+							),
+							&#039;thumbnail_url&#039;  =&gt; array(
+								&#039;type&#039;        =&gt; &#039;string&#039;,
+								&#039;description&#039; =&gt; &#039;Thumbnail URL&#039;,
+							),
+							&#039;link_url&#039;       =&gt; array(
+								&#039;type&#039;        =&gt; &#039;string&#039;,
+								&#039;description&#039; =&gt; &#039;Link URL for the theme&#039;,
+							),
+							&#039;color_palettes&#039; =&gt; array(
+								&#039;type&#039;        =&gt; &#039;array&#039;,
+								&#039;description&#039; =&gt; &#039;Array of color palette objects&#039;,
+								&#039;items&#039;       =&gt; array(
+									&#039;type&#039;       =&gt; &#039;object&#039;,
+									&#039;properties&#039; =&gt; array(
+										&#039;primary&#039;   =&gt; array(
+											&#039;type&#039;        =&gt; &#039;string&#039;,
+											&#039;description&#039; =&gt; &#039;Primary color&#039;,
+										),
+										&#039;secondary&#039; =&gt; array(
+											&#039;type&#039;        =&gt; &#039;string&#039;,
+											&#039;description&#039; =&gt; &#039;Secondary color&#039;,
+										),
+									),
+								),
+							),
+						),
+					),
+				),
+				&#039;_links&#039; =&gt; array(
+					&#039;type&#039;        =&gt; &#039;object&#039;,
+					&#039;description&#039; =&gt; &#039;Links related to this response&#039;,
+					&#039;properties&#039;  =&gt; array(
+						&#039;browse_all&#039; =&gt; array(
+							&#039;type&#039;        =&gt; &#039;object&#039;,
+							&#039;description&#039; =&gt; &#039;Link to browse all themes&#039;,
+							&#039;properties&#039;  =&gt; array(
+								&#039;href&#039; =&gt; array(
+									&#039;type&#039;        =&gt; &#039;string&#039;,
+									&#039;description&#039; =&gt; &#039;URL for browsing all themes&#039;,
+								),
+							),
+						),
+					),
+				),
+			),
+		);
+
+		return $this-&gt;add_additional_fields_schema( $schema );
+	}
 }
 </code></pre>
             </article>
@@ -386,7 +815,7 @@ class OnboardingThemes extends \WC_REST_Data_Controller {
 
     <footer class="phpdocumentor phpdocumentor-footer">
     <div class="phpdocumentor-section">
-        <span>WooCommerce Code Reference API documentation generated by <a href="http://www.phpdoc.org/">phpDocumentor</a> on August 24th, 2023 at 08:49 am.</span>
+        <span>WooCommerce Code Reference API documentation generated by <a href="http://www.phpdoc.org/">phpDocumentor</a> on July 25th, 2024 at 11:33 am.</span>
     </div>
 </footer>
 
@@ -398,7 +827,7 @@ class OnboardingThemes extends \WC_REST_Data_Controller {
             'searchIndex': '..\/js\/searchIndex.json'
         };
     </script>
-    <script src="../js/searchIndex.js?updated=1692866950"></script>
-    <script src="../js/search.js?updated=1692866950"></script>
+    <script src="../js/searchIndex.js?updated=1721907184"></script>
+    <script src="../js/search.js?updated=1721907184"></script>
 </body>
 </html>

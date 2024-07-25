@@ -9,9 +9,9 @@
     <link rel="apple-touch-icon" sizes="72x72" href="../images/apple-touch-icon-72x72.png"/>
     <link rel="apple-touch-icon" sizes="114x114" href="../images/apple-touch-icon-114x114.png"/>
     <link rel="stylesheet" href="../css/normalize.css">
-    <link rel="stylesheet" href="../css/base.css?updated=1692866965">
+    <link rel="stylesheet" href="../css/base.css?updated=1721907192">
     <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../css/template.css?updated=1692866965">
+    <link rel="stylesheet" href="../css/template.css?updated=1721907192">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0/css/all.min.css" integrity="sha256-ybRkN9dBjhcS2qrW1z+hfCxq+1aBdwyQM5wlQoQVt/0=" crossorigin="anonymous" />
             <script src="https://cdn.jsdelivr.net/npm/css-vars-ponyfill@2"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0/js/all.min.js" integrity="sha256-0vuk8LXoyrmCjp1f0O300qo1M75ZQyhH9X3J6d+scmk=" crossorigin="anonymous"></script>
@@ -119,6 +119,7 @@
                         <ul class="phpdocumentor-list">
                                     <li><a href="../packages/Automattic-WooCommerce.html"><abbr title="\Automattic\WooCommerce">WooCommerce</abbr></a></li>
                             </ul>
+                                <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/WooCommerceBlocks.html"><abbr title="\WooCommerceBlocks">WooCommerceBlocks</abbr></a></h3>
                         </section>
     
     <section class="phpdocumentor-sidebar__category">
@@ -159,9 +160,9 @@
     </h2>
 
         <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-install.php"><a href="../files/woocommerce-includes-class-wc-install.html#source-view.23">includes/class-wc-install.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-install.php"><a href="../files/woocommerce-includes-class-wc-install.html#source-view.28">includes/class-wc-install.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">23</span>
+    <span class="phpdocumentor-element-found-in__line">28</span>
 </aside>
 
             <p class="phpdocumentor-summary">WC_Install Class.</p>
@@ -187,6 +188,13 @@
         &nbsp;= &#039;woocommerce_newly_installed&#039;                    </span>
 </dt>
 <dd>Option name used to track new installations of WooCommerce.</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -constant -public">
+    <a href="../classes/WC-Install.html#constant_STORE_ID_OPTION">STORE_ID_OPTION</a>
+    <span>
+        &nbsp;= &#039;woocommerce_store_id&#039;                    </span>
+</dt>
+<dd>Option name used to uniquely identify installations of WooCommerce.</dd>
 
                 <dt class="phpdocumentor-table-of-contents__entry -property -private">
     <a href="../classes/WC-Install.html#property_db_updates">$db_updates</a>
@@ -333,6 +341,20 @@ in a single site or multi site environment.</dd>
 <dd>Create pages on installation.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a href="../classes/WC-Install.html#method_maybe_enable_hpos">maybe_enable_hpos()</a>
+    <span>
+                        &nbsp;: mixed    </span>
+</dt>
+<dd>Enable HPOS by default for new shops.</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a href="../classes/WC-Install.html#method_maybe_set_store_id">maybe_set_store_id()</a>
+    <span>
+                        &nbsp;: mixed    </span>
+</dt>
+<dd>Set the Store ID if not already present.</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="../classes/WC-Install.html#method_migrate_options">migrate_options()</a>
     <span>
                         &nbsp;: mixed    </span>
@@ -431,6 +453,20 @@ in a single site or multi site environment.</dd>
 <dd>Uninstall tables when MU blog is deleted.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -protected">
+    <a href="../classes/WC-Install.html#method_get_cart_block_content">get_cart_block_content()</a>
+    <span>
+                        &nbsp;: string    </span>
+</dt>
+<dd>Get the Cart block content.</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -protected">
+    <a href="../classes/WC-Install.html#method_get_checkout_block_content">get_checkout_block_content()</a>
+    <span>
+                        &nbsp;: string    </span>
+</dt>
+<dd>Get the Checkout block content.</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -protected">
     <a href="../classes/WC-Install.html#method_run_update_callback_end">run_update_callback_end()</a>
     <span>
                         &nbsp;: mixed    </span>
@@ -494,11 +530,34 @@ in a single site or multi site environment.</dd>
 <dd>Get Table schema.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -private">
+    <a href="../classes/WC-Install.html#method_install_core">install_core()</a>
+    <span>
+                        &nbsp;: mixed    </span>
+</dt>
+<dd>Core function that performs the WooCommerce install.</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -private">
     <a href="../classes/WC-Install.html#method_is_installing">is_installing()</a>
     <span>
                         &nbsp;: bool    </span>
 </dt>
 <dd>Returns true if we&#039;re installing.</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -private">
+    <a href="../classes/WC-Install.html#method_maybe_activate_legacy_api_enabled_option">maybe_activate_legacy_api_enabled_option()</a>
+    <span>
+                        &nbsp;: mixed    </span>
+</dt>
+<dd>If in a previous version of WooCommerce the Legacy REST API plugin was installed manually but the core Legacy REST API was kept disabled,
+now the Legacy API is still disabled and can&#039;t be manually enabled from settings UI (the plugin, which is now in control, won&#039;t allow that),
+which is weird and confusing. So we detect this case and explicitly enable it.</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -private">
+    <a href="../classes/WC-Install.html#method_maybe_install_legacy_api_plugin">maybe_install_legacy_api_plugin()</a>
+    <span>
+                        &nbsp;: mixed    </span>
+</dt>
+<dd>Install and activate the WooCommerce Legacy REST API plugin from the WordPress.org directory if all the following is true:</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -private">
     <a href="../classes/WC-Install.html#method_maybe_set_activation_transients">maybe_set_activation_transients()</a>
@@ -543,6 +602,13 @@ in a single site or multi site environment.</dd>
 <dd>Setup WC environment - post types, taxonomies, endpoints.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -private">
+    <a href="../classes/WC-Install.html#method_should_enable_hpos_for_new_shop">should_enable_hpos_for_new_shop()</a>
+    <span>
+                        &nbsp;: bool    </span>
+</dt>
+<dd>Checks whether HPOS should be enabled for new shops.</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -private">
     <a href="../classes/WC-Install.html#method_update">update()</a>
     <span>
                         &nbsp;: mixed    </span>
@@ -573,9 +639,9 @@ in a single site or multi site environment.</dd>
     </h4>
 
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-install.php"><a href="../files/woocommerce-includes-class-wc-install.html#source-view.244">includes/class-wc-install.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-install.php"><a href="../files/woocommerce-includes-class-wc-install.html#source-view.269">includes/class-wc-install.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">244</span>
+    <span class="phpdocumentor-element-found-in__line">269</span>
 </aside>
 
         <p class="phpdocumentor-summary">Option name used to track new installations of WooCommerce.</p>
@@ -585,6 +651,33 @@ in a single site or multi site environment.</dd>
     <span class="phpdocumentor-signature__type">string</span>
     <span class="phpdocumentor-signature__name">NEWLY_INSTALLED_OPTION</span>
     = <span class="phpdocumentor-signature__default-value">&#039;woocommerce_newly_installed&#039;</span>
+</code>
+
+
+        <section class="phpdocumentor-description"></section>
+
+    
+
+</article>
+                    <article class="phpdocumentor-element -constant -public ">
+    <h4 class="phpdocumentor-element__name" id="constant_STORE_ID_OPTION">
+        STORE_ID_OPTION
+        <a href="#constant_STORE_ID_OPTION" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-install.php"><a href="../files/woocommerce-includes-class-wc-install.html#source-view.276">includes/class-wc-install.php</a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">276</span>
+</aside>
+
+        <p class="phpdocumentor-summary">Option name used to uniquely identify installations of WooCommerce.</p>
+
+    <code class="phpdocumentor-signature phpdocumentor-code ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+    <span class="phpdocumentor-signature__type">string</span>
+    <span class="phpdocumentor-signature__name">STORE_ID_OPTION</span>
+    = <span class="phpdocumentor-signature__default-value">&#039;woocommerce_store_id&#039;</span>
 </code>
 
 
@@ -615,9 +708,9 @@ in a single site or multi site environment.</dd>
                                 </span>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-install.php"><a href="../files/woocommerce-includes-class-wc-install.html#source-view.38">includes/class-wc-install.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-install.php"><a href="../files/woocommerce-includes-class-wc-install.html#source-view.43">includes/class-wc-install.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">38</span>
+    <span class="phpdocumentor-element-found-in__line">43</span>
 </aside>
 
         <p class="phpdocumentor-summary">DB updates and callbacks that need to be run per version.</p>
@@ -626,7 +719,7 @@ in a single site or multi site environment.</dd>
     <span class="phpdocumentor-signature__visibility">private</span>
     <span class="phpdocumentor-signature__static">static</span>    <span class="phpdocumentor-signature__type">array&lt;string|int, mixed&gt;</span>
     <span class="phpdocumentor-signature__name">$db_updates</span>
-     = <span class="phpdocumentor-signature__default-value">array(&#039;2.0.0&#039; =&gt; array(&#039;wc_update_200_file_paths&#039;, &#039;wc_update_200_permalinks&#039;, &#039;wc_update_200_subcat_display&#039;, &#039;wc_update_200_taxrates&#039;, &#039;wc_update_200_line_items&#039;, &#039;wc_update_200_images&#039;, &#039;wc_update_200_db_version&#039;), &#039;2.0.9&#039; =&gt; array(&#039;wc_update_209_brazillian_state&#039;, &#039;wc_update_209_db_version&#039;), &#039;2.1.0&#039; =&gt; array(&#039;wc_update_210_remove_pages&#039;, &#039;wc_update_210_file_paths&#039;, &#039;wc_update_210_db_version&#039;), &#039;2.2.0&#039; =&gt; array(&#039;wc_update_220_shipping&#039;, &#039;wc_update_220_order_status&#039;, &#039;wc_update_220_variations&#039;, &#039;wc_update_220_attributes&#039;, &#039;wc_update_220_db_version&#039;), &#039;2.3.0&#039; =&gt; array(&#039;wc_update_230_options&#039;, &#039;wc_update_230_db_version&#039;), &#039;2.4.0&#039; =&gt; array(&#039;wc_update_240_options&#039;, &#039;wc_update_240_shipping_methods&#039;, &#039;wc_update_240_api_keys&#039;, &#039;wc_update_240_refunds&#039;, &#039;wc_update_240_db_version&#039;), &#039;2.4.1&#039; =&gt; array(&#039;wc_update_241_variations&#039;, &#039;wc_update_241_db_version&#039;), &#039;2.5.0&#039; =&gt; array(&#039;wc_update_250_currency&#039;, &#039;wc_update_250_db_version&#039;), &#039;2.6.0&#039; =&gt; array(&#039;wc_update_260_options&#039;, &#039;wc_update_260_termmeta&#039;, &#039;wc_update_260_zones&#039;, &#039;wc_update_260_zone_methods&#039;, &#039;wc_update_260_refunds&#039;, &#039;wc_update_260_db_version&#039;), &#039;3.0.0&#039; =&gt; array(&#039;wc_update_300_grouped_products&#039;, &#039;wc_update_300_settings&#039;, &#039;wc_update_300_product_visibility&#039;, &#039;wc_update_300_db_version&#039;), &#039;3.1.0&#039; =&gt; array(&#039;wc_update_310_downloadable_products&#039;, &#039;wc_update_310_old_comments&#039;, &#039;wc_update_310_db_version&#039;), &#039;3.1.2&#039; =&gt; array(&#039;wc_update_312_shop_manager_capabilities&#039;, &#039;wc_update_312_db_version&#039;), &#039;3.2.0&#039; =&gt; array(&#039;wc_update_320_mexican_states&#039;, &#039;wc_update_320_db_version&#039;), &#039;3.3.0&#039; =&gt; array(&#039;wc_update_330_image_options&#039;, &#039;wc_update_330_webhooks&#039;, &#039;wc_update_330_product_stock_status&#039;, &#039;wc_update_330_set_default_product_cat&#039;, &#039;wc_update_330_clear_transients&#039;, &#039;wc_update_330_set_paypal_sandbox_credentials&#039;, &#039;wc_update_330_db_version&#039;), &#039;3.4.0&#039; =&gt; array(&#039;wc_update_340_states&#039;, &#039;wc_update_340_state&#039;, &#039;wc_update_340_last_active&#039;, &#039;wc_update_340_db_version&#039;), &#039;3.4.3&#039; =&gt; array(&#039;wc_update_343_cleanup_foreign_keys&#039;, &#039;wc_update_343_db_version&#039;), &#039;3.4.4&#039; =&gt; array(&#039;wc_update_344_recreate_roles&#039;, &#039;wc_update_344_db_version&#039;), &#039;3.5.0&#039; =&gt; array(&#039;wc_update_350_reviews_comment_type&#039;, &#039;wc_update_350_db_version&#039;), &#039;3.5.2&#039; =&gt; array(&#039;wc_update_352_drop_download_log_fk&#039;), &#039;3.5.4&#039; =&gt; array(&#039;wc_update_354_modify_shop_manager_caps&#039;, &#039;wc_update_354_db_version&#039;), &#039;3.6.0&#039; =&gt; array(&#039;wc_update_360_product_lookup_tables&#039;, &#039;wc_update_360_term_meta&#039;, &#039;wc_update_360_downloadable_product_permissions_index&#039;, &#039;wc_update_360_db_version&#039;), &#039;3.7.0&#039; =&gt; array(&#039;wc_update_370_tax_rate_classes&#039;, &#039;wc_update_370_mro_std_currency&#039;, &#039;wc_update_370_db_version&#039;), &#039;3.9.0&#039; =&gt; array(&#039;wc_update_390_move_maxmind_database&#039;, &#039;wc_update_390_change_geolocation_database_update_cron&#039;, &#039;wc_update_390_db_version&#039;), &#039;4.0.0&#039; =&gt; array(&#039;wc_update_product_lookup_tables&#039;, &#039;wc_update_400_increase_size_of_column&#039;, &#039;wc_update_400_reset_action_scheduler_migration_status&#039;, &#039;wc_admin_update_0201_order_status_index&#039;, &#039;wc_admin_update_0230_rename_gross_total&#039;, &#039;wc_admin_update_0251_remove_unsnooze_action&#039;, &#039;wc_update_400_db_version&#039;), &#039;4.4.0&#039; =&gt; array(&#039;wc_update_440_insert_attribute_terms_for_variable_products&#039;, &#039;wc_admin_update_110_remove_facebook_note&#039;, &#039;wc_admin_update_130_remove_dismiss_action_from_tracking_opt_in_note&#039;, &#039;wc_update_440_db_version&#039;), &#039;4.5.0&#039; =&gt; array(&#039;wc_update_450_sanitize_coupons_code&#039;, &#039;wc_update_450_db_version&#039;), &#039;5.0.0&#039; =&gt; array(&#039;wc_update_500_fix_product_review_count&#039;, &#039;wc_admin_update_160_remove_facebook_note&#039;, &#039;wc_admin_update_170_homescreen_layout&#039;, &#039;wc_update_500_db_version&#039;), &#039;5.6.0&#039; =&gt; array(&#039;wc_update_560_create_refund_returns_page&#039;, &#039;wc_update_560_db_version&#039;), &#039;6.0.0&#039; =&gt; array(&#039;wc_update_600_migrate_rate_limit_options&#039;, &#039;wc_admin_update_270_delete_report_downloads&#039;, &#039;wc_admin_update_271_update_task_list_options&#039;, &#039;wc_admin_update_280_order_status&#039;, &#039;wc_admin_update_290_update_apperance_task_option&#039;, &#039;wc_admin_update_290_delete_default_homepage_layout_option&#039;, &#039;wc_update_600_db_version&#039;), &#039;6.3.0&#039; =&gt; array(&#039;wc_update_630_create_product_attributes_lookup_table&#039;, &#039;wc_admin_update_300_update_is_read_from_last_read&#039;, &#039;wc_update_630_db_version&#039;), &#039;6.4.0&#039; =&gt; array(&#039;wc_update_640_add_primary_key_to_product_attributes_lookup_table&#039;, &#039;wc_admin_update_340_remove_is_primary_from_note_action&#039;, &#039;wc_update_640_db_version&#039;), &#039;6.5.0&#039; =&gt; array(&#039;wc_update_650_approved_download_directories&#039;), &#039;6.5.1&#039; =&gt; array(&#039;wc_update_651_approved_download_directories&#039;), &#039;6.7.0&#039; =&gt; array(&#039;wc_update_670_purge_comments_count_cache&#039;, &#039;wc_update_670_delete_deprecated_remote_inbox_notifications_option&#039;), &#039;7.0.0&#039; =&gt; array(&#039;wc_update_700_remove_download_log_fk&#039;, &#039;wc_update_700_remove_recommended_marketing_plugins_transient&#039;), &#039;7.2.1&#039; =&gt; array(&#039;wc_update_721_adjust_new_zealand_states&#039;, &#039;wc_update_721_adjust_ukraine_states&#039;), &#039;7.2.2&#039; =&gt; array(&#039;wc_update_722_adjust_new_zealand_states&#039;, &#039;wc_update_722_adjust_ukraine_states&#039;), &#039;7.5.0&#039; =&gt; array(&#039;wc_update_750_add_columns_to_order_stats_table&#039;, &#039;wc_update_750_disable_new_product_management_experience&#039;), &#039;7.7.0&#039; =&gt; array(&#039;wc_update_770_remove_multichannel_marketing_feature_options&#039;))</span></code>
+     = <span class="phpdocumentor-signature__default-value">array(&#039;2.0.0&#039; =&gt; array(&#039;wc_update_200_file_paths&#039;, &#039;wc_update_200_permalinks&#039;, &#039;wc_update_200_subcat_display&#039;, &#039;wc_update_200_taxrates&#039;, &#039;wc_update_200_line_items&#039;, &#039;wc_update_200_images&#039;, &#039;wc_update_200_db_version&#039;), &#039;2.0.9&#039; =&gt; array(&#039;wc_update_209_brazillian_state&#039;, &#039;wc_update_209_db_version&#039;), &#039;2.1.0&#039; =&gt; array(&#039;wc_update_210_remove_pages&#039;, &#039;wc_update_210_file_paths&#039;, &#039;wc_update_210_db_version&#039;), &#039;2.2.0&#039; =&gt; array(&#039;wc_update_220_shipping&#039;, &#039;wc_update_220_order_status&#039;, &#039;wc_update_220_variations&#039;, &#039;wc_update_220_attributes&#039;, &#039;wc_update_220_db_version&#039;), &#039;2.3.0&#039; =&gt; array(&#039;wc_update_230_options&#039;, &#039;wc_update_230_db_version&#039;), &#039;2.4.0&#039; =&gt; array(&#039;wc_update_240_options&#039;, &#039;wc_update_240_shipping_methods&#039;, &#039;wc_update_240_api_keys&#039;, &#039;wc_update_240_refunds&#039;, &#039;wc_update_240_db_version&#039;), &#039;2.4.1&#039; =&gt; array(&#039;wc_update_241_variations&#039;, &#039;wc_update_241_db_version&#039;), &#039;2.5.0&#039; =&gt; array(&#039;wc_update_250_currency&#039;, &#039;wc_update_250_db_version&#039;), &#039;2.6.0&#039; =&gt; array(&#039;wc_update_260_options&#039;, &#039;wc_update_260_termmeta&#039;, &#039;wc_update_260_zones&#039;, &#039;wc_update_260_zone_methods&#039;, &#039;wc_update_260_refunds&#039;, &#039;wc_update_260_db_version&#039;), &#039;3.0.0&#039; =&gt; array(&#039;wc_update_300_grouped_products&#039;, &#039;wc_update_300_settings&#039;, &#039;wc_update_300_product_visibility&#039;, &#039;wc_update_300_db_version&#039;), &#039;3.1.0&#039; =&gt; array(&#039;wc_update_310_downloadable_products&#039;, &#039;wc_update_310_old_comments&#039;, &#039;wc_update_310_db_version&#039;), &#039;3.1.2&#039; =&gt; array(&#039;wc_update_312_shop_manager_capabilities&#039;, &#039;wc_update_312_db_version&#039;), &#039;3.2.0&#039; =&gt; array(&#039;wc_update_320_mexican_states&#039;, &#039;wc_update_320_db_version&#039;), &#039;3.3.0&#039; =&gt; array(&#039;wc_update_330_image_options&#039;, &#039;wc_update_330_webhooks&#039;, &#039;wc_update_330_product_stock_status&#039;, &#039;wc_update_330_set_default_product_cat&#039;, &#039;wc_update_330_clear_transients&#039;, &#039;wc_update_330_set_paypal_sandbox_credentials&#039;, &#039;wc_update_330_db_version&#039;), &#039;3.4.0&#039; =&gt; array(&#039;wc_update_340_states&#039;, &#039;wc_update_340_state&#039;, &#039;wc_update_340_last_active&#039;, &#039;wc_update_340_db_version&#039;), &#039;3.4.3&#039; =&gt; array(&#039;wc_update_343_cleanup_foreign_keys&#039;, &#039;wc_update_343_db_version&#039;), &#039;3.4.4&#039; =&gt; array(&#039;wc_update_344_recreate_roles&#039;, &#039;wc_update_344_db_version&#039;), &#039;3.5.0&#039; =&gt; array(&#039;wc_update_350_reviews_comment_type&#039;, &#039;wc_update_350_db_version&#039;), &#039;3.5.2&#039; =&gt; array(&#039;wc_update_352_drop_download_log_fk&#039;), &#039;3.5.4&#039; =&gt; array(&#039;wc_update_354_modify_shop_manager_caps&#039;, &#039;wc_update_354_db_version&#039;), &#039;3.6.0&#039; =&gt; array(&#039;wc_update_360_product_lookup_tables&#039;, &#039;wc_update_360_term_meta&#039;, &#039;wc_update_360_downloadable_product_permissions_index&#039;, &#039;wc_update_360_db_version&#039;), &#039;3.7.0&#039; =&gt; array(&#039;wc_update_370_tax_rate_classes&#039;, &#039;wc_update_370_mro_std_currency&#039;, &#039;wc_update_370_db_version&#039;), &#039;3.9.0&#039; =&gt; array(&#039;wc_update_390_move_maxmind_database&#039;, &#039;wc_update_390_change_geolocation_database_update_cron&#039;, &#039;wc_update_390_db_version&#039;), &#039;4.0.0&#039; =&gt; array(&#039;wc_update_product_lookup_tables&#039;, &#039;wc_update_400_increase_size_of_column&#039;, &#039;wc_update_400_reset_action_scheduler_migration_status&#039;, &#039;wc_admin_update_0201_order_status_index&#039;, &#039;wc_admin_update_0230_rename_gross_total&#039;, &#039;wc_admin_update_0251_remove_unsnooze_action&#039;, &#039;wc_update_400_db_version&#039;), &#039;4.4.0&#039; =&gt; array(&#039;wc_update_440_insert_attribute_terms_for_variable_products&#039;, &#039;wc_admin_update_110_remove_facebook_note&#039;, &#039;wc_admin_update_130_remove_dismiss_action_from_tracking_opt_in_note&#039;, &#039;wc_update_440_db_version&#039;), &#039;4.5.0&#039; =&gt; array(&#039;wc_update_450_sanitize_coupons_code&#039;, &#039;wc_update_450_db_version&#039;), &#039;5.0.0&#039; =&gt; array(&#039;wc_update_500_fix_product_review_count&#039;, &#039;wc_admin_update_160_remove_facebook_note&#039;, &#039;wc_admin_update_170_homescreen_layout&#039;, &#039;wc_update_500_db_version&#039;), &#039;5.6.0&#039; =&gt; array(&#039;wc_update_560_create_refund_returns_page&#039;, &#039;wc_update_560_db_version&#039;), &#039;6.0.0&#039; =&gt; array(&#039;wc_update_600_migrate_rate_limit_options&#039;, &#039;wc_admin_update_270_delete_report_downloads&#039;, &#039;wc_admin_update_271_update_task_list_options&#039;, &#039;wc_admin_update_280_order_status&#039;, &#039;wc_admin_update_290_update_apperance_task_option&#039;, &#039;wc_admin_update_290_delete_default_homepage_layout_option&#039;, &#039;wc_update_600_db_version&#039;), &#039;6.3.0&#039; =&gt; array(&#039;wc_update_630_create_product_attributes_lookup_table&#039;, &#039;wc_admin_update_300_update_is_read_from_last_read&#039;, &#039;wc_update_630_db_version&#039;), &#039;6.4.0&#039; =&gt; array(&#039;wc_update_640_add_primary_key_to_product_attributes_lookup_table&#039;, &#039;wc_admin_update_340_remove_is_primary_from_note_action&#039;, &#039;wc_update_640_db_version&#039;), &#039;6.5.0&#039; =&gt; array(&#039;wc_update_650_approved_download_directories&#039;), &#039;6.5.1&#039; =&gt; array(&#039;wc_update_651_approved_download_directories&#039;), &#039;6.7.0&#039; =&gt; array(&#039;wc_update_670_purge_comments_count_cache&#039;, &#039;wc_update_670_delete_deprecated_remote_inbox_notifications_option&#039;), &#039;7.0.0&#039; =&gt; array(&#039;wc_update_700_remove_download_log_fk&#039;, &#039;wc_update_700_remove_recommended_marketing_plugins_transient&#039;), &#039;7.2.1&#039; =&gt; array(&#039;wc_update_721_adjust_new_zealand_states&#039;, &#039;wc_update_721_adjust_ukraine_states&#039;), &#039;7.2.2&#039; =&gt; array(&#039;wc_update_722_adjust_new_zealand_states&#039;, &#039;wc_update_722_adjust_ukraine_states&#039;), &#039;7.5.0&#039; =&gt; array(&#039;wc_update_750_add_columns_to_order_stats_table&#039;, &#039;wc_update_750_disable_new_product_management_experience&#039;), &#039;7.7.0&#039; =&gt; array(&#039;wc_update_770_remove_multichannel_marketing_feature_options&#039;), &#039;8.1.0&#039; =&gt; array(&#039;wc_update_810_migrate_transactional_metadata_for_hpos&#039;), &#039;8.6.0&#039; =&gt; array(&#039;wc_update_860_remove_recommended_marketing_plugins_transient&#039;), &#039;8.7.0&#039; =&gt; array(&#039;wc_update_870_prevent_listing_of_transient_files_directory&#039;), &#039;8.9.0&#039; =&gt; array(&#039;wc_update_890_update_connect_to_woocommerce_note&#039;, &#039;wc_update_890_update_paypal_standard_load_eligibility&#039;), &#039;8.9.1&#039; =&gt; array(&#039;wc_update_891_create_plugin_autoinstall_history_option&#039;), &#039;9.1.0&#039; =&gt; array(&#039;wc_update_910_add_launch_your_store_tour_option&#039;, &#039;wc_update_910_remove_obsolete_user_meta&#039;))</span></code>
 
         <section class="phpdocumentor-description"><p>Please note that these functions are invoked when WooCommerce is updated from a previous version,
 but NOT when WooCommerce is newly installed.</p>
@@ -656,9 +749,9 @@ at install time (e.g. populating tables), use the 'woocommerce_installed' hook.<
         <a href="#method_add_admin_note_after_page_created" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-install.php"><a href="../files/woocommerce-includes-class-wc-install.html#source-view.2332">includes/class-wc-install.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-install.php"><a href="../files/woocommerce-includes-class-wc-install.html#source-view.2632">includes/class-wc-install.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">2332</span>
+    <span class="phpdocumentor-element-found-in__line">2632</span>
 </aside>
 
         <p class="phpdocumentor-summary">Adds an admin inbox note after a page has been created to notify
@@ -704,9 +797,9 @@ Refund and returns page.</p>
         <a href="#method_background_installer" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-install.php"><a href="../files/woocommerce-includes-class-wc-install.html#source-view.1945">includes/class-wc-install.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-install.php"><a href="../files/woocommerce-includes-class-wc-install.html#source-view.2245">includes/class-wc-install.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1945</span>
+    <span class="phpdocumentor-element-found-in__line">2245</span>
 </aside>
 
         <p class="phpdocumentor-summary">Install a plugin from .org in the background via a cron job (used by
@@ -781,9 +874,9 @@ installer - opt in).</p>
         <a href="#method_check_version" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-install.php"><a href="../files/woocommerce-includes-class-wc-install.html#source-view.289">includes/class-wc-install.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-install.php"><a href="../files/woocommerce-includes-class-wc-install.html#source-view.323">includes/class-wc-install.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">289</span>
+    <span class="phpdocumentor-element-found-in__line">323</span>
 </aside>
 
         <p class="phpdocumentor-summary">Check WooCommerce version and run the updater is required.</p>
@@ -814,9 +907,9 @@ installer - opt in).</p>
         <a href="#method_create_pages" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-install.php"><a href="../files/woocommerce-includes-class-wc-install.html#source-view.735">includes/class-wc-install.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-install.php"><a href="../files/woocommerce-includes-class-wc-install.html#source-view.823">includes/class-wc-install.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">735</span>
+    <span class="phpdocumentor-element-found-in__line">823</span>
 </aside>
 
         <p class="phpdocumentor-summary">Create pages that the plugin relies on, storing page IDs in variables.</p>
@@ -846,9 +939,9 @@ installer - opt in).</p>
         <a href="#method_create_roles" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-install.php"><a href="../files/woocommerce-includes-class-wc-install.html#source-view.1590">includes/class-wc-install.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-install.php"><a href="../files/woocommerce-includes-class-wc-install.html#source-view.1900">includes/class-wc-install.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1590</span>
+    <span class="phpdocumentor-element-found-in__line">1900</span>
 </aside>
 
         <p class="phpdocumentor-summary">Create roles and capabilities.</p>
@@ -878,9 +971,9 @@ installer - opt in).</p>
         <a href="#method_create_tables" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-install.php"><a href="../files/woocommerce-includes-class-wc-install.html#source-view.1071">includes/class-wc-install.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-install.php"><a href="../files/woocommerce-includes-class-wc-install.html#source-view.1378">includes/class-wc-install.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1071</span>
+    <span class="phpdocumentor-element-found-in__line">1378</span>
 </aside>
 
         <p class="phpdocumentor-summary">Set up the database tables which the plugin needs to function.</p>
@@ -921,9 +1014,9 @@ woocommerce_tax_rate_locations - Each rate can be applied to more than one postc
         <a href="#method_create_terms" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-install.php"><a href="../files/woocommerce-includes-class-wc-install.html#source-view.1000">includes/class-wc-install.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-install.php"><a href="../files/woocommerce-includes-class-wc-install.html#source-view.1143">includes/class-wc-install.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1000</span>
+    <span class="phpdocumentor-element-found-in__line">1143</span>
 </aside>
 
         <p class="phpdocumentor-summary">Add the default terms for WC taxonomies - product types and order statuses. Modify this at your own risk.</p>
@@ -953,9 +1046,9 @@ woocommerce_tax_rate_locations - Each rate can be applied to more than one postc
         <a href="#method_cron_schedules" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-install.php"><a href="../files/woocommerce-includes-class-wc-install.html#source-view.659">includes/class-wc-install.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-install.php"><a href="../files/woocommerce-includes-class-wc-install.html#source-view.747">includes/class-wc-install.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">659</span>
+    <span class="phpdocumentor-element-found-in__line">747</span>
 </aside>
 
         <p class="phpdocumentor-summary">Add more cron schedules.</p>
@@ -997,9 +1090,9 @@ woocommerce_tax_rate_locations - Each rate can be applied to more than one postc
         <a href="#method_delete_obsolete_notes" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-install.php"><a href="../files/woocommerce-includes-class-wc-install.html#source-view.865">includes/class-wc-install.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-install.php"><a href="../files/woocommerce-includes-class-wc-install.html#source-view.1008">includes/class-wc-install.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">865</span>
+    <span class="phpdocumentor-element-found-in__line">1008</span>
 </aside>
 
         <p class="phpdocumentor-summary">Delete obsolete notes.</p>
@@ -1029,9 +1122,9 @@ woocommerce_tax_rate_locations - Each rate can be applied to more than one postc
         <a href="#method_drop_tables" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-install.php"><a href="../files/woocommerce-includes-class-wc-install.html#source-view.1564">includes/class-wc-install.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-install.php"><a href="../files/woocommerce-includes-class-wc-install.html#source-view.1874">includes/class-wc-install.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1564</span>
+    <span class="phpdocumentor-element-found-in__line">1874</span>
 </aside>
 
         <p class="phpdocumentor-summary">Drop WooCommerce tables.</p>
@@ -1061,9 +1154,9 @@ woocommerce_tax_rate_locations - Each rate can be applied to more than one postc
         <a href="#method_get_core_capabilities" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-install.php"><a href="../files/woocommerce-includes-class-wc-install.html#source-view.1678">includes/class-wc-install.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-install.php"><a href="../files/woocommerce-includes-class-wc-install.html#source-view.1988">includes/class-wc-install.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1678</span>
+    <span class="phpdocumentor-element-found-in__line">1988</span>
 </aside>
 
         <p class="phpdocumentor-summary">Get capabilities for WooCommerce - these are assigned to admin/shop manager during installation or reset.</p>
@@ -1093,9 +1186,9 @@ woocommerce_tax_rate_locations - Each rate can be applied to more than one postc
         <a href="#method_get_db_update_callbacks" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-install.php"><a href="../files/woocommerce-includes-class-wc-install.html#source-view.601">includes/class-wc-install.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-install.php"><a href="../files/woocommerce-includes-class-wc-install.html#source-view.689">includes/class-wc-install.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">601</span>
+    <span class="phpdocumentor-element-found-in__line">689</span>
 </aside>
 
         <p class="phpdocumentor-summary">Get list of DB update callbacks.</p>
@@ -1139,9 +1232,9 @@ woocommerce_tax_rate_locations - Each rate can be applied to more than one postc
         <a href="#method_get_tables" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-install.php"><a href="../files/woocommerce-includes-class-wc-install.html#source-view.1508">includes/class-wc-install.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-install.php"><a href="../files/woocommerce-includes-class-wc-install.html#source-view.1818">includes/class-wc-install.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1508</span>
+    <span class="phpdocumentor-element-found-in__line">1818</span>
 </aside>
 
         <p class="phpdocumentor-summary">Return a list of WooCommerce tables. Used to make sure all WC tables are dropped when uninstalling the plugin
@@ -1172,9 +1265,9 @@ in a single site or multi site environment.</p>
         <a href="#method_init" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-install.php"><a href="../files/woocommerce-includes-class-wc-install.html#source-view.249">includes/class-wc-install.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-install.php"><a href="../files/woocommerce-includes-class-wc-install.html#source-view.281">includes/class-wc-install.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">249</span>
+    <span class="phpdocumentor-element-found-in__line">281</span>
 </aside>
 
         <p class="phpdocumentor-summary">Hook in tabs.</p>
@@ -1204,9 +1297,9 @@ in a single site or multi site environment.</p>
         <a href="#method_install" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-install.php"><a href="../files/woocommerce-includes-class-wc-install.html#source-view.399">includes/class-wc-install.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-install.php"><a href="../files/woocommerce-includes-class-wc-install.html#source-view.438">includes/class-wc-install.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">399</span>
+    <span class="phpdocumentor-element-found-in__line">438</span>
 </aside>
 
         <p class="phpdocumentor-summary">Install WC.</p>
@@ -1236,9 +1329,9 @@ in a single site or multi site environment.</p>
         <a href="#method_install_actions" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-install.php"><a href="../files/woocommerce-includes-class-wc-install.html#source-view.388">includes/class-wc-install.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-install.php"><a href="../files/woocommerce-includes-class-wc-install.html#source-view.422">includes/class-wc-install.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">388</span>
+    <span class="phpdocumentor-element-found-in__line">422</span>
 </aside>
 
         <p class="phpdocumentor-summary">Install actions when a update button is clicked within the admin area.</p>
@@ -1269,9 +1362,9 @@ in a single site or multi site environment.</p>
         <a href="#method_is_new_install" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-install.php"><a href="../files/woocommerce-includes-class-wc-install.html#source-view.534">includes/class-wc-install.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-install.php"><a href="../files/woocommerce-includes-class-wc-install.html#source-view.609">includes/class-wc-install.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">534</span>
+    <span class="phpdocumentor-element-found-in__line">609</span>
 </aside>
 
         <p class="phpdocumentor-summary">Is this a brand new WC install?</p>
@@ -1316,9 +1409,9 @@ in a single site or multi site environment.</p>
         <a href="#method_manual_database_update" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-install.php"><a href="../files/woocommerce-includes-class-wc-install.html#source-view.310">includes/class-wc-install.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-install.php"><a href="../files/woocommerce-includes-class-wc-install.html#source-view.344">includes/class-wc-install.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">310</span>
+    <span class="phpdocumentor-element-found-in__line">344</span>
 </aside>
 
         <p class="phpdocumentor-summary">Performan manual database update when triggered by WooCommerce System Tools.</p>
@@ -1362,9 +1455,9 @@ in a single site or multi site environment.</p>
         <a href="#method_maybe_create_pages" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-install.php"><a href="../files/woocommerce-includes-class-wc-install.html#source-view.726">includes/class-wc-install.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-install.php"><a href="../files/woocommerce-includes-class-wc-install.html#source-view.814">includes/class-wc-install.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">726</span>
+    <span class="phpdocumentor-element-found-in__line">814</span>
 </aside>
 
         <p class="phpdocumentor-summary">Create pages on installation.</p>
@@ -1389,14 +1482,106 @@ in a single site or multi site environment.</p>
             -public
                                     -static                    "
 >
+    <h4 class="phpdocumentor-element__name" id="method_maybe_enable_hpos">
+        maybe_enable_hpos()
+        <a href="#method_maybe_enable_hpos" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-install.php"><a href="../files/woocommerce-includes-class-wc-install.html#source-view.965">includes/class-wc-install.php</a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">965</span>
+</aside>
+
+        <p class="phpdocumentor-summary">Enable HPOS by default for new shops.</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+            <span class="phpdocumentor-signature__static">static</span>    <span class="phpdocumentor-signature__name">maybe_enable_hpos</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
+
+        <section class="phpdocumentor-description"></section>
+
+    
+    
+    <h5 class="phpdocumentor-tag-list__heading" id="tags">
+        Tags
+        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
+    </h5>
+    <dl class="phpdocumentor-tag-list">
+                                    <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">since</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                            <span class="phpdocumentor-tag-link">8.2.0</span>
+                                                                                                        <section class="phpdocumentor-description"></section>
+
+                </dd>
+                        </dl>
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">mixed</span>
+            &mdash; <span class="phpdocumentor-return-value__description"></span>
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                    -static                    "
+>
+    <h4 class="phpdocumentor-element__name" id="method_maybe_set_store_id">
+        maybe_set_store_id()
+        <a href="#method_maybe_set_store_id" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-install.php"><a href="../files/woocommerce-includes-class-wc-install.html#source-view.670">includes/class-wc-install.php</a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">670</span>
+</aside>
+
+        <p class="phpdocumentor-summary">Set the Store ID if not already present.</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+            <span class="phpdocumentor-signature__static">static</span>    <span class="phpdocumentor-signature__name">maybe_set_store_id</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
+
+        <section class="phpdocumentor-description"></section>
+
+    
+    
+    <h5 class="phpdocumentor-tag-list__heading" id="tags">
+        Tags
+        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
+    </h5>
+    <dl class="phpdocumentor-tag-list">
+                                    <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">since</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                            <span class="phpdocumentor-tag-link">8.4.0</span>
+                                                                                                        <section class="phpdocumentor-description"></section>
+
+                </dd>
+                        </dl>
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">mixed</span>
+            &mdash; <span class="phpdocumentor-return-value__description"></span>
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                    -static                    "
+>
     <h4 class="phpdocumentor-element__name" id="method_migrate_options">
         migrate_options()
         <a href="#method_migrate_options" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-install.php"><a href="../files/woocommerce-includes-class-wc-install.html#source-view.958">includes/class-wc-install.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-install.php"><a href="../files/woocommerce-includes-class-wc-install.html#source-view.1101">includes/class-wc-install.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">958</span>
+    <span class="phpdocumentor-element-found-in__line">1101</span>
 </aside>
 
         <p class="phpdocumentor-summary">Migrate option values to their new keys/names.</p>
@@ -1426,9 +1611,9 @@ in a single site or multi site environment.</p>
         <a href="#method_needs_db_update" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-install.php"><a href="../files/woocommerce-includes-class-wc-install.html#source-view.546">includes/class-wc-install.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-install.php"><a href="../files/woocommerce-includes-class-wc-install.html#source-view.623">includes/class-wc-install.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">546</span>
+    <span class="phpdocumentor-element-found-in__line">623</span>
 </aside>
 
         <p class="phpdocumentor-summary">Is a DB update needed?</p>
@@ -1472,9 +1657,9 @@ in a single site or multi site environment.</p>
         <a href="#method_page_created" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-install.php"><a href="../files/woocommerce-includes-class-wc-install.html#source-view.2356">includes/class-wc-install.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-install.php"><a href="../files/woocommerce-includes-class-wc-install.html#source-view.2656">includes/class-wc-install.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">2356</span>
+    <span class="phpdocumentor-element-found-in__line">2656</span>
 </aside>
 
         <p class="phpdocumentor-summary">When pages are created, we might want to take some action.</p>
@@ -1541,9 +1726,9 @@ page is created.</p>
         <a href="#method_plugin_action_links" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-install.php"><a href="../files/woocommerce-includes-class-wc-install.html#source-view.1860">includes/class-wc-install.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-install.php"><a href="../files/woocommerce-includes-class-wc-install.html#source-view.2160">includes/class-wc-install.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1860</span>
+    <span class="phpdocumentor-element-found-in__line">2160</span>
 </aside>
 
         <p class="phpdocumentor-summary">Show action links on the plugin screen.</p>
@@ -1585,9 +1770,9 @@ page is created.</p>
         <a href="#method_plugin_row_meta" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-install.php"><a href="../files/woocommerce-includes-class-wc-install.html#source-view.1876">includes/class-wc-install.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-install.php"><a href="../files/woocommerce-includes-class-wc-install.html#source-view.2176">includes/class-wc-install.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1876</span>
+    <span class="phpdocumentor-element-found-in__line">2176</span>
 </aside>
 
         <p class="phpdocumentor-summary">Show row meta on the plugin screen.</p>
@@ -1638,9 +1823,9 @@ page is created.</p>
         <a href="#method_remove_mailchimps_redirect" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-install.php"><a href="../files/woocommerce-includes-class-wc-install.html#source-view.2088">includes/class-wc-install.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-install.php"><a href="../files/woocommerce-includes-class-wc-install.html#source-view.2388">includes/class-wc-install.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">2088</span>
+    <span class="phpdocumentor-element-found-in__line">2388</span>
 </aside>
 
         <p class="phpdocumentor-summary">Removes redirect added during MailChimp plugin&#039;s activation.</p>
@@ -1691,9 +1876,9 @@ page is created.</p>
         <a href="#method_remove_roles" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-install.php"><a href="../files/woocommerce-includes-class-wc-install.html#source-view.1720">includes/class-wc-install.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-install.php"><a href="../files/woocommerce-includes-class-wc-install.html#source-view.2030">includes/class-wc-install.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1720</span>
+    <span class="phpdocumentor-element-found-in__line">2030</span>
 </aside>
 
         <p class="phpdocumentor-summary">Remove WooCommerce roles.</p>
@@ -1723,9 +1908,9 @@ page is created.</p>
         <a href="#method_run_manual_database_update" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-install.php"><a href="../files/woocommerce-includes-class-wc-install.html#source-view.333">includes/class-wc-install.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-install.php"><a href="../files/woocommerce-includes-class-wc-install.html#source-view.367">includes/class-wc-install.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">333</span>
+    <span class="phpdocumentor-element-found-in__line">367</span>
 </aside>
 
         <p class="phpdocumentor-summary">Run manual database update.</p>
@@ -1755,9 +1940,9 @@ page is created.</p>
         <a href="#method_run_update_callback" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-install.php"><a href="../files/woocommerce-includes-class-wc-install.html#source-view.344">includes/class-wc-install.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-install.php"><a href="../files/woocommerce-includes-class-wc-install.html#source-view.378">includes/class-wc-install.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">344</span>
+    <span class="phpdocumentor-element-found-in__line">378</span>
 </aside>
 
         <p class="phpdocumentor-summary">Run an update callback when triggered by ActionScheduler.</p>
@@ -1813,9 +1998,9 @@ page is created.</p>
         <a href="#method_theme_background_installer" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-install.php"><a href="../files/woocommerce-includes-class-wc-install.html#source-view.2104">includes/class-wc-install.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-install.php"><a href="../files/woocommerce-includes-class-wc-install.html#source-view.2404">includes/class-wc-install.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">2104</span>
+    <span class="phpdocumentor-element-found-in__line">2404</span>
 </aside>
 
         <p class="phpdocumentor-summary">Install a theme from .org in the background via a cron job (used by installer - opt in).</p>
@@ -1880,9 +2065,9 @@ page is created.</p>
         <a href="#method_update_db_version" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-install.php"><a href="../files/woocommerce-includes-class-wc-install.html#source-view.648">includes/class-wc-install.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-install.php"><a href="../files/woocommerce-includes-class-wc-install.html#source-view.736">includes/class-wc-install.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">648</span>
+    <span class="phpdocumentor-element-found-in__line">736</span>
 </aside>
 
         <p class="phpdocumentor-summary">Update DB version to current.</p>
@@ -1924,9 +2109,9 @@ page is created.</p>
         <a href="#method_verify_base_tables" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-install.php"><a href="../files/woocommerce-includes-class-wc-install.html#source-view.478">includes/class-wc-install.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-install.php"><a href="../files/woocommerce-includes-class-wc-install.html#source-view.534">includes/class-wc-install.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">478</span>
+    <span class="phpdocumentor-element-found-in__line">534</span>
 </aside>
 
         <p class="phpdocumentor-summary">Check if all the base tables are present.</p>
@@ -1977,9 +2162,9 @@ page is created.</p>
         <a href="#method_wc_admin_db_update_notice" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-install.php"><a href="../files/woocommerce-includes-class-wc-install.html#source-view.321">includes/class-wc-install.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-install.php"><a href="../files/woocommerce-includes-class-wc-install.html#source-view.355">includes/class-wc-install.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">321</span>
+    <span class="phpdocumentor-element-found-in__line">355</span>
 </aside>
 
         <p class="phpdocumentor-summary">Add WC Admin based db update notice.</p>
@@ -2023,9 +2208,9 @@ page is created.</p>
         <a href="#method_wpmu_drop_tables" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-install.php"><a href="../files/woocommerce-includes-class-wc-install.html#source-view.1583">includes/class-wc-install.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-install.php"><a href="../files/woocommerce-includes-class-wc-install.html#source-view.1893">includes/class-wc-install.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1583</span>
+    <span class="phpdocumentor-element-found-in__line">1893</span>
 </aside>
 
         <p class="phpdocumentor-summary">Uninstall tables when MU blog is deleted.</p>
@@ -2062,14 +2247,106 @@ page is created.</p>
             -protected
                                     -static                    "
 >
+    <h4 class="phpdocumentor-element__name" id="method_get_cart_block_content">
+        get_cart_block_content()
+        <a href="#method_get_cart_block_content" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-install.php"><a href="../files/woocommerce-includes-class-wc-install.html#source-view.2669">includes/class-wc-install.php</a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">2669</span>
+</aside>
+
+        <p class="phpdocumentor-summary">Get the Cart block content.</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">protected</span>
+            <span class="phpdocumentor-signature__static">static</span>    <span class="phpdocumentor-signature__name">get_cart_block_content</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">string</span></code>
+
+        <section class="phpdocumentor-description"></section>
+
+    
+    
+    <h5 class="phpdocumentor-tag-list__heading" id="tags">
+        Tags
+        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
+    </h5>
+    <dl class="phpdocumentor-tag-list">
+                                    <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">since</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                            <span class="phpdocumentor-tag-link">8.3.0</span>
+                                                                                                        <section class="phpdocumentor-description"></section>
+
+                </dd>
+                        </dl>
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">string</span>
+            &mdash; <span class="phpdocumentor-return-value__description"></span>
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -protected
+                                    -static                    "
+>
+    <h4 class="phpdocumentor-element__name" id="method_get_checkout_block_content">
+        get_checkout_block_content()
+        <a href="#method_get_checkout_block_content" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-install.php"><a href="../files/woocommerce-includes-class-wc-install.html#source-view.2757">includes/class-wc-install.php</a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">2757</span>
+</aside>
+
+        <p class="phpdocumentor-summary">Get the Checkout block content.</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">protected</span>
+            <span class="phpdocumentor-signature__static">static</span>    <span class="phpdocumentor-signature__name">get_checkout_block_content</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">string</span></code>
+
+        <section class="phpdocumentor-description"></section>
+
+    
+    
+    <h5 class="phpdocumentor-tag-list__heading" id="tags">
+        Tags
+        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
+    </h5>
+    <dl class="phpdocumentor-tag-list">
+                                    <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">since</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                            <span class="phpdocumentor-tag-link">8.3.0</span>
+                                                                                                        <section class="phpdocumentor-description"></section>
+
+                </dd>
+                        </dl>
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">string</span>
+            &mdash; <span class="phpdocumentor-return-value__description"></span>
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -protected
+                                    -static                    "
+>
     <h4 class="phpdocumentor-element__name" id="method_run_update_callback_end">
         run_update_callback_end()
         <a href="#method_run_update_callback_end" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-install.php"><a href="../files/woocommerce-includes-class-wc-install.html#source-view.371">includes/class-wc-install.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-install.php"><a href="../files/woocommerce-includes-class-wc-install.html#source-view.405">includes/class-wc-install.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">371</span>
+    <span class="phpdocumentor-element-found-in__line">405</span>
 </aside>
 
         <p class="phpdocumentor-summary">Triggered when a callback has ran.</p>
@@ -2134,9 +2411,9 @@ page is created.</p>
         <a href="#method_run_update_callback_start" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-install.php"><a href="../files/woocommerce-includes-class-wc-install.html#source-view.360">includes/class-wc-install.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-install.php"><a href="../files/woocommerce-includes-class-wc-install.html#source-view.394">includes/class-wc-install.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">360</span>
+    <span class="phpdocumentor-element-found-in__line">394</span>
 </aside>
 
         <p class="phpdocumentor-summary">Triggered when a callback will run.</p>
@@ -2192,9 +2469,9 @@ page is created.</p>
         <a href="#method_associate_plugin_file" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-install.php"><a href="../files/woocommerce-includes-class-wc-install.html#source-view.1928">includes/class-wc-install.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-install.php"><a href="../files/woocommerce-includes-class-wc-install.html#source-view.2228">includes/class-wc-install.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1928</span>
+    <span class="phpdocumentor-element-found-in__line">2228</span>
 </aside>
 
         <p class="phpdocumentor-summary">Get slug from path and associate it with the path.</p>
@@ -2245,9 +2522,9 @@ page is created.</p>
         <a href="#method_create_cron_jobs" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-install.php"><a href="../files/woocommerce-includes-class-wc-install.html#source-view.674">includes/class-wc-install.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-install.php"><a href="../files/woocommerce-includes-class-wc-install.html#source-view.762">includes/class-wc-install.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">674</span>
+    <span class="phpdocumentor-element-found-in__line">762</span>
 </aside>
 
         <p class="phpdocumentor-summary">Create cron jobs (clear them first).</p>
@@ -2277,9 +2554,9 @@ page is created.</p>
         <a href="#method_create_files" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-install.php"><a href="../files/woocommerce-includes-class-wc-install.html#source-view.1747">includes/class-wc-install.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-install.php"><a href="../files/woocommerce-includes-class-wc-install.html#source-view.2057">includes/class-wc-install.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1747</span>
+    <span class="phpdocumentor-element-found-in__line">2057</span>
 </aside>
 
         <p class="phpdocumentor-summary">Create files/directories.</p>
@@ -2309,9 +2586,9 @@ page is created.</p>
         <a href="#method_create_options" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-install.php"><a href="../files/woocommerce-includes-class-wc-install.html#source-view.819">includes/class-wc-install.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-install.php"><a href="../files/woocommerce-includes-class-wc-install.html#source-view.917">includes/class-wc-install.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">819</span>
+    <span class="phpdocumentor-element-found-in__line">917</span>
 </aside>
 
         <p class="phpdocumentor-summary">Default options.</p>
@@ -2342,9 +2619,9 @@ page is created.</p>
         <a href="#method_create_placeholder_image" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-install.php"><a href="../files/woocommerce-includes-class-wc-install.html#source-view.1803">includes/class-wc-install.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-install.php"><a href="../files/woocommerce-includes-class-wc-install.html#source-view.2103">includes/class-wc-install.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1803</span>
+    <span class="phpdocumentor-element-found-in__line">2103</span>
 </aside>
 
         <p class="phpdocumentor-summary">Create a placeholder image in the media library.</p>
@@ -2388,9 +2665,9 @@ page is created.</p>
         <a href="#method_get_refunds_return_policy_page_content" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-install.php"><a href="../files/woocommerce-includes-class-wc-install.html#source-view.2179">includes/class-wc-install.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-install.php"><a href="../files/woocommerce-includes-class-wc-install.html#source-view.2479">includes/class-wc-install.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">2179</span>
+    <span class="phpdocumentor-element-found-in__line">2479</span>
 </aside>
 
         <p class="phpdocumentor-summary">Gets the content of the sample refunds and return policy page.</p>
@@ -2434,9 +2711,9 @@ page is created.</p>
         <a href="#method_get_schema" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-install.php"><a href="../files/woocommerce-includes-class-wc-install.html#source-view.1136">includes/class-wc-install.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-install.php"><a href="../files/woocommerce-includes-class-wc-install.html#source-view.1443">includes/class-wc-install.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1136</span>
+    <span class="phpdocumentor-element-found-in__line">1443</span>
 </aside>
 
         <p class="phpdocumentor-summary">Get Table schema.</p>
@@ -2468,14 +2745,46 @@ indexes first causes too much load on some servers/larger DB.</p>
             -private
                                     -static                    "
 >
+    <h4 class="phpdocumentor-element__name" id="method_install_core">
+        install_core()
+        <a href="#method_install_core" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-install.php"><a href="../files/woocommerce-includes-class-wc-install.html#source-view.490">includes/class-wc-install.php</a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">490</span>
+</aside>
+
+        <p class="phpdocumentor-summary">Core function that performs the WooCommerce install.</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">private</span>
+            <span class="phpdocumentor-signature__static">static</span>    <span class="phpdocumentor-signature__name">install_core</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
+
+        <section class="phpdocumentor-description"></section>
+
+    
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">mixed</span>
+            &mdash; <span class="phpdocumentor-return-value__description"></span>
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -private
+                                    -static                    "
+>
     <h4 class="phpdocumentor-element__name" id="method_is_installing">
         is_installing()
         <a href="#method_is_installing" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-install.php"><a href="../files/woocommerce-includes-class-wc-install.html#source-view.466">includes/class-wc-install.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-install.php"><a href="../files/woocommerce-includes-class-wc-install.html#source-view.522">includes/class-wc-install.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">466</span>
+    <span class="phpdocumentor-element-found-in__line">522</span>
 </aside>
 
         <p class="phpdocumentor-summary">Returns true if we&#039;re installing.</p>
@@ -2500,14 +2809,88 @@ indexes first causes too much load on some servers/larger DB.</p>
             -private
                                     -static                    "
 >
+    <h4 class="phpdocumentor-element__name" id="method_maybe_activate_legacy_api_enabled_option">
+        maybe_activate_legacy_api_enabled_option()
+        <a href="#method_maybe_activate_legacy_api_enabled_option" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-install.php"><a href="../files/woocommerce-includes-class-wc-install.html#source-view.1353">includes/class-wc-install.php</a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">1353</span>
+</aside>
+
+        <p class="phpdocumentor-summary">If in a previous version of WooCommerce the Legacy REST API plugin was installed manually but the core Legacy REST API was kept disabled,
+now the Legacy API is still disabled and can&#039;t be manually enabled from settings UI (the plugin, which is now in control, won&#039;t allow that),
+which is weird and confusing. So we detect this case and explicitly enable it.</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">private</span>
+            <span class="phpdocumentor-signature__static">static</span>    <span class="phpdocumentor-signature__name">maybe_activate_legacy_api_enabled_option</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
+
+        <section class="phpdocumentor-description"></section>
+
+    
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">mixed</span>
+            &mdash; <span class="phpdocumentor-return-value__description"></span>
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -private
+                                    -static                    "
+>
+    <h4 class="phpdocumentor-element__name" id="method_maybe_install_legacy_api_plugin">
+        maybe_install_legacy_api_plugin()
+        <a href="#method_maybe_install_legacy_api_plugin" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-install.php"><a href="../files/woocommerce-includes-class-wc-install.html#source-view.1206">includes/class-wc-install.php</a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">1206</span>
+</aside>
+
+        <p class="phpdocumentor-summary">Install and activate the WooCommerce Legacy REST API plugin from the WordPress.org directory if all the following is true:</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">private</span>
+            <span class="phpdocumentor-signature__static">static</span>    <span class="phpdocumentor-signature__name">maybe_install_legacy_api_plugin</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
+
+        <section class="phpdocumentor-description"><ol>
+<li>We are in a WooCommerce upgrade process (not a new install).</li>
+<li>The 'woocommerce_skip_legacy_rest_api_plugin_auto_install' filter returns false (which is the default).</li>
+<li>The plugin is not installed and active already (but see note about multisite below).</li>
+<li>The Legacy REST API is enabled in the site OR the site has at least one webhook defined that uses the Legacy REST API payload format (disabled webhooks also count).</li>
+</ol>
+<p>In multisite setups it could happen that the plugin was installed by an installation process performed in another site.
+In this case we check if the plugin was autoinstalled in such a way, and if so we activate it if the conditions are fulfilled.</p>
+</section>
+
+    
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">mixed</span>
+            &mdash; <span class="phpdocumentor-return-value__description"></span>
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -private
+                                    -static                    "
+>
     <h4 class="phpdocumentor-element__name" id="method_maybe_set_activation_transients">
         maybe_set_activation_transients()
         <a href="#method_maybe_set_activation_transients" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-install.php"><a href="../files/woocommerce-includes-class-wc-install.html#source-view.560">includes/class-wc-install.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-install.php"><a href="../files/woocommerce-includes-class-wc-install.html#source-view.637">includes/class-wc-install.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">560</span>
+    <span class="phpdocumentor-element-found-in__line">637</span>
 </aside>
 
         <p class="phpdocumentor-summary">See if we need to set redirect transients for activation or not.</p>
@@ -2551,9 +2934,9 @@ indexes first causes too much load on some servers/larger DB.</p>
         <a href="#method_maybe_update_db_version" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-install.php"><a href="../files/woocommerce-includes-class-wc-install.html#source-view.571">includes/class-wc-install.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-install.php"><a href="../files/woocommerce-includes-class-wc-install.html#source-view.648">includes/class-wc-install.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">571</span>
+    <span class="phpdocumentor-element-found-in__line">648</span>
 </aside>
 
         <p class="phpdocumentor-summary">See if we need to show or run database updates during install.</p>
@@ -2597,9 +2980,9 @@ indexes first causes too much load on some servers/larger DB.</p>
         <a href="#method_newly_installed" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-install.php"><a href="../files/woocommerce-includes-class-wc-install.html#source-view.270">includes/class-wc-install.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-install.php"><a href="../files/woocommerce-includes-class-wc-install.html#source-view.304">includes/class-wc-install.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">270</span>
+    <span class="phpdocumentor-element-found-in__line">304</span>
 </aside>
 
         <p class="phpdocumentor-summary">Trigger `woocommerce_newly_installed` action for new installations.</p>
@@ -2643,9 +3026,9 @@ indexes first causes too much load on some servers/larger DB.</p>
         <a href="#method_remove_admin_notices" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-install.php"><a href="../files/woocommerce-includes-class-wc-install.html#source-view.507">includes/class-wc-install.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-install.php"><a href="../files/woocommerce-includes-class-wc-install.html#source-view.581">includes/class-wc-install.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">507</span>
+    <span class="phpdocumentor-element-found-in__line">581</span>
 </aside>
 
         <p class="phpdocumentor-summary">Reset any notices added to admin.</p>
@@ -2689,9 +3072,9 @@ indexes first causes too much load on some servers/larger DB.</p>
         <a href="#method_set_paypal_standard_load_eligibility" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-install.php"><a href="../files/woocommerce-includes-class-wc-install.html#source-view.2166">includes/class-wc-install.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-install.php"><a href="../files/woocommerce-includes-class-wc-install.html#source-view.2466">includes/class-wc-install.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">2166</span>
+    <span class="phpdocumentor-element-found-in__line">2466</span>
 </aside>
 
         <p class="phpdocumentor-summary">Sets whether PayPal Standard will be loaded on install.</p>
@@ -2735,9 +3118,9 @@ indexes first causes too much load on some servers/larger DB.</p>
         <a href="#method_setup_environment" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-install.php"><a href="../files/woocommerce-includes-class-wc-install.html#source-view.517">includes/class-wc-install.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-install.php"><a href="../files/woocommerce-includes-class-wc-install.html#source-view.592">includes/class-wc-install.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">517</span>
+    <span class="phpdocumentor-element-found-in__line">592</span>
 </aside>
 
         <p class="phpdocumentor-summary">Setup WC environment - post types, taxonomies, endpoints.</p>
@@ -2776,14 +3159,46 @@ indexes first causes too much load on some servers/larger DB.</p>
             -private
                                     -static                    "
 >
+    <h4 class="phpdocumentor-element__name" id="method_should_enable_hpos_for_new_shop">
+        should_enable_hpos_for_new_shop()
+        <a href="#method_should_enable_hpos_for_new_shop" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-install.php"><a href="../files/woocommerce-includes-class-wc-install.html#source-view.977">includes/class-wc-install.php</a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">977</span>
+</aside>
+
+        <p class="phpdocumentor-summary">Checks whether HPOS should be enabled for new shops.</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">private</span>
+            <span class="phpdocumentor-signature__static">static</span>    <span class="phpdocumentor-signature__name">should_enable_hpos_for_new_shop</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">bool</span></code>
+
+        <section class="phpdocumentor-description"></section>
+
+    
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">bool</span>
+            &mdash; <span class="phpdocumentor-return-value__description"></span>
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -private
+                                    -static                    "
+>
     <h4 class="phpdocumentor-element__name" id="method_update">
         update()
         <a href="#method_update" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-install.php"><a href="../files/woocommerce-includes-class-wc-install.html#source-view.608">includes/class-wc-install.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-install.php"><a href="../files/woocommerce-includes-class-wc-install.html#source-view.696">includes/class-wc-install.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">608</span>
+    <span class="phpdocumentor-element-found-in__line">696</span>
 </aside>
 
         <p class="phpdocumentor-summary">Push all needed DB updates to the queue for processing.</p>
@@ -2813,9 +3228,9 @@ indexes first causes too much load on some servers/larger DB.</p>
         <a href="#method_update_wc_version" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-install.php"><a href="../files/woocommerce-includes-class-wc-install.html#source-view.591">includes/class-wc-install.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-install.php"><a href="../files/woocommerce-includes-class-wc-install.html#source-view.679">includes/class-wc-install.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">591</span>
+    <span class="phpdocumentor-element-found-in__line">679</span>
 </aside>
 
         <p class="phpdocumentor-summary">Update WC version to current.</p>
@@ -2845,7 +3260,7 @@ indexes first causes too much load on some servers/larger DB.</p>
 
     <footer class="phpdocumentor phpdocumentor-footer">
     <div class="phpdocumentor-section">
-        <span>WooCommerce Code Reference API documentation generated by <a href="http://www.phpdoc.org/">phpDocumentor</a> on August 24th, 2023 at 08:49 am.</span>
+        <span>WooCommerce Code Reference API documentation generated by <a href="http://www.phpdoc.org/">phpDocumentor</a> on July 25th, 2024 at 11:33 am.</span>
     </div>
 </footer>
 
@@ -2857,7 +3272,7 @@ indexes first causes too much load on some servers/larger DB.</p>
             'searchIndex': '..\/js\/searchIndex.json'
         };
     </script>
-    <script src="../js/searchIndex.js?updated=1692866966"></script>
-    <script src="../js/search.js?updated=1692866966"></script>
+    <script src="../js/searchIndex.js?updated=1721907192"></script>
+    <script src="../js/search.js?updated=1721907192"></script>
 </body>
 </html>

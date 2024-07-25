@@ -9,9 +9,9 @@
     <link rel="apple-touch-icon" sizes="72x72" href="../images/apple-touch-icon-72x72.png"/>
     <link rel="apple-touch-icon" sizes="114x114" href="../images/apple-touch-icon-114x114.png"/>
     <link rel="stylesheet" href="../css/normalize.css">
-    <link rel="stylesheet" href="../css/base.css?updated=1692866946">
+    <link rel="stylesheet" href="../css/base.css?updated=1721907182">
     <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../css/template.css?updated=1692866946">
+    <link rel="stylesheet" href="../css/template.css?updated=1721907182">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0/css/all.min.css" integrity="sha256-ybRkN9dBjhcS2qrW1z+hfCxq+1aBdwyQM5wlQoQVt/0=" crossorigin="anonymous" />
             <script src="https://cdn.jsdelivr.net/npm/css-vars-ponyfill@2"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0/js/all.min.js" integrity="sha256-0vuk8LXoyrmCjp1f0O300qo1M75ZQyhH9X3J6d+scmk=" crossorigin="anonymous"></script>
@@ -125,6 +125,7 @@
                         <ul class="phpdocumentor-list">
                                     <li><a href="../packages/Automattic-WooCommerce.html"><abbr title="\Automattic\WooCommerce">WooCommerce</abbr></a></li>
                             </ul>
+                                <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/WooCommerceBlocks.html"><abbr title="\WooCommerceBlocks">WooCommerceBlocks</abbr></a></h3>
                         </section>
     
     <section class="phpdocumentor-sidebar__category">
@@ -162,6 +163,9 @@
  * @package WooCommerce\Admin\Shipping
  */
 
+use Automattic\WooCommerce\Blocks\Utils\CartCheckoutUtils;
+use Automattic\WooCommerce\Blocks\Shipping\ShippingController;
+
 if ( ! defined( &#039;ABSPATH&#039; ) ) {
 	exit;
 }
@@ -172,7 +176,10 @@ if ( ! defined( &#039;ABSPATH&#039; ) ) {
 	&lt;span class=&quot;wc-shipping-zone-name&quot;&gt;&lt;?php echo esc_html( $zone-&gt;get_zone_name() ? $zone-&gt;get_zone_name() : __( &#039;Zone&#039;, &#039;woocommerce&#039; ) ); ?&gt;&lt;/span&gt;
 &lt;/h2&gt;
 
-&lt;?php do_action( &#039;woocommerce_shipping_zone_before_methods_table&#039;, $zone ); ?&gt;
+&lt;?php
+// phpcs:ignore WooCommerce.Commenting.CommentHooks.MissingHookComment
+do_action( &#039;woocommerce_shipping_zone_before_methods_table&#039;, $zone );
+?&gt;
 
 &lt;table class=&quot;form-table wc-shipping-zone-settings&quot;&gt;
 	&lt;tbody&gt;
@@ -181,8 +188,10 @@ if ( ! defined( &#039;ABSPATH&#039; ) ) {
 				&lt;th scope=&quot;row&quot; class=&quot;titledesc&quot;&gt;
 					&lt;label for=&quot;zone_name&quot;&gt;
 						&lt;?php esc_html_e( &#039;Zone name&#039;, &#039;woocommerce&#039; ); ?&gt;
-						&lt;?php echo wc_help_tip( __( &#039;This is the name of the zone for your reference.&#039;, &#039;woocommerce&#039; ) ); // @codingStandardsIgnoreLine ?&gt;
 					&lt;/label&gt;
+					&lt;p class=&quot;wc-shipping-zone-help-text&quot;&gt;
+						&lt;?php esc_html_e( &#039;Give your zone a name! E.g. Local, or Worldwide.&#039;, &#039;woocommerce&#039; ); ?&gt;
+					&lt;/p&gt;
 				&lt;/th&gt;
 				&lt;td class=&quot;forminp&quot;&gt;
 					&lt;input type=&quot;text&quot; data-attribute=&quot;zone_name&quot; name=&quot;zone_name&quot; id=&quot;zone_name&quot; value=&quot;&lt;?php echo esc_attr( $zone-&gt;get_zone_name( &#039;edit&#039; ) ); ?&gt;&quot; placeholder=&quot;&lt;?php esc_attr_e( &#039;Zone name&#039;, &#039;woocommerce&#039; ); ?&gt;&quot;&gt;
@@ -192,48 +201,34 @@ if ( ! defined( &#039;ABSPATH&#039; ) ) {
 				&lt;th scope=&quot;row&quot; class=&quot;titledesc&quot;&gt;
 					&lt;label for=&quot;zone_locations&quot;&gt;
 						&lt;?php esc_html_e( &#039;Zone regions&#039;, &#039;woocommerce&#039; ); ?&gt;
-						&lt;?php echo wc_help_tip( __( &#039;These are regions inside this zone. Customers will be matched against these regions.&#039;, &#039;woocommerce&#039; ) ); // @codingStandardsIgnoreLine ?&gt;
 					&lt;/label&gt;
+					&lt;p class=&quot;wc-shipping-zone-help-text&quot;&gt;
+						&lt;?php esc_html_e( &#039;List the regions you\&#039;d like to include in your shipping zone. Customers will be matched against these regions.&#039;, &#039;woocommerce&#039; ); ?&gt;
+					&lt;/p&gt;
 				&lt;/th&gt;
-				&lt;td class=&quot;forminp&quot;&gt;
-					&lt;select multiple=&quot;multiple&quot; data-attribute=&quot;zone_locations&quot; id=&quot;zone_locations&quot; name=&quot;zone_locations&quot; data-placeholder=&quot;&lt;?php esc_attr_e( &#039;Select regions within this zone&#039;, &#039;woocommerce&#039; ); ?&gt;&quot; class=&quot;wc-shipping-zone-region-select chosen_select&quot;&gt;
-						&lt;?php
-						foreach ( $shipping_continents as $continent_code =&gt; $continent ) {
-							echo &#039;&lt;option value=&quot;continent:&#039; . esc_attr( $continent_code ) . &#039;&quot;&#039; . wc_selected( &quot;continent:$continent_code&quot;, $locations ) . &#039;&gt;&#039; . esc_html( $continent[&#039;name&#039;] ) . &#039;&lt;/option&gt;&#039;;
-
-							$countries = array_intersect( array_keys( $allowed_countries ), $continent[&#039;countries&#039;] );
-
-							foreach ( $countries as $country_code ) {
-								echo &#039;&lt;option value=&quot;country:&#039; . esc_attr( $country_code ) . &#039;&quot;&#039; . wc_selected( &quot;country:$country_code&quot;, $locations ) . &#039;&gt;&#039; . esc_html( &#039;&amp;nbsp;&amp;nbsp; &#039; . $allowed_countries[ $country_code ] ) . &#039;&lt;/option&gt;&#039;;
-
-								$states = WC()-&gt;countries-&gt;get_states( $country_code );
-
-								if ( $states ) {
-									foreach ( $states as $state_code =&gt; $state_name ) {
-										echo &#039;&lt;option value=&quot;state:&#039; . esc_attr( $country_code . &#039;:&#039; . $state_code ) . &#039;&quot;&#039; . wc_selected( &quot;state:$country_code:$state_code&quot;, $locations ) . &#039;&gt;&#039; . esc_html( &#039;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; &#039; . $state_name . &#039;, &#039; . $allowed_countries[ $country_code ] ) . &#039;&lt;/option&gt;&#039;;
-									}
-								}
-							}
-						}
-						?&gt;
-					&lt;/select&gt;
+				&lt;td&gt;
+					&lt;div&gt;
+						&lt;div id=&quot;wc-shipping-zone-region-picker-root&quot;/&gt;
+					&lt;/div&gt;
 					&lt;?php if ( empty( $postcodes ) ) : ?&gt;
 						&lt;a class=&quot;wc-shipping-zone-postcodes-toggle&quot; href=&quot;#&quot;&gt;&lt;?php esc_html_e( &#039;Limit to specific ZIP/postcodes&#039;, &#039;woocommerce&#039; ); ?&gt;&lt;/a&gt;
 					&lt;?php endif; ?&gt;
 					&lt;div class=&quot;wc-shipping-zone-postcodes&quot;&gt;
 						&lt;textarea name=&quot;zone_postcodes&quot; data-attribute=&quot;zone_postcodes&quot; id=&quot;zone_postcodes&quot; placeholder=&quot;&lt;?php esc_attr_e( &#039;List 1 postcode per line&#039;, &#039;woocommerce&#039; ); ?&gt;&quot; class=&quot;input-text large-text&quot; cols=&quot;25&quot; rows=&quot;5&quot;&gt;&lt;?php echo esc_textarea( implode( &quot;\n&quot;, $postcodes ) ); ?&gt;&lt;/textarea&gt;
 						&lt;?php /* translators: WooCommerce link to setting up shipping zones */ ?&gt;
-						&lt;span class=&quot;description&quot;&gt;&lt;?php printf( __( &#039;Postcodes containing wildcards (e.g. CB23*) or fully numeric ranges (e.g. &lt;code&gt;90210...99000&lt;/code&gt;) are also supported. Please see the shipping zones &lt;a href=&quot;%s&quot; target=&quot;_blank&quot;&gt;documentation&lt;/a&gt; for more information.&#039;, &#039;woocommerce&#039; ), &#039;https://docs.woocommerce.com/document/setting-up-shipping-zones/#section-3&#039; ); ?&gt;&lt;/span&gt;&lt;?php // @codingStandardsIgnoreLine. ?&gt;
+						&lt;span class=&quot;description&quot;&gt;&lt;?php printf( __( &#039;Postcodes containing wildcards (e.g. CB23*) or fully numeric ranges (e.g. &lt;code&gt;90210...99000&lt;/code&gt;) are also supported. Please see the shipping zones &lt;a href=&quot;%s&quot; target=&quot;_blank&quot;&gt;documentation&lt;/a&gt; for more information.&#039;, &#039;woocommerce&#039; ), &#039;https://woocommerce.com/document/setting-up-shipping-zones/#section-3&#039; ); ?&gt;&lt;/span&gt;&lt;?php // @codingStandardsIgnoreLine. ?&gt;
 					&lt;/div&gt;
 				&lt;/td&gt;
-			&lt;?php endif; ?&gt;
-		&lt;/tr&gt;
+			&lt;/tr&gt;
+		&lt;?php endif; ?&gt;
 		&lt;tr valign=&quot;top&quot; class=&quot;&quot;&gt;
 			&lt;th scope=&quot;row&quot; class=&quot;titledesc&quot;&gt;
 				&lt;label&gt;
 					&lt;?php esc_html_e( &#039;Shipping methods&#039;, &#039;woocommerce&#039; ); ?&gt;
-					&lt;?php echo wc_help_tip( __( &#039;The following shipping methods apply to customers with shipping addresses within this zone.&#039;, &#039;woocommerce&#039; ) ); // @codingStandardsIgnoreLine ?&gt;
 				&lt;/label&gt;
+				&lt;p class=&quot;wc-shipping-zone-help-text&quot;&gt;
+					&lt;?php esc_html_e( &#039;Add the shipping methods you\&#039;d like to make available to customers in this zone.&#039;, &#039;woocommerce&#039; ); ?&gt;
+				&lt;/p&gt;
 			&lt;/th&gt;
 			&lt;td class=&quot;&quot;&gt;
 				&lt;table class=&quot;wc-shipping-zone-methods widefat&quot;&gt;
@@ -243,31 +238,34 @@ if ( ! defined( &#039;ABSPATH&#039; ) ) {
 							&lt;th class=&quot;wc-shipping-zone-method-title&quot;&gt;&lt;?php esc_html_e( &#039;Title&#039;, &#039;woocommerce&#039; ); ?&gt;&lt;/th&gt;
 							&lt;th class=&quot;wc-shipping-zone-method-enabled&quot;&gt;&lt;?php esc_html_e( &#039;Enabled&#039;, &#039;woocommerce&#039; ); ?&gt;&lt;/th&gt;
 							&lt;th class=&quot;wc-shipping-zone-method-description&quot;&gt;&lt;?php esc_html_e( &#039;Description&#039;, &#039;woocommerce&#039; ); ?&gt;&lt;/th&gt;
+							&lt;th&gt;&lt;/th&gt;
 						&lt;/tr&gt;
 					&lt;/thead&gt;
-					&lt;tfoot&gt;
-						&lt;tr&gt;
-							&lt;td colspan=&quot;4&quot;&gt;
-								&lt;button type=&quot;submit&quot; class=&quot;button wc-shipping-zone-add-method&quot; value=&quot;&lt;?php esc_attr_e( &#039;Add shipping method&#039;, &#039;woocommerce&#039; ); ?&gt;&quot;&gt;&lt;?php esc_html_e( &#039;Add shipping method&#039;, &#039;woocommerce&#039; ); ?&gt;&lt;/button&gt;
-							&lt;/td&gt;
-						&lt;/tr&gt;
-					&lt;/tfoot&gt;
-					&lt;tbody class=&quot;wc-shipping-zone-method-rows&quot;&gt;&lt;/tbody&gt;
+					&lt;tbody class=&quot;wc-shipping-zone-method-rows wc-shipping-tables-tbody&quot;&gt;&lt;/tbody&gt;
 				&lt;/table&gt;
+			&lt;/td&gt;
+		&lt;/tr&gt;
+		&lt;tr&gt;
+			&lt;th scope=&quot;row&quot;&gt;&lt;/th&gt;
+			&lt;td&gt;
+				&lt;button type=&quot;submit&quot; class=&quot;wc-shipping-zone-add-method components-button is-primary&quot; value=&quot;&lt;?php esc_attr_e( &#039;Add shipping method&#039;, &#039;woocommerce&#039; ); ?&gt;&quot;&gt;&lt;?php esc_html_e( &#039;Add shipping method&#039;, &#039;woocommerce&#039; ); ?&gt;&lt;/button&gt;
 			&lt;/td&gt;
 		&lt;/tr&gt;
 	&lt;/tbody&gt;
 &lt;/table&gt;
 
-&lt;?php do_action( &#039;woocommerce_shipping_zone_after_methods_table&#039;, $zone ); ?&gt;
+&lt;?php
+// phpcs:ignore WooCommerce.Commenting.CommentHooks.MissingHookComment
+do_action( &#039;woocommerce_shipping_zone_after_methods_table&#039;, $zone );
+?&gt;
 
 &lt;p class=&quot;submit&quot;&gt;
-	&lt;button type=&quot;submit&quot; name=&quot;submit&quot; id=&quot;submit&quot; class=&quot;button button-primary button-large wc-shipping-zone-method-save&quot; value=&quot;&lt;?php esc_attr_e( &#039;Save changes&#039;, &#039;woocommerce&#039; ); ?&gt;&quot; disabled&gt;&lt;?php esc_html_e( &#039;Save changes&#039;, &#039;woocommerce&#039; ); ?&gt;&lt;/button&gt;
+	&lt;button type=&quot;submit&quot; name=&quot;submit&quot; id=&quot;submit&quot; class=&quot;button-primary button-large wc-shipping-zone-method-save components-button is-primary&quot; value=&quot;&lt;?php esc_attr_e( &#039;Save changes&#039;, &#039;woocommerce&#039; ); ?&gt;&quot; disabled&gt;&lt;?php esc_html_e( &#039;Save changes&#039;, &#039;woocommerce&#039; ); ?&gt;&lt;/button&gt;
 &lt;/p&gt;
 
 &lt;script type=&quot;text/html&quot; id=&quot;tmpl-wc-shipping-zone-method-row-blank&quot;&gt;
 	&lt;tr&gt;
-		&lt;td class=&quot;wc-shipping-zone-method-blank-state&quot; colspan=&quot;4&quot;&gt;
+		&lt;td class=&quot;wc-shipping-zone-method-blank-state&quot; colspan=&quot;5&quot;&gt;
 			&lt;p&gt;&lt;?php esc_html_e( &#039;You can add multiple shipping methods within this zone. Only customers within the zone will see them.&#039;, &#039;woocommerce&#039; ); ?&gt;&lt;/p&gt;
 		&lt;/td&gt;
 	&lt;/tr&gt;
@@ -277,15 +275,16 @@ if ( ! defined( &#039;ABSPATH&#039; ) ) {
 	&lt;tr data-id=&quot;{{ data.instance_id }}&quot; data-enabled=&quot;{{ data.enabled }}&quot;&gt;
 		&lt;td width=&quot;1%&quot; class=&quot;wc-shipping-zone-method-sort&quot;&gt;&lt;/td&gt;
 		&lt;td class=&quot;wc-shipping-zone-method-title&quot;&gt;
-			&lt;a class=&quot;wc-shipping-zone-method-settings&quot; href=&quot;admin.php?page=wc-settings&amp;amp;tab=shipping&amp;amp;instance_id={{ data.instance_id }}&quot;&gt;{{{ data.title }}}&lt;/a&gt;
-			&lt;div class=&quot;row-actions&quot;&gt;
-				&lt;a class=&quot;wc-shipping-zone-method-settings&quot; href=&quot;admin.php?page=wc-settings&amp;amp;tab=shipping&amp;amp;instance_id={{ data.instance_id }}&quot;&gt;&lt;?php esc_html_e( &#039;Edit&#039;, &#039;woocommerce&#039; ); ?&gt;&lt;/a&gt; | &lt;a href=&quot;#&quot; class=&quot;wc-shipping-zone-method-delete&quot;&gt;&lt;?php esc_html_e( &#039;Delete&#039;, &#039;woocommerce&#039; ); ?&gt;&lt;/a&gt;
-			&lt;/div&gt;
+			{{{ data.title }}}
 		&lt;/td&gt;
 		&lt;td width=&quot;1%&quot; class=&quot;wc-shipping-zone-method-enabled&quot;&gt;&lt;a href=&quot;#&quot;&gt;{{{ data.enabled_icon }}}&lt;/a&gt;&lt;/td&gt;
 		&lt;td class=&quot;wc-shipping-zone-method-description&quot;&gt;
-			&lt;strong class=&quot;wc-shipping-zone-method-type&quot;&gt;{{ data.method_title }}&lt;/strong&gt;
 			{{{ data.method_description }}}
+		&lt;/td&gt;
+		&lt;td class=&quot;wc-shipping-zone-actions&quot;&gt;
+			&lt;div&gt;
+				&lt;a class=&quot;wc-shipping-zone-method-settings wc-shipping-zone-action-edit&quot; href=&quot;admin.php?page=wc-settings&amp;amp;tab=shipping&amp;amp;instance_id={{ data.instance_id }}&quot;&gt;&lt;?php esc_html_e( &#039;Edit&#039;, &#039;woocommerce&#039; ); ?&gt;&lt;/a&gt; | &lt;a href=&quot;#&quot; class=&quot;wc-shipping-zone-method-delete wc-shipping-zone-actions&quot;&gt;&lt;?php esc_html_e( &#039;Delete&#039;, &#039;woocommerce&#039; ); ?&gt;&lt;/a&gt;
+			&lt;/div&gt;
 		&lt;/td&gt;
 	&lt;/tr&gt;
 &lt;/script&gt;
@@ -299,8 +298,8 @@ if ( ! defined( &#039;ABSPATH&#039; ) ) {
 						&lt;?php
 						printf(
 							/* translators: %s: shipping method title */
-							esc_html__( &#039;%s Settings&#039;, &#039;woocommerce&#039; ),
-							&#039;{{{ data.method.method_title }}}&#039;
+							esc_html__( &#039;Set up %s&#039;, &#039;woocommerce&#039; ),
+							&#039;{{{ data.method.method_title.toLowerCase() }}}&#039;
 						);
 						?&gt;
 					&lt;/h1&gt;
@@ -308,15 +307,23 @@ if ( ! defined( &#039;ABSPATH&#039; ) ) {
 						&lt;span class=&quot;screen-reader-text&quot;&gt;&lt;?php esc_html_e( &#039;Close modal panel&#039;, &#039;woocommerce&#039; ); ?&gt;&lt;/span&gt;
 					&lt;/button&gt;
 				&lt;/header&gt;
-				&lt;article class=&quot;wc-modal-shipping-method-settings&quot;&gt;
+				&lt;article class=&quot;wc-modal-shipping-method-settings&quot; data-id=&quot;{{{ data.instance_id }}}&quot; data-status=&quot;{{{ data.status }}}&quot;  data-shipping-classes-count=&quot;&lt;?php echo count( WC()-&gt;shipping()-&gt;get_shipping_classes() ); ?&gt;&quot;&gt;
 					&lt;form action=&quot;&quot; method=&quot;post&quot;&gt;
 						{{{ data.method.settings_html }}}
 						&lt;input type=&quot;hidden&quot; name=&quot;instance_id&quot; value=&quot;{{{ data.instance_id }}}&quot; /&gt;
 					&lt;/form&gt;
+					&lt;a class=&quot;wc-shipping-method-add-class-costs&quot; style=&quot;display:none;&quot; target=&quot;_blank&quot; href=&quot;&lt;?php echo esc_url( admin_url( &#039;admin.php?page=wc-settings&amp;tab=shipping&amp;section=classes&#039; ) ); ?&gt;&quot;&gt;&lt;?php esc_html_e( &#039;Add shipping class costs&#039;, &#039;woocommerce&#039; ); ?&gt;&lt;/a&gt;
 				&lt;/article&gt;
 				&lt;footer&gt;
 					&lt;div class=&quot;inner&quot;&gt;
-						&lt;button id=&quot;btn-ok&quot; class=&quot;button button-primary button-large&quot;&gt;&lt;?php esc_html_e( &#039;Save changes&#039;, &#039;woocommerce&#039; ); ?&gt;&lt;/button&gt;
+						&lt;div&gt;
+							&lt;button id=&quot;btn-back&quot; class=&quot;button button-large wc-backbone-modal-back-{{ data.status === &#039;new&#039; ? &#039;active&#039; : &#039;inactive&#039; }}&quot;&gt;&lt;?php esc_html_e( &#039;Back&#039;, &#039;woocommerce&#039; ); ?&gt;&lt;/button&gt;
+							&lt;button id=&quot;btn-ok&quot; data-status=&#039;{{ data.status }}&#039; class=&quot;button button-primary button-large&quot;&gt;
+								&lt;div class=&quot;wc-backbone-modal-action-{{ data.status === &#039;new&#039; ? &#039;active&#039; : &#039;inactive&#039; }}&quot;&gt;&lt;?php esc_html_e( &#039;Create and save&#039;, &#039;woocommerce&#039; ); ?&gt;&lt;/div&gt;
+								&lt;div class=&quot;wc-backbone-modal-action-{{ data.status === &#039;existing&#039; ? &#039;active&#039; : &#039;inactive&#039; }}&quot;&gt;&lt;?php esc_html_e( &#039;Save&#039;, &#039;woocommerce&#039; ); ?&gt;&lt;/div&gt;
+							&lt;/button&gt;
+						&lt;/div&gt;
+						&lt;div class=&quot;wc-shipping-zone-method-modal-info wc-shipping-zone-method-modal-info-{{ data.status === &#039;existing&#039; ? &#039;inactive&#039; : &#039;active&#039; }}&quot;&gt;&lt;?php esc_html_e( &#039;STEP 2 OF 2&#039;, &#039;woocommerce&#039; ); ?&gt;&lt;/div&gt;
 					&lt;/div&gt;
 				&lt;/footer&gt;
 			&lt;/section&gt;
@@ -326,36 +333,96 @@ if ( ! defined( &#039;ABSPATH&#039; ) ) {
 &lt;/script&gt;
 
 &lt;script type=&quot;text/template&quot; id=&quot;tmpl-wc-modal-add-shipping-method&quot;&gt;
-	&lt;div class=&quot;wc-backbone-modal&quot;&gt;
+	&lt;div class=&quot;wc-backbone-modal wc-backbone-modal-add-shipping-method&quot;&gt;
 		&lt;div class=&quot;wc-backbone-modal-content&quot;&gt;
 			&lt;section class=&quot;wc-backbone-modal-main&quot; role=&quot;main&quot;&gt;
 				&lt;header class=&quot;wc-backbone-modal-header&quot;&gt;
-					&lt;h1&gt;&lt;?php esc_html_e( &#039;Add shipping method&#039;, &#039;woocommerce&#039; ); ?&gt;&lt;/h1&gt;
+					&lt;h1&gt;&lt;?php esc_html_e( &#039;Create shipping method&#039;, &#039;woocommerce&#039; ); ?&gt;&lt;/h1&gt;
 					&lt;button class=&quot;modal-close modal-close-link dashicons dashicons-no-alt&quot;&gt;
 						&lt;span class=&quot;screen-reader-text&quot;&gt;&lt;?php esc_html_e( &#039;Close modal panel&#039;, &#039;woocommerce&#039; ); ?&gt;&lt;/span&gt;
 					&lt;/button&gt;
 				&lt;/header&gt;
 				&lt;article&gt;
 					&lt;form action=&quot;&quot; method=&quot;post&quot;&gt;
-						&lt;div class=&quot;wc-shipping-zone-method-selector&quot;&gt;
-							&lt;p&gt;&lt;?php esc_html_e( &#039;Choose the shipping method you wish to add. Only shipping methods which support zones are listed.&#039;, &#039;woocommerce&#039; ); ?&gt;&lt;/p&gt;
+						&lt;fieldset class=&quot;wc-shipping-zone-method-selector&quot;&gt;
+							&lt;legend class=&quot;screen-reader-text&quot;&gt;&lt;?php esc_html_e( &#039;Choose the shipping method you wish to add. Only shipping methods which support zones are listed.&#039;, &#039;woocommerce&#039; ); ?&gt;&lt;/legend&gt;
+							&lt;?php
+							$methods = WC()-&gt;shipping()-&gt;load_shipping_methods();
 
-							&lt;select name=&quot;add_method_id&quot;&gt;
-								&lt;?php
-								foreach ( WC()-&gt;shipping()-&gt;load_shipping_methods() as $method ) {
-									if ( ! $method-&gt;supports( &#039;shipping-zones&#039; ) ) {
-										continue;
+							$methods_placed_in_order = array();
+							$first_methods_ids       = array( &#039;free_shipping&#039;, &#039;flat_rate&#039;, &#039;local_pickup&#039; );
+
+							foreach ( $first_methods_ids as $first_method_id ) {
+								foreach ( $methods as $key =&gt; $obj ) {
+									if ( $obj-&gt;id === $first_method_id ) {
+										$methods_placed_in_order[] = $obj;
+										unset( $methods[ $key ] );
+										break;
 									}
-									echo &#039;&lt;option data-description=&quot;&#039; . esc_attr( wp_kses_post( wpautop( $method-&gt;get_method_description() ) ) ) . &#039;&quot; value=&quot;&#039; . esc_attr( $method-&gt;id ) . &#039;&quot;&gt;&#039; . esc_html( $method-&gt;get_method_title() ) . &#039;&lt;/li&gt;&#039;;
 								}
-								?&gt;
-							&lt;/select&gt;
-						&lt;/div&gt;
+							}
+
+							$methods_placed_in_order = array_merge( $methods_placed_in_order, array_values( $methods ) );
+
+							foreach ( $methods_placed_in_order as $method ) {
+								if ( CartCheckoutUtils::is_checkout_block_default() &amp;&amp; ! ShippingController::is_legacy_local_pickup_active() &amp;&amp; &#039;local_pickup&#039; === $method-&gt;id ) {
+									continue;
+								}
+
+								if ( ! $method-&gt;supports( &#039;shipping-zones&#039; ) ) {
+									continue;
+								}
+
+								echo &#039;&lt;div class=&quot;wc-shipping-zone-method-input&quot;&gt;&lt;input type=&quot;radio&quot; value=&quot;&#039; . esc_attr( $method-&gt;id ) . &#039;&quot; id=&quot;&#039; . esc_attr( $method-&gt;id ) . &#039;&quot; name=&quot;add_method_id&quot;/&gt;&lt;label for=&quot;&#039; . esc_attr( $method-&gt;id ) . &#039;&quot;&gt;&#039; . esc_html( $method-&gt;get_method_title() ) . &#039;&lt;span class=&quot;dashicons dashicons-yes&quot;&gt;&lt;/span&gt;&lt;/label&gt;&lt;/div&gt;&#039;;
+							}
+
+							echo &#039;&lt;div class=&quot;wc-shipping-zone-method-input-help-text-container&quot;&gt;&#039;;
+
+							foreach ( $methods_placed_in_order as $method ) {
+								if ( ! $method-&gt;supports( &#039;shipping-zones&#039; ) ) {
+									continue;
+								}
+
+								echo &#039;&lt;div id=&#039; . esc_attr( $method-&gt;id ) . &#039;-description class=&quot;wc-shipping-zone-method-input-help-text&quot;&gt;&lt;span&gt;&#039; . wp_kses_post( wpautop( $method-&gt;get_method_description() ) ) . &#039;&lt;/span&gt;&lt;/div&gt;&#039;;
+							}
+
+							if ( CartCheckoutUtils::is_checkout_block_default() ) {
+								echo &#039;&lt;p class=&quot;wc-shipping-legacy-local-pickup-help-text-container&quot;&gt;&#039;;
+
+								if ( ShippingController::is_legacy_local_pickup_active() ) {
+									printf(
+										wp_kses(
+										/* translators: %s: Local pickup settings page URL. */
+											__( &#039;Explore a new enhanced delivery method that allows you to easily offer one or more pickup locations to your customers in the &lt;a href=&quot;%s&quot;&gt;Local pickup settings page&lt;/a&gt;.&#039;, &#039;woocommerce&#039; ),
+											array( &#039;a&#039; =&gt; array( &#039;href&#039; =&gt; array() ) )
+										),
+										esc_url( admin_url( &#039;admin.php?page=wc-settings&amp;tab=shipping&amp;section=pickup_location&#039; ) )
+									);
+
+								} else {
+									printf(
+										wp_kses(
+										/* translators: %s: Local pickup settings page URL. */
+											__( &#039;Local pickup: Set up pickup locations in the &lt;a href=&quot;%s&quot;&gt;Local pickup settings page&lt;/a&gt;.&#039;, &#039;woocommerce&#039; ),
+											array( &#039;a&#039; =&gt; array( &#039;href&#039; =&gt; array() ) )
+										),
+										esc_url( admin_url( &#039;admin.php?page=wc-settings&amp;tab=shipping&amp;section=pickup_location&#039; ) )
+									);
+								}
+
+								echo &#039;&lt;/p&gt;&#039;;
+							}
+
+							echo &#039;&lt;/div&gt;&#039;;
+
+							?&gt;
+						&lt;/fieldset&gt;
 					&lt;/form&gt;
 				&lt;/article&gt;
 				&lt;footer&gt;
 					&lt;div class=&quot;inner&quot;&gt;
-						&lt;button id=&quot;btn-ok&quot; class=&quot;button button-primary button-large&quot;&gt;&lt;?php esc_html_e( &#039;Add shipping method&#039;, &#039;woocommerce&#039; ); ?&gt;&lt;/button&gt;
+						&lt;button id=&quot;btn-next&quot; disabled class=&quot;button button-primary button-large disabled&quot;&gt;&lt;?php esc_html_e( &#039;Continue&#039;, &#039;woocommerce&#039; ); ?&gt;&lt;/button&gt;
+						&lt;div class=&quot;wc-shipping-zone-method-modal-info&quot;&gt;&lt;?php esc_html_e( &#039;STEP 1 OF 2&#039;, &#039;woocommerce&#039; ); ?&gt;&lt;/div&gt;
 					&lt;/div&gt;
 				&lt;/footer&gt;
 			&lt;/section&gt;
@@ -373,7 +440,7 @@ if ( ! defined( &#039;ABSPATH&#039; ) ) {
 
     <footer class="phpdocumentor phpdocumentor-footer">
     <div class="phpdocumentor-section">
-        <span>WooCommerce Code Reference API documentation generated by <a href="http://www.phpdoc.org/">phpDocumentor</a> on August 24th, 2023 at 08:49 am.</span>
+        <span>WooCommerce Code Reference API documentation generated by <a href="http://www.phpdoc.org/">phpDocumentor</a> on July 25th, 2024 at 11:33 am.</span>
     </div>
 </footer>
 
@@ -385,7 +452,7 @@ if ( ! defined( &#039;ABSPATH&#039; ) ) {
             'searchIndex': '..\/js\/searchIndex.json'
         };
     </script>
-    <script src="../js/searchIndex.js?updated=1692866946"></script>
-    <script src="../js/search.js?updated=1692866946"></script>
+    <script src="../js/searchIndex.js?updated=1721907182"></script>
+    <script src="../js/search.js?updated=1721907182"></script>
 </body>
 </html>

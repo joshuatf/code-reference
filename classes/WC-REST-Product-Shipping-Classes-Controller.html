@@ -9,9 +9,9 @@
     <link rel="apple-touch-icon" sizes="72x72" href="../images/apple-touch-icon-72x72.png"/>
     <link rel="apple-touch-icon" sizes="114x114" href="../images/apple-touch-icon-114x114.png"/>
     <link rel="stylesheet" href="../css/normalize.css">
-    <link rel="stylesheet" href="../css/base.css?updated=1692866988">
+    <link rel="stylesheet" href="../css/base.css?updated=1721907198">
     <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../css/template.css?updated=1692866988">
+    <link rel="stylesheet" href="../css/template.css?updated=1721907198">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0/css/all.min.css" integrity="sha256-ybRkN9dBjhcS2qrW1z+hfCxq+1aBdwyQM5wlQoQVt/0=" crossorigin="anonymous" />
             <script src="https://cdn.jsdelivr.net/npm/css-vars-ponyfill@2"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0/js/all.min.js" integrity="sha256-0vuk8LXoyrmCjp1f0O300qo1M75ZQyhH9X3J6d+scmk=" crossorigin="anonymous"></script>
@@ -119,6 +119,7 @@
                         <ul class="phpdocumentor-list">
                                     <li><a href="../packages/Automattic-WooCommerce.html"><abbr title="\Automattic\WooCommerce">WooCommerce</abbr></a></li>
                             </ul>
+                                <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/WooCommerceBlocks.html"><abbr title="\WooCommerceBlocks">WooCommerceBlocks</abbr></a></h3>
                         </section>
     
     <section class="phpdocumentor-sidebar__category">
@@ -350,11 +351,18 @@
 <dd>Prepare a single product shipping class output for response.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a href="../classes/WC-REST-Terms-Controller.html#method_register_routes">register_routes()</a>
+    <a href="../classes/WC-REST-Product-Shipping-Classes-Controller.html#method_register_routes">register_routes()</a>
     <span>
                         &nbsp;: mixed    </span>
 </dt>
-<dd>Register the routes for terms.</dd>
+<dd>Register the routes for product reviews.</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a href="../classes/WC-REST-Product-Shipping-Classes-Controller.html#method_suggest_slug">suggest_slug()</a>
+    <span>
+                        &nbsp;: string    </span>
+</dt>
+<dd>Callback fuction for the slug-suggestion endpoint.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="../classes/WC-REST-Terms-Controller.html#method_update_item">update_item()</a>
@@ -1068,9 +1076,9 @@ ull</span></code>
         <a href="#method_get_fields_for_response" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/rest-api/Controllers/Version3/class-wc-rest-controller.php"><a href="../files/woocommerce-includes-rest-api-controllers-version3-class-wc-rest-controller.html#source-view.529">includes/rest-api/Controllers/Version3/class-wc-rest-controller.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/rest-api/Controllers/Version3/class-wc-rest-controller.php"><a href="../files/woocommerce-includes-rest-api-controllers-version3-class-wc-rest-controller.html#source-view.517">includes/rest-api/Controllers/Version3/class-wc-rest-controller.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">529</span>
+    <span class="phpdocumentor-element-found-in__line">517</span>
 </aside>
 
         <p class="phpdocumentor-summary">Gets an array of fields to be included on the response.</p>
@@ -1336,9 +1344,9 @@ Updated from WordPress 5.3, included into this class to support old versions.</p
         <a href="#method_get_public_batch_schema" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/rest-api/Controllers/Version3/class-wc-rest-controller.php"><a href="../files/woocommerce-includes-rest-api-controllers-version3-class-wc-rest-controller.html#source-view.483">includes/rest-api/Controllers/Version3/class-wc-rest-controller.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/rest-api/Controllers/Version3/class-wc-rest-controller.php"><a href="../files/woocommerce-includes-rest-api-controllers-version3-class-wc-rest-controller.html#source-view.471">includes/rest-api/Controllers/Version3/class-wc-rest-controller.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">483</span>
+    <span class="phpdocumentor-element-found-in__line">471</span>
 </aside>
 
         <p class="phpdocumentor-summary">Get the batch schema, conforming to JSON Schema.</p>
@@ -1420,12 +1428,12 @@ Updated from WordPress 5.3, included into this class to support old versions.</p
         <a href="#method_register_routes" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/rest-api/Controllers/Version3/class-wc-rest-terms-controller.php"><a href="../files/woocommerce-includes-rest-api-controllers-version3-class-wc-rest-terms-controller.html#source-view.44">includes/rest-api/Controllers/Version3/class-wc-rest-terms-controller.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/rest-api/Controllers/Version3/class-wc-rest-product-shipping-classes-controller.php"><a href="../files/woocommerce-includes-rest-api-controllers-version3-class-wc-rest-product-shipping-classes-controller.html#source-view.31">includes/rest-api/Controllers/Version3/class-wc-rest-product-shipping-classes-controller.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">44</span>
+    <span class="phpdocumentor-element-found-in__line">31</span>
 </aside>
 
-        <p class="phpdocumentor-summary">Register the routes for terms.</p>
+        <p class="phpdocumentor-summary">Register the routes for product reviews.</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
@@ -1439,6 +1447,50 @@ Updated from WordPress 5.3, included into this class to support old versions.</p
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
     <span class="phpdocumentor-signature__response_type">mixed</span>
             &mdash; <span class="phpdocumentor-return-value__description"></span>
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_suggest_slug">
+        suggest_slug()
+        <a href="#method_suggest_slug" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/rest-api/Controllers/Version3/class-wc-rest-product-shipping-classes-controller.php"><a href="../files/woocommerce-includes-rest-api-controllers-version3-class-wc-rest-product-shipping-classes-controller.html#source-view.61">includes/rest-api/Controllers/Version3/class-wc-rest-product-shipping-classes-controller.php</a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">61</span>
+</aside>
+
+        <p class="phpdocumentor-summary">Callback fuction for the slug-suggestion endpoint.</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                <span class="phpdocumentor-signature__name">suggest_slug</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type"><abbr title="\WP_REST_Request">WP_REST_Request</abbr>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$request</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">string</span></code>
+
+        <section class="phpdocumentor-description"></section>
+
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$request</span>
+                : <span class="phpdocumentor-signature__argument__return-type"><abbr title="\WP_REST_Request">WP_REST_Request</abbr></span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"><p>Full details about the request.</p>
+</section>
+
+            </dd>
+            </dl>
+
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">string</span>
+            &mdash; <span class="phpdocumentor-return-value__description">The suggested slug.</span>
     
 </article>
                     <article
@@ -1942,9 +1994,9 @@ Updated from WordPress 5.3, included into this class to support old versions.</p
         <a href="#method_validate_setting_textarea_field" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/rest-api/Controllers/Version3/class-wc-rest-controller.php"><a href="../files/woocommerce-includes-rest-api-controllers-version3-class-wc-rest-controller.html#source-view.442">includes/rest-api/Controllers/Version3/class-wc-rest-controller.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/rest-api/Controllers/Version3/class-wc-rest-controller.php"><a href="../files/woocommerce-includes-rest-api-controllers-version3-class-wc-rest-controller.html#source-view.443">includes/rest-api/Controllers/Version3/class-wc-rest-controller.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">442</span>
+    <span class="phpdocumentor-element-found-in__line">443</span>
 </aside>
 
         <p class="phpdocumentor-summary">Validate textarea based settings.</p>
@@ -1989,6 +2041,15 @@ Updated from WordPress 5.3, included into this class to support old versions.</p
                 <dd class="phpdocumentor-tag-list__definition">
                                             <span class="phpdocumentor-tag-link">3.0.0</span>
                                                                                                         <section class="phpdocumentor-description"></section>
+
+                </dd>
+                            <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">since</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                            <span class="phpdocumentor-tag-link">9.0.0</span>
+                                                                                                        <section class="phpdocumentor-description"><p>No longer allows storing IFRAME, which was allowed for &quot;ShareThis&quot; integration no longer found in core.</p>
+</section>
 
                 </dd>
                         </dl>
@@ -2054,9 +2115,9 @@ Updated from WordPress 5.3, included into this class to support old versions.</p
         <a href="#method_add_meta_query" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/rest-api/Controllers/Version3/class-wc-rest-controller.php"><a href="../files/woocommerce-includes-rest-api-controllers-version3-class-wc-rest-controller.html#source-view.468">includes/rest-api/Controllers/Version3/class-wc-rest-controller.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/rest-api/Controllers/Version3/class-wc-rest-controller.php"><a href="../files/woocommerce-includes-rest-api-controllers-version3-class-wc-rest-controller.html#source-view.456">includes/rest-api/Controllers/Version3/class-wc-rest-controller.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">468</span>
+    <span class="phpdocumentor-element-found-in__line">456</span>
 </aside>
 
         <p class="phpdocumentor-summary">Add meta query.</p>
@@ -2318,9 +2379,9 @@ Updated from WordPress 5.3, included into this class to support old versions.</p
         <a href="#method_get_meta_data_for_response" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/rest-api/Controllers/Version3/class-wc-rest-controller.php"><a href="../files/woocommerce-includes-rest-api-controllers-version3-class-wc-rest-controller.html#source-view.611">includes/rest-api/Controllers/Version3/class-wc-rest-controller.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/rest-api/Controllers/Version3/class-wc-rest-controller.php"><a href="../files/woocommerce-includes-rest-api-controllers-version3-class-wc-rest-controller.html#source-view.599">includes/rest-api/Controllers/Version3/class-wc-rest-controller.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">611</span>
+    <span class="phpdocumentor-element-found-in__line">599</span>
 </aside>
 
         <p class="phpdocumentor-summary">Limit the contents of the meta_data property based on certain request parameters.</p>
@@ -2612,7 +2673,7 @@ are instead treated as a full query.</p>
 
     <footer class="phpdocumentor phpdocumentor-footer">
     <div class="phpdocumentor-section">
-        <span>WooCommerce Code Reference API documentation generated by <a href="http://www.phpdoc.org/">phpDocumentor</a> on August 24th, 2023 at 08:49 am.</span>
+        <span>WooCommerce Code Reference API documentation generated by <a href="http://www.phpdoc.org/">phpDocumentor</a> on July 25th, 2024 at 11:33 am.</span>
     </div>
 </footer>
 
@@ -2624,7 +2685,7 @@ are instead treated as a full query.</p>
             'searchIndex': '..\/js\/searchIndex.json'
         };
     </script>
-    <script src="../js/searchIndex.js?updated=1692866989"></script>
-    <script src="../js/search.js?updated=1692866989"></script>
+    <script src="../js/searchIndex.js?updated=1721907199"></script>
+    <script src="../js/search.js?updated=1721907199"></script>
 </body>
 </html>

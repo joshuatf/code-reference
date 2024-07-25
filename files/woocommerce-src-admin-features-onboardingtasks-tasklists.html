@@ -9,9 +9,9 @@
     <link rel="apple-touch-icon" sizes="72x72" href="../images/apple-touch-icon-72x72.png"/>
     <link rel="apple-touch-icon" sizes="114x114" href="../images/apple-touch-icon-114x114.png"/>
     <link rel="stylesheet" href="../css/normalize.css">
-    <link rel="stylesheet" href="../css/base.css?updated=1692866951">
+    <link rel="stylesheet" href="../css/base.css?updated=1721907184">
     <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../css/template.css?updated=1692866951">
+    <link rel="stylesheet" href="../css/template.css?updated=1721907184">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0/css/all.min.css" integrity="sha256-ybRkN9dBjhcS2qrW1z+hfCxq+1aBdwyQM5wlQoQVt/0=" crossorigin="anonymous" />
             <script src="https://cdn.jsdelivr.net/npm/css-vars-ponyfill@2"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0/js/all.min.js" integrity="sha256-0vuk8LXoyrmCjp1f0O300qo1M75ZQyhH9X3J6d+scmk=" crossorigin="anonymous"></script>
@@ -125,6 +125,7 @@
                         <ul class="phpdocumentor-list">
                                     <li><a href="../packages/Automattic-WooCommerce.html"><abbr title="\Automattic\WooCommerce">WooCommerce</abbr></a></li>
                             </ul>
+                                <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/WooCommerceBlocks.html"><abbr title="\WooCommerceBlocks">WooCommerceBlocks</abbr></a></h3>
                         </section>
     
     <section class="phpdocumentor-sidebar__category">
@@ -166,7 +167,6 @@ use Automattic\WooCommerce\Admin\Features\Features;
 use Automattic\WooCommerce\Admin\Features\OnboardingTasks\DeprecatedExtendedTask;
 use Automattic\WooCommerce\Admin\Features\OnboardingTasks\Task;
 use Automattic\WooCommerce\Admin\Features\OnboardingTasks\Tasks\ReviewShippingOptions;
-use Automattic\WooCommerce\Admin\Features\OnboardingTasks\Tasks\TourInAppMarketplace;
 /**
  * Task Lists class.
  */
@@ -193,13 +193,15 @@ class TaskLists {
 	protected static $default_tasks_loaded = false;
 
 	/**
-	 * Array of default tasks.
+	 * The contents of this array is used in init_tasks() to run their init() methods.
+	 * If the classes do not have an init() method then nothing is executed.
+	 * Beyond that, adding tasks to this list has no effect, see init_default_lists() for the list of tasks.
+	 * that are added for each task list.
 	 *
 	 * @var array
 	 */
 	const DEFAULT_TASKS = array(
 		&#039;StoreDetails&#039;,
-		&#039;Purchase&#039;,
 		&#039;Products&#039;,
 		&#039;WooCommercePayments&#039;,
 		&#039;Payments&#039;,
@@ -210,7 +212,6 @@ class TaskLists {
 		&#039;AdditionalPayments&#039;,
 		&#039;ReviewShippingOptions&#039;,
 		&#039;GetMobileApp&#039;,
-		&#039;TourInAppMarketplace&#039;,
 	);
 
 	/**
@@ -266,19 +267,31 @@ class TaskLists {
 	 */
 	public static function init_default_lists() {
 		$tasks = array(
+			&#039;CustomizeStore&#039;,
 			&#039;StoreDetails&#039;,
-			&#039;Purchase&#039;,
 			&#039;Products&#039;,
+			&#039;Appearance&#039;,
 			&#039;WooCommercePayments&#039;,
 			&#039;Payments&#039;,
 			&#039;Tax&#039;,
 			&#039;Shipping&#039;,
 			&#039;Marketing&#039;,
-			&#039;Appearance&#039;,
+			&#039;LaunchYourStore&#039;,
 		);
 
 		if ( Features::is_enabled( &#039;core-profiler&#039; ) ) {
-			array_shift( $tasks );
+			$key = array_search( &#039;StoreDetails&#039;, $tasks, true );
+			if ( false !== $key ) {
+				unset( $tasks[ $key ] );
+			}
+		}
+
+		// Remove the old Personalize your store task if the new CustomizeStore is enabled.
+		$task_to_remove                 = Features::is_enabled( &#039;customize-store&#039; ) ? &#039;Appearance&#039; : &#039;CustomizeStore&#039;;
+		$store_customisation_task_index = array_search( $task_to_remove, $tasks, true );
+
+		if ( false !== $store_customisation_task_index ) {
+			unset( $tasks[ $store_customisation_task_index ] );
 		}
 
 		self::add_list(
@@ -310,6 +323,7 @@ class TaskLists {
 					),
 				),
 				&#039;tasks&#039;   =&gt; array(
+					&#039;StoreConnect&#039;,
 					&#039;AdditionalPayments&#039;,
 					&#039;GetMobileApp&#039;,
 				),
@@ -337,11 +351,6 @@ class TaskLists {
 					&#039;visible&#039;      =&gt; false,
 				)
 			);
-		}
-
-		if ( ! wp_is_mobile() ) { // Permit In-App Marketplace Tour on desktops only.
-			$tour_task = new TourInAppMarketplace();
-			self::add_task( &#039;extended&#039;, $tour_task );
 		}
 
 		if ( has_filter( &#039;woocommerce_admin_experimental_onboarding_tasklists&#039; ) ) {
@@ -558,7 +567,7 @@ class TaskLists {
 	public static function setup_tasks_remaining() {
 		$setup_list = self::get_list( &#039;setup&#039; );
 
-		if ( ! $setup_list || $setup_list-&gt;is_hidden() || $setup_list-&gt;is_complete() ) {
+		if ( ! $setup_list || $setup_list-&gt;is_hidden() || $setup_list-&gt;has_previously_completed() || $setup_list-&gt;is_complete() ) {
 			return;
 		}
 
@@ -588,7 +597,7 @@ class TaskLists {
 
 		foreach ( $submenu[&#039;woocommerce&#039;] as $key =&gt; $menu_item ) {
 			if ( 0 === strpos( $menu_item[0], _x( &#039;Home&#039;, &#039;Admin menu name&#039;, &#039;woocommerce&#039; ) ) ) {
-				$submenu[&#039;woocommerce&#039;][ $key ][0] .= &#039; &lt;span class=&quot;awaiting-mod update-plugins remaining-tasks-badge count-&#039; . esc_attr( $tasks_count ) . &#039;&quot;&gt;&#039; . number_format_i18n( $tasks_count ) . &#039;&lt;/span&gt;&#039;; // phpcs:ignore WordPress.WP.GlobalVariablesOverride.Prohibited
+				$submenu[&#039;woocommerce&#039;][ $key ][0] .= &#039; &lt;span class=&quot;awaiting-mod update-plugins remaining-tasks-badge woocommerce-task-list-remaining-tasks-badge&quot;&gt;&lt;span class=&quot;count-&#039; . esc_attr( $tasks_count ) . &#039;&quot;&gt;&#039; . absint( $tasks_count ) . &#039;&lt;/span&gt;&lt;/span&gt;&#039;; // phpcs:ignore WordPress.WP.GlobalVariablesOverride.Prohibited
 				break;
 			}
 		}
@@ -618,7 +627,7 @@ class TaskLists {
 
     <footer class="phpdocumentor phpdocumentor-footer">
     <div class="phpdocumentor-section">
-        <span>WooCommerce Code Reference API documentation generated by <a href="http://www.phpdoc.org/">phpDocumentor</a> on August 24th, 2023 at 08:49 am.</span>
+        <span>WooCommerce Code Reference API documentation generated by <a href="http://www.phpdoc.org/">phpDocumentor</a> on July 25th, 2024 at 11:33 am.</span>
     </div>
 </footer>
 
@@ -630,7 +639,7 @@ class TaskLists {
             'searchIndex': '..\/js\/searchIndex.json'
         };
     </script>
-    <script src="../js/searchIndex.js?updated=1692866951"></script>
-    <script src="../js/search.js?updated=1692866951"></script>
+    <script src="../js/searchIndex.js?updated=1721907184"></script>
+    <script src="../js/search.js?updated=1721907184"></script>
 </body>
 </html>

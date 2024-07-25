@@ -9,9 +9,9 @@
     <link rel="apple-touch-icon" sizes="72x72" href="../images/apple-touch-icon-72x72.png"/>
     <link rel="apple-touch-icon" sizes="114x114" href="../images/apple-touch-icon-114x114.png"/>
     <link rel="stylesheet" href="../css/normalize.css">
-    <link rel="stylesheet" href="../css/base.css?updated=1692866949">
+    <link rel="stylesheet" href="../css/base.css?updated=1721907183">
     <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../css/template.css?updated=1692866949">
+    <link rel="stylesheet" href="../css/template.css?updated=1721907183">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0/css/all.min.css" integrity="sha256-ybRkN9dBjhcS2qrW1z+hfCxq+1aBdwyQM5wlQoQVt/0=" crossorigin="anonymous" />
             <script src="https://cdn.jsdelivr.net/npm/css-vars-ponyfill@2"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0/js/all.min.js" integrity="sha256-0vuk8LXoyrmCjp1f0O300qo1M75ZQyhH9X3J6d+scmk=" crossorigin="anonymous"></script>
@@ -125,6 +125,7 @@
                         <ul class="phpdocumentor-list">
                                     <li><a href="../packages/Automattic-WooCommerce.html"><abbr title="\Automattic\WooCommerce">WooCommerce</abbr></a></li>
                             </ul>
+                                <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/WooCommerceBlocks.html"><abbr title="\WooCommerceBlocks">WooCommerceBlocks</abbr></a></h3>
                         </section>
     
     <section class="phpdocumentor-sidebar__category">
@@ -1208,24 +1209,28 @@ defines sizes.</p>
 
     
 </article>
-                    <article class="phpdocumentor-element -function - ">
+                    <article class="phpdocumentor-element -function - -deprecated">
     <h4 class="phpdocumentor-element__name" id="function_get_woocommerce_api_url">
         get_woocommerce_api_url()
         <a href="#function_get_woocommerce_api_url" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/wc-core-functions.php"><a href="../files/woocommerce-includes-wc-core-functions.html#source-view.1115">includes/wc-core-functions.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/wc-core-functions.php"><a href="../files/woocommerce-includes-wc-core-functions.html#source-view.1118">includes/wc-core-functions.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1115</span>
+    <span class="phpdocumentor-element-found-in__line">1118</span>
 </aside>
 
-        <p class="phpdocumentor-summary">Get the URL to the WooCommerce REST API.</p>
+        <p class="phpdocumentor-summary">Get the URL to the WooCommerce Legacy REST API.</p>
 
-    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <code class="phpdocumentor-code phpdocumentor-signature -deprecated">
     <span class="phpdocumentor-signature__visibility"></span>
                 <span class="phpdocumentor-signature__name">get_woocommerce_api_url</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$path</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">string</span></code>
 
-        <section class="phpdocumentor-description"></section>
+        <section class="phpdocumentor-description"><p>Note that as of WooCommerce 9.0 the WooCommerce Legacy REST API has been moved to a dedicated extension,
+and the implementation of its root endpoint in WooCommerce core is now just a stub that will always return an error.
+See the setup_legacy_api_stub method in includes/class-woocommerce.php and:
+https://developer.woocommerce.com/2023/10/03/the-legacy-rest-api-will-move-to-a-dedicated-extension-in-woocommerce-9-0/</p>
+</section>
 
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
     <dl class="phpdocumentor-argument-list">
@@ -1247,110 +1252,19 @@ defines sizes.</p>
     </h5>
     <dl class="phpdocumentor-tag-list">
                                     <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">deprecated</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                            <span class="phpdocumentor-tag-link">9.0.0</span>
+                                                                                                        <section class="phpdocumentor-description"><p>The Legacy REST API has been removed from WooCommerce core.</p>
+</section>
+
+                </dd>
+                                                <dt class="phpdocumentor-tag-list__entry">
                     <span class="phpdocumentor-tag__name">since</span>
                 </dt>
                 <dd class="phpdocumentor-tag-list__definition">
                                             <span class="phpdocumentor-tag-link">2.1</span>
-                                                                                                        <section class="phpdocumentor-description"></section>
-
-                </dd>
-                        </dl>
-
-    
-</article>
-                    <article class="phpdocumentor-element -function - ">
-    <h4 class="phpdocumentor-element__name" id="function_wc_get_log_file_path">
-        wc_get_log_file_path()
-        <a href="#function_wc_get_log_file_path" class="headerlink"><i class="fas fa-link"></i></a>
-    </h4>
-    <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/wc-core-functions.php"><a href="../files/woocommerce-includes-wc-core-functions.html#source-view.1139">includes/wc-core-functions.php</a></abbr>
-    :
-    <span class="phpdocumentor-element-found-in__line">1139</span>
-</aside>
-
-        <p class="phpdocumentor-summary">Get a log file path.</p>
-
-    <code class="phpdocumentor-code phpdocumentor-signature ">
-    <span class="phpdocumentor-signature__visibility"></span>
-                <span class="phpdocumentor-signature__name">wc_get_log_file_path</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$handle</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">string</span></code>
-
-        <section class="phpdocumentor-description"></section>
-
-        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
-    <dl class="phpdocumentor-argument-list">
-                    <dt class="phpdocumentor-argument-list__entry">
-                <span class="phpdocumentor-signature__argument__name">$handle</span>
-                : <span class="phpdocumentor-signature__argument__return-type">string</span>
-                            </dt>
-            <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"><p>name.</p>
-</section>
-
-            </dd>
-            </dl>
-
-    
-    <h5 class="phpdocumentor-tag-list__heading" id="tags">
-        Tags
-        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
-    </h5>
-    <dl class="phpdocumentor-tag-list">
-                                    <dt class="phpdocumentor-tag-list__entry">
-                    <span class="phpdocumentor-tag__name">since</span>
-                </dt>
-                <dd class="phpdocumentor-tag-list__definition">
-                                            <span class="phpdocumentor-tag-link">2.2</span>
-                                                                                                        <section class="phpdocumentor-description"></section>
-
-                </dd>
-                        </dl>
-
-    
-</article>
-                    <article class="phpdocumentor-element -function - ">
-    <h4 class="phpdocumentor-element__name" id="function_wc_get_log_file_name">
-        wc_get_log_file_name()
-        <a href="#function_wc_get_log_file_name" class="headerlink"><i class="fas fa-link"></i></a>
-    </h4>
-    <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/wc-core-functions.php"><a href="../files/woocommerce-includes-wc-core-functions.html#source-view.1151">includes/wc-core-functions.php</a></abbr>
-    :
-    <span class="phpdocumentor-element-found-in__line">1151</span>
-</aside>
-
-        <p class="phpdocumentor-summary">Get a log file name.</p>
-
-    <code class="phpdocumentor-code phpdocumentor-signature ">
-    <span class="phpdocumentor-signature__visibility"></span>
-                <span class="phpdocumentor-signature__name">wc_get_log_file_name</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$handle</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">string</span></code>
-
-        <section class="phpdocumentor-description"></section>
-
-        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
-    <dl class="phpdocumentor-argument-list">
-                    <dt class="phpdocumentor-argument-list__entry">
-                <span class="phpdocumentor-signature__argument__name">$handle</span>
-                : <span class="phpdocumentor-signature__argument__return-type">string</span>
-                            </dt>
-            <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"><p>Name.</p>
-</section>
-
-            </dd>
-            </dl>
-
-    
-    <h5 class="phpdocumentor-tag-list__heading" id="tags">
-        Tags
-        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
-    </h5>
-    <dl class="phpdocumentor-tag-list">
-                                    <dt class="phpdocumentor-tag-list__entry">
-                    <span class="phpdocumentor-tag__name">since</span>
-                </dt>
-                <dd class="phpdocumentor-tag-list__definition">
-                                            <span class="phpdocumentor-tag-link">3.3</span>
                                                                                                         <section class="phpdocumentor-description"></section>
 
                 </dd>
@@ -1364,9 +1278,9 @@ defines sizes.</p>
         <a href="#function_wc_get_page_children" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/wc-core-functions.php"><a href="../files/woocommerce-includes-wc-core-functions.html#source-view.1161">includes/wc-core-functions.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/wc-core-functions.php"><a href="../files/woocommerce-includes-wc-core-functions.html#source-view.1134">includes/wc-core-functions.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1161</span>
+    <span class="phpdocumentor-element-found-in__line">1134</span>
 </aside>
 
         <p class="phpdocumentor-summary">Recursively get page children.</p>
@@ -1400,9 +1314,9 @@ defines sizes.</p>
         <a href="#function_flush_rewrite_rules_on_shop_page_save" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/wc-core-functions.php"><a href="../files/woocommerce-includes-wc-core-functions.html#source-view.1184">includes/wc-core-functions.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/wc-core-functions.php"><a href="../files/woocommerce-includes-wc-core-functions.html#source-view.1157">includes/wc-core-functions.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1184</span>
+    <span class="phpdocumentor-element-found-in__line">1157</span>
 </aside>
 
         <p class="phpdocumentor-summary">Flushes rewrite rules when the shop page (or it&#039;s children) gets saved.</p>
@@ -1424,9 +1338,9 @@ defines sizes.</p>
         <a href="#function_wc_fix_rewrite_rules" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/wc-core-functions.php"><a href="../files/woocommerce-includes-wc-core-functions.html#source-view.1214">includes/wc-core-functions.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/wc-core-functions.php"><a href="../files/woocommerce-includes-wc-core-functions.html#source-view.1187">includes/wc-core-functions.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1214</span>
+    <span class="phpdocumentor-element-found-in__line">1187</span>
 </aside>
 
         <p class="phpdocumentor-summary">Various rewrite rule fixes.</p>
@@ -1474,9 +1388,9 @@ defines sizes.</p>
         <a href="#function_wc_fix_product_attachment_link" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/wc-core-functions.php"><a href="../files/woocommerce-includes-wc-core-functions.html#source-view.1264">includes/wc-core-functions.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/wc-core-functions.php"><a href="../files/woocommerce-includes-wc-core-functions.html#source-view.1237">includes/wc-core-functions.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1264</span>
+    <span class="phpdocumentor-element-found-in__line">1237</span>
 </aside>
 
         <p class="phpdocumentor-summary">Prevent product attachment links from breaking when using complex rewrite structures.</p>
@@ -1519,9 +1433,9 @@ defines sizes.</p>
         <a href="#function_wc_ms_protect_download_rewite_rules" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/wc-core-functions.php"><a href="../files/woocommerce-includes-wc-core-functions.html#source-view.1279">includes/wc-core-functions.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/wc-core-functions.php"><a href="../files/woocommerce-includes-wc-core-functions.html#source-view.1252">includes/wc-core-functions.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1279</span>
+    <span class="phpdocumentor-element-found-in__line">1252</span>
 </aside>
 
         <p class="phpdocumentor-summary">Protect downloads from ms-files.php in multisite.</p>
@@ -1555,9 +1469,9 @@ defines sizes.</p>
         <a href="#function_wc_format_country_state_string" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/wc-core-functions.php"><a href="../files/woocommerce-includes-wc-core-functions.html#source-view.1302">includes/wc-core-functions.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/wc-core-functions.php"><a href="../files/woocommerce-includes-wc-core-functions.html#source-view.1275">includes/wc-core-functions.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1302</span>
+    <span class="phpdocumentor-element-found-in__line">1275</span>
 </aside>
 
         <p class="phpdocumentor-summary">Formats a string in the format COUNTRY:STATE into an array.</p>
@@ -1605,9 +1519,9 @@ defines sizes.</p>
         <a href="#function_wc_get_base_location" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/wc-core-functions.php"><a href="../files/woocommerce-includes-wc-core-functions.html#source-view.1321">includes/wc-core-functions.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/wc-core-functions.php"><a href="../files/woocommerce-includes-wc-core-functions.html#source-view.1294">includes/wc-core-functions.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1321</span>
+    <span class="phpdocumentor-element-found-in__line">1294</span>
 </aside>
 
         <p class="phpdocumentor-summary">Get the store&#039;s base location.</p>
@@ -1643,9 +1557,9 @@ defines sizes.</p>
         <a href="#function_wc_get_customer_default_location" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/wc-core-functions.php"><a href="../files/woocommerce-includes-wc-core-functions.html#source-view.1336">includes/wc-core-functions.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/wc-core-functions.php"><a href="../files/woocommerce-includes-wc-core-functions.html#source-view.1309">includes/wc-core-functions.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1336</span>
+    <span class="phpdocumentor-element-found-in__line">1309</span>
 </aside>
 
         <p class="phpdocumentor-summary">Get the customer&#039;s default location.</p>
@@ -1683,9 +1597,9 @@ this should only be used when 'location' is set in the querystring.</p>
         <a href="#function_wc_get_user_agent" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/wc-core-functions.php"><a href="../files/woocommerce-includes-wc-core-functions.html#source-view.1372">includes/wc-core-functions.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/wc-core-functions.php"><a href="../files/woocommerce-includes-wc-core-functions.html#source-view.1345">includes/wc-core-functions.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1372</span>
+    <span class="phpdocumentor-element-found-in__line">1345</span>
 </aside>
 
         <p class="phpdocumentor-summary">Get user agent string.</p>
@@ -1721,9 +1635,9 @@ this should only be used when 'location' is set in the querystring.</p>
         <a href="#function_wc_rand_hash" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/wc-core-functions.php"><a href="../files/woocommerce-includes-wc-core-functions.html#source-view.1382">includes/wc-core-functions.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/wc-core-functions.php"><a href="../files/woocommerce-includes-wc-core-functions.html#source-view.1355">includes/wc-core-functions.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1382</span>
+    <span class="phpdocumentor-element-found-in__line">1355</span>
 </aside>
 
         <p class="phpdocumentor-summary">Generate a rand hash.</p>
@@ -1759,9 +1673,9 @@ this should only be used when 'location' is set in the querystring.</p>
         <a href="#function_wc_api_hash" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/wc-core-functions.php"><a href="../files/woocommerce-includes-wc-core-functions.html#source-view.1397">includes/wc-core-functions.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/wc-core-functions.php"><a href="../files/woocommerce-includes-wc-core-functions.html#source-view.1370">includes/wc-core-functions.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1397</span>
+    <span class="phpdocumentor-element-found-in__line">1370</span>
 </aside>
 
         <p class="phpdocumentor-summary">WC API - Hash.</p>
@@ -1809,9 +1723,9 @@ this should only be used when 'location' is set in the querystring.</p>
         <a href="#function_wc_array_cartesian" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/wc-core-functions.php"><a href="../files/woocommerce-includes-wc-core-functions.html#source-view.1408">includes/wc-core-functions.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/wc-core-functions.php"><a href="../files/woocommerce-includes-wc-core-functions.html#source-view.1381">includes/wc-core-functions.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1408</span>
+    <span class="phpdocumentor-element-found-in__line">1381</span>
 </aside>
 
         <p class="phpdocumentor-summary">Find all possible combinations of values from the input array and return in a logical order.</p>
@@ -1859,9 +1773,9 @@ this should only be used when 'location' is set in the querystring.</p>
         <a href="#function_wc_transaction_query" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/wc-core-functions.php"><a href="../files/woocommerce-includes-wc-core-functions.html#source-view.1474">includes/wc-core-functions.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/wc-core-functions.php"><a href="../files/woocommerce-includes-wc-core-functions.html#source-view.1447">includes/wc-core-functions.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1474</span>
+    <span class="phpdocumentor-element-found-in__line">1447</span>
 </aside>
 
         <p class="phpdocumentor-summary">Run a MySQL transaction query, if supported.</p>
@@ -1918,9 +1832,9 @@ this should only be used when 'location' is set in the querystring.</p>
         <a href="#function_wc_get_cart_url" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/wc-core-functions.php"><a href="../files/woocommerce-includes-wc-core-functions.html#source-view.1503">includes/wc-core-functions.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/wc-core-functions.php"><a href="../files/woocommerce-includes-wc-core-functions.html#source-view.1476">includes/wc-core-functions.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1503</span>
+    <span class="phpdocumentor-element-found-in__line">1476</span>
 </aside>
 
         <p class="phpdocumentor-summary">Gets the url to the cart page.</p>
@@ -1956,9 +1870,9 @@ this should only be used when 'location' is set in the querystring.</p>
         <a href="#function_wc_get_checkout_url" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/wc-core-functions.php"><a href="../files/woocommerce-includes-wc-core-functions.html#source-view.1514">includes/wc-core-functions.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/wc-core-functions.php"><a href="../files/woocommerce-includes-wc-core-functions.html#source-view.1487">includes/wc-core-functions.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1514</span>
+    <span class="phpdocumentor-element-found-in__line">1487</span>
 </aside>
 
         <p class="phpdocumentor-summary">Gets the url to the checkout page.</p>
@@ -1994,9 +1908,9 @@ this should only be used when 'location' is set in the querystring.</p>
         <a href="#function_woocommerce_register_shipping_method" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/wc-core-functions.php"><a href="../files/woocommerce-includes-wc-core-functions.html#source-view.1532">includes/wc-core-functions.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/wc-core-functions.php"><a href="../files/woocommerce-includes-wc-core-functions.html#source-view.1505">includes/wc-core-functions.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1532</span>
+    <span class="phpdocumentor-element-found-in__line">1505</span>
 </aside>
 
         <p class="phpdocumentor-summary">Register a shipping method.</p>
@@ -2044,9 +1958,9 @@ this should only be used when 'location' is set in the querystring.</p>
         <a href="#function_wc_get_shipping_zone" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/wc-core-functions.php"><a href="../files/woocommerce-includes-wc-core-functions.html#source-view.1545">includes/wc-core-functions.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/wc-core-functions.php"><a href="../files/woocommerce-includes-wc-core-functions.html#source-view.1518">includes/wc-core-functions.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1545</span>
+    <span class="phpdocumentor-element-found-in__line">1518</span>
 </aside>
 
         <p class="phpdocumentor-summary">Get the shipping zone matching a given package from the cart.</p>
@@ -2102,9 +2016,9 @@ this should only be used when 'location' is set in the querystring.</p>
         <a href="#function_wc_get_credit_card_type_label" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/wc-core-functions.php"><a href="../files/woocommerce-includes-wc-core-functions.html#source-view.1557">includes/wc-core-functions.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/wc-core-functions.php"><a href="../files/woocommerce-includes-wc-core-functions.html#source-view.1530">includes/wc-core-functions.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1557</span>
+    <span class="phpdocumentor-element-found-in__line">1530</span>
 </aside>
 
         <p class="phpdocumentor-summary">Get a nice name for credit card providers.</p>
@@ -2152,9 +2066,9 @@ this should only be used when 'location' is set in the querystring.</p>
         <a href="#function_wc_back_link" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/wc-core-functions.php"><a href="../files/woocommerce-includes-wc-core-functions.html#source-view.1584">includes/wc-core-functions.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/wc-core-functions.php"><a href="../files/woocommerce-includes-wc-core-functions.html#source-view.1563">includes/wc-core-functions.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1584</span>
+    <span class="phpdocumentor-element-found-in__line">1563</span>
 </aside>
 
         <p class="phpdocumentor-summary">Outputs a &quot;back&quot; link so admin screens can easily jump back a page.</p>
@@ -2197,9 +2111,9 @@ this should only be used when 'location' is set in the querystring.</p>
         <a href="#function_wc_help_tip" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/wc-core-functions.php"><a href="../files/woocommerce-includes-wc-core-functions.html#source-view.1597">includes/wc-core-functions.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/wc-core-functions.php"><a href="../files/woocommerce-includes-wc-core-functions.html#source-view.1576">includes/wc-core-functions.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1597</span>
+    <span class="phpdocumentor-element-found-in__line">1576</span>
 </aside>
 
         <p class="phpdocumentor-summary">Display a WooCommerce help tip.</p>
@@ -2256,9 +2170,9 @@ this should only be used when 'location' is set in the querystring.</p>
         <a href="#function_wc_get_wildcard_postcodes" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/wc-core-functions.php"><a href="../files/woocommerce-includes-wc-core-functions.html#source-view.1627">includes/wc-core-functions.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/wc-core-functions.php"><a href="../files/woocommerce-includes-wc-core-functions.html#source-view.1606">includes/wc-core-functions.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1627</span>
+    <span class="phpdocumentor-element-found-in__line">1606</span>
 </aside>
 
         <p class="phpdocumentor-summary">Return a list of potential postcodes for wildcard searching.</p>
@@ -2315,9 +2229,9 @@ this should only be used when 'location' is set in the querystring.</p>
         <a href="#function_wc_postcode_location_matcher" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/wc-core-functions.php"><a href="../files/woocommerce-includes-wc-core-functions.html#source-view.1655">includes/wc-core-functions.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/wc-core-functions.php"><a href="../files/woocommerce-includes-wc-core-functions.html#source-view.1634">includes/wc-core-functions.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1655</span>
+    <span class="phpdocumentor-element-found-in__line">1634</span>
 </aside>
 
         <p class="phpdocumentor-summary">Used by shipping zones and taxes to compare a given $postcode to stored
@@ -2402,9 +2316,9 @@ postcodes to find matches for numerical ranges, and wildcards.</p>
         <a href="#function_wc_get_shipping_method_count" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/wc-core-functions.php"><a href="../files/woocommerce-includes-wc-core-functions.html#source-view.1708">includes/wc-core-functions.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/wc-core-functions.php"><a href="../files/woocommerce-includes-wc-core-functions.html#source-view.1687">includes/wc-core-functions.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1708</span>
+    <span class="phpdocumentor-element-found-in__line">1687</span>
 </aside>
 
         <p class="phpdocumentor-summary">Gets number of shipping methods currently enabled. Used to identify if
@@ -2464,9 +2378,9 @@ legacy shipping methods. @since 4.3.0.</p>
         <a href="#function_wc_set_time_limit" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/wc-core-functions.php"><a href="../files/woocommerce-includes-wc-core-functions.html#source-view.1752">includes/wc-core-functions.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/wc-core-functions.php"><a href="../files/woocommerce-includes-wc-core-functions.html#source-view.1731">includes/wc-core-functions.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1752</span>
+    <span class="phpdocumentor-element-found-in__line">1731</span>
 </aside>
 
         <p class="phpdocumentor-summary">Wrapper for set_time_limit to see if it is enabled.</p>
@@ -2514,9 +2428,9 @@ legacy shipping methods. @since 4.3.0.</p>
         <a href="#function_wc_nocache_headers" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/wc-core-functions.php"><a href="../files/woocommerce-includes-wc-core-functions.html#source-view.1763">includes/wc-core-functions.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/wc-core-functions.php"><a href="../files/woocommerce-includes-wc-core-functions.html#source-view.1742">includes/wc-core-functions.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1763</span>
+    <span class="phpdocumentor-element-found-in__line">1742</span>
 </aside>
 
         <p class="phpdocumentor-summary">Wrapper for nocache_headers which also disables page caching.</p>
@@ -2552,9 +2466,9 @@ legacy shipping methods. @since 4.3.0.</p>
         <a href="#function_wc_product_attribute_uasort_comparison" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/wc-core-functions.php"><a href="../files/woocommerce-includes-wc-core-functions.html#source-view.1776">includes/wc-core-functions.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/wc-core-functions.php"><a href="../files/woocommerce-includes-wc-core-functions.html#source-view.1755">includes/wc-core-functions.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1776</span>
+    <span class="phpdocumentor-element-found-in__line">1755</span>
 </aside>
 
         <p class="phpdocumentor-summary">Used to sort products attributes with uasort.</p>
@@ -2611,9 +2525,9 @@ legacy shipping methods. @since 4.3.0.</p>
         <a href="#function_wc_shipping_zone_method_order_uasort_comparison" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/wc-core-functions.php"><a href="../files/woocommerce-includes-wc-core-functions.html#source-view.1790">includes/wc-core-functions.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/wc-core-functions.php"><a href="../files/woocommerce-includes-wc-core-functions.html#source-view.1769">includes/wc-core-functions.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1790</span>
+    <span class="phpdocumentor-element-found-in__line">1769</span>
 </aside>
 
         <p class="phpdocumentor-summary">Used to sort shipping zone methods with uasort.</p>
@@ -2670,9 +2584,9 @@ legacy shipping methods. @since 4.3.0.</p>
         <a href="#function_wc_checkout_fields_uasort_comparison" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/wc-core-functions.php"><a href="../files/woocommerce-includes-wc-core-functions.html#source-view.1802">includes/wc-core-functions.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/wc-core-functions.php"><a href="../files/woocommerce-includes-wc-core-functions.html#source-view.1781">includes/wc-core-functions.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1802</span>
+    <span class="phpdocumentor-element-found-in__line">1781</span>
 </aside>
 
         <p class="phpdocumentor-summary">User to sort checkout fields based on priority with uasort.</p>
@@ -2729,9 +2643,9 @@ legacy shipping methods. @since 4.3.0.</p>
         <a href="#function_wc_uasort_comparison" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/wc-core-functions.php"><a href="../files/woocommerce-includes-wc-core-functions.html#source-view.1823">includes/wc-core-functions.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/wc-core-functions.php"><a href="../files/woocommerce-includes-wc-core-functions.html#source-view.1802">includes/wc-core-functions.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1823</span>
+    <span class="phpdocumentor-element-found-in__line">1802</span>
 </aside>
 
         <p class="phpdocumentor-summary">User to sort two values with ausort.</p>
@@ -2788,9 +2702,9 @@ legacy shipping methods. @since 4.3.0.</p>
         <a href="#function_wc_ascii_uasort_comparison" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/wc-core-functions.php"><a href="../files/woocommerce-includes-wc-core-functions.html#source-view.1837">includes/wc-core-functions.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/wc-core-functions.php"><a href="../files/woocommerce-includes-wc-core-functions.html#source-view.1816">includes/wc-core-functions.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1837</span>
+    <span class="phpdocumentor-element-found-in__line">1816</span>
 </aside>
 
         <p class="phpdocumentor-summary">Sort values based on ascii, usefull for special chars in strings.</p>
@@ -2833,9 +2747,9 @@ legacy shipping methods. @since 4.3.0.</p>
         <a href="#function_wc_asort_by_locale" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/wc-core-functions.php"><a href="../files/woocommerce-includes-wc-core-functions.html#source-view.1854">includes/wc-core-functions.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/wc-core-functions.php"><a href="../files/woocommerce-includes-wc-core-functions.html#source-view.1833">includes/wc-core-functions.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1854</span>
+    <span class="phpdocumentor-element-found-in__line">1833</span>
 </aside>
 
         <p class="phpdocumentor-summary">Sort array according to current locale rules and maintaining index association.</p>
@@ -2895,9 +2809,9 @@ and by sorting with <code class="prettyprint">uasort( $data, 'strcmp' )</code> g
         <a href="#function_wc_get_tax_rounding_mode" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/wc-core-functions.php"><a href="../files/woocommerce-includes-wc-core-functions.html#source-view.1903">includes/wc-core-functions.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/wc-core-functions.php"><a href="../files/woocommerce-includes-wc-core-functions.html#source-view.1882">includes/wc-core-functions.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1903</span>
+    <span class="phpdocumentor-element-found-in__line">1882</span>
 </aside>
 
         <p class="phpdocumentor-summary">Get rounding mode for internal tax calculations.</p>
@@ -2933,9 +2847,9 @@ and by sorting with <code class="prettyprint">uasort( $data, 'strcmp' )</code> g
         <a href="#function_wc_get_rounding_precision" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/wc-core-functions.php"><a href="../files/woocommerce-includes-wc-core-functions.html#source-view.1920">includes/wc-core-functions.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/wc-core-functions.php"><a href="../files/woocommerce-includes-wc-core-functions.html#source-view.1899">includes/wc-core-functions.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1920</span>
+    <span class="phpdocumentor-element-found-in__line">1899</span>
 </aside>
 
         <p class="phpdocumentor-summary">Get rounding precision for internal WC calculations.</p>
@@ -2972,9 +2886,9 @@ and by sorting with <code class="prettyprint">uasort( $data, 'strcmp' )</code> g
         <a href="#function_wc_add_number_precision" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/wc-core-functions.php"><a href="../files/woocommerce-includes-wc-core-functions.html#source-view.1937">includes/wc-core-functions.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/wc-core-functions.php"><a href="../files/woocommerce-includes-wc-core-functions.html#source-view.1925">includes/wc-core-functions.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1937</span>
+    <span class="phpdocumentor-element-found-in__line">1925</span>
 </aside>
 
         <p class="phpdocumentor-summary">Add precision to a number by moving the decimal point to the right as many places as indicated by wc_get_price_decimals().</p>
@@ -3032,9 +2946,9 @@ and by sorting with <code class="prettyprint">uasort( $data, 'strcmp' )</code> g
         <a href="#function_wc_remove_number_precision" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/wc-core-functions.php"><a href="../files/woocommerce-includes-wc-core-functions.html#source-view.1954">includes/wc-core-functions.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/wc-core-functions.php"><a href="../files/woocommerce-includes-wc-core-functions.html#source-view.1942">includes/wc-core-functions.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1954</span>
+    <span class="phpdocumentor-element-found-in__line">1942</span>
 </aside>
 
         <p class="phpdocumentor-summary">Remove precision from a number and return a float.</p>
@@ -3082,9 +2996,9 @@ and by sorting with <code class="prettyprint">uasort( $data, 'strcmp' )</code> g
         <a href="#function_wc_add_number_precision_deep" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/wc-core-functions.php"><a href="../files/woocommerce-includes-wc-core-functions.html#source-view.1971">includes/wc-core-functions.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/wc-core-functions.php"><a href="../files/woocommerce-includes-wc-core-functions.html#source-view.1959">includes/wc-core-functions.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1971</span>
+    <span class="phpdocumentor-element-found-in__line">1959</span>
 </aside>
 
         <p class="phpdocumentor-summary">Add precision to an array of number and return an array of int.</p>
@@ -3141,9 +3055,9 @@ and by sorting with <code class="prettyprint">uasort( $data, 'strcmp' )</code> g
         <a href="#function_wc_remove_number_precision_deep" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/wc-core-functions.php"><a href="../files/woocommerce-includes-wc-core-functions.html#source-view.1990">includes/wc-core-functions.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/wc-core-functions.php"><a href="../files/woocommerce-includes-wc-core-functions.html#source-view.1978">includes/wc-core-functions.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1990</span>
+    <span class="phpdocumentor-element-found-in__line">1978</span>
 </aside>
 
         <p class="phpdocumentor-summary">Remove precision from an array of number and return an array of int.</p>
@@ -3191,16 +3105,16 @@ and by sorting with <code class="prettyprint">uasort( $data, 'strcmp' )</code> g
         <a href="#function_wc_get_logger" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/wc-core-functions.php"><a href="../files/woocommerce-includes-wc-core-functions.html#source-view.2014">includes/wc-core-functions.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/wc-core-functions.php"><a href="../files/woocommerce-includes-wc-core-functions.html#source-view.2000">includes/wc-core-functions.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">2014</span>
+    <span class="phpdocumentor-element-found-in__line">2000</span>
 </aside>
 
         <p class="phpdocumentor-summary">Get a shared logger instance.</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility"></span>
-                <span class="phpdocumentor-signature__name">wc_get_logger</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><a href="../classes/WC-Logger.html"><abbr title="\WC_Logger">WC_Logger</abbr></a></span></code>
+                <span class="phpdocumentor-signature__name">wc_get_logger</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><a href="../classes/WC-Logger-Interface.html"><abbr title="\WC_Logger_Interface">WC_Logger_Interface</abbr></a></span></code>
 
         <section class="phpdocumentor-description"><p>Use the woocommerce_logging_class filter to change the logging class. You may provide one of the following:
 - a class name which will be instantiated as <code class="prettyprint">new $class</code> with no arguments
@@ -3210,20 +3124,6 @@ In either case, the class or instance <em>must</em> implement WC_Logger_Interfac
 
     
     
-    <h5 class="phpdocumentor-tag-list__heading" id="tags">
-        Tags
-        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
-    </h5>
-    <dl class="phpdocumentor-tag-list">
-                                    <dt class="phpdocumentor-tag-list__entry">
-                    <span class="phpdocumentor-tag__name">see</span>
-                </dt>
-                <dd class="phpdocumentor-tag-list__definition">
-                                                                                    <span class="phpdocumentor-tag-link"><a href="../classes/WC-Logger-Interface.html"><abbr title="\WC_Logger_Interface">WC_Logger_Interface</abbr></a></span>
-                                                                <section class="phpdocumentor-description"></section>
-
-                </dd>
-                        </dl>
 
     
 </article>
@@ -3233,9 +3133,9 @@ In either case, the class or instance <em>must</em> implement WC_Logger_Interfac
         <a href="#function_wc_cleanup_logs" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/wc-core-functions.php"><a href="../files/woocommerce-includes-wc-core-functions.html#source-view.2051">includes/wc-core-functions.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/wc-core-functions.php"><a href="../files/woocommerce-includes-wc-core-functions.html#source-view.2037">includes/wc-core-functions.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">2051</span>
+    <span class="phpdocumentor-element-found-in__line">2037</span>
 </aside>
 
         <p class="phpdocumentor-summary">Trigger logging cleanup using the logging class.</p>
@@ -3271,9 +3171,9 @@ In either case, the class or instance <em>must</em> implement WC_Logger_Interfac
         <a href="#function_wc_print_r" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/wc-core-functions.php"><a href="../files/woocommerce-includes-wc-core-functions.html#source-view.2073">includes/wc-core-functions.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/wc-core-functions.php"><a href="../files/woocommerce-includes-wc-core-functions.html#source-view.2059">includes/wc-core-functions.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">2073</span>
+    <span class="phpdocumentor-element-found-in__line">2059</span>
 </aside>
 
         <p class="phpdocumentor-summary">Prints human-readable information about a variable.</p>
@@ -3327,64 +3227,14 @@ turn an expression into a printable, readable form without calling blocked funct
     
 </article>
                     <article class="phpdocumentor-element -function - ">
-    <h4 class="phpdocumentor-element__name" id="function_wc_register_default_log_handler">
-        wc_register_default_log_handler()
-        <a href="#function_wc_register_default_log_handler" class="headerlink"><i class="fas fa-link"></i></a>
-    </h4>
-    <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/wc-core-functions.php"><a href="../files/woocommerce-includes-wc-core-functions.html#source-view.2117">includes/wc-core-functions.php</a></abbr>
-    :
-    <span class="phpdocumentor-element-found-in__line">2117</span>
-</aside>
-
-        <p class="phpdocumentor-summary">Registers the default log handler.</p>
-
-    <code class="phpdocumentor-code phpdocumentor-signature ">
-    <span class="phpdocumentor-signature__visibility"></span>
-                <span class="phpdocumentor-signature__name">wc_register_default_log_handler</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__name">$handlers</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">array&lt;string|int, mixed&gt;</span></code>
-
-        <section class="phpdocumentor-description"></section>
-
-        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
-    <dl class="phpdocumentor-argument-list">
-                    <dt class="phpdocumentor-argument-list__entry">
-                <span class="phpdocumentor-signature__argument__name">$handlers</span>
-                : <span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;</span>
-                            </dt>
-            <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"><p>Handlers.</p>
-</section>
-
-            </dd>
-            </dl>
-
-    
-    <h5 class="phpdocumentor-tag-list__heading" id="tags">
-        Tags
-        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
-    </h5>
-    <dl class="phpdocumentor-tag-list">
-                                    <dt class="phpdocumentor-tag-list__entry">
-                    <span class="phpdocumentor-tag__name">since</span>
-                </dt>
-                <dd class="phpdocumentor-tag-list__definition">
-                                            <span class="phpdocumentor-tag-link">3.0</span>
-                                                                                                        <section class="phpdocumentor-description"></section>
-
-                </dd>
-                        </dl>
-
-    
-</article>
-                    <article class="phpdocumentor-element -function - ">
     <h4 class="phpdocumentor-element__name" id="function_wc_list_pluck">
         wc_list_pluck()
         <a href="#function_wc_list_pluck" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/wc-core-functions.php"><a href="../files/woocommerce-includes-wc-core-functions.html#source-view.2139">includes/wc-core-functions.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/wc-core-functions.php"><a href="../files/woocommerce-includes-wc-core-functions.html#source-view.2106">includes/wc-core-functions.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">2139</span>
+    <span class="phpdocumentor-element-found-in__line">2106</span>
 </aside>
 
         <p class="phpdocumentor-summary">Based on wp_list_pluck, this calls a method instead of returning a property.</p>
@@ -3451,9 +3301,9 @@ Default null.</p>
         <a href="#function_wc_get_permalink_structure" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/wc-core-functions.php"><a href="../files/woocommerce-includes-wc-core-functions.html#source-view.2186">includes/wc-core-functions.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/wc-core-functions.php"><a href="../files/woocommerce-includes-wc-core-functions.html#source-view.2153">includes/wc-core-functions.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">2186</span>
+    <span class="phpdocumentor-element-found-in__line">2153</span>
 </aside>
 
         <p class="phpdocumentor-summary">Get permalink settings for things like products and taxonomies.</p>
@@ -3493,9 +3343,9 @@ times by negating the need to switch locales on each page load.</p>
         <a href="#function_wc_switch_to_site_locale" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/wc-core-functions.php"><a href="../files/woocommerce-includes-wc-core-functions.html#source-view.2216">includes/wc-core-functions.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/wc-core-functions.php"><a href="../files/woocommerce-includes-wc-core-functions.html#source-view.2183">includes/wc-core-functions.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">2216</span>
+    <span class="phpdocumentor-element-found-in__line">2183</span>
 </aside>
 
         <p class="phpdocumentor-summary">Switch WooCommerce to site language.</p>
@@ -3531,9 +3381,9 @@ times by negating the need to switch locales on each page load.</p>
         <a href="#function_wc_restore_locale" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/wc-core-functions.php"><a href="../files/woocommerce-includes-wc-core-functions.html#source-view.2235">includes/wc-core-functions.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/wc-core-functions.php"><a href="../files/woocommerce-includes-wc-core-functions.html#source-view.2202">includes/wc-core-functions.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">2235</span>
+    <span class="phpdocumentor-element-found-in__line">2202</span>
 </aside>
 
         <p class="phpdocumentor-summary">Switch WooCommerce language to original.</p>
@@ -3569,9 +3419,9 @@ times by negating the need to switch locales on each page load.</p>
         <a href="#function_wc_make_phone_clickable" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/wc-core-functions.php"><a href="../files/woocommerce-includes-wc-core-functions.html#source-view.2260">includes/wc-core-functions.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/wc-core-functions.php"><a href="../files/woocommerce-includes-wc-core-functions.html#source-view.2227">includes/wc-core-functions.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">2260</span>
+    <span class="phpdocumentor-element-found-in__line">2227</span>
 </aside>
 
         <p class="phpdocumentor-summary">Convert plaintext phone number to clickable phone number.</p>
@@ -3621,9 +3471,9 @@ Example and specs: https://developer.mozilla.org/en/docs/Web/HTML/Element/a#Crea
         <a href="#function_wc_get_post_data_by_key" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/wc-core-functions.php"><a href="../files/woocommerce-includes-wc-core-functions.html#source-view.2274">includes/wc-core-functions.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/wc-core-functions.php"><a href="../files/woocommerce-includes-wc-core-functions.html#source-view.2241">includes/wc-core-functions.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">2274</span>
+    <span class="phpdocumentor-element-found-in__line">2241</span>
 </aside>
 
         <p class="phpdocumentor-summary">Get an item of post data if set, otherwise return a default value.</p>
@@ -3680,9 +3530,9 @@ Example and specs: https://developer.mozilla.org/en/docs/Web/HTML/Element/a#Crea
         <a href="#function_wc_get_var" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/wc-core-functions.php"><a href="../files/woocommerce-includes-wc-core-functions.html#source-view.2287">includes/wc-core-functions.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/wc-core-functions.php"><a href="../files/woocommerce-includes-wc-core-functions.html#source-view.2254">includes/wc-core-functions.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">2287</span>
+    <span class="phpdocumentor-element-found-in__line">2254</span>
 </aside>
 
         <p class="phpdocumentor-summary">Get data if set, otherwise return a default value or null. Prevents notices when data is not set.</p>
@@ -3739,9 +3589,9 @@ Example and specs: https://developer.mozilla.org/en/docs/Web/HTML/Element/a#Crea
         <a href="#function_wc_enable_wc_plugin_headers" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/wc-core-functions.php"><a href="../files/woocommerce-includes-wc-core-functions.html#source-view.2298">includes/wc-core-functions.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/wc-core-functions.php"><a href="../files/woocommerce-includes-wc-core-functions.html#source-view.2265">includes/wc-core-functions.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">2298</span>
+    <span class="phpdocumentor-element-found-in__line">2265</span>
 </aside>
 
         <p class="phpdocumentor-summary">Read in WooCommerce headers when reading plugin headers.</p>
@@ -3789,9 +3639,9 @@ Example and specs: https://developer.mozilla.org/en/docs/Web/HTML/Element/a#Crea
         <a href="#function_wc_prevent_dangerous_auto_updates" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/wc-core-functions.php"><a href="../files/woocommerce-includes-wc-core-functions.html#source-view.2325">includes/wc-core-functions.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/wc-core-functions.php"><a href="../files/woocommerce-includes-wc-core-functions.html#source-view.2292">includes/wc-core-functions.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">2325</span>
+    <span class="phpdocumentor-element-found-in__line">2292</span>
 </aside>
 
         <p class="phpdocumentor-summary">Prevent auto-updating the WooCommerce plugin on major releases if there are untested extensions active.</p>
@@ -3848,9 +3698,9 @@ Example and specs: https://developer.mozilla.org/en/docs/Web/HTML/Element/a#Crea
         <a href="#function_wc_delete_expired_transients" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/wc-core-functions.php"><a href="../files/woocommerce-includes-wc-core-functions.html#source-view.2365">includes/wc-core-functions.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/wc-core-functions.php"><a href="../files/woocommerce-includes-wc-core-functions.html#source-view.2332">includes/wc-core-functions.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">2365</span>
+    <span class="phpdocumentor-element-found-in__line">2332</span>
 </aside>
 
         <p class="phpdocumentor-summary">Delete expired transients.</p>
@@ -3890,9 +3740,9 @@ transient_timeout record from table b.</p>
         <a href="#function_wc_get_relative_url" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/wc-core-functions.php"><a href="../files/woocommerce-includes-wc-core-functions.html#source-view.2395">includes/wc-core-functions.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/wc-core-functions.php"><a href="../files/woocommerce-includes-wc-core-functions.html#source-view.2362">includes/wc-core-functions.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">2395</span>
+    <span class="phpdocumentor-element-found-in__line">2362</span>
 </aside>
 
         <p class="phpdocumentor-summary">Make a URL relative, if possible.</p>
@@ -3940,9 +3790,9 @@ transient_timeout record from table b.</p>
         <a href="#function_wc_is_external_resource" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/wc-core-functions.php"><a href="../files/woocommerce-includes-wc-core-functions.html#source-view.2406">includes/wc-core-functions.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/wc-core-functions.php"><a href="../files/woocommerce-includes-wc-core-functions.html#source-view.2373">includes/wc-core-functions.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">2406</span>
+    <span class="phpdocumentor-element-found-in__line">2373</span>
 </aside>
 
         <p class="phpdocumentor-summary">See if a resource is remote.</p>
@@ -3990,9 +3840,9 @@ transient_timeout record from table b.</p>
         <a href="#function_wc_is_active_theme" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/wc-core-functions.php"><a href="../files/woocommerce-includes-wc-core-functions.html#source-view.2419">includes/wc-core-functions.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/wc-core-functions.php"><a href="../files/woocommerce-includes-wc-core-functions.html#source-view.2386">includes/wc-core-functions.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">2419</span>
+    <span class="phpdocumentor-element-found-in__line">2386</span>
 </aside>
 
         <p class="phpdocumentor-summary">See if theme/s is activate or not.</p>
@@ -4040,9 +3890,9 @@ transient_timeout record from table b.</p>
         <a href="#function_wc_is_wp_default_theme_active" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/wc-core-functions.php"><a href="../files/woocommerce-includes-wc-core-functions.html#source-view.2428">includes/wc-core-functions.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/wc-core-functions.php"><a href="../files/woocommerce-includes-wc-core-functions.html#source-view.2395">includes/wc-core-functions.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">2428</span>
+    <span class="phpdocumentor-element-found-in__line">2395</span>
 </aside>
 
         <p class="phpdocumentor-summary">Is the site using a default WP theme?</p>
@@ -4064,9 +3914,9 @@ transient_timeout record from table b.</p>
         <a href="#function_wc_cleanup_session_data" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/wc-core-functions.php"><a href="../files/woocommerce-includes-wc-core-functions.html#source-view.2453">includes/wc-core-functions.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/wc-core-functions.php"><a href="../files/woocommerce-includes-wc-core-functions.html#source-view.2420">includes/wc-core-functions.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">2453</span>
+    <span class="phpdocumentor-element-found-in__line">2420</span>
 </aside>
 
         <p class="phpdocumentor-summary">Cleans up session data - cron callback.</p>
@@ -4102,9 +3952,9 @@ transient_timeout record from table b.</p>
         <a href="#function_wc_decimal_to_fraction" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/wc-core-functions.php"><a href="../files/woocommerce-includes-wc-core-functions.html#source-view.2470">includes/wc-core-functions.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/wc-core-functions.php"><a href="../files/woocommerce-includes-wc-core-functions.html#source-view.2437">includes/wc-core-functions.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">2470</span>
+    <span class="phpdocumentor-element-found-in__line">2437</span>
 </aside>
 
         <p class="phpdocumentor-summary">Convert a decimal (e.g. 3.5) to a fraction (e.g. 7/2).</p>
@@ -4139,9 +3989,9 @@ transient_timeout record from table b.</p>
         <a href="#function_wc_round_discount" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/wc-core-functions.php"><a href="../files/woocommerce-includes-wc-core-functions.html#source-view.2509">includes/wc-core-functions.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/wc-core-functions.php"><a href="../files/woocommerce-includes-wc-core-functions.html#source-view.2476">includes/wc-core-functions.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">2509</span>
+    <span class="phpdocumentor-element-found-in__line">2476</span>
 </aside>
 
         <p class="phpdocumentor-summary">Round discount.</p>
@@ -4184,9 +4034,9 @@ transient_timeout record from table b.</p>
         <a href="#function_wc_selected" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/wc-core-functions.php"><a href="../files/woocommerce-includes-wc-core-functions.html#source-view.2529">includes/wc-core-functions.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/wc-core-functions.php"><a href="../files/woocommerce-includes-wc-core-functions.html#source-view.2488">includes/wc-core-functions.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">2529</span>
+    <span class="phpdocumentor-element-found-in__line">2488</span>
 </aside>
 
         <p class="phpdocumentor-summary">Return the html selected attribute if stringified $value is found in array of stringified $options
@@ -4230,9 +4080,9 @@ or if stringified $value is the same as scalar stringified $options.</p>
         <a href="#function_wc_get_server_database_version" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/wc-core-functions.php"><a href="../files/woocommerce-includes-wc-core-functions.html#source-view.2544">includes/wc-core-functions.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/wc-core-functions.php"><a href="../files/woocommerce-includes-wc-core-functions.html#source-view.2503">includes/wc-core-functions.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">2544</span>
+    <span class="phpdocumentor-element-found-in__line">2503</span>
 </aside>
 
         <p class="phpdocumentor-summary">Retrieves the MySQL server version. Based on $wpdb.</p>
@@ -4268,9 +4118,9 @@ or if stringified $value is the same as scalar stringified $options.</p>
         <a href="#function_wc_load_cart" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/wc-core-functions.php"><a href="../files/woocommerce-includes-wc-core-functions.html#source-view.2569">includes/wc-core-functions.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/wc-core-functions.php"><a href="../files/woocommerce-includes-wc-core-functions.html#source-view.2528">includes/wc-core-functions.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">2569</span>
+    <span class="phpdocumentor-element-found-in__line">2528</span>
 </aside>
 
         <p class="phpdocumentor-summary">Initialize and load the cart functionality.</p>
@@ -4306,9 +4156,9 @@ or if stringified $value is the same as scalar stringified $options.</p>
         <a href="#function_wc_is_running_from_async_action_scheduler" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/wc-core-functions.php"><a href="../files/woocommerce-includes-wc-core-functions.html#source-view.2590">includes/wc-core-functions.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/wc-core-functions.php"><a href="../files/woocommerce-includes-wc-core-functions.html#source-view.2549">includes/wc-core-functions.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">2590</span>
+    <span class="phpdocumentor-element-found-in__line">2549</span>
 </aside>
 
         <p class="phpdocumentor-summary">Test whether the context of execution comes from async action scheduler.</p>
@@ -4344,9 +4194,9 @@ or if stringified $value is the same as scalar stringified $options.</p>
         <a href="#function_wc_cache_get_multiple" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/wc-core-functions.php"><a href="../files/woocommerce-includes-wc-core-functions.html#source-view.2604">includes/wc-core-functions.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/wc-core-functions.php"><a href="../files/woocommerce-includes-wc-core-functions.html#source-view.2563">includes/wc-core-functions.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">2604</span>
+    <span class="phpdocumentor-element-found-in__line">2563</span>
 </aside>
 
         <p class="phpdocumentor-summary">Polyfill for wp_cache_get_multiple for WP versions before 5.5.</p>
@@ -5032,8 +4882,8 @@ function get_woocommerce_currencies() {
 					&#039;USD&#039; =&gt; __( &#039;United States (US) dollar&#039;, &#039;woocommerce&#039; ),
 					&#039;UYU&#039; =&gt; __( &#039;Uruguayan peso&#039;, &#039;woocommerce&#039; ),
 					&#039;UZS&#039; =&gt; __( &#039;Uzbekistani som&#039;, &#039;woocommerce&#039; ),
-					&#039;VEF&#039; =&gt; __( &#039;Venezuelan bol&amp;iacute;var&#039;, &#039;woocommerce&#039; ),
-					&#039;VES&#039; =&gt; __( &#039;Bol&amp;iacute;var soberano&#039;, &#039;woocommerce&#039; ),
+					&#039;VEF&#039; =&gt; __( &#039;Venezuelan bol&amp;iacute;var (2008–2018)&#039;, &#039;woocommerce&#039; ),
+					&#039;VES&#039; =&gt; __( &#039;Venezuelan bol&amp;iacute;var&#039;, &#039;woocommerce&#039; ),
 					&#039;VND&#039; =&gt; __( &#039;Vietnamese &amp;#x111;&amp;#x1ed3;ng&#039;, &#039;woocommerce&#039; ),
 					&#039;VUV&#039; =&gt; __( &#039;Vanuatu vatu&#039;, &#039;woocommerce&#039; ),
 					&#039;WST&#039; =&gt; __( &#039;Samoan t&amp;#x101;l&amp;#x101;&#039;, &#039;woocommerce&#039; ),
@@ -5218,14 +5068,14 @@ function get_woocommerce_currency_symbols() {
 			&#039;UYU&#039; =&gt; &#039;&amp;#36;&#039;,
 			&#039;UZS&#039; =&gt; &#039;UZS&#039;,
 			&#039;VEF&#039; =&gt; &#039;Bs F&#039;,
-			&#039;VES&#039; =&gt; &#039;Bs.S&#039;,
+			&#039;VES&#039; =&gt; &#039;Bs.&#039;,
 			&#039;VND&#039; =&gt; &#039;&amp;#8363;&#039;,
 			&#039;VUV&#039; =&gt; &#039;Vt&#039;,
 			&#039;WST&#039; =&gt; &#039;T&#039;,
 			&#039;XAF&#039; =&gt; &#039;CFA&#039;,
 			&#039;XCD&#039; =&gt; &#039;&amp;#36;&#039;,
 			&#039;XOF&#039; =&gt; &#039;CFA&#039;,
-			&#039;XPF&#039; =&gt; &#039;Fr&#039;,
+			&#039;XPF&#039; =&gt; &#039;XPF&#039;,
 			&#039;YER&#039; =&gt; &#039;&amp;#xfdfc;&#039;,
 			&#039;ZAR&#039; =&gt; &#039;&amp;#82;&#039;,
 			&#039;ZMW&#039; =&gt; &#039;ZK&#039;,
@@ -5495,11 +5345,7 @@ function wc_setcookie( $name, $value, $expire = 0, $secure = false, $httponly = 
 			$value
 		);
 
-		if ( version_compare( PHP_VERSION, &#039;7.3.0&#039;, &#039;&gt;=&#039; ) ) {
-			setcookie( $name, $value, $options );
-		} else {
-			setcookie( $name, $value, $options[&#039;expires&#039;], $options[&#039;path&#039;], $options[&#039;domain&#039;], $options[&#039;secure&#039;], $options[&#039;httponly&#039;] );
-		}
+		setcookie( $name, $value, $options );
 	} elseif ( Constants::is_true( &#039;WP_DEBUG&#039; ) ) {
 		headers_sent( $file, $line );
 		trigger_error( &quot;{$name} cookie cannot be set - headers already sent by {$file} on line {$line}&quot;, E_USER_NOTICE ); // @codingStandardsIgnoreLine
@@ -5507,50 +5353,27 @@ function wc_setcookie( $name, $value, $expire = 0, $secure = false, $httponly = 
 }
 
 /**
- * Get the URL to the WooCommerce REST API.
+ * Get the URL to the WooCommerce Legacy REST API.
+ *
+ * Note that as of WooCommerce 9.0 the WooCommerce Legacy REST API has been moved to a dedicated extension,
+ * and the implementation of its root endpoint in WooCommerce core is now just a stub that will always return an error.
+ * See the setup_legacy_api_stub method in includes/class-woocommerce.php and:
+ * https://developer.woocommerce.com/2023/10/03/the-legacy-rest-api-will-move-to-a-dedicated-extension-in-woocommerce-9-0/
+ *
+ * @deprecated 9.0.0 The Legacy REST API has been removed from WooCommerce core.
  *
  * @since 2.1
  * @param string $path an endpoint to include in the URL.
  * @return string the URL.
  */
 function get_woocommerce_api_url( $path ) {
-	if ( Constants::is_defined( &#039;WC_API_REQUEST_VERSION&#039; ) ) {
-		$version = Constants::get_constant( &#039;WC_API_REQUEST_VERSION&#039; );
-	} else {
-		$version = substr( WC_API::VERSION, 0, 1 );
-	}
-
-	$url = get_home_url( null, &quot;wc-api/v{$version}/&quot;, is_ssl() ? &#039;https&#039; : &#039;http&#039; );
+	$url = get_home_url( null, &#039;wc-api/v3/&#039;, is_ssl() ? &#039;https&#039; : &#039;http&#039; );
 
 	if ( ! empty( $path ) &amp;&amp; is_string( $path ) ) {
 		$url .= ltrim( $path, &#039;/&#039; );
 	}
 
 	return $url;
-}
-
-/**
- * Get a log file path.
- *
- * @since 2.2
- *
- * @param string $handle name.
- * @return string the log file path.
- */
-function wc_get_log_file_path( $handle ) {
-	return WC_Log_Handler_File::get_log_file_path( $handle );
-}
-
-/**
- * Get a log file name.
- *
- * @since 3.3
- *
- * @param string $handle Name.
- * @return string The log file name.
- */
-function wc_get_log_file_name( $handle ) {
-	return WC_Log_Handler_File::get_log_file_name( $handle );
 }
 
 /**
@@ -5968,12 +5791,18 @@ function wc_get_credit_card_type_label( $type ) {
 			&#039;visa&#039;             =&gt; _x( &#039;Visa&#039;, &#039;Name of credit card&#039;, &#039;woocommerce&#039; ),
 			&#039;discover&#039;         =&gt; _x( &#039;Discover&#039;, &#039;Name of credit card&#039;, &#039;woocommerce&#039; ),
 			&#039;american express&#039; =&gt; _x( &#039;American Express&#039;, &#039;Name of credit card&#039;, &#039;woocommerce&#039; ),
+			&#039;cartes bancaires&#039; =&gt; _x( &#039;Cartes Bancaires&#039;, &#039;Name of credit card&#039;, &#039;woocommerce&#039; ),
 			&#039;diners&#039;           =&gt; _x( &#039;Diners&#039;, &#039;Name of credit card&#039;, &#039;woocommerce&#039; ),
 			&#039;jcb&#039;              =&gt; _x( &#039;JCB&#039;, &#039;Name of credit card&#039;, &#039;woocommerce&#039; ),
 		)
 	);
 
-	return apply_filters( &#039;woocommerce_get_credit_card_type_label&#039;, ( array_key_exists( $type, $labels ) ? $labels[ $type ] : ucfirst( $type ) ) );
+	/**
+	 * Fallback to title case, uppercasing the first letter of each word.
+	 *
+	 * @since 8.9.0
+	 */
+	return apply_filters( &#039;woocommerce_get_credit_card_type_label&#039;, ( array_key_exists( $type, $labels ) ? $labels[ $type ] : ucwords( $type ) ) );
 }
 
 /**
@@ -5983,7 +5812,7 @@ function wc_get_credit_card_type_label( $type ) {
  * @param string $url   URL of the page to return to.
  */
 function wc_back_link( $label, $url ) {
-	echo &#039;&lt;small class=&quot;wc-admin-breadcrumb&quot;&gt;&lt;a href=&quot;&#039; . esc_url( $url ) . &#039;&quot; aria-label=&quot;&#039; . esc_attr( $label ) . &#039;&quot;&gt;&amp;#x2934;&lt;/a&gt;&lt;/small&gt;&#039;;
+	echo &#039;&lt;small class=&quot;wc-admin-breadcrumb&quot;&gt;&lt;a href=&quot;&#039; . esc_url( $url ) . &#039;&quot; aria-label=&quot;&#039; . esc_attr( $label ) . &#039;&quot;&gt;&amp;#x2934;&amp;#xfe0e;&lt;/a&gt;&lt;/small&gt;&#039;;
 }
 
 /**
@@ -6323,7 +6152,16 @@ function wc_get_rounding_precision() {
 	if ( $precision &lt; absint( WC_ROUNDING_PRECISION ) ) {
 		$precision = absint( WC_ROUNDING_PRECISION );
 	}
-	return $precision;
+
+	/**
+	 * Filter the rounding precision for internal WC calculations. This is different from the number of decimals used for display.
+	 * Generally, this filter can be used to decrease the precision, but if you choose to decrease, there maybe side effects such as off by one rounding errors for certain tax rate combinations.
+	 *
+	 * @since 8.8.0
+	 *
+	 * @param int $precision The number of decimals to round to.
+	 */
+	return apply_filters( &#039;woocommerce_internal_rounding_precision&#039;, $precision );
 }
 
 /**
@@ -6408,9 +6246,7 @@ function wc_remove_number_precision_deep( $value ) {
  *     - an instance which will be used directly as the logger
  * In either case, the class or instance *must* implement WC_Logger_Interface.
  *
- * @see WC_Logger_Interface
- *
- * @return WC_Logger
+ * @return WC_Logger_Interface
  */
 function wc_get_logger() {
 	static $logger = null;
@@ -6507,25 +6343,6 @@ function wc_print_r( $expression, $return = false ) {
 
 	return false;
 }
-
-/**
- * Registers the default log handler.
- *
- * @since 3.0
- * @param array $handlers Handlers.
- * @return array
- */
-function wc_register_default_log_handler( $handlers ) {
-	$handler_class = Constants::get_constant( &#039;WC_LOG_HANDLER&#039; );
-	if ( is_null( $handler_class ) || ! class_exists( $handler_class ) ) {
-		$handler_class = WC_Log_Handler_File::class;
-	}
-
-	array_push( $handlers, new $handler_class() );
-
-	return $handlers;
-}
-add_filter( &#039;woocommerce_register_log_handlers&#039;, &#039;wc_register_default_log_handler&#039; );
 
 /**
  * Based on wp_list_pluck, this calls a method instead of returning a property.
@@ -6908,15 +6725,7 @@ function wc_decimal_to_fraction( $decimal ) {
  * @return float
  */
 function wc_round_discount( $value, $precision ) {
-	if ( version_compare( PHP_VERSION, &#039;5.3.0&#039;, &#039;&gt;=&#039; ) ) {
-		return NumberUtil::round( $value, $precision, WC_DISCOUNT_ROUNDING_MODE ); // phpcs:ignore PHPCompatibility.FunctionUse.NewFunctionParameters.round_modeFound
-	}
-
-	if ( PHP_ROUND_HALF_DOWN === WC_DISCOUNT_ROUNDING_MODE ) {
-		return wc_legacy_round_half_down( $value, $precision );
-	}
-
-	return NumberUtil::round( $value, $precision );
+	return NumberUtil::round( $value, $precision, WC_DISCOUNT_ROUNDING_MODE ); // phpcs:ignore PHPCompatibility.FunctionUse.NewFunctionParameters.round_modeFound
 }
 
 /**
@@ -6945,7 +6754,7 @@ function wc_selected( $value, $options ) {
 function wc_get_server_database_version() {
 	global $wpdb;
 
-	if ( empty( $wpdb-&gt;is_mysql ) || ! $wpdb-&gt;use_mysqli ) {
+	if ( empty( $wpdb-&gt;is_mysql ) || empty( $wpdb-&gt;use_mysqli ) ) {
 		return array(
 			&#039;string&#039; =&gt; &#039;&#039;,
 			&#039;number&#039; =&gt; &#039;&#039;,
@@ -7022,7 +6831,7 @@ function wc_cache_get_multiple( $keys, $group = &#039;&#039;, $force = false ) {
 
     <footer class="phpdocumentor phpdocumentor-footer">
     <div class="phpdocumentor-section">
-        <span>WooCommerce Code Reference API documentation generated by <a href="http://www.phpdoc.org/">phpDocumentor</a> on August 24th, 2023 at 08:49 am.</span>
+        <span>WooCommerce Code Reference API documentation generated by <a href="http://www.phpdoc.org/">phpDocumentor</a> on July 25th, 2024 at 11:33 am.</span>
     </div>
 </footer>
 
@@ -7034,7 +6843,7 @@ function wc_cache_get_multiple( $keys, $group = &#039;&#039;, $force = false ) {
             'searchIndex': '..\/js\/searchIndex.json'
         };
     </script>
-    <script src="../js/searchIndex.js?updated=1692866949"></script>
-    <script src="../js/search.js?updated=1692866949"></script>
+    <script src="../js/searchIndex.js?updated=1721907183"></script>
+    <script src="../js/search.js?updated=1721907183"></script>
 </body>
 </html>

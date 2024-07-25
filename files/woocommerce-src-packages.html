@@ -9,9 +9,9 @@
     <link rel="apple-touch-icon" sizes="72x72" href="../images/apple-touch-icon-72x72.png"/>
     <link rel="apple-touch-icon" sizes="114x114" href="../images/apple-touch-icon-114x114.png"/>
     <link rel="stylesheet" href="../css/normalize.css">
-    <link rel="stylesheet" href="../css/base.css?updated=1692866952">
+    <link rel="stylesheet" href="../css/base.css?updated=1721907186">
     <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../css/template.css?updated=1692866952">
+    <link rel="stylesheet" href="../css/template.css?updated=1721907186">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0/css/all.min.css" integrity="sha256-ybRkN9dBjhcS2qrW1z+hfCxq+1aBdwyQM5wlQoQVt/0=" crossorigin="anonymous" />
             <script src="https://cdn.jsdelivr.net/npm/css-vars-ponyfill@2"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0/js/all.min.js" integrity="sha256-0vuk8LXoyrmCjp1f0O300qo1M75ZQyhH9X3J6d+scmk=" crossorigin="anonymous"></script>
@@ -125,6 +125,7 @@
                         <ul class="phpdocumentor-list">
                                     <li><a href="../packages/Automattic-WooCommerce.html"><abbr title="\Automattic\WooCommerce">WooCommerce</abbr></a></li>
                             </ul>
+                                <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/WooCommerceBlocks.html"><abbr title="\WooCommerceBlocks">WooCommerceBlocks</abbr></a></h3>
                         </section>
     
     <section class="phpdocumentor-sidebar__category">
@@ -162,6 +163,8 @@
 
 namespace Automattic\WooCommerce;
 
+use Automattic\Jetpack\Constants;
+
 defined( &#039;ABSPATH&#039; ) || exit;
 
 /**
@@ -177,12 +180,29 @@ class Packages {
 	private function __construct() {}
 
 	/**
-	 * Array of package names and their main package classes.
+	 * Array of package names and their main package classes. Once a package has been merged into WooCommerce
+	 * directly it should be removed from here and added to the merged packages array.
 	 *
 	 * @var array Key is the package name/directory, value is the main package class which handles init.
 	 */
-	protected static $packages = array(
-		&#039;woocommerce-blocks&#039;   =&gt; &#039;\\Automattic\\WooCommerce\\Blocks\\Package&#039;
+	protected static $packages = array();
+
+	/**
+	 * Array of package names and their main package classes.
+	 *
+	 * One a package has been merged into WooCommerce Core it should be moved fron the package list and placed in
+	 * this list. This will ensure that the feature plugin is disabled as well as provide the class to handle
+	 * initialization for the now-merged feature plugin.
+	 *
+	 * Once a package has been merged into WooCommerce Core it should have its slug added here. This will ensure
+	 * that we deactivate the feature plugin automaticatlly to prevent any problems caused by conflicts between
+	 * the two versions caused by them both being active.
+	 *
+	 * @var array Key is the package name/directory, value is the main package class which handles init.
+	 */
+	protected static $merged_packages = array(
+		&#039;woocommerce-admin&#039;                    =&gt; &#039;\\Automattic\\WooCommerce\\Admin\\Composer\\Package&#039;,
+		&#039;woocommerce-gutenberg-products-block&#039; =&gt; &#039;\\Automattic\\WooCommerce\\Blocks\\Package&#039;,
 	);
 
 	/**
@@ -198,7 +218,8 @@ class Packages {
 	 * Callback for WordPress init hook.
 	 */
 	public static function on_init() {
-		self::load_packages();
+		self::deactivate_merged_packages();
+		self::initialize_packages();
 	}
 
 	/**
@@ -212,13 +233,58 @@ class Packages {
 	}
 
 	/**
+	 * Deactivates merged feature plugins.
+	 *
+	 * Once a feature plugin is merged into WooCommerce Core it should be deactivated. This method will
+	 * ensure that a plugin gets deactivated. Note that for the first request it will still be active,
+	 * and as such, there may be some odd behavior. This is unlikely to cause any issues though
+	 * because it will be deactivated on the request that updates or activates WooCommerce.
+	 */
+	protected static function deactivate_merged_packages() {
+		// Developers may need to be able to run merged feature plugins alongside merged packages for testing purposes.
+		if ( Constants::is_true( &#039;WC_ALLOW_MERGED_FEATURE_PLUGINS&#039; ) ) {
+			return;
+		}
+
+		// Scroll through all of the active plugins and disable them if they&#039;re merged packages.
+		$active_plugins = get_option( &#039;active_plugins&#039;, array() );
+		// Deactivate the plugin if possible so that there are no conflicts.
+		foreach ( $active_plugins as $active_plugin_path ) {
+			$plugin_file = basename( plugin_basename( $active_plugin_path ), &#039;.php&#039; );
+			if ( ! isset( self::$merged_packages[ $plugin_file ] ) ) {
+				continue;
+			}
+
+			require_once ABSPATH . &#039;wp-admin/includes/plugin.php&#039;;
+
+			// Make sure to display a message informing the user that the plugin has been deactivated.
+			$plugin_data = get_plugin_data( WP_PLUGIN_DIR . &#039;/&#039; . $active_plugin_path );
+			deactivate_plugins( $active_plugin_path );
+			add_action(
+				&#039;admin_notices&#039;,
+				function() use ( $plugin_data ) {
+					echo &#039;&lt;div class=&quot;error&quot;&gt;&lt;p&gt;&#039;;
+					printf(
+						/* translators: %s: is referring to the plugin&#039;s name. */
+						esc_html__( &#039;The %1$s plugin has been deactivated as the latest improvements are now included with the %2$s plugin.&#039;, &#039;woocommerce&#039; ),
+						&#039;&lt;code&gt;&#039; . esc_html( $plugin_data[&#039;Name&#039;] ) . &#039;&lt;/code&gt;&#039;,
+						&#039;&lt;code&gt;WooCommerce&lt;/code&gt;&#039;
+					);
+					echo &#039;&lt;/p&gt;&lt;/div&gt;&#039;;
+				}
+			);
+		}
+	}
+
+	/**
 	 * Loads packages after plugins_loaded hook.
 	 *
 	 * Each package should include an init file which loads the package so it can be used by core.
 	 */
-	protected static function load_packages() {
-		// Initialize WooCommerce Admin.
-		\Automattic\WooCommerce\Admin\Composer\Package::init();
+	protected static function initialize_packages() {
+		foreach ( self::$merged_packages as $package_name =&gt; $package_class ) {
+			call_user_func( array( $package_class, &#039;init&#039; ) );
+		}
 
 		foreach ( self::$packages as $package_name =&gt; $package_class ) {
 			if ( ! self::package_exists( $package_name ) ) {
@@ -303,7 +369,7 @@ class Packages {
 
     <footer class="phpdocumentor phpdocumentor-footer">
     <div class="phpdocumentor-section">
-        <span>WooCommerce Code Reference API documentation generated by <a href="http://www.phpdoc.org/">phpDocumentor</a> on August 24th, 2023 at 08:49 am.</span>
+        <span>WooCommerce Code Reference API documentation generated by <a href="http://www.phpdoc.org/">phpDocumentor</a> on July 25th, 2024 at 11:33 am.</span>
     </div>
 </footer>
 
@@ -315,7 +381,7 @@ class Packages {
             'searchIndex': '..\/js\/searchIndex.json'
         };
     </script>
-    <script src="../js/searchIndex.js?updated=1692866952"></script>
-    <script src="../js/search.js?updated=1692866952"></script>
+    <script src="../js/searchIndex.js?updated=1721907186"></script>
+    <script src="../js/search.js?updated=1721907186"></script>
 </body>
 </html>

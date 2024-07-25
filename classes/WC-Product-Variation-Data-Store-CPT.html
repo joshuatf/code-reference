@@ -9,9 +9,9 @@
     <link rel="apple-touch-icon" sizes="72x72" href="../images/apple-touch-icon-72x72.png"/>
     <link rel="apple-touch-icon" sizes="114x114" href="../images/apple-touch-icon-114x114.png"/>
     <link rel="stylesheet" href="../css/normalize.css">
-    <link rel="stylesheet" href="../css/base.css?updated=1692866975">
+    <link rel="stylesheet" href="../css/base.css?updated=1721907195">
     <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../css/template.css?updated=1692866975">
+    <link rel="stylesheet" href="../css/template.css?updated=1721907195">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0/css/all.min.css" integrity="sha256-ybRkN9dBjhcS2qrW1z+hfCxq+1aBdwyQM5wlQoQVt/0=" crossorigin="anonymous" />
             <script src="https://cdn.jsdelivr.net/npm/css-vars-ponyfill@2"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0/js/all.min.js" integrity="sha256-0vuk8LXoyrmCjp1f0O300qo1M75ZQyhH9X3J6d+scmk=" crossorigin="anonymous"></script>
@@ -119,6 +119,7 @@
                         <ul class="phpdocumentor-list">
                                     <li><a href="../packages/Automattic-WooCommerce.html"><abbr title="\Automattic\WooCommerce">WooCommerce</abbr></a></li>
                             </ul>
+                                <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/WooCommerceBlocks.html"><abbr title="\WooCommerceBlocks">WooCommerceBlocks</abbr></a></h3>
                         </section>
     
     <section class="phpdocumentor-sidebar__category">
@@ -1091,16 +1092,16 @@ For example, in payment_tokenmeta, this would be payment_token_id.</p>
         <a href="#method_create_all_product_variations" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/data-stores/class-wc-product-data-store-cpt.php"><a href="../files/woocommerce-includes-data-stores-class-wc-product-data-store-cpt.html#source-view.1185">includes/data-stores/class-wc-product-data-store-cpt.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/data-stores/class-wc-product-data-store-cpt.php"><a href="../files/woocommerce-includes-data-stores-class-wc-product-data-store-cpt.html#source-view.1207">includes/data-stores/class-wc-product-data-store-cpt.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1185</span>
+    <span class="phpdocumentor-element-found-in__line">1207</span>
 </aside>
 
         <p class="phpdocumentor-summary">Creates all possible combinations of variations from the attributes, without creating duplicates.</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                <span class="phpdocumentor-signature__name">create_all_product_variations</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type"><a href="../classes/WC-Product.html"><abbr title="\WC_Product">WC_Product</abbr></a>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$product</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type">int&nbsp;</span><span class="phpdocumentor-signature__argument__name">$limit</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">-1</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">int</span></code>
+                <span class="phpdocumentor-signature__name">create_all_product_variations</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type"><a href="../classes/WC-Product.html"><abbr title="\WC_Product">WC_Product</abbr></a>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$product</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type">int&nbsp;</span><span class="phpdocumentor-signature__argument__name">$limit</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">-1</span><span> ]</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__name">$default_values</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">array()</span><span> ]</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__name">$metadata</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">array()</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">int</span></code>
 
         <section class="phpdocumentor-description"></section>
 
@@ -1121,6 +1122,24 @@ For example, in payment_tokenmeta, this would be payment_token_id.</p>
                  = <span class="phpdocumentor-signature__argument__default-value">-1</span>            </dt>
             <dd class="phpdocumentor-argument-list__definition">
                     <section class="phpdocumentor-description"><p>Limit the number of created variations.</p>
+</section>
+
+            </dd>
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$default_values</span>
+                : <span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;</span>
+                 = <span class="phpdocumentor-signature__argument__default-value">array()</span>            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"><p>Key value pairs to set on created variations.</p>
+</section>
+
+            </dd>
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$metadata</span>
+                : <span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;</span>
+                 = <span class="phpdocumentor-signature__argument__default-value">array()</span>            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"><p>Key value pairs to set as meta data on created variations.</p>
 </section>
 
             </dd>
@@ -1166,9 +1185,9 @@ For example, in payment_tokenmeta, this would be payment_token_id.</p>
         <a href="#method_delete" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/data-stores/class-wc-product-data-store-cpt.php"><a href="../files/woocommerce-includes-data-stores-class-wc-product-data-store-cpt.html#source-view.284">includes/data-stores/class-wc-product-data-store-cpt.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/data-stores/class-wc-product-data-store-cpt.php"><a href="../files/woocommerce-includes-data-stores-class-wc-product-data-store-cpt.html#source-view.291">includes/data-stores/class-wc-product-data-store-cpt.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">284</span>
+    <span class="phpdocumentor-element-found-in__line">291</span>
 </aside>
 
         <p class="phpdocumentor-summary">Method to delete a product from the database.</p>
@@ -1420,9 +1439,9 @@ For example, in payment_tokenmeta, this would be payment_token_id.</p>
         <a href="#method_find_matching_product_variation" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/data-stores/class-wc-product-data-store-cpt.php"><a href="../files/woocommerce-includes-data-stores-class-wc-product-data-store-cpt.html#source-view.1093">includes/data-stores/class-wc-product-data-store-cpt.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/data-stores/class-wc-product-data-store-cpt.php"><a href="../files/woocommerce-includes-data-stores-class-wc-product-data-store-cpt.html#source-view.1108">includes/data-stores/class-wc-product-data-store-cpt.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1093</span>
+    <span class="phpdocumentor-element-found-in__line">1108</span>
 </aside>
 
         <p class="phpdocumentor-summary">Find a matching (enabled) variation within a variable product.</p>
@@ -1487,9 +1506,9 @@ For example, in payment_tokenmeta, this would be payment_token_id.</p>
         <a href="#method_get_ending_sales" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/data-stores/class-wc-product-data-store-cpt.php"><a href="../files/woocommerce-includes-data-stores-class-wc-product-data-store-cpt.html#source-view.1065">includes/data-stores/class-wc-product-data-store-cpt.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/data-stores/class-wc-product-data-store-cpt.php"><a href="../files/woocommerce-includes-data-stores-class-wc-product-data-store-cpt.html#source-view.1080">includes/data-stores/class-wc-product-data-store-cpt.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1065</span>
+    <span class="phpdocumentor-element-found-in__line">1080</span>
 </aside>
 
         <p class="phpdocumentor-summary">Returns an array of IDs of products that have sales which are due to end.</p>
@@ -1533,9 +1552,9 @@ For example, in payment_tokenmeta, this would be payment_token_id.</p>
         <a href="#method_get_featured_product_ids" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/data-stores/class-wc-product-data-store-cpt.php"><a href="../files/woocommerce-includes-data-stores-class-wc-product-data-store-cpt.html#source-view.945">includes/data-stores/class-wc-product-data-store-cpt.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/data-stores/class-wc-product-data-store-cpt.php"><a href="../files/woocommerce-includes-data-stores-class-wc-product-data-store-cpt.html#source-view.960">includes/data-stores/class-wc-product-data-store-cpt.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">945</span>
+    <span class="phpdocumentor-element-found-in__line">960</span>
 </aside>
 
         <p class="phpdocumentor-summary">Returns a list of product IDs ( id as key =&gt; parent as value) that are
@@ -1627,9 +1646,9 @@ some extra meta queries and ALL products (posts_per_page = -1).</p>
         <a href="#method_get_on_sale_products" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/data-stores/class-wc-product-data-store-cpt.php"><a href="../files/woocommerce-includes-data-stores-class-wc-product-data-store-cpt.html#source-view.896">includes/data-stores/class-wc-product-data-store-cpt.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/data-stores/class-wc-product-data-store-cpt.php"><a href="../files/woocommerce-includes-data-stores-class-wc-product-data-store-cpt.html#source-view.911">includes/data-stores/class-wc-product-data-store-cpt.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">896</span>
+    <span class="phpdocumentor-element-found-in__line">911</span>
 </aside>
 
         <p class="phpdocumentor-summary">Returns an array of on sale products, as an array of objects with an
@@ -1674,9 +1693,9 @@ ID and parent_id present. Example: $return[0]-&gt;id, $return[0]-&gt;parent_id.<
         <a href="#method_get_product_id_by_sku" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/data-stores/class-wc-product-data-store-cpt.php"><a href="../files/woocommerce-includes-data-stores-class-wc-product-data-store-cpt.html#source-view.1010">includes/data-stores/class-wc-product-data-store-cpt.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/data-stores/class-wc-product-data-store-cpt.php"><a href="../files/woocommerce-includes-data-stores-class-wc-product-data-store-cpt.html#source-view.1025">includes/data-stores/class-wc-product-data-store-cpt.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1010</span>
+    <span class="phpdocumentor-element-found-in__line">1025</span>
 </aside>
 
         <p class="phpdocumentor-summary">Return product ID based on SKU.</p>
@@ -1732,9 +1751,9 @@ ID and parent_id present. Example: $return[0]-&gt;id, $return[0]-&gt;parent_id.<
         <a href="#method_get_product_type" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/data-stores/class-wc-product-data-store-cpt.php"><a href="../files/woocommerce-includes-data-stores-class-wc-product-data-store-cpt.html#source-view.1727">includes/data-stores/class-wc-product-data-store-cpt.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/data-stores/class-wc-product-data-store-cpt.php"><a href="../files/woocommerce-includes-data-stores-class-wc-product-data-store-cpt.html#source-view.1753">includes/data-stores/class-wc-product-data-store-cpt.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1727</span>
+    <span class="phpdocumentor-element-found-in__line">1753</span>
 </aside>
 
         <p class="phpdocumentor-summary">Get the product type based on product ID.</p>
@@ -1790,9 +1809,9 @@ ID and parent_id present. Example: $return[0]-&gt;id, $return[0]-&gt;parent_id.<
         <a href="#method_get_products" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/data-stores/class-wc-product-data-store-cpt.php"><a href="../files/woocommerce-includes-data-stores-class-wc-product-data-store-cpt.html#source-view.1565">includes/data-stores/class-wc-product-data-store-cpt.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/data-stores/class-wc-product-data-store-cpt.php"><a href="../files/woocommerce-includes-data-stores-class-wc-product-data-store-cpt.html#source-view.1591">includes/data-stores/class-wc-product-data-store-cpt.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1565</span>
+    <span class="phpdocumentor-element-found-in__line">1591</span>
 </aside>
 
         <p class="phpdocumentor-summary">Returns an array of products.</p>
@@ -1848,9 +1867,9 @@ ID and parent_id present. Example: $return[0]-&gt;id, $return[0]-&gt;parent_id.<
         <a href="#method_get_related_products" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/data-stores/class-wc-product-data-store-cpt.php"><a href="../files/woocommerce-includes-data-stores-class-wc-product-data-store-cpt.html#source-view.1264">includes/data-stores/class-wc-product-data-store-cpt.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/data-stores/class-wc-product-data-store-cpt.php"><a href="../files/woocommerce-includes-data-stores-class-wc-product-data-store-cpt.html#source-view.1290">includes/data-stores/class-wc-product-data-store-cpt.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1264</span>
+    <span class="phpdocumentor-element-found-in__line">1290</span>
 </aside>
 
         <p class="phpdocumentor-summary">Return a list of related products (using data like categories and IDs).</p>
@@ -1942,9 +1961,9 @@ ID and parent_id present. Example: $return[0]-&gt;id, $return[0]-&gt;parent_id.<
         <a href="#method_get_related_products_query" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/data-stores/class-wc-product-data-store-cpt.php"><a href="../files/woocommerce-includes-data-stores-class-wc-product-data-store-cpt.html#source-view.1292">includes/data-stores/class-wc-product-data-store-cpt.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/data-stores/class-wc-product-data-store-cpt.php"><a href="../files/woocommerce-includes-data-stores-class-wc-product-data-store-cpt.html#source-view.1318">includes/data-stores/class-wc-product-data-store-cpt.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1292</span>
+    <span class="phpdocumentor-element-found-in__line">1318</span>
 </aside>
 
         <p class="phpdocumentor-summary">Builds the related posts query.</p>
@@ -2027,9 +2046,9 @@ ID and parent_id present. Example: $return[0]-&gt;id, $return[0]-&gt;parent_id.<
         <a href="#method_get_shipping_class_id_by_slug" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/data-stores/class-wc-product-data-store-cpt.php"><a href="../files/woocommerce-includes-data-stores-class-wc-product-data-store-cpt.html#source-view.1549">includes/data-stores/class-wc-product-data-store-cpt.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/data-stores/class-wc-product-data-store-cpt.php"><a href="../files/woocommerce-includes-data-stores-class-wc-product-data-store-cpt.html#source-view.1575">includes/data-stores/class-wc-product-data-store-cpt.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1549</span>
+    <span class="phpdocumentor-element-found-in__line">1575</span>
 </aside>
 
         <p class="phpdocumentor-summary">Get shipping class ID by slug.</p>
@@ -2085,9 +2104,9 @@ ID and parent_id present. Example: $return[0]-&gt;id, $return[0]-&gt;parent_id.<
         <a href="#method_get_starting_sales" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/data-stores/class-wc-product-data-store-cpt.php"><a href="../files/woocommerce-includes-data-stores-class-wc-product-data-store-cpt.html#source-view.1039">includes/data-stores/class-wc-product-data-store-cpt.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/data-stores/class-wc-product-data-store-cpt.php"><a href="../files/woocommerce-includes-data-stores-class-wc-product-data-store-cpt.html#source-view.1054">includes/data-stores/class-wc-product-data-store-cpt.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1039</span>
+    <span class="phpdocumentor-element-found-in__line">1054</span>
 </aside>
 
         <p class="phpdocumentor-summary">Returns an array of IDs of products that have sales starting soon.</p>
@@ -2131,9 +2150,9 @@ ID and parent_id present. Example: $return[0]-&gt;id, $return[0]-&gt;parent_id.<
         <a href="#method_is_existing_sku" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/data-stores/class-wc-product-data-store-cpt.php"><a href="../files/woocommerce-includes-data-stores-class-wc-product-data-store-cpt.html#source-view.980">includes/data-stores/class-wc-product-data-store-cpt.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/data-stores/class-wc-product-data-store-cpt.php"><a href="../files/woocommerce-includes-data-stores-class-wc-product-data-store-cpt.html#source-view.995">includes/data-stores/class-wc-product-data-store-cpt.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">980</span>
+    <span class="phpdocumentor-element-found-in__line">995</span>
 </aside>
 
         <p class="phpdocumentor-summary">Check if product sku is found for any other product IDs.</p>
@@ -2276,9 +2295,9 @@ Also accepts a WC_DateTime object.</p>
         <a href="#method_query" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/data-stores/class-wc-product-data-store-cpt.php"><a href="../files/woocommerce-includes-data-stores-class-wc-product-data-store-cpt.html#source-view.2032">includes/data-stores/class-wc-product-data-store-cpt.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/data-stores/class-wc-product-data-store-cpt.php"><a href="../files/woocommerce-includes-data-stores-class-wc-product-data-store-cpt.html#source-view.2070">includes/data-stores/class-wc-product-data-store-cpt.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">2032</span>
+    <span class="phpdocumentor-element-found-in__line">2070</span>
 </aside>
 
         <p class="phpdocumentor-summary">Query for Products matching specific criteria.</p>
@@ -2459,9 +2478,9 @@ Also accepts a WC_DateTime object.</p>
         <a href="#method_read_stock_quantity" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/data-stores/class-wc-product-data-store-cpt.php"><a href="../files/woocommerce-includes-data-stores-class-wc-product-data-store-cpt.html#source-view.382">includes/data-stores/class-wc-product-data-store-cpt.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/data-stores/class-wc-product-data-store-cpt.php"><a href="../files/woocommerce-includes-data-stores-class-wc-product-data-store-cpt.html#source-view.389">includes/data-stores/class-wc-product-data-store-cpt.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">382</span>
+    <span class="phpdocumentor-element-found-in__line">389</span>
 </aside>
 
         <p class="phpdocumentor-summary">Re-reads stock from the DB ignoring changes.</p>
@@ -2512,9 +2531,9 @@ Also accepts a WC_DateTime object.</p>
         <a href="#method_reviews_allowed_query_where" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/data-stores/class-wc-product-data-store-cpt.php"><a href="../files/woocommerce-includes-data-stores-class-wc-product-data-store-cpt.html#source-view.1759">includes/data-stores/class-wc-product-data-store-cpt.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/data-stores/class-wc-product-data-store-cpt.php"><a href="../files/woocommerce-includes-data-stores-class-wc-product-data-store-cpt.html#source-view.1785">includes/data-stores/class-wc-product-data-store-cpt.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1759</span>
+    <span class="phpdocumentor-element-found-in__line">1785</span>
 </aside>
 
         <p class="phpdocumentor-summary">Add ability to get products by &#039;reviews_allowed&#039; in WC_Product_Query.</p>
@@ -2579,9 +2598,9 @@ Also accepts a WC_DateTime object.</p>
         <a href="#method_search_products" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/data-stores/class-wc-product-data-store-cpt.php"><a href="../files/woocommerce-includes-data-stores-class-wc-product-data-store-cpt.html#source-view.1582">includes/data-stores/class-wc-product-data-store-cpt.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/data-stores/class-wc-product-data-store-cpt.php"><a href="../files/woocommerce-includes-data-stores-class-wc-product-data-store-cpt.html#source-view.1608">includes/data-stores/class-wc-product-data-store-cpt.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1582</span>
+    <span class="phpdocumentor-element-found-in__line">1608</span>
 </aside>
 
         <p class="phpdocumentor-summary">Search product data for a term and return ids.</p>
@@ -2677,9 +2696,9 @@ Also accepts a WC_DateTime object.</p>
         <a href="#method_sort_all_product_variations" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/data-stores/class-wc-product-data-store-cpt.php"><a href="../files/woocommerce-includes-data-stores-class-wc-product-data-store-cpt.html#source-view.1235">includes/data-stores/class-wc-product-data-store-cpt.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/data-stores/class-wc-product-data-store-cpt.php"><a href="../files/woocommerce-includes-data-stores-class-wc-product-data-store-cpt.html#source-view.1261">includes/data-stores/class-wc-product-data-store-cpt.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1235</span>
+    <span class="phpdocumentor-element-found-in__line">1261</span>
 </aside>
 
         <p class="phpdocumentor-summary">Make sure all variations have a sort order set so they can be reordered correctly.</p>
@@ -2779,9 +2798,9 @@ Also accepts a WC_DateTime object.</p>
         <a href="#method_update_average_rating" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/data-stores/class-wc-product-data-store-cpt.php"><a href="../files/woocommerce-includes-data-stores-class-wc-product-data-store-cpt.html#source-view.1515">includes/data-stores/class-wc-product-data-store-cpt.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/data-stores/class-wc-product-data-store-cpt.php"><a href="../files/woocommerce-includes-data-stores-class-wc-product-data-store-cpt.html#source-view.1541">includes/data-stores/class-wc-product-data-store-cpt.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1515</span>
+    <span class="phpdocumentor-element-found-in__line">1541</span>
 </aside>
 
         <p class="phpdocumentor-summary">Update a products average rating meta.</p>
@@ -2979,9 +2998,9 @@ Also accepts a WC_DateTime object.</p>
         <a href="#method_update_product_sales" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/data-stores/class-wc-product-data-store-cpt.php"><a href="../files/woocommerce-includes-data-stores-class-wc-product-data-store-cpt.html#source-view.1457">includes/data-stores/class-wc-product-data-store-cpt.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/data-stores/class-wc-product-data-store-cpt.php"><a href="../files/woocommerce-includes-data-stores-class-wc-product-data-store-cpt.html#source-view.1483">includes/data-stores/class-wc-product-data-store-cpt.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1457</span>
+    <span class="phpdocumentor-element-found-in__line">1483</span>
 </aside>
 
         <p class="phpdocumentor-summary">Update a product&#039;s sale count directly.</p>
@@ -3057,9 +3076,9 @@ Also accepts a WC_DateTime object.</p>
         <a href="#method_update_product_stock" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/data-stores/class-wc-product-data-store-cpt.php"><a href="../files/woocommerce-includes-data-stores-class-wc-product-data-store-cpt.html#source-view.1381">includes/data-stores/class-wc-product-data-store-cpt.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/data-stores/class-wc-product-data-store-cpt.php"><a href="../files/woocommerce-includes-data-stores-class-wc-product-data-store-cpt.html#source-view.1407">includes/data-stores/class-wc-product-data-store-cpt.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1381</span>
+    <span class="phpdocumentor-element-found-in__line">1407</span>
 </aside>
 
         <p class="phpdocumentor-summary">Update a product&#039;s stock amount directly.</p>
@@ -3137,9 +3156,9 @@ Uses locking to update the quantity. If the lock is not acquired, change is lost
         <a href="#method_update_rating_counts" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/data-stores/class-wc-product-data-store-cpt.php"><a href="../files/woocommerce-includes-data-stores-class-wc-product-data-store-cpt.html#source-view.1538">includes/data-stores/class-wc-product-data-store-cpt.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/data-stores/class-wc-product-data-store-cpt.php"><a href="../files/woocommerce-includes-data-stores-class-wc-product-data-store-cpt.html#source-view.1564">includes/data-stores/class-wc-product-data-store-cpt.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1538</span>
+    <span class="phpdocumentor-element-found-in__line">1564</span>
 </aside>
 
         <p class="phpdocumentor-summary">Update a products rating counts.</p>
@@ -3203,9 +3222,9 @@ Uses locking to update the quantity. If the lock is not acquired, change is lost
         <a href="#method_update_review_count" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/data-stores/class-wc-product-data-store-cpt.php"><a href="../files/woocommerce-includes-data-stores-class-wc-product-data-store-cpt.html#source-view.1527">includes/data-stores/class-wc-product-data-store-cpt.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/data-stores/class-wc-product-data-store-cpt.php"><a href="../files/woocommerce-includes-data-stores-class-wc-product-data-store-cpt.html#source-view.1553">includes/data-stores/class-wc-product-data-store-cpt.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1527</span>
+    <span class="phpdocumentor-element-found-in__line">1553</span>
 </aside>
 
         <p class="phpdocumentor-summary">Update a products review count meta.</p>
@@ -3269,9 +3288,9 @@ Uses locking to update the quantity. If the lock is not acquired, change is lost
         <a href="#method_clear_caches" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/data-stores/class-wc-product-data-store-cpt.php"><a href="../files/woocommerce-includes-data-stores-class-wc-product-data-store-cpt.html#source-view.873">includes/data-stores/class-wc-product-data-store-cpt.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/data-stores/class-wc-product-data-store-cpt.php"><a href="../files/woocommerce-includes-data-stores-class-wc-product-data-store-cpt.html#source-view.888">includes/data-stores/class-wc-product-data-store-cpt.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">873</span>
+    <span class="phpdocumentor-element-found-in__line">888</span>
 </aside>
 
         <p class="phpdocumentor-summary">Clear any caches.</p>
@@ -3955,9 +3974,9 @@ the approximate search engines list, and is translatable.</p>
         <a href="#method_handle_updated_props" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/data-stores/class-wc-product-data-store-cpt.php"><a href="../files/woocommerce-includes-data-stores-class-wc-product-data-store-cpt.html#source-view.639">includes/data-stores/class-wc-product-data-store-cpt.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/data-stores/class-wc-product-data-store-cpt.php"><a href="../files/woocommerce-includes-data-stores-class-wc-product-data-store-cpt.html#source-view.646">includes/data-stores/class-wc-product-data-store-cpt.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">639</span>
+    <span class="phpdocumentor-element-found-in__line">646</span>
 </aside>
 
         <p class="phpdocumentor-summary">Handle updated meta props after updating meta data.</p>
@@ -4072,9 +4091,9 @@ addition to all data props with _ prefix.</p>
         <a href="#method_read_attributes" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/data-stores/class-wc-product-data-store-cpt.php"><a href="../files/woocommerce-includes-data-stores-class-wc-product-data-store-cpt.html#source-view.441">includes/data-stores/class-wc-product-data-store-cpt.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/data-stores/class-wc-product-data-store-cpt.php"><a href="../files/woocommerce-includes-data-stores-class-wc-product-data-store-cpt.html#source-view.448">includes/data-stores/class-wc-product-data-store-cpt.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">441</span>
+    <span class="phpdocumentor-element-found-in__line">448</span>
 </aside>
 
         <p class="phpdocumentor-summary">Read attributes from post meta.</p>
@@ -4116,9 +4135,9 @@ addition to all data props with _ prefix.</p>
         <a href="#method_read_downloads" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/data-stores/class-wc-product-data-store-cpt.php"><a href="../files/woocommerce-includes-data-stores-class-wc-product-data-store-cpt.html#source-view.490">includes/data-stores/class-wc-product-data-store-cpt.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/data-stores/class-wc-product-data-store-cpt.php"><a href="../files/woocommerce-includes-data-stores-class-wc-product-data-store-cpt.html#source-view.497">includes/data-stores/class-wc-product-data-store-cpt.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">490</span>
+    <span class="phpdocumentor-element-found-in__line">497</span>
 </aside>
 
         <p class="phpdocumentor-summary">Read downloads from post meta.</p>
@@ -4174,9 +4193,9 @@ addition to all data props with _ prefix.</p>
         <a href="#method_read_extra_data" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/data-stores/class-wc-product-data-store-cpt.php"><a href="../files/woocommerce-includes-data-stores-class-wc-product-data-store-cpt.html#source-view.395">includes/data-stores/class-wc-product-data-store-cpt.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/data-stores/class-wc-product-data-store-cpt.php"><a href="../files/woocommerce-includes-data-stores-class-wc-product-data-store-cpt.html#source-view.402">includes/data-stores/class-wc-product-data-store-cpt.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">395</span>
+    <span class="phpdocumentor-element-found-in__line">402</span>
 </aside>
 
         <p class="phpdocumentor-summary">Read extra data associated with the product, like button text or product URL for external products.</p>
@@ -4299,9 +4318,9 @@ addition to all data props with _ prefix.</p>
         <a href="#method_read_visibility" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/data-stores/class-wc-product-data-store-cpt.php"><a href="../files/woocommerce-includes-data-stores-class-wc-product-data-store-cpt.html#source-view.411">includes/data-stores/class-wc-product-data-store-cpt.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/data-stores/class-wc-product-data-store-cpt.php"><a href="../files/woocommerce-includes-data-stores-class-wc-product-data-store-cpt.html#source-view.418">includes/data-stores/class-wc-product-data-store-cpt.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">411</span>
+    <span class="phpdocumentor-element-found-in__line">418</span>
 </aside>
 
         <p class="phpdocumentor-summary">Convert visibility terms to props.</p>
@@ -4358,9 +4377,9 @@ addition to all data props with _ prefix.</p>
         <a href="#method_set_product_stock" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/data-stores/class-wc-product-data-store-cpt.php"><a href="../files/woocommerce-includes-data-stores-class-wc-product-data-store-cpt.html#source-view.1347">includes/data-stores/class-wc-product-data-store-cpt.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/data-stores/class-wc-product-data-store-cpt.php"><a href="../files/woocommerce-includes-data-stores-class-wc-product-data-store-cpt.html#source-view.1373">includes/data-stores/class-wc-product-data-store-cpt.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1347</span>
+    <span class="phpdocumentor-element-found-in__line">1373</span>
 </aside>
 
         <p class="phpdocumentor-summary">Update a product&#039;s stock amount directly in the database.</p>
@@ -4537,9 +4556,9 @@ addition to all data props with _ prefix.</p>
         <a href="#method_update_downloads" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/data-stores/class-wc-product-data-store-cpt.php"><a href="../files/woocommerce-includes-data-stores-class-wc-product-data-store-cpt.html#source-view.822">includes/data-stores/class-wc-product-data-store-cpt.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/data-stores/class-wc-product-data-store-cpt.php"><a href="../files/woocommerce-includes-data-stores-class-wc-product-data-store-cpt.html#source-view.837">includes/data-stores/class-wc-product-data-store-cpt.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">822</span>
+    <span class="phpdocumentor-element-found-in__line">837</span>
 </aside>
 
         <p class="phpdocumentor-summary">Update downloads.</p>
@@ -5002,7 +5021,7 @@ Data-stores can force meta to exist using <code class="prettyprint">must_exist_m
 
     <footer class="phpdocumentor phpdocumentor-footer">
     <div class="phpdocumentor-section">
-        <span>WooCommerce Code Reference API documentation generated by <a href="http://www.phpdoc.org/">phpDocumentor</a> on August 24th, 2023 at 08:49 am.</span>
+        <span>WooCommerce Code Reference API documentation generated by <a href="http://www.phpdoc.org/">phpDocumentor</a> on July 25th, 2024 at 11:33 am.</span>
     </div>
 </footer>
 
@@ -5014,7 +5033,7 @@ Data-stores can force meta to exist using <code class="prettyprint">must_exist_m
             'searchIndex': '..\/js\/searchIndex.json'
         };
     </script>
-    <script src="../js/searchIndex.js?updated=1692866975"></script>
-    <script src="../js/search.js?updated=1692866975"></script>
+    <script src="../js/searchIndex.js?updated=1721907195"></script>
+    <script src="../js/search.js?updated=1721907195"></script>
 </body>
 </html>

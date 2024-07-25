@@ -9,9 +9,9 @@
     <link rel="apple-touch-icon" sizes="72x72" href="../images/apple-touch-icon-72x72.png"/>
     <link rel="apple-touch-icon" sizes="114x114" href="../images/apple-touch-icon-114x114.png"/>
     <link rel="stylesheet" href="../css/normalize.css">
-    <link rel="stylesheet" href="../css/base.css?updated=1692866951">
+    <link rel="stylesheet" href="../css/base.css?updated=1721907184">
     <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../css/template.css?updated=1692866951">
+    <link rel="stylesheet" href="../css/template.css?updated=1721907184">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0/css/all.min.css" integrity="sha256-ybRkN9dBjhcS2qrW1z+hfCxq+1aBdwyQM5wlQoQVt/0=" crossorigin="anonymous" />
             <script src="https://cdn.jsdelivr.net/npm/css-vars-ponyfill@2"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0/js/all.min.js" integrity="sha256-0vuk8LXoyrmCjp1f0O300qo1M75ZQyhH9X3J6d+scmk=" crossorigin="anonymous"></script>
@@ -125,6 +125,7 @@
                         <ul class="phpdocumentor-list">
                                     <li><a href="../packages/Automattic-WooCommerce.html"><abbr title="\Automattic\WooCommerce">WooCommerce</abbr></a></li>
                             </ul>
+                                <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/WooCommerceBlocks.html"><abbr title="\WooCommerceBlocks">WooCommerceBlocks</abbr></a></h3>
                         </section>
     
     <section class="phpdocumentor-sidebar__category">
@@ -161,11 +162,13 @@ namespace Automattic\WooCommerce\Admin\Features\OnboardingTasks\Tasks;
 
 use Automattic\WooCommerce\Admin\Features\OnboardingTasks\Task;
 use Automattic\WooCommerce\Internal\Admin\WCAdminAssets;
+use Automattic\WooCommerce\Internal\Admin\Onboarding\OnboardingProfile;
 
 /**
  * Products Task
  */
 class Products extends Task {
+	const PRODUCT_COUNT_TRANSIENT_NAME = &#039;woocommerce_product_task_product_count_transient&#039;;
 
 	/**
 	 * Constructor
@@ -177,6 +180,11 @@ class Products extends Task {
 		add_action( &#039;admin_enqueue_scripts&#039;, array( $this, &#039;possibly_add_manual_return_notice_script&#039; ) );
 		add_action( &#039;admin_enqueue_scripts&#039;, array( $this, &#039;possibly_add_import_return_notice_script&#039; ) );
 		add_action( &#039;admin_enqueue_scripts&#039;, array( $this, &#039;possibly_add_load_sample_return_notice_script&#039; ) );
+
+		add_action( &#039;woocommerce_update_product&#039;, array( $this, &#039;delete_product_count_cache&#039; ) );
+		add_action( &#039;woocommerce_new_product&#039;, array( $this, &#039;delete_product_count_cache&#039; ) );
+		add_action( &#039;wp_trash_post&#039;, array( $this, &#039;delete_product_count_cache&#039; ) );
+		add_action( &#039;untrashed_post&#039;, array( $this, &#039;delete_product_count_cache&#039; ) );
 	}
 
 	/**
@@ -194,13 +202,13 @@ class Products extends Task {
 	 * @return string
 	 */
 	public function get_title() {
-		if ( $this-&gt;get_parent_option( &#039;use_completed_title&#039; ) === true ) {
-			if ( $this-&gt;is_complete() ) {
-				return __( &#039;You added products&#039;, &#039;woocommerce&#039; );
-			}
-			return __( &#039;Add products&#039;, &#039;woocommerce&#039; );
+		$onboarding_profile = get_option( OnboardingProfile::DATA_OPTION, array() );
+
+		if ( isset( $onboarding_profile[&#039;business_choice&#039;] ) &amp;&amp; &#039;im_already_selling&#039; === $onboarding_profile[&#039;business_choice&#039;] ) {
+			return __( &#039;Import your products&#039;, &#039;woocommerce&#039; );
 		}
-		return __( &#039;Add my products&#039;, &#039;woocommerce&#039; );
+
+		return __( &#039;Add your products&#039;, &#039;woocommerce&#039; );
 	}
 
 	/**
@@ -234,7 +242,7 @@ class Products extends Task {
 	}
 
 	/**
-	 * Addtional data.
+	 * Additional data.
 	 *
 	 * @return array
 	 */
@@ -313,13 +321,57 @@ class Products extends Task {
 	}
 
 	/**
-	 * Check if the store has any published products.
+	 * Delete the product count transient used in has_products() method to refresh the cache.
+	 *
+	 * @return void
+	 */
+	public static function delete_product_count_cache() {
+		delete_transient( self::PRODUCT_COUNT_TRANSIENT_NAME );
+	}
+
+	/**
+	 * Check if the store has any user created published products.
 	 *
 	 * @return bool
 	 */
 	public static function has_products() {
-		$counts = wp_count_posts(&#039;product&#039;);
-		return isset( $counts-&gt;publish ) &amp;&amp; $counts-&gt;publish &gt; 0;
+		$product_counts = get_transient( self::PRODUCT_COUNT_TRANSIENT_NAME );
+		if ( false !== $product_counts &amp;&amp; is_numeric( $product_counts ) ) {
+			return (int) $product_counts &gt; 0;
+		}
+
+		$product_counts = self::count_user_products();
+		set_transient( self::PRODUCT_COUNT_TRANSIENT_NAME, $product_counts );
+		return $product_counts &gt; 0;
+	}
+
+	/**
+	 * Count the number of user created products.
+	 * Generated products have the _headstart_post meta key.
+	 *
+	 * @return int The number of user created products.
+	 */
+	private static function count_user_products() {
+		$args = array(
+			&#039;post_type&#039;   =&gt; &#039;product&#039;,
+			&#039;post_status&#039; =&gt; &#039;publish&#039;,
+			&#039;fields&#039;      =&gt; &#039;ids&#039;,
+			&#039;meta_query&#039;  =&gt; array( // phpcs:ignore WordPress.DB.SlowDBQuery.slow_db_query_meta_query
+				&#039;relation&#039; =&gt; &#039;OR&#039;,
+				array(
+					&#039;key&#039;     =&gt; &#039;_headstart_post&#039;,
+					&#039;compare&#039; =&gt; &#039;NOT EXISTS&#039;,
+				),
+				array(
+					&#039;key&#039;     =&gt; &#039;_edit_last&#039;,
+					&#039;compare&#039; =&gt; &#039;EXISTS&#039;,
+				),
+			),
+		);
+
+		$products_query = new \WP_Query( $args );
+
+		return $products_query-&gt;found_posts;
 	}
 }
 </code></pre>
@@ -332,7 +384,7 @@ class Products extends Task {
 
     <footer class="phpdocumentor phpdocumentor-footer">
     <div class="phpdocumentor-section">
-        <span>WooCommerce Code Reference API documentation generated by <a href="http://www.phpdoc.org/">phpDocumentor</a> on August 24th, 2023 at 08:49 am.</span>
+        <span>WooCommerce Code Reference API documentation generated by <a href="http://www.phpdoc.org/">phpDocumentor</a> on July 25th, 2024 at 11:33 am.</span>
     </div>
 </footer>
 
@@ -344,7 +396,7 @@ class Products extends Task {
             'searchIndex': '..\/js\/searchIndex.json'
         };
     </script>
-    <script src="../js/searchIndex.js?updated=1692866951"></script>
-    <script src="../js/search.js?updated=1692866951"></script>
+    <script src="../js/searchIndex.js?updated=1721907184"></script>
+    <script src="../js/search.js?updated=1721907184"></script>
 </body>
 </html>

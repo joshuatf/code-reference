@@ -9,9 +9,9 @@
     <link rel="apple-touch-icon" sizes="72x72" href="../images/apple-touch-icon-72x72.png"/>
     <link rel="apple-touch-icon" sizes="114x114" href="../images/apple-touch-icon-114x114.png"/>
     <link rel="stylesheet" href="../css/normalize.css">
-    <link rel="stylesheet" href="../css/base.css?updated=1692866947">
+    <link rel="stylesheet" href="../css/base.css?updated=1721907182">
     <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../css/template.css?updated=1692866947">
+    <link rel="stylesheet" href="../css/template.css?updated=1721907182">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0/css/all.min.css" integrity="sha256-ybRkN9dBjhcS2qrW1z+hfCxq+1aBdwyQM5wlQoQVt/0=" crossorigin="anonymous" />
             <script src="https://cdn.jsdelivr.net/npm/css-vars-ponyfill@2"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0/js/all.min.js" integrity="sha256-0vuk8LXoyrmCjp1f0O300qo1M75ZQyhH9X3J6d+scmk=" crossorigin="anonymous"></script>
@@ -125,6 +125,7 @@
                         <ul class="phpdocumentor-list">
                                     <li><a href="../packages/Automattic-WooCommerce.html"><abbr title="\Automattic\WooCommerce">WooCommerce</abbr></a></li>
                             </ul>
+                                <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/WooCommerceBlocks.html"><abbr title="\WooCommerceBlocks">WooCommerceBlocks</abbr></a></h3>
                         </section>
     
     <section class="phpdocumentor-sidebar__category">
@@ -165,12 +166,18 @@
  * @package WooCommerce\Classes\Payment
  */
 
+use Automattic\WooCommerce\Internal\Traits\AccessiblePrivateMethods;
+use Automattic\WooCommerce\Proxies\LegacyProxy;
+use Automattic\WooCommerce\Utilities\ArrayUtil;
+
 defined( &#039;ABSPATH&#039; ) || exit;
 
 /**
  * Payment gateways class.
  */
 class WC_Payment_Gateways {
+
+	use AccessiblePrivateMethods;
 
 	/**
 	 * Payment gateway classes.
@@ -270,6 +277,170 @@ class WC_Payment_Gateways {
 		}
 
 		ksort( $this-&gt;payment_gateways );
+
+		self::add_action( &#039;wc_payment_gateways_initialized&#039;, array( $this, &#039;on_payment_gateways_initialized&#039; ) );
+		/**
+		 * Hook that is called when the payment gateways have been initialized.
+		 *
+		 * @param WC_Payment_Gateways $wc_payment_gateways The payment gateways instance.
+		 * @since 8.5.0
+		 */
+		do_action( &#039;wc_payment_gateways_initialized&#039;, $this );
+	}
+
+	/**
+	 * Hook into payment gateway settings changes.
+	 *
+	 * @param WC_Payment_Gateways $wc_payment_gateways The WC_Payment_Gateways instance.
+	 * @since 8.5.0
+	 */
+	private function on_payment_gateways_initialized( WC_Payment_Gateways $wc_payment_gateways ) {
+		foreach ( $this-&gt;payment_gateways as $gateway ) {
+			$option_key = $gateway-&gt;get_option_key();
+			self::add_action(
+				&#039;add_option_&#039; . $option_key,
+				function( $option, $value ) use ( $gateway ) {
+					$this-&gt;payment_gateway_settings_option_changed( $gateway, $value, $option );
+				},
+				10,
+				2
+			);
+			self::add_action(
+				&#039;update_option_&#039; . $option_key,
+				function( $old_value, $value, $option ) use ( $gateway ) {
+					$this-&gt;payment_gateway_settings_option_changed( $gateway, $value, $option, $old_value );
+				},
+				10,
+				3
+			);
+		}
+	}
+
+	/**
+	 * Callback for when a gateway settings option was added or updated.
+	 *
+	 * @param WC_Payment_Gateway $gateway   The gateway for which the option was added or updated.
+	 * @param mixed              $value     New value.
+	 * @param string             $option    Option name.
+	 * @param mixed              $old_value Old value. `null` when called via add_option_ hook.
+	 * @since 8.5.0
+	 */
+	private function payment_gateway_settings_option_changed( $gateway, $value, $option, $old_value = null ) {
+		if ( ! $this-&gt;was_gateway_enabled( $value, $old_value ) ) {
+			return;
+		}
+
+		// This is a change to a payment gateway&#039;s settings and it was just enabled. Let&#039;s send an email to the admin.
+		// &quot;untitled&quot; shouldn&#039;t happen, but just in case.
+		$this-&gt;notify_admin_payment_gateway_enabled( $gateway );
+	}
+
+	/**
+	 * Email the site admin when a payment gateway has been enabled.
+	 *
+	 * @param WC_Payment_Gateway $gateway The gateway that was enabled.
+	 * @return bool Whether the email was sent or not.
+	 * @since 8.5.0
+	 */
+	private function notify_admin_payment_gateway_enabled( $gateway ) {
+		$admin_email          = get_option( &#039;admin_email&#039; );
+		$user                 = get_user_by( &#039;email&#039;, $admin_email );
+		$username             = $user ? $user-&gt;user_login : $admin_email;
+		$gateway_title        = $gateway-&gt;get_method_title();
+		$gateway_settings_url = esc_url_raw( self_admin_url( &#039;admin.php?page=wc-settings&amp;tab=checkout&amp;section=&#039; . $gateway-&gt;id ) );
+		$site_name            = wp_specialchars_decode( get_option( &#039;blogname&#039; ), ENT_QUOTES );
+		$site_url             = home_url();
+		/**
+		 * Allows adding to the addresses that receive payment gateway enabled notifications.
+		 *
+		 * @param array              $email_addresses The array of email addresses to notify.
+		 * @param WC_Payment_Gateway $gateway The gateway that was enabled.
+		 * @return array             The augmented array of email addresses to notify.
+		 * @since 8.5.0
+		 */
+		$email_addresses   = apply_filters( &#039;wc_payment_gateway_enabled_notification_email_addresses&#039;, array(), $gateway );
+		$email_addresses[] = $admin_email;
+		$email_addresses   = array_unique(
+			array_filter(
+				$email_addresses,
+				function( $email_address ) {
+					return filter_var( $email_address, FILTER_VALIDATE_EMAIL );
+				}
+			)
+		);
+
+		$logger = wc_get_container()-&gt;get( LegacyProxy::class )-&gt;call_function( &#039;wc_get_logger&#039; );
+		$logger-&gt;info( sprintf( &#039;Payment gateway enabled: &quot;%s&quot;&#039;, $gateway_title ) );
+
+		$email_text = sprintf(
+			/* translators: Payment gateway enabled notification email. 1: Username, 2: Gateway Title, 3: Site URL, 4: Gateway Settings URL, 5: Admin Email, 6: Site Name, 7: Site URL. */
+			__(
+				&#039;Howdy %1$s,
+
+The payment gateway &quot;%2$s&quot; was just enabled on this site:
+%3$s
+
+If this was intentional you can safely ignore and delete this email.
+
+If you did not enable this payment gateway, please log in to your site and consider disabling it here:
+%4$s
+
+This email has been sent to %5$s
+
+Regards,
+All at %6$s
+%7$s&#039;,
+				&#039;woocommerce&#039;
+			),
+			$username,
+			$gateway_title,
+			$site_url,
+			$gateway_settings_url,
+			$admin_email,
+			$site_name,
+			$site_url
+		);
+
+		if ( &#039;&#039; !== get_option( &#039;blogname&#039; ) ) {
+			$site_title = wp_specialchars_decode( get_option( &#039;blogname&#039; ), ENT_QUOTES );
+		} else {
+			$site_title = wp_parse_url( home_url(), PHP_URL_HOST );
+		}
+
+		return wp_mail(
+			$email_addresses,
+			sprintf(
+				/* translators: Payment gateway enabled notification email subject. %s1: Site title, $s2: Gateway title. */
+				__( &#039;[%1$s] Payment gateway &quot;%2$s&quot; enabled&#039;, &#039;woocommerce&#039; ),
+				$site_title,
+				$gateway_title
+			),
+			$email_text
+		);
+	}
+
+	/**
+	 * Determines from changes in settings if a gateway was enabled.
+	 *
+	 * @param array $value New value.
+	 * @param array $old_value Old value.
+	 * @return bool Whether the gateway was enabled or not.
+	 */
+	private function was_gateway_enabled( $value, $old_value = null ) {
+		if ( null === $old_value ) {
+			// There was no old value, so this is a new option.
+			if ( ! empty( $value ) &amp;&amp; is_array( $value ) &amp;&amp; isset( $value[&#039;enabled&#039;] ) &amp;&amp; &#039;yes&#039; === $value[&#039;enabled&#039;] &amp;&amp; isset( $value[&#039;title&#039;] ) ) {
+				return true;
+			}
+			return false;
+		}
+		// There was an old value, so this is an update.
+		if (
+			ArrayUtil::get_value_or_default( $value, &#039;enabled&#039; ) === &#039;yes&#039; &amp;&amp;
+			ArrayUtil::get_value_or_default( $old_value, &#039;enabled&#039; ) !== &#039;yes&#039; ) {
+			return true;
+		}
+		return false;
 	}
 
 	/**
@@ -387,6 +558,8 @@ class WC_Payment_Gateways {
 	 * @return bool Whether PayPal Standard should be loaded or not.
 	 */
 	protected function should_load_paypal_standard() {
+		// Tech debt: This class needs to be initialized to make sure any existing subscriptions gets processed as expected, even if the gateway is not enabled for new orders.
+		// Eventually, we want to load this via a singleton pattern to avoid unnecessary instantiation.
 		$paypal = new WC_Gateway_Paypal();
 		return $paypal-&gt;should_load();
 	}
@@ -401,7 +574,7 @@ class WC_Payment_Gateways {
 
     <footer class="phpdocumentor phpdocumentor-footer">
     <div class="phpdocumentor-section">
-        <span>WooCommerce Code Reference API documentation generated by <a href="http://www.phpdoc.org/">phpDocumentor</a> on August 24th, 2023 at 08:49 am.</span>
+        <span>WooCommerce Code Reference API documentation generated by <a href="http://www.phpdoc.org/">phpDocumentor</a> on July 25th, 2024 at 11:33 am.</span>
     </div>
 </footer>
 
@@ -413,7 +586,7 @@ class WC_Payment_Gateways {
             'searchIndex': '..\/js\/searchIndex.json'
         };
     </script>
-    <script src="../js/searchIndex.js?updated=1692866947"></script>
-    <script src="../js/search.js?updated=1692866947"></script>
+    <script src="../js/searchIndex.js?updated=1721907182"></script>
+    <script src="../js/search.js?updated=1721907182"></script>
 </body>
 </html>

@@ -9,9 +9,9 @@
     <link rel="apple-touch-icon" sizes="72x72" href="../images/apple-touch-icon-72x72.png"/>
     <link rel="apple-touch-icon" sizes="114x114" href="../images/apple-touch-icon-114x114.png"/>
     <link rel="stylesheet" href="../css/normalize.css">
-    <link rel="stylesheet" href="../css/base.css?updated=1692866951">
+    <link rel="stylesheet" href="../css/base.css?updated=1721907184">
     <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../css/template.css?updated=1692866951">
+    <link rel="stylesheet" href="../css/template.css?updated=1721907184">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0/css/all.min.css" integrity="sha256-ybRkN9dBjhcS2qrW1z+hfCxq+1aBdwyQM5wlQoQVt/0=" crossorigin="anonymous" />
             <script src="https://cdn.jsdelivr.net/npm/css-vars-ponyfill@2"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0/js/all.min.js" integrity="sha256-0vuk8LXoyrmCjp1f0O300qo1M75ZQyhH9X3J6d+scmk=" crossorigin="anonymous"></script>
@@ -125,6 +125,7 @@
                         <ul class="phpdocumentor-list">
                                     <li><a href="../packages/Automattic-WooCommerce.html"><abbr title="\Automattic\WooCommerce">WooCommerce</abbr></a></li>
                             </ul>
+                                <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/WooCommerceBlocks.html"><abbr title="\WooCommerceBlocks">WooCommerceBlocks</abbr></a></h3>
                         </section>
     
     <section class="phpdocumentor-sidebar__category">
@@ -202,6 +203,7 @@ class DefaultShippingPartners {
 
 		return array(
 			array(
+				&#039;id&#039;                =&gt; &#039;woocommerce-shipstation-integration&#039;,
 				&#039;name&#039;              =&gt; &#039;ShipStation&#039;,
 				&#039;slug&#039;              =&gt; &#039;woocommerce-shipstation-integration&#039;,
 				&#039;description&#039;       =&gt; __( &#039;Powerful yet easy-to-use solution:&#039;, &#039;woocommerce&#039; ),
@@ -215,28 +217,28 @@ class DefaultShippingPartners {
 						array(
 							&#039;icon&#039;        =&gt; $check_icon,
 							&#039;description&#039; =&gt; __(
-								&#039;Print labels from Royal Mail, Parcel Force, DPD, and many more&#039;,
+								&#039;Discounted labels from top global carriers&#039;,
 								&#039;woocommerce&#039;
 							),
 						),
 						array(
 							&#039;icon&#039;        =&gt; $check_icon,
 							&#039;description&#039; =&gt; __(
-								&#039;Shop for the best rates, in real-time&#039;,
+								&#039;Sync all your selling channels in one place&#039;,
 								&#039;woocommerce&#039;
 							),
 						),
 						array(
 							&#039;icon&#039;        =&gt; $check_icon,
-							&#039;description&#039; =&gt; __( &#039;Connect selling channels easily&#039;, &#039;woocommerce&#039; ),
+							&#039;description&#039; =&gt; __( &#039;Advanced automated workflows and customs&#039;, &#039;woocommerce&#039; ),
 						),
 						array(
 							&#039;icon&#039;        =&gt; $check_icon,
-							&#039;description&#039; =&gt; __( &#039;Advance automated workflows&#039;, &#039;woocommerce&#039; ),
+							&#039;description&#039; =&gt; __( &#039;Instantly send tracking to your customers&#039;, &#039;woocommerce&#039; ),
 						),
 						array(
 							&#039;icon&#039;        =&gt; $check_icon,
-							&#039;description&#039; =&gt; __( &#039;30-days free trial&#039;, &#039;woocommerce&#039; ),
+							&#039;description&#039; =&gt; __( &#039;30-day free trial&#039;, &#039;woocommerce&#039; ),
 						),
 					),
 				),
@@ -247,6 +249,7 @@ class DefaultShippingPartners {
 				&#039;available_layouts&#039; =&gt; array( &#039;row&#039;, &#039;column&#039; ),
 			),
 			array(
+				&#039;id&#039;                =&gt; &#039;skydropx-cotizador-y-envios&#039;,
 				&#039;name&#039;              =&gt; &#039;Skydropx&#039;,
 				&#039;slug&#039;              =&gt; &#039;skydropx-cotizador-y-envios&#039;,
 				&#039;layout_column&#039;     =&gt; array(
@@ -256,11 +259,12 @@ class DefaultShippingPartners {
 				&#039;description&#039;       =&gt; &#039;&#039;,
 				&#039;learn_more_link&#039;   =&gt; &#039;https://wordpress.org/plugins/skydropx-cotizador-y-envios/&#039;,
 				&#039;is_visible&#039;        =&gt; array(
-					self::get_rules_for_countries( array( &#039;MX&#039;, &#039;CO&#039; ) ),
+					self::get_rules_for_countries( array() ), // No countries eligible for SkydropX promotion at this time.
 				),
 				&#039;available_layouts&#039; =&gt; array( &#039;column&#039; ),
 			),
 			array(
+				&#039;id&#039;                =&gt; &#039;envia&#039;,
 				&#039;name&#039;              =&gt; &#039;Envia&#039;,
 				&#039;slug&#039;              =&gt; &#039;&#039;,
 				&#039;description&#039;       =&gt; &#039;&#039;,
@@ -275,6 +279,50 @@ class DefaultShippingPartners {
 				&#039;available_layouts&#039; =&gt; array( &#039;column&#039; ),
 			),
 			array(
+				&#039;id&#039;                =&gt; &#039;easyship-woocommerce-shipping-rates&#039;,
+				&#039;name&#039;              =&gt; &#039;Easyship&#039;,
+				&#039;slug&#039;              =&gt; &#039;easyship-woocommerce-shipping-rates&#039;,
+				&#039;description&#039;       =&gt; __( &#039;Simplified shipping with: &#039;, &#039;woocommerce&#039; ),
+				&#039;layout_column&#039;     =&gt; array(
+					&#039;image&#039;    =&gt; $asset_base_url . &#039;easyship-column.svg&#039;,
+					&#039;features&#039; =&gt; $column_layout_features,
+				),
+				&#039;layout_row&#039;        =&gt; array(
+					&#039;image&#039;    =&gt; $asset_base_url . &#039;easyship-row.svg&#039;,
+					&#039;features&#039; =&gt; array(
+						array(
+							&#039;icon&#039;        =&gt; $check_icon,
+							&#039;description&#039; =&gt; __( &#039;Highly discounted shipping rates&#039;, &#039;woocommerce&#039; ),
+						),
+						array(
+							&#039;icon&#039;        =&gt; $check_icon,
+							&#039;description&#039; =&gt; __(
+								&#039;Seamless order sync and label printing&#039;,
+								&#039;woocommerce&#039;
+							),
+						),
+						array(
+							&#039;icon&#039;        =&gt; $check_icon,
+							&#039;description&#039; =&gt; __( &#039;Branded tracking experience&#039;, &#039;woocommerce&#039; ),
+						),
+						array(
+							&#039;icon&#039;        =&gt; $check_icon,
+							&#039;description&#039; =&gt; __( &#039;Built-in Tax &amp; Duties paperwork&#039;, &#039;woocommerce&#039; ),
+						),
+						array(
+							&#039;icon&#039;        =&gt; $check_icon,
+							&#039;description&#039; =&gt; __( &#039;Free Plan Available&#039;, &#039;woocommerce&#039; ),
+						),
+					),
+				),
+				&#039;learn_more_link&#039;   =&gt; &#039;https://woocommerce.com/products/easyship-shipping-rates/&#039;,
+				&#039;is_visible&#039;        =&gt; array(
+					self::get_rules_for_countries( array( &#039;SG&#039;, &#039;HK&#039;, &#039;AU&#039;, &#039;NZ&#039; ) ),
+				),
+				&#039;available_layouts&#039; =&gt; array( &#039;row&#039;, &#039;column&#039; ),
+			),
+			array(
+				&#039;id&#039;                =&gt; &#039;sendcloud-shipping&#039;,
 				&#039;name&#039;              =&gt; &#039;Sendcloud&#039;,
 				&#039;slug&#039;              =&gt; &#039;sendcloud-shipping&#039;,
 				&#039;description&#039;       =&gt; __( &#039;All-in-one shipping tool:&#039;, &#039;woocommerce&#039; ),
@@ -318,6 +366,7 @@ class DefaultShippingPartners {
 				&#039;available_layouts&#039; =&gt; array( &#039;row&#039;, &#039;column&#039; ),
 			),
 			array(
+				&#039;id&#039;                =&gt; &#039;packlink-pro-shipping&#039;,
 				&#039;name&#039;              =&gt; &#039;Packlink&#039;,
 				&#039;slug&#039;              =&gt; &#039;packlink-pro-shipping&#039;,
 				&#039;description&#039;       =&gt; __( &#039;Optimize your full shipping process:&#039;, &#039;woocommerce&#039; ),
@@ -366,6 +415,7 @@ class DefaultShippingPartners {
 				&#039;available_layouts&#039; =&gt; array( &#039;row&#039;, &#039;column&#039; ),
 			),
 			array(
+				&#039;id&#039;                =&gt; &#039;woocommerce-services&#039;,
 				&#039;name&#039;              =&gt; &#039;WooCommerce Shipping&#039;,
 				&#039;slug&#039;              =&gt; &#039;woocommerce-services&#039;,
 				&#039;description&#039;       =&gt; __( &#039;Save time and money by printing your shipping labels right from your computer with WooCommerce Shipping. Try WooCommerce Shipping for free.&#039;, &#039;woocommerce&#039; ),
@@ -432,7 +482,7 @@ class DefaultShippingPartners {
 
     <footer class="phpdocumentor phpdocumentor-footer">
     <div class="phpdocumentor-section">
-        <span>WooCommerce Code Reference API documentation generated by <a href="http://www.phpdoc.org/">phpDocumentor</a> on August 24th, 2023 at 08:49 am.</span>
+        <span>WooCommerce Code Reference API documentation generated by <a href="http://www.phpdoc.org/">phpDocumentor</a> on July 25th, 2024 at 11:33 am.</span>
     </div>
 </footer>
 
@@ -444,7 +494,7 @@ class DefaultShippingPartners {
             'searchIndex': '..\/js\/searchIndex.json'
         };
     </script>
-    <script src="../js/searchIndex.js?updated=1692866951"></script>
-    <script src="../js/search.js?updated=1692866951"></script>
+    <script src="../js/searchIndex.js?updated=1721907184"></script>
+    <script src="../js/search.js?updated=1721907184"></script>
 </body>
 </html>

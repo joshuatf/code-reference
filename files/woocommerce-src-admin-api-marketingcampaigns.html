@@ -9,9 +9,9 @@
     <link rel="apple-touch-icon" sizes="72x72" href="../images/apple-touch-icon-72x72.png"/>
     <link rel="apple-touch-icon" sizes="114x114" href="../images/apple-touch-icon-114x114.png"/>
     <link rel="stylesheet" href="../css/normalize.css">
-    <link rel="stylesheet" href="../css/base.css?updated=1692866950">
+    <link rel="stylesheet" href="../css/base.css?updated=1721907184">
     <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../css/template.css?updated=1692866950">
+    <link rel="stylesheet" href="../css/template.css?updated=1721907184">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0/css/all.min.css" integrity="sha256-ybRkN9dBjhcS2qrW1z+hfCxq+1aBdwyQM5wlQoQVt/0=" crossorigin="anonymous" />
             <script src="https://cdn.jsdelivr.net/npm/css-vars-ponyfill@2"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0/js/all.min.js" integrity="sha256-0vuk8LXoyrmCjp1f0O300qo1M75ZQyhH9X3J6d+scmk=" crossorigin="anonymous"></script>
@@ -125,6 +125,7 @@
                         <ul class="phpdocumentor-list">
                                     <li><a href="../packages/Automattic-WooCommerce.html"><abbr title="\Automattic\WooCommerce">WooCommerce</abbr></a></li>
                             </ul>
+                                <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/WooCommerceBlocks.html"><abbr title="\WooCommerceBlocks">WooCommerceBlocks</abbr></a></h3>
                         </section>
     
     <section class="phpdocumentor-sidebar__category">
@@ -248,7 +249,7 @@ class MarketingCampaigns extends WC_REST_Controller {
 		$marketing_channels_service = wc_get_container()-&gt;get( MarketingChannelsService::class );
 
 		// Aggregate the campaigns from all registered marketing channels.
-		$responses = [];
+		$responses = array();
 		foreach ( $marketing_channels_service-&gt;get_registered_channels() as $channel ) {
 			foreach ( $channel-&gt;get_campaigns() as $campaign ) {
 				$response    = $this-&gt;prepare_item_for_response( $campaign, $request );
@@ -290,6 +291,57 @@ class MarketingCampaigns extends WC_REST_Controller {
 	}
 
 	/**
+	 * Get formatted price based on Price type.
+	 *
+	 * This uses plugins/woocommerce/i18n/currency-info.php and plugins/woocommerce/i18n/locale-info.php to get option object based on $price-&gt;currency.
+	 *
+	 * Example:
+	 *
+	 * - When $price-&gt;currency is &#039;USD&#039; and $price-&gt;value is &#039;1000&#039;, it should return &#039;$1000.00&#039;.
+	 * - When $price-&gt;currency is &#039;JPY&#039; and $price-&gt;value is &#039;1000&#039;, it should return &#039;¥1,000&#039;.
+	 * - When $price-&gt;currency is &#039;AED&#039; and $price-&gt;value is &#039;1000&#039;, it should return &#039;5.000,00 د.إ&#039;.
+	 *
+	 * @param Price $price Price object.
+	 * @return String formatted price.
+	 */
+	private function get_formatted_price( $price ) {
+		// Get $num_decimals to be passed to wc_price.
+		$locale_info_all = include WC()-&gt;plugin_path() . &#039;/i18n/locale-info.php&#039;;
+		$locale_index    = array_search( $price-&gt;get_currency(), array_column( $locale_info_all, &#039;currency_code&#039; ), true );
+		$locale          = array_values( $locale_info_all )[ $locale_index ];
+		$num_decimals    = $locale[&#039;num_decimals&#039;];
+
+		// Get $currency_info based on user locale or default locale.
+		$currency_locales = $locale[&#039;locales&#039;];
+		$user_locale      = get_user_locale();
+		$currency_info    = $currency_locales[ $user_locale ] ?? $currency_locales[&#039;default&#039;];
+
+		// Get $price_format to be passed to wc_price.
+		$currency_pos     = $currency_info[&#039;currency_pos&#039;];
+		$currency_formats = array(
+			&#039;left&#039;        =&gt; &#039;%1$s%2$s&#039;,
+			&#039;right&#039;       =&gt; &#039;%2$s%1$s&#039;,
+			&#039;left_space&#039;  =&gt; &#039;%1$s&amp;nbsp;%2$s&#039;,
+			&#039;right_space&#039; =&gt; &#039;%2$s&amp;nbsp;%1$s&#039;,
+		);
+		$price_format     = $currency_formats[ $currency_pos ] ?? $currency_formats[&#039;left&#039;];
+
+		$price_value     = wc_format_decimal( $price-&gt;get_value() );
+		$price_formatted = wc_price(
+			$price_value,
+			array(
+				&#039;currency&#039;           =&gt; $price-&gt;get_currency(),
+				&#039;decimal_separator&#039;  =&gt; $currency_info[&#039;decimal_sep&#039;],
+				&#039;thousand_separator&#039; =&gt; $currency_info[&#039;thousand_sep&#039;],
+				&#039;decimals&#039;           =&gt; $num_decimals,
+				&#039;price_format&#039;       =&gt; $price_format,
+			)
+		);
+
+		return html_entity_decode( wp_strip_all_tags( $price_formatted ) );
+	}
+
+	/**
 	 * Prepares the item for the REST response.
 	 *
 	 * @param MarketingCampaign $item    WordPress representation of the item.
@@ -298,18 +350,27 @@ class MarketingCampaigns extends WC_REST_Controller {
 	 * @return WP_REST_Response|WP_Error Response object on success, or WP_Error object on failure.
 	 */
 	public function prepare_item_for_response( $item, $request ) {
-		$data = [
+		$data = array(
 			&#039;id&#039;         =&gt; $item-&gt;get_id(),
 			&#039;channel&#039;    =&gt; $item-&gt;get_type()-&gt;get_channel()-&gt;get_slug(),
 			&#039;title&#039;      =&gt; $item-&gt;get_title(),
 			&#039;manage_url&#039; =&gt; $item-&gt;get_manage_url(),
-		];
+		);
 
 		if ( $item-&gt;get_cost() instanceof Price ) {
-			$data[&#039;cost&#039;] = [
-				&#039;value&#039;    =&gt; wc_format_decimal( $item-&gt;get_cost()-&gt;get_value() ),
-				&#039;currency&#039; =&gt; $item-&gt;get_cost()-&gt;get_currency(),
-			];
+			$data[&#039;cost&#039;] = array(
+				&#039;value&#039;     =&gt; wc_format_decimal( $item-&gt;get_cost()-&gt;get_value() ),
+				&#039;currency&#039;  =&gt; $item-&gt;get_cost()-&gt;get_currency(),
+				&#039;formatted&#039; =&gt; $this-&gt;get_formatted_price( $item-&gt;get_cost() ),
+			);
+		}
+
+		if ( $item-&gt;get_sales() instanceof Price ) {
+			$data[&#039;sales&#039;] = array(
+				&#039;value&#039;     =&gt; wc_format_decimal( $item-&gt;get_sales()-&gt;get_value() ),
+				&#039;currency&#039;  =&gt; $item-&gt;get_sales()-&gt;get_currency(),
+				&#039;formatted&#039; =&gt; $this-&gt;get_formatted_price( $item-&gt;get_sales() ),
+			);
 		}
 
 		$context = $request[&#039;context&#039;] ?? &#039;view&#039;;
@@ -325,55 +386,73 @@ class MarketingCampaigns extends WC_REST_Controller {
 	 * @return array Item schema data.
 	 */
 	public function get_item_schema() {
-		$schema = [
+		$schema = array(
 			&#039;$schema&#039;    =&gt; &#039;http://json-schema.org/draft-04/schema#&#039;,
 			&#039;title&#039;      =&gt; &#039;marketing_campaign&#039;,
 			&#039;type&#039;       =&gt; &#039;object&#039;,
-			&#039;properties&#039; =&gt; [
-				&#039;id&#039;         =&gt; [
+			&#039;properties&#039; =&gt; array(
+				&#039;id&#039;         =&gt; array(
 					&#039;description&#039; =&gt; __( &#039;The unique identifier for the marketing campaign.&#039;, &#039;woocommerce&#039; ),
 					&#039;type&#039;        =&gt; &#039;string&#039;,
-					&#039;context&#039;     =&gt; [ &#039;view&#039; ],
+					&#039;context&#039;     =&gt; array( &#039;view&#039; ),
 					&#039;readonly&#039;    =&gt; true,
-				],
-				&#039;channel&#039;    =&gt; [
+				),
+				&#039;channel&#039;    =&gt; array(
 					&#039;description&#039; =&gt; __( &#039;The unique identifier for the marketing channel that this campaign belongs to.&#039;, &#039;woocommerce&#039; ),
 					&#039;type&#039;        =&gt; &#039;string&#039;,
-					&#039;context&#039;     =&gt; [ &#039;view&#039; ],
+					&#039;context&#039;     =&gt; array( &#039;view&#039; ),
 					&#039;readonly&#039;    =&gt; true,
-				],
-				&#039;title&#039;      =&gt; [
+				),
+				&#039;title&#039;      =&gt; array(
 					&#039;description&#039; =&gt; __( &#039;Title of the marketing campaign.&#039;, &#039;woocommerce&#039; ),
 					&#039;type&#039;        =&gt; &#039;string&#039;,
-					&#039;context&#039;     =&gt; [ &#039;view&#039; ],
+					&#039;context&#039;     =&gt; array( &#039;view&#039; ),
 					&#039;readonly&#039;    =&gt; true,
-				],
-				&#039;manage_url&#039; =&gt; [
+				),
+				&#039;manage_url&#039; =&gt; array(
 					&#039;description&#039; =&gt; __( &#039;URL to the campaign management page.&#039;, &#039;woocommerce&#039; ),
 					&#039;type&#039;        =&gt; &#039;string&#039;,
-					&#039;context&#039;     =&gt; [ &#039;view&#039; ],
+					&#039;context&#039;     =&gt; array( &#039;view&#039; ),
 					&#039;readonly&#039;    =&gt; true,
-				],
-				&#039;cost&#039;       =&gt; [
+				),
+				&#039;cost&#039;       =&gt; array(
 					&#039;description&#039; =&gt; __( &#039;Cost of the marketing campaign.&#039;, &#039;woocommerce&#039; ),
-					&#039;context&#039;     =&gt; [ &#039;view&#039; ],
+					&#039;context&#039;     =&gt; array( &#039;view&#039; ),
 					&#039;readonly&#039;    =&gt; true,
 					&#039;type&#039;        =&gt; &#039;object&#039;,
-					&#039;properties&#039;  =&gt; [
-						&#039;value&#039;    =&gt; [
+					&#039;properties&#039;  =&gt; array(
+						&#039;value&#039;    =&gt; array(
 							&#039;type&#039;     =&gt; &#039;string&#039;,
-							&#039;context&#039;  =&gt; [ &#039;view&#039; ],
+							&#039;context&#039;  =&gt; array( &#039;view&#039; ),
 							&#039;readonly&#039; =&gt; true,
-						],
-						&#039;currency&#039; =&gt; [
+						),
+						&#039;currency&#039; =&gt; array(
 							&#039;type&#039;     =&gt; &#039;string&#039;,
-							&#039;context&#039;  =&gt; [ &#039;view&#039; ],
+							&#039;context&#039;  =&gt; array( &#039;view&#039; ),
 							&#039;readonly&#039; =&gt; true,
-						],
-					],
-				],
-			],
-		];
+						),
+					),
+				),
+				&#039;sales&#039;      =&gt; array(
+					&#039;description&#039; =&gt; __( &#039;Sales of the marketing campaign.&#039;, &#039;woocommerce&#039; ),
+					&#039;context&#039;     =&gt; array( &#039;view&#039; ),
+					&#039;readonly&#039;    =&gt; true,
+					&#039;type&#039;        =&gt; &#039;object&#039;,
+					&#039;properties&#039;  =&gt; array(
+						&#039;value&#039;    =&gt; array(
+							&#039;type&#039;     =&gt; &#039;string&#039;,
+							&#039;context&#039;  =&gt; array( &#039;view&#039; ),
+							&#039;readonly&#039; =&gt; true,
+						),
+						&#039;currency&#039; =&gt; array(
+							&#039;type&#039;     =&gt; &#039;string&#039;,
+							&#039;context&#039;  =&gt; array( &#039;view&#039; ),
+							&#039;readonly&#039; =&gt; true,
+						),
+					),
+				),
+			),
+		);
 
 		return $this-&gt;add_additional_fields_schema( $schema );
 	}
@@ -389,8 +468,6 @@ class MarketingCampaigns extends WC_REST_Controller {
 
 		return $params;
 	}
-
-
 }
 </code></pre>
             </article>
@@ -402,7 +479,7 @@ class MarketingCampaigns extends WC_REST_Controller {
 
     <footer class="phpdocumentor phpdocumentor-footer">
     <div class="phpdocumentor-section">
-        <span>WooCommerce Code Reference API documentation generated by <a href="http://www.phpdoc.org/">phpDocumentor</a> on August 24th, 2023 at 08:49 am.</span>
+        <span>WooCommerce Code Reference API documentation generated by <a href="http://www.phpdoc.org/">phpDocumentor</a> on July 25th, 2024 at 11:33 am.</span>
     </div>
 </footer>
 
@@ -414,7 +491,7 @@ class MarketingCampaigns extends WC_REST_Controller {
             'searchIndex': '..\/js\/searchIndex.json'
         };
     </script>
-    <script src="../js/searchIndex.js?updated=1692866950"></script>
-    <script src="../js/search.js?updated=1692866950"></script>
+    <script src="../js/searchIndex.js?updated=1721907184"></script>
+    <script src="../js/search.js?updated=1721907184"></script>
 </body>
 </html>

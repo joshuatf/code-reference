@@ -9,9 +9,9 @@
     <link rel="apple-touch-icon" sizes="72x72" href="../images/apple-touch-icon-72x72.png"/>
     <link rel="apple-touch-icon" sizes="114x114" href="../images/apple-touch-icon-114x114.png"/>
     <link rel="stylesheet" href="../css/normalize.css">
-    <link rel="stylesheet" href="../css/base.css?updated=1692866947">
+    <link rel="stylesheet" href="../css/base.css?updated=1721907183">
     <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../css/template.css?updated=1692866947">
+    <link rel="stylesheet" href="../css/template.css?updated=1721907183">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0/css/all.min.css" integrity="sha256-ybRkN9dBjhcS2qrW1z+hfCxq+1aBdwyQM5wlQoQVt/0=" crossorigin="anonymous" />
             <script src="https://cdn.jsdelivr.net/npm/css-vars-ponyfill@2"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0/js/all.min.js" integrity="sha256-0vuk8LXoyrmCjp1f0O300qo1M75ZQyhH9X3J6d+scmk=" crossorigin="anonymous"></script>
@@ -125,6 +125,7 @@
                         <ul class="phpdocumentor-list">
                                     <li><a href="../packages/Automattic-WooCommerce.html"><abbr title="\Automattic\WooCommerce">WooCommerce</abbr></a></li>
                             </ul>
+                                <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/WooCommerceBlocks.html"><abbr title="\WooCommerceBlocks">WooCommerceBlocks</abbr></a></h3>
                         </section>
     
     <section class="phpdocumentor-sidebar__category">
@@ -575,11 +576,11 @@ class WC_Gateway_Paypal extends WC_Payment_Gateway {
 		$result = WC_Gateway_Paypal_API_Handler::refund_transaction( $order, $amount, $reason );
 
 		if ( is_wp_error( $result ) ) {
-			$this-&gt;log( &#039;Refund Failed: &#039; . $result-&gt;get_error_message(), &#039;error&#039; );
+			static::log( &#039;Refund Failed: &#039; . $result-&gt;get_error_message(), &#039;error&#039; );
 			return new WP_Error( &#039;error&#039;, $result-&gt;get_error_message() );
 		}
 
-		$this-&gt;log( &#039;Refund Result: &#039; . wc_print_r( $result, true ) );
+		static::log( &#039;Refund Result: &#039; . wc_print_r( $result, true ) );
 
 		switch ( strtolower( $result-&gt;ACK ) ) { // phpcs:ignore WordPress.NamingConventions.ValidVariableName.UsedPropertyNotSnakeCase
 			case &#039;success&#039;:
@@ -607,13 +608,13 @@ class WC_Gateway_Paypal extends WC_Payment_Gateway {
 			$result = WC_Gateway_Paypal_API_Handler::do_capture( $order );
 
 			if ( is_wp_error( $result ) ) {
-				$this-&gt;log( &#039;Capture Failed: &#039; . $result-&gt;get_error_message(), &#039;error&#039; );
+				static::log( &#039;Capture Failed: &#039; . $result-&gt;get_error_message(), &#039;error&#039; );
 				/* translators: %s: Paypal gateway error message */
 				$order-&gt;add_order_note( sprintf( __( &#039;Payment could not be captured: %s&#039;, &#039;woocommerce&#039; ), $result-&gt;get_error_message() ) );
 				return;
 			}
 
-			$this-&gt;log( &#039;Capture Result: &#039; . wc_print_r( $result, true ) );
+			static::log( &#039;Capture Result: &#039; . wc_print_r( $result, true ) );
 
 			// phpcs:disable WordPress.NamingConventions.ValidVariableName.UsedPropertyNotSnakeCase
 			if ( ! empty( $result-&gt;PAYMENTSTATUS ) ) {
@@ -684,28 +685,33 @@ class WC_Gateway_Paypal extends WC_Payment_Gateway {
 		$should_load = $this-&gt;get_option( $option_key );
 
 		if ( &#039;&#039; === $should_load ) {
-
-			// New installs without PayPal Standard enabled don&#039;t load it.
-			if ( &#039;no&#039; === $this-&gt;enabled &amp;&amp; WC_Install::is_new_install() ) {
-				$should_load = false;
-			} else {
-				$should_load = true;
-			}
+			// Set default `_should_load` to &#039;yes&#039; on existing stores with PayPal Standard enabled or with existing PayPal Standard orders.
+			$should_load = &#039;yes&#039; === $this-&gt;enabled || $this-&gt;has_paypal_orders();
 
 			$this-&gt;update_option( $option_key, wc_bool_to_string( $should_load ) );
 		} else {
-			$should_load = wc_string_to_bool( $should_load );
+			// Enabled always takes precedence over the option.
+			$should_load = wc_string_to_bool( $this-&gt;enabled ) || wc_string_to_bool( $should_load );
 		}
 
-		/**
-		 * Allow third-parties to filter whether PayPal Standard should be loaded or not.
-		 *
-		 * @since 5.5.0
-		 *
-		 * @param bool              $should_load Whether PayPal Standard should be loaded.
-		 * @param WC_Gateway_Paypal $this        The WC_Gateway_Paypal instance.
-		 */
-		return apply_filters( &#039;woocommerce_should_load_paypal_standard&#039;, $should_load, $this );
+		return $should_load;
+	}
+
+	/**
+	 * Checks if the store has at least one PayPal Standand order.
+	 *
+	 * @return bool
+	 */
+	public function has_paypal_orders() {
+		$paypal_orders = wc_get_orders(
+			array(
+				&#039;limit&#039;          =&gt; 1,
+				&#039;return&#039;         =&gt; &#039;ids&#039;,
+				&#039;payment_method&#039; =&gt; &#039;paypal&#039;,
+			)
+		);
+
+		return is_countable( $paypal_orders ) ? 1 === count( $paypal_orders ) : false;
 	}
 }
 </code></pre>
@@ -718,7 +724,7 @@ class WC_Gateway_Paypal extends WC_Payment_Gateway {
 
     <footer class="phpdocumentor phpdocumentor-footer">
     <div class="phpdocumentor-section">
-        <span>WooCommerce Code Reference API documentation generated by <a href="http://www.phpdoc.org/">phpDocumentor</a> on August 24th, 2023 at 08:49 am.</span>
+        <span>WooCommerce Code Reference API documentation generated by <a href="http://www.phpdoc.org/">phpDocumentor</a> on July 25th, 2024 at 11:33 am.</span>
     </div>
 </footer>
 
@@ -730,7 +736,7 @@ class WC_Gateway_Paypal extends WC_Payment_Gateway {
             'searchIndex': '..\/js\/searchIndex.json'
         };
     </script>
-    <script src="../js/searchIndex.js?updated=1692866947"></script>
-    <script src="../js/search.js?updated=1692866947"></script>
+    <script src="../js/searchIndex.js?updated=1721907183"></script>
+    <script src="../js/search.js?updated=1721907183"></script>
 </body>
 </html>

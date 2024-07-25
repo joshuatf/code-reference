@@ -9,9 +9,9 @@
     <link rel="apple-touch-icon" sizes="72x72" href="../images/apple-touch-icon-72x72.png"/>
     <link rel="apple-touch-icon" sizes="114x114" href="../images/apple-touch-icon-114x114.png"/>
     <link rel="stylesheet" href="../css/normalize.css">
-    <link rel="stylesheet" href="../css/base.css?updated=1692866946">
+    <link rel="stylesheet" href="../css/base.css?updated=1721907182">
     <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../css/template.css?updated=1692866946">
+    <link rel="stylesheet" href="../css/template.css?updated=1721907182">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0/css/all.min.css" integrity="sha256-ybRkN9dBjhcS2qrW1z+hfCxq+1aBdwyQM5wlQoQVt/0=" crossorigin="anonymous" />
             <script src="https://cdn.jsdelivr.net/npm/css-vars-ponyfill@2"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0/js/all.min.js" integrity="sha256-0vuk8LXoyrmCjp1f0O300qo1M75ZQyhH9X3J6d+scmk=" crossorigin="anonymous"></script>
@@ -125,6 +125,7 @@
                         <ul class="phpdocumentor-list">
                                     <li><a href="../packages/Automattic-WooCommerce.html"><abbr title="\Automattic\WooCommerce">WooCommerce</abbr></a></li>
                             </ul>
+                                <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/WooCommerceBlocks.html"><abbr title="\WooCommerceBlocks">WooCommerceBlocks</abbr></a></h3>
                         </section>
     
     <section class="phpdocumentor-sidebar__category">
@@ -366,7 +367,7 @@ class WC_AJAX {
 				function( $response, $data ) use ( $ajax_callback ) {
 					return call_user_func_array( array( __CLASS__, $ajax_callback ), func_get_args() );
 				},
-				10,
+				11,
 				2
 			);
 		}
@@ -402,7 +403,13 @@ class WC_AJAX {
 
 		check_ajax_referer( &#039;apply-coupon&#039;, &#039;security&#039; );
 
-		$coupon_code = ArrayUtil::get_value_or_default( $_POST, &#039;coupon_code&#039; );
+		$coupon_code   = ArrayUtil::get_value_or_default( $_POST, &#039;coupon_code&#039; );
+		$billing_email = ArrayUtil::get_value_or_default( $_POST, &#039;billing_email&#039; );
+
+		if ( is_string( $billing_email ) &amp;&amp; is_email( $billing_email ) ) {
+			wc()-&gt;customer-&gt;set_billing_email( $billing_email );
+		}
+
 		if ( ! StringUtil::is_null_or_whitespace( $coupon_code ) ) {
 			WC()-&gt;cart-&gt;add_discount( wc_format_coupon_code( wp_unslash( $coupon_code ) ) ); // phpcs:ignore WordPress.Security.ValidatedSanitizedInput.InputNotSanitized
 		} else {
@@ -445,6 +452,9 @@ class WC_AJAX {
 
 		if ( is_array( $posted_shipping_methods ) ) {
 			foreach ( $posted_shipping_methods as $i =&gt; $value ) {
+				if ( ! is_string( $value ) ) {
+					continue;
+				}
 				$chosen_shipping_methods[ $i ] = $value;
 			}
 		}
@@ -504,6 +514,9 @@ class WC_AJAX {
 
 		if ( is_array( $posted_shipping_methods ) ) {
 			foreach ( $posted_shipping_methods as $i =&gt; $value ) {
+				if ( ! is_string( $value ) ) {
+					continue;
+				}
 				$chosen_shipping_methods[ $i ] = $value;
 			}
 		}
@@ -1127,6 +1140,8 @@ class WC_AJAX {
 		$data                  = $customer-&gt;get_data();
 		$data[&#039;date_created&#039;]  = $data[&#039;date_created&#039;] ? $data[&#039;date_created&#039;]-&gt;getTimestamp() : null;
 		$data[&#039;date_modified&#039;] = $data[&#039;date_modified&#039;] ? $data[&#039;date_modified&#039;]-&gt;getTimestamp() : null;
+
+		unset( $data[&#039;meta_data&#039;] );
 
 		$customer_data = apply_filters( &#039;woocommerce_ajax_get_customer_details&#039;, $data, $customer, $user_id );
 		wp_send_json( $customer_data );
@@ -2213,7 +2228,8 @@ class WC_AJAX {
 
 		$children = get_terms( $taxonomy, &quot;child_of=$id&amp;menu_order=ASC&amp;hide_empty=0&quot; );
 
-		if ( $term &amp;&amp; count( $children ) ) {
+		$children_count = is_countable( $children ) ? count( $children ) : 0;
+		if ( $term &amp;&amp; $children_count ) {
 			echo &#039;children&#039;;
 			wp_die();
 		}
@@ -2869,11 +2885,13 @@ class WC_AJAX {
 			$variation = wc_get_product( $variation_id );
 
 			if ( &#039;false&#039; !== $data[&#039;date_from&#039;] ) {
-				$variation-&gt;set_date_on_sale_from( wc_clean( $data[&#039;date_from&#039;] ) );
+				$date_on_sale_from = date( &#039;Y-m-d 00:00:00&#039;, strtotime( wc_clean( $data[&#039;date_from&#039;] ) ) ); // phpcs:ignore WordPress.DateTime.RestrictedFunctions.date_date
+				$variation-&gt;set_date_on_sale_from( $date_on_sale_from );
 			}
 
 			if ( &#039;false&#039; !== $data[&#039;date_to&#039;] ) {
-				$variation-&gt;set_date_on_sale_to( wc_clean( $data[&#039;date_to&#039;] ) );
+				$date_on_sale_to = date( &#039;Y-m-d 23:59:59&#039;, strtotime( wc_clean( $data[&#039;date_to&#039;] ) ) ); // phpcs:ignore WordPress.DateTime.RestrictedFunctions.date_date
+				$variation-&gt;set_date_on_sale_to( $date_on_sale_to );
 			}
 
 			$variation-&gt;save();
@@ -3772,7 +3790,7 @@ class WC_AJAX {
 	 * @param array $data     Data sent through the heartbeat.
 	 * @return array Response to be sent.
 	 */
-	private static function order_refresh_lock( $response, $data ) : array {
+	private static function order_refresh_lock( $response, $data ) {
 		return wc_get_container()-&gt;get( Automattic\WooCommerce\Internal\Admin\Orders\EditLock::class )-&gt;refresh_lock_ajax( $response, $data );
 	}
 
@@ -3785,7 +3803,7 @@ class WC_AJAX {
 	 * @param array $data     Data sent through the heartbeat.
 	 * @return array Response to be sent.
 	 */
-	private static function check_locked_orders( $response, $data ) : array {
+	private static function check_locked_orders( $response, $data ) {
 		return wc_get_container()-&gt;get( Automattic\WooCommerce\Internal\Admin\Orders\EditLock::class )-&gt;check_locked_orders_ajax( $response, $data );
 	}
 
@@ -3802,7 +3820,7 @@ WC_AJAX::init();
 
     <footer class="phpdocumentor phpdocumentor-footer">
     <div class="phpdocumentor-section">
-        <span>WooCommerce Code Reference API documentation generated by <a href="http://www.phpdoc.org/">phpDocumentor</a> on August 24th, 2023 at 08:49 am.</span>
+        <span>WooCommerce Code Reference API documentation generated by <a href="http://www.phpdoc.org/">phpDocumentor</a> on July 25th, 2024 at 11:33 am.</span>
     </div>
 </footer>
 
@@ -3814,7 +3832,7 @@ WC_AJAX::init();
             'searchIndex': '..\/js\/searchIndex.json'
         };
     </script>
-    <script src="../js/searchIndex.js?updated=1692866946"></script>
-    <script src="../js/search.js?updated=1692866946"></script>
+    <script src="../js/searchIndex.js?updated=1721907182"></script>
+    <script src="../js/search.js?updated=1721907182"></script>
 </body>
 </html>

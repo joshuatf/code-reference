@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>WooCommerce Code Reference</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="../images/favicon.png" />
+    <link rel="apple-touch-icon" href="../images/apple-touch-icon.png"/>
+    <link rel="apple-touch-icon" sizes="72x72" href="../images/apple-touch-icon-72x72.png"/>
+    <link rel="apple-touch-icon" sizes="114x114" href="../images/apple-touch-icon-114x114.png"/>
+    <link rel="stylesheet" href="../css/normalize.css">
+    <link rel="stylesheet" href="../css/base.css?updated=1721907185">
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/template.css?updated=1721907185">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0/css/all.min.css" integrity="sha256-ybRkN9dBjhcS2qrW1z+hfCxq+1aBdwyQM5wlQoQVt/0=" crossorigin="anonymous" />
+            <script src="https://cdn.jsdelivr.net/npm/css-vars-ponyfill@2"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0/js/all.min.js" integrity="sha256-0vuk8LXoyrmCjp1f0O300qo1M75ZQyhH9X3J6d+scmk=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tarekraafat/autocomplete.js@7.2.0/dist/js/autoComplete.min.js"></script>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-8KCYZ2CYMS"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-8KCYZ2CYMS', {
+		'content_group' : 'WooCommerce Core Code Reference',
+	});
+</script>
+        <script src="../js/prism.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            window.dispatchEvent(new HashChangeEvent('hashchange'));
+        });
+    </script>
+</head>
+<body id="top">
+    <header class="phpdocumentor-top-header">
+    <section class="phpdocumentor-section">
+        <div class="site-branding">
+            <a class="site-logo" href="../index.html"><img width="180" src="../images/logo.svg" alt="WooCommerce" /></a>
+        </div>
+        <nav class="main-navigation">
+            <ul>
+                <li><a href="../hooks/hooks.html">Hooks Reference</a></li>
+                <li><a href="https://docs.woocommerce.com/">Documentation</a></li>
+                <li><a href="https://woocommerce.github.io/woocommerce-rest-api-docs/">REST API Docs</a></li>
+                <li><a href="https://woocommerce.com/careers/?utm_source=woocommerce+core+code+reference&utm_medium=devdocs&utm_campaign=woo+careers" target="_blank">We're hiring!</a></li>
+            </ul>
+        </nav>
+    </section>
+</header>
+
+<div class="phpdocumentor-header">
+    <section class="phpdocumentor-section">
+        <h1 class="phpdocumentor-title">WooCommerce Code Reference</h1>
+        <section class="phpdocumentor-search">
+    <label class="phpdocumentor-label">
+        <span class="visually-hidden">Search (click ESC to close search results)</span>
+        <input id="autoComplete" tabindex="1" type="search" class="phpdocumentor-field phpdocumentor-search__field" placeholder="Loading..." disabled />
+    </label>
+</section>
+
+    </section>
+</div>
+
+    <main class="phpdocumentor">
+        <div class="phpdocumentor-section">
+            <aside class="phpdocumentor-column -four phpdocumentor-sidebar">
+    
+    <section class="phpdocumentor-sidebar__category">
+        <h2 class="phpdocumentor-sidebar__category-header">Namespaces</h2>
+                                <h3 class="phpdocumentor-sidebar__root-namespace"><a href="../namespaces/default.html"><abbr title="\">Global</abbr></a></h3>
+                                        <h4 class="phpdocumentor-sidebar__root-namespace"><a href="../namespaces/woocommerce.html"><abbr title="\WooCommerce">WooCommerce</abbr></a></h4>
+                <ul class="phpdocumentor-list">
+                                            <li><a href="../namespaces/woocommerce-admin.html"><abbr title="\WooCommerce\Admin">Admin</abbr></a></li>
+                                    </ul>
+                            <h4 class="phpdocumentor-sidebar__root-namespace"><a href="../namespaces/automattic.html"><abbr title="\Automattic">Automattic</abbr></a></h4>
+                <ul class="phpdocumentor-list">
+                                            <li><a href="../namespaces/automattic-woocommerce.html"><abbr title="\Automattic\WooCommerce">WooCommerce</abbr></a></li>
+                                    </ul>
+                        </section>
+
+        <section class="phpdocumentor-sidebar__category">
+        <h2 class="phpdocumentor-sidebar__category-header">Packages</h2>
+                    <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/WooCommerce.html"><abbr title="\WooCommerce">WooCommerce</abbr></a></h3>
+                        <ul class="phpdocumentor-list">
+                                    <li><a href="../packages/WooCommerce-Classes.html"><abbr title="\WooCommerce\Classes">Classes</abbr></a></li>
+                                    <li><a href="../packages/WooCommerce-Abstracts.html"><abbr title="\WooCommerce\Abstracts">Abstracts</abbr></a></li>
+                                    <li><a href="../packages/WooCommerce-Admin.html"><abbr title="\WooCommerce\Admin">Admin</abbr></a></li>
+                                    <li><a href="../packages/WooCommerce-Helper.html"><abbr title="\WooCommerce\Helper">Helper</abbr></a></li>
+                                    <li><a href="../packages/WooCommerce-Views.html"><abbr title="\WooCommerce\Views">Views</abbr></a></li>
+                                    <li><a href="../packages/WooCommerce-Templates.html"><abbr title="\WooCommerce\Templates">Templates</abbr></a></li>
+                                    <li><a href="../packages/WooCommerce-Reports.html"><abbr title="\WooCommerce\Reports">Reports</abbr></a></li>
+                                    <li><a href="../packages/WooCommerce-Blocks.html"><abbr title="\WooCommerce\Blocks">Blocks</abbr></a></li>
+                                    <li><a href="../packages/WooCommerce-RestApi.html"><abbr title="\WooCommerce\RestApi">RestApi</abbr></a></li>
+                                    <li><a href="../packages/WooCommerce-CLI.html"><abbr title="\WooCommerce\CLI">CLI</abbr></a></li>
+                                    <li><a href="../packages/WooCommerce-l10n.html"><abbr title="\WooCommerce\l10n">l10n</abbr></a></li>
+                                    <li><a href="../packages/WooCommerce-Webhooks.html"><abbr title="\WooCommerce\Webhooks">Webhooks</abbr></a></li>
+                                    <li><a href="../packages/WooCommerce-DataStores.html"><abbr title="\WooCommerce\DataStores">DataStores</abbr></a></li>
+                                    <li><a href="../packages/WooCommerce-Emails.html"><abbr title="\WooCommerce\Emails">Emails</abbr></a></li>
+                                    <li><a href="../packages/WooCommerce-Export.html"><abbr title="\WooCommerce\Export">Export</abbr></a></li>
+                                    <li><a href="../packages/WooCommerce-Gateways.html"><abbr title="\WooCommerce\Gateways">Gateways</abbr></a></li>
+                                    <li><a href="../packages/WooCommerce-PayPal.html"><abbr title="\WooCommerce\PayPal">PayPal</abbr></a></li>
+                                    <li><a href="../packages/WooCommerce-Import.html"><abbr title="\WooCommerce\Import">Import</abbr></a></li>
+                                    <li><a href="../packages/WooCommerce-Integrations.html"><abbr title="\WooCommerce\Integrations">Integrations</abbr></a></li>
+                                    <li><a href="../packages/WooCommerce-Interfaces.html"><abbr title="\WooCommerce\Interfaces">Interfaces</abbr></a></li>
+                                    <li><a href="../packages/WooCommerce-Interface.html"><abbr title="\WooCommerce\Interface">Interface</abbr></a></li>
+                                    <li><a href="../packages/WooCommerce-LogHandlers.html"><abbr title="\WooCommerce\LogHandlers">LogHandlers</abbr></a></li>
+                                    <li><a href="../packages/WooCommerce-PaymentTokens.html"><abbr title="\WooCommerce\PaymentTokens">PaymentTokens</abbr></a></li>
+                                    <li><a href="../packages/WooCommerce-Utilities.html"><abbr title="\WooCommerce\Utilities">Utilities</abbr></a></li>
+                                    <li><a href="../packages/WooCommerce-Shipping.html"><abbr title="\WooCommerce\Shipping">Shipping</abbr></a></li>
+                                    <li><a href="../packages/WooCommerce-Shortcodes.html"><abbr title="\WooCommerce\Shortcodes">Shortcodes</abbr></a></li>
+                                    <li><a href="../packages/WooCommerce-Tracks.html"><abbr title="\WooCommerce\Tracks">Tracks</abbr></a></li>
+                                    <li><a href="../packages/WooCommerce-Traits.html"><abbr title="\WooCommerce\Traits">Traits</abbr></a></li>
+                                    <li><a href="../packages/WooCommerce-Functions.html"><abbr title="\WooCommerce\Functions">Functions</abbr></a></li>
+                                    <li><a href="../packages/WooCommerce-WCCom.html"><abbr title="\WooCommerce\WCCom">WCCom</abbr></a></li>
+                                    <li><a href="../packages/WooCommerce-WCCOM.html"><abbr title="\WooCommerce\WCCOM">WCCOM</abbr></a></li>
+                                    <li><a href="../packages/WooCommerce-Widgets.html"><abbr title="\WooCommerce\Widgets">Widgets</abbr></a></li>
+                                    <li><a href="../packages/WooCommerce-Uninstaller.html"><abbr title="\WooCommerce\Uninstaller">Uninstaller</abbr></a></li>
+                            </ul>
+                                <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/WoocommerceAdmin.html"><abbr title="\WoocommerceAdmin">WoocommerceAdmin</abbr></a></h3>
+                                <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/WoocommerceNavigation.html"><abbr title="\WoocommerceNavigation">WoocommerceNavigation</abbr></a></h3>
+                                <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/Automattic.html"><abbr title="\Automattic">Automattic</abbr></a></h3>
+                        <ul class="phpdocumentor-list">
+                                    <li><a href="../packages/Automattic-WooCommerce.html"><abbr title="\Automattic\WooCommerce">WooCommerce</abbr></a></li>
+                            </ul>
+                                <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/WooCommerceBlocks.html"><abbr title="\WooCommerceBlocks">WooCommerceBlocks</abbr></a></h3>
+                        </section>
+    
+    <section class="phpdocumentor-sidebar__category">
+        <h2 class="phpdocumentor-sidebar__category-header">Reports</h2>
+                <h3 class="phpdocumentor-sidebar__root-package"><a href="../reports/deprecated.html">Deprecated</a></h3>
+        <h3 class="phpdocumentor-sidebar__root-package"><a href="../reports/errors.html">Errors</a></h3>
+        <h3 class="phpdocumentor-sidebar__root-package"><a href="../reports/markers.html">Markers</a></h3>
+    </section>
+
+    <section class="phpdocumentor-sidebar__category">
+        <h2 class="phpdocumentor-sidebar__category-header">Indices</h2>
+        <h3 class="phpdocumentor-sidebar__root-package"><a href="../indices/files.html">Files</a></h3>
+        <h3 class="phpdocumentor-sidebar__root-package"><a href="../hooks/hooks.html">Hooks Reference</a></h3>
+    </section>
+</aside>
+
+            <div class="phpdocumentor-column -eight phpdocumentor-content">
+                    <ul class="phpdocumentor-breadcrumbs">
+    </ul>
+
+    <article class="phpdocumentor-element -file">
+        <h2 class="phpdocumentor-content__title">ProductFilterAttribute.php</h2>
+
+                
+
+        
+                    <h3 class="phpdocumentor-elements__header" id="source-code">
+                Source code
+                <a href="#source-code" class="headerlink"><i class="fas fa-link"></i></a>
+            </h3>
+            <pre id="source-view" tabindex="-1" class="language-php line-numbers linkable-line-numbers"><code>&lt;?php
+namespace Automattic\WooCommerce\Blocks\BlockTypes;
+
+use Automattic\WooCommerce\Blocks\QueryFilters;
+use Automattic\WooCommerce\Blocks\Package;
+use Automattic\WooCommerce\Blocks\InteractivityComponents\Dropdown;
+use Automattic\WooCommerce\Blocks\InteractivityComponents\CheckboxList;
+use Automattic\WooCommerce\Blocks\Utils\ProductCollectionUtils;
+
+/**
+ * Product Filter: Attribute Block.
+ */
+final class ProductFilterAttribute extends AbstractBlock {
+
+	/**
+	 * Block name.
+	 *
+	 * @var string
+	 */
+	protected $block_name = &#039;product-filter-attribute&#039;;
+
+	/**
+	 * Initialize this block type.
+	 *
+	 * - Hook into WP lifecycle.
+	 * - Register the block with WordPress.
+	 */
+	protected function initialize() {
+		parent::initialize();
+
+		add_filter( &#039;collection_filter_query_param_keys&#039;, array( $this, &#039;get_filter_query_param_keys&#039; ), 10, 2 );
+		add_filter( &#039;collection_active_filters_data&#039;, array( $this, &#039;register_active_filters_data&#039; ), 10, 2 );
+	}
+
+	/**
+	 * Register the query param keys.
+	 *
+	 * @param array $filter_param_keys The active filters data.
+	 * @param array $url_param_keys    The query param parsed from the URL.
+	 *
+	 * @return array Active filters param keys.
+	 */
+	public function get_filter_query_param_keys( $filter_param_keys, $url_param_keys ) {
+		$attribute_param_keys = array_filter(
+			$url_param_keys,
+			function( $param ) {
+				return strpos( $param, &#039;filter_&#039; ) === 0 || strpos( $param, &#039;query_type_&#039; ) === 0;
+			}
+		);
+
+		return array_merge(
+			$filter_param_keys,
+			$attribute_param_keys
+		);
+	}
+
+	/**
+	 * Register the active filters data.
+	 *
+	 * @param array $data   The active filters data.
+	 * @param array $params The query param parsed from the URL.
+	 * @return array Active filters data.
+	 */
+	public function register_active_filters_data( $data, $params ) {
+		$product_attributes_map = array_reduce(
+			wc_get_attribute_taxonomies(),
+			function( $acc, $attribute_object ) {
+				$acc[ $attribute_object-&gt;attribute_name ] = $attribute_object-&gt;attribute_label;
+				return $acc;
+			},
+			array()
+		);
+
+		$active_product_attributes = array_reduce(
+			array_keys( $params ),
+			function( $acc, $attribute ) {
+				if ( strpos( $attribute, &#039;filter_&#039; ) === 0 ) {
+					$acc[] = str_replace( &#039;filter_&#039;, &#039;&#039;, $attribute );
+				}
+				return $acc;
+			},
+			array()
+		);
+
+		$active_product_attributes = array_filter(
+			$active_product_attributes,
+			function( $item ) use ( $product_attributes_map ) {
+				return in_array( $item, array_keys( $product_attributes_map ), true );
+			}
+		);
+
+		$action_namespace = $this-&gt;get_full_block_name();
+
+		foreach ( $active_product_attributes as $product_attribute ) {
+			$terms = explode( &#039;,&#039;, get_query_var( &quot;filter_{$product_attribute}&quot; ) );
+
+			// Get attribute term by slug.
+			$terms = array_map(
+				function( $term ) use ( $product_attribute, $action_namespace ) {
+					$term_object = get_term_by( &#039;slug&#039;, $term, &quot;pa_{$product_attribute}&quot; );
+					return array(
+						&#039;title&#039;      =&gt; $term_object-&gt;name,
+						&#039;attributes&#039; =&gt; array(
+							&#039;data-wc-on--click&#039; =&gt; &quot;$action_namespace::actions.removeFilter&quot;,
+							&#039;data-wc-context&#039;   =&gt; &quot;$action_namespace::&quot; . wp_json_encode(
+								array(
+									&#039;value&#039;         =&gt; $term,
+									&#039;attributeSlug&#039; =&gt; $product_attribute,
+									&#039;queryType&#039;     =&gt; get_query_var( &quot;query_type_{$product_attribute}&quot; ),
+								)
+							),
+						),
+					);
+				},
+				$terms
+			);
+
+			$data[ $product_attribute ] = array(
+				&#039;type&#039;  =&gt; $product_attributes_map[ $product_attribute ],
+				&#039;items&#039; =&gt; $terms,
+			);
+		}
+
+		return $data;
+	}
+
+	/**
+	 * Render the block.
+	 *
+	 * @param array    $attributes Block attributes.
+	 * @param string   $content    Block content.
+	 * @param WP_Block $block      Block instance.
+	 * @return string Rendered block type output.
+	 */
+	protected function render( $attributes, $content, $block ) {
+		// don&#039;t render if its admin, or ajax in progress.
+		if ( is_admin() || wp_doing_ajax() || empty( $attributes[&#039;attributeId&#039;] ) ) {
+			return &#039;&#039;;
+		}
+
+		$product_attribute = wc_get_attribute( $attributes[&#039;attributeId&#039;] );
+		$attribute_counts  = $this-&gt;get_attribute_counts( $block, $product_attribute-&gt;slug, $attributes[&#039;queryType&#039;] );
+
+		if ( empty( $attribute_counts ) ) {
+			return sprintf(
+				&#039;&lt;div %s&gt;&lt;/div&gt;&#039;,
+				get_block_wrapper_attributes(
+					array(
+						&#039;data-wc-interactive&#039; =&gt; wp_json_encode( array( &#039;namespace&#039; =&gt; $this-&gt;get_full_block_name() ) ),
+						&#039;data-has-filter&#039;     =&gt; &#039;no&#039;,
+					)
+				),
+			);
+		}
+
+		$attribute_terms = get_terms(
+			array(
+				&#039;taxonomy&#039; =&gt; $product_attribute-&gt;slug,
+				&#039;include&#039;  =&gt; array_keys( $attribute_counts ),
+			)
+		);
+
+		$selected_terms = array_filter(
+			explode(
+				&#039;,&#039;,
+				get_query_var( &#039;filter_&#039; . str_replace( &#039;pa_&#039;, &#039;&#039;, $product_attribute-&gt;slug ) )
+			)
+		);
+
+		$attribute_options = array_map(
+			function( $term ) use ( $attribute_counts, $selected_terms ) {
+				$term             = (array) $term;
+				$term[&#039;count&#039;]    = $attribute_counts[ $term[&#039;term_id&#039;] ];
+				$term[&#039;selected&#039;] = in_array( $term[&#039;slug&#039;], $selected_terms, true );
+				return $term;
+			},
+			$attribute_terms
+		);
+
+		$filtered_options = array_filter(
+			$attribute_options,
+			function( $option ) {
+				return $option[&#039;count&#039;] &gt; 0;
+			}
+		);
+
+		$filter_content = &#039;dropdown&#039; === $attributes[&#039;displayStyle&#039;] ?
+			$this-&gt;render_attribute_dropdown( $filtered_options, $attributes ) :
+			$this-&gt;render_attribute_checkbox_list( $filtered_options, $attributes );
+
+		$context = array(
+			&#039;attributeSlug&#039; =&gt; str_replace( &#039;pa_&#039;, &#039;&#039;, $product_attribute-&gt;slug ),
+			&#039;queryType&#039;     =&gt; $attributes[&#039;queryType&#039;],
+			&#039;selectType&#039;    =&gt; $attributes[&#039;selectType&#039;],
+		);
+
+		return sprintf(
+			&#039;&lt;div %1$s&gt;%2$s%3$s&lt;/div&gt;&#039;,
+			get_block_wrapper_attributes(
+				array(
+					&#039;data-wc-context&#039;     =&gt; wp_json_encode( $context ),
+					&#039;data-wc-interactive&#039; =&gt; wp_json_encode( array( &#039;namespace&#039; =&gt; $this-&gt;get_full_block_name() ) ),
+					&#039;data-has-filter&#039;     =&gt; &#039;yes&#039;,
+				)
+			),
+			$content,
+			$filter_content
+		);
+	}
+
+	/**
+	 * Render the dropdown.
+	 *
+	 * @param array $options    Data to render the dropdown.
+	 * @param bool  $attributes Block attributes.
+	 */
+	private function render_attribute_dropdown( $options, $attributes ) {
+		if ( empty( $options ) ) {
+			return &#039;&#039;;
+		}
+
+		$list_items     = array();
+		$selected_items = array();
+
+		$product_attribute = wc_get_attribute( $attributes[&#039;attributeId&#039;] );
+
+		foreach ( $options as $option ) {
+			$item = array(
+				&#039;label&#039; =&gt; $attributes[&#039;showCounts&#039;] ? sprintf( &#039;%1$s (%2$d)&#039;, $option[&#039;name&#039;], $option[&#039;count&#039;] ) : $option[&#039;name&#039;],
+				&#039;value&#039; =&gt; $option[&#039;slug&#039;],
+			);
+
+			$list_items[] = $item;
+
+			if ( $option[&#039;selected&#039;] ) {
+				$selected_items[] = $item;
+			}
+		}
+
+		return Dropdown::render(
+			array(
+				&#039;items&#039;          =&gt; $list_items,
+				&#039;action&#039;         =&gt; &quot;{$this-&gt;get_full_block_name()}::actions.navigate&quot;,
+				&#039;selected_items&#039; =&gt; $selected_items,
+				&#039;select_type&#039;    =&gt; $attributes[&#039;selectType&#039;] ?? &#039;multiple&#039;,
+				// translators: %s is a product attribute name.
+				&#039;placeholder&#039;    =&gt; sprintf( __( &#039;Select %s&#039;, &#039;woocommerce&#039; ), $product_attribute-&gt;name ),
+			)
+		);
+	}
+
+	/**
+	 * Render the attribute filter checkbox list.
+	 *
+	 * @param mixed $options Attribute filter options to render in the checkbox list.
+	 * @param mixed $attributes Block attributes.
+	 * @return string
+	 */
+	private function render_attribute_checkbox_list( $options, $attributes ) {
+		if ( empty( $options ) ) {
+			return &#039;&#039;;
+		}
+
+		$show_counts = $attributes[&#039;showCounts&#039;] ?? false;
+
+		$list_options = array_map(
+			function( $option ) use ( $show_counts ) {
+				return array(
+					&#039;id&#039;      =&gt; $option[&#039;slug&#039;] . &#039;-&#039; . $option[&#039;term_id&#039;],
+					&#039;checked&#039; =&gt; $option[&#039;selected&#039;],
+					&#039;label&#039;   =&gt; $show_counts ? sprintf( &#039;%1$s (%2$d)&#039;, $option[&#039;name&#039;], $option[&#039;count&#039;] ) : $option[&#039;name&#039;],
+					&#039;value&#039;   =&gt; $option[&#039;slug&#039;],
+				);
+			},
+			$options
+		);
+
+		return CheckboxList::render(
+			array(
+				&#039;items&#039;     =&gt; $list_options,
+				&#039;on_change&#039; =&gt; &quot;{$this-&gt;get_full_block_name()}::actions.updateProducts&quot;,
+			)
+		);
+	}
+
+	/**
+	 * Retrieve the attribute count for current block.
+	 *
+	 * @param WP_Block $block      Block instance.
+	 * @param string   $slug       Attribute slug.
+	 * @param string   $query_type Query type, accept &#039;and&#039; or &#039;or&#039;.
+	 */
+	private function get_attribute_counts( $block, $slug, $query_type ) {
+		$filters    = Package::container()-&gt;get( QueryFilters::class );
+		$query_vars = ProductCollectionUtils::get_query_vars( $block, 1 );
+
+		if ( &#039;and&#039; !== strtolower( $query_type ) ) {
+			unset( $query_vars[ &#039;filter_&#039; . str_replace( &#039;pa_&#039;, &#039;&#039;, $slug ) ] );
+		}
+
+		unset(
+			$query_vars[&#039;taxonomy&#039;],
+			$query_vars[&#039;term&#039;]
+		);
+
+		if ( ! empty( $query_vars[&#039;tax_query&#039;] ) ) {
+			// phpcs:ignore WordPress.DB.SlowDBQuery.slow_db_query_tax_query
+			$query_vars[&#039;tax_query&#039;] = ProductCollectionUtils::remove_query_array( $query_vars[&#039;tax_query&#039;], &#039;taxonomy&#039;, $slug );
+		}
+
+		$counts           = $filters-&gt;get_attribute_counts( $query_vars, $slug );
+		$attribute_counts = array();
+
+		foreach ( $counts as $key =&gt; $value ) {
+			$attribute_counts[] = array(
+				&#039;term&#039;  =&gt; $key,
+				&#039;count&#039; =&gt; $value,
+			);
+		}
+
+		$attribute_counts = array_reduce(
+			$attribute_counts,
+			function( $acc, $count ) {
+				$acc[ $count[&#039;term&#039;] ] = $count[&#039;count&#039;];
+				return $acc;
+			},
+			[]
+		);
+
+		return $attribute_counts;
+	}
+}
+</code></pre>
+            </article>
+            </div>
+        </div>
+        <a href="#top" class="phpdocumentor-back-to-top"><i class="fas fa-chevron-circle-up"></i></a>
+
+    </main>
+
+    <footer class="phpdocumentor phpdocumentor-footer">
+    <div class="phpdocumentor-section">
+        <span>WooCommerce Code Reference API documentation generated by <a href="http://www.phpdoc.org/">phpDocumentor</a> on July 25th, 2024 at 11:33 am.</span>
+    </div>
+</footer>
+
+    <script>
+        cssVars({});
+    </script>
+    <script>
+        var searchParams = {
+            'searchIndex': '..\/js\/searchIndex.json'
+        };
+    </script>
+    <script src="../js/searchIndex.js?updated=1721907185"></script>
+    <script src="../js/search.js?updated=1721907185"></script>
+</body>
+</html>

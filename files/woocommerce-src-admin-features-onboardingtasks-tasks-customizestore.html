@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>WooCommerce Code Reference</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="../images/favicon.png" />
+    <link rel="apple-touch-icon" href="../images/apple-touch-icon.png"/>
+    <link rel="apple-touch-icon" sizes="72x72" href="../images/apple-touch-icon-72x72.png"/>
+    <link rel="apple-touch-icon" sizes="114x114" href="../images/apple-touch-icon-114x114.png"/>
+    <link rel="stylesheet" href="../css/normalize.css">
+    <link rel="stylesheet" href="../css/base.css?updated=1721907184">
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/template.css?updated=1721907184">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0/css/all.min.css" integrity="sha256-ybRkN9dBjhcS2qrW1z+hfCxq+1aBdwyQM5wlQoQVt/0=" crossorigin="anonymous" />
+            <script src="https://cdn.jsdelivr.net/npm/css-vars-ponyfill@2"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0/js/all.min.js" integrity="sha256-0vuk8LXoyrmCjp1f0O300qo1M75ZQyhH9X3J6d+scmk=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tarekraafat/autocomplete.js@7.2.0/dist/js/autoComplete.min.js"></script>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-8KCYZ2CYMS"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-8KCYZ2CYMS', {
+		'content_group' : 'WooCommerce Core Code Reference',
+	});
+</script>
+        <script src="../js/prism.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            window.dispatchEvent(new HashChangeEvent('hashchange'));
+        });
+    </script>
+</head>
+<body id="top">
+    <header class="phpdocumentor-top-header">
+    <section class="phpdocumentor-section">
+        <div class="site-branding">
+            <a class="site-logo" href="../index.html"><img width="180" src="../images/logo.svg" alt="WooCommerce" /></a>
+        </div>
+        <nav class="main-navigation">
+            <ul>
+                <li><a href="../hooks/hooks.html">Hooks Reference</a></li>
+                <li><a href="https://docs.woocommerce.com/">Documentation</a></li>
+                <li><a href="https://woocommerce.github.io/woocommerce-rest-api-docs/">REST API Docs</a></li>
+                <li><a href="https://woocommerce.com/careers/?utm_source=woocommerce+core+code+reference&utm_medium=devdocs&utm_campaign=woo+careers" target="_blank">We're hiring!</a></li>
+            </ul>
+        </nav>
+    </section>
+</header>
+
+<div class="phpdocumentor-header">
+    <section class="phpdocumentor-section">
+        <h1 class="phpdocumentor-title">WooCommerce Code Reference</h1>
+        <section class="phpdocumentor-search">
+    <label class="phpdocumentor-label">
+        <span class="visually-hidden">Search (click ESC to close search results)</span>
+        <input id="autoComplete" tabindex="1" type="search" class="phpdocumentor-field phpdocumentor-search__field" placeholder="Loading..." disabled />
+    </label>
+</section>
+
+    </section>
+</div>
+
+    <main class="phpdocumentor">
+        <div class="phpdocumentor-section">
+            <aside class="phpdocumentor-column -four phpdocumentor-sidebar">
+    
+    <section class="phpdocumentor-sidebar__category">
+        <h2 class="phpdocumentor-sidebar__category-header">Namespaces</h2>
+                                <h3 class="phpdocumentor-sidebar__root-namespace"><a href="../namespaces/default.html"><abbr title="\">Global</abbr></a></h3>
+                                        <h4 class="phpdocumentor-sidebar__root-namespace"><a href="../namespaces/woocommerce.html"><abbr title="\WooCommerce">WooCommerce</abbr></a></h4>
+                <ul class="phpdocumentor-list">
+                                            <li><a href="../namespaces/woocommerce-admin.html"><abbr title="\WooCommerce\Admin">Admin</abbr></a></li>
+                                    </ul>
+                            <h4 class="phpdocumentor-sidebar__root-namespace"><a href="../namespaces/automattic.html"><abbr title="\Automattic">Automattic</abbr></a></h4>
+                <ul class="phpdocumentor-list">
+                                            <li><a href="../namespaces/automattic-woocommerce.html"><abbr title="\Automattic\WooCommerce">WooCommerce</abbr></a></li>
+                                    </ul>
+                        </section>
+
+        <section class="phpdocumentor-sidebar__category">
+        <h2 class="phpdocumentor-sidebar__category-header">Packages</h2>
+                    <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/WooCommerce.html"><abbr title="\WooCommerce">WooCommerce</abbr></a></h3>
+                        <ul class="phpdocumentor-list">
+                                    <li><a href="../packages/WooCommerce-Classes.html"><abbr title="\WooCommerce\Classes">Classes</abbr></a></li>
+                                    <li><a href="../packages/WooCommerce-Abstracts.html"><abbr title="\WooCommerce\Abstracts">Abstracts</abbr></a></li>
+                                    <li><a href="../packages/WooCommerce-Admin.html"><abbr title="\WooCommerce\Admin">Admin</abbr></a></li>
+                                    <li><a href="../packages/WooCommerce-Helper.html"><abbr title="\WooCommerce\Helper">Helper</abbr></a></li>
+                                    <li><a href="../packages/WooCommerce-Views.html"><abbr title="\WooCommerce\Views">Views</abbr></a></li>
+                                    <li><a href="../packages/WooCommerce-Templates.html"><abbr title="\WooCommerce\Templates">Templates</abbr></a></li>
+                                    <li><a href="../packages/WooCommerce-Reports.html"><abbr title="\WooCommerce\Reports">Reports</abbr></a></li>
+                                    <li><a href="../packages/WooCommerce-Blocks.html"><abbr title="\WooCommerce\Blocks">Blocks</abbr></a></li>
+                                    <li><a href="../packages/WooCommerce-RestApi.html"><abbr title="\WooCommerce\RestApi">RestApi</abbr></a></li>
+                                    <li><a href="../packages/WooCommerce-CLI.html"><abbr title="\WooCommerce\CLI">CLI</abbr></a></li>
+                                    <li><a href="../packages/WooCommerce-l10n.html"><abbr title="\WooCommerce\l10n">l10n</abbr></a></li>
+                                    <li><a href="../packages/WooCommerce-Webhooks.html"><abbr title="\WooCommerce\Webhooks">Webhooks</abbr></a></li>
+                                    <li><a href="../packages/WooCommerce-DataStores.html"><abbr title="\WooCommerce\DataStores">DataStores</abbr></a></li>
+                                    <li><a href="../packages/WooCommerce-Emails.html"><abbr title="\WooCommerce\Emails">Emails</abbr></a></li>
+                                    <li><a href="../packages/WooCommerce-Export.html"><abbr title="\WooCommerce\Export">Export</abbr></a></li>
+                                    <li><a href="../packages/WooCommerce-Gateways.html"><abbr title="\WooCommerce\Gateways">Gateways</abbr></a></li>
+                                    <li><a href="../packages/WooCommerce-PayPal.html"><abbr title="\WooCommerce\PayPal">PayPal</abbr></a></li>
+                                    <li><a href="../packages/WooCommerce-Import.html"><abbr title="\WooCommerce\Import">Import</abbr></a></li>
+                                    <li><a href="../packages/WooCommerce-Integrations.html"><abbr title="\WooCommerce\Integrations">Integrations</abbr></a></li>
+                                    <li><a href="../packages/WooCommerce-Interfaces.html"><abbr title="\WooCommerce\Interfaces">Interfaces</abbr></a></li>
+                                    <li><a href="../packages/WooCommerce-Interface.html"><abbr title="\WooCommerce\Interface">Interface</abbr></a></li>
+                                    <li><a href="../packages/WooCommerce-LogHandlers.html"><abbr title="\WooCommerce\LogHandlers">LogHandlers</abbr></a></li>
+                                    <li><a href="../packages/WooCommerce-PaymentTokens.html"><abbr title="\WooCommerce\PaymentTokens">PaymentTokens</abbr></a></li>
+                                    <li><a href="../packages/WooCommerce-Utilities.html"><abbr title="\WooCommerce\Utilities">Utilities</abbr></a></li>
+                                    <li><a href="../packages/WooCommerce-Shipping.html"><abbr title="\WooCommerce\Shipping">Shipping</abbr></a></li>
+                                    <li><a href="../packages/WooCommerce-Shortcodes.html"><abbr title="\WooCommerce\Shortcodes">Shortcodes</abbr></a></li>
+                                    <li><a href="../packages/WooCommerce-Tracks.html"><abbr title="\WooCommerce\Tracks">Tracks</abbr></a></li>
+                                    <li><a href="../packages/WooCommerce-Traits.html"><abbr title="\WooCommerce\Traits">Traits</abbr></a></li>
+                                    <li><a href="../packages/WooCommerce-Functions.html"><abbr title="\WooCommerce\Functions">Functions</abbr></a></li>
+                                    <li><a href="../packages/WooCommerce-WCCom.html"><abbr title="\WooCommerce\WCCom">WCCom</abbr></a></li>
+                                    <li><a href="../packages/WooCommerce-WCCOM.html"><abbr title="\WooCommerce\WCCOM">WCCOM</abbr></a></li>
+                                    <li><a href="../packages/WooCommerce-Widgets.html"><abbr title="\WooCommerce\Widgets">Widgets</abbr></a></li>
+                                    <li><a href="../packages/WooCommerce-Uninstaller.html"><abbr title="\WooCommerce\Uninstaller">Uninstaller</abbr></a></li>
+                            </ul>
+                                <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/WoocommerceAdmin.html"><abbr title="\WoocommerceAdmin">WoocommerceAdmin</abbr></a></h3>
+                                <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/WoocommerceNavigation.html"><abbr title="\WoocommerceNavigation">WoocommerceNavigation</abbr></a></h3>
+                                <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/Automattic.html"><abbr title="\Automattic">Automattic</abbr></a></h3>
+                        <ul class="phpdocumentor-list">
+                                    <li><a href="../packages/Automattic-WooCommerce.html"><abbr title="\Automattic\WooCommerce">WooCommerce</abbr></a></li>
+                            </ul>
+                                <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/WooCommerceBlocks.html"><abbr title="\WooCommerceBlocks">WooCommerceBlocks</abbr></a></h3>
+                        </section>
+    
+    <section class="phpdocumentor-sidebar__category">
+        <h2 class="phpdocumentor-sidebar__category-header">Reports</h2>
+                <h3 class="phpdocumentor-sidebar__root-package"><a href="../reports/deprecated.html">Deprecated</a></h3>
+        <h3 class="phpdocumentor-sidebar__root-package"><a href="../reports/errors.html">Errors</a></h3>
+        <h3 class="phpdocumentor-sidebar__root-package"><a href="../reports/markers.html">Markers</a></h3>
+    </section>
+
+    <section class="phpdocumentor-sidebar__category">
+        <h2 class="phpdocumentor-sidebar__category-header">Indices</h2>
+        <h3 class="phpdocumentor-sidebar__root-package"><a href="../indices/files.html">Files</a></h3>
+        <h3 class="phpdocumentor-sidebar__root-package"><a href="../hooks/hooks.html">Hooks Reference</a></h3>
+    </section>
+</aside>
+
+            <div class="phpdocumentor-column -eight phpdocumentor-content">
+                    <ul class="phpdocumentor-breadcrumbs">
+    </ul>
+
+    <article class="phpdocumentor-element -file">
+        <h2 class="phpdocumentor-content__title">CustomizeStore.php</h2>
+
+                
+
+        
+                    <h3 class="phpdocumentor-elements__header" id="source-code">
+                Source code
+                <a href="#source-code" class="headerlink"><i class="fas fa-link"></i></a>
+            </h3>
+            <pre id="source-view" tabindex="-1" class="language-php line-numbers linkable-line-numbers"><code>&lt;?php
+
+namespace Automattic\WooCommerce\Admin\Features\OnboardingTasks\Tasks;
+
+use Automattic\WooCommerce\Admin\Features\OnboardingTasks\Task;
+use Jetpack_Gutenberg;
+
+/**
+ * Customize Your Store Task
+ */
+class CustomizeStore extends Task {
+	/**
+	 * Constructor
+	 *
+	 * @param TaskList $task_list Parent task list.
+	 */
+	public function __construct( $task_list ) {
+		parent::__construct( $task_list );
+
+		add_action( &#039;admin_enqueue_scripts&#039;, array( $this, &#039;possibly_add_site_editor_scripts&#039; ) );
+
+		add_action( &#039;show_admin_bar&#039;, array( $this, &#039;possibly_hide_wp_admin_bar&#039; ) );
+
+		// Hook to remove unwanted UI elements when users are viewing with ?cys-hide-admin-bar=true.
+		add_action( &#039;wp_head&#039;, array( $this, &#039;possibly_remove_unwanted_ui_elements&#039; ) );
+
+		add_action( &#039;save_post_wp_global_styles&#039;, array( $this, &#039;mark_task_as_complete&#039; ), 10, 3 );
+		add_action( &#039;save_post_wp_template&#039;, array( $this, &#039;mark_task_as_complete&#039; ), 10, 3 );
+		add_action( &#039;save_post_wp_template_part&#039;, array( $this, &#039;mark_task_as_complete&#039; ), 10, 3 );
+	}
+
+	/**
+	 * Mark the CYS task as complete whenever the user updates their global styles.
+	 *
+	 * @param int      $post_id Post ID.
+	 * @param \WP_Post $post Post object.
+	 * @param bool     $update Whether this is an existing post being updated.
+	 *
+	 * @return void
+	 */
+	public function mark_task_as_complete( $post_id, $post, $update ) {
+		if ( $post instanceof \WP_Post ) {
+			$is_cys_complete = &#039;{&quot;version&quot;: 2, &quot;isGlobalStylesUserThemeJSON&quot;: true }&#039; !== $post-&gt;post_content || in_array( $post-&gt;post_type, array( &#039;wp_template&#039;, &#039;wp_template_part&#039; ), true );
+
+			if ( $is_cys_complete ) {
+				update_option( &#039;woocommerce_admin_customize_store_completed&#039;, &#039;yes&#039; );
+			}
+		}
+	}
+
+	/**
+	 * ID.
+	 *
+	 * @return string
+	 */
+	public function get_id() {
+		return &#039;customize-store&#039;;
+	}
+
+	/**
+	 * Title.
+	 *
+	 * @return string
+	 */
+	public function get_title() {
+		return __( &#039;Customize your store &#039;, &#039;woocommerce&#039; );
+	}
+
+	/**
+	 * Content.
+	 *
+	 * @return string
+	 */
+	public function get_content() {
+		return &#039;&#039;;
+	}
+
+	/**
+	 * Time.
+	 *
+	 * @return string
+	 */
+	public function get_time() {
+		return &#039;&#039;;
+	}
+
+	/**
+	 * Task completion.
+	 *
+	 * @return bool
+	 */
+	public function is_complete() {
+		return get_option( &#039;woocommerce_admin_customize_store_completed&#039; ) === &#039;yes&#039;;
+	}
+
+	/**
+	 * Task visibility.
+	 *
+	 * @return bool
+	 */
+	public function can_view() {
+		return true;
+	}
+
+	/**
+	 * Action URL.
+	 *
+	 * @return string
+	 */
+	public function get_action_url() {
+		return admin_url( &#039;admin.php?page=wc-admin&amp;path=%2Fcustomize-store&#039; );
+	}
+
+
+	/**
+	 * Possibly add site editor scripts.
+	 */
+	public function possibly_add_site_editor_scripts() {
+		// phpcs:disable WordPress.Security.NonceVerification.Recommended
+		$is_wc_admin_page = (
+			isset( $_GET[&#039;page&#039;] ) &amp;&amp;
+			&#039;wc-admin&#039; === $_GET[&#039;page&#039;] &amp;&amp;
+			isset( $_GET[&#039;path&#039;] )
+		);
+
+		$is_assembler_hub     = $is_wc_admin_page &amp;&amp; str_starts_with( wc_clean( wp_unslash( $_GET[&#039;path&#039;] ) ), &#039;/customize-store/assembler-hub&#039; );
+		$is_transitional_page = $is_wc_admin_page &amp;&amp; str_starts_with( wc_clean( wp_unslash( $_GET[&#039;path&#039;] ) ), &#039;/customize-store/transitional&#039; );
+		// phpcs:enable WordPress.Security.NonceVerification.Recommended
+
+		if ( ! ( $is_assembler_hub || $is_transitional_page ) ) {
+			return;
+		}
+
+		// See: https://github.com/WordPress/WordPress/blob/master/wp-admin/site-editor.php.
+		if ( ! wp_is_block_theme() ) {
+			wp_die( esc_html__( &#039;The theme you are currently using is not compatible.&#039;, &#039;woocommerce&#039; ) );
+		}
+		global $editor_styles;
+
+		// Flag that we&#039;re loading the block editor.
+		$current_screen = get_current_screen();
+		$current_screen-&gt;is_block_editor( true );
+
+		// Default to is-fullscreen-mode to avoid jumps in the UI.
+		add_filter(
+			&#039;admin_body_class&#039;,
+			static function ( $classes ) {
+				return &quot;$classes is-fullscreen-mode&quot;;
+			}
+		);
+
+		$block_editor_context   = new \WP_Block_Editor_Context( array( &#039;name&#039; =&gt; &#039;core/edit-site&#039; ) );
+		$indexed_template_types = array();
+		foreach ( get_default_block_template_types() as $slug =&gt; $template_type ) {
+			$template_type[&#039;slug&#039;]    = (string) $slug;
+			$indexed_template_types[] = $template_type;
+		}
+
+		$custom_settings = array(
+			&#039;siteUrl&#039;                   =&gt; site_url(),
+			&#039;postsPerPage&#039;              =&gt; get_option( &#039;posts_per_page&#039; ),
+			&#039;styles&#039;                    =&gt; get_block_editor_theme_styles(),
+			&#039;defaultTemplateTypes&#039;      =&gt; $indexed_template_types,
+			&#039;defaultTemplatePartAreas&#039;  =&gt; get_allowed_block_template_part_areas(),
+			&#039;supportsLayout&#039;            =&gt; wp_theme_has_theme_json(),
+			&#039;supportsTemplatePartsMode&#039; =&gt; ! wp_is_block_theme() &amp;&amp; current_theme_supports( &#039;block-template-parts&#039; ),
+		);
+
+		// Add additional back-compat patterns registered by `current_screen` et al.
+		$custom_settings[&#039;__experimentalAdditionalBlockPatterns&#039;]          = \WP_Block_Patterns_Registry::get_instance()-&gt;get_all_registered( true );
+		$custom_settings[&#039;__experimentalAdditionalBlockPatternCategories&#039;] = \WP_Block_Pattern_Categories_Registry::get_instance()-&gt;get_all_registered( true );
+
+		$editor_settings         = get_block_editor_settings( $custom_settings, $block_editor_context );
+		$active_global_styles_id = \WP_Theme_JSON_Resolver::get_user_global_styles_post_id();
+		$active_theme            = get_stylesheet();
+		$preload_paths           = array(
+			array( &#039;/wp/v2/media&#039;, &#039;OPTIONS&#039; ),
+			&#039;/wp/v2/types?context=view&#039;,
+			&#039;/wp/v2/types/wp_template?context=edit&#039;,
+			&#039;/wp/v2/types/wp_template-part?context=edit&#039;,
+			&#039;/wp/v2/templates?context=edit&amp;per_page=-1&#039;,
+			&#039;/wp/v2/template-parts?context=edit&amp;per_page=-1&#039;,
+			&#039;/wp/v2/themes?context=edit&amp;status=active&#039;,
+			&#039;/wp/v2/global-styles/&#039; . $active_global_styles_id . &#039;?context=edit&#039;,
+			&#039;/wp/v2/global-styles/&#039; . $active_global_styles_id,
+			&#039;/wp/v2/global-styles/themes/&#039; . $active_theme,
+		);
+
+		block_editor_rest_api_preload( $preload_paths, $block_editor_context );
+
+		wp_add_inline_script(
+			&#039;wp-blocks&#039;,
+			sprintf(
+				&#039;window.wcBlockSettings = %s;&#039;,
+				wp_json_encode( $editor_settings )
+			)
+		);
+
+		// Preload server-registered block schemas.
+		wp_add_inline_script(
+			&#039;wp-blocks&#039;,
+			&#039;wp.blocks.unstable__bootstrapServerSideBlockDefinitions(&#039; . wp_json_encode( get_block_editor_server_block_settings() ) . &#039;);&#039;
+		);
+
+		wp_add_inline_script(
+			&#039;wp-blocks&#039;,
+			sprintf( &#039;wp.blocks.setCategories( %s );&#039;, wp_json_encode( isset( $editor_settings[&#039;blockCategories&#039;] ) ? $editor_settings[&#039;blockCategories&#039;] : array() ) ),
+			&#039;after&#039;
+		);
+
+		wp_enqueue_script( &#039;wp-editor&#039; );
+		wp_enqueue_script( &#039;wp-format-library&#039; ); // Not sure if this is needed.
+		wp_enqueue_script( &#039;wp-router&#039; );
+		wp_enqueue_style( &#039;wp-editor&#039; );
+		wp_enqueue_style( &#039;wp-edit-site&#039; );
+		wp_enqueue_style( &#039;wp-format-library&#039; );
+		wp_enqueue_media();
+
+		if (
+				current_theme_supports( &#039;wp-block-styles&#039; ) &amp;&amp;
+				( ! is_array( $editor_styles ) || count( $editor_styles ) === 0 )
+			) {
+			wp_enqueue_style( &#039;wp-block-library-theme&#039; );
+		}
+		/** This action is documented in wp-admin/edit-form-blocks.php
+		 *
+		 * @since 8.0.3
+		*/
+		do_action( &#039;enqueue_block_editor_assets&#039; );
+
+		// Load Jetpack&#039;s block editor assets because they are not enqueued by default.
+		if ( class_exists( &#039;Jetpack_Gutenberg&#039; ) ) {
+			Jetpack_Gutenberg::enqueue_block_editor_assets();
+		}
+	}
+
+	/**
+	 * Appends a small style to hide admin bar
+	 *
+	 * @param bool $show Whether to show the admin bar.
+	 */
+	public function possibly_hide_wp_admin_bar( $show ) {
+		if ( isset( $_GET[&#039;cys-hide-admin-bar&#039;] ) ) { // @phpcs:ignore
+			return false;
+		}
+		return $show;
+	}
+
+	/**
+	 * Runs script and add styles to remove unwanted elements and hide scrollbar
+	 * when users are viewing with ?cys-hide-admin-bar=true.
+	 *
+	 * @return void
+	 */
+	public function possibly_remove_unwanted_ui_elements() {
+		if ( isset( $_GET[&#039;cys-hide-admin-bar&#039;] ) ) { // @phpcs:ignore
+			echo &#039;
+			&lt;style type=&quot;text/css&quot;&gt;
+				body { overflow: hidden; }
+			&lt;/style&gt;&#039;;
+		}
+	}
+}
+</code></pre>
+            </article>
+            </div>
+        </div>
+        <a href="#top" class="phpdocumentor-back-to-top"><i class="fas fa-chevron-circle-up"></i></a>
+
+    </main>
+
+    <footer class="phpdocumentor phpdocumentor-footer">
+    <div class="phpdocumentor-section">
+        <span>WooCommerce Code Reference API documentation generated by <a href="http://www.phpdoc.org/">phpDocumentor</a> on July 25th, 2024 at 11:33 am.</span>
+    </div>
+</footer>
+
+    <script>
+        cssVars({});
+    </script>
+    <script>
+        var searchParams = {
+            'searchIndex': '..\/js\/searchIndex.json'
+        };
+    </script>
+    <script src="../js/searchIndex.js?updated=1721907184"></script>
+    <script src="../js/search.js?updated=1721907184"></script>
+</body>
+</html>

@@ -9,9 +9,9 @@
     <link rel="apple-touch-icon" sizes="72x72" href="../images/apple-touch-icon-72x72.png"/>
     <link rel="apple-touch-icon" sizes="114x114" href="../images/apple-touch-icon-114x114.png"/>
     <link rel="stylesheet" href="../css/normalize.css">
-    <link rel="stylesheet" href="../css/base.css?updated=1692866963">
+    <link rel="stylesheet" href="../css/base.css?updated=1721907191">
     <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../css/template.css?updated=1692866963">
+    <link rel="stylesheet" href="../css/template.css?updated=1721907191">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0/css/all.min.css" integrity="sha256-ybRkN9dBjhcS2qrW1z+hfCxq+1aBdwyQM5wlQoQVt/0=" crossorigin="anonymous" />
             <script src="https://cdn.jsdelivr.net/npm/css-vars-ponyfill@2"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0/js/all.min.js" integrity="sha256-0vuk8LXoyrmCjp1f0O300qo1M75ZQyhH9X3J6d+scmk=" crossorigin="anonymous"></script>
@@ -119,6 +119,7 @@
                         <ul class="phpdocumentor-list">
                                     <li><a href="../packages/Automattic-WooCommerce.html"><abbr title="\Automattic\WooCommerce">WooCommerce</abbr></a></li>
                             </ul>
+                                <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/WooCommerceBlocks.html"><abbr title="\WooCommerceBlocks">WooCommerceBlocks</abbr></a></h3>
                         </section>
     
     <section class="phpdocumentor-sidebar__category">
@@ -256,11 +257,32 @@
 <dd>Save the persistent cart when the cart is updated.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a href="../classes/WC-Cart-Session.html#method_set_cart">set_cart()</a>
+    <span>
+                        &nbsp;: mixed    </span>
+</dt>
+<dd>Sets the cart instance.</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="../classes/WC-Cart-Session.html#method_set_session">set_session()</a>
     <span>
                         &nbsp;: mixed    </span>
 </dt>
 <dd>Sets the php session data for the cart and coupons.</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -private">
+    <a href="../classes/WC-Cart-Session.html#method_dedupe_cookies">dedupe_cookies()</a>
+    <span>
+                        &nbsp;: mixed    </span>
+</dt>
+<dd>Remove duplicate cookies from the response.</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -private">
+    <a href="../classes/WC-Cart-Session.html#method_find_cookie_by_name">find_cookie_by_name()</a>
+    <span>
+                        &nbsp;: mixed    </span>
+</dt>
+<dd>Find a cookie by name in an array of cookies.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -private">
     <a href="../classes/WC-Cart-Session.html#method_get_saved_cart">get_saved_cart()</a>
@@ -368,7 +390,7 @@
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                <span class="phpdocumentor-signature__name">__construct</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type"><a href="../classes/WC-Cart.html"><abbr title="\WC_Cart">WC_Cart</abbr></a>&nbsp;</span><span class="phpdocumentor-signature__argument__reference-operator">&amp;</span><span class="phpdocumentor-signature__argument__name">$cart</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
+                <span class="phpdocumentor-signature__name">__construct</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type"><a href="../classes/WC-Cart.html"><abbr title="\WC_Cart">WC_Cart</abbr></a>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$cart</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
 
         <section class="phpdocumentor-description"></section>
 
@@ -426,9 +448,9 @@
         <a href="#method_destroy_cart_session" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-cart-session.php"><a href="../files/woocommerce-includes-class-wc-cart-session.html#source-view.231">includes/class-wc-cart-session.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-cart-session.php"><a href="../files/woocommerce-includes-class-wc-cart-session.html#source-view.242">includes/class-wc-cart-session.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">231</span>
+    <span class="phpdocumentor-element-found-in__line">242</span>
 </aside>
 
         <p class="phpdocumentor-summary">Destroy cart session data.</p>
@@ -472,9 +494,9 @@
         <a href="#method_get_cart_for_session" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-cart-session.php"><a href="../files/woocommerce-includes-class-wc-cart-session.html#source-view.275">includes/class-wc-cart-session.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-cart-session.php"><a href="../files/woocommerce-includes-class-wc-cart-session.html#source-view.342">includes/class-wc-cart-session.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">275</span>
+    <span class="phpdocumentor-element-found-in__line">342</span>
 </aside>
 
         <p class="phpdocumentor-summary">Returns the contents of the cart in an array without the &#039;data&#039; element.</p>
@@ -504,9 +526,9 @@
         <a href="#method_get_cart_from_session" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-cart-session.php"><a href="../files/woocommerce-includes-class-wc-cart-session.html#source-view.84">includes/class-wc-cart-session.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-cart-session.php"><a href="../files/woocommerce-includes-class-wc-cart-session.html#source-view.94">includes/class-wc-cart-session.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">84</span>
+    <span class="phpdocumentor-element-found-in__line">94</span>
 </aside>
 
         <p class="phpdocumentor-summary">Get the cart data from the PHP session and store it in class variables.</p>
@@ -550,9 +572,9 @@
         <a href="#method_init" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-cart-session.php"><a href="../files/woocommerce-includes-class-wc-cart-session.html#source-view.47">includes/class-wc-cart-session.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-cart-session.php"><a href="../files/woocommerce-includes-class-wc-cart-session.html#source-view.57">includes/class-wc-cart-session.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">47</span>
+    <span class="phpdocumentor-element-found-in__line">57</span>
 </aside>
 
         <p class="phpdocumentor-summary">Register methods for this object on the appropriate WordPress hooks.</p>
@@ -582,9 +604,9 @@
         <a href="#method_maybe_set_cart_cookies" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-cart-session.php"><a href="../files/woocommerce-includes-class-wc-cart-session.html#source-view.246">includes/class-wc-cart-session.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-cart-session.php"><a href="../files/woocommerce-includes-class-wc-cart-session.html#source-view.259">includes/class-wc-cart-session.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">246</span>
+    <span class="phpdocumentor-element-found-in__line">259</span>
 </aside>
 
         <p class="phpdocumentor-summary">Will set cart cookies if needed and when possible.</p>
@@ -593,7 +615,8 @@
     <span class="phpdocumentor-signature__visibility">public</span>
                 <span class="phpdocumentor-signature__name">maybe_set_cart_cookies</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
 
-        <section class="phpdocumentor-description"></section>
+        <section class="phpdocumentor-description"><p>Headers are only updated if headers have not yet been sent.</p>
+</section>
 
     
     
@@ -628,9 +651,9 @@
         <a href="#method_persistent_cart_destroy" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-cart-session.php"><a href="../files/woocommerce-includes-class-wc-cart-session.html#source-view.304">includes/class-wc-cart-session.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-cart-session.php"><a href="../files/woocommerce-includes-class-wc-cart-session.html#source-view.371">includes/class-wc-cart-session.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">304</span>
+    <span class="phpdocumentor-element-found-in__line">371</span>
 </aside>
 
         <p class="phpdocumentor-summary">Delete the persistent cart permanently.</p>
@@ -660,9 +683,9 @@
         <a href="#method_persistent_cart_update" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-cart-session.php"><a href="../files/woocommerce-includes-class-wc-cart-session.html#source-view.289">includes/class-wc-cart-session.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-cart-session.php"><a href="../files/woocommerce-includes-class-wc-cart-session.html#source-view.356">includes/class-wc-cart-session.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">289</span>
+    <span class="phpdocumentor-element-found-in__line">356</span>
 </aside>
 
         <p class="phpdocumentor-summary">Save the persistent cart when the cart is updated.</p>
@@ -687,14 +710,58 @@
             -public
                                                         "
 >
+    <h4 class="phpdocumentor-element__name" id="method_set_cart">
+        set_cart()
+        <a href="#method_set_cart" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-cart-session.php"><a href="../files/woocommerce-includes-class-wc-cart-session.html#source-view.49">includes/class-wc-cart-session.php</a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">49</span>
+</aside>
+
+        <p class="phpdocumentor-summary">Sets the cart instance.</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                <span class="phpdocumentor-signature__name">set_cart</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type"><a href="../classes/WC-Cart.html"><abbr title="\WC_Cart">WC_Cart</abbr></a>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$cart</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
+
+        <section class="phpdocumentor-description"></section>
+
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$cart</span>
+                : <span class="phpdocumentor-signature__argument__return-type"><a href="../classes/WC-Cart.html"><abbr title="\WC_Cart">WC_Cart</abbr></a></span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"><p>Cart object.</p>
+</section>
+
+            </dd>
+            </dl>
+
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">mixed</span>
+            &mdash; <span class="phpdocumentor-return-value__description"></span>
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                                        "
+>
     <h4 class="phpdocumentor-element__name" id="method_set_session">
         set_session()
         <a href="#method_set_session" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-cart-session.php"><a href="../files/woocommerce-includes-class-wc-cart-session.html#source-view.259">includes/class-wc-cart-session.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-cart-session.php"><a href="../files/woocommerce-includes-class-wc-cart-session.html#source-view.326">includes/class-wc-cart-session.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">259</span>
+    <span class="phpdocumentor-element-found-in__line">326</span>
 </aside>
 
         <p class="phpdocumentor-summary">Sets the php session data for the cart and coupons.</p>
@@ -719,14 +786,99 @@
             -private
                                                         "
 >
+    <h4 class="phpdocumentor-element__name" id="method_dedupe_cookies">
+        dedupe_cookies()
+        <a href="#method_dedupe_cookies" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-cart-session.php"><a href="../files/woocommerce-includes-class-wc-cart-session.html#source-view.274">includes/class-wc-cart-session.php</a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">274</span>
+</aside>
+
+        <p class="phpdocumentor-summary">Remove duplicate cookies from the response.</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">private</span>
+                <span class="phpdocumentor-signature__name">dedupe_cookies</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
+
+        <section class="phpdocumentor-description"></section>
+
+    
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">mixed</span>
+            &mdash; <span class="phpdocumentor-return-value__description"></span>
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -private
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_find_cookie_by_name">
+        find_cookie_by_name()
+        <a href="#method_find_cookie_by_name" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-cart-session.php"><a href="../files/woocommerce-includes-class-wc-cart-session.html#source-view.314">includes/class-wc-cart-session.php</a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">314</span>
+</aside>
+
+        <p class="phpdocumentor-summary">Find a cookie by name in an array of cookies.</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">private</span>
+                <span class="phpdocumentor-signature__name">find_cookie_by_name</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$cookie_name</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__name">$cookies</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
+
+        <section class="phpdocumentor-description"></section>
+
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$cookie_name</span>
+                : <span class="phpdocumentor-signature__argument__return-type">string</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"><p>Name of the cookie to find.</p>
+</section>
+
+            </dd>
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$cookies</span>
+                : <span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"><p>Array of cookies to search.</p>
+</section>
+
+            </dd>
+            </dl>
+
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">mixed</span>
+            &mdash; <span class="phpdocumentor-return-value__description">Key of the cookie if found, false if not.</span>
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -private
+                                                        "
+>
     <h4 class="phpdocumentor-element__name" id="method_get_saved_cart">
         get_saved_cart()
         <a href="#method_get_saved_cart" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-cart-session.php"><a href="../files/woocommerce-includes-class-wc-cart-session.html#source-view.348">includes/class-wc-cart-session.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-cart-session.php"><a href="../files/woocommerce-includes-class-wc-cart-session.html#source-view.416">includes/class-wc-cart-session.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">348</span>
+    <span class="phpdocumentor-element-found-in__line">416</span>
 </aside>
 
         <p class="phpdocumentor-summary">Get the persistent cart from the database.</p>
@@ -770,9 +922,9 @@
         <a href="#method_populate_cart_from_order" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-cart-session.php"><a href="../files/woocommerce-includes-class-wc-cart-session.html#source-view.372">includes/class-wc-cart-session.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-cart-session.php"><a href="../files/woocommerce-includes-class-wc-cart-session.html#source-view.440">includes/class-wc-cart-session.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">372</span>
+    <span class="phpdocumentor-element-found-in__line">440</span>
 </aside>
 
         <p class="phpdocumentor-summary">Get a cart from an order, if user has permission.</p>
@@ -837,9 +989,9 @@
         <a href="#method_set_cart_cookies" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-cart-session.php"><a href="../files/woocommerce-includes-class-wc-cart-session.html#source-view.315">includes/class-wc-cart-session.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-cart-session.php"><a href="../files/woocommerce-includes-class-wc-cart-session.html#source-view.382">includes/class-wc-cart-session.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">315</span>
+    <span class="phpdocumentor-element-found-in__line">382</span>
 </aside>
 
         <p class="phpdocumentor-summary">Set cart hash cookie and items in cart if not already set.</p>
@@ -881,7 +1033,7 @@
 
     <footer class="phpdocumentor phpdocumentor-footer">
     <div class="phpdocumentor-section">
-        <span>WooCommerce Code Reference API documentation generated by <a href="http://www.phpdoc.org/">phpDocumentor</a> on August 24th, 2023 at 08:49 am.</span>
+        <span>WooCommerce Code Reference API documentation generated by <a href="http://www.phpdoc.org/">phpDocumentor</a> on July 25th, 2024 at 11:33 am.</span>
     </div>
 </footer>
 
@@ -893,7 +1045,7 @@
             'searchIndex': '..\/js\/searchIndex.json'
         };
     </script>
-    <script src="../js/searchIndex.js?updated=1692866963"></script>
-    <script src="../js/search.js?updated=1692866963"></script>
+    <script src="../js/searchIndex.js?updated=1721907191"></script>
+    <script src="../js/search.js?updated=1721907191"></script>
 </body>
 </html>

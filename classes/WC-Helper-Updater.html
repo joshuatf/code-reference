@@ -9,9 +9,9 @@
     <link rel="apple-touch-icon" sizes="72x72" href="../images/apple-touch-icon-72x72.png"/>
     <link rel="apple-touch-icon" sizes="114x114" href="../images/apple-touch-icon-114x114.png"/>
     <link rel="stylesheet" href="../css/normalize.css">
-    <link rel="stylesheet" href="../css/base.css?updated=1692866961">
+    <link rel="stylesheet" href="../css/base.css?updated=1721907190">
     <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../css/template.css?updated=1692866961">
+    <link rel="stylesheet" href="../css/template.css?updated=1721907190">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0/css/all.min.css" integrity="sha256-ybRkN9dBjhcS2qrW1z+hfCxq+1aBdwyQM5wlQoQVt/0=" crossorigin="anonymous" />
             <script src="https://cdn.jsdelivr.net/npm/css-vars-ponyfill@2"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0/js/all.min.js" integrity="sha256-0vuk8LXoyrmCjp1f0O300qo1M75ZQyhH9X3J6d+scmk=" crossorigin="anonymous"></script>
@@ -119,6 +119,7 @@
                         <ul class="phpdocumentor-list">
                                     <li><a href="../packages/Automattic-WooCommerce.html"><abbr title="\Automattic\WooCommerce">WooCommerce</abbr></a></li>
                             </ul>
+                                <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/WooCommerceBlocks.html"><abbr title="\WooCommerceBlocks">WooCommerceBlocks</abbr></a></h3>
                         </section>
     
     <section class="phpdocumentor-sidebar__category">
@@ -182,6 +183,28 @@ routines to serve WooCommerce.com-provided packages.</p>
 
 <dl class="phpdocumentor-table-of-contents">
                     <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a href="../classes/WC-Helper-Updater.html#method_add_connect_woocom_plugin_message">add_connect_woocom_plugin_message()</a>
+    <span>
+                        &nbsp;: void    </span>
+</dt>
+<dd>Runs on in_plugin_update_message-{file-name}, show a message to connect to woocommerce.com for unconnected stores</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a href="../classes/WC-Helper-Updater.html#method_add_hook_for_modifying_update_notices">add_hook_for_modifying_update_notices()</a>
+    <span>
+                        &nbsp;: mixed    </span>
+</dt>
+<dd>Add the hook for modifying default WPCore update notices on the plugins management page.</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a href="../classes/WC-Helper-Updater.html#method_add_install_marketplace_plugin_message">add_install_marketplace_plugin_message()</a>
+    <span>
+                        &nbsp;: void    </span>
+</dt>
+<dd>Runs on in_plugin_update_message-{file-name}, show a message to install the Woo Marketplace plugin, on plugin update notification,
+if the Woo Marketplace plugin isn&#039;t already installed.</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="../classes/WC-Helper-Updater.html#method_block_expired_updates">block_expired_updates()</a>
     <span>
                         &nbsp;: false|<abbr title="\WP_Error">WP_Error</abbr>    </span>
@@ -189,6 +212,13 @@ routines to serve WooCommerce.com-provided packages.</p>
 <dd>Hooked into the upgrader_pre_download filter in order to better handle error messaging around expired
 plugin updates. Initially we were using an empty string, but the error message that no_package
 results in does not fit the cause.</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a href="../classes/WC-Helper-Updater.html#method_display_notice_for_expired_and_expiring_subscriptions">display_notice_for_expired_and_expiring_subscriptions()</a>
+    <span>
+                        &nbsp;: void    </span>
+</dt>
+<dd>Runs on in_plugin_update_message-{file-name}, show a message if plugins subscription expired or expiring soon.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="../classes/WC-Helper-Updater.html#method_flush_updates_cache">flush_updates_cache()</a>
@@ -226,6 +256,13 @@ results in does not fit the cause.</dd>
 <dd>Get the number of products that have updates.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a href="../classes/WC-Helper-Updater.html#method_get_updates_count_based_on_site_status">get_updates_count_based_on_site_status()</a>
+    <span>
+                        &nbsp;: int    </span>
+</dt>
+<dd>Get the update count to based on the status of the site.</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="../classes/WC-Helper-Updater.html#method_get_updates_count_html">get_updates_count_html()</a>
     <span>
                         &nbsp;: string    </span>
@@ -233,11 +270,32 @@ results in does not fit the cause.</dd>
 <dd>Return the updates count markup.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a href="../classes/WC-Helper-Updater.html#method_get_woo_connect_notice_type">get_woo_connect_notice_type()</a>
+    <span>
+                        &nbsp;: string    </span>
+</dt>
+<dd>Get the type of woo connect notice to be shown in the WC Settings and Marketplace pages.</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="../classes/WC-Helper-Updater.html#method_load">load()</a>
     <span>
                         &nbsp;: mixed    </span>
 </dt>
 <dd>Loads the class, runs on init.</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a href="../classes/WC-Helper-Updater.html#method_setup_message_for_expired_and_expiring_subscriptions">setup_message_for_expired_and_expiring_subscriptions()</a>
+    <span>
+                        &nbsp;: mixed    </span>
+</dt>
+<dd>Add the hook for modifying default WPCore update notices on the plugins management page.</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a href="../classes/WC-Helper-Updater.html#method_setup_update_plugins_messages">setup_update_plugins_messages()</a>
+    <span>
+                        &nbsp;: void    </span>
+</dt>
+<dd>Runs on load-plugins.php, adds a hook to show a custom plugin update message for WooCommerce.com hosted plugins.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="../classes/WC-Helper-Updater.html#method_transient_update_plugins">transient_update_plugins()</a>
@@ -261,13 +319,6 @@ packages for WooCommerce.com-hosted extensions.</dd>
                         &nbsp;: mixed    </span>
 </dt>
 <dd>Fires when a user successfully updated a theme or a plugin.</dd>
-
-            <dt class="phpdocumentor-table-of-contents__entry -method -private">
-    <a href="../classes/WC-Helper-Updater.html#method__has_active_subscription">_has_active_subscription()</a>
-    <span>
-                        &nbsp;: bool    </span>
-</dt>
-<dd>Check for an active subscription.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -private">
     <a href="../classes/WC-Helper-Updater.html#method__update_check">_update_check()</a>
@@ -295,14 +346,132 @@ packages for WooCommerce.com-hosted extensions.</dd>
             -public
                                     -static                    "
 >
+    <h4 class="phpdocumentor-element__name" id="method_add_connect_woocom_plugin_message">
+        add_connect_woocom_plugin_message()
+        <a href="#method_add_connect_woocom_plugin_message" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/admin/helper/class-wc-helper-updater.php"><a href="../files/woocommerce-includes-admin-helper-class-wc-helper-updater.html#source-view.186">includes/admin/helper/class-wc-helper-updater.php</a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">186</span>
+</aside>
+
+        <p class="phpdocumentor-summary">Runs on in_plugin_update_message-{file-name}, show a message to connect to woocommerce.com for unconnected stores</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+            <span class="phpdocumentor-signature__static">static</span>    <span class="phpdocumentor-signature__name">add_connect_woocom_plugin_message</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">void</span></code>
+
+        <section class="phpdocumentor-description"></section>
+
+    
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">void</span>
+            &mdash; <span class="phpdocumentor-return-value__description"></span>
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                    -static                    "
+>
+    <h4 class="phpdocumentor-element__name" id="method_add_hook_for_modifying_update_notices">
+        add_hook_for_modifying_update_notices()
+        <a href="#method_add_hook_for_modifying_update_notices" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/admin/helper/class-wc-helper-updater.php"><a href="../files/woocommerce-includes-admin-helper-class-wc-helper-updater.html#source-view.35">includes/admin/helper/class-wc-helper-updater.php</a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">35</span>
+</aside>
+
+        <p class="phpdocumentor-summary">Add the hook for modifying default WPCore update notices on the plugins management page.</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+            <span class="phpdocumentor-signature__static">static</span>    <span class="phpdocumentor-signature__name">add_hook_for_modifying_update_notices</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
+
+        <section class="phpdocumentor-description"></section>
+
+    
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">mixed</span>
+            &mdash; <span class="phpdocumentor-return-value__description"></span>
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                    -static                    "
+>
+    <h4 class="phpdocumentor-element__name" id="method_add_install_marketplace_plugin_message">
+        add_install_marketplace_plugin_message()
+        <a href="#method_add_install_marketplace_plugin_message" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/admin/helper/class-wc-helper-updater.php"><a href="../files/woocommerce-includes-admin-helper-class-wc-helper-updater.html#source-view.220">includes/admin/helper/class-wc-helper-updater.php</a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">220</span>
+</aside>
+
+        <p class="phpdocumentor-summary">Runs on in_plugin_update_message-{file-name}, show a message to install the Woo Marketplace plugin, on plugin update notification,
+if the Woo Marketplace plugin isn&#039;t already installed.</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+            <span class="phpdocumentor-signature__static">static</span>    <span class="phpdocumentor-signature__name">add_install_marketplace_plugin_message</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">object&nbsp;</span><span class="phpdocumentor-signature__argument__name">$plugin_data</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">object&nbsp;</span><span class="phpdocumentor-signature__argument__name">$response</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">void</span></code>
+
+        <section class="phpdocumentor-description"></section>
+
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$plugin_data</span>
+                : <span class="phpdocumentor-signature__argument__return-type">object</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"><p>TAn array of plugin metadata.</p>
+</section>
+
+            </dd>
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$response</span>
+                : <span class="phpdocumentor-signature__argument__return-type">object</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"><p>An object of metadata about the available plugin update.</p>
+</section>
+
+            </dd>
+            </dl>
+
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">void</span>
+            &mdash; <span class="phpdocumentor-return-value__description"></span>
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                    -static                    "
+>
     <h4 class="phpdocumentor-element__name" id="method_block_expired_updates">
         block_expired_updates()
         <a href="#method_block_expired_updates" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/admin/helper/class-wc-helper-updater.php"><a href="../files/woocommerce-includes-admin-helper-class-wc-helper-updater.html#source-view.501">includes/admin/helper/class-wc-helper-updater.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/admin/helper/class-wc-helper-updater.php"><a href="../files/woocommerce-includes-admin-helper-class-wc-helper-updater.html#source-view.715">includes/admin/helper/class-wc-helper-updater.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">501</span>
+    <span class="phpdocumentor-element-found-in__line">715</span>
 </aside>
 
         <p class="phpdocumentor-summary">Hooked into the upgrader_pre_download filter in order to better handle error messaging around expired
@@ -364,14 +533,67 @@ results in does not fit the cause.</p>
             -public
                                     -static                    "
 >
+    <h4 class="phpdocumentor-element__name" id="method_display_notice_for_expired_and_expiring_subscriptions">
+        display_notice_for_expired_and_expiring_subscriptions()
+        <a href="#method_display_notice_for_expired_and_expiring_subscriptions" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/admin/helper/class-wc-helper-updater.php"><a href="../files/woocommerce-includes-admin-helper-class-wc-helper-updater.html#source-view.254">includes/admin/helper/class-wc-helper-updater.php</a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">254</span>
+</aside>
+
+        <p class="phpdocumentor-summary">Runs on in_plugin_update_message-{file-name}, show a message if plugins subscription expired or expiring soon.</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+            <span class="phpdocumentor-signature__static">static</span>    <span class="phpdocumentor-signature__name">display_notice_for_expired_and_expiring_subscriptions</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">object&nbsp;</span><span class="phpdocumentor-signature__argument__name">$plugin_data</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">object&nbsp;</span><span class="phpdocumentor-signature__argument__name">$response</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">void</span></code>
+
+        <section class="phpdocumentor-description"></section>
+
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$plugin_data</span>
+                : <span class="phpdocumentor-signature__argument__return-type">object</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"><p>An array of plugin metadata.</p>
+</section>
+
+            </dd>
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$response</span>
+                : <span class="phpdocumentor-signature__argument__return-type">object</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"><p>An object of metadata about the available plugin update.</p>
+</section>
+
+            </dd>
+            </dl>
+
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">void</span>
+            &mdash; <span class="phpdocumentor-return-value__description"></span>
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                    -static                    "
+>
     <h4 class="phpdocumentor-element__name" id="method_flush_updates_cache">
         flush_updates_cache()
         <a href="#method_flush_updates_cache" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/admin/helper/class-wc-helper-updater.php"><a href="../files/woocommerce-includes-admin-helper-class-wc-helper-updater.html#source-view.477">includes/admin/helper/class-wc-helper-updater.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/admin/helper/class-wc-helper-updater.php"><a href="../files/woocommerce-includes-admin-helper-class-wc-helper-updater.html#source-view.691">includes/admin/helper/class-wc-helper-updater.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">477</span>
+    <span class="phpdocumentor-element-found-in__line">691</span>
 </aside>
 
         <p class="phpdocumentor-summary">Flushes cached update data.</p>
@@ -401,9 +623,9 @@ results in does not fit the cause.</p>
         <a href="#method_get_available_extensions_downloads_data" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/admin/helper/class-wc-helper-updater.php"><a href="../files/woocommerce-includes-admin-helper-class-wc-helper-updater.html#source-view.133">includes/admin/helper/class-wc-helper-updater.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/admin/helper/class-wc-helper-updater.php"><a href="../files/woocommerce-includes-admin-helper-class-wc-helper-updater.html#source-view.313">includes/admin/helper/class-wc-helper-updater.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">133</span>
+    <span class="phpdocumentor-element-found-in__line">313</span>
 </aside>
 
         <p class="phpdocumentor-summary">Get update data for all plugins.</p>
@@ -447,9 +669,9 @@ results in does not fit the cause.</p>
         <a href="#method_get_translations_update_data" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/admin/helper/class-wc-helper-updater.php"><a href="../files/woocommerce-includes-admin-helper-class-wc-helper-updater.html#source-view.212">includes/admin/helper/class-wc-helper-updater.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/admin/helper/class-wc-helper-updater.php"><a href="../files/woocommerce-includes-admin-helper-class-wc-helper-updater.html#source-view.392">includes/admin/helper/class-wc-helper-updater.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">212</span>
+    <span class="phpdocumentor-element-found-in__line">392</span>
 </aside>
 
         <p class="phpdocumentor-summary">Get translations updates information.</p>
@@ -482,9 +704,9 @@ data for each product.</p>
         <a href="#method_get_update_data" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/admin/helper/class-wc-helper-updater.php"><a href="../files/woocommerce-includes-admin-helper-class-wc-helper-updater.html#source-view.167">includes/admin/helper/class-wc-helper-updater.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/admin/helper/class-wc-helper-updater.php"><a href="../files/woocommerce-includes-admin-helper-class-wc-helper-updater.html#source-view.347">includes/admin/helper/class-wc-helper-updater.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">167</span>
+    <span class="phpdocumentor-element-found-in__line">347</span>
 </aside>
 
         <p class="phpdocumentor-summary">Get update data for all extensions.</p>
@@ -517,9 +739,9 @@ data for each product.</p>
         <a href="#method_get_updates_count" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/admin/helper/class-wc-helper-updater.php"><a href="../files/woocommerce-includes-admin-helper-class-wc-helper-updater.html#source-view.409">includes/admin/helper/class-wc-helper-updater.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/admin/helper/class-wc-helper-updater.php"><a href="../files/woocommerce-includes-admin-helper-class-wc-helper-updater.html#source-view.568">includes/admin/helper/class-wc-helper-updater.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">409</span>
+    <span class="phpdocumentor-element-found-in__line">568</span>
 </aside>
 
         <p class="phpdocumentor-summary">Get the number of products that have updates.</p>
@@ -544,14 +766,46 @@ data for each product.</p>
             -public
                                     -static                    "
 >
+    <h4 class="phpdocumentor-element__name" id="method_get_updates_count_based_on_site_status">
+        get_updates_count_based_on_site_status()
+        <a href="#method_get_updates_count_based_on_site_status" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/admin/helper/class-wc-helper-updater.php"><a href="../files/woocommerce-includes-admin-helper-class-wc-helper-updater.html#source-view.624">includes/admin/helper/class-wc-helper-updater.php</a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">624</span>
+</aside>
+
+        <p class="phpdocumentor-summary">Get the update count to based on the status of the site.</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+            <span class="phpdocumentor-signature__static">static</span>    <span class="phpdocumentor-signature__name">get_updates_count_based_on_site_status</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">int</span></code>
+
+        <section class="phpdocumentor-description"></section>
+
+    
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">int</span>
+            &mdash; <span class="phpdocumentor-return-value__description"></span>
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                    -static                    "
+>
     <h4 class="phpdocumentor-element__name" id="method_get_updates_count_html">
         get_updates_count_html()
         <a href="#method_get_updates_count_html" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/admin/helper/class-wc-helper-updater.php"><a href="../files/woocommerce-includes-admin-helper-class-wc-helper-updater.html#source-view.464">includes/admin/helper/class-wc-helper-updater.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/admin/helper/class-wc-helper-updater.php"><a href="../files/woocommerce-includes-admin-helper-class-wc-helper-updater.html#source-view.681">includes/admin/helper/class-wc-helper-updater.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">464</span>
+    <span class="phpdocumentor-element-found-in__line">681</span>
 </aside>
 
         <p class="phpdocumentor-summary">Return the updates count markup.</p>
@@ -568,6 +822,43 @@ data for each product.</p>
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
     <span class="phpdocumentor-signature__response_type">string</span>
             &mdash; <span class="phpdocumentor-return-value__description">Updates count markup, empty string if no updates avairable.</span>
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                    -static                    "
+>
+    <h4 class="phpdocumentor-element__name" id="method_get_woo_connect_notice_type">
+        get_woo_connect_notice_type()
+        <a href="#method_get_woo_connect_notice_type" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/admin/helper/class-wc-helper-updater.php"><a href="../files/woocommerce-includes-admin-helper-class-wc-helper-updater.html#source-view.645">includes/admin/helper/class-wc-helper-updater.php</a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">645</span>
+</aside>
+
+        <p class="phpdocumentor-summary">Get the type of woo connect notice to be shown in the WC Settings and Marketplace pages.</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+            <span class="phpdocumentor-signature__static">static</span>    <span class="phpdocumentor-signature__name">get_woo_connect_notice_type</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">string</span></code>
+
+        <section class="phpdocumentor-description"><ul>
+<li>If a store is connected to woocommerce.com or has no installed woo plugins, return 'none'.</li>
+<li>If a store has installed woo plugins but no updates, return 'short'.</li>
+<li>If a store has an installed woo plugin with update, return 'long'.</li>
+</ul>
+</section>
+
+    
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">string</span>
+            &mdash; <span class="phpdocumentor-return-value__description">The notice type, &#039;none&#039;, &#039;short&#039;, or &#039;long&#039;.</span>
     
 </article>
                     <article
@@ -608,14 +899,78 @@ data for each product.</p>
             -public
                                     -static                    "
 >
+    <h4 class="phpdocumentor-element__name" id="method_setup_message_for_expired_and_expiring_subscriptions">
+        setup_message_for_expired_and_expiring_subscriptions()
+        <a href="#method_setup_message_for_expired_and_expiring_subscriptions" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/admin/helper/class-wc-helper-updater.php"><a href="../files/woocommerce-includes-admin-helper-class-wc-helper-updater.html#source-view.47">includes/admin/helper/class-wc-helper-updater.php</a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">47</span>
+</aside>
+
+        <p class="phpdocumentor-summary">Add the hook for modifying default WPCore update notices on the plugins management page.</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+            <span class="phpdocumentor-signature__static">static</span>    <span class="phpdocumentor-signature__name">setup_message_for_expired_and_expiring_subscriptions</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
+
+        <section class="phpdocumentor-description"></section>
+
+    
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">mixed</span>
+            &mdash; <span class="phpdocumentor-return-value__description"></span>
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                    -static                    "
+>
+    <h4 class="phpdocumentor-element__name" id="method_setup_update_plugins_messages">
+        setup_update_plugins_messages()
+        <a href="#method_setup_update_plugins_messages" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/admin/helper/class-wc-helper-updater.php"><a href="../files/woocommerce-includes-admin-helper-class-wc-helper-updater.html#source-view.169">includes/admin/helper/class-wc-helper-updater.php</a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">169</span>
+</aside>
+
+        <p class="phpdocumentor-summary">Runs on load-plugins.php, adds a hook to show a custom plugin update message for WooCommerce.com hosted plugins.</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+            <span class="phpdocumentor-signature__static">static</span>    <span class="phpdocumentor-signature__name">setup_update_plugins_messages</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">void</span></code>
+
+        <section class="phpdocumentor-description"></section>
+
+    
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">void</span>
+            &mdash; <span class="phpdocumentor-return-value__description"></span>
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                    -static                    "
+>
     <h4 class="phpdocumentor-element__name" id="method_transient_update_plugins">
         transient_update_plugins()
         <a href="#method_transient_update_plugins" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/admin/helper/class-wc-helper-updater.php"><a href="../files/woocommerce-includes-admin-helper-class-wc-helper-updater.html#source-view.39">includes/admin/helper/class-wc-helper-updater.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/admin/helper/class-wc-helper-updater.php"><a href="../files/woocommerce-includes-admin-helper-class-wc-helper-updater.html#source-view.61">includes/admin/helper/class-wc-helper-updater.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">39</span>
+    <span class="phpdocumentor-element-found-in__line">61</span>
 </aside>
 
         <p class="phpdocumentor-summary">Runs in a cron thread, or in a visitor thread if triggered
@@ -658,9 +1013,9 @@ by _maybe_update_plugins(), or in an auto-update thread.</p>
         <a href="#method_transient_update_themes" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/admin/helper/class-wc-helper-updater.php"><a href="../files/woocommerce-includes-admin-helper-class-wc-helper-updater.html#source-view.94">includes/admin/helper/class-wc-helper-updater.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/admin/helper/class-wc-helper-updater.php"><a href="../files/woocommerce-includes-admin-helper-class-wc-helper-updater.html#source-view.124">includes/admin/helper/class-wc-helper-updater.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">94</span>
+    <span class="phpdocumentor-element-found-in__line">124</span>
 </aside>
 
         <p class="phpdocumentor-summary">Runs on pre_set_site_transient_update_themes, provides custom
@@ -703,9 +1058,9 @@ packages for WooCommerce.com-hosted extensions.</p>
         <a href="#method_upgrader_process_complete" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/admin/helper/class-wc-helper-updater.php"><a href="../files/woocommerce-includes-admin-helper-class-wc-helper-updater.html#source-view.487">includes/admin/helper/class-wc-helper-updater.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/admin/helper/class-wc-helper-updater.php"><a href="../files/woocommerce-includes-admin-helper-class-wc-helper-updater.html#source-view.701">includes/admin/helper/class-wc-helper-updater.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">487</span>
+    <span class="phpdocumentor-element-found-in__line">701</span>
 </aside>
 
         <p class="phpdocumentor-summary">Fires when a user successfully updated a theme or a plugin.</p>
@@ -730,61 +1085,14 @@ packages for WooCommerce.com-hosted extensions.</p>
             -private
                                     -static                    "
 >
-    <h4 class="phpdocumentor-element__name" id="method__has_active_subscription">
-        _has_active_subscription()
-        <a href="#method__has_active_subscription" class="headerlink"><i class="fas fa-link"></i></a>
-    </h4>
-    <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/admin/helper/class-wc-helper-updater.php"><a href="../files/woocommerce-includes-admin-helper-class-wc-helper-updater.html#source-view.377">includes/admin/helper/class-wc-helper-updater.php</a></abbr>
-    :
-    <span class="phpdocumentor-element-found-in__line">377</span>
-</aside>
-
-        <p class="phpdocumentor-summary">Check for an active subscription.</p>
-
-    <code class="phpdocumentor-code phpdocumentor-signature ">
-    <span class="phpdocumentor-signature__visibility">private</span>
-            <span class="phpdocumentor-signature__static">static</span>    <span class="phpdocumentor-signature__name">_has_active_subscription</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">int&nbsp;</span><span class="phpdocumentor-signature__argument__name">$product_id</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">bool</span></code>
-
-        <section class="phpdocumentor-description"><p>Checks a given product id against all subscriptions on
-the current site. Returns true if at least one active
-subscription is found.</p>
-</section>
-
-        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
-    <dl class="phpdocumentor-argument-list">
-                    <dt class="phpdocumentor-argument-list__entry">
-                <span class="phpdocumentor-signature__argument__name">$product_id</span>
-                : <span class="phpdocumentor-signature__argument__return-type">int</span>
-                            </dt>
-            <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"><p>The product id to look for.</p>
-</section>
-
-            </dd>
-            </dl>
-
-    
-
-        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">bool</span>
-            &mdash; <span class="phpdocumentor-return-value__description">True if active subscription found.</span>
-    
-</article>
-                    <article
-        class="phpdocumentor-element
-            -method
-            -private
-                                    -static                    "
->
     <h4 class="phpdocumentor-element__name" id="method__update_check">
         _update_check()
         <a href="#method__update_check" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/admin/helper/class-wc-helper-updater.php"><a href="../files/woocommerce-includes-admin-helper-class-wc-helper-updater.html#source-view.329">includes/admin/helper/class-wc-helper-updater.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/admin/helper/class-wc-helper-updater.php"><a href="../files/woocommerce-includes-admin-helper-class-wc-helper-updater.html#source-view.514">includes/admin/helper/class-wc-helper-updater.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">329</span>
+    <span class="phpdocumentor-element-found-in__line">514</span>
 </aside>
 
         <p class="phpdocumentor-summary">Run an update check API call.</p>
@@ -828,7 +1136,7 @@ the payload changes, the cache is going to miss.</p>
 
     <footer class="phpdocumentor phpdocumentor-footer">
     <div class="phpdocumentor-section">
-        <span>WooCommerce Code Reference API documentation generated by <a href="http://www.phpdoc.org/">phpDocumentor</a> on August 24th, 2023 at 08:49 am.</span>
+        <span>WooCommerce Code Reference API documentation generated by <a href="http://www.phpdoc.org/">phpDocumentor</a> on July 25th, 2024 at 11:33 am.</span>
     </div>
 </footer>
 
@@ -840,7 +1148,7 @@ the payload changes, the cache is going to miss.</p>
             'searchIndex': '..\/js\/searchIndex.json'
         };
     </script>
-    <script src="../js/searchIndex.js?updated=1692866961"></script>
-    <script src="../js/search.js?updated=1692866961"></script>
+    <script src="../js/searchIndex.js?updated=1721907190"></script>
+    <script src="../js/search.js?updated=1721907190"></script>
 </body>
 </html>

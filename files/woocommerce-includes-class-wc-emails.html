@@ -9,9 +9,9 @@
     <link rel="apple-touch-icon" sizes="72x72" href="../images/apple-touch-icon-72x72.png"/>
     <link rel="apple-touch-icon" sizes="114x114" href="../images/apple-touch-icon-114x114.png"/>
     <link rel="stylesheet" href="../css/normalize.css">
-    <link rel="stylesheet" href="../css/base.css?updated=1692866947">
+    <link rel="stylesheet" href="../css/base.css?updated=1721907182">
     <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../css/template.css?updated=1692866947">
+    <link rel="stylesheet" href="../css/template.css?updated=1721907182">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0/css/all.min.css" integrity="sha256-ybRkN9dBjhcS2qrW1z+hfCxq+1aBdwyQM5wlQoQVt/0=" crossorigin="anonymous" />
             <script src="https://cdn.jsdelivr.net/npm/css-vars-ponyfill@2"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0/js/all.min.js" integrity="sha256-0vuk8LXoyrmCjp1f0O300qo1M75ZQyhH9X3J6d+scmk=" crossorigin="anonymous"></script>
@@ -125,6 +125,7 @@
                         <ul class="phpdocumentor-list">
                                     <li><a href="../packages/Automattic-WooCommerce.html"><abbr title="\Automattic\WooCommerce">WooCommerce</abbr></a></li>
                             </ul>
+                                <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/WooCommerceBlocks.html"><abbr title="\WooCommerceBlocks">WooCommerceBlocks</abbr></a></h3>
                         </section>
     
     <section class="phpdocumentor-sidebar__category">
@@ -166,6 +167,8 @@
  */
 
 use Automattic\Jetpack\Constants;
+use Automattic\WooCommerce\Blocks\Package;
+use Automattic\WooCommerce\Blocks\Domain\Services\CheckoutFields;
 
 defined( &#039;ABSPATH&#039; ) || exit;
 
@@ -354,6 +357,8 @@ class WC_Emails {
 		add_action( &#039;woocommerce_email_order_meta&#039;, array( $this, &#039;order_meta&#039; ), 10, 3 );
 		add_action( &#039;woocommerce_email_customer_details&#039;, array( $this, &#039;customer_details&#039; ), 10, 3 );
 		add_action( &#039;woocommerce_email_customer_details&#039;, array( $this, &#039;email_addresses&#039; ), 20, 3 );
+		add_action( &#039;woocommerce_email_customer_details&#039;, array( $this, &#039;additional_checkout_fields&#039; ), 30, 3 );
+		add_action( &#039;woocommerce_email_customer_address_section&#039;, array( $this, &#039;additional_address_fields&#039; ), 30, 4 );
 
 		// Hooks for sending emails during store events.
 		add_action( &#039;woocommerce_low_stock_notification&#039;, array( $this, &#039;low_stock&#039; ) );
@@ -373,7 +378,7 @@ class WC_Emails {
 	 */
 	public function init() {
 		// Include email classes.
-		include_once dirname( __FILE__ ) . &#039;/emails/class-wc-email.php&#039;;
+		include_once __DIR__ . &#039;/emails/class-wc-email.php&#039;;
 
 		$this-&gt;emails[&#039;WC_Email_New_Order&#039;]                 = include __DIR__ . &#039;/emails/class-wc-email-new-order.php&#039;;
 		$this-&gt;emails[&#039;WC_Email_Cancelled_Order&#039;]           = include __DIR__ . &#039;/emails/class-wc-email-cancelled-order.php&#039;;
@@ -750,6 +755,72 @@ class WC_Emails {
 	}
 
 	/**
+	 * Renders any additional fields captured during block-based checkout.
+	 *
+	 * @param WC_Order $order         Order instance.
+	 * @param bool     $sent_to_admin If email is sent to admin.
+	 * @param bool     $plain_text    If this is a plain text email.
+	 */
+	public function additional_checkout_fields( $order, $sent_to_admin = false, $plain_text = false ) {
+		if ( ! is_a( $order, &#039;WC_Order&#039; ) ) {
+			return;
+		}
+
+		$checkout_fields = Package::container()-&gt;get( CheckoutFields::class );
+		$fields          = array_merge(
+			$checkout_fields-&gt;get_order_additional_fields_with_values( $order, &#039;contact&#039;, &#039;other&#039;, &#039;view&#039; ),
+			$checkout_fields-&gt;get_order_additional_fields_with_values( $order, &#039;order&#039;, &#039;other&#039;, &#039;view&#039; ),
+		);
+
+		if ( ! $fields ) {
+			return;
+		}
+
+		if ( $plain_text ) {
+			echo &quot;\n&quot; . esc_html( wc_strtoupper( __( &#039;Additional information&#039;, &#039;woocommerce&#039; ) ) ) . &quot;\n\n&quot;;
+			foreach ( $fields as $field ) {
+				printf( &quot;%s: %s\n&quot;, wp_kses_post( $field[&#039;label&#039;] ), wp_kses_post( $field[&#039;value&#039;] ) );
+			}
+		} else {
+			echo &#039;&lt;h2&gt;&#039; . esc_html__( &#039;Additional information&#039;, &#039;woocommerce&#039; ) . &#039;&lt;/h2&gt;&#039;;
+			echo &#039;&lt;ul class=&quot;additional-fields&quot; style=&quot;margin-bottom: 40px;&quot;&gt;&#039;;
+			foreach ( $fields as $field ) {
+				printf( &#039;&lt;li&gt;&lt;strong&gt;%s&lt;/strong&gt;: %s&lt;/li&gt;&#039;, wp_kses_post( $field[&#039;label&#039;] ), wp_kses_post( $field[&#039;value&#039;] ) );
+			}
+			echo &#039;&lt;/ul&gt;&#039;;
+		}
+	}
+
+	/**
+	 * Renders any additional address fields captured during block-based checkout.
+	 *
+	 * @param string   $address_type Address type.
+	 * @param WC_Order $order         Order instance.
+	 * @param bool     $sent_to_admin If email is sent to admin.
+	 * @param bool     $plain_text    If this is a plain text email.
+	 */
+	public function additional_address_fields( $address_type, $order, $sent_to_admin = false, $plain_text = false ) {
+		if ( ! is_a( $order, &#039;WC_Order&#039; ) ) {
+			return;
+		}
+
+		$checkout_fields = Package::container()-&gt;get( CheckoutFields::class );
+		$fields          = $checkout_fields-&gt;get_order_additional_fields_with_values( $order, &#039;address&#039;, $address_type, &#039;view&#039; );
+
+		if ( ! $fields ) {
+			return;
+		}
+
+		foreach ( $fields as $field ) {
+			if ( $plain_text ) {
+				printf( &quot;%s: %s\n&quot;, wp_kses_post( $field[&#039;label&#039;] ), wp_kses_post( $field[&#039;value&#039;] ) );
+			} else {
+				printf( &#039;&lt;br&gt;&lt;strong&gt;%s&lt;/strong&gt;: %s&#039;, wp_kses_post( $field[&#039;label&#039;] ), wp_kses_post( $field[&#039;value&#039;] ) );
+			}
+		}
+	}
+
+	/**
 	 * Get blog name formatted for emails.
 	 *
 	 * @return string
@@ -896,7 +967,7 @@ class WC_Emails {
 
     <footer class="phpdocumentor phpdocumentor-footer">
     <div class="phpdocumentor-section">
-        <span>WooCommerce Code Reference API documentation generated by <a href="http://www.phpdoc.org/">phpDocumentor</a> on August 24th, 2023 at 08:49 am.</span>
+        <span>WooCommerce Code Reference API documentation generated by <a href="http://www.phpdoc.org/">phpDocumentor</a> on July 25th, 2024 at 11:33 am.</span>
     </div>
 </footer>
 
@@ -908,7 +979,7 @@ class WC_Emails {
             'searchIndex': '..\/js\/searchIndex.json'
         };
     </script>
-    <script src="../js/searchIndex.js?updated=1692866947"></script>
-    <script src="../js/search.js?updated=1692866947"></script>
+    <script src="../js/searchIndex.js?updated=1721907182"></script>
+    <script src="../js/search.js?updated=1721907182"></script>
 </body>
 </html>

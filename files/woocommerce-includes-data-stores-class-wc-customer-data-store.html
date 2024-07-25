@@ -9,9 +9,9 @@
     <link rel="apple-touch-icon" sizes="72x72" href="../images/apple-touch-icon-72x72.png"/>
     <link rel="apple-touch-icon" sizes="114x114" href="../images/apple-touch-icon-114x114.png"/>
     <link rel="stylesheet" href="../css/normalize.css">
-    <link rel="stylesheet" href="../css/base.css?updated=1692866947">
+    <link rel="stylesheet" href="../css/base.css?updated=1721907183">
     <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../css/template.css?updated=1692866947">
+    <link rel="stylesheet" href="../css/template.css?updated=1721907183">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0/css/all.min.css" integrity="sha256-ybRkN9dBjhcS2qrW1z+hfCxq+1aBdwyQM5wlQoQVt/0=" crossorigin="anonymous" />
             <script src="https://cdn.jsdelivr.net/npm/css-vars-ponyfill@2"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0/js/all.min.js" integrity="sha256-0vuk8LXoyrmCjp1f0O300qo1M75ZQyhH9X3J6d+scmk=" crossorigin="anonymous"></script>
@@ -125,6 +125,7 @@
                         <ul class="phpdocumentor-list">
                                     <li><a href="../packages/Automattic-WooCommerce.html"><abbr title="\Automattic\WooCommerce">WooCommerce</abbr></a></li>
                             </ul>
+                                <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/WooCommerceBlocks.html"><abbr title="\WooCommerceBlocks">WooCommerceBlocks</abbr></a></h3>
                         </section>
     
     <section class="phpdocumentor-sidebar__category">
@@ -164,6 +165,7 @@
 
 use Automattic\WooCommerce\Internal\DataStores\Orders\CustomOrdersTableController;
 use Automattic\WooCommerce\Internal\DataStores\Orders\OrdersTableDataStore;
+use Automattic\WooCommerce\Internal\Utilities\Users;
 
 if ( ! defined( &#039;ABSPATH&#039; ) ) {
 	exit;
@@ -497,17 +499,36 @@ class WC_Customer_Data_Store extends WC_Data_Store_WP implements WC_Customer_Dat
 	 * @return WC_Order|false
 	 */
 	public function get_last_order( &amp;$customer ) {
-		//phpcs:disable WooCommerce.Commenting.CommentHooks.MissingSinceComment
+		// Try to fetch the last order placed by this customer.
+		$last_order_id       = Users::get_site_user_meta( $customer-&gt;get_id(), &#039;wc_last_order&#039;, true );
+		$last_customer_order = false;
+
+		if ( ! empty( $last_order_id ) ) {
+			$last_customer_order = wc_get_order( $last_order_id );
+		}
+
+		// &quot;Unset&quot; the last order ID if the order is associated with another customer. Unsetting is done by making it an
+		// empty string, for compatibility with the declared types of the following filter hook.
+		if (
+			! $last_customer_order instanceof WC_Order
+			|| intval( $last_customer_order-&gt;get_customer_id() ) !== intval( $customer-&gt;get_id() )
+		) {
+			$last_order_id = &#039;&#039;;
+		}
+
 		/**
 		 * Filters the id of the last order from a given customer.
 		 *
-		 * @param string @last_order_id The last order id as retrieved from the database.
-		 * @param WC_Customer The customer whose last order id is being retrieved.
+		 * @since 4.9.1
+		 *
+		 * @param string      $last_order_id The last order id as retrieved from the database.
+		 * @param WC_Customer $customer      The customer whose last order id is being retrieved.
+		 *
 		 * @return string The actual last order id to use.
 		 */
 		$last_order_id = apply_filters(
 			&#039;woocommerce_customer_get_last_order&#039;,
-			get_user_meta( $customer-&gt;get_id(), &#039;_last_order&#039;, true ),
+			$last_order_id,
 			$customer
 		);
 		//phpcs:enable WooCommerce.Commenting.CommentHooks.MissingSinceComment
@@ -542,7 +563,7 @@ class WC_Customer_Data_Store extends WC_Data_Store_WP implements WC_Customer_Dat
 				);
 			}
 			//phpcs:enable WordPress.DB.PreparedSQL.NotPrepared, WordPress.DB.PreparedSQL.InterpolatedNotPrepared
-			update_user_meta( $customer-&gt;get_id(), &#039;_last_order&#039;, $last_order_id );
+			Users::update_site_user_meta( $customer-&gt;get_id(), &#039;wc_last_order&#039;, $last_order_id );
 		}
 
 		if ( ! $last_order_id ) {
@@ -562,7 +583,7 @@ class WC_Customer_Data_Store extends WC_Data_Store_WP implements WC_Customer_Dat
 	public function get_order_count( &amp;$customer ) {
 		$count = apply_filters(
 			&#039;woocommerce_customer_get_order_count&#039;,
-			get_user_meta( $customer-&gt;get_id(), &#039;_order_count&#039;, true ),
+			Users::get_site_user_meta( $customer-&gt;get_id(), &#039;wc_order_count&#039;, true ),
 			$customer
 		);
 
@@ -593,7 +614,7 @@ class WC_Customer_Data_Store extends WC_Data_Store_WP implements WC_Customer_Dat
 			}
 			//phpcs:enable WordPress.DB.PreparedSQL.NotPrepared, WordPress.DB.PreparedSQL.InterpolatedNotPrepared
 
-			update_user_meta( $customer-&gt;get_id(), &#039;_order_count&#039;, $count );
+			Users::update_site_user_meta( $customer-&gt;get_id(), &#039;wc_order_count&#039;, $count );
 		}
 
 		return absint( $count );
@@ -609,7 +630,7 @@ class WC_Customer_Data_Store extends WC_Data_Store_WP implements WC_Customer_Dat
 	public function get_total_spent( &amp;$customer ) {
 		$spent = apply_filters(
 			&#039;woocommerce_customer_get_total_spent&#039;,
-			get_user_meta( $customer-&gt;get_id(), &#039;_money_spent&#039;, true ),
+			Users::get_site_user_meta( $customer-&gt;get_id(), &#039;wc_money_spent&#039;, true ),
 			$customer
 		);
 
@@ -656,7 +677,7 @@ class WC_Customer_Data_Store extends WC_Data_Store_WP implements WC_Customer_Dat
 			if ( ! $spent ) {
 				$spent = 0;
 			}
-			update_user_meta( $customer-&gt;get_id(), &#039;_money_spent&#039;, $spent );
+			Users::update_site_user_meta( $customer-&gt;get_id(), &#039;wc_money_spent&#039;, $spent );
 		}
 
 		return wc_format_decimal( $spent, 2 );
@@ -761,7 +782,7 @@ class WC_Customer_Data_Store extends WC_Data_Store_WP implements WC_Customer_Dat
 
     <footer class="phpdocumentor phpdocumentor-footer">
     <div class="phpdocumentor-section">
-        <span>WooCommerce Code Reference API documentation generated by <a href="http://www.phpdoc.org/">phpDocumentor</a> on August 24th, 2023 at 08:49 am.</span>
+        <span>WooCommerce Code Reference API documentation generated by <a href="http://www.phpdoc.org/">phpDocumentor</a> on July 25th, 2024 at 11:33 am.</span>
     </div>
 </footer>
 
@@ -773,7 +794,7 @@ class WC_Customer_Data_Store extends WC_Data_Store_WP implements WC_Customer_Dat
             'searchIndex': '..\/js\/searchIndex.json'
         };
     </script>
-    <script src="../js/searchIndex.js?updated=1692866947"></script>
-    <script src="../js/search.js?updated=1692866947"></script>
+    <script src="../js/searchIndex.js?updated=1721907183"></script>
+    <script src="../js/search.js?updated=1721907183"></script>
 </body>
 </html>

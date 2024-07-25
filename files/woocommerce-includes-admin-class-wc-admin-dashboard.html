@@ -9,9 +9,9 @@
     <link rel="apple-touch-icon" sizes="72x72" href="../images/apple-touch-icon-72x72.png"/>
     <link rel="apple-touch-icon" sizes="114x114" href="../images/apple-touch-icon-114x114.png"/>
     <link rel="stylesheet" href="../css/normalize.css">
-    <link rel="stylesheet" href="../css/base.css?updated=1692866945">
+    <link rel="stylesheet" href="../css/base.css?updated=1721907182">
     <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../css/template.css?updated=1692866945">
+    <link rel="stylesheet" href="../css/template.css?updated=1721907182">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0/css/all.min.css" integrity="sha256-ybRkN9dBjhcS2qrW1z+hfCxq+1aBdwyQM5wlQoQVt/0=" crossorigin="anonymous" />
             <script src="https://cdn.jsdelivr.net/npm/css-vars-ponyfill@2"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0/js/all.min.js" integrity="sha256-0vuk8LXoyrmCjp1f0O300qo1M75ZQyhH9X3J6d+scmk=" crossorigin="anonymous"></script>
@@ -125,6 +125,7 @@
                         <ul class="phpdocumentor-list">
                                     <li><a href="../packages/Automattic-WooCommerce.html"><abbr title="\Automattic\WooCommerce">WooCommerce</abbr></a></li>
                             </ul>
+                                <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/WooCommerceBlocks.html"><abbr title="\WooCommerceBlocks">WooCommerceBlocks</abbr></a></h3>
                         </section>
     
     <section class="phpdocumentor-sidebar__category">
@@ -165,6 +166,7 @@
 
 use Automattic\Jetpack\Constants;
 use Automattic\WooCommerce\Admin\Features\Features;
+use Automattic\WooCommerce\Utilities\OrderUtil;
 
 if ( ! defined( &#039;ABSPATH&#039; ) ) {
 	exit; // Exit if accessed directly.
@@ -238,23 +240,49 @@ if ( ! class_exists( &#039;WC_Admin_Dashboard&#039;, false ) ) :
 		private function get_top_seller() {
 			global $wpdb;
 
-			$query            = array();
-			$query[&#039;fields&#039;]  = &quot;SELECT SUM( order_item_meta.meta_value ) as qty, order_item_meta_2.meta_value as product_id
-			FROM {$wpdb-&gt;posts} as posts&quot;;
-			$query[&#039;join&#039;]    = &quot;INNER JOIN {$wpdb-&gt;prefix}woocommerce_order_items AS order_items ON posts.ID = order_id &quot;;
-			$query[&#039;join&#039;]   .= &quot;INNER JOIN {$wpdb-&gt;prefix}woocommerce_order_itemmeta AS order_item_meta ON order_items.order_item_id = order_item_meta.order_item_id &quot;;
-			$query[&#039;join&#039;]   .= &quot;INNER JOIN {$wpdb-&gt;prefix}woocommerce_order_itemmeta AS order_item_meta_2 ON order_items.order_item_id = order_item_meta_2.order_item_id &quot;;
-			$query[&#039;where&#039;]   = &quot;WHERE posts.post_type IN ( &#039;&quot; . implode( &quot;&#039;,&#039;&quot;, wc_get_order_types( &#039;order-count&#039; ) ) . &quot;&#039; ) &quot;;
-			$query[&#039;where&#039;]  .= &quot;AND posts.post_status IN ( &#039;wc-&quot; . implode( &quot;&#039;,&#039;wc-&quot;, apply_filters( &#039;woocommerce_reports_order_statuses&#039;, array( &#039;completed&#039;, &#039;processing&#039;, &#039;on-hold&#039; ) ) ) . &quot;&#039; ) &quot;;
+			$hpos_enabled         = OrderUtil::custom_orders_table_usage_is_enabled();
+			$orders_table         = OrderUtil::get_table_for_orders();
+			$orders_column_id     = $hpos_enabled ? &#039;id&#039; : &#039;ID&#039;;
+			$orders_column_type   = $hpos_enabled ? &#039;type&#039; : &#039;post_type&#039;;
+			$orders_column_status = $hpos_enabled ? &#039;status&#039; : &#039;post_status&#039;;
+			$orders_column_date   = $hpos_enabled ? &#039;date_created_gmt&#039; : &#039;post_date_gmt&#039;;
+
+			$query           = array();
+			$query[&#039;fields&#039;] = &quot;SELECT SUM( order_item_meta.meta_value ) as qty, order_item_meta_2.meta_value as product_id FROM {$orders_table} AS orders&quot;;
+			$query[&#039;join&#039;]   = &quot;INNER JOIN {$wpdb-&gt;prefix}woocommerce_order_items AS order_items ON orders.{$orders_column_id} = order_id &quot;;
+			$query[&#039;join&#039;]  .= &quot;INNER JOIN {$wpdb-&gt;prefix}woocommerce_order_itemmeta AS order_item_meta ON order_items.order_item_id = order_item_meta.order_item_id &quot;;
+			$query[&#039;join&#039;]  .= &quot;INNER JOIN {$wpdb-&gt;prefix}woocommerce_order_itemmeta AS order_item_meta_2 ON order_items.order_item_id = order_item_meta_2.order_item_id &quot;;
+			$query[&#039;where&#039;]  = &quot;WHERE orders.{$orders_column_type} IN ( &#039;&quot; . implode( &quot;&#039;,&#039;&quot;, wc_get_order_types( &#039;order-count&#039; ) ) . &quot;&#039; ) &quot;;
+
+			/**
+			 * Allows modifying the order statuses used in the top seller query inside the dashboard status widget.
+			 *
+			 * @since 2.2.0
+			 *
+			 * @param string[] $order_statuses Order statuses.
+			 */
+			$order_statuses  = apply_filters( &#039;woocommerce_reports_order_statuses&#039;, array( &#039;completed&#039;, &#039;processing&#039;, &#039;on-hold&#039; ) );
+			$query[&#039;where&#039;] .= &quot;AND orders.{$orders_column_status} IN ( &#039;wc-&quot; . implode( &quot;&#039;,&#039;wc-&quot;, $order_statuses ) . &quot;&#039; ) &quot;;
+
 			$query[&#039;where&#039;]  .= &quot;AND order_item_meta.meta_key = &#039;_qty&#039; &quot;;
 			$query[&#039;where&#039;]  .= &quot;AND order_item_meta_2.meta_key = &#039;_product_id&#039; &quot;;
-			$query[&#039;where&#039;]  .= &quot;AND posts.post_date &gt;= &#039;&quot; . gmdate( &#039;Y-m-01&#039;, current_time( &#039;timestamp&#039; ) ) . &quot;&#039; &quot;;
-			$query[&#039;where&#039;]  .= &quot;AND posts.post_date &lt;= &#039;&quot; . gmdate( &#039;Y-m-d H:i:s&#039;, current_time( &#039;timestamp&#039; ) ) . &quot;&#039; &quot;;
+			$query[&#039;where&#039;]  .= &quot;AND orders.{$orders_column_date} &gt;= &#039;&quot; . gmdate( &#039;Y-m-01&#039;, current_time( &#039;timestamp&#039; ) ) . &quot;&#039; &quot;; // phpcs:ignore WordPress.DateTime.CurrentTimeTimestamp.Requested
+			$query[&#039;where&#039;]  .= &quot;AND orders.{$orders_column_date} &lt;= &#039;&quot; . gmdate( &#039;Y-m-d H:i:s&#039;, current_time( &#039;timestamp&#039; ) ) . &quot;&#039; &quot;; // phpcs:ignore WordPress.DateTime.CurrentTimeTimestamp.Requested
 			$query[&#039;groupby&#039;] = &#039;GROUP BY product_id&#039;;
 			$query[&#039;orderby&#039;] = &#039;ORDER BY qty DESC&#039;;
 			$query[&#039;limits&#039;]  = &#039;LIMIT 1&#039;;
 
-			return $wpdb-&gt;get_row( implode( &#039; &#039;, apply_filters( &#039;woocommerce_dashboard_status_widget_top_seller_query&#039;, $query ) ) ); //phpcs:ignore WordPress.DB.PreparedSQL.NotPrepared
+			/**
+			 * Allows modification of the query to determine the top seller product in the dashboard status widget.
+			 *
+			 * @since 2.2.0
+			 *
+			 * @param array $query SQL query parts.
+			 */
+			$query = apply_filters( &#039;woocommerce_dashboard_status_widget_top_seller_query&#039;, $query );
+
+			$sql = implode( &#039; &#039;, $query );
+			return $wpdb-&gt;get_row( $sql ); // phpcs:ignore WordPress.DB.PreparedSQL.NotPrepared
 		}
 
 		/**
@@ -359,9 +387,9 @@ if ( ! class_exists( &#039;WC_Admin_Dashboard&#039;, false ) ) :
 			$processing_count = 0;
 
 			foreach ( wc_get_order_types( &#039;order-count&#039; ) as $type ) {
-				$counts            = (array) wp_count_posts( $type );
-				$on_hold_count    += isset( $counts[&#039;wc-on-hold&#039;] ) ? $counts[&#039;wc-on-hold&#039;] : 0;
-				$processing_count += isset( $counts[&#039;wc-processing&#039;] ) ? $counts[&#039;wc-processing&#039;] : 0;
+				$counts            = OrderUtil::get_count_for_type( $type );
+				$on_hold_count    += $counts[&#039;wc-on-hold&#039;];
+				$processing_count += $counts[&#039;wc-processing&#039;];
 			}
 			?&gt;
 			&lt;li class=&quot;processing-orders&quot;&gt;
@@ -731,7 +759,7 @@ return new WC_Admin_Dashboard();
 
     <footer class="phpdocumentor phpdocumentor-footer">
     <div class="phpdocumentor-section">
-        <span>WooCommerce Code Reference API documentation generated by <a href="http://www.phpdoc.org/">phpDocumentor</a> on August 24th, 2023 at 08:49 am.</span>
+        <span>WooCommerce Code Reference API documentation generated by <a href="http://www.phpdoc.org/">phpDocumentor</a> on July 25th, 2024 at 11:33 am.</span>
     </div>
 </footer>
 
@@ -743,7 +771,7 @@ return new WC_Admin_Dashboard();
             'searchIndex': '..\/js\/searchIndex.json'
         };
     </script>
-    <script src="../js/searchIndex.js?updated=1692866945"></script>
-    <script src="../js/search.js?updated=1692866945"></script>
+    <script src="../js/searchIndex.js?updated=1721907182"></script>
+    <script src="../js/search.js?updated=1721907182"></script>
 </body>
 </html>

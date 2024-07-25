@@ -9,9 +9,9 @@
     <link rel="apple-touch-icon" sizes="72x72" href="../images/apple-touch-icon-72x72.png"/>
     <link rel="apple-touch-icon" sizes="114x114" href="../images/apple-touch-icon-114x114.png"/>
     <link rel="stylesheet" href="../css/normalize.css">
-    <link rel="stylesheet" href="../css/base.css?updated=1692867006">
+    <link rel="stylesheet" href="../css/base.css?updated=1721907209">
     <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../css/template.css?updated=1692867006">
+    <link rel="stylesheet" href="../css/template.css?updated=1721907209">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0/css/all.min.css" integrity="sha256-ybRkN9dBjhcS2qrW1z+hfCxq+1aBdwyQM5wlQoQVt/0=" crossorigin="anonymous" />
             <script src="https://cdn.jsdelivr.net/npm/css-vars-ponyfill@2"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0/js/all.min.js" integrity="sha256-0vuk8LXoyrmCjp1f0O300qo1M75ZQyhH9X3J6d+scmk=" crossorigin="anonymous"></script>
@@ -119,6 +119,7 @@
                         <ul class="phpdocumentor-list">
                                     <li><a href="../packages/Automattic-WooCommerce.html"><abbr title="\Automattic\WooCommerce">WooCommerce</abbr></a></li>
                             </ul>
+                                <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/WooCommerceBlocks.html"><abbr title="\WooCommerceBlocks">WooCommerceBlocks</abbr></a></h3>
                         </section>
     
     <section class="phpdocumentor-sidebar__category">
@@ -161,9 +162,9 @@
     </h2>
 
         <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Utilities/PluginUtil.php"><a href="../files/woocommerce-src-utilities-pluginutil.html#source-view.14">src/Utilities/PluginUtil.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Utilities/PluginUtil.php"><a href="../files/woocommerce-src-utilities-pluginutil.html#source-view.15">src/Utilities/PluginUtil.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">14</span>
+    <span class="phpdocumentor-element-found-in__line">15</span>
 </aside>
 
             <p class="phpdocumentor-summary">A class of utilities for dealing with plugins.</p>
@@ -184,6 +185,13 @@
 
 <dl class="phpdocumentor-table-of-contents">
                 <dt class="phpdocumentor-table-of-contents__entry -property -private">
+    <a href="../classes/Automattic-WooCommerce-Utilities-PluginUtil.html#property_plugins_excluded_from_compatibility_ui">$plugins_excluded_from_compatibility_ui</a>
+    <span>
+                &nbsp;: array&lt;string|int, string&gt;            </span>
+</dt>
+<dd>List of plugins excluded from feature compatibility warnings in UI.</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -property -private">
     <a href="../classes/Automattic-WooCommerce-Utilities-PluginUtil.html#property_proxy">$proxy</a>
     <span>
                 &nbsp;: <a href="../classes/Automattic-WooCommerce-Proxies-LegacyProxy.html"><abbr title="\Automattic\WooCommerce\Proxies\LegacyProxy">LegacyProxy</abbr></a>            </span>
@@ -216,7 +224,7 @@
     <span>
                         &nbsp;: string    </span>
 </dt>
-<dd>Util function to generate warning string for incompatible features based on active plugins.</dd>
+<dd>Utility method to generate warning string for incompatible features based on active plugins.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="../classes/Automattic-WooCommerce-Utilities-PluginUtil.html#method_get_plugin_name">get_plugin_name()</a>
@@ -224,6 +232,13 @@
                         &nbsp;: string    </span>
 </dt>
 <dd>Get the printable name of a plugin.</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a href="../classes/Automattic-WooCommerce-Utilities-PluginUtil.html#method_get_plugins_excluded_from_compatibility_ui">get_plugins_excluded_from_compatibility_ui()</a>
+    <span>
+                        &nbsp;: array&lt;string|int, string&gt;    </span>
+</dt>
+<dd>Get the names of the plugins that are excluded from the feature compatibility UI.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="../classes/Automattic-WooCommerce-Utilities-PluginUtil.html#method_get_woocommerce_aware_plugins">get_woocommerce_aware_plugins()</a>
@@ -273,6 +288,38 @@
             -private
                                                         "
 >
+    <h4 class="phpdocumentor-element__name" id="property_plugins_excluded_from_compatibility_ui">
+        $plugins_excluded_from_compatibility_ui
+        <a href="#property_plugins_excluded_from_compatibility_ui" class="headerlink"><i class="fas fa-link"></i></a>
+        <span class="phpdocumentor-element__modifiers">
+                                </span>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Utilities/PluginUtil.php"><a href="../files/woocommerce-src-utilities-pluginutil.html#source-view.45">src/Utilities/PluginUtil.php</a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">45</span>
+</aside>
+
+        <p class="phpdocumentor-summary">List of plugins excluded from feature compatibility warnings in UI.</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">private</span>
+        <span class="phpdocumentor-signature__type">array&lt;string|int, string&gt;</span>
+    <span class="phpdocumentor-signature__name">$plugins_excluded_from_compatibility_ui</span>
+    </code>
+
+        <section class="phpdocumentor-description"></section>
+
+    
+
+</article>
+                    <article
+        class="
+            phpdocumentor-element
+            -property
+            -private
+                                                        "
+>
     <h4 class="phpdocumentor-element__name" id="property_proxy">
         $proxy
         <a href="#property_proxy" class="headerlink"><i class="fas fa-link"></i></a>
@@ -280,9 +327,9 @@
                                 </span>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Utilities/PluginUtil.php"><a href="../files/woocommerce-src-utilities-pluginutil.html#source-view.23">src/Utilities/PluginUtil.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Utilities/PluginUtil.php"><a href="../files/woocommerce-src-utilities-pluginutil.html#source-view.24">src/Utilities/PluginUtil.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">23</span>
+    <span class="phpdocumentor-element-found-in__line">24</span>
 </aside>
 
         <p class="phpdocumentor-summary">The LegacyProxy instance to use.</p>
@@ -312,9 +359,9 @@
                                 </span>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Utilities/PluginUtil.php"><a href="../files/woocommerce-src-utilities-pluginutil.html#source-view.37">src/Utilities/PluginUtil.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Utilities/PluginUtil.php"><a href="../files/woocommerce-src-utilities-pluginutil.html#source-view.38">src/Utilities/PluginUtil.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">37</span>
+    <span class="phpdocumentor-element-found-in__line">38</span>
 </aside>
 
         <p class="phpdocumentor-summary">The cached list of enabled WooCommerce aware plugin ids.</p>
@@ -344,9 +391,9 @@
                                 </span>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Utilities/PluginUtil.php"><a href="../files/woocommerce-src-utilities-pluginutil.html#source-view.30">src/Utilities/PluginUtil.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Utilities/PluginUtil.php"><a href="../files/woocommerce-src-utilities-pluginutil.html#source-view.31">src/Utilities/PluginUtil.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">30</span>
+    <span class="phpdocumentor-element-found-in__line">31</span>
 </aside>
 
         <p class="phpdocumentor-summary">The cached list of WooCommerce aware plugin ids.</p>
@@ -380,9 +427,9 @@
         <a href="#method___construct" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Utilities/PluginUtil.php"><a href="../files/woocommerce-src-utilities-pluginutil.html#source-view.42">src/Utilities/PluginUtil.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Utilities/PluginUtil.php"><a href="../files/woocommerce-src-utilities-pluginutil.html#source-view.50">src/Utilities/PluginUtil.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">42</span>
+    <span class="phpdocumentor-element-found-in__line">50</span>
 </aside>
 
         <p class="phpdocumentor-summary">Creates a new instance of the class.</p>
@@ -412,18 +459,20 @@
         <a href="#method_generate_incompatible_plugin_feature_warning" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Utilities/PluginUtil.php"><a href="../files/woocommerce-src-utilities-pluginutil.html#source-view.183">src/Utilities/PluginUtil.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Utilities/PluginUtil.php"><a href="../files/woocommerce-src-utilities-pluginutil.html#source-view.196">src/Utilities/PluginUtil.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">183</span>
+    <span class="phpdocumentor-element-found-in__line">196</span>
 </aside>
 
-        <p class="phpdocumentor-summary">Util function to generate warning string for incompatible features based on active plugins.</p>
+        <p class="phpdocumentor-summary">Utility method to generate warning string for incompatible features based on active plugins.</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
                 <span class="phpdocumentor-signature__name">generate_incompatible_plugin_feature_warning</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$feature_id</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__name">$plugin_feature_info</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">string</span></code>
 
-        <section class="phpdocumentor-description"></section>
+        <section class="phpdocumentor-description"><p>Additionally, this method will manually print a warning message on the HPOS feature if both
+the Legacy REST API and HPOS are active.</p>
+</section>
 
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
     <dl class="phpdocumentor-argument-list">
@@ -465,9 +514,9 @@
         <a href="#method_get_plugin_name" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Utilities/PluginUtil.php"><a href="../files/woocommerce-src-utilities-pluginutil.html#source-view.101">src/Utilities/PluginUtil.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Utilities/PluginUtil.php"><a href="../files/woocommerce-src-utilities-pluginutil.html#source-view.111">src/Utilities/PluginUtil.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">101</span>
+    <span class="phpdocumentor-element-found-in__line">111</span>
 </aside>
 
         <p class="phpdocumentor-summary">Get the printable name of a plugin.</p>
@@ -504,14 +553,48 @@
             -public
                                                         "
 >
+    <h4 class="phpdocumentor-element__name" id="method_get_plugins_excluded_from_compatibility_ui">
+        get_plugins_excluded_from_compatibility_ui()
+        <a href="#method_get_plugins_excluded_from_compatibility_ui" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Utilities/PluginUtil.php"><a href="../files/woocommerce-src-utilities-pluginutil.html#source-view.289">src/Utilities/PluginUtil.php</a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">289</span>
+</aside>
+
+        <p class="phpdocumentor-summary">Get the names of the plugins that are excluded from the feature compatibility UI.</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                <span class="phpdocumentor-signature__name">get_plugins_excluded_from_compatibility_ui</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">array&lt;string|int, string&gt;</span></code>
+
+        <section class="phpdocumentor-description"><p>These plugins won't be considered as incompatible with any existing feature for the purposes
+of displaying compatibility warning in UI, even if they declare incompatibilities explicitly.</p>
+</section>
+
+    
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">array&lt;string|int, string&gt;</span>
+            &mdash; <span class="phpdocumentor-return-value__description">Plugin names relative to the root plugins directory.</span>
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                                        "
+>
     <h4 class="phpdocumentor-element__name" id="method_get_woocommerce_aware_plugins">
         get_woocommerce_aware_plugins()
         <a href="#method_get_woocommerce_aware_plugins" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Utilities/PluginUtil.php"><a href="../files/woocommerce-src-utilities-pluginutil.html#source-view.66">src/Utilities/PluginUtil.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Utilities/PluginUtil.php"><a href="../files/woocommerce-src-utilities-pluginutil.html#source-view.76">src/Utilities/PluginUtil.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">66</span>
+    <span class="phpdocumentor-element-found-in__line">76</span>
 </aside>
 
         <p class="phpdocumentor-summary">Get a list with the names of the WordPress plugins that are WooCommerce aware
@@ -554,9 +637,9 @@
         <a href="#method_get_wp_plugin_id" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Utilities/PluginUtil.php"><a href="../files/woocommerce-src-utilities-pluginutil.html#source-view.130">src/Utilities/PluginUtil.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Utilities/PluginUtil.php"><a href="../files/woocommerce-src-utilities-pluginutil.html#source-view.140">src/Utilities/PluginUtil.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">130</span>
+    <span class="phpdocumentor-element-found-in__line">140</span>
 </aside>
 
         <p class="phpdocumentor-summary">Match plugin identifier passed as a parameter with the output from `get_plugins()`.</p>
@@ -598,9 +681,9 @@
         <a href="#method_is_woocommerce_aware_plugin" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Utilities/PluginUtil.php"><a href="../files/woocommerce-src-utilities-pluginutil.html#source-view.113">src/Utilities/PluginUtil.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Utilities/PluginUtil.php"><a href="../files/woocommerce-src-utilities-pluginutil.html#source-view.123">src/Utilities/PluginUtil.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">113</span>
+    <span class="phpdocumentor-element-found-in__line">123</span>
 </aside>
 
         <p class="phpdocumentor-summary">Check if a plugin is WooCommerce aware.</p>
@@ -657,9 +740,9 @@
         <a href="#method_handle_plugin_de_activation" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Utilities/PluginUtil.php"><a href="../files/woocommerce-src-utilities-pluginutil.html#source-view.170">src/Utilities/PluginUtil.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Utilities/PluginUtil.php"><a href="../files/woocommerce-src-utilities-pluginutil.html#source-view.180">src/Utilities/PluginUtil.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">170</span>
+    <span class="phpdocumentor-element-found-in__line">180</span>
 </aside>
 
         <p class="phpdocumentor-summary">Handle plugin activation and deactivation by clearing the WooCommerce aware plugin ids cache.</p>
@@ -689,7 +772,7 @@
 
     <footer class="phpdocumentor phpdocumentor-footer">
     <div class="phpdocumentor-section">
-        <span>WooCommerce Code Reference API documentation generated by <a href="http://www.phpdoc.org/">phpDocumentor</a> on August 24th, 2023 at 08:50 am.</span>
+        <span>WooCommerce Code Reference API documentation generated by <a href="http://www.phpdoc.org/">phpDocumentor</a> on July 25th, 2024 at 11:33 am.</span>
     </div>
 </footer>
 
@@ -701,7 +784,7 @@
             'searchIndex': '..\/js\/searchIndex.json'
         };
     </script>
-    <script src="../js/searchIndex.js?updated=1692867006"></script>
-    <script src="../js/search.js?updated=1692867006"></script>
+    <script src="../js/searchIndex.js?updated=1721907209"></script>
+    <script src="../js/search.js?updated=1721907209"></script>
 </body>
 </html>

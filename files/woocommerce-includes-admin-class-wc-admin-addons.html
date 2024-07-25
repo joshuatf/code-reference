@@ -9,9 +9,9 @@
     <link rel="apple-touch-icon" sizes="72x72" href="../images/apple-touch-icon-72x72.png"/>
     <link rel="apple-touch-icon" sizes="114x114" href="../images/apple-touch-icon-114x114.png"/>
     <link rel="stylesheet" href="../css/normalize.css">
-    <link rel="stylesheet" href="../css/base.css?updated=1692866945">
+    <link rel="stylesheet" href="../css/base.css?updated=1721907182">
     <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../css/template.css?updated=1692866945">
+    <link rel="stylesheet" href="../css/template.css?updated=1721907182">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0/css/all.min.css" integrity="sha256-ybRkN9dBjhcS2qrW1z+hfCxq+1aBdwyQM5wlQoQVt/0=" crossorigin="anonymous" />
             <script src="https://cdn.jsdelivr.net/npm/css-vars-ponyfill@2"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0/js/all.min.js" integrity="sha256-0vuk8LXoyrmCjp1f0O300qo1M75ZQyhH9X3J6d+scmk=" crossorigin="anonymous"></script>
@@ -125,6 +125,7 @@
                         <ul class="phpdocumentor-list">
                                     <li><a href="../packages/Automattic-WooCommerce.html"><abbr title="\Automattic\WooCommerce">WooCommerce</abbr></a></li>
                             </ul>
+                                <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/WooCommerceBlocks.html"><abbr title="\WooCommerceBlocks">WooCommerceBlocks</abbr></a></h3>
                         </section>
     
     <section class="phpdocumentor-sidebar__category">
@@ -165,6 +166,7 @@
 
 use Automattic\Jetpack\Constants;
 use Automattic\WooCommerce\Admin\RemoteInboxNotifications as PromotionRuleEngine;
+use Automattic\WooCommerce\Admin\RemoteSpecs\RuleProcessors\RuleEvaluator;
 
 if ( ! defined( &#039;ABSPATH&#039; ) ) {
 	exit;
@@ -176,75 +178,24 @@ if ( ! defined( &#039;ABSPATH&#039; ) ) {
 class WC_Admin_Addons {
 
 	/**
-	 * Get featured for the addons screen
+	 * Fetch featured products from WCCOM&#039;s the Featured 3.0 Endpoint and cache the data for a day.
 	 *
-	 * @deprecated 5.9.0 No longer used in In-App Marketplace
-	 *
-	 * @return array of objects
+	 * @return array|WP_Error
 	 */
-	public static function get_featured() {
+	public static function fetch_featured() {
+		$transient_name = &#039;wc_addons_featured&#039;;
+		// Important: WCCOM Extensions API v3.0 is used.
+		$url      = &#039;https://woocommerce.com/wp-json/wccom-extensions/3.0/featured&#039;;
 		$locale   = get_user_locale();
-		$featured = self::get_locale_data_from_transient( &#039;wc_addons_featured_2&#039;, $locale );
+		$featured = self::get_locale_data_from_transient( $transient_name, $locale );
+
 		if ( false === $featured ) {
-			$headers = array();
-			$auth    = WC_Helper_Options::get( &#039;auth&#039; );
-
-			if ( ! empty( $auth[&#039;access_token&#039;] ) ) {
-				$headers[&#039;Authorization&#039;] = &#039;Bearer &#039; . $auth[&#039;access_token&#039;];
-			}
-
-			$raw_featured = wp_safe_remote_get(
-				&#039;https://woocommerce.com/wp-json/wccom-extensions/1.0/featured&#039;,
-				array(
-					&#039;headers&#039;    =&gt; $headers,
-					&#039;user-agent&#039; =&gt; &#039;WooCommerce/&#039; . WC()-&gt;version . &#039;; &#039; . get_bloginfo( &#039;url&#039; ),
-				)
+			$fetch_options = array(
+				&#039;auth&#039;    =&gt; true,
+				&#039;locale&#039;  =&gt; true,
+				&#039;country&#039; =&gt; true,
 			);
-
-			if ( ! is_wp_error( $raw_featured ) ) {
-				$featured = json_decode( wp_remote_retrieve_body( $raw_featured ) );
-				if ( $featured ) {
-					self::set_locale_data_in_transient( &#039;wc_addons_featured_2&#039;, $featured, $locale, DAY_IN_SECONDS );
-				}
-			}
-		}
-
-		if ( is_object( $featured ) ) {
-			self::output_featured_sections( $featured-&gt;sections );
-			return $featured;
-		}
-	}
-
-	/**
-	 * Render featured products and banners using WCCOM&#039;s the Featured 2.0 Endpoint
-	 *
-	 * @return void
-	 */
-	public static function render_featured() {
-		$locale   = get_user_locale();
-		$featured = self::get_locale_data_from_transient( &#039;wc_addons_featured&#039;, $locale );
-		if ( false === $featured ) {
-			$headers = array();
-			$auth    = WC_Helper_Options::get( &#039;auth&#039; );
-
-			if ( ! empty( $auth[&#039;access_token&#039;] ) ) {
-				$headers[&#039;Authorization&#039;] = &#039;Bearer &#039; . $auth[&#039;access_token&#039;];
-			}
-
-			$parameter_string = &#039;?&#039; . http_build_query( array( &#039;locale&#039; =&gt; get_user_locale() ) );
-			$country          = WC()-&gt;countries-&gt;get_base_country();
-			if ( ! empty( $country ) ) {
-				$parameter_string = $parameter_string . &#039;&amp;&#039; . http_build_query( array( &#039;country&#039; =&gt; $country ) );
-			}
-
-			// Important: WCCOM Extensions API v2.0 is used.
-			$raw_featured = wp_safe_remote_get(
-				&#039;https://woocommerce.com/wp-json/wccom-extensions/2.0/featured&#039; . $parameter_string,
-				array(
-					&#039;headers&#039;    =&gt; $headers,
-					&#039;user-agent&#039; =&gt; &#039;WooCommerce/&#039; . WC()-&gt;version . &#039;; &#039; . get_bloginfo( &#039;url&#039; ),
-				)
-			);
+			$raw_featured  = self::fetch( $url, $fetch_options );
 
 			if ( is_wp_error( $raw_featured ) ) {
 				do_action( &#039;woocommerce_page_wc-addons_connection_error&#039;, $raw_featured-&gt;get_error_message() );
@@ -253,9 +204,7 @@ class WC_Admin_Addons {
 					? __( &#039;We encountered an SSL error. Please ensure your site supports TLS version 1.2 or above.&#039;, &#039;woocommerce&#039; )
 					: $raw_featured-&gt;get_error_message();
 
-				self::output_empty( $message );
-
-				return;
+				return new WP_Error( &#039;wc-addons-connection-error&#039;, $message );
 			}
 
 			$response_code = (int) wp_remote_retrieve_response_code( $raw_featured );
@@ -274,26 +223,23 @@ class WC_Admin_Addons {
 					$response_code
 				);
 
-				self::output_empty( $message );
-
-				return;
+				return new WP_Error( &#039;wc-addons-connection-error&#039;, $message );
 			}
 
 			$featured = json_decode( wp_remote_retrieve_body( $raw_featured ) );
 			if ( empty( $featured ) || ! is_array( $featured ) ) {
 				do_action( &#039;woocommerce_page_wc-addons_connection_error&#039;, &#039;Empty or malformed response&#039; );
 				$message = __( &#039;Our request to the featured API got a malformed response.&#039;, &#039;woocommerce&#039; );
-				self::output_empty( $message );
 
-				return;
+				return new WP_Error( &#039;wc-addons-connection-error&#039;, $message );
 			}
 
 			if ( $featured ) {
-				self::set_locale_data_in_transient( &#039;wc_addons_featured&#039;, $featured, $locale, DAY_IN_SECONDS );
+				self::set_locale_data_in_transient( $transient_name, $featured, $locale, DAY_IN_SECONDS );
 			}
 		}
 
-		self::output_featured( $featured );
+		return $featured;
 	}
 
 	/**
@@ -305,83 +251,6 @@ class WC_Admin_Addons {
 	 */
 	public static function is_ssl_error( $error_message ) {
 		return false !== stripos( $error_message, &#039;cURL error 35&#039; );
-	}
-
-	/**
-	 * Build url parameter string
-	 *
-	 * @param  string $category Addon (sub) category.
-	 * @param  string $term     Search terms.
-	 * @param  string $country  Store country.
-	 *
-	 * @return string url parameter string
-	 */
-	public static function build_parameter_string( $category, $term, $country ) {
-
-		$parameters = array(
-			&#039;category&#039; =&gt; $category,
-			&#039;term&#039;     =&gt; $term,
-			&#039;country&#039;  =&gt; $country,
-			&#039;locale&#039;   =&gt; get_user_locale(),
-		);
-
-		return &#039;?&#039; . http_build_query( $parameters );
-	}
-
-	/**
-	 * Call API to get extensions
-	 *
-	 * @param  string $category Addon (sub) category.
-	 * @param  string $term     Search terms.
-	 * @param  string $country  Store country.
-	 *
-	 * @return object|WP_Error  Object with products and promotions properties, or WP_Error
-	 */
-	public static function get_extension_data( $category, $term, $country ) {
-		$parameters = self::build_parameter_string( $category, $term, $country );
-
-		$headers = array();
-		$auth    = WC_Helper_Options::get( &#039;auth&#039; );
-
-		if ( ! empty( $auth[&#039;access_token&#039;] ) ) {
-			$headers[&#039;Authorization&#039;] = &#039;Bearer &#039; . $auth[&#039;access_token&#039;];
-		}
-
-		$raw_extensions = wp_safe_remote_get(
-			&#039;https://woocommerce.com/wp-json/wccom-extensions/1.0/search&#039; . $parameters,
-			array(
-				&#039;headers&#039;    =&gt; $headers,
-				&#039;user-agent&#039; =&gt; &#039;WooCommerce/&#039; . WC()-&gt;version . &#039;; &#039; . get_bloginfo( &#039;url&#039; ),
-			)
-		);
-
-		if ( is_wp_error( $raw_extensions ) ) {
-			do_action( &#039;woocommerce_page_wc-addons_connection_error&#039;, $raw_extensions-&gt;get_error_message() );
-			return $raw_extensions;
-		}
-
-		$response_code = (int) wp_remote_retrieve_response_code( $raw_extensions );
-		if ( 200 !== $response_code ) {
-			do_action( &#039;woocommerce_page_wc-addons_connection_error&#039;, $response_code );
-			return new WP_Error(
-				&#039;error&#039;,
-				sprintf(
-					esc_html(
-						/* translators: Error code  */
-						__( &#039;Our request to the search API got response code %s.&#039;, &#039;woocommerce&#039; )
-					),
-					$response_code
-				)
-			);
-		}
-
-		$addons = json_decode( wp_remote_retrieve_body( $raw_extensions ) );
-
-		if ( ! is_object( $addons ) || ! isset( $addons-&gt;products ) ) {
-			do_action( &#039;woocommerce_page_wc-addons_connection_error&#039;, &#039;Empty or malformed response&#039; );
-			return new WP_Error( &#039;error&#039;, __( &#039;Our request to the search API got a malformed response.&#039;, &#039;woocommerce&#039; ) );
-		}
-		return $addons;
 	}
 
 	/**
@@ -423,660 +292,6 @@ class WC_Admin_Addons {
 			return $sections[ $section_id ];
 		}
 		return false;
-	}
-
-
-	/**
-	 * Get section content for the addons screen.
-	 *
-	 * @deprecated 5.9.0 No longer used in In-App Marketplace
-	 *
-	 * @param  string $section_id Required section ID.
-	 *
-	 * @return array
-	 */
-	public static function get_section_data( $section_id ) {
-		$section      = self::get_section( $section_id );
-		$section_data = &#039;&#039;;
-
-		if ( ! empty( $section-&gt;endpoint ) ) {
-			$section_data = get_transient( &#039;wc_addons_section_&#039; . $section_id );
-			if ( false === $section_data ) {
-				$raw_section = wp_safe_remote_get(
-					esc_url_raw( $section-&gt;endpoint ),
-					array(
-						&#039;user-agent&#039; =&gt; &#039;WooCommerce/&#039; . WC()-&gt;version . &#039;; &#039; . get_bloginfo( &#039;url&#039; ),
-					)
-				);
-
-				if ( ! is_wp_error( $raw_section ) ) {
-					$section_data = json_decode( wp_remote_retrieve_body( $raw_section ) );
-
-					if ( ! empty( $section_data-&gt;products ) ) {
-						set_transient( &#039;wc_addons_section_&#039; . $section_id, $section_data, WEEK_IN_SECONDS );
-					}
-				}
-			}
-		}
-
-		return apply_filters( &#039;woocommerce_addons_section_data&#039;, $section_data-&gt;products, $section_id );
-	}
-
-	/**
-	 * Handles the outputting of a contextually aware Storefront link (points to child themes if Storefront is already active).
-	 *
-	 * @deprecated 5.9.0 No longer used in In-App Marketplace
-	 */
-	public static function output_storefront_button() {
-		$template   = get_option( &#039;template&#039; );
-		$stylesheet = get_option( &#039;stylesheet&#039; );
-
-		if ( &#039;storefront&#039; === $template ) {
-			if ( &#039;storefront&#039; === $stylesheet ) {
-				$url         = &#039;https://woocommerce.com/product-category/themes/storefront-child-theme-themes/&#039;;
-				$text        = __( &#039;Need a fresh look? Try Storefront child themes&#039;, &#039;woocommerce&#039; );
-				$utm_content = &#039;nostorefrontchildtheme&#039;;
-			} else {
-				$url         = &#039;https://woocommerce.com/product-category/themes/storefront-child-theme-themes/&#039;;
-				$text        = __( &#039;View more Storefront child themes&#039;, &#039;woocommerce&#039; );
-				$utm_content = &#039;hasstorefrontchildtheme&#039;;
-			}
-		} else {
-			$url         = &#039;https://woocommerce.com/storefront/&#039;;
-			$text        = __( &#039;Need a theme? Try Storefront&#039;, &#039;woocommerce&#039; );
-			$utm_content = &#039;nostorefront&#039;;
-		}
-
-		$url = add_query_arg(
-			array(
-				&#039;utm_source&#039;   =&gt; &#039;addons&#039;,
-				&#039;utm_medium&#039;   =&gt; &#039;product&#039;,
-				&#039;utm_campaign&#039; =&gt; &#039;woocommerceplugin&#039;,
-				&#039;utm_content&#039;  =&gt; $utm_content,
-			),
-			$url
-		);
-
-		echo &#039;&lt;a href=&quot;&#039; . esc_url( $url ) . &#039;&quot; class=&quot;add-new-h2&quot;&gt;&#039; . esc_html( $text ) . &#039;&lt;/a&gt;&#039; . &quot;\n&quot;;
-	}
-
-	/**
-	 * Handles the outputting of a banner block.
-	 *
-	 * @deprecated 5.9.0 No longer used in In-App Marketplace
-	 *
-	 * @param object $block Banner data.
-	 */
-	public static function output_banner_block( $block ) {
-		?&gt;
-		&lt;div class=&quot;addons-banner-block&quot;&gt;
-			&lt;h1&gt;&lt;?php echo esc_html( $block-&gt;title ); ?&gt;&lt;/h1&gt;
-			&lt;p&gt;&lt;?php echo esc_html( $block-&gt;description ); ?&gt;&lt;/p&gt;
-			&lt;div class=&quot;addons-banner-block-items&quot;&gt;
-				&lt;?php foreach ( $block-&gt;items as $item ) : ?&gt;
-					&lt;?php if ( self::show_extension( $item ) ) : ?&gt;
-						&lt;div class=&quot;addons-banner-block-item&quot;&gt;
-							&lt;div class=&quot;addons-banner-block-item-icon&quot;&gt;
-								&lt;img class=&quot;addons-img&quot; src=&quot;&lt;?php echo esc_url( $item-&gt;image ); ?&gt;&quot; /&gt;
-							&lt;/div&gt;
-							&lt;div class=&quot;addons-banner-block-item-content&quot;&gt;
-								&lt;h3&gt;&lt;?php echo esc_html( $item-&gt;title ); ?&gt;&lt;/h3&gt;
-								&lt;p&gt;&lt;?php echo esc_html( $item-&gt;description ); ?&gt;&lt;/p&gt;
-								&lt;?php
-									self::output_button(
-										$item-&gt;href,
-										$item-&gt;button,
-										&#039;addons-button-solid&#039;,
-										$item-&gt;plugin
-									);
-								?&gt;
-							&lt;/div&gt;
-						&lt;/div&gt;
-					&lt;?php endif; ?&gt;
-				&lt;?php endforeach; ?&gt;
-			&lt;/div&gt;
-		&lt;/div&gt;
-		&lt;?php
-	}
-
-	/**
-	 * Handles the outputting of a column.
-	 *
-	 * @deprecated 5.9.0 No longer used in In-App Marketplace
-	 *
-	 * @param object $block Column data.
-	 */
-	public static function output_column( $block ) {
-		if ( isset( $block-&gt;container ) &amp;&amp; &#039;column_container_start&#039; === $block-&gt;container ) {
-			?&gt;
-			&lt;div class=&quot;addons-column-section&quot;&gt;
-			&lt;?php
-		}
-		if ( &#039;column_start&#039; === $block-&gt;module ) {
-			?&gt;
-			&lt;div class=&quot;addons-column&quot;&gt;
-			&lt;?php
-		} else {
-			?&gt;
-			&lt;/div&gt;
-			&lt;?php
-		}
-		if ( isset( $block-&gt;container ) &amp;&amp; &#039;column_container_end&#039; === $block-&gt;container ) {
-			?&gt;
-			&lt;/div&gt;
-			&lt;?php
-		}
-	}
-
-	/**
-	 * Handles the outputting of a column block.
-	 *
-	 * @deprecated 5.9.0 No longer used in In-App Marketplace
-	 *
-	 * @param object $block Column block data.
-	 */
-	public static function output_column_block( $block ) {
-		?&gt;
-		&lt;div class=&quot;addons-column-block&quot;&gt;
-			&lt;h1&gt;&lt;?php echo esc_html( $block-&gt;title ); ?&gt;&lt;/h1&gt;
-			&lt;p&gt;&lt;?php echo esc_html( $block-&gt;description ); ?&gt;&lt;/p&gt;
-			&lt;?php foreach ( $block-&gt;items as $item ) : ?&gt;
-				&lt;?php if ( self::show_extension( $item ) ) : ?&gt;
-					&lt;div class=&quot;addons-column-block-item&quot;&gt;
-						&lt;div class=&quot;addons-column-block-item-icon&quot;&gt;
-							&lt;img class=&quot;addons-img&quot; src=&quot;&lt;?php echo esc_url( $item-&gt;image ); ?&gt;&quot; /&gt;
-						&lt;/div&gt;
-						&lt;div class=&quot;addons-column-block-item-content&quot;&gt;
-							&lt;h2&gt;&lt;?php echo esc_html( $item-&gt;title ); ?&gt;&lt;/h2&gt;
-							&lt;?php
-								self::output_button(
-									$item-&gt;href,
-									$item-&gt;button,
-									&#039;addons-button-solid&#039;,
-									$item-&gt;plugin
-								);
-							?&gt;
-							&lt;p&gt;&lt;?php echo esc_html( $item-&gt;description ); ?&gt;&lt;/p&gt;
-						&lt;/div&gt;
-					&lt;/div&gt;
-				&lt;?php endif; ?&gt;
-			&lt;?php endforeach; ?&gt;
-		&lt;/div&gt;
-
-		&lt;?php
-	}
-
-	/**
-	 * Handles the outputting of a small light block.
-	 *
-	 * @deprecated 5.9.0 No longer used in In-App Marketplace
-	 *
-	 * @param object $block Block data.
-	 */
-	public static function output_small_light_block( $block ) {
-		?&gt;
-		&lt;div class=&quot;addons-small-light-block&quot;&gt;
-			&lt;img class=&quot;addons-img&quot; src=&quot;&lt;?php echo esc_url( $block-&gt;image ); ?&gt;&quot; /&gt;
-			&lt;div class=&quot;addons-small-light-block-content&quot;&gt;
-				&lt;h1&gt;&lt;?php echo esc_html( $block-&gt;title ); ?&gt;&lt;/h1&gt;
-				&lt;p&gt;&lt;?php echo esc_html( $block-&gt;description ); ?&gt;&lt;/p&gt;
-				&lt;div class=&quot;addons-small-light-block-buttons&quot;&gt;
-					&lt;?php foreach ( $block-&gt;buttons as $button ) : ?&gt;
-						&lt;?php
-							self::output_button(
-								$button-&gt;href,
-								$button-&gt;text,
-								&#039;addons-button-solid&#039;
-							);
-						?&gt;
-					&lt;?php endforeach; ?&gt;
-				&lt;/div&gt;
-			&lt;/div&gt;
-		&lt;/div&gt;
-		&lt;?php
-	}
-
-	/**
-	 * Handles the outputting of a small dark block.
-	 *
-	 * @deprecated 5.9.0 No longer used in In-App Marketplace
-	 *
-	 * @param object $block Block data.
-	 */
-	public static function output_small_dark_block( $block ) {
-		?&gt;
-		&lt;div class=&quot;addons-small-dark-block&quot;&gt;
-			&lt;h1&gt;&lt;?php echo esc_html( $block-&gt;title ); ?&gt;&lt;/h1&gt;
-			&lt;p&gt;&lt;?php echo esc_html( $block-&gt;description ); ?&gt;&lt;/p&gt;
-			&lt;div class=&quot;addons-small-dark-items&quot;&gt;
-				&lt;?php foreach ( $block-&gt;items as $item ) : ?&gt;
-					&lt;div class=&quot;addons-small-dark-item&quot;&gt;
-						&lt;?php if ( ! empty( $item-&gt;image ) ) : ?&gt;
-							&lt;div class=&quot;addons-small-dark-item-icon&quot;&gt;
-								&lt;img class=&quot;addons-img&quot; src=&quot;&lt;?php echo esc_url( $item-&gt;image ); ?&gt;&quot; /&gt;
-							&lt;/div&gt;
-						&lt;?php endif; ?&gt;
-						&lt;?php
-							self::output_button(
-								$item-&gt;href,
-								$item-&gt;button,
-								&#039;addons-button-outline-white&#039;
-							);
-						?&gt;
-					&lt;/div&gt;
-				&lt;?php endforeach; ?&gt;
-			&lt;/div&gt;
-		&lt;/div&gt;
-		&lt;?php
-	}
-
-	/**
-	 * Handles the outputting of the WooCommerce Services banner block.
-	 *
-	 * @deprecated 5.9.0 No longer used in In-App Marketplace
-	 *
-	 * @param object $block Block data.
-	 */
-	public static function output_wcs_banner_block( $block = array() ) {
-		$is_active = is_plugin_active( &#039;woocommerce-services/woocommerce-services.php&#039; );
-		$location  = wc_get_base_location();
-
-		if (
-			! in_array( $location[&#039;country&#039;], array( &#039;US&#039; ), true ) ||
-			$is_active ||
-			! current_user_can( &#039;install_plugins&#039; ) ||
-			! current_user_can( &#039;activate_plugins&#039; )
-		) {
-			return;
-		}
-
-		$button_url = wp_nonce_url(
-			add_query_arg(
-				array(
-					&#039;install-addon&#039; =&gt; &#039;woocommerce-services&#039;,
-				)
-			),
-			&#039;install-addon_woocommerce-services&#039;
-		);
-
-		$defaults = array(
-			&#039;image&#039;       =&gt; WC()-&gt;plugin_url() . &#039;/assets/images/wcs-extensions-banner-3x.jpg&#039;,
-			&#039;image_alt&#039;   =&gt; __( &#039;WooCommerce Shipping&#039;, &#039;woocommerce&#039; ),
-			&#039;title&#039;       =&gt; __( &#039;Save time and money with WooCommerce Shipping&#039;, &#039;woocommerce&#039; ),
-			&#039;description&#039; =&gt; __( &#039;Print discounted USPS and DHL labels straight from your WooCommerce dashboard and save on shipping.&#039;, &#039;woocommerce&#039; ),
-			&#039;button&#039;      =&gt; __( &#039;Free - Install now&#039;, &#039;woocommerce&#039; ),
-			&#039;href&#039;        =&gt; $button_url,
-			&#039;logos&#039;       =&gt; array(),
-		);
-
-		switch ( $location[&#039;country&#039;] ) {
-			case &#039;US&#039;:
-				$local_defaults = array(
-					&#039;logos&#039; =&gt; array_merge(
-						$defaults[&#039;logos&#039;],
-						array(
-							array(
-								&#039;link&#039; =&gt; WC()-&gt;plugin_url() . &#039;/assets/images/wcs-usps-logo.png&#039;,
-								&#039;alt&#039;  =&gt; &#039;USPS logo&#039;,
-							),
-							array(
-								&#039;link&#039; =&gt; WC()-&gt;plugin_url() . &#039;/assets/images/wcs-dhlexpress-logo.png&#039;,
-								&#039;alt&#039;  =&gt; &#039;DHL Express logo&#039;,
-							),
-						)
-					),
-				);
-				break;
-			default:
-				$local_defaults = array();
-		}
-
-		$block_data = array_merge( $defaults, $local_defaults, $block );
-		?&gt;
-		&lt;div class=&quot;addons-wcs-banner-block&quot;&gt;
-			&lt;div class=&quot;addons-wcs-banner-block-image is-full-image&quot;&gt;
-				&lt;img
-					class=&quot;addons-img&quot;
-					src=&quot;&lt;?php echo esc_url( $block_data[&#039;image&#039;] ); ?&gt;&quot;
-					alt=&quot;&lt;?php echo esc_attr( $block_data[&#039;image_alt&#039;] ); ?&gt;&quot;
-				/&gt;
-			&lt;/div&gt;
-			&lt;div class=&quot;addons-wcs-banner-block-content&quot;&gt;
-				&lt;h1&gt;&lt;?php echo esc_html( $block_data[&#039;title&#039;] ); ?&gt;&lt;/h1&gt;
-				&lt;p&gt;&lt;?php echo esc_html( $block_data[&#039;description&#039;] ); ?&gt;&lt;/p&gt;
-				&lt;ul class=&quot;wcs-logos-container&quot;&gt;
-					&lt;?php foreach ( $block_data[&#039;logos&#039;] as $logo ) : ?&gt;
-						&lt;li&gt;
-							&lt;img
-								alt=&quot;&lt;?php echo esc_attr( $logo[&#039;alt&#039;] ); ?&gt;&quot;
-								class=&quot;wcs-service-logo&quot;
-								src=&quot;&lt;?php echo esc_url( $logo[&#039;link&#039;] ); ?&gt;&quot;
-							&gt;
-						&lt;/li&gt;
-					&lt;?php endforeach; ?&gt;
-				&lt;/ul&gt;
-				&lt;?php
-					self::output_button(
-						$block_data[&#039;href&#039;],
-						$block_data[&#039;button&#039;],
-						&#039;addons-button-outline-purple&#039;
-					);
-				?&gt;
-			&lt;/div&gt;
-		&lt;/div&gt;
-		&lt;?php
-	}
-
-	/**
-	 * Handles the outputting of the WooCommerce Pay banner block.
-	 *
-	 * @deprecated 5.9.0 No longer used in In-App Marketplace
-	 *
-	 * @param object $block Block data.
-	 */
-	public static function output_wcpay_banner_block( $block = array() ) {
-		$is_active = is_plugin_active( &#039;woocommerce-payments/woocommerce-payments.php&#039; );
-		$location  = wc_get_base_location();
-
-		if (
-			! in_array( $location[&#039;country&#039;], array( &#039;US&#039; ), true ) ||
-			$is_active ||
-			! current_user_can( &#039;install_plugins&#039; ) ||
-			! current_user_can( &#039;activate_plugins&#039; )
-		) {
-			return;
-		}
-
-		$button_url = wp_nonce_url(
-			add_query_arg(
-				array(
-					&#039;install-addon&#039; =&gt; &#039;woocommerce-payments&#039;,
-				)
-			),
-			&#039;install-addon_woocommerce-payments&#039;
-		);
-
-		$defaults = array(
-			&#039;image&#039;       =&gt; WC()-&gt;plugin_url() . &#039;/assets/images/wcpayments-icon-secure.png&#039;,
-			&#039;image_alt&#039;   =&gt; __( &#039;WooPayments&#039;, &#039;woocommerce&#039; ),
-			&#039;title&#039;       =&gt; __( &#039;Payments made simple, with no monthly fees &amp;mdash; exclusively for WooCommerce stores.&#039;, &#039;woocommerce&#039; ),
-			&#039;description&#039; =&gt; __( &#039;Securely accept cards in your store. See payments, track cash flow into your bank account, and stay on top of disputes – right from your dashboard.&#039;, &#039;woocommerce&#039; ),
-			&#039;button&#039;      =&gt; __( &#039;Free - Install now&#039;, &#039;woocommerce&#039; ),
-			&#039;href&#039;        =&gt; $button_url,
-			&#039;logos&#039;       =&gt; array(),
-		);
-
-		$block_data = array_merge( $defaults, $block );
-		?&gt;
-		&lt;div class=&quot;addons-wcs-banner-block&quot;&gt;
-			&lt;div class=&quot;addons-wcs-banner-block-image&quot;&gt;
-				&lt;img
-					class=&quot;addons-img&quot;
-					src=&quot;&lt;?php echo esc_url( $block_data[&#039;image&#039;] ); ?&gt;&quot;
-					alt=&quot;&lt;?php echo esc_attr( $block_data[&#039;image_alt&#039;] ); ?&gt;&quot;
-				/&gt;
-			&lt;/div&gt;
-			&lt;div class=&quot;addons-wcs-banner-block-content&quot;&gt;
-				&lt;h1&gt;&lt;?php echo esc_html( $block_data[&#039;title&#039;] ); ?&gt;&lt;/h1&gt;
-				&lt;p&gt;&lt;?php echo esc_html( $block_data[&#039;description&#039;] ); ?&gt;&lt;/p&gt;
-				&lt;?php
-					self::output_button(
-						$block_data[&#039;href&#039;],
-						$block_data[&#039;button&#039;],
-						&#039;addons-button-outline-purple&#039;
-					);
-				?&gt;
-			&lt;/div&gt;
-		&lt;/div&gt;
-		&lt;?php
-	}
-
-
-	/**
-	 * Output the HTML for the promotion block.
-	 *
-	 * @param array $promotion Array of promotion block data.
-	 * @return void
-	 */
-	public static function output_search_promotion_block( array $promotion ) {
-		?&gt;
-		&lt;div class=&quot;addons-wcs-banner-block&quot;&gt;
-			&lt;div class=&quot;addons-wcs-banner-block-image&quot;&gt;
-				&lt;img
-					class=&quot;addons-img&quot;
-					src=&quot;&lt;?php echo esc_url( $promotion[&#039;image&#039;] ); ?&gt;&quot;
-					alt=&quot;&lt;?php echo esc_attr( $promotion[&#039;image_alt&#039;] ); ?&gt;&quot;
-				/&gt;
-			&lt;/div&gt;
-			&lt;div class=&quot;addons-wcs-banner-block-content&quot;&gt;
-				&lt;h1&gt;&lt;?php echo esc_html( $promotion[&#039;title&#039;] ); ?&gt;&lt;/h1&gt;
-				&lt;p&gt;&lt;?php echo esc_html( $promotion[&#039;description&#039;] ); ?&gt;&lt;/p&gt;
-				&lt;?php
-				if ( ! empty( $promotion[&#039;actions&#039;] ) ) {
-					foreach ( $promotion[&#039;actions&#039;] as $action ) {
-						self::output_promotion_action( $action );
-					}
-				}
-				?&gt;
-			&lt;/div&gt;
-		&lt;/div&gt;
-		&lt;?php
-	}
-
-
-	/**
-	 * Handles the output of a full-width block.
-	 *
-	 * @deprecated 5.9.0 No longer used in In-App Marketplace
-	 *
-	 * @param array $section Section data.
-	 */
-	public static function output_promotion_block( $section ) {
-		if (
-			! current_user_can( &#039;install_plugins&#039; ) ||
-			! current_user_can( &#039;activate_plugins&#039; )
-		) {
-			return;
-		}
-
-		$section_object = (object) $section;
-
-		if ( ! empty( $section_object-&gt;geowhitelist ) ) {
-			$section_object-&gt;geowhitelist = explode( &#039;,&#039;, $section_object-&gt;geowhitelist );
-		}
-
-		if ( ! empty( $section_object-&gt;geoblacklist ) ) {
-			$section_object-&gt;geoblacklist = explode( &#039;,&#039;, $section_object-&gt;geoblacklist );
-		}
-
-		if ( ! self::show_extension( $section_object ) ) {
-			return;
-		}
-
-		?&gt;
-		&lt;div class=&quot;addons-banner-block addons-promotion-block&quot;&gt;
-			&lt;img
-				class=&quot;addons-img&quot;
-				src=&quot;&lt;?php echo esc_url( $section[&#039;image&#039;] ); ?&gt;&quot;
-				alt=&quot;&lt;?php echo esc_attr( $section[&#039;image_alt&#039;] ); ?&gt;&quot;
-			/&gt;
-			&lt;div class=&quot;addons-promotion-block-content&quot;&gt;
-				&lt;h1 class=&quot;addons-promotion-block-title&quot;&gt;&lt;?php echo esc_html( $section[&#039;title&#039;] ); ?&gt;&lt;/h1&gt;
-				&lt;div class=&quot;addons-promotion-block-description&quot;&gt;
-					&lt;?php echo wp_kses_post( $section[&#039;description&#039;] ); ?&gt;
-				&lt;/div&gt;
-				&lt;div class=&quot;addons-promotion-block-buttons&quot;&gt;
-					&lt;?php
-					if ( $section[&#039;button_1&#039;] ) {
-						self::output_button(
-							$section[&#039;button_1_href&#039;],
-							$section[&#039;button_1&#039;],
-							&#039;addons-button-expandable addons-button-solid&#039;,
-							$section[&#039;plugin&#039;]
-						);
-					}
-
-					if ( $section[&#039;button_2&#039;] ) {
-						self::output_button(
-							$section[&#039;button_2_href&#039;],
-							$section[&#039;button_2&#039;],
-							&#039;addons-button-expandable addons-button-outline-purple&#039;,
-							$section[&#039;plugin&#039;]
-						);
-					}
-					?&gt;
-				&lt;/div&gt;
-			&lt;/div&gt;
-		&lt;/div&gt;
-		&lt;?php
-	}
-
-	/**
-	 * Handles the outputting of featured sections
-	 *
-	 * @param array $sections Section data.
-	 */
-	public static function output_featured_sections( $sections ) {
-		foreach ( $sections as $section ) {
-			switch ( $section-&gt;module ) {
-				case &#039;banner_block&#039;:
-					self::output_banner_block( $section );
-					break;
-				case &#039;column_start&#039;:
-					self::output_column( $section );
-					break;
-				case &#039;column_end&#039;:
-					self::output_column( $section );
-					break;
-				case &#039;column_block&#039;:
-					self::output_column_block( $section );
-					break;
-				case &#039;small_light_block&#039;:
-					self::output_small_light_block( $section );
-					break;
-				case &#039;small_dark_block&#039;:
-					self::output_small_dark_block( $section );
-					break;
-				case &#039;wcs_banner_block&#039;:
-					self::output_wcs_banner_block( (array) $section );
-					break;
-				case &#039;wcpay_banner_block&#039;:
-					self::output_wcpay_banner_block( (array) $section );
-					break;
-				case &#039;promotion_block&#039;:
-					self::output_promotion_block( (array) $section );
-					break;
-			}
-		}
-	}
-
-	/**
-	 * Handles the outputting of featured page
-	 *
-	 * @param array $blocks Featured page&#039;s blocks.
-	 */
-	private static function output_featured( $blocks ) {
-		foreach ( $blocks as $block ) {
-			$block_type = $block-&gt;type ?? null;
-			switch ( $block_type ) {
-				case &#039;group&#039;:
-					self::output_group( $block );
-					break;
-				case &#039;banner&#039;:
-					self::output_banner( $block );
-					break;
-			}
-		}
-	}
-
-	/**
-	 * Render a group block including products
-	 *
-	 * @param mixed $block Block of the page for rendering.
-	 *
-	 * @return void
-	 */
-	private static function output_group( $block ) {
-		$capacity             = $block-&gt;capacity ?? 3;
-		$product_list_classes = 3 === $capacity ? &#039;three-column&#039; : &#039;two-column&#039;;
-		$product_list_classes = &#039;products addons-products-&#039; . $product_list_classes;
-		?&gt;
-			&lt;section class=&quot;addon-product-group&quot;&gt;
-				&lt;h2 class=&quot;addon-product-group-title&quot;&gt;&lt;?php echo esc_html( $block-&gt;title ); ?&gt;&lt;/h2&gt;
-				&lt;div class=&quot;addon-product-group-description-container&quot;&gt;
-					&lt;?php if ( ! empty( $block-&gt;description ) ) : ?&gt;
-					&lt;div class=&quot;addon-product-group-description&quot;&gt;
-						&lt;?php echo esc_html( $block-&gt;description ); ?&gt;
-					&lt;/div&gt;
-					&lt;?php endif; ?&gt;
-					&lt;?php if ( null !== $block-&gt;url ) : ?&gt;
-					&lt;a class=&quot;addon-product-group-see-more&quot; href=&quot;&lt;?php echo esc_url( $block-&gt;url ); ?&gt;&quot;&gt;
-						&lt;?php esc_html_e( &#039;See more&#039;, &#039;woocommerce&#039; ); ?&gt;
-					&lt;/a&gt;
-					&lt;?php endif; ?&gt;
-				&lt;/div&gt;
-				&lt;div class=&quot;addon-product-group__items&quot;&gt;
-					&lt;ul class=&quot;&lt;?php echo esc_attr( $product_list_classes ); ?&gt;&quot;&gt;
-					&lt;?php
-					$products = array_slice( $block-&gt;items, 0, $capacity );
-					foreach ( $products as $item ) {
-						self::render_product_card( $item );
-					}
-					?&gt;
-					&lt;/ul&gt;
-				&lt;div&gt;
-			&lt;/section&gt;
-		&lt;?php
-	}
-
-	/**
-	 * Render a banner contains a product
-	 *
-	 * @param mixed $block Block of the page for rendering.
-	 *
-	 * @return void
-	 */
-	private static function output_banner( $block ) {
-		if ( empty( $block-&gt;buttons ) ) {
-			// Render a product-like banner.
-			?&gt;
-			&lt;ul class=&quot;products&quot;&gt;
-				&lt;?php self::render_product_card( $block, $block-&gt;type ); ?&gt;
-			&lt;/ul&gt;
-			&lt;?php
-		} else {
-			// Render a banner with buttons.
-			?&gt;
-			&lt;ul class=&quot;products&quot;&gt;
-				&lt;li class=&quot;product addons-buttons-banner&quot;&gt;
-					&lt;div class=&quot;addons-buttons-banner-image&quot;
-						style=&quot;background-image:url(&lt;?php echo esc_url( $block-&gt;image ); ?&gt;)&quot;
-						title=&quot;&lt;?php echo esc_attr( $block-&gt;image_alt ); ?&gt;&quot;&gt;&lt;/div&gt;
-					&lt;div class=&quot;product-details addons-buttons-banner-details-container&quot;&gt;
-						&lt;div class=&quot;addons-buttons-banner-details&quot;&gt;
-							&lt;h2&gt;&lt;?php echo esc_html( $block-&gt;title ); ?&gt;&lt;/h2&gt;
-							&lt;p&gt;&lt;?php echo wp_kses( $block-&gt;description, array() ); ?&gt;&lt;/p&gt;
-						&lt;/div&gt;
-						&lt;div class=&quot;addons-buttons-banner-button-container&quot;&gt;
-						&lt;?php
-						foreach ( $block-&gt;buttons as $button ) {
-							$button_classes = array( &#039;button&#039;, &#039;addons-buttons-banner-button&#039; );
-							$type           = $button-&gt;type ?? null;
-							if ( &#039;primary&#039; === $type ) {
-								$button_classes[] = &#039;addons-buttons-banner-button-primary&#039;;
-							}
-							?&gt;
-							&lt;a class=&quot;&lt;?php echo esc_attr( implode( &#039; &#039;, $button_classes ) ); ?&gt;&quot;
-								href=&quot;&lt;?php echo esc_url( $button-&gt;href ); ?&gt;&quot;&gt;
-								&lt;?php echo esc_html( $button-&gt;title ); ?&gt;
-							&lt;/a&gt;
-						&lt;?php } ?&gt;
-						&lt;/div&gt;
-					&lt;/div&gt;
-				&lt;/li&gt;
-			&lt;/ul&gt;
-			&lt;?php
-		}
 	}
 
 	/**
@@ -1132,169 +347,36 @@ class WC_Admin_Addons {
 	}
 
 	/**
-	 * Output HTML for a promotion action.
-	 *
-	 * @param array $action Array of action properties.
+	 * Process requests to legacy marketplace menu and redirect to correct in-app pages.
 	 *
 	 * @return void
 	 */
-	public static function output_promotion_action( array $action ) {
-		if ( empty( $action ) ) {
-			return;
-		}
-		$style = ( ! empty( $action[&#039;primary&#039;] ) &amp;&amp; $action[&#039;primary&#039;] ) ? &#039;addons-button-solid&#039; : &#039;addons-button-outline-purple&#039;;
-		?&gt;
-		&lt;a
-			class=&quot;addons-button &lt;?php echo esc_attr( $style ); ?&gt;&quot;
-			href=&quot;&lt;?php echo esc_url( $action[&#039;url&#039;] ); ?&gt;&quot;&gt;
-			&lt;?php echo esc_html( $action[&#039;label&#039;] ); ?&gt;
-		&lt;/a&gt;
-		&lt;?php
-	}
-
-	/**
-	 * Output HTML for a promotion action if data couldn&#039;t be fetched.
-	 *
-	 * @param string $message Error message.
-	 *
-	 * @return void
-	 */
-	public static function output_empty( $message = &#039;&#039; ) {
-		?&gt;
-		&lt;div class=&quot;wc-addons__empty&quot;&gt;
-			&lt;h2&gt;&lt;?php echo wp_kses_post( __( &#039;Oh no! We\&#039;re having trouble connecting to the extensions catalog right now.&#039;, &#039;woocommerce&#039; ) ); ?&gt;&lt;/h2&gt;
-			&lt;?php if ( ! empty( $message ) ) : ?&gt;
-				&lt;p&gt;&lt;?php echo esc_html( $message ); ?&gt;&lt;/p&gt;
-			&lt;?php endif; ?&gt;
-			&lt;p&gt;
-				&lt;?php
-				printf(
-					wp_kses_post(
-						/* translators: a url */
-						__(
-							&#039;To start growing your business, head over to &lt;a href=&quot;%s&quot;&gt;WooCommerce.com&lt;/a&gt;, where you\&#039;ll find the most popular WooCommerce extensions.&#039;,
-							&#039;woocommerce&#039;
-						)
-					),
-					&#039;https://woocommerce.com/products/?utm_source=extensionsscreen&amp;utm_medium=product&amp;utm_campaign=connectionerror&#039;
-				);
-				?&gt;
-			&lt;/p&gt;
-		&lt;/div&gt;
-		&lt;?php
-	}
-
-
-	/**
-	 * Handles output of the addons page in admin.
-	 */
-	public static function output() {
+	public static function handle_legacy_marketplace_redirects() {
 		$section = isset( $_GET[&#039;section&#039;] ) ? sanitize_text_field( wp_unslash( $_GET[&#039;section&#039;] ) ) : &#039;_featured&#039;;
 		$search  = isset( $_GET[&#039;search&#039;] ) ? sanitize_text_field( wp_unslash( $_GET[&#039;search&#039;] ) ) : &#039;&#039;;
 
-		if ( isset( $_GET[&#039;section&#039;] ) &amp;&amp; &#039;helper&#039; === $_GET[&#039;section&#039;] ) {
-			do_action( &#039;woocommerce_helper_output&#039; );
-			return;
+		if ( &#039;helper&#039; === $section ) {
+			wp_safe_redirect( admin_url( &#039;admin.php?page=wc-admin&amp;tab=my-subscriptions&amp;path=%2Fextensions&#039; ) );
+			exit();
 		}
 
-		if ( isset( $_GET[&#039;install-addon&#039;] ) ) {
-			switch ( $_GET[&#039;install-addon&#039;] ) {
-				case &#039;woocommerce-services&#039;:
-					self::install_woocommerce_services_addon();
-					break;
-				case &#039;woocommerce-payments&#039;:
-					self::install_woocommerce_payments_addon( $section );
-					break;
-				default:
-					// Do nothing.
-					break;
-			}
+		if ( &#039;search&#039; === $section || ! empty( $search ) ) {
+			wp_safe_redirect( admin_url( &#039;admin.php?page=wc-admin&amp;term=&#039; . $search . &#039;&amp;tab=search&amp;path=%2Fextensions&#039; ) );
+			exit();
 		}
 
-		$sections        = self::get_sections();
-		$theme           = wp_get_theme();
-		$current_section = isset( $_GET[&#039;section&#039;] ) ? $section : &#039;_featured&#039;;
-		$promotions      = array();
-		$addons          = array();
+		$sections         = self::get_sections();
+		$allowed_sections = array_map( fn( $section_object ) =&gt; $section_object-&gt;slug, $sections );
+		// Validate if the category is supported.
+		$section = in_array( $section, $allowed_sections, true ) ? $section : &#039;_featured&#039;;
 
-		if ( &#039;_featured&#039; !== $current_section ) {
-			$category       = $section ? $section : null;
-			$term           = $search ? $search : null;
-			$country        = WC()-&gt;countries-&gt;get_base_country();
-			$extension_data = self::get_extension_data( $category, $term, $country );
-			$addons         = is_wp_error( $extension_data ) ? $extension_data : $extension_data-&gt;products;
-			$promotions     = ! empty( $extension_data-&gt;promotions ) ? $extension_data-&gt;promotions : array();
+		if ( &#039;_featured&#039; === $section ) {
+			wp_safe_redirect( admin_url( &#039;admin.php?page=wc-admin&amp;path=%2Fextensions&#039; ) );
+			exit();
 		}
 
-		// We need Automattic\WooCommerce\Admin\RemoteInboxNotifications for the next part, if not remove all promotions.
-		if ( ! WC()-&gt;is_wc_admin_active() ) {
-			$promotions = array();
-		}
-		// Check for existence of promotions and evaluate out if we should show them.
-		if ( ! empty( $promotions ) ) {
-			foreach ( $promotions as $promo_id =&gt; $promotion ) {
-				$evaluator = new PromotionRuleEngine\RuleEvaluator();
-				$passed    = $evaluator-&gt;evaluate( $promotion-&gt;rules );
-				if ( ! $passed ) {
-					unset( $promotions[ $promo_id ] );
-				}
-			}
-			// Transform promotions to the correct format ready for output.
-			$promotions = self::format_promotions( $promotions );
-		}
-
-		/**
-		 * Addon page view.
-		 *
-		 * @uses $addons
-		 * @uses $search
-		 * @uses $sections
-		 * @uses $theme
-		 * @uses $current_section
-		 */
-		include_once dirname( __FILE__ ) . &#039;/views/html-admin-page-addons.php&#039;;
-	}
-
-	/**
-	 * Install WooCommerce Services from Extensions screens.
-	 */
-	public static function install_woocommerce_services_addon() {
-		check_admin_referer( &#039;install-addon_woocommerce-services&#039; );
-
-		$services_plugin_id = &#039;woocommerce-services&#039;;
-		$services_plugin    = array(
-			&#039;name&#039;      =&gt; __( &#039;WooCommerce Services&#039;, &#039;woocommerce&#039; ),
-			&#039;repo-slug&#039; =&gt; &#039;woocommerce-services&#039;,
-		);
-
-		WC_Install::background_installer( $services_plugin_id, $services_plugin );
-
-		wp_safe_redirect( remove_query_arg( array( &#039;install-addon&#039;, &#039;_wpnonce&#039; ) ) );
-		exit;
-	}
-
-	/**
-	 * Install WooCommerce Payments from the Extensions screens.
-	 *
-	 * @param string $section Optional. Extensions tab.
-	 *
-	 * @return void
-	 */
-	public static function install_woocommerce_payments_addon( $section = &#039;_featured&#039; ) {
-		check_admin_referer( &#039;install-addon_woocommerce-payments&#039; );
-
-		$wcpay_plugin_id = &#039;woocommerce-payments&#039;;
-		$wcpay_plugin    = array(
-			&#039;name&#039;      =&gt; __( &#039;WooPayments&#039;, &#039;woocommerce&#039; ),
-			&#039;repo-slug&#039; =&gt; &#039;woocommerce-payments&#039;,
-		);
-
-		WC_Install::background_installer( $wcpay_plugin_id, $wcpay_plugin );
-
-		do_action( &#039;woocommerce_addon_installed&#039;, $wcpay_plugin_id, $section );
-
-		wp_safe_redirect( remove_query_arg( array( &#039;install-addon&#039;, &#039;_wpnonce&#039; ) ) );
-		exit;
+		wp_safe_redirect( admin_url( &#039;admin.php?page=wc-admin&amp;tab=extensions&amp;path=%2Fextensions&amp;category=&#039; . $section ) );
+		exit();
 	}
 
 	/**
@@ -1311,40 +393,6 @@ class WC_Admin_Addons {
 		}
 
 		return &quot; $admin_body_class woocommerce-page-wc-marketplace &quot;;
-	}
-
-	/**
-	 * Determine which class should be used for a rating star:
-	 * - golden
-	 * - half-filled (50/50 golden and gray)
-	 * - gray
-	 *
-	 * Consider ratings from 3.0 to 4.0 as an example
-	 * 3.0 will produce 3 stars
-	 * 3.1 to 3.5 will produce 3 stars and a half star
-	 * 3.6 to 4.0 will product 4 stars
-	 *
-	 * @param float $rating Rating of a product.
-	 * @param int   $index  Index of a star in a row.
-	 *
-	 * @return string CSS class to use.
-	 */
-	public static function get_star_class( $rating, $index ) {
-		if ( $rating &gt;= $index ) {
-			// Rating more that current star to show.
-			return &#039;fill&#039;;
-		} elseif (
-			abs( $index - 1 - floor( $rating ) ) &lt; 0.0000001 &amp;&amp;
-			0 &lt; ( $rating - floor( $rating ) )
-		) {
-			// For rating more than x.0 and less than x.5 or equal it will show a half star.
-			return 50 &gt;= floor( ( $rating - floor( $rating ) ) * 100 )
-				? &#039;half-fill&#039;
-				: &#039;fill&#039;;
-		}
-
-		// Don&#039;t show a golden star otherwise.
-		return &#039;no-fill&#039;;
 	}
 
 	/**
@@ -1373,288 +421,6 @@ class WC_Admin_Addons {
 		}
 
 		return $action-&gt;url;
-	}
-
-	/**
-	 * Format the promotion data ready for display, ie fetch locales and actions.
-	 *
-	 * @param array $promotions Array of promotoin objects.
-	 * @return array Array of formatted promotions ready for output.
-	 */
-	public static function format_promotions( array $promotions ): array {
-		$formatted_promotions = array();
-		foreach ( $promotions as $promotion ) {
-			// Get the matching locale or fall back to en-US.
-			$locale = PromotionRuleEngine\SpecRunner::get_locale( $promotion-&gt;locales );
-			if ( null === $locale ) {
-				continue;
-			}
-
-			$promotion_actions = array();
-			if ( ! empty( $promotion-&gt;actions ) ) {
-				foreach ( $promotion-&gt;actions as $action ) {
-					$action_locale = PromotionRuleEngine\SpecRunner::get_action_locale( $action-&gt;locales );
-					$url           = self::get_action_url( $action );
-
-					$promotion_actions[] = array(
-						&#039;name&#039;    =&gt; $action-&gt;name,
-						&#039;label&#039;   =&gt; $action_locale-&gt;label,
-						&#039;url&#039;     =&gt; $url,
-						&#039;primary&#039; =&gt; isset( $action-&gt;is_primary ) ? $action-&gt;is_primary : false,
-					);
-				}
-			}
-
-			$formatted_promotions[] = array(
-				&#039;title&#039;       =&gt; $locale-&gt;title,
-				&#039;description&#039; =&gt; $locale-&gt;description,
-				&#039;image&#039;       =&gt; ( &#039;http&#039; === substr( $locale-&gt;image, 0, 4 ) ) ? $locale-&gt;image : WC()-&gt;plugin_url() . $locale-&gt;image,
-				&#039;image_alt&#039;   =&gt; $locale-&gt;image_alt,
-				&#039;actions&#039;     =&gt; $promotion_actions,
-			);
-		}
-		return $formatted_promotions;
-	}
-
-	/**
-	 * Map data from different endpoints to a universal format
-	 *
-	 * Search and featured products has a slightly different products&#039; field names.
-	 * Mapping converts different data structures into a universal one for further processing.
-	 *
-	 * @param mixed $data Product Card Data.
-	 *
-	 * @return object Converted data.
-	 */
-	public static function map_product_card_data( $data ) {
-		$mapped = (object) null;
-
-		$type = $data-&gt;type ?? null;
-
-		// Icon.
-		$mapped-&gt;icon = $data-&gt;icon ?? null;
-		if ( null === $mapped-&gt;icon &amp;&amp; &#039;banner&#039; === $type ) {
-			// For product-related banners icon is a product&#039;s image.
-			$mapped-&gt;icon = $data-&gt;image ?? null;
-		}
-
-		// URL.
-		$mapped-&gt;url = $data-&gt;link ?? null;
-		if ( empty( $mapped-&gt;url ) ) {
-			$mapped-&gt;url = $data-&gt;url ?? null;
-		}
-
-		// Title.
-		$mapped-&gt;title = $data-&gt;title ?? null;
-
-		// Vendor Name.
-		$mapped-&gt;vendor_name = $data-&gt;vendor_name ?? null;
-		if ( empty( $mapped-&gt;vendor_name ) ) {
-			$mapped-&gt;vendor_name = $data-&gt;vendorName ?? null; // phpcs:ignore WordPress.NamingConventions.ValidVariableName.UsedPropertyNotSnakeCase
-		}
-
-		// Vendor URL.
-		$mapped-&gt;vendor_url = $data-&gt;vendor_url ?? null;
-		if ( empty( $mapped-&gt;vendor_url ) ) {
-			$mapped-&gt;vendor_url = $data-&gt;vendorUrl ?? null; // phpcs:ignore WordPress.NamingConventions.ValidVariableName.UsedPropertyNotSnakeCase
-		}
-
-		// Description.
-		$mapped-&gt;description = $data-&gt;excerpt ?? null;
-		if ( empty( $mapped-&gt;description ) ) {
-			$mapped-&gt;description = $data-&gt;description ?? null;
-		}
-
-		$has_currency = ! empty( $data-&gt;currency ); // phpcs:ignore WordPress.NamingConventions.ValidVariableName.UsedPropertyNotSnakeCase
-
-		// Is Free.
-		if ( $has_currency ) {
-			$mapped-&gt;is_free = 0 === (int) $data-&gt;price;
-		} else {
-			$mapped-&gt;is_free = &#039;&amp;#36;0.00&#039; === $data-&gt;price;
-		}
-
-		// Price.
-		if ( $has_currency ) {
-			$mapped-&gt;price = wc_price( $data-&gt;price, array( &#039;currency&#039; =&gt; $data-&gt;currency ) );
-		} else {
-			$mapped-&gt;price = $data-&gt;price;
-		}
-
-		// Price suffix, e.g. &quot;per month&quot;.
-		$mapped-&gt;price_suffix = $data-&gt;price_suffix ?? null;
-
-		// Rating.
-		$mapped-&gt;rating = $data-&gt;rating ?? null;
-		if ( null === $mapped-&gt;rating ) {
-			$mapped-&gt;rating = $data-&gt;averageRating ?? null; // phpcs:ignore WordPress.NamingConventions.ValidVariableName.UsedPropertyNotSnakeCase
-		}
-
-		// Reviews Count.
-		$mapped-&gt;reviews_count = $data-&gt;reviews_count ?? null;
-		if ( null === $mapped-&gt;reviews_count ) {
-			$mapped-&gt;reviews_count = $data-&gt;reviewsCount ?? null; // phpcs:ignore WordPress.NamingConventions.ValidVariableName.UsedPropertyNotSnakeCase
-		}
-		// Featured &amp; Promoted product card.
-		// Label.
-		$mapped-&gt;label = $data-&gt;label ?? null;
-		// Primary color.
-		$mapped-&gt;primary_color = $data-&gt;primary_color ?? null;
-		// Text color.
-		$mapped-&gt;text_color = $data-&gt;text_color ?? null;
-		// Button text.
-		$mapped-&gt;button = $data-&gt;button ?? null;
-
-		return $mapped;
-	}
-
-	/**
-	 * Render a product card
-	 *
-	 * There&#039;s difference in data structure (e.g. field names) between endpoints such as search and
-	 * featured. Inner mapping helps to use universal field names for further work.
-	 *
-	 * @param mixed  $data       Product data.
-	 * @param string $block_type Block type that&#039;s different from the default product card, e.g. a banner.
-	 *
-	 * @return void
-	 */
-	public static function render_product_card( $data, $block_type = null ) {
-		$mapped      = self::map_product_card_data( $data );
-		$product_url = self::add_in_app_purchase_url_params( $mapped-&gt;url );
-		$class_names = array( &#039;product&#039; );
-		// Specify a class name according to $block_type (if it&#039;s specified).
-		if ( null !== $block_type ) {
-			$class_names[] = &#039;addons-product-&#039; . $block_type;
-		}
-
-		$product_details_classes = &#039;product-details&#039;;
-		if ( &#039;banner&#039; === $block_type ) {
-			$product_details_classes .= &#039; addon-product-banner-details&#039;;
-		}
-
-		if ( isset( $mapped-&gt;label ) &amp;&amp; &#039;promoted&#039; === $mapped-&gt;label ) {
-			$product_details_classes .= &#039; promoted&#039;;
-		} elseif ( isset( $mapped-&gt;label ) &amp;&amp; &#039;featured&#039; === $mapped-&gt;label ) {
-			$product_details_classes .= &#039; featured&#039;;
-		}
-
-		if ( &#039;promoted&#039; === $mapped-&gt;label
-			&amp;&amp; ! empty( $mapped-&gt;primary_color )
-			&amp;&amp; ! empty( $mapped-&gt;text_color )
-			&amp;&amp; ! empty( $mapped-&gt;button ) ) {
-			// Promoted product card.
-			?&gt;
-			&lt;li class=&quot;product&quot;&gt;
-				&lt;div class=&quot;&lt;?php echo esc_attr( $product_details_classes ); ?&gt;&quot; style=&quot;border-top: 5px  solid &lt;?php echo esc_html( $mapped-&gt;primary_color ); ?&gt;;&quot;&gt;
-					&lt;span class=&quot;label promoted&quot;&gt;&lt;?php esc_attr_e( &#039;Promoted&#039;, &#039;woocommerce&#039; ); ?&gt;&lt;/span&gt;
-					&lt;a href=&quot;&lt;?php echo esc_url( $product_url ); ?&gt;&quot;&gt;
-						&lt;h2&gt;&lt;?php echo esc_html( $mapped-&gt;title ); ?&gt;&lt;/h2&gt;
-					&lt;/a&gt;
-					&lt;p&gt;&lt;?php echo wp_kses_post( $mapped-&gt;description ); ?&gt;&lt;/p&gt;
-				&lt;/div&gt;
-				&lt;div class=&quot;product-footer-promoted&quot;&gt;
-					&lt;span class=&quot;icon&quot;&gt;&lt;img src=&quot;&lt;?php echo esc_url( $mapped-&gt;icon ); ?&gt;&quot; /&gt;&lt;/span&gt;
-					&lt;a class=&quot;addons-button addons-button-promoted&quot; style=&quot;background: &lt;?php echo esc_html( $mapped-&gt;primary_color ); ?&gt;; color: &lt;?php echo esc_html( $mapped-&gt;text_color ); ?&gt;;&quot; href=&quot;&lt;?php echo esc_url( $product_url ); ?&gt;&quot;&gt;
-						&lt;?php echo esc_html( $mapped-&gt;button ); ?&gt;
-					&lt;/a&gt;
-				&lt;/div&gt;
-			&lt;/li&gt;
-			&lt;?php
-		} else {
-			// Normal or &quot;featured&quot; product card.
-			?&gt;
-			&lt;li class=&quot;&lt;?php echo esc_attr( implode( &#039; &#039;, $class_names ) ); ?&gt;&quot;&gt;
-				&lt;div class=&quot;&lt;?php echo esc_attr( $product_details_classes ); ?&gt;&quot;&gt;
-					&lt;div class=&quot;product-text-container&quot;&gt;
-						&lt;?php if ( isset( $mapped-&gt;label ) &amp;&amp; &#039;featured&#039; === $mapped-&gt;label ) { ?&gt;
-							&lt;span class=&quot;label featured&quot;&gt;&lt;?php esc_attr_e( &#039;Featured&#039;, &#039;woocommerce&#039; ); ?&gt;&lt;/span&gt;
-						&lt;?php } ?&gt;
-						&lt;a href=&quot;&lt;?php echo esc_url( $product_url ); ?&gt;&quot;&gt;
-							&lt;h2&gt;&lt;?php echo esc_html( $mapped-&gt;title ); ?&gt;&lt;/h2&gt;
-						&lt;/a&gt;
-						&lt;?php if ( ! empty( $mapped-&gt;vendor_name ) &amp;&amp; ! empty( $mapped-&gt;vendor_url ) ) : ?&gt;
-							&lt;div class=&quot;product-developed-by&quot;&gt;
-								&lt;?php
-								$vendor_url = add_query_arg(
-									array(
-										&#039;utm_source&#039;   =&gt; &#039;extensionsscreen&#039;,
-										&#039;utm_medium&#039;   =&gt; &#039;product&#039;,
-										&#039;utm_campaign&#039; =&gt; &#039;wcaddons&#039;,
-										&#039;utm_content&#039;  =&gt; &#039;devpartner&#039;,
-									),
-									$mapped-&gt;vendor_url
-								);
-
-								printf(
-								/* translators: %s vendor link */
-									esc_html__( &#039;Developed by %s&#039;, &#039;woocommerce&#039; ),
-									sprintf(
-										&#039;&lt;a class=&quot;product-vendor-link&quot; href=&quot;%1$s&quot; target=&quot;_blank&quot;&gt;%2$s&lt;/a&gt;&#039;,
-										esc_url_raw( $vendor_url ),
-										esc_html( $mapped-&gt;vendor_name )
-									)
-								);
-								?&gt;
-							&lt;/div&gt;
-						&lt;?php endif; ?&gt;
-						&lt;p&gt;&lt;?php echo wp_kses_post( $mapped-&gt;description ); ?&gt;&lt;/p&gt;
-					&lt;/div&gt;
-					&lt;?php if ( ! empty( $mapped-&gt;icon ) ) : ?&gt;
-						&lt;span class=&quot;product-img-wrap&quot;&gt;
-							&lt;?php /* Show an icon if it exists */ ?&gt;
-							&lt;img src=&quot;&lt;?php echo esc_url( $mapped-&gt;icon ); ?&gt;&quot; /&gt;
-						&lt;/span&gt;
-					&lt;?php endif; ?&gt;
-				&lt;/div&gt;
-				&lt;div class=&quot;product-footer&quot;&gt;
-					&lt;div class=&quot;product-price-and-reviews-container&quot;&gt;
-						&lt;div class=&quot;product-price-block&quot;&gt;
-							&lt;?php if ( $mapped-&gt;is_free ) : ?&gt;
-								&lt;span class=&quot;price&quot;&gt;&lt;?php esc_html_e( &#039;Free&#039;, &#039;woocommerce&#039; ); ?&gt;&lt;/span&gt;
-							&lt;?php else : ?&gt;
-								&lt;span class=&quot;price&quot;&gt;
-									&lt;?php
-									echo wp_kses(
-										$mapped-&gt;price,
-										array(
-											&#039;span&#039; =&gt; array(
-												&#039;class&#039; =&gt; array(),
-											),
-											&#039;bdi&#039;  =&gt; array(),
-										)
-									);
-									?&gt;
-								&lt;/span&gt;
-								&lt;span class=&quot;price-suffix&quot;&gt;
-									&lt;?php
-									$price_suffix = __( &#039;per year&#039;, &#039;woocommerce&#039; );
-									if ( ! empty( $mapped-&gt;price_suffix ) ) {
-										$price_suffix = $mapped-&gt;price_suffix;
-									}
-									echo esc_html( $price_suffix );
-									?&gt;
-								&lt;/span&gt;
-							&lt;?php endif; ?&gt;
-						&lt;/div&gt;
-						&lt;?php if ( ! empty( $mapped-&gt;reviews_count ) &amp;&amp; ! empty( $mapped-&gt;rating ) ) : ?&gt;
-							&lt;?php /* Show rating and the number of reviews */ ?&gt;
-							&lt;div class=&quot;product-reviews-block&quot;&gt;
-								&lt;?php for ( $index = 1; $index &lt;= 5; ++$index ) : ?&gt;
-									&lt;?php $rating_star_class = &#039;product-rating-star product-rating-star__&#039; . self::get_star_class( $mapped-&gt;rating, $index ); ?&gt;
-									&lt;div class=&quot;&lt;?php echo esc_attr( $rating_star_class ); ?&gt;&quot;&gt;&lt;/div&gt;
-								&lt;?php endfor; ?&gt;
-								&lt;span class=&quot;product-reviews-count&quot;&gt;(&lt;?php echo (int) $mapped-&gt;reviews_count; ?&gt;)&lt;/span&gt;
-							&lt;/div&gt;
-						&lt;?php endif; ?&gt;
-					&lt;/div&gt;
-					&lt;a class=&quot;button&quot; href=&quot;&lt;?php echo esc_url( $product_url ); ?&gt;&quot;&gt;
-						&lt;?php esc_html_e( &#039;View details&#039;, &#039;woocommerce&#039; ); ?&gt;
-					&lt;/a&gt;
-				&lt;/div&gt;
-			&lt;/li&gt;
-			&lt;?php
-		}
 	}
 
 	/**
@@ -1702,6 +468,51 @@ class WC_Admin_Addons {
 		$transient_value[ $locale ] = $value;
 		return set_transient( $transient, $transient_value, $expiration );
 	}
+
+	/**
+	 * Make wp_safe_remote_get request to WooCommerce.com endpoint.
+	 * Optionally pass user auth token, locale or country.
+	 *
+	 * @param string $url     URL to request.
+	 * @param ?array $options Options for the request. For example, to pass auth token, locale and country,
+	 *                        pass array( &#039;auth&#039; =&gt; true, &#039;locale&#039; =&gt; true, &#039;country&#039; =&gt; true, ).
+	 *
+	 * @return array|WP_Error
+	 */
+	public static function fetch( $url, $options = array() ) {
+		$headers = array();
+
+		if ( isset( $options[&#039;auth&#039;] ) &amp;&amp; $options[&#039;auth&#039;] ) {
+			$auth = WC_Helper_Options::get( &#039;auth&#039; );
+
+			if ( isset( $auth[&#039;access_token&#039;] ) &amp;&amp; ! empty( $auth[&#039;access_token&#039;] ) ) {
+				$headers[&#039;Authorization&#039;] = &#039;Bearer &#039; . $auth[&#039;access_token&#039;];
+			}
+		}
+
+		$parameters = array();
+
+		if ( isset( $options[&#039;locale&#039;] ) &amp;&amp; $options[&#039;locale&#039;] ) {
+			$parameters[&#039;locale&#039;] = get_user_locale();
+		}
+
+		if ( isset( $options[&#039;country&#039;] ) &amp;&amp; $options[&#039;country&#039;] ) {
+			$country = WC()-&gt;countries-&gt;get_base_country();
+			if ( ! empty( $country ) ) {
+				$parameters[&#039;country&#039;] = $country;
+			}
+		}
+
+		$query_string = ! empty( $parameters ) ? &#039;?&#039; . http_build_query( $parameters ) : &#039;&#039;;
+
+		return wp_safe_remote_get(
+			$url . $query_string,
+			array(
+				&#039;headers&#039;    =&gt; $headers,
+				&#039;user-agent&#039; =&gt; &#039;WooCommerce/&#039; . WC()-&gt;version . &#039;; &#039; . get_bloginfo( &#039;url&#039; ),
+			)
+		);
+	}
 }
 </code></pre>
             </article>
@@ -1713,7 +524,7 @@ class WC_Admin_Addons {
 
     <footer class="phpdocumentor phpdocumentor-footer">
     <div class="phpdocumentor-section">
-        <span>WooCommerce Code Reference API documentation generated by <a href="http://www.phpdoc.org/">phpDocumentor</a> on August 24th, 2023 at 08:49 am.</span>
+        <span>WooCommerce Code Reference API documentation generated by <a href="http://www.phpdoc.org/">phpDocumentor</a> on July 25th, 2024 at 11:33 am.</span>
     </div>
 </footer>
 
@@ -1725,7 +536,7 @@ class WC_Admin_Addons {
             'searchIndex': '..\/js\/searchIndex.json'
         };
     </script>
-    <script src="../js/searchIndex.js?updated=1692866945"></script>
-    <script src="../js/search.js?updated=1692866945"></script>
+    <script src="../js/searchIndex.js?updated=1721907182"></script>
+    <script src="../js/search.js?updated=1721907182"></script>
 </body>
 </html>

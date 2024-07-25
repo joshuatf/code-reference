@@ -9,9 +9,9 @@
     <link rel="apple-touch-icon" sizes="72x72" href="../images/apple-touch-icon-72x72.png"/>
     <link rel="apple-touch-icon" sizes="114x114" href="../images/apple-touch-icon-114x114.png"/>
     <link rel="stylesheet" href="../css/normalize.css">
-    <link rel="stylesheet" href="../css/base.css?updated=1692867006">
+    <link rel="stylesheet" href="../css/base.css?updated=1721907208">
     <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../css/template.css?updated=1692867006">
+    <link rel="stylesheet" href="../css/template.css?updated=1721907208">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0/css/all.min.css" integrity="sha256-ybRkN9dBjhcS2qrW1z+hfCxq+1aBdwyQM5wlQoQVt/0=" crossorigin="anonymous" />
             <script src="https://cdn.jsdelivr.net/npm/css-vars-ponyfill@2"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0/js/all.min.js" integrity="sha256-0vuk8LXoyrmCjp1f0O300qo1M75ZQyhH9X3J6d+scmk=" crossorigin="anonymous"></script>
@@ -119,6 +119,7 @@
                         <ul class="phpdocumentor-list">
                                     <li><a href="../packages/Automattic-WooCommerce.html"><abbr title="\Automattic\WooCommerce">WooCommerce</abbr></a></li>
                             </ul>
+                                <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/WooCommerceBlocks.html"><abbr title="\WooCommerceBlocks">WooCommerceBlocks</abbr></a></h3>
                         </section>
     
     <section class="phpdocumentor-sidebar__category">
@@ -157,9 +158,9 @@
     </h2>
 
         <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Packages.php"><a href="../files/woocommerce-src-packages.html#source-view.15">src/Packages.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Packages.php"><a href="../files/woocommerce-src-packages.html#source-view.17">src/Packages.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">15</span>
+    <span class="phpdocumentor-element-found-in__line">17</span>
 </aside>
 
             <p class="phpdocumentor-summary">Packages class.</p>
@@ -194,11 +195,19 @@
 
 <dl class="phpdocumentor-table-of-contents">
                 <dt class="phpdocumentor-table-of-contents__entry -property -protected">
-    <a href="../classes/Automattic-WooCommerce-Packages.html#property_packages">$packages</a>
+    <a href="../classes/Automattic-WooCommerce-Packages.html#property_merged_packages">$merged_packages</a>
     <span>
                 &nbsp;: array&lt;string|int, mixed&gt;            </span>
 </dt>
 <dd>Array of package names and their main package classes.</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -property -protected">
+    <a href="../classes/Automattic-WooCommerce-Packages.html#property_packages">$packages</a>
+    <span>
+                &nbsp;: array&lt;string|int, mixed&gt;            </span>
+</dt>
+<dd>Array of package names and their main package classes. Once a package has been merged into WooCommerce
+directly it should be removed from here and added to the merged packages array.</dd>
 
                 <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="../classes/Automattic-WooCommerce-Packages.html#method_init">init()</a>
@@ -222,7 +231,14 @@
 <dd>Checks a package exists by looking for it&#039;s directory.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -protected">
-    <a href="../classes/Automattic-WooCommerce-Packages.html#method_load_packages">load_packages()</a>
+    <a href="../classes/Automattic-WooCommerce-Packages.html#method_deactivate_merged_packages">deactivate_merged_packages()</a>
+    <span>
+                        &nbsp;: mixed    </span>
+</dt>
+<dd>Deactivates merged feature plugins.</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -protected">
+    <a href="../classes/Automattic-WooCommerce-Packages.html#method_initialize_packages">initialize_packages()</a>
     <span>
                         &nbsp;: mixed    </span>
 </dt>
@@ -261,16 +277,16 @@
             -protected
             -static                                            "
 >
-    <h4 class="phpdocumentor-element__name" id="property_packages">
-        $packages
-        <a href="#property_packages" class="headerlink"><i class="fas fa-link"></i></a>
+    <h4 class="phpdocumentor-element__name" id="property_merged_packages">
+        $merged_packages
+        <a href="#property_merged_packages" class="headerlink"><i class="fas fa-link"></i></a>
         <span class="phpdocumentor-element__modifiers">
                                 </span>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Packages.php"><a href="../files/woocommerce-src-packages.html#source-view.27">src/Packages.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Packages.php"><a href="../files/woocommerce-src-packages.html#source-view.45">src/Packages.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">27</span>
+    <span class="phpdocumentor-element-found-in__line">45</span>
 </aside>
 
         <p class="phpdocumentor-summary">Array of package names and their main package classes.</p>
@@ -278,8 +294,47 @@
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">protected</span>
     <span class="phpdocumentor-signature__static">static</span>    <span class="phpdocumentor-signature__type">array&lt;string|int, mixed&gt;</span>
+    <span class="phpdocumentor-signature__name">$merged_packages</span>
+     = <span class="phpdocumentor-signature__default-value">array(&#039;woocommerce-admin&#039; =&gt; &#039;\Automattic\WooCommerce\Admin\Composer\Package&#039;, &#039;woocommerce-gutenberg-products-block&#039; =&gt; &#039;\Automattic\WooCommerce\Blocks\Package&#039;)</span></code>
+
+        <section class="phpdocumentor-description"><p>One a package has been merged into WooCommerce Core it should be moved fron the package list and placed in
+this list. This will ensure that the feature plugin is disabled as well as provide the class to handle
+initialization for the now-merged feature plugin.</p>
+<p>Once a package has been merged into WooCommerce Core it should have its slug added here. This will ensure
+that we deactivate the feature plugin automaticatlly to prevent any problems caused by conflicts between
+the two versions caused by them both being active.</p>
+</section>
+
+    
+
+</article>
+                    <article
+        class="
+            phpdocumentor-element
+            -property
+            -protected
+            -static                                            "
+>
+    <h4 class="phpdocumentor-element__name" id="property_packages">
+        $packages
+        <a href="#property_packages" class="headerlink"><i class="fas fa-link"></i></a>
+        <span class="phpdocumentor-element__modifiers">
+                                </span>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Packages.php"><a href="../files/woocommerce-src-packages.html#source-view.30">src/Packages.php</a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">30</span>
+</aside>
+
+        <p class="phpdocumentor-summary">Array of package names and their main package classes. Once a package has been merged into WooCommerce
+directly it should be removed from here and added to the merged packages array.</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">protected</span>
+    <span class="phpdocumentor-signature__static">static</span>    <span class="phpdocumentor-signature__type">array&lt;string|int, mixed&gt;</span>
     <span class="phpdocumentor-signature__name">$packages</span>
-     = <span class="phpdocumentor-signature__default-value">array(&#039;woocommerce-blocks&#039; =&gt; &#039;\Automattic\WooCommerce\Blocks\Package&#039;)</span></code>
+     = <span class="phpdocumentor-signature__default-value">array()</span></code>
 
         <section class="phpdocumentor-description"></section>
 
@@ -304,9 +359,9 @@
         <a href="#method_init" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Packages.php"><a href="../files/woocommerce-src-packages.html#source-view.36">src/Packages.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Packages.php"><a href="../files/woocommerce-src-packages.html#source-view.55">src/Packages.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">36</span>
+    <span class="phpdocumentor-element-found-in__line">55</span>
 </aside>
 
         <p class="phpdocumentor-summary">Init the package loader.</p>
@@ -350,9 +405,9 @@
         <a href="#method_on_init" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Packages.php"><a href="../files/woocommerce-src-packages.html#source-view.43">src/Packages.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Packages.php"><a href="../files/woocommerce-src-packages.html#source-view.62">src/Packages.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">43</span>
+    <span class="phpdocumentor-element-found-in__line">62</span>
 </aside>
 
         <p class="phpdocumentor-summary">Callback for WordPress init hook.</p>
@@ -382,9 +437,9 @@
         <a href="#method_package_exists" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Packages.php"><a href="../files/woocommerce-src-packages.html#source-view.53">src/Packages.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Packages.php"><a href="../files/woocommerce-src-packages.html#source-view.73">src/Packages.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">53</span>
+    <span class="phpdocumentor-element-found-in__line">73</span>
 </aside>
 
         <p class="phpdocumentor-summary">Checks a package exists by looking for it&#039;s directory.</p>
@@ -421,21 +476,57 @@
             -protected
                                     -static                    "
 >
-    <h4 class="phpdocumentor-element__name" id="method_load_packages">
-        load_packages()
-        <a href="#method_load_packages" class="headerlink"><i class="fas fa-link"></i></a>
+    <h4 class="phpdocumentor-element__name" id="method_deactivate_merged_packages">
+        deactivate_merged_packages()
+        <a href="#method_deactivate_merged_packages" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Packages.php"><a href="../files/woocommerce-src-packages.html#source-view.62">src/Packages.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Packages.php"><a href="../files/woocommerce-src-packages.html#source-view.85">src/Packages.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">62</span>
+    <span class="phpdocumentor-element-found-in__line">85</span>
+</aside>
+
+        <p class="phpdocumentor-summary">Deactivates merged feature plugins.</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">protected</span>
+            <span class="phpdocumentor-signature__static">static</span>    <span class="phpdocumentor-signature__name">deactivate_merged_packages</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
+
+        <section class="phpdocumentor-description"><p>Once a feature plugin is merged into WooCommerce Core it should be deactivated. This method will
+ensure that a plugin gets deactivated. Note that for the first request it will still be active,
+and as such, there may be some odd behavior. This is unlikely to cause any issues though
+because it will be deactivated on the request that updates or activates WooCommerce.</p>
+</section>
+
+    
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">mixed</span>
+            &mdash; <span class="phpdocumentor-return-value__description"></span>
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -protected
+                                    -static                    "
+>
+    <h4 class="phpdocumentor-element__name" id="method_initialize_packages">
+        initialize_packages()
+        <a href="#method_initialize_packages" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Packages.php"><a href="../files/woocommerce-src-packages.html#source-view.126">src/Packages.php</a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">126</span>
 </aside>
 
         <p class="phpdocumentor-summary">Loads packages after plugins_loaded hook.</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">protected</span>
-            <span class="phpdocumentor-signature__static">static</span>    <span class="phpdocumentor-signature__name">load_packages</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
+            <span class="phpdocumentor-signature__static">static</span>    <span class="phpdocumentor-signature__name">initialize_packages</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
 
         <section class="phpdocumentor-description"><p>Each package should include an init file which loads the package so it can be used by core.</p>
 </section>
@@ -459,9 +550,9 @@
         <a href="#method_missing_package" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Packages.php"><a href="../files/woocommerce-src-packages.html#source-view.98">src/Packages.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Packages.php"><a href="../files/woocommerce-src-packages.html#source-view.163">src/Packages.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">98</span>
+    <span class="phpdocumentor-element-found-in__line">163</span>
 </aside>
 
         <p class="phpdocumentor-summary">If a package is missing, add an admin notice.</p>
@@ -503,9 +594,9 @@
         <a href="#method___construct" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Packages.php"><a href="../files/woocommerce-src-packages.html#source-view.20">src/Packages.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Packages.php"><a href="../files/woocommerce-src-packages.html#source-view.22">src/Packages.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">20</span>
+    <span class="phpdocumentor-element-found-in__line">22</span>
 </aside>
 
         <p class="phpdocumentor-summary">Static-only class.</p>
@@ -535,7 +626,7 @@
 
     <footer class="phpdocumentor phpdocumentor-footer">
     <div class="phpdocumentor-section">
-        <span>WooCommerce Code Reference API documentation generated by <a href="http://www.phpdoc.org/">phpDocumentor</a> on August 24th, 2023 at 08:50 am.</span>
+        <span>WooCommerce Code Reference API documentation generated by <a href="http://www.phpdoc.org/">phpDocumentor</a> on July 25th, 2024 at 11:33 am.</span>
     </div>
 </footer>
 
@@ -547,7 +638,7 @@
             'searchIndex': '..\/js\/searchIndex.json'
         };
     </script>
-    <script src="../js/searchIndex.js?updated=1692867006"></script>
-    <script src="../js/search.js?updated=1692867006"></script>
+    <script src="../js/searchIndex.js?updated=1721907208"></script>
+    <script src="../js/search.js?updated=1721907208"></script>
 </body>
 </html>

@@ -9,9 +9,9 @@
     <link rel="apple-touch-icon" sizes="72x72" href="../images/apple-touch-icon-72x72.png"/>
     <link rel="apple-touch-icon" sizes="114x114" href="../images/apple-touch-icon-114x114.png"/>
     <link rel="stylesheet" href="../css/normalize.css">
-    <link rel="stylesheet" href="../css/base.css?updated=1692866966">
+    <link rel="stylesheet" href="../css/base.css?updated=1721907192">
     <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../css/template.css?updated=1692866966">
+    <link rel="stylesheet" href="../css/template.css?updated=1721907192">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0/css/all.min.css" integrity="sha256-ybRkN9dBjhcS2qrW1z+hfCxq+1aBdwyQM5wlQoQVt/0=" crossorigin="anonymous" />
             <script src="https://cdn.jsdelivr.net/npm/css-vars-ponyfill@2"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0/js/all.min.js" integrity="sha256-0vuk8LXoyrmCjp1f0O300qo1M75ZQyhH9X3J6d+scmk=" crossorigin="anonymous"></script>
@@ -119,6 +119,7 @@
                         <ul class="phpdocumentor-list">
                                     <li><a href="../packages/Automattic-WooCommerce.html"><abbr title="\Automattic\WooCommerce">WooCommerce</abbr></a></li>
                             </ul>
+                                <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/WooCommerceBlocks.html"><abbr title="\WooCommerceBlocks">WooCommerceBlocks</abbr></a></h3>
                         </section>
     
     <section class="phpdocumentor-sidebar__category">
@@ -159,9 +160,9 @@
     </h2>
 
         <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-order-item-product.php"><a href="../files/woocommerce-includes-class-wc-order-item-product.html#source-view.15">includes/class-wc-order-item-product.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-order-item-product.php"><a href="../files/woocommerce-includes-class-wc-order-item-product.html#source-view.17">includes/class-wc-order-item-product.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">15</span>
+    <span class="phpdocumentor-element-found-in__line">17</span>
 </aside>
 
             <p class="phpdocumentor-summary">Order item product class.</p>
@@ -181,7 +182,28 @@
 </h3>
 
 <dl class="phpdocumentor-table-of-contents">
-                <dt class="phpdocumentor-table-of-contents__entry -property -protected">
+                <dt class="phpdocumentor-table-of-contents__entry -property -public">
+    <a href="../classes/WC-Order-Item-Product.html#property_legacy_cart_item_key">$legacy_cart_item_key</a>
+    <span>
+                &nbsp;: string            </span>
+</dt>
+<dd>Legacy cart item key.</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -property -public">
+    <a href="../classes/WC-Order-Item.html#property_legacy_package_key">$legacy_package_key</a>
+    <span>
+                &nbsp;: string            </span>
+</dt>
+<dd>Legacy package key.</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -property -public">
+    <a href="../classes/WC-Order-Item-Product.html#property_legacy_values">$legacy_values</a>
+    <span>
+                &nbsp;: array&lt;string|int, mixed&gt;            </span>
+</dt>
+<dd>Legacy values.</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -property -protected">
     <a href="../classes/WC-Data.html#property_cache_group">$cache_group</a>
     <span>
                 &nbsp;: string            </span>
@@ -502,7 +524,8 @@ the types available at https://developer.wordpress.org/reference/functions/add_m
     <span>
                         &nbsp;: string    </span>
 </dt>
-<dd>Get subtotal.</dd>
+<dd>Gets the item subtotal. This is the price of the item times the quantity
+excluding taxes before coupon discounts.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="../classes/WC-Order-Item-Product.html#method_get_subtotal_tax">get_subtotal_tax()</a>
@@ -537,7 +560,8 @@ the types available at https://developer.wordpress.org/reference/functions/add_m
     <span>
                         &nbsp;: string    </span>
 </dt>
-<dd>Get total.</dd>
+<dd>Gets the item total. This is the price of the item times the quantity
+excluding taxes after coupon discounts.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="../classes/WC-Order-Item-Product.html#method_get_total_tax">get_total_tax()</a>
@@ -849,6 +873,147 @@ the types available at https://developer.wordpress.org/reference/functions/add_m
         class="
             phpdocumentor-element
             -property
+            -public
+                        -deprecated                                "
+>
+    <h4 class="phpdocumentor-element__name" id="property_legacy_cart_item_key">
+        $legacy_cart_item_key
+        <a href="#property_legacy_cart_item_key" class="headerlink"><i class="fas fa-link"></i></a>
+        <span class="phpdocumentor-element__modifiers">
+                                </span>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-order-item-product.php"><a href="../files/woocommerce-includes-class-wc-order-item-product.html#source-view.33">includes/class-wc-order-item-product.php</a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">33</span>
+</aside>
+
+        <p class="phpdocumentor-summary">Legacy cart item key.</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature phpdocumentor-signature--deprecated">
+    <span class="phpdocumentor-signature__visibility">public</span>
+        <span class="phpdocumentor-signature__type">string</span>
+    <span class="phpdocumentor-signature__name">$legacy_cart_item_key</span>
+    </code>
+
+        <section class="phpdocumentor-description"></section>
+
+    
+    <h5 class="phpdocumentor-tag-list__heading" id="tags">
+        Tags
+        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
+    </h5>
+    <dl class="phpdocumentor-tag-list">
+                                    <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">deprecated</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                            <span class="phpdocumentor-tag-link">4.4.0</span>
+                                                                                                        <section class="phpdocumentor-description"><p>For legacy actions.</p>
+</section>
+
+                </dd>
+                        </dl>
+
+</article>
+                    <article
+        class="
+            phpdocumentor-element
+            -property
+            -public
+                        -deprecated                                "
+>
+    <h4 class="phpdocumentor-element__name" id="property_legacy_package_key">
+        $legacy_package_key
+        <a href="#property_legacy_package_key" class="headerlink"><i class="fas fa-link"></i></a>
+        <span class="phpdocumentor-element__modifiers">
+                                </span>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-order-item.php"><a href="../files/woocommerce-includes-class-wc-order-item.html#source-view.76">includes/class-wc-order-item.php</a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">76</span>
+</aside>
+
+        <p class="phpdocumentor-summary">Legacy package key.</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature phpdocumentor-signature--deprecated">
+    <span class="phpdocumentor-signature__visibility">public</span>
+        <span class="phpdocumentor-signature__type">string</span>
+    <span class="phpdocumentor-signature__name">$legacy_package_key</span>
+    </code>
+
+        <section class="phpdocumentor-description"></section>
+
+    
+    <h5 class="phpdocumentor-tag-list__heading" id="tags">
+        Tags
+        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
+    </h5>
+    <dl class="phpdocumentor-tag-list">
+                                    <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">deprecated</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                            <span class="phpdocumentor-tag-link">4.4.0</span>
+                                                                                                        <section class="phpdocumentor-description"><p>For legacy actions.</p>
+</section>
+
+                </dd>
+                        </dl>
+
+</article>
+                    <article
+        class="
+            phpdocumentor-element
+            -property
+            -public
+                        -deprecated                                "
+>
+    <h4 class="phpdocumentor-element__name" id="property_legacy_values">
+        $legacy_values
+        <a href="#property_legacy_values" class="headerlink"><i class="fas fa-link"></i></a>
+        <span class="phpdocumentor-element__modifiers">
+                                </span>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-order-item-product.php"><a href="../files/woocommerce-includes-class-wc-order-item-product.html#source-view.25">includes/class-wc-order-item-product.php</a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">25</span>
+</aside>
+
+        <p class="phpdocumentor-summary">Legacy values.</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature phpdocumentor-signature--deprecated">
+    <span class="phpdocumentor-signature__visibility">public</span>
+        <span class="phpdocumentor-signature__type">array&lt;string|int, mixed&gt;</span>
+    <span class="phpdocumentor-signature__name">$legacy_values</span>
+    </code>
+
+        <section class="phpdocumentor-description"></section>
+
+    
+    <h5 class="phpdocumentor-tag-list__heading" id="tags">
+        Tags
+        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
+    </h5>
+    <dl class="phpdocumentor-tag-list">
+                                    <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">deprecated</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                            <span class="phpdocumentor-tag-link">4.4.0</span>
+                                                                                                        <section class="phpdocumentor-description"><p>For legacy actions.</p>
+</section>
+
+                </dd>
+                        </dl>
+
+</article>
+                    <article
+        class="
+            phpdocumentor-element
+            -property
             -protected
                                                         "
 >
@@ -1090,9 +1255,9 @@ the types available at https://developer.wordpress.org/reference/functions/add_m
                                 </span>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-order-item-product.php"><a href="../files/woocommerce-includes-class-wc-order-item-product.html#source-view.23">includes/class-wc-order-item-product.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-order-item-product.php"><a href="../files/woocommerce-includes-class-wc-order-item-product.html#source-view.41">includes/class-wc-order-item-product.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">23</span>
+    <span class="phpdocumentor-element-found-in__line">41</span>
 </aside>
 
         <p class="phpdocumentor-summary">Order Data array. This is the core order data exposed in APIs since 3.0.0.</p>
@@ -1263,9 +1428,9 @@ ull</span></code>
                                 </span>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-order-item.php"><a href="../files/woocommerce-includes-class-wc-order-item.html#source-view.46">includes/class-wc-order-item.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-order-item.php"><a href="../files/woocommerce-includes-class-wc-order-item.html#source-view.61">includes/class-wc-order-item.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">46</span>
+    <span class="phpdocumentor-element-found-in__line">61</span>
 </aside>
 
         <p class="phpdocumentor-summary">Meta type. This should match up with
@@ -1515,9 +1680,9 @@ the types available at https://developer.wordpress.org/reference/functions/add_m
         <a href="#method___toString" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-data.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-data.html#source-view.248">includes/abstracts/abstract-wc-data.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-data.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-data.html#source-view.261">includes/abstracts/abstract-wc-data.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">248</span>
+    <span class="phpdocumentor-element-found-in__line">261</span>
 </aside>
 
         <p class="phpdocumentor-summary">Change data to JSON format.</p>
@@ -1594,9 +1759,9 @@ the types available at https://developer.wordpress.org/reference/functions/add_m
         <a href="#method_add_meta_data" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-data.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-data.html#source-view.419">includes/abstracts/abstract-wc-data.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-data.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-data.html#source-view.432">includes/abstracts/abstract-wc-data.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">419</span>
+    <span class="phpdocumentor-element-found-in__line">432</span>
 </aside>
 
         <p class="phpdocumentor-summary">Add meta data.</p>
@@ -1670,9 +1835,9 @@ the types available at https://developer.wordpress.org/reference/functions/add_m
         <a href="#method_apply_changes" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-data.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-data.html#source-view.808">includes/abstracts/abstract-wc-data.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-data.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-data.html#source-view.851">includes/abstracts/abstract-wc-data.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">808</span>
+    <span class="phpdocumentor-element-found-in__line">851</span>
 </aside>
 
         <p class="phpdocumentor-summary">Merge changes with data and clear.</p>
@@ -1716,9 +1881,9 @@ the types available at https://developer.wordpress.org/reference/functions/add_m
         <a href="#method_calculate_taxes" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-order-item.php"><a href="../files/woocommerce-includes-class-wc-order-item.html#source-view.215">includes/class-wc-order-item.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-order-item.php"><a href="../files/woocommerce-includes-class-wc-order-item.html#source-view.238">includes/class-wc-order-item.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">215</span>
+    <span class="phpdocumentor-element-found-in__line">238</span>
 </aside>
 
         <p class="phpdocumentor-summary">Calculate item taxes.</p>
@@ -1832,9 +1997,9 @@ the types available at https://developer.wordpress.org/reference/functions/add_m
         <a href="#method_delete_meta_data" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-data.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-data.html#source-view.498">includes/abstracts/abstract-wc-data.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-data.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-data.html#source-view.511">includes/abstracts/abstract-wc-data.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">498</span>
+    <span class="phpdocumentor-element-found-in__line">511</span>
 </aside>
 
         <p class="phpdocumentor-summary">Delete meta data.</p>
@@ -1890,9 +2055,9 @@ the types available at https://developer.wordpress.org/reference/functions/add_m
         <a href="#method_delete_meta_data_by_mid" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-data.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-data.html#source-view.535">includes/abstracts/abstract-wc-data.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-data.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-data.html#source-view.548">includes/abstracts/abstract-wc-data.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">535</span>
+    <span class="phpdocumentor-element-found-in__line">548</span>
 </aside>
 
         <p class="phpdocumentor-summary">Delete meta data.</p>
@@ -1948,9 +2113,9 @@ the types available at https://developer.wordpress.org/reference/functions/add_m
         <a href="#method_delete_meta_data_value" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-data.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-data.html#source-view.516">includes/abstracts/abstract-wc-data.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-data.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-data.html#source-view.529">includes/abstracts/abstract-wc-data.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">516</span>
+    <span class="phpdocumentor-element-found-in__line">529</span>
 </aside>
 
         <p class="phpdocumentor-summary">Delete meta data with a matching value.</p>
@@ -2015,9 +2180,9 @@ the types available at https://developer.wordpress.org/reference/functions/add_m
         <a href="#method_generate_meta_cache_key" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-data.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-data.html#source-view.582">includes/abstracts/abstract-wc-data.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-data.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-data.html#source-view.595">includes/abstracts/abstract-wc-data.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">582</span>
+    <span class="phpdocumentor-element-found-in__line">595</span>
 </aside>
 
         <p class="phpdocumentor-summary">Generate cache key from id and group.</p>
@@ -2082,9 +2247,9 @@ the types available at https://developer.wordpress.org/reference/functions/add_m
         <a href="#method_get_all_formatted_meta_data" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-order-item.php"><a href="../files/woocommerce-includes-class-wc-order-item.html#source-view.257">includes/class-wc-order-item.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-order-item.php"><a href="../files/woocommerce-includes-class-wc-order-item.html#source-view.280">includes/class-wc-order-item.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">257</span>
+    <span class="phpdocumentor-element-found-in__line">280</span>
 </aside>
 
         <p class="phpdocumentor-summary">Wrapper for get_formatted_meta_data that includes all metadata by default. See https://github.com/woocommerce/woocommerce/pull/30948</p>
@@ -2135,9 +2300,9 @@ the types available at https://developer.wordpress.org/reference/functions/add_m
         <a href="#method_get_changes" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-data.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-data.html#source-view.799">includes/abstracts/abstract-wc-data.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-data.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-data.html#source-view.842">includes/abstracts/abstract-wc-data.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">799</span>
+    <span class="phpdocumentor-element-found-in__line">842</span>
 </aside>
 
         <p class="phpdocumentor-summary">Return data changes only.</p>
@@ -2181,9 +2346,9 @@ the types available at https://developer.wordpress.org/reference/functions/add_m
         <a href="#method_get_data" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-data.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-data.html#source-view.258">includes/abstracts/abstract-wc-data.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-data.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-data.html#source-view.271">includes/abstracts/abstract-wc-data.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">258</span>
+    <span class="phpdocumentor-element-found-in__line">271</span>
 </aside>
 
         <p class="phpdocumentor-summary">Returns all data for this object.</p>
@@ -2227,9 +2392,9 @@ the types available at https://developer.wordpress.org/reference/functions/add_m
         <a href="#method_get_data_keys" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-data.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-data.html#source-view.268">includes/abstracts/abstract-wc-data.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-data.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-data.html#source-view.281">includes/abstracts/abstract-wc-data.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">268</span>
+    <span class="phpdocumentor-element-found-in__line">281</span>
 </aside>
 
         <p class="phpdocumentor-summary">Returns array of expected data keys for this object.</p>
@@ -2319,9 +2484,9 @@ the types available at https://developer.wordpress.org/reference/functions/add_m
         <a href="#method_get_extra_data_keys" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-data.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-data.html#source-view.278">includes/abstracts/abstract-wc-data.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-data.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-data.html#source-view.291">includes/abstracts/abstract-wc-data.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">278</span>
+    <span class="phpdocumentor-element-found-in__line">291</span>
 </aside>
 
         <p class="phpdocumentor-summary">Returns all &quot;extra&quot; data keys for an object (for sub objects like product types).</p>
@@ -2365,9 +2530,9 @@ the types available at https://developer.wordpress.org/reference/functions/add_m
         <a href="#method_get_formatted_meta_data" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-order-item.php"><a href="../files/woocommerce-includes-class-wc-order-item.html#source-view.268">includes/class-wc-order-item.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-order-item.php"><a href="../files/woocommerce-includes-class-wc-order-item.html#source-view.291">includes/class-wc-order-item.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">268</span>
+    <span class="phpdocumentor-element-found-in__line">291</span>
 </aside>
 
         <p class="phpdocumentor-summary">Expands things like term slugs before return.</p>
@@ -2464,9 +2629,9 @@ the types available at https://developer.wordpress.org/reference/functions/add_m
         <a href="#method_get_item_download_url" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-order-item-product.php"><a href="../files/woocommerce-includes-class-wc-order-item-product.html#source-view.347">includes/class-wc-order-item-product.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-order-item-product.php"><a href="../files/woocommerce-includes-class-wc-order-item-product.html#source-view.367">includes/class-wc-order-item-product.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">347</span>
+    <span class="phpdocumentor-element-found-in__line">367</span>
 </aside>
 
         <p class="phpdocumentor-summary">Get the Download URL.</p>
@@ -2508,9 +2673,9 @@ the types available at https://developer.wordpress.org/reference/functions/add_m
         <a href="#method_get_item_downloads" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-order-item-product.php"><a href="../files/woocommerce-includes-class-wc-order-item-product.html#source-view.366">includes/class-wc-order-item-product.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-order-item-product.php"><a href="../files/woocommerce-includes-class-wc-order-item-product.html#source-view.386">includes/class-wc-order-item-product.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">366</span>
+    <span class="phpdocumentor-element-found-in__line">386</span>
 </aside>
 
         <p class="phpdocumentor-summary">Get any associated downloadable files.</p>
@@ -2540,9 +2705,9 @@ the types available at https://developer.wordpress.org/reference/functions/add_m
         <a href="#method_get_meta" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-data.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-data.html#source-view.343">includes/abstracts/abstract-wc-data.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-data.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-data.html#source-view.356">includes/abstracts/abstract-wc-data.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">343</span>
+    <span class="phpdocumentor-element-found-in__line">356</span>
 </aside>
 
         <p class="phpdocumentor-summary">Get Meta Data by Key.</p>
@@ -2616,9 +2781,9 @@ the types available at https://developer.wordpress.org/reference/functions/add_m
         <a href="#method_get_meta_cache_key" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-data.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-data.html#source-view.564">includes/abstracts/abstract-wc-data.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-data.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-data.html#source-view.577">includes/abstracts/abstract-wc-data.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">564</span>
+    <span class="phpdocumentor-element-found-in__line">577</span>
 </aside>
 
         <p class="phpdocumentor-summary">Helper method to compute meta cache key. Different from WP Meta cache key in that meta data cached using this key also contains meta_id column.</p>
@@ -2662,9 +2827,9 @@ the types available at https://developer.wordpress.org/reference/functions/add_m
         <a href="#method_get_meta_data" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-data.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-data.html#source-view.299">includes/abstracts/abstract-wc-data.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-data.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-data.html#source-view.312">includes/abstracts/abstract-wc-data.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">299</span>
+    <span class="phpdocumentor-element-found-in__line">312</span>
 </aside>
 
         <p class="phpdocumentor-summary">Get All Meta Data.</p>
@@ -2708,9 +2873,9 @@ the types available at https://developer.wordpress.org/reference/functions/add_m
         <a href="#method_get_name" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-order-item.php"><a href="../files/woocommerce-includes-class-wc-order-item.html#source-view.119">includes/class-wc-order-item.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-order-item.php"><a href="../files/woocommerce-includes-class-wc-order-item.html#source-view.142">includes/class-wc-order-item.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">119</span>
+    <span class="phpdocumentor-element-found-in__line">142</span>
 </aside>
 
         <p class="phpdocumentor-summary">Get order item name.</p>
@@ -2752,9 +2917,9 @@ the types available at https://developer.wordpress.org/reference/functions/add_m
         <a href="#method_get_object_read" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-data.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-data.html#source-view.729">includes/abstracts/abstract-wc-data.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-data.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-data.html#source-view.772">includes/abstracts/abstract-wc-data.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">729</span>
+    <span class="phpdocumentor-element-found-in__line">772</span>
 </aside>
 
         <p class="phpdocumentor-summary">Get object read property.</p>
@@ -2798,9 +2963,9 @@ the types available at https://developer.wordpress.org/reference/functions/add_m
         <a href="#method_get_order" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-order-item.php"><a href="../files/woocommerce-includes-class-wc-order-item.html#source-view.164">includes/class-wc-order-item.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-order-item.php"><a href="../files/woocommerce-includes-class-wc-order-item.html#source-view.187">includes/class-wc-order-item.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">164</span>
+    <span class="phpdocumentor-element-found-in__line">187</span>
 </aside>
 
         <p class="phpdocumentor-summary">Get parent order object.</p>
@@ -2830,9 +2995,9 @@ the types available at https://developer.wordpress.org/reference/functions/add_m
         <a href="#method_get_order_id" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-order-item.php"><a href="../files/woocommerce-includes-class-wc-order-item.html#source-view.109">includes/class-wc-order-item.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-order-item.php"><a href="../files/woocommerce-includes-class-wc-order-item.html#source-view.132">includes/class-wc-order-item.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">109</span>
+    <span class="phpdocumentor-element-found-in__line">132</span>
 </aside>
 
         <p class="phpdocumentor-summary">Get order ID this meta belongs to.</p>
@@ -2874,9 +3039,9 @@ the types available at https://developer.wordpress.org/reference/functions/add_m
         <a href="#method_get_product" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-order-item-product.php"><a href="../files/woocommerce-includes-class-wc-order-item-product.html#source-view.326">includes/class-wc-order-item-product.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-order-item-product.php"><a href="../files/woocommerce-includes-class-wc-order-item-product.html#source-view.346">includes/class-wc-order-item-product.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">326</span>
+    <span class="phpdocumentor-element-found-in__line">346</span>
 </aside>
 
         <p class="phpdocumentor-summary">Get the associated product.</p>
@@ -2906,9 +3071,9 @@ the types available at https://developer.wordpress.org/reference/functions/add_m
         <a href="#method_get_product_id" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-order-item-product.php"><a href="../files/woocommerce-includes-class-wc-order-item-product.html#source-view.237">includes/class-wc-order-item-product.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-order-item-product.php"><a href="../files/woocommerce-includes-class-wc-order-item-product.html#source-view.255">includes/class-wc-order-item-product.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">237</span>
+    <span class="phpdocumentor-element-found-in__line">255</span>
 </aside>
 
         <p class="phpdocumentor-summary">Get product ID.</p>
@@ -2950,9 +3115,9 @@ the types available at https://developer.wordpress.org/reference/functions/add_m
         <a href="#method_get_quantity" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-order-item-product.php"><a href="../files/woocommerce-includes-class-wc-order-item-product.html#source-view.257">includes/class-wc-order-item-product.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-order-item-product.php"><a href="../files/woocommerce-includes-class-wc-order-item-product.html#source-view.275">includes/class-wc-order-item-product.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">257</span>
+    <span class="phpdocumentor-element-found-in__line">275</span>
 </aside>
 
         <p class="phpdocumentor-summary">Get quantity.</p>
@@ -2994,12 +3159,13 @@ the types available at https://developer.wordpress.org/reference/functions/add_m
         <a href="#method_get_subtotal" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-order-item-product.php"><a href="../files/woocommerce-includes-class-wc-order-item-product.html#source-view.277">includes/class-wc-order-item-product.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-order-item-product.php"><a href="../files/woocommerce-includes-class-wc-order-item-product.html#source-view.296">includes/class-wc-order-item-product.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">277</span>
+    <span class="phpdocumentor-element-found-in__line">296</span>
 </aside>
 
-        <p class="phpdocumentor-summary">Get subtotal.</p>
+        <p class="phpdocumentor-summary">Gets the item subtotal. This is the price of the item times the quantity
+excluding taxes before coupon discounts.</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
@@ -3038,9 +3204,9 @@ the types available at https://developer.wordpress.org/reference/functions/add_m
         <a href="#method_get_subtotal_tax" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-order-item-product.php"><a href="../files/woocommerce-includes-class-wc-order-item-product.html#source-view.287">includes/class-wc-order-item-product.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-order-item-product.php"><a href="../files/woocommerce-includes-class-wc-order-item-product.html#source-view.306">includes/class-wc-order-item-product.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">287</span>
+    <span class="phpdocumentor-element-found-in__line">306</span>
 </aside>
 
         <p class="phpdocumentor-summary">Get subtotal tax.</p>
@@ -3082,9 +3248,9 @@ the types available at https://developer.wordpress.org/reference/functions/add_m
         <a href="#method_get_tax_class" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-order-item-product.php"><a href="../files/woocommerce-includes-class-wc-order-item-product.html#source-view.267">includes/class-wc-order-item-product.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-order-item-product.php"><a href="../files/woocommerce-includes-class-wc-order-item-product.html#source-view.285">includes/class-wc-order-item-product.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">267</span>
+    <span class="phpdocumentor-element-found-in__line">285</span>
 </aside>
 
         <p class="phpdocumentor-summary">Get tax class.</p>
@@ -3126,9 +3292,9 @@ the types available at https://developer.wordpress.org/reference/functions/add_m
         <a href="#method_get_tax_status" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-order-item-product.php"><a href="../files/woocommerce-includes-class-wc-order-item-product.html#source-view.411">includes/class-wc-order-item-product.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-order-item-product.php"><a href="../files/woocommerce-includes-class-wc-order-item-product.html#source-view.431">includes/class-wc-order-item-product.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">411</span>
+    <span class="phpdocumentor-element-found-in__line">431</span>
 </aside>
 
         <p class="phpdocumentor-summary">Get tax status.</p>
@@ -3158,9 +3324,9 @@ the types available at https://developer.wordpress.org/reference/functions/add_m
         <a href="#method_get_taxes" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-order-item-product.php"><a href="../files/woocommerce-includes-class-wc-order-item-product.html#source-view.317">includes/class-wc-order-item-product.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-order-item-product.php"><a href="../files/woocommerce-includes-class-wc-order-item-product.html#source-view.337">includes/class-wc-order-item-product.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">317</span>
+    <span class="phpdocumentor-element-found-in__line">337</span>
 </aside>
 
         <p class="phpdocumentor-summary">Get taxes.</p>
@@ -3202,12 +3368,13 @@ the types available at https://developer.wordpress.org/reference/functions/add_m
         <a href="#method_get_total" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-order-item-product.php"><a href="../files/woocommerce-includes-class-wc-order-item-product.html#source-view.297">includes/class-wc-order-item-product.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-order-item-product.php"><a href="../files/woocommerce-includes-class-wc-order-item-product.html#source-view.317">includes/class-wc-order-item-product.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">297</span>
+    <span class="phpdocumentor-element-found-in__line">317</span>
 </aside>
 
-        <p class="phpdocumentor-summary">Get total.</p>
+        <p class="phpdocumentor-summary">Gets the item total. This is the price of the item times the quantity
+excluding taxes after coupon discounts.</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
@@ -3246,9 +3413,9 @@ the types available at https://developer.wordpress.org/reference/functions/add_m
         <a href="#method_get_total_tax" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-order-item-product.php"><a href="../files/woocommerce-includes-class-wc-order-item-product.html#source-view.307">includes/class-wc-order-item-product.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-order-item-product.php"><a href="../files/woocommerce-includes-class-wc-order-item-product.html#source-view.327">includes/class-wc-order-item-product.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">307</span>
+    <span class="phpdocumentor-element-found-in__line">327</span>
 </aside>
 
         <p class="phpdocumentor-summary">Get total tax.</p>
@@ -3290,9 +3457,9 @@ the types available at https://developer.wordpress.org/reference/functions/add_m
         <a href="#method_get_type" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-order-item-product.php"><a href="../files/woocommerce-includes-class-wc-order-item-product.html#source-view.227">includes/class-wc-order-item-product.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-order-item-product.php"><a href="../files/woocommerce-includes-class-wc-order-item-product.html#source-view.245">includes/class-wc-order-item-product.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">227</span>
+    <span class="phpdocumentor-element-found-in__line">245</span>
 </aside>
 
         <p class="phpdocumentor-summary">Get order item type.</p>
@@ -3322,9 +3489,9 @@ the types available at https://developer.wordpress.org/reference/functions/add_m
         <a href="#method_get_variation_id" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-order-item-product.php"><a href="../files/woocommerce-includes-class-wc-order-item-product.html#source-view.247">includes/class-wc-order-item-product.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-order-item-product.php"><a href="../files/woocommerce-includes-class-wc-order-item-product.html#source-view.265">includes/class-wc-order-item-product.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">247</span>
+    <span class="phpdocumentor-element-found-in__line">265</span>
 </aside>
 
         <p class="phpdocumentor-summary">Get variation ID.</p>
@@ -3366,9 +3533,9 @@ the types available at https://developer.wordpress.org/reference/functions/add_m
         <a href="#method_init_meta_data" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-data.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-data.html#source-view.648">includes/abstracts/abstract-wc-data.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-data.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-data.html#source-view.661">includes/abstracts/abstract-wc-data.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">648</span>
+    <span class="phpdocumentor-element-found-in__line">661</span>
 </aside>
 
         <p class="phpdocumentor-summary">Helper function to initialize metadata entries from filtered raw meta data.</p>
@@ -3410,9 +3577,9 @@ the types available at https://developer.wordpress.org/reference/functions/add_m
         <a href="#method_is_type" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-order-item.php"><a href="../files/woocommerce-includes-class-wc-order-item.html#source-view.204">includes/class-wc-order-item.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-order-item.php"><a href="../files/woocommerce-includes-class-wc-order-item.html#source-view.227">includes/class-wc-order-item.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">204</span>
+    <span class="phpdocumentor-element-found-in__line">227</span>
 </aside>
 
         <p class="phpdocumentor-summary">Type checking.</p>
@@ -3454,9 +3621,9 @@ the types available at https://developer.wordpress.org/reference/functions/add_m
         <a href="#method_meta_exists" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-data.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-data.html#source-view.380">includes/abstracts/abstract-wc-data.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-data.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-data.html#source-view.393">includes/abstracts/abstract-wc-data.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">380</span>
+    <span class="phpdocumentor-element-found-in__line">393</span>
 </aside>
 
         <p class="phpdocumentor-summary">See if meta data exists, since get_meta always returns a &#039;&#039; or array().</p>
@@ -3512,9 +3679,9 @@ the types available at https://developer.wordpress.org/reference/functions/add_m
         <a href="#method_offsetExists" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-order-item-product.php"><a href="../files/woocommerce-includes-class-wc-order-item-product.html#source-view.481">includes/class-wc-order-item-product.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-order-item-product.php"><a href="../files/woocommerce-includes-class-wc-order-item-product.html#source-view.501">includes/class-wc-order-item-product.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">481</span>
+    <span class="phpdocumentor-element-found-in__line">501</span>
 </aside>
 
         <p class="phpdocumentor-summary">OffsetExists for ArrayAccess.</p>
@@ -3556,9 +3723,9 @@ the types available at https://developer.wordpress.org/reference/functions/add_m
         <a href="#method_offsetGet" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-order-item-product.php"><a href="../files/woocommerce-includes-class-wc-order-item-product.html#source-view.431">includes/class-wc-order-item-product.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-order-item-product.php"><a href="../files/woocommerce-includes-class-wc-order-item-product.html#source-view.451">includes/class-wc-order-item-product.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">431</span>
+    <span class="phpdocumentor-element-found-in__line">451</span>
 </aside>
 
         <p class="phpdocumentor-summary">OffsetGet for ArrayAccess/Backwards compatibility.</p>
@@ -3600,9 +3767,9 @@ the types available at https://developer.wordpress.org/reference/functions/add_m
         <a href="#method_offsetSet" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-order-item-product.php"><a href="../files/woocommerce-includes-class-wc-order-item-product.html#source-view.456">includes/class-wc-order-item-product.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-order-item-product.php"><a href="../files/woocommerce-includes-class-wc-order-item-product.html#source-view.476">includes/class-wc-order-item-product.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">456</span>
+    <span class="phpdocumentor-element-found-in__line">476</span>
 </aside>
 
         <p class="phpdocumentor-summary">OffsetSet for ArrayAccess/Backwards compatibility.</p>
@@ -3667,9 +3834,9 @@ the types available at https://developer.wordpress.org/reference/functions/add_m
         <a href="#method_offsetUnset" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-order-item.php"><a href="../files/woocommerce-includes-class-wc-order-item.html#source-view.349">includes/class-wc-order-item.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-order-item.php"><a href="../files/woocommerce-includes-class-wc-order-item.html#source-view.372">includes/class-wc-order-item.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">349</span>
+    <span class="phpdocumentor-element-found-in__line">372</span>
 </aside>
 
         <p class="phpdocumentor-summary">OffsetUnset for ArrayAccess.</p>
@@ -3711,9 +3878,9 @@ the types available at https://developer.wordpress.org/reference/functions/add_m
         <a href="#method_prime_raw_meta_data_cache" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-data.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-data.html#source-view.594">includes/abstracts/abstract-wc-data.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-data.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-data.html#source-view.607">includes/abstracts/abstract-wc-data.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">594</span>
+    <span class="phpdocumentor-element-found-in__line">607</span>
 </aside>
 
         <p class="phpdocumentor-summary">Prime caches for raw meta data. This includes meta_id column as well, which is not included by default in WP meta data.</p>
@@ -3778,9 +3945,9 @@ the types available at https://developer.wordpress.org/reference/functions/add_m
         <a href="#method_read_meta_data" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-data.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-data.html#source-view.608">includes/abstracts/abstract-wc-data.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-data.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-data.html#source-view.621">includes/abstracts/abstract-wc-data.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">608</span>
+    <span class="phpdocumentor-element-found-in__line">621</span>
 </aside>
 
         <p class="phpdocumentor-summary">Read Meta Data from the database. Ignore any internal properties.</p>
@@ -3837,9 +4004,9 @@ the types available at https://developer.wordpress.org/reference/functions/add_m
         <a href="#method_save" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-data.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-data.html#source-view.212">includes/abstracts/abstract-wc-data.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-data.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-data.html#source-view.225">includes/abstracts/abstract-wc-data.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">212</span>
+    <span class="phpdocumentor-element-found-in__line">225</span>
 </aside>
 
         <p class="phpdocumentor-summary">Save should create or update based on object existence.</p>
@@ -3883,9 +4050,9 @@ the types available at https://developer.wordpress.org/reference/functions/add_m
         <a href="#method_save_meta_data" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-data.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-data.html#source-view.666">includes/abstracts/abstract-wc-data.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-data.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-data.html#source-view.679">includes/abstracts/abstract-wc-data.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">666</span>
+    <span class="phpdocumentor-element-found-in__line">679</span>
 </aside>
 
         <p class="phpdocumentor-summary">Update Meta Data in the database.</p>
@@ -3929,9 +4096,9 @@ the types available at https://developer.wordpress.org/reference/functions/add_m
         <a href="#method_set_backorder_meta" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-order-item-product.php"><a href="../files/woocommerce-includes-class-wc-order-item-product.html#source-view.209">includes/class-wc-order-item-product.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-order-item-product.php"><a href="../files/woocommerce-includes-class-wc-order-item-product.html#source-view.227">includes/class-wc-order-item-product.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">209</span>
+    <span class="phpdocumentor-element-found-in__line">227</span>
 </aside>
 
         <p class="phpdocumentor-summary">Set meta data for backordered products.</p>
@@ -3961,9 +4128,9 @@ the types available at https://developer.wordpress.org/reference/functions/add_m
         <a href="#method_set_defaults" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-data.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-data.html#source-view.707">includes/abstracts/abstract-wc-data.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-data.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-data.html#source-view.750">includes/abstracts/abstract-wc-data.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">707</span>
+    <span class="phpdocumentor-element-found-in__line">750</span>
 </aside>
 
         <p class="phpdocumentor-summary">Set all props to default values.</p>
@@ -4007,9 +4174,9 @@ the types available at https://developer.wordpress.org/reference/functions/add_m
         <a href="#method_set_id" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-data.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-data.html#source-view.698">includes/abstracts/abstract-wc-data.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-data.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-data.html#source-view.741">includes/abstracts/abstract-wc-data.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">698</span>
+    <span class="phpdocumentor-element-found-in__line">741</span>
 </aside>
 
         <p class="phpdocumentor-summary">Set ID.</p>
@@ -4065,9 +4232,9 @@ the types available at https://developer.wordpress.org/reference/functions/add_m
         <a href="#method_set_meta_data" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-data.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-data.html#source-view.392">includes/abstracts/abstract-wc-data.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-data.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-data.html#source-view.405">includes/abstracts/abstract-wc-data.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">392</span>
+    <span class="phpdocumentor-element-found-in__line">405</span>
 </aside>
 
         <p class="phpdocumentor-summary">Set all meta data from array.</p>
@@ -4123,9 +4290,9 @@ the types available at https://developer.wordpress.org/reference/functions/add_m
         <a href="#method_set_name" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-order-item.php"><a href="../files/woocommerce-includes-class-wc-order-item.html#source-view.188">includes/class-wc-order-item.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-order-item.php"><a href="../files/woocommerce-includes-class-wc-order-item.html#source-view.211">includes/class-wc-order-item.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">188</span>
+    <span class="phpdocumentor-element-found-in__line">211</span>
 </aside>
 
         <p class="phpdocumentor-summary">Set order item name.</p>
@@ -4167,9 +4334,9 @@ the types available at https://developer.wordpress.org/reference/functions/add_m
         <a href="#method_set_object_read" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-data.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-data.html#source-view.719">includes/abstracts/abstract-wc-data.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-data.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-data.html#source-view.762">includes/abstracts/abstract-wc-data.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">719</span>
+    <span class="phpdocumentor-element-found-in__line">762</span>
 </aside>
 
         <p class="phpdocumentor-summary">Set object read property.</p>
@@ -4225,9 +4392,9 @@ the types available at https://developer.wordpress.org/reference/functions/add_m
         <a href="#method_set_order_id" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-order-item.php"><a href="../files/woocommerce-includes-class-wc-order-item.html#source-view.179">includes/class-wc-order-item.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-order-item.php"><a href="../files/woocommerce-includes-class-wc-order-item.html#source-view.202">includes/class-wc-order-item.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">179</span>
+    <span class="phpdocumentor-element-found-in__line">202</span>
 </aside>
 
         <p class="phpdocumentor-summary">Set order ID.</p>
@@ -4269,9 +4436,9 @@ the types available at https://developer.wordpress.org/reference/functions/add_m
         <a href="#method_set_product" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-order-item-product.php"><a href="../files/woocommerce-includes-class-wc-order-item-product.html#source-view.191">includes/class-wc-order-item-product.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-order-item-product.php"><a href="../files/woocommerce-includes-class-wc-order-item-product.html#source-view.209">includes/class-wc-order-item-product.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">191</span>
+    <span class="phpdocumentor-element-found-in__line">209</span>
 </aside>
 
         <p class="phpdocumentor-summary">Set properties based on passed in product object.</p>
@@ -4313,9 +4480,9 @@ the types available at https://developer.wordpress.org/reference/functions/add_m
         <a href="#method_set_product_id" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-order-item-product.php"><a href="../files/woocommerce-includes-class-wc-order-item-product.html#source-view.70">includes/class-wc-order-item-product.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-order-item-product.php"><a href="../files/woocommerce-includes-class-wc-order-item-product.html#source-view.88">includes/class-wc-order-item-product.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">70</span>
+    <span class="phpdocumentor-element-found-in__line">88</span>
 </aside>
 
         <p class="phpdocumentor-summary">Set Product ID</p>
@@ -4357,9 +4524,9 @@ the types available at https://developer.wordpress.org/reference/functions/add_m
         <a href="#method_set_props" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-data.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-data.html#source-view.744">includes/abstracts/abstract-wc-data.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-data.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-data.html#source-view.787">includes/abstracts/abstract-wc-data.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">744</span>
+    <span class="phpdocumentor-element-found-in__line">787</span>
 </aside>
 
         <p class="phpdocumentor-summary">Set a collection of props in one go, collect any errors, and return the result.</p>
@@ -4425,9 +4592,9 @@ the types available at https://developer.wordpress.org/reference/functions/add_m
         <a href="#method_set_quantity" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-order-item-product.php"><a href="../files/woocommerce-includes-class-wc-order-item-product.html#source-view.49">includes/class-wc-order-item-product.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-order-item-product.php"><a href="../files/woocommerce-includes-class-wc-order-item-product.html#source-view.67">includes/class-wc-order-item-product.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">49</span>
+    <span class="phpdocumentor-element-found-in__line">67</span>
 </aside>
 
         <p class="phpdocumentor-summary">Set quantity.</p>
@@ -4469,9 +4636,9 @@ the types available at https://developer.wordpress.org/reference/functions/add_m
         <a href="#method_set_subtotal" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-order-item-product.php"><a href="../files/woocommerce-includes-class-wc-order-item-product.html#source-view.94">includes/class-wc-order-item-product.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-order-item-product.php"><a href="../files/woocommerce-includes-class-wc-order-item-product.html#source-view.112">includes/class-wc-order-item-product.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">94</span>
+    <span class="phpdocumentor-element-found-in__line">112</span>
 </aside>
 
         <p class="phpdocumentor-summary">Line subtotal (before discounts).</p>
@@ -4513,9 +4680,9 @@ the types available at https://developer.wordpress.org/reference/functions/add_m
         <a href="#method_set_subtotal_tax" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-order-item-product.php"><a href="../files/woocommerce-includes-class-wc-order-item-product.html#source-view.129">includes/class-wc-order-item-product.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-order-item-product.php"><a href="../files/woocommerce-includes-class-wc-order-item-product.html#source-view.147">includes/class-wc-order-item-product.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">129</span>
+    <span class="phpdocumentor-element-found-in__line">147</span>
 </aside>
 
         <p class="phpdocumentor-summary">Line subtotal tax (before discounts).</p>
@@ -4557,9 +4724,9 @@ the types available at https://developer.wordpress.org/reference/functions/add_m
         <a href="#method_set_tax_class" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-order-item-product.php"><a href="../files/woocommerce-includes-class-wc-order-item-product.html#source-view.58">includes/class-wc-order-item-product.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-order-item-product.php"><a href="../files/woocommerce-includes-class-wc-order-item-product.html#source-view.76">includes/class-wc-order-item-product.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">58</span>
+    <span class="phpdocumentor-element-found-in__line">76</span>
 </aside>
 
         <p class="phpdocumentor-summary">Set tax class.</p>
@@ -4601,9 +4768,9 @@ the types available at https://developer.wordpress.org/reference/functions/add_m
         <a href="#method_set_taxes" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-order-item-product.php"><a href="../files/woocommerce-includes-class-wc-order-item-product.html#source-view.147">includes/class-wc-order-item-product.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-order-item-product.php"><a href="../files/woocommerce-includes-class-wc-order-item-product.html#source-view.165">includes/class-wc-order-item-product.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">147</span>
+    <span class="phpdocumentor-element-found-in__line">165</span>
 </aside>
 
         <p class="phpdocumentor-summary">Set line taxes and totals for passed in taxes.</p>
@@ -4645,9 +4812,9 @@ the types available at https://developer.wordpress.org/reference/functions/add_m
         <a href="#method_set_total" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-order-item-product.php"><a href="../files/woocommerce-includes-class-wc-order-item-product.html#source-view.109">includes/class-wc-order-item-product.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-order-item-product.php"><a href="../files/woocommerce-includes-class-wc-order-item-product.html#source-view.127">includes/class-wc-order-item-product.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">109</span>
+    <span class="phpdocumentor-element-found-in__line">127</span>
 </aside>
 
         <p class="phpdocumentor-summary">Line total (after discounts).</p>
@@ -4689,9 +4856,9 @@ the types available at https://developer.wordpress.org/reference/functions/add_m
         <a href="#method_set_total_tax" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-order-item-product.php"><a href="../files/woocommerce-includes-class-wc-order-item-product.html#source-view.138">includes/class-wc-order-item-product.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-order-item-product.php"><a href="../files/woocommerce-includes-class-wc-order-item-product.html#source-view.156">includes/class-wc-order-item-product.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">138</span>
+    <span class="phpdocumentor-element-found-in__line">156</span>
 </aside>
 
         <p class="phpdocumentor-summary">Line total tax (after discounts).</p>
@@ -4733,9 +4900,9 @@ the types available at https://developer.wordpress.org/reference/functions/add_m
         <a href="#method_set_variation" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-order-item-product.php"><a href="../files/woocommerce-includes-class-wc-order-item-product.html#source-view.178">includes/class-wc-order-item-product.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-order-item-product.php"><a href="../files/woocommerce-includes-class-wc-order-item-product.html#source-view.196">includes/class-wc-order-item-product.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">178</span>
+    <span class="phpdocumentor-element-found-in__line">196</span>
 </aside>
 
         <p class="phpdocumentor-summary">Set variation data (stored as meta data - write only).</p>
@@ -4777,9 +4944,9 @@ the types available at https://developer.wordpress.org/reference/functions/add_m
         <a href="#method_set_variation_id" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-order-item-product.php"><a href="../files/woocommerce-includes-class-wc-order-item-product.html#source-view.82">includes/class-wc-order-item-product.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-order-item-product.php"><a href="../files/woocommerce-includes-class-wc-order-item-product.html#source-view.100">includes/class-wc-order-item-product.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">82</span>
+    <span class="phpdocumentor-element-found-in__line">100</span>
 </aside>
 
         <p class="phpdocumentor-summary">Set variation ID.</p>
@@ -4821,9 +4988,9 @@ the types available at https://developer.wordpress.org/reference/functions/add_m
         <a href="#method_update_meta_data" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-data.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-data.html#source-view.449">includes/abstracts/abstract-wc-data.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-data.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-data.html#source-view.462">includes/abstracts/abstract-wc-data.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">449</span>
+    <span class="phpdocumentor-element-found-in__line">462</span>
 </aside>
 
         <p class="phpdocumentor-summary">Update meta data by key or ID, if provided.</p>
@@ -4897,9 +5064,9 @@ the types available at https://developer.wordpress.org/reference/functions/add_m
         <a href="#method_error" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-data.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-data.html#source-view.899">includes/abstracts/abstract-wc-data.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-data.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-data.html#source-view.942">includes/abstracts/abstract-wc-data.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">899</span>
+    <span class="phpdocumentor-element-found-in__line">942</span>
 </aside>
 
         <p class="phpdocumentor-summary">When invalid data is found, throw an exception unless reading from the DB.</p>
@@ -4991,9 +5158,9 @@ the types available at https://developer.wordpress.org/reference/functions/add_m
         <a href="#method_filter_null_meta" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-data.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-data.html#source-view.289">includes/abstracts/abstract-wc-data.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-data.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-data.html#source-view.302">includes/abstracts/abstract-wc-data.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">289</span>
+    <span class="phpdocumentor-element-found-in__line">302</span>
 </aside>
 
         <p class="phpdocumentor-summary">Filter null meta values from array.</p>
@@ -5049,9 +5216,9 @@ the types available at https://developer.wordpress.org/reference/functions/add_m
         <a href="#method_get_hook_prefix" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-data.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-data.html#source-view.819">includes/abstracts/abstract-wc-data.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-data.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-data.html#source-view.862">includes/abstracts/abstract-wc-data.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">819</span>
+    <span class="phpdocumentor-element-found-in__line">862</span>
 </aside>
 
         <p class="phpdocumentor-summary">Prefix for action and filter hooks on data.</p>
@@ -5095,9 +5262,9 @@ the types available at https://developer.wordpress.org/reference/functions/add_m
         <a href="#method_get_prop" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-data.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-data.html#source-view.834">includes/abstracts/abstract-wc-data.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-data.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-data.html#source-view.877">includes/abstracts/abstract-wc-data.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">834</span>
+    <span class="phpdocumentor-element-found-in__line">877</span>
 </aside>
 
         <p class="phpdocumentor-summary">Gets a prop for a getter method.</p>
@@ -5164,9 +5331,9 @@ Context controls what happens to the value before it's returned.</p>
         <a href="#method_is_internal_meta_key" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-data.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-data.html#source-view.311">includes/abstracts/abstract-wc-data.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-data.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-data.html#source-view.324">includes/abstracts/abstract-wc-data.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">311</span>
+    <span class="phpdocumentor-element-found-in__line">324</span>
 </aside>
 
         <p class="phpdocumentor-summary">Check if the key is an internal one.</p>
@@ -5222,9 +5389,9 @@ Context controls what happens to the value before it's returned.</p>
         <a href="#method_maybe_read_meta_data" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-data.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-data.html#source-view.551">includes/abstracts/abstract-wc-data.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-data.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-data.html#source-view.564">includes/abstracts/abstract-wc-data.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">551</span>
+    <span class="phpdocumentor-element-found-in__line">564</span>
 </aside>
 
         <p class="phpdocumentor-summary">Read meta data if null.</p>
@@ -5268,9 +5435,9 @@ Context controls what happens to the value before it's returned.</p>
         <a href="#method_set_date_prop" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-data.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-data.html#source-view.855">includes/abstracts/abstract-wc-data.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-data.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-data.html#source-view.898">includes/abstracts/abstract-wc-data.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">855</span>
+    <span class="phpdocumentor-element-found-in__line">898</span>
 </aside>
 
         <p class="phpdocumentor-summary">Sets a date prop whilst handling formatting and datetime objects.</p>
@@ -5335,9 +5502,9 @@ Context controls what happens to the value before it's returned.</p>
         <a href="#method_set_prop" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-data.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-data.html#source-view.781">includes/abstracts/abstract-wc-data.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-data.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-data.html#source-view.824">includes/abstracts/abstract-wc-data.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">781</span>
+    <span class="phpdocumentor-element-found-in__line">824</span>
 </aside>
 
         <p class="phpdocumentor-summary">Sets a prop for a setter method.</p>
@@ -5347,7 +5514,7 @@ Context controls what happens to the value before it's returned.</p>
                 <span class="phpdocumentor-signature__name">set_prop</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$prop</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">mixed&nbsp;</span><span class="phpdocumentor-signature__argument__name">$value</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
 
         <section class="phpdocumentor-description"><p>This stores changes in a special array so we can track what needs saving
-the the DB later.</p>
+the DB later.</p>
 </section>
 
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
@@ -5404,7 +5571,7 @@ the the DB later.</p>
 
     <footer class="phpdocumentor phpdocumentor-footer">
     <div class="phpdocumentor-section">
-        <span>WooCommerce Code Reference API documentation generated by <a href="http://www.phpdoc.org/">phpDocumentor</a> on August 24th, 2023 at 08:49 am.</span>
+        <span>WooCommerce Code Reference API documentation generated by <a href="http://www.phpdoc.org/">phpDocumentor</a> on July 25th, 2024 at 11:33 am.</span>
     </div>
 </footer>
 
@@ -5416,7 +5583,7 @@ the the DB later.</p>
             'searchIndex': '..\/js\/searchIndex.json'
         };
     </script>
-    <script src="../js/searchIndex.js?updated=1692866966"></script>
-    <script src="../js/search.js?updated=1692866966"></script>
+    <script src="../js/searchIndex.js?updated=1721907192"></script>
+    <script src="../js/search.js?updated=1721907192"></script>
 </body>
 </html>

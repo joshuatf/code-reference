@@ -1,0 +1,663 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>WooCommerce Code Reference</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="../images/favicon.png" />
+    <link rel="apple-touch-icon" href="../images/apple-touch-icon.png"/>
+    <link rel="apple-touch-icon" sizes="72x72" href="../images/apple-touch-icon-72x72.png"/>
+    <link rel="apple-touch-icon" sizes="114x114" href="../images/apple-touch-icon-114x114.png"/>
+    <link rel="stylesheet" href="../css/normalize.css">
+    <link rel="stylesheet" href="../css/base.css?updated=1721907185">
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/template.css?updated=1721907185">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0/css/all.min.css" integrity="sha256-ybRkN9dBjhcS2qrW1z+hfCxq+1aBdwyQM5wlQoQVt/0=" crossorigin="anonymous" />
+            <script src="https://cdn.jsdelivr.net/npm/css-vars-ponyfill@2"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0/js/all.min.js" integrity="sha256-0vuk8LXoyrmCjp1f0O300qo1M75ZQyhH9X3J6d+scmk=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tarekraafat/autocomplete.js@7.2.0/dist/js/autoComplete.min.js"></script>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-8KCYZ2CYMS"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-8KCYZ2CYMS', {
+		'content_group' : 'WooCommerce Core Code Reference',
+	});
+</script>
+        <script src="../js/prism.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            window.dispatchEvent(new HashChangeEvent('hashchange'));
+        });
+    </script>
+</head>
+<body id="top">
+    <header class="phpdocumentor-top-header">
+    <section class="phpdocumentor-section">
+        <div class="site-branding">
+            <a class="site-logo" href="../index.html"><img width="180" src="../images/logo.svg" alt="WooCommerce" /></a>
+        </div>
+        <nav class="main-navigation">
+            <ul>
+                <li><a href="../hooks/hooks.html">Hooks Reference</a></li>
+                <li><a href="https://docs.woocommerce.com/">Documentation</a></li>
+                <li><a href="https://woocommerce.github.io/woocommerce-rest-api-docs/">REST API Docs</a></li>
+                <li><a href="https://woocommerce.com/careers/?utm_source=woocommerce+core+code+reference&utm_medium=devdocs&utm_campaign=woo+careers" target="_blank">We're hiring!</a></li>
+            </ul>
+        </nav>
+    </section>
+</header>
+
+<div class="phpdocumentor-header">
+    <section class="phpdocumentor-section">
+        <h1 class="phpdocumentor-title">WooCommerce Code Reference</h1>
+        <section class="phpdocumentor-search">
+    <label class="phpdocumentor-label">
+        <span class="visually-hidden">Search (click ESC to close search results)</span>
+        <input id="autoComplete" tabindex="1" type="search" class="phpdocumentor-field phpdocumentor-search__field" placeholder="Loading..." disabled />
+    </label>
+</section>
+
+    </section>
+</div>
+
+    <main class="phpdocumentor">
+        <div class="phpdocumentor-section">
+            <aside class="phpdocumentor-column -four phpdocumentor-sidebar">
+    
+    <section class="phpdocumentor-sidebar__category">
+        <h2 class="phpdocumentor-sidebar__category-header">Namespaces</h2>
+                                <h3 class="phpdocumentor-sidebar__root-namespace"><a href="../namespaces/default.html"><abbr title="\">Global</abbr></a></h3>
+                                        <h4 class="phpdocumentor-sidebar__root-namespace"><a href="../namespaces/woocommerce.html"><abbr title="\WooCommerce">WooCommerce</abbr></a></h4>
+                <ul class="phpdocumentor-list">
+                                            <li><a href="../namespaces/woocommerce-admin.html"><abbr title="\WooCommerce\Admin">Admin</abbr></a></li>
+                                    </ul>
+                            <h4 class="phpdocumentor-sidebar__root-namespace"><a href="../namespaces/automattic.html"><abbr title="\Automattic">Automattic</abbr></a></h4>
+                <ul class="phpdocumentor-list">
+                                            <li><a href="../namespaces/automattic-woocommerce.html"><abbr title="\Automattic\WooCommerce">WooCommerce</abbr></a></li>
+                                    </ul>
+                        </section>
+
+        <section class="phpdocumentor-sidebar__category">
+        <h2 class="phpdocumentor-sidebar__category-header">Packages</h2>
+                    <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/WooCommerce.html"><abbr title="\WooCommerce">WooCommerce</abbr></a></h3>
+                        <ul class="phpdocumentor-list">
+                                    <li><a href="../packages/WooCommerce-Classes.html"><abbr title="\WooCommerce\Classes">Classes</abbr></a></li>
+                                    <li><a href="../packages/WooCommerce-Abstracts.html"><abbr title="\WooCommerce\Abstracts">Abstracts</abbr></a></li>
+                                    <li><a href="../packages/WooCommerce-Admin.html"><abbr title="\WooCommerce\Admin">Admin</abbr></a></li>
+                                    <li><a href="../packages/WooCommerce-Helper.html"><abbr title="\WooCommerce\Helper">Helper</abbr></a></li>
+                                    <li><a href="../packages/WooCommerce-Views.html"><abbr title="\WooCommerce\Views">Views</abbr></a></li>
+                                    <li><a href="../packages/WooCommerce-Templates.html"><abbr title="\WooCommerce\Templates">Templates</abbr></a></li>
+                                    <li><a href="../packages/WooCommerce-Reports.html"><abbr title="\WooCommerce\Reports">Reports</abbr></a></li>
+                                    <li><a href="../packages/WooCommerce-Blocks.html"><abbr title="\WooCommerce\Blocks">Blocks</abbr></a></li>
+                                    <li><a href="../packages/WooCommerce-RestApi.html"><abbr title="\WooCommerce\RestApi">RestApi</abbr></a></li>
+                                    <li><a href="../packages/WooCommerce-CLI.html"><abbr title="\WooCommerce\CLI">CLI</abbr></a></li>
+                                    <li><a href="../packages/WooCommerce-l10n.html"><abbr title="\WooCommerce\l10n">l10n</abbr></a></li>
+                                    <li><a href="../packages/WooCommerce-Webhooks.html"><abbr title="\WooCommerce\Webhooks">Webhooks</abbr></a></li>
+                                    <li><a href="../packages/WooCommerce-DataStores.html"><abbr title="\WooCommerce\DataStores">DataStores</abbr></a></li>
+                                    <li><a href="../packages/WooCommerce-Emails.html"><abbr title="\WooCommerce\Emails">Emails</abbr></a></li>
+                                    <li><a href="../packages/WooCommerce-Export.html"><abbr title="\WooCommerce\Export">Export</abbr></a></li>
+                                    <li><a href="../packages/WooCommerce-Gateways.html"><abbr title="\WooCommerce\Gateways">Gateways</abbr></a></li>
+                                    <li><a href="../packages/WooCommerce-PayPal.html"><abbr title="\WooCommerce\PayPal">PayPal</abbr></a></li>
+                                    <li><a href="../packages/WooCommerce-Import.html"><abbr title="\WooCommerce\Import">Import</abbr></a></li>
+                                    <li><a href="../packages/WooCommerce-Integrations.html"><abbr title="\WooCommerce\Integrations">Integrations</abbr></a></li>
+                                    <li><a href="../packages/WooCommerce-Interfaces.html"><abbr title="\WooCommerce\Interfaces">Interfaces</abbr></a></li>
+                                    <li><a href="../packages/WooCommerce-Interface.html"><abbr title="\WooCommerce\Interface">Interface</abbr></a></li>
+                                    <li><a href="../packages/WooCommerce-LogHandlers.html"><abbr title="\WooCommerce\LogHandlers">LogHandlers</abbr></a></li>
+                                    <li><a href="../packages/WooCommerce-PaymentTokens.html"><abbr title="\WooCommerce\PaymentTokens">PaymentTokens</abbr></a></li>
+                                    <li><a href="../packages/WooCommerce-Utilities.html"><abbr title="\WooCommerce\Utilities">Utilities</abbr></a></li>
+                                    <li><a href="../packages/WooCommerce-Shipping.html"><abbr title="\WooCommerce\Shipping">Shipping</abbr></a></li>
+                                    <li><a href="../packages/WooCommerce-Shortcodes.html"><abbr title="\WooCommerce\Shortcodes">Shortcodes</abbr></a></li>
+                                    <li><a href="../packages/WooCommerce-Tracks.html"><abbr title="\WooCommerce\Tracks">Tracks</abbr></a></li>
+                                    <li><a href="../packages/WooCommerce-Traits.html"><abbr title="\WooCommerce\Traits">Traits</abbr></a></li>
+                                    <li><a href="../packages/WooCommerce-Functions.html"><abbr title="\WooCommerce\Functions">Functions</abbr></a></li>
+                                    <li><a href="../packages/WooCommerce-WCCom.html"><abbr title="\WooCommerce\WCCom">WCCom</abbr></a></li>
+                                    <li><a href="../packages/WooCommerce-WCCOM.html"><abbr title="\WooCommerce\WCCOM">WCCOM</abbr></a></li>
+                                    <li><a href="../packages/WooCommerce-Widgets.html"><abbr title="\WooCommerce\Widgets">Widgets</abbr></a></li>
+                                    <li><a href="../packages/WooCommerce-Uninstaller.html"><abbr title="\WooCommerce\Uninstaller">Uninstaller</abbr></a></li>
+                            </ul>
+                                <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/WoocommerceAdmin.html"><abbr title="\WoocommerceAdmin">WoocommerceAdmin</abbr></a></h3>
+                                <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/WoocommerceNavigation.html"><abbr title="\WoocommerceNavigation">WoocommerceNavigation</abbr></a></h3>
+                                <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/Automattic.html"><abbr title="\Automattic">Automattic</abbr></a></h3>
+                        <ul class="phpdocumentor-list">
+                                    <li><a href="../packages/Automattic-WooCommerce.html"><abbr title="\Automattic\WooCommerce">WooCommerce</abbr></a></li>
+                            </ul>
+                                <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/WooCommerceBlocks.html"><abbr title="\WooCommerceBlocks">WooCommerceBlocks</abbr></a></h3>
+                        </section>
+    
+    <section class="phpdocumentor-sidebar__category">
+        <h2 class="phpdocumentor-sidebar__category-header">Reports</h2>
+                <h3 class="phpdocumentor-sidebar__root-package"><a href="../reports/deprecated.html">Deprecated</a></h3>
+        <h3 class="phpdocumentor-sidebar__root-package"><a href="../reports/errors.html">Errors</a></h3>
+        <h3 class="phpdocumentor-sidebar__root-package"><a href="../reports/markers.html">Markers</a></h3>
+    </section>
+
+    <section class="phpdocumentor-sidebar__category">
+        <h2 class="phpdocumentor-sidebar__category-header">Indices</h2>
+        <h3 class="phpdocumentor-sidebar__root-package"><a href="../indices/files.html">Files</a></h3>
+        <h3 class="phpdocumentor-sidebar__root-package"><a href="../hooks/hooks.html">Hooks Reference</a></h3>
+    </section>
+</aside>
+
+            <div class="phpdocumentor-column -eight phpdocumentor-content">
+                    <ul class="phpdocumentor-breadcrumbs">
+    </ul>
+
+    <article class="phpdocumentor-element -file">
+        <h2 class="phpdocumentor-content__title">UpdatePatterns.php</h2>
+
+                
+
+        
+                    <h3 class="phpdocumentor-elements__header" id="source-code">
+                Source code
+                <a href="#source-code" class="headerlink"><i class="fas fa-link"></i></a>
+            </h3>
+            <pre id="source-view" tabindex="-1" class="language-php line-numbers linkable-line-numbers"><code>&lt;?php
+
+namespace Automattic\WooCommerce\Blocks\AIContent;
+
+use Automattic\WooCommerce\Blocks\AI\Connection;
+use WP_Error;
+
+/**
+ * Pattern Images class.
+ */
+class UpdatePatterns {
+
+	/**
+	 * All patterns that are actively in use in the Assembler.
+	 */
+	const WC_PATTERNS_IN_THE_ASSEMBLER = [
+		&#039;woocommerce-blocks/featured-category-triple&#039;,
+		&#039;woocommerce-blocks/hero-product-3-split&#039;,
+		&#039;woocommerce-blocks/hero-product-chessboard&#039;,
+		&#039;woocommerce-blocks/hero-product-split&#039;,
+		&#039;woocommerce-blocks/product-collection-4-columns&#039;,
+		&#039;woocommerce-blocks/product-collection-5-columns&#039;,
+		&#039;woocommerce-blocks/social-follow-us-in-social-media&#039;,
+		&#039;woocommerce-blocks/testimonials-3-columns&#039;,
+		&#039;woocommerce-blocks/product-collection-featured-products-5-columns&#039;,
+	];
+
+	/**
+	 * Generate AI content and assign AI-managed images to Patterns.
+	 *
+	 * @param Connection      $ai_connection The AI connection.
+	 * @param string|WP_Error $token The JWT token.
+	 * @param array|WP_Error  $images The array of images.
+	 * @param string          $business_description The business description.
+	 *
+	 * @return bool|WP_Error
+	 */
+	public function generate_content( $ai_connection, $token, $images, $business_description ) {
+		if ( is_wp_error( $token ) ) {
+			return $token;
+		}
+
+		$images              = ContentProcessor::verify_images( $images, $ai_connection, $token, $business_description );
+		$patterns_dictionary = PatternsHelper::get_patterns_dictionary();
+
+		if ( is_wp_error( $patterns_dictionary ) ) {
+			return $patterns_dictionary;
+		}
+
+		$patterns = $this-&gt;assign_selected_images_to_patterns( $patterns_dictionary, $images[&#039;images&#039;] );
+
+		if ( is_wp_error( $patterns ) ) {
+			return new WP_Error( &#039;failed_to_set_pattern_images&#039;, __( &#039;Failed to set the pattern images.&#039;, &#039;woocommerce&#039; ) );
+		}
+
+		$ai_generated_patterns_content = $this-&gt;generate_ai_content_for_patterns( $ai_connection, $token, $patterns, $business_description );
+
+		if ( is_wp_error( $ai_generated_patterns_content ) ) {
+			return new WP_Error( &#039;failed_to_set_pattern_content&#039;, __( &#039;Failed to set the pattern content.&#039;, &#039;woocommerce&#039; ) );
+		}
+
+		$patterns_ai_data_post = PatternsHelper::get_patterns_ai_data_post();
+
+		if ( isset( $patterns_ai_data_post-&gt;post_content ) &amp;&amp; json_decode( $patterns_ai_data_post-&gt;post_content ) === $ai_generated_patterns_content ) {
+			return true;
+		}
+
+		$updated_content = PatternsHelper::upsert_patterns_ai_data_post( $ai_generated_patterns_content );
+
+		if ( is_wp_error( $updated_content ) ) {
+			return new WP_Error( &#039;failed_to_update_patterns_content&#039;, __( &#039;Failed to update patterns content.&#039;, &#039;woocommerce&#039; ) );
+		}
+
+		return true;
+	}
+
+	/**
+	 * Returns the patterns with AI generated content.
+	 *
+	 * @param Connection      $ai_connection The AI connection.
+	 * @param string|WP_Error $token The JWT token.
+	 * @param array           $patterns The array of patterns.
+	 * @param string          $business_description The business description.
+	 *
+	 * @return array|WP_Error The patterns with AI generated content.
+	 */
+	public function generate_ai_content_for_patterns( $ai_connection, $token, $patterns, $business_description ) {
+		$prompts                 = $this-&gt;prepare_prompts( $patterns );
+		$expected_results_format = $this-&gt;prepare_expected_results_format( $prompts );
+		$formatted_prompts       = $this-&gt;format_prompts_for_ai( $prompts, $business_description, $expected_results_format );
+		$ai_responses            = $this-&gt;fetch_and_validate_ai_responses( $ai_connection, $token, $formatted_prompts, $expected_results_format );
+
+		if ( is_wp_error( $ai_responses ) ) {
+			return $ai_responses;
+		}
+
+		return $this-&gt;apply_ai_responses_to_patterns( $patterns, $ai_responses );
+	}
+
+	/**
+	 * Prepares the prompts for the AI.
+	 *
+	 * @param array $patterns The array of patterns.
+	 *
+	 * @return array
+	 */
+	private function prepare_prompts( array $patterns ) {
+		$prompts    = [];
+		$result     = [];
+		$group_size = count( self::WC_PATTERNS_IN_THE_ASSEMBLER );
+		$i          = 1;
+		foreach ( $patterns as $pattern ) {
+			$slug = $pattern[&#039;slug&#039;] ?? &#039;&#039;;
+
+			if ( ! in_array( $slug, self::WC_PATTERNS_IN_THE_ASSEMBLER, true ) ) {
+				continue;
+			}
+
+			$content         = $pattern[&#039;content&#039;] ?? &#039;&#039;;
+			$counter         = 1;
+			$result[ $slug ] = [];
+
+			if ( isset( $content[&#039;titles&#039;] ) ) {
+				foreach ( $content[&#039;titles&#039;] as $title ) {
+					$result[ $slug ][ $counter ++ ] = $title[&#039;ai_prompt&#039;];
+				}
+			}
+
+			if ( isset( $content[&#039;descriptions&#039;] ) ) {
+				foreach ( $content[&#039;descriptions&#039;] as $description ) {
+					$result[ $slug ][ $counter ++ ] = $description[&#039;ai_prompt&#039;];
+				}
+			}
+
+			if ( isset( $content[&#039;buttons&#039;] ) ) {
+				foreach ( $content[&#039;buttons&#039;] as $button ) {
+					$result[ $slug ][ $counter ++ ] = $button[&#039;ai_prompt&#039;];
+				}
+			}
+
+			$i ++;
+
+			if ( $i === $group_size ) {
+				$prompts[] = $result;
+				$result    = [];
+				$i         = 1;
+			}
+		}
+
+		return $prompts;
+	}
+
+	/**
+	 * Prepares the expected results format for the AI.
+	 *
+	 * @param array $prompts The array of prompts.
+	 *
+	 * @return array
+	 */
+	private function prepare_expected_results_format( array $prompts ) {
+		$expected_results_format = [];
+		foreach ( $prompts as $prompt ) {
+			$expected_result_format = [];
+
+			foreach ( $prompt as $key =&gt; $values ) {
+				$expected_result_format[ $key ] = [];
+
+				foreach ( $values as $sub_key =&gt; $sub_value ) {
+					$expected_result_format[ $key ][ $sub_key ] = &#039;&#039;;
+				}
+			}
+
+			$expected_results_format[] = $expected_result_format;
+		}
+
+		return $expected_results_format;
+	}
+
+	/**
+	 * Formats the prompts for the AI.
+	 *
+	 * @param array  $prompts The array of prompts.
+	 * @param string $business_description The business description.
+	 * @param array  $expected_results_format The expected results format.
+	 *
+	 * @return array
+	 */
+	private function format_prompts_for_ai( array $prompts, string $business_description, array $expected_results_format ) {
+		$i                 = 0;
+		$formatted_prompts = [];
+		foreach ( $prompts as $prompt ) {
+			$formatted_prompts[] = sprintf(
+				&quot;You are an experienced writer. Given a business described as: &#039;%s&#039;, generate content for the sections using the following prompts for each one of them: `&#039;%s&#039;`, always making sure that the expected number of characters is respected. The response should be an array of data in JSON format. Each element should be an object with the pattern name as the key, and the generated content as values. Here&#039;s an example format: `&#039;%s&#039;`&quot;,
+				$business_description,
+				wp_json_encode( $prompt ),
+				wp_json_encode( $expected_results_format[ $i ] )
+			);
+			$i ++;
+		}
+
+		return $formatted_prompts;
+	}
+
+	/**
+	 * Fetches and validates the AI responses.
+	 *
+	 * @param Connection      $ai_connection The AI connection.
+	 * @param string|WP_Error $token The JWT token.
+	 * @param array           $formatted_prompts The array of formatted prompts.
+	 * @param array           $expected_results_format The array of expected results format.
+	 *
+	 * @return array|mixed
+	 */
+	private function fetch_and_validate_ai_responses( $ai_connection, $token, $formatted_prompts, $expected_results_format ) {
+		$ai_request_retries = 0;
+		$ai_responses       = [];
+		$success            = false;
+		while ( $ai_request_retries &lt; 5 &amp;&amp; ! $success ) {
+			$ai_request_retries ++;
+			$ai_responses = $ai_connection-&gt;fetch_ai_responses( $token, $formatted_prompts, 60, &#039;json_object&#039; );
+
+			if ( is_wp_error( $ai_responses ) ) {
+				continue;
+			}
+
+			if ( empty( $ai_responses ) ) {
+				continue;
+			}
+
+			$loops_success = [];
+			$i             = 0;
+			foreach ( $ai_responses as $ai_response ) {
+				if ( ! isset( $ai_response[&#039;completion&#039;] ) ) {
+					$loops_success[] = false;
+					continue;
+				}
+
+				$completion = json_decode( $ai_response[&#039;completion&#039;], true );
+
+				if ( ! is_array( $completion ) ) {
+					$loops_success[] = false;
+					continue;
+				}
+
+				$diff = array_diff_key( $expected_results_format[ $i ], $completion );
+				$i ++;
+
+				if ( ! empty( $diff ) ) {
+					$loops_success[] = false;
+					continue;
+				}
+
+				$empty_results = false;
+				foreach ( $completion as $completion_item ) {
+					foreach ( $completion_item as $value ) {
+						if ( empty( $value ) ) {
+							$empty_results = true;
+						}
+					}
+				}
+
+				if ( $empty_results ) {
+					$loops_success[] = false;
+					continue;
+				}
+
+				$loops_success[] = true;
+			}
+
+			if ( ! in_array( false, $loops_success, true ) ) {
+				$success = true;
+			}
+		}
+
+		if ( ! $success ) {
+			return new WP_Error( &#039;failed_to_fetch_ai_responses&#039;, __( &#039;Failed to fetch AI responses.&#039;, &#039;woocommerce&#039; ) );
+		}
+
+		return $ai_responses;
+	}
+
+	/**
+	 * Applies the AI responses to the patterns.
+	 *
+	 * @param array $patterns The array of patterns.
+	 * @param array $ai_responses The array of AI responses.
+	 *
+	 * @return mixed
+	 */
+	private function apply_ai_responses_to_patterns( array $patterns, array $ai_responses ) {
+		foreach ( $patterns as $i =&gt; $pattern ) {
+			$pattern_slug = $pattern[&#039;slug&#039;];
+
+			if ( ! in_array( $pattern_slug, self::WC_PATTERNS_IN_THE_ASSEMBLER, true ) ) {
+				continue;
+			}
+
+			foreach ( $ai_responses as $ai_response ) {
+				$ai_response = json_decode( $ai_response[&#039;completion&#039;], true );
+
+				if ( isset( $ai_response[ $pattern_slug ] ) ) {
+					$ai_response_content = $ai_response[ $pattern_slug ];
+
+					$counter = 1;
+					if ( isset( $patterns[ $i ][&#039;content&#039;][&#039;titles&#039;] ) ) {
+						foreach ( $patterns[ $i ][&#039;content&#039;][&#039;titles&#039;] as $j =&gt; $title ) {
+							if ( ! isset( $ai_response_content[ $counter ] ) ) {
+								$ai_response_content[ $counter ] = $ai_response_content[ $counter - 1 ] ?? &#039;&#039;;
+							}
+
+							$patterns[ $i ][&#039;content&#039;][&#039;titles&#039;][ $j ][&#039;default&#039;] = $this-&gt;sanitize_string( $ai_response_content[ $counter ] );
+
+							$counter ++;
+						}
+					}
+
+					if ( isset( $patterns[ $i ][&#039;content&#039;][&#039;descriptions&#039;] ) ) {
+						foreach ( $patterns[ $i ][&#039;content&#039;][&#039;descriptions&#039;] as $k =&gt; $description ) {
+							if ( ! isset( $ai_response_content[ $counter ] ) ) {
+								$ai_response_content[ $counter ] = $ai_response_content[ $counter - 1 ] ?? &#039;&#039;;
+							}
+
+							$patterns[ $i ][&#039;content&#039;][&#039;descriptions&#039;][ $k ][&#039;default&#039;] = $this-&gt;sanitize_string( $ai_response_content[ $counter ] );
+
+							$counter ++;
+						}
+					}
+
+					if ( isset( $patterns[ $i ][&#039;content&#039;][&#039;buttons&#039;] ) ) {
+						foreach ( $patterns[ $i ][&#039;content&#039;][&#039;buttons&#039;] as $l =&gt; $button ) {
+							if ( ! isset( $ai_response_content[ $counter ] ) ) {
+								$ai_response_content[ $counter ] = $ai_response_content[ $counter - 1 ] ?? &#039;&#039;;
+							}
+
+							$patterns[ $i ][&#039;content&#039;][&#039;buttons&#039;][ $l ][&#039;default&#039;] = $this-&gt;sanitize_string( $ai_response_content[ $counter ] );
+
+							$counter ++;
+						}
+					}
+				}
+			}
+		}
+
+		return $patterns;
+	}
+
+	/**
+	 * Sanitize the string from the AI generated content. It removes double quotes that can cause issues when
+	 * decoding the patterns JSON.
+	 *
+	 * @param string $string The string to be sanitized.
+	 *
+	 * @return string The sanitized string.
+	 */
+	private function sanitize_string( $string ) {
+		return str_replace( &#039;&quot;&#039;, &#039;&#039;, $string );
+	}
+
+	/**
+	 * Assign selected images to patterns.
+	 *
+	 * @param array $patterns_dictionary The array of patterns.
+	 * @param array $selected_images The array of images.
+	 *
+	 * @return array|WP_Error The patterns with images.
+	 */
+	private function assign_selected_images_to_patterns( $patterns_dictionary, $selected_images ) {
+		$patterns_with_images = array();
+
+		foreach ( $patterns_dictionary as $pattern ) {
+			if ( ! $this-&gt;pattern_has_images( $pattern ) ) {
+				$patterns_with_images[] = $pattern;
+				continue;
+			}
+
+			list( $images, $alts ) = $this-&gt;get_images_for_pattern( $pattern, $selected_images );
+			if ( empty( $images ) ) {
+				$patterns_with_images[] = $pattern;
+				continue;
+			}
+
+			$pattern[&#039;images&#039;] = $images;
+
+			$string = wp_json_encode( $pattern );
+
+			foreach ( $alts as $i =&gt; $alt ) {
+				$alt    = empty( $alt ) ? &#039;the text should be related to the store description but generic enough to adapt to any image&#039; : $alt;
+				$string = str_replace( &quot;{image.$i}&quot;, $alt, $string );
+			}
+
+			$pattern = json_decode( $string, true );
+
+			$patterns_with_images[] = $pattern;
+		}
+
+		return $patterns_with_images;
+	}
+
+	/**
+	 * Get the Patterns Dictionary.
+	 *
+	 * @return mixed|WP_Error|null
+	 */
+	public static function get_patterns_dictionary() {
+		$patterns_dictionary = plugin_dir_path( __FILE__ ) . &#039;dictionary.json&#039;;
+
+		if ( ! file_exists( $patterns_dictionary ) ) {
+			return new WP_Error( &#039;missing_patterns_dictionary&#039;, __( &#039;The patterns dictionary is missing.&#039;, &#039;woocommerce&#039; ) );
+		}
+
+		return wp_json_file_decode( $patterns_dictionary, array( &#039;associative&#039; =&gt; true ) );
+	}
+
+	/**
+	 * Returns whether the pattern has images.
+	 *
+	 * @param array $pattern The array representing the pattern.
+	 *
+	 * @return bool True if the pattern has images, false otherwise.
+	 */
+	private function pattern_has_images( array $pattern ): bool {
+		return isset( $pattern[&#039;images_total&#039;] ) &amp;&amp; $pattern[&#039;images_total&#039;] &gt; 0;
+	}
+
+	/**
+	 * Returns the images for the given pattern.
+	 *
+	 * @param array $pattern         The array representing the pattern.
+	 * @param array $selected_images The array of images.
+	 *
+	 * @return array An array containing an array of the images in the first position and their alts in the second.
+	 */
+	private function get_images_for_pattern( array $pattern, array $selected_images ): array {
+		$images = array();
+		$alts   = array();
+		foreach ( $selected_images as $selected_image ) {
+			if ( ! isset( $selected_image[&#039;title&#039;] ) ) {
+				continue;
+			}
+
+			if ( ! isset( $selected_image[&#039;URL&#039;] ) ) {
+				continue;
+			}
+
+			if ( str_contains( &#039;.jpeg&#039;, $selected_image[&#039;title&#039;] ) ) {
+				continue;
+			}
+
+			$expected_image_format = $pattern[&#039;images_format&#039;] ?? &#039;portrait&#039;;
+			$selected_image_format = $this-&gt;get_selected_image_format( $selected_image );
+
+			if ( $selected_image_format !== $expected_image_format ) {
+				continue;
+			}
+
+			$selected_image_url = ContentProcessor::adjust_image_size( $selected_image[&#039;URL&#039;], &#039;patterns&#039; );
+
+			$images[] = $selected_image_url;
+			$alts[]   = $selected_image[&#039;title&#039;];
+		}
+
+		return array( $images, $alts );
+	}
+
+	/**
+	 * Returns the selected image format. Defaults to portrait.
+	 *
+	 * @param array $selected_image The selected image to be assigned to the pattern.
+	 *
+	 * @return string The selected image format.
+	 */
+	private function get_selected_image_format( $selected_image ) {
+		if ( ! isset( $selected_image[&#039;width&#039;], $selected_image[&#039;height&#039;] ) ) {
+			return &#039;portrait&#039;;
+		}
+
+		return $selected_image[&#039;width&#039;] === $selected_image[&#039;height&#039;] ? &#039;square&#039; : ( $selected_image[&#039;width&#039;] &gt; $selected_image[&#039;height&#039;] ? &#039;landscape&#039; : &#039;portrait&#039; );
+	}
+}
+</code></pre>
+            </article>
+            </div>
+        </div>
+        <a href="#top" class="phpdocumentor-back-to-top"><i class="fas fa-chevron-circle-up"></i></a>
+
+    </main>
+
+    <footer class="phpdocumentor phpdocumentor-footer">
+    <div class="phpdocumentor-section">
+        <span>WooCommerce Code Reference API documentation generated by <a href="http://www.phpdoc.org/">phpDocumentor</a> on July 25th, 2024 at 11:33 am.</span>
+    </div>
+</footer>
+
+    <script>
+        cssVars({});
+    </script>
+    <script>
+        var searchParams = {
+            'searchIndex': '..\/js\/searchIndex.json'
+        };
+    </script>
+    <script src="../js/searchIndex.js?updated=1721907185"></script>
+    <script src="../js/search.js?updated=1721907185"></script>
+</body>
+</html>

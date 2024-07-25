@@ -9,9 +9,9 @@
     <link rel="apple-touch-icon" sizes="72x72" href="../images/apple-touch-icon-72x72.png"/>
     <link rel="apple-touch-icon" sizes="114x114" href="../images/apple-touch-icon-114x114.png"/>
     <link rel="stylesheet" href="../css/normalize.css">
-    <link rel="stylesheet" href="../css/base.css?updated=1692866973">
+    <link rel="stylesheet" href="../css/base.css?updated=1721907194">
     <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../css/template.css?updated=1692866973">
+    <link rel="stylesheet" href="../css/template.css?updated=1721907194">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0/css/all.min.css" integrity="sha256-ybRkN9dBjhcS2qrW1z+hfCxq+1aBdwyQM5wlQoQVt/0=" crossorigin="anonymous" />
             <script src="https://cdn.jsdelivr.net/npm/css-vars-ponyfill@2"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0/js/all.min.js" integrity="sha256-0vuk8LXoyrmCjp1f0O300qo1M75ZQyhH9X3J6d+scmk=" crossorigin="anonymous"></script>
@@ -119,6 +119,7 @@
                         <ul class="phpdocumentor-list">
                                     <li><a href="../packages/Automattic-WooCommerce.html"><abbr title="\Automattic\WooCommerce">WooCommerce</abbr></a></li>
                             </ul>
+                                <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/WooCommerceBlocks.html"><abbr title="\WooCommerceBlocks">WooCommerceBlocks</abbr></a></h3>
                         </section>
     
     <section class="phpdocumentor-sidebar__category">
@@ -501,6 +502,14 @@ addition to all data props with _ prefix.</dd>
 <dd>Helper function to add a `_used_by` record to track coupons used by the user.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -private">
+    <a href="../classes/WC-Coupon-Data-Store-CPT.html#method_get_coupon_meta_as_array">get_coupon_meta_as_array()</a>
+    <span>
+                        &nbsp;: array&lt;string|int, mixed&gt;    </span>
+</dt>
+<dd>Get a metadata value that is stored as either a string consisting of a comma-separated list of values
+or as a serialized array.</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -private">
     <a href="../classes/WC-Coupon-Data-Store-CPT.html#method_get_tentative_held_time">get_tentative_held_time()</a>
     <span>
                         &nbsp;: int    </span>
@@ -520,6 +529,14 @@ addition to all data props with _ prefix.</dd>
                         &nbsp;: string    </span>
 </dt>
 <dd>Generate query to calculate tentative usages for the coupon by the user.</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -private">
+    <a href="../classes/WC-Coupon-Data-Store-CPT.html#method_refresh_coupon_data">refresh_coupon_data()</a>
+    <span>
+                        &nbsp;: void    </span>
+</dt>
+<dd>This function clears coupon data from the WP cache after certain operations which, for performance reasons,
+are done via SQL queries.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -private">
     <a href="../classes/WC-Coupon-Data-Store-CPT.html#method_update_post_meta">update_post_meta()</a>
@@ -850,9 +867,9 @@ For example, in payment_tokenmeta, this would be payment_token_id.</p>
         <a href="#method_check_and_hold_coupon" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/data-stores/class-wc-coupon-data-store-cpt.php"><a href="../files/woocommerce-includes-data-stores-class-wc-coupon-data-store-cpt.html#source-view.502">includes/data-stores/class-wc-coupon-data-store-cpt.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/data-stores/class-wc-coupon-data-store-cpt.php"><a href="../files/woocommerce-includes-data-stores-class-wc-coupon-data-store-cpt.html#source-view.532">includes/data-stores/class-wc-coupon-data-store-cpt.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">502</span>
+    <span class="phpdocumentor-element-found-in__line">532</span>
 </aside>
 
         <p class="phpdocumentor-summary">Check and records coupon usage tentatively for short period of time so that counts validation is correct. Returns early if there is no limit defined for the coupon.</p>
@@ -894,9 +911,9 @@ For example, in payment_tokenmeta, this would be payment_token_id.</p>
         <a href="#method_check_and_hold_coupon_for_user" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/data-stores/class-wc-coupon-data-store-cpt.php"><a href="../files/woocommerce-includes-data-stores-class-wc-coupon-data-store-cpt.html#source-view.601">includes/data-stores/class-wc-coupon-data-store-cpt.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/data-stores/class-wc-coupon-data-store-cpt.php"><a href="../files/woocommerce-includes-data-stores-class-wc-coupon-data-store-cpt.html#source-view.631">includes/data-stores/class-wc-coupon-data-store-cpt.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">601</span>
+    <span class="phpdocumentor-element-found-in__line">631</span>
 </aside>
 
         <p class="phpdocumentor-summary">Check and records coupon usage tentatively for passed user aliases for short period of time so that counts validation is correct. Returns early if there is no limit per user for the coupon.</p>
@@ -1014,9 +1031,9 @@ For example, in payment_tokenmeta, this would be payment_token_id.</p>
         <a href="#method_decrease_usage_count" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/data-stores/class-wc-coupon-data-store-cpt.php"><a href="../files/woocommerce-includes-data-stores-class-wc-coupon-data-store-cpt.html#source-view.360">includes/data-stores/class-wc-coupon-data-store-cpt.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/data-stores/class-wc-coupon-data-store-cpt.php"><a href="../files/woocommerce-includes-data-stores-class-wc-coupon-data-store-cpt.html#source-view.388">includes/data-stores/class-wc-coupon-data-store-cpt.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">360</span>
+    <span class="phpdocumentor-element-found-in__line">388</span>
 </aside>
 
         <p class="phpdocumentor-summary">Decrease usage count for current coupon.</p>
@@ -1081,9 +1098,9 @@ For example, in payment_tokenmeta, this would be payment_token_id.</p>
         <a href="#method_delete" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/data-stores/class-wc-coupon-data-store-cpt.php"><a href="../files/woocommerce-includes-data-stores-class-wc-coupon-data-store-cpt.html#source-view.204">includes/data-stores/class-wc-coupon-data-store-cpt.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/data-stores/class-wc-coupon-data-store-cpt.php"><a href="../files/woocommerce-includes-data-stores-class-wc-coupon-data-store-cpt.html#source-view.229">includes/data-stores/class-wc-coupon-data-store-cpt.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">204</span>
+    <span class="phpdocumentor-element-found-in__line">229</span>
 </aside>
 
         <p class="phpdocumentor-summary">Deletes a coupon from the database.</p>
@@ -1349,9 +1366,9 @@ For example, in payment_tokenmeta, this would be payment_token_id.</p>
         <a href="#method_get_code_by_id" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/data-stores/class-wc-coupon-data-store-cpt.php"><a href="../files/woocommerce-includes-data-stores-class-wc-coupon-data-store-cpt.html#source-view.703">includes/data-stores/class-wc-coupon-data-store-cpt.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/data-stores/class-wc-coupon-data-store-cpt.php"><a href="../files/woocommerce-includes-data-stores-class-wc-coupon-data-store-cpt.html#source-view.745">includes/data-stores/class-wc-coupon-data-store-cpt.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">703</span>
+    <span class="phpdocumentor-element-found-in__line">745</span>
 </aside>
 
         <p class="phpdocumentor-summary">Return a coupon code for a specific ID.</p>
@@ -1407,9 +1424,9 @@ For example, in payment_tokenmeta, this would be payment_token_id.</p>
         <a href="#method_get_ids_by_code" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/data-stores/class-wc-coupon-data-store-cpt.php"><a href="../files/woocommerce-includes-data-stores-class-wc-coupon-data-store-cpt.html#source-view.725">includes/data-stores/class-wc-coupon-data-store-cpt.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/data-stores/class-wc-coupon-data-store-cpt.php"><a href="../files/woocommerce-includes-data-stores-class-wc-coupon-data-store-cpt.html#source-view.767">includes/data-stores/class-wc-coupon-data-store-cpt.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">725</span>
+    <span class="phpdocumentor-element-found-in__line">767</span>
 </aside>
 
         <p class="phpdocumentor-summary">Return an array of IDs for for a specific coupon code.</p>
@@ -1512,9 +1529,9 @@ For example, in payment_tokenmeta, this would be payment_token_id.</p>
         <a href="#method_get_tentative_usage_count" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/data-stores/class-wc-coupon-data-store-cpt.php"><a href="../files/woocommerce-includes-data-stores-class-wc-coupon-data-store-cpt.html#source-view.419">includes/data-stores/class-wc-coupon-data-store-cpt.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/data-stores/class-wc-coupon-data-store-cpt.php"><a href="../files/woocommerce-includes-data-stores-class-wc-coupon-data-store-cpt.html#source-view.450">includes/data-stores/class-wc-coupon-data-store-cpt.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">419</span>
+    <span class="phpdocumentor-element-found-in__line">450</span>
 </aside>
 
         <p class="phpdocumentor-summary">Returns tentative usage count for coupon.</p>
@@ -1556,9 +1573,9 @@ For example, in payment_tokenmeta, this would be payment_token_id.</p>
         <a href="#method_get_tentative_usages_for_user" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/data-stores/class-wc-coupon-data-store-cpt.php"><a href="../files/woocommerce-includes-data-stores-class-wc-coupon-data-store-cpt.html#source-view.477">includes/data-stores/class-wc-coupon-data-store-cpt.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/data-stores/class-wc-coupon-data-store-cpt.php"><a href="../files/woocommerce-includes-data-stores-class-wc-coupon-data-store-cpt.html#source-view.508">includes/data-stores/class-wc-coupon-data-store-cpt.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">477</span>
+    <span class="phpdocumentor-element-found-in__line">508</span>
 </aside>
 
         <p class="phpdocumentor-summary">Get tentative coupon usages for user.</p>
@@ -1609,9 +1626,9 @@ For example, in payment_tokenmeta, this would be payment_token_id.</p>
         <a href="#method_get_usage_by_email" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/data-stores/class-wc-coupon-data-store-cpt.php"><a href="../files/woocommerce-includes-data-stores-class-wc-coupon-data-store-cpt.html#source-view.456">includes/data-stores/class-wc-coupon-data-store-cpt.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/data-stores/class-wc-coupon-data-store-cpt.php"><a href="../files/woocommerce-includes-data-stores-class-wc-coupon-data-store-cpt.html#source-view.487">includes/data-stores/class-wc-coupon-data-store-cpt.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">456</span>
+    <span class="phpdocumentor-element-found-in__line">487</span>
 </aside>
 
         <p class="phpdocumentor-summary">Get the number of uses for a coupon by email address</p>
@@ -1676,9 +1693,9 @@ For example, in payment_tokenmeta, this would be payment_token_id.</p>
         <a href="#method_get_usage_by_user_id" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/data-stores/class-wc-coupon-data-store-cpt.php"><a href="../files/woocommerce-includes-data-stores-class-wc-coupon-data-store-cpt.html#source-view.435">includes/data-stores/class-wc-coupon-data-store-cpt.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/data-stores/class-wc-coupon-data-store-cpt.php"><a href="../files/woocommerce-includes-data-stores-class-wc-coupon-data-store-cpt.html#source-view.466">includes/data-stores/class-wc-coupon-data-store-cpt.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">435</span>
+    <span class="phpdocumentor-element-found-in__line">466</span>
 </aside>
 
         <p class="phpdocumentor-summary">Get the number of uses for a coupon by user ID.</p>
@@ -1743,9 +1760,9 @@ For example, in payment_tokenmeta, this would be payment_token_id.</p>
         <a href="#method_increase_usage_count" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/data-stores/class-wc-coupon-data-store-cpt.php"><a href="../files/woocommerce-includes-data-stores-class-wc-coupon-data-store-cpt.html#source-view.304">includes/data-stores/class-wc-coupon-data-store-cpt.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/data-stores/class-wc-coupon-data-store-cpt.php"><a href="../files/woocommerce-includes-data-stores-class-wc-coupon-data-store-cpt.html#source-view.330">includes/data-stores/class-wc-coupon-data-store-cpt.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">304</span>
+    <span class="phpdocumentor-element-found-in__line">330</span>
 </aside>
 
         <p class="phpdocumentor-summary">Increase usage count for current coupon.</p>
@@ -2022,9 +2039,9 @@ Also accepts a WC_DateTime object.</p>
         <a href="#method_update" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/data-stores/class-wc-coupon-data-store-cpt.php"><a href="../files/woocommerce-includes-data-stores-class-wc-coupon-data-store-cpt.html#source-view.160">includes/data-stores/class-wc-coupon-data-store-cpt.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/data-stores/class-wc-coupon-data-store-cpt.php"><a href="../files/woocommerce-includes-data-stores-class-wc-coupon-data-store-cpt.html#source-view.179">includes/data-stores/class-wc-coupon-data-store-cpt.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">160</span>
+    <span class="phpdocumentor-element-found-in__line">179</span>
 </aside>
 
         <p class="phpdocumentor-summary">Updates a coupon in the database.</p>
@@ -2922,9 +2939,9 @@ Data-stores can force meta to exist using <code class="prettyprint">must_exist_m
         <a href="#method_add_coupon_used_by" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/data-stores/class-wc-coupon-data-store-cpt.php"><a href="../files/woocommerce-includes-data-stores-class-wc-coupon-data-store-cpt.html#source-view.329">includes/data-stores/class-wc-coupon-data-store-cpt.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/data-stores/class-wc-coupon-data-store-cpt.php"><a href="../files/woocommerce-includes-data-stores-class-wc-coupon-data-store-cpt.html#source-view.355">includes/data-stores/class-wc-coupon-data-store-cpt.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">329</span>
+    <span class="phpdocumentor-element-found-in__line">355</span>
 </aside>
 
         <p class="phpdocumentor-summary">Helper function to add a `_used_by` record to track coupons used by the user.</p>
@@ -2979,14 +2996,70 @@ Data-stores can force meta to exist using <code class="prettyprint">must_exist_m
             -private
                                                         "
 >
+    <h4 class="phpdocumentor-element__name" id="method_get_coupon_meta_as_array">
+        get_coupon_meta_as_array()
+        <a href="#method_get_coupon_meta_as_array" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/data-stores/class-wc-coupon-data-store-cpt.php"><a href="../files/woocommerce-includes-data-stores-class-wc-coupon-data-store-cpt.html#source-view.166">includes/data-stores/class-wc-coupon-data-store-cpt.php</a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">166</span>
+</aside>
+
+        <p class="phpdocumentor-summary">Get a metadata value that is stored as either a string consisting of a comma-separated list of values
+or as a serialized array.</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">private</span>
+                <span class="phpdocumentor-signature__name">get_coupon_meta_as_array</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">int&nbsp;</span><span class="phpdocumentor-signature__argument__name">$coupon_id</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$meta_key</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">array&lt;string|int, mixed&gt;</span></code>
+
+        <section class="phpdocumentor-description"><p>WooCommerce always stores the coupon product ids as a comma-separated string, but it seems that
+some plugins mistakenly change these to an array.</p>
+</section>
+
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$coupon_id</span>
+                : <span class="phpdocumentor-signature__argument__return-type">int</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"><p>The coupon id.</p>
+</section>
+
+            </dd>
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$meta_key</span>
+                : <span class="phpdocumentor-signature__argument__return-type">string</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"><p>The meta key to get.</p>
+</section>
+
+            </dd>
+            </dl>
+
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">array&lt;string|int, mixed&gt;</span>
+            &mdash; <span class="phpdocumentor-return-value__description">The metadata value as an array, with empty values removed.</span>
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -private
+                                                        "
+>
     <h4 class="phpdocumentor-element__name" id="method_get_tentative_held_time">
         get_tentative_held_time()
         <a href="#method_get_tentative_held_time" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/data-stores/class-wc-coupon-data-store-cpt.php"><a href="../files/woocommerce-includes-data-stores-class-wc-coupon-data-store-cpt.html#source-view.491">includes/data-stores/class-wc-coupon-data-store-cpt.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/data-stores/class-wc-coupon-data-store-cpt.php"><a href="../files/woocommerce-includes-data-stores-class-wc-coupon-data-store-cpt.html#source-view.521">includes/data-stores/class-wc-coupon-data-store-cpt.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">491</span>
+    <span class="phpdocumentor-element-found-in__line">521</span>
 </aside>
 
         <p class="phpdocumentor-summary">Get held time for resources before cancelling the order. Use 60 minutes as sane default.</p>
@@ -3017,9 +3090,9 @@ Data-stores can force meta to exist using <code class="prettyprint">must_exist_m
         <a href="#method_get_tentative_usage_query" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/data-stores/class-wc-coupon-data-store-cpt.php"><a href="../files/woocommerce-includes-data-stores-class-wc-coupon-data-store-cpt.html#source-view.574">includes/data-stores/class-wc-coupon-data-store-cpt.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/data-stores/class-wc-coupon-data-store-cpt.php"><a href="../files/woocommerce-includes-data-stores-class-wc-coupon-data-store-cpt.html#source-view.604">includes/data-stores/class-wc-coupon-data-store-cpt.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">574</span>
+    <span class="phpdocumentor-element-found-in__line">604</span>
 </aside>
 
         <p class="phpdocumentor-summary">Generate query to calculate tentative usages for the coupon.</p>
@@ -3061,9 +3134,9 @@ Data-stores can force meta to exist using <code class="prettyprint">must_exist_m
         <a href="#method_get_tentative_usage_query_for_user" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/data-stores/class-wc-coupon-data-store-cpt.php"><a href="../files/woocommerce-includes-data-stores-class-wc-coupon-data-store-cpt.html#source-view.670">includes/data-stores/class-wc-coupon-data-store-cpt.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/data-stores/class-wc-coupon-data-store-cpt.php"><a href="../files/woocommerce-includes-data-stores-class-wc-coupon-data-store-cpt.html#source-view.700">includes/data-stores/class-wc-coupon-data-store-cpt.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">670</span>
+    <span class="phpdocumentor-element-found-in__line">700</span>
 </aside>
 
         <p class="phpdocumentor-summary">Generate query to calculate tentative usages for the coupon by the user.</p>
@@ -3109,14 +3182,59 @@ Data-stores can force meta to exist using <code class="prettyprint">must_exist_m
             -private
                                                         "
 >
+    <h4 class="phpdocumentor-element__name" id="method_refresh_coupon_data">
+        refresh_coupon_data()
+        <a href="#method_refresh_coupon_data" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/data-stores/class-wc-coupon-data-store-cpt.php"><a href="../files/woocommerce-includes-data-stores-class-wc-coupon-data-store-cpt.html#source-view.733">includes/data-stores/class-wc-coupon-data-store-cpt.php</a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">733</span>
+</aside>
+
+        <p class="phpdocumentor-summary">This function clears coupon data from the WP cache after certain operations which, for performance reasons,
+are done via SQL queries.</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">private</span>
+                <span class="phpdocumentor-signature__name">refresh_coupon_data</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type"><a href="../classes/WC-Coupon.html"><abbr title="\WC_Coupon">WC_Coupon</abbr></a>&nbsp;</span><span class="phpdocumentor-signature__argument__reference-operator">&amp;</span><span class="phpdocumentor-signature__argument__name">$coupon</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">void</span></code>
+
+        <section class="phpdocumentor-description"></section>
+
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$coupon</span>
+                : <span class="phpdocumentor-signature__argument__return-type"><a href="../classes/WC-Coupon.html"><abbr title="\WC_Coupon">WC_Coupon</abbr></a></span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"><p>The coupon object.</p>
+</section>
+
+            </dd>
+            </dl>
+
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">void</span>
+            &mdash; <span class="phpdocumentor-return-value__description"></span>
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -private
+                                                        "
+>
     <h4 class="phpdocumentor-element__name" id="method_update_post_meta">
         update_post_meta()
         <a href="#method_update_post_meta" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/data-stores/class-wc-coupon-data-store-cpt.php"><a href="../files/woocommerce-includes-data-stores-class-wc-coupon-data-store-cpt.html#source-view.237">includes/data-stores/class-wc-coupon-data-store-cpt.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/data-stores/class-wc-coupon-data-store-cpt.php"><a href="../files/woocommerce-includes-data-stores-class-wc-coupon-data-store-cpt.html#source-view.263">includes/data-stores/class-wc-coupon-data-store-cpt.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">237</span>
+    <span class="phpdocumentor-element-found-in__line">263</span>
 </aside>
 
         <p class="phpdocumentor-summary">Helper method that updates all the post meta for a coupon based on it&#039;s settings in the WC_Coupon class.</p>
@@ -3172,9 +3290,9 @@ Data-stores can force meta to exist using <code class="prettyprint">must_exist_m
         <a href="#method_update_usage_count_meta" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/data-stores/class-wc-coupon-data-store-cpt.php"><a href="../files/woocommerce-includes-data-stores-class-wc-coupon-data-store-cpt.html#source-view.394">includes/data-stores/class-wc-coupon-data-store-cpt.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/data-stores/class-wc-coupon-data-store-cpt.php"><a href="../files/woocommerce-includes-data-stores-class-wc-coupon-data-store-cpt.html#source-view.423">includes/data-stores/class-wc-coupon-data-store-cpt.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">394</span>
+    <span class="phpdocumentor-element-found-in__line">423</span>
 </aside>
 
         <p class="phpdocumentor-summary">Increase or decrease the usage count for a coupon by 1.</p>
@@ -3239,7 +3357,7 @@ Data-stores can force meta to exist using <code class="prettyprint">must_exist_m
 
     <footer class="phpdocumentor phpdocumentor-footer">
     <div class="phpdocumentor-section">
-        <span>WooCommerce Code Reference API documentation generated by <a href="http://www.phpdoc.org/">phpDocumentor</a> on August 24th, 2023 at 08:49 am.</span>
+        <span>WooCommerce Code Reference API documentation generated by <a href="http://www.phpdoc.org/">phpDocumentor</a> on July 25th, 2024 at 11:33 am.</span>
     </div>
 </footer>
 
@@ -3251,7 +3369,7 @@ Data-stores can force meta to exist using <code class="prettyprint">must_exist_m
             'searchIndex': '..\/js\/searchIndex.json'
         };
     </script>
-    <script src="../js/searchIndex.js?updated=1692866973"></script>
-    <script src="../js/search.js?updated=1692866973"></script>
+    <script src="../js/searchIndex.js?updated=1721907194"></script>
+    <script src="../js/search.js?updated=1721907194"></script>
 </body>
 </html>

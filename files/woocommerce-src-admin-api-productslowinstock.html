@@ -9,9 +9,9 @@
     <link rel="apple-touch-icon" sizes="72x72" href="../images/apple-touch-icon-72x72.png"/>
     <link rel="apple-touch-icon" sizes="114x114" href="../images/apple-touch-icon-114x114.png"/>
     <link rel="stylesheet" href="../css/normalize.css">
-    <link rel="stylesheet" href="../css/base.css?updated=1692866951">
+    <link rel="stylesheet" href="../css/base.css?updated=1721907184">
     <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../css/template.css?updated=1692866951">
+    <link rel="stylesheet" href="../css/template.css?updated=1721907184">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0/css/all.min.css" integrity="sha256-ybRkN9dBjhcS2qrW1z+hfCxq+1aBdwyQM5wlQoQVt/0=" crossorigin="anonymous" />
             <script src="https://cdn.jsdelivr.net/npm/css-vars-ponyfill@2"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0/js/all.min.js" integrity="sha256-0vuk8LXoyrmCjp1f0O300qo1M75ZQyhH9X3J6d+scmk=" crossorigin="anonymous"></script>
@@ -125,6 +125,7 @@
                         <ul class="phpdocumentor-list">
                                     <li><a href="../packages/Automattic-WooCommerce.html"><abbr title="\Automattic\WooCommerce">WooCommerce</abbr></a></li>
                             </ul>
+                                <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/WooCommerceBlocks.html"><abbr title="\WooCommerceBlocks">WooCommerceBlocks</abbr></a></h3>
                         </section>
     
     <section class="phpdocumentor-sidebar__category">
@@ -199,6 +200,47 @@ final class ProductsLowInStock extends \WC_REST_Products_Controller {
 				&#039;schema&#039; =&gt; array( $this, &#039;get_public_item_schema&#039; ),
 			)
 		);
+		register_rest_route(
+			$this-&gt;namespace,
+			&#039;products/count-low-in-stock&#039;,
+			array(
+				&#039;args&#039;   =&gt; array(),
+				array(
+					&#039;methods&#039;             =&gt; \WP_REST_Server::READABLE,
+					&#039;callback&#039;            =&gt; array( $this, &#039;get_low_in_stock_count&#039; ),
+					&#039;permission_callback&#039; =&gt; array( $this, &#039;get_items_permissions_check&#039; ),
+					&#039;args&#039;                =&gt; $this-&gt;get_low_in_stock_count_params(),
+				),
+				&#039;schema&#039; =&gt; array( $this, &#039;get_low_in_stock_count_schema&#039; ),
+			)
+		);
+	}
+
+	/**
+	 * Return # of low in stock count.
+	 *
+	 * @param WP_REST_Request $request request object.
+	 *
+	 * @return \WP_Error|\WP_HTTP_Response|\WP_REST_Response
+	 */
+	public function get_low_in_stock_count( $request ) {
+		global $wpdb;
+		$status              = $request-&gt;get_param( &#039;status&#039; );
+		$low_stock_threshold = absint( max( get_option( &#039;woocommerce_notify_low_stock_amount&#039; ), 1 ) );
+
+		$sidewide_stock_threshold_only = $this-&gt;is_using_sitewide_stock_threshold_only();
+		$count_query_string            = $this-&gt;get_count_query( $sidewide_stock_threshold_only );
+		$count_query_results           = $wpdb-&gt;get_results(
+		// phpcs:ignore -- not sure why phpcs complains about this line when prepare() is used here.
+			$wpdb-&gt;prepare( $count_query_string, $status, $low_stock_threshold ),
+		);
+
+		$total_results = (int) $count_query_results[0]-&gt;total;
+		$response      = rest_ensure_response( array( &#039;total&#039; =&gt; $total_results ) );
+		$response-&gt;header( &#039;X-WP-Total&#039;, $total_results );
+		$response-&gt;header( &#039;X-WP-TotalPages&#039;, 0 );
+
+		return $response;
 	}
 
 	/**
@@ -310,7 +352,9 @@ final class ProductsLowInStock extends \WC_REST_Products_Controller {
 		$offset              = ( $page - 1 ) * $per_page;
 		$low_stock_threshold = absint( max( get_option( &#039;woocommerce_notify_low_stock_amount&#039; ), 1 ) );
 
-		$query_string = $this-&gt;get_query( $this-&gt;is_using_sitewide_stock_threshold_only() );
+		$sidewide_stock_threshold_only = $this-&gt;is_using_sitewide_stock_threshold_only();
+
+		$query_string = $this-&gt;get_query( $sidewide_stock_threshold_only );
 
 		$query_results = $wpdb-&gt;get_results(
 			// phpcs:ignore -- not sure why phpcs complains about this line when prepare() is used here.
@@ -318,7 +362,13 @@ final class ProductsLowInStock extends \WC_REST_Products_Controller {
 			OBJECT_K
 		);
 
-		$total_results = $wpdb-&gt;get_var( &#039;SELECT FOUND_ROWS()&#039; );
+		$count_query_string  = $this-&gt;get_count_query( $sidewide_stock_threshold_only );
+		$count_query_results = $wpdb-&gt;get_results(
+		// phpcs:ignore -- not sure why phpcs complains about this line when prepare() is used here.
+			$wpdb-&gt;prepare( $count_query_string, $status, $low_stock_threshold ),
+		);
+
+		$total_results = $count_query_results[0]-&gt;total;
 
 		return array(
 			&#039;results&#039; =&gt; $query_results,
@@ -370,19 +420,22 @@ final class ProductsLowInStock extends \WC_REST_Products_Controller {
 	}
 
 	/**
-	 * Generate a query.
+	 * Return a query string for low in stock products.
+	 * The query string incldues the following replacement strings:
+	 * - :selects
+	 * - :postmeta_join
+	 * - :postmeta_wheres
+	 * - :orderAndLimit
 	 *
-	 * @param bool $siteside_only generates a query for sitewide low stock threshold only query.
+	 * @param array $replacements  of replacement strings.
 	 *
 	 * @return string
 	 */
-	protected function get_query( $siteside_only = false ) {
+	private function get_base_query( $replacements = array() ) {
 		global $wpdb;
 		$query = &quot;
 			SELECT
-				SQL_CALC_FOUND_ROWS wp_posts.*,
-				:postmeta_select
-				wc_product_meta_lookup.stock_quantity
+				:selects
 			FROM
 			  {$wpdb-&gt;wc_product_meta_lookup} wc_product_meta_lookup
 			  LEFT JOIN {$wpdb-&gt;posts} wp_posts ON wp_posts.ID = wc_product_meta_lookup.product_id
@@ -393,21 +446,26 @@ final class ProductsLowInStock extends \WC_REST_Products_Controller {
 			  AND wc_product_meta_lookup.stock_quantity IS NOT NULL
 			  AND wc_product_meta_lookup.stock_status IN(&#039;instock&#039;, &#039;outofstock&#039;)
 			  :postmeta_wheres
-			order by wc_product_meta_lookup.product_id DESC
-			limit %d, %d
+			  :orderAndLimit
 		&quot;;
 
-		$postmeta = array(
-			&#039;select&#039; =&gt; &#039;&#039;,
-			&#039;join&#039;   =&gt; &#039;&#039;,
-			&#039;wheres&#039; =&gt; &#039;AND wc_product_meta_lookup.stock_quantity &lt;= %d&#039;,
-		);
+		return strtr( $query, $replacements );
+	}
 
-		if ( ! $siteside_only ) {
-			$postmeta[&#039;select&#039;] = &#039;meta.meta_value AS low_stock_amount,&#039;;
-			$postmeta[&#039;join&#039;]   = &quot;LEFT JOIN {$wpdb-&gt;postmeta} AS meta ON wp_posts.ID = meta.post_id
-			  AND meta.meta_key = &#039;_low_stock_amount&#039;&quot;;
-			$postmeta[&#039;wheres&#039;] = &quot;AND (
+	/**
+	 * Add sitewide stock query string to base query string.
+	 *
+	 * @param string $query Base query string.
+	 *
+	 * @return string
+	 */
+	private function add_sitewide_stock_query_str( $query ) {
+		global $wpdb;
+		$postmeta = array(
+			&#039;select&#039; =&gt; &#039;meta.meta_value AS low_stock_amount,&#039;,
+			&#039;join&#039;   =&gt; &quot;LEFT JOIN {$wpdb-&gt;postmeta} AS meta ON wp_posts.ID = meta.post_id
+			  AND meta.meta_key = &#039;_low_stock_amount&#039;&quot;,
+			&#039;wheres&#039; =&gt; &quot;AND (
 			    (
 			      meta.meta_value &gt; &#039;&#039;
 			      AND wc_product_meta_lookup.stock_quantity &lt;= CAST(
@@ -421,8 +479,8 @@ final class ProductsLowInStock extends \WC_REST_Products_Controller {
 			      )
 			      AND wc_product_meta_lookup.stock_quantity &lt;= %d
 			    )
-		    )&quot;;
-		}
+		    )&quot;,
+		);
 
 		return strtr(
 			$query,
@@ -430,6 +488,64 @@ final class ProductsLowInStock extends \WC_REST_Products_Controller {
 				&#039;:postmeta_select&#039; =&gt; $postmeta[&#039;select&#039;],
 				&#039;:postmeta_join&#039;   =&gt; $postmeta[&#039;join&#039;],
 				&#039;:postmeta_wheres&#039; =&gt; $postmeta[&#039;wheres&#039;],
+			)
+		);
+	}
+
+	/**
+	 * Generate a query.
+	 *
+	 * @param bool $sitewide_only generates a query for sitewide low stock threshold only query.
+	 *
+	 * @return string
+	 */
+	protected function get_query( $sitewide_only = false ) {
+		$query = $this-&gt;get_base_query(
+			array(
+				&#039;:selects&#039;       =&gt; &#039;wp_posts.*, :postmeta_select wc_product_meta_lookup.stock_quantity&#039;,
+				&#039;:orderAndLimit&#039; =&gt; &#039;order by wc_product_meta_lookup.product_id DESC limit %d, %d&#039;,
+			)
+		);
+
+		if ( ! $sitewide_only ) {
+			return $this-&gt;add_sitewide_stock_query_str( $query );
+		}
+
+		return strtr(
+			$query,
+			array(
+				&#039;:postmeta_select&#039; =&gt; &#039;&#039;,
+				&#039;:postmeta_join&#039;   =&gt; &#039;&#039;,
+				&#039;:postmeta_wheres&#039; =&gt; &#039;AND wc_product_meta_lookup.stock_quantity &lt;= %d&#039;,
+			)
+		);
+	}
+
+	/**
+	 * Generate a count query.
+	 *
+	 * @param bool $sitewide_only generates a query for sitewide low stock threshold only query.
+	 *
+	 * @return string
+	 */
+	protected function get_count_query( $sitewide_only = false ) {
+		$query = $this-&gt;get_base_query(
+			array(
+				&#039;:selects&#039;       =&gt; &#039;count(*) as total&#039;,
+				&#039;:orderAndLimit&#039; =&gt; &#039;&#039;,
+			)
+		);
+
+		if ( ! $sitewide_only ) {
+			return $this-&gt;add_sitewide_stock_query_str( $query );
+		}
+
+		return strtr(
+			$query,
+			array(
+				&#039;:postmeta_select&#039; =&gt; &#039;&#039;,
+				&#039;:postmeta_join&#039;   =&gt; &#039;&#039;,
+				&#039;:postmeta_wheres&#039; =&gt; &#039;AND wc_product_meta_lookup.stock_quantity &lt;= %d&#039;,
 			)
 		);
 	}
@@ -473,6 +589,46 @@ final class ProductsLowInStock extends \WC_REST_Products_Controller {
 
 		return $params;
 	}
+
+	/**
+	 * Get the query params for collections for /count-low-in-stock endpoint.
+	 *
+	 * @return array
+	 */
+	public function get_low_in_stock_count_params() {
+		$params                       = array();
+		$params[&#039;context&#039;]            = $this-&gt;get_context_param();
+		$params[&#039;context&#039;][&#039;default&#039;] = &#039;view&#039;;
+		$params[&#039;status&#039;]             = array(
+			&#039;default&#039;           =&gt; &#039;publish&#039;,
+			&#039;description&#039;       =&gt; __( &#039;Limit result set to products assigned a specific status.&#039;, &#039;woocommerce&#039; ),
+			&#039;type&#039;              =&gt; &#039;string&#039;,
+			&#039;enum&#039;              =&gt; array_merge( array_keys( get_post_statuses() ), array( &#039;future&#039; ) ),
+			&#039;sanitize_callback&#039; =&gt; &#039;sanitize_key&#039;,
+			&#039;validate_callback&#039; =&gt; &#039;rest_validate_request_arg&#039;,
+		);
+
+		return $params;
+	}
+
+	/**
+	 * Get the schema for /count-low-in-stock response.
+	 *
+	 * @return array
+	 */
+	public function get_low_in_stock_count_schema() {
+		return array(
+			&#039;$schema&#039;    =&gt; &#039;http://json-schema.org/draft-04/schema#&#039;,
+			&#039;title&#039;      =&gt; &#039;Count Low in Stock Items&#039;,
+			&#039;type&#039;       =&gt; &#039;object&#039;,
+			&#039;properties&#039; =&gt; array(
+				&#039;type&#039;       =&gt; &#039;object&#039;,
+				&#039;properties&#039; =&gt; array(
+					&#039;total&#039; =&gt; &#039;integer&#039;,
+				),
+			),
+		);
+	}
 }
 </code></pre>
             </article>
@@ -484,7 +640,7 @@ final class ProductsLowInStock extends \WC_REST_Products_Controller {
 
     <footer class="phpdocumentor phpdocumentor-footer">
     <div class="phpdocumentor-section">
-        <span>WooCommerce Code Reference API documentation generated by <a href="http://www.phpdoc.org/">phpDocumentor</a> on August 24th, 2023 at 08:49 am.</span>
+        <span>WooCommerce Code Reference API documentation generated by <a href="http://www.phpdoc.org/">phpDocumentor</a> on July 25th, 2024 at 11:33 am.</span>
     </div>
 </footer>
 
@@ -496,7 +652,7 @@ final class ProductsLowInStock extends \WC_REST_Products_Controller {
             'searchIndex': '..\/js\/searchIndex.json'
         };
     </script>
-    <script src="../js/searchIndex.js?updated=1692866951"></script>
-    <script src="../js/search.js?updated=1692866951"></script>
+    <script src="../js/searchIndex.js?updated=1721907184"></script>
+    <script src="../js/search.js?updated=1721907184"></script>
 </body>
 </html>

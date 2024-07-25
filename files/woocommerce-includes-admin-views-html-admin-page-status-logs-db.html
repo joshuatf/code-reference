@@ -9,9 +9,9 @@
     <link rel="apple-touch-icon" sizes="72x72" href="../images/apple-touch-icon-72x72.png"/>
     <link rel="apple-touch-icon" sizes="114x114" href="../images/apple-touch-icon-114x114.png"/>
     <link rel="stylesheet" href="../css/normalize.css">
-    <link rel="stylesheet" href="../css/base.css?updated=1692866946">
+    <link rel="stylesheet" href="../css/base.css?updated=1721907182">
     <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../css/template.css?updated=1692866946">
+    <link rel="stylesheet" href="../css/template.css?updated=1721907182">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0/css/all.min.css" integrity="sha256-ybRkN9dBjhcS2qrW1z+hfCxq+1aBdwyQM5wlQoQVt/0=" crossorigin="anonymous" />
             <script src="https://cdn.jsdelivr.net/npm/css-vars-ponyfill@2"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0/js/all.min.js" integrity="sha256-0vuk8LXoyrmCjp1f0O300qo1M75ZQyhH9X3J6d+scmk=" crossorigin="anonymous"></script>
@@ -125,6 +125,7 @@
                         <ul class="phpdocumentor-list">
                                     <li><a href="../packages/Automattic-WooCommerce.html"><abbr title="\Automattic\WooCommerce">WooCommerce</abbr></a></li>
                             </ul>
+                                <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/WooCommerceBlocks.html"><abbr title="\WooCommerceBlocks">WooCommerceBlocks</abbr></a></h3>
                         </section>
     
     <section class="phpdocumentor-sidebar__category">
@@ -166,26 +167,59 @@ if ( ! defined( &#039;ABSPATH&#039; ) ) {
 	exit;
 }
 
+$delete_confirmation_js = sprintf(
+	&quot;return window.confirm( &#039;%s&#039; )&quot;,
+	esc_js( __( &#039;Are you sure you want to clear all logs from the database?&#039;, &#039;woocommerce&#039; ) )
+);
 ?&gt;
-&lt;form method=&quot;post&quot; id=&quot;mainform&quot; action=&quot;&quot;&gt;
-	&lt;?php $log_table_list-&gt;search_box( __( &#039;Search logs&#039;, &#039;woocommerce&#039; ), &#039;log&#039; ); ?&gt;
-	&lt;?php $log_table_list-&gt;display(); ?&gt;
-
+&lt;form method=&quot;get&quot; id=&quot;mainform&quot;&gt;
 	&lt;input type=&quot;hidden&quot; name=&quot;page&quot; value=&quot;wc-status&quot; /&gt;
 	&lt;input type=&quot;hidden&quot; name=&quot;tab&quot; value=&quot;logs&quot; /&gt;
 
-	&lt;?php submit_button( __( &#039;Flush all logs&#039;, &#039;woocommerce&#039; ), &#039;delete&#039;, &#039;flush-logs&#039; ); ?&gt;
-	&lt;?php wp_nonce_field( &#039;woocommerce-status-logs&#039; ); ?&gt;
+	&lt;?php $log_table_list-&gt;search_box( __( &#039;Search logs&#039;, &#039;woocommerce&#039; ), &#039;log&#039; ); ?&gt;
+	&lt;?php $log_table_list-&gt;display(); ?&gt;
+
+	&lt;?php
+	submit_button(
+		__( &#039;Flush all logs&#039;, &#039;woocommerce&#039; ),
+		&#039;delete&#039;,
+		&#039;flush-logs&#039;,
+		true,
+		array(
+			&#039;onclick&#039; =&gt; esc_attr( $delete_confirmation_js ),
+		)
+	);
+	?&gt;
 &lt;/form&gt;
-&lt;?php
-wc_enqueue_js(
-	&quot;jQuery( &#039;#flush-logs&#039; ).on( &#039;click&#039;, function() {
-		if ( window.confirm(&#039;&quot; . esc_js( __( &#039;Are you sure you want to clear all logs from the database?&#039;, &#039;woocommerce&#039; ) ) . &quot;&#039;) ) {
-			return true;
-		}
-		return false;
-	});&quot;
-);
+&lt;script&gt;
+	document.addEventListener( &#039;DOMContentLoaded&#039;, function() {
+		var contextToggles = Array.from( document.getElementsByClassName( &#039;log-toggle&#039; ) );
+		contextToggles.forEach( ( element ) =&gt; {
+			element.addEventListener( &#039;click&#039;, ( event ) =&gt; {
+				event.preventDefault();
+				const button = event.currentTarget;
+				const buttonLabel = button.querySelector( &#039;.log-toggle-label&#039; );
+				const buttonIcon = button.querySelector( &#039;.dashicons&#039; );
+				const context = document.getElementById( &#039;log-context-&#039; + button.dataset.logId );
+
+				switch ( button.dataset.toggleStatus ) {
+					case &#039;off&#039;:
+						context.style.display = &#039;table-row&#039;;
+						buttonLabel.textContent = button.dataset.labelHide;
+						buttonIcon.classList.replace( &#039;dashicons-arrow-down-alt2&#039;, &#039;dashicons-arrow-up-alt2&#039; );
+						button.dataset.toggleStatus = &#039;on&#039;;
+						break;
+					case &#039;on&#039;:
+						context.style.display = &#039;none&#039;;
+						buttonLabel.textContent = button.dataset.labelShow;
+						buttonIcon.classList.replace( &#039;dashicons-arrow-up-alt2&#039;, &#039;dashicons-arrow-down-alt2&#039; );
+						button.dataset.toggleStatus = &#039;off&#039;;
+						break;
+				}
+			} );
+		} );
+	} );
+&lt;/script&gt;
 </code></pre>
             </article>
             </div>
@@ -196,7 +230,7 @@ wc_enqueue_js(
 
     <footer class="phpdocumentor phpdocumentor-footer">
     <div class="phpdocumentor-section">
-        <span>WooCommerce Code Reference API documentation generated by <a href="http://www.phpdoc.org/">phpDocumentor</a> on August 24th, 2023 at 08:49 am.</span>
+        <span>WooCommerce Code Reference API documentation generated by <a href="http://www.phpdoc.org/">phpDocumentor</a> on July 25th, 2024 at 11:33 am.</span>
     </div>
 </footer>
 
@@ -208,7 +242,7 @@ wc_enqueue_js(
             'searchIndex': '..\/js\/searchIndex.json'
         };
     </script>
-    <script src="../js/searchIndex.js?updated=1692866946"></script>
-    <script src="../js/search.js?updated=1692866946"></script>
+    <script src="../js/searchIndex.js?updated=1721907182"></script>
+    <script src="../js/search.js?updated=1721907182"></script>
 </body>
 </html>

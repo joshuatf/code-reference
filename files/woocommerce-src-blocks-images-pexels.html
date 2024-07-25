@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>WooCommerce Code Reference</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="../images/favicon.png" />
+    <link rel="apple-touch-icon" href="../images/apple-touch-icon.png"/>
+    <link rel="apple-touch-icon" sizes="72x72" href="../images/apple-touch-icon-72x72.png"/>
+    <link rel="apple-touch-icon" sizes="114x114" href="../images/apple-touch-icon-114x114.png"/>
+    <link rel="stylesheet" href="../css/normalize.css">
+    <link rel="stylesheet" href="../css/base.css?updated=1721907185">
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/template.css?updated=1721907185">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0/css/all.min.css" integrity="sha256-ybRkN9dBjhcS2qrW1z+hfCxq+1aBdwyQM5wlQoQVt/0=" crossorigin="anonymous" />
+            <script src="https://cdn.jsdelivr.net/npm/css-vars-ponyfill@2"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0/js/all.min.js" integrity="sha256-0vuk8LXoyrmCjp1f0O300qo1M75ZQyhH9X3J6d+scmk=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tarekraafat/autocomplete.js@7.2.0/dist/js/autoComplete.min.js"></script>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-8KCYZ2CYMS"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-8KCYZ2CYMS', {
+		'content_group' : 'WooCommerce Core Code Reference',
+	});
+</script>
+        <script src="../js/prism.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            window.dispatchEvent(new HashChangeEvent('hashchange'));
+        });
+    </script>
+</head>
+<body id="top">
+    <header class="phpdocumentor-top-header">
+    <section class="phpdocumentor-section">
+        <div class="site-branding">
+            <a class="site-logo" href="../index.html"><img width="180" src="../images/logo.svg" alt="WooCommerce" /></a>
+        </div>
+        <nav class="main-navigation">
+            <ul>
+                <li><a href="../hooks/hooks.html">Hooks Reference</a></li>
+                <li><a href="https://docs.woocommerce.com/">Documentation</a></li>
+                <li><a href="https://woocommerce.github.io/woocommerce-rest-api-docs/">REST API Docs</a></li>
+                <li><a href="https://woocommerce.com/careers/?utm_source=woocommerce+core+code+reference&utm_medium=devdocs&utm_campaign=woo+careers" target="_blank">We're hiring!</a></li>
+            </ul>
+        </nav>
+    </section>
+</header>
+
+<div class="phpdocumentor-header">
+    <section class="phpdocumentor-section">
+        <h1 class="phpdocumentor-title">WooCommerce Code Reference</h1>
+        <section class="phpdocumentor-search">
+    <label class="phpdocumentor-label">
+        <span class="visually-hidden">Search (click ESC to close search results)</span>
+        <input id="autoComplete" tabindex="1" type="search" class="phpdocumentor-field phpdocumentor-search__field" placeholder="Loading..." disabled />
+    </label>
+</section>
+
+    </section>
+</div>
+
+    <main class="phpdocumentor">
+        <div class="phpdocumentor-section">
+            <aside class="phpdocumentor-column -four phpdocumentor-sidebar">
+    
+    <section class="phpdocumentor-sidebar__category">
+        <h2 class="phpdocumentor-sidebar__category-header">Namespaces</h2>
+                                <h3 class="phpdocumentor-sidebar__root-namespace"><a href="../namespaces/default.html"><abbr title="\">Global</abbr></a></h3>
+                                        <h4 class="phpdocumentor-sidebar__root-namespace"><a href="../namespaces/woocommerce.html"><abbr title="\WooCommerce">WooCommerce</abbr></a></h4>
+                <ul class="phpdocumentor-list">
+                                            <li><a href="../namespaces/woocommerce-admin.html"><abbr title="\WooCommerce\Admin">Admin</abbr></a></li>
+                                    </ul>
+                            <h4 class="phpdocumentor-sidebar__root-namespace"><a href="../namespaces/automattic.html"><abbr title="\Automattic">Automattic</abbr></a></h4>
+                <ul class="phpdocumentor-list">
+                                            <li><a href="../namespaces/automattic-woocommerce.html"><abbr title="\Automattic\WooCommerce">WooCommerce</abbr></a></li>
+                                    </ul>
+                        </section>
+
+        <section class="phpdocumentor-sidebar__category">
+        <h2 class="phpdocumentor-sidebar__category-header">Packages</h2>
+                    <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/WooCommerce.html"><abbr title="\WooCommerce">WooCommerce</abbr></a></h3>
+                        <ul class="phpdocumentor-list">
+                                    <li><a href="../packages/WooCommerce-Classes.html"><abbr title="\WooCommerce\Classes">Classes</abbr></a></li>
+                                    <li><a href="../packages/WooCommerce-Abstracts.html"><abbr title="\WooCommerce\Abstracts">Abstracts</abbr></a></li>
+                                    <li><a href="../packages/WooCommerce-Admin.html"><abbr title="\WooCommerce\Admin">Admin</abbr></a></li>
+                                    <li><a href="../packages/WooCommerce-Helper.html"><abbr title="\WooCommerce\Helper">Helper</abbr></a></li>
+                                    <li><a href="../packages/WooCommerce-Views.html"><abbr title="\WooCommerce\Views">Views</abbr></a></li>
+                                    <li><a href="../packages/WooCommerce-Templates.html"><abbr title="\WooCommerce\Templates">Templates</abbr></a></li>
+                                    <li><a href="../packages/WooCommerce-Reports.html"><abbr title="\WooCommerce\Reports">Reports</abbr></a></li>
+                                    <li><a href="../packages/WooCommerce-Blocks.html"><abbr title="\WooCommerce\Blocks">Blocks</abbr></a></li>
+                                    <li><a href="../packages/WooCommerce-RestApi.html"><abbr title="\WooCommerce\RestApi">RestApi</abbr></a></li>
+                                    <li><a href="../packages/WooCommerce-CLI.html"><abbr title="\WooCommerce\CLI">CLI</abbr></a></li>
+                                    <li><a href="../packages/WooCommerce-l10n.html"><abbr title="\WooCommerce\l10n">l10n</abbr></a></li>
+                                    <li><a href="../packages/WooCommerce-Webhooks.html"><abbr title="\WooCommerce\Webhooks">Webhooks</abbr></a></li>
+                                    <li><a href="../packages/WooCommerce-DataStores.html"><abbr title="\WooCommerce\DataStores">DataStores</abbr></a></li>
+                                    <li><a href="../packages/WooCommerce-Emails.html"><abbr title="\WooCommerce\Emails">Emails</abbr></a></li>
+                                    <li><a href="../packages/WooCommerce-Export.html"><abbr title="\WooCommerce\Export">Export</abbr></a></li>
+                                    <li><a href="../packages/WooCommerce-Gateways.html"><abbr title="\WooCommerce\Gateways">Gateways</abbr></a></li>
+                                    <li><a href="../packages/WooCommerce-PayPal.html"><abbr title="\WooCommerce\PayPal">PayPal</abbr></a></li>
+                                    <li><a href="../packages/WooCommerce-Import.html"><abbr title="\WooCommerce\Import">Import</abbr></a></li>
+                                    <li><a href="../packages/WooCommerce-Integrations.html"><abbr title="\WooCommerce\Integrations">Integrations</abbr></a></li>
+                                    <li><a href="../packages/WooCommerce-Interfaces.html"><abbr title="\WooCommerce\Interfaces">Interfaces</abbr></a></li>
+                                    <li><a href="../packages/WooCommerce-Interface.html"><abbr title="\WooCommerce\Interface">Interface</abbr></a></li>
+                                    <li><a href="../packages/WooCommerce-LogHandlers.html"><abbr title="\WooCommerce\LogHandlers">LogHandlers</abbr></a></li>
+                                    <li><a href="../packages/WooCommerce-PaymentTokens.html"><abbr title="\WooCommerce\PaymentTokens">PaymentTokens</abbr></a></li>
+                                    <li><a href="../packages/WooCommerce-Utilities.html"><abbr title="\WooCommerce\Utilities">Utilities</abbr></a></li>
+                                    <li><a href="../packages/WooCommerce-Shipping.html"><abbr title="\WooCommerce\Shipping">Shipping</abbr></a></li>
+                                    <li><a href="../packages/WooCommerce-Shortcodes.html"><abbr title="\WooCommerce\Shortcodes">Shortcodes</abbr></a></li>
+                                    <li><a href="../packages/WooCommerce-Tracks.html"><abbr title="\WooCommerce\Tracks">Tracks</abbr></a></li>
+                                    <li><a href="../packages/WooCommerce-Traits.html"><abbr title="\WooCommerce\Traits">Traits</abbr></a></li>
+                                    <li><a href="../packages/WooCommerce-Functions.html"><abbr title="\WooCommerce\Functions">Functions</abbr></a></li>
+                                    <li><a href="../packages/WooCommerce-WCCom.html"><abbr title="\WooCommerce\WCCom">WCCom</abbr></a></li>
+                                    <li><a href="../packages/WooCommerce-WCCOM.html"><abbr title="\WooCommerce\WCCOM">WCCOM</abbr></a></li>
+                                    <li><a href="../packages/WooCommerce-Widgets.html"><abbr title="\WooCommerce\Widgets">Widgets</abbr></a></li>
+                                    <li><a href="../packages/WooCommerce-Uninstaller.html"><abbr title="\WooCommerce\Uninstaller">Uninstaller</abbr></a></li>
+                            </ul>
+                                <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/WoocommerceAdmin.html"><abbr title="\WoocommerceAdmin">WoocommerceAdmin</abbr></a></h3>
+                                <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/WoocommerceNavigation.html"><abbr title="\WoocommerceNavigation">WoocommerceNavigation</abbr></a></h3>
+                                <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/Automattic.html"><abbr title="\Automattic">Automattic</abbr></a></h3>
+                        <ul class="phpdocumentor-list">
+                                    <li><a href="../packages/Automattic-WooCommerce.html"><abbr title="\Automattic\WooCommerce">WooCommerce</abbr></a></li>
+                            </ul>
+                                <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/WooCommerceBlocks.html"><abbr title="\WooCommerceBlocks">WooCommerceBlocks</abbr></a></h3>
+                        </section>
+    
+    <section class="phpdocumentor-sidebar__category">
+        <h2 class="phpdocumentor-sidebar__category-header">Reports</h2>
+                <h3 class="phpdocumentor-sidebar__root-package"><a href="../reports/deprecated.html">Deprecated</a></h3>
+        <h3 class="phpdocumentor-sidebar__root-package"><a href="../reports/errors.html">Errors</a></h3>
+        <h3 class="phpdocumentor-sidebar__root-package"><a href="../reports/markers.html">Markers</a></h3>
+    </section>
+
+    <section class="phpdocumentor-sidebar__category">
+        <h2 class="phpdocumentor-sidebar__category-header">Indices</h2>
+        <h3 class="phpdocumentor-sidebar__root-package"><a href="../indices/files.html">Files</a></h3>
+        <h3 class="phpdocumentor-sidebar__root-package"><a href="../hooks/hooks.html">Hooks Reference</a></h3>
+    </section>
+</aside>
+
+            <div class="phpdocumentor-column -eight phpdocumentor-content">
+                    <ul class="phpdocumentor-breadcrumbs">
+    </ul>
+
+    <article class="phpdocumentor-element -file">
+        <h2 class="phpdocumentor-content__title">Pexels.php</h2>
+
+                
+
+        
+                    <h3 class="phpdocumentor-elements__header" id="source-code">
+                Source code
+                <a href="#source-code" class="headerlink"><i class="fas fa-link"></i></a>
+            </h3>
+            <pre id="source-view" tabindex="-1" class="language-php line-numbers linkable-line-numbers"><code>&lt;?php
+
+namespace Automattic\WooCommerce\Blocks\Images;
+
+use Automattic\WooCommerce\Blocks\AI\Connection;
+use Automattic\WooCommerce\Blocks\AIContent\ContentProcessor;
+use Automattic\WooCommerce\Blocks\AIContent\UpdatePatterns;
+
+/**
+ * Pexels API client.
+ *
+ * @internal
+ */
+class Pexels {
+
+	/**
+	 * The Pexels API endpoint.
+	 */
+	const EXTERNAL_MEDIA_PEXELS_ENDPOINT = &#039;/wpcom/v2/external-media/list/pexels&#039;;
+
+	/**
+	 * Returns the list of images for the given search criteria.
+	 *
+	 * @param Connection $ai_connection The AI connection.
+	 * @param string     $token The JWT token.
+	 * @param string     $business_description The business description.
+	 *
+	 * @return array|\WP_Error Array of images, or WP_Error if the request failed.
+	 */
+	public function get_images( $ai_connection, $token, $business_description ) {
+		$business_description = ContentProcessor::summarize_business_description( $business_description, $ai_connection, $token );
+
+		if ( str_word_count( $business_description ) === 1 ) {
+			$search_term = $business_description;
+		} else {
+			$search_term = $this-&gt;define_search_term( $ai_connection, $token, $business_description );
+		}
+
+		if ( is_wp_error( $search_term ) ) {
+			return $search_term;
+		}
+
+		$required_images = $this-&gt;total_number_required_images();
+
+		if ( is_wp_error( $required_images ) ) {
+			return $required_images;
+		}
+
+		$returned_images = $this-&gt;request( $search_term );
+
+		if ( is_wp_error( $returned_images ) ) {
+			return $returned_images;
+		}
+
+		$refined_images = $this-&gt;refine_returned_images_results( $ai_connection, $token, $business_description, $returned_images );
+
+		if ( is_wp_error( $refined_images ) ) {
+			return $returned_images;
+		}
+
+		$refined_images_count = count( $refined_images );
+
+		$i      = 0;
+		$errors = array();
+		while ( $refined_images_count &lt; $required_images &amp;&amp; $i &lt; 5 ) {
+			$i ++;
+			$search_term = $this-&gt;define_search_term( $ai_connection, $token, $business_description );
+
+			if ( is_wp_error( $search_term ) ) {
+				$errors[] = $search_term;
+				continue;
+			}
+
+			$images_to_add = $this-&gt;request( $search_term );
+
+			if ( is_wp_error( $images_to_add ) ) {
+				$errors[] = $images_to_add;
+				continue;
+			}
+
+			$images_to_add = $this-&gt;refine_returned_images_results( $ai_connection, $token, $business_description, $images_to_add );
+
+			if ( is_wp_error( $images_to_add ) ) {
+				$errors[] = $images_to_add;
+				continue;
+			}
+
+			$refined_images = array_merge( $refined_images, $images_to_add );
+		}
+
+		if ( $refined_images_count &lt; $required_images &amp;&amp; ! empty( $errors ) ) {
+			return new \WP_Error( &#039;ai_service_unavailable&#039;, __( &#039;AI Service is unavailable, try again later.&#039;, &#039;woocommerce&#039; ), $errors );
+		}
+
+		if ( empty( $refined_images ) ) {
+			return new \WP_Error( &#039;woocommerce_no_images_found&#039;, __( &#039;No images found.&#039;, &#039;woocommerce&#039; ) );
+		}
+
+		return array(
+			&#039;images&#039;      =&gt; $refined_images,
+			&#039;search_term&#039; =&gt; $search_term,
+		);
+	}
+
+	/**
+	 * Define the search term to be used on Pexels using the AI endpoint.
+	 *
+	 * The search term is a shorter description of the business.
+	 *
+	 * @param Connection $ai_connection The AI connection.
+	 * @param string     $token The JWT token.
+	 * @param string     $business_description The business description.
+	 *
+	 * @return mixed|\WP_Error
+	 */
+	private function define_search_term( $ai_connection, $token, $business_description ) {
+
+		$prompt = sprintf( &#039;You are a teacher. Based on the following business description, \&#039;%s\&#039;, describe to a child exactly what this store is selling in one or two words and be as precise as you can possibly be. Do not reply with generic words that could cause confusion and be associated with other businesses as a response. Make sure you do not add double quotes in your response. Do not add any explanations in the response&#039;, $business_description );
+
+		$response = $ai_connection-&gt;fetch_ai_response( $token, $prompt, 30 );
+
+		if ( is_wp_error( $response ) ) {
+			return $response;
+		}
+
+		if ( isset( $response[&#039;code&#039;] ) &amp;&amp; &#039;completion_error&#039; === $response[&#039;code&#039;] ) {
+			return new \WP_Error( &#039;search_term_definition_failed&#039;, __( &#039;The search term definition failed.&#039;, &#039;woocommerce&#039; ) );
+		}
+
+		if ( ! isset( $response[&#039;completion&#039;] ) ) {
+			return new \WP_Error( &#039;search_term_definition_failed&#039;, __( &#039;The search term definition failed.&#039;, &#039;woocommerce&#039; ) );
+		}
+
+		return $response[&#039;completion&#039;];
+	}
+
+	/**
+	 * Refine the results returned by Pexels API.
+	 *
+	 * @param  Connection $ai_connection  The AI connection.
+	 * @param  string     $token  The JWT token.
+	 * @param  string     $business_description  The business description.
+	 * @param  array      $returned_images  The returned images.
+	 *
+	 * @return array|\WP_Error The refined images, or WP_Error if the request failed.
+	 */
+	private function refine_returned_images_results( $ai_connection, $token, $business_description, $returned_images ) {
+		$image_titles = array();
+		foreach ( $returned_images as $returned_image ) {
+			if ( isset( $returned_image[&#039;title&#039;] ) ) {
+				$image_titles[] = $returned_image[&#039;title&#039;];
+			}
+		}
+
+		$prompt = sprintf( &#039;Given that you own a store described as &quot;%s&quot;, remove from the following JSON all titles that do not represent products that could be sold on your store: %s&#039;, $business_description, wp_json_encode( $image_titles ) );
+
+		$response = $ai_connection-&gt;fetch_ai_response( $token, $prompt, 30 );
+
+		if ( is_wp_error( $response ) || ! isset( $response[&#039;completion&#039;] ) ) {
+			return $returned_images;
+		}
+
+		$filtered_image_titles = json_decode( $response[&#039;completion&#039;] );
+
+		if ( ! is_array( $filtered_image_titles ) ) {
+			$response = $ai_connection-&gt;fetch_ai_response( $token, $prompt, 30 );
+
+			if ( is_wp_error( $response ) || ! isset( $response[&#039;completion&#039;] ) ) {
+				return $returned_images;
+			}
+
+			$filtered_image_titles = json_decode( $response[&#039;completion&#039;] );
+		}
+
+		if ( ! is_array( $filtered_image_titles ) ) {
+			return new \WP_Error( &#039;ai_service_unavailable&#039;, __( &#039;AI Service is unavailable, try again later.&#039;, &#039;woocommerce&#039; ) );
+		}
+
+		// Remove the images that are not aligned with the business description.
+		foreach ( $returned_images as $returned_image ) {
+			if ( isset( $returned_image[&#039;title&#039;] ) &amp;&amp; ! in_array( $returned_image[&#039;title&#039;], $filtered_image_titles, true ) ) {
+				unset( $returned_image );
+			}
+		}
+
+		return $returned_images;
+	}
+
+	/**
+	 * Make a request to the Pexels API.
+	 *
+	 * @param string $search_term The search term to use.
+	 * @param int    $per_page The number of images to return.
+	 *
+	 * @return array|\WP_Error The response body, or WP_Error if the request failed.
+	 */
+	private function request( string $search_term, int $per_page = 100 ) {
+		$request = new \WP_REST_Request( &#039;GET&#039;, self::EXTERNAL_MEDIA_PEXELS_ENDPOINT );
+
+		$request-&gt;set_param( &#039;search&#039;, esc_html( $search_term ) );
+		$request-&gt;set_param( &#039;number&#039;, $per_page );
+		$request-&gt;set_param( &#039;size&#039;, &#039;small&#039; );
+
+		$response      = rest_do_request( $request );
+		$response_data = $response-&gt;get_data();
+
+		if ( $response-&gt;is_error() ) {
+			$error_msg = [
+				&#039;code&#039; =&gt; $response-&gt;get_status(),
+				&#039;data&#039; =&gt; $response_data,
+			];
+
+			return new \WP_Error( &#039;pexels_api_error&#039;, __( &#039;Request to the Pexels API failed.&#039;, &#039;woocommerce&#039; ), $error_msg );
+		}
+
+		$response = $response_data[&#039;media&#039;] ?? $response_data;
+
+		if ( is_array( $response ) ) {
+			shuffle( $response );
+
+			return $response;
+		}
+
+		return array();
+	}
+
+	/**
+	 * Total number of required images.
+	 *
+	 * @return array|\WP_Error The total number of required images, or WP_Error if the request failed.
+	 */
+	private function total_number_required_images() {
+		$patterns_dictionary = UpdatePatterns::get_patterns_dictionary();
+
+		if ( is_wp_error( $patterns_dictionary ) ) {
+			return $patterns_dictionary;
+		}
+
+		$required_images = 0;
+		foreach ( $patterns_dictionary as $pattern ) {
+			if ( isset( $pattern[&#039;images_total&#039;] ) &amp;&amp; $pattern[&#039;images_total&#039;] &gt; 0 ) {
+				$required_images += $pattern[&#039;images_total&#039;];
+			}
+		}
+
+		// Adding +6 images for the dummy products.
+		$required_images += 6;
+
+		return $required_images;
+	}
+}
+</code></pre>
+            </article>
+            </div>
+        </div>
+        <a href="#top" class="phpdocumentor-back-to-top"><i class="fas fa-chevron-circle-up"></i></a>
+
+    </main>
+
+    <footer class="phpdocumentor phpdocumentor-footer">
+    <div class="phpdocumentor-section">
+        <span>WooCommerce Code Reference API documentation generated by <a href="http://www.phpdoc.org/">phpDocumentor</a> on July 25th, 2024 at 11:33 am.</span>
+    </div>
+</footer>
+
+    <script>
+        cssVars({});
+    </script>
+    <script>
+        var searchParams = {
+            'searchIndex': '..\/js\/searchIndex.json'
+        };
+    </script>
+    <script src="../js/searchIndex.js?updated=1721907185"></script>
+    <script src="../js/search.js?updated=1721907185"></script>
+</body>
+</html>

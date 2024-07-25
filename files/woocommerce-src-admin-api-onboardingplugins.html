@@ -9,9 +9,9 @@
     <link rel="apple-touch-icon" sizes="72x72" href="../images/apple-touch-icon-72x72.png"/>
     <link rel="apple-touch-icon" sizes="114x114" href="../images/apple-touch-icon-114x114.png"/>
     <link rel="stylesheet" href="../css/normalize.css">
-    <link rel="stylesheet" href="../css/base.css?updated=1692866950">
+    <link rel="stylesheet" href="../css/base.css?updated=1721907184">
     <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../css/template.css?updated=1692866950">
+    <link rel="stylesheet" href="../css/template.css?updated=1721907184">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0/css/all.min.css" integrity="sha256-ybRkN9dBjhcS2qrW1z+hfCxq+1aBdwyQM5wlQoQVt/0=" crossorigin="anonymous" />
             <script src="https://cdn.jsdelivr.net/npm/css-vars-ponyfill@2"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0/js/all.min.js" integrity="sha256-0vuk8LXoyrmCjp1f0O300qo1M75ZQyhH9X3J6d+scmk=" crossorigin="anonymous"></script>
@@ -125,6 +125,7 @@
                         <ul class="phpdocumentor-list">
                                     <li><a href="../packages/Automattic-WooCommerce.html"><abbr title="\Automattic\WooCommerce">WooCommerce</abbr></a></li>
                             </ul>
+                                <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/WooCommerceBlocks.html"><abbr title="\WooCommerceBlocks">WooCommerceBlocks</abbr></a></h3>
                         </section>
     
     <section class="phpdocumentor-sidebar__category">
@@ -168,7 +169,6 @@ defined( &#039;ABSPATH&#039; ) || exit;
 
 use ActionScheduler;
 use Automattic\Jetpack\Connection\Manager;
-use Automattic\Jetpack\Constants;
 use Automattic\WooCommerce\Admin\PluginsHelper;
 use Automattic\WooCommerce\Admin\PluginsInstallLoggers\AsynPluginsInstallLogger;
 use WC_REST_Data_Controller;
@@ -282,29 +282,8 @@ class OnboardingPlugins extends WC_REST_Data_Controller {
 				),
 			)
 		);
-
-		/*
-		 * This is a temporary solution to override /jetpack/v4/connection/data endpoint
-		 * registered by Jetpack Connection when Jetpack is not installed.
-		 *
-		 * For more details, see https://github.com/woocommerce/woocommerce/issues/38979
-		 */
-		if ( Constants::get_constant( &#039;JETPACK__VERSION&#039; ) === null &amp;&amp; wp_is_mobile() ) {
-			register_rest_route(
-				&#039;jetpack/v4&#039;,
-				&#039;/connection/data&#039;,
-				array(
-					array(
-						&#039;methods&#039;             =&gt; &#039;GET&#039;,
-						&#039;permission_callback&#039; =&gt; &#039;__return_true&#039;,
-						&#039;callback&#039;            =&gt; function() {
-							return new WP_REST_Response( null, 404 );
-						},
-					),
-				),
-				true
-			);
-		}
+		add_action( &#039;woocommerce_plugins_install_error&#039;, array( $this, &#039;log_plugins_install_error&#039; ), 10, 4 );
+		add_action( &#039;woocommerce_plugins_install_api_error&#039;, array( $this, &#039;log_plugins_install_api_error&#039; ), 10, 2 );
 	}
 
 	/**
@@ -568,6 +547,43 @@ class OnboardingPlugins extends WC_REST_Data_Controller {
 			),
 		);
 	}
+
+	public function log_plugins_install_error( $slug, $api, $result, $upgrader ) {
+		$properties = array(
+			&#039;error_message&#039;         =&gt; sprintf(
+			/* translators: %s: plugin slug (example: woocommerce-services) */
+				__(
+					&#039;The requested plugin `%s` could not be installed.&#039;,
+					&#039;woocommerce&#039;
+				),
+				$slug
+			),
+			&#039;type&#039;				    =&gt; &#039;plugin_info_api_error&#039;,
+			&#039;slug&#039;                  =&gt; $slug,
+			&#039;api_version&#039;           =&gt; $api-&gt;version,
+			&#039;api_download_link&#039;     =&gt; $api-&gt;download_link,
+			&#039;upgrader_skin_message&#039; =&gt; implode( &#039;,&#039;, $upgrader-&gt;skin-&gt;get_upgrade_messages() ),
+			&#039;result&#039;                =&gt; is_wp_error( $result ) ? $result-&gt;get_error_message() : &#039;null&#039;,
+		);
+		wc_admin_record_tracks_event( &#039;coreprofiler_install_plugin_error&#039;, $properties );
+	}
+
+	public function log_plugins_install_api_error( $slug, $api ) {
+		$properties = array(
+			&#039;error_message&#039;     =&gt; sprintf(
+			// translators: %s: plugin slug (example: woocommerce-services).
+				__(
+					&#039;The requested plugin `%s` could not be installed. Plugin API call failed.&#039;,
+					&#039;woocommerce&#039;
+				),
+				$slug
+			),
+			&#039;type&#039;              =&gt; &#039;plugin_install_error&#039;,
+			&#039;api_error_message&#039; =&gt; $api-&gt;get_error_message(),
+			&#039;slug&#039;              =&gt; $slug,
+		);
+		wc_admin_record_tracks_event( &#039;coreprofiler_install_plugin_error&#039;, $properties );
+	}
 }
 </code></pre>
             </article>
@@ -579,7 +595,7 @@ class OnboardingPlugins extends WC_REST_Data_Controller {
 
     <footer class="phpdocumentor phpdocumentor-footer">
     <div class="phpdocumentor-section">
-        <span>WooCommerce Code Reference API documentation generated by <a href="http://www.phpdoc.org/">phpDocumentor</a> on August 24th, 2023 at 08:49 am.</span>
+        <span>WooCommerce Code Reference API documentation generated by <a href="http://www.phpdoc.org/">phpDocumentor</a> on July 25th, 2024 at 11:33 am.</span>
     </div>
 </footer>
 
@@ -591,7 +607,7 @@ class OnboardingPlugins extends WC_REST_Data_Controller {
             'searchIndex': '..\/js\/searchIndex.json'
         };
     </script>
-    <script src="../js/searchIndex.js?updated=1692866950"></script>
-    <script src="../js/search.js?updated=1692866950"></script>
+    <script src="../js/searchIndex.js?updated=1721907184"></script>
+    <script src="../js/search.js?updated=1721907184"></script>
 </body>
 </html>

@@ -9,9 +9,9 @@
     <link rel="apple-touch-icon" sizes="72x72" href="../images/apple-touch-icon-72x72.png"/>
     <link rel="apple-touch-icon" sizes="114x114" href="../images/apple-touch-icon-114x114.png"/>
     <link rel="stylesheet" href="../css/normalize.css">
-    <link rel="stylesheet" href="../css/base.css?updated=1692866946">
+    <link rel="stylesheet" href="../css/base.css?updated=1721907182">
     <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../css/template.css?updated=1692866946">
+    <link rel="stylesheet" href="../css/template.css?updated=1721907182">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0/css/all.min.css" integrity="sha256-ybRkN9dBjhcS2qrW1z+hfCxq+1aBdwyQM5wlQoQVt/0=" crossorigin="anonymous" />
             <script src="https://cdn.jsdelivr.net/npm/css-vars-ponyfill@2"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0/js/all.min.js" integrity="sha256-0vuk8LXoyrmCjp1f0O300qo1M75ZQyhH9X3J6d+scmk=" crossorigin="anonymous"></script>
@@ -125,6 +125,7 @@
                         <ul class="phpdocumentor-list">
                                     <li><a href="../packages/Automattic-WooCommerce.html"><abbr title="\Automattic\WooCommerce">WooCommerce</abbr></a></li>
                             </ul>
+                                <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/WooCommerceBlocks.html"><abbr title="\WooCommerceBlocks">WooCommerceBlocks</abbr></a></h3>
                         </section>
     
     <section class="phpdocumentor-sidebar__category">
@@ -269,7 +270,7 @@ class WC_Settings_Payment_Gateways extends WC_Settings_Page {
 	 */
 	public function payment_gateways_banner() {
 		?&gt;
-		&lt;div id=&quot;wc_payment_gateways_banner_slotfill&quot;&gt; &lt;/div&gt;
+		&lt;div id=&quot;wc_payments_settings_slotfill&quot;&gt; &lt;/div&gt;
 		&lt;?php
 	}
 
@@ -345,19 +346,27 @@ class WC_Settings_Payment_Gateways extends WC_Settings_Page {
 										echo wp_kses_post( $gateway-&gt;get_method_description() );
 										break;
 									case &#039;action&#039;:
-										if ( wc_string_to_bool( $gateway-&gt;enabled ) ) {
-											/* Translators: %s Payment gateway name. */
-											echo &#039;&lt;a class=&quot;button alignright&quot; aria-label=&quot;&#039; . esc_attr( sprintf( __( &#039;Manage the &quot;%s&quot; payment method&#039;, &#039;woocommerce&#039; ), $method_title ) ) . &#039;&quot; href=&quot;&#039; . esc_url( admin_url( &#039;admin.php?page=wc-settings&amp;tab=checkout&amp;section=&#039; . strtolower( $gateway-&gt;id ) ) ) . &#039;&quot;&gt;&#039; . esc_html__( &#039;Manage&#039;, &#039;woocommerce&#039; ) . &#039;&lt;/a&gt;&#039;;
-										} else {
-											if (
-												// Keep old brand name for backwards compatibility.
-												( &#039;WooCommerce Payments&#039; === $method_title || &#039;WooPayments&#039; === $method_title ) &amp;&amp;
-												class_exists( &#039;WC_Payments_Account&#039; )
-											) {
-												$setup_url = WC_Payments_Account::get_connect_url();
+										$setup_url = admin_url( &#039;admin.php?page=wc-settings&amp;tab=checkout&amp;section=&#039; . strtolower( $gateway-&gt;id ) );
+										// Override the behaviour for WooPayments plugin.
+										if (
+											// Keep old brand name for backwards compatibility.
+											( &#039;WooCommerce Payments&#039; === $method_title || &#039;WooPayments&#039; === $method_title ) &amp;&amp;
+											class_exists( &#039;WC_Payments_Account&#039; )
+										) {
+											if ( ! WooCommercePayments::is_connected() || WooCommercePayments::is_account_partially_onboarded() ) {
+												// The CTA text and label is &quot;Finish set up&quot; if the account is not connected or not completely onboarded.
+												$setup_url = WC_Payments_Account::get_connect_url(); // Plugin will handle the redirection to the connect page or directly to the provider (e.g. Stripe).
+												/* Translators: %s Payment gateway name. */
+												echo &#039;&lt;a class=&quot;button alignright&quot; aria-label=&quot;&#039; . esc_attr( sprintf( __( &#039;Set up the &quot;%s&quot; payment method&#039;, &#039;woocommerce&#039; ), $method_title ) ) . &#039;&quot; href=&quot;&#039; . esc_url( $setup_url ) . &#039;&quot;&gt;&#039; . esc_html__( &#039;Finish set up&#039;, &#039;woocommerce&#039; ) . &#039;&lt;/a&gt;&#039;;
 											} else {
-												$setup_url = admin_url( &#039;admin.php?page=wc-settings&amp;tab=checkout&amp;section=&#039; . strtolower( $gateway-&gt;id ) );
+												// If the account is fully onboarded, the CTA text and label is &quot;Manage&quot; regardless gateway is enabled or not.
+												/* Translators: %s Payment gateway name. */
+												echo &#039;&lt;a class=&quot;button alignright&quot; aria-label=&quot;&#039; . esc_attr( sprintf( __( &#039;Manage the &quot;%s&quot; payment method&#039;, &#039;woocommerce&#039; ), $method_title ) ) . &#039;&quot; href=&quot;&#039; . esc_url( $setup_url ) . &#039;&quot;&gt;&#039; . esc_html__( &#039;Manage&#039;, &#039;woocommerce&#039; ) . &#039;&lt;/a&gt;&#039;;
 											}
+										} elseif ( wc_string_to_bool( $gateway-&gt;enabled ) ) {
+											/* Translators: %s Payment gateway name. */
+											echo &#039;&lt;a class=&quot;button alignright&quot; aria-label=&quot;&#039; . esc_attr( sprintf( __( &#039;Manage the &quot;%s&quot; payment method&#039;, &#039;woocommerce&#039; ), $method_title ) ) . &#039;&quot; href=&quot;&#039; . esc_url( $setup_url ) . &#039;&quot;&gt;&#039; . esc_html__( &#039;Manage&#039;, &#039;woocommerce&#039; ) . &#039;&lt;/a&gt;&#039;;
+										} else {
 											/* Translators: %s Payment gateway name. */
 											echo &#039;&lt;a class=&quot;button alignright&quot; aria-label=&quot;&#039; . esc_attr( sprintf( __( &#039;Set up the &quot;%s&quot; payment method&#039;, &#039;woocommerce&#039; ), $method_title ) ) . &#039;&quot; href=&quot;&#039; . esc_url( $setup_url ) . &#039;&quot;&gt;&#039; . esc_html__( &#039;Finish set up&#039;, &#039;woocommerce&#039; ) . &#039;&lt;/a&gt;&#039;;
 										}
@@ -479,7 +488,7 @@ return new WC_Settings_Payment_Gateways();
 
     <footer class="phpdocumentor phpdocumentor-footer">
     <div class="phpdocumentor-section">
-        <span>WooCommerce Code Reference API documentation generated by <a href="http://www.phpdoc.org/">phpDocumentor</a> on August 24th, 2023 at 08:49 am.</span>
+        <span>WooCommerce Code Reference API documentation generated by <a href="http://www.phpdoc.org/">phpDocumentor</a> on July 25th, 2024 at 11:33 am.</span>
     </div>
 </footer>
 
@@ -491,7 +500,7 @@ return new WC_Settings_Payment_Gateways();
             'searchIndex': '..\/js\/searchIndex.json'
         };
     </script>
-    <script src="../js/searchIndex.js?updated=1692866946"></script>
-    <script src="../js/search.js?updated=1692866946"></script>
+    <script src="../js/searchIndex.js?updated=1721907182"></script>
+    <script src="../js/search.js?updated=1721907182"></script>
 </body>
 </html>

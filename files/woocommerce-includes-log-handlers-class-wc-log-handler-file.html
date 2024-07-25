@@ -9,9 +9,9 @@
     <link rel="apple-touch-icon" sizes="72x72" href="../images/apple-touch-icon-72x72.png"/>
     <link rel="apple-touch-icon" sizes="114x114" href="../images/apple-touch-icon-114x114.png"/>
     <link rel="stylesheet" href="../css/normalize.css">
-    <link rel="stylesheet" href="../css/base.css?updated=1692866948">
+    <link rel="stylesheet" href="../css/base.css?updated=1721907183">
     <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../css/template.css?updated=1692866948">
+    <link rel="stylesheet" href="../css/template.css?updated=1721907183">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0/css/all.min.css" integrity="sha256-ybRkN9dBjhcS2qrW1z+hfCxq+1aBdwyQM5wlQoQVt/0=" crossorigin="anonymous" />
             <script src="https://cdn.jsdelivr.net/npm/css-vars-ponyfill@2"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0/js/all.min.js" integrity="sha256-0vuk8LXoyrmCjp1f0O300qo1M75ZQyhH9X3J6d+scmk=" crossorigin="anonymous"></script>
@@ -125,6 +125,7 @@
                         <ul class="phpdocumentor-list">
                                     <li><a href="../packages/Automattic-WooCommerce.html"><abbr title="\Automattic\WooCommerce">WooCommerce</abbr></a></li>
                             </ul>
+                                <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/WooCommerceBlocks.html"><abbr title="\WooCommerceBlocks">WooCommerceBlocks</abbr></a></h3>
                         </section>
     
     <section class="phpdocumentor-sidebar__category">
@@ -163,6 +164,7 @@
  */
 
 use Automattic\Jetpack\Constants;
+use Automattic\WooCommerce\Utilities\LoggingUtil;
 
 if ( ! defined( &#039;ABSPATH&#039; ) ) {
 	exit; // Exit if accessed directly.
@@ -408,13 +410,14 @@ class WC_Log_Handler_File extends WC_Log_Handler {
 	 * @return bool
 	 */
 	public function remove( $handle ) {
-		$removed = false;
-		$logs    = $this-&gt;get_log_files();
-		$handle  = sanitize_title( $handle );
+		$removed       = false;
+		$logs          = $this-&gt;get_log_files();
+		$log_directory = LoggingUtil::get_log_directory();
+		$handle        = sanitize_title( $handle );
 
 		if ( isset( $logs[ $handle ] ) &amp;&amp; $logs[ $handle ] ) {
-			$file = realpath( trailingslashit( WC_LOG_DIR ) . $logs[ $handle ] );
-			if ( 0 === stripos( $file, realpath( trailingslashit( WC_LOG_DIR ) ) ) &amp;&amp; is_file( $file ) &amp;&amp; is_writable( $file ) ) { // phpcs:ignore WordPress.VIP.FileSystemWritesDisallow.file_ops_is_writable
+			$file = realpath( trailingslashit( $log_directory ) . $logs[ $handle ] );
+			if ( 0 === stripos( $file, realpath( trailingslashit( $log_directory ) ) ) &amp;&amp; is_file( $file ) &amp;&amp; is_writable( $file ) ) { // phpcs:ignore WordPress.VIP.FileSystemWritesDisallow.file_ops_is_writable
 				$this-&gt;close( $file ); // Close first to be certain no processes keep it alive after it is unlinked.
 				$removed = unlink( $file ); // phpcs:ignore WordPress.VIP.FileSystemWritesDisallow.file_ops_unlink
 			}
@@ -506,8 +509,10 @@ class WC_Log_Handler_File extends WC_Log_Handler {
 	 * @return bool|string The log file path or false if path cannot be determined.
 	 */
 	public static function get_log_file_path( $handle ) {
+		$log_directory = LoggingUtil::get_log_directory();
+
 		if ( function_exists( &#039;wp_hash&#039; ) ) {
-			return trailingslashit( WC_LOG_DIR ) . self::get_log_file_name( $handle );
+			return trailingslashit( $log_directory ) . self::get_log_file_name( $handle );
 		} else {
 			wc_doing_it_wrong( __METHOD__, __( &#039;This method should not be called before plugins_loaded.&#039;, &#039;woocommerce&#039; ), &#039;3.0&#039; );
 			return false;
@@ -567,13 +572,14 @@ class WC_Log_Handler_File extends WC_Log_Handler {
 			return;
 		}
 
-		$log_files = self::get_log_files();
+		$log_files     = self::get_log_files();
+		$log_directory = LoggingUtil::get_log_directory();
 
 		foreach ( $log_files as $log_file ) {
-			$last_modified = filemtime( trailingslashit( WC_LOG_DIR ) . $log_file );
+			$last_modified = filemtime( trailingslashit( $log_directory ) . $log_file );
 
 			if ( $last_modified &lt; $timestamp ) {
-				@unlink( trailingslashit( WC_LOG_DIR ) . $log_file ); // @codingStandardsIgnoreLine.
+				@unlink( trailingslashit( $log_directory ) . $log_file ); // @codingStandardsIgnoreLine.
 			}
 		}
 	}
@@ -585,7 +591,9 @@ class WC_Log_Handler_File extends WC_Log_Handler {
 	 * @return array
 	 */
 	public static function get_log_files() {
-		$files  = @scandir( WC_LOG_DIR ); // @codingStandardsIgnoreLine.
+		$log_directory = LoggingUtil::get_log_directory();
+
+		$files  = @scandir( $log_directory ); // @codingStandardsIgnoreLine.
 		$result = array();
 
 		if ( ! empty( $files ) ) {
@@ -611,7 +619,7 @@ class WC_Log_Handler_File extends WC_Log_Handler {
 
     <footer class="phpdocumentor phpdocumentor-footer">
     <div class="phpdocumentor-section">
-        <span>WooCommerce Code Reference API documentation generated by <a href="http://www.phpdoc.org/">phpDocumentor</a> on August 24th, 2023 at 08:49 am.</span>
+        <span>WooCommerce Code Reference API documentation generated by <a href="http://www.phpdoc.org/">phpDocumentor</a> on July 25th, 2024 at 11:33 am.</span>
     </div>
 </footer>
 
@@ -623,7 +631,7 @@ class WC_Log_Handler_File extends WC_Log_Handler {
             'searchIndex': '..\/js\/searchIndex.json'
         };
     </script>
-    <script src="../js/searchIndex.js?updated=1692866948"></script>
-    <script src="../js/search.js?updated=1692866948"></script>
+    <script src="../js/searchIndex.js?updated=1721907183"></script>
+    <script src="../js/search.js?updated=1721907183"></script>
 </body>
 </html>

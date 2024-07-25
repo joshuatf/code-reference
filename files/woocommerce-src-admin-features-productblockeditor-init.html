@@ -9,9 +9,9 @@
     <link rel="apple-touch-icon" sizes="72x72" href="../images/apple-touch-icon-72x72.png"/>
     <link rel="apple-touch-icon" sizes="114x114" href="../images/apple-touch-icon-114x114.png"/>
     <link rel="stylesheet" href="../css/normalize.css">
-    <link rel="stylesheet" href="../css/base.css?updated=1692866951">
+    <link rel="stylesheet" href="../css/base.css?updated=1721907184">
     <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../css/template.css?updated=1692866951">
+    <link rel="stylesheet" href="../css/template.css?updated=1721907184">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0/css/all.min.css" integrity="sha256-ybRkN9dBjhcS2qrW1z+hfCxq+1aBdwyQM5wlQoQVt/0=" crossorigin="anonymous" />
             <script src="https://cdn.jsdelivr.net/npm/css-vars-ponyfill@2"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0/js/all.min.js" integrity="sha256-0vuk8LXoyrmCjp1f0O300qo1M75ZQyhH9X3J6d+scmk=" crossorigin="anonymous"></script>
@@ -125,6 +125,7 @@
                         <ul class="phpdocumentor-list">
                                     <li><a href="../packages/Automattic-WooCommerce.html"><abbr title="\Automattic\WooCommerce">WooCommerce</abbr></a></li>
                             </ul>
+                                <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/WooCommerceBlocks.html"><abbr title="\WooCommerceBlocks">WooCommerceBlocks</abbr></a></h3>
                         </section>
     
     <section class="phpdocumentor-sidebar__category">
@@ -163,9 +164,13 @@
 namespace Automattic\WooCommerce\Admin\Features\ProductBlockEditor;
 
 use Automattic\WooCommerce\Admin\Features\Features;
-use Automattic\WooCommerce\Admin\Features\TransientNotices;
+use Automattic\WooCommerce\Admin\Features\ProductBlockEditor\ProductTemplate;
 use Automattic\WooCommerce\Admin\PageController;
-use Automattic\WooCommerce\Internal\Admin\Loader;
+use Automattic\WooCommerce\LayoutTemplates\LayoutTemplateRegistry;
+
+use Automattic\WooCommerce\Internal\Features\ProductBlockEditor\ProductTemplates\SimpleProductTemplate;
+use Automattic\WooCommerce\Internal\Features\ProductBlockEditor\ProductTemplates\ProductVariationTemplate;
+use WC_Meta_Data;
 use WP_Block_Editor_Context;
 
 /**
@@ -178,11 +183,18 @@ class Init {
 	const EDITOR_CONTEXT_NAME = &#039;woocommerce/edit-product&#039;;
 
 	/**
-	 * Supported post types.
+	 * Supported product types.
 	 *
 	 * @var array
 	 */
-	private $supported_post_types = array( &#039;simple&#039; );
+	private $supported_product_types = array( &#039;simple&#039; );
+
+	/**
+	 * Registered product templates.
+	 *
+	 * @var array
+	 */
+	private $product_templates = array();
 
 	/**
 	 * Redirection controller.
@@ -195,25 +207,71 @@ class Init {
 	 * Constructor
 	 */
 	public function __construct() {
-		$this-&gt;redirection_controller = new RedirectionController( $this-&gt;supported_post_types );
+		array_push( $this-&gt;supported_product_types, &#039;variable&#039; );
+		array_push( $this-&gt;supported_product_types, &#039;external&#039; );
+		array_push( $this-&gt;supported_product_types, &#039;grouped&#039; );
+
+		$this-&gt;redirection_controller = new RedirectionController();
 
 		if ( \Automattic\WooCommerce\Utilities\FeaturesUtil::feature_is_enabled( &#039;product_block_editor&#039; ) ) {
-			if ( ! Features::is_enabled( &#039;new-product-management-experience&#039; ) ) {
-				add_action( &#039;admin_enqueue_scripts&#039;, array( $this, &#039;enqueue_styles&#039; ) );
-				add_action( &#039;admin_enqueue_scripts&#039;, array( $this, &#039;dequeue_conflicting_styles&#039; ), 100 );
-				add_action( &#039;get_edit_post_link&#039;, array( $this, &#039;update_edit_product_link&#039; ), 10, 2 );
-			}
+			add_action( &#039;admin_enqueue_scripts&#039;, array( $this, &#039;enqueue_styles&#039; ) );
+			add_action( &#039;admin_enqueue_scripts&#039;, array( $this, &#039;dequeue_conflicting_styles&#039; ), 100 );
+			add_action( &#039;get_edit_post_link&#039;, array( $this, &#039;update_edit_product_link&#039; ), 10, 2 );
+
+			add_filter( &#039;woocommerce_admin_get_user_data_fields&#039;, array( $this, &#039;add_user_data_fields&#039; ) );
 			add_action( &#039;admin_enqueue_scripts&#039;, array( $this, &#039;enqueue_scripts&#039; ) );
-			add_filter( &#039;woocommerce_register_post_type_product&#039;, array( $this, &#039;add_product_template&#039; ) );
+			add_filter( &#039;woocommerce_register_post_type_product_variation&#039;, array( $this, &#039;enable_rest_api_for_product_variation&#039; ) );
 
 			add_action( &#039;current_screen&#039;, array( $this, &#039;set_current_screen_to_block_editor_if_wc_admin&#039; ) );
 
-			$block_registry = new BlockRegistry();
-			$block_registry-&gt;init();
+			add_action( &#039;rest_api_init&#039;, array( $this, &#039;register_layout_templates&#039; ) );
+			add_action( &#039;rest_api_init&#039;, array( $this, &#039;register_user_metas&#039; ) );
+
+			add_filter( &#039;register_block_type_args&#039;, array( $this, &#039;register_metadata_attribute&#039; ) );
+			add_filter( &#039;woocommerce_get_block_types&#039;, array( $this, &#039;get_block_types&#039; ), 999, 1 );
+
+			add_filter( &#039;woocommerce_rest_prepare_product_object&#039;, array( $this, &#039;possibly_add_template_id&#039; ), 10, 2 );
+			add_filter( &#039;woocommerce_rest_prepare_product_variation_object&#039;, array( $this, &#039;possibly_add_template_id&#039; ), 10, 2 );
+
+			// Make sure the block registry is initialized so that core blocks are registered.
+			BlockRegistry::get_instance();
 
 			$tracks = new Tracks();
 			$tracks-&gt;init();
+
+			$this-&gt;register_product_templates();
 		}
+	}
+
+
+	/**
+	 * Adds the product template ID to the product if it doesn&#039;t exist.
+	 *
+	 * @param WP_REST_Response $response The response object.
+	 * @param WC_Product       $product The product.
+	 */
+	public function possibly_add_template_id( $response, $product ) {
+		if ( ! $product ) {
+			return $response;
+		}
+		if ( ! $product-&gt;meta_exists( &#039;_product_template_id&#039; ) ) {
+			/**
+			 * Experimental: Allows to determine a product template id based on the product data.
+			 *
+			 * @ignore
+			 * @since 9.1.0
+			 */
+			$product_template_id = apply_filters( &#039;experimental_woocommerce_product_editor_product_template_id_for_product&#039;, &#039;&#039;, $product );
+			if ( $product_template_id ) {
+				$response-&gt;data[&#039;meta_data&#039;][] = new WC_Meta_Data(
+					array(
+						&#039;key&#039;   =&gt; &#039;_product_template_id&#039;,
+						&#039;value&#039; =&gt; $product_template_id,
+					)
+				);
+			}
+		}
+		return $response;
 	}
 
 	/**
@@ -223,17 +281,8 @@ class Init {
 		if ( ! PageController::is_admin_or_embed_page() ) {
 			return;
 		}
-		$post_type_object     = get_post_type_object( &#039;product&#039; );
-		$block_editor_context = new WP_Block_Editor_Context( array( &#039;name&#039; =&gt; self::EDITOR_CONTEXT_NAME ) );
 
-		$editor_settings = array();
-		if ( ! empty( $post_type_object-&gt;template ) ) {
-			$editor_settings[&#039;template&#039;]                 = $post_type_object-&gt;template;
-			$editor_settings[&#039;templateLock&#039;]             = ! empty( $post_type_object-&gt;template_lock ) ? $post_type_object-&gt;template_lock : false;
-			$editor_settings[&#039;__unstableResolvedAssets&#039;] = $this-&gt;get_resolved_assets();
-		}
-
-		$editor_settings = get_block_editor_settings( $editor_settings, $block_editor_context );
+		$editor_settings = $this-&gt;get_product_editor_settings();
 
 		$script_handle = &#039;wc-admin-edit-product&#039;;
 		wp_register_script( $script_handle, &#039;&#039;, array(), &#039;0.1.0&#039;, true );
@@ -249,6 +298,10 @@ class Init {
 			&#039;before&#039;
 		);
 		wp_tinymce_inline_scripts();
+		wp_enqueue_media();
+		wp_register_style( &#039;wc-global-presets&#039;, false ); // phpcs:ignore
+		wp_add_inline_style( &#039;wc-global-presets&#039;, wp_get_global_stylesheet( array( &#039;presets&#039; ) ) );
+		wp_enqueue_style( &#039;wc-global-presets&#039; );
 	}
 
 	/**
@@ -302,592 +355,33 @@ class Init {
 	}
 
 	/**
-	 * Get the resolved assets needed for the iframe editor.
-	 *
-	 * @return array Styles and scripts.
-	 */
-	private function get_resolved_assets() {
-		if ( function_exists( &#039;gutenberg_resolve_assets_override&#039; ) ) {
-			return gutenberg_resolve_assets_override();
-		}
-
-		global $pagenow;
-
-		$script_handles = array(
-			&#039;wp-polyfill&#039;,
-		);
-		// Note for core merge: only &#039;wp-edit-blocks&#039; should be in this array.
-		$style_handles = array(
-			&#039;wp-edit-blocks&#039;,
-		);
-
-		if ( current_theme_supports( &#039;wp-block-styles&#039; ) ) {
-			$style_handles[] = &#039;wp-block-library-theme&#039;;
-		}
-
-		if ( &#039;widgets.php&#039; === $pagenow || &#039;customize.php&#039; === $pagenow ) {
-			$style_handles[] = &#039;wp-widgets&#039;;
-			$style_handles[] = &#039;wp-edit-widgets&#039;;
-		}
-
-		$block_registry = \WP_Block_Type_Registry::get_instance();
-
-		foreach ( $block_registry-&gt;get_all_registered() as $block_type ) {
-			// In older WordPress versions, like 6.0, these properties are not defined.
-			if ( isset( $block_type-&gt;style_handles ) &amp;&amp; is_array( $block_type-&gt;style_handles ) ) {
-				$style_handles = array_merge( $style_handles, $block_type-&gt;style_handles );
-			}
-
-			if ( isset( $block_type-&gt;editor_style_handles ) &amp;&amp; is_array( $block_type-&gt;editor_style_handles ) ) {
-				$style_handles = array_merge( $style_handles, $block_type-&gt;editor_style_handles );
-			}
-
-			if ( isset( $block_type-&gt;script_handles ) &amp;&amp; is_array( $block_type-&gt;script_handles ) ) {
-				$script_handles = array_merge( $script_handles, $block_type-&gt;script_handles );
-			}
-		}
-
-		$style_handles = array_unique( $style_handles );
-		$done          = wp_styles()-&gt;done;
-
-		ob_start();
-
-		// We do not need reset styles for the iframed editor.
-		wp_styles()-&gt;done = array( &#039;wp-reset-editor-styles&#039; );
-		wp_styles()-&gt;do_items( $style_handles );
-		wp_styles()-&gt;done = $done;
-
-		$styles = ob_get_clean();
-
-		$script_handles = array_unique( $script_handles );
-		$done           = wp_scripts()-&gt;done;
-
-		ob_start();
-
-		wp_scripts()-&gt;done = array();
-		wp_scripts()-&gt;do_items( $script_handles );
-		wp_scripts()-&gt;done = $done;
-
-		$scripts = ob_get_clean();
-
-		/*
-		 * Generate font @font-face styles for the site editor iframe.
-		 * Use the registered font families for printing.
-		 */
-		if ( class_exists( &#039;\WP_Fonts&#039; ) ) {
-			$wp_fonts   = wp_fonts();
-			$registered = $wp_fonts-&gt;get_registered_font_families();
-			if ( ! empty( $registered ) ) {
-				$queue = $wp_fonts-&gt;queue;
-				$done  = $wp_fonts-&gt;done;
-
-				$wp_fonts-&gt;done  = array();
-				$wp_fonts-&gt;queue = $registered;
-
-				ob_start();
-				$wp_fonts-&gt;do_items();
-				$styles .= ob_get_clean();
-
-				// Reset the Web Fonts API.
-				$wp_fonts-&gt;done  = $done;
-				$wp_fonts-&gt;queue = $queue;
-			}
-		}
-
-		return array(
-			&#039;styles&#039;  =&gt; $styles,
-			&#039;scripts&#039; =&gt; $scripts,
-		);
-	}
-
-	/**
-	 * Enqueue styles needed for the rich text editor.
+	 * Enables variation post type in REST API.
 	 *
 	 * @param array $args Array of post type arguments.
 	 * @return array Array of post type arguments.
 	 */
-	public function add_product_template( $args ) {
-		if ( ! isset( $args[&#039;template&#039;] ) ) {
-			$args[&#039;template_lock&#039;] = &#039;all&#039;;
-			$args[&#039;template&#039;]      = array(
-				array(
-					&#039;woocommerce/product-tab&#039;,
-					array(
-						&#039;id&#039;    =&gt; &#039;general&#039;,
-						&#039;title&#039; =&gt; __( &#039;General&#039;, &#039;woocommerce&#039; ),
-						&#039;order&#039; =&gt; 10,
-					),
-					array(
-						array(
-							&#039;woocommerce/product-section&#039;,
-							array(
-								&#039;title&#039;       =&gt; __( &#039;Basic details&#039;, &#039;woocommerce&#039; ),
-								&#039;description&#039; =&gt; __( &#039;This info will be displayed on the product page, category pages, social media, and search results.&#039;, &#039;woocommerce&#039; ),
-							),
-							array(
-								array(
-									&#039;woocommerce/product-name-field&#039;,
-									array(
-										&#039;name&#039;      =&gt; &#039;Product name&#039;,
-										&#039;autoFocus&#039; =&gt; true,
-									),
-								),
-								array(
-									&#039;woocommerce/product-summary-field&#039;,
-								),
-								array(
-									&#039;core/columns&#039;,
-									array(),
-									array(
-										array(
-											&#039;core/column&#039;,
-											array(
-												&#039;templateLock&#039; =&gt; &#039;all&#039;,
-											),
-											array(
-												array(
-													&#039;woocommerce/product-regular-price-field&#039;,
-													array(
-														&#039;name&#039;  =&gt; &#039;regular_price&#039;,
-														&#039;label&#039; =&gt; __( &#039;List price&#039;, &#039;woocommerce&#039; ),
-														&#039;help&#039;  =&gt; __( &#039;Manage more settings in &lt;PricingTab&gt;Pricing.&lt;/PricingTab&gt;&#039;, &#039;woocommerce&#039; ),
-													),
-												),
-											),
-										),
-										array(
-											&#039;core/column&#039;,
-											array(
-												&#039;templateLock&#039; =&gt; &#039;all&#039;,
-											),
-											array(
-												array(
-													&#039;woocommerce/product-sale-price-field&#039;,
-													array(
-														&#039;label&#039; =&gt; __( &#039;Sale price&#039;, &#039;woocommerce&#039; ),
-													),
-												),
-											),
-										),
-									),
-								),
-							),
-						),
-						array(
-							&#039;woocommerce/product-section&#039;,
-							array(
-								&#039;title&#039;       =&gt; __( &#039;Description&#039;, &#039;woocommerce&#039; ),
-								&#039;description&#039; =&gt; __( &#039;What makes this product unique? What are its most important features? Enrich the product page by adding rich content using blocks.&#039;, &#039;woocommerce&#039; ),
-							),
-							array(
-								array(
-									&#039;woocommerce/product-description-field&#039;,
-								),
-							),
-						),
-						array(
-							&#039;woocommerce/product-section&#039;,
-							array(
-								&#039;title&#039;       =&gt; __( &#039;Images&#039;, &#039;woocommerce&#039; ),
-								&#039;description&#039; =&gt; sprintf(
-									/* translators: %1$s: Images guide link opening tag. %2$s: Images guide link closing tag.*/
-									__( &#039;Drag images, upload new ones or select files from your library. For best results, use JPEG files that are 1000 by 1000 pixels or larger. %1$sHow to prepare images?%2$s&#039;, &#039;woocommerce&#039; ),
-									&#039;&lt;a href=&quot;http://woocommerce.com/#&quot; target=&quot;_blank&quot; rel=&quot;noreferrer&quot;&gt;&#039;,
-									&#039;&lt;/a&gt;&#039;
-								),
-							),
-							array(
-								array(
-									&#039;woocommerce/product-images-field&#039;,
-									array(
-										&#039;images&#039; =&gt; array(),
-									),
-								),
-							),
-						),
-						array(
-							&#039;woocommerce/product-section&#039;,
-							array(
-								&#039;title&#039;       =&gt; __( &#039;Organization &amp; visibility&#039;, &#039;woocommerce&#039; ),
-								&#039;description&#039; =&gt; __( &#039;Help customers find this product by assigning it to categories or featuring it across your sales channels.&#039;, &#039;woocommerce&#039; ),
-							),
-							array(
-								array(
-									&#039;woocommerce/product-category-field&#039;,
-									array(
-										&#039;name&#039; =&gt; &#039;categories&#039;,
-									),
-								),
-							),
-						),
-						array(
-							&#039;woocommerce/product-section&#039;,
-							array(
-								&#039;title&#039;       =&gt; __( &#039;Attributes&#039;, &#039;woocommerce&#039; ),
-								&#039;description&#039; =&gt; sprintf(
-									/* translators: %1$s: Attributes guide link opening tag. %2$s: Attributes guide link closing tag.*/
-									__( &#039;Add descriptive pieces of information that customers can use to filter and search for this product. %1$sLearn more%2$s&#039;, &#039;woocommerce&#039; ),
-									&#039;&lt;a href=&quot;https://woocommerce.com/document/managing-product-taxonomies/#product-attributes&quot; target=&quot;_blank&quot; rel=&quot;noreferrer&quot;&gt;&#039;,
-									&#039;&lt;/a&gt;&#039;
-								),
-							),
-							array(
-								array(
-									&#039;woocommerce/product-attributes-field&#039;,
-								),
-							),
-						),
-					),
-				),
-				array(
-					&#039;woocommerce/product-tab&#039;,
-					array(
-						&#039;id&#039;    =&gt; &#039;pricing&#039;,
-						&#039;title&#039; =&gt; __( &#039;Pricing&#039;, &#039;woocommerce&#039; ),
-						&#039;order&#039; =&gt; 20,
-					),
-					array(
-						array(
-							&#039;woocommerce/product-section&#039;,
-							array(
-								&#039;title&#039;       =&gt; __( &#039;Pricing&#039;, &#039;woocommerce&#039; ),
-								&#039;description&#039; =&gt; sprintf(
-									/* translators: %1$s: Images guide link opening tag. %2$s: Images guide link closing tag.*/
-									__( &#039;Set a competitive price, put the product on sale, and manage tax calculations. %1$sHow to price your product?%2$s&#039;, &#039;woocommerce&#039; ),
-									&#039;&lt;a href=&quot;https://woocommerce.com/posts/how-to-price-products-strategies-expert-tips/&quot; target=&quot;_blank&quot; rel=&quot;noreferrer&quot;&gt;&#039;,
-									&#039;&lt;/a&gt;&#039;
-								),
-								&#039;blockGap&#039;    =&gt; &#039;unit-40&#039;,
-							),
-							array(
-								array(
-									&#039;woocommerce/product-section&#039;,
-									array(),
-									array(
-										array(
-											&#039;core/columns&#039;,
-											array(),
-											array(
-												array(
-													&#039;core/column&#039;,
-													array(
-														&#039;templateLock&#039; =&gt; &#039;all&#039;,
-													),
-													array(
-														array(
-															&#039;woocommerce/product-regular-price-field&#039;,
-															array(
-																&#039;name&#039;  =&gt; &#039;regular_price&#039;,
-																&#039;label&#039; =&gt; __( &#039;List price&#039;, &#039;woocommerce&#039; ),
-															),
-														),
-													),
-												),
-												array(
-													&#039;core/column&#039;,
-													array(
-														&#039;templateLock&#039; =&gt; &#039;all&#039;,
-													),
-													array(
-														array(
-															&#039;woocommerce/product-sale-price-field&#039;,
-															array(
-																&#039;label&#039; =&gt; __( &#039;Sale price&#039;, &#039;woocommerce&#039; ),
-															),
-														),
-													),
-												),
-											),
-										),
-										array(
-											&#039;woocommerce/product-schedule-sale-fields&#039;,
-										),
-									),
-								),
-								array(
-									&#039;woocommerce/product-radio-field&#039;,
-									array(
-										&#039;title&#039;    =&gt; __( &#039;Charge sales tax on&#039;, &#039;woocommerce&#039; ),
-										&#039;property&#039; =&gt; &#039;tax_status&#039;,
-										&#039;options&#039;  =&gt; array(
-											array(
-												&#039;label&#039; =&gt; __( &#039;Product and shipping&#039;, &#039;woocommerce&#039; ),
-												&#039;value&#039; =&gt; &#039;taxable&#039;,
-											),
-											array(
-												&#039;label&#039; =&gt; __( &#039;Only shipping&#039;, &#039;woocommerce&#039; ),
-												&#039;value&#039; =&gt; &#039;shipping&#039;,
-											),
-											array(
-												&#039;label&#039; =&gt; __( &quot;Don&#039;t charge tax&quot;, &#039;woocommerce&#039; ),
-												&#039;value&#039; =&gt; &#039;none&#039;,
-											),
-										),
-									),
-								),
-								array(
-									&#039;woocommerce/product-collapsible&#039;,
-									array(
-										&#039;toggleText&#039;       =&gt; __( &#039;Advanced&#039;, &#039;woocommerce&#039; ),
-										&#039;initialCollapsed&#039; =&gt; true,
-										&#039;persistRender&#039;    =&gt; true,
-									),
-									array(
-										array(
-											&#039;woocommerce/product-radio-field&#039;,
-											array(
-												&#039;title&#039;    =&gt; __( &#039;Tax class&#039;, &#039;woocommerce&#039; ),
-												&#039;description&#039; =&gt; sprintf(
-													/* translators: %1$s: Learn more link opening tag. %2$s: Learn more link closing tag.*/
-													__( &#039;Apply a tax rate if this product qualifies for tax reduction or exemption. %1$sLearn more%2$s.&#039;, &#039;woocommerce&#039; ),
-													&#039;&lt;a href=&quot;https://woocommerce.com/document/setting-up-taxes-in-woocommerce/#shipping-tax-class&quot; target=&quot;_blank&quot; rel=&quot;noreferrer&quot;&gt;&#039;,
-													&#039;&lt;/a&gt;&#039;
-												),
-												&#039;property&#039; =&gt; &#039;tax_class&#039;,
-												&#039;options&#039;  =&gt; array(
-													array(
-														&#039;label&#039; =&gt; __( &#039;Standard&#039;, &#039;woocommerce&#039; ),
-														&#039;value&#039; =&gt; &#039;&#039;,
-													),
-													array(
-														&#039;label&#039; =&gt; __( &#039;Reduced rate&#039;, &#039;woocommerce&#039; ),
-														&#039;value&#039; =&gt; &#039;reduced-rate&#039;,
-													),
-													array(
-														&#039;label&#039; =&gt; __( &#039;Zero rate&#039;, &#039;woocommerce&#039; ),
-														&#039;value&#039; =&gt; &#039;zero-rate&#039;,
-													),
-												),
-											),
-										),
-									),
-								),
-							),
-						),
-					),
-				),
-				array(
-					&#039;woocommerce/product-tab&#039;,
-					array(
-						&#039;id&#039;    =&gt; &#039;inventory&#039;,
-						&#039;title&#039; =&gt; __( &#039;Inventory&#039;, &#039;woocommerce&#039; ),
-						&#039;order&#039; =&gt; 30,
-					),
-					array(
-						array(
-							&#039;woocommerce/product-section&#039;,
-							array(
-								&#039;title&#039;       =&gt; __( &#039;Inventory&#039;, &#039;woocommerce&#039; ),
-								&#039;description&#039; =&gt; sprintf(
-									/* translators: %1$s: Inventory settings link opening tag. %2$s: Inventory settings link closing tag.*/
-									__( &#039;Set up and manage inventory for this product, including status and available quantity. %1$sManage store inventory settings%2$s&#039;, &#039;woocommerce&#039; ),
-									&#039;&lt;a href=&quot;&#039; . admin_url( &#039;admin.php?page=wc-settings&amp;tab=products&amp;section=inventory&#039; ) . &#039;&quot; target=&quot;_blank&quot; rel=&quot;noreferrer&quot;&gt;&#039;,
-									&#039;&lt;/a&gt;&#039;
-								),
-								&#039;blockGap&#039;    =&gt; &#039;unit-40&#039;,
-							),
-							array(
-								array(
-									&#039;woocommerce/product-section&#039;,
-									array(),
-									array(
-										array(
-											&#039;woocommerce/product-sku-field&#039;,
-										),
-										array(
-											&#039;woocommerce/product-toggle-field&#039;,
-											array(
-												&#039;label&#039;    =&gt; __( &#039;Track stock quantity for this product&#039;, &#039;woocommerce&#039; ),
-												&#039;property&#039; =&gt; &#039;manage_stock&#039;,
-												&#039;disabled&#039; =&gt; &#039;yes&#039; !== get_option( &#039;woocommerce_manage_stock&#039; ),
-											),
-										),
-										array(
-											&#039;woocommerce/conditional&#039;,
-											array(
-												&#039;mustMatch&#039; =&gt; array(
-													&#039;manage_stock&#039; =&gt; array( true ),
-												),
-											),
-											array(
-												array(
-													&#039;woocommerce/product-inventory-quantity-field&#039;,
-												),
-											),
-										),
-									),
-								),
-								array(
-									&#039;woocommerce/conditional&#039;,
-									array(
-										&#039;mustMatch&#039; =&gt; array(
-											&#039;manage_stock&#039; =&gt; array( false ),
-										),
-									),
-									array(
-										array(
-											&#039;woocommerce/product-radio-field&#039;,
-											array(
-												&#039;title&#039;    =&gt; __( &#039;Stock status&#039;, &#039;woocommerce&#039; ),
-												&#039;property&#039; =&gt; &#039;stock_status&#039;,
-												&#039;options&#039;  =&gt; array(
-													array(
-														&#039;label&#039; =&gt; __( &#039;In stock&#039;, &#039;woocommerce&#039; ),
-														&#039;value&#039; =&gt; &#039;instock&#039;,
-													),
-													array(
-														&#039;label&#039; =&gt; __( &#039;Out of stock&#039;, &#039;woocommerce&#039; ),
-														&#039;value&#039; =&gt; &#039;outofstock&#039;,
-													),
-													array(
-														&#039;label&#039; =&gt; __( &#039;On backorder&#039;, &#039;woocommerce&#039; ),
-														&#039;value&#039; =&gt; &#039;onbackorder&#039;,
-													),
-												),
-											),
-										),
-									),
-								),
-								array(
-									&#039;woocommerce/product-collapsible&#039;,
-									array(
-										&#039;toggleText&#039;       =&gt; __( &#039;Advanced&#039;, &#039;woocommerce&#039; ),
-										&#039;initialCollapsed&#039; =&gt; true,
-										&#039;persistRender&#039;    =&gt; true,
-									),
-									array(
-										array(
-											&#039;woocommerce/product-section&#039;,
-											array(
-												&#039;blockGap&#039; =&gt; &#039;unit-40&#039;,
-											),
-											array(
-												array(
-													&#039;woocommerce/conditional&#039;,
-													array(
-														&#039;mustMatch&#039; =&gt; array(
-															&#039;manage_stock&#039; =&gt; array( true ),
-														),
-													),
-													array(
-														array(
-															&#039;woocommerce/product-radio-field&#039;,
-															array(
-																&#039;title&#039;    =&gt; __( &#039;When out of stock&#039;, &#039;woocommerce&#039; ),
-																&#039;property&#039; =&gt; &#039;backorders&#039;,
-																&#039;options&#039;  =&gt; array(
-																	array(
-																		&#039;label&#039; =&gt; __( &#039;Allow purchases&#039;, &#039;woocommerce&#039; ),
-																		&#039;value&#039; =&gt; &#039;yes&#039;,
-																	),
-																	array(
-																		&#039;label&#039; =&gt; __(
-																			&#039;Allow purchases, but notify customers&#039;,
-																			&#039;woocommerce&#039;
-																		),
-																		&#039;value&#039; =&gt; &#039;notify&#039;,
-																	),
-																	array(
-																		&#039;label&#039; =&gt; __( &quot;Don&#039;t allow purchases&quot;, &#039;woocommerce&#039; ),
-																		&#039;value&#039; =&gt; &#039;no&#039;,
-																	),
-																),
-															),
-														),
-														array(
-															&#039;woocommerce/product-inventory-email-field&#039;,
-														),
-													),
-												),
-												array(
-													&#039;woocommerce/product-checkbox-field&#039;,
-													array(
-														&#039;title&#039;    =&gt; __(
-															&#039;Restrictions&#039;,
-															&#039;woocommerce&#039;
-														),
-														&#039;label&#039;    =&gt; __(
-															&#039;Limit purchases to 1 item per order&#039;,
-															&#039;woocommerce&#039;
-														),
-														&#039;property&#039; =&gt; &#039;sold_individually&#039;,
-														&#039;tooltip&#039;  =&gt; __(
-															&#039;When checked, customers will be able to purchase only 1 item in a single order. This is particularly useful for items that have limited quantity, like art or handmade goods.&#039;,
-															&#039;woocommerce&#039;
-														),
-													),
-												),
+	public function enable_rest_api_for_product_variation( $args ) {
+		$args[&#039;show_in_rest&#039;] = true;
 
-											),
-										),
-									),
-								),
-
-							),
-						),
-					),
-
-				),
-				array(
-					&#039;woocommerce/product-tab&#039;,
-					array(
-						&#039;id&#039;    =&gt; &#039;shipping&#039;,
-						&#039;title&#039; =&gt; __( &#039;Shipping&#039;, &#039;woocommerce&#039; ),
-						&#039;order&#039; =&gt; 40,
-					),
-					array(
-						array(
-							&#039;woocommerce/product-section&#039;,
-							array(
-								&#039;title&#039;       =&gt; __( &#039;Fees &amp; dimensions&#039;, &#039;woocommerce&#039; ),
-								&#039;description&#039; =&gt; sprintf(
-									/* translators: %1$s: How to get started? link opening tag. %2$s: How to get started? link closing tag.*/
-									__( &#039;Set up shipping costs and enter dimensions used for accurate rate calculations. %1$sHow to get started?%2$s.&#039;, &#039;woocommerce&#039; ),
-									&#039;&lt;a href=&quot;https://woocommerce.com/posts/how-to-calculate-shipping-costs-for-your-woocommerce-store/&quot; target=&quot;_blank&quot; rel=&quot;noreferrer&quot;&gt;&#039;,
-									&#039;&lt;/a&gt;&#039;
-								),
-							),
-							array(
-								array(
-									&#039;woocommerce/product-shipping-class-field&#039;,
-								),
-								array(
-									&#039;woocommerce/product-shipping-dimensions-fields&#039;,
-								),
-							),
-						),
-					),
-				),
-			);
-			if ( Features::is_enabled( &#039;product-variation-management&#039; ) ) {
-				array_push(
-					$args[&#039;template&#039;],
-					array(
-						&#039;woocommerce/product-tab&#039;,
-						array(
-							&#039;id&#039;    =&gt; &#039;variations&#039;,
-							&#039;title&#039; =&gt; __( &#039;Variations&#039;, &#039;woocommerce&#039; ),
-							&#039;order&#039; =&gt; 40,
-						),
-						array(
-							array(
-								&#039;woocommerce/product-variations-fields&#039;,
-								array(
-									&#039;description&#039; =&gt; sprintf(
-										/* translators: %1$s: Sell your product in multiple variations like size or color. strong opening tag. %2$s: Sell your product in multiple variations like size or color. strong closing tag.*/
-										__( &#039;%1$sSell your product in multiple variations like size or color.%2$s Get started by adding options for the buyers to choose on the product page.&#039;, &#039;woocommerce&#039; ),
-										&#039;&lt;strong&gt;&#039;,
-										&#039;&lt;/strong&gt;&#039;
-									),
-								),
-								array(),
-							),
-						),
-					)
-				);
-			}
-		}
 		return $args;
+	}
+
+	/**
+	 * Adds fields so that we can store user preferences for the variations block.
+	 *
+	 * @param array $user_data_fields User data fields.
+	 * @return array
+	 */
+	public function add_user_data_fields( $user_data_fields ) {
+		return array_merge(
+			$user_data_fields,
+			array(
+				&#039;variable_product_block_tour_shown&#039;,
+				&#039;local_attributes_notice_dismissed_ids&#039;,
+				&#039;variable_items_without_price_notice_dismissed&#039;,
+				&#039;product_advice_card_dismissed&#039;,
+			)
+		);
 	}
 
 	/**
@@ -910,6 +404,256 @@ class Init {
 			);
 		}
 	}
+
+	/**
+	 * Get the product editor settings.
+	 */
+	private function get_product_editor_settings() {
+		$editor_settings[&#039;productTemplates&#039;] = array_map(
+			function ( $product_template ) {
+				return $product_template-&gt;to_json();
+			},
+			$this-&gt;product_templates
+		);
+
+		$block_editor_context = new WP_Block_Editor_Context( array( &#039;name&#039; =&gt; self::EDITOR_CONTEXT_NAME ) );
+
+		return get_block_editor_settings( $editor_settings, $block_editor_context );
+	}
+
+	/**
+	 * Get default product templates.
+	 *
+	 * @return array The default templates.
+	 */
+	private function get_default_product_templates() {
+		$templates   = array();
+		$templates[] = new ProductTemplate(
+			array(
+				&#039;id&#039;                 =&gt; &#039;standard-product-template&#039;,
+				&#039;title&#039;              =&gt; __( &#039;Standard product&#039;, &#039;woocommerce&#039; ),
+				&#039;description&#039;        =&gt; __( &#039;A single physical or virtual product, e.g. a t-shirt or an eBook.&#039;, &#039;woocommerce&#039; ),
+				&#039;order&#039;              =&gt; 10,
+				&#039;icon&#039;               =&gt; &#039;shipping&#039;,
+				&#039;layout_template_id&#039; =&gt; &#039;simple-product&#039;,
+				&#039;product_data&#039;       =&gt; array(
+					&#039;type&#039; =&gt; &#039;simple&#039;,
+				),
+			)
+		);
+		$templates[] = new ProductTemplate(
+			array(
+				&#039;id&#039;                 =&gt; &#039;grouped-product-template&#039;,
+				&#039;title&#039;              =&gt; __( &#039;Grouped product&#039;, &#039;woocommerce&#039; ),
+				&#039;description&#039;        =&gt; __( &#039;A set of products that go well together, e.g. camera kit.&#039;, &#039;woocommerce&#039; ),
+				&#039;order&#039;              =&gt; 20,
+				&#039;icon&#039;               =&gt; &#039;group&#039;,
+				&#039;layout_template_id&#039; =&gt; &#039;simple-product&#039;,
+				&#039;product_data&#039;       =&gt; array(
+					&#039;type&#039; =&gt; &#039;grouped&#039;,
+				),
+			)
+		);
+		$templates[] = new ProductTemplate(
+			array(
+				&#039;id&#039;                 =&gt; &#039;affiliate-product-template&#039;,
+				&#039;title&#039;              =&gt; __( &#039;Affiliate product&#039;, &#039;woocommerce&#039; ),
+				&#039;description&#039;        =&gt; __( &#039;A link to a product sold on a different website, e.g. brand collab.&#039;, &#039;woocommerce&#039; ),
+				&#039;order&#039;              =&gt; 30,
+				&#039;icon&#039;               =&gt; &#039;link&#039;,
+				&#039;layout_template_id&#039; =&gt; &#039;simple-product&#039;,
+				&#039;product_data&#039;       =&gt; array(
+					&#039;type&#039; =&gt; &#039;external&#039;,
+				),
+			)
+		);
+
+		return $templates;
+	}
+
+	/**
+	 * Create default product template by custom product type if it does not have a
+	 * template associated yet.
+	 *
+	 * @param array $templates The registered product templates.
+	 * @return array The new templates.
+	 */
+	private function create_default_product_template_by_custom_product_type( array $templates ) {
+		// Getting the product types registered via the classic editor.
+		$registered_product_types = wc_get_product_types();
+
+		$custom_product_types = array_filter(
+			$registered_product_types,
+			function ( $product_type ) {
+				return ! in_array( $product_type, $this-&gt;supported_product_types, true );
+			},
+			ARRAY_FILTER_USE_KEY
+		);
+
+		$templates_with_product_type = array_filter(
+			$templates,
+			function ( $template ) {
+				$product_data = $template-&gt;get_product_data();
+				return ! is_null( $product_data ) &amp;&amp; array_key_exists( &#039;type&#039;, $product_data );
+			}
+		);
+
+		$custom_product_types_on_templates = array_map(
+			function ( $template ) {
+				$product_data = $template-&gt;get_product_data();
+				return $product_data[&#039;type&#039;];
+			},
+			$templates_with_product_type
+		);
+
+		foreach ( $custom_product_types as $product_type =&gt; $title ) {
+			if ( in_array( $product_type, $custom_product_types_on_templates, true ) ) {
+				continue;
+			}
+
+			$templates[] = new ProductTemplate(
+				array(
+					&#039;id&#039;           =&gt; $product_type . &#039;-product-template&#039;,
+					&#039;title&#039;        =&gt; $title,
+					&#039;product_data&#039; =&gt; array(
+						&#039;type&#039; =&gt; $product_type,
+					),
+				)
+			);
+		}
+
+		return $templates;
+	}
+
+	/**
+	 * Register layout templates.
+	 */
+	public function register_layout_templates() {
+		$layout_template_registry = wc_get_container()-&gt;get( LayoutTemplateRegistry::class );
+
+		if ( ! $layout_template_registry-&gt;is_registered( &#039;simple-product&#039; ) ) {
+			$layout_template_registry-&gt;register(
+				&#039;simple-product&#039;,
+				&#039;product-form&#039;,
+				SimpleProductTemplate::class
+			);
+		}
+
+		if ( ! $layout_template_registry-&gt;is_registered( &#039;product-variation&#039; ) ) {
+			$layout_template_registry-&gt;register(
+				&#039;product-variation&#039;,
+				&#039;product-form&#039;,
+				ProductVariationTemplate::class
+			);
+		}
+	}
+
+	/**
+	 * Register product templates.
+	 */
+	public function register_product_templates() {
+		/**
+		 * Allows for new product template registration.
+		 *
+		 * @since 8.5.0
+		 */
+		$this-&gt;product_templates = apply_filters( &#039;woocommerce_product_editor_product_templates&#039;, $this-&gt;get_default_product_templates() );
+		$this-&gt;product_templates = $this-&gt;create_default_product_template_by_custom_product_type( $this-&gt;product_templates );
+
+		usort(
+			$this-&gt;product_templates,
+			function ( $a, $b ) {
+				return $a-&gt;get_order() - $b-&gt;get_order();
+			}
+		);
+
+		$this-&gt;redirection_controller-&gt;set_product_templates( $this-&gt;product_templates );
+
+		// PFT: Initialize the product form controller.
+		if ( Features::is_enabled( &#039;product-editor-template-system&#039; ) ) {
+			$product_form_controller = new ProductFormsController();
+			$product_form_controller-&gt;init();
+		}
+	}
+
+	/**
+	 * Register user metas.
+	 */
+	public function register_user_metas() {
+		register_rest_field(
+			&#039;user&#039;,
+			&#039;metaboxhidden_product&#039;,
+			array(
+				&#039;get_callback&#039;    =&gt; function ( $object, $attr ) {
+					$hidden = get_user_meta( $object[&#039;id&#039;], $attr, true );
+
+					if ( is_array( $hidden ) ) {
+						// Ensures to always return a string array.
+						return array_values( $hidden );
+					}
+
+					return array( &#039;postcustom&#039; );
+				},
+				&#039;update_callback&#039; =&gt; function ( $value, $object, $attr ) {
+					// Update the field/meta value.
+					update_user_meta( $object-&gt;ID, $attr, $value );
+				},
+				&#039;schema&#039;          =&gt; array(
+					&#039;type&#039;        =&gt; &#039;array&#039;,
+					&#039;description&#039; =&gt; __( &#039;The metaboxhidden_product meta from the user metas.&#039;, &#039;woocommerce&#039; ),
+					&#039;items&#039;       =&gt; array(
+						&#039;type&#039; =&gt; &#039;string&#039;,
+					),
+					&#039;arg_options&#039; =&gt; array(
+						&#039;sanitize_callback&#039; =&gt; &#039;wp_parse_list&#039;,
+						&#039;validate_callback&#039; =&gt; &#039;rest_validate_request_arg&#039;,
+					),
+				),
+			)
+		);
+	}
+
+	/**
+	 * Registers the metadata block attribute for all block types.
+	 * This is a fallback/temporary solution until
+	 * the Gutenberg core version registers the metadata attribute.
+	 *
+	 * @see https://github.com/WordPress/gutenberg/blob/6aaa3686ae67adc1a6a6b08096d3312859733e1b/lib/compat/wordpress-6.5/blocks.php#L27-L47
+	 * To do: Remove this method once the Gutenberg core version registers the metadata attribute.
+	 *
+	 * @param array $args Array of arguments for registering a block type.
+	 * @return array $args
+	 */
+	public function register_metadata_attribute( $args ) {
+		// Setup attributes if needed.
+		if ( ! isset( $args[&#039;attributes&#039;] ) || ! is_array( $args[&#039;attributes&#039;] ) ) {
+			$args[&#039;attributes&#039;] = array();
+		}
+
+		// Add metadata attribute if it doesn&#039;t exist.
+		if ( ! array_key_exists( &#039;metadata&#039;, $args[&#039;attributes&#039;] ) ) {
+			$args[&#039;attributes&#039;][&#039;metadata&#039;] = array(
+				&#039;type&#039; =&gt; &#039;object&#039;,
+			);
+		}
+
+		return $args;
+	}
+
+	/**
+	 * Filters woocommerce block types.
+	 *
+	 * @param string[] $block_types Array of woocommerce block types.
+	 * @return array
+	 */
+	public function get_block_types( $block_types ) {
+		if ( PageController::is_admin_page() ) {
+			// Ignore all woocommerce blocks.
+			return array();
+		}
+
+		return $block_types;
+	}
 }
 </code></pre>
             </article>
@@ -921,7 +665,7 @@ class Init {
 
     <footer class="phpdocumentor phpdocumentor-footer">
     <div class="phpdocumentor-section">
-        <span>WooCommerce Code Reference API documentation generated by <a href="http://www.phpdoc.org/">phpDocumentor</a> on August 24th, 2023 at 08:49 am.</span>
+        <span>WooCommerce Code Reference API documentation generated by <a href="http://www.phpdoc.org/">phpDocumentor</a> on July 25th, 2024 at 11:33 am.</span>
     </div>
 </footer>
 
@@ -933,7 +677,7 @@ class Init {
             'searchIndex': '..\/js\/searchIndex.json'
         };
     </script>
-    <script src="../js/searchIndex.js?updated=1692866951"></script>
-    <script src="../js/search.js?updated=1692866951"></script>
+    <script src="../js/searchIndex.js?updated=1721907184"></script>
+    <script src="../js/search.js?updated=1721907184"></script>
 </body>
 </html>

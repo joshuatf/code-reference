@@ -9,9 +9,9 @@
     <link rel="apple-touch-icon" sizes="72x72" href="../images/apple-touch-icon-72x72.png"/>
     <link rel="apple-touch-icon" sizes="114x114" href="../images/apple-touch-icon-114x114.png"/>
     <link rel="stylesheet" href="../css/normalize.css">
-    <link rel="stylesheet" href="../css/base.css?updated=1692866951">
+    <link rel="stylesheet" href="../css/base.css?updated=1721907184">
     <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../css/template.css?updated=1692866951">
+    <link rel="stylesheet" href="../css/template.css?updated=1721907184">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0/css/all.min.css" integrity="sha256-ybRkN9dBjhcS2qrW1z+hfCxq+1aBdwyQM5wlQoQVt/0=" crossorigin="anonymous" />
             <script src="https://cdn.jsdelivr.net/npm/css-vars-ponyfill@2"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0/js/all.min.js" integrity="sha256-0vuk8LXoyrmCjp1f0O300qo1M75ZQyhH9X3J6d+scmk=" crossorigin="anonymous"></script>
@@ -125,6 +125,7 @@
                         <ul class="phpdocumentor-list">
                                     <li><a href="../packages/Automattic-WooCommerce.html"><abbr title="\Automattic\WooCommerce">WooCommerce</abbr></a></li>
                             </ul>
+                                <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/WooCommerceBlocks.html"><abbr title="\WooCommerceBlocks">WooCommerceBlocks</abbr></a></h3>
                         </section>
     
     <section class="phpdocumentor-sidebar__category">
@@ -163,7 +164,7 @@ use Automattic\WooCommerce\Internal\Admin\Onboarding\OnboardingProfile;
 use Automattic\WooCommerce\Admin\Features\OnboardingTasks\Task;
 use Automattic\WooCommerce\Admin\PluginsHelper;
 use Automattic\WooCommerce\Admin\Features\PaymentGatewaySuggestions\Init as Suggestions;
-use Automattic\WooCommerce\Admin\Features\OnboardingTasks\TaskList;
+use Automattic\WooCommerce\Internal\Admin\WCPayPromotion\Init as WCPayPromotionInit;
 
 /**
  * WooCommercePayments Task
@@ -191,7 +192,22 @@ class WooCommercePayments extends Task {
 	 * @return string
 	 */
 	public function get_title() {
-		return __( &#039;Set up WooPayments&#039;, &#039;woocommerce&#039; );
+		return __( &#039;Get paid with WooPayments&#039;, &#039;woocommerce&#039; );
+	}
+
+	/**
+	 * Badge.
+	 *
+	 * @return string
+	 */
+	public function get_badge() {
+		/**
+		 * Filter WooPayments onboarding task badge.
+		 *
+		 * @param string     $badge    Badge content.
+		 * @since 8.2.0
+		 */
+		return apply_filters( &#039;woocommerce_admin_woopayments_onboarding_task_badge&#039;, &#039;&#039; );
 	}
 
 	/**
@@ -225,25 +241,13 @@ class WooCommercePayments extends Task {
 	}
 
 	/**
-	 * Additional info.
-	 *
-	 * @return string
-	 */
-	public function get_additional_info() {
-		return __(
-			&#039;By using WooPayments you agree to be bound by our &lt;a href=&quot;https://wordpress.com/tos/&quot; target=&quot;_blank&quot;&gt;Terms of Service&lt;/a&gt; and acknowledge that you have read our &lt;a href=&quot;https://automattic.com/privacy/&quot; target=&quot;_blank&quot;&gt;Privacy Policy&lt;/a&gt;&#039;,
-			&#039;woocommerce&#039;
-		);
-	}
-
-	/**
 	 * Task completion.
 	 *
 	 * @return bool
 	 */
 	public function is_complete() {
 		if ( null === $this-&gt;is_complete_result ) {
-			$this-&gt;is_complete_result = self::is_connected();
+			$this-&gt;is_complete_result = self::is_connected() &amp;&amp; ! self::is_account_partially_onboarded();
 		}
 
 		return $this-&gt;is_complete_result;
@@ -259,12 +263,11 @@ class WooCommercePayments extends Task {
 
 		return ! $payments-&gt;is_complete() &amp;&amp; // Do not re-display the task if the &quot;add payments&quot; task has already been completed.
 			self::is_installed() &amp;&amp;
-			self::is_supported() &amp;&amp;
-			! self::is_connected();
+			self::is_supported();
 	}
 
 	/**
-	 * Check if the plugin was requested during onboarding.
+	 * Check if the WooPayments plugin was requested during onboarding.
 	 *
 	 * @return bool
 	 */
@@ -278,7 +281,7 @@ class WooCommercePayments extends Task {
 	}
 
 	/**
-	 * Check if the plugin is installed.
+	 * Check if the WooPayments plugin is installed.
 	 *
 	 * @return bool
 	 */
@@ -288,7 +291,16 @@ class WooCommercePayments extends Task {
 	}
 
 	/**
-	 * Check if WooCommerce Payments is connected.
+	 * Check if the WooPayments plugin is active.
+	 *
+	 * @return bool
+	 */
+	public static function is_wcpay_active() {
+		return class_exists( &#039;\WC_Payments&#039; );
+	}
+
+	/**
+	 * Check if WooPayments is connected.
 	 *
 	 * @return bool
 	 */
@@ -297,6 +309,23 @@ class WooCommercePayments extends Task {
 			$wc_payments_gateway = \WC_Payments::get_gateway();
 			return method_exists( $wc_payments_gateway, &#039;is_connected&#039; )
 				? $wc_payments_gateway-&gt;is_connected()
+				: false;
+		}
+
+		return false;
+	}
+
+	/**
+	 * Check if WooPayments needs setup.
+	 * Errored data or payments not enabled.
+	 *
+	 * @return bool
+	 */
+	public static function is_account_partially_onboarded() {
+		if ( class_exists( &#039;\WC_Payments&#039; ) ) {
+			$wc_payments_gateway = \WC_Payments::get_gateway();
+			return method_exists( $wc_payments_gateway, &#039;is_account_partially_onboarded&#039; )
+				? $wc_payments_gateway-&gt;is_account_partially_onboarded()
 				: false;
 		}
 
@@ -335,7 +364,7 @@ class WooCommercePayments extends Task {
 
     <footer class="phpdocumentor phpdocumentor-footer">
     <div class="phpdocumentor-section">
-        <span>WooCommerce Code Reference API documentation generated by <a href="http://www.phpdoc.org/">phpDocumentor</a> on August 24th, 2023 at 08:49 am.</span>
+        <span>WooCommerce Code Reference API documentation generated by <a href="http://www.phpdoc.org/">phpDocumentor</a> on July 25th, 2024 at 11:33 am.</span>
     </div>
 </footer>
 
@@ -347,7 +376,7 @@ class WooCommercePayments extends Task {
             'searchIndex': '..\/js\/searchIndex.json'
         };
     </script>
-    <script src="../js/searchIndex.js?updated=1692866951"></script>
-    <script src="../js/search.js?updated=1692866951"></script>
+    <script src="../js/searchIndex.js?updated=1721907184"></script>
+    <script src="../js/search.js?updated=1721907184"></script>
 </body>
 </html>

@@ -9,9 +9,9 @@
     <link rel="apple-touch-icon" sizes="72x72" href="../images/apple-touch-icon-72x72.png"/>
     <link rel="apple-touch-icon" sizes="114x114" href="../images/apple-touch-icon-114x114.png"/>
     <link rel="stylesheet" href="../css/normalize.css">
-    <link rel="stylesheet" href="../css/base.css?updated=1692866946">
+    <link rel="stylesheet" href="../css/base.css?updated=1721907182">
     <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../css/template.css?updated=1692866946">
+    <link rel="stylesheet" href="../css/template.css?updated=1721907182">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0/css/all.min.css" integrity="sha256-ybRkN9dBjhcS2qrW1z+hfCxq+1aBdwyQM5wlQoQVt/0=" crossorigin="anonymous" />
             <script src="https://cdn.jsdelivr.net/npm/css-vars-ponyfill@2"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0/js/all.min.js" integrity="sha256-0vuk8LXoyrmCjp1f0O300qo1M75ZQyhH9X3J6d+scmk=" crossorigin="anonymous"></script>
@@ -125,6 +125,7 @@
                         <ul class="phpdocumentor-list">
                                     <li><a href="../packages/Automattic-WooCommerce.html"><abbr title="\Automattic\WooCommerce">WooCommerce</abbr></a></li>
                             </ul>
+                                <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/WooCommerceBlocks.html"><abbr title="\WooCommerceBlocks">WooCommerceBlocks</abbr></a></h3>
                         </section>
     
     <section class="phpdocumentor-sidebar__category">
@@ -349,7 +350,7 @@ class WC_Admin_Webhooks {
 			$webhook_id = absint( $_GET[&#039;delete&#039;] );
 
 			if ( $webhook_id ) {
-				$this-&gt;bulk_delete( array( $webhook_id ) );
+				self::bulk_delete( array( $webhook_id ) );
 			}
 		}
 	}
@@ -452,20 +453,22 @@ class WC_Admin_Webhooks {
 	private static function table_list_output() {
 		global $webhooks_table_list;
 
-		echo &#039;&lt;h2 class=&quot;wc-table-list-header&quot;&gt;&#039; . esc_html__( &#039;Webhooks&#039;, &#039;woocommerce&#039; ) . &#039; &lt;a href=&quot;&#039; . esc_url( admin_url( &#039;admin.php?page=wc-settings&amp;tab=advanced&amp;section=webhooks&amp;edit-webhook=0&#039; ) ) . &#039;&quot; class=&quot;add-new-h2&quot;&gt;&#039; . esc_html__( &#039;Add webhook&#039;, &#039;woocommerce&#039; ) . &#039;&lt;/a&gt;&lt;/h2&gt;&#039;;
+		echo &#039;&lt;h2 class=&quot;wc-table-list-header&quot;&gt;&#039; . esc_html__( &#039;Webhooks&#039;, &#039;woocommerce&#039; ) . &#039; &lt;a href=&quot;&#039; . esc_url( admin_url( &#039;admin.php?page=wc-settings&amp;tab=advanced&amp;section=webhooks&amp;edit-webhook=0&#039; ) ) . &#039;&quot; class=&quot;page-title-action&quot;&gt;&#039; . esc_html__( &#039;Add webhook&#039;, &#039;woocommerce&#039; ) . &#039;&lt;/a&gt;&lt;/h2&gt;&#039;;
 
 		// Get the webhooks count.
 		$data_store   = WC_Data_Store::load( &#039;webhook&#039; );
 		$num_webhooks = $data_store-&gt;get_count_webhooks_by_status();
 		$count        = array_sum( $num_webhooks );
 
-		if ( 0 &lt; $count ) {
+		if ( $count &gt; 0 ) {
 			$webhooks_table_list-&gt;process_bulk_action();
 			$webhooks_table_list-&gt;prepare_items();
 
 			echo &#039;&lt;input type=&quot;hidden&quot; name=&quot;page&quot; value=&quot;wc-settings&quot; /&gt;&#039;;
 			echo &#039;&lt;input type=&quot;hidden&quot; name=&quot;tab&quot; value=&quot;advanced&quot; /&gt;&#039;;
 			echo &#039;&lt;input type=&quot;hidden&quot; name=&quot;section&quot; value=&quot;webhooks&quot; /&gt;&#039;;
+
+			self::maybe_display_legacy_rest_api_warning();
 
 			$webhooks_table_list-&gt;views();
 			$webhooks_table_list-&gt;search_box( __( &#039;Search webhooks&#039;, &#039;woocommerce&#039; ), &#039;webhook&#039; );
@@ -478,6 +481,81 @@ class WC_Admin_Webhooks {
 			&lt;style type=&quot;text/css&quot;&gt;#posts-filter .wp-list-table, #posts-filter .tablenav.top, .tablenav.bottom .actions { display: none; }&lt;/style&gt;
 			&lt;?php
 		}
+	}
+
+	/**
+	 * Display a warning message if the Legacy REST API extension is not installed
+	 * and there are webhooks configured to use the legacy payload format.
+	 */
+	private static function maybe_display_legacy_rest_api_warning() {
+		global $webhooks_table_list;
+
+		if ( ! is_null( wc()-&gt;api ) ) {
+			return;
+		}
+
+		$legacy_api_webhooks_count = $webhooks_table_list-&gt;get_legacy_api_webhooks_count();
+		if ( 0 === $legacy_api_webhooks_count ) {
+			return;
+		}
+
+		?&gt;
+		&lt;div class=&#039;error inline&#039;&gt;
+			&lt;p&gt;&lt;strong&gt;
+				&lt;?php echo esc_html__( &#039;Incompatible webhooks warning&#039;, &#039;woocommerce&#039; ); ?&gt;
+			&lt;/strong&gt;&lt;/p&gt;
+			&lt;p&gt;
+				&lt;?php
+				echo wp_kses_data(
+					sprintf(
+						/* translators: %s = webhooks count */
+						_n(
+							&quot;There&#039;s %d webhook that is configured to be delivered using the Legacy REST API, which has been removed from WooCommerce. This webhook will fail to be sent.&quot;,
+							&#039;There are %d webhooks that are configured to be delivered using the Legacy REST API, which has been removed from WooCommerce. These webhooks will fail to be sent.&#039;,
+							$legacy_api_webhooks_count,
+							&#039;woocommerce&#039;
+						),
+						$legacy_api_webhooks_count,
+						&#039;woocommerce&#039;
+					)
+				);
+				?&gt;
+			&lt;/p&gt;
+			&lt;p&gt;
+				&lt;?php
+				echo wp_kses(
+					sprintf(
+						/* translators: %s = URL */
+						_n(
+							&#039;This webhook has the ⚠️ symbol in front of its name in the list below. Please either edit the webhook to use a different delivery format, or install and activate &lt;a href=&quot;%s&quot; target=&quot;_blank&quot;&gt;the WooCommerce Legacy REST API extension&lt;/a&gt;.&#039;,
+							&#039;These webhooks have the ⚠️ symbol in front of their names in the list below. Please either edit the webhooks to use a different delivery format, or install and activate &lt;a href=&quot;%s&quot; target=&quot;_blank&quot;&gt;the WooCommerce Legacy REST API extension&lt;/a&gt;.&#039;,
+							$legacy_api_webhooks_count,
+							&#039;woocommerce&#039;
+						),
+						&#039;https://wordpress.org/plugins/woocommerce-legacy-rest-api/&#039;
+					),
+					array(
+						&#039;a&#039; =&gt; array(
+							&#039;href&#039;   =&gt; array(),
+							&#039;target&#039; =&gt; array(),
+						),
+					)
+				);
+				?&gt;
+			&lt;/p&gt;
+			&lt;p&gt;&lt;strong&gt;
+				&lt;?php
+				echo wp_kses_data(
+					sprintf(
+						/* translators: %s is an URL */
+						__( &quot;&lt;a href=&#039;%s&#039;&gt;More information&lt;/a&gt;&quot;, &#039;woocommerce&#039; ),
+						&#039;https://developer.woocommerce.com/2023/10/03/the-legacy-rest-api-will-move-to-a-dedicated-extension-in-woocommerce-9-0/&#039;
+					)
+				);
+				?&gt;
+			&lt;/strong&gt;&lt;/p&gt;
+		&lt;/div&gt;
+		&lt;?php
 	}
 
 	/**
@@ -542,7 +620,7 @@ new WC_Admin_Webhooks();
 
     <footer class="phpdocumentor phpdocumentor-footer">
     <div class="phpdocumentor-section">
-        <span>WooCommerce Code Reference API documentation generated by <a href="http://www.phpdoc.org/">phpDocumentor</a> on August 24th, 2023 at 08:49 am.</span>
+        <span>WooCommerce Code Reference API documentation generated by <a href="http://www.phpdoc.org/">phpDocumentor</a> on July 25th, 2024 at 11:33 am.</span>
     </div>
 </footer>
 
@@ -554,7 +632,7 @@ new WC_Admin_Webhooks();
             'searchIndex': '..\/js\/searchIndex.json'
         };
     </script>
-    <script src="../js/searchIndex.js?updated=1692866946"></script>
-    <script src="../js/search.js?updated=1692866946"></script>
+    <script src="../js/searchIndex.js?updated=1721907182"></script>
+    <script src="../js/search.js?updated=1721907182"></script>
 </body>
 </html>

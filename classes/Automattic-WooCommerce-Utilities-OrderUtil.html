@@ -9,9 +9,9 @@
     <link rel="apple-touch-icon" sizes="72x72" href="../images/apple-touch-icon-72x72.png"/>
     <link rel="apple-touch-icon" sizes="114x114" href="../images/apple-touch-icon-114x114.png"/>
     <link rel="stylesheet" href="../css/normalize.css">
-    <link rel="stylesheet" href="../css/base.css?updated=1692867006">
+    <link rel="stylesheet" href="../css/base.css?updated=1721907209">
     <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../css/template.css?updated=1692867006">
+    <link rel="stylesheet" href="../css/template.css?updated=1721907209">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0/css/all.min.css" integrity="sha256-ybRkN9dBjhcS2qrW1z+hfCxq+1aBdwyQM5wlQoQVt/0=" crossorigin="anonymous" />
             <script src="https://cdn.jsdelivr.net/npm/css-vars-ponyfill@2"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0/js/all.min.js" integrity="sha256-0vuk8LXoyrmCjp1f0O300qo1M75ZQyhH9X3J6d+scmk=" crossorigin="anonymous"></script>
@@ -119,6 +119,7 @@
                         <ul class="phpdocumentor-list">
                                     <li><a href="../packages/Automattic-WooCommerce.html"><abbr title="\Automattic\WooCommerce">WooCommerce</abbr></a></li>
                             </ul>
+                                <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/WooCommerceBlocks.html"><abbr title="\WooCommerceBlocks">WooCommerceBlocks</abbr></a></h3>
                         </section>
     
     <section class="phpdocumentor-sidebar__category">
@@ -158,9 +159,9 @@
     </h2>
 
         <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Utilities/OrderUtil.php"><a href="../files/woocommerce-src-utilities-orderutil.html#source-view.19">src/Utilities/OrderUtil.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Utilities/OrderUtil.php"><a href="../files/woocommerce-src-utilities-orderutil.html#source-view.18">src/Utilities/OrderUtil.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">19</span>
+    <span class="phpdocumentor-element-found-in__line">18</span>
 </aside>
 
             <p class="phpdocumentor-summary">A class of utilities for dealing with orders.</p>
@@ -186,6 +187,13 @@
                         &nbsp;: bool    </span>
 </dt>
 <dd>Helper function to get whether custom order tables are enabled or not.</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a href="../classes/Automattic-WooCommerce-Utilities-OrderUtil.html#method_get_count_for_type">get_count_for_type()</a>
+    <span>
+                        &nbsp;: array&lt;string, int&gt;    </span>
+</dt>
+<dd>Counts number of orders of a given type.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="../classes/Automattic-WooCommerce-Utilities-OrderUtil.html#method_get_order_admin_edit_url">get_order_admin_edit_url()</a>
@@ -316,9 +324,9 @@
         <a href="#method_custom_orders_table_usage_is_enabled" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Utilities/OrderUtil.php"><a href="../files/woocommerce-src-utilities-orderutil.html#source-view.36">src/Utilities/OrderUtil.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Utilities/OrderUtil.php"><a href="../files/woocommerce-src-utilities-orderutil.html#source-view.35">src/Utilities/OrderUtil.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">36</span>
+    <span class="phpdocumentor-element-found-in__line">35</span>
 </aside>
 
         <p class="phpdocumentor-summary">Helper function to get whether custom order tables are enabled or not.</p>
@@ -343,14 +351,72 @@
             -public
                                     -static                    "
 >
+    <h4 class="phpdocumentor-element__name" id="method_get_count_for_type">
+        get_count_for_type()
+        <a href="#method_get_count_for_type" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Utilities/OrderUtil.php"><a href="../files/woocommerce-src-utilities-orderutil.html#source-view.196">src/Utilities/OrderUtil.php</a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">196</span>
+</aside>
+
+        <p class="phpdocumentor-summary">Counts number of orders of a given type.</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+            <span class="phpdocumentor-signature__static">static</span>    <span class="phpdocumentor-signature__name">get_count_for_type</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$order_type</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">array&lt;string, int&gt;</span></code>
+
+        <section class="phpdocumentor-description"></section>
+
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$order_type</span>
+                : <span class="phpdocumentor-signature__argument__return-type">string</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"><p>Order type.</p>
+</section>
+
+            </dd>
+            </dl>
+
+    
+    <h5 class="phpdocumentor-tag-list__heading" id="tags">
+        Tags
+        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
+    </h5>
+    <dl class="phpdocumentor-tag-list">
+                                    <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">since</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                            <span class="phpdocumentor-tag-link">8.7.0</span>
+                                                                                                        <section class="phpdocumentor-description"></section>
+
+                </dd>
+                        </dl>
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">array&lt;string, int&gt;</span>
+            &mdash; <span class="phpdocumentor-return-value__description">Array of order counts indexed by order type.</span>
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                    -static                    "
+>
     <h4 class="phpdocumentor-element__name" id="method_get_order_admin_edit_url">
         get_order_admin_edit_url()
         <a href="#method_get_order_admin_edit_url" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Utilities/OrderUtil.php"><a href="../files/woocommerce-src-utilities-orderutil.html#source-view.125">src/Utilities/OrderUtil.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Utilities/OrderUtil.php"><a href="../files/woocommerce-src-utilities-orderutil.html#source-view.124">src/Utilities/OrderUtil.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">125</span>
+    <span class="phpdocumentor-element-found-in__line">124</span>
 </aside>
 
         <p class="phpdocumentor-summary">Helper method to generate admin url for an order.</p>
@@ -392,9 +458,9 @@
         <a href="#method_get_order_admin_new_url" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Utilities/OrderUtil.php"><a href="../files/woocommerce-src-utilities-orderutil.html#source-view.134">src/Utilities/OrderUtil.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Utilities/OrderUtil.php"><a href="../files/woocommerce-src-utilities-orderutil.html#source-view.133">src/Utilities/OrderUtil.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">134</span>
+    <span class="phpdocumentor-element-found-in__line">133</span>
 </aside>
 
         <p class="phpdocumentor-summary">Helper method to generate admin URL for new order.</p>
@@ -424,9 +490,9 @@
         <a href="#method_get_order_admin_screen" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Utilities/OrderUtil.php"><a href="../files/woocommerce-src-utilities-orderutil.html#source-view.26">src/Utilities/OrderUtil.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Utilities/OrderUtil.php"><a href="../files/woocommerce-src-utilities-orderutil.html#source-view.25">src/Utilities/OrderUtil.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">26</span>
+    <span class="phpdocumentor-element-found-in__line">25</span>
 </aside>
 
         <p class="phpdocumentor-summary">Helper function to get screen name of orders page in wp-admin.</p>
@@ -456,9 +522,9 @@
         <a href="#method_get_order_type" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Utilities/OrderUtil.php"><a href="../files/woocommerce-src-utilities-orderutil.html#source-view.114">src/Utilities/OrderUtil.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Utilities/OrderUtil.php"><a href="../files/woocommerce-src-utilities-orderutil.html#source-view.113">src/Utilities/OrderUtil.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">114</span>
+    <span class="phpdocumentor-element-found-in__line">113</span>
 </aside>
 
         <p class="phpdocumentor-summary">Returns type pf passed id, post or order object.</p>
@@ -500,9 +566,9 @@
         <a href="#method_get_post_or_object_meta" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Utilities/OrderUtil.php"><a href="../files/woocommerce-src-utilities-orderutil.html#source-view.69">src/Utilities/OrderUtil.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Utilities/OrderUtil.php"><a href="../files/woocommerce-src-utilities-orderutil.html#source-view.68">src/Utilities/OrderUtil.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">69</span>
+    <span class="phpdocumentor-element-found-in__line">68</span>
 </aside>
 
         <p class="phpdocumentor-summary">Gets value of a meta key from WC_Data object if passed, otherwise from the post object.</p>
@@ -572,16 +638,16 @@
         <a href="#method_get_post_or_order_id" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Utilities/OrderUtil.php"><a href="../files/woocommerce-src-utilities-orderutil.html#source-view.91">src/Utilities/OrderUtil.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Utilities/OrderUtil.php"><a href="../files/woocommerce-src-utilities-orderutil.html#source-view.90">src/Utilities/OrderUtil.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">91</span>
+    <span class="phpdocumentor-element-found-in__line">90</span>
 </aside>
 
         <p class="phpdocumentor-summary">Helper function to id from an post or order object.</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-            <span class="phpdocumentor-signature__static">static</span>    <span class="phpdocumentor-signature__name">get_post_or_order_id</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">mixed&nbsp;</span><span class="phpdocumentor-signature__argument__name">$post_or_order_object</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">int</span></code>
+            <span class="phpdocumentor-signature__static">static</span>    <span class="phpdocumentor-signature__name">get_post_or_order_id</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type"><abbr title="\WP_Post">WP_Post</abbr>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$post_or_order_object</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">int</span></code>
 
         <section class="phpdocumentor-description"></section>
 
@@ -589,10 +655,12 @@
     <dl class="phpdocumentor-argument-list">
                     <dt class="phpdocumentor-argument-list__entry">
                 <span class="phpdocumentor-signature__argument__name">$post_or_order_object</span>
-                : <span class="phpdocumentor-signature__argument__return-type">mixed</span>
+                : <span class="phpdocumentor-signature__argument__return-type"><abbr title="\WP_Post">WP_Post</abbr></span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
-                
+                    <section class="phpdocumentor-description"><p>WP_Post/WC_Order object to get ID for.</p>
+</section>
+
             </dd>
             </dl>
 
@@ -614,9 +682,9 @@
         <a href="#method_get_table_for_order_meta" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Utilities/OrderUtil.php"><a href="../files/woocommerce-src-utilities-orderutil.html#source-view.185">src/Utilities/OrderUtil.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Utilities/OrderUtil.php"><a href="../files/woocommerce-src-utilities-orderutil.html#source-view.184">src/Utilities/OrderUtil.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">185</span>
+    <span class="phpdocumentor-element-found-in__line">184</span>
 </aside>
 
         <p class="phpdocumentor-summary">Get the name of the database table that&#039;s currently in use for orders.</p>
@@ -646,9 +714,9 @@
         <a href="#method_get_table_for_orders" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Utilities/OrderUtil.php"><a href="../files/woocommerce-src-utilities-orderutil.html#source-view.176">src/Utilities/OrderUtil.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Utilities/OrderUtil.php"><a href="../files/woocommerce-src-utilities-orderutil.html#source-view.175">src/Utilities/OrderUtil.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">176</span>
+    <span class="phpdocumentor-element-found-in__line">175</span>
 </aside>
 
         <p class="phpdocumentor-summary">Get the name of the database table that&#039;s currently in use for orders.</p>
@@ -678,9 +746,9 @@
         <a href="#method_init_theorder_object" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Utilities/OrderUtil.php"><a href="../files/woocommerce-src-utilities-orderutil.html#source-view.80">src/Utilities/OrderUtil.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Utilities/OrderUtil.php"><a href="../files/woocommerce-src-utilities-orderutil.html#source-view.79">src/Utilities/OrderUtil.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">80</span>
+    <span class="phpdocumentor-element-found-in__line">79</span>
 </aside>
 
         <p class="phpdocumentor-summary">Helper function to initialize the global $theorder object, mostly used during order meta boxes rendering.</p>
@@ -722,9 +790,9 @@
         <a href="#method_is_custom_order_tables_in_sync" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Utilities/OrderUtil.php"><a href="../files/woocommerce-src-utilities-orderutil.html#source-view.54">src/Utilities/OrderUtil.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Utilities/OrderUtil.php"><a href="../files/woocommerce-src-utilities-orderutil.html#source-view.53">src/Utilities/OrderUtil.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">54</span>
+    <span class="phpdocumentor-element-found-in__line">53</span>
 </aside>
 
         <p class="phpdocumentor-summary">Checks if posts and order custom table sync is enabled and there are no pending orders.</p>
@@ -754,9 +822,9 @@
         <a href="#method_is_new_order_screen" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Utilities/OrderUtil.php"><a href="../files/woocommerce-src-utilities-orderutil.html#source-view.167">src/Utilities/OrderUtil.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Utilities/OrderUtil.php"><a href="../files/woocommerce-src-utilities-orderutil.html#source-view.166">src/Utilities/OrderUtil.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">167</span>
+    <span class="phpdocumentor-element-found-in__line">166</span>
 </aside>
 
         <p class="phpdocumentor-summary">Check if the current admin screen is adding a new order.</p>
@@ -798,9 +866,9 @@
         <a href="#method_is_order" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Utilities/OrderUtil.php"><a href="../files/woocommerce-src-utilities-orderutil.html#source-view.103">src/Utilities/OrderUtil.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Utilities/OrderUtil.php"><a href="../files/woocommerce-src-utilities-orderutil.html#source-view.102">src/Utilities/OrderUtil.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">103</span>
+    <span class="phpdocumentor-element-found-in__line">102</span>
 </aside>
 
         <p class="phpdocumentor-summary">Checks if passed id, post or order object is a WC_Order object.</p>
@@ -851,9 +919,9 @@
         <a href="#method_is_order_edit_screen" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Utilities/OrderUtil.php"><a href="../files/woocommerce-src-utilities-orderutil.html#source-view.156">src/Utilities/OrderUtil.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Utilities/OrderUtil.php"><a href="../files/woocommerce-src-utilities-orderutil.html#source-view.155">src/Utilities/OrderUtil.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">156</span>
+    <span class="phpdocumentor-element-found-in__line">155</span>
 </aside>
 
         <p class="phpdocumentor-summary">Check if the current admin screen is for editing an order.</p>
@@ -895,9 +963,9 @@
         <a href="#method_is_order_list_table_screen" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Utilities/OrderUtil.php"><a href="../files/woocommerce-src-utilities-orderutil.html#source-view.145">src/Utilities/OrderUtil.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Utilities/OrderUtil.php"><a href="../files/woocommerce-src-utilities-orderutil.html#source-view.144">src/Utilities/OrderUtil.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">145</span>
+    <span class="phpdocumentor-element-found-in__line">144</span>
 </aside>
 
         <p class="phpdocumentor-summary">Check if the current admin screen is an order list table.</p>
@@ -939,9 +1007,9 @@
         <a href="#method_orders_cache_usage_is_enabled" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Utilities/OrderUtil.php"><a href="../files/woocommerce-src-utilities-orderutil.html#source-view.45">src/Utilities/OrderUtil.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Utilities/OrderUtil.php"><a href="../files/woocommerce-src-utilities-orderutil.html#source-view.44">src/Utilities/OrderUtil.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">45</span>
+    <span class="phpdocumentor-element-found-in__line">44</span>
 </aside>
 
         <p class="phpdocumentor-summary">Helper function to get whether the orders cache should be used or not.</p>
@@ -971,7 +1039,7 @@
 
     <footer class="phpdocumentor phpdocumentor-footer">
     <div class="phpdocumentor-section">
-        <span>WooCommerce Code Reference API documentation generated by <a href="http://www.phpdoc.org/">phpDocumentor</a> on August 24th, 2023 at 08:50 am.</span>
+        <span>WooCommerce Code Reference API documentation generated by <a href="http://www.phpdoc.org/">phpDocumentor</a> on July 25th, 2024 at 11:33 am.</span>
     </div>
 </footer>
 
@@ -983,7 +1051,7 @@
             'searchIndex': '..\/js\/searchIndex.json'
         };
     </script>
-    <script src="../js/searchIndex.js?updated=1692867006"></script>
-    <script src="../js/search.js?updated=1692867006"></script>
+    <script src="../js/searchIndex.js?updated=1721907209"></script>
+    <script src="../js/search.js?updated=1721907209"></script>
 </body>
 </html>

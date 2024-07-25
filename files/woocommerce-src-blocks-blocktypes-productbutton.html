@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>WooCommerce Code Reference</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="../images/favicon.png" />
+    <link rel="apple-touch-icon" href="../images/apple-touch-icon.png"/>
+    <link rel="apple-touch-icon" sizes="72x72" href="../images/apple-touch-icon-72x72.png"/>
+    <link rel="apple-touch-icon" sizes="114x114" href="../images/apple-touch-icon-114x114.png"/>
+    <link rel="stylesheet" href="../css/normalize.css">
+    <link rel="stylesheet" href="../css/base.css?updated=1721907185">
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/template.css?updated=1721907185">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0/css/all.min.css" integrity="sha256-ybRkN9dBjhcS2qrW1z+hfCxq+1aBdwyQM5wlQoQVt/0=" crossorigin="anonymous" />
+            <script src="https://cdn.jsdelivr.net/npm/css-vars-ponyfill@2"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0/js/all.min.js" integrity="sha256-0vuk8LXoyrmCjp1f0O300qo1M75ZQyhH9X3J6d+scmk=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tarekraafat/autocomplete.js@7.2.0/dist/js/autoComplete.min.js"></script>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-8KCYZ2CYMS"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-8KCYZ2CYMS', {
+		'content_group' : 'WooCommerce Core Code Reference',
+	});
+</script>
+        <script src="../js/prism.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            window.dispatchEvent(new HashChangeEvent('hashchange'));
+        });
+    </script>
+</head>
+<body id="top">
+    <header class="phpdocumentor-top-header">
+    <section class="phpdocumentor-section">
+        <div class="site-branding">
+            <a class="site-logo" href="../index.html"><img width="180" src="../images/logo.svg" alt="WooCommerce" /></a>
+        </div>
+        <nav class="main-navigation">
+            <ul>
+                <li><a href="../hooks/hooks.html">Hooks Reference</a></li>
+                <li><a href="https://docs.woocommerce.com/">Documentation</a></li>
+                <li><a href="https://woocommerce.github.io/woocommerce-rest-api-docs/">REST API Docs</a></li>
+                <li><a href="https://woocommerce.com/careers/?utm_source=woocommerce+core+code+reference&utm_medium=devdocs&utm_campaign=woo+careers" target="_blank">We're hiring!</a></li>
+            </ul>
+        </nav>
+    </section>
+</header>
+
+<div class="phpdocumentor-header">
+    <section class="phpdocumentor-section">
+        <h1 class="phpdocumentor-title">WooCommerce Code Reference</h1>
+        <section class="phpdocumentor-search">
+    <label class="phpdocumentor-label">
+        <span class="visually-hidden">Search (click ESC to close search results)</span>
+        <input id="autoComplete" tabindex="1" type="search" class="phpdocumentor-field phpdocumentor-search__field" placeholder="Loading..." disabled />
+    </label>
+</section>
+
+    </section>
+</div>
+
+    <main class="phpdocumentor">
+        <div class="phpdocumentor-section">
+            <aside class="phpdocumentor-column -four phpdocumentor-sidebar">
+    
+    <section class="phpdocumentor-sidebar__category">
+        <h2 class="phpdocumentor-sidebar__category-header">Namespaces</h2>
+                                <h3 class="phpdocumentor-sidebar__root-namespace"><a href="../namespaces/default.html"><abbr title="\">Global</abbr></a></h3>
+                                        <h4 class="phpdocumentor-sidebar__root-namespace"><a href="../namespaces/woocommerce.html"><abbr title="\WooCommerce">WooCommerce</abbr></a></h4>
+                <ul class="phpdocumentor-list">
+                                            <li><a href="../namespaces/woocommerce-admin.html"><abbr title="\WooCommerce\Admin">Admin</abbr></a></li>
+                                    </ul>
+                            <h4 class="phpdocumentor-sidebar__root-namespace"><a href="../namespaces/automattic.html"><abbr title="\Automattic">Automattic</abbr></a></h4>
+                <ul class="phpdocumentor-list">
+                                            <li><a href="../namespaces/automattic-woocommerce.html"><abbr title="\Automattic\WooCommerce">WooCommerce</abbr></a></li>
+                                    </ul>
+                        </section>
+
+        <section class="phpdocumentor-sidebar__category">
+        <h2 class="phpdocumentor-sidebar__category-header">Packages</h2>
+                    <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/WooCommerce.html"><abbr title="\WooCommerce">WooCommerce</abbr></a></h3>
+                        <ul class="phpdocumentor-list">
+                                    <li><a href="../packages/WooCommerce-Classes.html"><abbr title="\WooCommerce\Classes">Classes</abbr></a></li>
+                                    <li><a href="../packages/WooCommerce-Abstracts.html"><abbr title="\WooCommerce\Abstracts">Abstracts</abbr></a></li>
+                                    <li><a href="../packages/WooCommerce-Admin.html"><abbr title="\WooCommerce\Admin">Admin</abbr></a></li>
+                                    <li><a href="../packages/WooCommerce-Helper.html"><abbr title="\WooCommerce\Helper">Helper</abbr></a></li>
+                                    <li><a href="../packages/WooCommerce-Views.html"><abbr title="\WooCommerce\Views">Views</abbr></a></li>
+                                    <li><a href="../packages/WooCommerce-Templates.html"><abbr title="\WooCommerce\Templates">Templates</abbr></a></li>
+                                    <li><a href="../packages/WooCommerce-Reports.html"><abbr title="\WooCommerce\Reports">Reports</abbr></a></li>
+                                    <li><a href="../packages/WooCommerce-Blocks.html"><abbr title="\WooCommerce\Blocks">Blocks</abbr></a></li>
+                                    <li><a href="../packages/WooCommerce-RestApi.html"><abbr title="\WooCommerce\RestApi">RestApi</abbr></a></li>
+                                    <li><a href="../packages/WooCommerce-CLI.html"><abbr title="\WooCommerce\CLI">CLI</abbr></a></li>
+                                    <li><a href="../packages/WooCommerce-l10n.html"><abbr title="\WooCommerce\l10n">l10n</abbr></a></li>
+                                    <li><a href="../packages/WooCommerce-Webhooks.html"><abbr title="\WooCommerce\Webhooks">Webhooks</abbr></a></li>
+                                    <li><a href="../packages/WooCommerce-DataStores.html"><abbr title="\WooCommerce\DataStores">DataStores</abbr></a></li>
+                                    <li><a href="../packages/WooCommerce-Emails.html"><abbr title="\WooCommerce\Emails">Emails</abbr></a></li>
+                                    <li><a href="../packages/WooCommerce-Export.html"><abbr title="\WooCommerce\Export">Export</abbr></a></li>
+                                    <li><a href="../packages/WooCommerce-Gateways.html"><abbr title="\WooCommerce\Gateways">Gateways</abbr></a></li>
+                                    <li><a href="../packages/WooCommerce-PayPal.html"><abbr title="\WooCommerce\PayPal">PayPal</abbr></a></li>
+                                    <li><a href="../packages/WooCommerce-Import.html"><abbr title="\WooCommerce\Import">Import</abbr></a></li>
+                                    <li><a href="../packages/WooCommerce-Integrations.html"><abbr title="\WooCommerce\Integrations">Integrations</abbr></a></li>
+                                    <li><a href="../packages/WooCommerce-Interfaces.html"><abbr title="\WooCommerce\Interfaces">Interfaces</abbr></a></li>
+                                    <li><a href="../packages/WooCommerce-Interface.html"><abbr title="\WooCommerce\Interface">Interface</abbr></a></li>
+                                    <li><a href="../packages/WooCommerce-LogHandlers.html"><abbr title="\WooCommerce\LogHandlers">LogHandlers</abbr></a></li>
+                                    <li><a href="../packages/WooCommerce-PaymentTokens.html"><abbr title="\WooCommerce\PaymentTokens">PaymentTokens</abbr></a></li>
+                                    <li><a href="../packages/WooCommerce-Utilities.html"><abbr title="\WooCommerce\Utilities">Utilities</abbr></a></li>
+                                    <li><a href="../packages/WooCommerce-Shipping.html"><abbr title="\WooCommerce\Shipping">Shipping</abbr></a></li>
+                                    <li><a href="../packages/WooCommerce-Shortcodes.html"><abbr title="\WooCommerce\Shortcodes">Shortcodes</abbr></a></li>
+                                    <li><a href="../packages/WooCommerce-Tracks.html"><abbr title="\WooCommerce\Tracks">Tracks</abbr></a></li>
+                                    <li><a href="../packages/WooCommerce-Traits.html"><abbr title="\WooCommerce\Traits">Traits</abbr></a></li>
+                                    <li><a href="../packages/WooCommerce-Functions.html"><abbr title="\WooCommerce\Functions">Functions</abbr></a></li>
+                                    <li><a href="../packages/WooCommerce-WCCom.html"><abbr title="\WooCommerce\WCCom">WCCom</abbr></a></li>
+                                    <li><a href="../packages/WooCommerce-WCCOM.html"><abbr title="\WooCommerce\WCCOM">WCCOM</abbr></a></li>
+                                    <li><a href="../packages/WooCommerce-Widgets.html"><abbr title="\WooCommerce\Widgets">Widgets</abbr></a></li>
+                                    <li><a href="../packages/WooCommerce-Uninstaller.html"><abbr title="\WooCommerce\Uninstaller">Uninstaller</abbr></a></li>
+                            </ul>
+                                <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/WoocommerceAdmin.html"><abbr title="\WoocommerceAdmin">WoocommerceAdmin</abbr></a></h3>
+                                <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/WoocommerceNavigation.html"><abbr title="\WoocommerceNavigation">WoocommerceNavigation</abbr></a></h3>
+                                <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/Automattic.html"><abbr title="\Automattic">Automattic</abbr></a></h3>
+                        <ul class="phpdocumentor-list">
+                                    <li><a href="../packages/Automattic-WooCommerce.html"><abbr title="\Automattic\WooCommerce">WooCommerce</abbr></a></li>
+                            </ul>
+                                <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/WooCommerceBlocks.html"><abbr title="\WooCommerceBlocks">WooCommerceBlocks</abbr></a></h3>
+                        </section>
+    
+    <section class="phpdocumentor-sidebar__category">
+        <h2 class="phpdocumentor-sidebar__category-header">Reports</h2>
+                <h3 class="phpdocumentor-sidebar__root-package"><a href="../reports/deprecated.html">Deprecated</a></h3>
+        <h3 class="phpdocumentor-sidebar__root-package"><a href="../reports/errors.html">Errors</a></h3>
+        <h3 class="phpdocumentor-sidebar__root-package"><a href="../reports/markers.html">Markers</a></h3>
+    </section>
+
+    <section class="phpdocumentor-sidebar__category">
+        <h2 class="phpdocumentor-sidebar__category-header">Indices</h2>
+        <h3 class="phpdocumentor-sidebar__root-package"><a href="../indices/files.html">Files</a></h3>
+        <h3 class="phpdocumentor-sidebar__root-package"><a href="../hooks/hooks.html">Hooks Reference</a></h3>
+    </section>
+</aside>
+
+            <div class="phpdocumentor-column -eight phpdocumentor-content">
+                    <ul class="phpdocumentor-breadcrumbs">
+    </ul>
+
+    <article class="phpdocumentor-element -file">
+        <h2 class="phpdocumentor-content__title">ProductButton.php</h2>
+
+                
+
+        
+                    <h3 class="phpdocumentor-elements__header" id="source-code">
+                Source code
+                <a href="#source-code" class="headerlink"><i class="fas fa-link"></i></a>
+            </h3>
+            <pre id="source-view" tabindex="-1" class="language-php line-numbers linkable-line-numbers"><code>&lt;?php
+namespace Automattic\WooCommerce\Blocks\BlockTypes;
+
+use Automattic\WooCommerce\Blocks\Utils\StyleAttributesUtils;
+
+/**
+ * ProductButton class.
+ */
+class ProductButton extends AbstractBlock {
+
+	/**
+	 * Block name.
+	 *
+	 * @var string
+	 */
+	protected $block_name = &#039;product-button&#039;;
+
+
+	/**
+	 * Get the frontend script handle for this block type.
+	 *
+	 * @param string $key Data to get, or default to everything.
+	 */
+	protected function get_block_type_script( $key = null ) {
+		$script = [
+			&#039;handle&#039;       =&gt; &#039;wc-&#039; . $this-&gt;block_name . &#039;-interactivity-frontend&#039;,
+			&#039;path&#039;         =&gt; $this-&gt;asset_api-&gt;get_block_asset_build_path( $this-&gt;block_name . &#039;-interactivity-frontend&#039; ),
+			&#039;dependencies&#039; =&gt; [ &#039;wc-interactivity&#039; ],
+		];
+
+		return $key ? $script[ $key ] : $script;
+	}
+
+	/**
+	 * Register the context.
+	 */
+	protected function get_block_type_uses_context() {
+		return [ &#039;query&#039;, &#039;queryId&#039;, &#039;postId&#039; ];
+	}
+
+	/**
+	 * Enqueue frontend assets for this block, just in time for rendering.
+	 *
+	 * @param array    $attributes  Any attributes that currently are available from the block.
+	 * @param string   $content    The block content.
+	 * @param WP_Block $block    The block object.
+	 */
+	protected function enqueue_assets( array $attributes, $content, $block ) {
+		parent::enqueue_assets( $attributes, $content, $block );
+		if ( wc_current_theme_is_fse_theme() ) {
+			add_action(
+				&#039;wp_enqueue_scripts&#039;,
+				array( $this, &#039;dequeue_add_to_cart_scripts&#039; )
+			);
+		}
+	}
+
+	/**
+	 * Dequeue the add-to-cart script.
+	 * The block uses Interactivity API, it isn&#039;t necessary enqueue the add-to-cart script.
+	 */
+	public function dequeue_add_to_cart_scripts() {
+		wp_dequeue_script( &#039;wc-add-to-cart&#039; );
+	}
+
+	/**
+	 * Include and render the block.
+	 *
+	 * @param array    $attributes Block attributes. Default empty array.
+	 * @param string   $content    Block content. Default empty string.
+	 * @param WP_Block $block      Block instance.
+	 * @return string Rendered block type output.
+	 */
+	protected function render( $attributes, $content, $block ) {
+		$post_id = isset( $block-&gt;context[&#039;postId&#039;] ) ? $block-&gt;context[&#039;postId&#039;] : &#039;&#039;;
+		$product = wc_get_product( $post_id );
+
+		wc_initial_state(
+			&#039;woocommerce/product-button&#039;,
+			array(
+				&#039;inTheCartText&#039; =&gt; sprintf(
+					/* translators: %s: product number. */
+					__( &#039;%s in cart&#039;, &#039;woocommerce&#039; ),
+					&#039;###&#039;
+				),
+			)
+		);
+
+		if ( $product ) {
+			$number_of_items_in_cart = $this-&gt;get_cart_item_quantities_by_product_id( $product-&gt;get_id() );
+			$more_than_one_item      = $number_of_items_in_cart &gt; 0;
+			$initial_product_text    = $more_than_one_item ? sprintf(
+			/* translators: %s: product number. */
+				__( &#039;%s in cart&#039;, &#039;woocommerce&#039; ),
+				$number_of_items_in_cart
+			) : $product-&gt;add_to_cart_text();
+			$cart_redirect_after_add  = get_option( &#039;woocommerce_cart_redirect_after_add&#039; ) === &#039;yes&#039;;
+			$ajax_add_to_cart_enabled = get_option( &#039;woocommerce_enable_ajax_add_to_cart&#039; ) === &#039;yes&#039;;
+			$is_ajax_button           = $ajax_add_to_cart_enabled &amp;&amp; ! $cart_redirect_after_add &amp;&amp; $product-&gt;supports( &#039;ajax_add_to_cart&#039; ) &amp;&amp; $product-&gt;is_purchasable() &amp;&amp; $product-&gt;is_in_stock();
+			$html_element             = $is_ajax_button ? &#039;button&#039; : &#039;a&#039;;
+			$styles_and_classes       = StyleAttributesUtils::get_classes_and_styles_by_attributes( $attributes );
+			$classname                = $attributes[&#039;className&#039;] ?? &#039;&#039;;
+			$custom_width_classes     = isset( $attributes[&#039;width&#039;] ) ? &#039;has-custom-width wp-block-button__width-&#039; . $attributes[&#039;width&#039;] : &#039;&#039;;
+			$custom_align_classes     = isset( $attributes[&#039;textAlign&#039;] ) ? &#039;align-&#039; . $attributes[&#039;textAlign&#039;] : &#039;&#039;;
+			$html_classes             = implode(
+				&#039; &#039;,
+				array_filter(
+					array(
+						&#039;wp-block-button__link&#039;,
+						&#039;wp-element-button&#039;,
+						&#039;wc-block-components-product-button__button&#039;,
+						$product-&gt;is_purchasable() &amp;&amp; $product-&gt;is_in_stock() ? &#039;add_to_cart_button&#039; : &#039;&#039;,
+						$is_ajax_button ? &#039;ajax_add_to_cart&#039; : &#039;&#039;,
+						&#039;product_type_&#039; . $product-&gt;get_type(),
+						esc_attr( $styles_and_classes[&#039;classes&#039;] ),
+					)
+				)
+			);
+
+			$default_quantity = 1;
+			/**
+			* Filters the change the quantity to add to cart.
+			*
+			* @since 10.9.0
+			* @param number $default_quantity The default quantity.
+			* @param number $product_id The product id.
+			*/
+			$quantity_to_add = apply_filters( &#039;woocommerce_add_to_cart_quantity&#039;, $default_quantity, $product-&gt;get_id() );
+
+			$context = array(
+				&#039;quantityToAdd&#039;          =&gt; $quantity_to_add,
+				&#039;productId&#039;              =&gt; $product-&gt;get_id(),
+				&#039;addToCartText&#039;          =&gt; null !== $product-&gt;add_to_cart_text() ? $product-&gt;add_to_cart_text() : __( &#039;Add to cart&#039;, &#039;woocommerce&#039; ),
+				&#039;temporaryNumberOfItems&#039; =&gt; $number_of_items_in_cart,
+				&#039;animationStatus&#039;        =&gt; &#039;IDLE&#039;,
+			);
+
+			/**
+			 * Allow filtering of the add to cart button arguments.
+			 *
+			 * @since 9.7.0
+			 */
+			$args = apply_filters(
+				&#039;woocommerce_loop_add_to_cart_args&#039;,
+				array(
+					&#039;class&#039;      =&gt; $html_classes,
+					&#039;attributes&#039; =&gt; array(
+						&#039;data-product_id&#039;  =&gt; $product-&gt;get_id(),
+						&#039;data-product_sku&#039; =&gt; $product-&gt;get_sku(),
+						&#039;aria-label&#039;       =&gt; $product-&gt;add_to_cart_description(),
+						&#039;rel&#039;              =&gt; &#039;nofollow&#039;,
+					),
+				),
+				$product
+			);
+
+			if ( isset( $args[&#039;attributes&#039;][&#039;aria-label&#039;] ) ) {
+				$args[&#039;attributes&#039;][&#039;aria-label&#039;] = wp_strip_all_tags( $args[&#039;attributes&#039;][&#039;aria-label&#039;] );
+			}
+
+			if ( isset( WC()-&gt;cart ) &amp;&amp; ! WC()-&gt;cart-&gt;is_empty() ) {
+				$this-&gt;prevent_cache();
+			}
+
+			$interactive = array(
+				&#039;namespace&#039; =&gt; &#039;woocommerce/product-button&#039;,
+			);
+
+			$div_directives = &#039;
+				data-wc-interactive=\&#039;&#039; . wp_json_encode( $interactive, JSON_NUMERIC_CHECK ) . &#039;\&#039;
+				data-wc-context=\&#039;&#039; . wp_json_encode( $context, JSON_NUMERIC_CHECK ) . &#039;\&#039;
+			&#039;;
+
+			$button_directives = &#039;
+				data-wc-on--click=&quot;actions.addToCart&quot;
+				data-wc-class--loading=&quot;context.isLoading&quot;
+			&#039;;
+
+			$span_button_directives = &#039;
+				data-wc-text=&quot;state.addToCartText&quot;
+				data-wc-class--wc-block-slide-in=&quot;state.slideInAnimation&quot;
+				data-wc-class--wc-block-slide-out=&quot;state.slideOutAnimation&quot;
+				data-wc-on--animationend=&quot;actions.handleAnimationEnd&quot;
+				data-wc-watch=&quot;callbacks.startAnimation&quot;
+				data-wc-layout-init=&quot;callbacks.syncTemporaryNumberOfItemsOnLoad&quot;
+			&#039;;
+
+			/**
+			 * Filters the add to cart button class.
+			 *
+			 * @since 8.7.0
+			 *
+			 * @param string $class The class.
+			 */
+			return apply_filters(
+				&#039;woocommerce_loop_add_to_cart_link&#039;,
+				strtr(
+					&#039;&lt;div class=&quot;wp-block-button wc-block-components-product-button {classes} {custom_classes}&quot;
+						{div_directives}
+					&gt;
+						&lt;{html_element}
+							href=&quot;{add_to_cart_url}&quot;
+							class=&quot;{button_classes}&quot;
+							style=&quot;{button_styles}&quot;
+							{attributes}
+							{button_directives}
+						&gt;
+						&lt;span {span_button_directives}&gt; {add_to_cart_text} &lt;/span&gt;
+						&lt;/{html_element}&gt;
+						{view_cart_html}
+					&lt;/div&gt;&#039;,
+					array(
+						&#039;{classes}&#039;                =&gt; esc_attr( $text_align_styles_and_classes[&#039;class&#039;] ?? &#039;&#039; ),
+						&#039;{custom_classes}&#039;         =&gt; esc_attr( $classname . &#039; &#039; . $custom_width_classes . &#039; &#039; . $custom_align_classes ),
+						&#039;{html_element}&#039;           =&gt; $html_element,
+						&#039;{add_to_cart_url}&#039;        =&gt; esc_url( $product-&gt;add_to_cart_url() ),
+						&#039;{button_classes}&#039;         =&gt; isset( $args[&#039;class&#039;] ) ? esc_attr( $args[&#039;class&#039;] . &#039; wc-interactive&#039; ) : &#039;wc-interactive&#039;,
+						&#039;{button_styles}&#039;          =&gt; esc_attr( $styles_and_classes[&#039;styles&#039;] ),
+						&#039;{attributes}&#039;             =&gt; isset( $args[&#039;attributes&#039;] ) ? wc_implode_html_attributes( $args[&#039;attributes&#039;] ) : &#039;&#039;,
+						&#039;{add_to_cart_text}&#039;       =&gt; esc_html( $initial_product_text ),
+						&#039;{div_directives}&#039;         =&gt; $is_ajax_button ? $div_directives : &#039;&#039;,
+						&#039;{button_directives}&#039;      =&gt; $is_ajax_button ? $button_directives : &#039;&#039;,
+						&#039;{span_button_directives}&#039; =&gt; $is_ajax_button ? $span_button_directives : &#039;&#039;,
+						&#039;{view_cart_html}&#039;         =&gt; $is_ajax_button ? $this-&gt;get_view_cart_html() : &#039;&#039;,
+					)
+				),
+				$product,
+				$args
+			);
+		}
+	}
+
+	/**
+	 * Get the number of items in the cart for a given product id.
+	 *
+	 * @param number $product_id The product id.
+	 * @return number The number of items in the cart.
+	 */
+	private function get_cart_item_quantities_by_product_id( $product_id ) {
+		if ( ! isset( WC()-&gt;cart ) ) {
+			return 0;
+		}
+
+		$cart = WC()-&gt;cart-&gt;get_cart_item_quantities();
+		return isset( $cart[ $product_id ] ) ? $cart[ $product_id ] : 0;
+	}
+
+	/**
+	 * Prevent caching on certain pages
+	 */
+	private function prevent_cache() {
+		\WC_Cache_Helper::set_nocache_constants();
+		nocache_headers();
+	}
+
+	/**
+	 * Get the view cart link html.
+	 *
+	 * @return string The view cart html.
+	 */
+	private function get_view_cart_html() {
+		return sprintf(
+			&#039;&lt;span
+				hidden
+				data-wc-bind--hidden=&quot;!state.displayViewCart&quot;
+			&gt;
+				&lt;a
+					href=&quot;%1$s&quot;
+					class=&quot;added_to_cart wc_forward&quot;
+					title=&quot;%2$s&quot;
+				&gt;
+					%2$s
+				&lt;/a&gt;
+			&lt;/span&gt;&#039;,
+			wc_get_cart_url(),
+			__( &#039;View cart&#039;, &#039;woocommerce&#039; )
+		);
+	}
+}
+</code></pre>
+            </article>
+            </div>
+        </div>
+        <a href="#top" class="phpdocumentor-back-to-top"><i class="fas fa-chevron-circle-up"></i></a>
+
+    </main>
+
+    <footer class="phpdocumentor phpdocumentor-footer">
+    <div class="phpdocumentor-section">
+        <span>WooCommerce Code Reference API documentation generated by <a href="http://www.phpdoc.org/">phpDocumentor</a> on July 25th, 2024 at 11:33 am.</span>
+    </div>
+</footer>
+
+    <script>
+        cssVars({});
+    </script>
+    <script>
+        var searchParams = {
+            'searchIndex': '..\/js\/searchIndex.json'
+        };
+    </script>
+    <script src="../js/searchIndex.js?updated=1721907185"></script>
+    <script src="../js/search.js?updated=1721907185"></script>
+</body>
+</html>

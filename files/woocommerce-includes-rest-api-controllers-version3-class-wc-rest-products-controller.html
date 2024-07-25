@@ -9,9 +9,9 @@
     <link rel="apple-touch-icon" sizes="72x72" href="../images/apple-touch-icon-72x72.png"/>
     <link rel="apple-touch-icon" sizes="114x114" href="../images/apple-touch-icon-114x114.png"/>
     <link rel="stylesheet" href="../css/normalize.css">
-    <link rel="stylesheet" href="../css/base.css?updated=1692866948">
+    <link rel="stylesheet" href="../css/base.css?updated=1721907183">
     <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../css/template.css?updated=1692866948">
+    <link rel="stylesheet" href="../css/template.css?updated=1721907183">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0/css/all.min.css" integrity="sha256-ybRkN9dBjhcS2qrW1z+hfCxq+1aBdwyQM5wlQoQVt/0=" crossorigin="anonymous" />
             <script src="https://cdn.jsdelivr.net/npm/css-vars-ponyfill@2"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0/js/all.min.js" integrity="sha256-0vuk8LXoyrmCjp1f0O300qo1M75ZQyhH9X3J6d+scmk=" crossorigin="anonymous"></script>
@@ -125,6 +125,7 @@
                         <ul class="phpdocumentor-list">
                                     <li><a href="../packages/Automattic-WooCommerce.html"><abbr title="\Automattic\WooCommerce">WooCommerce</abbr></a></li>
                             </ul>
+                                <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/WooCommerceBlocks.html"><abbr title="\WooCommerceBlocks">WooCommerceBlocks</abbr></a></h3>
                         </section>
     
     <section class="phpdocumentor-sidebar__category">
@@ -192,6 +193,82 @@ class WC_REST_Products_Controller extends WC_REST_Products_V2_Controller {
 	 * @var string
 	 */
 	private $search_sku_in_product_lookup_table = &#039;&#039;;
+
+	/**
+	 * Suggested product ids.
+	 *
+	 * @var array
+	 */
+	private $suggested_products_ids = array();
+
+	/**
+	 * Register the routes for products.
+	 */
+	public function register_routes() {
+		parent::register_routes();
+
+		register_rest_route(
+			$this-&gt;namespace,
+			&#039;/&#039; . $this-&gt;rest_base . &#039;/suggested-products&#039;,
+			array(
+				array(
+					&#039;methods&#039;             =&gt; WP_REST_Server::READABLE,
+					&#039;callback&#039;            =&gt; array( $this, &#039;get_suggested_products&#039; ),
+					&#039;permission_callback&#039; =&gt; array( $this, &#039;get_items_permissions_check&#039; ),
+					&#039;args&#039;                =&gt; $this-&gt;get_suggested_products_collection_params(),
+				),
+				&#039;schema&#039; =&gt; array( $this, &#039;get_public_item_schema&#039; ),
+			)
+		);
+
+		register_rest_route(
+			$this-&gt;namespace,
+			&#039;/&#039; . $this-&gt;rest_base . &#039;/(?P&lt;id&gt;[\d]+)/duplicate&#039;,
+			array(
+				&#039;args&#039;   =&gt; array(
+					&#039;id&#039; =&gt; array(
+						&#039;description&#039; =&gt; __( &#039;Unique identifier for the resource.&#039;, &#039;woocommerce&#039; ),
+						&#039;type&#039;        =&gt; &#039;integer&#039;,
+					),
+				),
+				array(
+					&#039;methods&#039;             =&gt; WP_REST_Server::CREATABLE,
+					&#039;callback&#039;            =&gt; array( $this, &#039;duplicate_product&#039; ),
+					&#039;permission_callback&#039; =&gt; array( $this, &#039;create_item_permissions_check&#039; ),
+					&#039;args&#039;                =&gt; $this-&gt;get_endpoint_args_for_item_schema( WP_REST_Server::EDITABLE ),
+				),
+				&#039;schema&#039; =&gt; array( $this, &#039;get_public_item_schema&#039; ),
+			)
+		);
+	}
+
+	/**
+	 * Duplicate a product and returns the duplicated product.
+	 * The product status is set to &quot;draft&quot; and the name includes a &quot;(copy)&quot; at the end by default.
+	 *
+	 * @param WP_REST_Request $request Request data.
+	 * @return WP_REST_Response|WP_Error
+	 */
+	public function duplicate_product( $request ) {
+		$product_id = $request-&gt;get_param( &#039;id&#039; );
+		$product    = wc_get_product( $product_id );
+
+		if ( ! $product ) {
+			return new WP_Error( &#039;woocommerce_rest_product_invalid_id&#039;, __( &#039;Invalid product ID.&#039;, &#039;woocommerce&#039; ), array( &#039;status&#039; =&gt; 404 ) );
+		}
+
+		// Creating product object from request data in preparation for copying.
+		$updated_product    = $this-&gt;prepare_object_for_database( $request );
+		$duplicated_product = ( new WC_Admin_Duplicate_Product() )-&gt;product_duplicate( $updated_product );
+
+		if ( is_wp_error( $duplicated_product ) ) {
+			return new WP_Error( &#039;woocommerce_rest_product_duplicate_error&#039;, $duplicated_product-&gt;get_error_message(), array( &#039;status&#039; =&gt; 400 ) );
+		}
+
+		$response_data = $duplicated_product-&gt;get_data();
+
+		return new WP_REST_Response( $response_data, 200 );
+	}
 
 	/**
 	 * Get the images for a product or product variation.
@@ -392,6 +469,15 @@ class WC_REST_Products_Controller extends WC_REST_Products_V2_Controller {
 			$args[&#039;meta_key&#039;] = $ordering_args[&#039;meta_key&#039;]; // WPCS: slow query ok.
 		}
 
+		/*
+		 * When the suggested products ids is not empty,
+		 * filter the query to return only the suggested products,
+		 * overwriting the post__in parameter.
+		 */
+		if ( ! empty( $this-&gt;suggested_products_ids ) ) {
+			$args[&#039;post__in&#039;] = $this-&gt;suggested_products_ids;
+		}
+
 		return $args;
 	}
 
@@ -445,7 +531,7 @@ class WC_REST_Products_Controller extends WC_REST_Products_V2_Controller {
 		global $wpdb;
 		if ( ! empty( $this-&gt;search_sku_in_product_lookup_table ) ) {
 			$like_search = &#039;%&#039; . $wpdb-&gt;esc_like( $this-&gt;search_sku_in_product_lookup_table ) . &#039;%&#039;;
-			$where .= &#039; AND &#039; . $wpdb-&gt;prepare( &#039;(wc_product_meta_lookup.sku LIKE %s)&#039;, $like_search );
+			$where      .= &#039; AND &#039; . $wpdb-&gt;prepare( &#039;(wc_product_meta_lookup.sku LIKE %s)&#039;, $like_search );
 		}
 		return $where;
 	}
@@ -490,6 +576,7 @@ class WC_REST_Products_Controller extends WC_REST_Products_V2_Controller {
 
 				if ( 0 === $index ) {
 					$product-&gt;set_image_id( $attachment_id );
+					wc_product_attach_featured_image( $attachment_id, $product, false );
 				} else {
 					$gallery[] = $attachment_id;
 				}
@@ -587,6 +674,11 @@ class WC_REST_Products_Controller extends WC_REST_Products_V2_Controller {
 		// Comment status.
 		if ( isset( $request[&#039;reviews_allowed&#039;] ) ) {
 			$product-&gt;set_reviews_allowed( $request[&#039;reviews_allowed&#039;] );
+		}
+
+		// Post password.
+		if ( isset( $request[&#039;post_password&#039;] ) ) {
+			$product-&gt;set_post_password( $request[&#039;post_password&#039;] );
 		}
 
 		// Virtual.
@@ -1197,7 +1289,7 @@ class WC_REST_Products_Controller extends WC_REST_Products_V2_Controller {
 				),
 				&#039;stock_quantity&#039;        =&gt; array(
 					&#039;description&#039; =&gt; __( &#039;Stock quantity.&#039;, &#039;woocommerce&#039; ),
-					&#039;type&#039;        =&gt; &#039;integer&#039;,
+					&#039;type&#039;        =&gt; has_filter( &#039;woocommerce_stock_amount&#039;, &#039;intval&#039; ) ? &#039;integer&#039; : &#039;number&#039;,
 					&#039;context&#039;     =&gt; array( &#039;view&#039;, &#039;edit&#039; ),
 				),
 				&#039;stock_status&#039;          =&gt; array(
@@ -1226,7 +1318,7 @@ class WC_REST_Products_Controller extends WC_REST_Products_V2_Controller {
 					&#039;context&#039;     =&gt; array( &#039;view&#039;, &#039;edit&#039; ),
 					&#039;readonly&#039;    =&gt; true,
 				),
-				&#039;low_stock_amount&#039;       =&gt; array(
+				&#039;low_stock_amount&#039;      =&gt; array(
 					&#039;description&#039; =&gt; __( &#039;Low Stock amount for the product.&#039;, &#039;woocommerce&#039; ),
 					&#039;type&#039;        =&gt; array( &#039;integer&#039;, &#039;null&#039; ),
 					&#039;context&#039;     =&gt; array( &#039;view&#039;, &#039;edit&#039; ),
@@ -1295,6 +1387,11 @@ class WC_REST_Products_Controller extends WC_REST_Products_V2_Controller {
 					&#039;description&#039; =&gt; __( &#039;Allow reviews.&#039;, &#039;woocommerce&#039; ),
 					&#039;type&#039;        =&gt; &#039;boolean&#039;,
 					&#039;default&#039;     =&gt; true,
+					&#039;context&#039;     =&gt; array( &#039;view&#039;, &#039;edit&#039; ),
+				),
+				&#039;post_password&#039;         =&gt; array(
+					&#039;description&#039; =&gt; __( &#039;Post password.&#039;, &#039;woocommerce&#039; ),
+					&#039;type&#039;        =&gt; &#039;string&#039;,
 					&#039;context&#039;     =&gt; array( &#039;view&#039;, &#039;edit&#039; ),
 				),
 				&#039;average_rating&#039;        =&gt; array(
@@ -1453,7 +1550,7 @@ class WC_REST_Products_Controller extends WC_REST_Products_V2_Controller {
 						),
 					),
 				),
-				&#039;has_options&#039;     =&gt; array(
+				&#039;has_options&#039;           =&gt; array(
 					&#039;description&#039; =&gt; __( &#039;Shows if the product needs to be configured before it can be bought.&#039;, &#039;woocommerce&#039; ),
 					&#039;type&#039;        =&gt; &#039;boolean&#039;,
 					&#039;context&#039;     =&gt; array( &#039;view&#039;, &#039;edit&#039; ),
@@ -1630,6 +1727,72 @@ class WC_REST_Products_Controller extends WC_REST_Products_V2_Controller {
 	}
 
 	/**
+	 * Add new options for the suggested-products endpoint.
+	 *
+	 * @return array
+	 */
+	public function get_suggested_products_collection_params() {
+		$params = parent::get_collection_params();
+
+		$params[&#039;categories&#039;] = array(
+			&#039;description&#039;       =&gt; __( &#039;Limit result set to specific product categorie ids.&#039;, &#039;woocommerce&#039; ),
+			&#039;type&#039;              =&gt; &#039;array&#039;,
+			&#039;items&#039;             =&gt; array(
+				&#039;type&#039; =&gt; &#039;integer&#039;,
+			),
+			&#039;default&#039;           =&gt; array(),
+			&#039;sanitize_callback&#039; =&gt; &#039;wp_parse_id_list&#039;,
+			&#039;validate_callback&#039; =&gt; &#039;rest_validate_request_arg&#039;,
+		);
+
+		$params[&#039;tags&#039;] = array(
+			&#039;description&#039;       =&gt; __( &#039;Limit result set to specific product tag ids.&#039;, &#039;woocommerce&#039; ),
+			&#039;type&#039;              =&gt; &#039;array&#039;,
+			&#039;items&#039;             =&gt; array(
+				&#039;type&#039; =&gt; &#039;integer&#039;,
+			),
+			&#039;default&#039;           =&gt; array(),
+			&#039;validate_callback&#039; =&gt; &#039;rest_validate_request_arg&#039;,
+			&#039;sanitize_callback&#039; =&gt; &#039;wp_parse_id_list&#039;,
+		);
+
+		$params[&#039;limit&#039;] = array(
+			&#039;description&#039;       =&gt; __( &#039;Limit result set to specific amount of suggested products.&#039;, &#039;woocommerce&#039; ),
+			&#039;type&#039;              =&gt; &#039;integer&#039;,
+			&#039;default&#039;           =&gt; 5,
+			&#039;validate_callback&#039; =&gt; &#039;rest_validate_request_arg&#039;,
+			&#039;sanitize_callback&#039; =&gt; &#039;absint&#039;,
+		);
+
+		return $params;
+	}
+
+	/**
+	 * Get the downloads for a product.
+	 *
+	 * @param WC_Product $product Product instance.
+	 *
+	 * @return array
+	 */
+	protected function get_downloads( $product ) {
+		$downloads = array();
+
+		$context = isset( $this-&gt;request ) &amp;&amp; isset( $this-&gt;request[&#039;context&#039;] ) ? $this-&gt;request[&#039;context&#039;] : &#039;view&#039;;
+
+		if ( $product-&gt;is_downloadable() || &#039;edit&#039; === $context ) {
+			foreach ( $product-&gt;get_downloads() as $file_id =&gt; $file ) {
+				$downloads[] = array(
+					&#039;id&#039;   =&gt; $file_id, // MD5 hash.
+					&#039;name&#039; =&gt; $file[&#039;name&#039;],
+					&#039;file&#039; =&gt; $file[&#039;file&#039;],
+				);
+			}
+		}
+
+		return $downloads;
+	}
+
+	/**
 	 * Get product data.
 	 *
 	 * @param WC_Product $product Product instance.
@@ -1651,6 +1814,10 @@ class WC_REST_Products_Controller extends WC_REST_Products_V2_Controller {
 			// Add has_options if needed.
 			if ( in_array( &#039;has_options&#039;, $fields, true ) ) {
 				$data[&#039;has_options&#039;] = $product-&gt;has_options( $context );
+			}
+
+			if ( in_array( &#039;post_password&#039;, $fields, true ) ) {
+				$data[&#039;post_password&#039;] = $product-&gt;get_post_password( $context );
 			}
 
 			$post_type_obj = get_post_type_object( $this-&gt;post_type );
@@ -1680,6 +1847,38 @@ class WC_REST_Products_Controller extends WC_REST_Products_V2_Controller {
 
 		return $data;
 	}
+
+	/**
+	 * Get the suggested products.
+	 *
+	 * @param WP_REST_Request $request Request object.
+	 * @return object
+	 */
+	public function get_suggested_products( $request ) {
+		$categories  = $request-&gt;get_param( &#039;categories&#039; );
+		$tags        = $request-&gt;get_param( &#039;tags&#039; );
+		$exclude_ids = $request-&gt;get_param( &#039;exclude&#039; );
+		$limit       = $request-&gt;get_param( &#039;limit&#039; ) ? $request-&gt;get_param( &#039;limit&#039; ) : 5;
+
+		$data_store                   = WC_Data_Store::load( &#039;product&#039; );
+		$this-&gt;suggested_products_ids = $data_store-&gt;get_related_products(
+			$categories,
+			$tags,
+			$exclude_ids,
+			$limit,
+			null // No need to pass the product ID.
+		);
+
+		// When no suggested products are found, return an empty array.
+		if ( empty( $this-&gt;suggested_products_ids ) ) {
+			return array();
+		}
+
+		// Ensure to respect the limit, since the data store may return more than the limit.
+		$this-&gt;suggested_products_ids = array_slice( $this-&gt;suggested_products_ids, 0, $limit );
+
+		return parent::get_items( $request );
+	}
 }
 </code></pre>
             </article>
@@ -1691,7 +1890,7 @@ class WC_REST_Products_Controller extends WC_REST_Products_V2_Controller {
 
     <footer class="phpdocumentor phpdocumentor-footer">
     <div class="phpdocumentor-section">
-        <span>WooCommerce Code Reference API documentation generated by <a href="http://www.phpdoc.org/">phpDocumentor</a> on August 24th, 2023 at 08:49 am.</span>
+        <span>WooCommerce Code Reference API documentation generated by <a href="http://www.phpdoc.org/">phpDocumentor</a> on July 25th, 2024 at 11:33 am.</span>
     </div>
 </footer>
 
@@ -1703,7 +1902,7 @@ class WC_REST_Products_Controller extends WC_REST_Products_V2_Controller {
             'searchIndex': '..\/js\/searchIndex.json'
         };
     </script>
-    <script src="../js/searchIndex.js?updated=1692866948"></script>
-    <script src="../js/search.js?updated=1692866948"></script>
+    <script src="../js/searchIndex.js?updated=1721907183"></script>
+    <script src="../js/search.js?updated=1721907183"></script>
 </body>
 </html>
