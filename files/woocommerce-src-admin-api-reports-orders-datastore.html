@@ -4,14 +4,13 @@
     <meta charset="utf-8">
     <title>WooCommerce Code Reference</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="../images/favicon.png" />
-    <link rel="apple-touch-icon" href="../images/apple-touch-icon.png"/>
-    <link rel="apple-touch-icon" sizes="72x72" href="../images/apple-touch-icon-72x72.png"/>
-    <link rel="apple-touch-icon" sizes="114x114" href="../images/apple-touch-icon-114x114.png"/>
+    <link rel="icon" href="../images/favicon-32x32.png" sizes="32x32" />
+    <link rel="icon" href="../images/favicon-192x192.png" sizes="192x192" />
+    <link rel="apple-touch-icon" href="../images/favicon-180x180.png" />
+
     <link rel="stylesheet" href="../css/normalize.css">
-    <link rel="stylesheet" href="../css/base.css?updated=1721907184">
-    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../css/template.css?updated=1721907184">
+    <link rel="stylesheet" href="../css/base.css?updated=1747386861">
+    <link rel="stylesheet" href="../css/template.css?updated=1747386861">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0/css/all.min.css" integrity="sha256-ybRkN9dBjhcS2qrW1z+hfCxq+1aBdwyQM5wlQoQVt/0=" crossorigin="anonymous" />
             <script src="https://cdn.jsdelivr.net/npm/css-vars-ponyfill@2"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0/js/all.min.js" integrity="sha256-0vuk8LXoyrmCjp1f0O300qo1M75ZQyhH9X3J6d+scmk=" crossorigin="anonymous"></script>
@@ -38,14 +37,13 @@
     <header class="phpdocumentor-top-header">
     <section class="phpdocumentor-section">
         <div class="site-branding">
-            <a class="site-logo" href="../index.html"><img width="180" src="../images/logo.svg" alt="WooCommerce" /></a>
+            <a class="site-logo" href="../index.html"><img src="../images/logo.png" alt="WooCommerce" /></a>
         </div>
         <nav class="main-navigation">
             <ul>
                 <li><a href="../hooks/hooks.html">Hooks Reference</a></li>
-                <li><a href="https://docs.woocommerce.com/">Documentation</a></li>
+                <li><a href="https://developer.woocommerce.com/docs/">Documentation</a></li>
                 <li><a href="https://woocommerce.github.io/woocommerce-rest-api-docs/">REST API Docs</a></li>
-                <li><a href="https://woocommerce.com/careers/?utm_source=woocommerce+core+code+reference&utm_medium=devdocs&utm_campaign=woo+careers" target="_blank">We're hiring!</a></li>
             </ul>
         </nav>
     </section>
@@ -53,7 +51,7 @@
 
 <div class="phpdocumentor-header">
     <section class="phpdocumentor-section">
-        <h1 class="phpdocumentor-title">WooCommerce Code Reference</h1>
+        <h1 class="phpdocumentor-title"><a href="../index.html">WooCommerce Code Reference</a></h1>
         <section class="phpdocumentor-search">
     <label class="phpdocumentor-label">
         <span class="visually-hidden">Search (click ESC to close search results)</span>
@@ -74,6 +72,10 @@
                                         <h4 class="phpdocumentor-sidebar__root-namespace"><a href="../namespaces/woocommerce.html"><abbr title="\WooCommerce">WooCommerce</abbr></a></h4>
                 <ul class="phpdocumentor-list">
                                             <li><a href="../namespaces/woocommerce-admin.html"><abbr title="\WooCommerce\Admin">Admin</abbr></a></li>
+                                    </ul>
+                            <h4 class="phpdocumentor-sidebar__root-namespace"><a href="../namespaces/mailpoet.html"><abbr title="\MailPoet">MailPoet</abbr></a></h4>
+                <ul class="phpdocumentor-list">
+                                            <li><a href="../namespaces/mailpoet-emaileditor.html"><abbr title="\MailPoet\EmailEditor">EmailEditor</abbr></a></li>
                                     </ul>
                             <h4 class="phpdocumentor-sidebar__root-namespace"><a href="../namespaces/automattic.html"><abbr title="\Automattic">Automattic</abbr></a></h4>
                 <ul class="phpdocumentor-list">
@@ -119,8 +121,10 @@
                                     <li><a href="../packages/WooCommerce-Widgets.html"><abbr title="\WooCommerce\Widgets">Widgets</abbr></a></li>
                                     <li><a href="../packages/WooCommerce-Uninstaller.html"><abbr title="\WooCommerce\Uninstaller">Uninstaller</abbr></a></li>
                             </ul>
-                                <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/WoocommerceAdmin.html"><abbr title="\WoocommerceAdmin">WoocommerceAdmin</abbr></a></h3>
-                                <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/WoocommerceNavigation.html"><abbr title="\WoocommerceNavigation">WoocommerceNavigation</abbr></a></h3>
+                                <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/MailPoet.html"><abbr title="\MailPoet">MailPoet</abbr></a></h3>
+                        <ul class="phpdocumentor-list">
+                                    <li><a href="../packages/MailPoet-EmailEditor.html"><abbr title="\MailPoet\EmailEditor">EmailEditor</abbr></a></li>
+                            </ul>
                                 <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/Automattic.html"><abbr title="\Automattic">Automattic</abbr></a></h3>
                         <ul class="phpdocumentor-list">
                                     <li><a href="../packages/Automattic-WooCommerce.html"><abbr title="\Automattic\WooCommerce">WooCommerce</abbr></a></li>
@@ -172,7 +176,6 @@ use Automattic\WooCommerce\Admin\API\Reports\DataStore as ReportsDataStore;
 use Automattic\WooCommerce\Admin\API\Reports\DataStoreInterface;
 use Automattic\WooCommerce\Admin\API\Reports\SqlQuery;
 use Automattic\WooCommerce\Admin\API\Reports\Cache;
-use Automattic\WooCommerce\Admin\API\Reports\TimeInterval;
 
 
 /**
@@ -183,6 +186,8 @@ class DataStore extends ReportsDataStore implements DataStoreInterface {
 
 	/**
 	 * Dynamically sets the date column name based on configuration
+	 *
+	 * @override ReportsDataStore::__construct()
 	 */
 	public function __construct() {
 		$this-&gt;date_column_name = get_option( &#039;woocommerce_date_type&#039;, &#039;date_paid&#039; );
@@ -192,6 +197,8 @@ class DataStore extends ReportsDataStore implements DataStoreInterface {
 	/**
 	 * Table used to get the data.
 	 *
+	 * @override ReportsDataStore::$table_name
+	 *
 	 * @var string
 	 */
 	protected static $table_name = &#039;wc_order_stats&#039;;
@@ -199,12 +206,16 @@ class DataStore extends ReportsDataStore implements DataStoreInterface {
 	/**
 	 * Cache identifier.
 	 *
+	 * @override ReportsDataStore::$cache_key
+	 *
 	 * @var string
 	 */
 	protected $cache_key = &#039;orders&#039;;
 
 	/**
 	 * Mapping columns to data type to return correct response types.
+	 *
+	 * @override ReportsDataStore::$column_types
 	 *
 	 * @var array
 	 */
@@ -224,16 +235,20 @@ class DataStore extends ReportsDataStore implements DataStoreInterface {
 	/**
 	 * Data store context used to pass to filters.
 	 *
+	 * @override ReportsDataStore::$context
+	 *
 	 * @var string
 	 */
 	protected $context = &#039;orders&#039;;
 
 	/**
 	 * Assign report columns once full table name has been assigned.
+	 *
+	 * @override ReportsDataStore::assign_report_columns()
 	 */
 	protected function assign_report_columns() {
 		$table_name = self::get_db_table_name();
-		// Avoid ambigious columns in SQL query.
+		// Avoid ambiguous columns in SQL query.
 		$this-&gt;report_columns = array(
 			&#039;order_id&#039;         =&gt; &quot;DISTINCT {$table_name}.order_id&quot;,
 			&#039;parent_id&#039;        =&gt; &quot;{$table_name}.parent_id&quot;,
@@ -371,116 +386,117 @@ class DataStore extends ReportsDataStore implements DataStoreInterface {
 	}
 
 	/**
-	 * Returns the report data based on parameters supplied by the user.
+	 * Get the default query arguments to be used by get_data().
+	 * These defaults are only partially applied when used via REST API, as that has its own defaults.
 	 *
-	 * @param array $query_args  Query parameters.
-	 * @return stdClass|WP_Error Data.
+	 * @override ReportsDataStore::get_default_query_vars()
+	 *
+	 * @return array Query parameters.
 	 */
-	public function get_data( $query_args ) {
+	public function get_default_query_vars() {
+		$defaults = array_merge(
+			parent::get_default_query_vars(),
+			array(
+				&#039;orderby&#039;           =&gt; $this-&gt;date_column_name,
+				&#039;product_includes&#039;  =&gt; array(),
+				&#039;product_excludes&#039;  =&gt; array(),
+				&#039;coupon_includes&#039;   =&gt; array(),
+				&#039;coupon_excludes&#039;   =&gt; array(),
+				&#039;tax_rate_includes&#039; =&gt; array(),
+				&#039;tax_rate_excludes&#039; =&gt; array(),
+				&#039;customer_type&#039;     =&gt; null,
+				&#039;status_is&#039;         =&gt; array(),
+				&#039;extended_info&#039;     =&gt; false,
+				&#039;refunds&#039;           =&gt; null,
+				&#039;order_includes&#039;    =&gt; array(),
+				&#039;order_excludes&#039;    =&gt; array(),
+			)
+		);
+
+		return $defaults;
+	}
+
+	/**
+	 * Returns the report data based on normalized parameters.
+	 * Will be called by `get_data` if there is no data in cache.
+	 *
+	 * @override ReportsDataStore::get_noncached_data()
+	 *
+	 * @see get_data
+	 * @param array $query_args Query parameters.
+	 * @return stdClass|WP_Error Data object `{ totals: *, intervals: array, total: int, pages: int, page_no: int }`, or error.
+	 */
+	public function get_noncached_data( $query_args ) {
 		global $wpdb;
 
-		// These defaults are only partially applied when used via REST API, as that has its own defaults.
-		$defaults   = array(
-			&#039;per_page&#039;          =&gt; get_option( &#039;posts_per_page&#039; ),
-			&#039;page&#039;              =&gt; 1,
-			&#039;order&#039;             =&gt; &#039;DESC&#039;,
-			&#039;orderby&#039;           =&gt; $this-&gt;date_column_name,
-			&#039;before&#039;            =&gt; TimeInterval::default_before(),
-			&#039;after&#039;             =&gt; TimeInterval::default_after(),
-			&#039;fields&#039;            =&gt; &#039;*&#039;,
-			&#039;product_includes&#039;  =&gt; array(),
-			&#039;product_excludes&#039;  =&gt; array(),
-			&#039;coupon_includes&#039;   =&gt; array(),
-			&#039;coupon_excludes&#039;   =&gt; array(),
-			&#039;tax_rate_includes&#039; =&gt; array(),
-			&#039;tax_rate_excludes&#039; =&gt; array(),
-			&#039;customer_type&#039;     =&gt; null,
-			&#039;status_is&#039;         =&gt; array(),
-			&#039;extended_info&#039;     =&gt; false,
-			&#039;refunds&#039;           =&gt; null,
-			&#039;order_includes&#039;    =&gt; array(),
-			&#039;order_excludes&#039;    =&gt; array(),
+		$this-&gt;initialize_queries();
+
+		$data = (object) array(
+			&#039;data&#039;    =&gt; array(),
+			&#039;total&#039;   =&gt; 0,
+			&#039;pages&#039;   =&gt; 0,
+			&#039;page_no&#039; =&gt; 0,
 		);
-		$query_args = wp_parse_args( $query_args, $defaults );
-		$this-&gt;normalize_timezones( $query_args, $defaults );
 
-		/*
-		 * We need to get the cache key here because
-		 * parent::update_intervals_sql_params() modifies $query_args.
-		 */
-		$cache_key = $this-&gt;get_cache_key( $query_args );
-		$data      = $this-&gt;get_cached_data( $cache_key );
+		$selections = $this-&gt;selected_columns( $query_args );
+		$params     = $this-&gt;get_limit_params( $query_args );
+		$this-&gt;add_sql_query_params( $query_args );
+		/* phpcs:disable WordPress.DB.PreparedSQL.InterpolatedNotPrepared */
+		$db_records_count = (int) $wpdb-&gt;get_var(
+			&quot;SELECT COUNT( DISTINCT tt.order_id ) FROM (
+				{$this-&gt;subquery-&gt;get_query_statement()}
+			) AS tt&quot;
+		);
+		/* phpcs:enable */
 
-		if ( false === $data ) {
-			$this-&gt;initialize_queries();
-
+		if ( 0 === $params[&#039;per_page&#039;] ) {
+			$total_pages = 0;
+		} else {
+			$total_pages = (int) ceil( $db_records_count / $params[&#039;per_page&#039;] );
+		}
+		if ( $query_args[&#039;page&#039;] &lt; 1 || $query_args[&#039;page&#039;] &gt; $total_pages ) {
 			$data = (object) array(
 				&#039;data&#039;    =&gt; array(),
-				&#039;total&#039;   =&gt; 0,
+				&#039;total&#039;   =&gt; $db_records_count,
 				&#039;pages&#039;   =&gt; 0,
 				&#039;page_no&#039; =&gt; 0,
 			);
-
-			$selections = $this-&gt;selected_columns( $query_args );
-			$params     = $this-&gt;get_limit_params( $query_args );
-			$this-&gt;add_sql_query_params( $query_args );
-			/* phpcs:disable WordPress.DB.PreparedSQL.InterpolatedNotPrepared */
-			$db_records_count = (int) $wpdb-&gt;get_var(
-				&quot;SELECT COUNT( DISTINCT tt.order_id ) FROM (
-					{$this-&gt;subquery-&gt;get_query_statement()}
-				) AS tt&quot;
-			);
-			/* phpcs:enable */
-
-			if ( 0 === $params[&#039;per_page&#039;] ) {
-				$total_pages = 0;
-			} else {
-				$total_pages = (int) ceil( $db_records_count / $params[&#039;per_page&#039;] );
-			}
-			if ( $query_args[&#039;page&#039;] &lt; 1 || $query_args[&#039;page&#039;] &gt; $total_pages ) {
-				$data = (object) array(
-					&#039;data&#039;    =&gt; array(),
-					&#039;total&#039;   =&gt; $db_records_count,
-					&#039;pages&#039;   =&gt; 0,
-					&#039;page_no&#039; =&gt; 0,
-				);
-				return $data;
-			}
-
-			$this-&gt;subquery-&gt;clear_sql_clause( &#039;select&#039; );
-			$this-&gt;subquery-&gt;add_sql_clause( &#039;select&#039;, $selections );
-			$this-&gt;subquery-&gt;add_sql_clause( &#039;order_by&#039;, $this-&gt;get_sql_clause( &#039;order_by&#039; ) );
-			$this-&gt;subquery-&gt;add_sql_clause( &#039;limit&#039;, $this-&gt;get_sql_clause( &#039;limit&#039; ) );
-			/* phpcs:disable WordPress.DB.PreparedSQL.NotPrepared */
-			$orders_data = $wpdb-&gt;get_results(
-				$this-&gt;subquery-&gt;get_query_statement(),
-				ARRAY_A
-			);
-			/* phpcs:enable */
-
-			if ( null === $orders_data ) {
-				return $data;
-			}
-
-			if ( $query_args[&#039;extended_info&#039;] ) {
-				$this-&gt;include_extended_info( $orders_data, $query_args );
-			}
-
-			$orders_data = array_map( array( $this, &#039;cast_numbers&#039; ), $orders_data );
-			$data        = (object) array(
-				&#039;data&#039;    =&gt; $orders_data,
-				&#039;total&#039;   =&gt; $db_records_count,
-				&#039;pages&#039;   =&gt; $total_pages,
-				&#039;page_no&#039; =&gt; (int) $query_args[&#039;page&#039;],
-			);
-
-			$this-&gt;set_cached_data( $cache_key, $data );
+			return $data;
 		}
+
+		$this-&gt;subquery-&gt;clear_sql_clause( &#039;select&#039; );
+		$this-&gt;subquery-&gt;add_sql_clause( &#039;select&#039;, $selections );
+		$this-&gt;subquery-&gt;add_sql_clause( &#039;order_by&#039;, $this-&gt;get_sql_clause( &#039;order_by&#039; ) );
+		$this-&gt;subquery-&gt;add_sql_clause( &#039;limit&#039;, $this-&gt;get_sql_clause( &#039;limit&#039; ) );
+		/* phpcs:disable WordPress.DB.PreparedSQL.NotPrepared */
+		$orders_data = $wpdb-&gt;get_results(
+			$this-&gt;subquery-&gt;get_query_statement(),
+			ARRAY_A
+		);
+		/* phpcs:enable */
+
+		if ( null === $orders_data ) {
+			return $data;
+		}
+
+		if ( $query_args[&#039;extended_info&#039;] ) {
+			$this-&gt;include_extended_info( $orders_data, $query_args );
+		}
+
+		$orders_data = array_map( array( $this, &#039;cast_numbers&#039; ), $orders_data );
+		$data        = (object) array(
+			&#039;data&#039;    =&gt; $orders_data,
+			&#039;total&#039;   =&gt; $db_records_count,
+			&#039;pages&#039;   =&gt; $total_pages,
+			&#039;page_no&#039; =&gt; (int) $query_args[&#039;page&#039;],
+		);
 		return $data;
 	}
 
 	/**
 	 * Normalizes order_by clause to match to SQL query.
+	 *
+	 * @override ReportsDataStore::normalize_order_by()
 	 *
 	 * @param string $order_by Order by option requeste by user.
 	 * @return string
@@ -795,7 +811,7 @@ class DataStore extends ReportsDataStore implements DataStoreInterface {
 
     <footer class="phpdocumentor phpdocumentor-footer">
     <div class="phpdocumentor-section">
-        <span>WooCommerce Code Reference API documentation generated by <a href="http://www.phpdoc.org/">phpDocumentor</a> on July 25th, 2024 at 11:33 am.</span>
+        <span>WooCommerce Code Reference API documentation generated by <a href="http://www.phpdoc.org/">phpDocumentor</a> on May 16th, 2025 at 09:14 am.</span>
     </div>
 </footer>
 
@@ -807,7 +823,7 @@ class DataStore extends ReportsDataStore implements DataStoreInterface {
             'searchIndex': '..\/js\/searchIndex.json'
         };
     </script>
-    <script src="../js/searchIndex.js?updated=1721907184"></script>
-    <script src="../js/search.js?updated=1721907184"></script>
+    <script src="../js/searchIndex.js?updated=1747386861"></script>
+    <script src="../js/search.js?updated=1747386861"></script>
 </body>
 </html>

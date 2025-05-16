@@ -4,14 +4,13 @@
     <meta charset="utf-8">
     <title>WooCommerce Code Reference</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="../images/favicon.png" />
-    <link rel="apple-touch-icon" href="../images/apple-touch-icon.png"/>
-    <link rel="apple-touch-icon" sizes="72x72" href="../images/apple-touch-icon-72x72.png"/>
-    <link rel="apple-touch-icon" sizes="114x114" href="../images/apple-touch-icon-114x114.png"/>
+    <link rel="icon" href="../images/favicon-32x32.png" sizes="32x32" />
+    <link rel="icon" href="../images/favicon-192x192.png" sizes="192x192" />
+    <link rel="apple-touch-icon" href="../images/favicon-180x180.png" />
+
     <link rel="stylesheet" href="../css/normalize.css">
-    <link rel="stylesheet" href="../css/base.css?updated=1721907186">
-    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../css/template.css?updated=1721907186">
+    <link rel="stylesheet" href="../css/base.css?updated=1747386863">
+    <link rel="stylesheet" href="../css/template.css?updated=1747386863">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0/css/all.min.css" integrity="sha256-ybRkN9dBjhcS2qrW1z+hfCxq+1aBdwyQM5wlQoQVt/0=" crossorigin="anonymous" />
             <script src="https://cdn.jsdelivr.net/npm/css-vars-ponyfill@2"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0/js/all.min.js" integrity="sha256-0vuk8LXoyrmCjp1f0O300qo1M75ZQyhH9X3J6d+scmk=" crossorigin="anonymous"></script>
@@ -38,14 +37,13 @@
     <header class="phpdocumentor-top-header">
     <section class="phpdocumentor-section">
         <div class="site-branding">
-            <a class="site-logo" href="../index.html"><img width="180" src="../images/logo.svg" alt="WooCommerce" /></a>
+            <a class="site-logo" href="../index.html"><img src="../images/logo.png" alt="WooCommerce" /></a>
         </div>
         <nav class="main-navigation">
             <ul>
                 <li><a href="../hooks/hooks.html">Hooks Reference</a></li>
-                <li><a href="https://docs.woocommerce.com/">Documentation</a></li>
+                <li><a href="https://developer.woocommerce.com/docs/">Documentation</a></li>
                 <li><a href="https://woocommerce.github.io/woocommerce-rest-api-docs/">REST API Docs</a></li>
-                <li><a href="https://woocommerce.com/careers/?utm_source=woocommerce+core+code+reference&utm_medium=devdocs&utm_campaign=woo+careers" target="_blank">We're hiring!</a></li>
             </ul>
         </nav>
     </section>
@@ -53,7 +51,7 @@
 
 <div class="phpdocumentor-header">
     <section class="phpdocumentor-section">
-        <h1 class="phpdocumentor-title">WooCommerce Code Reference</h1>
+        <h1 class="phpdocumentor-title"><a href="../index.html">WooCommerce Code Reference</a></h1>
         <section class="phpdocumentor-search">
     <label class="phpdocumentor-label">
         <span class="visually-hidden">Search (click ESC to close search results)</span>
@@ -74,6 +72,10 @@
                                         <h4 class="phpdocumentor-sidebar__root-namespace"><a href="../namespaces/woocommerce.html"><abbr title="\WooCommerce">WooCommerce</abbr></a></h4>
                 <ul class="phpdocumentor-list">
                                             <li><a href="../namespaces/woocommerce-admin.html"><abbr title="\WooCommerce\Admin">Admin</abbr></a></li>
+                                    </ul>
+                            <h4 class="phpdocumentor-sidebar__root-namespace"><a href="../namespaces/mailpoet.html"><abbr title="\MailPoet">MailPoet</abbr></a></h4>
+                <ul class="phpdocumentor-list">
+                                            <li><a href="../namespaces/mailpoet-emaileditor.html"><abbr title="\MailPoet\EmailEditor">EmailEditor</abbr></a></li>
                                     </ul>
                             <h4 class="phpdocumentor-sidebar__root-namespace"><a href="../namespaces/automattic.html"><abbr title="\Automattic">Automattic</abbr></a></h4>
                 <ul class="phpdocumentor-list">
@@ -119,8 +121,10 @@
                                     <li><a href="../packages/WooCommerce-Widgets.html"><abbr title="\WooCommerce\Widgets">Widgets</abbr></a></li>
                                     <li><a href="../packages/WooCommerce-Uninstaller.html"><abbr title="\WooCommerce\Uninstaller">Uninstaller</abbr></a></li>
                             </ul>
-                                <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/WoocommerceAdmin.html"><abbr title="\WoocommerceAdmin">WoocommerceAdmin</abbr></a></h3>
-                                <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/WoocommerceNavigation.html"><abbr title="\WoocommerceNavigation">WoocommerceNavigation</abbr></a></h3>
+                                <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/MailPoet.html"><abbr title="\MailPoet">MailPoet</abbr></a></h3>
+                        <ul class="phpdocumentor-list">
+                                    <li><a href="../packages/MailPoet-EmailEditor.html"><abbr title="\MailPoet\EmailEditor">EmailEditor</abbr></a></li>
+                            </ul>
                                 <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/Automattic.html"><abbr title="\Automattic">Automattic</abbr></a></h3>
                         <ul class="phpdocumentor-list">
                                     <li><a href="../packages/Automattic-WooCommerce.html"><abbr title="\Automattic\WooCommerce">WooCommerce</abbr></a></li>
@@ -156,10 +160,14 @@
                 Source code
                 <a href="#source-code" class="headerlink"><i class="fas fa-link"></i></a>
             </h3>
-            <pre id="source-view" tabindex="-1" class="language-php line-numbers linkable-line-numbers"><code>&lt;?php
+            <pre id="source-view" tabindex="-1" class="language-php line-numbers linkable-line-numbers"><code>&lt;?php //phpcs:ignore Generic.PHP.RequireStrictTypes.MissingDeclaration
+// many places seem to be calling round with a string, and that causes PHP &gt; 8.1 to throw a TypeError.
+// It&#039;s not respecting the &#039;mixed&#039; type hint in the docblock, and type unions aren&#039;t supported until PHP &gt; 8.0.
+// so I&#039;m not sure how to handle this since adding the type union will cause errors below PHP &lt; 8.0.
 /**
  * A class of utilities for dealing with numbers.
  */
+
 
 namespace Automattic\WooCommerce\Utilities;
 
@@ -182,7 +190,7 @@ final class NumberUtil {
 	 *
 	 * @return float The value rounded to the given precision as a float, or the supplied default value.
 	 */
-	public static function round( $val, int $precision = 0, int $mode = PHP_ROUND_HALF_UP ) : float {
+	public static function round( $val, int $precision = 0, int $mode = PHP_ROUND_HALF_UP ): float {
 		if ( ! is_numeric( $val ) ) {
 			$val = floatval( $val );
 		}
@@ -207,6 +215,103 @@ final class NumberUtil {
 
 		return array_sum( $sanitized_array );
 	}
+
+	/**
+	 * Sanitize a cost value based on the current locale decimal and thousand separators.
+	 *
+	 * @param string $value               The value to sanitize.
+	 * @return string                     The sanitized value.
+	 * @throws \InvalidArgumentException If the value is not a valid numeric value.
+	 */
+	public static function sanitize_cost_in_current_locale( $value ): string {
+		$value                      = is_null( $value ) ? &#039;&#039; : $value;
+		$value                      = wp_kses_post( trim( wp_unslash( $value ) ) );
+		$currency_symbol_encoded    = get_woocommerce_currency_symbol();
+		$currency_symbol_variations = array( $currency_symbol_encoded, wp_kses_normalize_entities( $currency_symbol_encoded ), html_entity_decode( $currency_symbol_encoded ) );
+
+		$value = str_replace( $currency_symbol_variations, &#039;&#039;, $value );
+
+		// Count the number of decimal points.
+		$decimal_point_count = substr_count( $value, &#039;.&#039; );
+
+		// If it&#039;s a standard decimal number (single decimal point and is_numeric), accept it directly. This could be in the case where the frontend has de-localised the value.
+		// We check for the decimal point count in addition to using is_numeric.
+		// This is because is_numeric is much looser and accepts non-base10 numbers as well as &#039;e&#039; to demarcate exponents.
+		if ( 1 === $decimal_point_count &amp;&amp; is_numeric( $value ) ) {
+			return $value;
+		}
+
+		// Otherwise, attempt to delocalise according to localisation rules.
+		$allowed_characters_regex = sprintf(
+			&#039;/^[0-9\%s\%s]*$/&#039;,
+			wc_get_price_thousand_separator(),
+			wc_get_price_decimal_separator()
+		);
+
+		if ( 1 !== preg_match( $allowed_characters_regex, $value ) ) {
+			throw new \InvalidArgumentException(
+				esc_html(
+					sprintf(
+						/* translators: %1$s: Invalid value that was input by the user, %2$s: thousand separator, %3$s: decimal separator */
+						__( &#039;%1$s is not a valid numeric value. Allowed characters are numbers, the thousand (%2$s), and decimal (%3$s) separators.&#039;, &#039;woocommerce&#039; ),
+						$value,
+						wc_get_price_thousand_separator(),
+						wc_get_price_decimal_separator()
+					)
+				)
+			);
+		}
+
+		// Validate decimal and thousand separator positions.
+		$decimal_separator  = wc_get_price_decimal_separator();
+		$thousand_separator = wc_get_price_thousand_separator();
+
+		if (
+			// Check that there is only 1 decimal separator.
+			substr_count( $value, $decimal_separator ) &gt; 1 ||
+			(
+				// Check that decimal separator appears after thousand separator if both exist.
+				false !== strpos( $value, $thousand_separator ) &amp;&amp;
+				false !== strpos( $value, $decimal_separator ) &amp;&amp;
+				strpos( $value, $decimal_separator ) &lt;= strpos( $value, $thousand_separator )
+			)
+		) {
+			throw new \InvalidArgumentException(
+				esc_html(
+					sprintf(
+						/* translators: %s: Invalid value that was input by the user */
+						__( &#039;%s is not a valid numeric value: there should be one decimal separator and it has to be after the thousands separator.&#039;, &#039;woocommerce&#039; ),
+						$value
+					)
+				)
+			);
+		}
+
+		/**
+		 * For context, as of 2025.
+		 * The full set of thousands separators is PERIOD, COMMA, SPACE, APOSTROPHE.
+		 * And the full set of decimal separators is PERIOD, COMMA.
+		 * There are no locales that use the same thousands and decimal separators.
+		 */
+
+		$value = str_replace( wc_get_price_thousand_separator(), &#039;&#039;, $value );
+		$value = str_replace( wc_get_price_decimal_separator(), &#039;.&#039;, $value );
+
+		if ( $value &amp;&amp; ! is_numeric( $value ) ) {
+			/* translators: %s: Invalid value that was input by the user */
+			throw new \InvalidArgumentException(
+				esc_html(
+					sprintf(
+						/* translators: %s: Invalid value that was input by the user */
+						__( &#039;%s is not a valid numeric value.&#039;, &#039;woocommerce&#039; ),
+						$value
+					)
+				)
+			);
+		}
+
+		return $value;
+	}
 }
 </code></pre>
             </article>
@@ -218,7 +323,7 @@ final class NumberUtil {
 
     <footer class="phpdocumentor phpdocumentor-footer">
     <div class="phpdocumentor-section">
-        <span>WooCommerce Code Reference API documentation generated by <a href="http://www.phpdoc.org/">phpDocumentor</a> on July 25th, 2024 at 11:33 am.</span>
+        <span>WooCommerce Code Reference API documentation generated by <a href="http://www.phpdoc.org/">phpDocumentor</a> on May 16th, 2025 at 09:14 am.</span>
     </div>
 </footer>
 
@@ -230,7 +335,7 @@ final class NumberUtil {
             'searchIndex': '..\/js\/searchIndex.json'
         };
     </script>
-    <script src="../js/searchIndex.js?updated=1721907186"></script>
-    <script src="../js/search.js?updated=1721907186"></script>
+    <script src="../js/searchIndex.js?updated=1747386863"></script>
+    <script src="../js/search.js?updated=1747386863"></script>
 </body>
 </html>

@@ -4,14 +4,13 @@
     <meta charset="utf-8">
     <title>WooCommerce Code Reference</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="../images/favicon.png" />
-    <link rel="apple-touch-icon" href="../images/apple-touch-icon.png"/>
-    <link rel="apple-touch-icon" sizes="72x72" href="../images/apple-touch-icon-72x72.png"/>
-    <link rel="apple-touch-icon" sizes="114x114" href="../images/apple-touch-icon-114x114.png"/>
+    <link rel="icon" href="../images/favicon-32x32.png" sizes="32x32" />
+    <link rel="icon" href="../images/favicon-192x192.png" sizes="192x192" />
+    <link rel="apple-touch-icon" href="../images/favicon-180x180.png" />
+
     <link rel="stylesheet" href="../css/normalize.css">
-    <link rel="stylesheet" href="../css/base.css?updated=1721907183">
-    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../css/template.css?updated=1721907183">
+    <link rel="stylesheet" href="../css/base.css?updated=1747386858">
+    <link rel="stylesheet" href="../css/template.css?updated=1747386858">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0/css/all.min.css" integrity="sha256-ybRkN9dBjhcS2qrW1z+hfCxq+1aBdwyQM5wlQoQVt/0=" crossorigin="anonymous" />
             <script src="https://cdn.jsdelivr.net/npm/css-vars-ponyfill@2"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0/js/all.min.js" integrity="sha256-0vuk8LXoyrmCjp1f0O300qo1M75ZQyhH9X3J6d+scmk=" crossorigin="anonymous"></script>
@@ -38,14 +37,13 @@
     <header class="phpdocumentor-top-header">
     <section class="phpdocumentor-section">
         <div class="site-branding">
-            <a class="site-logo" href="../index.html"><img width="180" src="../images/logo.svg" alt="WooCommerce" /></a>
+            <a class="site-logo" href="../index.html"><img src="../images/logo.png" alt="WooCommerce" /></a>
         </div>
         <nav class="main-navigation">
             <ul>
                 <li><a href="../hooks/hooks.html">Hooks Reference</a></li>
-                <li><a href="https://docs.woocommerce.com/">Documentation</a></li>
+                <li><a href="https://developer.woocommerce.com/docs/">Documentation</a></li>
                 <li><a href="https://woocommerce.github.io/woocommerce-rest-api-docs/">REST API Docs</a></li>
-                <li><a href="https://woocommerce.com/careers/?utm_source=woocommerce+core+code+reference&utm_medium=devdocs&utm_campaign=woo+careers" target="_blank">We're hiring!</a></li>
             </ul>
         </nav>
     </section>
@@ -53,7 +51,7 @@
 
 <div class="phpdocumentor-header">
     <section class="phpdocumentor-section">
-        <h1 class="phpdocumentor-title">WooCommerce Code Reference</h1>
+        <h1 class="phpdocumentor-title"><a href="../index.html">WooCommerce Code Reference</a></h1>
         <section class="phpdocumentor-search">
     <label class="phpdocumentor-label">
         <span class="visually-hidden">Search (click ESC to close search results)</span>
@@ -74,6 +72,10 @@
                                         <h4 class="phpdocumentor-sidebar__root-namespace"><a href="../namespaces/woocommerce.html"><abbr title="\WooCommerce">WooCommerce</abbr></a></h4>
                 <ul class="phpdocumentor-list">
                                             <li><a href="../namespaces/woocommerce-admin.html"><abbr title="\WooCommerce\Admin">Admin</abbr></a></li>
+                                    </ul>
+                            <h4 class="phpdocumentor-sidebar__root-namespace"><a href="../namespaces/mailpoet.html"><abbr title="\MailPoet">MailPoet</abbr></a></h4>
+                <ul class="phpdocumentor-list">
+                                            <li><a href="../namespaces/mailpoet-emaileditor.html"><abbr title="\MailPoet\EmailEditor">EmailEditor</abbr></a></li>
                                     </ul>
                             <h4 class="phpdocumentor-sidebar__root-namespace"><a href="../namespaces/automattic.html"><abbr title="\Automattic">Automattic</abbr></a></h4>
                 <ul class="phpdocumentor-list">
@@ -119,8 +121,10 @@
                                     <li><a href="../packages/WooCommerce-Widgets.html"><abbr title="\WooCommerce\Widgets">Widgets</abbr></a></li>
                                     <li><a href="../packages/WooCommerce-Uninstaller.html"><abbr title="\WooCommerce\Uninstaller">Uninstaller</abbr></a></li>
                             </ul>
-                                <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/WoocommerceAdmin.html"><abbr title="\WoocommerceAdmin">WoocommerceAdmin</abbr></a></h3>
-                                <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/WoocommerceNavigation.html"><abbr title="\WoocommerceNavigation">WoocommerceNavigation</abbr></a></h3>
+                                <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/MailPoet.html"><abbr title="\MailPoet">MailPoet</abbr></a></h3>
+                        <ul class="phpdocumentor-list">
+                                    <li><a href="../packages/MailPoet-EmailEditor.html"><abbr title="\MailPoet\EmailEditor">EmailEditor</abbr></a></li>
+                            </ul>
                                 <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/Automattic.html"><abbr title="\Automattic">Automattic</abbr></a></h3>
                         <ul class="phpdocumentor-list">
                                     <li><a href="../packages/Automattic-WooCommerce.html"><abbr title="\Automattic\WooCommerce">WooCommerce</abbr></a></li>
@@ -160,10 +164,19 @@
 /**
  * Structured data&#039;s handler and generator using JSON-LD format.
  *
+ * When making changes to this file, please make sure to test the generated
+ * markup with Schema Markup Validator and Google Search Console.
+ * * https://validator.schema.org/
+ * * https://search.google.com/test/rich-results
+ *
  * @package WooCommerce\Classes
  * @since   3.0.0
  * @version 3.0.0
  */
+
+use Automattic\WooCommerce\Enums\OrderStatus;
+use Automattic\WooCommerce\Enums\ProductType;
+use Automattic\WooCommerce\Enums\ProductStockStatus;
 
 defined( &#039;ABSPATH&#039; ) || exit;
 
@@ -372,23 +385,31 @@ class WC_Structured_Data {
 			$markup[&#039;sku&#039;] = $product-&gt;get_id();
 		}
 
+		// Prepare GTIN and load it if it&#039;s valid.
+		$gtin = $this-&gt;prepare_gtin( $product-&gt;get_global_unique_id() );
+		if ( $this-&gt;is_valid_gtin( $gtin ) ) {
+			$markup[&#039;gtin&#039;] = $gtin;
+		}
+
 		if ( &#039;&#039; !== $product-&gt;get_price() ) {
 			// Assume prices will be valid until the end of next year, unless on sale and there is an end date.
 			$price_valid_until = gmdate( &#039;Y-12-31&#039;, time() + YEAR_IN_SECONDS );
 
-			if ( $product-&gt;is_type( &#039;variable&#039; ) ) {
+			if ( $product-&gt;is_type( ProductType::VARIABLE ) ) {
 				$lowest  = $product-&gt;get_variation_price( &#039;min&#039;, false );
 				$highest = $product-&gt;get_variation_price( &#039;max&#039;, false );
 
 				if ( $lowest === $highest ) {
 					$markup_offer = array(
 						&#039;@type&#039;              =&gt; &#039;Offer&#039;,
-						&#039;price&#039;              =&gt; wc_format_decimal( $lowest, wc_get_price_decimals() ),
-						&#039;priceValidUntil&#039;    =&gt; $price_valid_until,
 						&#039;priceSpecification&#039; =&gt; array(
-							&#039;price&#039;                 =&gt; wc_format_decimal( $lowest, wc_get_price_decimals() ),
-							&#039;priceCurrency&#039;         =&gt; $currency,
-							&#039;valueAddedTaxIncluded&#039; =&gt; wc_prices_include_tax() ? &#039;true&#039; : &#039;false&#039;,
+							array(
+								&#039;@type&#039;                 =&gt; &#039;UnitPriceSpecification&#039;,
+								&#039;price&#039;                 =&gt; wc_format_decimal( $lowest, wc_get_price_decimals() ),
+								&#039;priceCurrency&#039;         =&gt; $currency,
+								&#039;valueAddedTaxIncluded&#039; =&gt; wc_prices_include_tax(),
+								&#039;validThrough&#039;          =&gt; $price_valid_until,
+							),
 						),
 					);
 				} else {
@@ -398,19 +419,48 @@ class WC_Structured_Data {
 						&#039;highPrice&#039;  =&gt; wc_format_decimal( $highest, wc_get_price_decimals() ),
 						&#039;offerCount&#039; =&gt; count( $product-&gt;get_children() ),
 					);
-				}
-			} elseif ( $product-&gt;is_type( &#039;grouped&#039; ) ) {
-				if ( $product-&gt;is_on_sale() &amp;&amp; $product-&gt;get_date_on_sale_to() ) {
-					$price_valid_until = gmdate( &#039;Y-m-d&#039;, $product-&gt;get_date_on_sale_to()-&gt;getTimestamp() );
-				}
 
+					if ( $product-&gt;is_on_sale() ) {
+						$children                = array_map( &#039;wc_get_product&#039;, $product-&gt;get_children() );
+						$lowest_child_sale_price = $highest;
+
+						foreach ( $children as $child ) {
+							$child_sale_price = $child-&gt;get_sale_price();
+
+							if ( empty( $child_sale_price ) || (int) $child_sale_price &gt; (int) $lowest_child_sale_price ) {
+								continue;
+							}
+
+							$lowest_child_sale_price = $child_sale_price;
+							$date_on_sale_to         = $child-&gt;get_date_on_sale_to();
+							$sale_price_valid_until  = $date_on_sale_to
+								? gmdate( &#039;Y-m-d&#039;, $date_on_sale_to-&gt;getTimestamp() )
+								: null;
+						}
+
+						$markup_offer[&#039;priceSpecification&#039;] = array(
+							array(
+								&#039;@type&#039;                 =&gt; &#039;UnitPriceSpecification&#039;,
+								&#039;priceType&#039;             =&gt; &#039;https://schema.org/SalePrice&#039;,
+								&#039;price&#039;                 =&gt; wc_format_decimal( $lowest_child_sale_price, wc_get_price_decimals() ),
+								&#039;priceCurrency&#039;         =&gt; $currency,
+								&#039;valueAddedTaxIncluded&#039; =&gt; wc_prices_include_tax(),
+								&#039;validThrough&#039;          =&gt; $sale_price_valid_until ?? $price_valid_until,
+							),
+						);
+					}
+				}
+			} elseif ( $product-&gt;is_type( ProductType::GROUPED ) ) {
 				$tax_display_mode = get_option( &#039;woocommerce_tax_display_shop&#039; );
 				$children         = array_filter( array_map( &#039;wc_get_product&#039;, $product-&gt;get_children() ), &#039;wc_products_array_filter_visible_grouped&#039; );
 				$price_function   = &#039;incl&#039; === $tax_display_mode ? &#039;wc_get_price_including_tax&#039; : &#039;wc_get_price_excluding_tax&#039;;
 
 				foreach ( $children as $child ) {
-					if ( &#039;&#039; !== $child-&gt;get_price() ) {
-						$child_prices[] = $price_function( $child );
+					if ( &#039;&#039; !== $child-&gt;get_regular_price() ) {
+						$child_prices[] = $price_function( $child, array( &#039;price&#039; =&gt; $child-&gt;get_regular_price() ) );
+					}
+					if ( &#039;&#039; !== $child-&gt;get_sale_price() ) {
+						$child_sale_prices[] = $price_function( $child, array( &#039;price&#039; =&gt; $child-&gt;get_sale_price() ) );
 					}
 				}
 				if ( empty( $child_prices ) ) {
@@ -418,49 +468,113 @@ class WC_Structured_Data {
 				} else {
 					$min_price = min( $child_prices );
 				}
+				if ( empty( $child_sale_prices ) ) {
+					$min_sale_price = 0;
+				} else {
+					$min_sale_price = min( $child_sale_prices );
+				}
 
-				$markup_offer = array(
-					&#039;@type&#039;              =&gt; &#039;Offer&#039;,
-					&#039;price&#039;              =&gt; wc_format_decimal( $min_price, wc_get_price_decimals() ),
-					&#039;priceValidUntil&#039;    =&gt; $price_valid_until,
-					&#039;priceSpecification&#039; =&gt; array(
-						&#039;price&#039;                 =&gt; wc_format_decimal( $min_price, wc_get_price_decimals() ),
-						&#039;priceCurrency&#039;         =&gt; $currency,
-						&#039;valueAddedTaxIncluded&#039; =&gt; wc_prices_include_tax() ? &#039;true&#039; : &#039;false&#039;,
-					),
+				$unit_price_specification = array(
+					&#039;@type&#039;                 =&gt; &#039;UnitPriceSpecification&#039;,
+					&#039;price&#039;                 =&gt; wc_format_decimal( $min_price, wc_get_price_decimals() ),
+					&#039;priceCurrency&#039;         =&gt; $currency,
+					&#039;valueAddedTaxIncluded&#039; =&gt; wc_prices_include_tax(),
+					&#039;validThrough&#039;          =&gt; $price_valid_until,
 				);
-			} else {
-				if ( $product-&gt;is_on_sale() &amp;&amp; $product-&gt;get_date_on_sale_to() ) {
-					$price_valid_until = gmdate( &#039;Y-m-d&#039;, $product-&gt;get_date_on_sale_to()-&gt;getTimestamp() );
+				if ( $product-&gt;is_on_sale() &amp;&amp; $min_price !== $min_sale_price ) {
+					// `priceType` should only be specified in prices which are not the current offer.
+					// https://developers.google.com/search/docs/appearance/structured-data/merchant-listing#sale-pricing-example
+					$unit_price_specification[&#039;priceType&#039;] = &#039;https://schema.org/ListPrice&#039;;
 				}
 				$markup_offer = array(
 					&#039;@type&#039;              =&gt; &#039;Offer&#039;,
-					&#039;price&#039;              =&gt; wc_format_decimal( $product-&gt;get_price(), wc_get_price_decimals() ),
-					&#039;priceValidUntil&#039;    =&gt; $price_valid_until,
 					&#039;priceSpecification&#039; =&gt; array(
-						&#039;price&#039;                 =&gt; wc_format_decimal( $product-&gt;get_price(), wc_get_price_decimals() ),
-						&#039;priceCurrency&#039;         =&gt; $currency,
-						&#039;valueAddedTaxIncluded&#039; =&gt; wc_prices_include_tax() ? &#039;true&#039; : &#039;false&#039;,
+						$unit_price_specification,
 					),
 				);
+
+				if ( $product-&gt;is_on_sale() &amp;&amp; $min_price !== $min_sale_price ) {
+					if ( $product-&gt;get_date_on_sale_to() ) {
+						$sale_price_valid_until = gmdate( &#039;Y-m-d&#039;, $product-&gt;get_date_on_sale_to()-&gt;getTimestamp() );
+					}
+
+					// We add the sale price to the top of the array so it&#039;s the first offer.
+					// See https://github.com/woocommerce/woocommerce/issues/55043.
+					array_unshift(
+						$markup_offer[&#039;priceSpecification&#039;],
+						array(
+							&#039;@type&#039;                 =&gt; &#039;UnitPriceSpecification&#039;,
+							&#039;price&#039;                 =&gt; wc_format_decimal( $min_sale_price, wc_get_price_decimals() ),
+							&#039;priceCurrency&#039;         =&gt; $currency,
+							&#039;valueAddedTaxIncluded&#039; =&gt; wc_prices_include_tax(),
+							&#039;validThrough&#039;          =&gt; $sale_price_valid_until ?? $price_valid_until,
+						)
+					);
+				}
+			} else {
+				$unit_price_specification = array(
+					&#039;@type&#039;                 =&gt; &#039;UnitPriceSpecification&#039;,
+					&#039;price&#039;                 =&gt; wc_format_decimal( $product-&gt;get_regular_price(), wc_get_price_decimals() ),
+					&#039;priceCurrency&#039;         =&gt; $currency,
+					&#039;valueAddedTaxIncluded&#039; =&gt; wc_prices_include_tax(),
+					&#039;validThrough&#039;          =&gt; $price_valid_until,
+				);
+				if ( $product-&gt;is_on_sale() ) {
+					// `priceType` should only be specified in prices which are not the current offer.
+					// https://developers.google.com/search/docs/appearance/structured-data/merchant-listing#sale-pricing-example
+					$unit_price_specification[&#039;priceType&#039;] = &#039;https://schema.org/ListPrice&#039;;
+				}
+				$markup_offer = array(
+					&#039;@type&#039;              =&gt; &#039;Offer&#039;,
+					&#039;priceSpecification&#039; =&gt; array(
+						$unit_price_specification,
+					),
+				);
+
+				if ( $product-&gt;is_on_sale() ) {
+					if ( $product-&gt;get_date_on_sale_to() ) {
+						$sale_price_valid_until = gmdate( &#039;Y-m-d&#039;, $product-&gt;get_date_on_sale_to()-&gt;getTimestamp() );
+					}
+
+					// We add the sale price to the top of the array so it&#039;s the first offer.
+					// See https://github.com/woocommerce/woocommerce/issues/55043.
+					array_unshift(
+						$markup_offer[&#039;priceSpecification&#039;],
+						array(
+							&#039;@type&#039;                 =&gt; &#039;UnitPriceSpecification&#039;,
+							&#039;price&#039;                 =&gt; wc_format_decimal( $product-&gt;get_sale_price(), wc_get_price_decimals() ),
+							&#039;priceCurrency&#039;         =&gt; $currency,
+							&#039;valueAddedTaxIncluded&#039; =&gt; wc_prices_include_tax(),
+							&#039;validThrough&#039;          =&gt; $sale_price_valid_until ?? $price_valid_until,
+						)
+					);
+				}
 			}
 
 			if ( $product-&gt;is_in_stock() ) {
-				$stock_status_schema = ( &#039;onbackorder&#039; === $product-&gt;get_stock_status() ) ? &#039;BackOrder&#039; : &#039;InStock&#039;;
+				$stock_status_schema = ( ProductStockStatus::ON_BACKORDER === $product-&gt;get_stock_status() ) ? &#039;BackOrder&#039; : &#039;InStock&#039;;
 			} else {
 				$stock_status_schema = &#039;OutOfStock&#039;;
 			}
 
 			$markup_offer += array(
-				&#039;priceCurrency&#039; =&gt; $currency,
-				&#039;availability&#039;  =&gt; &#039;http://schema.org/&#039; . $stock_status_schema,
-				&#039;url&#039;           =&gt; $permalink,
-				&#039;seller&#039;        =&gt; array(
+				&#039;priceValidUntil&#039; =&gt; $sale_price_valid_until ?? $price_valid_until,
+				&#039;availability&#039;    =&gt; &#039;http://schema.org/&#039; . $stock_status_schema,
+				&#039;url&#039;             =&gt; $permalink,
+				&#039;seller&#039;          =&gt; array(
 					&#039;@type&#039; =&gt; &#039;Organization&#039;,
 					&#039;name&#039;  =&gt; $shop_name,
 					&#039;url&#039;   =&gt; $shop_url,
 				),
 			);
+			if (
+				( ! empty( $markup_offer[&#039;price&#039;] ) ||
+					! empty( $markup_offer[&#039;lowPrice&#039;] ) ||
+					! empty( $markup_offer[&#039;highPrice&#039;] )
+				) &amp;&amp; empty( $markup_offer[&#039;priceCurrency&#039;] )
+			) {
+				$markup_offer[&#039;priceCurrency&#039;] = $currency;
+			}
 
 			$markup[&#039;offers&#039;] = array( apply_filters( &#039;woocommerce_structured_data_product_offer&#039;, $markup_offer, $product ) );
 		}
@@ -638,13 +752,13 @@ class WC_Structured_Data {
 		$shop_url       = home_url();
 		$order_url      = $sent_to_admin ? $order-&gt;get_edit_order_url() : $order-&gt;get_view_order_url();
 		$order_statuses = array(
-			&#039;pending&#039;    =&gt; &#039;https://schema.org/OrderPaymentDue&#039;,
-			&#039;processing&#039; =&gt; &#039;https://schema.org/OrderProcessing&#039;,
-			&#039;on-hold&#039;    =&gt; &#039;https://schema.org/OrderProblem&#039;,
-			&#039;completed&#039;  =&gt; &#039;https://schema.org/OrderDelivered&#039;,
-			&#039;cancelled&#039;  =&gt; &#039;https://schema.org/OrderCancelled&#039;,
-			&#039;refunded&#039;   =&gt; &#039;https://schema.org/OrderReturned&#039;,
-			&#039;failed&#039;     =&gt; &#039;https://schema.org/OrderProblem&#039;,
+			OrderStatus::PENDING    =&gt; &#039;https://schema.org/OrderPaymentDue&#039;,
+			OrderStatus::PROCESSING =&gt; &#039;https://schema.org/OrderProcessing&#039;,
+			OrderStatus::ON_HOLD    =&gt; &#039;https://schema.org/OrderProblem&#039;,
+			OrderStatus::COMPLETED  =&gt; &#039;https://schema.org/OrderDelivered&#039;,
+			OrderStatus::CANCELLED  =&gt; &#039;https://schema.org/OrderCancelled&#039;,
+			OrderStatus::REFUNDED   =&gt; &#039;https://schema.org/OrderReturned&#039;,
+			OrderStatus::FAILED     =&gt; &#039;https://schema.org/OrderProblem&#039;,
 		);
 
 		$markup_offers = array();
@@ -729,6 +843,32 @@ class WC_Structured_Data {
 
 		$this-&gt;set_data( apply_filters( &#039;woocommerce_structured_data_order&#039;, $markup, $sent_to_admin, $order ), true );
 	}
+
+	/**
+	 * Check if a GTIN is valid.
+	 * A valid GTIN is a string containing 8,12,13 or 14 digits.
+	 *
+	 * @see https://schema.org/gtin
+	 * @param string $gtin The GTIN to check.
+	 * @return bool True if valid. False otherwise.
+	 */
+	public function is_valid_gtin( $gtin ) {
+		return is_string( $gtin ) &amp;&amp; preg_match( &#039;/^(\d{8}|\d{12,14})$/&#039;, $gtin );
+	}
+
+	/**
+	 * Prepare a GTIN input removing everything except numbers.
+	 *
+	 * @param string $gtin The GTIN to prepare.
+	 * @return string Empty string if no GTIN is provided or the string with the replacements.
+	 */
+	public function prepare_gtin( $gtin ) {
+		if ( ! $gtin || ! is_string( $gtin ) ) {
+			return &#039;&#039;;
+		}
+
+		return preg_replace( &#039;/[^0-9]/&#039;, &#039;&#039;, $gtin );
+	}
 }
 </code></pre>
             </article>
@@ -740,7 +880,7 @@ class WC_Structured_Data {
 
     <footer class="phpdocumentor phpdocumentor-footer">
     <div class="phpdocumentor-section">
-        <span>WooCommerce Code Reference API documentation generated by <a href="http://www.phpdoc.org/">phpDocumentor</a> on July 25th, 2024 at 11:33 am.</span>
+        <span>WooCommerce Code Reference API documentation generated by <a href="http://www.phpdoc.org/">phpDocumentor</a> on May 16th, 2025 at 09:14 am.</span>
     </div>
 </footer>
 
@@ -752,7 +892,7 @@ class WC_Structured_Data {
             'searchIndex': '..\/js\/searchIndex.json'
         };
     </script>
-    <script src="../js/searchIndex.js?updated=1721907183"></script>
-    <script src="../js/search.js?updated=1721907183"></script>
+    <script src="../js/searchIndex.js?updated=1747386858"></script>
+    <script src="../js/search.js?updated=1747386858"></script>
 </body>
 </html>

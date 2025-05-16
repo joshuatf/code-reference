@@ -4,14 +4,13 @@
     <meta charset="utf-8">
     <title>WooCommerce Code Reference</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="../images/favicon.png" />
-    <link rel="apple-touch-icon" href="../images/apple-touch-icon.png"/>
-    <link rel="apple-touch-icon" sizes="72x72" href="../images/apple-touch-icon-72x72.png"/>
-    <link rel="apple-touch-icon" sizes="114x114" href="../images/apple-touch-icon-114x114.png"/>
+    <link rel="icon" href="../images/favicon-32x32.png" sizes="32x32" />
+    <link rel="icon" href="../images/favicon-192x192.png" sizes="192x192" />
+    <link rel="apple-touch-icon" href="../images/favicon-180x180.png" />
+
     <link rel="stylesheet" href="../css/normalize.css">
-    <link rel="stylesheet" href="../css/base.css?updated=1721907202">
-    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../css/template.css?updated=1721907202">
+    <link rel="stylesheet" href="../css/base.css?updated=1747386882">
+    <link rel="stylesheet" href="../css/template.css?updated=1747386882">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0/css/all.min.css" integrity="sha256-ybRkN9dBjhcS2qrW1z+hfCxq+1aBdwyQM5wlQoQVt/0=" crossorigin="anonymous" />
             <script src="https://cdn.jsdelivr.net/npm/css-vars-ponyfill@2"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0/js/all.min.js" integrity="sha256-0vuk8LXoyrmCjp1f0O300qo1M75ZQyhH9X3J6d+scmk=" crossorigin="anonymous"></script>
@@ -27,19 +26,24 @@
 		'content_group' : 'WooCommerce Core Code Reference',
 	});
 </script>
-        </head>
+        <script src="../js/prism.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            window.dispatchEvent(new HashChangeEvent('hashchange'));
+        });
+    </script>
+</head>
 <body id="top">
     <header class="phpdocumentor-top-header">
     <section class="phpdocumentor-section">
         <div class="site-branding">
-            <a class="site-logo" href="../index.html"><img width="180" src="../images/logo.svg" alt="WooCommerce" /></a>
+            <a class="site-logo" href="../index.html"><img src="../images/logo.png" alt="WooCommerce" /></a>
         </div>
         <nav class="main-navigation">
             <ul>
                 <li><a href="../hooks/hooks.html">Hooks Reference</a></li>
-                <li><a href="https://docs.woocommerce.com/">Documentation</a></li>
+                <li><a href="https://developer.woocommerce.com/docs/">Documentation</a></li>
                 <li><a href="https://woocommerce.github.io/woocommerce-rest-api-docs/">REST API Docs</a></li>
-                <li><a href="https://woocommerce.com/careers/?utm_source=woocommerce+core+code+reference&utm_medium=devdocs&utm_campaign=woo+careers" target="_blank">We're hiring!</a></li>
             </ul>
         </nav>
     </section>
@@ -47,7 +51,7 @@
 
 <div class="phpdocumentor-header">
     <section class="phpdocumentor-section">
-        <h1 class="phpdocumentor-title">WooCommerce Code Reference</h1>
+        <h1 class="phpdocumentor-title"><a href="../index.html">WooCommerce Code Reference</a></h1>
         <section class="phpdocumentor-search">
     <label class="phpdocumentor-label">
         <span class="visually-hidden">Search (click ESC to close search results)</span>
@@ -68,6 +72,10 @@
                                         <h4 class="phpdocumentor-sidebar__root-namespace"><a href="../namespaces/woocommerce.html"><abbr title="\WooCommerce">WooCommerce</abbr></a></h4>
                 <ul class="phpdocumentor-list">
                                             <li><a href="../namespaces/woocommerce-admin.html"><abbr title="\WooCommerce\Admin">Admin</abbr></a></li>
+                                    </ul>
+                            <h4 class="phpdocumentor-sidebar__root-namespace"><a href="../namespaces/mailpoet.html"><abbr title="\MailPoet">MailPoet</abbr></a></h4>
+                <ul class="phpdocumentor-list">
+                                            <li><a href="../namespaces/mailpoet-emaileditor.html"><abbr title="\MailPoet\EmailEditor">EmailEditor</abbr></a></li>
                                     </ul>
                             <h4 class="phpdocumentor-sidebar__root-namespace"><a href="../namespaces/automattic.html"><abbr title="\Automattic">Automattic</abbr></a></h4>
                 <ul class="phpdocumentor-list">
@@ -113,8 +121,10 @@
                                     <li><a href="../packages/WooCommerce-Widgets.html"><abbr title="\WooCommerce\Widgets">Widgets</abbr></a></li>
                                     <li><a href="../packages/WooCommerce-Uninstaller.html"><abbr title="\WooCommerce\Uninstaller">Uninstaller</abbr></a></li>
                             </ul>
-                                <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/WoocommerceAdmin.html"><abbr title="\WoocommerceAdmin">WoocommerceAdmin</abbr></a></h3>
-                                <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/WoocommerceNavigation.html"><abbr title="\WoocommerceNavigation">WoocommerceNavigation</abbr></a></h3>
+                                <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/MailPoet.html"><abbr title="\MailPoet">MailPoet</abbr></a></h3>
+                        <ul class="phpdocumentor-list">
+                                    <li><a href="../packages/MailPoet-EmailEditor.html"><abbr title="\MailPoet\EmailEditor">EmailEditor</abbr></a></li>
+                            </ul>
                                 <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/Automattic.html"><abbr title="\Automattic">Automattic</abbr></a></h3>
                         <ul class="phpdocumentor-list">
                                     <li><a href="../packages/Automattic-WooCommerce.html"><abbr title="\Automattic\WooCommerce">WooCommerce</abbr></a></li>
@@ -160,9 +170,9 @@
     </h2>
 
         <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/Features/Features.php"><a href="../files/woocommerce-src-admin-features-features.html#source-view.15">src/Admin/Features/Features.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/Features/Features.php"><a href="../files/woocommerce-src-admin-features-features.html#source-view.16">src/Admin/Features/Features.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">15</span>
+    <span class="phpdocumentor-element-found-in__line">16</span>
 </aside>
 
             <p class="phpdocumentor-summary">Features Class.</p>
@@ -329,6 +339,13 @@
 </dt>
 <dd>Alias internal features classes to make them backward compatible.</dd>
 
+            <dt class="phpdocumentor-table-of-contents__entry -method -private">
+    <a href="../classes/Automattic-WooCommerce-Admin-Features-Features.html#method_should_load_features">should_load_features()</a>
+    <span>
+                        &nbsp;: bool    </span>
+</dt>
+<dd>Check if we&#039;re in an admin context where features should be loaded.</dd>
+
         </dl>
 
 
@@ -355,9 +372,9 @@
                                 </span>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/Features/Features.php"><a href="../files/woocommerce-src-admin-features-features.html#source-view.40">src/Admin/Features/Features.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/Features/Features.php"><a href="../files/woocommerce-src-admin-features-features.html#source-view.39">src/Admin/Features/Features.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">40</span>
+    <span class="phpdocumentor-element-found-in__line">39</span>
 </aside>
 
         <p class="phpdocumentor-summary">Beta features</p>
@@ -366,7 +383,7 @@
     <span class="phpdocumentor-signature__visibility">protected</span>
     <span class="phpdocumentor-signature__static">static</span>    <span class="phpdocumentor-signature__type">array&lt;string|int, mixed&gt;</span>
     <span class="phpdocumentor-signature__name">$beta_features</span>
-     = <span class="phpdocumentor-signature__default-value">array(&#039;navigation&#039;, &#039;settings&#039;)</span></code>
+     = <span class="phpdocumentor-signature__default-value">array(&#039;settings&#039;)</span></code>
 
         <section class="phpdocumentor-description"></section>
 
@@ -387,9 +404,9 @@
                                 </span>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/Features/Features.php"><a href="../files/woocommerce-src-admin-features-features.html#source-view.21">src/Admin/Features/Features.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/Features/Features.php"><a href="../files/woocommerce-src-admin-features-features.html#source-view.22">src/Admin/Features/Features.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">21</span>
+    <span class="phpdocumentor-element-found-in__line">22</span>
 </aside>
 
         <p class="phpdocumentor-summary">Class instance.</p>
@@ -419,9 +436,9 @@
                                 </span>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/Features/Features.php"><a href="../files/woocommerce-src-admin-features-features.html#source-view.28">src/Admin/Features/Features.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/Features/Features.php"><a href="../files/woocommerce-src-admin-features-features.html#source-view.29">src/Admin/Features/Features.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">28</span>
+    <span class="phpdocumentor-element-found-in__line">29</span>
 </aside>
 
         <p class="phpdocumentor-summary">Optional features</p>
@@ -430,7 +447,7 @@
     <span class="phpdocumentor-signature__visibility">protected</span>
     <span class="phpdocumentor-signature__static">static</span>    <span class="phpdocumentor-signature__type">array&lt;string|int, mixed&gt;</span>
     <span class="phpdocumentor-signature__name">$optional_features</span>
-     = <span class="phpdocumentor-signature__default-value">array(&#039;navigation&#039; =&gt; array(&#039;default&#039; =&gt; &#039;no&#039;), &#039;settings&#039; =&gt; array(&#039;default&#039; =&gt; &#039;no&#039;), &#039;analytics&#039; =&gt; array(&#039;default&#039; =&gt; &#039;yes&#039;), &#039;remote-inbox-notifications&#039; =&gt; array(&#039;default&#039; =&gt; &#039;yes&#039;))</span></code>
+     = <span class="phpdocumentor-signature__default-value">array(&#039;analytics&#039; =&gt; array(&#039;default&#039; =&gt; &#039;yes&#039;), &#039;remote-inbox-notifications&#039; =&gt; array(&#039;default&#039; =&gt; &#039;yes&#039;))</span></code>
 
         <section class="phpdocumentor-description"></section>
 
@@ -455,9 +472,9 @@
         <a href="#method___construct" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/Features/Features.php"><a href="../files/woocommerce-src-admin-features-features.html#source-view.58">src/Admin/Features/Features.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/Features/Features.php"><a href="../files/woocommerce-src-admin-features-features.html#source-view.56">src/Admin/Features/Features.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">58</span>
+    <span class="phpdocumentor-element-found-in__line">56</span>
 </aside>
 
         <p class="phpdocumentor-summary">Constructor.</p>
@@ -487,9 +504,9 @@
         <a href="#method_add_admin_body_classes" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/Features/Features.php"><a href="../files/woocommerce-src-admin-features-features.html#source-view.320">src/Admin/Features/Features.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/Features/Features.php"><a href="../files/woocommerce-src-admin-features-features.html#source-view.334">src/Admin/Features/Features.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">320</span>
+    <span class="phpdocumentor-element-found-in__line">334</span>
 </aside>
 
         <p class="phpdocumentor-summary">Adds body classes to the main wp-admin wrapper, allowing us to better target elements in specific scenarios.</p>
@@ -531,9 +548,9 @@
         <a href="#method_add_features_section" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/Features/Features.php"><a href="../files/woocommerce-src-admin-features-features.html#source-view.254">src/Admin/Features/Features.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/Features/Features.php"><a href="../files/woocommerce-src-admin-features-features.html#source-view.268">src/Admin/Features/Features.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">254</span>
+    <span class="phpdocumentor-element-found-in__line">268</span>
 </aside>
 
         <p class="phpdocumentor-summary">Adds the Features section to the advanced tab of WooCommerce Settings</p>
@@ -590,9 +607,9 @@
         <a href="#method_add_features_settings" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/Features/Features.php"><a href="../files/woocommerce-src-admin-features-features.html#source-view.267">src/Admin/Features/Features.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/Features/Features.php"><a href="../files/woocommerce-src-admin-features-features.html#source-view.281">src/Admin/Features/Features.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">267</span>
+    <span class="phpdocumentor-element-found-in__line">281</span>
 </aside>
 
         <p class="phpdocumentor-summary">Adds the Features settings.</p>
@@ -658,9 +675,9 @@
         <a href="#method_disable" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/Features/Features.php"><a href="../files/woocommerce-src-admin-features-features.html#source-view.219">src/Admin/Features/Features.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/Features/Features.php"><a href="../files/woocommerce-src-admin-features-features.html#source-view.233">src/Admin/Features/Features.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">219</span>
+    <span class="phpdocumentor-element-found-in__line">233</span>
 </aside>
 
         <p class="phpdocumentor-summary">Disable a toggleable optional feature.</p>
@@ -702,9 +719,9 @@
         <a href="#method_enable" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/Features/Features.php"><a href="../files/woocommerce-src-admin-features-features.html#source-view.202">src/Admin/Features/Features.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/Features/Features.php"><a href="../files/woocommerce-src-admin-features-features.html#source-view.216">src/Admin/Features/Features.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">202</span>
+    <span class="phpdocumentor-element-found-in__line">216</span>
 </aside>
 
         <p class="phpdocumentor-summary">Enable a toggleable optional feature.</p>
@@ -746,9 +763,9 @@
         <a href="#method_exists" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/Features/Features.php"><a href="../files/woocommerce-src-admin-features-features.html#source-view.101">src/Admin/Features/Features.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/Features/Features.php"><a href="../files/woocommerce-src-admin-features-features.html#source-view.103">src/Admin/Features/Features.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">101</span>
+    <span class="phpdocumentor-element-found-in__line">103</span>
 </aside>
 
         <p class="phpdocumentor-summary">Returns if a specific wc-admin feature exists in the current environment.</p>
@@ -790,9 +807,9 @@
         <a href="#method_get_available_features" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/Features/Features.php"><a href="../files/woocommerce-src-admin-features-features.html#source-view.147">src/Admin/Features/Features.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/Features/Features.php"><a href="../files/woocommerce-src-admin-features-features.html#source-view.161">src/Admin/Features/Features.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">147</span>
+    <span class="phpdocumentor-element-found-in__line">161</span>
 </aside>
 
         <p class="phpdocumentor-summary">Gets a build configured array of enabled WooCommerce Admin respecting optionally disabled features.</p>
@@ -822,9 +839,9 @@
         <a href="#method_get_feature_class" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/Features/Features.php"><a href="../files/woocommerce-src-admin-features-features.html#source-view.112">src/Admin/Features/Features.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/Features/Features.php"><a href="../files/woocommerce-src-admin-features-features.html#source-view.114">src/Admin/Features/Features.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">112</span>
+    <span class="phpdocumentor-element-found-in__line">114</span>
 </aside>
 
         <p class="phpdocumentor-summary">Get the feature class as a string.</p>
@@ -866,9 +883,9 @@
         <a href="#method_get_features" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/Features/Features.php"><a href="../files/woocommerce-src-admin-features-features.html#source-view.73">src/Admin/Features/Features.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/Features/Features.php"><a href="../files/woocommerce-src-admin-features-features.html#source-view.75">src/Admin/Features/Features.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">73</span>
+    <span class="phpdocumentor-element-found-in__line">75</span>
 </aside>
 
         <p class="phpdocumentor-summary">Gets a build configured array of enabled WooCommerce Admin features/sections, but does not respect optionally disabled features.</p>
@@ -898,9 +915,9 @@
         <a href="#method_get_instance" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/Features/Features.php"><a href="../files/woocommerce-src-admin-features-features.html#source-view.48">src/Admin/Features/Features.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/Features/Features.php"><a href="../files/woocommerce-src-admin-features-features.html#source-view.46">src/Admin/Features/Features.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">48</span>
+    <span class="phpdocumentor-element-found-in__line">46</span>
 </aside>
 
         <p class="phpdocumentor-summary">Get class instance.</p>
@@ -930,9 +947,9 @@
         <a href="#method_get_optional_feature_options" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/Features/Features.php"><a href="../files/woocommerce-src-admin-features-features.html#source-view.82">src/Admin/Features/Features.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/Features/Features.php"><a href="../files/woocommerce-src-admin-features-features.html#source-view.84">src/Admin/Features/Features.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">82</span>
+    <span class="phpdocumentor-element-found-in__line">84</span>
 </aside>
 
         <p class="phpdocumentor-summary">Gets the optional feature options as an associative array that can be toggled on or off.</p>
@@ -962,9 +979,9 @@
         <a href="#method_is_enabled" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/Features/Features.php"><a href="../files/woocommerce-src-admin-features-features.html#source-view.191">src/Admin/Features/Features.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/Features/Features.php"><a href="../files/woocommerce-src-admin-features-features.html#source-view.205">src/Admin/Features/Features.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">191</span>
+    <span class="phpdocumentor-element-found-in__line">205</span>
 </aside>
 
         <p class="phpdocumentor-summary">Check if a feature is enabled.</p>
@@ -1006,9 +1023,9 @@
         <a href="#method_load_features" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/Features/Features.php"><a href="../files/woocommerce-src-admin-features-features.html#source-view.131">src/Admin/Features/Features.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/Features/Features.php"><a href="../files/woocommerce-src-admin-features-features.html#source-view.137">src/Admin/Features/Features.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">131</span>
+    <span class="phpdocumentor-element-found-in__line">137</span>
 </aside>
 
         <p class="phpdocumentor-summary">Class loader for enabled WooCommerce Admin features/sections.</p>
@@ -1038,9 +1055,9 @@
         <a href="#method_load_scripts" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/Features/Features.php"><a href="../files/woocommerce-src-admin-features-features.html#source-view.301">src/Admin/Features/Features.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/Features/Features.php"><a href="../files/woocommerce-src-admin-features-features.html#source-view.315">src/Admin/Features/Features.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">301</span>
+    <span class="phpdocumentor-element-found-in__line">315</span>
 </aside>
 
         <p class="phpdocumentor-summary">Loads the required scripts on the correct pages.</p>
@@ -1070,9 +1087,9 @@
         <a href="#method_maybe_disable_features" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/Features/Features.php"><a href="../files/woocommerce-src-admin-features-features.html#source-view.236">src/Admin/Features/Features.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/Features/Features.php"><a href="../files/woocommerce-src-admin-features-features.html#source-view.250">src/Admin/Features/Features.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">236</span>
+    <span class="phpdocumentor-element-found-in__line">250</span>
 </aside>
 
         <p class="phpdocumentor-summary">Disable features when opting out of tracking.</p>
@@ -1123,9 +1140,9 @@
         <a href="#method_maybe_load_beta_features_modal" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/Features/Features.php"><a href="../files/woocommerce-src-admin-features-features.html#source-view.276">src/Admin/Features/Features.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/Features/Features.php"><a href="../files/woocommerce-src-admin-features-features.html#source-view.290">src/Admin/Features/Features.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">276</span>
+    <span class="phpdocumentor-element-found-in__line">290</span>
 </aside>
 
         <p class="phpdocumentor-summary">Conditionally loads the beta features tracking modal.</p>
@@ -1167,9 +1184,9 @@
         <a href="#method_register_internal_class_aliases" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/Features/Features.php"><a href="../files/woocommerce-src-admin-features-features.html#source-view.342">src/Admin/Features/Features.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/Features/Features.php"><a href="../files/woocommerce-src-admin-features-features.html#source-view.364">src/Admin/Features/Features.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">342</span>
+    <span class="phpdocumentor-element-found-in__line">364</span>
 </aside>
 
         <p class="phpdocumentor-summary">Alias internal features classes to make them backward compatible.</p>
@@ -1191,6 +1208,38 @@ See https://wp.me/p90Yrv-2HY for details.</p>
             &mdash; <span class="phpdocumentor-return-value__description"></span>
     
 </article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -private
+                                    -static                    "
+>
+    <h4 class="phpdocumentor-element__name" id="method_should_load_features">
+        should_load_features()
+        <a href="#method_should_load_features" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/Features/Features.php"><a href="../files/woocommerce-src-admin-features-features.html#source-view.392">src/Admin/Features/Features.php</a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">392</span>
+</aside>
+
+        <p class="phpdocumentor-summary">Check if we&#039;re in an admin context where features should be loaded.</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">private</span>
+            <span class="phpdocumentor-signature__static">static</span>    <span class="phpdocumentor-signature__name">should_load_features</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">bool</span></code>
+
+        <section class="phpdocumentor-description"></section>
+
+    
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">bool</span>
+            &mdash; <span class="phpdocumentor-return-value__description"></span>
+    
+</article>
             </section>
 
     </article>
@@ -1202,7 +1251,7 @@ See https://wp.me/p90Yrv-2HY for details.</p>
 
     <footer class="phpdocumentor phpdocumentor-footer">
     <div class="phpdocumentor-section">
-        <span>WooCommerce Code Reference API documentation generated by <a href="http://www.phpdoc.org/">phpDocumentor</a> on July 25th, 2024 at 11:33 am.</span>
+        <span>WooCommerce Code Reference API documentation generated by <a href="http://www.phpdoc.org/">phpDocumentor</a> on May 16th, 2025 at 09:14 am.</span>
     </div>
 </footer>
 
@@ -1214,7 +1263,7 @@ See https://wp.me/p90Yrv-2HY for details.</p>
             'searchIndex': '..\/js\/searchIndex.json'
         };
     </script>
-    <script src="../js/searchIndex.js?updated=1721907202"></script>
-    <script src="../js/search.js?updated=1721907202"></script>
+    <script src="../js/searchIndex.js?updated=1747386882"></script>
+    <script src="../js/search.js?updated=1747386882"></script>
 </body>
 </html>

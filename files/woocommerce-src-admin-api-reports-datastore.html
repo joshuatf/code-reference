@@ -4,14 +4,13 @@
     <meta charset="utf-8">
     <title>WooCommerce Code Reference</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="../images/favicon.png" />
-    <link rel="apple-touch-icon" href="../images/apple-touch-icon.png"/>
-    <link rel="apple-touch-icon" sizes="72x72" href="../images/apple-touch-icon-72x72.png"/>
-    <link rel="apple-touch-icon" sizes="114x114" href="../images/apple-touch-icon-114x114.png"/>
+    <link rel="icon" href="../images/favicon-32x32.png" sizes="32x32" />
+    <link rel="icon" href="../images/favicon-192x192.png" sizes="192x192" />
+    <link rel="apple-touch-icon" href="../images/favicon-180x180.png" />
+
     <link rel="stylesheet" href="../css/normalize.css">
-    <link rel="stylesheet" href="../css/base.css?updated=1721907184">
-    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../css/template.css?updated=1721907184">
+    <link rel="stylesheet" href="../css/base.css?updated=1747386860">
+    <link rel="stylesheet" href="../css/template.css?updated=1747386860">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0/css/all.min.css" integrity="sha256-ybRkN9dBjhcS2qrW1z+hfCxq+1aBdwyQM5wlQoQVt/0=" crossorigin="anonymous" />
             <script src="https://cdn.jsdelivr.net/npm/css-vars-ponyfill@2"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0/js/all.min.js" integrity="sha256-0vuk8LXoyrmCjp1f0O300qo1M75ZQyhH9X3J6d+scmk=" crossorigin="anonymous"></script>
@@ -38,14 +37,13 @@
     <header class="phpdocumentor-top-header">
     <section class="phpdocumentor-section">
         <div class="site-branding">
-            <a class="site-logo" href="../index.html"><img width="180" src="../images/logo.svg" alt="WooCommerce" /></a>
+            <a class="site-logo" href="../index.html"><img src="../images/logo.png" alt="WooCommerce" /></a>
         </div>
         <nav class="main-navigation">
             <ul>
                 <li><a href="../hooks/hooks.html">Hooks Reference</a></li>
-                <li><a href="https://docs.woocommerce.com/">Documentation</a></li>
+                <li><a href="https://developer.woocommerce.com/docs/">Documentation</a></li>
                 <li><a href="https://woocommerce.github.io/woocommerce-rest-api-docs/">REST API Docs</a></li>
-                <li><a href="https://woocommerce.com/careers/?utm_source=woocommerce+core+code+reference&utm_medium=devdocs&utm_campaign=woo+careers" target="_blank">We're hiring!</a></li>
             </ul>
         </nav>
     </section>
@@ -53,7 +51,7 @@
 
 <div class="phpdocumentor-header">
     <section class="phpdocumentor-section">
-        <h1 class="phpdocumentor-title">WooCommerce Code Reference</h1>
+        <h1 class="phpdocumentor-title"><a href="../index.html">WooCommerce Code Reference</a></h1>
         <section class="phpdocumentor-search">
     <label class="phpdocumentor-label">
         <span class="visually-hidden">Search (click ESC to close search results)</span>
@@ -74,6 +72,10 @@
                                         <h4 class="phpdocumentor-sidebar__root-namespace"><a href="../namespaces/woocommerce.html"><abbr title="\WooCommerce">WooCommerce</abbr></a></h4>
                 <ul class="phpdocumentor-list">
                                             <li><a href="../namespaces/woocommerce-admin.html"><abbr title="\WooCommerce\Admin">Admin</abbr></a></li>
+                                    </ul>
+                            <h4 class="phpdocumentor-sidebar__root-namespace"><a href="../namespaces/mailpoet.html"><abbr title="\MailPoet">MailPoet</abbr></a></h4>
+                <ul class="phpdocumentor-list">
+                                            <li><a href="../namespaces/mailpoet-emaileditor.html"><abbr title="\MailPoet\EmailEditor">EmailEditor</abbr></a></li>
                                     </ul>
                             <h4 class="phpdocumentor-sidebar__root-namespace"><a href="../namespaces/automattic.html"><abbr title="\Automattic">Automattic</abbr></a></h4>
                 <ul class="phpdocumentor-list">
@@ -119,8 +121,10 @@
                                     <li><a href="../packages/WooCommerce-Widgets.html"><abbr title="\WooCommerce\Widgets">Widgets</abbr></a></li>
                                     <li><a href="../packages/WooCommerce-Uninstaller.html"><abbr title="\WooCommerce\Uninstaller">Uninstaller</abbr></a></li>
                             </ul>
-                                <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/WoocommerceAdmin.html"><abbr title="\WoocommerceAdmin">WoocommerceAdmin</abbr></a></h3>
-                                <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/WoocommerceNavigation.html"><abbr title="\WoocommerceNavigation">WoocommerceNavigation</abbr></a></h3>
+                                <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/MailPoet.html"><abbr title="\MailPoet">MailPoet</abbr></a></h3>
+                        <ul class="phpdocumentor-list">
+                                    <li><a href="../packages/MailPoet-EmailEditor.html"><abbr title="\MailPoet\EmailEditor">EmailEditor</abbr></a></li>
+                            </ul>
                                 <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/Automattic.html"><abbr title="\Automattic">Automattic</abbr></a></h3>
                         <ul class="phpdocumentor-list">
                                     <li><a href="../packages/Automattic-WooCommerce.html"><abbr title="\Automattic\WooCommerce">WooCommerce</abbr></a></li>
@@ -167,12 +171,59 @@ if ( ! defined( &#039;ABSPATH&#039; ) ) {
 	exit;
 }
 
+use Automattic\WooCommerce\Admin\API\Reports\DataStoreInterface;
 use Automattic\WooCommerce\Admin\API\Reports\TimeInterval;
 
 /**
- * Admin\API\Reports\DataStore: Common parent for custom report data stores.
+ * Common parent for custom report data stores.
+ *
+ * We use Report DataStores to separate DB data retrieval logic from the REST API controllers.
+ *
+ * Handles caching, data normalization, intervals-related methods, and other common functionality.
+ * So, in your custom report DataStore class that extends this class
+ * you can focus on specifics by overriding the `get_noncached_data` method.
+ *
+ * Minimalistic example:
+ * &lt;pre&gt;&lt;code class=&quot;language-php&quot;&gt;class MyDataStore extends DataStore implements DataStoreInterface {
+ *     /** Cache identifier, used by the `DataStore` class to handle caching for you. &amp;ast;/
+ *     protected $cache_key = &#039;my_thing&#039;;
+ *     /** Data store context used to pass to filters. &amp;ast;/
+ *     protected $context = &#039;my_thing&#039;;
+ *     /** Table used to get the data. &amp;ast;/
+ *     protected static $table_name = &#039;my_table&#039;;
+ *     /**
+ *      * Method that overrides the `DataStore::get_noncached_data()` to return the report data.
+ *      * Will be called by `get_data` if there is no data in cache.
+ *      &amp;ast;/
+ *     public function get_noncached_data( $query ) {
+ *         // Do your magic.
+ *
+ *         // Then return your data in conforming object structure.
+ *         return (object) array(
+ *             &#039;data&#039; =&gt; $product_data,
+ *             &#039;total&#039; =&gt; 1,
+ *             &#039;page_no&#039; =&gt; 1,
+ *             &#039;pages&#039; =&gt; 1,
+ *         );
+ *     }
+ * }
+ * &lt;/code&gt;&lt;/pre&gt;
+ *
+ * Please use the `woocommerce_data_stores` filter to add your custom data store to the list of available ones.
+ * Then, your store could be accessed by Controller classes ({@see GenericController::get_datastore_data() GenericController::get_datastore_data()})
+ * or using {@link \WC_Data_Store::load() \WC_Data_Store::load()}.
+ *
+ * We recommend registering using the REST base name of your Controller as the key, e.g.:
+ * &lt;pre&gt;&lt;code class=&quot;language-php&quot;&gt;add_filter( &#039;woocommerce_data_stores&#039;, function( $stores ) {
+ *     $stores[&#039;reports/my-thing&#039;] = &#039;MyExtension\Admin\Analytics\Rest_API\MyDataStore&#039;;
+ * } );
+ * &lt;/code&gt;&lt;/pre&gt;
+ * This way, `GenericController` will pick it up automatically.
+ *
+ * Note that this class is NOT {@link https://developer.woocommerce.com/docs/how-to-manage-woocommerce-data-stores/ a CRUD data store}.
+ * It does not implement the {@see WC_Object_Data_Store_Interface WC_Object_Data_Store_Interface} nor extend WC_Data &amp; WC_Data_Store_WP classes.
  */
-class DataStore extends SqlQuery {
+class DataStore extends SqlQuery implements DataStoreInterface {
 
 	/**
 	 * Cache group for the reports.
@@ -248,6 +299,8 @@ class DataStore extends SqlQuery {
 	/**
 	 * Data store context used to pass to filters.
 	 *
+	 * @override SqlQuery
+	 *
 	 * @var string
 	 */
 	protected $context = &#039;reports&#039;;
@@ -296,6 +349,8 @@ class DataStore extends SqlQuery {
 
 	/**
 	 * Class constructor.
+	 *
+	 * @override SqlQuery::__construct()
 	 */
 	public function __construct() {
 		self::set_db_table_name();
@@ -318,12 +373,73 @@ class DataStore extends SqlQuery {
 		}
 	}
 
+
+	/**
+	 * Get the data based on args.
+	 *
+	 * Returns the report data based on parameters supplied by the user.
+	 * Fetches it from cache or returns `get_noncached_data` result.
+	 *
+	 * @param array $query_args Query parameters.
+	 * @return stdClass|WP_Error
+	 */
+	public function get_data( $query_args ) {
+		$defaults   = $this-&gt;get_default_query_vars();
+		$query_args = wp_parse_args( $query_args, $defaults );
+		$this-&gt;normalize_timezones( $query_args, $defaults );
+
+		/*
+		 * We need to get the cache key here because
+		 * parent::update_intervals_sql_params() modifies $query_args.
+		 */
+		$cache_key = $this-&gt;get_cache_key( $query_args );
+		$data      = $this-&gt;get_cached_data( $cache_key );
+
+		if ( false === $data ) {
+			$data = $this-&gt;get_noncached_data( $query_args );
+			$this-&gt;set_cached_data( $cache_key, $data );
+		}
+
+		return $data;
+	}
+
+	/**
+	 * Get the default query arguments to be used by get_data().
+	 * These defaults are only partially applied when used via REST API, as that has its own defaults.
+	 *
+	 * @return array Query parameters.
+	 */
+	public function get_default_query_vars() {
+		return array(
+			&#039;per_page&#039; =&gt; get_option( &#039;posts_per_page&#039; ),
+			&#039;page&#039;     =&gt; 1,
+			&#039;order&#039;    =&gt; &#039;DESC&#039;,
+			&#039;orderby&#039;  =&gt; &#039;date&#039;,
+			&#039;before&#039;   =&gt; TimeInterval::default_before(),
+			&#039;after&#039;    =&gt; TimeInterval::default_after(),
+			&#039;fields&#039;   =&gt; &#039;*&#039;,
+		);
+	}
+
 	/**
 	 * Get table name from database class.
 	 */
 	public static function get_db_table_name() {
 		global $wpdb;
 		return isset( $wpdb-&gt;{static::$table_name} ) ? $wpdb-&gt;{static::$table_name} : $wpdb-&gt;prefix . static::$table_name;
+	}
+
+	/**
+	 * Returns the report data based on normalized parameters.
+	 * Will be called by `get_data` if there is no data in cache.
+	 *
+	 * @see get_data
+	 * @param array $query_args Query parameters.
+	 * @return stdClass|WP_Error Data object `{ totals: *, intervals: array, total: int, pages: int, page_no: int }`, or error.
+	 */
+	public function get_noncached_data( $query_args ) {
+		/* translators: %s: Method name */
+		return new \WP_Error( &#039;invalid-method&#039;, sprintf( __( &quot;Method &#039;%s&#039; not implemented. Must be overridden in subclass.&quot;, &#039;woocommerce&#039; ), __METHOD__ ), array( &#039;status&#039; =&gt; 405 ) );
 	}
 
 	/**
@@ -1657,7 +1773,7 @@ class DataStore extends SqlQuery {
 
     <footer class="phpdocumentor phpdocumentor-footer">
     <div class="phpdocumentor-section">
-        <span>WooCommerce Code Reference API documentation generated by <a href="http://www.phpdoc.org/">phpDocumentor</a> on July 25th, 2024 at 11:33 am.</span>
+        <span>WooCommerce Code Reference API documentation generated by <a href="http://www.phpdoc.org/">phpDocumentor</a> on May 16th, 2025 at 09:14 am.</span>
     </div>
 </footer>
 
@@ -1669,7 +1785,7 @@ class DataStore extends SqlQuery {
             'searchIndex': '..\/js\/searchIndex.json'
         };
     </script>
-    <script src="../js/searchIndex.js?updated=1721907184"></script>
-    <script src="../js/search.js?updated=1721907184"></script>
+    <script src="../js/searchIndex.js?updated=1747386860"></script>
+    <script src="../js/search.js?updated=1747386860"></script>
 </body>
 </html>

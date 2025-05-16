@@ -4,14 +4,13 @@
     <meta charset="utf-8">
     <title>WooCommerce Code Reference</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="../images/favicon.png" />
-    <link rel="apple-touch-icon" href="../images/apple-touch-icon.png"/>
-    <link rel="apple-touch-icon" sizes="72x72" href="../images/apple-touch-icon-72x72.png"/>
-    <link rel="apple-touch-icon" sizes="114x114" href="../images/apple-touch-icon-114x114.png"/>
+    <link rel="icon" href="../images/favicon-32x32.png" sizes="32x32" />
+    <link rel="icon" href="../images/favicon-192x192.png" sizes="192x192" />
+    <link rel="apple-touch-icon" href="../images/favicon-180x180.png" />
+
     <link rel="stylesheet" href="../css/normalize.css">
-    <link rel="stylesheet" href="../css/base.css?updated=1721907208">
-    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../css/template.css?updated=1721907208">
+    <link rel="stylesheet" href="../css/base.css?updated=1747386889">
+    <link rel="stylesheet" href="../css/template.css?updated=1747386889">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0/css/all.min.css" integrity="sha256-ybRkN9dBjhcS2qrW1z+hfCxq+1aBdwyQM5wlQoQVt/0=" crossorigin="anonymous" />
             <script src="https://cdn.jsdelivr.net/npm/css-vars-ponyfill@2"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0/js/all.min.js" integrity="sha256-0vuk8LXoyrmCjp1f0O300qo1M75ZQyhH9X3J6d+scmk=" crossorigin="anonymous"></script>
@@ -27,19 +26,24 @@
 		'content_group' : 'WooCommerce Core Code Reference',
 	});
 </script>
-        </head>
+        <script src="../js/prism.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            window.dispatchEvent(new HashChangeEvent('hashchange'));
+        });
+    </script>
+</head>
 <body id="top">
     <header class="phpdocumentor-top-header">
     <section class="phpdocumentor-section">
         <div class="site-branding">
-            <a class="site-logo" href="../index.html"><img width="180" src="../images/logo.svg" alt="WooCommerce" /></a>
+            <a class="site-logo" href="../index.html"><img src="../images/logo.png" alt="WooCommerce" /></a>
         </div>
         <nav class="main-navigation">
             <ul>
                 <li><a href="../hooks/hooks.html">Hooks Reference</a></li>
-                <li><a href="https://docs.woocommerce.com/">Documentation</a></li>
+                <li><a href="https://developer.woocommerce.com/docs/">Documentation</a></li>
                 <li><a href="https://woocommerce.github.io/woocommerce-rest-api-docs/">REST API Docs</a></li>
-                <li><a href="https://woocommerce.com/careers/?utm_source=woocommerce+core+code+reference&utm_medium=devdocs&utm_campaign=woo+careers" target="_blank">We're hiring!</a></li>
             </ul>
         </nav>
     </section>
@@ -47,7 +51,7 @@
 
 <div class="phpdocumentor-header">
     <section class="phpdocumentor-section">
-        <h1 class="phpdocumentor-title">WooCommerce Code Reference</h1>
+        <h1 class="phpdocumentor-title"><a href="../index.html">WooCommerce Code Reference</a></h1>
         <section class="phpdocumentor-search">
     <label class="phpdocumentor-label">
         <span class="visually-hidden">Search (click ESC to close search results)</span>
@@ -68,6 +72,10 @@
                                         <h4 class="phpdocumentor-sidebar__root-namespace"><a href="../namespaces/woocommerce.html"><abbr title="\WooCommerce">WooCommerce</abbr></a></h4>
                 <ul class="phpdocumentor-list">
                                             <li><a href="../namespaces/woocommerce-admin.html"><abbr title="\WooCommerce\Admin">Admin</abbr></a></li>
+                                    </ul>
+                            <h4 class="phpdocumentor-sidebar__root-namespace"><a href="../namespaces/mailpoet.html"><abbr title="\MailPoet">MailPoet</abbr></a></h4>
+                <ul class="phpdocumentor-list">
+                                            <li><a href="../namespaces/mailpoet-emaileditor.html"><abbr title="\MailPoet\EmailEditor">EmailEditor</abbr></a></li>
                                     </ul>
                             <h4 class="phpdocumentor-sidebar__root-namespace"><a href="../namespaces/automattic.html"><abbr title="\Automattic">Automattic</abbr></a></h4>
                 <ul class="phpdocumentor-list">
@@ -113,8 +121,10 @@
                                     <li><a href="../packages/WooCommerce-Widgets.html"><abbr title="\WooCommerce\Widgets">Widgets</abbr></a></li>
                                     <li><a href="../packages/WooCommerce-Uninstaller.html"><abbr title="\WooCommerce\Uninstaller">Uninstaller</abbr></a></li>
                             </ul>
-                                <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/WoocommerceAdmin.html"><abbr title="\WoocommerceAdmin">WoocommerceAdmin</abbr></a></h3>
-                                <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/WoocommerceNavigation.html"><abbr title="\WoocommerceNavigation">WoocommerceNavigation</abbr></a></h3>
+                                <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/MailPoet.html"><abbr title="\MailPoet">MailPoet</abbr></a></h3>
+                        <ul class="phpdocumentor-list">
+                                    <li><a href="../packages/MailPoet-EmailEditor.html"><abbr title="\MailPoet\EmailEditor">EmailEditor</abbr></a></li>
+                            </ul>
                                 <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/Automattic.html"><abbr title="\Automattic">Automattic</abbr></a></h3>
                         <ul class="phpdocumentor-list">
                                     <li><a href="../packages/Automattic-WooCommerce.html"><abbr title="\Automattic\WooCommerce">WooCommerce</abbr></a></li>
@@ -159,9 +169,9 @@
     </h2>
 
         <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/StoreApi/Authentication.php"><a href="../files/woocommerce-src-storeapi-authentication.html#source-view.10">src/StoreApi/Authentication.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/StoreApi/Authentication.php"><a href="../files/woocommerce-src-storeapi-authentication.html#source-view.12">src/StoreApi/Authentication.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">10</span>
+    <span class="phpdocumentor-element-found-in__line">12</span>
 </aside>
 
             <p class="phpdocumentor-summary">Authentication class.</p>
@@ -196,11 +206,25 @@
 <dd>The Store API does not require authentication.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a href="../classes/Automattic-WooCommerce-StoreApi-Authentication.html#method_exposed_cors_headers">exposed_cors_headers()</a>
+    <span>
+                        &nbsp;: array&lt;string|int, mixed&gt;    </span>
+</dt>
+<dd>Expose Store API headers in CORS responses.</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="../classes/Automattic-WooCommerce-StoreApi-Authentication.html#method_init">init()</a>
     <span>
                         &nbsp;: mixed    </span>
 </dt>
 <dd>Hook into WP lifecycle events. This is hooked by the StoreAPI class on `rest_api_init`.</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a href="../classes/Automattic-WooCommerce-StoreApi-Authentication.html#method_opt_in_checkout_endpoint">opt_in_checkout_endpoint()</a>
+    <span>
+                        &nbsp;: <abbr title="\WP_Error">WP_Error</abbr>|null|bool    </span>
+</dt>
+<dd>Opt in to rate limiting for the checkout endpoint.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="../classes/Automattic-WooCommerce-StoreApi-Authentication.html#method_send_cors_headers">send_cors_headers()</a>
@@ -225,6 +249,13 @@ for returning updated nonces, we need this to be available immediately.</dd>
 <dd>Applies Rate Limiting to the request, and passes through any errors from other authentication methods used before this one.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -protected">
+    <a href="../classes/Automattic-WooCommerce-StoreApi-Authentication.html#method_get_cart_token">get_cart_token()</a>
+    <span>
+                        &nbsp;: string    </span>
+</dt>
+<dd>Gets the cart token from the request header.</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -protected">
     <a href="../classes/Automattic-WooCommerce-StoreApi-Authentication.html#method_get_cart_token_secret">get_cart_token_secret()</a>
     <span>
                         &nbsp;: string    </span>
@@ -239,11 +270,11 @@ for returning updated nonces, we need this to be available immediately.</dd>
 <dd>Get current user IP Address.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -protected">
-    <a href="../classes/Automattic-WooCommerce-StoreApi-Authentication.html#method_has_valid_cart_token">has_valid_cart_token()</a>
+    <a href="../classes/Automattic-WooCommerce-StoreApi-Authentication.html#method_get_rate_limiting_id">get_rate_limiting_id()</a>
     <span>
-                        &nbsp;: bool    </span>
+                        &nbsp;: string    </span>
 </dt>
-<dd>Checks if we&#039;re using a cart token to access the Store API.</dd>
+<dd>Generates the request grouping identifier for the rate limiting.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -protected">
     <a href="../classes/Automattic-WooCommerce-StoreApi-Authentication.html#method_is_preflight">is_preflight()</a>
@@ -291,9 +322,9 @@ Will return 0.0.0.0 if the ip is not valid. This is done to group and still rate
         <a href="#method_allowed_cors_headers" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/StoreApi/Authentication.php"><a href="../files/woocommerce-src-storeapi-authentication.html#source-view.33">src/StoreApi/Authentication.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/StoreApi/Authentication.php"><a href="../files/woocommerce-src-storeapi-authentication.html#source-view.37">src/StoreApi/Authentication.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">33</span>
+    <span class="phpdocumentor-element-found-in__line">37</span>
 </aside>
 
         <p class="phpdocumentor-summary">Add allowed cors headers for store API headers.</p>
@@ -335,9 +366,9 @@ Will return 0.0.0.0 if the ip is not valid. This is done to group and still rate
         <a href="#method_check_authentication" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/StoreApi/Authentication.php"><a href="../files/woocommerce-src-storeapi-authentication.html#source-view.120">src/StoreApi/Authentication.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/StoreApi/Authentication.php"><a href="../files/woocommerce-src-storeapi-authentication.html#source-view.133">src/StoreApi/Authentication.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">120</span>
+    <span class="phpdocumentor-element-found-in__line">133</span>
 </aside>
 
         <p class="phpdocumentor-summary">The Store API does not require authentication.</p>
@@ -374,14 +405,59 @@ Will return 0.0.0.0 if the ip is not valid. This is done to group and still rate
             -public
                                                         "
 >
+    <h4 class="phpdocumentor-element__name" id="method_exposed_cors_headers">
+        exposed_cors_headers()
+        <a href="#method_exposed_cors_headers" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/StoreApi/Authentication.php"><a href="../files/woocommerce-src-storeapi-authentication.html#source-view.50">src/StoreApi/Authentication.php</a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">50</span>
+</aside>
+
+        <p class="phpdocumentor-summary">Expose Store API headers in CORS responses.</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                <span class="phpdocumentor-signature__name">exposed_cors_headers</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__name">$exposed_headers</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">array&lt;string|int, mixed&gt;</span></code>
+
+        <section class="phpdocumentor-description"><p>We're explicitly exposing the Cart-Token, not the nonce. Only one of them is needed.</p>
+</section>
+
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$exposed_headers</span>
+                : <span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"><p>Exposed headers.</p>
+</section>
+
+            </dd>
+            </dl>
+
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">array&lt;string|int, mixed&gt;</span>
+            &mdash; <span class="phpdocumentor-return-value__description"></span>
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                                        "
+>
     <h4 class="phpdocumentor-element__name" id="method_init">
         init()
         <a href="#method_init" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/StoreApi/Authentication.php"><a href="../files/woocommerce-src-storeapi-authentication.html#source-view.14">src/StoreApi/Authentication.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/StoreApi/Authentication.php"><a href="../files/woocommerce-src-storeapi-authentication.html#source-view.16">src/StoreApi/Authentication.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">14</span>
+    <span class="phpdocumentor-element-found-in__line">16</span>
 </aside>
 
         <p class="phpdocumentor-summary">Hook into WP lifecycle events. This is hooked by the StoreAPI class on `rest_api_init`.</p>
@@ -406,21 +482,65 @@ Will return 0.0.0.0 if the ip is not valid. This is done to group and still rate
             -public
                                                         "
 >
+    <h4 class="phpdocumentor-element__name" id="method_opt_in_checkout_endpoint">
+        opt_in_checkout_endpoint()
+        <a href="#method_opt_in_checkout_endpoint" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/StoreApi/Authentication.php"><a href="../files/woocommerce-src-storeapi-authentication.html#source-view.162">src/StoreApi/Authentication.php</a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">162</span>
+</aside>
+
+        <p class="phpdocumentor-summary">Opt in to rate limiting for the checkout endpoint.</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                <span class="phpdocumentor-signature__name">opt_in_checkout_endpoint</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type"><abbr title="\WP_Error">WP_Error</abbr>|mixed&nbsp;</span><span class="phpdocumentor-signature__argument__name">$result</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><abbr title="\WP_Error">WP_Error</abbr>|null|bool</span></code>
+
+        <section class="phpdocumentor-description"></section>
+
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$result</span>
+                : <span class="phpdocumentor-signature__argument__return-type"><abbr title="\WP_Error">WP_Error</abbr>|mixed</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"><p>Error from another authentication handler, null if we should handle it, or another value if not.</p>
+</section>
+
+            </dd>
+            </dl>
+
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type"><abbr title="\WP_Error">WP_Error</abbr>|null|bool</span>
+            &mdash; <span class="phpdocumentor-return-value__description"></span>
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                                        "
+>
     <h4 class="phpdocumentor-element__name" id="method_send_cors_headers">
         send_cors_headers()
         <a href="#method_send_cors_headers" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/StoreApi/Authentication.php"><a href="../files/woocommerce-src-storeapi-authentication.html#source-view.56">src/StoreApi/Authentication.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/StoreApi/Authentication.php"><a href="../files/woocommerce-src-storeapi-authentication.html#source-view.71">src/StoreApi/Authentication.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">56</span>
+    <span class="phpdocumentor-element-found-in__line">71</span>
 </aside>
 
         <p class="phpdocumentor-summary">Add CORS headers to a response object.</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                <span class="phpdocumentor-signature__name">send_cors_headers</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">bool&nbsp;</span><span class="phpdocumentor-signature__argument__name">$value</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type"><abbr title="\WP_HTTP_Response">WP_HTTP_Response</abbr>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$result</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type"><abbr title="\WP_REST_Request">WP_REST_Request</abbr>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$request</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">bool</span></code>
+                <span class="phpdocumentor-signature__name">send_cors_headers</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">bool&nbsp;</span><span class="phpdocumentor-signature__argument__name">$value</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type"><abbr title="\WP_REST_Server">WP_REST_Server</abbr>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$server</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type"><abbr title="\WP_REST_Request">WP_REST_Request</abbr>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$request</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">bool</span></code>
 
         <section class="phpdocumentor-description"><p>These checks prevent access to the Store API from non-allowed origins. By default, the WordPress REST API allows
 access from any origin. Because some Store API routes return PII, we need to add our own CORS headers.</p>
@@ -441,11 +561,11 @@ access needs to be granted to other domains.</p>
 
             </dd>
                     <dt class="phpdocumentor-argument-list__entry">
-                <span class="phpdocumentor-signature__argument__name">$result</span>
-                : <span class="phpdocumentor-signature__argument__return-type"><abbr title="\WP_HTTP_Response">WP_HTTP_Response</abbr></span>
+                <span class="phpdocumentor-signature__argument__name">$server</span>
+                : <span class="phpdocumentor-signature__argument__return-type"><abbr title="\WP_REST_Server">WP_REST_Server</abbr></span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"><p>Result to send to the client. Usually a <code class="prettyprint">WP_REST_Response</code>.</p>
+                    <section class="phpdocumentor-description"><p>The REST server instance.</p>
 </section>
 
             </dd>
@@ -454,7 +574,7 @@ access needs to be granted to other domains.</p>
                 : <span class="phpdocumentor-signature__argument__return-type"><abbr title="\WP_REST_Request">WP_REST_Request</abbr></span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"><p>Request used to generate the response.</p>
+                    <section class="phpdocumentor-description"><p>The REST request instance.</p>
 </section>
 
             </dd>
@@ -478,9 +598,9 @@ access needs to be granted to other domains.</p>
         <a href="#method_set_logged_in_cookie" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/StoreApi/Authentication.php"><a href="../files/woocommerce-src-storeapi-authentication.html#source-view.136">src/StoreApi/Authentication.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/StoreApi/Authentication.php"><a href="../files/woocommerce-src-storeapi-authentication.html#source-view.149">src/StoreApi/Authentication.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">136</span>
+    <span class="phpdocumentor-element-found-in__line">149</span>
 </aside>
 
         <p class="phpdocumentor-summary">When the login cookies are set, they are not available until the next page reload. For the Store API, specifically
@@ -523,9 +643,9 @@ for returning updated nonces, we need this to be available immediately.</p>
         <a href="#method_apply_rate_limiting" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/StoreApi/Authentication.php"><a href="../files/woocommerce-src-storeapi-authentication.html#source-view.149">src/StoreApi/Authentication.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/StoreApi/Authentication.php"><a href="../files/woocommerce-src-storeapi-authentication.html#source-view.190">src/StoreApi/Authentication.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">149</span>
+    <span class="phpdocumentor-element-found-in__line">190</span>
 </aside>
 
         <p class="phpdocumentor-summary">Applies Rate Limiting to the request, and passes through any errors from other authentication methods used before this one.</p>
@@ -562,14 +682,58 @@ for returning updated nonces, we need this to be available immediately.</p>
             -protected
                                                         "
 >
+    <h4 class="phpdocumentor-element__name" id="method_get_cart_token">
+        get_cart_token()
+        <a href="#method_get_cart_token" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/StoreApi/Authentication.php"><a href="../files/woocommerce-src-storeapi-authentication.html#source-view.114">src/StoreApi/Authentication.php</a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">114</span>
+</aside>
+
+        <p class="phpdocumentor-summary">Gets the cart token from the request header.</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">protected</span>
+                <span class="phpdocumentor-signature__name">get_cart_token</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type"><abbr title="\WP_REST_Request">WP_REST_Request</abbr>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$request</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">string</span></code>
+
+        <section class="phpdocumentor-description"></section>
+
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$request</span>
+                : <span class="phpdocumentor-signature__argument__return-type"><abbr title="\WP_REST_Request">WP_REST_Request</abbr></span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"><p>The REST request instance.</p>
+</section>
+
+            </dd>
+            </dl>
+
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">string</span>
+            &mdash; <span class="phpdocumentor-return-value__description"></span>
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -protected
+                                                        "
+>
     <h4 class="phpdocumentor-element__name" id="method_get_cart_token_secret">
         get_cart_token_secret()
         <a href="#method_get_cart_token_secret" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/StoreApi/Authentication.php"><a href="../files/woocommerce-src-storeapi-authentication.html#source-view.110">src/StoreApi/Authentication.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/StoreApi/Authentication.php"><a href="../files/woocommerce-src-storeapi-authentication.html#source-view.123">src/StoreApi/Authentication.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">110</span>
+    <span class="phpdocumentor-element-found-in__line">123</span>
 </aside>
 
         <p class="phpdocumentor-summary">Gets the secret for the cart token using wp_salt.</p>
@@ -599,9 +763,9 @@ for returning updated nonces, we need this to be available immediately.</p>
         <a href="#method_get_ip_address" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/StoreApi/Authentication.php"><a href="../files/woocommerce-src-storeapi-authentication.html#source-view.229">src/StoreApi/Authentication.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/StoreApi/Authentication.php"><a href="../files/woocommerce-src-storeapi-authentication.html#source-view.295">src/StoreApi/Authentication.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">229</span>
+    <span class="phpdocumentor-element-found-in__line">295</span>
 </aside>
 
         <p class="phpdocumentor-summary">Get current user IP Address.</p>
@@ -644,34 +808,34 @@ Full RFC at https://datatracker.ietf.org/doc/html/rfc7239</p>
         class="phpdocumentor-element
             -method
             -protected
-                                                        "
+                                    -static                    "
 >
-    <h4 class="phpdocumentor-element__name" id="method_has_valid_cart_token">
-        has_valid_cart_token()
-        <a href="#method_has_valid_cart_token" class="headerlink"><i class="fas fa-link"></i></a>
+    <h4 class="phpdocumentor-element__name" id="method_get_rate_limiting_id">
+        get_rate_limiting_id()
+        <a href="#method_get_rate_limiting_id" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/StoreApi/Authentication.php"><a href="../files/woocommerce-src-storeapi-authentication.html#source-view.99">src/StoreApi/Authentication.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/StoreApi/Authentication.php"><a href="../files/woocommerce-src-storeapi-authentication.html#source-view.245">src/StoreApi/Authentication.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">99</span>
+    <span class="phpdocumentor-element-found-in__line">245</span>
 </aside>
 
-        <p class="phpdocumentor-summary">Checks if we&#039;re using a cart token to access the Store API.</p>
+        <p class="phpdocumentor-summary">Generates the request grouping identifier for the rate limiting.</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">protected</span>
-                <span class="phpdocumentor-signature__name">has_valid_cart_token</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type"><abbr title="\WP_REST_Request">WP_REST_Request</abbr>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$request</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">bool</span></code>
+            <span class="phpdocumentor-signature__static">static</span>    <span class="phpdocumentor-signature__name">get_rate_limiting_id</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">bool&nbsp;</span><span class="phpdocumentor-signature__argument__name">$proxy_support</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">string</span></code>
 
         <section class="phpdocumentor-description"></section>
 
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
     <dl class="phpdocumentor-argument-list">
                     <dt class="phpdocumentor-argument-list__entry">
-                <span class="phpdocumentor-signature__argument__name">$request</span>
-                : <span class="phpdocumentor-signature__argument__return-type"><abbr title="\WP_REST_Request">WP_REST_Request</abbr></span>
+                <span class="phpdocumentor-signature__argument__name">$proxy_support</span>
+                : <span class="phpdocumentor-signature__argument__return-type">bool</span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"><p>Request object.</p>
+                    <section class="phpdocumentor-description"><p>Rate Limiting proxy support.</p>
 </section>
 
             </dd>
@@ -680,7 +844,7 @@ Full RFC at https://datatracker.ietf.org/doc/html/rfc7239</p>
     
 
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">bool</span>
+    <span class="phpdocumentor-signature__response_type">string</span>
             &mdash; <span class="phpdocumentor-return-value__description"></span>
     
 </article>
@@ -695,9 +859,9 @@ Full RFC at https://datatracker.ietf.org/doc/html/rfc7239</p>
         <a href="#method_is_preflight" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/StoreApi/Authentication.php"><a href="../files/woocommerce-src-storeapi-authentication.html#source-view.89">src/StoreApi/Authentication.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/StoreApi/Authentication.php"><a href="../files/woocommerce-src-storeapi-authentication.html#source-view.104">src/StoreApi/Authentication.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">89</span>
+    <span class="phpdocumentor-element-found-in__line">104</span>
 </aside>
 
         <p class="phpdocumentor-summary">Is the request a preflight request? Checks the request method</p>
@@ -727,9 +891,9 @@ Full RFC at https://datatracker.ietf.org/doc/html/rfc7239</p>
         <a href="#method_is_request_to_store_api" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/StoreApi/Authentication.php"><a href="../files/woocommerce-src-storeapi-authentication.html#source-view.204">src/StoreApi/Authentication.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/StoreApi/Authentication.php"><a href="../files/woocommerce-src-storeapi-authentication.html#source-view.270">src/StoreApi/Authentication.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">204</span>
+    <span class="phpdocumentor-element-found-in__line">270</span>
 </aside>
 
         <p class="phpdocumentor-summary">Check if is request to the Store API.</p>
@@ -759,9 +923,9 @@ Full RFC at https://datatracker.ietf.org/doc/html/rfc7239</p>
         <a href="#method_validate_ip" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/StoreApi/Authentication.php"><a href="../files/woocommerce-src-storeapi-authentication.html#source-view.283">src/StoreApi/Authentication.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/StoreApi/Authentication.php"><a href="../files/woocommerce-src-storeapi-authentication.html#source-view.349">src/StoreApi/Authentication.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">283</span>
+    <span class="phpdocumentor-element-found-in__line">349</span>
 </aside>
 
         <p class="phpdocumentor-summary">Uses filter_var() to validate and return ipv4 and ipv6 addresses
@@ -804,7 +968,7 @@ Will return 0.0.0.0 if the ip is not valid. This is done to group and still rate
 
     <footer class="phpdocumentor phpdocumentor-footer">
     <div class="phpdocumentor-section">
-        <span>WooCommerce Code Reference API documentation generated by <a href="http://www.phpdoc.org/">phpDocumentor</a> on July 25th, 2024 at 11:33 am.</span>
+        <span>WooCommerce Code Reference API documentation generated by <a href="http://www.phpdoc.org/">phpDocumentor</a> on May 16th, 2025 at 09:14 am.</span>
     </div>
 </footer>
 
@@ -816,7 +980,7 @@ Will return 0.0.0.0 if the ip is not valid. This is done to group and still rate
             'searchIndex': '..\/js\/searchIndex.json'
         };
     </script>
-    <script src="../js/searchIndex.js?updated=1721907208"></script>
-    <script src="../js/search.js?updated=1721907208"></script>
+    <script src="../js/searchIndex.js?updated=1747386889"></script>
+    <script src="../js/search.js?updated=1747386889"></script>
 </body>
 </html>

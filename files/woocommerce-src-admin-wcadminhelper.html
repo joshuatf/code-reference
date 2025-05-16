@@ -4,14 +4,13 @@
     <meta charset="utf-8">
     <title>WooCommerce Code Reference</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="../images/favicon.png" />
-    <link rel="apple-touch-icon" href="../images/apple-touch-icon.png"/>
-    <link rel="apple-touch-icon" sizes="72x72" href="../images/apple-touch-icon-72x72.png"/>
-    <link rel="apple-touch-icon" sizes="114x114" href="../images/apple-touch-icon-114x114.png"/>
+    <link rel="icon" href="../images/favicon-32x32.png" sizes="32x32" />
+    <link rel="icon" href="../images/favicon-192x192.png" sizes="192x192" />
+    <link rel="apple-touch-icon" href="../images/favicon-180x180.png" />
+
     <link rel="stylesheet" href="../css/normalize.css">
-    <link rel="stylesheet" href="../css/base.css?updated=1721907185">
-    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../css/template.css?updated=1721907185">
+    <link rel="stylesheet" href="../css/base.css?updated=1747386861">
+    <link rel="stylesheet" href="../css/template.css?updated=1747386861">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0/css/all.min.css" integrity="sha256-ybRkN9dBjhcS2qrW1z+hfCxq+1aBdwyQM5wlQoQVt/0=" crossorigin="anonymous" />
             <script src="https://cdn.jsdelivr.net/npm/css-vars-ponyfill@2"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0/js/all.min.js" integrity="sha256-0vuk8LXoyrmCjp1f0O300qo1M75ZQyhH9X3J6d+scmk=" crossorigin="anonymous"></script>
@@ -38,14 +37,13 @@
     <header class="phpdocumentor-top-header">
     <section class="phpdocumentor-section">
         <div class="site-branding">
-            <a class="site-logo" href="../index.html"><img width="180" src="../images/logo.svg" alt="WooCommerce" /></a>
+            <a class="site-logo" href="../index.html"><img src="../images/logo.png" alt="WooCommerce" /></a>
         </div>
         <nav class="main-navigation">
             <ul>
                 <li><a href="../hooks/hooks.html">Hooks Reference</a></li>
-                <li><a href="https://docs.woocommerce.com/">Documentation</a></li>
+                <li><a href="https://developer.woocommerce.com/docs/">Documentation</a></li>
                 <li><a href="https://woocommerce.github.io/woocommerce-rest-api-docs/">REST API Docs</a></li>
-                <li><a href="https://woocommerce.com/careers/?utm_source=woocommerce+core+code+reference&utm_medium=devdocs&utm_campaign=woo+careers" target="_blank">We're hiring!</a></li>
             </ul>
         </nav>
     </section>
@@ -53,7 +51,7 @@
 
 <div class="phpdocumentor-header">
     <section class="phpdocumentor-section">
-        <h1 class="phpdocumentor-title">WooCommerce Code Reference</h1>
+        <h1 class="phpdocumentor-title"><a href="../index.html">WooCommerce Code Reference</a></h1>
         <section class="phpdocumentor-search">
     <label class="phpdocumentor-label">
         <span class="visually-hidden">Search (click ESC to close search results)</span>
@@ -74,6 +72,10 @@
                                         <h4 class="phpdocumentor-sidebar__root-namespace"><a href="../namespaces/woocommerce.html"><abbr title="\WooCommerce">WooCommerce</abbr></a></h4>
                 <ul class="phpdocumentor-list">
                                             <li><a href="../namespaces/woocommerce-admin.html"><abbr title="\WooCommerce\Admin">Admin</abbr></a></li>
+                                    </ul>
+                            <h4 class="phpdocumentor-sidebar__root-namespace"><a href="../namespaces/mailpoet.html"><abbr title="\MailPoet">MailPoet</abbr></a></h4>
+                <ul class="phpdocumentor-list">
+                                            <li><a href="../namespaces/mailpoet-emaileditor.html"><abbr title="\MailPoet\EmailEditor">EmailEditor</abbr></a></li>
                                     </ul>
                             <h4 class="phpdocumentor-sidebar__root-namespace"><a href="../namespaces/automattic.html"><abbr title="\Automattic">Automattic</abbr></a></h4>
                 <ul class="phpdocumentor-list">
@@ -119,8 +121,10 @@
                                     <li><a href="../packages/WooCommerce-Widgets.html"><abbr title="\WooCommerce\Widgets">Widgets</abbr></a></li>
                                     <li><a href="../packages/WooCommerce-Uninstaller.html"><abbr title="\WooCommerce\Uninstaller">Uninstaller</abbr></a></li>
                             </ul>
-                                <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/WoocommerceAdmin.html"><abbr title="\WoocommerceAdmin">WoocommerceAdmin</abbr></a></h3>
-                                <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/WoocommerceNavigation.html"><abbr title="\WoocommerceNavigation">WoocommerceNavigation</abbr></a></h3>
+                                <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/MailPoet.html"><abbr title="\MailPoet">MailPoet</abbr></a></h3>
+                        <ul class="phpdocumentor-list">
+                                    <li><a href="../packages/MailPoet-EmailEditor.html"><abbr title="\MailPoet\EmailEditor">EmailEditor</abbr></a></li>
+                            </ul>
                                 <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/Automattic.html"><abbr title="\Automattic">Automattic</abbr></a></h3>
                         <ul class="phpdocumentor-list">
                                     <li><a href="../packages/Automattic-WooCommerce.html"><abbr title="\Automattic\WooCommerce">WooCommerce</abbr></a></li>
@@ -282,38 +286,18 @@ class WCAdminHelper {
 	}
 
 	/**
-	 * Test if a URL is a store page. This function ignores the domain and protocol of the URL and only checks the path and query string.
+	 * Check if the current page is a store page.
 	 *
-	 * Store pages are defined as:
+	 * This should only be called when WP has has set up the query, typically during or after the parse_query or template_redirect action hooks.
 	 *
-	 * - Shop
-	 * - Cart
-	 * - Checkout
-	 * - Privacy Policy
-	 * - Terms and Conditions
-	 *
-	 * Additionally, the following autogenerated pages should be included:
-	 * - Product pages
-	 * - Product Category pages
-	 * - Product Tag pages
-	 *
-	 * @param string $url URL to check. If not provided, the current URL will be used.
-	 * @return bool Whether or not the URL is a store page.
+	 * @return bool
 	 */
-	public static function is_store_page( $url = &#039;&#039; ) {
-		$url = $url ? $url : esc_url_raw( wp_unslash( $_SERVER[&#039;REQUEST_URI&#039;] ?? &#039;&#039; ) );
-
-		if ( ! $url ) {
-			return false;
-		}
-		$normalized_path = self::get_normalized_url_path( $url );
-
+	public static function is_current_page_store_page() {
 		// WC store pages.
 		$store_pages = array(
 			&#039;shop&#039;        =&gt; wc_get_page_id( &#039;shop&#039; ),
 			&#039;cart&#039;        =&gt; wc_get_page_id( &#039;cart&#039; ),
 			&#039;checkout&#039;    =&gt; wc_get_page_id( &#039;checkout&#039; ),
-			&#039;privacy&#039;     =&gt; wc_privacy_policy_page_id(),
 			&#039;terms&#039;       =&gt; wc_terms_and_conditions_page_id(),
 			&#039;coming_soon&#039; =&gt; wc_get_page_id( &#039;coming_soon&#039; ),
 		);
@@ -326,69 +310,52 @@ class WCAdminHelper {
 		 */
 		$store_pages = apply_filters( &#039;woocommerce_store_pages&#039;, $store_pages );
 
-		// If the shop page is not set, we will still show the product archive page.
-		// Therefore, we need to check if the URL is a product archive page when the shop page is not set.
-		if ( $store_pages[&#039;shop&#039;] &lt;= 0 ) {
-			$product_post_archive_link = get_post_type_archive_link( &#039;product&#039; );
-
-			if ( is_string( $product_post_archive_link ) &amp;&amp;
-				0 === strpos( $normalized_path, self::get_normalized_url_path( $product_post_archive_link ) )
-			) {
+		foreach ( $store_pages as $page_slug =&gt; $page_id ) {
+			if ( $page_id &gt; 0 &amp;&amp; is_page( $page_id ) ) {
 				return true;
 			}
 		}
 
-		foreach ( $store_pages as $page =&gt; $page_id ) {
-			if ( 0 &gt;= $page_id ) {
-				continue;
-			}
-
-			$permalink = get_permalink( $page_id );
-			if ( ! $permalink ) {
-				continue;
-			}
-
-			if ( 0 === strpos( $normalized_path, self::get_normalized_url_path( $permalink ) ) ) {
-				return true;
-			}
+		// Product archive page.
+		if ( is_post_type_archive( &#039;product&#039; ) ) {
+			return true;
 		}
 
-		// Check product, category and tag pages.
-		$permalink_structure = wc_get_permalink_structure();
-		$permalink_keys      = array(
-			&#039;category_base&#039;,
-			&#039;tag_base&#039;,
-			&#039;product_base&#039;,
-		);
-
-		foreach ( $permalink_keys as $key ) {
-			if ( ! isset( $permalink_structure[ $key ] ) || ! is_string( $permalink_structure[ $key ] ) ) {
-				continue;
-			}
-
-			// Check if the URL path starts with the matching base.
-			if ( 0 === strpos( $normalized_path, trim( $permalink_structure[ $key ], &#039;/&#039; ) ) ) {
-				return true;
-			}
-
-			// If the permalink structure contains placeholders, we need to check if the URL matches the structure using regex.
-			if ( strpos( $permalink_structure[ $key ], &#039;%&#039; ) !== false ) {
-				global $wp_rewrite;
-				$rules = $wp_rewrite-&gt;generate_rewrite_rule( $permalink_structure[ $key ] );
-
-				if ( is_array( $rules ) &amp;&amp; ! empty( $rules ) ) {
-					// rule key is the regex pattern.
-					$rule = array_keys( $rules )[0];
-					$rule = &#039;#^&#039; . str_replace( &#039;?$&#039;, &#039;&#039;, $rule ) . &#039;#&#039;;
-
-					if ( preg_match( $rule, $normalized_path ) ) {
-						return true;
-					}
-				}
-			}
+		// Product page.
+		if ( is_singular( &#039;product&#039; ) ) {
+			return true;
 		}
 
-		return false;
+		// Product taxonomy page (e.g. Product Category, Product Tag, etc.).
+		if ( is_product_taxonomy() ) {
+			return true;
+		}
+
+		global $wp;
+		$url = self::get_url_from_wp( $wp );
+
+		/**
+		 * Filter if a URL is a store page.
+		 *
+		 * @since 9.3.0
+		 * @param bool   $is_store_page Whether or not the URL is a store page.
+		 * @param string $url           URL to check.
+		 */
+		$is_store_page = apply_filters( &#039;woocommerce_is_extension_store_page&#039;, false, $url );
+
+		return filter_var( $is_store_page, FILTER_VALIDATE_BOOL );
+	}
+
+	/**
+	 * Test if a URL is a store page.
+	 *
+	 * @param string $url URL to check. If not provided, the current URL will be used.
+	 * @return bool Whether or not the URL is a store page.
+	 * @deprecated 9.8.0 Use is_current_page_store_page instead.
+	 */
+	public static function is_store_page( $url = &#039;&#039; ) { // phpcs:ignore Generic.CodeAnalysis.UnusedFunctionParameter.Found
+		_deprecated_function( __METHOD__, &#039;9.8.0&#039;, &#039;is_current_page_store_page&#039; );
+		return self::is_current_page_store_page();
 	}
 
 	/**
@@ -410,6 +377,22 @@ class WCAdminHelper {
 		$normalized_path = trim( substr( $path, strlen( $home_path ) ), &#039;/&#039; );
 		return $normalized_path;
 	}
+
+	/**
+	 * Builds the relative URL from the WP instance.
+	 *
+	 * @internal
+	 * @link https://wordpress.stackexchange.com/a/274572
+	 * @param \WP $wp WordPress environment instance.
+	 */
+	private static function get_url_from_wp( \WP $wp ) {
+		// Initialize query vars if they haven&#039;t been set.
+		if ( empty( $wp-&gt;query_vars ) || empty( $wp-&gt;request ) ) {
+			$wp-&gt;parse_request();
+		}
+
+		return home_url( add_query_arg( $wp-&gt;query_vars, $wp-&gt;request ) );
+	}
 }
 </code></pre>
             </article>
@@ -421,7 +404,7 @@ class WCAdminHelper {
 
     <footer class="phpdocumentor phpdocumentor-footer">
     <div class="phpdocumentor-section">
-        <span>WooCommerce Code Reference API documentation generated by <a href="http://www.phpdoc.org/">phpDocumentor</a> on July 25th, 2024 at 11:33 am.</span>
+        <span>WooCommerce Code Reference API documentation generated by <a href="http://www.phpdoc.org/">phpDocumentor</a> on May 16th, 2025 at 09:14 am.</span>
     </div>
 </footer>
 
@@ -433,7 +416,7 @@ class WCAdminHelper {
             'searchIndex': '..\/js\/searchIndex.json'
         };
     </script>
-    <script src="../js/searchIndex.js?updated=1721907185"></script>
-    <script src="../js/search.js?updated=1721907185"></script>
+    <script src="../js/searchIndex.js?updated=1747386861"></script>
+    <script src="../js/search.js?updated=1747386861"></script>
 </body>
 </html>

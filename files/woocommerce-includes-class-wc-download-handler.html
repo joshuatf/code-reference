@@ -4,14 +4,13 @@
     <meta charset="utf-8">
     <title>WooCommerce Code Reference</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="../images/favicon.png" />
-    <link rel="apple-touch-icon" href="../images/apple-touch-icon.png"/>
-    <link rel="apple-touch-icon" sizes="72x72" href="../images/apple-touch-icon-72x72.png"/>
-    <link rel="apple-touch-icon" sizes="114x114" href="../images/apple-touch-icon-114x114.png"/>
+    <link rel="icon" href="../images/favicon-32x32.png" sizes="32x32" />
+    <link rel="icon" href="../images/favicon-192x192.png" sizes="192x192" />
+    <link rel="apple-touch-icon" href="../images/favicon-180x180.png" />
+
     <link rel="stylesheet" href="../css/normalize.css">
-    <link rel="stylesheet" href="../css/base.css?updated=1721907182">
-    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../css/template.css?updated=1721907182">
+    <link rel="stylesheet" href="../css/base.css?updated=1747386858">
+    <link rel="stylesheet" href="../css/template.css?updated=1747386858">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0/css/all.min.css" integrity="sha256-ybRkN9dBjhcS2qrW1z+hfCxq+1aBdwyQM5wlQoQVt/0=" crossorigin="anonymous" />
             <script src="https://cdn.jsdelivr.net/npm/css-vars-ponyfill@2"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0/js/all.min.js" integrity="sha256-0vuk8LXoyrmCjp1f0O300qo1M75ZQyhH9X3J6d+scmk=" crossorigin="anonymous"></script>
@@ -38,14 +37,13 @@
     <header class="phpdocumentor-top-header">
     <section class="phpdocumentor-section">
         <div class="site-branding">
-            <a class="site-logo" href="../index.html"><img width="180" src="../images/logo.svg" alt="WooCommerce" /></a>
+            <a class="site-logo" href="../index.html"><img src="../images/logo.png" alt="WooCommerce" /></a>
         </div>
         <nav class="main-navigation">
             <ul>
                 <li><a href="../hooks/hooks.html">Hooks Reference</a></li>
-                <li><a href="https://docs.woocommerce.com/">Documentation</a></li>
+                <li><a href="https://developer.woocommerce.com/docs/">Documentation</a></li>
                 <li><a href="https://woocommerce.github.io/woocommerce-rest-api-docs/">REST API Docs</a></li>
-                <li><a href="https://woocommerce.com/careers/?utm_source=woocommerce+core+code+reference&utm_medium=devdocs&utm_campaign=woo+careers" target="_blank">We're hiring!</a></li>
             </ul>
         </nav>
     </section>
@@ -53,7 +51,7 @@
 
 <div class="phpdocumentor-header">
     <section class="phpdocumentor-section">
-        <h1 class="phpdocumentor-title">WooCommerce Code Reference</h1>
+        <h1 class="phpdocumentor-title"><a href="../index.html">WooCommerce Code Reference</a></h1>
         <section class="phpdocumentor-search">
     <label class="phpdocumentor-label">
         <span class="visually-hidden">Search (click ESC to close search results)</span>
@@ -74,6 +72,10 @@
                                         <h4 class="phpdocumentor-sidebar__root-namespace"><a href="../namespaces/woocommerce.html"><abbr title="\WooCommerce">WooCommerce</abbr></a></h4>
                 <ul class="phpdocumentor-list">
                                             <li><a href="../namespaces/woocommerce-admin.html"><abbr title="\WooCommerce\Admin">Admin</abbr></a></li>
+                                    </ul>
+                            <h4 class="phpdocumentor-sidebar__root-namespace"><a href="../namespaces/mailpoet.html"><abbr title="\MailPoet">MailPoet</abbr></a></h4>
+                <ul class="phpdocumentor-list">
+                                            <li><a href="../namespaces/mailpoet-emaileditor.html"><abbr title="\MailPoet\EmailEditor">EmailEditor</abbr></a></li>
                                     </ul>
                             <h4 class="phpdocumentor-sidebar__root-namespace"><a href="../namespaces/automattic.html"><abbr title="\Automattic">Automattic</abbr></a></h4>
                 <ul class="phpdocumentor-list">
@@ -119,8 +121,10 @@
                                     <li><a href="../packages/WooCommerce-Widgets.html"><abbr title="\WooCommerce\Widgets">Widgets</abbr></a></li>
                                     <li><a href="../packages/WooCommerce-Uninstaller.html"><abbr title="\WooCommerce\Uninstaller">Uninstaller</abbr></a></li>
                             </ul>
-                                <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/WoocommerceAdmin.html"><abbr title="\WoocommerceAdmin">WoocommerceAdmin</abbr></a></h3>
-                                <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/WoocommerceNavigation.html"><abbr title="\WoocommerceNavigation">WoocommerceNavigation</abbr></a></h3>
+                                <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/MailPoet.html"><abbr title="\MailPoet">MailPoet</abbr></a></h3>
+                        <ul class="phpdocumentor-list">
+                                    <li><a href="../packages/MailPoet-EmailEditor.html"><abbr title="\MailPoet\EmailEditor">EmailEditor</abbr></a></li>
+                            </ul>
                                 <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/Automattic.html"><abbr title="\Automattic">Automattic</abbr></a></h3>
                         <ul class="phpdocumentor-list">
                                     <li><a href="../packages/Automattic-WooCommerce.html"><abbr title="\Automattic\WooCommerce">WooCommerce</abbr></a></li>
@@ -172,6 +176,10 @@ defined( &#039;ABSPATH&#039; ) || exit;
  * Download handler class.
  */
 class WC_Download_Handler {
+	/**
+	 * The hook used for deferred tracking of partial download attempts.
+	 */
+	public const TRACK_DOWNLOAD_CALLBACK = &#039;track_partial_download&#039;;
 
 	/**
 	 * Hook in methods.
@@ -183,6 +191,7 @@ class WC_Download_Handler {
 		add_action( &#039;woocommerce_download_file_redirect&#039;, array( __CLASS__, &#039;download_file_redirect&#039; ), 10, 2 );
 		add_action( &#039;woocommerce_download_file_xsendfile&#039;, array( __CLASS__, &#039;download_file_xsendfile&#039; ), 10, 2 );
 		add_action( &#039;woocommerce_download_file_force&#039;, array( __CLASS__, &#039;download_file_force&#039; ), 10, 2 );
+		add_action( self::TRACK_DOWNLOAD_CALLBACK, array( __CLASS__, &#039;track_download&#039; ), 10, 3 );
 	}
 
 	/**
@@ -293,9 +302,13 @@ class WC_Download_Handler {
 		// Track the download in logs and change remaining/counts.
 		$current_user_id = get_current_user_id();
 		$ip_address      = WC_Geolocation::get_ip_address();
-		if ( ! $download_range[&#039;is_range_request&#039;] ) {
-			$download-&gt;track_download( $current_user_id &gt; 0 ? $current_user_id : null, ! empty( $ip_address ) ? $ip_address : null );
-		}
+
+		self::track_download(
+			$download,
+			$current_user_id &gt; 0 ? $current_user_id : null,
+			! empty( $ip_address ) ? $ip_address : null,
+			$download_range[&#039;is_range_request&#039;]
+		);
 
 		self::download( $file_path, $download-&gt;get_product_id() );
 	}
@@ -853,6 +866,78 @@ class WC_Download_Handler {
 		}
 		wp_die( $message, $title, array( &#039;response&#039; =&gt; $status ) ); // WPCS: XSS ok.
 	}
+
+	/**
+	 * Takes care of tracking download requests, with support for deferring tracking in the case of
+	 * partial (ranged request) downloads.
+	 *
+	 * @param WC_Customer_Download|int $download        The download to be tracked.
+	 * @param int|null                 $user_id         The user ID, if known.
+	 * @param string|null              $user_ip_address The download IP address, if known.
+	 * @param bool                     $defer           If tracking the download should be deferred.
+	 *
+	 * @return void
+	 * @throws Exception If the active version of Action Scheduler is less than 3.6.0.
+	 *
+	 * @internal For exclusive usage of WooCommerce core, backwards compatibility not guaranteed.
+	 */
+	public static function track_download( $download, $user_id = null, $user_ip_address = null, bool $defer = false ): void {
+		try {
+			// If we were supplied with an integer, convert it to a download object.
+			$download = new WC_Customer_Download( $download );
+
+			// In simple cases, we can track the download immediately.
+			if ( ! $defer ) {
+				$download-&gt;track_download( $user_id, $user_ip_address );
+				return;
+			}
+
+			// Counting of partial downloads may be disabled by the site operator.
+			if ( get_option( &#039;woocommerce_downloads_count_partial&#039;, &#039;yes&#039; ) !== &#039;yes&#039; ) {
+				return;
+			}
+
+			/**
+			 * Determines how long the window of time is for tracking unique download attempts, in relation to
+			 * partial (ranged) download requests.
+			 *
+			 * @since 9.2.0
+			 *
+			 * @param int $window_in_seconds      Non-negative number of seconds. Defaults to 1800 (30 minutes).
+			 * @param int $download_permission_id References the download permission being tracked.
+			 */
+			$window = absint( apply_filters( &#039;woocommerce_partial_download_tracking_window&#039;, 30 * MINUTE_IN_SECONDS, $download-&gt;get_id() ) );
+
+			// If we do not have Action Scheduler 3.6.0+ (this would be an unexpected scenario) then we cannot
+			// track partial downloads, because we require support for unique actions.
+			if ( version_compare( ActionScheduler_Versions::instance()-&gt;latest_version(), &#039;3.6.0&#039;, &#039;&lt;&#039; ) ) {
+				throw new Exception( &#039;Support for unique scheduled actions is not currently available.&#039; );
+			}
+
+			as_schedule_single_action(
+				time() + $window,
+				self::TRACK_DOWNLOAD_CALLBACK,
+				array(
+					$download-&gt;get_id(),
+					$user_id,
+					$user_ip_address,
+				),
+				&#039;woocommerce&#039;,
+				true
+			);
+		} catch ( Exception $e ) {
+			wc_get_logger()-&gt;error(
+				&#039;There was a problem while tracking a product download.&#039;,
+				array(
+					&#039;error&#039;    =&gt; $e-&gt;getMessage(),
+					&#039;id&#039;       =&gt; $download-&gt;get_id(),
+					&#039;user_id&#039;  =&gt; $user_id,
+					&#039;ip&#039;       =&gt; $user_ip_address,
+					&#039;deferred&#039; =&gt; $defer ? &#039;yes&#039; : &#039;no&#039;,
+				)
+			);
+		}
+	}
 }
 
 WC_Download_Handler::init();
@@ -866,7 +951,7 @@ WC_Download_Handler::init();
 
     <footer class="phpdocumentor phpdocumentor-footer">
     <div class="phpdocumentor-section">
-        <span>WooCommerce Code Reference API documentation generated by <a href="http://www.phpdoc.org/">phpDocumentor</a> on July 25th, 2024 at 11:33 am.</span>
+        <span>WooCommerce Code Reference API documentation generated by <a href="http://www.phpdoc.org/">phpDocumentor</a> on May 16th, 2025 at 09:14 am.</span>
     </div>
 </footer>
 
@@ -878,7 +963,7 @@ WC_Download_Handler::init();
             'searchIndex': '..\/js\/searchIndex.json'
         };
     </script>
-    <script src="../js/searchIndex.js?updated=1721907182"></script>
-    <script src="../js/search.js?updated=1721907182"></script>
+    <script src="../js/searchIndex.js?updated=1747386858"></script>
+    <script src="../js/search.js?updated=1747386858"></script>
 </body>
 </html>

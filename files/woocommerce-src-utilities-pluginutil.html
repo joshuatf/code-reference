@@ -4,14 +4,13 @@
     <meta charset="utf-8">
     <title>WooCommerce Code Reference</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="../images/favicon.png" />
-    <link rel="apple-touch-icon" href="../images/apple-touch-icon.png"/>
-    <link rel="apple-touch-icon" sizes="72x72" href="../images/apple-touch-icon-72x72.png"/>
-    <link rel="apple-touch-icon" sizes="114x114" href="../images/apple-touch-icon-114x114.png"/>
+    <link rel="icon" href="../images/favicon-32x32.png" sizes="32x32" />
+    <link rel="icon" href="../images/favicon-192x192.png" sizes="192x192" />
+    <link rel="apple-touch-icon" href="../images/favicon-180x180.png" />
+
     <link rel="stylesheet" href="../css/normalize.css">
-    <link rel="stylesheet" href="../css/base.css?updated=1721907186">
-    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../css/template.css?updated=1721907186">
+    <link rel="stylesheet" href="../css/base.css?updated=1747386863">
+    <link rel="stylesheet" href="../css/template.css?updated=1747386863">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0/css/all.min.css" integrity="sha256-ybRkN9dBjhcS2qrW1z+hfCxq+1aBdwyQM5wlQoQVt/0=" crossorigin="anonymous" />
             <script src="https://cdn.jsdelivr.net/npm/css-vars-ponyfill@2"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0/js/all.min.js" integrity="sha256-0vuk8LXoyrmCjp1f0O300qo1M75ZQyhH9X3J6d+scmk=" crossorigin="anonymous"></script>
@@ -38,14 +37,13 @@
     <header class="phpdocumentor-top-header">
     <section class="phpdocumentor-section">
         <div class="site-branding">
-            <a class="site-logo" href="../index.html"><img width="180" src="../images/logo.svg" alt="WooCommerce" /></a>
+            <a class="site-logo" href="../index.html"><img src="../images/logo.png" alt="WooCommerce" /></a>
         </div>
         <nav class="main-navigation">
             <ul>
                 <li><a href="../hooks/hooks.html">Hooks Reference</a></li>
-                <li><a href="https://docs.woocommerce.com/">Documentation</a></li>
+                <li><a href="https://developer.woocommerce.com/docs/">Documentation</a></li>
                 <li><a href="https://woocommerce.github.io/woocommerce-rest-api-docs/">REST API Docs</a></li>
-                <li><a href="https://woocommerce.com/careers/?utm_source=woocommerce+core+code+reference&utm_medium=devdocs&utm_campaign=woo+careers" target="_blank">We're hiring!</a></li>
             </ul>
         </nav>
     </section>
@@ -53,7 +51,7 @@
 
 <div class="phpdocumentor-header">
     <section class="phpdocumentor-section">
-        <h1 class="phpdocumentor-title">WooCommerce Code Reference</h1>
+        <h1 class="phpdocumentor-title"><a href="../index.html">WooCommerce Code Reference</a></h1>
         <section class="phpdocumentor-search">
     <label class="phpdocumentor-label">
         <span class="visually-hidden">Search (click ESC to close search results)</span>
@@ -74,6 +72,10 @@
                                         <h4 class="phpdocumentor-sidebar__root-namespace"><a href="../namespaces/woocommerce.html"><abbr title="\WooCommerce">WooCommerce</abbr></a></h4>
                 <ul class="phpdocumentor-list">
                                             <li><a href="../namespaces/woocommerce-admin.html"><abbr title="\WooCommerce\Admin">Admin</abbr></a></li>
+                                    </ul>
+                            <h4 class="phpdocumentor-sidebar__root-namespace"><a href="../namespaces/mailpoet.html"><abbr title="\MailPoet">MailPoet</abbr></a></h4>
+                <ul class="phpdocumentor-list">
+                                            <li><a href="../namespaces/mailpoet-emaileditor.html"><abbr title="\MailPoet\EmailEditor">EmailEditor</abbr></a></li>
                                     </ul>
                             <h4 class="phpdocumentor-sidebar__root-namespace"><a href="../namespaces/automattic.html"><abbr title="\Automattic">Automattic</abbr></a></h4>
                 <ul class="phpdocumentor-list">
@@ -119,8 +121,10 @@
                                     <li><a href="../packages/WooCommerce-Widgets.html"><abbr title="\WooCommerce\Widgets">Widgets</abbr></a></li>
                                     <li><a href="../packages/WooCommerce-Uninstaller.html"><abbr title="\WooCommerce\Uninstaller">Uninstaller</abbr></a></li>
                             </ul>
-                                <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/WoocommerceAdmin.html"><abbr title="\WoocommerceAdmin">WoocommerceAdmin</abbr></a></h3>
-                                <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/WoocommerceNavigation.html"><abbr title="\WoocommerceNavigation">WoocommerceNavigation</abbr></a></h3>
+                                <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/MailPoet.html"><abbr title="\MailPoet">MailPoet</abbr></a></h3>
+                        <ul class="phpdocumentor-list">
+                                    <li><a href="../packages/MailPoet-EmailEditor.html"><abbr title="\MailPoet\EmailEditor">EmailEditor</abbr></a></li>
+                            </ul>
                                 <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/Automattic.html"><abbr title="\Automattic">Automattic</abbr></a></h3>
                         <ul class="phpdocumentor-list">
                                     <li><a href="../packages/Automattic-WooCommerce.html"><abbr title="\Automattic\WooCommerce">WooCommerce</abbr></a></li>
@@ -163,7 +167,7 @@
 
 namespace Automattic\WooCommerce\Utilities;
 
-use Automattic\WooCommerce\Internal\Traits\AccessiblePrivateMethods;
+use Automattic\WooCommerce\Internal\Features\FeaturesController;
 use Automattic\WooCommerce\Internal\Utilities\PluginInstaller;
 use Automattic\WooCommerce\Proxies\LegacyProxy;
 
@@ -171,8 +175,6 @@ use Automattic\WooCommerce\Proxies\LegacyProxy;
  * A class of utilities for dealing with plugins.
  */
 class PluginUtil {
-
-	use AccessiblePrivateMethods;
 
 	/**
 	 * The LegacyProxy instance to use.
@@ -206,8 +208,8 @@ class PluginUtil {
 	 * Creates a new instance of the class.
 	 */
 	public function __construct() {
-		self::add_action( &#039;activated_plugin&#039;, array( $this, &#039;handle_plugin_de_activation&#039; ), 10, 0 );
-		self::add_action( &#039;deactivated_plugin&#039;, array( $this, &#039;handle_plugin_de_activation&#039; ), 10, 0 );
+		add_action( &#039;activated_plugin&#039;, array( $this, &#039;handle_plugin_de_activation&#039; ), 10, 0 );
+		add_action( &#039;deactivated_plugin&#039;, array( $this, &#039;handle_plugin_de_activation&#039; ), 10, 0 );
 
 		$this-&gt;plugins_excluded_from_compatibility_ui = array( &#039;woocommerce-legacy-rest-api/woocommerce-legacy-rest-api.php&#039; );
 	}
@@ -222,6 +224,37 @@ class PluginUtil {
 	final public function init( LegacyProxy $proxy ) {
 		$this-&gt;proxy = $proxy;
 		require_once ABSPATH . WPINC . &#039;/plugin.php&#039;;
+	}
+
+	/**
+	 * Wrapper for WP&#039;s private `wp_get_active_and_valid_plugins` and `wp_get_active_network_plugins` functions.
+	 *
+	 * This combines the results of the two functions to get a list of all plugins that are active within a site.
+	 * It&#039;s more useful than just retrieving the option values because it also validates that the plugin files exist.
+	 * This wrapper is also a hedge against backward-incompatible changes since both of the WP methods are marked as
+	 * being &quot;@access private&quot;, so if need be we can update our methods here to preserve functionality.
+	 *
+	 * Note that the doc block for `wp_get_active_and_valid_plugins` says it returns &quot;Array of paths to plugin files
+	 * relative to the plugins directory&quot;, but it actually returns absolute paths.
+	 *
+	 * @return string[] Array of plugin basenames (paths relative to the plugin directory).
+	 */
+	public function get_all_active_valid_plugins() {
+		$local = wp_get_active_and_valid_plugins();
+
+		if ( is_multisite() ) {
+			require_once ABSPATH . WPINC . &#039;/ms-load.php&#039;;
+			$network = wp_get_active_network_plugins();
+		} else {
+			$network = array();
+		}
+
+		$all = array_merge( $local, $network );
+		$all = array_unique( $all );
+		$all = array_map( &#039;plugin_basename&#039;, $all );
+		sort( $all );
+
+		return $all;
 	}
 
 	/**
@@ -316,7 +349,7 @@ class PluginUtil {
 				$full_matches[] = $wp_plugin;
 			}
 
-			if ( false !== strpos( $wp_plugin, $file_name ) ) {
+			if ( ! empty( $file_name ) &amp;&amp; false !== strpos( $wp_plugin, $file_name ) ) {
 				$partial_matches[] = $wp_plugin;
 			}
 		}
@@ -334,8 +367,10 @@ class PluginUtil {
 
 	/**
 	 * Handle plugin activation and deactivation by clearing the WooCommerce aware plugin ids cache.
+	 *
+	 * @internal For exclusive usage of WooCommerce core, backwards compatibility not guaranteed.
 	 */
-	private function handle_plugin_de_activation(): void {
+	public function handle_plugin_de_activation(): void {
 		$this-&gt;woocommerce_aware_plugins        = null;
 		$this-&gt;woocommerce_aware_active_plugins = null;
 	}
@@ -347,13 +382,12 @@ class PluginUtil {
 	 * the Legacy REST API and HPOS are active.
 	 *
 	 * @param string $feature_id Feature id.
-	 * @param array  $plugin_feature_info Array of plugin feature info. See FeaturesControllers-&gt;get_compatible_plugins_for_feature() for details.
+	 * @param array  $plugin_feature_info Array of plugin feature info, as provided by FeaturesController-&gt;get_compatible_plugins_for_feature().
 	 *
 	 * @return string Warning string.
 	 */
 	public function generate_incompatible_plugin_feature_warning( string $feature_id, array $plugin_feature_info ): string {
-		$feature_warning    = &#039;&#039;;
-		$incompatibles      = array_merge( $plugin_feature_info[&#039;incompatible&#039;], $plugin_feature_info[&#039;uncertain&#039;] );
+		$incompatibles      = $this-&gt;get_items_considered_incompatible( $feature_id, $plugin_feature_info );
 		$incompatibles      = array_filter( $incompatibles, &#039;is_plugin_active&#039; );
 		$incompatibles      = array_values( array_diff( $incompatibles, $this-&gt;get_plugins_excluded_from_compatibility_ui() ) );
 		$incompatible_count = count( $incompatibles );
@@ -426,7 +460,8 @@ class PluginUtil {
 				),
 				admin_url( &#039;plugins.php&#039; )
 			);
-			$feature_warnings[]       = sprintf(
+
+			$feature_warnings[] = sprintf(
 				/* translators: %1$s opening link tag %2$s closing link tag. */
 				__( &#039;%1$sView and manage%2$s&#039;, &#039;woocommerce&#039; ),
 				&#039;&lt;a href=&quot;&#039; . esc_url( $incompatible_plugins_url ) . &#039;&quot;&gt;&#039;,
@@ -435,6 +470,23 @@ class PluginUtil {
 		}
 
 		return str_replace( &quot;\n&quot;, &#039;&lt;br&gt;&#039;, implode( &quot;\n&quot;, $feature_warnings ) );
+	}
+
+	/**
+	 * Filter plugin/feature compatibility info, returning the names of the plugins/features that are considered incompatible.
+	 * &quot;Uncertain&quot; information will be included or not depending on the value of the value of the &#039;plugins_are_incompatible_by_default&#039;
+	 * flag in the feature definition (default is true).
+	 *
+	 * @param string $feature_id Feature id.
+	 * @param array  $compatibility_info Array containing &quot;compatible&#039;, &#039;incompatible&#039; and &#039;uncertain&#039; keys.
+	 * @return array Items in &#039;incompatible&#039; and &#039;uncertain&#039; if plugins are incompatible by default with the feature; only items in &#039;incompatible&#039; otherwise.
+	 */
+	public function get_items_considered_incompatible( string $feature_id, array $compatibility_info ): array {
+		$incompatible_by_default = wc_get_container()-&gt;get( FeaturesController::class )-&gt;get_plugins_are_incompatible_by_default( $feature_id );
+
+		return $incompatible_by_default ?
+			array_merge( $compatibility_info[&#039;incompatible&#039;], $compatibility_info[&#039;uncertain&#039;] ) :
+			$compatibility_info[&#039;incompatible&#039;];
 	}
 
 	/**
@@ -458,7 +510,7 @@ class PluginUtil {
 
     <footer class="phpdocumentor phpdocumentor-footer">
     <div class="phpdocumentor-section">
-        <span>WooCommerce Code Reference API documentation generated by <a href="http://www.phpdoc.org/">phpDocumentor</a> on July 25th, 2024 at 11:33 am.</span>
+        <span>WooCommerce Code Reference API documentation generated by <a href="http://www.phpdoc.org/">phpDocumentor</a> on May 16th, 2025 at 09:14 am.</span>
     </div>
 </footer>
 
@@ -470,7 +522,7 @@ class PluginUtil {
             'searchIndex': '..\/js\/searchIndex.json'
         };
     </script>
-    <script src="../js/searchIndex.js?updated=1721907186"></script>
-    <script src="../js/search.js?updated=1721907186"></script>
+    <script src="../js/searchIndex.js?updated=1747386863"></script>
+    <script src="../js/search.js?updated=1747386863"></script>
 </body>
 </html>

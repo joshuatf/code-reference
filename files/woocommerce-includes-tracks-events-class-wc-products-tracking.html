@@ -4,14 +4,13 @@
     <meta charset="utf-8">
     <title>WooCommerce Code Reference</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="../images/favicon.png" />
-    <link rel="apple-touch-icon" href="../images/apple-touch-icon.png"/>
-    <link rel="apple-touch-icon" sizes="72x72" href="../images/apple-touch-icon-72x72.png"/>
-    <link rel="apple-touch-icon" sizes="114x114" href="../images/apple-touch-icon-114x114.png"/>
+    <link rel="icon" href="../images/favicon-32x32.png" sizes="32x32" />
+    <link rel="icon" href="../images/favicon-192x192.png" sizes="192x192" />
+    <link rel="apple-touch-icon" href="../images/favicon-180x180.png" />
+
     <link rel="stylesheet" href="../css/normalize.css">
-    <link rel="stylesheet" href="../css/base.css?updated=1721907183">
-    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../css/template.css?updated=1721907183">
+    <link rel="stylesheet" href="../css/base.css?updated=1747386859">
+    <link rel="stylesheet" href="../css/template.css?updated=1747386859">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0/css/all.min.css" integrity="sha256-ybRkN9dBjhcS2qrW1z+hfCxq+1aBdwyQM5wlQoQVt/0=" crossorigin="anonymous" />
             <script src="https://cdn.jsdelivr.net/npm/css-vars-ponyfill@2"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0/js/all.min.js" integrity="sha256-0vuk8LXoyrmCjp1f0O300qo1M75ZQyhH9X3J6d+scmk=" crossorigin="anonymous"></script>
@@ -38,14 +37,13 @@
     <header class="phpdocumentor-top-header">
     <section class="phpdocumentor-section">
         <div class="site-branding">
-            <a class="site-logo" href="../index.html"><img width="180" src="../images/logo.svg" alt="WooCommerce" /></a>
+            <a class="site-logo" href="../index.html"><img src="../images/logo.png" alt="WooCommerce" /></a>
         </div>
         <nav class="main-navigation">
             <ul>
                 <li><a href="../hooks/hooks.html">Hooks Reference</a></li>
-                <li><a href="https://docs.woocommerce.com/">Documentation</a></li>
+                <li><a href="https://developer.woocommerce.com/docs/">Documentation</a></li>
                 <li><a href="https://woocommerce.github.io/woocommerce-rest-api-docs/">REST API Docs</a></li>
-                <li><a href="https://woocommerce.com/careers/?utm_source=woocommerce+core+code+reference&utm_medium=devdocs&utm_campaign=woo+careers" target="_blank">We're hiring!</a></li>
             </ul>
         </nav>
     </section>
@@ -53,7 +51,7 @@
 
 <div class="phpdocumentor-header">
     <section class="phpdocumentor-section">
-        <h1 class="phpdocumentor-title">WooCommerce Code Reference</h1>
+        <h1 class="phpdocumentor-title"><a href="../index.html">WooCommerce Code Reference</a></h1>
         <section class="phpdocumentor-search">
     <label class="phpdocumentor-label">
         <span class="visually-hidden">Search (click ESC to close search results)</span>
@@ -74,6 +72,10 @@
                                         <h4 class="phpdocumentor-sidebar__root-namespace"><a href="../namespaces/woocommerce.html"><abbr title="\WooCommerce">WooCommerce</abbr></a></h4>
                 <ul class="phpdocumentor-list">
                                             <li><a href="../namespaces/woocommerce-admin.html"><abbr title="\WooCommerce\Admin">Admin</abbr></a></li>
+                                    </ul>
+                            <h4 class="phpdocumentor-sidebar__root-namespace"><a href="../namespaces/mailpoet.html"><abbr title="\MailPoet">MailPoet</abbr></a></h4>
+                <ul class="phpdocumentor-list">
+                                            <li><a href="../namespaces/mailpoet-emaileditor.html"><abbr title="\MailPoet\EmailEditor">EmailEditor</abbr></a></li>
                                     </ul>
                             <h4 class="phpdocumentor-sidebar__root-namespace"><a href="../namespaces/automattic.html"><abbr title="\Automattic">Automattic</abbr></a></h4>
                 <ul class="phpdocumentor-list">
@@ -119,8 +121,10 @@
                                     <li><a href="../packages/WooCommerce-Widgets.html"><abbr title="\WooCommerce\Widgets">Widgets</abbr></a></li>
                                     <li><a href="../packages/WooCommerce-Uninstaller.html"><abbr title="\WooCommerce\Uninstaller">Uninstaller</abbr></a></li>
                             </ul>
-                                <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/WoocommerceAdmin.html"><abbr title="\WoocommerceAdmin">WoocommerceAdmin</abbr></a></h3>
-                                <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/WoocommerceNavigation.html"><abbr title="\WoocommerceNavigation">WoocommerceNavigation</abbr></a></h3>
+                                <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/MailPoet.html"><abbr title="\MailPoet">MailPoet</abbr></a></h3>
+                        <ul class="phpdocumentor-list">
+                                    <li><a href="../packages/MailPoet-EmailEditor.html"><abbr title="\MailPoet\EmailEditor">EmailEditor</abbr></a></li>
+                            </ul>
                                 <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/Automattic.html"><abbr title="\Automattic">Automattic</abbr></a></h3>
                         <ul class="phpdocumentor-list">
                                     <li><a href="../packages/Automattic-WooCommerce.html"><abbr title="\Automattic\WooCommerce">WooCommerce</abbr></a></li>
@@ -187,8 +191,7 @@ class WC_Products_Tracking {
 		add_action( &#039;load-edit.php&#039;, array( $this, &#039;track_products_view&#039; ), 10 );
 		add_action( &#039;load-edit-tags.php&#039;, array( $this, &#039;track_categories_and_tags_view&#039; ), 10, 2 );
 		add_action( &#039;edit_post&#039;, array( $this, &#039;track_product_updated&#039; ), 10, 2 );
-		add_action( &#039;woocommerce_new_product&#039;, array( $this, &#039;track_product_published&#039; ), 10, 3 );
-		add_action( &#039;woocommerce_update_product&#039;, array( $this, &#039;track_product_published&#039; ), 10, 3 );
+		add_action( &#039;wp_after_insert_post&#039;, array( $this, &#039;track_product_published&#039; ), 10, 4 );
 		add_action( &#039;created_product_cat&#039;, array( $this, &#039;track_product_category_created&#039; ) );
 		add_action( &#039;edited_product_cat&#039;, array( $this, &#039;track_product_category_updated&#039; ) );
 		add_action( &#039;add_meta_boxes_product&#039;, array( $this, &#039;track_product_updated_client_side&#039; ), 10 );
@@ -462,21 +465,24 @@ class WC_Products_Tracking {
 	/**
 	 * Send a Tracks event when a product is published.
 	 *
-	 * @param int        $product_id  Product ID.
-	 * @param WC_Product $product     Product object.
-	 * @param array      $changes     Product changes.
+	 * @param int          $post_id     Post ID.
+	 * @param WP_Post      $post        Post object.
+	 * @param bool         $update      Whether this is an existing post being updated.
+	 * @param null|WP_Post $post_before Null for new posts, the WP_Post object prior
+	 *                                  to the update for updated posts.
 	 */
-	public function track_product_published( $product_id, $product, $changes = null ) {
+	public function track_product_published( $post_id, $post, $update, $post_before ) {
 		if (
-			! isset( $product ) ||
-			&#039;product&#039; !== $product-&gt;post_type ||
-			&#039;publish&#039; !== $product-&gt;get_status( &#039;edit&#039; ) ||
-			( $changes &amp;&amp; ! isset( $changes[&#039;status&#039;] ) )
+			&#039;product&#039; !== $post-&gt;post_type ||
+			&#039;publish&#039; !== $post-&gt;post_status ||
+			( $post_before &amp;&amp; &#039;publish&#039; === $post_before-&gt;post_status )
 		) {
 			return;
 		}
 
-		$product_type_options        = self::get_product_type_options( $product_id );
+		$product = wc_get_product( $post_id );
+
+		$product_type_options        = self::get_product_type_options( $post_id );
 		$product_type_options_string = self::get_product_type_options_string( $product_type_options );
 
 		$properties = array(
@@ -490,7 +496,7 @@ class WC_Products_Tracking {
 			&#039;is_virtual&#039;           =&gt; $product-&gt;is_virtual() ? &#039;yes&#039; : &#039;no&#039;,
 			&#039;manage_stock&#039;         =&gt; $product-&gt;get_manage_stock() ? &#039;yes&#039; : &#039;no&#039;,
 			&#039;menu_order&#039;           =&gt; $product-&gt;get_menu_order() ? &#039;yes&#039; : &#039;no&#039;,
-			&#039;product_id&#039;           =&gt; $product_id,
+			&#039;product_id&#039;           =&gt; $post_id,
 			&#039;product_gallery&#039;      =&gt; count( $product-&gt;get_gallery_image_ids() ),
 			&#039;product_image&#039;        =&gt; $product-&gt;get_image_id() ? &#039;yes&#039; : &#039;no&#039;,
 			&#039;product_type&#039;         =&gt; $product-&gt;get_type(),
@@ -502,6 +508,7 @@ class WC_Products_Tracking {
 			&#039;tags&#039;                 =&gt; count( $product-&gt;get_tag_ids() ),
 			&#039;upsells&#039;              =&gt; ! empty( $product-&gt;get_upsell_ids() ) ? &#039;yes&#039; : &#039;no&#039;,
 			&#039;weight&#039;               =&gt; $product-&gt;get_weight() ? &#039;yes&#039; : &#039;no&#039;,
+			&#039;global_unique_id&#039;     =&gt; $product-&gt;get_global_unique_id() ? &#039;yes&#039; : &#039;no&#039;,
 		);
 
 		WC_Tracks::record_event( &#039;product_add_publish&#039;, $properties );
@@ -728,7 +735,7 @@ class WC_Products_Tracking {
 
     <footer class="phpdocumentor phpdocumentor-footer">
     <div class="phpdocumentor-section">
-        <span>WooCommerce Code Reference API documentation generated by <a href="http://www.phpdoc.org/">phpDocumentor</a> on July 25th, 2024 at 11:33 am.</span>
+        <span>WooCommerce Code Reference API documentation generated by <a href="http://www.phpdoc.org/">phpDocumentor</a> on May 16th, 2025 at 09:14 am.</span>
     </div>
 </footer>
 
@@ -740,7 +747,7 @@ class WC_Products_Tracking {
             'searchIndex': '..\/js\/searchIndex.json'
         };
     </script>
-    <script src="../js/searchIndex.js?updated=1721907183"></script>
-    <script src="../js/search.js?updated=1721907183"></script>
+    <script src="../js/searchIndex.js?updated=1747386859"></script>
+    <script src="../js/search.js?updated=1747386859"></script>
 </body>
 </html>

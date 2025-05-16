@@ -4,14 +4,13 @@
     <meta charset="utf-8">
     <title>WooCommerce Code Reference</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="../images/favicon.png" />
-    <link rel="apple-touch-icon" href="../images/apple-touch-icon.png"/>
-    <link rel="apple-touch-icon" sizes="72x72" href="../images/apple-touch-icon-72x72.png"/>
-    <link rel="apple-touch-icon" sizes="114x114" href="../images/apple-touch-icon-114x114.png"/>
+    <link rel="icon" href="../images/favicon-32x32.png" sizes="32x32" />
+    <link rel="icon" href="../images/favicon-192x192.png" sizes="192x192" />
+    <link rel="apple-touch-icon" href="../images/favicon-180x180.png" />
+
     <link rel="stylesheet" href="../css/normalize.css">
-    <link rel="stylesheet" href="../css/base.css?updated=1721907182">
-    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../css/template.css?updated=1721907182">
+    <link rel="stylesheet" href="../css/base.css?updated=1747386858">
+    <link rel="stylesheet" href="../css/template.css?updated=1747386858">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0/css/all.min.css" integrity="sha256-ybRkN9dBjhcS2qrW1z+hfCxq+1aBdwyQM5wlQoQVt/0=" crossorigin="anonymous" />
             <script src="https://cdn.jsdelivr.net/npm/css-vars-ponyfill@2"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0/js/all.min.js" integrity="sha256-0vuk8LXoyrmCjp1f0O300qo1M75ZQyhH9X3J6d+scmk=" crossorigin="anonymous"></script>
@@ -38,14 +37,13 @@
     <header class="phpdocumentor-top-header">
     <section class="phpdocumentor-section">
         <div class="site-branding">
-            <a class="site-logo" href="../index.html"><img width="180" src="../images/logo.svg" alt="WooCommerce" /></a>
+            <a class="site-logo" href="../index.html"><img src="../images/logo.png" alt="WooCommerce" /></a>
         </div>
         <nav class="main-navigation">
             <ul>
                 <li><a href="../hooks/hooks.html">Hooks Reference</a></li>
-                <li><a href="https://docs.woocommerce.com/">Documentation</a></li>
+                <li><a href="https://developer.woocommerce.com/docs/">Documentation</a></li>
                 <li><a href="https://woocommerce.github.io/woocommerce-rest-api-docs/">REST API Docs</a></li>
-                <li><a href="https://woocommerce.com/careers/?utm_source=woocommerce+core+code+reference&utm_medium=devdocs&utm_campaign=woo+careers" target="_blank">We're hiring!</a></li>
             </ul>
         </nav>
     </section>
@@ -53,7 +51,7 @@
 
 <div class="phpdocumentor-header">
     <section class="phpdocumentor-section">
-        <h1 class="phpdocumentor-title">WooCommerce Code Reference</h1>
+        <h1 class="phpdocumentor-title"><a href="../index.html">WooCommerce Code Reference</a></h1>
         <section class="phpdocumentor-search">
     <label class="phpdocumentor-label">
         <span class="visually-hidden">Search (click ESC to close search results)</span>
@@ -74,6 +72,10 @@
                                         <h4 class="phpdocumentor-sidebar__root-namespace"><a href="../namespaces/woocommerce.html"><abbr title="\WooCommerce">WooCommerce</abbr></a></h4>
                 <ul class="phpdocumentor-list">
                                             <li><a href="../namespaces/woocommerce-admin.html"><abbr title="\WooCommerce\Admin">Admin</abbr></a></li>
+                                    </ul>
+                            <h4 class="phpdocumentor-sidebar__root-namespace"><a href="../namespaces/mailpoet.html"><abbr title="\MailPoet">MailPoet</abbr></a></h4>
+                <ul class="phpdocumentor-list">
+                                            <li><a href="../namespaces/mailpoet-emaileditor.html"><abbr title="\MailPoet\EmailEditor">EmailEditor</abbr></a></li>
                                     </ul>
                             <h4 class="phpdocumentor-sidebar__root-namespace"><a href="../namespaces/automattic.html"><abbr title="\Automattic">Automattic</abbr></a></h4>
                 <ul class="phpdocumentor-list">
@@ -119,8 +121,10 @@
                                     <li><a href="../packages/WooCommerce-Widgets.html"><abbr title="\WooCommerce\Widgets">Widgets</abbr></a></li>
                                     <li><a href="../packages/WooCommerce-Uninstaller.html"><abbr title="\WooCommerce\Uninstaller">Uninstaller</abbr></a></li>
                             </ul>
-                                <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/WoocommerceAdmin.html"><abbr title="\WoocommerceAdmin">WoocommerceAdmin</abbr></a></h3>
-                                <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/WoocommerceNavigation.html"><abbr title="\WoocommerceNavigation">WoocommerceNavigation</abbr></a></h3>
+                                <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/MailPoet.html"><abbr title="\MailPoet">MailPoet</abbr></a></h3>
+                        <ul class="phpdocumentor-list">
+                                    <li><a href="../packages/MailPoet-EmailEditor.html"><abbr title="\MailPoet\EmailEditor">EmailEditor</abbr></a></li>
+                            </ul>
                                 <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/Automattic.html"><abbr title="\Automattic">Automattic</abbr></a></h3>
                         <ul class="phpdocumentor-list">
                                     <li><a href="../packages/Automattic-WooCommerce.html"><abbr title="\Automattic\WooCommerce">WooCommerce</abbr></a></li>
@@ -164,6 +168,8 @@
  * @package WooCommerce\Admin\Helper
  */
 
+use Automattic\WooCommerce\Admin\PluginsHelper;
+
 if ( ! defined( &#039;ABSPATH&#039; ) ) {
 	exit;
 }
@@ -184,7 +190,7 @@ class WC_Helper_Updater {
 		add_action( &#039;pre_set_site_transient_update_themes&#039;, array( __CLASS__, &#039;transient_update_themes&#039; ), 21, 1 );
 		add_action( &#039;upgrader_process_complete&#039;, array( __CLASS__, &#039;upgrader_process_complete&#039; ) );
 		add_action( &#039;upgrader_pre_download&#039;, array( __CLASS__, &#039;block_expired_updates&#039; ), 10, 2 );
-		add_action( &#039;plugins_loaded&#039;, array( __CLASS__, &#039;add_hook_for_modifying_update_notices&#039; ) );
+		add_action( &#039;admin_init&#039;, array( __CLASS__, &#039;add_hook_for_modifying_update_notices&#039; ) );
 	}
 
 	/**
@@ -196,15 +202,27 @@ class WC_Helper_Updater {
 		}
 		if ( WC_Helper::is_site_connected() ) {
 			add_action( &#039;load-plugins.php&#039;, array( __CLASS__, &#039;setup_message_for_expired_and_expiring_subscriptions&#039; ), 11 );
+			add_action( &#039;load-plugins.php&#039;, array( __CLASS__, &#039;setup_message_for_plugins_without_subscription&#039; ), 11 );
 		}
 	}
 
 	/**
 	 * Add the hook for modifying default WPCore update notices on the plugins management page.
+	 * This is for plugins with expired or expiring subscriptions.
 	 */
 	public static function setup_message_for_expired_and_expiring_subscriptions() {
 		foreach ( WC_Helper::get_local_woo_plugins() as $plugin ) {
 			add_action( &#039;in_plugin_update_message-&#039; . $plugin[&#039;_filename&#039;], array( __CLASS__, &#039;display_notice_for_expired_and_expiring_subscriptions&#039; ), 10, 2 );
+		}
+	}
+
+	/**
+	 * Add the hook for modifying default WPCore update notices on the plugins management page.
+	 * This is for plugins without a subscription.
+	 */
+	public static function setup_message_for_plugins_without_subscription() {
+		foreach ( WC_Helper::get_local_woo_plugins() as $plugin ) {
+			add_action( &#039;in_plugin_update_message-&#039; . $plugin[&#039;_filename&#039;], array( __CLASS__, &#039;display_notice_for_plugins_without_subscription&#039; ), 10, 2 );
 		}
 	}
 
@@ -344,9 +362,11 @@ class WC_Helper_Updater {
 	public static function add_connect_woocom_plugin_message() {
 		$connect_page_url = add_query_arg(
 			array(
-				&#039;page&#039; =&gt; &#039;wc-admin&#039;,
-				&#039;tab&#039;  =&gt; &#039;my-subscriptions&#039;,
-				&#039;path&#039; =&gt; rawurlencode( &#039;/extensions&#039; ),
+				&#039;page&#039;         =&gt; &#039;wc-admin&#039;,
+				&#039;tab&#039;          =&gt; &#039;my-subscriptions&#039;,
+				&#039;path&#039;         =&gt; rawurlencode( &#039;/extensions&#039; ),
+				&#039;utm_source&#039;   =&gt; &#039;pu&#039;,
+				&#039;utm_campaign&#039; =&gt; &#039;pu_plugin_screen_connect&#039;,
 			),
 			admin_url( &#039;admin.php&#039; )
 		);
@@ -410,41 +430,74 @@ class WC_Helper_Updater {
 	 * @return void.
 	 */
 	public static function display_notice_for_expired_and_expiring_subscriptions( $plugin_data, $response ) {
-
 		// Extract product ID from the response.
 		$product_id = preg_replace( &#039;/[^0-9]/&#039;, &#039;&#039;, $response-&gt;id );
 
-		// Get the subscription details based on product ID.
-		$subscription = current(
-			wp_list_filter(
-				WC_Helper::get_subscriptions(),
-				array( &#039;product_id&#039; =&gt; $product_id )
-			)
+		$installed_or_unconnected = array_merge(
+			WC_Helper::get_installed_subscriptions(),
+			WC_Helper::get_unconnected_subscriptions()
 		);
 
-		// Check if subscription is empty.
-		if ( empty( $subscription ) ) {
+		// Product subscriptions.
+		$subscriptions = wp_list_filter( $installed_or_unconnected, array( &#039;product_id&#039; =&gt; $product_id ) );
+		if ( empty( $subscriptions ) ) {
 			return;
 		}
 
+		$expired_subscription = current(
+			array_filter(
+				$subscriptions,
+				function ( $subscription ) {
+					return ! empty( $subscription[&#039;expired&#039;] ) &amp;&amp; ! $subscription[&#039;lifetime&#039;];
+				}
+			)
+		);
+
+		$expiring_subscription = current(
+			array_filter(
+				$subscriptions,
+				function ( $subscription ) {
+					return ! empty( $subscription[&#039;expiring&#039;] ) &amp;&amp; ! $subscription[&#039;autorenew&#039;];
+				}
+			)
+		);
+
 		// Prepare the expiry notice based on subscription status.
 		$expiry_notice = &#039;&#039;;
-		if ( ! empty( $subscription[&#039;expired&#039;] ) &amp;&amp; ! $subscription[&#039;lifetime&#039;] ) {
+		if ( ! empty( $expired_subscription ) ) {
+
+			$renew_link = add_query_arg(
+				array(
+					&#039;add-to-cart&#039;  =&gt; $product_id,
+					&#039;utm_source&#039;   =&gt; &#039;pu&#039;,
+					&#039;utm_campaign&#039; =&gt; &#039;pu_plugin_screen_renew&#039;,
+				),
+				PluginsHelper::WOO_CART_PAGE_URL
+			);
+
 			/* translators: 1: Product regular price */
-			$product_price = ! empty( $subscription[&#039;product_regular_price&#039;] ) ? sprintf( __( &#039;for %s &#039;, &#039;woocommerce&#039; ), esc_html( $subscription[&#039;product_regular_price&#039;] ) ) : &#039;&#039;;
+			$product_price = ! empty( $expired_subscription[&#039;product_regular_price&#039;] ) ? sprintf( __( &#039;for %s &#039;, &#039;woocommerce&#039; ), esc_html( $expired_subscription[&#039;product_regular_price&#039;] ) ) : &#039;&#039;;
 
 			$expiry_notice = sprintf(
 			/* translators: 1: URL to My Subscriptions page 2: Product price */
 				__( &#039; Your subscription expired, &lt;a href=&quot;%1$s&quot; class=&quot;woocommerce-renew-subscription&quot;&gt;renew %2$s&lt;/a&gt;to update.&#039;, &#039;woocommerce&#039; ),
-				esc_url( &#039;https://woocommerce.com/my-account/my-subscriptions/&#039; ),
+				esc_url( $renew_link ),
 				$product_price
 			);
-		} elseif ( ! empty( $subscription[&#039;expiring&#039;] ) &amp;&amp; ! $subscription[&#039;autorenew&#039;] ) {
+		} elseif ( ! empty( $expiring_subscription ) ) {
+			$renew_link = add_query_arg(
+				array(
+					&#039;utm_source&#039;   =&gt; &#039;pu&#039;,
+					&#039;utm_campaign&#039; =&gt; &#039;pu_plugin_screen_enable_autorenew&#039;,
+				),
+				PluginsHelper::WOO_SUBSCRIPTION_PAGE_URL
+			);
+
 			$expiry_notice = sprintf(
 			/* translators: 1: Expiry date 1: URL to My Subscriptions page */
 				__( &#039; Your subscription expires on %1$s, &lt;a href=&quot;%2$s&quot; class=&quot;woocommerce-enable-autorenew&quot;&gt;enable auto-renew&lt;/a&gt; to continue receiving updates.&#039;, &#039;woocommerce&#039; ),
-				date_i18n( &#039;F jS&#039;, $subscription[&#039;expires&#039;] ),
-				esc_url( &#039;https://woocommerce.com/my-account/my-subscriptions/&#039; )
+				date_i18n( &#039;F jS&#039;, $expiring_subscription[&#039;expires&#039;] ),
+				esc_url( $renew_link )
 			);
 		}
 
@@ -460,6 +513,52 @@ class WC_Helper_Updater {
 				)
 			);
 		}
+	}
+
+	/**
+	 * Runs on in_plugin_update_message-{file-name}, show a message if plugin is without a subscription.
+	 * Only Woo local plugins are passed to this function.
+	 *
+	 * @see setup_message_for_plugins_without_subscription
+	 * @param object $plugin_data An array of plugin metadata.
+	 * @param object $response  An object of metadata about the available plugin update.
+	 *
+	 * @return void.
+	 */
+	public static function display_notice_for_plugins_without_subscription( $plugin_data, $response ) {
+		// Extract product ID from the response.
+		$product_id = preg_replace( &#039;/[^0-9]/&#039;, &#039;&#039;, $response-&gt;id );
+
+		if ( WC_Helper::has_product_subscription( $product_id ) ) {
+			return;
+		}
+
+		// Prepare the expiry notice based on subscription status.
+		$purchase_link = add_query_arg(
+			array(
+				&#039;add-to-cart&#039;  =&gt; $product_id,
+				&#039;utm_source&#039;   =&gt; &#039;pu&#039;,
+				&#039;utm_campaign&#039; =&gt; &#039;pu_plugin_screen_purchase&#039;,
+			),
+			PluginsHelper::WOO_CART_PAGE_URL,
+		);
+
+		$notice = sprintf(
+			/* translators: 1: URL to My Subscriptions page */
+			__( &#039; You don\&#039;t have a subscription, &lt;a href=&quot;%1$s&quot; class=&quot;woocommerce-purchase-subscription&quot;&gt;subscribe&lt;/a&gt; to update.&#039;, &#039;woocommerce&#039; ),
+			esc_url( $purchase_link ),
+		);
+
+		// Display the expiry notice.
+		echo wp_kses(
+			$notice,
+			array(
+				&#039;a&#039; =&gt; array(
+					&#039;href&#039;  =&gt; array(),
+					&#039;class&#039; =&gt; array(),
+				),
+			)
+		);
 	}
 
 	/**
@@ -838,7 +937,7 @@ class WC_Helper_Updater {
 	 */
 	public static function get_updates_count_html() {
 		$count      = self::get_updates_count_based_on_site_status();
-		$count_html = sprintf( &#039;&lt;span class=&quot;update-plugins count-%d&quot;&gt;&lt;span class=&quot;update-count&quot;&gt;%d&lt;/span&gt;&lt;/span&gt;&#039;, $count, number_format_i18n( $count ) );
+		$count_html = sprintf( &#039; &lt;span class=&quot;update-plugins count-%d&quot;&gt;&lt;span class=&quot;update-count&quot;&gt;%d&lt;/span&gt;&lt;/span&gt;&#039;, $count, number_format_i18n( $count ) );
 
 		return $count_html;
 	}
@@ -886,7 +985,7 @@ class WC_Helper_Updater {
 			sprintf(
 				// translators: %s: URL of WooCommerce.com subscriptions tab.
 				__( &#039;Please visit the &lt;a href=&quot;%s&quot; target=&quot;_blank&quot;&gt;subscriptions page&lt;/a&gt; and renew to continue receiving updates.&#039;, &#039;woocommerce&#039; ),
-				esc_url( admin_url( &#039;admin.php?page=wc-addons&amp;section=helper&#039; ) )
+				esc_url( admin_url( &#039;admin.php?page=wc-admin&amp;tab=my-subscriptions&amp;path=%2Fextensions&#039; ) )
 			)
 		);
 	}
@@ -903,7 +1002,7 @@ WC_Helper_Updater::load();
 
     <footer class="phpdocumentor phpdocumentor-footer">
     <div class="phpdocumentor-section">
-        <span>WooCommerce Code Reference API documentation generated by <a href="http://www.phpdoc.org/">phpDocumentor</a> on July 25th, 2024 at 11:33 am.</span>
+        <span>WooCommerce Code Reference API documentation generated by <a href="http://www.phpdoc.org/">phpDocumentor</a> on May 16th, 2025 at 09:14 am.</span>
     </div>
 </footer>
 
@@ -915,7 +1014,7 @@ WC_Helper_Updater::load();
             'searchIndex': '..\/js\/searchIndex.json'
         };
     </script>
-    <script src="../js/searchIndex.js?updated=1721907182"></script>
-    <script src="../js/search.js?updated=1721907182"></script>
+    <script src="../js/searchIndex.js?updated=1747386858"></script>
+    <script src="../js/search.js?updated=1747386858"></script>
 </body>
 </html>

@@ -4,14 +4,13 @@
     <meta charset="utf-8">
     <title>WooCommerce Code Reference</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="../images/favicon.png" />
-    <link rel="apple-touch-icon" href="../images/apple-touch-icon.png"/>
-    <link rel="apple-touch-icon" sizes="72x72" href="../images/apple-touch-icon-72x72.png"/>
-    <link rel="apple-touch-icon" sizes="114x114" href="../images/apple-touch-icon-114x114.png"/>
+    <link rel="icon" href="../images/favicon-32x32.png" sizes="32x32" />
+    <link rel="icon" href="../images/favicon-192x192.png" sizes="192x192" />
+    <link rel="apple-touch-icon" href="../images/favicon-180x180.png" />
+
     <link rel="stylesheet" href="../css/normalize.css">
-    <link rel="stylesheet" href="../css/base.css?updated=1721907202">
-    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../css/template.css?updated=1721907202">
+    <link rel="stylesheet" href="../css/base.css?updated=1747386883">
+    <link rel="stylesheet" href="../css/template.css?updated=1747386883">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0/css/all.min.css" integrity="sha256-ybRkN9dBjhcS2qrW1z+hfCxq+1aBdwyQM5wlQoQVt/0=" crossorigin="anonymous" />
             <script src="https://cdn.jsdelivr.net/npm/css-vars-ponyfill@2"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0/js/all.min.js" integrity="sha256-0vuk8LXoyrmCjp1f0O300qo1M75ZQyhH9X3J6d+scmk=" crossorigin="anonymous"></script>
@@ -27,19 +26,24 @@
 		'content_group' : 'WooCommerce Core Code Reference',
 	});
 </script>
-        </head>
+        <script src="../js/prism.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            window.dispatchEvent(new HashChangeEvent('hashchange'));
+        });
+    </script>
+</head>
 <body id="top">
     <header class="phpdocumentor-top-header">
     <section class="phpdocumentor-section">
         <div class="site-branding">
-            <a class="site-logo" href="../index.html"><img width="180" src="../images/logo.svg" alt="WooCommerce" /></a>
+            <a class="site-logo" href="../index.html"><img src="../images/logo.png" alt="WooCommerce" /></a>
         </div>
         <nav class="main-navigation">
             <ul>
                 <li><a href="../hooks/hooks.html">Hooks Reference</a></li>
-                <li><a href="https://docs.woocommerce.com/">Documentation</a></li>
+                <li><a href="https://developer.woocommerce.com/docs/">Documentation</a></li>
                 <li><a href="https://woocommerce.github.io/woocommerce-rest-api-docs/">REST API Docs</a></li>
-                <li><a href="https://woocommerce.com/careers/?utm_source=woocommerce+core+code+reference&utm_medium=devdocs&utm_campaign=woo+careers" target="_blank">We're hiring!</a></li>
             </ul>
         </nav>
     </section>
@@ -47,7 +51,7 @@
 
 <div class="phpdocumentor-header">
     <section class="phpdocumentor-section">
-        <h1 class="phpdocumentor-title">WooCommerce Code Reference</h1>
+        <h1 class="phpdocumentor-title"><a href="../index.html">WooCommerce Code Reference</a></h1>
         <section class="phpdocumentor-search">
     <label class="phpdocumentor-label">
         <span class="visually-hidden">Search (click ESC to close search results)</span>
@@ -68,6 +72,10 @@
                                         <h4 class="phpdocumentor-sidebar__root-namespace"><a href="../namespaces/woocommerce.html"><abbr title="\WooCommerce">WooCommerce</abbr></a></h4>
                 <ul class="phpdocumentor-list">
                                             <li><a href="../namespaces/woocommerce-admin.html"><abbr title="\WooCommerce\Admin">Admin</abbr></a></li>
+                                    </ul>
+                            <h4 class="phpdocumentor-sidebar__root-namespace"><a href="../namespaces/mailpoet.html"><abbr title="\MailPoet">MailPoet</abbr></a></h4>
+                <ul class="phpdocumentor-list">
+                                            <li><a href="../namespaces/mailpoet-emaileditor.html"><abbr title="\MailPoet\EmailEditor">EmailEditor</abbr></a></li>
                                     </ul>
                             <h4 class="phpdocumentor-sidebar__root-namespace"><a href="../namespaces/automattic.html"><abbr title="\Automattic">Automattic</abbr></a></h4>
                 <ul class="phpdocumentor-list">
@@ -113,8 +121,10 @@
                                     <li><a href="../packages/WooCommerce-Widgets.html"><abbr title="\WooCommerce\Widgets">Widgets</abbr></a></li>
                                     <li><a href="../packages/WooCommerce-Uninstaller.html"><abbr title="\WooCommerce\Uninstaller">Uninstaller</abbr></a></li>
                             </ul>
-                                <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/WoocommerceAdmin.html"><abbr title="\WoocommerceAdmin">WoocommerceAdmin</abbr></a></h3>
-                                <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/WoocommerceNavigation.html"><abbr title="\WoocommerceNavigation">WoocommerceNavigation</abbr></a></h3>
+                                <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/MailPoet.html"><abbr title="\MailPoet">MailPoet</abbr></a></h3>
+                        <ul class="phpdocumentor-list">
+                                    <li><a href="../packages/MailPoet-EmailEditor.html"><abbr title="\MailPoet\EmailEditor">EmailEditor</abbr></a></li>
+                            </ul>
                                 <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/Automattic.html"><abbr title="\Automattic">Automattic</abbr></a></h3>
                         <ul class="phpdocumentor-list">
                                     <li><a href="../packages/Automattic-WooCommerce.html"><abbr title="\Automattic\WooCommerce">WooCommerce</abbr></a></li>
@@ -227,7 +237,7 @@
     <span>
                 &nbsp;: string            </span>
 </dt>
-<dd>Duration to milisecond mapping.</dd>
+<dd>Duration to millisecond mapping.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -property -protected">
     <a href="../classes/Automattic-WooCommerce-Admin-Features-OnboardingTasks-Task.html#property_task_list">$task_list</a>
@@ -403,6 +413,13 @@
                         &nbsp;: mixed    </span>
 </dt>
 <dd>Check if this is the active task.</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a href="../classes/Automattic-WooCommerce-Admin-Features-OnboardingTasks-Task.html#method_is_always_accessible">is_always_accessible()</a>
+    <span>
+                        &nbsp;: bool    </span>
+</dt>
+<dd>If a task is always accessible, relevant for when a task list is hidden but a task can still be viewed.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="../classes/Automattic-WooCommerce-Admin-Features-OnboardingTasks-Tasks-LaunchYourStore.html#method_is_complete">is_complete()</a>
@@ -716,7 +733,7 @@
     <span class="phpdocumentor-element-found-in__line">68</span>
 </aside>
 
-        <p class="phpdocumentor-summary">Duration to milisecond mapping.</p>
+        <p class="phpdocumentor-summary">Duration to millisecond mapping.</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">protected</span>
@@ -855,9 +872,9 @@
         <a href="#method_convert_object_to_camelcase" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/Features/OnboardingTasks/Task.php"><a href="../files/woocommerce-src-admin-features-onboardingtasks-task.html#source-view.528">src/Admin/Features/OnboardingTasks/Task.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/Features/OnboardingTasks/Task.php"><a href="../files/woocommerce-src-admin-features-onboardingtasks-task.html#source-view.537">src/Admin/Features/OnboardingTasks/Task.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">528</span>
+    <span class="phpdocumentor-element-found-in__line">537</span>
 </aside>
 
         <p class="phpdocumentor-summary">Convert object keys to camelcase.</p>
@@ -1155,9 +1172,9 @@
         <a href="#method_get_json" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/Features/OnboardingTasks/Task.php"><a href="../files/woocommerce-src-admin-features-onboardingtasks-task.html#source-view.492">src/Admin/Features/OnboardingTasks/Task.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/Features/OnboardingTasks/Task.php"><a href="../files/woocommerce-src-admin-features-onboardingtasks-task.html#source-view.501">src/Admin/Features/OnboardingTasks/Task.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">492</span>
+    <span class="phpdocumentor-element-found-in__line">501</span>
 </aside>
 
         <p class="phpdocumentor-summary">Get the task as JSON.</p>
@@ -1373,9 +1390,9 @@
         <a href="#method_get_record_view_event" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/Features/OnboardingTasks/Task.php"><a href="../files/woocommerce-src-admin-features-onboardingtasks-task.html#source-view.483">src/Admin/Features/OnboardingTasks/Task.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/Features/OnboardingTasks/Task.php"><a href="../files/woocommerce-src-admin-features-onboardingtasks-task.html#source-view.492">src/Admin/Features/OnboardingTasks/Task.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">483</span>
+    <span class="phpdocumentor-element-found-in__line">492</span>
 </aside>
 
         <p class="phpdocumentor-summary">Check if should record event when task is viewed</p>
@@ -1547,9 +1564,9 @@
         <a href="#method_is_actioned" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/Features/OnboardingTasks/Task.php"><a href="../files/woocommerce-src-admin-features-onboardingtasks-task.html#source-view.566">src/Admin/Features/OnboardingTasks/Task.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/Features/OnboardingTasks/Task.php"><a href="../files/woocommerce-src-admin-features-onboardingtasks-task.html#source-view.575">src/Admin/Features/OnboardingTasks/Task.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">566</span>
+    <span class="phpdocumentor-element-found-in__line">575</span>
 </aside>
 
         <p class="phpdocumentor-summary">Check if a task has been actioned.</p>
@@ -1597,6 +1614,38 @@
 
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
     <span class="phpdocumentor-signature__response_type">mixed</span>
+            &mdash; <span class="phpdocumentor-return-value__description"></span>
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_is_always_accessible">
+        is_always_accessible()
+        <a href="#method_is_always_accessible" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/Features/OnboardingTasks/Task.php"><a href="../files/woocommerce-src-admin-features-onboardingtasks-task.html#source-view.470">src/Admin/Features/OnboardingTasks/Task.php</a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">470</span>
+</aside>
+
+        <p class="phpdocumentor-summary">If a task is always accessible, relevant for when a task list is hidden but a task can still be viewed.</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                <span class="phpdocumentor-signature__name">is_always_accessible</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">bool</span></code>
+
+        <section class="phpdocumentor-description"></section>
+
+    
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">bool</span>
             &mdash; <span class="phpdocumentor-return-value__description"></span>
     
 </article>
@@ -1845,9 +1894,9 @@
         <a href="#method_is_task_actioned" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/Features/OnboardingTasks/Task.php"><a href="../files/woocommerce-src-admin-features-onboardingtasks-task.html#source-view.576">src/Admin/Features/OnboardingTasks/Task.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/Features/OnboardingTasks/Task.php"><a href="../files/woocommerce-src-admin-features-onboardingtasks-task.html#source-view.585">src/Admin/Features/OnboardingTasks/Task.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">576</span>
+    <span class="phpdocumentor-element-found-in__line">585</span>
 </aside>
 
         <p class="phpdocumentor-summary">Check if a provided task ID has been actioned.</p>
@@ -1889,9 +1938,9 @@
         <a href="#method_is_visited" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/Features/OnboardingTasks/Task.php"><a href="../files/woocommerce-src-admin-features-onboardingtasks-task.html#source-view.470">src/Admin/Features/OnboardingTasks/Task.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/Features/OnboardingTasks/Task.php"><a href="../files/woocommerce-src-admin-features-onboardingtasks-task.html#source-view.479">src/Admin/Features/OnboardingTasks/Task.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">470</span>
+    <span class="phpdocumentor-element-found-in__line">479</span>
 </aside>
 
         <p class="phpdocumentor-summary">Check if the task has been visited.</p>
@@ -1921,9 +1970,9 @@
         <a href="#method_mark_actioned" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/Features/OnboardingTasks/Task.php"><a href="../files/woocommerce-src-admin-features-onboardingtasks-task.html#source-view.548">src/Admin/Features/OnboardingTasks/Task.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/Features/OnboardingTasks/Task.php"><a href="../files/woocommerce-src-admin-features-onboardingtasks-task.html#source-view.557">src/Admin/Features/OnboardingTasks/Task.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">548</span>
+    <span class="phpdocumentor-element-found-in__line">557</span>
 </aside>
 
         <p class="phpdocumentor-summary">Mark a task as actioned.  Used to verify an action has taken place in some tasks.</p>
@@ -2216,9 +2265,9 @@
         <a href="#method_sort" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/Features/OnboardingTasks/Task.php"><a href="../files/woocommerce-src-admin-features-onboardingtasks-task.html#source-view.589">src/Admin/Features/OnboardingTasks/Task.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/Features/OnboardingTasks/Task.php"><a href="../files/woocommerce-src-admin-features-onboardingtasks-task.html#source-view.598">src/Admin/Features/OnboardingTasks/Task.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">589</span>
+    <span class="phpdocumentor-element-found-in__line">598</span>
 </aside>
 
         <p class="phpdocumentor-summary">Sorting function for tasks.</p>
@@ -2356,7 +2405,7 @@
 
     <footer class="phpdocumentor phpdocumentor-footer">
     <div class="phpdocumentor-section">
-        <span>WooCommerce Code Reference API documentation generated by <a href="http://www.phpdoc.org/">phpDocumentor</a> on July 25th, 2024 at 11:33 am.</span>
+        <span>WooCommerce Code Reference API documentation generated by <a href="http://www.phpdoc.org/">phpDocumentor</a> on May 16th, 2025 at 09:14 am.</span>
     </div>
 </footer>
 
@@ -2368,7 +2417,7 @@
             'searchIndex': '..\/js\/searchIndex.json'
         };
     </script>
-    <script src="../js/searchIndex.js?updated=1721907202"></script>
-    <script src="../js/search.js?updated=1721907202"></script>
+    <script src="../js/searchIndex.js?updated=1747386883"></script>
+    <script src="../js/search.js?updated=1747386883"></script>
 </body>
 </html>

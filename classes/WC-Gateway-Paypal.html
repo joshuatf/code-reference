@@ -4,14 +4,13 @@
     <meta charset="utf-8">
     <title>WooCommerce Code Reference</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="../images/favicon.png" />
-    <link rel="apple-touch-icon" href="../images/apple-touch-icon.png"/>
-    <link rel="apple-touch-icon" sizes="72x72" href="../images/apple-touch-icon-72x72.png"/>
-    <link rel="apple-touch-icon" sizes="114x114" href="../images/apple-touch-icon-114x114.png"/>
+    <link rel="icon" href="../images/favicon-32x32.png" sizes="32x32" />
+    <link rel="icon" href="../images/favicon-192x192.png" sizes="192x192" />
+    <link rel="apple-touch-icon" href="../images/favicon-180x180.png" />
+
     <link rel="stylesheet" href="../css/normalize.css">
-    <link rel="stylesheet" href="../css/base.css?updated=1721907196">
-    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../css/template.css?updated=1721907196">
+    <link rel="stylesheet" href="../css/base.css?updated=1747386874">
+    <link rel="stylesheet" href="../css/template.css?updated=1747386874">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0/css/all.min.css" integrity="sha256-ybRkN9dBjhcS2qrW1z+hfCxq+1aBdwyQM5wlQoQVt/0=" crossorigin="anonymous" />
             <script src="https://cdn.jsdelivr.net/npm/css-vars-ponyfill@2"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0/js/all.min.js" integrity="sha256-0vuk8LXoyrmCjp1f0O300qo1M75ZQyhH9X3J6d+scmk=" crossorigin="anonymous"></script>
@@ -27,19 +26,24 @@
 		'content_group' : 'WooCommerce Core Code Reference',
 	});
 </script>
-        </head>
+        <script src="../js/prism.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            window.dispatchEvent(new HashChangeEvent('hashchange'));
+        });
+    </script>
+</head>
 <body id="top">
     <header class="phpdocumentor-top-header">
     <section class="phpdocumentor-section">
         <div class="site-branding">
-            <a class="site-logo" href="../index.html"><img width="180" src="../images/logo.svg" alt="WooCommerce" /></a>
+            <a class="site-logo" href="../index.html"><img src="../images/logo.png" alt="WooCommerce" /></a>
         </div>
         <nav class="main-navigation">
             <ul>
                 <li><a href="../hooks/hooks.html">Hooks Reference</a></li>
-                <li><a href="https://docs.woocommerce.com/">Documentation</a></li>
+                <li><a href="https://developer.woocommerce.com/docs/">Documentation</a></li>
                 <li><a href="https://woocommerce.github.io/woocommerce-rest-api-docs/">REST API Docs</a></li>
-                <li><a href="https://woocommerce.com/careers/?utm_source=woocommerce+core+code+reference&utm_medium=devdocs&utm_campaign=woo+careers" target="_blank">We're hiring!</a></li>
             </ul>
         </nav>
     </section>
@@ -47,7 +51,7 @@
 
 <div class="phpdocumentor-header">
     <section class="phpdocumentor-section">
-        <h1 class="phpdocumentor-title">WooCommerce Code Reference</h1>
+        <h1 class="phpdocumentor-title"><a href="../index.html">WooCommerce Code Reference</a></h1>
         <section class="phpdocumentor-search">
     <label class="phpdocumentor-label">
         <span class="visually-hidden">Search (click ESC to close search results)</span>
@@ -68,6 +72,10 @@
                                         <h4 class="phpdocumentor-sidebar__root-namespace"><a href="../namespaces/woocommerce.html"><abbr title="\WooCommerce">WooCommerce</abbr></a></h4>
                 <ul class="phpdocumentor-list">
                                             <li><a href="../namespaces/woocommerce-admin.html"><abbr title="\WooCommerce\Admin">Admin</abbr></a></li>
+                                    </ul>
+                            <h4 class="phpdocumentor-sidebar__root-namespace"><a href="../namespaces/mailpoet.html"><abbr title="\MailPoet">MailPoet</abbr></a></h4>
+                <ul class="phpdocumentor-list">
+                                            <li><a href="../namespaces/mailpoet-emaileditor.html"><abbr title="\MailPoet\EmailEditor">EmailEditor</abbr></a></li>
                                     </ul>
                             <h4 class="phpdocumentor-sidebar__root-namespace"><a href="../namespaces/automattic.html"><abbr title="\Automattic">Automattic</abbr></a></h4>
                 <ul class="phpdocumentor-list">
@@ -113,8 +121,10 @@
                                     <li><a href="../packages/WooCommerce-Widgets.html"><abbr title="\WooCommerce\Widgets">Widgets</abbr></a></li>
                                     <li><a href="../packages/WooCommerce-Uninstaller.html"><abbr title="\WooCommerce\Uninstaller">Uninstaller</abbr></a></li>
                             </ul>
-                                <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/WoocommerceAdmin.html"><abbr title="\WoocommerceAdmin">WoocommerceAdmin</abbr></a></h3>
-                                <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/WoocommerceNavigation.html"><abbr title="\WoocommerceNavigation">WoocommerceNavigation</abbr></a></h3>
+                                <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/MailPoet.html"><abbr title="\MailPoet">MailPoet</abbr></a></h3>
+                        <ul class="phpdocumentor-list">
+                                    <li><a href="../packages/MailPoet-EmailEditor.html"><abbr title="\MailPoet\EmailEditor">EmailEditor</abbr></a></li>
+                            </ul>
                                 <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/Automattic.html"><abbr title="\Automattic">Automattic</abbr></a></h3>
                         <ul class="phpdocumentor-list">
                                     <li><a href="../packages/Automattic-WooCommerce.html"><abbr title="\Automattic\WooCommerce">WooCommerce</abbr></a></li>
@@ -183,6 +193,13 @@
 </h3>
 
 <dl class="phpdocumentor-table-of-contents">
+            <dt class="phpdocumentor-table-of-contents__entry -constant -public">
+    <a href="../classes/WC-Gateway-Paypal.html#constant_ID">ID</a>
+    <span>
+        &nbsp;= &#039;paypal&#039;                    </span>
+</dt>
+<dd>Unique ID for this gateway.</dd>
+
                 <dt class="phpdocumentor-table-of-contents__entry -property -public">
     <a href="../classes/WC-Payment-Gateway.html#property_availability">$availability</a>
     <span>
@@ -973,6 +990,39 @@ method/token selection radio selection.</dd>
 
 
         
+    <section class="phpdocumentor-constants">
+        <h3 class="phpdocumentor-elements__header" id="constants">
+            Constants
+            <a href="#constants" class="headerlink"><i class="fas fa-link"></i></a>
+        </h3>
+                    <article class="phpdocumentor-element -constant -public ">
+    <h4 class="phpdocumentor-element__name" id="constant_ID">
+        ID
+        <a href="#constant_ID" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/gateways/paypal/class-wc-gateway-paypal.php"><a href="../files/woocommerce-includes-gateways-paypal-class-wc-gateway-paypal.html#source-view.29">includes/gateways/paypal/class-wc-gateway-paypal.php</a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">29</span>
+</aside>
+
+        <p class="phpdocumentor-summary">Unique ID for this gateway.</p>
+
+    <code class="phpdocumentor-signature phpdocumentor-code ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+    <span class="phpdocumentor-signature__type">string</span>
+    <span class="phpdocumentor-signature__name">ID</span>
+    = <span class="phpdocumentor-signature__default-value">&#039;paypal&#039;</span>
+</code>
+
+
+        <section class="phpdocumentor-description"></section>
+
+    
+
+</article>
+            </section>
 
         
     <section class="phpdocumentor-properties">
@@ -994,9 +1044,9 @@ method/token selection radio selection.</dd>
                                 </span>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-payment-gateway.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-payment-gateway.html#source-view.99">includes/abstracts/abstract-wc-payment-gateway.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-payment-gateway.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-payment-gateway.html#source-view.101">includes/abstracts/abstract-wc-payment-gateway.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">99</span>
+    <span class="phpdocumentor-element-found-in__line">101</span>
 </aside>
 
         <p class="phpdocumentor-summary">Available for all counties or specific.</p>
@@ -1026,9 +1076,9 @@ method/token selection radio selection.</dd>
                                 </span>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-payment-gateway.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-payment-gateway.html#source-view.64">includes/abstracts/abstract-wc-payment-gateway.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-payment-gateway.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-payment-gateway.html#source-view.66">includes/abstracts/abstract-wc-payment-gateway.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">64</span>
+    <span class="phpdocumentor-element-found-in__line">66</span>
 </aside>
 
         <p class="phpdocumentor-summary">Chosen payment method id.</p>
@@ -1058,9 +1108,9 @@ method/token selection radio selection.</dd>
                                 </span>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-payment-gateway.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-payment-gateway.html#source-view.92">includes/abstracts/abstract-wc-payment-gateway.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-payment-gateway.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-payment-gateway.html#source-view.94">includes/abstracts/abstract-wc-payment-gateway.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">92</span>
+    <span class="phpdocumentor-element-found-in__line">94</span>
 </aside>
 
         <p class="phpdocumentor-summary">Countries this gateway is allowed for.</p>
@@ -1090,9 +1140,9 @@ method/token selection radio selection.</dd>
                                 </span>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/gateways/paypal/class-wc-gateway-paypal.php"><a href="../files/woocommerce-includes-gateways-paypal-class-wc-gateway-paypal.html#source-view.50">includes/gateways/paypal/class-wc-gateway-paypal.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/gateways/paypal/class-wc-gateway-paypal.php"><a href="../files/woocommerce-includes-gateways-paypal-class-wc-gateway-paypal.html#source-view.57">includes/gateways/paypal/class-wc-gateway-paypal.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">50</span>
+    <span class="phpdocumentor-element-found-in__line">57</span>
 </aside>
 
         <p class="phpdocumentor-summary">Whether the debug mode is enabled.</p>
@@ -1122,9 +1172,9 @@ method/token selection radio selection.</dd>
                                 </span>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-payment-gateway.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-payment-gateway.html#source-view.57">includes/abstracts/abstract-wc-payment-gateway.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-payment-gateway.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-payment-gateway.html#source-view.59">includes/abstracts/abstract-wc-payment-gateway.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">57</span>
+    <span class="phpdocumentor-element-found-in__line">59</span>
 </aside>
 
         <p class="phpdocumentor-summary">Payment method description for the frontend.</p>
@@ -1154,9 +1204,9 @@ method/token selection radio selection.</dd>
                                 </span>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/gateways/paypal/class-wc-gateway-paypal.php"><a href="../files/woocommerce-includes-gateways-paypal-class-wc-gateway-paypal.html#source-view.57">includes/gateways/paypal/class-wc-gateway-paypal.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/gateways/paypal/class-wc-gateway-paypal.php"><a href="../files/woocommerce-includes-gateways-paypal-class-wc-gateway-paypal.html#source-view.64">includes/gateways/paypal/class-wc-gateway-paypal.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">57</span>
+    <span class="phpdocumentor-element-found-in__line">64</span>
 </aside>
 
         <p class="phpdocumentor-summary">Email address to send payments to.</p>
@@ -1186,9 +1236,9 @@ method/token selection radio selection.</dd>
                                 </span>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-payment-gateway.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-payment-gateway.html#source-view.43">includes/abstracts/abstract-wc-payment-gateway.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-payment-gateway.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-payment-gateway.html#source-view.45">includes/abstracts/abstract-wc-payment-gateway.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">43</span>
+    <span class="phpdocumentor-element-found-in__line">45</span>
 </aside>
 
         <p class="phpdocumentor-summary">Yes or no based on whether the method is enabled.</p>
@@ -1282,9 +1332,9 @@ method/token selection radio selection.</dd>
                                 </span>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-payment-gateway.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-payment-gateway.html#source-view.85">includes/abstracts/abstract-wc-payment-gateway.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-payment-gateway.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-payment-gateway.html#source-view.87">includes/abstracts/abstract-wc-payment-gateway.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">85</span>
+    <span class="phpdocumentor-element-found-in__line">87</span>
 </aside>
 
         <p class="phpdocumentor-summary">True if the gateway shows fields on the checkout.</p>
@@ -1314,9 +1364,9 @@ method/token selection radio selection.</dd>
                                 </span>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-payment-gateway.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-payment-gateway.html#source-view.106">includes/abstracts/abstract-wc-payment-gateway.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-payment-gateway.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-payment-gateway.html#source-view.108">includes/abstracts/abstract-wc-payment-gateway.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">106</span>
+    <span class="phpdocumentor-element-found-in__line">108</span>
 </aside>
 
         <p class="phpdocumentor-summary">Icon for the gateway.</p>
@@ -1378,9 +1428,9 @@ method/token selection radio selection.</dd>
                                 </span>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/gateways/paypal/class-wc-gateway-paypal.php"><a href="../files/woocommerce-includes-gateways-paypal-class-wc-gateway-paypal.html#source-view.71">includes/gateways/paypal/class-wc-gateway-paypal.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/gateways/paypal/class-wc-gateway-paypal.php"><a href="../files/woocommerce-includes-gateways-paypal-class-wc-gateway-paypal.html#source-view.78">includes/gateways/paypal/class-wc-gateway-paypal.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">71</span>
+    <span class="phpdocumentor-element-found-in__line">78</span>
 </aside>
 
         <p class="phpdocumentor-summary">Identity token.</p>
@@ -1410,9 +1460,9 @@ method/token selection radio selection.</dd>
                                 </span>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/gateways/paypal/class-wc-gateway-paypal.php"><a href="../files/woocommerce-includes-gateways-paypal-class-wc-gateway-paypal.html#source-view.36">includes/gateways/paypal/class-wc-gateway-paypal.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/gateways/paypal/class-wc-gateway-paypal.php"><a href="../files/woocommerce-includes-gateways-paypal-class-wc-gateway-paypal.html#source-view.43">includes/gateways/paypal/class-wc-gateway-paypal.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">36</span>
+    <span class="phpdocumentor-element-found-in__line">43</span>
 </aside>
 
         <p class="phpdocumentor-summary">Logger instance</p>
@@ -1442,9 +1492,9 @@ method/token selection radio selection.</dd>
                                 </span>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/gateways/paypal/class-wc-gateway-paypal.php"><a href="../files/woocommerce-includes-gateways-paypal-class-wc-gateway-paypal.html#source-view.29">includes/gateways/paypal/class-wc-gateway-paypal.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/gateways/paypal/class-wc-gateway-paypal.php"><a href="../files/woocommerce-includes-gateways-paypal-class-wc-gateway-paypal.html#source-view.36">includes/gateways/paypal/class-wc-gateway-paypal.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">29</span>
+    <span class="phpdocumentor-element-found-in__line">36</span>
 </aside>
 
         <p class="phpdocumentor-summary">Whether or not logging is enabled</p>
@@ -1474,9 +1524,9 @@ method/token selection radio selection.</dd>
                                 </span>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-payment-gateway.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-payment-gateway.html#source-view.120">includes/abstracts/abstract-wc-payment-gateway.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-payment-gateway.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-payment-gateway.html#source-view.122">includes/abstracts/abstract-wc-payment-gateway.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">120</span>
+    <span class="phpdocumentor-element-found-in__line">122</span>
 </aside>
 
         <p class="phpdocumentor-summary">Maximum transaction amount, zero does not define a maximum.</p>
@@ -1506,9 +1556,9 @@ method/token selection radio selection.</dd>
                                 </span>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-payment-gateway.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-payment-gateway.html#source-view.78">includes/abstracts/abstract-wc-payment-gateway.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-payment-gateway.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-payment-gateway.html#source-view.80">includes/abstracts/abstract-wc-payment-gateway.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">78</span>
+    <span class="phpdocumentor-element-found-in__line">80</span>
 </aside>
 
         <p class="phpdocumentor-summary">Gateway description.</p>
@@ -1538,9 +1588,9 @@ method/token selection radio selection.</dd>
                                 </span>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-payment-gateway.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-payment-gateway.html#source-view.71">includes/abstracts/abstract-wc-payment-gateway.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-payment-gateway.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-payment-gateway.html#source-view.73">includes/abstracts/abstract-wc-payment-gateway.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">71</span>
+    <span class="phpdocumentor-element-found-in__line">73</span>
 </aside>
 
         <p class="phpdocumentor-summary">Gateway title.</p>
@@ -1570,9 +1620,9 @@ method/token selection radio selection.</dd>
                                 </span>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-payment-gateway.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-payment-gateway.html#source-view.135">includes/abstracts/abstract-wc-payment-gateway.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-payment-gateway.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-payment-gateway.html#source-view.137">includes/abstracts/abstract-wc-payment-gateway.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">135</span>
+    <span class="phpdocumentor-element-found-in__line">137</span>
 </aside>
 
         <p class="phpdocumentor-summary">Optional label to show for &quot;new payment method&quot; in the payment
@@ -1603,9 +1653,9 @@ method/token selection radio selection.</p>
                                 </span>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-payment-gateway.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-payment-gateway.html#source-view.36">includes/abstracts/abstract-wc-payment-gateway.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-payment-gateway.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-payment-gateway.html#source-view.38">includes/abstracts/abstract-wc-payment-gateway.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">36</span>
+    <span class="phpdocumentor-element-found-in__line">38</span>
 </aside>
 
         <p class="phpdocumentor-summary">Set if the place order button should be renamed on selection.</p>
@@ -1635,9 +1685,9 @@ method/token selection radio selection.</p>
                                 </span>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-payment-gateway.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-payment-gateway.html#source-view.142">includes/abstracts/abstract-wc-payment-gateway.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-payment-gateway.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-payment-gateway.html#source-view.144">includes/abstracts/abstract-wc-payment-gateway.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">142</span>
+    <span class="phpdocumentor-element-found-in__line">144</span>
 </aside>
 
         <p class="phpdocumentor-summary">Pay button ID if supported.</p>
@@ -1699,9 +1749,9 @@ method/token selection radio selection.</p>
                                 </span>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/gateways/paypal/class-wc-gateway-paypal.php"><a href="../files/woocommerce-includes-gateways-paypal-class-wc-gateway-paypal.html#source-view.64">includes/gateways/paypal/class-wc-gateway-paypal.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/gateways/paypal/class-wc-gateway-paypal.php"><a href="../files/woocommerce-includes-gateways-paypal-class-wc-gateway-paypal.html#source-view.71">includes/gateways/paypal/class-wc-gateway-paypal.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">64</span>
+    <span class="phpdocumentor-element-found-in__line">71</span>
 </aside>
 
         <p class="phpdocumentor-summary">Receiver email.</p>
@@ -1763,9 +1813,9 @@ method/token selection radio selection.</p>
                                 </span>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-payment-gateway.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-payment-gateway.html#source-view.113">includes/abstracts/abstract-wc-payment-gateway.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-payment-gateway.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-payment-gateway.html#source-view.115">includes/abstracts/abstract-wc-payment-gateway.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">113</span>
+    <span class="phpdocumentor-element-found-in__line">115</span>
 </aside>
 
         <p class="phpdocumentor-summary">Supported features such as &#039;default_credit_card_form&#039;, &#039;refunds&#039;.</p>
@@ -1795,9 +1845,9 @@ method/token selection radio selection.</p>
                                 </span>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/gateways/paypal/class-wc-gateway-paypal.php"><a href="../files/woocommerce-includes-gateways-paypal-class-wc-gateway-paypal.html#source-view.43">includes/gateways/paypal/class-wc-gateway-paypal.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/gateways/paypal/class-wc-gateway-paypal.php"><a href="../files/woocommerce-includes-gateways-paypal-class-wc-gateway-paypal.html#source-view.50">includes/gateways/paypal/class-wc-gateway-paypal.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">43</span>
+    <span class="phpdocumentor-element-found-in__line">50</span>
 </aside>
 
         <p class="phpdocumentor-summary">Whether the test mode is enabled.</p>
@@ -1827,9 +1877,9 @@ method/token selection radio selection.</p>
                                 </span>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-payment-gateway.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-payment-gateway.html#source-view.50">includes/abstracts/abstract-wc-payment-gateway.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-payment-gateway.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-payment-gateway.html#source-view.52">includes/abstracts/abstract-wc-payment-gateway.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">50</span>
+    <span class="phpdocumentor-element-found-in__line">52</span>
 </aside>
 
         <p class="phpdocumentor-summary">Payment method title for the frontend.</p>
@@ -1859,9 +1909,9 @@ method/token selection radio selection.</p>
                                 </span>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-payment-gateway.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-payment-gateway.html#source-view.127">includes/abstracts/abstract-wc-payment-gateway.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-payment-gateway.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-payment-gateway.html#source-view.129">includes/abstracts/abstract-wc-payment-gateway.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">127</span>
+    <span class="phpdocumentor-element-found-in__line">129</span>
 </aside>
 
         <p class="phpdocumentor-summary">Optional URL to view a transaction.</p>
@@ -1923,9 +1973,9 @@ method/token selection radio selection.</p>
                                 </span>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-payment-gateway.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-payment-gateway.html#source-view.149">includes/abstracts/abstract-wc-payment-gateway.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-payment-gateway.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-payment-gateway.html#source-view.151">includes/abstracts/abstract-wc-payment-gateway.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">149</span>
+    <span class="phpdocumentor-element-found-in__line">151</span>
 </aside>
 
         <p class="phpdocumentor-summary">Contains a users saved tokens for this gateway.</p>
@@ -1959,9 +2009,9 @@ method/token selection radio selection.</p>
         <a href="#method___construct" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/gateways/paypal/class-wc-gateway-paypal.php"><a href="../files/woocommerce-includes-gateways-paypal-class-wc-gateway-paypal.html#source-view.77">includes/gateways/paypal/class-wc-gateway-paypal.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/gateways/paypal/class-wc-gateway-paypal.php"><a href="../files/woocommerce-includes-gateways-paypal-class-wc-gateway-paypal.html#source-view.84">includes/gateways/paypal/class-wc-gateway-paypal.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">77</span>
+    <span class="phpdocumentor-element-found-in__line">84</span>
 </aside>
 
         <p class="phpdocumentor-summary">Constructor for the gateway.</p>
@@ -2035,9 +2085,9 @@ method/token selection radio selection.</p>
         <a href="#method_add_payment_method" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-payment-gateway.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-payment-gateway.html#source-view.663">includes/abstracts/abstract-wc-payment-gateway.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-payment-gateway.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-payment-gateway.html#source-view.673">includes/abstracts/abstract-wc-payment-gateway.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">663</span>
+    <span class="phpdocumentor-element-found-in__line">673</span>
 </aside>
 
         <p class="phpdocumentor-summary">Add payment method via account screen. This should be extended by gateway plugins.</p>
@@ -2082,9 +2132,9 @@ method/token selection radio selection.</p>
         <a href="#method_admin_options" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/gateways/paypal/class-wc-gateway-paypal.php"><a href="../files/woocommerce-includes-gateways-paypal-class-wc-gateway-paypal.html#source-view.317">includes/gateways/paypal/class-wc-gateway-paypal.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/gateways/paypal/class-wc-gateway-paypal.php"><a href="../files/woocommerce-includes-gateways-paypal-class-wc-gateway-paypal.html#source-view.324">includes/gateways/paypal/class-wc-gateway-paypal.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">317</span>
+    <span class="phpdocumentor-element-found-in__line">324</span>
 </aside>
 
         <p class="phpdocumentor-summary">Admin Panel Options.</p>
@@ -2131,9 +2181,9 @@ method/token selection radio selection.</p>
         <a href="#method_admin_scripts" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/gateways/paypal/class-wc-gateway-paypal.php"><a href="../files/woocommerce-includes-gateways-paypal-class-wc-gateway-paypal.html#source-view.486">includes/gateways/paypal/class-wc-gateway-paypal.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/gateways/paypal/class-wc-gateway-paypal.php"><a href="../files/woocommerce-includes-gateways-paypal-class-wc-gateway-paypal.html#source-view.493">includes/gateways/paypal/class-wc-gateway-paypal.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">486</span>
+    <span class="phpdocumentor-element-found-in__line">493</span>
 </aside>
 
         <p class="phpdocumentor-summary">Load admin scripts.</p>
@@ -2177,9 +2227,9 @@ method/token selection radio selection.</p>
         <a href="#method_can_refund_order" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/gateways/paypal/class-wc-gateway-paypal.php"><a href="../files/woocommerce-includes-gateways-paypal-class-wc-gateway-paypal.html#source-view.377">includes/gateways/paypal/class-wc-gateway-paypal.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/gateways/paypal/class-wc-gateway-paypal.php"><a href="../files/woocommerce-includes-gateways-paypal-class-wc-gateway-paypal.html#source-view.384">includes/gateways/paypal/class-wc-gateway-paypal.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">377</span>
+    <span class="phpdocumentor-element-found-in__line">384</span>
 </aside>
 
         <p class="phpdocumentor-summary">Can the order be refunded via PayPal?</p>
@@ -2221,9 +2271,9 @@ method/token selection radio selection.</p>
         <a href="#method_capture_payment" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/gateways/paypal/class-wc-gateway-paypal.php"><a href="../files/woocommerce-includes-gateways-paypal-class-wc-gateway-paypal.html#source-view.445">includes/gateways/paypal/class-wc-gateway-paypal.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/gateways/paypal/class-wc-gateway-paypal.php"><a href="../files/woocommerce-includes-gateways-paypal-class-wc-gateway-paypal.html#source-view.452">includes/gateways/paypal/class-wc-gateway-paypal.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">445</span>
+    <span class="phpdocumentor-element-found-in__line">452</span>
 </aside>
 
         <p class="phpdocumentor-summary">Capture payment when the order is changed from on-hold to complete or processing</p>
@@ -2265,9 +2315,9 @@ method/token selection radio selection.</p>
         <a href="#method_credit_card_form" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-payment-gateway.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-payment-gateway.html#source-view.516">includes/abstracts/abstract-wc-payment-gateway.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-payment-gateway.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-payment-gateway.html#source-view.526">includes/abstracts/abstract-wc-payment-gateway.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">516</span>
+    <span class="phpdocumentor-element-found-in__line">526</span>
 </aside>
 
         <p class="phpdocumentor-summary">Core credit card form which gateways can use if needed. Deprecated - inherit WC_Payment_Gateway_CC instead.</p>
@@ -3266,9 +3316,9 @@ method/token selection radio selection.</p>
         <a href="#method_get_description" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-payment-gateway.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-payment-gateway.html#source-view.358">includes/abstracts/abstract-wc-payment-gateway.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-payment-gateway.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-payment-gateway.html#source-view.368">includes/abstracts/abstract-wc-payment-gateway.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">358</span>
+    <span class="phpdocumentor-element-found-in__line">368</span>
 </aside>
 
         <p class="phpdocumentor-summary">Return the gateway&#039;s description.</p>
@@ -3600,9 +3650,9 @@ method/token selection radio selection.</p>
         <a href="#method_get_icon" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/gateways/paypal/class-wc-gateway-paypal.php"><a href="../files/woocommerce-includes-gateways-paypal-class-wc-gateway-paypal.html#source-view.187">includes/gateways/paypal/class-wc-gateway-paypal.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/gateways/paypal/class-wc-gateway-paypal.php"><a href="../files/woocommerce-includes-gateways-paypal-class-wc-gateway-paypal.html#source-view.194">includes/gateways/paypal/class-wc-gateway-paypal.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">187</span>
+    <span class="phpdocumentor-element-found-in__line">194</span>
 </aside>
 
         <p class="phpdocumentor-summary">Get gateway icon.</p>
@@ -3632,9 +3682,9 @@ method/token selection radio selection.</p>
         <a href="#method_get_method_description" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-payment-gateway.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-payment-gateway.html#source-view.191">includes/abstracts/abstract-wc-payment-gateway.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-payment-gateway.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-payment-gateway.html#source-view.193">includes/abstracts/abstract-wc-payment-gateway.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">191</span>
+    <span class="phpdocumentor-element-found-in__line">193</span>
 </aside>
 
         <p class="phpdocumentor-summary">Return the description for admin screens.</p>
@@ -3664,9 +3714,9 @@ method/token selection radio selection.</p>
         <a href="#method_get_method_title" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-payment-gateway.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-payment-gateway.html#source-view.174">includes/abstracts/abstract-wc-payment-gateway.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-payment-gateway.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-payment-gateway.html#source-view.176">includes/abstracts/abstract-wc-payment-gateway.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">174</span>
+    <span class="phpdocumentor-element-found-in__line">176</span>
 </aside>
 
         <p class="phpdocumentor-summary">Return the title for admin screens.</p>
@@ -3696,9 +3746,9 @@ method/token selection radio selection.</p>
         <a href="#method_get_new_payment_method_option_html" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-payment-gateway.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-payment-gateway.html#source-view.603">includes/abstracts/abstract-wc-payment-gateway.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-payment-gateway.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-payment-gateway.html#source-view.613">includes/abstracts/abstract-wc-payment-gateway.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">603</span>
+    <span class="phpdocumentor-element-found-in__line">613</span>
 </aside>
 
         <p class="phpdocumentor-summary">Displays a radio button for entering a new payment method (new CC details) instead of using a saved method.</p>
@@ -3843,9 +3893,9 @@ method/token selection radio selection.</p>
         <a href="#method_get_pay_button_id" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-payment-gateway.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-payment-gateway.html#source-view.398">includes/abstracts/abstract-wc-payment-gateway.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-payment-gateway.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-payment-gateway.html#source-view.408">includes/abstracts/abstract-wc-payment-gateway.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">398</span>
+    <span class="phpdocumentor-element-found-in__line">408</span>
 </aside>
 
         <p class="phpdocumentor-summary">Return the gateway&#039;s pay button ID.</p>
@@ -3921,9 +3971,9 @@ method/token selection radio selection.</p>
         <a href="#method_get_return_url" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-payment-gateway.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-payment-gateway.html#source-view.241">includes/abstracts/abstract-wc-payment-gateway.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-payment-gateway.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-payment-gateway.html#source-view.251">includes/abstracts/abstract-wc-payment-gateway.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">241</span>
+    <span class="phpdocumentor-element-found-in__line">251</span>
 </aside>
 
         <p class="phpdocumentor-summary">Get the return url (thank you page).</p>
@@ -3965,9 +4015,9 @@ method/token selection radio selection.</p>
         <a href="#method_get_saved_payment_method_option_html" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-payment-gateway.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-payment-gateway.html#source-view.573">includes/abstracts/abstract-wc-payment-gateway.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-payment-gateway.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-payment-gateway.html#source-view.583">includes/abstracts/abstract-wc-payment-gateway.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">573</span>
+    <span class="phpdocumentor-element-found-in__line">583</span>
 </aside>
 
         <p class="phpdocumentor-summary">Gets saved payment method HTML from a token.</p>
@@ -4023,9 +4073,9 @@ method/token selection radio selection.</p>
         <a href="#method_get_title" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-payment-gateway.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-payment-gateway.html#source-view.339">includes/abstracts/abstract-wc-payment-gateway.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-payment-gateway.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-payment-gateway.html#source-view.349">includes/abstracts/abstract-wc-payment-gateway.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">339</span>
+    <span class="phpdocumentor-element-found-in__line">349</span>
 </aside>
 
         <p class="phpdocumentor-summary">Return the gateway&#039;s title.</p>
@@ -4055,9 +4105,9 @@ method/token selection radio selection.</p>
         <a href="#method_get_tokens" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-payment-gateway.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-payment-gateway.html#source-view.157">includes/abstracts/abstract-wc-payment-gateway.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-payment-gateway.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-payment-gateway.html#source-view.159">includes/abstracts/abstract-wc-payment-gateway.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">157</span>
+    <span class="phpdocumentor-element-found-in__line">159</span>
 </aside>
 
         <p class="phpdocumentor-summary">Returns a users saved tokens for this gateway.</p>
@@ -4145,9 +4195,9 @@ method/token selection radio selection.</p>
         <a href="#method_get_transaction_url" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/gateways/paypal/class-wc-gateway-paypal.php"><a href="../files/woocommerce-includes-gateways-paypal-class-wc-gateway-paypal.html#source-view.344">includes/gateways/paypal/class-wc-gateway-paypal.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/gateways/paypal/class-wc-gateway-paypal.php"><a href="../files/woocommerce-includes-gateways-paypal-class-wc-gateway-paypal.html#source-view.351">includes/gateways/paypal/class-wc-gateway-paypal.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">344</span>
+    <span class="phpdocumentor-element-found-in__line">351</span>
 </aside>
 
         <p class="phpdocumentor-summary">Get the transaction URL.</p>
@@ -4189,9 +4239,9 @@ method/token selection radio selection.</p>
         <a href="#method_has_fields" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-payment-gateway.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-payment-gateway.html#source-view.330">includes/abstracts/abstract-wc-payment-gateway.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-payment-gateway.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-payment-gateway.html#source-view.340">includes/abstracts/abstract-wc-payment-gateway.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">330</span>
+    <span class="phpdocumentor-element-found-in__line">340</span>
 </aside>
 
         <p class="phpdocumentor-summary">Check if the gateway has fields on the checkout.</p>
@@ -4221,9 +4271,9 @@ method/token selection radio selection.</p>
         <a href="#method_has_paypal_orders" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/gateways/paypal/class-wc-gateway-paypal.php"><a href="../files/woocommerce-includes-gateways-paypal-class-wc-gateway-paypal.html#source-view.547">includes/gateways/paypal/class-wc-gateway-paypal.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/gateways/paypal/class-wc-gateway-paypal.php"><a href="../files/woocommerce-includes-gateways-paypal-class-wc-gateway-paypal.html#source-view.554">includes/gateways/paypal/class-wc-gateway-paypal.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">547</span>
+    <span class="phpdocumentor-element-found-in__line">554</span>
 </aside>
 
         <p class="phpdocumentor-summary">Checks if the store has at least one PayPal Standand order.</p>
@@ -4253,9 +4303,9 @@ method/token selection radio selection.</p>
         <a href="#method_init_form_fields" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/gateways/paypal/class-wc-gateway-paypal.php"><a href="../files/woocommerce-includes-gateways-paypal-class-wc-gateway-paypal.html#source-view.334">includes/gateways/paypal/class-wc-gateway-paypal.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/gateways/paypal/class-wc-gateway-paypal.php"><a href="../files/woocommerce-includes-gateways-paypal-class-wc-gateway-paypal.html#source-view.341">includes/gateways/paypal/class-wc-gateway-paypal.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">334</span>
+    <span class="phpdocumentor-element-found-in__line">341</span>
 </aside>
 
         <p class="phpdocumentor-summary">Initialise Gateway Settings Form Fields.</p>
@@ -4342,9 +4392,9 @@ or the settings stored in the database.</p>
         <a href="#method_is_available" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-payment-gateway.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-payment-gateway.html#source-view.315">includes/abstracts/abstract-wc-payment-gateway.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-payment-gateway.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-payment-gateway.html#source-view.325">includes/abstracts/abstract-wc-payment-gateway.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">315</span>
+    <span class="phpdocumentor-element-found-in__line">325</span>
 </aside>
 
         <p class="phpdocumentor-summary">Check if the gateway is available for use.</p>
@@ -4374,9 +4424,9 @@ or the settings stored in the database.</p>
         <a href="#method_is_valid_for_use" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/gateways/paypal/class-wc-gateway-paypal.php"><a href="../files/woocommerce-includes-gateways-paypal-class-wc-gateway-paypal.html#source-view.300">includes/gateways/paypal/class-wc-gateway-paypal.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/gateways/paypal/class-wc-gateway-paypal.php"><a href="../files/woocommerce-includes-gateways-paypal-class-wc-gateway-paypal.html#source-view.307">includes/gateways/paypal/class-wc-gateway-paypal.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">300</span>
+    <span class="phpdocumentor-element-found-in__line">307</span>
 </aside>
 
         <p class="phpdocumentor-summary">Check if this gateway is available in the user&#039;s country based on currency.</p>
@@ -4406,9 +4456,9 @@ or the settings stored in the database.</p>
         <a href="#method_log" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/gateways/paypal/class-wc-gateway-paypal.php"><a href="../files/woocommerce-includes-gateways-paypal-class-wc-gateway-paypal.html#source-view.153">includes/gateways/paypal/class-wc-gateway-paypal.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/gateways/paypal/class-wc-gateway-paypal.php"><a href="../files/woocommerce-includes-gateways-paypal-class-wc-gateway-paypal.html#source-view.160">includes/gateways/paypal/class-wc-gateway-paypal.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">153</span>
+    <span class="phpdocumentor-element-found-in__line">160</span>
 </aside>
 
         <p class="phpdocumentor-summary">Logging method.</p>
@@ -4460,9 +4510,9 @@ emergency|alert|critical|error|warning|notice|info|debug.</p>
         <a href="#method_needs_setup" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/gateways/paypal/class-wc-gateway-paypal.php"><a href="../files/woocommerce-includes-gateways-paypal-class-wc-gateway-paypal.html#source-view.142">includes/gateways/paypal/class-wc-gateway-paypal.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/gateways/paypal/class-wc-gateway-paypal.php"><a href="../files/woocommerce-includes-gateways-paypal-class-wc-gateway-paypal.html#source-view.149">includes/gateways/paypal/class-wc-gateway-paypal.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">142</span>
+    <span class="phpdocumentor-element-found-in__line">149</span>
 </aside>
 
         <p class="phpdocumentor-summary">Return whether or not this gateway still requires setup to function.</p>
@@ -4508,9 +4558,9 @@ redirect will occur to the settings page instead.</p>
         <a href="#method_order_received_text" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/gateways/paypal/class-wc-gateway-paypal.php"><a href="../files/woocommerce-includes-gateways-paypal-class-wc-gateway-paypal.html#source-view.508">includes/gateways/paypal/class-wc-gateway-paypal.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/gateways/paypal/class-wc-gateway-paypal.php"><a href="../files/woocommerce-includes-gateways-paypal-class-wc-gateway-paypal.html#source-view.515">includes/gateways/paypal/class-wc-gateway-paypal.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">508</span>
+    <span class="phpdocumentor-element-found-in__line">515</span>
 </aside>
 
         <p class="phpdocumentor-summary">Custom PayPal order received text.</p>
@@ -4575,9 +4625,9 @@ redirect will occur to the settings page instead.</p>
         <a href="#method_payment_fields" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-payment-gateway.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-payment-gateway.html#source-view.462">includes/abstracts/abstract-wc-payment-gateway.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-payment-gateway.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-payment-gateway.html#source-view.472">includes/abstracts/abstract-wc-payment-gateway.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">462</span>
+    <span class="phpdocumentor-element-found-in__line">472</span>
 </aside>
 
         <p class="phpdocumentor-summary">Default payment fields display. Override this in your gateway to customize displayed fields.</p>
@@ -4622,9 +4672,9 @@ redirect will occur to the settings page instead.</p>
         <a href="#method_process_admin_options" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/gateways/paypal/class-wc-gateway-paypal.php"><a href="../files/woocommerce-includes-gateways-paypal-class-wc-gateway-paypal.html#source-view.168">includes/gateways/paypal/class-wc-gateway-paypal.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/gateways/paypal/class-wc-gateway-paypal.php"><a href="../files/woocommerce-includes-gateways-paypal-class-wc-gateway-paypal.html#source-view.175">includes/gateways/paypal/class-wc-gateway-paypal.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">168</span>
+    <span class="phpdocumentor-element-found-in__line">175</span>
 </aside>
 
         <p class="phpdocumentor-summary">Processes and saves options.</p>
@@ -4655,9 +4705,9 @@ redirect will occur to the settings page instead.</p>
         <a href="#method_process_payment" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/gateways/paypal/class-wc-gateway-paypal.php"><a href="../files/woocommerce-includes-gateways-paypal-class-wc-gateway-paypal.html#source-view.359">includes/gateways/paypal/class-wc-gateway-paypal.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/gateways/paypal/class-wc-gateway-paypal.php"><a href="../files/woocommerce-includes-gateways-paypal-class-wc-gateway-paypal.html#source-view.366">includes/gateways/paypal/class-wc-gateway-paypal.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">359</span>
+    <span class="phpdocumentor-element-found-in__line">366</span>
 </aside>
 
         <p class="phpdocumentor-summary">Process the payment and return the result.</p>
@@ -4699,9 +4749,9 @@ redirect will occur to the settings page instead.</p>
         <a href="#method_process_refund" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/gateways/paypal/class-wc-gateway-paypal.php"><a href="../files/woocommerce-includes-gateways-paypal-class-wc-gateway-paypal.html#source-view.409">includes/gateways/paypal/class-wc-gateway-paypal.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/gateways/paypal/class-wc-gateway-paypal.php"><a href="../files/woocommerce-includes-gateways-paypal-class-wc-gateway-paypal.html#source-view.416">includes/gateways/paypal/class-wc-gateway-paypal.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">409</span>
+    <span class="phpdocumentor-element-found-in__line">416</span>
 </aside>
 
         <p class="phpdocumentor-summary">Process a refund if supported.</p>
@@ -4761,9 +4811,9 @@ redirect will occur to the settings page instead.</p>
         <a href="#method_save_payment_method_checkbox" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-payment-gateway.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-payment-gateway.html#source-view.637">includes/abstracts/abstract-wc-payment-gateway.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-payment-gateway.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-payment-gateway.html#source-view.647">includes/abstracts/abstract-wc-payment-gateway.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">637</span>
+    <span class="phpdocumentor-element-found-in__line">647</span>
 </aside>
 
         <p class="phpdocumentor-summary">Outputs a checkbox for saving a new payment method to the database.</p>
@@ -4807,9 +4857,9 @@ redirect will occur to the settings page instead.</p>
         <a href="#method_saved_payment_methods" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-payment-gateway.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-payment-gateway.html#source-view.553">includes/abstracts/abstract-wc-payment-gateway.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-payment-gateway.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-payment-gateway.html#source-view.563">includes/abstracts/abstract-wc-payment-gateway.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">553</span>
+    <span class="phpdocumentor-element-found-in__line">563</span>
 </aside>
 
         <p class="phpdocumentor-summary">Grab and display our saved payment methods.</p>
@@ -4853,9 +4903,9 @@ redirect will occur to the settings page instead.</p>
         <a href="#method_set_current" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-payment-gateway.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-payment-gateway.html#source-view.407">includes/abstracts/abstract-wc-payment-gateway.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-payment-gateway.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-payment-gateway.html#source-view.417">includes/abstracts/abstract-wc-payment-gateway.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">407</span>
+    <span class="phpdocumentor-element-found-in__line">417</span>
 </aside>
 
         <p class="phpdocumentor-summary">Set as current gateway.</p>
@@ -4930,9 +4980,9 @@ redirect will occur to the settings page instead.</p>
         <a href="#method_should_load" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/gateways/paypal/class-wc-gateway-paypal.php"><a href="../files/woocommerce-includes-gateways-paypal-class-wc-gateway-paypal.html#source-view.525">includes/gateways/paypal/class-wc-gateway-paypal.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/gateways/paypal/class-wc-gateway-paypal.php"><a href="../files/woocommerce-includes-gateways-paypal-class-wc-gateway-paypal.html#source-view.532">includes/gateways/paypal/class-wc-gateway-paypal.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">525</span>
+    <span class="phpdocumentor-element-found-in__line">532</span>
 </aside>
 
         <p class="phpdocumentor-summary">Determines whether PayPal Standard should be loaded or not.</p>
@@ -4977,9 +5027,9 @@ redirect will occur to the settings page instead.</p>
         <a href="#method_supports" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-payment-gateway.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-payment-gateway.html#source-view.485">includes/abstracts/abstract-wc-payment-gateway.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-payment-gateway.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-payment-gateway.html#source-view.495">includes/abstracts/abstract-wc-payment-gateway.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">485</span>
+    <span class="phpdocumentor-element-found-in__line">495</span>
 </aside>
 
         <p class="phpdocumentor-summary">Check if a gateway supports a given feature.</p>
@@ -5037,9 +5087,9 @@ For backward compatibility, gateways support 'products' by default, but nothing 
         <a href="#method_tokenization_script" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-payment-gateway.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-payment-gateway.html#source-view.529">includes/abstracts/abstract-wc-payment-gateway.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-payment-gateway.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-payment-gateway.html#source-view.539">includes/abstracts/abstract-wc-payment-gateway.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">529</span>
+    <span class="phpdocumentor-element-found-in__line">539</span>
 </aside>
 
         <p class="phpdocumentor-summary">Enqueues our tokenization script to handle some of the new form options.</p>
@@ -5258,9 +5308,9 @@ For backward compatibility, gateways support 'products' by default, but nothing 
         <a href="#method_validate_fields" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-payment-gateway.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-payment-gateway.html#source-view.451">includes/abstracts/abstract-wc-payment-gateway.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-payment-gateway.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-payment-gateway.html#source-view.461">includes/abstracts/abstract-wc-payment-gateway.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">451</span>
+    <span class="phpdocumentor-element-found-in__line">461</span>
 </aside>
 
         <p class="phpdocumentor-summary">Validate frontend fields.</p>
@@ -5742,9 +5792,9 @@ choices).</p>
         <a href="#method_get_icon_image" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/gateways/paypal/class-wc-gateway-paypal.php"><a href="../files/woocommerce-includes-gateways-paypal-class-wc-gateway-paypal.html#source-view.231">includes/gateways/paypal/class-wc-gateway-paypal.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/gateways/paypal/class-wc-gateway-paypal.php"><a href="../files/woocommerce-includes-gateways-paypal-class-wc-gateway-paypal.html#source-view.238">includes/gateways/paypal/class-wc-gateway-paypal.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">231</span>
+    <span class="phpdocumentor-element-found-in__line">238</span>
 </aside>
 
         <p class="phpdocumentor-summary">Get PayPal images for a country.</p>
@@ -5786,9 +5836,9 @@ choices).</p>
         <a href="#method_get_icon_url" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/gateways/paypal/class-wc-gateway-paypal.php"><a href="../files/woocommerce-includes-gateways-paypal-class-wc-gateway-paypal.html#source-view.211">includes/gateways/paypal/class-wc-gateway-paypal.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/gateways/paypal/class-wc-gateway-paypal.php"><a href="../files/woocommerce-includes-gateways-paypal-class-wc-gateway-paypal.html#source-view.218">includes/gateways/paypal/class-wc-gateway-paypal.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">211</span>
+    <span class="phpdocumentor-element-found-in__line">218</span>
 </aside>
 
         <p class="phpdocumentor-summary">Get the link for an icon based on country.</p>
@@ -5830,9 +5880,9 @@ choices).</p>
         <a href="#method_get_order_total" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-payment-gateway.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-payment-gateway.html#source-view.290">includes/abstracts/abstract-wc-payment-gateway.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-payment-gateway.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-payment-gateway.html#source-view.300">includes/abstracts/abstract-wc-payment-gateway.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">290</span>
+    <span class="phpdocumentor-element-found-in__line">300</span>
 </aside>
 
         <p class="phpdocumentor-summary">Get the order total in checkout and pay_for_order.</p>
@@ -5862,9 +5912,9 @@ choices).</p>
         <a href="#method_init_api" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/gateways/paypal/class-wc-gateway-paypal.php"><a href="../files/woocommerce-includes-gateways-paypal-class-wc-gateway-paypal.html#source-view.392">includes/gateways/paypal/class-wc-gateway-paypal.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/gateways/paypal/class-wc-gateway-paypal.php"><a href="../files/woocommerce-includes-gateways-paypal-class-wc-gateway-paypal.html#source-view.399">includes/gateways/paypal/class-wc-gateway-paypal.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">392</span>
+    <span class="phpdocumentor-element-found-in__line">399</span>
 </aside>
 
         <p class="phpdocumentor-summary">Init the API class and set the username/password etc.</p>
@@ -5938,7 +5988,7 @@ choices).</p>
 
     <footer class="phpdocumentor phpdocumentor-footer">
     <div class="phpdocumentor-section">
-        <span>WooCommerce Code Reference API documentation generated by <a href="http://www.phpdoc.org/">phpDocumentor</a> on July 25th, 2024 at 11:33 am.</span>
+        <span>WooCommerce Code Reference API documentation generated by <a href="http://www.phpdoc.org/">phpDocumentor</a> on May 16th, 2025 at 09:14 am.</span>
     </div>
 </footer>
 
@@ -5950,7 +6000,7 @@ choices).</p>
             'searchIndex': '..\/js\/searchIndex.json'
         };
     </script>
-    <script src="../js/searchIndex.js?updated=1721907196"></script>
-    <script src="../js/search.js?updated=1721907196"></script>
+    <script src="../js/searchIndex.js?updated=1747386874"></script>
+    <script src="../js/search.js?updated=1747386874"></script>
 </body>
 </html>

@@ -4,14 +4,13 @@
     <meta charset="utf-8">
     <title>WooCommerce Code Reference</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="../images/favicon.png" />
-    <link rel="apple-touch-icon" href="../images/apple-touch-icon.png"/>
-    <link rel="apple-touch-icon" sizes="72x72" href="../images/apple-touch-icon-72x72.png"/>
-    <link rel="apple-touch-icon" sizes="114x114" href="../images/apple-touch-icon-114x114.png"/>
+    <link rel="icon" href="../images/favicon-32x32.png" sizes="32x32" />
+    <link rel="icon" href="../images/favicon-192x192.png" sizes="192x192" />
+    <link rel="apple-touch-icon" href="../images/favicon-180x180.png" />
+
     <link rel="stylesheet" href="../css/normalize.css">
-    <link rel="stylesheet" href="../css/base.css?updated=1721907186">
-    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../css/template.css?updated=1721907186">
+    <link rel="stylesheet" href="../css/base.css?updated=1747386863">
+    <link rel="stylesheet" href="../css/template.css?updated=1747386863">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0/css/all.min.css" integrity="sha256-ybRkN9dBjhcS2qrW1z+hfCxq+1aBdwyQM5wlQoQVt/0=" crossorigin="anonymous" />
             <script src="https://cdn.jsdelivr.net/npm/css-vars-ponyfill@2"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0/js/all.min.js" integrity="sha256-0vuk8LXoyrmCjp1f0O300qo1M75ZQyhH9X3J6d+scmk=" crossorigin="anonymous"></script>
@@ -38,14 +37,13 @@
     <header class="phpdocumentor-top-header">
     <section class="phpdocumentor-section">
         <div class="site-branding">
-            <a class="site-logo" href="../index.html"><img width="180" src="../images/logo.svg" alt="WooCommerce" /></a>
+            <a class="site-logo" href="../index.html"><img src="../images/logo.png" alt="WooCommerce" /></a>
         </div>
         <nav class="main-navigation">
             <ul>
                 <li><a href="../hooks/hooks.html">Hooks Reference</a></li>
-                <li><a href="https://docs.woocommerce.com/">Documentation</a></li>
+                <li><a href="https://developer.woocommerce.com/docs/">Documentation</a></li>
                 <li><a href="https://woocommerce.github.io/woocommerce-rest-api-docs/">REST API Docs</a></li>
-                <li><a href="https://woocommerce.com/careers/?utm_source=woocommerce+core+code+reference&utm_medium=devdocs&utm_campaign=woo+careers" target="_blank">We're hiring!</a></li>
             </ul>
         </nav>
     </section>
@@ -53,7 +51,7 @@
 
 <div class="phpdocumentor-header">
     <section class="phpdocumentor-section">
-        <h1 class="phpdocumentor-title">WooCommerce Code Reference</h1>
+        <h1 class="phpdocumentor-title"><a href="../index.html">WooCommerce Code Reference</a></h1>
         <section class="phpdocumentor-search">
     <label class="phpdocumentor-label">
         <span class="visually-hidden">Search (click ESC to close search results)</span>
@@ -74,6 +72,10 @@
                                         <h4 class="phpdocumentor-sidebar__root-namespace"><a href="../namespaces/woocommerce.html"><abbr title="\WooCommerce">WooCommerce</abbr></a></h4>
                 <ul class="phpdocumentor-list">
                                             <li><a href="../namespaces/woocommerce-admin.html"><abbr title="\WooCommerce\Admin">Admin</abbr></a></li>
+                                    </ul>
+                            <h4 class="phpdocumentor-sidebar__root-namespace"><a href="../namespaces/mailpoet.html"><abbr title="\MailPoet">MailPoet</abbr></a></h4>
+                <ul class="phpdocumentor-list">
+                                            <li><a href="../namespaces/mailpoet-emaileditor.html"><abbr title="\MailPoet\EmailEditor">EmailEditor</abbr></a></li>
                                     </ul>
                             <h4 class="phpdocumentor-sidebar__root-namespace"><a href="../namespaces/automattic.html"><abbr title="\Automattic">Automattic</abbr></a></h4>
                 <ul class="phpdocumentor-list">
@@ -119,8 +121,10 @@
                                     <li><a href="../packages/WooCommerce-Widgets.html"><abbr title="\WooCommerce\Widgets">Widgets</abbr></a></li>
                                     <li><a href="../packages/WooCommerce-Uninstaller.html"><abbr title="\WooCommerce\Uninstaller">Uninstaller</abbr></a></li>
                             </ul>
-                                <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/WoocommerceAdmin.html"><abbr title="\WoocommerceAdmin">WoocommerceAdmin</abbr></a></h3>
-                                <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/WoocommerceNavigation.html"><abbr title="\WoocommerceNavigation">WoocommerceNavigation</abbr></a></h3>
+                                <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/MailPoet.html"><abbr title="\MailPoet">MailPoet</abbr></a></h3>
+                        <ul class="phpdocumentor-list">
+                                    <li><a href="../packages/MailPoet-EmailEditor.html"><abbr title="\MailPoet\EmailEditor">EmailEditor</abbr></a></li>
+                            </ul>
                                 <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/Automattic.html"><abbr title="\Automattic">Automattic</abbr></a></h3>
                         <ul class="phpdocumentor-list">
                                     <li><a href="../packages/Automattic-WooCommerce.html"><abbr title="\Automattic\WooCommerce">WooCommerce</abbr></a></li>
@@ -170,13 +174,17 @@
  *
  * @see     https://woocommerce.com/document/template-structure/
  * @package WooCommerce\Templates\Emails
- * @version 3.7.0
+ * @version 9.8.0
  */
+
+use Automattic\WooCommerce\Utilities\FeaturesUtil;
 
 defined( &#039;ABSPATH&#039; ) || exit;
 
-$text_align  = is_rtl() ? &#039;right&#039; : &#039;left&#039;;
 $margin_side = is_rtl() ? &#039;left&#039; : &#039;right&#039;;
+
+$email_improvements_enabled = FeaturesUtil::feature_is_enabled( &#039;email_improvements&#039; );
+$price_text_align           = $email_improvements_enabled ? &#039;right&#039; : &#039;left&#039;;
 
 foreach ( $items as $item_id =&gt; $item ) :
 	$product       = $item-&gt;get_product();
@@ -196,39 +204,149 @@ foreach ( $items as $item_id =&gt; $item ) :
 
 	?&gt;
 	&lt;tr class=&quot;&lt;?php echo esc_attr( apply_filters( &#039;woocommerce_order_item_class&#039;, &#039;order_item&#039;, $item, $order ) ); ?&gt;&quot;&gt;
-		&lt;td class=&quot;td&quot; style=&quot;text-align:&lt;?php echo esc_attr( $text_align ); ?&gt;; vertical-align: middle; font-family: &#039;Helvetica Neue&#039;, Helvetica, Roboto, Arial, sans-serif; word-wrap:break-word;&quot;&gt;
-		&lt;?php
+		&lt;td class=&quot;td font-family text-align-left&quot; style=&quot;vertical-align: middle; word-wrap:break-word;&quot;&gt;
+			&lt;?php if ( $email_improvements_enabled ) { ?&gt;
+				&lt;table class=&quot;order-item-data&quot;&gt;
+					&lt;tr&gt;
+						&lt;?php
+						// Show title/image etc.
+						if ( $show_image ) {
+							/**
+							 * Email Order Item Thumbnail hook.
+							 *
+							 * @param string                $image The image HTML.
+							 * @param WC_Order_Item_Product $item  The item being displayed.
+							 * @since 2.1.0
+							 */
+							echo &#039;&lt;td&gt;&#039; . wp_kses_post( apply_filters( &#039;woocommerce_order_item_thumbnail&#039;, $image, $item ) ) . &#039;&lt;/td&gt;&#039;;
+						}
+						?&gt;
+						&lt;td&gt;
+							&lt;?php
+							/**
+							 * Order Item Name hook.
+							 *
+							 * @param string                $item_name The item name HTML.
+							 * @param WC_Order_Item_Product $item      The item being displayed.
+							 * @since 2.1.0
+							 */
+							echo wp_kses_post( apply_filters( &#039;woocommerce_order_item_name&#039;, $item-&gt;get_name(), $item, false ) );
 
-		// Show title/image etc.
-		if ( $show_image ) {
-			echo wp_kses_post( apply_filters( &#039;woocommerce_order_item_thumbnail&#039;, $image, $item ) );
-		}
+							// SKU.
+							if ( $show_sku &amp;&amp; $sku ) {
+								echo wp_kses_post( &#039; (#&#039; . $sku . &#039;)&#039; );
+							}
 
-		// Product name.
-		echo wp_kses_post( apply_filters( &#039;woocommerce_order_item_name&#039;, $item-&gt;get_name(), $item, false ) );
+							/**
+							 * Allow other plugins to add additional product information.
+							 *
+							 * @param int                   $item_id    The item ID.
+							 * @param WC_Order_Item_Product $item       The item object.
+							 * @param WC_Order              $order      The order object.
+							 * @param bool                  $plain_text Whether the email is plain text or not.
+							 * @since 2.3.0
+							 */
+							do_action( &#039;woocommerce_order_item_meta_start&#039;, $item_id, $item, $order, $plain_text );
 
-		// SKU.
-		if ( $show_sku &amp;&amp; $sku ) {
-			echo wp_kses_post( &#039; (#&#039; . $sku . &#039;)&#039; );
-		}
+							$item_meta = wc_display_item_meta(
+								$item,
+								array(
+									&#039;before&#039;       =&gt; &#039;&#039;,
+									&#039;after&#039;        =&gt; &#039;&#039;,
+									&#039;separator&#039;    =&gt; &#039;&lt;br&gt;&#039;,
+									&#039;echo&#039;         =&gt; false,
+									&#039;label_before&#039; =&gt; &#039;&lt;span&gt;&#039;,
+									&#039;label_after&#039;  =&gt; &#039;:&lt;/span&gt; &#039;,
+								)
+							);
+							echo &#039;&lt;div class=&quot;email-order-item-meta&quot;&gt;&#039;;
+							echo wp_kses(
+								$item_meta,
+								array(
+									&#039;br&#039;   =&gt; array(),
+									&#039;span&#039; =&gt; array(),
+								)
+							);
+							echo &#039;&lt;/div&gt;&#039;;
 
-		// allow other plugins to add additional product information here.
-		do_action( &#039;woocommerce_order_item_meta_start&#039;, $item_id, $item, $order, $plain_text );
+							/**
+							 * Allow other plugins to add additional product information.
+							 *
+							 * @param int                   $item_id    The item ID.
+							 * @param WC_Order_Item_Product $item       The item object.
+							 * @param WC_Order              $order      The order object.
+							 * @param bool                  $plain_text Whether the email is plain text or not.
+							 * @since 2.3.0
+							 */
+							do_action( &#039;woocommerce_order_item_meta_end&#039;, $item_id, $item, $order, $plain_text );
 
-		wc_display_item_meta(
-			$item,
-			array(
-				&#039;label_before&#039; =&gt; &#039;&lt;strong class=&quot;wc-item-meta-label&quot; style=&quot;float: &#039; . esc_attr( $text_align ) . &#039;; margin-&#039; . esc_attr( $margin_side ) . &#039;: .25em; clear: both&quot;&gt;&#039;,
-			)
-		);
+							?&gt;
+						&lt;/td&gt;
+					&lt;/tr&gt;
+				&lt;/table&gt;
+				&lt;?php
+			} else {
 
-		// allow other plugins to add additional product information here.
-		do_action( &#039;woocommerce_order_item_meta_end&#039;, $item_id, $item, $order, $plain_text );
+				// Show title/image etc.
+				if ( $show_image ) {
+					/**
+					 * Email Order Item Thumbnail hook.
+					 *
+					 * @param string                $image The image HTML.
+					 * @param WC_Order_Item_Product $item  The item being displayed.
+					 * @since 2.1.0
+					 */
+					echo wp_kses_post( apply_filters( &#039;woocommerce_order_item_thumbnail&#039;, $image, $item ) );
+				}
 
-		?&gt;
+				/**
+				 * Order Item Name hook.
+				 *
+				 * @param string                $item_name The item name HTML.
+				 * @param WC_Order_Item_Product $item      The item being displayed.
+				 * @since 2.1.0
+				 */
+				echo wp_kses_post( apply_filters( &#039;woocommerce_order_item_name&#039;, $item-&gt;get_name(), $item, false ) );
+
+				// SKU.
+				if ( $show_sku &amp;&amp; $sku ) {
+					echo wp_kses_post( &#039; (#&#039; . $sku . &#039;)&#039; );
+				}
+
+				/**
+				 * Allow other plugins to add additional product information.
+				 *
+				 * @param int                   $item_id    The item ID.
+				 * @param WC_Order_Item_Product $item       The item object.
+				 * @param WC_Order              $order      The order object.
+				 * @param bool                  $plain_text Whether the email is plain text or not.
+				 * @since 2.3.0
+				 */
+				do_action( &#039;woocommerce_order_item_meta_start&#039;, $item_id, $item, $order, $plain_text );
+
+				wc_display_item_meta(
+					$item,
+					array(
+						&#039;label_before&#039; =&gt; &#039;&lt;strong class=&quot;wc-item-meta-label&quot; style=&quot;float: &#039; . ( is_rtl() ? &#039;right&#039; : &#039;left&#039; ) . &#039;; margin-&#039; . esc_attr( $margin_side ) . &#039;: .25em; clear: both&quot;&gt;&#039;,
+					)
+				);
+
+				/**
+				 * Allow other plugins to add additional product information.
+				 *
+				 * @param int                   $item_id    The item ID.
+				 * @param WC_Order_Item_Product $item       The item object.
+				 * @param WC_Order              $order      The order object.
+				 * @param bool                  $plain_text Whether the email is plain text or not.
+				 * @since 2.3.0
+				 */
+				do_action( &#039;woocommerce_order_item_meta_end&#039;, $item_id, $item, $order, $plain_text );
+			}
+			?&gt;
 		&lt;/td&gt;
-		&lt;td class=&quot;td&quot; style=&quot;text-align:&lt;?php echo esc_attr( $text_align ); ?&gt;; vertical-align:middle; font-family: &#039;Helvetica Neue&#039;, Helvetica, Roboto, Arial, sans-serif;&quot;&gt;
+		&lt;td class=&quot;td font-family text-align-&lt;?php echo esc_attr( $price_text_align ); ?&gt;&quot; style=&quot;vertical-align:middle;&quot;&gt;
 			&lt;?php
+			echo $email_improvements_enabled ? &#039;&amp;times;&#039; : &#039;&#039;;
 			$qty          = $item-&gt;get_quantity();
 			$refunded_qty = $order-&gt;get_qty_refunded_for_item( $item_id );
 
@@ -240,7 +358,7 @@ foreach ( $items as $item_id =&gt; $item ) :
 			echo wp_kses_post( apply_filters( &#039;woocommerce_email_order_item_quantity&#039;, $qty_display, $item ) );
 			?&gt;
 		&lt;/td&gt;
-		&lt;td class=&quot;td&quot; style=&quot;text-align:&lt;?php echo esc_attr( $text_align ); ?&gt;; vertical-align:middle; font-family: &#039;Helvetica Neue&#039;, Helvetica, Roboto, Arial, sans-serif;&quot;&gt;
+		&lt;td class=&quot;td font-family text-align-&lt;?php echo esc_attr( $price_text_align ); ?&gt;&quot; style=&quot;vertical-align:middle;&quot;&gt;
 			&lt;?php echo wp_kses_post( $order-&gt;get_formatted_line_subtotal( $item ) ); ?&gt;
 		&lt;/td&gt;
 	&lt;/tr&gt;
@@ -249,7 +367,7 @@ foreach ( $items as $item_id =&gt; $item ) :
 	if ( $show_purchase_note &amp;&amp; $purchase_note ) {
 		?&gt;
 		&lt;tr&gt;
-			&lt;td colspan=&quot;3&quot; style=&quot;text-align:&lt;?php echo esc_attr( $text_align ); ?&gt;; vertical-align:middle; font-family: &#039;Helvetica Neue&#039;, Helvetica, Roboto, Arial, sans-serif;&quot;&gt;
+			&lt;td colspan=&quot;3&quot; class=&quot;font-family text-align-left&quot; style=&quot;vertical-align:middle;&quot;&gt;
 				&lt;?php
 				echo wp_kses_post( wpautop( do_shortcode( $purchase_note ) ) );
 				?&gt;
@@ -270,7 +388,7 @@ foreach ( $items as $item_id =&gt; $item ) :
 
     <footer class="phpdocumentor phpdocumentor-footer">
     <div class="phpdocumentor-section">
-        <span>WooCommerce Code Reference API documentation generated by <a href="http://www.phpdoc.org/">phpDocumentor</a> on July 25th, 2024 at 11:33 am.</span>
+        <span>WooCommerce Code Reference API documentation generated by <a href="http://www.phpdoc.org/">phpDocumentor</a> on May 16th, 2025 at 09:14 am.</span>
     </div>
 </footer>
 
@@ -282,7 +400,7 @@ foreach ( $items as $item_id =&gt; $item ) :
             'searchIndex': '..\/js\/searchIndex.json'
         };
     </script>
-    <script src="../js/searchIndex.js?updated=1721907186"></script>
-    <script src="../js/search.js?updated=1721907186"></script>
+    <script src="../js/searchIndex.js?updated=1747386863"></script>
+    <script src="../js/search.js?updated=1747386863"></script>
 </body>
 </html>

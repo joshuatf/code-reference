@@ -4,14 +4,13 @@
     <meta charset="utf-8">
     <title>WooCommerce Code Reference</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="../images/favicon.png" />
-    <link rel="apple-touch-icon" href="../images/apple-touch-icon.png"/>
-    <link rel="apple-touch-icon" sizes="72x72" href="../images/apple-touch-icon-72x72.png"/>
-    <link rel="apple-touch-icon" sizes="114x114" href="../images/apple-touch-icon-114x114.png"/>
+    <link rel="icon" href="../images/favicon-32x32.png" sizes="32x32" />
+    <link rel="icon" href="../images/favicon-192x192.png" sizes="192x192" />
+    <link rel="apple-touch-icon" href="../images/favicon-180x180.png" />
+
     <link rel="stylesheet" href="../css/normalize.css">
-    <link rel="stylesheet" href="../css/base.css?updated=1721907202">
-    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../css/template.css?updated=1721907202">
+    <link rel="stylesheet" href="../css/base.css?updated=1747386882">
+    <link rel="stylesheet" href="../css/template.css?updated=1747386882">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0/css/all.min.css" integrity="sha256-ybRkN9dBjhcS2qrW1z+hfCxq+1aBdwyQM5wlQoQVt/0=" crossorigin="anonymous" />
             <script src="https://cdn.jsdelivr.net/npm/css-vars-ponyfill@2"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0/js/all.min.js" integrity="sha256-0vuk8LXoyrmCjp1f0O300qo1M75ZQyhH9X3J6d+scmk=" crossorigin="anonymous"></script>
@@ -27,19 +26,24 @@
 		'content_group' : 'WooCommerce Core Code Reference',
 	});
 </script>
-        </head>
+        <script src="../js/prism.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            window.dispatchEvent(new HashChangeEvent('hashchange'));
+        });
+    </script>
+</head>
 <body id="top">
     <header class="phpdocumentor-top-header">
     <section class="phpdocumentor-section">
         <div class="site-branding">
-            <a class="site-logo" href="../index.html"><img width="180" src="../images/logo.svg" alt="WooCommerce" /></a>
+            <a class="site-logo" href="../index.html"><img src="../images/logo.png" alt="WooCommerce" /></a>
         </div>
         <nav class="main-navigation">
             <ul>
                 <li><a href="../hooks/hooks.html">Hooks Reference</a></li>
-                <li><a href="https://docs.woocommerce.com/">Documentation</a></li>
+                <li><a href="https://developer.woocommerce.com/docs/">Documentation</a></li>
                 <li><a href="https://woocommerce.github.io/woocommerce-rest-api-docs/">REST API Docs</a></li>
-                <li><a href="https://woocommerce.com/careers/?utm_source=woocommerce+core+code+reference&utm_medium=devdocs&utm_campaign=woo+careers" target="_blank">We're hiring!</a></li>
             </ul>
         </nav>
     </section>
@@ -47,7 +51,7 @@
 
 <div class="phpdocumentor-header">
     <section class="phpdocumentor-section">
-        <h1 class="phpdocumentor-title">WooCommerce Code Reference</h1>
+        <h1 class="phpdocumentor-title"><a href="../index.html">WooCommerce Code Reference</a></h1>
         <section class="phpdocumentor-search">
     <label class="phpdocumentor-label">
         <span class="visually-hidden">Search (click ESC to close search results)</span>
@@ -68,6 +72,10 @@
                                         <h4 class="phpdocumentor-sidebar__root-namespace"><a href="../namespaces/woocommerce.html"><abbr title="\WooCommerce">WooCommerce</abbr></a></h4>
                 <ul class="phpdocumentor-list">
                                             <li><a href="../namespaces/woocommerce-admin.html"><abbr title="\WooCommerce\Admin">Admin</abbr></a></li>
+                                    </ul>
+                            <h4 class="phpdocumentor-sidebar__root-namespace"><a href="../namespaces/mailpoet.html"><abbr title="\MailPoet">MailPoet</abbr></a></h4>
+                <ul class="phpdocumentor-list">
+                                            <li><a href="../namespaces/mailpoet-emaileditor.html"><abbr title="\MailPoet\EmailEditor">EmailEditor</abbr></a></li>
                                     </ul>
                             <h4 class="phpdocumentor-sidebar__root-namespace"><a href="../namespaces/automattic.html"><abbr title="\Automattic">Automattic</abbr></a></h4>
                 <ul class="phpdocumentor-list">
@@ -113,8 +121,10 @@
                                     <li><a href="../packages/WooCommerce-Widgets.html"><abbr title="\WooCommerce\Widgets">Widgets</abbr></a></li>
                                     <li><a href="../packages/WooCommerce-Uninstaller.html"><abbr title="\WooCommerce\Uninstaller">Uninstaller</abbr></a></li>
                             </ul>
-                                <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/WoocommerceAdmin.html"><abbr title="\WoocommerceAdmin">WoocommerceAdmin</abbr></a></h3>
-                                <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/WoocommerceNavigation.html"><abbr title="\WoocommerceNavigation">WoocommerceNavigation</abbr></a></h3>
+                                <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/MailPoet.html"><abbr title="\MailPoet">MailPoet</abbr></a></h3>
+                        <ul class="phpdocumentor-list">
+                                    <li><a href="../packages/MailPoet-EmailEditor.html"><abbr title="\MailPoet\EmailEditor">EmailEditor</abbr></a></li>
+                            </ul>
                                 <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/Automattic.html"><abbr title="\Automattic">Automattic</abbr></a></h3>
                         <ul class="phpdocumentor-list">
                                     <li><a href="../packages/Automattic-WooCommerce.html"><abbr title="\Automattic\WooCommerce">WooCommerce</abbr></a></li>
@@ -404,9 +414,9 @@
                                 </span>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/API/Reports/Segmenter.php"><a href="../files/woocommerce-src-admin-api-reports-segmenter.html#source-view.23">src/Admin/API/Reports/Segmenter.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/API/Reports/Segmenter.php"><a href="../files/woocommerce-src-admin-api-reports-segmenter.html#source-view.24">src/Admin/API/Reports/Segmenter.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">23</span>
+    <span class="phpdocumentor-element-found-in__line">24</span>
 </aside>
 
         <p class="phpdocumentor-summary">Array of all segment ids.</p>
@@ -436,9 +446,9 @@
                                 </span>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/API/Reports/Segmenter.php"><a href="../files/woocommerce-src-admin-api-reports-segmenter.html#source-view.37">src/Admin/API/Reports/Segmenter.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/API/Reports/Segmenter.php"><a href="../files/woocommerce-src-admin-api-reports-segmenter.html#source-view.38">src/Admin/API/Reports/Segmenter.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">37</span>
+    <span class="phpdocumentor-element-found-in__line">38</span>
 </aside>
 
         <p class="phpdocumentor-summary">Query arguments supplied by the user for data store.</p>
@@ -468,9 +478,9 @@
                                 </span>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/API/Reports/Segmenter.php"><a href="../files/woocommerce-src-admin-api-reports-segmenter.html#source-view.44">src/Admin/API/Reports/Segmenter.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/API/Reports/Segmenter.php"><a href="../files/woocommerce-src-admin-api-reports-segmenter.html#source-view.45">src/Admin/API/Reports/Segmenter.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">44</span>
+    <span class="phpdocumentor-element-found-in__line">45</span>
 </aside>
 
         <p class="phpdocumentor-summary">SQL definition for each column.</p>
@@ -500,9 +510,9 @@
                                 </span>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/API/Reports/Segmenter.php"><a href="../files/woocommerce-src-admin-api-reports-segmenter.html#source-view.30">src/Admin/API/Reports/Segmenter.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/API/Reports/Segmenter.php"><a href="../files/woocommerce-src-admin-api-reports-segmenter.html#source-view.31">src/Admin/API/Reports/Segmenter.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">30</span>
+    <span class="phpdocumentor-element-found-in__line">31</span>
 </aside>
 
         <p class="phpdocumentor-summary">Array of all segment labels.</p>
@@ -536,9 +546,9 @@
         <a href="#method___construct" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/API/Reports/Segmenter.php"><a href="../files/woocommerce-src-admin-api-reports-segmenter.html#source-view.52">src/Admin/API/Reports/Segmenter.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/API/Reports/Segmenter.php"><a href="../files/woocommerce-src-admin-api-reports-segmenter.html#source-view.53">src/Admin/API/Reports/Segmenter.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">52</span>
+    <span class="phpdocumentor-element-found-in__line">53</span>
 </aside>
 
         <p class="phpdocumentor-summary">Constructor.</p>
@@ -589,9 +599,9 @@
         <a href="#method_add_intervals_segments" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/API/Reports/Segmenter.php"><a href="../files/woocommerce-src-admin-api-reports-segmenter.html#source-view.718">src/Admin/API/Reports/Segmenter.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/API/Reports/Segmenter.php"><a href="../files/woocommerce-src-admin-api-reports-segmenter.html#source-view.719">src/Admin/API/Reports/Segmenter.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">718</span>
+    <span class="phpdocumentor-element-found-in__line">719</span>
 </aside>
 
         <p class="phpdocumentor-summary">Adds an array of segments to data-&gt;intervals object.</p>
@@ -651,9 +661,9 @@
         <a href="#method_get_totals_segments" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/API/Reports/Segmenter.php"><a href="../files/woocommerce-src-admin-api-reports-segmenter.html#source-view.704">src/Admin/API/Reports/Segmenter.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/API/Reports/Segmenter.php"><a href="../files/woocommerce-src-admin-api-reports-segmenter.html#source-view.705">src/Admin/API/Reports/Segmenter.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">704</span>
+    <span class="phpdocumentor-element-found-in__line">705</span>
 </aside>
 
         <p class="phpdocumentor-summary">Returns an array of segments for totals part of REST response.</p>
@@ -704,9 +714,9 @@
         <a href="#method_assign_segments_to_intervals" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/API/Reports/Segmenter.php"><a href="../files/woocommerce-src-admin-api-reports-segmenter.html#source-view.677">src/Admin/API/Reports/Segmenter.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/API/Reports/Segmenter.php"><a href="../files/woocommerce-src-admin-api-reports-segmenter.html#source-view.678">src/Admin/API/Reports/Segmenter.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">677</span>
+    <span class="phpdocumentor-element-found-in__line">678</span>
 </aside>
 
         <p class="phpdocumentor-summary">Assign segments to time intervals by updating original $intervals array.</p>
@@ -757,9 +767,9 @@
         <a href="#method_fill_in_missing_interval_segments" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/API/Reports/Segmenter.php"><a href="../files/woocommerce-src-admin-api-reports-segmenter.html#source-view.540">src/Admin/API/Reports/Segmenter.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/API/Reports/Segmenter.php"><a href="../files/woocommerce-src-admin-api-reports-segmenter.html#source-view.541">src/Admin/API/Reports/Segmenter.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">540</span>
+    <span class="phpdocumentor-element-found-in__line">541</span>
 </aside>
 
         <p class="phpdocumentor-summary">Adds missing segments to intervals, modifies $data.</p>
@@ -801,9 +811,9 @@
         <a href="#method_fill_in_missing_segments" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/API/Reports/Segmenter.php"><a href="../files/woocommerce-src-admin-api-reports-segmenter.html#source-view.501">src/Admin/API/Reports/Segmenter.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/API/Reports/Segmenter.php"><a href="../files/woocommerce-src-admin-api-reports-segmenter.html#source-view.502">src/Admin/API/Reports/Segmenter.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">501</span>
+    <span class="phpdocumentor-element-found-in__line">502</span>
 </aside>
 
         <p class="phpdocumentor-summary">Adds zeroes for segments not present in the data selection.</p>
@@ -845,9 +855,9 @@
         <a href="#method_get_all_segments" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/API/Reports/Segmenter.php"><a href="../files/woocommerce-src-admin-api-reports-segmenter.html#source-view.456">src/Admin/API/Reports/Segmenter.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/API/Reports/Segmenter.php"><a href="../files/woocommerce-src-admin-api-reports-segmenter.html#source-view.457">src/Admin/API/Reports/Segmenter.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">456</span>
+    <span class="phpdocumentor-element-found-in__line">457</span>
 </aside>
 
         <p class="phpdocumentor-summary">Return all segment ids for given segmentby query parameter.</p>
@@ -877,9 +887,9 @@
         <a href="#method_get_order_related_intervals_segments" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/API/Reports/Segmenter.php"><a href="../files/woocommerce-src-admin-api-reports-segmenter.html#source-view.610">src/Admin/API/Reports/Segmenter.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/API/Reports/Segmenter.php"><a href="../files/woocommerce-src-admin-api-reports-segmenter.html#source-view.611">src/Admin/API/Reports/Segmenter.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">610</span>
+    <span class="phpdocumentor-element-found-in__line">611</span>
 </aside>
 
         <p class="phpdocumentor-summary">Calculate segments for intervals query where the segmenting property is bound to order (e.g. coupon or customer type).</p>
@@ -966,9 +976,9 @@
         <a href="#method_get_order_related_segments" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/API/Reports/Segmenter.php"><a href="../files/woocommerce-src-admin-api-reports-segmenter.html#source-view.663">src/Admin/API/Reports/Segmenter.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/API/Reports/Segmenter.php"><a href="../files/woocommerce-src-admin-api-reports-segmenter.html#source-view.664">src/Admin/API/Reports/Segmenter.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">663</span>
+    <span class="phpdocumentor-element-found-in__line">664</span>
 </aside>
 
         <p class="phpdocumentor-summary">Calculate segments for segmenting property bound to order (e.g. coupon or customer type).</p>
@@ -1064,9 +1074,9 @@
         <a href="#method_get_order_related_totals_segments" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/API/Reports/Segmenter.php"><a href="../files/woocommerce-src-admin-api-reports-segmenter.html#source-view.594">src/Admin/API/Reports/Segmenter.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/API/Reports/Segmenter.php"><a href="../files/woocommerce-src-admin-api-reports-segmenter.html#source-view.595">src/Admin/API/Reports/Segmenter.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">594</span>
+    <span class="phpdocumentor-element-found-in__line">595</span>
 </aside>
 
         <p class="phpdocumentor-summary">Calculate segments for totals query where the segmenting property is bound to order (e.g. coupon or customer type).</p>
@@ -1260,9 +1270,9 @@
         <a href="#method_get_product_related_segments" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/API/Reports/Segmenter.php"><a href="../files/woocommerce-src-admin-api-reports-segmenter.html#source-view.642">src/Admin/API/Reports/Segmenter.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/API/Reports/Segmenter.php"><a href="../files/woocommerce-src-admin-api-reports-segmenter.html#source-view.643">src/Admin/API/Reports/Segmenter.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">642</span>
+    <span class="phpdocumentor-element-found-in__line">643</span>
 </aside>
 
         <p class="phpdocumentor-summary">Calculate segments for segmenting property bound to product (e.g. category, product_id, variation_id).</p>
@@ -1483,9 +1493,9 @@
         <a href="#method_get_segment_labels" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/API/Reports/Segmenter.php"><a href="../files/woocommerce-src-admin-api-reports-segmenter.html#source-view.469">src/Admin/API/Reports/Segmenter.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/API/Reports/Segmenter.php"><a href="../files/woocommerce-src-admin-api-reports-segmenter.html#source-view.470">src/Admin/API/Reports/Segmenter.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">469</span>
+    <span class="phpdocumentor-element-found-in__line">470</span>
 </aside>
 
         <p class="phpdocumentor-summary">Return all segment labels for given segmentby query parameter.</p>
@@ -1637,9 +1647,9 @@
         <a href="#method_merge_segment_intervals_results" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/API/Reports/Segmenter.php"><a href="../files/woocommerce-src-admin-api-reports-segmenter.html#source-view.224">src/Admin/API/Reports/Segmenter.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/API/Reports/Segmenter.php"><a href="../files/woocommerce-src-admin-api-reports-segmenter.html#source-view.225">src/Admin/API/Reports/Segmenter.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">224</span>
+    <span class="phpdocumentor-element-found-in__line">225</span>
 </aside>
 
         <p class="phpdocumentor-summary">Merges segmented results for intervals response part.</p>
@@ -1726,9 +1736,9 @@ $r2 = array(
         <a href="#method_merge_segment_totals_results" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/API/Reports/Segmenter.php"><a href="../files/woocommerce-src-admin-api-reports-segmenter.html#source-view.150">src/Admin/API/Reports/Segmenter.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/API/Reports/Segmenter.php"><a href="../files/woocommerce-src-admin-api-reports-segmenter.html#source-view.151">src/Admin/API/Reports/Segmenter.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">150</span>
+    <span class="phpdocumentor-element-found-in__line">151</span>
 </aside>
 
         <p class="phpdocumentor-summary">Merges segmented results for totals response part.</p>
@@ -1809,9 +1819,9 @@ $r2 = array(
         <a href="#method_prepare_selections" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/API/Reports/Segmenter.php"><a href="../files/woocommerce-src-admin-api-reports-segmenter.html#source-view.64">src/Admin/API/Reports/Segmenter.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/API/Reports/Segmenter.php"><a href="../files/woocommerce-src-admin-api-reports-segmenter.html#source-view.65">src/Admin/API/Reports/Segmenter.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">64</span>
+    <span class="phpdocumentor-element-found-in__line">65</span>
 </aside>
 
         <p class="phpdocumentor-summary">Filters definitions for SELECT clauses based on query_args and joins them into one string usable in SELECT clause.</p>
@@ -1853,9 +1863,9 @@ $r2 = array(
         <a href="#method_reformat_intervals_segments" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/API/Reports/Segmenter.php"><a href="../files/woocommerce-src-admin-api-reports-segmenter.html#source-view.287">src/Admin/API/Reports/Segmenter.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/API/Reports/Segmenter.php"><a href="../files/woocommerce-src-admin-api-reports-segmenter.html#source-view.288">src/Admin/API/Reports/Segmenter.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">287</span>
+    <span class="phpdocumentor-element-found-in__line">288</span>
 </aside>
 
         <p class="phpdocumentor-summary">Update row-level db result for segments in &#039;intervals&#039; section to the format used for output.</p>
@@ -1906,9 +1916,9 @@ $r2 = array(
         <a href="#method_reformat_totals_segments" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/API/Reports/Segmenter.php"><a href="../files/woocommerce-src-admin-api-reports-segmenter.html#source-view.92">src/Admin/API/Reports/Segmenter.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/API/Reports/Segmenter.php"><a href="../files/woocommerce-src-admin-api-reports-segmenter.html#source-view.93">src/Admin/API/Reports/Segmenter.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">92</span>
+    <span class="phpdocumentor-element-found-in__line">93</span>
 </aside>
 
         <p class="phpdocumentor-summary">Update row-level db result for segments in &#039;totals&#039; section to the format used for output.</p>
@@ -1959,9 +1969,9 @@ $r2 = array(
         <a href="#method_set_all_segments" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/API/Reports/Segmenter.php"><a href="../files/woocommerce-src-admin-api-reports-segmenter.html#source-view.326">src/Admin/API/Reports/Segmenter.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/API/Reports/Segmenter.php"><a href="../files/woocommerce-src-admin-api-reports-segmenter.html#source-view.327">src/Admin/API/Reports/Segmenter.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">326</span>
+    <span class="phpdocumentor-element-found-in__line">327</span>
 </aside>
 
         <p class="phpdocumentor-summary">Fetches all segment ids from db and stores it for later use.</p>
@@ -1991,9 +2001,9 @@ $r2 = array(
         <a href="#method_segment_cmp" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/API/Reports/Segmenter.php"><a href="../files/woocommerce-src-admin-api-reports-segmenter.html#source-view.484">src/Admin/API/Reports/Segmenter.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/API/Reports/Segmenter.php"><a href="../files/woocommerce-src-admin-api-reports-segmenter.html#source-view.485">src/Admin/API/Reports/Segmenter.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">484</span>
+    <span class="phpdocumentor-element-found-in__line">485</span>
 </aside>
 
         <p class="phpdocumentor-summary">Compares two report data objects by pre-defined object property and ASC/DESC ordering.</p>
@@ -2044,7 +2054,7 @@ $r2 = array(
 
     <footer class="phpdocumentor phpdocumentor-footer">
     <div class="phpdocumentor-section">
-        <span>WooCommerce Code Reference API documentation generated by <a href="http://www.phpdoc.org/">phpDocumentor</a> on July 25th, 2024 at 11:33 am.</span>
+        <span>WooCommerce Code Reference API documentation generated by <a href="http://www.phpdoc.org/">phpDocumentor</a> on May 16th, 2025 at 09:14 am.</span>
     </div>
 </footer>
 
@@ -2056,7 +2066,7 @@ $r2 = array(
             'searchIndex': '..\/js\/searchIndex.json'
         };
     </script>
-    <script src="../js/searchIndex.js?updated=1721907202"></script>
-    <script src="../js/search.js?updated=1721907202"></script>
+    <script src="../js/searchIndex.js?updated=1747386882"></script>
+    <script src="../js/search.js?updated=1747386882"></script>
 </body>
 </html>

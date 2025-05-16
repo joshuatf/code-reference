@@ -4,14 +4,13 @@
     <meta charset="utf-8">
     <title>WooCommerce Code Reference</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="../images/favicon.png" />
-    <link rel="apple-touch-icon" href="../images/apple-touch-icon.png"/>
-    <link rel="apple-touch-icon" sizes="72x72" href="../images/apple-touch-icon-72x72.png"/>
-    <link rel="apple-touch-icon" sizes="114x114" href="../images/apple-touch-icon-114x114.png"/>
+    <link rel="icon" href="../images/favicon-32x32.png" sizes="32x32" />
+    <link rel="icon" href="../images/favicon-192x192.png" sizes="192x192" />
+    <link rel="apple-touch-icon" href="../images/favicon-180x180.png" />
+
     <link rel="stylesheet" href="../css/normalize.css">
-    <link rel="stylesheet" href="../css/base.css?updated=1721907183">
-    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../css/template.css?updated=1721907183">
+    <link rel="stylesheet" href="../css/base.css?updated=1747386859">
+    <link rel="stylesheet" href="../css/template.css?updated=1747386859">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0/css/all.min.css" integrity="sha256-ybRkN9dBjhcS2qrW1z+hfCxq+1aBdwyQM5wlQoQVt/0=" crossorigin="anonymous" />
             <script src="https://cdn.jsdelivr.net/npm/css-vars-ponyfill@2"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0/js/all.min.js" integrity="sha256-0vuk8LXoyrmCjp1f0O300qo1M75ZQyhH9X3J6d+scmk=" crossorigin="anonymous"></script>
@@ -38,14 +37,13 @@
     <header class="phpdocumentor-top-header">
     <section class="phpdocumentor-section">
         <div class="site-branding">
-            <a class="site-logo" href="../index.html"><img width="180" src="../images/logo.svg" alt="WooCommerce" /></a>
+            <a class="site-logo" href="../index.html"><img src="../images/logo.png" alt="WooCommerce" /></a>
         </div>
         <nav class="main-navigation">
             <ul>
                 <li><a href="../hooks/hooks.html">Hooks Reference</a></li>
-                <li><a href="https://docs.woocommerce.com/">Documentation</a></li>
+                <li><a href="https://developer.woocommerce.com/docs/">Documentation</a></li>
                 <li><a href="https://woocommerce.github.io/woocommerce-rest-api-docs/">REST API Docs</a></li>
-                <li><a href="https://woocommerce.com/careers/?utm_source=woocommerce+core+code+reference&utm_medium=devdocs&utm_campaign=woo+careers" target="_blank">We're hiring!</a></li>
             </ul>
         </nav>
     </section>
@@ -53,7 +51,7 @@
 
 <div class="phpdocumentor-header">
     <section class="phpdocumentor-section">
-        <h1 class="phpdocumentor-title">WooCommerce Code Reference</h1>
+        <h1 class="phpdocumentor-title"><a href="../index.html">WooCommerce Code Reference</a></h1>
         <section class="phpdocumentor-search">
     <label class="phpdocumentor-label">
         <span class="visually-hidden">Search (click ESC to close search results)</span>
@@ -74,6 +72,10 @@
                                         <h4 class="phpdocumentor-sidebar__root-namespace"><a href="../namespaces/woocommerce.html"><abbr title="\WooCommerce">WooCommerce</abbr></a></h4>
                 <ul class="phpdocumentor-list">
                                             <li><a href="../namespaces/woocommerce-admin.html"><abbr title="\WooCommerce\Admin">Admin</abbr></a></li>
+                                    </ul>
+                            <h4 class="phpdocumentor-sidebar__root-namespace"><a href="../namespaces/mailpoet.html"><abbr title="\MailPoet">MailPoet</abbr></a></h4>
+                <ul class="phpdocumentor-list">
+                                            <li><a href="../namespaces/mailpoet-emaileditor.html"><abbr title="\MailPoet\EmailEditor">EmailEditor</abbr></a></li>
                                     </ul>
                             <h4 class="phpdocumentor-sidebar__root-namespace"><a href="../namespaces/automattic.html"><abbr title="\Automattic">Automattic</abbr></a></h4>
                 <ul class="phpdocumentor-list">
@@ -119,8 +121,10 @@
                                     <li><a href="../packages/WooCommerce-Widgets.html"><abbr title="\WooCommerce\Widgets">Widgets</abbr></a></li>
                                     <li><a href="../packages/WooCommerce-Uninstaller.html"><abbr title="\WooCommerce\Uninstaller">Uninstaller</abbr></a></li>
                             </ul>
-                                <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/WoocommerceAdmin.html"><abbr title="\WoocommerceAdmin">WoocommerceAdmin</abbr></a></h3>
-                                <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/WoocommerceNavigation.html"><abbr title="\WoocommerceNavigation">WoocommerceNavigation</abbr></a></h3>
+                                <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/MailPoet.html"><abbr title="\MailPoet">MailPoet</abbr></a></h3>
+                        <ul class="phpdocumentor-list">
+                                    <li><a href="../packages/MailPoet-EmailEditor.html"><abbr title="\MailPoet\EmailEditor">EmailEditor</abbr></a></li>
+                            </ul>
                                 <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/Automattic.html"><abbr title="\Automattic">Automattic</abbr></a></h3>
                         <ul class="phpdocumentor-list">
                                     <li><a href="../packages/Automattic-WooCommerce.html"><abbr title="\Automattic\WooCommerce">WooCommerce</abbr></a></li>
@@ -164,6 +168,9 @@
  * @version 3.1.0
  */
 
+use Automattic\WooCommerce\Enums\ProductStatus;
+use Automattic\WooCommerce\Enums\ProductStockStatus;
+use Automattic\WooCommerce\Enums\ProductType;
 use Automattic\WooCommerce\Utilities\I18nUtil;
 
 if ( ! defined( &#039;ABSPATH&#039; ) ) {
@@ -268,6 +275,7 @@ class WC_Product_CSV_Exporter extends WC_CSV_Batch_Exporter {
 				&#039;id&#039;                 =&gt; __( &#039;ID&#039;, &#039;woocommerce&#039; ),
 				&#039;type&#039;               =&gt; __( &#039;Type&#039;, &#039;woocommerce&#039; ),
 				&#039;sku&#039;                =&gt; __( &#039;SKU&#039;, &#039;woocommerce&#039; ),
+				&#039;global_unique_id&#039;   =&gt; __( &#039;GTIN, UPC, EAN, or ISBN&#039;, &#039;woocommerce&#039; ),
 				&#039;name&#039;               =&gt; __( &#039;Name&#039;, &#039;woocommerce&#039; ),
 				&#039;published&#039;          =&gt; __( &#039;Published&#039;, &#039;woocommerce&#039; ),
 				&#039;featured&#039;           =&gt; __( &#039;Is featured?&#039;, &#039;woocommerce&#039; ),
@@ -319,7 +327,7 @@ class WC_Product_CSV_Exporter extends WC_CSV_Batch_Exporter {
 	 */
 	public function prepare_data_to_export() {
 		$args = array(
-			&#039;status&#039;   =&gt; array( &#039;private&#039;, &#039;publish&#039;, &#039;draft&#039;, &#039;future&#039;, &#039;pending&#039; ),
+			&#039;status&#039;   =&gt; array( ProductStatus::PRIVATE, ProductStatus::PUBLISH, ProductStatus::DRAFT, ProductStatus::FUTURE, ProductStatus::PENDING ),
 			&#039;type&#039;     =&gt; $this-&gt;product_types_to_export,
 			&#039;limit&#039;    =&gt; $this-&gt;get_limit(),
 			&#039;page&#039;     =&gt; $this-&gt;get_page(),
@@ -341,7 +349,7 @@ class WC_Product_CSV_Exporter extends WC_CSV_Batch_Exporter {
 
 		foreach ( $products-&gt;products as $product ) {
 			// Check if the category is set, this means we need to fetch variations separately as they are not tied to a category.
-			if ( ! empty( $args[&#039;category&#039;] ) &amp;&amp; $product-&gt;is_type( &#039;variable&#039; ) ) {
+			if ( ! empty( $args[&#039;category&#039;] ) &amp;&amp; $product-&gt;is_type( ProductType::VARIABLE ) ) {
 				$variable_products[] = $product-&gt;get_id();
 			}
 
@@ -354,7 +362,7 @@ class WC_Product_CSV_Exporter extends WC_CSV_Batch_Exporter {
 				$products = wc_get_products(
 					array(
 						&#039;parent&#039; =&gt; $parent_id,
-						&#039;type&#039;   =&gt; array( &#039;variation&#039; ),
+						&#039;type&#039;   =&gt; array( ProductType::VARIATION ),
 						&#039;return&#039; =&gt; &#039;objects&#039;,
 						&#039;limit&#039;  =&gt; -1,
 					)
@@ -420,7 +428,7 @@ class WC_Product_CSV_Exporter extends WC_CSV_Batch_Exporter {
 		 * @since 3.1.0
 		 *
 		 * @param array                   $row         An associative array with the data of a single row in the CSV file.
-		 * @param WC_Product              $product     The product object correspnding to the current row.
+		 * @param WC_Product              $product     The product object corresponding to the current row.
 		 * @param WC_Product_CSV_Exporter $exporter    The instance of the CSV exporter.
 		 */
 		return apply_filters( &#039;woocommerce_product_export_row_data&#039;, $row, $product, $this );
@@ -436,15 +444,15 @@ class WC_Product_CSV_Exporter extends WC_CSV_Batch_Exporter {
 	 */
 	protected function get_column_value_published( $product ) {
 		$statuses = array(
-			&#039;draft&#039;   =&gt; -1,
-			&#039;private&#039; =&gt; 0,
-			&#039;publish&#039; =&gt; 1,
+			ProductStatus::DRAFT   =&gt; -1,
+			ProductStatus::PRIVATE =&gt; 0,
+			ProductStatus::PUBLISH =&gt; 1,
 		);
 
 		// Fix display for variations when parent product is a draft.
-		if ( &#039;variation&#039; === $product-&gt;get_type() ) {
+		if ( ProductType::VARIATION === $product-&gt;get_type() ) {
 			$parent = $product-&gt;get_parent_data();
-			$status = &#039;draft&#039; === $parent[&#039;status&#039;] ? $parent[&#039;status&#039;] : $product-&gt;get_status( &#039;edit&#039; );
+			$status = ProductStatus::DRAFT === $parent[&#039;status&#039;] ? $parent[&#039;status&#039;] : $product-&gt;get_status( &#039;edit&#039; );
 		} else {
 			$status = $product-&gt;get_status( &#039;edit&#039; );
 		}
@@ -611,7 +619,7 @@ class WC_Product_CSV_Exporter extends WC_CSV_Batch_Exporter {
 	 * @return string
 	 */
 	protected function get_column_value_grouped_products( $product ) {
-		if ( &#039;grouped&#039; !== $product-&gt;get_type() ) {
+		if ( ProductType::GROUPED !== $product-&gt;get_type() ) {
 			return &#039;&#039;;
 		}
 
@@ -664,7 +672,7 @@ class WC_Product_CSV_Exporter extends WC_CSV_Batch_Exporter {
 		$manage_stock   = $product-&gt;get_manage_stock( &#039;edit&#039; );
 		$stock_quantity = $product-&gt;get_stock_quantity( &#039;edit&#039; );
 
-		if ( $product-&gt;is_type( &#039;variation&#039; ) &amp;&amp; &#039;parent&#039; === $manage_stock ) {
+		if ( $product-&gt;is_type( ProductType::VARIATION ) &amp;&amp; &#039;parent&#039; === $manage_stock ) {
 			return &#039;parent&#039;;
 		} elseif ( $manage_stock ) {
 			return $stock_quantity;
@@ -684,11 +692,11 @@ class WC_Product_CSV_Exporter extends WC_CSV_Batch_Exporter {
 	protected function get_column_value_stock_status( $product ) {
 		$status = $product-&gt;get_stock_status( &#039;edit&#039; );
 
-		if ( &#039;onbackorder&#039; === $status ) {
+		if ( ProductStockStatus::ON_BACKORDER === $status ) {
 			return &#039;backorder&#039;;
 		}
 
-		return &#039;instock&#039; === $status ? 1 : 0;
+		return ProductStockStatus::IN_STOCK === $status ? 1 : 0;
 	}
 
 	/**
@@ -848,7 +856,7 @@ class WC_Product_CSV_Exporter extends WC_CSV_Batch_Exporter {
 						$row[ &#039;attributes:visible&#039; . $i ] = &#039;&#039;;
 					}
 
-					if ( $product-&gt;is_type( &#039;variable&#039; ) &amp;&amp; isset( $default_attributes[ sanitize_title( $attribute_name ) ] ) ) {
+					if ( $product-&gt;is_type( ProductType::VARIABLE ) &amp;&amp; isset( $default_attributes[ sanitize_title( $attribute_name ) ] ) ) {
 						/* translators: %s: attribute number */
 						$this-&gt;column_names[ &#039;attributes:default&#039; . $i ] = sprintf( __( &#039;Attribute %d default&#039;, &#039;woocommerce&#039; ), $i );
 						$default_value                                   = $default_attributes[ sanitize_title( $attribute_name ) ];
@@ -914,7 +922,7 @@ class WC_Product_CSV_Exporter extends WC_CSV_Batch_Exporter {
 
     <footer class="phpdocumentor phpdocumentor-footer">
     <div class="phpdocumentor-section">
-        <span>WooCommerce Code Reference API documentation generated by <a href="http://www.phpdoc.org/">phpDocumentor</a> on July 25th, 2024 at 11:33 am.</span>
+        <span>WooCommerce Code Reference API documentation generated by <a href="http://www.phpdoc.org/">phpDocumentor</a> on May 16th, 2025 at 09:14 am.</span>
     </div>
 </footer>
 
@@ -926,7 +934,7 @@ class WC_Product_CSV_Exporter extends WC_CSV_Batch_Exporter {
             'searchIndex': '..\/js\/searchIndex.json'
         };
     </script>
-    <script src="../js/searchIndex.js?updated=1721907183"></script>
-    <script src="../js/search.js?updated=1721907183"></script>
+    <script src="../js/searchIndex.js?updated=1747386859"></script>
+    <script src="../js/search.js?updated=1747386859"></script>
 </body>
 </html>

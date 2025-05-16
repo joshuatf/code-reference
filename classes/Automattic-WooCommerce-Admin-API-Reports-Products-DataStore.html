@@ -4,14 +4,13 @@
     <meta charset="utf-8">
     <title>WooCommerce Code Reference</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="../images/favicon.png" />
-    <link rel="apple-touch-icon" href="../images/apple-touch-icon.png"/>
-    <link rel="apple-touch-icon" sizes="72x72" href="../images/apple-touch-icon-72x72.png"/>
-    <link rel="apple-touch-icon" sizes="114x114" href="../images/apple-touch-icon-114x114.png"/>
+    <link rel="icon" href="../images/favicon-32x32.png" sizes="32x32" />
+    <link rel="icon" href="../images/favicon-192x192.png" sizes="192x192" />
+    <link rel="apple-touch-icon" href="../images/favicon-180x180.png" />
+
     <link rel="stylesheet" href="../css/normalize.css">
-    <link rel="stylesheet" href="../css/base.css?updated=1721907201">
-    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../css/template.css?updated=1721907201">
+    <link rel="stylesheet" href="../css/base.css?updated=1747386881">
+    <link rel="stylesheet" href="../css/template.css?updated=1747386881">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0/css/all.min.css" integrity="sha256-ybRkN9dBjhcS2qrW1z+hfCxq+1aBdwyQM5wlQoQVt/0=" crossorigin="anonymous" />
             <script src="https://cdn.jsdelivr.net/npm/css-vars-ponyfill@2"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0/js/all.min.js" integrity="sha256-0vuk8LXoyrmCjp1f0O300qo1M75ZQyhH9X3J6d+scmk=" crossorigin="anonymous"></script>
@@ -27,19 +26,24 @@
 		'content_group' : 'WooCommerce Core Code Reference',
 	});
 </script>
-        </head>
+        <script src="../js/prism.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            window.dispatchEvent(new HashChangeEvent('hashchange'));
+        });
+    </script>
+</head>
 <body id="top">
     <header class="phpdocumentor-top-header">
     <section class="phpdocumentor-section">
         <div class="site-branding">
-            <a class="site-logo" href="../index.html"><img width="180" src="../images/logo.svg" alt="WooCommerce" /></a>
+            <a class="site-logo" href="../index.html"><img src="../images/logo.png" alt="WooCommerce" /></a>
         </div>
         <nav class="main-navigation">
             <ul>
                 <li><a href="../hooks/hooks.html">Hooks Reference</a></li>
-                <li><a href="https://docs.woocommerce.com/">Documentation</a></li>
+                <li><a href="https://developer.woocommerce.com/docs/">Documentation</a></li>
                 <li><a href="https://woocommerce.github.io/woocommerce-rest-api-docs/">REST API Docs</a></li>
-                <li><a href="https://woocommerce.com/careers/?utm_source=woocommerce+core+code+reference&utm_medium=devdocs&utm_campaign=woo+careers" target="_blank">We're hiring!</a></li>
             </ul>
         </nav>
     </section>
@@ -47,7 +51,7 @@
 
 <div class="phpdocumentor-header">
     <section class="phpdocumentor-section">
-        <h1 class="phpdocumentor-title">WooCommerce Code Reference</h1>
+        <h1 class="phpdocumentor-title"><a href="../index.html">WooCommerce Code Reference</a></h1>
         <section class="phpdocumentor-search">
     <label class="phpdocumentor-label">
         <span class="visually-hidden">Search (click ESC to close search results)</span>
@@ -68,6 +72,10 @@
                                         <h4 class="phpdocumentor-sidebar__root-namespace"><a href="../namespaces/woocommerce.html"><abbr title="\WooCommerce">WooCommerce</abbr></a></h4>
                 <ul class="phpdocumentor-list">
                                             <li><a href="../namespaces/woocommerce-admin.html"><abbr title="\WooCommerce\Admin">Admin</abbr></a></li>
+                                    </ul>
+                            <h4 class="phpdocumentor-sidebar__root-namespace"><a href="../namespaces/mailpoet.html"><abbr title="\MailPoet">MailPoet</abbr></a></h4>
+                <ul class="phpdocumentor-list">
+                                            <li><a href="../namespaces/mailpoet-emaileditor.html"><abbr title="\MailPoet\EmailEditor">EmailEditor</abbr></a></li>
                                     </ul>
                             <h4 class="phpdocumentor-sidebar__root-namespace"><a href="../namespaces/automattic.html"><abbr title="\Automattic">Automattic</abbr></a></h4>
                 <ul class="phpdocumentor-list">
@@ -113,8 +121,10 @@
                                     <li><a href="../packages/WooCommerce-Widgets.html"><abbr title="\WooCommerce\Widgets">Widgets</abbr></a></li>
                                     <li><a href="../packages/WooCommerce-Uninstaller.html"><abbr title="\WooCommerce\Uninstaller">Uninstaller</abbr></a></li>
                             </ul>
-                                <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/WoocommerceAdmin.html"><abbr title="\WoocommerceAdmin">WoocommerceAdmin</abbr></a></h3>
-                                <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/WoocommerceNavigation.html"><abbr title="\WoocommerceNavigation">WoocommerceNavigation</abbr></a></h3>
+                                <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/MailPoet.html"><abbr title="\MailPoet">MailPoet</abbr></a></h3>
+                        <ul class="phpdocumentor-list">
+                                    <li><a href="../packages/MailPoet-EmailEditor.html"><abbr title="\MailPoet\EmailEditor">EmailEditor</abbr></a></li>
+                            </ul>
                                 <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/Automattic.html"><abbr title="\Automattic">Automattic</abbr></a></h3>
                         <ul class="phpdocumentor-list">
                                     <li><a href="../packages/Automattic-WooCommerce.html"><abbr title="\Automattic\WooCommerce">WooCommerce</abbr></a></li>
@@ -168,9 +178,9 @@
     </h2>
 
         <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/API/Reports/Products/DataStore.php"><a href="../files/woocommerce-src-admin-api-reports-products-datastore.html#source-view.19">src/Admin/API/Reports/Products/DataStore.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/API/Reports/Products/DataStore.php"><a href="../files/woocommerce-src-admin-api-reports-products-datastore.html#source-view.20">src/Admin/API/Reports/Products/DataStore.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">19</span>
+    <span class="phpdocumentor-element-found-in__line">20</span>
 </aside>
 
             <p class="phpdocumentor-summary">API\Reports\Products\DataStore.</p>
@@ -382,6 +392,20 @@
                         &nbsp;: mixed    </span>
 </dt>
 <dd>Get table name from database class.</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a href="../classes/Automattic-WooCommerce-Admin-API-Reports-Products-DataStore.html#method_get_default_query_vars">get_default_query_vars()</a>
+    <span>
+                        &nbsp;: array&lt;string|int, mixed&gt;    </span>
+</dt>
+<dd>Get the default query arguments to be used by get_data().</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a href="../classes/Automattic-WooCommerce-Admin-API-Reports-Products-DataStore.html#method_get_noncached_data">get_noncached_data()</a>
+    <span>
+                        &nbsp;: <abbr title="\Automattic\WooCommerce\Admin\API\Reports\Products\stdClass">stdClass</abbr>|<abbr title="\Automattic\WooCommerce\Admin\API\Reports\Products\WP_Error">WP_Error</abbr>    </span>
+</dt>
+<dd>Returns the report data based on normalized parameters.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="../classes/Automattic-WooCommerce-Admin-API-Reports-SqlQuery.html#method_get_query_statement">get_query_statement()</a>
@@ -866,9 +890,9 @@ uses default from $defaults.</dd>
                                 </span>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/API/Reports/DataStore.php"><a href="../files/woocommerce-src-admin-api-reports-datastore.html#source-view.24">src/Admin/API/Reports/DataStore.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/API/Reports/DataStore.php"><a href="../files/woocommerce-src-admin-api-reports-datastore.html#source-view.71">src/Admin/API/Reports/DataStore.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">24</span>
+    <span class="phpdocumentor-element-found-in__line">71</span>
 </aside>
 
         <p class="phpdocumentor-summary">Cache group for the reports.</p>
@@ -898,9 +922,9 @@ uses default from $defaults.</dd>
                                 </span>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/API/Reports/Products/DataStore.php"><a href="../files/woocommerce-src-admin-api-reports-products-datastore.html#source-view.33">src/Admin/API/Reports/Products/DataStore.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/API/Reports/Products/DataStore.php"><a href="../files/woocommerce-src-admin-api-reports-products-datastore.html#source-view.38">src/Admin/API/Reports/Products/DataStore.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">33</span>
+    <span class="phpdocumentor-element-found-in__line">38</span>
 </aside>
 
         <p class="phpdocumentor-summary">Cache identifier.</p>
@@ -914,6 +938,20 @@ uses default from $defaults.</dd>
         <section class="phpdocumentor-description"></section>
 
     
+    <h5 class="phpdocumentor-tag-list__heading" id="tags">
+        Tags
+        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
+    </h5>
+    <dl class="phpdocumentor-tag-list">
+                                    <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">override</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                                                                                        <section class="phpdocumentor-description"><p>ReportsDataStore::$cache_key</p>
+</section>
+
+                </dd>
+                        </dl>
 
 </article>
                     <article
@@ -930,9 +968,9 @@ uses default from $defaults.</dd>
                                 </span>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/API/Reports/DataStore.php"><a href="../files/woocommerce-src-admin-api-reports-datastore.html#source-view.31">src/Admin/API/Reports/DataStore.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/API/Reports/DataStore.php"><a href="../files/woocommerce-src-admin-api-reports-datastore.html#source-view.78">src/Admin/API/Reports/DataStore.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">31</span>
+    <span class="phpdocumentor-element-found-in__line">78</span>
 </aside>
 
         <p class="phpdocumentor-summary">Time out for the cache.</p>
@@ -962,9 +1000,9 @@ uses default from $defaults.</dd>
                                 </span>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/API/Reports/Products/DataStore.php"><a href="../files/woocommerce-src-admin-api-reports-products-datastore.html#source-view.40">src/Admin/API/Reports/Products/DataStore.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/API/Reports/Products/DataStore.php"><a href="../files/woocommerce-src-admin-api-reports-products-datastore.html#source-view.47">src/Admin/API/Reports/Products/DataStore.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">40</span>
+    <span class="phpdocumentor-element-found-in__line">47</span>
 </aside>
 
         <p class="phpdocumentor-summary">Mapping columns to data type to return correct response types.</p>
@@ -996,6 +1034,20 @@ uses default from $defaults.</dd>
         <section class="phpdocumentor-description"></section>
 
     
+    <h5 class="phpdocumentor-tag-list__heading" id="tags">
+        Tags
+        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
+    </h5>
+    <dl class="phpdocumentor-tag-list">
+                                    <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">override</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                                                                                        <section class="phpdocumentor-description"><p>ReportsDataStore::$column_types</p>
+</section>
+
+                </dd>
+                        </dl>
 
 </article>
                     <article
@@ -1012,9 +1064,9 @@ uses default from $defaults.</dd>
                                 </span>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/API/Reports/Products/DataStore.php"><a href="../files/woocommerce-src-admin-api-reports-products-datastore.html#source-view.84">src/Admin/API/Reports/Products/DataStore.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/API/Reports/Products/DataStore.php"><a href="../files/woocommerce-src-admin-api-reports-products-datastore.html#source-view.93">src/Admin/API/Reports/Products/DataStore.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">84</span>
+    <span class="phpdocumentor-element-found-in__line">93</span>
 </aside>
 
         <p class="phpdocumentor-summary">Data store context used to pass to filters.</p>
@@ -1028,6 +1080,20 @@ uses default from $defaults.</dd>
         <section class="phpdocumentor-description"></section>
 
     
+    <h5 class="phpdocumentor-tag-list__heading" id="tags">
+        Tags
+        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
+    </h5>
+    <dl class="phpdocumentor-tag-list">
+                                    <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">override</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                                                                                        <section class="phpdocumentor-description"><p>ReportsDataStore::$context</p>
+</section>
+
+                </dd>
+                        </dl>
 
 </article>
                     <article
@@ -1044,9 +1110,9 @@ uses default from $defaults.</dd>
                                 </span>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/API/Reports/DataStore.php"><a href="../files/woocommerce-src-admin-api-reports-datastore.html#source-view.52">src/Admin/API/Reports/DataStore.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/API/Reports/DataStore.php"><a href="../files/woocommerce-src-admin-api-reports-datastore.html#source-view.99">src/Admin/API/Reports/DataStore.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">52</span>
+    <span class="phpdocumentor-element-found-in__line">99</span>
 </aside>
 
         <p class="phpdocumentor-summary">Date field name.</p>
@@ -1076,9 +1142,9 @@ uses default from $defaults.</dd>
                                 </span>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/API/Reports/DataStore.php"><a href="../files/woocommerce-src-admin-api-reports-datastore.html#source-view.130">src/Admin/API/Reports/DataStore.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/API/Reports/DataStore.php"><a href="../files/woocommerce-src-admin-api-reports-datastore.html#source-view.179">src/Admin/API/Reports/DataStore.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">130</span>
+    <span class="phpdocumentor-element-found-in__line">179</span>
 </aside>
 
         <p class="phpdocumentor-summary">Include debugging information in the returned data when true.</p>
@@ -1108,9 +1174,9 @@ uses default from $defaults.</dd>
                                 </span>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/API/Reports/DataStore.php"><a href="../files/woocommerce-src-admin-api-reports-datastore.html#source-view.137">src/Admin/API/Reports/DataStore.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/API/Reports/DataStore.php"><a href="../files/woocommerce-src-admin-api-reports-datastore.html#source-view.186">src/Admin/API/Reports/DataStore.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">137</span>
+    <span class="phpdocumentor-element-found-in__line">186</span>
 </aside>
 
         <p class="phpdocumentor-summary">Debugging information to include in the returned data.</p>
@@ -1140,9 +1206,9 @@ uses default from $defaults.</dd>
                                 </span>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/API/Reports/Products/DataStore.php"><a href="../files/woocommerce-src-admin-api-reports-products-datastore.html#source-view.65">src/Admin/API/Reports/Products/DataStore.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/API/Reports/Products/DataStore.php"><a href="../files/woocommerce-src-admin-api-reports-products-datastore.html#source-view.72">src/Admin/API/Reports/Products/DataStore.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">65</span>
+    <span class="phpdocumentor-element-found-in__line">72</span>
 </aside>
 
         <p class="phpdocumentor-summary">Extended product attributes to include in the data.</p>
@@ -1172,9 +1238,9 @@ uses default from $defaults.</dd>
                                 </span>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/API/Reports/DataStore.php"><a href="../files/woocommerce-src-admin-api-reports-datastore.html#source-view.123">src/Admin/API/Reports/DataStore.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/API/Reports/DataStore.php"><a href="../files/woocommerce-src-admin-api-reports-datastore.html#source-view.172">src/Admin/API/Reports/DataStore.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">123</span>
+    <span class="phpdocumentor-element-found-in__line">172</span>
 </aside>
 
         <p class="phpdocumentor-summary">Refresh the cache for the current query when true.</p>
@@ -1204,9 +1270,9 @@ uses default from $defaults.</dd>
                                 </span>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/API/Reports/DataStore.php"><a href="../files/woocommerce-src-admin-api-reports-datastore.html#source-view.116">src/Admin/API/Reports/DataStore.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/API/Reports/DataStore.php"><a href="../files/woocommerce-src-admin-api-reports-datastore.html#source-view.165">src/Admin/API/Reports/DataStore.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">116</span>
+    <span class="phpdocumentor-element-found-in__line">165</span>
 </aside>
 
         <p class="phpdocumentor-summary">Intervals query object.</p>
@@ -1236,9 +1302,9 @@ uses default from $defaults.</dd>
                                 </span>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/API/Reports/DataStore.php"><a href="../files/woocommerce-src-admin-api-reports-datastore.html#source-view.66">src/Admin/API/Reports/DataStore.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/API/Reports/DataStore.php"><a href="../files/woocommerce-src-admin-api-reports-datastore.html#source-view.113">src/Admin/API/Reports/DataStore.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">66</span>
+    <span class="phpdocumentor-element-found-in__line">113</span>
 </aside>
 
         <p class="phpdocumentor-summary">SQL columns to select in the db query.</p>
@@ -1268,9 +1334,9 @@ uses default from $defaults.</dd>
                                 </span>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/API/Reports/DataStore.php"><a href="../files/woocommerce-src-admin-api-reports-datastore.html#source-view.102">src/Admin/API/Reports/DataStore.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/API/Reports/DataStore.php"><a href="../files/woocommerce-src-admin-api-reports-datastore.html#source-view.151">src/Admin/API/Reports/DataStore.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">102</span>
+    <span class="phpdocumentor-element-found-in__line">151</span>
 </aside>
 
         <p class="phpdocumentor-summary">Subquery object for query nesting.</p>
@@ -1300,9 +1366,9 @@ uses default from $defaults.</dd>
                                 </span>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/API/Reports/Products/DataStore.php"><a href="../files/woocommerce-src-admin-api-reports-products-datastore.html#source-view.26">src/Admin/API/Reports/Products/DataStore.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/API/Reports/Products/DataStore.php"><a href="../files/woocommerce-src-admin-api-reports-products-datastore.html#source-view.29">src/Admin/API/Reports/Products/DataStore.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">26</span>
+    <span class="phpdocumentor-element-found-in__line">29</span>
 </aside>
 
         <p class="phpdocumentor-summary">Table used to get the data.</p>
@@ -1316,6 +1382,20 @@ uses default from $defaults.</dd>
         <section class="phpdocumentor-description"></section>
 
     
+    <h5 class="phpdocumentor-tag-list__heading" id="tags">
+        Tags
+        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
+    </h5>
+    <dl class="phpdocumentor-tag-list">
+                                    <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">override</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                                                                                        <section class="phpdocumentor-description"><p>ReportsDataStore::$table_name</p>
+</section>
+
+                </dd>
+                        </dl>
 
 </article>
                     <article
@@ -1332,9 +1412,9 @@ uses default from $defaults.</dd>
                                 </span>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/API/Reports/DataStore.php"><a href="../files/woocommerce-src-admin-api-reports-datastore.html#source-view.109">src/Admin/API/Reports/DataStore.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/API/Reports/DataStore.php"><a href="../files/woocommerce-src-admin-api-reports-datastore.html#source-view.158">src/Admin/API/Reports/DataStore.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">109</span>
+    <span class="phpdocumentor-element-found-in__line">158</span>
 </aside>
 
         <p class="phpdocumentor-summary">Totals query object.</p>
@@ -1364,9 +1444,9 @@ uses default from $defaults.</dd>
                                 </span>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/API/Reports/DataStore.php"><a href="../files/woocommerce-src-admin-api-reports-datastore.html#source-view.88">src/Admin/API/Reports/DataStore.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/API/Reports/DataStore.php"><a href="../files/woocommerce-src-admin-api-reports-datastore.html#source-view.135">src/Admin/API/Reports/DataStore.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">88</span>
+    <span class="phpdocumentor-element-found-in__line">135</span>
 </aside>
 
         <p class="phpdocumentor-summary">Query limit parameters.</p>
@@ -1396,9 +1476,9 @@ uses default from $defaults.</dd>
                                 </span>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/API/Reports/DataStore.php"><a href="../files/woocommerce-src-admin-api-reports-datastore.html#source-view.81">src/Admin/API/Reports/DataStore.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/API/Reports/DataStore.php"><a href="../files/woocommerce-src-admin-api-reports-datastore.html#source-view.128">src/Admin/API/Reports/DataStore.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">81</span>
+    <span class="phpdocumentor-element-found-in__line">128</span>
 </aside>
 
         <p class="phpdocumentor-summary">Order property, used in the cmp function.</p>
@@ -1428,9 +1508,9 @@ uses default from $defaults.</dd>
                                 </span>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/API/Reports/DataStore.php"><a href="../files/woocommerce-src-admin-api-reports-datastore.html#source-view.74">src/Admin/API/Reports/DataStore.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/API/Reports/DataStore.php"><a href="../files/woocommerce-src-admin-api-reports-datastore.html#source-view.121">src/Admin/API/Reports/DataStore.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">74</span>
+    <span class="phpdocumentor-element-found-in__line">121</span>
 </aside>
 
         <p class="phpdocumentor-summary">Order by property, used in the cmp function.</p>
@@ -1572,9 +1652,9 @@ uses default from $defaults.</dd>
         <a href="#method_add_debug_cache_to_envelope" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/API/Reports/DataStore.php"><a href="../files/woocommerce-src-admin-api-reports-datastore.html#source-view.281">src/Admin/API/Reports/DataStore.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/API/Reports/DataStore.php"><a href="../files/woocommerce-src-admin-api-reports-datastore.html#source-view.393">src/Admin/API/Reports/DataStore.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">281</span>
+    <span class="phpdocumentor-element-found-in__line">393</span>
 </aside>
 
         <p class="phpdocumentor-summary">Add cache debugging information to an enveloped API response.</p>
@@ -1708,9 +1788,9 @@ uses default from $defaults.</dd>
         <a href="#method_get_data" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/API/Reports/Products/DataStore.php"><a href="../files/woocommerce-src-admin-api-reports-products-datastore.html#source-view.262">src/Admin/API/Reports/Products/DataStore.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/API/Reports/Products/DataStore.php"><a href="../files/woocommerce-src-admin-api-reports-products-datastore.html#source-view.277">src/Admin/API/Reports/Products/DataStore.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">262</span>
+    <span class="phpdocumentor-element-found-in__line">277</span>
 </aside>
 
         <p class="phpdocumentor-summary">Returns the report data based on parameters supplied by the user.</p>
@@ -1735,6 +1815,20 @@ uses default from $defaults.</dd>
             </dl>
 
     
+    <h5 class="phpdocumentor-tag-list__heading" id="tags">
+        Tags
+        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
+    </h5>
+    <dl class="phpdocumentor-tag-list">
+                                    <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">override</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                                                                                        <section class="phpdocumentor-description"><p>ReportsDataStore::get_data()</p>
+</section>
+
+                </dd>
+                        </dl>
 
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
     <span class="phpdocumentor-signature__response_type"><abbr title="\Automattic\WooCommerce\Admin\API\Reports\Products\stdClass">stdClass</abbr>|<abbr title="\Automattic\WooCommerce\Admin\API\Reports\Products\WP_Error">WP_Error</abbr></span>
@@ -1752,9 +1846,9 @@ uses default from $defaults.</dd>
         <a href="#method_get_db_table_name" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/API/Reports/DataStore.php"><a href="../files/woocommerce-src-admin-api-reports-datastore.html#source-view.166">src/Admin/API/Reports/DataStore.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/API/Reports/DataStore.php"><a href="../files/woocommerce-src-admin-api-reports-datastore.html#source-view.265">src/Admin/API/Reports/DataStore.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">166</span>
+    <span class="phpdocumentor-element-found-in__line">265</span>
 </aside>
 
         <p class="phpdocumentor-summary">Get table name from database class.</p>
@@ -1771,6 +1865,120 @@ uses default from $defaults.</dd>
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
     <span class="phpdocumentor-signature__response_type">mixed</span>
             &mdash; <span class="phpdocumentor-return-value__description"></span>
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_get_default_query_vars">
+        get_default_query_vars()
+        <a href="#method_get_default_query_vars" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/API/Reports/Products/DataStore.php"><a href="../files/woocommerce-src-admin-api-reports-products-datastore.html#source-view.300">src/Admin/API/Reports/Products/DataStore.php</a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">300</span>
+</aside>
+
+        <p class="phpdocumentor-summary">Get the default query arguments to be used by get_data().</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                <span class="phpdocumentor-signature__name">get_default_query_vars</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">array&lt;string|int, mixed&gt;</span></code>
+
+        <section class="phpdocumentor-description"><p>These defaults are only partially applied when used via REST API, as that has its own defaults.</p>
+</section>
+
+    
+    
+    <h5 class="phpdocumentor-tag-list__heading" id="tags">
+        Tags
+        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
+    </h5>
+    <dl class="phpdocumentor-tag-list">
+                                    <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">override</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                                                                                        <section class="phpdocumentor-description"><p>ReportsDataStore::get_default_query_vars()</p>
+</section>
+
+                </dd>
+                        </dl>
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">array&lt;string|int, mixed&gt;</span>
+            &mdash; <span class="phpdocumentor-return-value__description">Query parameters.</span>
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_get_noncached_data">
+        get_noncached_data()
+        <a href="#method_get_noncached_data" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/API/Reports/Products/DataStore.php"><a href="../files/woocommerce-src-admin-api-reports-products-datastore.html#source-view.319">src/Admin/API/Reports/Products/DataStore.php</a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">319</span>
+</aside>
+
+        <p class="phpdocumentor-summary">Returns the report data based on normalized parameters.</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                <span class="phpdocumentor-signature__name">get_noncached_data</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__name">$query_args</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><abbr title="\Automattic\WooCommerce\Admin\API\Reports\Products\stdClass">stdClass</abbr>|<abbr title="\Automattic\WooCommerce\Admin\API\Reports\Products\WP_Error">WP_Error</abbr></span></code>
+
+        <section class="phpdocumentor-description"><p>Will be called by <code class="prettyprint">get_data</code> if there is no data in cache.</p>
+</section>
+
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$query_args</span>
+                : <span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"><p>Query parameters.</p>
+</section>
+
+            </dd>
+            </dl>
+
+    
+    <h5 class="phpdocumentor-tag-list__heading" id="tags">
+        Tags
+        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
+    </h5>
+    <dl class="phpdocumentor-tag-list">
+                                    <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">override</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                                                                                        <section class="phpdocumentor-description"><p>ReportsDataStore::get_noncached_data()</p>
+</section>
+
+                </dd>
+                                                <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">see</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                                                                    <span class="phpdocumentor-tag-link"><abbr title="\Automattic\WooCommerce\Admin\API\Reports\Products\get_data">get_data</abbr></span>
+                                                                <section class="phpdocumentor-description"></section>
+
+                </dd>
+                        </dl>
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type"><abbr title="\Automattic\WooCommerce\Admin\API\Reports\Products\stdClass">stdClass</abbr>|<abbr title="\Automattic\WooCommerce\Admin\API\Reports\Products\WP_Error">WP_Error</abbr></span>
+            &mdash; <span class="phpdocumentor-return-value__description">Data object `{ totals: *, intervals: array, total: int, pages: int, page_no: int }`, or error.</span>
     
 </article>
                     <article
@@ -1816,9 +2024,9 @@ uses default from $defaults.</dd>
         <a href="#method_init" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/API/Reports/Products/DataStore.php"><a href="../files/woocommerce-src-admin-api-reports-products-datastore.html#source-view.102">src/Admin/API/Reports/Products/DataStore.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/API/Reports/Products/DataStore.php"><a href="../files/woocommerce-src-admin-api-reports-products-datastore.html#source-view.113">src/Admin/API/Reports/Products/DataStore.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">102</span>
+    <span class="phpdocumentor-element-found-in__line">113</span>
 </aside>
 
         <p class="phpdocumentor-summary">Set up all the hooks for maintaining and populating table data.</p>
@@ -1848,9 +2056,9 @@ uses default from $defaults.</dd>
         <a href="#method_sync_on_order_delete" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/API/Reports/Products/DataStore.php"><a href="../files/woocommerce-src-admin-api-reports-products-datastore.html#source-view.505">src/Admin/API/Reports/Products/DataStore.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/API/Reports/Products/DataStore.php"><a href="../files/woocommerce-src-admin-api-reports-products-datastore.html#source-view.533">src/Admin/API/Reports/Products/DataStore.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">505</span>
+    <span class="phpdocumentor-element-found-in__line">533</span>
 </aside>
 
         <p class="phpdocumentor-summary">Clean products data when an order is deleted.</p>
@@ -1892,9 +2100,9 @@ uses default from $defaults.</dd>
         <a href="#method_sync_order_products" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/API/Reports/Products/DataStore.php"><a href="../files/woocommerce-src-admin-api-reports-products-datastore.html#source-view.386">src/Admin/API/Reports/Products/DataStore.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/API/Reports/Products/DataStore.php"><a href="../files/woocommerce-src-admin-api-reports-products-datastore.html#source-view.414">src/Admin/API/Reports/Products/DataStore.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">386</span>
+    <span class="phpdocumentor-element-found-in__line">414</span>
 </aside>
 
         <p class="phpdocumentor-summary">Create or update an entry in the wc_admin_order_product_lookup table for an order.</p>
@@ -1950,9 +2158,9 @@ uses default from $defaults.</dd>
         <a href="#method_add_from_sql_params" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/API/Reports/Products/DataStore.php"><a href="../files/woocommerce-src-admin-api-reports-products-datastore.html#source-view.113">src/Admin/API/Reports/Products/DataStore.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/API/Reports/Products/DataStore.php"><a href="../files/woocommerce-src-admin-api-reports-products-datastore.html#source-view.124">src/Admin/API/Reports/Products/DataStore.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">113</span>
+    <span class="phpdocumentor-element-found-in__line">124</span>
 </aside>
 
         <p class="phpdocumentor-summary">Fills FROM clause of SQL request based on user supplied parameters.</p>
@@ -2012,9 +2220,9 @@ uses default from $defaults.</dd>
         <a href="#method_add_intervals_sql_params" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/API/Reports/DataStore.php"><a href="../files/woocommerce-src-admin-api-reports-datastore.html#source-view.936">src/Admin/API/Reports/DataStore.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/API/Reports/DataStore.php"><a href="../files/woocommerce-src-admin-api-reports-datastore.html#source-view.1048">src/Admin/API/Reports/DataStore.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">936</span>
+    <span class="phpdocumentor-element-found-in__line">1048</span>
 </aside>
 
         <p class="phpdocumentor-summary">Fills FROM and WHERE clauses of SQL request for &#039;Intervals&#039; section of data response based on user supplied parameters.</p>
@@ -2065,9 +2273,9 @@ uses default from $defaults.</dd>
         <a href="#method_add_order_by_clause" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/API/Reports/DataStore.php"><a href="../files/woocommerce-src-admin-api-reports-datastore.html#source-view.1270">src/Admin/API/Reports/DataStore.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/API/Reports/DataStore.php"><a href="../files/woocommerce-src-admin-api-reports-datastore.html#source-view.1382">src/Admin/API/Reports/DataStore.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1270</span>
+    <span class="phpdocumentor-element-found-in__line">1382</span>
 </aside>
 
         <p class="phpdocumentor-summary">Add order by SQL clause if included in query.</p>
@@ -2118,9 +2326,9 @@ uses default from $defaults.</dd>
         <a href="#method_add_order_by_sql_params" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/API/Reports/DataStore.php"><a href="../files/woocommerce-src-admin-api-reports-datastore.html#source-view.918">src/Admin/API/Reports/DataStore.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/API/Reports/DataStore.php"><a href="../files/woocommerce-src-admin-api-reports-datastore.html#source-view.1030">src/Admin/API/Reports/DataStore.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">918</span>
+    <span class="phpdocumentor-element-found-in__line">1030</span>
 </aside>
 
         <p class="phpdocumentor-summary">Fills ORDER BY clause of SQL request based on user supplied parameters.</p>
@@ -2162,9 +2370,9 @@ uses default from $defaults.</dd>
         <a href="#method_add_order_status_clause" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/API/Reports/DataStore.php"><a href="../files/woocommerce-src-admin-api-reports-datastore.html#source-view.1254">src/Admin/API/Reports/DataStore.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/API/Reports/DataStore.php"><a href="../files/woocommerce-src-admin-api-reports-datastore.html#source-view.1366">src/Admin/API/Reports/DataStore.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1254</span>
+    <span class="phpdocumentor-element-found-in__line">1366</span>
 </aside>
 
         <p class="phpdocumentor-summary">Add order status SQL clauses if included in query.</p>
@@ -2224,9 +2432,9 @@ uses default from $defaults.</dd>
         <a href="#method_add_orderby_order_clause" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/API/Reports/DataStore.php"><a href="../files/woocommerce-src-admin-api-reports-datastore.html#source-view.1289">src/Admin/API/Reports/DataStore.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/API/Reports/DataStore.php"><a href="../files/woocommerce-src-admin-api-reports-datastore.html#source-view.1401">src/Admin/API/Reports/DataStore.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1289</span>
+    <span class="phpdocumentor-element-found-in__line">1401</span>
 </aside>
 
         <p class="phpdocumentor-summary">Add order by order SQL clause.</p>
@@ -2277,9 +2485,9 @@ uses default from $defaults.</dd>
         <a href="#method_add_sql_query_params" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/API/Reports/Products/DataStore.php"><a href="../files/woocommerce-src-admin-api-reports-products-datastore.html#source-view.147">src/Admin/API/Reports/Products/DataStore.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/API/Reports/Products/DataStore.php"><a href="../files/woocommerce-src-admin-api-reports-products-datastore.html#source-view.158">src/Admin/API/Reports/Products/DataStore.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">147</span>
+    <span class="phpdocumentor-element-found-in__line">158</span>
 </aside>
 
         <p class="phpdocumentor-summary">Updates the database query with parameters used for Products report: categories and order status.</p>
@@ -2321,9 +2529,9 @@ uses default from $defaults.</dd>
         <a href="#method_add_time_period_sql_params" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/API/Reports/DataStore.php"><a href="../files/woocommerce-src-admin-api-reports-datastore.html#source-view.785">src/Admin/API/Reports/DataStore.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/API/Reports/DataStore.php"><a href="../files/woocommerce-src-admin-api-reports-datastore.html#source-view.897">src/Admin/API/Reports/DataStore.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">785</span>
+    <span class="phpdocumentor-element-found-in__line">897</span>
 </aside>
 
         <p class="phpdocumentor-summary">Fills WHERE clause of SQL request with date-related constraints.</p>
@@ -2374,9 +2582,9 @@ uses default from $defaults.</dd>
         <a href="#method_assign_report_columns" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/API/Reports/Products/DataStore.php"><a href="../files/woocommerce-src-admin-api-reports-products-datastore.html#source-view.89">src/Admin/API/Reports/Products/DataStore.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/API/Reports/Products/DataStore.php"><a href="../files/woocommerce-src-admin-api-reports-products-datastore.html#source-view.100">src/Admin/API/Reports/Products/DataStore.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">89</span>
+    <span class="phpdocumentor-element-found-in__line">100</span>
 </aside>
 
         <p class="phpdocumentor-summary">Assign report columns once full table name has been assigned.</p>
@@ -2389,6 +2597,20 @@ uses default from $defaults.</dd>
 
     
     
+    <h5 class="phpdocumentor-tag-list__heading" id="tags">
+        Tags
+        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
+    </h5>
+    <dl class="phpdocumentor-tag-list">
+                                    <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">override</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                                                                                        <section class="phpdocumentor-description"><p>ReportsDataStore::assign_report_columns()</p>
+</section>
+
+                </dd>
+                        </dl>
 
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
     <span class="phpdocumentor-signature__response_type">mixed</span>
@@ -2406,9 +2628,9 @@ uses default from $defaults.</dd>
         <a href="#method_cast_numbers" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/API/Reports/DataStore.php"><a href="../files/woocommerce-src-admin-api-reports-datastore.html#source-view.634">src/Admin/API/Reports/DataStore.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/API/Reports/DataStore.php"><a href="../files/woocommerce-src-admin-api-reports-datastore.html#source-view.746">src/Admin/API/Reports/DataStore.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">634</span>
+    <span class="phpdocumentor-element-found-in__line">746</span>
 </aside>
 
         <p class="phpdocumentor-summary">Casts strings returned from the database to appropriate data types for output.</p>
@@ -2494,9 +2716,9 @@ uses default from $defaults.</dd>
         <a href="#method_create_interval_subtotals" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/API/Reports/DataStore.php"><a href="../files/woocommerce-src-admin-api-reports-datastore.html#source-view.757">src/Admin/API/Reports/DataStore.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/API/Reports/DataStore.php"><a href="../files/woocommerce-src-admin-api-reports-datastore.html#source-view.869">src/Admin/API/Reports/DataStore.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">757</span>
+    <span class="phpdocumentor-element-found-in__line">869</span>
 </aside>
 
         <p class="phpdocumentor-summary">Change structure of intervals to form a correct response.</p>
@@ -2539,9 +2761,9 @@ uses default from $defaults.</dd>
         <a href="#method_expected_intervals_on_page" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/API/Reports/DataStore.php"><a href="../files/woocommerce-src-admin-api-reports-datastore.html#source-view.468">src/Admin/API/Reports/DataStore.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/API/Reports/DataStore.php"><a href="../files/woocommerce-src-admin-api-reports-datastore.html#source-view.580">src/Admin/API/Reports/DataStore.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">468</span>
+    <span class="phpdocumentor-element-found-in__line">580</span>
 </aside>
 
         <p class="phpdocumentor-summary">Returns expected number of items on the page in case of date ordering.</p>
@@ -2601,9 +2823,9 @@ uses default from $defaults.</dd>
         <a href="#method_fill_in_missing_intervals" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/API/Reports/DataStore.php"><a href="../files/woocommerce-src-admin-api-reports-datastore.html#source-view.358">src/Admin/API/Reports/DataStore.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/API/Reports/DataStore.php"><a href="../files/woocommerce-src-admin-api-reports-datastore.html#source-view.470">src/Admin/API/Reports/DataStore.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">358</span>
+    <span class="phpdocumentor-element-found-in__line">470</span>
 </aside>
 
         <p class="phpdocumentor-summary">Fills in interval gaps from DB with 0-filled objects.</p>
@@ -2681,9 +2903,9 @@ uses default from $defaults.</dd>
         <a href="#method_format_join_selections" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/API/Reports/DataStore.php"><a href="../files/woocommerce-src-admin-api-reports-datastore.html#source-view.898">src/Admin/API/Reports/DataStore.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/API/Reports/DataStore.php"><a href="../files/woocommerce-src-admin-api-reports-datastore.html#source-view.1010">src/Admin/API/Reports/DataStore.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">898</span>
+    <span class="phpdocumentor-element-found-in__line">1010</span>
 </aside>
 
         <p class="phpdocumentor-summary">Returns a comma separated list of the field names prepared to be used for a selection after a join with `default_results`.</p>
@@ -2743,9 +2965,9 @@ uses default from $defaults.</dd>
         <a href="#method_get_attribute_subqueries" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/API/Reports/DataStore.php"><a href="../files/woocommerce-src-admin-api-reports-datastore.html#source-view.1325">src/Admin/API/Reports/DataStore.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/API/Reports/DataStore.php"><a href="../files/woocommerce-src-admin-api-reports-datastore.html#source-view.1437">src/Admin/API/Reports/DataStore.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1325</span>
+    <span class="phpdocumentor-element-found-in__line">1437</span>
 </aside>
 
         <p class="phpdocumentor-summary">Returns product attribute subquery elements used in JOIN and WHERE clauses,
@@ -2788,9 +3010,9 @@ based on query arguments from the user.</p>
         <a href="#method_get_cache_key" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/API/Reports/DataStore.php"><a href="../files/woocommerce-src-admin-api-reports-datastore.html#source-view.204">src/Admin/API/Reports/DataStore.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/API/Reports/DataStore.php"><a href="../files/woocommerce-src-admin-api-reports-datastore.html#source-view.316">src/Admin/API/Reports/DataStore.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">204</span>
+    <span class="phpdocumentor-element-found-in__line">316</span>
 </aside>
 
         <p class="phpdocumentor-summary">Returns string to be used as cache key for the data.</p>
@@ -2832,9 +3054,9 @@ based on query arguments from the user.</p>
         <a href="#method_get_cached_data" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/API/Reports/DataStore.php"><a href="../files/woocommerce-src-admin-api-reports-datastore.html#source-view.234">src/Admin/API/Reports/DataStore.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/API/Reports/DataStore.php"><a href="../files/woocommerce-src-admin-api-reports-datastore.html#source-view.346">src/Admin/API/Reports/DataStore.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">234</span>
+    <span class="phpdocumentor-element-found-in__line">346</span>
 </aside>
 
         <p class="phpdocumentor-summary">Wrapper around Cache::get().</p>
@@ -2876,9 +3098,9 @@ based on query arguments from the user.</p>
         <a href="#method_get_customer_subquery" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/API/Reports/DataStore.php"><a href="../files/woocommerce-src-admin-api-reports-datastore.html#source-view.1303">src/Admin/API/Reports/DataStore.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/API/Reports/DataStore.php"><a href="../files/woocommerce-src-admin-api-reports-datastore.html#source-view.1415">src/Admin/API/Reports/DataStore.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1303</span>
+    <span class="phpdocumentor-element-found-in__line">1415</span>
 </aside>
 
         <p class="phpdocumentor-summary">Returns customer subquery to be used in WHERE SQL query, based on query arguments from the user.</p>
@@ -2920,9 +3142,9 @@ based on query arguments from the user.</p>
         <a href="#method_get_excluded_coupons" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/API/Reports/DataStore.php"><a href="../files/woocommerce-src-admin-api-reports-datastore.html#source-view.1167">src/Admin/API/Reports/DataStore.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/API/Reports/DataStore.php"><a href="../files/woocommerce-src-admin-api-reports-datastore.html#source-view.1279">src/Admin/API/Reports/DataStore.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1167</span>
+    <span class="phpdocumentor-element-found-in__line">1279</span>
 </aside>
 
         <p class="phpdocumentor-summary">Returns comma separated ids of excluded coupons, based on query arguments from the user.</p>
@@ -2964,9 +3186,9 @@ based on query arguments from the user.</p>
         <a href="#method_get_excluded_orders" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/API/Reports/DataStore.php"><a href="../files/woocommerce-src-admin-api-reports-datastore.html#source-view.1187">src/Admin/API/Reports/DataStore.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/API/Reports/DataStore.php"><a href="../files/woocommerce-src-admin-api-reports-datastore.html#source-view.1299">src/Admin/API/Reports/DataStore.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1187</span>
+    <span class="phpdocumentor-element-found-in__line">1299</span>
 </aside>
 
         <p class="phpdocumentor-summary">Returns comma separated ids of excluded orders, based on query arguments from the user.</p>
@@ -3008,9 +3230,9 @@ based on query arguments from the user.</p>
         <a href="#method_get_excluded_products" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/API/Reports/DataStore.php"><a href="../files/woocommerce-src-admin-api-reports-datastore.html#source-view.1135">src/Admin/API/Reports/DataStore.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/API/Reports/DataStore.php"><a href="../files/woocommerce-src-admin-api-reports-datastore.html#source-view.1247">src/Admin/API/Reports/DataStore.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1135</span>
+    <span class="phpdocumentor-element-found-in__line">1247</span>
 </aside>
 
         <p class="phpdocumentor-summary">Returns comma separated ids of excluded products, based on query arguments from the user.</p>
@@ -3052,9 +3274,9 @@ based on query arguments from the user.</p>
         <a href="#method_get_excluded_products_array" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/API/Reports/DataStore.php"><a href="../files/woocommerce-src-admin-api-reports-datastore.html#source-view.1114">src/Admin/API/Reports/DataStore.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/API/Reports/DataStore.php"><a href="../files/woocommerce-src-admin-api-reports-datastore.html#source-view.1226">src/Admin/API/Reports/DataStore.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1114</span>
+    <span class="phpdocumentor-element-found-in__line">1226</span>
 </aside>
 
         <p class="phpdocumentor-summary">Returns an array of ids of disallowed products, based on query arguments from the user.</p>
@@ -3096,9 +3318,9 @@ based on query arguments from the user.</p>
         <a href="#method_get_excluded_report_order_statuses" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/API/Reports/DataStore.php"><a href="../files/woocommerce-src-admin-api-reports-datastore.html#source-view.679">src/Admin/API/Reports/DataStore.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/API/Reports/DataStore.php"><a href="../files/woocommerce-src-admin-api-reports-datastore.html#source-view.791">src/Admin/API/Reports/DataStore.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">679</span>
+    <span class="phpdocumentor-element-found-in__line">791</span>
 </aside>
 
         <p class="phpdocumentor-summary">Get the excluded order statuses used when calculating reports.</p>
@@ -3128,9 +3350,9 @@ based on query arguments from the user.</p>
         <a href="#method_get_excluded_users" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/API/Reports/DataStore.php"><a href="../files/woocommerce-src-admin-api-reports-datastore.html#source-view.1207">src/Admin/API/Reports/DataStore.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/API/Reports/DataStore.php"><a href="../files/woocommerce-src-admin-api-reports-datastore.html#source-view.1319">src/Admin/API/Reports/DataStore.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1207</span>
+    <span class="phpdocumentor-element-found-in__line">1319</span>
 </aside>
 
         <p class="phpdocumentor-summary">Returns comma separated ids of excluded users, based on query arguments from the user.</p>
@@ -3172,9 +3394,9 @@ based on query arguments from the user.</p>
         <a href="#method_get_excluded_variations" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/API/Reports/DataStore.php"><a href="../files/woocommerce-src-admin-api-reports-datastore.html#source-view.1104">src/Admin/API/Reports/DataStore.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/API/Reports/DataStore.php"><a href="../files/woocommerce-src-admin-api-reports-datastore.html#source-view.1216">src/Admin/API/Reports/DataStore.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1104</span>
+    <span class="phpdocumentor-element-found-in__line">1216</span>
 </aside>
 
         <p class="phpdocumentor-summary">Returns comma separated ids of excluded variations, based on query arguments from the user.</p>
@@ -3216,9 +3438,9 @@ based on query arguments from the user.</p>
         <a href="#method_get_fields" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/API/Reports/DataStore.php"><a href="../files/woocommerce-src-admin-api-reports-datastore.html#source-view.883">src/Admin/API/Reports/DataStore.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/API/Reports/DataStore.php"><a href="../files/woocommerce-src-admin-api-reports-datastore.html#source-view.995">src/Admin/API/Reports/DataStore.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">883</span>
+    <span class="phpdocumentor-element-found-in__line">995</span>
 </aside>
 
         <p class="phpdocumentor-summary">Returns a comma separated list of the fields in the `query_args`, if there aren&#039;t, returns `report_columns` keys.</p>
@@ -3260,9 +3482,9 @@ based on query arguments from the user.</p>
         <a href="#method_get_filtered_ids" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/API/Reports/DataStore.php"><a href="../files/woocommerce-src-admin-api-reports-datastore.html#source-view.1460">src/Admin/API/Reports/DataStore.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/API/Reports/DataStore.php"><a href="../files/woocommerce-src-admin-api-reports-datastore.html#source-view.1572">src/Admin/API/Reports/DataStore.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1460</span>
+    <span class="phpdocumentor-element-found-in__line">1572</span>
 </aside>
 
         <p class="phpdocumentor-summary">Returns filtered comma separated ids, based on query arguments from the user.</p>
@@ -3322,9 +3544,9 @@ based on query arguments from the user.</p>
         <a href="#method_get_ids_table" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/API/Reports/DataStore.php"><a href="../files/woocommerce-src-admin-api-reports-datastore.html#source-view.862">src/Admin/API/Reports/DataStore.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/API/Reports/DataStore.php"><a href="../files/woocommerce-src-admin-api-reports-datastore.html#source-view.974">src/Admin/API/Reports/DataStore.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">862</span>
+    <span class="phpdocumentor-element-found-in__line">974</span>
 </aside>
 
         <p class="phpdocumentor-summary">Generates a virtual table given a list of IDs.</p>
@@ -3384,9 +3606,9 @@ based on query arguments from the user.</p>
         <a href="#method_get_included_categories" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/API/Reports/DataStore.php"><a href="../files/woocommerce-src-admin-api-reports-datastore.html#source-view.1146">src/Admin/API/Reports/DataStore.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/API/Reports/DataStore.php"><a href="../files/woocommerce-src-admin-api-reports-datastore.html#source-view.1258">src/Admin/API/Reports/DataStore.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1146</span>
+    <span class="phpdocumentor-element-found-in__line">1258</span>
 </aside>
 
         <p class="phpdocumentor-summary">Returns comma separated ids of included categories, based on query arguments from the user.</p>
@@ -3428,9 +3650,9 @@ based on query arguments from the user.</p>
         <a href="#method_get_included_coupons" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/API/Reports/DataStore.php"><a href="../files/woocommerce-src-admin-api-reports-datastore.html#source-view.1157">src/Admin/API/Reports/DataStore.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/API/Reports/DataStore.php"><a href="../files/woocommerce-src-admin-api-reports-datastore.html#source-view.1269">src/Admin/API/Reports/DataStore.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1157</span>
+    <span class="phpdocumentor-element-found-in__line">1269</span>
 </aside>
 
         <p class="phpdocumentor-summary">Returns comma separated ids of included coupons, based on query arguments from the user.</p>
@@ -3481,9 +3703,9 @@ based on query arguments from the user.</p>
         <a href="#method_get_included_orders" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/API/Reports/DataStore.php"><a href="../files/woocommerce-src-admin-api-reports-datastore.html#source-view.1177">src/Admin/API/Reports/DataStore.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/API/Reports/DataStore.php"><a href="../files/woocommerce-src-admin-api-reports-datastore.html#source-view.1289">src/Admin/API/Reports/DataStore.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1177</span>
+    <span class="phpdocumentor-element-found-in__line">1289</span>
 </aside>
 
         <p class="phpdocumentor-summary">Returns comma separated ids of included orders, based on query arguments from the user.</p>
@@ -3525,9 +3747,9 @@ based on query arguments from the user.</p>
         <a href="#method_get_included_products" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/API/Reports/DataStore.php"><a href="../files/woocommerce-src-admin-api-reports-datastore.html#source-view.1083">src/Admin/API/Reports/DataStore.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/API/Reports/DataStore.php"><a href="../files/woocommerce-src-admin-api-reports-datastore.html#source-view.1195">src/Admin/API/Reports/DataStore.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1083</span>
+    <span class="phpdocumentor-element-found-in__line">1195</span>
 </aside>
 
         <p class="phpdocumentor-summary">Returns comma separated ids of allowed products, based on query arguments from the user.</p>
@@ -3569,9 +3791,9 @@ based on query arguments from the user.</p>
         <a href="#method_get_included_products_array" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/API/Reports/DataStore.php"><a href="../files/woocommerce-src-admin-api-reports-datastore.html#source-view.1046">src/Admin/API/Reports/DataStore.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/API/Reports/DataStore.php"><a href="../files/woocommerce-src-admin-api-reports-datastore.html#source-view.1158">src/Admin/API/Reports/DataStore.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1046</span>
+    <span class="phpdocumentor-element-found-in__line">1158</span>
 </aside>
 
         <p class="phpdocumentor-summary">Returns an array of ids of allowed products, based on query arguments from the user.</p>
@@ -3613,9 +3835,9 @@ based on query arguments from the user.</p>
         <a href="#method_get_included_users" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/API/Reports/DataStore.php"><a href="../files/woocommerce-src-admin-api-reports-datastore.html#source-view.1197">src/Admin/API/Reports/DataStore.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/API/Reports/DataStore.php"><a href="../files/woocommerce-src-admin-api-reports-datastore.html#source-view.1309">src/Admin/API/Reports/DataStore.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1197</span>
+    <span class="phpdocumentor-element-found-in__line">1309</span>
 </aside>
 
         <p class="phpdocumentor-summary">Returns comma separated ids of included users, based on query arguments from the user.</p>
@@ -3657,9 +3879,9 @@ based on query arguments from the user.</p>
         <a href="#method_get_included_variations" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/API/Reports/DataStore.php"><a href="../files/woocommerce-src-admin-api-reports-datastore.html#source-view.1094">src/Admin/API/Reports/DataStore.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/API/Reports/DataStore.php"><a href="../files/woocommerce-src-admin-api-reports-datastore.html#source-view.1206">src/Admin/API/Reports/DataStore.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1094</span>
+    <span class="phpdocumentor-element-found-in__line">1206</span>
 </aside>
 
         <p class="phpdocumentor-summary">Returns comma separated ids of allowed variations, based on query arguments from the user.</p>
@@ -3701,9 +3923,9 @@ based on query arguments from the user.</p>
         <a href="#method_get_limit_params" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/API/Reports/DataStore.php"><a href="../files/woocommerce-src-admin-api-reports-datastore.html#source-view.839">src/Admin/API/Reports/DataStore.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/API/Reports/DataStore.php"><a href="../files/woocommerce-src-admin-api-reports-datastore.html#source-view.951">src/Admin/API/Reports/DataStore.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">839</span>
+    <span class="phpdocumentor-element-found-in__line">951</span>
 </aside>
 
         <p class="phpdocumentor-summary">Fills LIMIT parameters of SQL request based on user supplied parameters.</p>
@@ -3745,9 +3967,9 @@ based on query arguments from the user.</p>
         <a href="#method_get_limit_sql_params" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/API/Reports/DataStore.php"><a href="../files/woocommerce-src-admin-api-reports-datastore.html#source-view.824">src/Admin/API/Reports/DataStore.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/API/Reports/DataStore.php"><a href="../files/woocommerce-src-admin-api-reports-datastore.html#source-view.936">src/Admin/API/Reports/DataStore.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">824</span>
+    <span class="phpdocumentor-element-found-in__line">936</span>
 </aside>
 
         <p class="phpdocumentor-summary">Fills LIMIT clause of SQL request based on user supplied parameters.</p>
@@ -3789,9 +4011,9 @@ based on query arguments from the user.</p>
         <a href="#method_get_match_operator" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/API/Reports/DataStore.php"><a href="../files/woocommerce-src-admin-api-reports-datastore.html#source-view.1437">src/Admin/API/Reports/DataStore.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/API/Reports/DataStore.php"><a href="../files/woocommerce-src-admin-api-reports-datastore.html#source-view.1549">src/Admin/API/Reports/DataStore.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1437</span>
+    <span class="phpdocumentor-element-found-in__line">1549</span>
 </aside>
 
         <p class="phpdocumentor-summary">Returns logic operator for WHERE subclause based on &#039;match&#039; query argument.</p>
@@ -3833,9 +4055,9 @@ based on query arguments from the user.</p>
         <a href="#method_get_object_where_filter" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/API/Reports/DataStore.php"><a href="../files/woocommerce-src-admin-api-reports-datastore.html#source-view.1021">src/Admin/API/Reports/DataStore.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/API/Reports/DataStore.php"><a href="../files/woocommerce-src-admin-api-reports-datastore.html#source-view.1133">src/Admin/API/Reports/DataStore.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1021</span>
+    <span class="phpdocumentor-element-found-in__line">1133</span>
 </aside>
 
         <p class="phpdocumentor-summary">Get WHERE filter by object ids subquery.</p>
@@ -3922,9 +4144,9 @@ based on query arguments from the user.</p>
         <a href="#method_get_products_by_cat_ids" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/API/Reports/DataStore.php"><a href="../files/woocommerce-src-admin-api-reports-datastore.html#source-view.989">src/Admin/API/Reports/DataStore.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/API/Reports/DataStore.php"><a href="../files/woocommerce-src-admin-api-reports-datastore.html#source-view.1101">src/Admin/API/Reports/DataStore.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">989</span>
+    <span class="phpdocumentor-element-found-in__line">1101</span>
 </aside>
 
         <p class="phpdocumentor-summary">Returns an array of products belonging to given categories.</p>
@@ -3966,9 +4188,9 @@ based on query arguments from the user.</p>
         <a href="#method_get_refund_subquery" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/API/Reports/DataStore.php"><a href="../files/woocommerce-src-admin-api-reports-datastore.html#source-view.954">src/Admin/API/Reports/DataStore.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/API/Reports/DataStore.php"><a href="../files/woocommerce-src-admin-api-reports-datastore.html#source-view.1066">src/Admin/API/Reports/DataStore.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">954</span>
+    <span class="phpdocumentor-element-found-in__line">1066</span>
 </aside>
 
         <p class="phpdocumentor-summary">Get join and where clauses for refunds based on user supplied parameters.</p>
@@ -4063,9 +4285,9 @@ based on query arguments from the user.</p>
         <a href="#method_get_status_subquery" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/API/Reports/DataStore.php"><a href="../files/woocommerce-src-admin-api-reports-datastore.html#source-view.1218">src/Admin/API/Reports/DataStore.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/API/Reports/DataStore.php"><a href="../files/woocommerce-src-admin-api-reports-datastore.html#source-view.1330">src/Admin/API/Reports/DataStore.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1218</span>
+    <span class="phpdocumentor-element-found-in__line">1330</span>
 </aside>
 
         <p class="phpdocumentor-summary">Returns order status subquery to be used in WHERE SQL query, based on query arguments from the user.</p>
@@ -4116,9 +4338,9 @@ based on query arguments from the user.</p>
         <a href="#method_include_extended_info" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/API/Reports/Products/DataStore.php"><a href="../files/woocommerce-src-admin-api-reports-products-datastore.html#source-view.200">src/Admin/API/Reports/Products/DataStore.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/API/Reports/Products/DataStore.php"><a href="../files/woocommerce-src-admin-api-reports-products-datastore.html#source-view.213">src/Admin/API/Reports/Products/DataStore.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">200</span>
+    <span class="phpdocumentor-element-found-in__line">213</span>
 </aside>
 
         <p class="phpdocumentor-summary">Enriches the product data with attributes specified by the extended_attributes.</p>
@@ -4169,9 +4391,9 @@ based on query arguments from the user.</p>
         <a href="#method_initialize_queries" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/API/Reports/Products/DataStore.php"><a href="../files/woocommerce-src-admin-api-reports-products-datastore.html#source-view.524">src/Admin/API/Reports/Products/DataStore.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/API/Reports/Products/DataStore.php"><a href="../files/woocommerce-src-admin-api-reports-products-datastore.html#source-view.552">src/Admin/API/Reports/Products/DataStore.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">524</span>
+    <span class="phpdocumentor-element-found-in__line">552</span>
 </aside>
 
         <p class="phpdocumentor-summary">Initialize query objects.</p>
@@ -4201,9 +4423,9 @@ based on query arguments from the user.</p>
         <a href="#method_intervals_missing" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/API/Reports/DataStore.php"><a href="../files/woocommerce-src-admin-api-reports-datastore.html#source-view.492">src/Admin/API/Reports/DataStore.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/API/Reports/DataStore.php"><a href="../files/woocommerce-src-admin-api-reports-datastore.html#source-view.604">src/Admin/API/Reports/DataStore.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">492</span>
+    <span class="phpdocumentor-element-found-in__line">604</span>
 </aside>
 
         <p class="phpdocumentor-summary">Returns true if there are any intervals that need to be filled in the response.</p>
@@ -4299,9 +4521,9 @@ based on query arguments from the user.</p>
         <a href="#method_normalize_order_by" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/API/Reports/Products/DataStore.php"><a href="../files/woocommerce-src-admin-api-reports-products-datastore.html#source-view.181">src/Admin/API/Reports/Products/DataStore.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/API/Reports/Products/DataStore.php"><a href="../files/woocommerce-src-admin-api-reports-products-datastore.html#source-view.194">src/Admin/API/Reports/Products/DataStore.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">181</span>
+    <span class="phpdocumentor-element-found-in__line">194</span>
 </aside>
 
         <p class="phpdocumentor-summary">Maps ordering specified by the user to columns in the database/fields in the data.</p>
@@ -4326,6 +4548,20 @@ based on query arguments from the user.</p>
             </dl>
 
     
+    <h5 class="phpdocumentor-tag-list__heading" id="tags">
+        Tags
+        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
+    </h5>
+    <dl class="phpdocumentor-tag-list">
+                                    <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">override</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                                                                                        <section class="phpdocumentor-description"><p>ReportsDataStore::normalize_order_by()</p>
+</section>
+
+                </dd>
+                        </dl>
 
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
     <span class="phpdocumentor-signature__response_type">string</span>
@@ -4343,9 +4579,9 @@ based on query arguments from the user.</p>
         <a href="#method_normalize_order_status" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/API/Reports/DataStore.php"><a href="../files/woocommerce-src-admin-api-reports-datastore.html#source-view.691">src/Admin/API/Reports/DataStore.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/API/Reports/DataStore.php"><a href="../files/woocommerce-src-admin-api-reports-datastore.html#source-view.803">src/Admin/API/Reports/DataStore.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">691</span>
+    <span class="phpdocumentor-element-found-in__line">803</span>
 </aside>
 
         <p class="phpdocumentor-summary">Maps order status provided by the user to the one used in the database.</p>
@@ -4387,9 +4623,9 @@ based on query arguments from the user.</p>
         <a href="#method_normalize_timezones" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/API/Reports/DataStore.php"><a href="../files/woocommerce-src-admin-api-reports-datastore.html#source-view.410">src/Admin/API/Reports/DataStore.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/API/Reports/DataStore.php"><a href="../files/woocommerce-src-admin-api-reports-datastore.html#source-view.522">src/Admin/API/Reports/DataStore.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">410</span>
+    <span class="phpdocumentor-element-found-in__line">522</span>
 </aside>
 
         <p class="phpdocumentor-summary">Converts input datetime parameters to local timezone. If there are no inputs from the user in query_args,
@@ -4441,9 +4677,9 @@ uses default from $defaults.</p>
         <a href="#method_remove_extra_records" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/API/Reports/DataStore.php"><a href="../files/woocommerce-src-admin-api-reports-datastore.html#source-view.439">src/Admin/API/Reports/DataStore.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/API/Reports/DataStore.php"><a href="../files/woocommerce-src-admin-api-reports-datastore.html#source-view.551">src/Admin/API/Reports/DataStore.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">439</span>
+    <span class="phpdocumentor-element-found-in__line">551</span>
 </aside>
 
         <p class="phpdocumentor-summary">Removes extra records from intervals so that only requested number of records get returned.</p>
@@ -4539,9 +4775,9 @@ uses default from $defaults.</p>
         <a href="#method_selected_columns" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/API/Reports/DataStore.php"><a href="../files/woocommerce-src-admin-api-reports-datastore.html#source-view.657">src/Admin/API/Reports/DataStore.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/API/Reports/DataStore.php"><a href="../files/woocommerce-src-admin-api-reports-datastore.html#source-view.769">src/Admin/API/Reports/DataStore.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">657</span>
+    <span class="phpdocumentor-element-found-in__line">769</span>
 </aside>
 
         <p class="phpdocumentor-summary">Returns a list of columns selected by the query_args formatted as a comma separated string.</p>
@@ -4583,9 +4819,9 @@ uses default from $defaults.</p>
         <a href="#method_set_cached_data" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/API/Reports/DataStore.php"><a href="../files/woocommerce-src-admin-api-reports-datastore.html#source-view.265">src/Admin/API/Reports/DataStore.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/API/Reports/DataStore.php"><a href="../files/woocommerce-src-admin-api-reports-datastore.html#source-view.377">src/Admin/API/Reports/DataStore.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">265</span>
+    <span class="phpdocumentor-element-found-in__line">377</span>
 </aside>
 
         <p class="phpdocumentor-summary">Wrapper around Cache::set().</p>
@@ -4636,9 +4872,9 @@ uses default from $defaults.</p>
         <a href="#method_set_db_table_name" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/API/Reports/DataStore.php"><a href="../files/woocommerce-src-admin-api-reports-datastore.html#source-view.174">src/Admin/API/Reports/DataStore.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/API/Reports/DataStore.php"><a href="../files/woocommerce-src-admin-api-reports-datastore.html#source-view.286">src/Admin/API/Reports/DataStore.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">174</span>
+    <span class="phpdocumentor-element-found-in__line">286</span>
 </aside>
 
         <p class="phpdocumentor-summary">Set table name from database class.</p>
@@ -4668,9 +4904,9 @@ uses default from $defaults.</p>
         <a href="#method_should_use_cache" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/API/Reports/DataStore.php"><a href="../files/woocommerce-src-admin-api-reports-datastore.html#source-view.188">src/Admin/API/Reports/DataStore.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/API/Reports/DataStore.php"><a href="../files/woocommerce-src-admin-api-reports-datastore.html#source-view.300">src/Admin/API/Reports/DataStore.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">188</span>
+    <span class="phpdocumentor-element-found-in__line">300</span>
 </aside>
 
         <p class="phpdocumentor-summary">Whether or not the report should use the caching layer.</p>
@@ -4701,9 +4937,9 @@ uses default from $defaults.</p>
         <a href="#method_sort_array" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/API/Reports/DataStore.php"><a href="../files/woocommerce-src-admin-api-reports-datastore.html#source-view.342">src/Admin/API/Reports/DataStore.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/API/Reports/DataStore.php"><a href="../files/woocommerce-src-admin-api-reports-datastore.html#source-view.454">src/Admin/API/Reports/DataStore.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">342</span>
+    <span class="phpdocumentor-element-found-in__line">454</span>
 </aside>
 
         <p class="phpdocumentor-summary">Sorts array of arrays based on subarray key $sort_by.</p>
@@ -4763,9 +4999,9 @@ uses default from $defaults.</p>
         <a href="#method_sort_intervals" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/API/Reports/DataStore.php"><a href="../files/woocommerce-src-admin-api-reports-datastore.html#source-view.331">src/Admin/API/Reports/DataStore.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/API/Reports/DataStore.php"><a href="../files/woocommerce-src-admin-api-reports-datastore.html#source-view.443">src/Admin/API/Reports/DataStore.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">331</span>
+    <span class="phpdocumentor-element-found-in__line">443</span>
 </aside>
 
         <p class="phpdocumentor-summary">Sorts intervals according to user&#039;s request.</p>
@@ -4888,9 +5124,9 @@ uses default from $defaults.</p>
         <a href="#method_update_interval_boundary_dates" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/API/Reports/DataStore.php"><a href="../files/woocommerce-src-admin-api-reports-datastore.html#source-view.720">src/Admin/API/Reports/DataStore.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/API/Reports/DataStore.php"><a href="../files/woocommerce-src-admin-api-reports-datastore.html#source-view.832">src/Admin/API/Reports/DataStore.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">720</span>
+    <span class="phpdocumentor-element-found-in__line">832</span>
 </aside>
 
         <p class="phpdocumentor-summary">Updates start and end dates for intervals so that they represent intervals&#039; borders, not times when data in db were recorded.</p>
@@ -4960,9 +5196,9 @@ uses default from $defaults.</p>
         <a href="#method_update_intervals_sql_params" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/API/Reports/DataStore.php"><a href="../files/woocommerce-src-admin-api-reports-datastore.html#source-view.521">src/Admin/API/Reports/DataStore.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/API/Reports/DataStore.php"><a href="../files/woocommerce-src-admin-api-reports-datastore.html#source-view.633">src/Admin/API/Reports/DataStore.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">521</span>
+    <span class="phpdocumentor-element-found-in__line">633</span>
 </aside>
 
         <p class="phpdocumentor-summary">Updates the LIMIT query part for Intervals query of the report.</p>
@@ -5033,9 +5269,9 @@ to fetch correct records.</p>
         <a href="#method_interval_cmp" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/API/Reports/DataStore.php"><a href="../files/woocommerce-src-admin-api-reports-datastore.html#source-view.300">src/Admin/API/Reports/DataStore.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/API/Reports/DataStore.php"><a href="../files/woocommerce-src-admin-api-reports-datastore.html#source-view.412">src/Admin/API/Reports/DataStore.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">300</span>
+    <span class="phpdocumentor-element-found-in__line">412</span>
 </aside>
 
         <p class="phpdocumentor-summary">Compares two report data objects by pre-defined object property and ASC/DESC ordering.</p>
@@ -5086,7 +5322,7 @@ to fetch correct records.</p>
 
     <footer class="phpdocumentor phpdocumentor-footer">
     <div class="phpdocumentor-section">
-        <span>WooCommerce Code Reference API documentation generated by <a href="http://www.phpdoc.org/">phpDocumentor</a> on July 25th, 2024 at 11:33 am.</span>
+        <span>WooCommerce Code Reference API documentation generated by <a href="http://www.phpdoc.org/">phpDocumentor</a> on May 16th, 2025 at 09:14 am.</span>
     </div>
 </footer>
 
@@ -5098,7 +5334,7 @@ to fetch correct records.</p>
             'searchIndex': '..\/js\/searchIndex.json'
         };
     </script>
-    <script src="../js/searchIndex.js?updated=1721907201"></script>
-    <script src="../js/search.js?updated=1721907201"></script>
+    <script src="../js/searchIndex.js?updated=1747386881"></script>
+    <script src="../js/search.js?updated=1747386881"></script>
 </body>
 </html>

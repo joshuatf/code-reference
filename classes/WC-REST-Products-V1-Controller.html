@@ -4,14 +4,13 @@
     <meta charset="utf-8">
     <title>WooCommerce Code Reference</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="../images/favicon.png" />
-    <link rel="apple-touch-icon" href="../images/apple-touch-icon.png"/>
-    <link rel="apple-touch-icon" sizes="72x72" href="../images/apple-touch-icon-72x72.png"/>
-    <link rel="apple-touch-icon" sizes="114x114" href="../images/apple-touch-icon-114x114.png"/>
+    <link rel="icon" href="../images/favicon-32x32.png" sizes="32x32" />
+    <link rel="icon" href="../images/favicon-192x192.png" sizes="192x192" />
+    <link rel="apple-touch-icon" href="../images/favicon-180x180.png" />
+
     <link rel="stylesheet" href="../css/normalize.css">
-    <link rel="stylesheet" href="../css/base.css?updated=1721907197">
-    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../css/template.css?updated=1721907197">
+    <link rel="stylesheet" href="../css/base.css?updated=1747386875">
+    <link rel="stylesheet" href="../css/template.css?updated=1747386875">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0/css/all.min.css" integrity="sha256-ybRkN9dBjhcS2qrW1z+hfCxq+1aBdwyQM5wlQoQVt/0=" crossorigin="anonymous" />
             <script src="https://cdn.jsdelivr.net/npm/css-vars-ponyfill@2"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0/js/all.min.js" integrity="sha256-0vuk8LXoyrmCjp1f0O300qo1M75ZQyhH9X3J6d+scmk=" crossorigin="anonymous"></script>
@@ -27,19 +26,24 @@
 		'content_group' : 'WooCommerce Core Code Reference',
 	});
 </script>
-        </head>
+        <script src="../js/prism.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            window.dispatchEvent(new HashChangeEvent('hashchange'));
+        });
+    </script>
+</head>
 <body id="top">
     <header class="phpdocumentor-top-header">
     <section class="phpdocumentor-section">
         <div class="site-branding">
-            <a class="site-logo" href="../index.html"><img width="180" src="../images/logo.svg" alt="WooCommerce" /></a>
+            <a class="site-logo" href="../index.html"><img src="../images/logo.png" alt="WooCommerce" /></a>
         </div>
         <nav class="main-navigation">
             <ul>
                 <li><a href="../hooks/hooks.html">Hooks Reference</a></li>
-                <li><a href="https://docs.woocommerce.com/">Documentation</a></li>
+                <li><a href="https://developer.woocommerce.com/docs/">Documentation</a></li>
                 <li><a href="https://woocommerce.github.io/woocommerce-rest-api-docs/">REST API Docs</a></li>
-                <li><a href="https://woocommerce.com/careers/?utm_source=woocommerce+core+code+reference&utm_medium=devdocs&utm_campaign=woo+careers" target="_blank">We're hiring!</a></li>
             </ul>
         </nav>
     </section>
@@ -47,7 +51,7 @@
 
 <div class="phpdocumentor-header">
     <section class="phpdocumentor-section">
-        <h1 class="phpdocumentor-title">WooCommerce Code Reference</h1>
+        <h1 class="phpdocumentor-title"><a href="../index.html">WooCommerce Code Reference</a></h1>
         <section class="phpdocumentor-search">
     <label class="phpdocumentor-label">
         <span class="visually-hidden">Search (click ESC to close search results)</span>
@@ -68,6 +72,10 @@
                                         <h4 class="phpdocumentor-sidebar__root-namespace"><a href="../namespaces/woocommerce.html"><abbr title="\WooCommerce">WooCommerce</abbr></a></h4>
                 <ul class="phpdocumentor-list">
                                             <li><a href="../namespaces/woocommerce-admin.html"><abbr title="\WooCommerce\Admin">Admin</abbr></a></li>
+                                    </ul>
+                            <h4 class="phpdocumentor-sidebar__root-namespace"><a href="../namespaces/mailpoet.html"><abbr title="\MailPoet">MailPoet</abbr></a></h4>
+                <ul class="phpdocumentor-list">
+                                            <li><a href="../namespaces/mailpoet-emaileditor.html"><abbr title="\MailPoet\EmailEditor">EmailEditor</abbr></a></li>
                                     </ul>
                             <h4 class="phpdocumentor-sidebar__root-namespace"><a href="../namespaces/automattic.html"><abbr title="\Automattic">Automattic</abbr></a></h4>
                 <ul class="phpdocumentor-list">
@@ -113,8 +121,10 @@
                                     <li><a href="../packages/WooCommerce-Widgets.html"><abbr title="\WooCommerce\Widgets">Widgets</abbr></a></li>
                                     <li><a href="../packages/WooCommerce-Uninstaller.html"><abbr title="\WooCommerce\Uninstaller">Uninstaller</abbr></a></li>
                             </ul>
-                                <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/WoocommerceAdmin.html"><abbr title="\WoocommerceAdmin">WoocommerceAdmin</abbr></a></h3>
-                                <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/WoocommerceNavigation.html"><abbr title="\WoocommerceNavigation">WoocommerceNavigation</abbr></a></h3>
+                                <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/MailPoet.html"><abbr title="\MailPoet">MailPoet</abbr></a></h3>
+                        <ul class="phpdocumentor-list">
+                                    <li><a href="../packages/MailPoet-EmailEditor.html"><abbr title="\MailPoet\EmailEditor">EmailEditor</abbr></a></li>
+                            </ul>
                                 <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/Automattic.html"><abbr title="\Automattic">Automattic</abbr></a></h3>
                         <ul class="phpdocumentor-list">
                                     <li><a href="../packages/Automattic-WooCommerce.html"><abbr title="\Automattic\WooCommerce">WooCommerce</abbr></a></li>
@@ -160,9 +170,9 @@
     </h2>
 
         <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/rest-api/Controllers/Version1/class-wc-rest-products-v1-controller.php"><a href="../files/woocommerce-includes-rest-api-controllers-version1-class-wc-rest-products-v1-controller.html#source-view.25">includes/rest-api/Controllers/Version1/class-wc-rest-products-v1-controller.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/rest-api/Controllers/Version1/class-wc-rest-products-v1-controller.php"><a href="../files/woocommerce-includes-rest-api-controllers-version1-class-wc-rest-products-v1-controller.html#source-view.30">includes/rest-api/Controllers/Version1/class-wc-rest-products-v1-controller.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">25</span>
+    <span class="phpdocumentor-element-found-in__line">30</span>
 </aside>
 
             <p class="phpdocumentor-summary">REST API Products controller class.</p>
@@ -706,9 +716,9 @@ prepare for WP_Query.</dd>
                                 </span>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/rest-api/Controllers/Version1/class-wc-rest-products-v1-controller.php"><a href="../files/woocommerce-includes-rest-api-controllers-version1-class-wc-rest-products-v1-controller.html#source-view.32">includes/rest-api/Controllers/Version1/class-wc-rest-products-v1-controller.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/rest-api/Controllers/Version1/class-wc-rest-products-v1-controller.php"><a href="../files/woocommerce-includes-rest-api-controllers-version1-class-wc-rest-products-v1-controller.html#source-view.37">includes/rest-api/Controllers/Version1/class-wc-rest-products-v1-controller.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">32</span>
+    <span class="phpdocumentor-element-found-in__line">37</span>
 </aside>
 
         <p class="phpdocumentor-summary">Endpoint namespace.</p>
@@ -738,9 +748,9 @@ prepare for WP_Query.</dd>
                                 </span>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/rest-api/Controllers/Version1/class-wc-rest-products-v1-controller.php"><a href="../files/woocommerce-includes-rest-api-controllers-version1-class-wc-rest-products-v1-controller.html#source-view.46">includes/rest-api/Controllers/Version1/class-wc-rest-products-v1-controller.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/rest-api/Controllers/Version1/class-wc-rest-products-v1-controller.php"><a href="../files/woocommerce-includes-rest-api-controllers-version1-class-wc-rest-products-v1-controller.html#source-view.51">includes/rest-api/Controllers/Version1/class-wc-rest-products-v1-controller.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">46</span>
+    <span class="phpdocumentor-element-found-in__line">51</span>
 </aside>
 
         <p class="phpdocumentor-summary">Post type.</p>
@@ -802,9 +812,9 @@ prepare for WP_Query.</dd>
                                 </span>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/rest-api/Controllers/Version1/class-wc-rest-products-v1-controller.php"><a href="../files/woocommerce-includes-rest-api-controllers-version1-class-wc-rest-products-v1-controller.html#source-view.39">includes/rest-api/Controllers/Version1/class-wc-rest-products-v1-controller.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/rest-api/Controllers/Version1/class-wc-rest-products-v1-controller.php"><a href="../files/woocommerce-includes-rest-api-controllers-version1-class-wc-rest-products-v1-controller.html#source-view.44">includes/rest-api/Controllers/Version1/class-wc-rest-products-v1-controller.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">39</span>
+    <span class="phpdocumentor-element-found-in__line">44</span>
 </aside>
 
         <p class="phpdocumentor-summary">Route base.</p>
@@ -904,9 +914,9 @@ ull</span></code>
         <a href="#method___construct" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/rest-api/Controllers/Version1/class-wc-rest-products-v1-controller.php"><a href="../files/woocommerce-includes-rest-api-controllers-version1-class-wc-rest-products-v1-controller.html#source-view.51">includes/rest-api/Controllers/Version1/class-wc-rest-products-v1-controller.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/rest-api/Controllers/Version1/class-wc-rest-products-v1-controller.php"><a href="../files/woocommerce-includes-rest-api-controllers-version1-class-wc-rest-products-v1-controller.html#source-view.56">includes/rest-api/Controllers/Version1/class-wc-rest-products-v1-controller.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">51</span>
+    <span class="phpdocumentor-element-found-in__line">56</span>
 </aside>
 
         <p class="phpdocumentor-summary">Initialize product actions.</p>
@@ -1024,9 +1034,9 @@ ull</span></code>
         <a href="#method_clear_transients" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/rest-api/Controllers/Version1/class-wc-rest-products-v1-controller.php"><a href="../files/woocommerce-includes-rest-api-controllers-version1-class-wc-rest-products-v1-controller.html#source-view.1594">includes/rest-api/Controllers/Version1/class-wc-rest-products-v1-controller.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/rest-api/Controllers/Version1/class-wc-rest-products-v1-controller.php"><a href="../files/woocommerce-includes-rest-api-controllers-version1-class-wc-rest-products-v1-controller.html#source-view.1599">includes/rest-api/Controllers/Version1/class-wc-rest-products-v1-controller.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1594</span>
+    <span class="phpdocumentor-element-found-in__line">1599</span>
 </aside>
 
         <p class="phpdocumentor-summary">Clear cache/transients.</p>
@@ -1068,9 +1078,9 @@ ull</span></code>
         <a href="#method_create_item" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/rest-api/Controllers/Version1/class-wc-rest-products-v1-controller.php"><a href="../files/woocommerce-includes-rest-api-controllers-version1-class-wc-rest-products-v1-controller.html#source-view.739">includes/rest-api/Controllers/Version1/class-wc-rest-products-v1-controller.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/rest-api/Controllers/Version1/class-wc-rest-products-v1-controller.php"><a href="../files/woocommerce-includes-rest-api-controllers-version1-class-wc-rest-products-v1-controller.html#source-view.744">includes/rest-api/Controllers/Version1/class-wc-rest-products-v1-controller.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">739</span>
+    <span class="phpdocumentor-element-found-in__line">744</span>
 </aside>
 
         <p class="phpdocumentor-summary">Create a single product.</p>
@@ -1156,9 +1166,9 @@ ull</span></code>
         <a href="#method_delete_item" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/rest-api/Controllers/Version1/class-wc-rest-products-v1-controller.php"><a href="../files/woocommerce-includes-rest-api-controllers-version1-class-wc-rest-products-v1-controller.html#source-view.1632">includes/rest-api/Controllers/Version1/class-wc-rest-products-v1-controller.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/rest-api/Controllers/Version1/class-wc-rest-products-v1-controller.php"><a href="../files/woocommerce-includes-rest-api-controllers-version1-class-wc-rest-products-v1-controller.html#source-view.1637">includes/rest-api/Controllers/Version1/class-wc-rest-products-v1-controller.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1632</span>
+    <span class="phpdocumentor-element-found-in__line">1637</span>
 </aside>
 
         <p class="phpdocumentor-summary">Delete a single item.</p>
@@ -1244,9 +1254,9 @@ ull</span></code>
         <a href="#method_get_collection_params" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/rest-api/Controllers/Version1/class-wc-rest-products-v1-controller.php"><a href="../files/woocommerce-includes-rest-api-controllers-version1-class-wc-rest-products-v1-controller.html#source-view.2581">includes/rest-api/Controllers/Version1/class-wc-rest-products-v1-controller.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/rest-api/Controllers/Version1/class-wc-rest-products-v1-controller.php"><a href="../files/woocommerce-includes-rest-api-controllers-version1-class-wc-rest-products-v1-controller.html#source-view.2586">includes/rest-api/Controllers/Version1/class-wc-rest-products-v1-controller.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">2581</span>
+    <span class="phpdocumentor-element-found-in__line">2586</span>
 </aside>
 
         <p class="phpdocumentor-summary">Get the query params for collections of attachments.</p>
@@ -1321,9 +1331,9 @@ ull</span></code>
         <a href="#method_get_fields_for_response" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/rest-api/Controllers/Version3/class-wc-rest-controller.php"><a href="../files/woocommerce-includes-rest-api-controllers-version3-class-wc-rest-controller.html#source-view.517">includes/rest-api/Controllers/Version3/class-wc-rest-controller.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/rest-api/Controllers/Version3/class-wc-rest-controller.php"><a href="../files/woocommerce-includes-rest-api-controllers-version3-class-wc-rest-controller.html#source-view.563">includes/rest-api/Controllers/Version3/class-wc-rest-controller.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">517</span>
+    <span class="phpdocumentor-element-found-in__line">563</span>
 </aside>
 
         <p class="phpdocumentor-summary">Gets an array of fields to be included on the response.</p>
@@ -1469,9 +1479,9 @@ Updated from WordPress 5.3, included into this class to support old versions.</p
         <a href="#method_get_item_schema" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/rest-api/Controllers/Version1/class-wc-rest-products-v1-controller.php"><a href="../files/woocommerce-includes-rest-api-controllers-version1-class-wc-rest-products-v1-controller.html#source-view.1732">includes/rest-api/Controllers/Version1/class-wc-rest-products-v1-controller.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/rest-api/Controllers/Version1/class-wc-rest-products-v1-controller.php"><a href="../files/woocommerce-includes-rest-api-controllers-version1-class-wc-rest-products-v1-controller.html#source-view.1737">includes/rest-api/Controllers/Version1/class-wc-rest-products-v1-controller.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1732</span>
+    <span class="phpdocumentor-element-found-in__line">1737</span>
 </aside>
 
         <p class="phpdocumentor-summary">Get the Product&#039;s schema, conforming to JSON Schema.</p>
@@ -1589,9 +1599,9 @@ Updated from WordPress 5.3, included into this class to support old versions.</p
         <a href="#method_get_public_batch_schema" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/rest-api/Controllers/Version3/class-wc-rest-controller.php"><a href="../files/woocommerce-includes-rest-api-controllers-version3-class-wc-rest-controller.html#source-view.471">includes/rest-api/Controllers/Version3/class-wc-rest-controller.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/rest-api/Controllers/Version3/class-wc-rest-controller.php"><a href="../files/woocommerce-includes-rest-api-controllers-version3-class-wc-rest-controller.html#source-view.517">includes/rest-api/Controllers/Version3/class-wc-rest-controller.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">471</span>
+    <span class="phpdocumentor-element-found-in__line">517</span>
 </aside>
 
         <p class="phpdocumentor-summary">Get the batch schema, conforming to JSON Schema.</p>
@@ -1621,9 +1631,9 @@ Updated from WordPress 5.3, included into this class to support old versions.</p
         <a href="#method_prepare_item_for_response" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/rest-api/Controllers/Version1/class-wc-rest-products-v1-controller.php"><a href="../files/woocommerce-includes-rest-api-controllers-version1-class-wc-rest-products-v1-controller.html#source-view.599">includes/rest-api/Controllers/Version1/class-wc-rest-products-v1-controller.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/rest-api/Controllers/Version1/class-wc-rest-products-v1-controller.php"><a href="../files/woocommerce-includes-rest-api-controllers-version1-class-wc-rest-products-v1-controller.html#source-view.604">includes/rest-api/Controllers/Version1/class-wc-rest-products-v1-controller.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">599</span>
+    <span class="phpdocumentor-element-found-in__line">604</span>
 </aside>
 
         <p class="phpdocumentor-summary">Prepare a single product output for response.</p>
@@ -1674,9 +1684,9 @@ Updated from WordPress 5.3, included into this class to support old versions.</p
         <a href="#method_query_args" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/rest-api/Controllers/Version1/class-wc-rest-products-v1-controller.php"><a href="../files/woocommerce-includes-rest-api-controllers-version1-class-wc-rest-products-v1-controller.html#source-view.139">includes/rest-api/Controllers/Version1/class-wc-rest-products-v1-controller.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/rest-api/Controllers/Version1/class-wc-rest-products-v1-controller.php"><a href="../files/woocommerce-includes-rest-api-controllers-version1-class-wc-rest-products-v1-controller.html#source-view.144">includes/rest-api/Controllers/Version1/class-wc-rest-products-v1-controller.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">139</span>
+    <span class="phpdocumentor-element-found-in__line">144</span>
 </aside>
 
         <p class="phpdocumentor-summary">Query args.</p>
@@ -1727,9 +1737,9 @@ Updated from WordPress 5.3, included into this class to support old versions.</p
         <a href="#method_register_routes" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/rest-api/Controllers/Version1/class-wc-rest-products-v1-controller.php"><a href="../files/woocommerce-includes-rest-api-controllers-version1-class-wc-rest-products-v1-controller.html#source-view.59">includes/rest-api/Controllers/Version1/class-wc-rest-products-v1-controller.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/rest-api/Controllers/Version1/class-wc-rest-products-v1-controller.php"><a href="../files/woocommerce-includes-rest-api-controllers-version1-class-wc-rest-products-v1-controller.html#source-view.64">includes/rest-api/Controllers/Version1/class-wc-rest-products-v1-controller.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">59</span>
+    <span class="phpdocumentor-element-found-in__line">64</span>
 </aside>
 
         <p class="phpdocumentor-summary">Register the routes for products.</p>
@@ -1759,9 +1769,9 @@ Updated from WordPress 5.3, included into this class to support old versions.</p
         <a href="#method_save_product" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/rest-api/Controllers/Version1/class-wc-rest-products-v1-controller.php"><a href="../files/woocommerce-includes-rest-api-controllers-version1-class-wc-rest-products-v1-controller.html#source-view.820">includes/rest-api/Controllers/Version1/class-wc-rest-products-v1-controller.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/rest-api/Controllers/Version1/class-wc-rest-products-v1-controller.php"><a href="../files/woocommerce-includes-rest-api-controllers-version1-class-wc-rest-products-v1-controller.html#source-view.825">includes/rest-api/Controllers/Version1/class-wc-rest-products-v1-controller.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">820</span>
+    <span class="phpdocumentor-element-found-in__line">825</span>
 </aside>
 
         <p class="phpdocumentor-summary">Saves a product to the database.</p>
@@ -1803,9 +1813,9 @@ Updated from WordPress 5.3, included into this class to support old versions.</p
         <a href="#method_update_item" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/rest-api/Controllers/Version1/class-wc-rest-products-v1-controller.php"><a href="../files/woocommerce-includes-rest-api-controllers-version1-class-wc-rest-products-v1-controller.html#source-view.782">includes/rest-api/Controllers/Version1/class-wc-rest-products-v1-controller.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/rest-api/Controllers/Version1/class-wc-rest-products-v1-controller.php"><a href="../files/woocommerce-includes-rest-api-controllers-version1-class-wc-rest-products-v1-controller.html#source-view.787">includes/rest-api/Controllers/Version1/class-wc-rest-products-v1-controller.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">782</span>
+    <span class="phpdocumentor-element-found-in__line">787</span>
 </aside>
 
         <p class="phpdocumentor-summary">Update a single product.</p>
@@ -1891,9 +1901,9 @@ Updated from WordPress 5.3, included into this class to support old versions.</p
         <a href="#method_validate_setting_checkbox_field" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/rest-api/Controllers/Version3/class-wc-rest-controller.php"><a href="../files/woocommerce-includes-rest-api-controllers-version3-class-wc-rest-controller.html#source-view.423">includes/rest-api/Controllers/Version3/class-wc-rest-controller.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/rest-api/Controllers/Version3/class-wc-rest-controller.php"><a href="../files/woocommerce-includes-rest-api-controllers-version3-class-wc-rest-controller.html#source-view.469">includes/rest-api/Controllers/Version3/class-wc-rest-controller.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">423</span>
+    <span class="phpdocumentor-element-found-in__line">469</span>
 </aside>
 
         <p class="phpdocumentor-summary">Validate checkbox based settings.</p>
@@ -1958,9 +1968,9 @@ Updated from WordPress 5.3, included into this class to support old versions.</p
         <a href="#method_validate_setting_image_width_field" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/rest-api/Controllers/Version3/class-wc-rest-controller.php"><a href="../files/woocommerce-includes-rest-api-controllers-version3-class-wc-rest-controller.html#source-view.385">includes/rest-api/Controllers/Version3/class-wc-rest-controller.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/rest-api/Controllers/Version3/class-wc-rest-controller.php"><a href="../files/woocommerce-includes-rest-api-controllers-version3-class-wc-rest-controller.html#source-view.431">includes/rest-api/Controllers/Version3/class-wc-rest-controller.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">385</span>
+    <span class="phpdocumentor-element-found-in__line">431</span>
 </aside>
 
         <p class="phpdocumentor-summary">Validate image_width based settings.</p>
@@ -2025,9 +2035,9 @@ Updated from WordPress 5.3, included into this class to support old versions.</p
         <a href="#method_validate_setting_multiselect_field" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/rest-api/Controllers/Version3/class-wc-rest-controller.php"><a href="../files/woocommerce-includes-rest-api-controllers-version3-class-wc-rest-controller.html#source-view.358">includes/rest-api/Controllers/Version3/class-wc-rest-controller.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/rest-api/Controllers/Version3/class-wc-rest-controller.php"><a href="../files/woocommerce-includes-rest-api-controllers-version3-class-wc-rest-controller.html#source-view.404">includes/rest-api/Controllers/Version3/class-wc-rest-controller.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">358</span>
+    <span class="phpdocumentor-element-found-in__line">404</span>
 </aside>
 
         <p class="phpdocumentor-summary">Validate multiselect based settings.</p>
@@ -2092,9 +2102,9 @@ Updated from WordPress 5.3, included into this class to support old versions.</p
         <a href="#method_validate_setting_radio_field" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/rest-api/Controllers/Version3/class-wc-rest-controller.php"><a href="../files/woocommerce-includes-rest-api-controllers-version3-class-wc-rest-controller.html#source-view.411">includes/rest-api/Controllers/Version3/class-wc-rest-controller.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/rest-api/Controllers/Version3/class-wc-rest-controller.php"><a href="../files/woocommerce-includes-rest-api-controllers-version3-class-wc-rest-controller.html#source-view.457">includes/rest-api/Controllers/Version3/class-wc-rest-controller.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">411</span>
+    <span class="phpdocumentor-element-found-in__line">457</span>
 </aside>
 
         <p class="phpdocumentor-summary">Validate radio based settings.</p>
@@ -2159,9 +2169,9 @@ Updated from WordPress 5.3, included into this class to support old versions.</p
         <a href="#method_validate_setting_select_field" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/rest-api/Controllers/Version3/class-wc-rest-controller.php"><a href="../files/woocommerce-includes-rest-api-controllers-version3-class-wc-rest-controller.html#source-view.342">includes/rest-api/Controllers/Version3/class-wc-rest-controller.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/rest-api/Controllers/Version3/class-wc-rest-controller.php"><a href="../files/woocommerce-includes-rest-api-controllers-version3-class-wc-rest-controller.html#source-view.388">includes/rest-api/Controllers/Version3/class-wc-rest-controller.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">342</span>
+    <span class="phpdocumentor-element-found-in__line">388</span>
 </aside>
 
         <p class="phpdocumentor-summary">Validate select based settings.</p>
@@ -2226,9 +2236,9 @@ Updated from WordPress 5.3, included into this class to support old versions.</p
         <a href="#method_validate_setting_text_field" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/rest-api/Controllers/Version3/class-wc-rest-controller.php"><a href="../files/woocommerce-includes-rest-api-controllers-version3-class-wc-rest-controller.html#source-view.329">includes/rest-api/Controllers/Version3/class-wc-rest-controller.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/rest-api/Controllers/Version3/class-wc-rest-controller.php"><a href="../files/woocommerce-includes-rest-api-controllers-version3-class-wc-rest-controller.html#source-view.375">includes/rest-api/Controllers/Version3/class-wc-rest-controller.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">329</span>
+    <span class="phpdocumentor-element-found-in__line">375</span>
 </aside>
 
         <p class="phpdocumentor-summary">Validate a text value for a text based setting.</p>
@@ -2293,9 +2303,9 @@ Updated from WordPress 5.3, included into this class to support old versions.</p
         <a href="#method_validate_setting_textarea_field" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/rest-api/Controllers/Version3/class-wc-rest-controller.php"><a href="../files/woocommerce-includes-rest-api-controllers-version3-class-wc-rest-controller.html#source-view.443">includes/rest-api/Controllers/Version3/class-wc-rest-controller.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/rest-api/Controllers/Version3/class-wc-rest-controller.php"><a href="../files/woocommerce-includes-rest-api-controllers-version3-class-wc-rest-controller.html#source-view.489">includes/rest-api/Controllers/Version3/class-wc-rest-controller.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">443</span>
+    <span class="phpdocumentor-element-found-in__line">489</span>
 </aside>
 
         <p class="phpdocumentor-summary">Validate textarea based settings.</p>
@@ -2414,9 +2424,9 @@ Updated from WordPress 5.3, included into this class to support old versions.</p
         <a href="#method_add_meta_query" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/rest-api/Controllers/Version3/class-wc-rest-controller.php"><a href="../files/woocommerce-includes-rest-api-controllers-version3-class-wc-rest-controller.html#source-view.456">includes/rest-api/Controllers/Version3/class-wc-rest-controller.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/rest-api/Controllers/Version3/class-wc-rest-controller.php"><a href="../files/woocommerce-includes-rest-api-controllers-version3-class-wc-rest-controller.html#source-view.502">includes/rest-api/Controllers/Version3/class-wc-rest-controller.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">456</span>
+    <span class="phpdocumentor-element-found-in__line">502</span>
 </aside>
 
         <p class="phpdocumentor-summary">Add meta query.</p>
@@ -2481,9 +2491,9 @@ Updated from WordPress 5.3, included into this class to support old versions.</p
         <a href="#method_add_post_meta_fields" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/rest-api/Controllers/Version1/class-wc-rest-products-v1-controller.php"><a href="../files/woocommerce-includes-rest-api-controllers-version1-class-wc-rest-products-v1-controller.html#source-view.1550">includes/rest-api/Controllers/Version1/class-wc-rest-products-v1-controller.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/rest-api/Controllers/Version1/class-wc-rest-products-v1-controller.php"><a href="../files/woocommerce-includes-rest-api-controllers-version1-class-wc-rest-products-v1-controller.html#source-view.1555">includes/rest-api/Controllers/Version1/class-wc-rest-products-v1-controller.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1550</span>
+    <span class="phpdocumentor-element-found-in__line">1555</span>
 </aside>
 
         <p class="phpdocumentor-summary">Add post meta fields.</p>
@@ -2624,9 +2634,9 @@ Updated from WordPress 5.3, included into this class to support old versions.</p
         <a href="#method_delete_post" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/rest-api/Controllers/Version1/class-wc-rest-products-v1-controller.php"><a href="../files/woocommerce-includes-rest-api-controllers-version1-class-wc-rest-products-v1-controller.html#source-view.1603">includes/rest-api/Controllers/Version1/class-wc-rest-products-v1-controller.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/rest-api/Controllers/Version1/class-wc-rest-products-v1-controller.php"><a href="../files/woocommerce-includes-rest-api-controllers-version1-class-wc-rest-products-v1-controller.html#source-view.1608">includes/rest-api/Controllers/Version1/class-wc-rest-products-v1-controller.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1603</span>
+    <span class="phpdocumentor-element-found-in__line">1608</span>
 </aside>
 
         <p class="phpdocumentor-summary">Delete post.</p>
@@ -2700,9 +2710,9 @@ Updated from WordPress 5.3, included into this class to support old versions.</p
         <a href="#method_get_attribute_options" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/rest-api/Controllers/Version1/class-wc-rest-products-v1-controller.php"><a href="../files/woocommerce-includes-rest-api-controllers-version1-class-wc-rest-products-v1-controller.html#source-view.374">includes/rest-api/Controllers/Version1/class-wc-rest-products-v1-controller.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/rest-api/Controllers/Version1/class-wc-rest-products-v1-controller.php"><a href="../files/woocommerce-includes-rest-api-controllers-version1-class-wc-rest-products-v1-controller.html#source-view.379">includes/rest-api/Controllers/Version1/class-wc-rest-products-v1-controller.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">374</span>
+    <span class="phpdocumentor-element-found-in__line">379</span>
 </aside>
 
         <p class="phpdocumentor-summary">Get attribute options.</p>
@@ -2753,9 +2763,9 @@ Updated from WordPress 5.3, included into this class to support old versions.</p
         <a href="#method_get_attribute_taxonomy_label" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/rest-api/Controllers/Version1/class-wc-rest-products-v1-controller.php"><a href="../files/woocommerce-includes-rest-api-controllers-version1-class-wc-rest-products-v1-controller.html#source-view.330">includes/rest-api/Controllers/Version1/class-wc-rest-products-v1-controller.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/rest-api/Controllers/Version1/class-wc-rest-products-v1-controller.php"><a href="../files/woocommerce-includes-rest-api-controllers-version1-class-wc-rest-products-v1-controller.html#source-view.335">includes/rest-api/Controllers/Version1/class-wc-rest-products-v1-controller.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">330</span>
+    <span class="phpdocumentor-element-found-in__line">335</span>
 </aside>
 
         <p class="phpdocumentor-summary">Get attribute taxonomy label.</p>
@@ -2797,9 +2807,9 @@ Updated from WordPress 5.3, included into this class to support old versions.</p
         <a href="#method_get_attributes" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/rest-api/Controllers/Version1/class-wc-rest-products-v1-controller.php"><a href="../files/woocommerce-includes-rest-api-controllers-version1-class-wc-rest-products-v1-controller.html#source-view.390">includes/rest-api/Controllers/Version1/class-wc-rest-products-v1-controller.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/rest-api/Controllers/Version1/class-wc-rest-products-v1-controller.php"><a href="../files/woocommerce-includes-rest-api-controllers-version1-class-wc-rest-products-v1-controller.html#source-view.395">includes/rest-api/Controllers/Version1/class-wc-rest-products-v1-controller.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">390</span>
+    <span class="phpdocumentor-element-found-in__line">395</span>
 </aside>
 
         <p class="phpdocumentor-summary">Get the attributes for a product or product variation.</p>
@@ -2841,9 +2851,9 @@ Updated from WordPress 5.3, included into this class to support old versions.</p
         <a href="#method_get_default_attributes" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/rest-api/Controllers/Version1/class-wc-rest-products-v1-controller.php"><a href="../files/woocommerce-includes-rest-api-controllers-version1-class-wc-rest-products-v1-controller.html#source-view.343">includes/rest-api/Controllers/Version1/class-wc-rest-products-v1-controller.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/rest-api/Controllers/Version1/class-wc-rest-products-v1-controller.php"><a href="../files/woocommerce-includes-rest-api-controllers-version1-class-wc-rest-products-v1-controller.html#source-view.348">includes/rest-api/Controllers/Version1/class-wc-rest-products-v1-controller.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">343</span>
+    <span class="phpdocumentor-element-found-in__line">348</span>
 </aside>
 
         <p class="phpdocumentor-summary">Get default attributes.</p>
@@ -2885,9 +2895,9 @@ Updated from WordPress 5.3, included into this class to support old versions.</p
         <a href="#method_get_downloads" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/rest-api/Controllers/Version1/class-wc-rest-products-v1-controller.php"><a href="../files/woocommerce-includes-rest-api-controllers-version1-class-wc-rest-products-v1-controller.html#source-view.230">includes/rest-api/Controllers/Version1/class-wc-rest-products-v1-controller.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/rest-api/Controllers/Version1/class-wc-rest-products-v1-controller.php"><a href="../files/woocommerce-includes-rest-api-controllers-version1-class-wc-rest-products-v1-controller.html#source-view.235">includes/rest-api/Controllers/Version1/class-wc-rest-products-v1-controller.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">230</span>
+    <span class="phpdocumentor-element-found-in__line">235</span>
 </aside>
 
         <p class="phpdocumentor-summary">Get the downloads for a product or product variation.</p>
@@ -2929,9 +2939,9 @@ Updated from WordPress 5.3, included into this class to support old versions.</p
         <a href="#method_get_images" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/rest-api/Controllers/Version1/class-wc-rest-products-v1-controller.php"><a href="../files/woocommerce-includes-rest-api-controllers-version1-class-wc-rest-products-v1-controller.html#source-view.273">includes/rest-api/Controllers/Version1/class-wc-rest-products-v1-controller.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/rest-api/Controllers/Version1/class-wc-rest-products-v1-controller.php"><a href="../files/woocommerce-includes-rest-api-controllers-version1-class-wc-rest-products-v1-controller.html#source-view.278">includes/rest-api/Controllers/Version1/class-wc-rest-products-v1-controller.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">273</span>
+    <span class="phpdocumentor-element-found-in__line">278</span>
 </aside>
 
         <p class="phpdocumentor-summary">Get the images for a product or product variation.</p>
@@ -2973,9 +2983,9 @@ Updated from WordPress 5.3, included into this class to support old versions.</p
         <a href="#method_get_meta_data_for_response" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/rest-api/Controllers/Version3/class-wc-rest-controller.php"><a href="../files/woocommerce-includes-rest-api-controllers-version3-class-wc-rest-controller.html#source-view.599">includes/rest-api/Controllers/Version3/class-wc-rest-controller.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/rest-api/Controllers/Version3/class-wc-rest-controller.php"><a href="../files/woocommerce-includes-rest-api-controllers-version3-class-wc-rest-controller.html#source-view.645">includes/rest-api/Controllers/Version3/class-wc-rest-controller.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">599</span>
+    <span class="phpdocumentor-element-found-in__line">645</span>
 </aside>
 
         <p class="phpdocumentor-summary">Limit the contents of the meta_data property based on certain request parameters.</p>
@@ -3060,9 +3070,9 @@ Updated from WordPress 5.3, included into this class to support old versions.</p
         <a href="#method_get_post_types" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/rest-api/Controllers/Version1/class-wc-rest-products-v1-controller.php"><a href="../files/woocommerce-includes-rest-api-controllers-version1-class-wc-rest-products-v1-controller.html#source-view.128">includes/rest-api/Controllers/Version1/class-wc-rest-products-v1-controller.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/rest-api/Controllers/Version1/class-wc-rest-products-v1-controller.php"><a href="../files/woocommerce-includes-rest-api-controllers-version1-class-wc-rest-products-v1-controller.html#source-view.133">includes/rest-api/Controllers/Version1/class-wc-rest-products-v1-controller.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">128</span>
+    <span class="phpdocumentor-element-found-in__line">133</span>
 </aside>
 
         <p class="phpdocumentor-summary">Get post types.</p>
@@ -3092,9 +3102,9 @@ Updated from WordPress 5.3, included into this class to support old versions.</p
         <a href="#method_get_product_data" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/rest-api/Controllers/Version1/class-wc-rest-products-v1-controller.php"><a href="../files/woocommerce-includes-rest-api-controllers-version1-class-wc-rest-products-v1-controller.html#source-view.462">includes/rest-api/Controllers/Version1/class-wc-rest-products-v1-controller.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/rest-api/Controllers/Version1/class-wc-rest-products-v1-controller.php"><a href="../files/woocommerce-includes-rest-api-controllers-version1-class-wc-rest-products-v1-controller.html#source-view.467">includes/rest-api/Controllers/Version1/class-wc-rest-products-v1-controller.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">462</span>
+    <span class="phpdocumentor-element-found-in__line">467</span>
 </aside>
 
         <p class="phpdocumentor-summary">Get product data.</p>
@@ -3136,9 +3146,9 @@ Updated from WordPress 5.3, included into this class to support old versions.</p
         <a href="#method_get_product_menu_order" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/rest-api/Controllers/Version1/class-wc-rest-products-v1-controller.php"><a href="../files/woocommerce-includes-rest-api-controllers-version1-class-wc-rest-products-v1-controller.html#source-view.452">includes/rest-api/Controllers/Version1/class-wc-rest-products-v1-controller.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/rest-api/Controllers/Version1/class-wc-rest-products-v1-controller.php"><a href="../files/woocommerce-includes-rest-api-controllers-version1-class-wc-rest-products-v1-controller.html#source-view.457">includes/rest-api/Controllers/Version1/class-wc-rest-products-v1-controller.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">452</span>
+    <span class="phpdocumentor-element-found-in__line">457</span>
 </aside>
 
         <p class="phpdocumentor-summary">Get product menu order.</p>
@@ -3194,9 +3204,9 @@ Updated from WordPress 5.3, included into this class to support old versions.</p
         <a href="#method_get_taxonomy_terms" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/rest-api/Controllers/Version1/class-wc-rest-products-v1-controller.php"><a href="../files/woocommerce-includes-rest-api-controllers-version1-class-wc-rest-products-v1-controller.html#source-view.253">includes/rest-api/Controllers/Version1/class-wc-rest-products-v1-controller.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/rest-api/Controllers/Version1/class-wc-rest-products-v1-controller.php"><a href="../files/woocommerce-includes-rest-api-controllers-version1-class-wc-rest-products-v1-controller.html#source-view.258">includes/rest-api/Controllers/Version1/class-wc-rest-products-v1-controller.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">253</span>
+    <span class="phpdocumentor-element-found-in__line">258</span>
 </aside>
 
         <p class="phpdocumentor-summary">Get taxonomy terms.</p>
@@ -3247,9 +3257,9 @@ Updated from WordPress 5.3, included into this class to support old versions.</p
         <a href="#method_get_variation_data" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/rest-api/Controllers/Version1/class-wc-rest-products-v1-controller.php"><a href="../files/woocommerce-includes-rest-api-controllers-version1-class-wc-rest-products-v1-controller.html#source-view.540">includes/rest-api/Controllers/Version1/class-wc-rest-products-v1-controller.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/rest-api/Controllers/Version1/class-wc-rest-products-v1-controller.php"><a href="../files/woocommerce-includes-rest-api-controllers-version1-class-wc-rest-products-v1-controller.html#source-view.545">includes/rest-api/Controllers/Version1/class-wc-rest-products-v1-controller.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">540</span>
+    <span class="phpdocumentor-element-found-in__line">545</span>
 </aside>
 
         <p class="phpdocumentor-summary">Get an individual variation&#039;s data.</p>
@@ -3291,9 +3301,9 @@ Updated from WordPress 5.3, included into this class to support old versions.</p
         <a href="#method_prepare_item_for_database" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/rest-api/Controllers/Version1/class-wc-rest-products-v1-controller.php"><a href="../files/woocommerce-includes-rest-api-controllers-version1-class-wc-rest-products-v1-controller.html#source-view.667">includes/rest-api/Controllers/Version1/class-wc-rest-products-v1-controller.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/rest-api/Controllers/Version1/class-wc-rest-products-v1-controller.php"><a href="../files/woocommerce-includes-rest-api-controllers-version1-class-wc-rest-products-v1-controller.html#source-view.672">includes/rest-api/Controllers/Version1/class-wc-rest-products-v1-controller.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">667</span>
+    <span class="phpdocumentor-element-found-in__line">672</span>
 </aside>
 
         <p class="phpdocumentor-summary">Prepare a single product for create or update.</p>
@@ -3389,9 +3399,9 @@ prepare for WP_Query.</p>
         <a href="#method_prepare_links" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/rest-api/Controllers/Version1/class-wc-rest-products-v1-controller.php"><a href="../files/woocommerce-includes-rest-api-controllers-version1-class-wc-rest-products-v1-controller.html#source-view.642">includes/rest-api/Controllers/Version1/class-wc-rest-products-v1-controller.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/rest-api/Controllers/Version1/class-wc-rest-products-v1-controller.php"><a href="../files/woocommerce-includes-rest-api-controllers-version1-class-wc-rest-products-v1-controller.html#source-view.647">includes/rest-api/Controllers/Version1/class-wc-rest-products-v1-controller.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">642</span>
+    <span class="phpdocumentor-element-found-in__line">647</span>
 </aside>
 
         <p class="phpdocumentor-summary">Prepare links for the request.</p>
@@ -3442,9 +3452,9 @@ prepare for WP_Query.</p>
         <a href="#method_save_default_attributes" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/rest-api/Controllers/Version1/class-wc-rest-products-v1-controller.php"><a href="../files/woocommerce-includes-rest-api-controllers-version1-class-wc-rest-products-v1-controller.html#source-view.1004">includes/rest-api/Controllers/Version1/class-wc-rest-products-v1-controller.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/rest-api/Controllers/Version1/class-wc-rest-products-v1-controller.php"><a href="../files/woocommerce-includes-rest-api-controllers-version1-class-wc-rest-products-v1-controller.html#source-view.1009">includes/rest-api/Controllers/Version1/class-wc-rest-products-v1-controller.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1004</span>
+    <span class="phpdocumentor-element-found-in__line">1009</span>
 </aside>
 
         <p class="phpdocumentor-summary">Save default attributes.</p>
@@ -3509,9 +3519,9 @@ prepare for WP_Query.</p>
         <a href="#method_save_downloadable_files" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/rest-api/Controllers/Version1/class-wc-rest-products-v1-controller.php"><a href="../files/woocommerce-includes-rest-api-controllers-version1-class-wc-rest-products-v1-controller.html#source-view.953">includes/rest-api/Controllers/Version1/class-wc-rest-products-v1-controller.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/rest-api/Controllers/Version1/class-wc-rest-products-v1-controller.php"><a href="../files/woocommerce-includes-rest-api-controllers-version1-class-wc-rest-products-v1-controller.html#source-view.958">includes/rest-api/Controllers/Version1/class-wc-rest-products-v1-controller.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">953</span>
+    <span class="phpdocumentor-element-found-in__line">958</span>
 </aside>
 
         <p class="phpdocumentor-summary">Save downloadable files.</p>
@@ -3571,9 +3581,9 @@ prepare for WP_Query.</p>
         <a href="#method_save_product_images" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/rest-api/Controllers/Version1/class-wc-rest-products-v1-controller.php"><a href="../files/woocommerce-includes-rest-api-controllers-version1-class-wc-rest-products-v1-controller.html#source-view.833">includes/rest-api/Controllers/Version1/class-wc-rest-products-v1-controller.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/rest-api/Controllers/Version1/class-wc-rest-products-v1-controller.php"><a href="../files/woocommerce-includes-rest-api-controllers-version1-class-wc-rest-products-v1-controller.html#source-view.838">includes/rest-api/Controllers/Version1/class-wc-rest-products-v1-controller.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">833</span>
+    <span class="phpdocumentor-element-found-in__line">838</span>
 </aside>
 
         <p class="phpdocumentor-summary">Save product images.</p>
@@ -3644,9 +3654,9 @@ prepare for WP_Query.</p>
         <a href="#method_save_product_meta" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/rest-api/Controllers/Version1/class-wc-rest-products-v1-controller.php"><a href="../files/woocommerce-includes-rest-api-controllers-version1-class-wc-rest-products-v1-controller.html#source-view.1064">includes/rest-api/Controllers/Version1/class-wc-rest-products-v1-controller.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/rest-api/Controllers/Version1/class-wc-rest-products-v1-controller.php"><a href="../files/woocommerce-includes-rest-api-controllers-version1-class-wc-rest-products-v1-controller.html#source-view.1069">includes/rest-api/Controllers/Version1/class-wc-rest-products-v1-controller.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1064</span>
+    <span class="phpdocumentor-element-found-in__line">1069</span>
 </aside>
 
         <p class="phpdocumentor-summary">Save product meta.</p>
@@ -3717,9 +3727,9 @@ prepare for WP_Query.</p>
         <a href="#method_save_product_shipping_data" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/rest-api/Controllers/Version1/class-wc-rest-products-v1-controller.php"><a href="../files/woocommerce-includes-rest-api-controllers-version1-class-wc-rest-products-v1-controller.html#source-view.907">includes/rest-api/Controllers/Version1/class-wc-rest-products-v1-controller.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/rest-api/Controllers/Version1/class-wc-rest-products-v1-controller.php"><a href="../files/woocommerce-includes-rest-api-controllers-version1-class-wc-rest-products-v1-controller.html#source-view.912">includes/rest-api/Controllers/Version1/class-wc-rest-products-v1-controller.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">907</span>
+    <span class="phpdocumentor-element-found-in__line">912</span>
 </aside>
 
         <p class="phpdocumentor-summary">Save product shipping data.</p>
@@ -3770,9 +3780,9 @@ prepare for WP_Query.</p>
         <a href="#method_save_taxonomy_terms" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/rest-api/Controllers/Version1/class-wc-rest-products-v1-controller.php"><a href="../files/woocommerce-includes-rest-api-controllers-version1-class-wc-rest-products-v1-controller.html#source-view.983">includes/rest-api/Controllers/Version1/class-wc-rest-products-v1-controller.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/rest-api/Controllers/Version1/class-wc-rest-products-v1-controller.php"><a href="../files/woocommerce-includes-rest-api-controllers-version1-class-wc-rest-products-v1-controller.html#source-view.988">includes/rest-api/Controllers/Version1/class-wc-rest-products-v1-controller.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">983</span>
+    <span class="phpdocumentor-element-found-in__line">988</span>
 </aside>
 
         <p class="phpdocumentor-summary">Save taxonomy terms.</p>
@@ -3832,9 +3842,9 @@ prepare for WP_Query.</p>
         <a href="#method_save_variations_data" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/rest-api/Controllers/Version1/class-wc-rest-products-v1-controller.php"><a href="../files/woocommerce-includes-rest-api-controllers-version1-class-wc-rest-products-v1-controller.html#source-view.1367">includes/rest-api/Controllers/Version1/class-wc-rest-products-v1-controller.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/rest-api/Controllers/Version1/class-wc-rest-products-v1-controller.php"><a href="../files/woocommerce-includes-rest-api-controllers-version1-class-wc-rest-products-v1-controller.html#source-view.1372">includes/rest-api/Controllers/Version1/class-wc-rest-products-v1-controller.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1367</span>
+    <span class="phpdocumentor-element-found-in__line">1372</span>
 </aside>
 
         <p class="phpdocumentor-summary">Save variations.</p>
@@ -3900,9 +3910,9 @@ prepare for WP_Query.</p>
         <a href="#method_set_product_images" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/rest-api/Controllers/Version1/class-wc-rest-products-v1-controller.php"><a href="../files/woocommerce-includes-rest-api-controllers-version1-class-wc-rest-products-v1-controller.html#source-view.847">includes/rest-api/Controllers/Version1/class-wc-rest-products-v1-controller.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/rest-api/Controllers/Version1/class-wc-rest-products-v1-controller.php"><a href="../files/woocommerce-includes-rest-api-controllers-version1-class-wc-rest-products-v1-controller.html#source-view.852">includes/rest-api/Controllers/Version1/class-wc-rest-products-v1-controller.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">847</span>
+    <span class="phpdocumentor-element-found-in__line">852</span>
 </aside>
 
         <p class="phpdocumentor-summary">Set product images.</p>
@@ -3968,9 +3978,9 @@ prepare for WP_Query.</p>
         <a href="#method_set_product_meta" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/rest-api/Controllers/Version1/class-wc-rest-products-v1-controller.php"><a href="../files/woocommerce-includes-rest-api-controllers-version1-class-wc-rest-products-v1-controller.html#source-view.1079">includes/rest-api/Controllers/Version1/class-wc-rest-products-v1-controller.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/rest-api/Controllers/Version1/class-wc-rest-products-v1-controller.php"><a href="../files/woocommerce-includes-rest-api-controllers-version1-class-wc-rest-products-v1-controller.html#source-view.1084">includes/rest-api/Controllers/Version1/class-wc-rest-products-v1-controller.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1079</span>
+    <span class="phpdocumentor-element-found-in__line">1084</span>
 </aside>
 
         <p class="phpdocumentor-summary">Set product meta.</p>
@@ -4036,9 +4046,9 @@ prepare for WP_Query.</p>
         <a href="#method_update_post_meta_fields" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/rest-api/Controllers/Version1/class-wc-rest-products-v1-controller.php"><a href="../files/woocommerce-includes-rest-api-controllers-version1-class-wc-rest-products-v1-controller.html#source-view.1561">includes/rest-api/Controllers/Version1/class-wc-rest-products-v1-controller.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/rest-api/Controllers/Version1/class-wc-rest-products-v1-controller.php"><a href="../files/woocommerce-includes-rest-api-controllers-version1-class-wc-rest-products-v1-controller.html#source-view.1566">includes/rest-api/Controllers/Version1/class-wc-rest-products-v1-controller.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1561</span>
+    <span class="phpdocumentor-element-found-in__line">1566</span>
 </aside>
 
         <p class="phpdocumentor-summary">Update post meta fields.</p>
@@ -4089,7 +4099,7 @@ prepare for WP_Query.</p>
 
     <footer class="phpdocumentor phpdocumentor-footer">
     <div class="phpdocumentor-section">
-        <span>WooCommerce Code Reference API documentation generated by <a href="http://www.phpdoc.org/">phpDocumentor</a> on July 25th, 2024 at 11:33 am.</span>
+        <span>WooCommerce Code Reference API documentation generated by <a href="http://www.phpdoc.org/">phpDocumentor</a> on May 16th, 2025 at 09:14 am.</span>
     </div>
 </footer>
 
@@ -4101,7 +4111,7 @@ prepare for WP_Query.</p>
             'searchIndex': '..\/js\/searchIndex.json'
         };
     </script>
-    <script src="../js/searchIndex.js?updated=1721907197"></script>
-    <script src="../js/search.js?updated=1721907197"></script>
+    <script src="../js/searchIndex.js?updated=1747386875"></script>
+    <script src="../js/search.js?updated=1747386875"></script>
 </body>
 </html>

@@ -4,14 +4,13 @@
     <meta charset="utf-8">
     <title>WooCommerce Code Reference</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="../images/favicon.png" />
-    <link rel="apple-touch-icon" href="../images/apple-touch-icon.png"/>
-    <link rel="apple-touch-icon" sizes="72x72" href="../images/apple-touch-icon-72x72.png"/>
-    <link rel="apple-touch-icon" sizes="114x114" href="../images/apple-touch-icon-114x114.png"/>
+    <link rel="icon" href="../images/favicon-32x32.png" sizes="32x32" />
+    <link rel="icon" href="../images/favicon-192x192.png" sizes="192x192" />
+    <link rel="apple-touch-icon" href="../images/favicon-180x180.png" />
+
     <link rel="stylesheet" href="../css/normalize.css">
-    <link rel="stylesheet" href="../css/base.css?updated=1721907194">
-    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../css/template.css?updated=1721907194">
+    <link rel="stylesheet" href="../css/base.css?updated=1747386871">
+    <link rel="stylesheet" href="../css/template.css?updated=1747386871">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0/css/all.min.css" integrity="sha256-ybRkN9dBjhcS2qrW1z+hfCxq+1aBdwyQM5wlQoQVt/0=" crossorigin="anonymous" />
             <script src="https://cdn.jsdelivr.net/npm/css-vars-ponyfill@2"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0/js/all.min.js" integrity="sha256-0vuk8LXoyrmCjp1f0O300qo1M75ZQyhH9X3J6d+scmk=" crossorigin="anonymous"></script>
@@ -27,19 +26,24 @@
 		'content_group' : 'WooCommerce Core Code Reference',
 	});
 </script>
-        </head>
+        <script src="../js/prism.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            window.dispatchEvent(new HashChangeEvent('hashchange'));
+        });
+    </script>
+</head>
 <body id="top">
     <header class="phpdocumentor-top-header">
     <section class="phpdocumentor-section">
         <div class="site-branding">
-            <a class="site-logo" href="../index.html"><img width="180" src="../images/logo.svg" alt="WooCommerce" /></a>
+            <a class="site-logo" href="../index.html"><img src="../images/logo.png" alt="WooCommerce" /></a>
         </div>
         <nav class="main-navigation">
             <ul>
                 <li><a href="../hooks/hooks.html">Hooks Reference</a></li>
-                <li><a href="https://docs.woocommerce.com/">Documentation</a></li>
+                <li><a href="https://developer.woocommerce.com/docs/">Documentation</a></li>
                 <li><a href="https://woocommerce.github.io/woocommerce-rest-api-docs/">REST API Docs</a></li>
-                <li><a href="https://woocommerce.com/careers/?utm_source=woocommerce+core+code+reference&utm_medium=devdocs&utm_campaign=woo+careers" target="_blank">We're hiring!</a></li>
             </ul>
         </nav>
     </section>
@@ -47,7 +51,7 @@
 
 <div class="phpdocumentor-header">
     <section class="phpdocumentor-section">
-        <h1 class="phpdocumentor-title">WooCommerce Code Reference</h1>
+        <h1 class="phpdocumentor-title"><a href="../index.html">WooCommerce Code Reference</a></h1>
         <section class="phpdocumentor-search">
     <label class="phpdocumentor-label">
         <span class="visually-hidden">Search (click ESC to close search results)</span>
@@ -68,6 +72,10 @@
                                         <h4 class="phpdocumentor-sidebar__root-namespace"><a href="../namespaces/woocommerce.html"><abbr title="\WooCommerce">WooCommerce</abbr></a></h4>
                 <ul class="phpdocumentor-list">
                                             <li><a href="../namespaces/woocommerce-admin.html"><abbr title="\WooCommerce\Admin">Admin</abbr></a></li>
+                                    </ul>
+                            <h4 class="phpdocumentor-sidebar__root-namespace"><a href="../namespaces/mailpoet.html"><abbr title="\MailPoet">MailPoet</abbr></a></h4>
+                <ul class="phpdocumentor-list">
+                                            <li><a href="../namespaces/mailpoet-emaileditor.html"><abbr title="\MailPoet\EmailEditor">EmailEditor</abbr></a></li>
                                     </ul>
                             <h4 class="phpdocumentor-sidebar__root-namespace"><a href="../namespaces/automattic.html"><abbr title="\Automattic">Automattic</abbr></a></h4>
                 <ul class="phpdocumentor-list">
@@ -113,8 +121,10 @@
                                     <li><a href="../packages/WooCommerce-Widgets.html"><abbr title="\WooCommerce\Widgets">Widgets</abbr></a></li>
                                     <li><a href="../packages/WooCommerce-Uninstaller.html"><abbr title="\WooCommerce\Uninstaller">Uninstaller</abbr></a></li>
                             </ul>
-                                <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/WoocommerceAdmin.html"><abbr title="\WoocommerceAdmin">WoocommerceAdmin</abbr></a></h3>
-                                <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/WoocommerceNavigation.html"><abbr title="\WoocommerceNavigation">WoocommerceNavigation</abbr></a></h3>
+                                <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/MailPoet.html"><abbr title="\MailPoet">MailPoet</abbr></a></h3>
+                        <ul class="phpdocumentor-list">
+                                    <li><a href="../packages/MailPoet-EmailEditor.html"><abbr title="\MailPoet\EmailEditor">EmailEditor</abbr></a></li>
+                            </ul>
                                 <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/Automattic.html"><abbr title="\Automattic">Automattic</abbr></a></h3>
                         <ul class="phpdocumentor-list">
                                     <li><a href="../packages/Automattic-WooCommerce.html"><abbr title="\Automattic\WooCommerce">WooCommerce</abbr></a></li>
@@ -154,9 +164,6 @@
         </div>
     
     
-            <span class="phpdocumentor-element__extends">
-            Uses
-                            <abbr title="\Automattic\WooCommerce\Internal\Traits\AccessiblePrivateMethods">AccessiblePrivateMethods</abbr>                    </span>
     </h2>
 
         <aside class="phpdocumentor-element-found-in">
@@ -556,13 +563,6 @@ all custom filters are removed.</dd>
 </dt>
 <dd>Is the front page a page we define?</dd>
 
-            <dt class="phpdocumentor-table-of-contents__entry -method -private">
-    <a href="../classes/WC-Query.html#method_product_query_post_clauses">product_query_post_clauses()</a>
-    <span>
-                        &nbsp;: array&lt;string|int, mixed&gt;    </span>
-</dt>
-<dd>Add extra clauses to the product query.</dd>
-
         </dl>
 
 
@@ -589,9 +589,9 @@ all custom filters are removed.</dd>
                                 </span>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-query.php"><a href="../files/woocommerce-includes-class-wc-query.html#source-view.26">includes/class-wc-query.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-query.php"><a href="../files/woocommerce-includes-class-wc-query.html#source-view.24">includes/class-wc-query.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">26</span>
+    <span class="phpdocumentor-element-found-in__line">24</span>
 </aside>
 
         <p class="phpdocumentor-summary">Query vars to add to wp.</p>
@@ -621,9 +621,9 @@ all custom filters are removed.</dd>
                                 </span>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-query.php"><a href="../files/woocommerce-includes-class-wc-query.html#source-view.40">includes/class-wc-query.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-query.php"><a href="../files/woocommerce-includes-class-wc-query.html#source-view.38">includes/class-wc-query.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">40</span>
+    <span class="phpdocumentor-element-found-in__line">38</span>
 </aside>
 
         <p class="phpdocumentor-summary">Stores chosen attributes.</p>
@@ -653,9 +653,9 @@ all custom filters are removed.</dd>
                                 </span>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-query.php"><a href="../files/woocommerce-includes-class-wc-query.html#source-view.47">includes/class-wc-query.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-query.php"><a href="../files/woocommerce-includes-class-wc-query.html#source-view.45">includes/class-wc-query.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">47</span>
+    <span class="phpdocumentor-element-found-in__line">45</span>
 </aside>
 
         <p class="phpdocumentor-summary">The instance of the class that helps filtering with the product attributes lookup table.</p>
@@ -685,9 +685,9 @@ all custom filters are removed.</dd>
                                 </span>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-query.php"><a href="../files/woocommerce-includes-class-wc-query.html#source-view.33">includes/class-wc-query.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-query.php"><a href="../files/woocommerce-includes-class-wc-query.html#source-view.31">includes/class-wc-query.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">33</span>
+    <span class="phpdocumentor-element-found-in__line">31</span>
 </aside>
 
         <p class="phpdocumentor-summary">Reference to the main product query on the page.</p>
@@ -721,9 +721,9 @@ all custom filters are removed.</dd>
         <a href="#method___construct" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-query.php"><a href="../files/woocommerce-includes-class-wc-query.html#source-view.52">includes/class-wc-query.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-query.php"><a href="../files/woocommerce-includes-class-wc-query.html#source-view.50">includes/class-wc-query.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">52</span>
+    <span class="phpdocumentor-element-found-in__line">50</span>
 </aside>
 
         <p class="phpdocumentor-summary">Constructor for the query class. Hooks in methods.</p>
@@ -753,9 +753,9 @@ all custom filters are removed.</dd>
         <a href="#method_add_endpoints" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-query.php"><a href="../files/woocommerce-includes-class-wc-query.html#source-view.207">includes/class-wc-query.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-query.php"><a href="../files/woocommerce-includes-class-wc-query.html#source-view.205">includes/class-wc-query.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">207</span>
+    <span class="phpdocumentor-element-found-in__line">205</span>
 </aside>
 
         <p class="phpdocumentor-summary">Add endpoints for query vars.</p>
@@ -785,9 +785,9 @@ all custom filters are removed.</dd>
         <a href="#method_add_query_vars" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-query.php"><a href="../files/woocommerce-includes-class-wc-query.html#source-view.223">includes/class-wc-query.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-query.php"><a href="../files/woocommerce-includes-class-wc-query.html#source-view.221">includes/class-wc-query.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">223</span>
+    <span class="phpdocumentor-element-found-in__line">221</span>
 </aside>
 
         <p class="phpdocumentor-summary">Add query vars.</p>
@@ -829,9 +829,9 @@ all custom filters are removed.</dd>
         <a href="#method_adjust_posts_count" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-query.php"><a href="../files/woocommerce-includes-class-wc-query.html#source-view.468">includes/class-wc-query.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-query.php"><a href="../files/woocommerce-includes-class-wc-query.html#source-view.466">includes/class-wc-query.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">468</span>
+    <span class="phpdocumentor-element-found-in__line">466</span>
 </aside>
 
         <p class="phpdocumentor-summary">This function used to be hooked to found_posts and adjust the posts count when the filtering by attribute
@@ -951,9 +951,9 @@ the input unchanged, since the pull request in which it was introduced has been 
         <a href="#method_get_current_endpoint" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-query.php"><a href="../files/woocommerce-includes-class-wc-query.html#source-view.244">includes/class-wc-query.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-query.php"><a href="../files/woocommerce-includes-class-wc-query.html#source-view.242">includes/class-wc-query.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">244</span>
+    <span class="phpdocumentor-element-found-in__line">242</span>
 </aside>
 
         <p class="phpdocumentor-summary">Get query current active query var.</p>
@@ -983,9 +983,9 @@ the input unchanged, since the pull request in which it was introduced has been 
         <a href="#method_get_endpoint_title" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-query.php"><a href="../files/woocommerce-includes-class-wc-query.html#source-view.119">includes/class-wc-query.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-query.php"><a href="../files/woocommerce-includes-class-wc-query.html#source-view.117">includes/class-wc-query.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">119</span>
+    <span class="phpdocumentor-element-found-in__line">117</span>
 </aside>
 
         <p class="phpdocumentor-summary">Get page title for an endpoint.</p>
@@ -1059,9 +1059,9 @@ the input unchanged, since the pull request in which it was introduced has been 
         <a href="#method_get_endpoints_mask" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-query.php"><a href="../files/woocommerce-includes-class-wc-query.html#source-view.190">includes/class-wc-query.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-query.php"><a href="../files/woocommerce-includes-class-wc-query.html#source-view.188">includes/class-wc-query.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">190</span>
+    <span class="phpdocumentor-element-found-in__line">188</span>
 </aside>
 
         <p class="phpdocumentor-summary">Endpoint mask describing the places the endpoint should be added.</p>
@@ -1105,9 +1105,9 @@ the input unchanged, since the pull request in which it was introduced has been 
         <a href="#method_get_errors" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-query.php"><a href="../files/woocommerce-includes-class-wc-query.html#source-view.76">includes/class-wc-query.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-query.php"><a href="../files/woocommerce-includes-class-wc-query.html#source-view.74">includes/class-wc-query.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">76</span>
+    <span class="phpdocumentor-element-found-in__line">74</span>
 </aside>
 
         <p class="phpdocumentor-summary">Get any errors from querystring.</p>
@@ -1137,9 +1137,9 @@ the input unchanged, since the pull request in which it was introduced has been 
         <a href="#method_get_layered_nav_chosen_attributes" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-query.php"><a href="../files/woocommerce-includes-class-wc-query.html#source-view.919">includes/class-wc-query.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-query.php"><a href="../files/woocommerce-includes-class-wc-query.html#source-view.927">includes/class-wc-query.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">919</span>
+    <span class="phpdocumentor-element-found-in__line">927</span>
 </aside>
 
         <p class="phpdocumentor-summary">Get an array of attributes and terms selected with the layered nav widget.</p>
@@ -1169,9 +1169,9 @@ the input unchanged, since the pull request in which it was introduced has been 
         <a href="#method_get_main_meta_query" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-query.php"><a href="../files/woocommerce-includes-class-wc-query.html#source-view.872">includes/class-wc-query.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-query.php"><a href="../files/woocommerce-includes-class-wc-query.html#source-view.880">includes/class-wc-query.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">872</span>
+    <span class="phpdocumentor-element-found-in__line">880</span>
 </aside>
 
         <p class="phpdocumentor-summary">Get the meta query which was used by the main query.</p>
@@ -1201,9 +1201,9 @@ the input unchanged, since the pull request in which it was introduced has been 
         <a href="#method_get_main_query" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-query.php"><a href="../files/woocommerce-includes-class-wc-query.html#source-view.852">includes/class-wc-query.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-query.php"><a href="../files/woocommerce-includes-class-wc-query.html#source-view.860">includes/class-wc-query.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">852</span>
+    <span class="phpdocumentor-element-found-in__line">860</span>
 </aside>
 
         <p class="phpdocumentor-summary">Get the main query which product queries ran against.</p>
@@ -1233,9 +1233,9 @@ the input unchanged, since the pull request in which it was introduced has been 
         <a href="#method_get_main_search_query_sql" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-query.php"><a href="../files/woocommerce-includes-class-wc-query.html#source-view.882">includes/class-wc-query.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-query.php"><a href="../files/woocommerce-includes-class-wc-query.html#source-view.890">includes/class-wc-query.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">882</span>
+    <span class="phpdocumentor-element-found-in__line">890</span>
 </aside>
 
         <p class="phpdocumentor-summary">Based on WP_Query::parse_search</p>
@@ -1265,9 +1265,9 @@ the input unchanged, since the pull request in which it was introduced has been 
         <a href="#method_get_main_tax_query" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-query.php"><a href="../files/woocommerce-includes-class-wc-query.html#source-view.861">includes/class-wc-query.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-query.php"><a href="../files/woocommerce-includes-class-wc-query.html#source-view.869">includes/class-wc-query.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">861</span>
+    <span class="phpdocumentor-element-found-in__line">869</span>
 </aside>
 
         <p class="phpdocumentor-summary">Get the tax query which was used by the main query.</p>
@@ -1297,9 +1297,9 @@ the input unchanged, since the pull request in which it was introduced has been 
         <a href="#method_get_meta_query" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-query.php"><a href="../files/woocommerce-includes-class-wc-query.html#source-view.770">includes/class-wc-query.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-query.php"><a href="../files/woocommerce-includes-class-wc-query.html#source-view.778">includes/class-wc-query.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">770</span>
+    <span class="phpdocumentor-element-found-in__line">778</span>
 </aside>
 
         <p class="phpdocumentor-summary">Appends meta queries to an array.</p>
@@ -1350,9 +1350,9 @@ the input unchanged, since the pull request in which it was introduced has been 
         <a href="#method_get_products_in_view" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-query.php"><a href="../files/woocommerce-includes-class-wc-query.html#source-view.1002">includes/class-wc-query.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-query.php"><a href="../files/woocommerce-includes-class-wc-query.html#source-view.1010">includes/class-wc-query.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1002</span>
+    <span class="phpdocumentor-element-found-in__line">1010</span>
 </aside>
 
         <p class="phpdocumentor-summary">Get an unpaginated list all product IDs (both filtered and unfiltered). Makes use of transients.</p>
@@ -1397,9 +1397,9 @@ the input unchanged, since the pull request in which it was introduced has been 
         <a href="#method_get_query_vars" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-query.php"><a href="../files/woocommerce-includes-class-wc-query.html#source-view.235">includes/class-wc-query.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-query.php"><a href="../files/woocommerce-includes-class-wc-query.html#source-view.233">includes/class-wc-query.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">235</span>
+    <span class="phpdocumentor-element-found-in__line">233</span>
 </aside>
 
         <p class="phpdocumentor-summary">Get query vars.</p>
@@ -1429,9 +1429,9 @@ the input unchanged, since the pull request in which it was introduced has been 
         <a href="#method_get_tax_query" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-query.php"><a href="../files/woocommerce-includes-class-wc-query.html#source-view.784">includes/class-wc-query.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-query.php"><a href="../files/woocommerce-includes-class-wc-query.html#source-view.792">includes/class-wc-query.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">784</span>
+    <span class="phpdocumentor-element-found-in__line">792</span>
 </aside>
 
         <p class="phpdocumentor-summary">Appends tax queries to an array.</p>
@@ -1482,9 +1482,9 @@ the input unchanged, since the pull request in which it was introduced has been 
         <a href="#method_handle_get_posts" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-query.php"><a href="../files/woocommerce-includes-class-wc-query.html#source-view.433">includes/class-wc-query.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-query.php"><a href="../files/woocommerce-includes-class-wc-query.html#source-view.431">includes/class-wc-query.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">433</span>
+    <span class="phpdocumentor-element-found-in__line">431</span>
 </aside>
 
         <p class="phpdocumentor-summary">Handler for the &#039;the_posts&#039; WP filter.</p>
@@ -1535,9 +1535,9 @@ the input unchanged, since the pull request in which it was introduced has been 
         <a href="#method_init_query_vars" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-query.php"><a href="../files/woocommerce-includes-class-wc-query.html#source-view.88">includes/class-wc-query.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-query.php"><a href="../files/woocommerce-includes-class-wc-query.html#source-view.86">includes/class-wc-query.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">88</span>
+    <span class="phpdocumentor-element-found-in__line">86</span>
 </aside>
 
         <p class="phpdocumentor-summary">Init query vars by loading options.</p>
@@ -1567,9 +1567,9 @@ the input unchanged, since the pull request in which it was introduced has been 
         <a href="#method_layered_nav_init" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-query.php"><a href="../files/woocommerce-includes-class-wc-query.html#source-view.993">includes/class-wc-query.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-query.php"><a href="../files/woocommerce-includes-class-wc-query.html#source-view.1001">includes/class-wc-query.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">993</span>
+    <span class="phpdocumentor-element-found-in__line">1001</span>
 </aside>
 
         <p class="phpdocumentor-summary">Layered nav init.</p>
@@ -1613,9 +1613,9 @@ the input unchanged, since the pull request in which it was introduced has been 
         <a href="#method_layered_nav_query" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-query.php"><a href="../files/woocommerce-includes-class-wc-query.html#source-view.1013">includes/class-wc-query.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-query.php"><a href="../files/woocommerce-includes-class-wc-query.html#source-view.1021">includes/class-wc-query.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1013</span>
+    <span class="phpdocumentor-element-found-in__line">1021</span>
 </aside>
 
         <p class="phpdocumentor-summary">Layered Nav post filter.</p>
@@ -1672,9 +1672,9 @@ the input unchanged, since the pull request in which it was introduced has been 
         <a href="#method_order_by_popularity_post_clauses" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-query.php"><a href="../files/woocommerce-includes-class-wc-query.html#source-view.730">includes/class-wc-query.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-query.php"><a href="../files/woocommerce-includes-class-wc-query.html#source-view.738">includes/class-wc-query.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">730</span>
+    <span class="phpdocumentor-element-found-in__line">738</span>
 </aside>
 
         <p class="phpdocumentor-summary">WP Core does not let us change the sort direction for individual orderby params - https://core.trac.wordpress.org/ticket/17065.</p>
@@ -1717,9 +1717,9 @@ the input unchanged, since the pull request in which it was introduced has been 
         <a href="#method_order_by_price_asc_post_clauses" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-query.php"><a href="../files/woocommerce-includes-class-wc-query.html#source-view.704">includes/class-wc-query.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-query.php"><a href="../files/woocommerce-includes-class-wc-query.html#source-view.712">includes/class-wc-query.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">704</span>
+    <span class="phpdocumentor-element-found-in__line">712</span>
 </aside>
 
         <p class="phpdocumentor-summary">Handle numeric price sorting.</p>
@@ -1761,9 +1761,9 @@ the input unchanged, since the pull request in which it was introduced has been 
         <a href="#method_order_by_price_desc_post_clauses" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-query.php"><a href="../files/woocommerce-includes-class-wc-query.html#source-view.716">includes/class-wc-query.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-query.php"><a href="../files/woocommerce-includes-class-wc-query.html#source-view.724">includes/class-wc-query.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">716</span>
+    <span class="phpdocumentor-element-found-in__line">724</span>
 </aside>
 
         <p class="phpdocumentor-summary">Handle numeric price sorting.</p>
@@ -1805,9 +1805,9 @@ the input unchanged, since the pull request in which it was introduced has been 
         <a href="#method_order_by_rating_post_clauses" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-query.php"><a href="../files/woocommerce-includes-class-wc-query.html#source-view.742">includes/class-wc-query.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-query.php"><a href="../files/woocommerce-includes-class-wc-query.html#source-view.750">includes/class-wc-query.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">742</span>
+    <span class="phpdocumentor-element-found-in__line">750</span>
 </aside>
 
         <p class="phpdocumentor-summary">Order by rating post clauses.</p>
@@ -1849,9 +1849,9 @@ the input unchanged, since the pull request in which it was introduced has been 
         <a href="#method_parse_request" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-query.php"><a href="../files/woocommerce-includes-class-wc-query.html#source-view.258">includes/class-wc-query.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-query.php"><a href="../files/woocommerce-includes-class-wc-query.html#source-view.256">includes/class-wc-query.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">258</span>
+    <span class="phpdocumentor-element-found-in__line">256</span>
 </aside>
 
         <p class="phpdocumentor-summary">Parse the request and look for query vars - endpoints may not be supported.</p>
@@ -1881,9 +1881,9 @@ the input unchanged, since the pull request in which it was introduced has been 
         <a href="#method_pre_get_posts" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-query.php"><a href="../files/woocommerce-includes-class-wc-query.html#source-view.328">includes/class-wc-query.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-query.php"><a href="../files/woocommerce-includes-class-wc-query.html#source-view.326">includes/class-wc-query.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">328</span>
+    <span class="phpdocumentor-element-found-in__line">326</span>
 </aside>
 
         <p class="phpdocumentor-summary">Hook into pre_get_posts to do the main product query.</p>
@@ -1925,9 +1925,9 @@ the input unchanged, since the pull request in which it was introduced has been 
         <a href="#method_price_filter_post_clauses" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-query.php"><a href="../files/woocommerce-includes-class-wc-query.html#source-view.662">includes/class-wc-query.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-query.php"><a href="../files/woocommerce-includes-class-wc-query.html#source-view.670">includes/class-wc-query.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">662</span>
+    <span class="phpdocumentor-element-found-in__line">670</span>
 </aside>
 
         <p class="phpdocumentor-summary">Custom query used to filter products by price.</p>
@@ -1992,9 +1992,9 @@ the input unchanged, since the pull request in which it was introduced has been 
         <a href="#method_product_query" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-query.php"><a href="../files/woocommerce-includes-class-wc-query.html#source-view.518">includes/class-wc-query.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-query.php"><a href="../files/woocommerce-includes-class-wc-query.html#source-view.516">includes/class-wc-query.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">518</span>
+    <span class="phpdocumentor-element-found-in__line">516</span>
 </aside>
 
         <p class="phpdocumentor-summary">Query the products, applying sorting/ordering etc.</p>
@@ -2037,9 +2037,9 @@ the input unchanged, since the pull request in which it was introduced has been 
         <a href="#method_rating_filter_meta_query" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-query.php"><a href="../files/woocommerce-includes-class-wc-query.html#source-view.962">includes/class-wc-query.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-query.php"><a href="../files/woocommerce-includes-class-wc-query.html#source-view.970">includes/class-wc-query.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">962</span>
+    <span class="phpdocumentor-element-found-in__line">970</span>
 </aside>
 
         <p class="phpdocumentor-summary">Return a meta query for filtering by rating.</p>
@@ -2084,9 +2084,9 @@ the input unchanged, since the pull request in which it was introduced has been 
         <a href="#method_remove_add_to_cart_pagination" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-query.php"><a href="../files/woocommerce-includes-class-wc-query.html#source-view.952">includes/class-wc-query.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-query.php"><a href="../files/woocommerce-includes-class-wc-query.html#source-view.960">includes/class-wc-query.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">952</span>
+    <span class="phpdocumentor-element-found-in__line">960</span>
 </aside>
 
         <p class="phpdocumentor-summary">Remove the add-to-cart param from pagination urls.</p>
@@ -2160,9 +2160,9 @@ the input unchanged, since the pull request in which it was introduced has been 
         <a href="#method_remove_posts_where" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-query.php"><a href="../files/woocommerce-includes-class-wc-query.html#source-view.1034">includes/class-wc-query.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-query.php"><a href="../files/woocommerce-includes-class-wc-query.html#source-view.1042">includes/class-wc-query.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1034</span>
+    <span class="phpdocumentor-element-found-in__line">1042</span>
 </aside>
 
         <p class="phpdocumentor-summary">Remove the posts_where filter.</p>
@@ -2241,9 +2241,9 @@ the input unchanged, since the pull request in which it was introduced has been 
         <a href="#method_remove_product_query_filters" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-query.php"><a href="../files/woocommerce-includes-class-wc-query.html#source-view.451">includes/class-wc-query.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-query.php"><a href="../files/woocommerce-includes-class-wc-query.html#source-view.449">includes/class-wc-query.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">451</span>
+    <span class="phpdocumentor-element-found-in__line">449</span>
 </aside>
 
         <p class="phpdocumentor-summary">Pre_get_posts above may adjust the main query to add WooCommerce logic. When this query is done, we need to ensure
@@ -2287,9 +2287,9 @@ all custom filters are removed.</p>
         <a href="#method_reset_chosen_attributes" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-query.php"><a href="../files/woocommerce-includes-class-wc-query.html#source-view.69">includes/class-wc-query.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-query.php"><a href="../files/woocommerce-includes-class-wc-query.html#source-view.67">includes/class-wc-query.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">69</span>
+    <span class="phpdocumentor-element-found-in__line">67</span>
 </aside>
 
         <p class="phpdocumentor-summary">Reset the chosen attributes so that get_layered_nav_chosen_attributes will get them from the query again.</p>
@@ -2319,9 +2319,9 @@ all custom filters are removed.</p>
         <a href="#method_search_post_excerpt" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-query.php"><a href="../files/woocommerce-includes-class-wc-query.html#source-view.1024">includes/class-wc-query.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-query.php"><a href="../files/woocommerce-includes-class-wc-query.html#source-view.1032">includes/class-wc-query.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1024</span>
+    <span class="phpdocumentor-element-found-in__line">1032</span>
 </aside>
 
         <p class="phpdocumentor-summary">Search post excerpt.</p>
@@ -2380,16 +2380,16 @@ all custom filters are removed.</p>
         <a href="#method_stock_status_meta_query" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-query.php"><a href="../files/woocommerce-includes-class-wc-query.html#source-view.984">includes/class-wc-query.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-query.php"><a href="../files/woocommerce-includes-class-wc-query.html#source-view.992">includes/class-wc-query.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">984</span>
+    <span class="phpdocumentor-element-found-in__line">992</span>
 </aside>
 
         <p class="phpdocumentor-summary">Returns a meta query to handle product stock status.</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature -deprecated">
     <span class="phpdocumentor-signature__visibility">public</span>
-                <span class="phpdocumentor-signature__name">stock_status_meta_query</span><span>(</span><span class="phpdocumentor-signature__argument"><span>[</span><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$status</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">&#039;instock&#039;</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">array&lt;string|int, mixed&gt;</span></code>
+                <span class="phpdocumentor-signature__name">stock_status_meta_query</span><span>(</span><span class="phpdocumentor-signature__argument"><span>[</span><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$status</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">ProductStockStatus::IN_STOCK</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">array&lt;string|int, mixed&gt;</span></code>
 
         <section class="phpdocumentor-description"></section>
 
@@ -2398,7 +2398,7 @@ all custom filters are removed.</p>
                     <dt class="phpdocumentor-argument-list__entry">
                 <span class="phpdocumentor-signature__argument__name">$status</span>
                 : <span class="phpdocumentor-signature__argument__return-type">string</span>
-                 = <span class="phpdocumentor-signature__argument__default-value">&#039;instock&#039;</span>            </dt>
+                 = <span class="phpdocumentor-signature__argument__default-value">ProductStockStatus::IN_STOCK</span>            </dt>
             <dd class="phpdocumentor-argument-list__definition">
                     <section class="phpdocumentor-description"><p>(default: 'instock').</p>
 </section>
@@ -2439,9 +2439,9 @@ all custom filters are removed.</p>
         <a href="#method_visibility_meta_query" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-query.php"><a href="../files/woocommerce-includes-class-wc-query.html#source-view.973">includes/class-wc-query.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-query.php"><a href="../files/woocommerce-includes-class-wc-query.html#source-view.981">includes/class-wc-query.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">973</span>
+    <span class="phpdocumentor-element-found-in__line">981</span>
 </aside>
 
         <p class="phpdocumentor-summary">Returns a meta query to handle product visibility.</p>
@@ -2498,9 +2498,9 @@ all custom filters are removed.</p>
         <a href="#method_wpseo_metadesc" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-query.php"><a href="../files/woocommerce-includes-class-wc-query.html#source-view.497">includes/class-wc-query.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-query.php"><a href="../files/woocommerce-includes-class-wc-query.html#source-view.495">includes/class-wc-query.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">497</span>
+    <span class="phpdocumentor-element-found-in__line">495</span>
 </aside>
 
         <p class="phpdocumentor-summary">WP SEO meta description.</p>
@@ -2531,9 +2531,9 @@ all custom filters are removed.</p>
         <a href="#method_wpseo_metakey" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-query.php"><a href="../files/woocommerce-includes-class-wc-query.html#source-view.508">includes/class-wc-query.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-query.php"><a href="../files/woocommerce-includes-class-wc-query.html#source-view.506">includes/class-wc-query.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">508</span>
+    <span class="phpdocumentor-element-found-in__line">506</span>
 </aside>
 
         <p class="phpdocumentor-summary">WP SEO meta key.</p>
@@ -2564,9 +2564,9 @@ all custom filters are removed.</p>
         <a href="#method_get_current_posts" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-query.php"><a href="../files/woocommerce-includes-class-wc-query.html#source-view.486">includes/class-wc-query.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-query.php"><a href="../files/woocommerce-includes-class-wc-query.html#source-view.484">includes/class-wc-query.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">486</span>
+    <span class="phpdocumentor-element-found-in__line">484</span>
 </aside>
 
         <p class="phpdocumentor-summary">Get the posts (or the ids of the posts) found in the current WP loop.</p>
@@ -2596,9 +2596,9 @@ all custom filters are removed.</p>
         <a href="#method_get_layered_nav_chosen_attributes_inst" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-query.php"><a href="../files/woocommerce-includes-class-wc-query.html#source-view.477">includes/class-wc-query.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-query.php"><a href="../files/woocommerce-includes-class-wc-query.html#source-view.475">includes/class-wc-query.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">477</span>
+    <span class="phpdocumentor-element-found-in__line">475</span>
 </aside>
 
         <p class="phpdocumentor-summary">Instance version of get_layered_nav_chosen_attributes, needed for unit tests.</p>
@@ -2628,9 +2628,9 @@ all custom filters are removed.</p>
         <a href="#method_append_product_sorting_table_join" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-query.php"><a href="../files/woocommerce-includes-class-wc-query.html#source-view.754">includes/class-wc-query.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-query.php"><a href="../files/woocommerce-includes-class-wc-query.html#source-view.762">includes/class-wc-query.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">754</span>
+    <span class="phpdocumentor-element-found-in__line">762</span>
 </aside>
 
         <p class="phpdocumentor-summary">Join wc_product_meta_lookup to posts if not already joined.</p>
@@ -2672,9 +2672,9 @@ all custom filters are removed.</p>
         <a href="#method_filter_out_valid_front_page_query_vars" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-query.php"><a href="../files/woocommerce-includes-class-wc-query.html#source-view.300">includes/class-wc-query.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-query.php"><a href="../files/woocommerce-includes-class-wc-query.html#source-view.298">includes/class-wc-query.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">300</span>
+    <span class="phpdocumentor-element-found-in__line">298</span>
 </aside>
 
         <p class="phpdocumentor-summary">Returns a copy of `$query` with all query vars that are allowed on the front page stripped.</p>
@@ -2717,9 +2717,9 @@ all custom filters are removed.</p>
         <a href="#method_is_query_var_valid_on_front_page" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-query.php"><a href="../files/woocommerce-includes-class-wc-query.html#source-view.316">includes/class-wc-query.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-query.php"><a href="../files/woocommerce-includes-class-wc-query.html#source-view.314">includes/class-wc-query.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">316</span>
+    <span class="phpdocumentor-element-found-in__line">314</span>
 </aside>
 
         <p class="phpdocumentor-summary">Checks whether a query var is allowed on the front page or not.</p>
@@ -2761,9 +2761,9 @@ all custom filters are removed.</p>
         <a href="#method_is_showing_page_on_front" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-query.php"><a href="../files/woocommerce-includes-class-wc-query.html#source-view.279">includes/class-wc-query.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-query.php"><a href="../files/woocommerce-includes-class-wc-query.html#source-view.277">includes/class-wc-query.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">279</span>
+    <span class="phpdocumentor-element-found-in__line">277</span>
 </aside>
 
         <p class="phpdocumentor-summary">Are we currently on the front page?</p>
@@ -2805,9 +2805,9 @@ all custom filters are removed.</p>
         <a href="#method_page_on_front_is" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-query.php"><a href="../files/woocommerce-includes-class-wc-query.html#source-view.289">includes/class-wc-query.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-query.php"><a href="../files/woocommerce-includes-class-wc-query.html#source-view.287">includes/class-wc-query.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">289</span>
+    <span class="phpdocumentor-element-found-in__line">287</span>
 </aside>
 
         <p class="phpdocumentor-summary">Is the front page a page we define?</p>
@@ -2838,59 +2838,6 @@ all custom filters are removed.</p>
             &mdash; <span class="phpdocumentor-return-value__description"></span>
     
 </article>
-                    <article
-        class="phpdocumentor-element
-            -method
-            -private
-                                                        "
->
-    <h4 class="phpdocumentor-element__name" id="method_product_query_post_clauses">
-        product_query_post_clauses()
-        <a href="#method_product_query_post_clauses" class="headerlink"><i class="fas fa-link"></i></a>
-    </h4>
-    <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-query.php"><a href="../files/woocommerce-includes-class-wc-query.html#source-view.555">includes/class-wc-query.php</a></abbr>
-    :
-    <span class="phpdocumentor-element-found-in__line">555</span>
-</aside>
-
-        <p class="phpdocumentor-summary">Add extra clauses to the product query.</p>
-
-    <code class="phpdocumentor-code phpdocumentor-signature ">
-    <span class="phpdocumentor-signature__visibility">private</span>
-                <span class="phpdocumentor-signature__name">product_query_post_clauses</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__name">$args</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type"><abbr title="\WP_Query">WP_Query</abbr>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$wp_query</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">array&lt;string|int, mixed&gt;</span></code>
-
-        <section class="phpdocumentor-description"></section>
-
-        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
-    <dl class="phpdocumentor-argument-list">
-                    <dt class="phpdocumentor-argument-list__entry">
-                <span class="phpdocumentor-signature__argument__name">$args</span>
-                : <span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;</span>
-                            </dt>
-            <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"><p>Product query clauses.</p>
-</section>
-
-            </dd>
-                    <dt class="phpdocumentor-argument-list__entry">
-                <span class="phpdocumentor-signature__argument__name">$wp_query</span>
-                : <span class="phpdocumentor-signature__argument__return-type"><abbr title="\WP_Query">WP_Query</abbr></span>
-                            </dt>
-            <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"><p>The current product query.</p>
-</section>
-
-            </dd>
-            </dl>
-
-    
-
-        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">array&lt;string|int, mixed&gt;</span>
-            &mdash; <span class="phpdocumentor-return-value__description">The updated product query clauses array.</span>
-    
-</article>
             </section>
 
     </article>
@@ -2902,7 +2849,7 @@ all custom filters are removed.</p>
 
     <footer class="phpdocumentor phpdocumentor-footer">
     <div class="phpdocumentor-section">
-        <span>WooCommerce Code Reference API documentation generated by <a href="http://www.phpdoc.org/">phpDocumentor</a> on July 25th, 2024 at 11:33 am.</span>
+        <span>WooCommerce Code Reference API documentation generated by <a href="http://www.phpdoc.org/">phpDocumentor</a> on May 16th, 2025 at 09:14 am.</span>
     </div>
 </footer>
 
@@ -2914,7 +2861,7 @@ all custom filters are removed.</p>
             'searchIndex': '..\/js\/searchIndex.json'
         };
     </script>
-    <script src="../js/searchIndex.js?updated=1721907194"></script>
-    <script src="../js/search.js?updated=1721907194"></script>
+    <script src="../js/searchIndex.js?updated=1747386871"></script>
+    <script src="../js/search.js?updated=1747386871"></script>
 </body>
 </html>

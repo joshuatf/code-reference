@@ -4,14 +4,13 @@
     <meta charset="utf-8">
     <title>WooCommerce Code Reference</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="../images/favicon.png" />
-    <link rel="apple-touch-icon" href="../images/apple-touch-icon.png"/>
-    <link rel="apple-touch-icon" sizes="72x72" href="../images/apple-touch-icon-72x72.png"/>
-    <link rel="apple-touch-icon" sizes="114x114" href="../images/apple-touch-icon-114x114.png"/>
+    <link rel="icon" href="../images/favicon-32x32.png" sizes="32x32" />
+    <link rel="icon" href="../images/favicon-192x192.png" sizes="192x192" />
+    <link rel="apple-touch-icon" href="../images/favicon-180x180.png" />
+
     <link rel="stylesheet" href="../css/normalize.css">
-    <link rel="stylesheet" href="../css/base.css?updated=1721907195">
-    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../css/template.css?updated=1721907195">
+    <link rel="stylesheet" href="../css/base.css?updated=1747386873">
+    <link rel="stylesheet" href="../css/template.css?updated=1747386873">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0/css/all.min.css" integrity="sha256-ybRkN9dBjhcS2qrW1z+hfCxq+1aBdwyQM5wlQoQVt/0=" crossorigin="anonymous" />
             <script src="https://cdn.jsdelivr.net/npm/css-vars-ponyfill@2"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0/js/all.min.js" integrity="sha256-0vuk8LXoyrmCjp1f0O300qo1M75ZQyhH9X3J6d+scmk=" crossorigin="anonymous"></script>
@@ -27,19 +26,24 @@
 		'content_group' : 'WooCommerce Core Code Reference',
 	});
 </script>
-        </head>
+        <script src="../js/prism.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            window.dispatchEvent(new HashChangeEvent('hashchange'));
+        });
+    </script>
+</head>
 <body id="top">
     <header class="phpdocumentor-top-header">
     <section class="phpdocumentor-section">
         <div class="site-branding">
-            <a class="site-logo" href="../index.html"><img width="180" src="../images/logo.svg" alt="WooCommerce" /></a>
+            <a class="site-logo" href="../index.html"><img src="../images/logo.png" alt="WooCommerce" /></a>
         </div>
         <nav class="main-navigation">
             <ul>
                 <li><a href="../hooks/hooks.html">Hooks Reference</a></li>
-                <li><a href="https://docs.woocommerce.com/">Documentation</a></li>
+                <li><a href="https://developer.woocommerce.com/docs/">Documentation</a></li>
                 <li><a href="https://woocommerce.github.io/woocommerce-rest-api-docs/">REST API Docs</a></li>
-                <li><a href="https://woocommerce.com/careers/?utm_source=woocommerce+core+code+reference&utm_medium=devdocs&utm_campaign=woo+careers" target="_blank">We're hiring!</a></li>
             </ul>
         </nav>
     </section>
@@ -47,7 +51,7 @@
 
 <div class="phpdocumentor-header">
     <section class="phpdocumentor-section">
-        <h1 class="phpdocumentor-title">WooCommerce Code Reference</h1>
+        <h1 class="phpdocumentor-title"><a href="../index.html">WooCommerce Code Reference</a></h1>
         <section class="phpdocumentor-search">
     <label class="phpdocumentor-label">
         <span class="visually-hidden">Search (click ESC to close search results)</span>
@@ -68,6 +72,10 @@
                                         <h4 class="phpdocumentor-sidebar__root-namespace"><a href="../namespaces/woocommerce.html"><abbr title="\WooCommerce">WooCommerce</abbr></a></h4>
                 <ul class="phpdocumentor-list">
                                             <li><a href="../namespaces/woocommerce-admin.html"><abbr title="\WooCommerce\Admin">Admin</abbr></a></li>
+                                    </ul>
+                            <h4 class="phpdocumentor-sidebar__root-namespace"><a href="../namespaces/mailpoet.html"><abbr title="\MailPoet">MailPoet</abbr></a></h4>
+                <ul class="phpdocumentor-list">
+                                            <li><a href="../namespaces/mailpoet-emaileditor.html"><abbr title="\MailPoet\EmailEditor">EmailEditor</abbr></a></li>
                                     </ul>
                             <h4 class="phpdocumentor-sidebar__root-namespace"><a href="../namespaces/automattic.html"><abbr title="\Automattic">Automattic</abbr></a></h4>
                 <ul class="phpdocumentor-list">
@@ -113,8 +121,10 @@
                                     <li><a href="../packages/WooCommerce-Widgets.html"><abbr title="\WooCommerce\Widgets">Widgets</abbr></a></li>
                                     <li><a href="../packages/WooCommerce-Uninstaller.html"><abbr title="\WooCommerce\Uninstaller">Uninstaller</abbr></a></li>
                             </ul>
-                                <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/WoocommerceAdmin.html"><abbr title="\WoocommerceAdmin">WoocommerceAdmin</abbr></a></h3>
-                                <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/WoocommerceNavigation.html"><abbr title="\WoocommerceNavigation">WoocommerceNavigation</abbr></a></h3>
+                                <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/MailPoet.html"><abbr title="\MailPoet">MailPoet</abbr></a></h3>
+                        <ul class="phpdocumentor-list">
+                                    <li><a href="../packages/MailPoet-EmailEditor.html"><abbr title="\MailPoet\EmailEditor">EmailEditor</abbr></a></li>
+                            </ul>
                                 <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/Automattic.html"><abbr title="\Automattic">Automattic</abbr></a></h3>
                         <ul class="phpdocumentor-list">
                                     <li><a href="../packages/Automattic-WooCommerce.html"><abbr title="\Automattic\WooCommerce">WooCommerce</abbr></a></li>
@@ -215,11 +225,32 @@
 
 <dl class="phpdocumentor-table-of-contents">
                 <dt class="phpdocumentor-table-of-contents__entry -property -public">
+    <a href="../classes/WC-Email.html#property_bcc">$bcc</a>
+    <span>
+                &nbsp;: string            </span>
+</dt>
+<dd>Bcc recipients for the email.</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -property -public">
+    <a href="../classes/WC-Email.html#property_cc">$cc</a>
+    <span>
+                &nbsp;: string            </span>
+</dt>
+<dd>Cc recipients for the email.</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -property -public">
     <a href="../classes/WC-Email.html#property_description">$description</a>
     <span>
                 &nbsp;: string            </span>
 </dt>
 <dd>Description for the email.</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -property -public">
+    <a href="../classes/WC-Email.html#property_email_improvements_enabled">$email_improvements_enabled</a>
+    <span>
+                &nbsp;: bool            </span>
+</dt>
+<dd>Whether email improvements feature is enabled.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -property -public">
     <a href="../classes/WC-Email.html#property_email_type">$email_type</a>
@@ -297,6 +328,13 @@
                 &nbsp;: bool            </span>
 </dt>
 <dd>Is the password generated?</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -property -public">
+    <a href="../classes/WC-Email.html#property_placeholders">$placeholders</a>
+    <span>
+                &nbsp;: array&lt;string|int, mixed&gt;            </span>
+</dt>
+<dd>Strings to find/replace in subjects/headings.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -property -public">
     <a href="../classes/WC-Email.html#property_plain_replace">$plain_replace</a>
@@ -431,13 +469,6 @@
                 &nbsp;: bool            </span>
 </dt>
 <dd>True when the email notification is sent manually only.</dd>
-
-            <dt class="phpdocumentor-table-of-contents__entry -property -protected">
-    <a href="../classes/WC-Email.html#property_placeholders">$placeholders</a>
-    <span>
-                &nbsp;: array&lt;string|int, mixed&gt;            </span>
-</dt>
-<dd>Strings to find/replace in subjects/headings.</dd>
 
                 <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="../classes/WC-Email-Customer-New-Account.html#method___construct">__construct()</a>
@@ -580,11 +611,25 @@
 <dd>Get email attachments.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a href="../classes/WC-Email.html#method_get_bcc_recipient">get_bcc_recipient()</a>
+    <span>
+                        &nbsp;: string    </span>
+</dt>
+<dd>Get valid Bcc recipients.</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="../classes/WC-Email.html#method_get_blogname">get_blogname()</a>
     <span>
                         &nbsp;: string    </span>
 </dt>
 <dd>Get WordPress blog name.</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a href="../classes/WC-Email.html#method_get_cc_recipient">get_cc_recipient()</a>
+    <span>
+                        &nbsp;: string    </span>
+</dt>
+<dd>Get valid Cc recipients.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="../classes/WC-Email.html#method_get_content">get_content()</a>
@@ -867,6 +912,13 @@
 <dd>Send an email.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a href="../classes/WC-Email.html#method_set_object">set_object()</a>
+    <span>
+                        &nbsp;: void    </span>
+</dt>
+<dd>Set the object for the outgoing email.</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="../classes/WC-Settings-API.html#method_set_post_data">set_post_data()</a>
     <span>
                         &nbsp;: mixed    </span>
@@ -993,11 +1045,32 @@
 <dd>Generate set password URL link for a new user.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -protected">
+    <a href="../classes/WC-Email.html#method_get_bcc_field">get_bcc_field()</a>
+    <span>
+                        &nbsp;: array&lt;string|int, mixed&gt;    </span>
+</dt>
+<dd>Get the bcc field definition.</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -protected">
+    <a href="../classes/WC-Email.html#method_get_cc_field">get_cc_field()</a>
+    <span>
+                        &nbsp;: array&lt;string|int, mixed&gt;    </span>
+</dt>
+<dd>Get the cc field definition.</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -protected">
     <a href="../classes/WC-Email.html#method_get_must_use_css_styles">get_must_use_css_styles()</a>
     <span>
                         &nbsp;: string    </span>
 </dt>
 <dd>Returns CSS styles that should be included with all HTML e-mails, regardless of theme specific customizations.</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -protected">
+    <a href="../classes/WC-Email.html#method_get_option_or_transient">get_option_or_transient()</a>
+    <span>
+                        &nbsp;: mixed    </span>
+</dt>
+<dd>Get an option or transient for email preview.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -protected">
     <a href="../classes/WC-Email.html#method_move_template_action">move_template_action()</a>
@@ -1053,6 +1126,70 @@
             -public
                                                         "
 >
+    <h4 class="phpdocumentor-element__name" id="property_bcc">
+        $bcc
+        <a href="#property_bcc" class="headerlink"><i class="fas fa-link"></i></a>
+        <span class="phpdocumentor-element__modifiers">
+                                </span>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/emails/class-wc-email.php"><a href="../files/woocommerce-includes-emails-class-wc-email.html#source-view.121">includes/emails/class-wc-email.php</a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">121</span>
+</aside>
+
+        <p class="phpdocumentor-summary">Bcc recipients for the email.</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+        <span class="phpdocumentor-signature__type">string</span>
+    <span class="phpdocumentor-signature__name">$bcc</span>
+    </code>
+
+        <section class="phpdocumentor-description"></section>
+
+    
+
+</article>
+                    <article
+        class="
+            phpdocumentor-element
+            -property
+            -public
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="property_cc">
+        $cc
+        <a href="#property_cc" class="headerlink"><i class="fas fa-link"></i></a>
+        <span class="phpdocumentor-element__modifiers">
+                                </span>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/emails/class-wc-email.php"><a href="../files/woocommerce-includes-emails-class-wc-email.html#source-view.114">includes/emails/class-wc-email.php</a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">114</span>
+</aside>
+
+        <p class="phpdocumentor-summary">Cc recipients for the email.</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+        <span class="phpdocumentor-signature__type">string</span>
+    <span class="phpdocumentor-signature__name">$cc</span>
+    </code>
+
+        <section class="phpdocumentor-description"></section>
+
+    
+
+</article>
+                    <article
+        class="
+            phpdocumentor-element
+            -property
+            -public
+                                                        "
+>
     <h4 class="phpdocumentor-element__name" id="property_description">
         $description
         <a href="#property_description" class="headerlink"><i class="fas fa-link"></i></a>
@@ -1060,9 +1197,9 @@
                                 </span>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/emails/class-wc-email.php"><a href="../files/woocommerce-includes-emails-class-wc-email.html#source-view.58">includes/emails/class-wc-email.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/emails/class-wc-email.php"><a href="../files/woocommerce-includes-emails-class-wc-email.html#source-view.59">includes/emails/class-wc-email.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">58</span>
+    <span class="phpdocumentor-element-found-in__line">59</span>
 </aside>
 
         <p class="phpdocumentor-summary">Description for the email.</p>
@@ -1085,6 +1222,38 @@
             -public
                                                         "
 >
+    <h4 class="phpdocumentor-element__name" id="property_email_improvements_enabled">
+        $email_improvements_enabled
+        <a href="#property_email_improvements_enabled" class="headerlink"><i class="fas fa-link"></i></a>
+        <span class="phpdocumentor-element__modifiers">
+                                </span>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/emails/class-wc-email.php"><a href="../files/woocommerce-includes-emails-class-wc-email.html#source-view.258">includes/emails/class-wc-email.php</a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">258</span>
+</aside>
+
+        <p class="phpdocumentor-summary">Whether email improvements feature is enabled.</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+        <span class="phpdocumentor-signature__type">bool</span>
+    <span class="phpdocumentor-signature__name">$email_improvements_enabled</span>
+    </code>
+
+        <section class="phpdocumentor-description"></section>
+
+    
+
+</article>
+                    <article
+        class="
+            phpdocumentor-element
+            -property
+            -public
+                                                        "
+>
     <h4 class="phpdocumentor-element__name" id="property_email_type">
         $email_type
         <a href="#property_email_type" class="headerlink"><i class="fas fa-link"></i></a>
@@ -1092,9 +1261,9 @@
                                 </span>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/emails/class-wc-email.php"><a href="../files/woocommerce-includes-emails-class-wc-email.html#source-view.236">includes/emails/class-wc-email.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/emails/class-wc-email.php"><a href="../files/woocommerce-includes-emails-class-wc-email.html#source-view.251">includes/emails/class-wc-email.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">236</span>
+    <span class="phpdocumentor-element-found-in__line">251</span>
 </aside>
 
         <p class="phpdocumentor-summary">E-mail type: plain, html or multipart.</p>
@@ -1124,9 +1293,9 @@
                                 </span>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/emails/class-wc-email.php"><a href="../files/woocommerce-includes-emails-class-wc-email.html#source-view.51">includes/emails/class-wc-email.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/emails/class-wc-email.php"><a href="../files/woocommerce-includes-emails-class-wc-email.html#source-view.52">includes/emails/class-wc-email.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">51</span>
+    <span class="phpdocumentor-element-found-in__line">52</span>
 </aside>
 
         <p class="phpdocumentor-summary">&#039;yes&#039; if the method is enabled.</p>
@@ -1188,9 +1357,9 @@
                                 </span>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/emails/class-wc-email.php"><a href="../files/woocommerce-includes-emails-class-wc-email.html#source-view.221">includes/emails/class-wc-email.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/emails/class-wc-email.php"><a href="../files/woocommerce-includes-emails-class-wc-email.html#source-view.236">includes/emails/class-wc-email.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">221</span>
+    <span class="phpdocumentor-element-found-in__line">236</span>
 </aside>
 
         <p class="phpdocumentor-summary">Strings to find in subjects/headings.</p>
@@ -1267,9 +1436,9 @@
                                 </span>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/emails/class-wc-email.php"><a href="../files/woocommerce-includes-emails-class-wc-email.html#source-view.68">includes/emails/class-wc-email.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/emails/class-wc-email.php"><a href="../files/woocommerce-includes-emails-class-wc-email.html#source-view.69">includes/emails/class-wc-email.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">68</span>
+    <span class="phpdocumentor-element-found-in__line">69</span>
 </aside>
 
         <p class="phpdocumentor-summary">Default heading.</p>
@@ -1333,9 +1502,9 @@ get_default_x methods instead so localization can be done when needed.</p>
                                 </span>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/emails/class-wc-email.php"><a href="../files/woocommerce-includes-emails-class-wc-email.html#source-view.120">includes/emails/class-wc-email.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/emails/class-wc-email.php"><a href="../files/woocommerce-includes-emails-class-wc-email.html#source-view.135">includes/emails/class-wc-email.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">120</span>
+    <span class="phpdocumentor-element-found-in__line">135</span>
 </aside>
 
         <p class="phpdocumentor-summary">Mime boundary (for multipart emails).</p>
@@ -1365,9 +1534,9 @@ get_default_x methods instead so localization can be done when needed.</p>
                                 </span>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/emails/class-wc-email.php"><a href="../files/woocommerce-includes-emails-class-wc-email.html#source-view.127">includes/emails/class-wc-email.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/emails/class-wc-email.php"><a href="../files/woocommerce-includes-emails-class-wc-email.html#source-view.142">includes/emails/class-wc-email.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">127</span>
+    <span class="phpdocumentor-element-found-in__line">142</span>
 </aside>
 
         <p class="phpdocumentor-summary">Mime boundary header (for multipart emails).</p>
@@ -1397,9 +1566,9 @@ get_default_x methods instead so localization can be done when needed.</p>
                                 </span>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/emails/class-wc-email.php"><a href="../files/woocommerce-includes-emails-class-wc-email.html#source-view.113">includes/emails/class-wc-email.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/emails/class-wc-email.php"><a href="../files/woocommerce-includes-emails-class-wc-email.html#source-view.128">includes/emails/class-wc-email.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">113</span>
+    <span class="phpdocumentor-element-found-in__line">128</span>
 </aside>
 
         <p class="phpdocumentor-summary">Object this email is for, for example a customer, product, or email.</p>
@@ -1454,6 +1623,38 @@ get_default_x methods instead so localization can be done when needed.</p>
             -public
                                                         "
 >
+    <h4 class="phpdocumentor-element__name" id="property_placeholders">
+        $placeholders
+        <a href="#property_placeholders" class="headerlink"><i class="fas fa-link"></i></a>
+        <span class="phpdocumentor-element__modifiers">
+                                </span>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/emails/class-wc-email.php"><a href="../files/woocommerce-includes-emails-class-wc-email.html#source-view.228">includes/emails/class-wc-email.php</a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">228</span>
+</aside>
+
+        <p class="phpdocumentor-summary">Strings to find/replace in subjects/headings.</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+        <span class="phpdocumentor-signature__type">array&lt;string|int, mixed&gt;</span>
+    <span class="phpdocumentor-signature__name">$placeholders</span>
+     = <span class="phpdocumentor-signature__default-value">array()</span></code>
+
+        <section class="phpdocumentor-description"></section>
+
+    
+
+</article>
+                    <article
+        class="
+            phpdocumentor-element
+            -property
+            -public
+                                                        "
+>
     <h4 class="phpdocumentor-element__name" id="property_plain_replace">
         $plain_replace
         <a href="#property_plain_replace" class="headerlink"><i class="fas fa-link"></i></a>
@@ -1461,9 +1662,9 @@ get_default_x methods instead so localization can be done when needed.</p>
                                 </span>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/emails/class-wc-email.php"><a href="../files/woocommerce-includes-emails-class-wc-email.html#source-view.186">includes/emails/class-wc-email.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/emails/class-wc-email.php"><a href="../files/woocommerce-includes-emails-class-wc-email.html#source-view.201">includes/emails/class-wc-email.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">186</span>
+    <span class="phpdocumentor-element-found-in__line">201</span>
 </aside>
 
         <p class="phpdocumentor-summary">List of pattern replacements corresponding to patterns searched.</p>
@@ -1546,9 +1747,9 @@ get_default_x methods instead so localization can be done when needed.</p>
                                 </span>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/emails/class-wc-email.php"><a href="../files/woocommerce-includes-emails-class-wc-email.html#source-view.158">includes/emails/class-wc-email.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/emails/class-wc-email.php"><a href="../files/woocommerce-includes-emails-class-wc-email.html#source-view.173">includes/emails/class-wc-email.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">158</span>
+    <span class="phpdocumentor-element-found-in__line">173</span>
 </aside>
 
         <p class="phpdocumentor-summary">List of preg* regular expression patterns to search for,
@@ -1650,9 +1851,9 @@ get_default_x methods instead so localization can be done when needed.</p>
                                 </span>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/emails/class-wc-email.php"><a href="../files/woocommerce-includes-emails-class-wc-email.html#source-view.106">includes/emails/class-wc-email.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/emails/class-wc-email.php"><a href="../files/woocommerce-includes-emails-class-wc-email.html#source-view.107">includes/emails/class-wc-email.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">106</span>
+    <span class="phpdocumentor-element-found-in__line">107</span>
 </aside>
 
         <p class="phpdocumentor-summary">Recipients for the email.</p>
@@ -1682,9 +1883,9 @@ get_default_x methods instead so localization can be done when needed.</p>
                                 </span>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/emails/class-wc-email.php"><a href="../files/woocommerce-includes-emails-class-wc-email.html#source-view.229">includes/emails/class-wc-email.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/emails/class-wc-email.php"><a href="../files/woocommerce-includes-emails-class-wc-email.html#source-view.244">includes/emails/class-wc-email.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">229</span>
+    <span class="phpdocumentor-element-found-in__line">244</span>
 </aside>
 
         <p class="phpdocumentor-summary">Strings to replace in subjects/headings.</p>
@@ -1729,9 +1930,9 @@ get_default_x methods instead so localization can be done when needed.</p>
                                 </span>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/emails/class-wc-email.php"><a href="../files/woocommerce-includes-emails-class-wc-email.html#source-view.134">includes/emails/class-wc-email.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/emails/class-wc-email.php"><a href="../files/woocommerce-includes-emails-class-wc-email.html#source-view.149">includes/emails/class-wc-email.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">134</span>
+    <span class="phpdocumentor-element-found-in__line">149</span>
 </aside>
 
         <p class="phpdocumentor-summary">True when email is being sent.</p>
@@ -1825,9 +2026,9 @@ get_default_x methods instead so localization can be done when needed.</p>
                                 </span>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/emails/class-wc-email.php"><a href="../files/woocommerce-includes-emails-class-wc-email.html#source-view.78">includes/emails/class-wc-email.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/emails/class-wc-email.php"><a href="../files/woocommerce-includes-emails-class-wc-email.html#source-view.79">includes/emails/class-wc-email.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">78</span>
+    <span class="phpdocumentor-element-found-in__line">79</span>
 </aside>
 
         <p class="phpdocumentor-summary">Default subject.</p>
@@ -1859,9 +2060,9 @@ get_default_x methods instead so localization can be done when needed.</p>
                                 </span>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/emails/class-wc-email.php"><a href="../files/woocommerce-includes-emails-class-wc-email.html#source-view.99">includes/emails/class-wc-email.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/emails/class-wc-email.php"><a href="../files/woocommerce-includes-emails-class-wc-email.html#source-view.100">includes/emails/class-wc-email.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">99</span>
+    <span class="phpdocumentor-element-found-in__line">100</span>
 </aside>
 
         <p class="phpdocumentor-summary">Template path.</p>
@@ -1891,9 +2092,9 @@ get_default_x methods instead so localization can be done when needed.</p>
                                 </span>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/emails/class-wc-email.php"><a href="../files/woocommerce-includes-emails-class-wc-email.html#source-view.92">includes/emails/class-wc-email.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/emails/class-wc-email.php"><a href="../files/woocommerce-includes-emails-class-wc-email.html#source-view.93">includes/emails/class-wc-email.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">92</span>
+    <span class="phpdocumentor-element-found-in__line">93</span>
 </aside>
 
         <p class="phpdocumentor-summary">HTML template path.</p>
@@ -1923,9 +2124,9 @@ get_default_x methods instead so localization can be done when needed.</p>
                                 </span>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/emails/class-wc-email.php"><a href="../files/woocommerce-includes-emails-class-wc-email.html#source-view.85">includes/emails/class-wc-email.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/emails/class-wc-email.php"><a href="../files/woocommerce-includes-emails-class-wc-email.html#source-view.86">includes/emails/class-wc-email.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">85</span>
+    <span class="phpdocumentor-element-found-in__line">86</span>
 </aside>
 
         <p class="phpdocumentor-summary">Plain text template path.</p>
@@ -1955,9 +2156,9 @@ get_default_x methods instead so localization can be done when needed.</p>
                                 </span>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/emails/class-wc-email.php"><a href="../files/woocommerce-includes-emails-class-wc-email.html#source-view.44">includes/emails/class-wc-email.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/emails/class-wc-email.php"><a href="../files/woocommerce-includes-emails-class-wc-email.html#source-view.45">includes/emails/class-wc-email.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">44</span>
+    <span class="phpdocumentor-element-found-in__line">45</span>
 </aside>
 
         <p class="phpdocumentor-summary">Email method title.</p>
@@ -2083,9 +2284,9 @@ get_default_x methods instead so localization can be done when needed.</p>
                                 </span>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/emails/class-wc-email.php"><a href="../files/woocommerce-includes-emails-class-wc-email.html#source-view.148">includes/emails/class-wc-email.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/emails/class-wc-email.php"><a href="../files/woocommerce-includes-emails-class-wc-email.html#source-view.163">includes/emails/class-wc-email.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">148</span>
+    <span class="phpdocumentor-element-found-in__line">163</span>
 </aside>
 
         <p class="phpdocumentor-summary">True when the email notification is sent to customers.</p>
@@ -2147,9 +2348,9 @@ get_default_x methods instead so localization can be done when needed.</p>
                                 </span>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/emails/class-wc-email.php"><a href="../files/woocommerce-includes-emails-class-wc-email.html#source-view.141">includes/emails/class-wc-email.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/emails/class-wc-email.php"><a href="../files/woocommerce-includes-emails-class-wc-email.html#source-view.156">includes/emails/class-wc-email.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">141</span>
+    <span class="phpdocumentor-element-found-in__line">156</span>
 </aside>
 
         <p class="phpdocumentor-summary">True when the email notification is sent manually only.</p>
@@ -2159,38 +2360,6 @@ get_default_x methods instead so localization can be done when needed.</p>
         <span class="phpdocumentor-signature__type">bool</span>
     <span class="phpdocumentor-signature__name">$manual</span>
      = <span class="phpdocumentor-signature__default-value">alse</span></code>
-
-        <section class="phpdocumentor-description"></section>
-
-    
-
-</article>
-                    <article
-        class="
-            phpdocumentor-element
-            -property
-            -protected
-                                                        "
->
-    <h4 class="phpdocumentor-element__name" id="property_placeholders">
-        $placeholders
-        <a href="#property_placeholders" class="headerlink"><i class="fas fa-link"></i></a>
-        <span class="phpdocumentor-element__modifiers">
-                                </span>
-    </h4>
-    <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/emails/class-wc-email.php"><a href="../files/woocommerce-includes-emails-class-wc-email.html#source-view.213">includes/emails/class-wc-email.php</a></abbr>
-    :
-    <span class="phpdocumentor-element-found-in__line">213</span>
-</aside>
-
-        <p class="phpdocumentor-summary">Strings to find/replace in subjects/headings.</p>
-
-    <code class="phpdocumentor-code phpdocumentor-signature ">
-    <span class="phpdocumentor-signature__visibility">protected</span>
-        <span class="phpdocumentor-signature__type">array&lt;string|int, mixed&gt;</span>
-    <span class="phpdocumentor-signature__name">$placeholders</span>
-     = <span class="phpdocumentor-signature__default-value">array()</span></code>
 
         <section class="phpdocumentor-description"></section>
 
@@ -2414,9 +2583,9 @@ get_default_x methods instead so localization can be done when needed.</p>
         <a href="#method_format_string" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/emails/class-wc-email.php"><a href="../files/woocommerce-includes-emails-class-wc-email.html#source-view.297">includes/emails/class-wc-email.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/emails/class-wc-email.php"><a href="../files/woocommerce-includes-emails-class-wc-email.html#source-view.326">includes/emails/class-wc-email.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">297</span>
+    <span class="phpdocumentor-element-found-in__line">326</span>
 </aside>
 
         <p class="phpdocumentor-summary">Format email string.</p>
@@ -3271,9 +3440,9 @@ get_default_x methods instead so localization can be done when needed.</p>
         <a href="#method_get_additional_content" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/emails/class-wc-email.php"><a href="../files/woocommerce-includes-emails-class-wc-email.html#source-view.409">includes/emails/class-wc-email.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/emails/class-wc-email.php"><a href="../files/woocommerce-includes-emails-class-wc-email.html#source-view.438">includes/emails/class-wc-email.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">409</span>
+    <span class="phpdocumentor-element-found-in__line">438</span>
 </aside>
 
         <p class="phpdocumentor-summary">Return content from the additional_content field.</p>
@@ -3318,9 +3487,9 @@ get_default_x methods instead so localization can be done when needed.</p>
         <a href="#method_get_attachments" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/emails/class-wc-email.php"><a href="../files/woocommerce-includes-emails-class-wc-email.html#source-view.476">includes/emails/class-wc-email.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/emails/class-wc-email.php"><a href="../files/woocommerce-includes-emails-class-wc-email.html#source-view.588">includes/emails/class-wc-email.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">476</span>
+    <span class="phpdocumentor-element-found-in__line">588</span>
 </aside>
 
         <p class="phpdocumentor-summary">Get email attachments.</p>
@@ -3345,14 +3514,46 @@ get_default_x methods instead so localization can be done when needed.</p>
             -public
                                                         "
 >
+    <h4 class="phpdocumentor-element__name" id="method_get_bcc_recipient">
+        get_bcc_recipient()
+        <a href="#method_get_bcc_recipient" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/emails/class-wc-email.php"><a href="../files/woocommerce-includes-emails-class-wc-email.html#source-view.535">includes/emails/class-wc-email.php</a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">535</span>
+</aside>
+
+        <p class="phpdocumentor-summary">Get valid Bcc recipients.</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                <span class="phpdocumentor-signature__name">get_bcc_recipient</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">string</span></code>
+
+        <section class="phpdocumentor-description"></section>
+
+    
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">string</span>
+            &mdash; <span class="phpdocumentor-return-value__description"></span>
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                                        "
+>
     <h4 class="phpdocumentor-element__name" id="method_get_blogname">
         get_blogname()
         <a href="#method_get_blogname" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/emails/class-wc-email.php"><a href="../files/woocommerce-includes-emails-class-wc-email.html#source-view.573">includes/emails/class-wc-email.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/emails/class-wc-email.php"><a href="../files/woocommerce-includes-emails-class-wc-email.html#source-view.698">includes/emails/class-wc-email.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">573</span>
+    <span class="phpdocumentor-element-found-in__line">698</span>
 </aside>
 
         <p class="phpdocumentor-summary">Get WordPress blog name.</p>
@@ -3377,14 +3578,46 @@ get_default_x methods instead so localization can be done when needed.</p>
             -public
                                                         "
 >
+    <h4 class="phpdocumentor-element__name" id="method_get_cc_recipient">
+        get_cc_recipient()
+        <a href="#method_get_cc_recipient" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/emails/class-wc-email.php"><a href="../files/woocommerce-includes-emails-class-wc-email.html#source-view.513">includes/emails/class-wc-email.php</a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">513</span>
+</aside>
+
+        <p class="phpdocumentor-summary">Get valid Cc recipients.</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                <span class="phpdocumentor-signature__name">get_cc_recipient</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">string</span></code>
+
+        <section class="phpdocumentor-description"></section>
+
+    
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">string</span>
+            &mdash; <span class="phpdocumentor-return-value__description"></span>
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                                        "
+>
     <h4 class="phpdocumentor-element__name" id="method_get_content">
         get_content()
         <a href="#method_get_content" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/emails/class-wc-email.php"><a href="../files/woocommerce-includes-emails-class-wc-email.html#source-view.582">includes/emails/class-wc-email.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/emails/class-wc-email.php"><a href="../files/woocommerce-includes-emails-class-wc-email.html#source-view.707">includes/emails/class-wc-email.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">582</span>
+    <span class="phpdocumentor-element-found-in__line">707</span>
 </aside>
 
         <p class="phpdocumentor-summary">Get email content.</p>
@@ -3478,9 +3711,9 @@ get_default_x methods instead so localization can be done when needed.</p>
         <a href="#method_get_content_type" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/emails/class-wc-email.php"><a href="../files/woocommerce-includes-emails-class-wc-email.html#source-view.495">includes/emails/class-wc-email.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/emails/class-wc-email.php"><a href="../files/woocommerce-includes-emails-class-wc-email.html#source-view.620">includes/emails/class-wc-email.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">495</span>
+    <span class="phpdocumentor-element-found-in__line">620</span>
 </aside>
 
         <p class="phpdocumentor-summary">Get email content type.</p>
@@ -3704,9 +3937,9 @@ get_default_x methods instead so localization can be done when needed.</p>
         <a href="#method_get_description" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/emails/class-wc-email.php"><a href="../files/woocommerce-includes-emails-class-wc-email.html#source-view.525">includes/emails/class-wc-email.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/emails/class-wc-email.php"><a href="../files/woocommerce-includes-emails-class-wc-email.html#source-view.650">includes/emails/class-wc-email.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">525</span>
+    <span class="phpdocumentor-element-found-in__line">650</span>
 </aside>
 
         <p class="phpdocumentor-summary">Return the email&#039;s description</p>
@@ -3780,9 +4013,9 @@ get_default_x methods instead so localization can be done when needed.</p>
         <a href="#method_get_email_type" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/emails/class-wc-email.php"><a href="../files/woocommerce-includes-emails-class-wc-email.html#source-view.485">includes/emails/class-wc-email.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/emails/class-wc-email.php"><a href="../files/woocommerce-includes-emails-class-wc-email.html#source-view.597">includes/emails/class-wc-email.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">485</span>
+    <span class="phpdocumentor-element-found-in__line">597</span>
 </aside>
 
         <p class="phpdocumentor-summary">Return email type.</p>
@@ -3812,9 +4045,9 @@ get_default_x methods instead so localization can be done when needed.</p>
         <a href="#method_get_email_type_options" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/emails/class-wc-email.php"><a href="../files/woocommerce-includes-emails-class-wc-email.html#source-view.818">includes/emails/class-wc-email.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/emails/class-wc-email.php"><a href="../files/woocommerce-includes-emails-class-wc-email.html#source-view.991">includes/emails/class-wc-email.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">818</span>
+    <span class="phpdocumentor-element-found-in__line">991</span>
 </aside>
 
         <p class="phpdocumentor-summary">Email type options.</p>
@@ -4102,9 +4335,9 @@ get_default_x methods instead so localization can be done when needed.</p>
         <a href="#method_get_from_address" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/emails/class-wc-email.php"><a href="../files/woocommerce-includes-emails-class-wc-email.html#source-view.718">includes/emails/class-wc-email.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/emails/class-wc-email.php"><a href="../files/woocommerce-includes-emails-class-wc-email.html#source-view.843">includes/emails/class-wc-email.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">718</span>
+    <span class="phpdocumentor-element-found-in__line">843</span>
 </aside>
 
         <p class="phpdocumentor-summary">Get the from address for outgoing emails.</p>
@@ -4146,9 +4379,9 @@ get_default_x methods instead so localization can be done when needed.</p>
         <a href="#method_get_from_name" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/emails/class-wc-email.php"><a href="../files/woocommerce-includes-emails-class-wc-email.html#source-view.707">includes/emails/class-wc-email.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/emails/class-wc-email.php"><a href="../files/woocommerce-includes-emails-class-wc-email.html#source-view.832">includes/emails/class-wc-email.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">707</span>
+    <span class="phpdocumentor-element-found-in__line">832</span>
 </aside>
 
         <p class="phpdocumentor-summary">Get the from name for outgoing emails.</p>
@@ -4190,9 +4423,9 @@ get_default_x methods instead so localization can be done when needed.</p>
         <a href="#method_get_headers" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/emails/class-wc-email.php"><a href="../files/woocommerce-includes-emails-class-wc-email.html#source-view.457">includes/emails/class-wc-email.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/emails/class-wc-email.php"><a href="../files/woocommerce-includes-emails-class-wc-email.html#source-view.557">includes/emails/class-wc-email.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">457</span>
+    <span class="phpdocumentor-element-found-in__line">557</span>
 </aside>
 
         <p class="phpdocumentor-summary">Get email headers.</p>
@@ -4222,9 +4455,9 @@ get_default_x methods instead so localization can be done when needed.</p>
         <a href="#method_get_heading" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/emails/class-wc-email.php"><a href="../files/woocommerce-includes-emails-class-wc-email.html#source-view.436">includes/emails/class-wc-email.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/emails/class-wc-email.php"><a href="../files/woocommerce-includes-emails-class-wc-email.html#source-view.474">includes/emails/class-wc-email.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">436</span>
+    <span class="phpdocumentor-element-found-in__line">474</span>
 </aside>
 
         <p class="phpdocumentor-summary">Get email heading.</p>
@@ -4386,9 +4619,9 @@ get_default_x methods instead so localization can be done when needed.</p>
         <a href="#method_get_recipient" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/emails/class-wc-email.php"><a href="../files/woocommerce-includes-emails-class-wc-email.html#source-view.445">includes/emails/class-wc-email.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/emails/class-wc-email.php"><a href="../files/woocommerce-includes-emails-class-wc-email.html#source-view.492">includes/emails/class-wc-email.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">445</span>
+    <span class="phpdocumentor-element-found-in__line">492</span>
 </aside>
 
         <p class="phpdocumentor-summary">Get valid recipients.</p>
@@ -4418,9 +4651,9 @@ get_default_x methods instead so localization can be done when needed.</p>
         <a href="#method_get_subject" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/emails/class-wc-email.php"><a href="../files/woocommerce-includes-emails-class-wc-email.html#source-view.427">includes/emails/class-wc-email.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/emails/class-wc-email.php"><a href="../files/woocommerce-includes-emails-class-wc-email.html#source-view.456">includes/emails/class-wc-email.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">427</span>
+    <span class="phpdocumentor-element-found-in__line">456</span>
 </aside>
 
         <p class="phpdocumentor-summary">Get email subject.</p>
@@ -4450,9 +4683,9 @@ get_default_x methods instead so localization can be done when needed.</p>
         <a href="#method_get_template" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/emails/class-wc-email.php"><a href="../files/woocommerce-includes-emails-class-wc-email.html#source-view.853">includes/emails/class-wc-email.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/emails/class-wc-email.php"><a href="../files/woocommerce-includes-emails-class-wc-email.html#source-view.1026">includes/emails/class-wc-email.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">853</span>
+    <span class="phpdocumentor-element-found-in__line">1026</span>
 </aside>
 
         <p class="phpdocumentor-summary">Get template.</p>
@@ -4494,9 +4727,9 @@ get_default_x methods instead so localization can be done when needed.</p>
         <a href="#method_get_theme_template_file" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/emails/class-wc-email.php"><a href="../files/woocommerce-includes-emails-class-wc-email.html#source-view.902">includes/emails/class-wc-email.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/emails/class-wc-email.php"><a href="../files/woocommerce-includes-emails-class-wc-email.html#source-view.1075">includes/emails/class-wc-email.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">902</span>
+    <span class="phpdocumentor-element-found-in__line">1075</span>
 </aside>
 
         <p class="phpdocumentor-summary">Get the template file in the current theme.</p>
@@ -4538,9 +4771,9 @@ get_default_x methods instead so localization can be done when needed.</p>
         <a href="#method_get_title" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/emails/class-wc-email.php"><a href="../files/woocommerce-includes-emails-class-wc-email.html#source-view.516">includes/emails/class-wc-email.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/emails/class-wc-email.php"><a href="../files/woocommerce-includes-emails-class-wc-email.html#source-view.641">includes/emails/class-wc-email.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">516</span>
+    <span class="phpdocumentor-element-found-in__line">641</span>
 </aside>
 
         <p class="phpdocumentor-summary">Return the email&#039;s title</p>
@@ -4614,9 +4847,9 @@ get_default_x methods instead so localization can be done when needed.</p>
         <a href="#method_handle_multipart" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/emails/class-wc-email.php"><a href="../files/woocommerce-includes-emails-class-wc-email.html#source-view.274">includes/emails/class-wc-email.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/emails/class-wc-email.php"><a href="../files/woocommerce-includes-emails-class-wc-email.html#source-view.303">includes/emails/class-wc-email.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">274</span>
+    <span class="phpdocumentor-element-found-in__line">303</span>
 </aside>
 
         <p class="phpdocumentor-summary">Handle multipart mail.</p>
@@ -4762,9 +4995,9 @@ or the settings stored in the database.</p>
         <a href="#method_is_customer_email" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/emails/class-wc-email.php"><a href="../files/woocommerce-includes-emails-class-wc-email.html#source-view.564">includes/emails/class-wc-email.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/emails/class-wc-email.php"><a href="../files/woocommerce-includes-emails-class-wc-email.html#source-view.689">includes/emails/class-wc-email.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">564</span>
+    <span class="phpdocumentor-element-found-in__line">689</span>
 </aside>
 
         <p class="phpdocumentor-summary">Checks if this email is customer focussed.</p>
@@ -4794,9 +5027,9 @@ or the settings stored in the database.</p>
         <a href="#method_is_enabled" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/emails/class-wc-email.php"><a href="../files/woocommerce-includes-emails-class-wc-email.html#source-view.546">includes/emails/class-wc-email.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/emails/class-wc-email.php"><a href="../files/woocommerce-includes-emails-class-wc-email.html#source-view.671">includes/emails/class-wc-email.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">546</span>
+    <span class="phpdocumentor-element-found-in__line">671</span>
 </aside>
 
         <p class="phpdocumentor-summary">Checks if this email is enabled and will be sent.</p>
@@ -4826,9 +5059,9 @@ or the settings stored in the database.</p>
         <a href="#method_is_manual" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/emails/class-wc-email.php"><a href="../files/woocommerce-includes-emails-class-wc-email.html#source-view.555">includes/emails/class-wc-email.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/emails/class-wc-email.php"><a href="../files/woocommerce-includes-emails-class-wc-email.html#source-view.680">includes/emails/class-wc-email.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">555</span>
+    <span class="phpdocumentor-element-found-in__line">680</span>
 </aside>
 
         <p class="phpdocumentor-summary">Checks if this email is manually sent</p>
@@ -4891,9 +5124,9 @@ or the settings stored in the database.</p>
         <a href="#method_restore_locale" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/emails/class-wc-email.php"><a href="../files/woocommerce-includes-emails-class-wc-email.html#source-view.354">includes/emails/class-wc-email.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/emails/class-wc-email.php"><a href="../files/woocommerce-includes-emails-class-wc-email.html#source-view.383">includes/emails/class-wc-email.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">354</span>
+    <span class="phpdocumentor-element-found-in__line">383</span>
 </aside>
 
         <p class="phpdocumentor-summary">Restore the locale to the default locale. Use after finished with setup_locale.</p>
@@ -4923,9 +5156,9 @@ or the settings stored in the database.</p>
         <a href="#method_send" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/emails/class-wc-email.php"><a href="../files/woocommerce-includes-emails-class-wc-email.html#source-view.733">includes/emails/class-wc-email.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/emails/class-wc-email.php"><a href="../files/woocommerce-includes-emails-class-wc-email.html#source-view.868">includes/emails/class-wc-email.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">733</span>
+    <span class="phpdocumentor-element-found-in__line">868</span>
 </aside>
 
         <p class="phpdocumentor-summary">Send an email.</p>
@@ -4998,6 +5231,50 @@ or the settings stored in the database.</p>
             -public
                                                         "
 >
+    <h4 class="phpdocumentor-element__name" id="method_set_object">
+        set_object()
+        <a href="#method_set_object" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/emails/class-wc-email.php"><a href="../files/woocommerce-includes-emails-class-wc-email.html#source-view.854">includes/emails/class-wc-email.php</a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">854</span>
+</aside>
+
+        <p class="phpdocumentor-summary">Set the object for the outgoing email.</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                <span class="phpdocumentor-signature__name">set_object</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">object&nbsp;</span><span class="phpdocumentor-signature__argument__name">$object</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">void</span></code>
+
+        <section class="phpdocumentor-description"></section>
+
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$object</span>
+                : <span class="phpdocumentor-signature__argument__return-type">object</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"><p>Object this email is for, e.g. customer, or product.</p>
+</section>
+
+            </dd>
+            </dl>
+
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">void</span>
+            &mdash; <span class="phpdocumentor-return-value__description"></span>
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                                        "
+>
     <h4 class="phpdocumentor-element__name" id="method_set_post_data">
         set_post_data()
         <a href="#method_set_post_data" class="headerlink"><i class="fas fa-link"></i></a>
@@ -5047,9 +5324,9 @@ or the settings stored in the database.</p>
         <a href="#method_setup_locale" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/emails/class-wc-email.php"><a href="../files/woocommerce-includes-emails-class-wc-email.html#source-view.334">includes/emails/class-wc-email.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/emails/class-wc-email.php"><a href="../files/woocommerce-includes-emails-class-wc-email.html#source-view.363">includes/emails/class-wc-email.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">334</span>
+    <span class="phpdocumentor-element-found-in__line">363</span>
 </aside>
 
         <p class="phpdocumentor-summary">Set the locale to the store locale for customer emails to make sure emails are in the store language.</p>
@@ -5079,9 +5356,9 @@ or the settings stored in the database.</p>
         <a href="#method_style_inline" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/emails/class-wc-email.php"><a href="../files/woocommerce-includes-emails-class-wc-email.html#source-view.603">includes/emails/class-wc-email.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/emails/class-wc-email.php"><a href="../files/woocommerce-includes-emails-class-wc-email.html#source-view.728">includes/emails/class-wc-email.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">603</span>
+    <span class="phpdocumentor-element-found-in__line">728</span>
 </aside>
 
         <p class="phpdocumentor-summary">Apply inline styles to dynamic content.</p>
@@ -5826,9 +6103,9 @@ choices).</p>
         <a href="#method_admin_actions" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/emails/class-wc-email.php"><a href="../files/woocommerce-includes-emails-class-wc-email.html#source-view.977">includes/emails/class-wc-email.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/emails/class-wc-email.php"><a href="../files/woocommerce-includes-emails-class-wc-email.html#source-view.1150">includes/emails/class-wc-email.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">977</span>
+    <span class="phpdocumentor-element-found-in__line">1150</span>
 </aside>
 
         <p class="phpdocumentor-summary">Admin actions.</p>
@@ -5858,9 +6135,9 @@ choices).</p>
         <a href="#method_delete_template_action" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/emails/class-wc-email.php"><a href="../files/woocommerce-includes-emails-class-wc-email.html#source-view.947">includes/emails/class-wc-email.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/emails/class-wc-email.php"><a href="../files/woocommerce-includes-emails-class-wc-email.html#source-view.1120">includes/emails/class-wc-email.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">947</span>
+    <span class="phpdocumentor-element-found-in__line">1120</span>
 </aside>
 
         <p class="phpdocumentor-summary">Delete template action.</p>
@@ -5944,14 +6221,78 @@ choices).</p>
             -protected
                                                         "
 >
+    <h4 class="phpdocumentor-element__name" id="method_get_bcc_field">
+        get_bcc_field()
+        <a href="#method_get_bcc_field" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/emails/class-wc-email.php"><a href="../files/woocommerce-includes-emails-class-wc-email.html#source-view.974">includes/emails/class-wc-email.php</a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">974</span>
+</aside>
+
+        <p class="phpdocumentor-summary">Get the bcc field definition.</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">protected</span>
+                <span class="phpdocumentor-signature__name">get_bcc_field</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">array&lt;string|int, mixed&gt;</span></code>
+
+        <section class="phpdocumentor-description"></section>
+
+    
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">array&lt;string|int, mixed&gt;</span>
+            &mdash; <span class="phpdocumentor-return-value__description"></span>
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -protected
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_get_cc_field">
+        get_cc_field()
+        <a href="#method_get_cc_field" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/emails/class-wc-email.php"><a href="../files/woocommerce-includes-emails-class-wc-email.html#source-view.957">includes/emails/class-wc-email.php</a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">957</span>
+</aside>
+
+        <p class="phpdocumentor-summary">Get the cc field definition.</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">protected</span>
+                <span class="phpdocumentor-signature__name">get_cc_field</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">array&lt;string|int, mixed&gt;</span></code>
+
+        <section class="phpdocumentor-description"></section>
+
+    
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">array&lt;string|int, mixed&gt;</span>
+            &mdash; <span class="phpdocumentor-return-value__description"></span>
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -protected
+                                                        "
+>
     <h4 class="phpdocumentor-element__name" id="method_get_must_use_css_styles">
         get_must_use_css_styles()
         <a href="#method_get_must_use_css_styles" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/emails/class-wc-email.php"><a href="../files/woocommerce-includes-emails-class-wc-email.html#source-view.656">includes/emails/class-wc-email.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/emails/class-wc-email.php"><a href="../files/woocommerce-includes-emails-class-wc-email.html#source-view.781">includes/emails/class-wc-email.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">656</span>
+    <span class="phpdocumentor-element-found-in__line">781</span>
 </aside>
 
         <p class="phpdocumentor-summary">Returns CSS styles that should be included with all HTML e-mails, regardless of theme specific customizations.</p>
@@ -5990,14 +6331,67 @@ choices).</p>
             -protected
                                                         "
 >
+    <h4 class="phpdocumentor-element__name" id="method_get_option_or_transient">
+        get_option_or_transient()
+        <a href="#method_get_option_or_transient" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/emails/class-wc-email.php"><a href="../files/woocommerce-includes-emails-class-wc-email.html#source-view.1372">includes/emails/class-wc-email.php</a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">1372</span>
+</aside>
+
+        <p class="phpdocumentor-summary">Get an option or transient for email preview.</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">protected</span>
+                <span class="phpdocumentor-signature__name">get_option_or_transient</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$key</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type">mixed&nbsp;</span><span class="phpdocumentor-signature__argument__name">$empty_value</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
+
+        <section class="phpdocumentor-description"></section>
+
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$key</span>
+                : <span class="phpdocumentor-signature__argument__return-type">string</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"><p>Option key.</p>
+</section>
+
+            </dd>
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$empty_value</span>
+                : <span class="phpdocumentor-signature__argument__return-type">mixed</span>
+                 = <span class="phpdocumentor-signature__argument__default-value">null</span>            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"><p>Value to use when option is empty.</p>
+</section>
+
+            </dd>
+            </dl>
+
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">mixed</span>
+            &mdash; <span class="phpdocumentor-return-value__description"></span>
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -protected
+                                                        "
+>
     <h4 class="phpdocumentor-element__name" id="method_move_template_action">
         move_template_action()
         <a href="#method_move_template_action" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/emails/class-wc-email.php"><a href="../files/woocommerce-includes-emails-class-wc-email.html#source-view.911">includes/emails/class-wc-email.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/emails/class-wc-email.php"><a href="../files/woocommerce-includes-emails-class-wc-email.html#source-view.1084">includes/emails/class-wc-email.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">911</span>
+    <span class="phpdocumentor-element-found-in__line">1084</span>
 </aside>
 
         <p class="phpdocumentor-summary">Move template action.</p>
@@ -6039,9 +6433,9 @@ choices).</p>
         <a href="#method_save_template" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/emails/class-wc-email.php"><a href="../files/woocommerce-includes-emails-class-wc-email.html#source-view.871">includes/emails/class-wc-email.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/emails/class-wc-email.php"><a href="../files/woocommerce-includes-emails-class-wc-email.html#source-view.1044">includes/emails/class-wc-email.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">871</span>
+    <span class="phpdocumentor-element-found-in__line">1044</span>
 </aside>
 
         <p class="phpdocumentor-summary">Save the email templates.</p>
@@ -6150,9 +6544,9 @@ choices).</p>
         <a href="#method_supports_emogrifier" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/emails/class-wc-email.php"><a href="../files/woocommerce-includes-emails-class-wc-email.html#source-view.679">includes/emails/class-wc-email.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/emails/class-wc-email.php"><a href="../files/woocommerce-includes-emails-class-wc-email.html#source-view.804">includes/emails/class-wc-email.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">679</span>
+    <span class="phpdocumentor-element-found-in__line">804</span>
 </aside>
 
         <p class="phpdocumentor-summary">Return if emogrifier library is supported.</p>
@@ -6204,9 +6598,9 @@ choices).</p>
         <a href="#method_clear_alt_body_field" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/emails/class-wc-email.php"><a href="../files/woocommerce-includes-emails-class-wc-email.html#source-view.1185">includes/emails/class-wc-email.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/emails/class-wc-email.php"><a href="../files/woocommerce-includes-emails-class-wc-email.html#source-view.1358">includes/emails/class-wc-email.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1185</span>
+    <span class="phpdocumentor-element-found-in__line">1358</span>
 </aside>
 
         <p class="phpdocumentor-summary">Clears the PhpMailer AltBody field, to prevent that content from leaking across emails.</p>
@@ -6236,7 +6630,7 @@ choices).</p>
 
     <footer class="phpdocumentor phpdocumentor-footer">
     <div class="phpdocumentor-section">
-        <span>WooCommerce Code Reference API documentation generated by <a href="http://www.phpdoc.org/">phpDocumentor</a> on July 25th, 2024 at 11:33 am.</span>
+        <span>WooCommerce Code Reference API documentation generated by <a href="http://www.phpdoc.org/">phpDocumentor</a> on May 16th, 2025 at 09:14 am.</span>
     </div>
 </footer>
 
@@ -6248,7 +6642,7 @@ choices).</p>
             'searchIndex': '..\/js\/searchIndex.json'
         };
     </script>
-    <script src="../js/searchIndex.js?updated=1721907195"></script>
-    <script src="../js/search.js?updated=1721907195"></script>
+    <script src="../js/searchIndex.js?updated=1747386873"></script>
+    <script src="../js/search.js?updated=1747386873"></script>
 </body>
 </html>

@@ -4,14 +4,13 @@
     <meta charset="utf-8">
     <title>WooCommerce Code Reference</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="../images/favicon.png" />
-    <link rel="apple-touch-icon" href="../images/apple-touch-icon.png"/>
-    <link rel="apple-touch-icon" sizes="72x72" href="../images/apple-touch-icon-72x72.png"/>
-    <link rel="apple-touch-icon" sizes="114x114" href="../images/apple-touch-icon-114x114.png"/>
+    <link rel="icon" href="../images/favicon-32x32.png" sizes="32x32" />
+    <link rel="icon" href="../images/favicon-192x192.png" sizes="192x192" />
+    <link rel="apple-touch-icon" href="../images/favicon-180x180.png" />
+
     <link rel="stylesheet" href="../css/normalize.css">
-    <link rel="stylesheet" href="../css/base.css?updated=1721907207">
-    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../css/template.css?updated=1721907207">
+    <link rel="stylesheet" href="../css/base.css?updated=1747386889">
+    <link rel="stylesheet" href="../css/template.css?updated=1747386889">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0/css/all.min.css" integrity="sha256-ybRkN9dBjhcS2qrW1z+hfCxq+1aBdwyQM5wlQoQVt/0=" crossorigin="anonymous" />
             <script src="https://cdn.jsdelivr.net/npm/css-vars-ponyfill@2"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0/js/all.min.js" integrity="sha256-0vuk8LXoyrmCjp1f0O300qo1M75ZQyhH9X3J6d+scmk=" crossorigin="anonymous"></script>
@@ -27,19 +26,24 @@
 		'content_group' : 'WooCommerce Core Code Reference',
 	});
 </script>
-        </head>
+        <script src="../js/prism.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            window.dispatchEvent(new HashChangeEvent('hashchange'));
+        });
+    </script>
+</head>
 <body id="top">
     <header class="phpdocumentor-top-header">
     <section class="phpdocumentor-section">
         <div class="site-branding">
-            <a class="site-logo" href="../index.html"><img width="180" src="../images/logo.svg" alt="WooCommerce" /></a>
+            <a class="site-logo" href="../index.html"><img src="../images/logo.png" alt="WooCommerce" /></a>
         </div>
         <nav class="main-navigation">
             <ul>
                 <li><a href="../hooks/hooks.html">Hooks Reference</a></li>
-                <li><a href="https://docs.woocommerce.com/">Documentation</a></li>
+                <li><a href="https://developer.woocommerce.com/docs/">Documentation</a></li>
                 <li><a href="https://woocommerce.github.io/woocommerce-rest-api-docs/">REST API Docs</a></li>
-                <li><a href="https://woocommerce.com/careers/?utm_source=woocommerce+core+code+reference&utm_medium=devdocs&utm_campaign=woo+careers" target="_blank">We're hiring!</a></li>
             </ul>
         </nav>
     </section>
@@ -47,7 +51,7 @@
 
 <div class="phpdocumentor-header">
     <section class="phpdocumentor-section">
-        <h1 class="phpdocumentor-title">WooCommerce Code Reference</h1>
+        <h1 class="phpdocumentor-title"><a href="../index.html">WooCommerce Code Reference</a></h1>
         <section class="phpdocumentor-search">
     <label class="phpdocumentor-label">
         <span class="visually-hidden">Search (click ESC to close search results)</span>
@@ -68,6 +72,10 @@
                                         <h4 class="phpdocumentor-sidebar__root-namespace"><a href="../namespaces/woocommerce.html"><abbr title="\WooCommerce">WooCommerce</abbr></a></h4>
                 <ul class="phpdocumentor-list">
                                             <li><a href="../namespaces/woocommerce-admin.html"><abbr title="\WooCommerce\Admin">Admin</abbr></a></li>
+                                    </ul>
+                            <h4 class="phpdocumentor-sidebar__root-namespace"><a href="../namespaces/mailpoet.html"><abbr title="\MailPoet">MailPoet</abbr></a></h4>
+                <ul class="phpdocumentor-list">
+                                            <li><a href="../namespaces/mailpoet-emaileditor.html"><abbr title="\MailPoet\EmailEditor">EmailEditor</abbr></a></li>
                                     </ul>
                             <h4 class="phpdocumentor-sidebar__root-namespace"><a href="../namespaces/automattic.html"><abbr title="\Automattic">Automattic</abbr></a></h4>
                 <ul class="phpdocumentor-list">
@@ -113,8 +121,10 @@
                                     <li><a href="../packages/WooCommerce-Widgets.html"><abbr title="\WooCommerce\Widgets">Widgets</abbr></a></li>
                                     <li><a href="../packages/WooCommerce-Uninstaller.html"><abbr title="\WooCommerce\Uninstaller">Uninstaller</abbr></a></li>
                             </ul>
-                                <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/WoocommerceAdmin.html"><abbr title="\WoocommerceAdmin">WoocommerceAdmin</abbr></a></h3>
-                                <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/WoocommerceNavigation.html"><abbr title="\WoocommerceNavigation">WoocommerceNavigation</abbr></a></h3>
+                                <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/MailPoet.html"><abbr title="\MailPoet">MailPoet</abbr></a></h3>
+                        <ul class="phpdocumentor-list">
+                                    <li><a href="../packages/MailPoet-EmailEditor.html"><abbr title="\MailPoet\EmailEditor">EmailEditor</abbr></a></li>
+                            </ul>
                                 <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/Automattic.html"><abbr title="\Automattic">Automattic</abbr></a></h3>
                         <ul class="phpdocumentor-list">
                                     <li><a href="../packages/Automattic-WooCommerce.html"><abbr title="\Automattic\WooCommerce">WooCommerce</abbr></a></li>
@@ -261,7 +271,7 @@ try to get one via get_from_datastore method or by supplying a callback and then
     <span>
                         &nbsp;: string    </span>
 </dt>
-<dd>Get the identifier for the type of the cached objects.</dd>
+<dd>Get the cache key and prefix to use for Orders.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="../classes/Automattic-WooCommerce-Caching-ObjectCache.html#method_is_cached">is_cached()</a>
@@ -559,9 +569,9 @@ try to get one via get_from_datastore method or by supplying a callback and then
         <a href="#method___construct" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Caching/ObjectCache.php"><a href="../files/woocommerce-src-caching-objectcache.html#source-view.74">src/Caching/ObjectCache.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Caching/ObjectCache.php"><a href="../files/woocommerce-src-caching-objectcache.html#source-view.73">src/Caching/ObjectCache.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">74</span>
+    <span class="phpdocumentor-element-found-in__line">73</span>
 </aside>
 
         <p class="phpdocumentor-summary">Creates a new instance of the class.</p>
@@ -606,9 +616,9 @@ try to get one via get_from_datastore method or by supplying a callback and then
         <a href="#method_flush" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Caching/ObjectCache.php"><a href="../files/woocommerce-src-caching-objectcache.html#source-view.268">src/Caching/ObjectCache.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Caching/ObjectCache.php"><a href="../files/woocommerce-src-caching-objectcache.html#source-view.267">src/Caching/ObjectCache.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">268</span>
+    <span class="phpdocumentor-element-found-in__line">267</span>
 </aside>
 
         <p class="phpdocumentor-summary">Remove all the objects from the cache.</p>
@@ -638,9 +648,9 @@ try to get one via get_from_datastore method or by supplying a callback and then
         <a href="#method_get" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Caching/ObjectCache.php"><a href="../files/woocommerce-src-caching-objectcache.html#source-view.229">src/Caching/ObjectCache.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Caching/ObjectCache.php"><a href="../files/woocommerce-src-caching-objectcache.html#source-view.228">src/Caching/ObjectCache.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">229</span>
+    <span class="phpdocumentor-element-found-in__line">228</span>
 </aside>
 
         <p class="phpdocumentor-summary">Retrieve a cached object, and if no object is cached with the given id,
@@ -718,9 +728,9 @@ pass &quot;ObjectCache::DEFAULT_EXPIRATION&quot; as the second parameter.</p>
         <a href="#method_get_default_expiration_value" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Caching/ObjectCache.php"><a href="../files/woocommerce-src-caching-objectcache.html#source-view.86">src/Caching/ObjectCache.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Caching/ObjectCache.php"><a href="../files/woocommerce-src-caching-objectcache.html#source-view.85">src/Caching/ObjectCache.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">86</span>
+    <span class="phpdocumentor-element-found-in__line">85</span>
 </aside>
 
         <p class="phpdocumentor-summary">Get the default expiration time for cached objects, in seconds.</p>
@@ -755,7 +765,7 @@ pass &quot;ObjectCache::DEFAULT_EXPIRATION&quot; as the second parameter.</p>
     <span class="phpdocumentor-element-found-in__line">18</span>
 </aside>
 
-        <p class="phpdocumentor-summary">Get the identifier for the type of the cached objects.</p>
+        <p class="phpdocumentor-summary">Get the cache key and prefix to use for Orders.</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
@@ -782,9 +792,9 @@ pass &quot;ObjectCache::DEFAULT_EXPIRATION&quot; as the second parameter.</p>
         <a href="#method_is_cached" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Caching/ObjectCache.php"><a href="../files/woocommerce-src-caching-objectcache.html#source-view.278">src/Caching/ObjectCache.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Caching/ObjectCache.php"><a href="../files/woocommerce-src-caching-objectcache.html#source-view.277">src/Caching/ObjectCache.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">278</span>
+    <span class="phpdocumentor-element-found-in__line">277</span>
 </aside>
 
         <p class="phpdocumentor-summary">Is a given object cached?</p>
@@ -826,9 +836,9 @@ pass &quot;ObjectCache::DEFAULT_EXPIRATION&quot; as the second parameter.</p>
         <a href="#method_remove" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Caching/ObjectCache.php"><a href="../files/woocommerce-src-caching-objectcache.html#source-view.259">src/Caching/ObjectCache.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Caching/ObjectCache.php"><a href="../files/woocommerce-src-caching-objectcache.html#source-view.258">src/Caching/ObjectCache.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">259</span>
+    <span class="phpdocumentor-element-found-in__line">258</span>
 </aside>
 
         <p class="phpdocumentor-summary">Remove an object from the cache.</p>
@@ -870,9 +880,9 @@ pass &quot;ObjectCache::DEFAULT_EXPIRATION&quot; as the second parameter.</p>
         <a href="#method_set" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Caching/ObjectCache.php"><a href="../files/woocommerce-src-caching-objectcache.html#source-view.122">src/Caching/ObjectCache.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Caching/ObjectCache.php"><a href="../files/woocommerce-src-caching-objectcache.html#source-view.121">src/Caching/ObjectCache.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">122</span>
+    <span class="phpdocumentor-element-found-in__line">121</span>
 </aside>
 
         <p class="phpdocumentor-summary">Add an object to the cache, or update an already cached object.</p>
@@ -947,9 +957,9 @@ pass &quot;ObjectCache::DEFAULT_EXPIRATION&quot; as the second parameter.</p>
         <a href="#method_update_if_cached" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Caching/ObjectCache.php"><a href="../files/woocommerce-src-caching-objectcache.html#source-view.172">src/Caching/ObjectCache.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Caching/ObjectCache.php"><a href="../files/woocommerce-src-caching-objectcache.html#source-view.171">src/Caching/ObjectCache.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">172</span>
+    <span class="phpdocumentor-element-found-in__line">171</span>
 </aside>
 
         <p class="phpdocumentor-summary">Update an object in the cache, but only if an object is already cached with the same id.</p>
@@ -1010,7 +1020,7 @@ pass &quot;ObjectCache::DEFAULT_EXPIRATION&quot; as the second parameter.</p>
 
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
     <span class="phpdocumentor-signature__response_type">bool</span>
-            &mdash; <span class="phpdocumentor-return-value__description">True on success, false on error or if no object wiith the supplied id was cached.</span>
+            &mdash; <span class="phpdocumentor-return-value__description">True on success, false on error or if no object with the supplied id was cached.</span>
     
 </article>
                     <article
@@ -1024,9 +1034,9 @@ pass &quot;ObjectCache::DEFAULT_EXPIRATION&quot; as the second parameter.</p>
         <a href="#method_get_cache_engine_instance" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Caching/ObjectCache.php"><a href="../files/woocommerce-src-caching-objectcache.html#source-view.304">src/Caching/ObjectCache.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Caching/ObjectCache.php"><a href="../files/woocommerce-src-caching-objectcache.html#source-view.303">src/Caching/ObjectCache.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">304</span>
+    <span class="phpdocumentor-element-found-in__line">303</span>
 </aside>
 
         <p class="phpdocumentor-summary">Get the instance of the cache engine to use.</p>
@@ -1056,9 +1066,9 @@ pass &quot;ObjectCache::DEFAULT_EXPIRATION&quot; as the second parameter.</p>
         <a href="#method_get_object_id" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Caches/OrderCache.php"><a href="../files/woocommerce-src-caches-ordercache.html#source-view.28">src/Caches/OrderCache.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Caches/OrderCache.php"><a href="../files/woocommerce-src-caches-ordercache.html#source-view.36">src/Caches/OrderCache.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">28</span>
+    <span class="phpdocumentor-element-found-in__line">36</span>
 </aside>
 
         <p class="phpdocumentor-summary">Get the id of an object to be cached.</p>
@@ -1100,9 +1110,9 @@ pass &quot;ObjectCache::DEFAULT_EXPIRATION&quot; as the second parameter.</p>
         <a href="#method_get_random_string" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Caching/ObjectCache.php"><a href="../files/woocommerce-src-caching-objectcache.html#source-view.314">src/Caching/ObjectCache.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Caching/ObjectCache.php"><a href="../files/woocommerce-src-caching-objectcache.html#source-view.313">src/Caching/ObjectCache.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">314</span>
+    <span class="phpdocumentor-element-found-in__line">313</span>
 </aside>
 
         <p class="phpdocumentor-summary">Get a random string to be used to compose the cache key prefix.</p>
@@ -1133,9 +1143,9 @@ pass &quot;ObjectCache::DEFAULT_EXPIRATION&quot; as the second parameter.</p>
         <a href="#method_validate" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Caches/OrderCache.php"><a href="../files/woocommerce-src-caches-ordercache.html#source-view.38">src/Caches/OrderCache.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Caches/OrderCache.php"><a href="../files/woocommerce-src-caches-ordercache.html#source-view.46">src/Caches/OrderCache.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">38</span>
+    <span class="phpdocumentor-element-found-in__line">46</span>
 </aside>
 
         <p class="phpdocumentor-summary">Validate an object before caching it.</p>
@@ -1177,9 +1187,9 @@ pass &quot;ObjectCache::DEFAULT_EXPIRATION&quot; as the second parameter.</p>
         <a href="#method_get_cache_engine" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Caching/ObjectCache.php"><a href="../files/woocommerce-src-caching-objectcache.html#source-view.95">src/Caching/ObjectCache.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Caching/ObjectCache.php"><a href="../files/woocommerce-src-caching-objectcache.html#source-view.94">src/Caching/ObjectCache.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">95</span>
+    <span class="phpdocumentor-element-found-in__line">94</span>
 </aside>
 
         <p class="phpdocumentor-summary">Get the cache engine to use and cache it internally.</p>
@@ -1209,9 +1219,9 @@ pass &quot;ObjectCache::DEFAULT_EXPIRATION&quot; as the second parameter.</p>
         <a href="#method_get_id_from_object_if_null" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Caching/ObjectCache.php"><a href="../files/woocommerce-src-caching-objectcache.html#source-view.192">src/Caching/ObjectCache.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Caching/ObjectCache.php"><a href="../files/woocommerce-src-caching-objectcache.html#source-view.191">src/Caching/ObjectCache.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">192</span>
+    <span class="phpdocumentor-element-found-in__line">191</span>
 </aside>
 
         <p class="phpdocumentor-summary">Get the id from an object if the id itself is null.</p>
@@ -1277,9 +1287,9 @@ pass &quot;ObjectCache::DEFAULT_EXPIRATION&quot; as the second parameter.</p>
         <a href="#method_verify_expiration_value" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Caching/ObjectCache.php"><a href="../files/woocommerce-src-caching-objectcache.html#source-view.210">src/Caching/ObjectCache.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Caching/ObjectCache.php"><a href="../files/woocommerce-src-caching-objectcache.html#source-view.209">src/Caching/ObjectCache.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">210</span>
+    <span class="phpdocumentor-element-found-in__line">209</span>
 </aside>
 
         <p class="phpdocumentor-summary">Check if the given expiration time value is valid, throw an exception if not.</p>
@@ -1336,7 +1346,7 @@ pass &quot;ObjectCache::DEFAULT_EXPIRATION&quot; as the second parameter.</p>
 
     <footer class="phpdocumentor phpdocumentor-footer">
     <div class="phpdocumentor-section">
-        <span>WooCommerce Code Reference API documentation generated by <a href="http://www.phpdoc.org/">phpDocumentor</a> on July 25th, 2024 at 11:33 am.</span>
+        <span>WooCommerce Code Reference API documentation generated by <a href="http://www.phpdoc.org/">phpDocumentor</a> on May 16th, 2025 at 09:14 am.</span>
     </div>
 </footer>
 
@@ -1348,7 +1358,7 @@ pass &quot;ObjectCache::DEFAULT_EXPIRATION&quot; as the second parameter.</p>
             'searchIndex': '..\/js\/searchIndex.json'
         };
     </script>
-    <script src="../js/searchIndex.js?updated=1721907207"></script>
-    <script src="../js/search.js?updated=1721907207"></script>
+    <script src="../js/searchIndex.js?updated=1747386889"></script>
+    <script src="../js/search.js?updated=1747386889"></script>
 </body>
 </html>

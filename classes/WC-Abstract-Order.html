@@ -4,14 +4,13 @@
     <meta charset="utf-8">
     <title>WooCommerce Code Reference</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="../images/favicon.png" />
-    <link rel="apple-touch-icon" href="../images/apple-touch-icon.png"/>
-    <link rel="apple-touch-icon" sizes="72x72" href="../images/apple-touch-icon-72x72.png"/>
-    <link rel="apple-touch-icon" sizes="114x114" href="../images/apple-touch-icon-114x114.png"/>
+    <link rel="icon" href="../images/favicon-32x32.png" sizes="32x32" />
+    <link rel="icon" href="../images/favicon-192x192.png" sizes="192x192" />
+    <link rel="apple-touch-icon" href="../images/favicon-180x180.png" />
+
     <link rel="stylesheet" href="../css/normalize.css">
-    <link rel="stylesheet" href="../css/base.css?updated=1721907189">
-    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../css/template.css?updated=1721907189">
+    <link rel="stylesheet" href="../css/base.css?updated=1747386866">
+    <link rel="stylesheet" href="../css/template.css?updated=1747386866">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0/css/all.min.css" integrity="sha256-ybRkN9dBjhcS2qrW1z+hfCxq+1aBdwyQM5wlQoQVt/0=" crossorigin="anonymous" />
             <script src="https://cdn.jsdelivr.net/npm/css-vars-ponyfill@2"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0/js/all.min.js" integrity="sha256-0vuk8LXoyrmCjp1f0O300qo1M75ZQyhH9X3J6d+scmk=" crossorigin="anonymous"></script>
@@ -27,19 +26,24 @@
 		'content_group' : 'WooCommerce Core Code Reference',
 	});
 </script>
-        </head>
+        <script src="../js/prism.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            window.dispatchEvent(new HashChangeEvent('hashchange'));
+        });
+    </script>
+</head>
 <body id="top">
     <header class="phpdocumentor-top-header">
     <section class="phpdocumentor-section">
         <div class="site-branding">
-            <a class="site-logo" href="../index.html"><img width="180" src="../images/logo.svg" alt="WooCommerce" /></a>
+            <a class="site-logo" href="../index.html"><img src="../images/logo.png" alt="WooCommerce" /></a>
         </div>
         <nav class="main-navigation">
             <ul>
                 <li><a href="../hooks/hooks.html">Hooks Reference</a></li>
-                <li><a href="https://docs.woocommerce.com/">Documentation</a></li>
+                <li><a href="https://developer.woocommerce.com/docs/">Documentation</a></li>
                 <li><a href="https://woocommerce.github.io/woocommerce-rest-api-docs/">REST API Docs</a></li>
-                <li><a href="https://woocommerce.com/careers/?utm_source=woocommerce+core+code+reference&utm_medium=devdocs&utm_campaign=woo+careers" target="_blank">We're hiring!</a></li>
             </ul>
         </nav>
     </section>
@@ -47,7 +51,7 @@
 
 <div class="phpdocumentor-header">
     <section class="phpdocumentor-section">
-        <h1 class="phpdocumentor-title">WooCommerce Code Reference</h1>
+        <h1 class="phpdocumentor-title"><a href="../index.html">WooCommerce Code Reference</a></h1>
         <section class="phpdocumentor-search">
     <label class="phpdocumentor-label">
         <span class="visually-hidden">Search (click ESC to close search results)</span>
@@ -68,6 +72,10 @@
                                         <h4 class="phpdocumentor-sidebar__root-namespace"><a href="../namespaces/woocommerce.html"><abbr title="\WooCommerce">WooCommerce</abbr></a></h4>
                 <ul class="phpdocumentor-list">
                                             <li><a href="../namespaces/woocommerce-admin.html"><abbr title="\WooCommerce\Admin">Admin</abbr></a></li>
+                                    </ul>
+                            <h4 class="phpdocumentor-sidebar__root-namespace"><a href="../namespaces/mailpoet.html"><abbr title="\MailPoet">MailPoet</abbr></a></h4>
+                <ul class="phpdocumentor-list">
+                                            <li><a href="../namespaces/mailpoet-emaileditor.html"><abbr title="\MailPoet\EmailEditor">EmailEditor</abbr></a></li>
                                     </ul>
                             <h4 class="phpdocumentor-sidebar__root-namespace"><a href="../namespaces/automattic.html"><abbr title="\Automattic">Automattic</abbr></a></h4>
                 <ul class="phpdocumentor-list">
@@ -113,8 +121,10 @@
                                     <li><a href="../packages/WooCommerce-Widgets.html"><abbr title="\WooCommerce\Widgets">Widgets</abbr></a></li>
                                     <li><a href="../packages/WooCommerce-Uninstaller.html"><abbr title="\WooCommerce\Uninstaller">Uninstaller</abbr></a></li>
                             </ul>
-                                <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/WoocommerceAdmin.html"><abbr title="\WoocommerceAdmin">WoocommerceAdmin</abbr></a></h3>
-                                <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/WoocommerceNavigation.html"><abbr title="\WoocommerceNavigation">WoocommerceNavigation</abbr></a></h3>
+                                <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/MailPoet.html"><abbr title="\MailPoet">MailPoet</abbr></a></h3>
+                        <ul class="phpdocumentor-list">
+                                    <li><a href="../packages/MailPoet-EmailEditor.html"><abbr title="\MailPoet\EmailEditor">EmailEditor</abbr></a></li>
+                            </ul>
                                 <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/Automattic.html"><abbr title="\Automattic">Automattic</abbr></a></h3>
                         <ul class="phpdocumentor-list">
                                     <li><a href="../packages/Automattic-WooCommerce.html"><abbr title="\Automattic\WooCommerce">WooCommerce</abbr></a></li>
@@ -159,13 +169,13 @@
     
             <span class="phpdocumentor-element__extends">
             Uses
-                            <a href="../classes/WC-Item-Totals.html"><abbr title="\WC_Item_Totals">WC_Item_Totals</abbr></a>                    </span>
+                            <a href="../classes/WC-Item-Totals.html"><abbr title="\WC_Item_Totals">WC_Item_Totals</abbr></a>,                             <abbr title="\Automattic\WooCommerce\Internal\CostOfGoodsSold\CogsAwareTrait">CogsAwareTrait</abbr>                    </span>
     </h2>
 
         <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-order.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-order.html#source-view.26">includes/abstracts/abstract-wc-order.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-order.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-order.html#source-view.31">includes/abstracts/abstract-wc-order.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">26</span>
+    <span class="phpdocumentor-element-found-in__line">31</span>
 </aside>
 
             <p class="phpdocumentor-summary">WC_Abstract_Order class.</p>
@@ -240,6 +250,13 @@
                 &nbsp;: int            </span>
 </dt>
 <dd>ID for this object.</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -property -protected">
+    <a href="../classes/WC-Abstract-Order.html#property_item_types_to_group">$item_types_to_group</a>
+    <span>
+                &nbsp;: array&lt;string|int, mixed&gt;            </span>
+</dt>
+<dd>Mappings of order item types to groups.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -property -protected">
     <a href="../classes/WC-Abstract-Order.html#property_items">$items</a>
@@ -404,6 +421,13 @@ its own method because it saves looking up order amounts (costs are added up for
 <dd>Apply a coupon to the order and recalculate totals.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a href="../classes/WC-Abstract-Order.html#method_calculate_cogs_total_value">calculate_cogs_total_value()</a>
+    <span>
+                        &nbsp;: float    </span>
+</dt>
+<dd>Calculate the Cost of Goods Sold value and set it as the actual value for this order.</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="../classes/WC-Abstract-Order.html#method_calculate_shipping">calculate_shipping()</a>
     <span>
                         &nbsp;: float    </span>
@@ -521,6 +545,13 @@ its own method because it saves looking up order amounts (costs are added up for
                         &nbsp;: array&lt;string|int, mixed&gt;    </span>
 </dt>
 <dd>Return data changes only.</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a href="../classes/WC-Abstract-Order.html#method_get_cogs_total_value">get_cogs_total_value()</a>
+    <span>
+                        &nbsp;: float    </span>
+</dt>
+<dd>Get the value of the Cost of Goods Sold for this order.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="../classes/WC-Abstract-Order.html#method_get_coupon_codes">get_coupon_codes()</a>
@@ -803,6 +834,13 @@ its own method because it saves looking up order amounts (costs are added up for
 <dd>Get parent order ID.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a href="../classes/WC-Abstract-Order.html#method_get_payment_card_info">get_payment_card_info()</a>
+    <span>
+                        &nbsp;: array&lt;string|int, mixed&gt;    </span>
+</dt>
+<dd>Get info about the card used for payment in the order.</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="../classes/WC-Abstract-Order.html#method_get_payment_tokens">get_payment_tokens()</a>
     <span>
                         &nbsp;: array&lt;string|int, mixed&gt;    </span>
@@ -990,6 +1028,13 @@ its own method because it saves looking up order amounts (costs are added up for
                         &nbsp;: string    </span>
 </dt>
 <dd>Get order_version.</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a href="../classes/WC-Abstract-Order.html#method_has_cogs">has_cogs()</a>
+    <span>
+                        &nbsp;: bool    </span>
+</dt>
+<dd>Indicates if the current order has an associated Cost of Goods Sold value.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="../classes/WC-Abstract-Order.html#method_has_free_item">has_free_item()</a>
@@ -1378,6 +1423,14 @@ version and should be removed in future versions.</dd>
 <dd>Add total row for grand total.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -protected">
+    <a href="../classes/WC-Abstract-Order.html#method_calculate_cogs_total_value_core">calculate_cogs_total_value_core()</a>
+    <span>
+                        &nbsp;: float    </span>
+</dt>
+<dd>Core method to calculate the Cost of Goods Sold value for this order:
+it doesn&#039;t check if COGS is enabled at class or system level, doesn&#039;t fire hooks, and doesn&#039;t set the value as the current one for the order.</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -protected">
     <a href="../classes/WC-Data.html#method_error">error()</a>
     <span>
                         &nbsp;: mixed    </span>
@@ -1600,9 +1653,9 @@ if the original coupon no longer exists.</dd>
                                 </span>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-order.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-order.html#source-view.90">includes/abstracts/abstract-wc-order.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-order.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-order.html#source-view.96">includes/abstracts/abstract-wc-order.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">90</span>
+    <span class="phpdocumentor-element-found-in__line">96</span>
 </aside>
 
         <p class="phpdocumentor-summary">Stores meta in cache for future reads.</p>
@@ -1679,9 +1732,9 @@ if the original coupon no longer exists.</dd>
                                 </span>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-order.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-order.html#source-view.38">includes/abstracts/abstract-wc-order.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-order.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-order.html#source-view.44">includes/abstracts/abstract-wc-order.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">38</span>
+    <span class="phpdocumentor-element-found-in__line">44</span>
 </aside>
 
         <p class="phpdocumentor-summary">Order Data array. This is the core order data exposed in APIs since 3.0.0.</p>
@@ -1775,9 +1828,9 @@ which is the tax for items only, not shipping.</p>
                                 </span>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-order.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-order.html#source-view.97">includes/abstracts/abstract-wc-order.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-order.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-order.html#source-view.103">includes/abstracts/abstract-wc-order.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">97</span>
+    <span class="phpdocumentor-element-found-in__line">103</span>
 </aside>
 
         <p class="phpdocumentor-summary">Which data store to load.</p>
@@ -1940,6 +1993,38 @@ additional information to an inherited class.</p>
             -protected
                                                         "
 >
+    <h4 class="phpdocumentor-element__name" id="property_item_types_to_group">
+        $item_types_to_group
+        <a href="#property_item_types_to_group" class="headerlink"><i class="fas fa-link"></i></a>
+        <span class="phpdocumentor-element__modifiers">
+                                </span>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-order.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-order.html#source-view.902">includes/abstracts/abstract-wc-order.php</a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">902</span>
+</aside>
+
+        <p class="phpdocumentor-summary">Mappings of order item types to groups.</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">protected</span>
+        <span class="phpdocumentor-signature__type">array&lt;string|int, mixed&gt;</span>
+    <span class="phpdocumentor-signature__name">$item_types_to_group</span>
+     = <span class="phpdocumentor-signature__default-value">array(&#039;line_item&#039; =&gt; &#039;line_items&#039;, &#039;tax&#039; =&gt; &#039;tax_lines&#039;, &#039;shipping&#039; =&gt; &#039;shipping_lines&#039;, &#039;fee&#039; =&gt; &#039;fee_lines&#039;, &#039;coupon&#039; =&gt; &#039;coupon_lines&#039;)</span></code>
+
+        <section class="phpdocumentor-description"></section>
+
+    
+
+</article>
+                    <article
+        class="
+            phpdocumentor-element
+            -property
+            -protected
+                                                        "
+>
     <h4 class="phpdocumentor-element__name" id="property_items">
         $items
         <a href="#property_items" class="headerlink"><i class="fas fa-link"></i></a>
@@ -1947,9 +2032,9 @@ additional information to an inherited class.</p>
                                 </span>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-order.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-order.html#source-view.73">includes/abstracts/abstract-wc-order.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-order.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-order.html#source-view.79">includes/abstracts/abstract-wc-order.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">73</span>
+    <span class="phpdocumentor-element-found-in__line">79</span>
 </aside>
 
         <p class="phpdocumentor-summary">Order items will be stored here, sometimes before they persist in the DB.</p>
@@ -1993,9 +2078,9 @@ additional information to an inherited class.</p>
                                 </span>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-order.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-order.html#source-view.81">includes/abstracts/abstract-wc-order.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-order.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-order.html#source-view.87">includes/abstracts/abstract-wc-order.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">81</span>
+    <span class="phpdocumentor-element-found-in__line">87</span>
 </aside>
 
         <p class="phpdocumentor-summary">Order items that need deleting are stored here.</p>
@@ -2039,9 +2124,9 @@ additional information to an inherited class.</p>
                                 </span>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-order.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-order.html#source-view.63">includes/abstracts/abstract-wc-order.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-order.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-order.html#source-view.69">includes/abstracts/abstract-wc-order.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">63</span>
+    <span class="phpdocumentor-element-found-in__line">69</span>
 </aside>
 
         <p class="phpdocumentor-summary">List of properties that were earlier managed by data store. However, since DataStore is a not a stored entity in itself, they used to store data in metadata of the data object.</p>
@@ -2166,9 +2251,9 @@ ull</span></code>
                                 </span>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-order.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-order.html#source-view.104">includes/abstracts/abstract-wc-order.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-order.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-order.html#source-view.110">includes/abstracts/abstract-wc-order.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">104</span>
+    <span class="phpdocumentor-element-found-in__line">110</span>
 </aside>
 
         <p class="phpdocumentor-summary">This is the name of this object type.</p>
@@ -2202,9 +2287,9 @@ ull</span></code>
         <a href="#method___clone" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-order.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-order.html#source-view.143">includes/abstracts/abstract-wc-order.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-order.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-order.html#source-view.153">includes/abstracts/abstract-wc-order.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">143</span>
+    <span class="phpdocumentor-element-found-in__line">153</span>
 </aside>
 
         <p class="phpdocumentor-summary">This method overwrites the base class&#039;s clone method to make it a no-op. In base class WC_Data, we are unsetting the meta_id to clone.</p>
@@ -2251,9 +2336,9 @@ In-fact, when we do that for orders, we lose the capability to clone orders with
         <a href="#method___construct" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-order.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-order.html#source-view.114">includes/abstracts/abstract-wc-order.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-order.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-order.html#source-view.120">includes/abstracts/abstract-wc-order.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">114</span>
+    <span class="phpdocumentor-element-found-in__line">120</span>
 </aside>
 
         <p class="phpdocumentor-summary">Get the order if ID is passed, otherwise the order is new and empty.</p>
@@ -2298,9 +2383,9 @@ methods that will be maintained going forward.</p>
         <a href="#method___get" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/legacy/abstract-wc-legacy-order.php"><a href="../files/woocommerce-includes-legacy-abstract-wc-legacy-order.html#source-view.407">includes/legacy/abstract-wc-legacy-order.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/legacy/abstract-wc-legacy-order.php"><a href="../files/woocommerce-includes-legacy-abstract-wc-legacy-order.html#source-view.410">includes/legacy/abstract-wc-legacy-order.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">407</span>
+    <span class="phpdocumentor-element-found-in__line">410</span>
 </aside>
 
         <p class="phpdocumentor-summary">Magic __get method for backwards compatibility.</p>
@@ -2341,9 +2426,9 @@ methods that will be maintained going forward.</p>
         <a href="#method___isset" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/legacy/abstract-wc-legacy-order.php"><a href="../files/woocommerce-includes-legacy-abstract-wc-legacy-order.html#source-view.396">includes/legacy/abstract-wc-legacy-order.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/legacy/abstract-wc-legacy-order.php"><a href="../files/woocommerce-includes-legacy-abstract-wc-legacy-order.html#source-view.399">includes/legacy/abstract-wc-legacy-order.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">396</span>
+    <span class="phpdocumentor-element-found-in__line">399</span>
 </aside>
 
         <p class="phpdocumentor-summary">Magic __isset method for backwards compatibility. Handles legacy properties which could be accessed directly in the past.</p>
@@ -2495,9 +2580,9 @@ methods that will be maintained going forward.</p>
         <a href="#method_add_coupon" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/legacy/abstract-wc-legacy-order.php"><a href="../files/woocommerce-includes-legacy-abstract-wc-legacy-order.html#source-view.27">includes/legacy/abstract-wc-legacy-order.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/legacy/abstract-wc-legacy-order.php"><a href="../files/woocommerce-includes-legacy-abstract-wc-legacy-order.html#source-view.30">includes/legacy/abstract-wc-legacy-order.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">27</span>
+    <span class="phpdocumentor-element-found-in__line">30</span>
 </aside>
 
         <p class="phpdocumentor-summary">Add coupon code to the order.</p>
@@ -2570,9 +2655,9 @@ methods that will be maintained going forward.</p>
         <a href="#method_add_fee" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/legacy/abstract-wc-legacy-order.php"><a href="../files/woocommerce-includes-legacy-abstract-wc-legacy-order.html#source-view.105">includes/legacy/abstract-wc-legacy-order.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/legacy/abstract-wc-legacy-order.php"><a href="../files/woocommerce-includes-legacy-abstract-wc-legacy-order.html#source-view.108">includes/legacy/abstract-wc-legacy-order.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">105</span>
+    <span class="phpdocumentor-element-found-in__line">108</span>
 </aside>
 
         <p class="phpdocumentor-summary">Add a fee to the order.</p>
@@ -2631,9 +2716,9 @@ or for a particular right or service, and not supposed to be negative.</p>
         <a href="#method_add_item" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-order.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-order.html#source-view.1075">includes/abstracts/abstract-wc-order.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-order.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-order.html#source-view.1119">includes/abstracts/abstract-wc-order.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1075</span>
+    <span class="phpdocumentor-element-found-in__line">1119</span>
 </aside>
 
         <p class="phpdocumentor-summary">Adds an order item to this order. The order item will not persist until save.</p>
@@ -2765,9 +2850,9 @@ or for a particular right or service, and not supposed to be negative.</p>
         <a href="#method_add_payment_token" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-order.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-order.html#source-view.1606">includes/abstracts/abstract-wc-order.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-order.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-order.html#source-view.1650">includes/abstracts/abstract-wc-order.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1606</span>
+    <span class="phpdocumentor-element-found-in__line">1650</span>
 </aside>
 
         <p class="phpdocumentor-summary">Add a payment token to an order</p>
@@ -2823,9 +2908,9 @@ or for a particular right or service, and not supposed to be negative.</p>
         <a href="#method_add_product" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-order.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-order.html#source-view.1537">includes/abstracts/abstract-wc-order.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-order.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-order.html#source-view.1581">includes/abstracts/abstract-wc-order.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1537</span>
+    <span class="phpdocumentor-element-found-in__line">1581</span>
 </aside>
 
         <p class="phpdocumentor-summary">Add a product line item to the order. This is the only line item type with
@@ -2886,9 +2971,9 @@ its own method because it saves looking up order amounts (costs are added up for
         <a href="#method_add_shipping" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/legacy/abstract-wc-legacy-order.php"><a href="../files/woocommerce-includes-legacy-abstract-wc-legacy-order.html#source-view.74">includes/legacy/abstract-wc-legacy-order.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/legacy/abstract-wc-legacy-order.php"><a href="../files/woocommerce-includes-legacy-abstract-wc-legacy-order.html#source-view.77">includes/legacy/abstract-wc-legacy-order.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">74</span>
+    <span class="phpdocumentor-element-found-in__line">77</span>
 </aside>
 
         <p class="phpdocumentor-summary">Add a shipping row to the order.</p>
@@ -2942,9 +3027,9 @@ its own method because it saves looking up order amounts (costs are added up for
         <a href="#method_add_tax" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/legacy/abstract-wc-legacy-order.php"><a href="../files/woocommerce-includes-legacy-abstract-wc-legacy-order.html#source-view.51">includes/legacy/abstract-wc-legacy-order.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/legacy/abstract-wc-legacy-order.php"><a href="../files/woocommerce-includes-legacy-abstract-wc-legacy-order.html#source-view.54">includes/legacy/abstract-wc-legacy-order.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">51</span>
+    <span class="phpdocumentor-element-found-in__line">54</span>
 </aside>
 
         <p class="phpdocumentor-summary">Add a tax row to the order.</p>
@@ -3017,9 +3102,9 @@ its own method because it saves looking up order amounts (costs are added up for
         <a href="#method_apply_changes" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-data.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-data.html#source-view.851">includes/abstracts/abstract-wc-data.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-data.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-data.html#source-view.849">includes/abstracts/abstract-wc-data.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">851</span>
+    <span class="phpdocumentor-element-found-in__line">849</span>
 </aside>
 
         <p class="phpdocumentor-summary">Merge changes with data and clear.</p>
@@ -3063,9 +3148,9 @@ its own method because it saves looking up order amounts (costs are added up for
         <a href="#method_apply_coupon" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-order.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-order.html#source-view.1229">includes/abstracts/abstract-wc-order.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-order.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-order.html#source-view.1273">includes/abstracts/abstract-wc-order.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1229</span>
+    <span class="phpdocumentor-element-found-in__line">1273</span>
 </aside>
 
         <p class="phpdocumentor-summary">Apply a coupon to the order and recalculate totals.</p>
@@ -3116,14 +3201,60 @@ its own method because it saves looking up order amounts (costs are added up for
             -public
                                                         "
 >
+    <h4 class="phpdocumentor-element__name" id="method_calculate_cogs_total_value">
+        calculate_cogs_total_value()
+        <a href="#method_calculate_cogs_total_value" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-order.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-order.html#source-view.2507">includes/abstracts/abstract-wc-order.php</a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">2507</span>
+</aside>
+
+        <p class="phpdocumentor-summary">Calculate the Cost of Goods Sold value and set it as the actual value for this order.</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                <span class="phpdocumentor-signature__name">calculate_cogs_total_value</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">float</span></code>
+
+        <section class="phpdocumentor-description"></section>
+
+    
+    
+    <h5 class="phpdocumentor-tag-list__heading" id="tags">
+        Tags
+        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
+    </h5>
+    <dl class="phpdocumentor-tag-list">
+                                    <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">since</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                            <span class="phpdocumentor-tag-link">9.5.0</span>
+                                                                                                        <section class="phpdocumentor-description"></section>
+
+                </dd>
+                        </dl>
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">float</span>
+            &mdash; <span class="phpdocumentor-return-value__description">The calculated value.</span>
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                                        "
+>
     <h4 class="phpdocumentor-element__name" id="method_calculate_shipping">
         calculate_shipping()
         <a href="#method_calculate_shipping" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-order.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-order.html#source-view.1644">includes/abstracts/abstract-wc-order.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-order.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-order.html#source-view.1688">includes/abstracts/abstract-wc-order.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1644</span>
+    <span class="phpdocumentor-element-found-in__line">1688</span>
 </aside>
 
         <p class="phpdocumentor-summary">Calculate shipping total.</p>
@@ -3167,9 +3298,9 @@ its own method because it saves looking up order amounts (costs are added up for
         <a href="#method_calculate_taxes" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-order.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-order.html#source-view.1769">includes/abstracts/abstract-wc-order.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-order.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-order.html#source-view.1813">includes/abstracts/abstract-wc-order.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1769</span>
+    <span class="phpdocumentor-element-found-in__line">1813</span>
 </aside>
 
         <p class="phpdocumentor-summary">Calculate taxes for all line items and shipping, and store the totals and tax rows.</p>
@@ -3214,9 +3345,9 @@ have any, it would use the billing address rather than using the Shopping base l
         <a href="#method_calculate_totals" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-order.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-order.html#source-view.1913">includes/abstracts/abstract-wc-order.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-order.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-order.html#source-view.1957">includes/abstracts/abstract-wc-order.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1913</span>
+    <span class="phpdocumentor-element-found-in__line">1957</span>
 </aside>
 
         <p class="phpdocumentor-summary">Calculate totals by looking at the contents of the order. Stores the totals and returns the orders final total.</p>
@@ -3272,9 +3403,9 @@ have any, it would use the billing address rather than using the Shopping base l
         <a href="#method_cancel_order" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/legacy/abstract-wc-legacy-order.php"><a href="../files/woocommerce-includes-legacy-abstract-wc-legacy-order.html#source-view.683">includes/legacy/abstract-wc-legacy-order.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/legacy/abstract-wc-legacy-order.php"><a href="../files/woocommerce-includes-legacy-abstract-wc-legacy-order.html#source-view.686">includes/legacy/abstract-wc-legacy-order.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">683</span>
+    <span class="phpdocumentor-element-found-in__line">686</span>
 </aside>
 
         <p class="phpdocumentor-summary">Cancel the order and restore the cart (before payment).</p>
@@ -3331,9 +3462,9 @@ have any, it would use the billing address rather than using the Shopping base l
         <a href="#method_decrease_coupon_usage_counts" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/legacy/abstract-wc-legacy-order.php"><a href="../files/woocommerce-includes-legacy-abstract-wc-legacy-order.html#source-view.711">includes/legacy/abstract-wc-legacy-order.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/legacy/abstract-wc-legacy-order.php"><a href="../files/woocommerce-includes-legacy-abstract-wc-legacy-order.html#source-view.714">includes/legacy/abstract-wc-legacy-order.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">711</span>
+    <span class="phpdocumentor-element-found-in__line">714</span>
 </aside>
 
         <p class="phpdocumentor-summary">Decrease applied coupon counts.</p>
@@ -3618,9 +3749,9 @@ have any, it would use the billing address rather than using the Shopping base l
         <a href="#method_display_item_downloads" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/legacy/abstract-wc-legacy-order.php"><a href="../files/woocommerce-includes-legacy-abstract-wc-legacy-order.html#source-view.496">includes/legacy/abstract-wc-legacy-order.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/legacy/abstract-wc-legacy-order.php"><a href="../files/woocommerce-includes-legacy-abstract-wc-legacy-order.html#source-view.499">includes/legacy/abstract-wc-legacy-order.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">496</span>
+    <span class="phpdocumentor-element-found-in__line">499</span>
 </aside>
 
         <p class="phpdocumentor-summary">Display download links for an order item.</p>
@@ -3661,9 +3792,9 @@ have any, it would use the billing address rather than using the Shopping base l
         <a href="#method_display_item_meta" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/legacy/abstract-wc-legacy-order.php"><a href="../files/woocommerce-includes-legacy-abstract-wc-legacy-order.html#source-view.485">includes/legacy/abstract-wc-legacy-order.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/legacy/abstract-wc-legacy-order.php"><a href="../files/woocommerce-includes-legacy-abstract-wc-legacy-order.html#source-view.488">includes/legacy/abstract-wc-legacy-order.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">485</span>
+    <span class="phpdocumentor-element-found-in__line">488</span>
 </aside>
 
         <p class="phpdocumentor-summary">Display meta data belonging to an item.</p>
@@ -3704,9 +3835,9 @@ have any, it would use the billing address rather than using the Shopping base l
         <a href="#method_email_order_items_table" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/legacy/abstract-wc-legacy-order.php"><a href="../files/woocommerce-includes-legacy-abstract-wc-legacy-order.html#source-view.743">includes/legacy/abstract-wc-legacy-order.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/legacy/abstract-wc-legacy-order.php"><a href="../files/woocommerce-includes-legacy-abstract-wc-legacy-order.html#source-view.746">includes/legacy/abstract-wc-legacy-order.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">743</span>
+    <span class="phpdocumentor-element-found-in__line">746</span>
 </aside>
 
         <p class="phpdocumentor-summary">Output items for display in html emails.</p>
@@ -3763,9 +3894,9 @@ have any, it would use the billing address rather than using the Shopping base l
         <a href="#method_expand_item_meta" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/legacy/abstract-wc-legacy-order.php"><a href="../files/woocommerce-includes-legacy-abstract-wc-legacy-order.html#source-view.620">includes/legacy/abstract-wc-legacy-order.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/legacy/abstract-wc-legacy-order.php"><a href="../files/woocommerce-includes-legacy-abstract-wc-legacy-order.html#source-view.623">includes/legacy/abstract-wc-legacy-order.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">620</span>
+    <span class="phpdocumentor-element-found-in__line">623</span>
 </aside>
 
         <p class="phpdocumentor-summary">Expand item meta into the $item array.</p>
@@ -3890,9 +4021,9 @@ classes. This function now does nothing to avoid data breakage.</p>
         <a href="#method_get_base_data" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-order.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-order.html#source-view.588">includes/abstracts/abstract-wc-order.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-order.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-order.html#source-view.604">includes/abstracts/abstract-wc-order.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">588</span>
+    <span class="phpdocumentor-element-found-in__line">604</span>
 </aside>
 
         <p class="phpdocumentor-summary">Get basic order data in array format.</p>
@@ -3922,9 +4053,9 @@ classes. This function now does nothing to avoid data breakage.</p>
         <a href="#method_get_cart_tax" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-order.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-order.html#source-view.454">includes/abstracts/abstract-wc-order.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-order.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-order.html#source-view.470">includes/abstracts/abstract-wc-order.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">454</span>
+    <span class="phpdocumentor-element-found-in__line">470</span>
 </aside>
 
         <p class="phpdocumentor-summary">Gets cart tax amount.</p>
@@ -3966,9 +4097,9 @@ classes. This function now does nothing to avoid data breakage.</p>
         <a href="#method_get_changes" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-data.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-data.html#source-view.842">includes/abstracts/abstract-wc-data.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-data.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-data.html#source-view.840">includes/abstracts/abstract-wc-data.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">842</span>
+    <span class="phpdocumentor-element-found-in__line">840</span>
 </aside>
 
         <p class="phpdocumentor-summary">Return data changes only.</p>
@@ -4007,14 +4138,47 @@ classes. This function now does nothing to avoid data breakage.</p>
             -public
                                                         "
 >
+    <h4 class="phpdocumentor-element__name" id="method_get_cogs_total_value">
+        get_cogs_total_value()
+        <a href="#method_get_cogs_total_value" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-order.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-order.html#source-view.2561">includes/abstracts/abstract-wc-order.php</a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">2561</span>
+</aside>
+
+        <p class="phpdocumentor-summary">Get the value of the Cost of Goods Sold for this order.</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                <span class="phpdocumentor-signature__name">get_cogs_total_value</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">float</span></code>
+
+        <section class="phpdocumentor-description"><p>WARNING! If the Cost of Goods Sold feature is disabled this method will always return zero.</p>
+</section>
+
+    
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">float</span>
+            &mdash; <span class="phpdocumentor-return-value__description">The current value for this order.</span>
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                                        "
+>
     <h4 class="phpdocumentor-element__name" id="method_get_coupon_codes">
         get_coupon_codes()
         <a href="#method_get_coupon_codes" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-order.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-order.html#source-view.964">includes/abstracts/abstract-wc-order.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-order.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-order.html#source-view.1008">includes/abstracts/abstract-wc-order.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">964</span>
+    <span class="phpdocumentor-element-found-in__line">1008</span>
 </aside>
 
         <p class="phpdocumentor-summary">Get used coupon codes only.</p>
@@ -4058,9 +4222,9 @@ classes. This function now does nothing to avoid data breakage.</p>
         <a href="#method_get_coupons" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-order.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-order.html#source-view.914">includes/abstracts/abstract-wc-order.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-order.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-order.html#source-view.958">includes/abstracts/abstract-wc-order.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">914</span>
+    <span class="phpdocumentor-element-found-in__line">958</span>
 </aside>
 
         <p class="phpdocumentor-summary">Return an array of coupons within this order.</p>
@@ -4104,9 +4268,9 @@ classes. This function now does nothing to avoid data breakage.</p>
         <a href="#method_get_currency" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-order.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-order.html#source-view.327">includes/abstracts/abstract-wc-order.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-order.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-order.html#source-view.337">includes/abstracts/abstract-wc-order.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">327</span>
+    <span class="phpdocumentor-element-found-in__line">337</span>
 </aside>
 
         <p class="phpdocumentor-summary">Gets order currency.</p>
@@ -4148,9 +4312,9 @@ classes. This function now does nothing to avoid data breakage.</p>
         <a href="#method_get_data" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-order.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-order.html#source-view.160">includes/abstracts/abstract-wc-order.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-order.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-order.html#source-view.170">includes/abstracts/abstract-wc-order.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">160</span>
+    <span class="phpdocumentor-element-found-in__line">170</span>
 </aside>
 
         <p class="phpdocumentor-summary">Get all class data in array format.</p>
@@ -4286,9 +4450,9 @@ classes. This function now does nothing to avoid data breakage.</p>
         <a href="#method_get_date_completed" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-order.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-order.html#source-view.387">includes/abstracts/abstract-wc-order.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-order.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-order.html#source-view.397">includes/abstracts/abstract-wc-order.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">387</span>
+    <span class="phpdocumentor-element-found-in__line">397</span>
 </aside>
 
         <p class="phpdocumentor-summary">Get date_modified.</p>
@@ -4330,9 +4494,9 @@ classes. This function now does nothing to avoid data breakage.</p>
         <a href="#method_get_date_created" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-order.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-order.html#source-view.357">includes/abstracts/abstract-wc-order.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-order.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-order.html#source-view.367">includes/abstracts/abstract-wc-order.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">357</span>
+    <span class="phpdocumentor-element-found-in__line">367</span>
 </aside>
 
         <p class="phpdocumentor-summary">Get date_created.</p>
@@ -4374,9 +4538,9 @@ classes. This function now does nothing to avoid data breakage.</p>
         <a href="#method_get_date_modified" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-order.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-order.html#source-view.367">includes/abstracts/abstract-wc-order.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-order.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-order.html#source-view.377">includes/abstracts/abstract-wc-order.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">367</span>
+    <span class="phpdocumentor-element-found-in__line">377</span>
 </aside>
 
         <p class="phpdocumentor-summary">Get date_modified.</p>
@@ -4418,9 +4582,9 @@ classes. This function now does nothing to avoid data breakage.</p>
         <a href="#method_get_date_paid" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-order.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-order.html#source-view.377">includes/abstracts/abstract-wc-order.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-order.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-order.html#source-view.387">includes/abstracts/abstract-wc-order.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">377</span>
+    <span class="phpdocumentor-element-found-in__line">387</span>
 </aside>
 
         <p class="phpdocumentor-summary">Get date_modified.</p>
@@ -4462,9 +4626,9 @@ classes. This function now does nothing to avoid data breakage.</p>
         <a href="#method_get_discount_tax" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-order.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-order.html#source-view.424">includes/abstracts/abstract-wc-order.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-order.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-order.html#source-view.440">includes/abstracts/abstract-wc-order.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">424</span>
+    <span class="phpdocumentor-element-found-in__line">440</span>
 </aside>
 
         <p class="phpdocumentor-summary">Get discount_tax.</p>
@@ -4506,9 +4670,9 @@ classes. This function now does nothing to avoid data breakage.</p>
         <a href="#method_get_discount_to_display" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-order.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-order.html#source-view.2231">includes/abstracts/abstract-wc-order.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-order.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-order.html#source-view.2279">includes/abstracts/abstract-wc-order.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">2231</span>
+    <span class="phpdocumentor-element-found-in__line">2279</span>
 </aside>
 
         <p class="phpdocumentor-summary">Get the discount amount (formatted).</p>
@@ -4564,9 +4728,9 @@ classes. This function now does nothing to avoid data breakage.</p>
         <a href="#method_get_discount_total" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-order.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-order.html#source-view.414">includes/abstracts/abstract-wc-order.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-order.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-order.html#source-view.430">includes/abstracts/abstract-wc-order.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">414</span>
+    <span class="phpdocumentor-element-found-in__line">430</span>
 </aside>
 
         <p class="phpdocumentor-summary">Get discount_total.</p>
@@ -4608,9 +4772,9 @@ classes. This function now does nothing to avoid data breakage.</p>
         <a href="#method_get_download_url" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/legacy/abstract-wc-legacy-order.php"><a href="../files/woocommerce-includes-legacy-abstract-wc-legacy-order.html#source-view.523">includes/legacy/abstract-wc-legacy-order.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/legacy/abstract-wc-legacy-order.php"><a href="../files/woocommerce-includes-legacy-abstract-wc-legacy-order.html#source-view.526">includes/legacy/abstract-wc-legacy-order.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">523</span>
+    <span class="phpdocumentor-element-found-in__line">526</span>
 </aside>
 
         <p class="phpdocumentor-summary">Get the Download URL.</p>
@@ -4705,9 +4869,9 @@ classes. This function now does nothing to avoid data breakage.</p>
         <a href="#method_get_fees" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-order.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-order.html#source-view.923">includes/abstracts/abstract-wc-order.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-order.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-order.html#source-view.967">includes/abstracts/abstract-wc-order.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">923</span>
+    <span class="phpdocumentor-element-found-in__line">967</span>
 </aside>
 
         <p class="phpdocumentor-summary">Return an array of fees within this order.</p>
@@ -4737,9 +4901,9 @@ classes. This function now does nothing to avoid data breakage.</p>
         <a href="#method_get_formatted_line_subtotal" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-order.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-order.html#source-view.2103">includes/abstracts/abstract-wc-order.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-order.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-order.html#source-view.2151">includes/abstracts/abstract-wc-order.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">2103</span>
+    <span class="phpdocumentor-element-found-in__line">2151</span>
 </aside>
 
         <p class="phpdocumentor-summary">Gets line subtotal - formatted for display.</p>
@@ -4790,9 +4954,9 @@ classes. This function now does nothing to avoid data breakage.</p>
         <a href="#method_get_formatted_order_total" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-order.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-order.html#source-view.2128">includes/abstracts/abstract-wc-order.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-order.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-order.html#source-view.2176">includes/abstracts/abstract-wc-order.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">2128</span>
+    <span class="phpdocumentor-element-found-in__line">2176</span>
 </aside>
 
         <p class="phpdocumentor-summary">Gets order total - formatted for display.</p>
@@ -4868,9 +5032,9 @@ classes. This function now does nothing to avoid data breakage.</p>
         <a href="#method_get_item" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-order.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-order.html#source-view.1001">includes/abstracts/abstract-wc-order.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-order.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-order.html#source-view.1045">includes/abstracts/abstract-wc-order.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1001</span>
+    <span class="phpdocumentor-element-found-in__line">1045</span>
 </aside>
 
         <p class="phpdocumentor-summary">Get an order item object, based on its type.</p>
@@ -4935,9 +5099,9 @@ classes. This function now does nothing to avoid data breakage.</p>
         <a href="#method_get_item_count" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-order.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-order.html#source-view.982">includes/abstracts/abstract-wc-order.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-order.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-order.html#source-view.1026">includes/abstracts/abstract-wc-order.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">982</span>
+    <span class="phpdocumentor-element-found-in__line">1026</span>
 </aside>
 
         <p class="phpdocumentor-summary">Gets the count of order items of a certain type.</p>
@@ -4979,9 +5143,9 @@ classes. This function now does nothing to avoid data breakage.</p>
         <a href="#method_get_item_downloads" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/legacy/abstract-wc-legacy-order.php"><a href="../files/woocommerce-includes-legacy-abstract-wc-legacy-order.html#source-view.539">includes/legacy/abstract-wc-legacy-order.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/legacy/abstract-wc-legacy-order.php"><a href="../files/woocommerce-includes-legacy-abstract-wc-legacy-order.html#source-view.542">includes/legacy/abstract-wc-legacy-order.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">539</span>
+    <span class="phpdocumentor-element-found-in__line">542</span>
 </aside>
 
         <p class="phpdocumentor-summary">Get the downloadable files for an item in this order.</p>
@@ -5022,9 +5186,9 @@ classes. This function now does nothing to avoid data breakage.</p>
         <a href="#method_get_item_meta" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/legacy/abstract-wc-legacy-order.php"><a href="../files/woocommerce-includes-legacy-abstract-wc-legacy-order.html#source-view.578">includes/legacy/abstract-wc-legacy-order.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/legacy/abstract-wc-legacy-order.php"><a href="../files/woocommerce-includes-legacy-abstract-wc-legacy-order.html#source-view.581">includes/legacy/abstract-wc-legacy-order.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">578</span>
+    <span class="phpdocumentor-element-found-in__line">581</span>
 </aside>
 
         <p class="phpdocumentor-summary">Get order item meta.</p>
@@ -5097,9 +5261,9 @@ classes. This function now does nothing to avoid data breakage.</p>
         <a href="#method_get_item_meta_array" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/legacy/abstract-wc-legacy-order.php"><a href="../files/woocommerce-includes-legacy-abstract-wc-legacy-order.html#source-view.589">includes/legacy/abstract-wc-legacy-order.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/legacy/abstract-wc-legacy-order.php"><a href="../files/woocommerce-includes-legacy-abstract-wc-legacy-order.html#source-view.592">includes/legacy/abstract-wc-legacy-order.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">589</span>
+    <span class="phpdocumentor-element-found-in__line">592</span>
 </aside>
 
         <p class="phpdocumentor-summary">Get all item meta data in array format in the order it was saved. Does not group meta by key like get_item_meta().</p>
@@ -5140,9 +5304,9 @@ classes. This function now does nothing to avoid data breakage.</p>
         <a href="#method_get_item_subtotal" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-order.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-order.html#source-view.1982">includes/abstracts/abstract-wc-order.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-order.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-order.html#source-view.2030">includes/abstracts/abstract-wc-order.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1982</span>
+    <span class="phpdocumentor-element-found-in__line">2030</span>
 </aside>
 
         <p class="phpdocumentor-summary">Get item subtotal - this is the cost before discount.</p>
@@ -5202,9 +5366,9 @@ classes. This function now does nothing to avoid data breakage.</p>
         <a href="#method_get_item_tax" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-order.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-order.html#source-view.2075">includes/abstracts/abstract-wc-order.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-order.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-order.html#source-view.2123">includes/abstracts/abstract-wc-order.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">2075</span>
+    <span class="phpdocumentor-element-found-in__line">2123</span>
 </aside>
 
         <p class="phpdocumentor-summary">Get item tax - useful for gateways.</p>
@@ -5255,9 +5419,9 @@ classes. This function now does nothing to avoid data breakage.</p>
         <a href="#method_get_item_total" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-order.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-order.html#source-view.2030">includes/abstracts/abstract-wc-order.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-order.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-order.html#source-view.2078">includes/abstracts/abstract-wc-order.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">2030</span>
+    <span class="phpdocumentor-element-found-in__line">2078</span>
 </aside>
 
         <p class="phpdocumentor-summary">Calculate item cost - useful for gateways.</p>
@@ -5317,9 +5481,9 @@ classes. This function now does nothing to avoid data breakage.</p>
         <a href="#method_get_items" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-order.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-order.html#source-view.872">includes/abstracts/abstract-wc-order.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-order.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-order.html#source-view.916">includes/abstracts/abstract-wc-order.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">872</span>
+    <span class="phpdocumentor-element-found-in__line">916</span>
 </aside>
 
         <p class="phpdocumentor-summary">Return an array of items/products within this order.</p>
@@ -5361,9 +5525,9 @@ classes. This function now does nothing to avoid data breakage.</p>
         <a href="#method_get_items_tax_classes" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-order.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-order.html#source-view.1663">includes/abstracts/abstract-wc-order.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-order.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-order.html#source-view.1707">includes/abstracts/abstract-wc-order.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1663</span>
+    <span class="phpdocumentor-element-found-in__line">1707</span>
 </aside>
 
         <p class="phpdocumentor-summary">Get all tax classes for items in the order.</p>
@@ -5407,9 +5571,9 @@ classes. This function now does nothing to avoid data breakage.</p>
         <a href="#method_get_line_subtotal" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-order.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-order.html#source-view.2006">includes/abstracts/abstract-wc-order.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-order.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-order.html#source-view.2054">includes/abstracts/abstract-wc-order.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">2006</span>
+    <span class="phpdocumentor-element-found-in__line">2054</span>
 </aside>
 
         <p class="phpdocumentor-summary">Get line subtotal - this is the cost before discount.</p>
@@ -5469,9 +5633,9 @@ classes. This function now does nothing to avoid data breakage.</p>
         <a href="#method_get_line_tax" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-order.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-order.html#source-view.2092">includes/abstracts/abstract-wc-order.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-order.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-order.html#source-view.2140">includes/abstracts/abstract-wc-order.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">2092</span>
+    <span class="phpdocumentor-element-found-in__line">2140</span>
 </aside>
 
         <p class="phpdocumentor-summary">Get line tax - useful for gateways.</p>
@@ -5513,9 +5677,9 @@ classes. This function now does nothing to avoid data breakage.</p>
         <a href="#method_get_line_total" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-order.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-order.html#source-view.2054">includes/abstracts/abstract-wc-order.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-order.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-order.html#source-view.2102">includes/abstracts/abstract-wc-order.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">2054</span>
+    <span class="phpdocumentor-element-found-in__line">2102</span>
 </aside>
 
         <p class="phpdocumentor-summary">Calculate line total - useful for gateways.</p>
@@ -5743,9 +5907,9 @@ classes. This function now does nothing to avoid data breakage.</p>
         <a href="#method_get_object_read" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-data.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-data.html#source-view.772">includes/abstracts/abstract-wc-data.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-data.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-data.html#source-view.770">includes/abstracts/abstract-wc-data.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">772</span>
+    <span class="phpdocumentor-element-found-in__line">770</span>
 </aside>
 
         <p class="phpdocumentor-summary">Get object read property.</p>
@@ -5789,9 +5953,9 @@ classes. This function now does nothing to avoid data breakage.</p>
         <a href="#method_get_order" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/legacy/abstract-wc-legacy-order.php"><a href="../files/woocommerce-includes-legacy-abstract-wc-legacy-order.html#source-view.649">includes/legacy/abstract-wc-legacy-order.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/legacy/abstract-wc-legacy-order.php"><a href="../files/woocommerce-includes-legacy-abstract-wc-legacy-order.html#source-view.652">includes/legacy/abstract-wc-legacy-order.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">649</span>
+    <span class="phpdocumentor-element-found-in__line">652</span>
 </aside>
 
         <p class="phpdocumentor-summary">Gets an order from the database.</p>
@@ -5847,9 +6011,9 @@ classes. This function now does nothing to avoid data breakage.</p>
         <a href="#method_get_order_currency" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/legacy/abstract-wc-legacy-order.php"><a href="../files/woocommerce-includes-legacy-abstract-wc-legacy-order.html#source-view.752">includes/legacy/abstract-wc-legacy-order.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/legacy/abstract-wc-legacy-order.php"><a href="../files/woocommerce-includes-legacy-abstract-wc-legacy-order.html#source-view.755">includes/legacy/abstract-wc-legacy-order.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">752</span>
+    <span class="phpdocumentor-element-found-in__line">755</span>
 </aside>
 
         <p class="phpdocumentor-summary">Get currency.</p>
@@ -5893,9 +6057,9 @@ classes. This function now does nothing to avoid data breakage.</p>
         <a href="#method_get_order_item_totals" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-order.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-order.html#source-view.2355">includes/abstracts/abstract-wc-order.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-order.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-order.html#source-view.2411">includes/abstracts/abstract-wc-order.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">2355</span>
+    <span class="phpdocumentor-element-found-in__line">2411</span>
 </aside>
 
         <p class="phpdocumentor-summary">Get totals for display on pages and in emails.</p>
@@ -5937,9 +6101,9 @@ classes. This function now does nothing to avoid data breakage.</p>
         <a href="#method_get_parent_id" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-order.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-order.html#source-view.317">includes/abstracts/abstract-wc-order.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-order.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-order.html#source-view.327">includes/abstracts/abstract-wc-order.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">317</span>
+    <span class="phpdocumentor-element-found-in__line">327</span>
 </aside>
 
         <p class="phpdocumentor-summary">Get parent order ID.</p>
@@ -5990,14 +6154,46 @@ classes. This function now does nothing to avoid data breakage.</p>
             -public
                                                         "
 >
+    <h4 class="phpdocumentor-element__name" id="method_get_payment_card_info">
+        get_payment_card_info()
+        <a href="#method_get_payment_card_info" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-order.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-order.html#source-view.616">includes/abstracts/abstract-wc-order.php</a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">616</span>
+</aside>
+
+        <p class="phpdocumentor-summary">Get info about the card used for payment in the order.</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                <span class="phpdocumentor-signature__name">get_payment_card_info</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">array&lt;string|int, mixed&gt;</span></code>
+
+        <section class="phpdocumentor-description"></section>
+
+    
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">array&lt;string|int, mixed&gt;</span>
+            &mdash; <span class="phpdocumentor-return-value__description"></span>
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                                        "
+>
     <h4 class="phpdocumentor-element__name" id="method_get_payment_tokens">
         get_payment_tokens()
         <a href="#method_get_payment_tokens" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-order.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-order.html#source-view.1625">includes/abstracts/abstract-wc-order.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-order.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-order.html#source-view.1669">includes/abstracts/abstract-wc-order.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1625</span>
+    <span class="phpdocumentor-element-found-in__line">1669</span>
 </aside>
 
         <p class="phpdocumentor-summary">Returns a list of all payment tokens associated with the current order</p>
@@ -6041,9 +6237,9 @@ classes. This function now does nothing to avoid data breakage.</p>
         <a href="#method_get_prices_include_tax" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-order.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-order.html#source-view.347">includes/abstracts/abstract-wc-order.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-order.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-order.html#source-view.357">includes/abstracts/abstract-wc-order.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">347</span>
+    <span class="phpdocumentor-element-found-in__line">357</span>
 </aside>
 
         <p class="phpdocumentor-summary">Get prices_include_tax.</p>
@@ -6085,9 +6281,9 @@ classes. This function now does nothing to avoid data breakage.</p>
         <a href="#method_get_product_from_item" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/legacy/abstract-wc-legacy-order.php"><a href="../files/woocommerce-includes-legacy-abstract-wc-legacy-order.html#source-view.319">includes/legacy/abstract-wc-legacy-order.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/legacy/abstract-wc-legacy-order.php"><a href="../files/woocommerce-includes-legacy-abstract-wc-legacy-order.html#source-view.322">includes/legacy/abstract-wc-legacy-order.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">319</span>
+    <span class="phpdocumentor-element-found-in__line">322</span>
 </aside>
 
         <p class="phpdocumentor-summary">Get a product (either product or variation).</p>
@@ -6142,9 +6338,9 @@ classes. This function now does nothing to avoid data breakage.</p>
         <a href="#method_get_recorded_coupon_usage_counts" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-order.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-order.html#source-view.579">includes/abstracts/abstract-wc-order.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-order.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-order.html#source-view.595">includes/abstracts/abstract-wc-order.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">579</span>
+    <span class="phpdocumentor-element-found-in__line">595</span>
 </aside>
 
         <p class="phpdocumentor-summary">Gets information about whether coupon counts were updated.</p>
@@ -6244,9 +6440,9 @@ classes. This function now does nothing to avoid data breakage.</p>
         <a href="#method_get_shipping_method" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-order.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-order.html#source-view.950">includes/abstracts/abstract-wc-order.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-order.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-order.html#source-view.994">includes/abstracts/abstract-wc-order.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">950</span>
+    <span class="phpdocumentor-element-found-in__line">994</span>
 </aside>
 
         <p class="phpdocumentor-summary">Gets formatted shipping method title.</p>
@@ -6276,9 +6472,9 @@ classes. This function now does nothing to avoid data breakage.</p>
         <a href="#method_get_shipping_methods" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-order.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-order.html#source-view.941">includes/abstracts/abstract-wc-order.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-order.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-order.html#source-view.985">includes/abstracts/abstract-wc-order.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">941</span>
+    <span class="phpdocumentor-element-found-in__line">985</span>
 </aside>
 
         <p class="phpdocumentor-summary">Return an array of shipping costs within this order.</p>
@@ -6308,9 +6504,9 @@ classes. This function now does nothing to avoid data breakage.</p>
         <a href="#method_get_shipping_tax" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-order.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-order.html#source-view.444">includes/abstracts/abstract-wc-order.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-order.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-order.html#source-view.460">includes/abstracts/abstract-wc-order.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">444</span>
+    <span class="phpdocumentor-element-found-in__line">460</span>
 </aside>
 
         <p class="phpdocumentor-summary">Get shipping_tax.</p>
@@ -6352,9 +6548,9 @@ classes. This function now does nothing to avoid data breakage.</p>
         <a href="#method_get_shipping_to_display" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-order.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-order.html#source-view.2189">includes/abstracts/abstract-wc-order.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-order.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-order.html#source-view.2237">includes/abstracts/abstract-wc-order.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">2189</span>
+    <span class="phpdocumentor-element-found-in__line">2237</span>
 </aside>
 
         <p class="phpdocumentor-summary">Gets shipping (formatted).</p>
@@ -6396,9 +6592,9 @@ classes. This function now does nothing to avoid data breakage.</p>
         <a href="#method_get_shipping_total" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-order.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-order.html#source-view.434">includes/abstracts/abstract-wc-order.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-order.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-order.html#source-view.450">includes/abstracts/abstract-wc-order.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">434</span>
+    <span class="phpdocumentor-element-found-in__line">450</span>
 </aside>
 
         <p class="phpdocumentor-summary">Get shipping_total.</p>
@@ -6440,9 +6636,9 @@ classes. This function now does nothing to avoid data breakage.</p>
         <a href="#method_get_status" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-order.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-order.html#source-view.398">includes/abstracts/abstract-wc-order.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-order.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-order.html#source-view.408">includes/abstracts/abstract-wc-order.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">398</span>
+    <span class="phpdocumentor-element-found-in__line">408</span>
 </aside>
 
         <p class="phpdocumentor-summary">Return the order statuses without wc- internal prefix.</p>
@@ -6484,9 +6680,9 @@ classes. This function now does nothing to avoid data breakage.</p>
         <a href="#method_get_subtotal" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-order.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-order.html#source-view.506">includes/abstracts/abstract-wc-order.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-order.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-order.html#source-view.522">includes/abstracts/abstract-wc-order.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">506</span>
+    <span class="phpdocumentor-element-found-in__line">522</span>
 </aside>
 
         <p class="phpdocumentor-summary">Gets order subtotal. Order subtotal is the price of all items excluding taxes, fees, shipping cost, and coupon discounts.</p>
@@ -6518,9 +6714,9 @@ price of $100 bought at a 50% discount will represent $50 of the subtotal for th
         <a href="#method_get_subtotal_to_display" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-order.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-order.html#source-view.2140">includes/abstracts/abstract-wc-order.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-order.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-order.html#source-view.2188">includes/abstracts/abstract-wc-order.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">2140</span>
+    <span class="phpdocumentor-element-found-in__line">2188</span>
 </aside>
 
         <p class="phpdocumentor-summary">Gets subtotal - subtotal is shown before discounts, but with localised taxes.</p>
@@ -6571,9 +6767,9 @@ price of $100 bought at a 50% discount will represent $50 of the subtotal for th
         <a href="#method_get_tax_totals" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-order.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-order.html#source-view.516">includes/abstracts/abstract-wc-order.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-order.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-order.html#source-view.532">includes/abstracts/abstract-wc-order.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">516</span>
+    <span class="phpdocumentor-element-found-in__line">532</span>
 </aside>
 
         <p class="phpdocumentor-summary">Get taxes, merged by code, formatted ready for output.</p>
@@ -6603,9 +6799,9 @@ price of $100 bought at a 50% discount will represent $50 of the subtotal for th
         <a href="#method_get_taxable_location" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-order.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-order.html#source-view.1740">includes/abstracts/abstract-wc-order.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-order.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-order.html#source-view.1784">includes/abstracts/abstract-wc-order.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1740</span>
+    <span class="phpdocumentor-element-found-in__line">1784</span>
 </aside>
 
         <p class="phpdocumentor-summary">Public wrapper for exposing get_tax_location() method, enabling 3rd parties to get the tax location for an order.</p>
@@ -6661,9 +6857,9 @@ price of $100 bought at a 50% discount will represent $50 of the subtotal for th
         <a href="#method_get_taxes" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-order.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-order.html#source-view.932">includes/abstracts/abstract-wc-order.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-order.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-order.html#source-view.976">includes/abstracts/abstract-wc-order.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">932</span>
+    <span class="phpdocumentor-element-found-in__line">976</span>
 </aside>
 
         <p class="phpdocumentor-summary">Return an array of taxes within this order.</p>
@@ -6693,9 +6889,9 @@ price of $100 bought at a 50% discount will represent $50 of the subtotal for th
         <a href="#method_get_title" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-order.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-order.html#source-view.2423">includes/abstracts/abstract-wc-order.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-order.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-order.html#source-view.2479">includes/abstracts/abstract-wc-order.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">2423</span>
+    <span class="phpdocumentor-element-found-in__line">2479</span>
 </aside>
 
         <p class="phpdocumentor-summary">Get order title.</p>
@@ -6725,9 +6921,9 @@ price of $100 bought at a 50% discount will represent $50 of the subtotal for th
         <a href="#method_get_total" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-order.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-order.html#source-view.464">includes/abstracts/abstract-wc-order.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-order.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-order.html#source-view.480">includes/abstracts/abstract-wc-order.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">464</span>
+    <span class="phpdocumentor-element-found-in__line">480</span>
 </aside>
 
         <p class="phpdocumentor-summary">Gets order grand total including taxes, shipping cost, fees, and coupon discounts. Used in gateways.</p>
@@ -6769,9 +6965,9 @@ price of $100 bought at a 50% discount will represent $50 of the subtotal for th
         <a href="#method_get_total_discount" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-order.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-order.html#source-view.490">includes/abstracts/abstract-wc-order.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-order.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-order.html#source-view.506">includes/abstracts/abstract-wc-order.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">490</span>
+    <span class="phpdocumentor-element-found-in__line">506</span>
 </aside>
 
         <p class="phpdocumentor-summary">Gets the total discount amount.</p>
@@ -6813,9 +7009,9 @@ price of $100 bought at a 50% discount will represent $50 of the subtotal for th
         <a href="#method_get_total_fees" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-order.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-order.html#source-view.1807">includes/abstracts/abstract-wc-order.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-order.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-order.html#source-view.1851">includes/abstracts/abstract-wc-order.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1807</span>
+    <span class="phpdocumentor-element-found-in__line">1851</span>
 </aside>
 
         <p class="phpdocumentor-summary">Calculate fees for all line items.</p>
@@ -6845,9 +7041,9 @@ price of $100 bought at a 50% discount will represent $50 of the subtotal for th
         <a href="#method_get_total_shipping" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/legacy/abstract-wc-legacy-order.php"><a href="../files/woocommerce-includes-legacy-abstract-wc-legacy-order.html#source-view.566">includes/legacy/abstract-wc-legacy-order.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/legacy/abstract-wc-legacy-order.php"><a href="../files/woocommerce-includes-legacy-abstract-wc-legacy-order.html#source-view.569">includes/legacy/abstract-wc-legacy-order.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">566</span>
+    <span class="phpdocumentor-element-found-in__line">569</span>
 </aside>
 
         <p class="phpdocumentor-summary">Gets shipping total. Alias of WC_Order::get_shipping_total().</p>
@@ -6892,9 +7088,9 @@ price of $100 bought at a 50% discount will represent $50 of the subtotal for th
         <a href="#method_get_total_tax" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-order.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-order.html#source-view.474">includes/abstracts/abstract-wc-order.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-order.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-order.html#source-view.490">includes/abstracts/abstract-wc-order.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">474</span>
+    <span class="phpdocumentor-element-found-in__line">490</span>
 </aside>
 
         <p class="phpdocumentor-summary">Get total tax amount. Alias for get_order_tax().</p>
@@ -6936,9 +7132,9 @@ price of $100 bought at a 50% discount will represent $50 of the subtotal for th
         <a href="#method_get_type" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-order.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-order.html#source-view.150">includes/abstracts/abstract-wc-order.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-order.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-order.html#source-view.160">includes/abstracts/abstract-wc-order.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">150</span>
+    <span class="phpdocumentor-element-found-in__line">160</span>
 </aside>
 
         <p class="phpdocumentor-summary">Get internal type.</p>
@@ -6968,9 +7164,9 @@ price of $100 bought at a 50% discount will represent $50 of the subtotal for th
         <a href="#method_get_used_coupons" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/legacy/abstract-wc-legacy-order.php"><a href="../files/woocommerce-includes-legacy-abstract-wc-legacy-order.html#source-view.608">includes/legacy/abstract-wc-legacy-order.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/legacy/abstract-wc-legacy-order.php"><a href="../files/woocommerce-includes-legacy-abstract-wc-legacy-order.html#source-view.611">includes/legacy/abstract-wc-legacy-order.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">608</span>
+    <span class="phpdocumentor-element-found-in__line">611</span>
 </aside>
 
         <p class="phpdocumentor-summary">Get coupon codes only.</p>
@@ -7017,9 +7213,9 @@ price of $100 bought at a 50% discount will represent $50 of the subtotal for th
         <a href="#method_get_user" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-order.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-order.html#source-view.568">includes/abstracts/abstract-wc-order.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-order.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-order.html#source-view.584">includes/abstracts/abstract-wc-order.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">568</span>
+    <span class="phpdocumentor-element-found-in__line">584</span>
 </aside>
 
         <p class="phpdocumentor-summary">Get user. Used by orders, not other order types like refunds.</p>
@@ -7049,9 +7245,9 @@ price of $100 bought at a 50% discount will represent $50 of the subtotal for th
         <a href="#method_get_user_id" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-order.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-order.html#source-view.559">includes/abstracts/abstract-wc-order.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-order.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-order.html#source-view.575">includes/abstracts/abstract-wc-order.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">559</span>
+    <span class="phpdocumentor-element-found-in__line">575</span>
 </aside>
 
         <p class="phpdocumentor-summary">Get user ID. Used by orders, not other order types like refunds.</p>
@@ -7093,9 +7289,9 @@ price of $100 bought at a 50% discount will represent $50 of the subtotal for th
         <a href="#method_get_version" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-order.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-order.html#source-view.337">includes/abstracts/abstract-wc-order.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-order.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-order.html#source-view.347">includes/abstracts/abstract-wc-order.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">337</span>
+    <span class="phpdocumentor-element-found-in__line">347</span>
 </aside>
 
         <p class="phpdocumentor-summary">Get order_version.</p>
@@ -7132,14 +7328,61 @@ price of $100 bought at a 50% discount will represent $50 of the subtotal for th
             -public
                                                         "
 >
+    <h4 class="phpdocumentor-element__name" id="method_has_cogs">
+        has_cogs()
+        <a href="#method_has_cogs" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-order.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-order.html#source-view.2496">includes/abstracts/abstract-wc-order.php</a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">2496</span>
+</aside>
+
+        <p class="phpdocumentor-summary">Indicates if the current order has an associated Cost of Goods Sold value.</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                <span class="phpdocumentor-signature__name">has_cogs</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">bool</span></code>
+
+        <section class="phpdocumentor-description"><p>Derived classes representing orders that have a COGS value should override this method to return &quot;true&quot;.</p>
+</section>
+
+    
+    
+    <h5 class="phpdocumentor-tag-list__heading" id="tags">
+        Tags
+        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
+    </h5>
+    <dl class="phpdocumentor-tag-list">
+                                    <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">since</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                            <span class="phpdocumentor-tag-link">9.5.0</span>
+                                                                                                        <section class="phpdocumentor-description"></section>
+
+                </dd>
+                        </dl>
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">bool</span>
+            &mdash; <span class="phpdocumentor-return-value__description">True if this order has an associated Cost of Goods Sold value.</span>
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                                        "
+>
     <h4 class="phpdocumentor-element__name" id="method_has_free_item">
         has_free_item()
         <a href="#method_has_free_item" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-order.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-order.html#source-view.2409">includes/abstracts/abstract-wc-order.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-order.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-order.html#source-view.2465">includes/abstracts/abstract-wc-order.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">2409</span>
+    <span class="phpdocumentor-element-found-in__line">2465</span>
 </aside>
 
         <p class="phpdocumentor-summary">Returns true if the order contains a free product.</p>
@@ -7183,9 +7426,9 @@ price of $100 bought at a 50% discount will represent $50 of the subtotal for th
         <a href="#method_has_meta" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/legacy/abstract-wc-legacy-order.php"><a href="../files/woocommerce-includes-legacy-abstract-wc-legacy-order.html#source-view.471">includes/legacy/abstract-wc-legacy-order.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/legacy/abstract-wc-legacy-order.php"><a href="../files/woocommerce-includes-legacy-abstract-wc-legacy-order.html#source-view.474">includes/legacy/abstract-wc-legacy-order.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">471</span>
+    <span class="phpdocumentor-element-found-in__line">474</span>
 </aside>
 
         <p class="phpdocumentor-summary">has_meta function for order items. This is different to the WC_Data
@@ -7241,9 +7484,9 @@ version and should be removed in future versions.</p>
         <a href="#method_has_shipping_method" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-order.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-order.html#source-view.2394">includes/abstracts/abstract-wc-order.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-order.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-order.html#source-view.2450">includes/abstracts/abstract-wc-order.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">2394</span>
+    <span class="phpdocumentor-element-found-in__line">2450</span>
 </aside>
 
         <p class="phpdocumentor-summary">Check whether this order has a specific shipping method or not.</p>
@@ -7285,9 +7528,9 @@ version and should be removed in future versions.</p>
         <a href="#method_has_status" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-order.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-order.html#source-view.2384">includes/abstracts/abstract-wc-order.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-order.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-order.html#source-view.2440">includes/abstracts/abstract-wc-order.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">2384</span>
+    <span class="phpdocumentor-element-found-in__line">2440</span>
 </aside>
 
         <p class="phpdocumentor-summary">Checks the order status against a passed in status.</p>
@@ -7329,9 +7572,9 @@ version and should be removed in future versions.</p>
         <a href="#method_hold_applied_coupons" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-order.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-order.html#source-view.1109">includes/abstracts/abstract-wc-order.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-order.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-order.html#source-view.1153">includes/abstracts/abstract-wc-order.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1109</span>
+    <span class="phpdocumentor-element-found-in__line">1153</span>
 </aside>
 
         <p class="phpdocumentor-summary">Check and records coupon usage tentatively so that counts validation is correct. Display an error if coupon usage limit has been reached.</p>
@@ -7389,9 +7632,9 @@ version and should be removed in future versions.</p>
         <a href="#method_increase_coupon_usage_counts" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/legacy/abstract-wc-legacy-order.php"><a href="../files/woocommerce-includes-legacy-abstract-wc-legacy-order.html#source-view.702">includes/legacy/abstract-wc-legacy-order.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/legacy/abstract-wc-legacy-order.php"><a href="../files/woocommerce-includes-legacy-abstract-wc-legacy-order.html#source-view.705">includes/legacy/abstract-wc-legacy-order.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">702</span>
+    <span class="phpdocumentor-element-found-in__line">705</span>
 </aside>
 
         <p class="phpdocumentor-summary">Increase applied coupon counts.</p>
@@ -7479,9 +7722,9 @@ version and should be removed in future versions.</p>
         <a href="#method_legacy_set_total" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/legacy/abstract-wc-legacy-order.php"><a href="../files/woocommerce-includes-legacy-abstract-wc-legacy-order.html#source-view.349">includes/legacy/abstract-wc-legacy-order.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/legacy/abstract-wc-legacy-order.php"><a href="../files/woocommerce-includes-legacy-abstract-wc-legacy-order.html#source-view.352">includes/legacy/abstract-wc-legacy-order.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">349</span>
+    <span class="phpdocumentor-element-found-in__line">352</span>
 </aside>
 
         <p class="phpdocumentor-summary">Set an order total.</p>
@@ -7588,9 +7831,9 @@ version and should be removed in future versions.</p>
         <a href="#method_populate" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/legacy/abstract-wc-legacy-order.php"><a href="../files/woocommerce-includes-legacy-abstract-wc-legacy-order.html#source-view.671">includes/legacy/abstract-wc-legacy-order.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/legacy/abstract-wc-legacy-order.php"><a href="../files/woocommerce-includes-legacy-abstract-wc-legacy-order.html#source-view.674">includes/legacy/abstract-wc-legacy-order.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">671</span>
+    <span class="phpdocumentor-element-found-in__line">674</span>
 </aside>
 
         <p class="phpdocumentor-summary">Populates an order from the loaded post data.</p>
@@ -7771,9 +8014,9 @@ version and should be removed in future versions.</p>
         <a href="#method_recalculate_coupons" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-order.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-order.html#source-view.1348">includes/abstracts/abstract-wc-order.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-order.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-order.html#source-view.1392">includes/abstracts/abstract-wc-order.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1348</span>
+    <span class="phpdocumentor-element-found-in__line">1392</span>
 </aside>
 
         <p class="phpdocumentor-summary">Apply all coupons in this order again to all line items.</p>
@@ -7818,9 +8061,9 @@ version and should be removed in future versions.</p>
         <a href="#method_record_product_sales" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/legacy/abstract-wc-legacy-order.php"><a href="../files/woocommerce-includes-legacy-abstract-wc-legacy-order.html#source-view.693">includes/legacy/abstract-wc-legacy-order.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/legacy/abstract-wc-legacy-order.php"><a href="../files/woocommerce-includes-legacy-abstract-wc-legacy-order.html#source-view.696">includes/legacy/abstract-wc-legacy-order.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">693</span>
+    <span class="phpdocumentor-element-found-in__line">696</span>
 </aside>
 
         <p class="phpdocumentor-summary">Record sales.</p>
@@ -7864,9 +8107,9 @@ version and should be removed in future versions.</p>
         <a href="#method_reduce_order_stock" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/legacy/abstract-wc-legacy-order.php"><a href="../files/woocommerce-includes-legacy-abstract-wc-legacy-order.html#source-view.720">includes/legacy/abstract-wc-legacy-order.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/legacy/abstract-wc-legacy-order.php"><a href="../files/woocommerce-includes-legacy-abstract-wc-legacy-order.html#source-view.723">includes/legacy/abstract-wc-legacy-order.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">720</span>
+    <span class="phpdocumentor-element-found-in__line">723</span>
 </aside>
 
         <p class="phpdocumentor-summary">Reduce stock levels for all line items in the order.</p>
@@ -7910,9 +8153,9 @@ version and should be removed in future versions.</p>
         <a href="#method_remove_coupon" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-order.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-order.html#source-view.1324">includes/abstracts/abstract-wc-order.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-order.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-order.html#source-view.1368">includes/abstracts/abstract-wc-order.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1324</span>
+    <span class="phpdocumentor-element-found-in__line">1368</span>
 </aside>
 
         <p class="phpdocumentor-summary">Remove a coupon from the order and recalculate totals.</p>
@@ -7983,9 +8226,9 @@ stored line totals.</p>
         <a href="#method_remove_item" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-order.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-order.html#source-view.1055">includes/abstracts/abstract-wc-order.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-order.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-order.html#source-view.1099">includes/abstracts/abstract-wc-order.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1055</span>
+    <span class="phpdocumentor-element-found-in__line">1099</span>
 </aside>
 
         <p class="phpdocumentor-summary">Remove item from the order.</p>
@@ -8027,9 +8270,9 @@ stored line totals.</p>
         <a href="#method_remove_order_items" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-order.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-order.html#source-view.812">includes/abstracts/abstract-wc-order.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-order.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-order.html#source-view.849">includes/abstracts/abstract-wc-order.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">812</span>
+    <span class="phpdocumentor-element-found-in__line">849</span>
 </aside>
 
         <p class="phpdocumentor-summary">Remove all line items (products, coupons, shipping, taxes) from the order.</p>
@@ -8129,9 +8372,9 @@ stored line totals.</p>
         <a href="#method_save" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-order.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-order.html#source-view.197">includes/abstracts/abstract-wc-order.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-order.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-order.html#source-view.207">includes/abstracts/abstract-wc-order.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">197</span>
+    <span class="phpdocumentor-element-found-in__line">207</span>
 </aside>
 
         <p class="phpdocumentor-summary">Save data to the database.</p>
@@ -8221,9 +8464,9 @@ stored line totals.</p>
         <a href="#method_send_stock_notifications" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/legacy/abstract-wc-legacy-order.php"><a href="../files/woocommerce-includes-legacy-abstract-wc-legacy-order.html#source-view.733">includes/legacy/abstract-wc-legacy-order.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/legacy/abstract-wc-legacy-order.php"><a href="../files/woocommerce-includes-legacy-abstract-wc-legacy-order.html#source-view.736">includes/legacy/abstract-wc-legacy-order.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">733</span>
+    <span class="phpdocumentor-element-found-in__line">736</span>
 </aside>
 
         <p class="phpdocumentor-summary">Send the stock notifications.</p>
@@ -8295,9 +8538,9 @@ stored line totals.</p>
         <a href="#method_set_address" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/legacy/abstract-wc-legacy-order.php"><a href="../files/woocommerce-includes-legacy-abstract-wc-legacy-order.html#source-view.334">includes/legacy/abstract-wc-legacy-order.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/legacy/abstract-wc-legacy-order.php"><a href="../files/woocommerce-includes-legacy-abstract-wc-legacy-order.html#source-view.337">includes/legacy/abstract-wc-legacy-order.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">334</span>
+    <span class="phpdocumentor-element-found-in__line">337</span>
 </aside>
 
         <p class="phpdocumentor-summary">Set the customer address.</p>
@@ -8348,9 +8591,9 @@ stored line totals.</p>
         <a href="#method_set_cart_tax" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-order.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-order.html#source-view.754">includes/abstracts/abstract-wc-order.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-order.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-order.html#source-view.791">includes/abstracts/abstract-wc-order.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">754</span>
+    <span class="phpdocumentor-element-found-in__line">791</span>
 </aside>
 
         <p class="phpdocumentor-summary">Set cart tax.</p>
@@ -8407,9 +8650,9 @@ stored line totals.</p>
         <a href="#method_set_currency" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-order.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-order.html#source-view.670">includes/abstracts/abstract-wc-order.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-order.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-order.html#source-view.707">includes/abstracts/abstract-wc-order.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">670</span>
+    <span class="phpdocumentor-element-found-in__line">707</span>
 </aside>
 
         <p class="phpdocumentor-summary">Set order_currency.</p>
@@ -8466,9 +8709,9 @@ stored line totals.</p>
         <a href="#method_set_date_created" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-order.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-order.html#source-view.693">includes/abstracts/abstract-wc-order.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-order.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-order.html#source-view.730">includes/abstracts/abstract-wc-order.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">693</span>
+    <span class="phpdocumentor-element-found-in__line">730</span>
 </aside>
 
         <p class="phpdocumentor-summary">Set date_created.</p>
@@ -8525,9 +8768,9 @@ stored line totals.</p>
         <a href="#method_set_date_modified" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-order.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-order.html#source-view.703">includes/abstracts/abstract-wc-order.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-order.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-order.html#source-view.740">includes/abstracts/abstract-wc-order.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">703</span>
+    <span class="phpdocumentor-element-found-in__line">740</span>
 </aside>
 
         <p class="phpdocumentor-summary">Set date_modified.</p>
@@ -8584,9 +8827,9 @@ stored line totals.</p>
         <a href="#method_set_defaults" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-data.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-data.html#source-view.750">includes/abstracts/abstract-wc-data.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-data.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-data.html#source-view.748">includes/abstracts/abstract-wc-data.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">750</span>
+    <span class="phpdocumentor-element-found-in__line">748</span>
 </aside>
 
         <p class="phpdocumentor-summary">Set all props to default values.</p>
@@ -8630,9 +8873,9 @@ stored line totals.</p>
         <a href="#method_set_discount_tax" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-order.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-order.html#source-view.723">includes/abstracts/abstract-wc-order.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-order.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-order.html#source-view.760">includes/abstracts/abstract-wc-order.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">723</span>
+    <span class="phpdocumentor-element-found-in__line">760</span>
 </aside>
 
         <p class="phpdocumentor-summary">Set discount_tax.</p>
@@ -8689,9 +8932,9 @@ stored line totals.</p>
         <a href="#method_set_discount_total" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-order.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-order.html#source-view.713">includes/abstracts/abstract-wc-order.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-order.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-order.html#source-view.750">includes/abstracts/abstract-wc-order.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">713</span>
+    <span class="phpdocumentor-element-found-in__line">750</span>
 </aside>
 
         <p class="phpdocumentor-summary">Set discount_total.</p>
@@ -8748,9 +8991,9 @@ stored line totals.</p>
         <a href="#method_set_id" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-data.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-data.html#source-view.741">includes/abstracts/abstract-wc-data.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-data.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-data.html#source-view.739">includes/abstracts/abstract-wc-data.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">741</span>
+    <span class="phpdocumentor-element-found-in__line">739</span>
 </aside>
 
         <p class="phpdocumentor-summary">Set ID.</p>
@@ -8864,9 +9107,9 @@ stored line totals.</p>
         <a href="#method_set_object_read" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-data.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-data.html#source-view.762">includes/abstracts/abstract-wc-data.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-data.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-data.html#source-view.760">includes/abstracts/abstract-wc-data.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">762</span>
+    <span class="phpdocumentor-element-found-in__line">760</span>
 </aside>
 
         <p class="phpdocumentor-summary">Set object read property.</p>
@@ -8922,9 +9165,9 @@ stored line totals.</p>
         <a href="#method_set_parent_id" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-order.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-order.html#source-view.613">includes/abstracts/abstract-wc-order.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-order.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-order.html#source-view.638">includes/abstracts/abstract-wc-order.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">613</span>
+    <span class="phpdocumentor-element-found-in__line">638</span>
 </aside>
 
         <p class="phpdocumentor-summary">Set parent order ID.</p>
@@ -8989,9 +9232,9 @@ stored line totals.</p>
         <a href="#method_set_prices_include_tax" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-order.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-order.html#source-view.683">includes/abstracts/abstract-wc-order.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-order.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-order.html#source-view.720">includes/abstracts/abstract-wc-order.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">683</span>
+    <span class="phpdocumentor-element-found-in__line">720</span>
 </aside>
 
         <p class="phpdocumentor-summary">Set prices_include_tax.</p>
@@ -9048,9 +9291,9 @@ stored line totals.</p>
         <a href="#method_set_props" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-data.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-data.html#source-view.787">includes/abstracts/abstract-wc-data.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-data.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-data.html#source-view.785">includes/abstracts/abstract-wc-data.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">787</span>
+    <span class="phpdocumentor-element-found-in__line">785</span>
 </aside>
 
         <p class="phpdocumentor-summary">Set a collection of props in one go, collect any errors, and return the result.</p>
@@ -9116,9 +9359,9 @@ stored line totals.</p>
         <a href="#method_set_recorded_coupon_usage_counts" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-order.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-order.html#source-view.794">includes/abstracts/abstract-wc-order.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-order.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-order.html#source-view.831">includes/abstracts/abstract-wc-order.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">794</span>
+    <span class="phpdocumentor-element-found-in__line">831</span>
 </aside>
 
         <p class="phpdocumentor-summary">Stores information about whether the coupon usage were counted.</p>
@@ -9160,9 +9403,9 @@ stored line totals.</p>
         <a href="#method_set_shipping_tax" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-order.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-order.html#source-view.743">includes/abstracts/abstract-wc-order.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-order.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-order.html#source-view.780">includes/abstracts/abstract-wc-order.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">743</span>
+    <span class="phpdocumentor-element-found-in__line">780</span>
 </aside>
 
         <p class="phpdocumentor-summary">Set shipping_tax.</p>
@@ -9219,9 +9462,9 @@ stored line totals.</p>
         <a href="#method_set_shipping_total" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-order.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-order.html#source-view.733">includes/abstracts/abstract-wc-order.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-order.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-order.html#source-view.770">includes/abstracts/abstract-wc-order.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">733</span>
+    <span class="phpdocumentor-element-found-in__line">770</span>
 </aside>
 
         <p class="phpdocumentor-summary">Set shipping_total.</p>
@@ -9278,9 +9521,9 @@ stored line totals.</p>
         <a href="#method_set_status" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-order.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-order.html#source-view.627">includes/abstracts/abstract-wc-order.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-order.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-order.html#source-view.652">includes/abstracts/abstract-wc-order.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">627</span>
+    <span class="phpdocumentor-element-found-in__line">652</span>
 </aside>
 
         <p class="phpdocumentor-summary">Set order status.</p>
@@ -9336,9 +9579,9 @@ stored line totals.</p>
         <a href="#method_set_total" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-order.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-order.html#source-view.779">includes/abstracts/abstract-wc-order.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-order.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-order.html#source-view.816">includes/abstracts/abstract-wc-order.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">779</span>
+    <span class="phpdocumentor-element-found-in__line">816</span>
 </aside>
 
         <p class="phpdocumentor-summary">Set total.</p>
@@ -9404,9 +9647,9 @@ stored line totals.</p>
         <a href="#method_set_version" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-order.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-order.html#source-view.660">includes/abstracts/abstract-wc-order.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-order.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-order.html#source-view.697">includes/abstracts/abstract-wc-order.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">660</span>
+    <span class="phpdocumentor-element-found-in__line">697</span>
 </aside>
 
         <p class="phpdocumentor-summary">Set order_version.</p>
@@ -9463,9 +9706,9 @@ stored line totals.</p>
         <a href="#method_update_coupon" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/legacy/abstract-wc-legacy-order.php"><a href="../files/woocommerce-includes-legacy-abstract-wc-legacy-order.html#source-view.185">includes/legacy/abstract-wc-legacy-order.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/legacy/abstract-wc-legacy-order.php"><a href="../files/woocommerce-includes-legacy-abstract-wc-legacy-order.html#source-view.188">includes/legacy/abstract-wc-legacy-order.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">185</span>
+    <span class="phpdocumentor-element-found-in__line">188</span>
 </aside>
 
         <p class="phpdocumentor-summary">Update coupon for order. Note this does not update order totals.</p>
@@ -9528,9 +9771,9 @@ stored line totals.</p>
         <a href="#method_update_fee" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/legacy/abstract-wc-legacy-order.php"><a href="../files/woocommerce-includes-legacy-abstract-wc-legacy-order.html#source-view.261">includes/legacy/abstract-wc-legacy-order.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/legacy/abstract-wc-legacy-order.php"><a href="../files/woocommerce-includes-legacy-abstract-wc-legacy-order.html#source-view.264">includes/legacy/abstract-wc-legacy-order.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">261</span>
+    <span class="phpdocumentor-element-found-in__line">264</span>
 </aside>
 
         <p class="phpdocumentor-summary">Update fee for order.</p>
@@ -9670,9 +9913,9 @@ stored line totals.</p>
         <a href="#method_update_product" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/legacy/abstract-wc-legacy-order.php"><a href="../files/woocommerce-includes-legacy-abstract-wc-legacy-order.html#source-view.136">includes/legacy/abstract-wc-legacy-order.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/legacy/abstract-wc-legacy-order.php"><a href="../files/woocommerce-includes-legacy-abstract-wc-legacy-order.html#source-view.139">includes/legacy/abstract-wc-legacy-order.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">136</span>
+    <span class="phpdocumentor-element-found-in__line">139</span>
 </aside>
 
         <p class="phpdocumentor-summary">Update a line item for the order.</p>
@@ -9746,9 +9989,9 @@ stored line totals.</p>
         <a href="#method_update_shipping" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/legacy/abstract-wc-legacy-order.php"><a href="../files/woocommerce-includes-legacy-abstract-wc-legacy-order.html#source-view.224">includes/legacy/abstract-wc-legacy-order.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/legacy/abstract-wc-legacy-order.php"><a href="../files/woocommerce-includes-legacy-abstract-wc-legacy-order.html#source-view.227">includes/legacy/abstract-wc-legacy-order.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">224</span>
+    <span class="phpdocumentor-element-found-in__line">227</span>
 </aside>
 
         <p class="phpdocumentor-summary">Update shipping method for order.</p>
@@ -9812,9 +10055,9 @@ stored line totals.</p>
         <a href="#method_update_tax" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/legacy/abstract-wc-legacy-order.php"><a href="../files/woocommerce-includes-legacy-abstract-wc-legacy-order.html#source-view.292">includes/legacy/abstract-wc-legacy-order.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/legacy/abstract-wc-legacy-order.php"><a href="../files/woocommerce-includes-legacy-abstract-wc-legacy-order.html#source-view.295">includes/legacy/abstract-wc-legacy-order.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">292</span>
+    <span class="phpdocumentor-element-found-in__line">295</span>
 </aside>
 
         <p class="phpdocumentor-summary">Update tax line on order.</p>
@@ -9886,9 +10129,9 @@ stored line totals.</p>
         <a href="#method_update_taxes" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-order.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-order.html#source-view.1820">includes/abstracts/abstract-wc-order.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-order.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-order.html#source-view.1864">includes/abstracts/abstract-wc-order.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1820</span>
+    <span class="phpdocumentor-element-found-in__line">1864</span>
 </aside>
 
         <p class="phpdocumentor-summary">Update tax lines for the order based on the line item taxes themselves.</p>
@@ -9918,9 +10161,9 @@ stored line totals.</p>
         <a href="#method_add_order_item_totals_discount_row" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-order.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-order.html#source-view.2265">includes/abstracts/abstract-wc-order.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-order.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-order.html#source-view.2314">includes/abstracts/abstract-wc-order.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">2265</span>
+    <span class="phpdocumentor-element-found-in__line">2314</span>
 </aside>
 
         <p class="phpdocumentor-summary">Add total row for discounts.</p>
@@ -9971,9 +10214,9 @@ stored line totals.</p>
         <a href="#method_add_order_item_totals_fee_rows" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-order.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-order.html#source-view.2295">includes/abstracts/abstract-wc-order.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-order.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-order.html#source-view.2347">includes/abstracts/abstract-wc-order.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">2295</span>
+    <span class="phpdocumentor-element-found-in__line">2347</span>
 </aside>
 
         <p class="phpdocumentor-summary">Add total row for fees.</p>
@@ -10024,9 +10267,9 @@ stored line totals.</p>
         <a href="#method_add_order_item_totals_shipping_row" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-order.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-order.html#source-view.2280">includes/abstracts/abstract-wc-order.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-order.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-order.html#source-view.2330">includes/abstracts/abstract-wc-order.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">2280</span>
+    <span class="phpdocumentor-element-found-in__line">2330</span>
 </aside>
 
         <p class="phpdocumentor-summary">Add total row for shipping.</p>
@@ -10077,9 +10320,9 @@ stored line totals.</p>
         <a href="#method_add_order_item_totals_subtotal_row" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-order.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-order.html#source-view.2248">includes/abstracts/abstract-wc-order.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-order.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-order.html#source-view.2296">includes/abstracts/abstract-wc-order.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">2248</span>
+    <span class="phpdocumentor-element-found-in__line">2296</span>
 </aside>
 
         <p class="phpdocumentor-summary">Add total row for subtotal.</p>
@@ -10130,9 +10373,9 @@ stored line totals.</p>
         <a href="#method_add_order_item_totals_tax_rows" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-order.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-order.html#source-view.2317">includes/abstracts/abstract-wc-order.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-order.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-order.html#source-view.2370">includes/abstracts/abstract-wc-order.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">2317</span>
+    <span class="phpdocumentor-element-found-in__line">2370</span>
 </aside>
 
         <p class="phpdocumentor-summary">Add total row for taxes.</p>
@@ -10183,9 +10426,9 @@ stored line totals.</p>
         <a href="#method_add_order_item_totals_total_row" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-order.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-order.html#source-view.2342">includes/abstracts/abstract-wc-order.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-order.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-order.html#source-view.2397">includes/abstracts/abstract-wc-order.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">2342</span>
+    <span class="phpdocumentor-element-found-in__line">2397</span>
 </aside>
 
         <p class="phpdocumentor-summary">Add total row for grand total.</p>
@@ -10231,14 +10474,47 @@ stored line totals.</p>
             -protected
                                                         "
 >
+    <h4 class="phpdocumentor-element__name" id="method_calculate_cogs_total_value_core">
+        calculate_cogs_total_value_core()
+        <a href="#method_calculate_cogs_total_value_core" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-order.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-order.html#source-view.2535">includes/abstracts/abstract-wc-order.php</a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">2535</span>
+</aside>
+
+        <p class="phpdocumentor-summary">Core method to calculate the Cost of Goods Sold value for this order:
+it doesn&#039;t check if COGS is enabled at class or system level, doesn&#039;t fire hooks, and doesn&#039;t set the value as the current one for the order.</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">protected</span>
+                <span class="phpdocumentor-signature__name">calculate_cogs_total_value_core</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">float</span></code>
+
+        <section class="phpdocumentor-description"></section>
+
+    
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">float</span>
+            &mdash; <span class="phpdocumentor-return-value__description">The calculated value.</span>
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -protected
+                                                        "
+>
     <h4 class="phpdocumentor-element__name" id="method_error">
         error()
         <a href="#method_error" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-data.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-data.html#source-view.942">includes/abstracts/abstract-wc-data.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-data.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-data.html#source-view.940">includes/abstracts/abstract-wc-data.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">942</span>
+    <span class="phpdocumentor-element-found-in__line">940</span>
 </aside>
 
         <p class="phpdocumentor-summary">When invalid data is found, throw an exception unless reading from the DB.</p>
@@ -10388,9 +10664,9 @@ stored line totals.</p>
         <a href="#method_get_cart_subtotal_for_order" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-order.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-order.html#source-view.1884">includes/abstracts/abstract-wc-order.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-order.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-order.html#source-view.1928">includes/abstracts/abstract-wc-order.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1884</span>
+    <span class="phpdocumentor-element-found-in__line">1928</span>
 </aside>
 
         <p class="phpdocumentor-summary">Helper function.</p>
@@ -10421,9 +10697,9 @@ stored line totals.</p>
         <a href="#method_get_cart_total_for_order" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-order.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-order.html#source-view.1898">includes/abstracts/abstract-wc-order.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-order.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-order.html#source-view.1942">includes/abstracts/abstract-wc-order.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1898</span>
+    <span class="phpdocumentor-element-found-in__line">1942</span>
 </aside>
 
         <p class="phpdocumentor-summary">Helper function.</p>
@@ -10454,9 +10730,9 @@ stored line totals.</p>
         <a href="#method_get_hook_prefix" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-data.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-data.html#source-view.862">includes/abstracts/abstract-wc-data.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-data.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-data.html#source-view.860">includes/abstracts/abstract-wc-data.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">862</span>
+    <span class="phpdocumentor-element-found-in__line">860</span>
 </aside>
 
         <p class="phpdocumentor-summary">Prefix for action and filter hooks on data.</p>
@@ -10500,9 +10776,9 @@ stored line totals.</p>
         <a href="#method_get_items_key" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-order.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-order.html#source-view.1034">includes/abstracts/abstract-wc-order.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-order.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-order.html#source-view.1078">includes/abstracts/abstract-wc-order.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1034</span>
+    <span class="phpdocumentor-element-found-in__line">1078</span>
 </aside>
 
         <p class="phpdocumentor-summary">Get key for where a certain item type is stored in _items.</p>
@@ -10558,9 +10834,9 @@ stored line totals.</p>
         <a href="#method_get_prop" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-data.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-data.html#source-view.877">includes/abstracts/abstract-wc-data.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-data.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-data.html#source-view.875">includes/abstracts/abstract-wc-data.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">877</span>
+    <span class="phpdocumentor-element-found-in__line">875</span>
 </aside>
 
         <p class="phpdocumentor-summary">Gets a prop for a getter method.</p>
@@ -10627,9 +10903,9 @@ Context controls what happens to the value before it's returned.</p>
         <a href="#method_get_tax_location" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-order.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-order.html#source-view.1682">includes/abstracts/abstract-wc-order.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-order.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-order.html#source-view.1726">includes/abstracts/abstract-wc-order.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1682</span>
+    <span class="phpdocumentor-element-found-in__line">1726</span>
 </aside>
 
         <p class="phpdocumentor-summary">Get tax location for this order.</p>
@@ -10685,9 +10961,9 @@ Context controls what happens to the value before it's returned.</p>
         <a href="#method_get_tax_rates" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-order.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-order.html#source-view.1753">includes/abstracts/abstract-wc-order.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-order.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-order.html#source-view.1797">includes/abstracts/abstract-wc-order.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1753</span>
+    <span class="phpdocumentor-element-found-in__line">1797</span>
 </aside>
 
         <p class="phpdocumentor-summary">Get tax rates for an order. Use order&#039;s shipping or billing address, defaults to base location.</p>
@@ -10747,9 +11023,9 @@ Context controls what happens to the value before it's returned.</p>
         <a href="#method_get_valid_statuses" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-order.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-order.html#source-view.549">includes/abstracts/abstract-wc-order.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-order.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-order.html#source-view.565">includes/abstracts/abstract-wc-order.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">549</span>
+    <span class="phpdocumentor-element-found-in__line">565</span>
 </aside>
 
         <p class="phpdocumentor-summary">Get all valid statuses for this order</p>
@@ -10793,9 +11069,9 @@ Context controls what happens to the value before it's returned.</p>
         <a href="#method_get_values_for_total" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-order.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-order.html#source-view.898">includes/abstracts/abstract-wc-order.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-order.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-order.html#source-view.942">includes/abstracts/abstract-wc-order.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">898</span>
+    <span class="phpdocumentor-element-found-in__line">942</span>
 </aside>
 
         <p class="phpdocumentor-summary">Return array of values for calculations.</p>
@@ -10837,9 +11113,9 @@ Context controls what happens to the value before it's returned.</p>
         <a href="#method_handle_exception" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-order.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-order.html#source-view.256">includes/abstracts/abstract-wc-order.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-order.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-order.html#source-view.266">includes/abstracts/abstract-wc-order.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">256</span>
+    <span class="phpdocumentor-element-found-in__line">266</span>
 </aside>
 
         <p class="phpdocumentor-summary">Log an error about this order is exception is encountered.</p>
@@ -10904,9 +11180,9 @@ Context controls what happens to the value before it's returned.</p>
         <a href="#method_init" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/legacy/abstract-wc-legacy-order.php"><a href="../files/woocommerce-includes-legacy-abstract-wc-legacy-order.html#source-view.630">includes/legacy/abstract-wc-legacy-order.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/legacy/abstract-wc-legacy-order.php"><a href="../files/woocommerce-includes-legacy-abstract-wc-legacy-order.html#source-view.633">includes/legacy/abstract-wc-legacy-order.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">630</span>
+    <span class="phpdocumentor-element-found-in__line">633</span>
 </aside>
 
         <p class="phpdocumentor-summary">Load the order object. Called from the constructor.</p>
@@ -11180,9 +11456,9 @@ Context controls what happens to the value before it's returned.</p>
         <a href="#method_save_items" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-order.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-order.html#source-view.269">includes/abstracts/abstract-wc-order.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-order.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-order.html#source-view.279">includes/abstracts/abstract-wc-order.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">269</span>
+    <span class="phpdocumentor-element-found-in__line">279</span>
 </aside>
 
         <p class="phpdocumentor-summary">Save all order items which are part of this order.</p>
@@ -11212,9 +11488,9 @@ Context controls what happens to the value before it's returned.</p>
         <a href="#method_set_coupon_discount_amounts" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-order.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-order.html#source-view.1467">includes/abstracts/abstract-wc-order.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-order.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-order.html#source-view.1511">includes/abstracts/abstract-wc-order.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1467</span>
+    <span class="phpdocumentor-element-found-in__line">1511</span>
 </aside>
 
         <p class="phpdocumentor-summary">After applying coupons via the WC_Discounts class, update or create coupon items.</p>
@@ -11270,9 +11546,9 @@ Context controls what happens to the value before it's returned.</p>
         <a href="#method_set_date_prop" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-data.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-data.html#source-view.898">includes/abstracts/abstract-wc-data.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-data.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-data.html#source-view.896">includes/abstracts/abstract-wc-data.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">898</span>
+    <span class="phpdocumentor-element-found-in__line">896</span>
 </aside>
 
         <p class="phpdocumentor-summary">Sets a date prop whilst handling formatting and datetime objects.</p>
@@ -11337,9 +11613,9 @@ Context controls what happens to the value before it's returned.</p>
         <a href="#method_set_item_discount_amounts" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-order.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-order.html#source-view.1439">includes/abstracts/abstract-wc-order.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-order.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-order.html#source-view.1483">includes/abstracts/abstract-wc-order.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1439</span>
+    <span class="phpdocumentor-element-found-in__line">1483</span>
 </aside>
 
         <p class="phpdocumentor-summary">After applying coupons via the WC_Discounts class, update line items.</p>
@@ -11395,9 +11671,9 @@ Context controls what happens to the value before it's returned.</p>
         <a href="#method_set_prop" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-data.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-data.html#source-view.824">includes/abstracts/abstract-wc-data.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-data.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-data.html#source-view.822">includes/abstracts/abstract-wc-data.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">824</span>
+    <span class="phpdocumentor-element-found-in__line">822</span>
 </aside>
 
         <p class="phpdocumentor-summary">Sets a prop for a setter method.</p>
@@ -11464,9 +11740,9 @@ the DB later.</p>
         <a href="#method_set_total_tax" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-order.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-order.html#source-view.765">includes/abstracts/abstract-wc-order.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-order.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-order.html#source-view.802">includes/abstracts/abstract-wc-order.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">765</span>
+    <span class="phpdocumentor-element-found-in__line">802</span>
 </aside>
 
         <p class="phpdocumentor-summary">Sets order tax (sum of cart and shipping tax). Used internally only.</p>
@@ -11523,9 +11799,9 @@ the DB later.</p>
         <a href="#method_type_to_group" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-order.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-order.html#source-view.852">includes/abstracts/abstract-wc-order.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-order.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-order.html#source-view.889">includes/abstracts/abstract-wc-order.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">852</span>
+    <span class="phpdocumentor-element-found-in__line">889</span>
 </aside>
 
         <p class="phpdocumentor-summary">Convert a type to a types group.</p>
@@ -11567,9 +11843,9 @@ the DB later.</p>
         <a href="#method_get_billing_and_current_user_aliases" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-order.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-order.html#source-view.1209">includes/abstracts/abstract-wc-order.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-order.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-order.html#source-view.1253">includes/abstracts/abstract-wc-order.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1209</span>
+    <span class="phpdocumentor-element-found-in__line">1253</span>
 </aside>
 
         <p class="phpdocumentor-summary">Helper method to get all aliases for current user and provide billing email.</p>
@@ -11626,9 +11902,9 @@ the DB later.</p>
         <a href="#method_get_temporary_coupon" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-order.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-order.html#source-view.1413">includes/abstracts/abstract-wc-order.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-order.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-order.html#source-view.1457">includes/abstracts/abstract-wc-order.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1413</span>
+    <span class="phpdocumentor-element-found-in__line">1457</span>
 </aside>
 
         <p class="phpdocumentor-summary">Get a coupon object populated from order line item metadata, to be used when reapplying coupons
@@ -11693,9 +11969,9 @@ if the original coupon no longer exists.</p>
         <a href="#method_hold_coupon" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-order.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-order.html#source-view.1167">includes/abstracts/abstract-wc-order.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-order.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-order.html#source-view.1211">includes/abstracts/abstract-wc-order.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1167</span>
+    <span class="phpdocumentor-element-found-in__line">1211</span>
 </aside>
 
         <p class="phpdocumentor-summary">Hold coupon if a global usage limit is defined.</p>
@@ -11752,9 +12028,9 @@ if the original coupon no longer exists.</p>
         <a href="#method_hold_coupon_for_users" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-order.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-order.html#source-view.1189">includes/abstracts/abstract-wc-order.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-order.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-order.html#source-view.1233">includes/abstracts/abstract-wc-order.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1189</span>
+    <span class="phpdocumentor-element-found-in__line">1233</span>
 </aside>
 
         <p class="phpdocumentor-summary">Hold coupon if usage limit per customer is defined.</p>
@@ -11829,7 +12105,7 @@ if the original coupon no longer exists.</p>
 
     <footer class="phpdocumentor phpdocumentor-footer">
     <div class="phpdocumentor-section">
-        <span>WooCommerce Code Reference API documentation generated by <a href="http://www.phpdoc.org/">phpDocumentor</a> on July 25th, 2024 at 11:33 am.</span>
+        <span>WooCommerce Code Reference API documentation generated by <a href="http://www.phpdoc.org/">phpDocumentor</a> on May 16th, 2025 at 09:14 am.</span>
     </div>
 </footer>
 
@@ -11841,7 +12117,7 @@ if the original coupon no longer exists.</p>
             'searchIndex': '..\/js\/searchIndex.json'
         };
     </script>
-    <script src="../js/searchIndex.js?updated=1721907189"></script>
-    <script src="../js/search.js?updated=1721907189"></script>
+    <script src="../js/searchIndex.js?updated=1747386866"></script>
+    <script src="../js/search.js?updated=1747386866"></script>
 </body>
 </html>

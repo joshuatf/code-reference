@@ -4,14 +4,13 @@
     <meta charset="utf-8">
     <title>WooCommerce Code Reference</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="../images/favicon.png" />
-    <link rel="apple-touch-icon" href="../images/apple-touch-icon.png"/>
-    <link rel="apple-touch-icon" sizes="72x72" href="../images/apple-touch-icon-72x72.png"/>
-    <link rel="apple-touch-icon" sizes="114x114" href="../images/apple-touch-icon-114x114.png"/>
+    <link rel="icon" href="../images/favicon-32x32.png" sizes="32x32" />
+    <link rel="icon" href="../images/favicon-192x192.png" sizes="192x192" />
+    <link rel="apple-touch-icon" href="../images/favicon-180x180.png" />
+
     <link rel="stylesheet" href="../css/normalize.css">
-    <link rel="stylesheet" href="../css/base.css?updated=1721907184">
-    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../css/template.css?updated=1721907184">
+    <link rel="stylesheet" href="../css/base.css?updated=1747386861">
+    <link rel="stylesheet" href="../css/template.css?updated=1747386861">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0/css/all.min.css" integrity="sha256-ybRkN9dBjhcS2qrW1z+hfCxq+1aBdwyQM5wlQoQVt/0=" crossorigin="anonymous" />
             <script src="https://cdn.jsdelivr.net/npm/css-vars-ponyfill@2"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0/js/all.min.js" integrity="sha256-0vuk8LXoyrmCjp1f0O300qo1M75ZQyhH9X3J6d+scmk=" crossorigin="anonymous"></script>
@@ -38,14 +37,13 @@
     <header class="phpdocumentor-top-header">
     <section class="phpdocumentor-section">
         <div class="site-branding">
-            <a class="site-logo" href="../index.html"><img width="180" src="../images/logo.svg" alt="WooCommerce" /></a>
+            <a class="site-logo" href="../index.html"><img src="../images/logo.png" alt="WooCommerce" /></a>
         </div>
         <nav class="main-navigation">
             <ul>
                 <li><a href="../hooks/hooks.html">Hooks Reference</a></li>
-                <li><a href="https://docs.woocommerce.com/">Documentation</a></li>
+                <li><a href="https://developer.woocommerce.com/docs/">Documentation</a></li>
                 <li><a href="https://woocommerce.github.io/woocommerce-rest-api-docs/">REST API Docs</a></li>
-                <li><a href="https://woocommerce.com/careers/?utm_source=woocommerce+core+code+reference&utm_medium=devdocs&utm_campaign=woo+careers" target="_blank">We're hiring!</a></li>
             </ul>
         </nav>
     </section>
@@ -53,7 +51,7 @@
 
 <div class="phpdocumentor-header">
     <section class="phpdocumentor-section">
-        <h1 class="phpdocumentor-title">WooCommerce Code Reference</h1>
+        <h1 class="phpdocumentor-title"><a href="../index.html">WooCommerce Code Reference</a></h1>
         <section class="phpdocumentor-search">
     <label class="phpdocumentor-label">
         <span class="visually-hidden">Search (click ESC to close search results)</span>
@@ -74,6 +72,10 @@
                                         <h4 class="phpdocumentor-sidebar__root-namespace"><a href="../namespaces/woocommerce.html"><abbr title="\WooCommerce">WooCommerce</abbr></a></h4>
                 <ul class="phpdocumentor-list">
                                             <li><a href="../namespaces/woocommerce-admin.html"><abbr title="\WooCommerce\Admin">Admin</abbr></a></li>
+                                    </ul>
+                            <h4 class="phpdocumentor-sidebar__root-namespace"><a href="../namespaces/mailpoet.html"><abbr title="\MailPoet">MailPoet</abbr></a></h4>
+                <ul class="phpdocumentor-list">
+                                            <li><a href="../namespaces/mailpoet-emaileditor.html"><abbr title="\MailPoet\EmailEditor">EmailEditor</abbr></a></li>
                                     </ul>
                             <h4 class="phpdocumentor-sidebar__root-namespace"><a href="../namespaces/automattic.html"><abbr title="\Automattic">Automattic</abbr></a></h4>
                 <ul class="phpdocumentor-list">
@@ -119,8 +121,10 @@
                                     <li><a href="../packages/WooCommerce-Widgets.html"><abbr title="\WooCommerce\Widgets">Widgets</abbr></a></li>
                                     <li><a href="../packages/WooCommerce-Uninstaller.html"><abbr title="\WooCommerce\Uninstaller">Uninstaller</abbr></a></li>
                             </ul>
-                                <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/WoocommerceAdmin.html"><abbr title="\WoocommerceAdmin">WoocommerceAdmin</abbr></a></h3>
-                                <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/WoocommerceNavigation.html"><abbr title="\WoocommerceNavigation">WoocommerceNavigation</abbr></a></h3>
+                                <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/MailPoet.html"><abbr title="\MailPoet">MailPoet</abbr></a></h3>
+                        <ul class="phpdocumentor-list">
+                                    <li><a href="../packages/MailPoet-EmailEditor.html"><abbr title="\MailPoet\EmailEditor">EmailEditor</abbr></a></li>
+                            </ul>
                                 <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/Automattic.html"><abbr title="\Automattic">Automattic</abbr></a></h3>
                         <ul class="phpdocumentor-list">
                                     <li><a href="../packages/Automattic-WooCommerce.html"><abbr title="\Automattic\WooCommerce">WooCommerce</abbr></a></li>
@@ -161,10 +165,12 @@
 namespace Automattic\WooCommerce\Admin\Features\OnboardingTasks\Tasks;
 
 use Automattic\WooCommerce\Admin\Features\OnboardingTasks\Task;
-use Jetpack_Gutenberg;
+use WP_Post;
 
 /**
  * Customize Your Store Task
+ *
+ * @internal
  */
 class CustomizeStore extends Task {
 	/**
@@ -182,28 +188,38 @@ class CustomizeStore extends Task {
 		// Hook to remove unwanted UI elements when users are viewing with ?cys-hide-admin-bar=true.
 		add_action( &#039;wp_head&#039;, array( $this, &#039;possibly_remove_unwanted_ui_elements&#039; ) );
 
-		add_action( &#039;save_post_wp_global_styles&#039;, array( $this, &#039;mark_task_as_complete&#039; ), 10, 3 );
-		add_action( &#039;save_post_wp_template&#039;, array( $this, &#039;mark_task_as_complete&#039; ), 10, 3 );
-		add_action( &#039;save_post_wp_template_part&#039;, array( $this, &#039;mark_task_as_complete&#039; ), 10, 3 );
+		add_action( &#039;save_post_wp_global_styles&#039;, array( $this, &#039;mark_task_as_complete_block_theme&#039; ), 10, 3 );
+		add_action( &#039;save_post_wp_template&#039;, array( $this, &#039;mark_task_as_complete_block_theme&#039; ), 10, 3 );
+		add_action( &#039;save_post_wp_template_part&#039;, array( $this, &#039;mark_task_as_complete_block_theme&#039; ), 10, 3 );
+		add_action( &#039;customize_save_after&#039;, array( $this, &#039;mark_task_as_complete_classic_theme&#039; ) );
 	}
 
 	/**
 	 * Mark the CYS task as complete whenever the user updates their global styles.
 	 *
-	 * @param int      $post_id Post ID.
-	 * @param \WP_Post $post Post object.
-	 * @param bool     $update Whether this is an existing post being updated.
+	 * @param int     $post_id Post ID.
+	 * @param WP_Post $post Post object.
+	 * @param bool    $update Whether this is an existing post being updated.
 	 *
 	 * @return void
 	 */
-	public function mark_task_as_complete( $post_id, $post, $update ) {
-		if ( $post instanceof \WP_Post ) {
-			$is_cys_complete = &#039;{&quot;version&quot;: 2, &quot;isGlobalStylesUserThemeJSON&quot;: true }&#039; !== $post-&gt;post_content || in_array( $post-&gt;post_type, array( &#039;wp_template&#039;, &#039;wp_template_part&#039; ), true );
+	public function mark_task_as_complete_block_theme( $post_id, $post, $update ) {
+		if ( $post instanceof WP_Post ) {
+			$is_cys_complete = $this-&gt;has_custom_global_styles( $post ) || $this-&gt;has_custom_template( $post );
 
 			if ( $is_cys_complete ) {
 				update_option( &#039;woocommerce_admin_customize_store_completed&#039;, &#039;yes&#039; );
 			}
 		}
+	}
+
+	/**
+	 * Mark the CYS task as complete whenever the user saves the customizer changes.
+	 *
+	 * @return void
+	 */
+	public function mark_task_as_complete_classic_theme() {
+		update_option( &#039;woocommerce_admin_customize_store_completed&#039;, &#039;yes&#039; );
 	}
 
 	/**
@@ -370,7 +386,6 @@ class CustomizeStore extends Task {
 		wp_enqueue_script( &#039;wp-format-library&#039; ); // Not sure if this is needed.
 		wp_enqueue_script( &#039;wp-router&#039; );
 		wp_enqueue_style( &#039;wp-editor&#039; );
-		wp_enqueue_style( &#039;wp-edit-site&#039; );
 		wp_enqueue_style( &#039;wp-format-library&#039; );
 		wp_enqueue_media();
 
@@ -385,11 +400,6 @@ class CustomizeStore extends Task {
 		 * @since 8.0.3
 		*/
 		do_action( &#039;enqueue_block_editor_assets&#039; );
-
-		// Load Jetpack&#039;s block editor assets because they are not enqueued by default.
-		if ( class_exists( &#039;Jetpack_Gutenberg&#039; ) ) {
-			Jetpack_Gutenberg::enqueue_block_editor_assets();
-		}
 	}
 
 	/**
@@ -418,6 +428,35 @@ class CustomizeStore extends Task {
 			&lt;/style&gt;&#039;;
 		}
 	}
+
+	/**
+	 * Checks if the post has custom global styles stored (if it is different from the default global styles).
+	 *
+	 * @param WP_Post $post The post object.
+	 * @return bool
+	 */
+	private function has_custom_global_styles( WP_Post $post ) {
+		$required_keys = array( &#039;version&#039;, &#039;isGlobalStylesUserThemeJSON&#039; );
+
+		$json_post_content = json_decode( $post-&gt;post_content, true );
+		if ( is_null( $json_post_content ) ) {
+			return false;
+		}
+
+		$post_content_keys = array_keys( $json_post_content );
+
+		return ! empty( array_diff( $post_content_keys, $required_keys ) ) || ! empty( array_diff( $required_keys, $post_content_keys ) );
+	}
+
+	/**
+	 * Checks if the post is a template or a template part.
+	 *
+	 * @param WP_Post $post The post object.
+	 * @return bool Whether the post is a template or a template part.
+	 */
+	private function has_custom_template( WP_Post $post ) {
+		return in_array( $post-&gt;post_type, array( &#039;wp_template&#039;, &#039;wp_template_part&#039; ), true );
+	}
 }
 </code></pre>
             </article>
@@ -429,7 +468,7 @@ class CustomizeStore extends Task {
 
     <footer class="phpdocumentor phpdocumentor-footer">
     <div class="phpdocumentor-section">
-        <span>WooCommerce Code Reference API documentation generated by <a href="http://www.phpdoc.org/">phpDocumentor</a> on July 25th, 2024 at 11:33 am.</span>
+        <span>WooCommerce Code Reference API documentation generated by <a href="http://www.phpdoc.org/">phpDocumentor</a> on May 16th, 2025 at 09:14 am.</span>
     </div>
 </footer>
 
@@ -441,7 +480,7 @@ class CustomizeStore extends Task {
             'searchIndex': '..\/js\/searchIndex.json'
         };
     </script>
-    <script src="../js/searchIndex.js?updated=1721907184"></script>
-    <script src="../js/search.js?updated=1721907184"></script>
+    <script src="../js/searchIndex.js?updated=1747386861"></script>
+    <script src="../js/search.js?updated=1747386861"></script>
 </body>
 </html>

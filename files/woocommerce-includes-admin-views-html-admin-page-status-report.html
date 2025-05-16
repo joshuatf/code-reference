@@ -4,14 +4,13 @@
     <meta charset="utf-8">
     <title>WooCommerce Code Reference</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="../images/favicon.png" />
-    <link rel="apple-touch-icon" href="../images/apple-touch-icon.png"/>
-    <link rel="apple-touch-icon" sizes="72x72" href="../images/apple-touch-icon-72x72.png"/>
-    <link rel="apple-touch-icon" sizes="114x114" href="../images/apple-touch-icon-114x114.png"/>
+    <link rel="icon" href="../images/favicon-32x32.png" sizes="32x32" />
+    <link rel="icon" href="../images/favicon-192x192.png" sizes="192x192" />
+    <link rel="apple-touch-icon" href="../images/favicon-180x180.png" />
+
     <link rel="stylesheet" href="../css/normalize.css">
-    <link rel="stylesheet" href="../css/base.css?updated=1721907182">
-    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../css/template.css?updated=1721907182">
+    <link rel="stylesheet" href="../css/base.css?updated=1747386858">
+    <link rel="stylesheet" href="../css/template.css?updated=1747386858">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0/css/all.min.css" integrity="sha256-ybRkN9dBjhcS2qrW1z+hfCxq+1aBdwyQM5wlQoQVt/0=" crossorigin="anonymous" />
             <script src="https://cdn.jsdelivr.net/npm/css-vars-ponyfill@2"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0/js/all.min.js" integrity="sha256-0vuk8LXoyrmCjp1f0O300qo1M75ZQyhH9X3J6d+scmk=" crossorigin="anonymous"></script>
@@ -38,14 +37,13 @@
     <header class="phpdocumentor-top-header">
     <section class="phpdocumentor-section">
         <div class="site-branding">
-            <a class="site-logo" href="../index.html"><img width="180" src="../images/logo.svg" alt="WooCommerce" /></a>
+            <a class="site-logo" href="../index.html"><img src="../images/logo.png" alt="WooCommerce" /></a>
         </div>
         <nav class="main-navigation">
             <ul>
                 <li><a href="../hooks/hooks.html">Hooks Reference</a></li>
-                <li><a href="https://docs.woocommerce.com/">Documentation</a></li>
+                <li><a href="https://developer.woocommerce.com/docs/">Documentation</a></li>
                 <li><a href="https://woocommerce.github.io/woocommerce-rest-api-docs/">REST API Docs</a></li>
-                <li><a href="https://woocommerce.com/careers/?utm_source=woocommerce+core+code+reference&utm_medium=devdocs&utm_campaign=woo+careers" target="_blank">We're hiring!</a></li>
             </ul>
         </nav>
     </section>
@@ -53,7 +51,7 @@
 
 <div class="phpdocumentor-header">
     <section class="phpdocumentor-section">
-        <h1 class="phpdocumentor-title">WooCommerce Code Reference</h1>
+        <h1 class="phpdocumentor-title"><a href="../index.html">WooCommerce Code Reference</a></h1>
         <section class="phpdocumentor-search">
     <label class="phpdocumentor-label">
         <span class="visually-hidden">Search (click ESC to close search results)</span>
@@ -74,6 +72,10 @@
                                         <h4 class="phpdocumentor-sidebar__root-namespace"><a href="../namespaces/woocommerce.html"><abbr title="\WooCommerce">WooCommerce</abbr></a></h4>
                 <ul class="phpdocumentor-list">
                                             <li><a href="../namespaces/woocommerce-admin.html"><abbr title="\WooCommerce\Admin">Admin</abbr></a></li>
+                                    </ul>
+                            <h4 class="phpdocumentor-sidebar__root-namespace"><a href="../namespaces/mailpoet.html"><abbr title="\MailPoet">MailPoet</abbr></a></h4>
+                <ul class="phpdocumentor-list">
+                                            <li><a href="../namespaces/mailpoet-emaileditor.html"><abbr title="\MailPoet\EmailEditor">EmailEditor</abbr></a></li>
                                     </ul>
                             <h4 class="phpdocumentor-sidebar__root-namespace"><a href="../namespaces/automattic.html"><abbr title="\Automattic">Automattic</abbr></a></h4>
                 <ul class="phpdocumentor-list">
@@ -119,8 +121,10 @@
                                     <li><a href="../packages/WooCommerce-Widgets.html"><abbr title="\WooCommerce\Widgets">Widgets</abbr></a></li>
                                     <li><a href="../packages/WooCommerce-Uninstaller.html"><abbr title="\WooCommerce\Uninstaller">Uninstaller</abbr></a></li>
                             </ul>
-                                <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/WoocommerceAdmin.html"><abbr title="\WoocommerceAdmin">WoocommerceAdmin</abbr></a></h3>
-                                <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/WoocommerceNavigation.html"><abbr title="\WoocommerceNavigation">WoocommerceNavigation</abbr></a></h3>
+                                <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/MailPoet.html"><abbr title="\MailPoet">MailPoet</abbr></a></h3>
+                        <ul class="phpdocumentor-list">
+                                    <li><a href="../packages/MailPoet-EmailEditor.html"><abbr title="\MailPoet\EmailEditor">EmailEditor</abbr></a></li>
+                            </ul>
                                 <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/Automattic.html"><abbr title="\Automattic">Automattic</abbr></a></h3>
                         <ul class="phpdocumentor-list">
                                     <li><a href="../packages/Automattic-WooCommerce.html"><abbr title="\Automattic\WooCommerce">WooCommerce</abbr></a></li>
@@ -260,12 +264,12 @@ if ( file_exists( $plugin_path ) ) {
 			&lt;td class=&quot;help&quot;&gt;&lt;?php echo wc_help_tip( esc_html__( &#039;The WooCommerce Legacy REST API plugin running on this site.&#039;, &#039;woocommerce&#039; ) ); ?&gt;&lt;/td&gt;
 			&lt;td&gt;
 				&lt;?php
-				if ( is_null( wc()-&gt;api ) ) {
-					echo &#039;&lt;mark class=&quot;info-icon&quot;&gt;&lt;span class=&quot;dashicons dashicons-info&quot;&gt;&lt;/span&gt; &#039; . esc_html__( &#039;The Legacy REST API plugin is not installed on this site.&#039;, &#039;woocommerce&#039; ) . &#039;&lt;/mark&gt;&#039;;
-				} else {
+				if ( WC()-&gt;legacy_rest_api_is_available() ) {
 					$plugin_path = wc_get_container()-&gt;get( \Automattic\WooCommerce\Utilities\PluginUtil::class )-&gt;get_wp_plugin_id( &#039;woocommerce-legacy-rest-api&#039; );
 					$version     = get_plugin_data( WP_PLUGIN_DIR . &#039;/&#039; . $plugin_path )[&#039;Version&#039;] ?? &#039;&#039;;
 					echo &#039;&lt;mark class=&quot;yes&quot;&gt;&lt;span class=&quot;dashicons dashicons-yes&quot;&gt;&lt;/span&gt; &#039; . esc_html( $version ) . &#039; &lt;code class=&quot;private&quot;&gt;&#039; . esc_html( wc()-&gt;api-&gt;get_rest_api_package_path() ) . &#039;&lt;/code&gt;&lt;/mark&gt; &#039;;
+				} else {
+					echo &#039;&lt;mark class=&quot;info-icon&quot;&gt;&lt;span class=&quot;dashicons dashicons-info&quot;&gt;&lt;/span&gt; &#039; . esc_html__( &#039;The Legacy REST API plugin is not installed on this site.&#039;, &#039;woocommerce&#039; ) . &#039;&lt;/mark&gt;&#039;;
 				}
 				?&gt;
 			&lt;/td&gt;
@@ -853,8 +857,8 @@ if ( 0 &lt; $mu_plugins_count ) :
 	&lt;/thead&gt;
 	&lt;tbody&gt;
 		&lt;tr&gt;
-			&lt;td data-export-label=&quot;API Enabled&quot;&gt;&lt;?php esc_html_e( &#039;API enabled&#039;, &#039;woocommerce&#039; ); ?&gt;:&lt;/td&gt;
-			&lt;td class=&quot;help&quot;&gt;&lt;?php echo wc_help_tip( esc_html__( &#039;Does your site have REST API enabled?&#039;, &#039;woocommerce&#039; ) ); /* phpcs:ignore WordPress.XSS.EscapeOutput.OutputNotEscaped */ ?&gt;&lt;/td&gt;
+			&lt;td data-export-label=&quot;Legacy API Enabled&quot;&gt;&lt;?php esc_html_e( &#039;Legacy API enabled&#039;, &#039;woocommerce&#039; ); ?&gt;:&lt;/td&gt;
+			&lt;td class=&quot;help&quot;&gt;&lt;?php echo wc_help_tip( esc_html__( &#039;Does your site have the Legacy REST API enabled?&#039;, &#039;woocommerce&#039; ) ); /* phpcs:ignore WordPress.XSS.EscapeOutput.OutputNotEscaped */ ?&gt;&lt;/td&gt;
 			&lt;td&gt;&lt;?php echo $settings[&#039;api_enabled&#039;] ? &#039;&lt;mark class=&quot;yes&quot;&gt;&lt;span class=&quot;dashicons dashicons-yes&quot;&gt;&lt;/span&gt;&lt;/mark&gt;&#039; : &#039;&lt;mark class=&quot;no&quot;&gt;&amp;ndash;&lt;/mark&gt;&#039;; ?&gt;&lt;/td&gt;
 		&lt;/tr&gt;
 		&lt;tr&gt;
@@ -1045,8 +1049,7 @@ if ( 0 &lt; $mu_plugins_count ) :
 
 				$additional_info = &#039;&#039;;
 
-				// We only state the used type on the Checkout and the Cart page.
-				if ( in_array( $_page[&#039;block&#039;], array( &#039;woocommerce/checkout&#039;, &#039;woocommerce/cart&#039; ), true ) ) {
+				if ( ! empty( $_page[&#039;shortcode&#039;] ) || ! empty( $_page[&#039;block&#039;] ) ) {
 					// We check first if, in a blocks theme, the template content does not load the page content.
 					if ( CartCheckoutUtils::is_overriden_by_custom_template_content( $_page[&#039;block&#039;] ) ) {
 						$additional_info = __( &quot;This page&#039;s content is overridden by custom template content&quot;, &#039;woocommerce&#039; );
@@ -1141,6 +1144,21 @@ if ( 0 &lt; $mu_plugins_count ) :
 				&lt;td&gt;&lt;?php echo esc_html( $theme[&#039;parent_author_url&#039;] ); ?&gt;&lt;/td&gt;
 			&lt;/tr&gt;
 		&lt;?php endif ?&gt;
+		&lt;?php if ( isset( $theme[&#039;is_block_theme&#039;] ) ) : ?&gt;
+		&lt;tr&gt;
+			&lt;td data-export-label=&quot;Theme type&quot;&gt;&lt;?php esc_html_e( &#039;Theme type&#039;, &#039;woocommerce&#039; ); ?&gt;:&lt;/td&gt;
+			&lt;td class=&quot;help&quot;&gt;&lt;?php echo wc_help_tip( esc_html__( &#039;Displays whether the current active theme is a block theme or a classic theme.&#039;, &#039;woocommerce&#039; ) ); /* phpcs:ignore WordPress.XSS.EscapeOutput.OutputNotEscaped */ ?&gt;&lt;/td&gt;
+			&lt;td&gt;
+				&lt;?php
+				if ( $theme[&#039;is_block_theme&#039;] ) {
+					esc_html_e( &#039;Block theme&#039;, &#039;woocommerce&#039; );
+				} else {
+					esc_html_e( &#039;Classic theme&#039;, &#039;woocommerce&#039; );
+				}
+				?&gt;
+			&lt;/td&gt;
+		&lt;/tr&gt;
+		&lt;?php endif ?&gt;
 		&lt;tr&gt;
 			&lt;td data-export-label=&quot;WooCommerce Support&quot;&gt;&lt;?php esc_html_e( &#039;WooCommerce support&#039;, &#039;woocommerce&#039; ); ?&gt;:&lt;/td&gt;
 			&lt;td class=&quot;help&quot;&gt;&lt;?php echo wc_help_tip( esc_html__( &#039;Displays whether or not the current active theme declares WooCommerce support.&#039;, &#039;woocommerce&#039; ) ); /* phpcs:ignore WordPress.XSS.EscapeOutput.OutputNotEscaped */ ?&gt;&lt;/td&gt;
@@ -1218,6 +1236,12 @@ if ( 0 &lt; $mu_plugins_count ) :
 					&lt;/mark&gt;
 					&lt;a href=&quot;https://woocommerce.com/document/fix-outdated-templates-woocommerce/&quot; target=&quot;_blank&quot;&gt;
 						&lt;?php esc_html_e( &#039;Learn how to update&#039;, &#039;woocommerce&#039; ); ?&gt;
+					&lt;/a&gt; |
+					&lt;mark class=&quot;info&quot;&gt;
+						&lt;span class=&quot;dashicons dashicons-info&quot;&gt;&lt;/span&gt;
+					&lt;/mark&gt;
+					&lt;a href=&quot;&lt;?php echo esc_url( admin_url( &#039;admin.php?page=wc-status&amp;tab=tools&#039; ) ); ?&gt;&quot;&gt;
+						&lt;?php esc_html_e( &#039;Clear system status theme info cache&#039;, &#039;woocommerce&#039; ); ?&gt;
 					&lt;/a&gt;
 				&lt;/td&gt;
 			&lt;/tr&gt;
@@ -1226,12 +1250,15 @@ if ( 0 &lt; $mu_plugins_count ) :
 &lt;/table&gt;
 
 &lt;?php
-	// phpcs:disable WooCommerce.Commenting.CommentHooks.MissingSinceComment
 	/**
 	 * Action fired when the WooCommerce system status report is rendered.
+	 *
+	 * @since 2.4.0 Introduced hook.
+	 * @since 9.8.0 Made SSR report data available to callbacks.
+	 *
+	 * @param array|WP_Error $report Report data.
 	 */
-	do_action( &#039;woocommerce_system_status_report&#039; );
-	// phpcs:enable WooCommerce.Commenting.CommentHooks.MissingSinceComment
+	do_action( &#039;woocommerce_system_status_report&#039;, $report );
 ?&gt;
 
 &lt;table class=&quot;wc_status_table widefat&quot; cellspacing=&quot;0&quot;&gt;
@@ -1259,7 +1286,7 @@ if ( 0 &lt; $mu_plugins_count ) :
 
     <footer class="phpdocumentor phpdocumentor-footer">
     <div class="phpdocumentor-section">
-        <span>WooCommerce Code Reference API documentation generated by <a href="http://www.phpdoc.org/">phpDocumentor</a> on July 25th, 2024 at 11:33 am.</span>
+        <span>WooCommerce Code Reference API documentation generated by <a href="http://www.phpdoc.org/">phpDocumentor</a> on May 16th, 2025 at 09:14 am.</span>
     </div>
 </footer>
 
@@ -1271,7 +1298,7 @@ if ( 0 &lt; $mu_plugins_count ) :
             'searchIndex': '..\/js\/searchIndex.json'
         };
     </script>
-    <script src="../js/searchIndex.js?updated=1721907182"></script>
-    <script src="../js/search.js?updated=1721907182"></script>
+    <script src="../js/searchIndex.js?updated=1747386858"></script>
+    <script src="../js/search.js?updated=1747386858"></script>
 </body>
 </html>

@@ -4,14 +4,13 @@
     <meta charset="utf-8">
     <title>WooCommerce Code Reference</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="../images/favicon.png" />
-    <link rel="apple-touch-icon" href="../images/apple-touch-icon.png"/>
-    <link rel="apple-touch-icon" sizes="72x72" href="../images/apple-touch-icon-72x72.png"/>
-    <link rel="apple-touch-icon" sizes="114x114" href="../images/apple-touch-icon-114x114.png"/>
+    <link rel="icon" href="../images/favicon-32x32.png" sizes="32x32" />
+    <link rel="icon" href="../images/favicon-192x192.png" sizes="192x192" />
+    <link rel="apple-touch-icon" href="../images/favicon-180x180.png" />
+
     <link rel="stylesheet" href="../css/normalize.css">
-    <link rel="stylesheet" href="../css/base.css?updated=1721907184">
-    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../css/template.css?updated=1721907184">
+    <link rel="stylesheet" href="../css/base.css?updated=1747386860">
+    <link rel="stylesheet" href="../css/template.css?updated=1747386860">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0/css/all.min.css" integrity="sha256-ybRkN9dBjhcS2qrW1z+hfCxq+1aBdwyQM5wlQoQVt/0=" crossorigin="anonymous" />
             <script src="https://cdn.jsdelivr.net/npm/css-vars-ponyfill@2"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0/js/all.min.js" integrity="sha256-0vuk8LXoyrmCjp1f0O300qo1M75ZQyhH9X3J6d+scmk=" crossorigin="anonymous"></script>
@@ -38,14 +37,13 @@
     <header class="phpdocumentor-top-header">
     <section class="phpdocumentor-section">
         <div class="site-branding">
-            <a class="site-logo" href="../index.html"><img width="180" src="../images/logo.svg" alt="WooCommerce" /></a>
+            <a class="site-logo" href="../index.html"><img src="../images/logo.png" alt="WooCommerce" /></a>
         </div>
         <nav class="main-navigation">
             <ul>
                 <li><a href="../hooks/hooks.html">Hooks Reference</a></li>
-                <li><a href="https://docs.woocommerce.com/">Documentation</a></li>
+                <li><a href="https://developer.woocommerce.com/docs/">Documentation</a></li>
                 <li><a href="https://woocommerce.github.io/woocommerce-rest-api-docs/">REST API Docs</a></li>
-                <li><a href="https://woocommerce.com/careers/?utm_source=woocommerce+core+code+reference&utm_medium=devdocs&utm_campaign=woo+careers" target="_blank">We're hiring!</a></li>
             </ul>
         </nav>
     </section>
@@ -53,7 +51,7 @@
 
 <div class="phpdocumentor-header">
     <section class="phpdocumentor-section">
-        <h1 class="phpdocumentor-title">WooCommerce Code Reference</h1>
+        <h1 class="phpdocumentor-title"><a href="../index.html">WooCommerce Code Reference</a></h1>
         <section class="phpdocumentor-search">
     <label class="phpdocumentor-label">
         <span class="visually-hidden">Search (click ESC to close search results)</span>
@@ -74,6 +72,10 @@
                                         <h4 class="phpdocumentor-sidebar__root-namespace"><a href="../namespaces/woocommerce.html"><abbr title="\WooCommerce">WooCommerce</abbr></a></h4>
                 <ul class="phpdocumentor-list">
                                             <li><a href="../namespaces/woocommerce-admin.html"><abbr title="\WooCommerce\Admin">Admin</abbr></a></li>
+                                    </ul>
+                            <h4 class="phpdocumentor-sidebar__root-namespace"><a href="../namespaces/mailpoet.html"><abbr title="\MailPoet">MailPoet</abbr></a></h4>
+                <ul class="phpdocumentor-list">
+                                            <li><a href="../namespaces/mailpoet-emaileditor.html"><abbr title="\MailPoet\EmailEditor">EmailEditor</abbr></a></li>
                                     </ul>
                             <h4 class="phpdocumentor-sidebar__root-namespace"><a href="../namespaces/automattic.html"><abbr title="\Automattic">Automattic</abbr></a></h4>
                 <ul class="phpdocumentor-list">
@@ -119,8 +121,10 @@
                                     <li><a href="../packages/WooCommerce-Widgets.html"><abbr title="\WooCommerce\Widgets">Widgets</abbr></a></li>
                                     <li><a href="../packages/WooCommerce-Uninstaller.html"><abbr title="\WooCommerce\Uninstaller">Uninstaller</abbr></a></li>
                             </ul>
-                                <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/WoocommerceAdmin.html"><abbr title="\WoocommerceAdmin">WoocommerceAdmin</abbr></a></h3>
-                                <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/WoocommerceNavigation.html"><abbr title="\WoocommerceNavigation">WoocommerceNavigation</abbr></a></h3>
+                                <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/MailPoet.html"><abbr title="\MailPoet">MailPoet</abbr></a></h3>
+                        <ul class="phpdocumentor-list">
+                                    <li><a href="../packages/MailPoet-EmailEditor.html"><abbr title="\MailPoet\EmailEditor">EmailEditor</abbr></a></li>
+                            </ul>
                                 <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/Automattic.html"><abbr title="\Automattic">Automattic</abbr></a></h3>
                         <ul class="phpdocumentor-list">
                                     <li><a href="../packages/Automattic-WooCommerce.html"><abbr title="\Automattic\WooCommerce">WooCommerce</abbr></a></li>
@@ -158,58 +162,56 @@
             </h3>
             <pre id="source-view" tabindex="-1" class="language-php line-numbers linkable-line-numbers"><code>&lt;?php
 /**
+ * Note: This pattern is deprecated, it will be removed once newsletter feature flag is deployed.
+ * If you are updating this pattern, please also update page-coming-soon-default.php.
+ */
+
+/**
  * Title: Coming Soon Entire Site
  * Slug: woocommerce/coming-soon-entire-site
  * Categories: WooCommerce
+ * Inserter: false
  * Feature Flag: launch-your-store
  *
  * @package WooCommerce\Blocks
  */
 
-$current_theme     = wp_get_theme()-&gt;get_stylesheet();
-$inter_font_family = &#039;inter&#039;;
-$cardo_font_family = &#039;cardo&#039;;
+use Automattic\WooCommerce\Blocks\Templates\ComingSoonTemplate;
 
-if ( &#039;twentytwentyfour&#039; === $current_theme ) {
-	$inter_font_family = &#039;body&#039;;
-	$cardo_font_family = &#039;heading&#039;;
-}
+$fonts               = ComingSoonTemplate::get_font_families();
+$heading_font_family = $fonts[&#039;heading&#039;];
+$body_font_family    = $fonts[&#039;body&#039;];
+
 ?&gt;
 
-&lt;!-- wp:woocommerce/coming-soon {&quot;color&quot;:&quot;#bea0f2&quot;,&quot;storeOnly&quot;:false,&quot;className&quot;:&quot;wp-block-woocommerce-background-color&quot;} --&gt;
-&lt;div class=&quot;wp-block-woocommerce-coming-soon wp-block-woocommerce-background-color&quot;&gt;&lt;!-- wp:cover {&quot;minHeight&quot;:100,&quot;minHeightUnit&quot;:&quot;vh&quot;,&quot;isDark&quot;:false,&quot;className&quot;:&quot;coming-soon-is-vertically-aligned-center coming-soon-cover&quot;,&quot;layout&quot;:{&quot;type&quot;:&quot;default&quot;}} --&gt;
-&lt;div class=&quot;wp-block-cover is-light coming-soon-is-vertically-aligned-center coming-soon-cover&quot; style=&quot;min-height:100vh&quot;&gt;&lt;span aria-hidden=&quot;true&quot; class=&quot;wp-block-cover__background has-background-dim-100 has-background-dim&quot; style=&quot;&quot;&gt;&lt;/span&gt;&lt;div class=&quot;wp-block-cover__inner-container&quot;&gt;&lt;!-- wp:group {&quot;className&quot;:&quot;woocommerce-coming-soon-banner-container&quot;,&quot;layout&quot;:{&quot;type&quot;:&quot;default&quot;}} --&gt;
-&lt;div class=&quot;wp-block-group woocommerce-coming-soon-banner-container&quot;&gt;&lt;!-- wp:group {&quot;align&quot;:&quot;wide&quot;,&quot;style&quot;:{&quot;spacing&quot;:{&quot;padding&quot;:{&quot;top&quot;:&quot;3px&quot;,&quot;bottom&quot;:&quot;20px&quot;}}},&quot;className&quot;:&quot;woocommerce-coming-soon-header&quot;,&quot;layout&quot;:{&quot;type&quot;:&quot;constrained&quot;}} --&gt;
-&lt;div class=&quot;wp-block-group alignwide woocommerce-coming-soon-header has-background&quot; style=&quot;padding-top:3px;padding-bottom:20px&quot;&gt;&lt;!-- wp:group {&quot;align&quot;:&quot;wide&quot;,&quot;layout&quot;:{&quot;type&quot;:&quot;flex&quot;,&quot;justifyContent&quot;:&quot;space-between&quot;,&quot;flexWrap&quot;:&quot;wrap&quot;}} --&gt;
+&lt;!-- wp:woocommerce/coming-soon {&quot;comingSoonPatternId&quot;:&quot;page-coming-soon-default&quot;,&quot;className&quot;:&quot;woocommerce-coming-soon-entire-site&quot;,&quot;style&quot;:{&quot;color&quot;:{&quot;background&quot;:&quot;#bea0f2&quot;,&quot;text&quot;:&quot;#000000&quot;},&quot;elements&quot;:{&quot;link&quot;:{&quot;color&quot;:{&quot;text&quot;:&quot;#000000&quot;}}}}} --&gt;
+&lt;div class=&quot;wp-block-woocommerce-coming-soon woocommerce-coming-soon-entire-site has-text-color has-background has-link-color&quot; style=&quot;color:#000000;background-color:#bea0f2&quot;&gt;&lt;!-- wp:cover {&quot;customOverlayColor&quot;:&quot;transparent&quot;,&quot;isUserOverlayColor&quot;:true,&quot;minHeight&quot;:100,&quot;minHeightUnit&quot;:&quot;vh&quot;,&quot;className&quot;:&quot;coming-soon-is-vertically-aligned-center coming-soon-cover&quot;,&quot;style&quot;:{&quot;spacing&quot;:{&quot;padding&quot;:{&quot;top&quot;:&quot;0px&quot;,&quot;bottom&quot;:&quot;0px&quot;,&quot;left&quot;:&quot;24px&quot;,&quot;right&quot;:&quot;24px&quot;}},&quot;color&quot;:{&quot;text&quot;:&quot;inherit&quot;},&quot;elements&quot;:{&quot;link&quot;:{&quot;color&quot;:{&quot;text&quot;:&quot;inherit&quot;}}}},&quot;layout&quot;:{&quot;type&quot;:&quot;constrained&quot;,&quot;wideSize&quot;:&quot;1280px&quot;}} --&gt;
+&lt;div class=&quot;wp-block-cover coming-soon-is-vertically-aligned-center coming-soon-cover has-text-color has-link-color&quot; style=&quot;color:inherit;padding-top:0px;padding-right:24px;padding-bottom:0px;padding-left:24px;min-height:100vh&quot;&gt;&lt;span aria-hidden=&quot;true&quot; class=&quot;wp-block-cover__background has-background-dim-100 has-background-dim&quot; style=&quot;background-color:transparent&quot;&gt;&lt;/span&gt;&lt;div class=&quot;wp-block-cover__inner-container&quot;&gt;&lt;!-- wp:group {&quot;className&quot;:&quot;woocommerce-coming-soon-banner-container&quot;,&quot;style&quot;:{&quot;dimensions&quot;:{&quot;minHeight&quot;:&quot;100vh&quot;},&quot;spacing&quot;:{&quot;blockGap&quot;:&quot;0px&quot;}},&quot;layout&quot;:{&quot;type&quot;:&quot;flex&quot;,&quot;orientation&quot;:&quot;vertical&quot;,&quot;justifyContent&quot;:&quot;stretch&quot;}} --&gt;
+&lt;div class=&quot;wp-block-group woocommerce-coming-soon-banner-container&quot; style=&quot;min-height:100vh&quot;&gt;&lt;!-- wp:group {&quot;align&quot;:&quot;wide&quot;,&quot;className&quot;:&quot;woocommerce-coming-soon-header has-background&quot;,&quot;style&quot;:{&quot;spacing&quot;:{&quot;padding&quot;:{&quot;bottom&quot;:&quot;14px&quot;,&quot;top&quot;:&quot;26px&quot;}}},&quot;layout&quot;:{&quot;type&quot;:&quot;constrained&quot;}} --&gt;
+&lt;div class=&quot;wp-block-group alignwide woocommerce-coming-soon-header has-background&quot; style=&quot;padding-top:26px;padding-bottom:14px&quot;&gt;&lt;!-- wp:group {&quot;align&quot;:&quot;wide&quot;,&quot;layout&quot;:{&quot;type&quot;:&quot;flex&quot;,&quot;justifyContent&quot;:&quot;space-between&quot;,&quot;flexWrap&quot;:&quot;wrap&quot;}} --&gt;
 &lt;div class=&quot;wp-block-group alignwide&quot;&gt;&lt;!-- wp:group {&quot;style&quot;:{&quot;spacing&quot;:{&quot;blockGap&quot;:&quot;var:preset|spacing|20&quot;},&quot;layout&quot;:{&quot;selfStretch&quot;:&quot;fit&quot;,&quot;flexSize&quot;:null}},&quot;layout&quot;:{&quot;type&quot;:&quot;flex&quot;}} --&gt;
-&lt;div class=&quot;wp-block-group&quot;&gt;&lt;!-- wp:site-logo {&quot;width&quot;:60} /--&gt;
+&lt;div class=&quot;wp-block-group&quot;&gt;&lt;!-- wp:site-logo {&quot;width&quot;:60,&quot;style&quot;:{&quot;layout&quot;:{&quot;selfStretch&quot;:&quot;fit&quot;,&quot;flexSize&quot;:null}}} /--&gt;
 
 &lt;!-- wp:group {&quot;style&quot;:{&quot;spacing&quot;:{&quot;blockGap&quot;:&quot;0px&quot;}}} --&gt;
-&lt;div class=&quot;wp-block-group&quot;&gt;&lt;!-- wp:site-title {&quot;level&quot;:0,&quot;fontFamily&quot;:&quot;&lt;?php echo esc_html( $inter_font_family ); ?&gt;&quot;} /--&gt;&lt;/div&gt;
+&lt;div class=&quot;wp-block-group&quot;&gt;&lt;!-- wp:site-title {&quot;level&quot;:0,&quot;style&quot;:{&quot;typography&quot;:{&quot;fontSize&quot;:&quot;20px&quot;,&quot;letterSpacing&quot;:&quot;0px&quot;},&quot;color&quot;:{&quot;text&quot;:&quot;#000000&quot;},&quot;elements&quot;:{&quot;link&quot;:{&quot;color&quot;:{&quot;text&quot;:&quot;#000000&quot;}}}},&quot;fontFamily&quot;:&quot;&lt;?php echo esc_html( $body_font_family ); ?&gt;&quot;} /--&gt;&lt;/div&gt;
 &lt;!-- /wp:group --&gt;&lt;/div&gt;
 &lt;!-- /wp:group --&gt;
 
-&lt;!-- wp:group {&quot;style&quot;:{&quot;spacing&quot;:{&quot;blockGap&quot;:&quot;48px&quot;}},&quot;className&quot;:&quot;woocommerce-coming-soon-social-login&quot;,&quot;layout&quot;:{&quot;type&quot;:&quot;flex&quot;,&quot;flexWrap&quot;:&quot;nowrap&quot;}} --&gt;
-&lt;div class=&quot;wp-block-group woocommerce-coming-soon-social-login&quot;&gt;&lt;!-- wp:social-links {&quot;iconColor&quot;:&quot;contrast&quot;,&quot;iconColorValue&quot;:&quot;#111111&quot;,&quot;style&quot;:{&quot;layout&quot;:{&quot;selfStretch&quot;:&quot;fit&quot;,&quot;flexSize&quot;:null},&quot;spacing&quot;:{&quot;blockGap&quot;:{&quot;left&quot;:&quot;18px&quot;}}},&quot;className&quot;:&quot;is-style-logos-only&quot;} --&gt;
-&lt;ul class=&quot;wp-block-social-links has-icon-color is-style-logos-only&quot;&gt;&lt;!-- wp:social-link {&quot;url&quot;:&quot;https://www.linkedin.com/&quot;,&quot;service&quot;:&quot;linkedin&quot;} /--&gt;
+&lt;!-- wp:group {&quot;className&quot;:&quot;woocommerce-coming-soon-social-login&quot;,&quot;style&quot;:{&quot;spacing&quot;:{&quot;blockGap&quot;:&quot;48px&quot;}},&quot;layout&quot;:{&quot;type&quot;:&quot;flex&quot;,&quot;flexWrap&quot;:&quot;nowrap&quot;}} --&gt;
+&lt;div class=&quot;wp-block-group woocommerce-coming-soon-social-login&quot;&gt;&lt;!-- wp:template-part {&quot;slug&quot;:&quot;coming-soon-social-links&quot;,&quot;theme&quot;:&quot;woocommerce/woocommerce&quot;,&quot;tagName&quot;:&quot;div&quot;} /--&gt;
 
-&lt;!-- wp:social-link {&quot;url&quot;:&quot;https://www.instagram.com&quot;,&quot;service&quot;:&quot;instagram&quot;} /--&gt;
-
-&lt;!-- wp:social-link {&quot;url&quot;:&quot;https://www.facebook.com&quot;,&quot;service&quot;:&quot;facebook&quot;} /--&gt;&lt;/ul&gt;
-&lt;!-- /wp:social-links --&gt;
-
-&lt;!-- wp:loginout {&quot;fontFamily&quot;:&quot;&lt;?php echo esc_html( $inter_font_family ); ?&gt;&quot;} /--&gt;&lt;/div&gt;
+&lt;!-- wp:loginout {&quot;style&quot;:{&quot;elements&quot;:{&quot;link&quot;:{&quot;color&quot;:{&quot;text&quot;:&quot;#ffffff&quot;}}},&quot;color&quot;:{&quot;background&quot;:&quot;#000000&quot;},&quot;spacing&quot;:{&quot;padding&quot;:{&quot;top&quot;:&quot;12px&quot;,&quot;bottom&quot;:&quot;12px&quot;,&quot;left&quot;:&quot;16px&quot;,&quot;right&quot;:&quot;16px&quot;}},&quot;typography&quot;:{&quot;fontSize&quot;:&quot;14px&quot;,&quot;lineHeight&quot;:&quot;1.2&quot;},&quot;border&quot;:{&quot;radius&quot;:&quot;6px&quot;}},&quot;fontFamily&quot;:&quot;&lt;?php echo esc_html( $body_font_family ); ?&gt;&quot;} /--&gt;&lt;/div&gt;
 &lt;!-- /wp:group --&gt;&lt;/div&gt;
 &lt;!-- /wp:group --&gt;&lt;/div&gt;
 &lt;!-- /wp:group --&gt;
 
-&lt;!-- wp:group {&quot;layout&quot;:{&quot;type&quot;:&quot;flex&quot;,&quot;orientation&quot;:&quot;vertical&quot;,&quot;justifyContent&quot;:&quot;center&quot;}} --&gt;
-&lt;div class=&quot;wp-block-group&quot;&gt;&lt;!-- wp:heading {&quot;textAlign&quot;:&quot;center&quot;,&quot;level&quot;:1,&quot;align&quot;:&quot;wide&quot;,&quot;className&quot;:&quot;woocommerce-coming-soon-banner&quot;,&quot;fontFamily&quot;:&quot;&lt;?php echo esc_html( $cardo_font_family ); ?&gt;&quot;} --&gt;
-&lt;h1 class=&quot;wp-block-heading alignwide has-text-align-center woocommerce-coming-soon-banner has-&lt;?php echo esc_html( $cardo_font_family ); ?&gt;-font-family&quot;&gt;&lt;?php echo esc_html__( &quot;Pardon our dust! We&#039;re working on something amazing — check back soon!&quot;, &#039;woocommerce&#039; ); ?&gt;&lt;/h1&gt;
+&lt;!-- wp:group {&quot;style&quot;:{&quot;layout&quot;:{&quot;selfStretch&quot;:&quot;fill&quot;,&quot;flexSize&quot;:null}},&quot;layout&quot;:{&quot;type&quot;:&quot;flex&quot;,&quot;orientation&quot;:&quot;vertical&quot;,&quot;justifyContent&quot;:&quot;center&quot;,&quot;verticalAlignment&quot;:&quot;center&quot;}} --&gt;
+&lt;div class=&quot;wp-block-group&quot;&gt;&lt;!-- wp:heading {&quot;textAlign&quot;:&quot;center&quot;,&quot;level&quot;:1,&quot;align&quot;:&quot;wide&quot;,&quot;className&quot;:&quot;woocommerce-coming-soon-banner&quot;,&quot;style&quot;:{&quot;typography&quot;:{&quot;fontSize&quot;:&quot;48px&quot;,&quot;fontStyle&quot;:&quot;normal&quot;,&quot;fontWeight&quot;:&quot;400&quot;,&quot;lineHeight&quot;:&quot;1.2&quot;}},&quot;fontFamily&quot;:&quot;&lt;?php echo esc_html( $heading_font_family ); ?&gt;&quot;} --&gt;
+&lt;h1 class=&quot;wp-block-heading alignwide has-text-align-center woocommerce-coming-soon-banner has-&lt;?php echo esc_html( $heading_font_family ); ?&gt;-font-family&quot; style=&quot;font-size:48px;font-style:normal;font-weight:400;line-height:1.2&quot;&gt;&lt;?php echo esc_html__( &quot;Pardon our dust! We&#039;re working on something amazing — check back soon!&quot;, &#039;woocommerce&#039; ); ?&gt;&lt;/h1&gt;
 &lt;!-- /wp:heading --&gt;&lt;/div&gt;
 &lt;!-- /wp:group --&gt;
 
-&lt;!-- wp:group {&quot;style&quot;:{&quot;spacing&quot;:{&quot;padding&quot;:{&quot;top&quot;:&quot;var:preset|spacing|30&quot;,&quot;bottom&quot;:&quot;var:preset|spacing|10&quot;}}},&quot;className&quot;:&quot;woocommerce-coming-soon-powered-by-woo&quot;,&quot;layout&quot;:{&quot;type&quot;:&quot;constrained&quot;}} --&gt;
+&lt;!-- wp:group {&quot;className&quot;:&quot;woocommerce-coming-soon-powered-by-woo&quot;,&quot;style&quot;:{&quot;spacing&quot;:{&quot;padding&quot;:{&quot;top&quot;:&quot;var:preset|spacing|30&quot;,&quot;bottom&quot;:&quot;var:preset|spacing|10&quot;}}},&quot;layout&quot;:{&quot;type&quot;:&quot;constrained&quot;}} --&gt;
 &lt;div class=&quot;wp-block-group woocommerce-coming-soon-powered-by-woo&quot; style=&quot;padding-top:var(--wp--preset--spacing--30);padding-bottom:var(--wp--preset--spacing--10)&quot;&gt;&lt;!-- wp:group {&quot;align&quot;:&quot;wide&quot;,&quot;style&quot;:{&quot;spacing&quot;:{&quot;padding&quot;:{&quot;top&quot;:&quot;var:preset|spacing|30&quot;,&quot;bottom&quot;:&quot;0&quot;}}}} --&gt;
 &lt;div class=&quot;wp-block-group alignwide&quot; style=&quot;padding-top:var(--wp--preset--spacing--30);padding-bottom:0&quot;&gt;&lt;!-- wp:paragraph {&quot;align&quot;:&quot;center&quot;,&quot;style&quot;:{&quot;elements&quot;:{&quot;link&quot;:{&quot;color&quot;:{&quot;text&quot;:&quot;var:preset|color|contrast&quot;}}}},&quot;textColor&quot;:&quot;contrast-2&quot;,&quot;fontSize&quot;:&quot;small&quot;} --&gt;
 &lt;p class=&quot;has-text-align-center has-contrast-2-color has-text-color has-link-color has-small-font-size&quot;&gt;&amp;nbsp;&lt;/p&gt;
@@ -217,142 +219,8 @@ if ( &#039;twentytwentyfour&#039; === $current_theme ) {
 &lt;!-- /wp:group --&gt;&lt;/div&gt;
 &lt;!-- /wp:group --&gt;&lt;/div&gt;
 &lt;!-- /wp:group --&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;!-- /wp:cover --&gt;&lt;style&gt;
-/* Reset */
-h1, p, a {
-	margin: 0;
-	padding: 0;
-	border: 0;
-	vertical-align: baseline;
-}
-ol, ul {
-	list-style: none;
-}
-a {
-	text-decoration: none;
-}
-body,
-body.custom-background {
-	margin: 0;
-	background-color: #bea0f2;
-	font-family: &#039;Inter&#039;, sans-serif;
-	min-width: 320px;
-	--wp--preset--color--contrast: #111111;
-	--wp--style--global--wide-size: 1280px;
-}
-body .is-layout-constrained &gt; .alignwide {
-	margin: 0 auto;
-}
-.wp-container-core-group-is-layout-4.wp-container-core-group-is-layout-4 {
-	justify-content: space-between;
-}
-.is-layout-flex {
-	display: flex;
-	flex-wrap: wrap;
-	align-items: center;
-	margin: 0;
-}
-.wp-block-site-title p {
-	line-height: normal;
-}
-.wp-block-site-title a {
-	font-weight: 600;
-	font-size: 20px;
-	font-style: normal;
-	line-height: normal;
-	letter-spacing: -0.4px;
-	color: var(--wp--preset--color--contrast);
-	text-decoration: none;
-}
-.wp-block-social-links {
-	gap: 0.5em 18px;
-}
-.woocommerce-coming-soon-social-login {
-	gap: 48px;
-}
-.wp-block-loginout {
-	background-color: #000000;
-	border-radius: 6px;
-	display: flex;
-	height: 40px;
-	width: 74px;
-	justify-content: center;
-	align-items: center;
-	gap: 10px;
-	box-sizing: border-box;
-}
-.wp-block-loginout a {
-	color: #ffffff;
-	text-decoration: none;
-	line-height: 17px;
-	font-size: 14px;
-	font-weight: 500;
-}
-.wp-block-spacer {
-	margin: 0;
-}
-.woocommerce-coming-soon-banner-container {
-	padding-inline: min(5.5rem, 8vw);
-	margin: 0;
-	height: 100%;
-	display: flex;
-	flex-direction: column;
-	justify-content: space-between;
-}
-@media (max-width: 660px) {
-	.woocommerce-coming-soon-banner-container {
-		padding-inline: 0;
-	}
-}
-.woocommerce-coming-soon-banner-container &gt; .wp-block-group__inner-container {
-	height: 100%;
-	display: flex;
-	flex-direction: column;
-	justify-content: space-between;
-}
-.woocommerce-coming-soon-powered-by-woo {
-	width: 100%;
-	--wp--preset--spacing--30: 0;
-	--wp--preset--spacing--10: 19px;
-}
-.woocommerce-coming-soon-powered-by-woo p {
-	font-style: normal;
-	font-weight: 400;
-	line-height: 160%; /* 19.2px */
-	letter-spacing: -0.12px;
-	color: #3C434A;
-	font-size: 12px;
-	font-family: Inter;
-}
-.woocommerce-coming-soon-powered-by-woo a {
-	font-family: Inter;
-}
-body .is-layout-constrained &gt; .woocommerce-coming-soon-banner.alignwide {
-	max-width: 820px;
-}
-.coming-soon-is-vertically-aligned-center {
-	width: 100%;
-	align-items: stretch;
-}
-.coming-soon-cover .wp-block-cover__background {
-	background-color: #bea0f2 !important;
-}
-.woocommerce-coming-soon-header {
-	height: 40px;
-}
-.woocommerce-coming-soon-banner {
-	font-size: clamp(27px, 1.74rem + ((1vw - 3px) * 2), 48px);
-	font-weight: 400;
-	line-height: 58px;
-	font-family: &#039;Cardo&#039;, serif;
-	letter-spacing: normal;
-	text-align: center;
-	font-style: normal;
-	max-width: 820px;
-	color: var(--wp--preset--color--contrast);
-	margin: 0 auto;
-	text-wrap: balance;
-}&lt;/style&gt;&lt;/div&gt;
+&lt;!-- /wp:cover --&gt;
+&lt;/div&gt;
 &lt;!-- /wp:woocommerce/coming-soon --&gt;
 </code></pre>
             </article>
@@ -364,7 +232,7 @@ body .is-layout-constrained &gt; .woocommerce-coming-soon-banner.alignwide {
 
     <footer class="phpdocumentor phpdocumentor-footer">
     <div class="phpdocumentor-section">
-        <span>WooCommerce Code Reference API documentation generated by <a href="http://www.phpdoc.org/">phpDocumentor</a> on July 25th, 2024 at 11:33 am.</span>
+        <span>WooCommerce Code Reference API documentation generated by <a href="http://www.phpdoc.org/">phpDocumentor</a> on May 16th, 2025 at 09:14 am.</span>
     </div>
 </footer>
 
@@ -376,7 +244,7 @@ body .is-layout-constrained &gt; .woocommerce-coming-soon-banner.alignwide {
             'searchIndex': '..\/js\/searchIndex.json'
         };
     </script>
-    <script src="../js/searchIndex.js?updated=1721907184"></script>
-    <script src="../js/search.js?updated=1721907184"></script>
+    <script src="../js/searchIndex.js?updated=1747386860"></script>
+    <script src="../js/search.js?updated=1747386860"></script>
 </body>
 </html>

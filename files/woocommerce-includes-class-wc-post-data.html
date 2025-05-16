@@ -4,14 +4,13 @@
     <meta charset="utf-8">
     <title>WooCommerce Code Reference</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="../images/favicon.png" />
-    <link rel="apple-touch-icon" href="../images/apple-touch-icon.png"/>
-    <link rel="apple-touch-icon" sizes="72x72" href="../images/apple-touch-icon-72x72.png"/>
-    <link rel="apple-touch-icon" sizes="114x114" href="../images/apple-touch-icon-114x114.png"/>
+    <link rel="icon" href="../images/favicon-32x32.png" sizes="32x32" />
+    <link rel="icon" href="../images/favicon-192x192.png" sizes="192x192" />
+    <link rel="apple-touch-icon" href="../images/favicon-180x180.png" />
+
     <link rel="stylesheet" href="../css/normalize.css">
-    <link rel="stylesheet" href="../css/base.css?updated=1721907182">
-    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../css/template.css?updated=1721907182">
+    <link rel="stylesheet" href="../css/base.css?updated=1747386858">
+    <link rel="stylesheet" href="../css/template.css?updated=1747386858">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0/css/all.min.css" integrity="sha256-ybRkN9dBjhcS2qrW1z+hfCxq+1aBdwyQM5wlQoQVt/0=" crossorigin="anonymous" />
             <script src="https://cdn.jsdelivr.net/npm/css-vars-ponyfill@2"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0/js/all.min.js" integrity="sha256-0vuk8LXoyrmCjp1f0O300qo1M75ZQyhH9X3J6d+scmk=" crossorigin="anonymous"></script>
@@ -38,14 +37,13 @@
     <header class="phpdocumentor-top-header">
     <section class="phpdocumentor-section">
         <div class="site-branding">
-            <a class="site-logo" href="../index.html"><img width="180" src="../images/logo.svg" alt="WooCommerce" /></a>
+            <a class="site-logo" href="../index.html"><img src="../images/logo.png" alt="WooCommerce" /></a>
         </div>
         <nav class="main-navigation">
             <ul>
                 <li><a href="../hooks/hooks.html">Hooks Reference</a></li>
-                <li><a href="https://docs.woocommerce.com/">Documentation</a></li>
+                <li><a href="https://developer.woocommerce.com/docs/">Documentation</a></li>
                 <li><a href="https://woocommerce.github.io/woocommerce-rest-api-docs/">REST API Docs</a></li>
-                <li><a href="https://woocommerce.com/careers/?utm_source=woocommerce+core+code+reference&utm_medium=devdocs&utm_campaign=woo+careers" target="_blank">We're hiring!</a></li>
             </ul>
         </nav>
     </section>
@@ -53,7 +51,7 @@
 
 <div class="phpdocumentor-header">
     <section class="phpdocumentor-section">
-        <h1 class="phpdocumentor-title">WooCommerce Code Reference</h1>
+        <h1 class="phpdocumentor-title"><a href="../index.html">WooCommerce Code Reference</a></h1>
         <section class="phpdocumentor-search">
     <label class="phpdocumentor-label">
         <span class="visually-hidden">Search (click ESC to close search results)</span>
@@ -74,6 +72,10 @@
                                         <h4 class="phpdocumentor-sidebar__root-namespace"><a href="../namespaces/woocommerce.html"><abbr title="\WooCommerce">WooCommerce</abbr></a></h4>
                 <ul class="phpdocumentor-list">
                                             <li><a href="../namespaces/woocommerce-admin.html"><abbr title="\WooCommerce\Admin">Admin</abbr></a></li>
+                                    </ul>
+                            <h4 class="phpdocumentor-sidebar__root-namespace"><a href="../namespaces/mailpoet.html"><abbr title="\MailPoet">MailPoet</abbr></a></h4>
+                <ul class="phpdocumentor-list">
+                                            <li><a href="../namespaces/mailpoet-emaileditor.html"><abbr title="\MailPoet\EmailEditor">EmailEditor</abbr></a></li>
                                     </ul>
                             <h4 class="phpdocumentor-sidebar__root-namespace"><a href="../namespaces/automattic.html"><abbr title="\Automattic">Automattic</abbr></a></h4>
                 <ul class="phpdocumentor-list">
@@ -119,8 +121,10 @@
                                     <li><a href="../packages/WooCommerce-Widgets.html"><abbr title="\WooCommerce\Widgets">Widgets</abbr></a></li>
                                     <li><a href="../packages/WooCommerce-Uninstaller.html"><abbr title="\WooCommerce\Uninstaller">Uninstaller</abbr></a></li>
                             </ul>
-                                <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/WoocommerceAdmin.html"><abbr title="\WoocommerceAdmin">WoocommerceAdmin</abbr></a></h3>
-                                <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/WoocommerceNavigation.html"><abbr title="\WoocommerceNavigation">WoocommerceNavigation</abbr></a></h3>
+                                <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/MailPoet.html"><abbr title="\MailPoet">MailPoet</abbr></a></h3>
+                        <ul class="phpdocumentor-list">
+                                    <li><a href="../packages/MailPoet-EmailEditor.html"><abbr title="\MailPoet\EmailEditor">EmailEditor</abbr></a></li>
+                            </ul>
                                 <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/Automattic.html"><abbr title="\Automattic">Automattic</abbr></a></h3>
                         <ul class="phpdocumentor-list">
                                     <li><a href="../packages/Automattic-WooCommerce.html"><abbr title="\Automattic\WooCommerce">WooCommerce</abbr></a></li>
@@ -166,6 +170,10 @@
  * @version 2.2.0
  */
 
+use Automattic\WooCommerce\Enums\OrderStatus;
+use Automattic\WooCommerce\Enums\OrderInternalStatus;
+use Automattic\WooCommerce\Enums\ProductStatus;
+use Automattic\WooCommerce\Enums\ProductType;
 use Automattic\WooCommerce\Internal\DataStores\Orders\DataSynchronizer;
 use Automattic\WooCommerce\Internal\ProductAttributesLookup\LookupDataStore as ProductAttributesLookupDataStore;
 use Automattic\WooCommerce\Proxies\LegacyProxy;
@@ -208,7 +216,7 @@ class WC_Post_Data {
 
 		// Status transitions.
 		add_action( &#039;transition_post_status&#039;, array( __CLASS__, &#039;transition_post_status&#039; ), 10, 3 );
-		add_action( &#039;delete_post&#039;, array( __CLASS__, &#039;delete_post&#039; ) );
+		add_action( &#039;delete_post&#039;, array( __CLASS__, &#039;delete_post_data&#039; ) );
 		add_action( &#039;wp_trash_post&#039;, array( __CLASS__, &#039;trash_post&#039; ) );
 		add_action( &#039;untrashed_post&#039;, array( __CLASS__, &#039;untrash_post&#039; ) );
 		add_action( &#039;before_delete_post&#039;, array( __CLASS__, &#039;before_delete_order&#039; ) );
@@ -216,6 +224,8 @@ class WC_Post_Data {
 
 		// Meta cache flushing.
 		add_action( &#039;updated_post_meta&#039;, array( __CLASS__, &#039;flush_object_meta_cache&#039; ), 10, 4 );
+		add_action( &#039;added_post_meta&#039;, array( __CLASS__, &#039;flush_object_meta_cache&#039; ), 10, 4 );
+		add_action( &#039;deleted_post_meta&#039;, array( __CLASS__, &#039;flush_object_meta_cache&#039; ), 10, 4 );
 		add_action( &#039;updated_order_item_meta&#039;, array( __CLASS__, &#039;flush_object_meta_cache&#039; ), 10, 4 );
 	}
 
@@ -271,7 +281,7 @@ class WC_Post_Data {
 	 * @param WP_Post $post       Post data.
 	 */
 	public static function transition_post_status( $new_status, $old_status, $post ) {
-		if ( ( &#039;publish&#039; === $new_status || &#039;publish&#039; === $old_status ) &amp;&amp; in_array( $post-&gt;post_type, array( &#039;product&#039;, &#039;product_variation&#039; ), true ) ) {
+		if ( ( ProductStatus::PUBLISH === $new_status || ProductStatus::PUBLISH === $old_status ) &amp;&amp; in_array( $post-&gt;post_type, array( &#039;product&#039;, &#039;product_variation&#039; ), true ) ) {
 			self::delete_product_query_transients();
 		}
 	}
@@ -303,7 +313,7 @@ class WC_Post_Data {
 		 * @return string    $from    Origin type.
 		 * @param string     $to      New type.
 		 */
-		if ( apply_filters( &#039;woocommerce_delete_variations_on_product_type_change&#039;, &#039;variable&#039; === $from &amp;&amp; &#039;variable&#039; !== $to, $product, $from, $to ) ) {
+		if ( apply_filters( &#039;woocommerce_delete_variations_on_product_type_change&#039;, ProductType::VARIABLE === $from &amp;&amp; ProductType::VARIABLE !== $to, $product, $from, $to ) ) {
 			// If the product is no longer variable, we should ensure all variations are removed.
 			$data_store = WC_Data_Store::load( &#039;product-variable&#039; );
 			$data_store-&gt;delete_variations( $product-&gt;get_id(), true );
@@ -424,12 +434,12 @@ class WC_Post_Data {
 		} elseif ( &#039;product&#039; === $data[&#039;post_type&#039;] &amp;&amp; isset( $_POST[&#039;product-type&#039;] ) ) { // WPCS: input var ok, CSRF ok.
 			$product_type = wc_clean( wp_unslash( $_POST[&#039;product-type&#039;] ) ); // WPCS: input var ok, CSRF ok.
 			switch ( $product_type ) {
-				case &#039;grouped&#039;:
-				case &#039;variable&#039;:
+				case ProductType::GROUPED:
+				case ProductType::VARIABLE:
 					$data[&#039;post_parent&#039;] = 0;
 					break;
 			}
-		} elseif ( &#039;product&#039; === $data[&#039;post_type&#039;] &amp;&amp; &#039;auto-draft&#039; === $data[&#039;post_status&#039;] ) {
+		} elseif ( &#039;product&#039; === $data[&#039;post_type&#039;] &amp;&amp; ProductStatus::AUTO_DRAFT === $data[&#039;post_status&#039;] ) {
 			$data[&#039;post_title&#039;] = &#039;AUTO-DRAFT&#039;;
 		} elseif ( &#039;shop_coupon&#039; === $data[&#039;post_type&#039;] ) {
 			// Coupons should never allow unfiltered HTML.
@@ -455,15 +465,15 @@ class WC_Post_Data {
 	}
 
 	/**
-	 * Removes variations etc belonging to a deleted post, and clears transients.
+	 * Removes variations etc. belonging to a deleted post, and clears transients.
+	 *
+	 * @internal Use the delete_post function instead.
+	 * @since 9.8.0
 	 *
 	 * @param mixed $id ID of post being deleted.
 	 */
-	public static function delete_post( $id ) {
+	public static function delete_post_data( $id ) {
 		$container = wc_get_container();
-		if ( ! $container-&gt;get( LegacyProxy::class )-&gt;call_function( &#039;current_user_can&#039;, &#039;delete_posts&#039; ) || ! $id ) {
-			return;
-		}
 
 		$post_type = self::get_post_type( $id );
 		switch ( $post_type ) {
@@ -502,6 +512,20 @@ class WC_Post_Data {
 	}
 
 	/**
+	 * Removes variations etc. belonging to a deleted post, and clears transients, if the user has permission.
+	 *
+	 * @param mixed $id ID of post being deleted.
+	 */
+	public static function delete_post( $id ) {
+		$container = wc_get_container();
+		if ( ! $container-&gt;get( LegacyProxy::class )-&gt;call_function( &#039;current_user_can&#039;, &#039;delete_posts&#039; ) || ! $id ) {
+			return;
+		}
+
+		self::delete_post_data( $id );
+	}
+
+	/**
 	 * Trash post.
 	 *
 	 * @param mixed $id Post ID.
@@ -520,7 +544,7 @@ class WC_Post_Data {
 			$refunds = $wpdb-&gt;get_results( $wpdb-&gt;prepare( &quot;SELECT ID FROM $wpdb-&gt;posts WHERE post_type = &#039;shop_order_refund&#039; AND post_parent = %d&quot;, $id ) );
 
 			foreach ( $refunds as $refund ) {
-				$wpdb-&gt;update( $wpdb-&gt;posts, array( &#039;post_status&#039; =&gt; &#039;trash&#039; ), array( &#039;ID&#039; =&gt; $refund-&gt;ID ) );
+				$wpdb-&gt;update( $wpdb-&gt;posts, array( &#039;post_status&#039; =&gt; OrderStatus::TRASH ), array( &#039;ID&#039; =&gt; $refund-&gt;ID ) );
 			}
 
 			wc_delete_shop_order_transients( $id );
@@ -553,7 +577,7 @@ class WC_Post_Data {
 			$refunds = $wpdb-&gt;get_results( $wpdb-&gt;prepare( &quot;SELECT ID FROM $wpdb-&gt;posts WHERE post_type = &#039;shop_order_refund&#039; AND post_parent = %d&quot;, $id ) );
 
 			foreach ( $refunds as $refund ) {
-				$wpdb-&gt;update( $wpdb-&gt;posts, array( &#039;post_status&#039; =&gt; &#039;wc-completed&#039; ), array( &#039;ID&#039; =&gt; $refund-&gt;ID ) );
+				$wpdb-&gt;update( $wpdb-&gt;posts, array( &#039;post_status&#039; =&gt; OrderInternalStatus::COMPLETED ), array( &#039;ID&#039; =&gt; $refund-&gt;ID ) );
 			}
 
 			wc_delete_shop_order_transients( $id );
@@ -563,10 +587,24 @@ class WC_Post_Data {
 			$data_store-&gt;untrash_variations( $id );
 
 			wc_product_force_unique_sku( $id );
+			self::clear_global_unique_id_if_necessary( $id );
 
 			wc_get_container()-&gt;get( ProductAttributesLookupDataStore::class )-&gt;on_product_changed( $id );
 		} elseif ( &#039;product_variation&#039; === $post_type ) {
 			wc_get_container()-&gt;get( ProductAttributesLookupDataStore::class )-&gt;on_product_changed( $id );
+		}
+	}
+
+	/**
+	 * Clear global unique id if it&#039;s not unique.
+	 *
+	 * @param mixed $id Post ID.
+	 */
+	private static function clear_global_unique_id_if_necessary( $id ) {
+		$product = wc_get_product( $id );
+		if ( $product &amp;&amp; ! wc_product_has_global_unique_id( $id, $product-&gt;get_global_unique_id() ) ) {
+			$product-&gt;set_global_unique_id( &#039;&#039; );
+			$product-&gt;save();
 		}
 	}
 
@@ -758,7 +796,7 @@ WC_Post_Data::init();
 
     <footer class="phpdocumentor phpdocumentor-footer">
     <div class="phpdocumentor-section">
-        <span>WooCommerce Code Reference API documentation generated by <a href="http://www.phpdoc.org/">phpDocumentor</a> on July 25th, 2024 at 11:33 am.</span>
+        <span>WooCommerce Code Reference API documentation generated by <a href="http://www.phpdoc.org/">phpDocumentor</a> on May 16th, 2025 at 09:14 am.</span>
     </div>
 </footer>
 
@@ -770,7 +808,7 @@ WC_Post_Data::init();
             'searchIndex': '..\/js\/searchIndex.json'
         };
     </script>
-    <script src="../js/searchIndex.js?updated=1721907182"></script>
-    <script src="../js/search.js?updated=1721907182"></script>
+    <script src="../js/searchIndex.js?updated=1747386858"></script>
+    <script src="../js/search.js?updated=1747386858"></script>
 </body>
 </html>

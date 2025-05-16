@@ -4,14 +4,13 @@
     <meta charset="utf-8">
     <title>WooCommerce Code Reference</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="../images/favicon.png" />
-    <link rel="apple-touch-icon" href="../images/apple-touch-icon.png"/>
-    <link rel="apple-touch-icon" sizes="72x72" href="../images/apple-touch-icon-72x72.png"/>
-    <link rel="apple-touch-icon" sizes="114x114" href="../images/apple-touch-icon-114x114.png"/>
+    <link rel="icon" href="../images/favicon-32x32.png" sizes="32x32" />
+    <link rel="icon" href="../images/favicon-192x192.png" sizes="192x192" />
+    <link rel="apple-touch-icon" href="../images/favicon-180x180.png" />
+
     <link rel="stylesheet" href="../css/normalize.css">
-    <link rel="stylesheet" href="../css/base.css?updated=1721907199">
-    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../css/template.css?updated=1721907199">
+    <link rel="stylesheet" href="../css/base.css?updated=1747386878">
+    <link rel="stylesheet" href="../css/template.css?updated=1747386878">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0/css/all.min.css" integrity="sha256-ybRkN9dBjhcS2qrW1z+hfCxq+1aBdwyQM5wlQoQVt/0=" crossorigin="anonymous" />
             <script src="https://cdn.jsdelivr.net/npm/css-vars-ponyfill@2"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0/js/all.min.js" integrity="sha256-0vuk8LXoyrmCjp1f0O300qo1M75ZQyhH9X3J6d+scmk=" crossorigin="anonymous"></script>
@@ -27,19 +26,24 @@
 		'content_group' : 'WooCommerce Core Code Reference',
 	});
 </script>
-        </head>
+        <script src="../js/prism.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            window.dispatchEvent(new HashChangeEvent('hashchange'));
+        });
+    </script>
+</head>
 <body id="top">
     <header class="phpdocumentor-top-header">
     <section class="phpdocumentor-section">
         <div class="site-branding">
-            <a class="site-logo" href="../index.html"><img width="180" src="../images/logo.svg" alt="WooCommerce" /></a>
+            <a class="site-logo" href="../index.html"><img src="../images/logo.png" alt="WooCommerce" /></a>
         </div>
         <nav class="main-navigation">
             <ul>
                 <li><a href="../hooks/hooks.html">Hooks Reference</a></li>
-                <li><a href="https://docs.woocommerce.com/">Documentation</a></li>
+                <li><a href="https://developer.woocommerce.com/docs/">Documentation</a></li>
                 <li><a href="https://woocommerce.github.io/woocommerce-rest-api-docs/">REST API Docs</a></li>
-                <li><a href="https://woocommerce.com/careers/?utm_source=woocommerce+core+code+reference&utm_medium=devdocs&utm_campaign=woo+careers" target="_blank">We're hiring!</a></li>
             </ul>
         </nav>
     </section>
@@ -47,7 +51,7 @@
 
 <div class="phpdocumentor-header">
     <section class="phpdocumentor-section">
-        <h1 class="phpdocumentor-title">WooCommerce Code Reference</h1>
+        <h1 class="phpdocumentor-title"><a href="../index.html">WooCommerce Code Reference</a></h1>
         <section class="phpdocumentor-search">
     <label class="phpdocumentor-label">
         <span class="visually-hidden">Search (click ESC to close search results)</span>
@@ -68,6 +72,10 @@
                                         <h4 class="phpdocumentor-sidebar__root-namespace"><a href="../namespaces/woocommerce.html"><abbr title="\WooCommerce">WooCommerce</abbr></a></h4>
                 <ul class="phpdocumentor-list">
                                             <li><a href="../namespaces/woocommerce-admin.html"><abbr title="\WooCommerce\Admin">Admin</abbr></a></li>
+                                    </ul>
+                            <h4 class="phpdocumentor-sidebar__root-namespace"><a href="../namespaces/mailpoet.html"><abbr title="\MailPoet">MailPoet</abbr></a></h4>
+                <ul class="phpdocumentor-list">
+                                            <li><a href="../namespaces/mailpoet-emaileditor.html"><abbr title="\MailPoet\EmailEditor">EmailEditor</abbr></a></li>
                                     </ul>
                             <h4 class="phpdocumentor-sidebar__root-namespace"><a href="../namespaces/automattic.html"><abbr title="\Automattic">Automattic</abbr></a></h4>
                 <ul class="phpdocumentor-list">
@@ -113,8 +121,10 @@
                                     <li><a href="../packages/WooCommerce-Widgets.html"><abbr title="\WooCommerce\Widgets">Widgets</abbr></a></li>
                                     <li><a href="../packages/WooCommerce-Uninstaller.html"><abbr title="\WooCommerce\Uninstaller">Uninstaller</abbr></a></li>
                             </ul>
-                                <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/WoocommerceAdmin.html"><abbr title="\WoocommerceAdmin">WoocommerceAdmin</abbr></a></h3>
-                                <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/WoocommerceNavigation.html"><abbr title="\WoocommerceNavigation">WoocommerceNavigation</abbr></a></h3>
+                                <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/MailPoet.html"><abbr title="\MailPoet">MailPoet</abbr></a></h3>
+                        <ul class="phpdocumentor-list">
+                                    <li><a href="../packages/MailPoet-EmailEditor.html"><abbr title="\MailPoet\EmailEditor">EmailEditor</abbr></a></li>
+                            </ul>
                                 <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/Automattic.html"><abbr title="\Automattic">Automattic</abbr></a></h3>
                         <ul class="phpdocumentor-list">
                                     <li><a href="../packages/Automattic-WooCommerce.html"><abbr title="\Automattic\WooCommerce">WooCommerce</abbr></a></li>
@@ -935,9 +945,9 @@ suffix if distinguishing between multiple rates.</dd>
                                 </span>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-shipping-method.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-shipping-method.html#source-view.126">includes/abstracts/abstract-wc-shipping-method.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-shipping-method.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-shipping-method.html#source-view.128">includes/abstracts/abstract-wc-shipping-method.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">126</span>
+    <span class="phpdocumentor-element-found-in__line">128</span>
 </aside>
 
         <p class="phpdocumentor-summary">Availability - legacy. Used for method Availability.</p>
@@ -1014,9 +1024,9 @@ suffix if distinguishing between multiple rates.</dd>
                                 </span>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-shipping-method.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-shipping-method.html#source-view.135">includes/abstracts/abstract-wc-shipping-method.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-shipping-method.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-shipping-method.html#source-view.137">includes/abstracts/abstract-wc-shipping-method.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">135</span>
+    <span class="phpdocumentor-element-found-in__line">137</span>
 </aside>
 
         <p class="phpdocumentor-summary">Availability countries - legacy. Used for method Availability.</p>
@@ -1061,9 +1071,9 @@ suffix if distinguishing between multiple rates.</dd>
                                 </span>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-shipping-method.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-shipping-method.html#source-view.61">includes/abstracts/abstract-wc-shipping-method.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-shipping-method.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-shipping-method.html#source-view.63">includes/abstracts/abstract-wc-shipping-method.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">61</span>
+    <span class="phpdocumentor-element-found-in__line">63</span>
 </aside>
 
         <p class="phpdocumentor-summary">Yes or no based on whether the method is enabled.</p>
@@ -1125,9 +1135,9 @@ suffix if distinguishing between multiple rates.</dd>
                                 </span>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-shipping-method.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-shipping-method.html#source-view.89">includes/abstracts/abstract-wc-shipping-method.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-shipping-method.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-shipping-method.html#source-view.91">includes/abstracts/abstract-wc-shipping-method.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">89</span>
+    <span class="phpdocumentor-element-found-in__line">91</span>
 </aside>
 
         <p class="phpdocumentor-summary">Fee for the method (if applicable).</p>
@@ -1190,9 +1200,9 @@ ull</span></code>
                                 </span>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-shipping-method.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-shipping-method.html#source-view.149">includes/abstracts/abstract-wc-shipping-method.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-shipping-method.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-shipping-method.html#source-view.151">includes/abstracts/abstract-wc-shipping-method.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">149</span>
+    <span class="phpdocumentor-element-found-in__line">151</span>
 </aside>
 
         <p class="phpdocumentor-summary">Whether the shipping method has settings or not. Preferably, use {@see has_settings()} instead.</p>
@@ -1254,9 +1264,9 @@ ull</span></code>
                                 </span>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-shipping-method.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-shipping-method.html#source-view.110">includes/abstracts/abstract-wc-shipping-method.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-shipping-method.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-shipping-method.html#source-view.112">includes/abstracts/abstract-wc-shipping-method.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">110</span>
+    <span class="phpdocumentor-element-found-in__line">112</span>
 </aside>
 
         <p class="phpdocumentor-summary">Instance form fields.</p>
@@ -1286,9 +1296,9 @@ ull</span></code>
                                 </span>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-shipping-method.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-shipping-method.html#source-view.103">includes/abstracts/abstract-wc-shipping-method.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-shipping-method.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-shipping-method.html#source-view.105">includes/abstracts/abstract-wc-shipping-method.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">103</span>
+    <span class="phpdocumentor-element-found-in__line">105</span>
 </aside>
 
         <p class="phpdocumentor-summary">Instance ID if used.</p>
@@ -1318,9 +1328,9 @@ ull</span></code>
                                 </span>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-shipping-method.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-shipping-method.html#source-view.117">includes/abstracts/abstract-wc-shipping-method.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-shipping-method.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-shipping-method.html#source-view.119">includes/abstracts/abstract-wc-shipping-method.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">117</span>
+    <span class="phpdocumentor-element-found-in__line">119</span>
 </aside>
 
         <p class="phpdocumentor-summary">Instance settings.</p>
@@ -1350,9 +1360,9 @@ ull</span></code>
                                 </span>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-shipping-method.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-shipping-method.html#source-view.54">includes/abstracts/abstract-wc-shipping-method.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-shipping-method.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-shipping-method.html#source-view.56">includes/abstracts/abstract-wc-shipping-method.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">54</span>
+    <span class="phpdocumentor-element-found-in__line">56</span>
 </aside>
 
         <p class="phpdocumentor-summary">Method description.</p>
@@ -1382,9 +1392,9 @@ ull</span></code>
                                 </span>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-shipping-method.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-shipping-method.html#source-view.142">includes/abstracts/abstract-wc-shipping-method.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-shipping-method.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-shipping-method.html#source-view.144">includes/abstracts/abstract-wc-shipping-method.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">142</span>
+    <span class="phpdocumentor-element-found-in__line">144</span>
 </aside>
 
         <p class="phpdocumentor-summary">Shipping method order.</p>
@@ -1414,9 +1424,9 @@ ull</span></code>
                                 </span>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-shipping-method.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-shipping-method.html#source-view.47">includes/abstracts/abstract-wc-shipping-method.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-shipping-method.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-shipping-method.html#source-view.49">includes/abstracts/abstract-wc-shipping-method.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">47</span>
+    <span class="phpdocumentor-element-found-in__line">49</span>
 </aside>
 
         <p class="phpdocumentor-summary">Method title.</p>
@@ -1446,9 +1456,9 @@ ull</span></code>
                                 </span>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-shipping-method.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-shipping-method.html#source-view.96">includes/abstracts/abstract-wc-shipping-method.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-shipping-method.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-shipping-method.html#source-view.98">includes/abstracts/abstract-wc-shipping-method.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">96</span>
+    <span class="phpdocumentor-element-found-in__line">98</span>
 </aside>
 
         <p class="phpdocumentor-summary">Minimum fee for the method (if applicable).</p>
@@ -1557,9 +1567,9 @@ ull</span></code>
                                 </span>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-shipping-method.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-shipping-method.html#source-view.75">includes/abstracts/abstract-wc-shipping-method.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-shipping-method.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-shipping-method.html#source-view.77">includes/abstracts/abstract-wc-shipping-method.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">75</span>
+    <span class="phpdocumentor-element-found-in__line">77</span>
 </aside>
 
         <p class="phpdocumentor-summary">This is an array of rates - methods must populate this array to register shipping costs.</p>
@@ -1621,9 +1631,9 @@ ull</span></code>
                                 </span>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-shipping-method.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-shipping-method.html#source-view.157">includes/abstracts/abstract-wc-shipping-method.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-shipping-method.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-shipping-method.html#source-view.159">includes/abstracts/abstract-wc-shipping-method.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">157</span>
+    <span class="phpdocumentor-element-found-in__line">159</span>
 </aside>
 
         <p class="phpdocumentor-summary">When the method supports the settings modal, this is the admin settings HTML.</p>
@@ -1654,9 +1664,9 @@ ull</span></code>
                                 </span>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-shipping-method.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-shipping-method.html#source-view.33">includes/abstracts/abstract-wc-shipping-method.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-shipping-method.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-shipping-method.html#source-view.35">includes/abstracts/abstract-wc-shipping-method.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">33</span>
+    <span class="phpdocumentor-element-found-in__line">35</span>
 </aside>
 
         <p class="phpdocumentor-summary">Features this method supports. Possible features used by core:
@@ -1692,9 +1702,9 @@ ull</span></code>
                                 </span>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-shipping-method.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-shipping-method.html#source-view.82">includes/abstracts/abstract-wc-shipping-method.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-shipping-method.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-shipping-method.html#source-view.84">includes/abstracts/abstract-wc-shipping-method.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">82</span>
+    <span class="phpdocumentor-element-found-in__line">84</span>
 </aside>
 
         <p class="phpdocumentor-summary">If &#039;taxable&#039; tax will be charged for this method (if applicable).</p>
@@ -1703,7 +1713,7 @@ ull</span></code>
     <span class="phpdocumentor-signature__visibility">public</span>
         <span class="phpdocumentor-signature__type">string</span>
     <span class="phpdocumentor-signature__name">$tax_status</span>
-     = <span class="phpdocumentor-signature__default-value">&#039;taxable&#039;</span></code>
+     = <span class="phpdocumentor-signature__default-value">AutomatticWooCommerceEnumsProductTaxStatus::TAXABLE</span></code>
 
         <section class="phpdocumentor-description"></section>
 
@@ -1724,9 +1734,9 @@ ull</span></code>
                                 </span>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-shipping-method.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-shipping-method.html#source-view.68">includes/abstracts/abstract-wc-shipping-method.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-shipping-method.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-shipping-method.html#source-view.70">includes/abstracts/abstract-wc-shipping-method.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">68</span>
+    <span class="phpdocumentor-element-found-in__line">70</span>
 </aside>
 
         <p class="phpdocumentor-summary">Shipping method title for the frontend.</p>
@@ -1932,9 +1942,9 @@ ull</span></code>
         <a href="#method_add_rate" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-shipping-method.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-shipping-method.html#source-view.289">includes/abstracts/abstract-wc-shipping-method.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-shipping-method.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-shipping-method.html#source-view.291">includes/abstracts/abstract-wc-shipping-method.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">289</span>
+    <span class="phpdocumentor-element-found-in__line">291</span>
 </aside>
 
         <p class="phpdocumentor-summary">Add a shipping rate. If taxes are not set they will be calculated based on cost.</p>
@@ -3198,9 +3208,9 @@ Option Name | Additional Cost [+- Percents%] | Per Cost Type (order, class, or i
         <a href="#method_get_admin_options_html" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-shipping-method.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-shipping-method.html#source-view.456">includes/abstracts/abstract-wc-shipping-method.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-shipping-method.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-shipping-method.html#source-view.459">includes/abstracts/abstract-wc-shipping-method.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">456</span>
+    <span class="phpdocumentor-element-found-in__line">459</span>
 </aside>
 
         <p class="phpdocumentor-summary">Return admin options as a html string.</p>
@@ -3426,9 +3436,9 @@ Option Name | Additional Cost [+- Percents%] | Per Cost Type (order, class, or i
         <a href="#method_get_fee" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-shipping-method.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-shipping-method.html#source-view.432">includes/abstracts/abstract-wc-shipping-method.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-shipping-method.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-shipping-method.html#source-view.435">includes/abstracts/abstract-wc-shipping-method.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">432</span>
+    <span class="phpdocumentor-element-found-in__line">435</span>
 </aside>
 
         <p class="phpdocumentor-summary">Get fee to add to shipping cost.</p>
@@ -3705,9 +3715,9 @@ Option Name | Additional Cost [+- Percents%] | Per Cost Type (order, class, or i
         <a href="#method_get_instance_form_fields" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-shipping-method.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-shipping-method.html#source-view.530">includes/abstracts/abstract-wc-shipping-method.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-shipping-method.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-shipping-method.html#source-view.533">includes/abstracts/abstract-wc-shipping-method.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">530</span>
+    <span class="phpdocumentor-element-found-in__line">533</span>
 </aside>
 
         <p class="phpdocumentor-summary">Get settings fields for instances of this shipping method (within zones).</p>
@@ -3752,9 +3762,9 @@ Option Name | Additional Cost [+- Percents%] | Per Cost Type (order, class, or i
         <a href="#method_get_instance_id" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-shipping-method.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-shipping-method.html#source-view.214">includes/abstracts/abstract-wc-shipping-method.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-shipping-method.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-shipping-method.html#source-view.216">includes/abstracts/abstract-wc-shipping-method.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">214</span>
+    <span class="phpdocumentor-element-found-in__line">216</span>
 </aside>
 
         <p class="phpdocumentor-summary">Return the shipping method instance ID.</p>
@@ -3798,9 +3808,9 @@ Option Name | Additional Cost [+- Percents%] | Per Cost Type (order, class, or i
         <a href="#method_get_instance_option" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-shipping-method.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-shipping-method.html#source-view.504">includes/abstracts/abstract-wc-shipping-method.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-shipping-method.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-shipping-method.html#source-view.507">includes/abstracts/abstract-wc-shipping-method.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">504</span>
+    <span class="phpdocumentor-element-found-in__line">507</span>
 </aside>
 
         <p class="phpdocumentor-summary">Gets an option from the settings API, using defaults if necessary to prevent undefined notices.</p>
@@ -3851,9 +3861,9 @@ Option Name | Additional Cost [+- Percents%] | Per Cost Type (order, class, or i
         <a href="#method_get_instance_option_key" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-shipping-method.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-shipping-method.html#source-view.540">includes/abstracts/abstract-wc-shipping-method.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-shipping-method.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-shipping-method.html#source-view.543">includes/abstracts/abstract-wc-shipping-method.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">540</span>
+    <span class="phpdocumentor-element-found-in__line">543</span>
 </aside>
 
         <p class="phpdocumentor-summary">Return the name of the option in the WP DB.</p>
@@ -3897,9 +3907,9 @@ Option Name | Additional Cost [+- Percents%] | Per Cost Type (order, class, or i
         <a href="#method_get_method_description" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-shipping-method.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-shipping-method.html#source-view.234">includes/abstracts/abstract-wc-shipping-method.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-shipping-method.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-shipping-method.html#source-view.236">includes/abstracts/abstract-wc-shipping-method.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">234</span>
+    <span class="phpdocumentor-element-found-in__line">236</span>
 </aside>
 
         <p class="phpdocumentor-summary">Return the shipping method description.</p>
@@ -3943,9 +3953,9 @@ Option Name | Additional Cost [+- Percents%] | Per Cost Type (order, class, or i
         <a href="#method_get_method_title" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-shipping-method.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-shipping-method.html#source-view.224">includes/abstracts/abstract-wc-shipping-method.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-shipping-method.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-shipping-method.html#source-view.226">includes/abstracts/abstract-wc-shipping-method.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">224</span>
+    <span class="phpdocumentor-element-found-in__line">226</span>
 </aside>
 
         <p class="phpdocumentor-summary">Return the shipping method title.</p>
@@ -4165,9 +4175,9 @@ Option Name | Additional Cost [+- Percents%] | Per Cost Type (order, class, or i
         <a href="#method_get_rate_id" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-shipping-method.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-shipping-method.html#source-view.270">includes/abstracts/abstract-wc-shipping-method.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-shipping-method.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-shipping-method.html#source-view.272">includes/abstracts/abstract-wc-shipping-method.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">270</span>
+    <span class="phpdocumentor-element-found-in__line">272</span>
 </aside>
 
         <p class="phpdocumentor-summary">Returns a rate ID based on this methods ID and instance, with an optional
@@ -4224,9 +4234,9 @@ suffix if distinguishing between multiple rates.</p>
         <a href="#method_get_rates_for_package" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-shipping-method.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-shipping-method.html#source-view.254">includes/abstracts/abstract-wc-shipping-method.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-shipping-method.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-shipping-method.html#source-view.256">includes/abstracts/abstract-wc-shipping-method.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">254</span>
+    <span class="phpdocumentor-element-found-in__line">256</span>
 </aside>
 
         <p class="phpdocumentor-summary">Return calculated rates for a package.</p>
@@ -4282,9 +4292,9 @@ suffix if distinguishing between multiple rates.</p>
         <a href="#method_get_title" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-shipping-method.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-shipping-method.html#source-view.243">includes/abstracts/abstract-wc-shipping-method.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-shipping-method.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-shipping-method.html#source-view.245">includes/abstracts/abstract-wc-shipping-method.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">243</span>
+    <span class="phpdocumentor-element-found-in__line">245</span>
 </aside>
 
         <p class="phpdocumentor-summary">Return the shipping title which is user set.</p>
@@ -4358,9 +4368,9 @@ suffix if distinguishing between multiple rates.</p>
         <a href="#method_has_settings" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-shipping-method.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-shipping-method.html#source-view.447">includes/abstracts/abstract-wc-shipping-method.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-shipping-method.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-shipping-method.html#source-view.450">includes/abstracts/abstract-wc-shipping-method.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">447</span>
+    <span class="phpdocumentor-element-found-in__line">450</span>
 </aside>
 
         <p class="phpdocumentor-summary">Does this method have a settings page?</p>
@@ -4454,9 +4464,9 @@ suffix if distinguishing between multiple rates.</p>
         <a href="#method_init_instance_settings" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-shipping-method.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-shipping-method.html#source-view.549">includes/abstracts/abstract-wc-shipping-method.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-shipping-method.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-shipping-method.html#source-view.552">includes/abstracts/abstract-wc-shipping-method.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">549</span>
+    <span class="phpdocumentor-element-found-in__line">552</span>
 </aside>
 
         <p class="phpdocumentor-summary">Initialise Settings for instances.</p>
@@ -4557,9 +4567,9 @@ or the settings stored in the database.</p>
         <a href="#method_is_available" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-shipping-method.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-shipping-method.html#source-view.401">includes/abstracts/abstract-wc-shipping-method.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-shipping-method.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-shipping-method.html#source-view.404">includes/abstracts/abstract-wc-shipping-method.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">401</span>
+    <span class="phpdocumentor-element-found-in__line">404</span>
 </aside>
 
         <p class="phpdocumentor-summary">Is this method available?</p>
@@ -4601,9 +4611,9 @@ or the settings stored in the database.</p>
         <a href="#method_is_enabled" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-shipping-method.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-shipping-method.html#source-view.204">includes/abstracts/abstract-wc-shipping-method.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-shipping-method.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-shipping-method.html#source-view.206">includes/abstracts/abstract-wc-shipping-method.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">204</span>
+    <span class="phpdocumentor-element-found-in__line">206</span>
 </aside>
 
         <p class="phpdocumentor-summary">Whether or not this method is enabled in settings.</p>
@@ -4647,9 +4657,9 @@ or the settings stored in the database.</p>
         <a href="#method_is_taxable" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-shipping-method.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-shipping-method.html#source-view.194">includes/abstracts/abstract-wc-shipping-method.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-shipping-method.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-shipping-method.html#source-view.196">includes/abstracts/abstract-wc-shipping-method.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">194</span>
+    <span class="phpdocumentor-element-found-in__line">196</span>
 </aside>
 
         <p class="phpdocumentor-summary">Whether or not we need to calculate tax on top of the shipping rate.</p>
@@ -4755,9 +4765,9 @@ or the settings stored in the database.</p>
         <a href="#method_supports" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-shipping-method.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-shipping-method.html#source-view.178">includes/abstracts/abstract-wc-shipping-method.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-shipping-method.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-shipping-method.html#source-view.180">includes/abstracts/abstract-wc-shipping-method.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">178</span>
+    <span class="phpdocumentor-element-found-in__line">180</span>
 </aside>
 
         <p class="phpdocumentor-summary">Check if a shipping method supports a given feature.</p>
@@ -5479,9 +5489,9 @@ choices).</p>
         <a href="#method_get_taxes_per_item" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-shipping-method.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-shipping-method.html#source-view.360">includes/abstracts/abstract-wc-shipping-method.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-shipping-method.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-shipping-method.html#source-view.363">includes/abstracts/abstract-wc-shipping-method.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">360</span>
+    <span class="phpdocumentor-element-found-in__line">363</span>
 </aside>
 
         <p class="phpdocumentor-summary">Calc taxes per item being shipping in costs array.</p>
@@ -5581,7 +5591,7 @@ choices).</p>
 
     <footer class="phpdocumentor phpdocumentor-footer">
     <div class="phpdocumentor-section">
-        <span>WooCommerce Code Reference API documentation generated by <a href="http://www.phpdoc.org/">phpDocumentor</a> on July 25th, 2024 at 11:33 am.</span>
+        <span>WooCommerce Code Reference API documentation generated by <a href="http://www.phpdoc.org/">phpDocumentor</a> on May 16th, 2025 at 09:14 am.</span>
     </div>
 </footer>
 
@@ -5593,7 +5603,7 @@ choices).</p>
             'searchIndex': '..\/js\/searchIndex.json'
         };
     </script>
-    <script src="../js/searchIndex.js?updated=1721907199"></script>
-    <script src="../js/search.js?updated=1721907199"></script>
+    <script src="../js/searchIndex.js?updated=1747386878"></script>
+    <script src="../js/search.js?updated=1747386878"></script>
 </body>
 </html>

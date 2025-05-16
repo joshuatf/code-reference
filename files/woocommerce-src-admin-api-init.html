@@ -4,14 +4,13 @@
     <meta charset="utf-8">
     <title>WooCommerce Code Reference</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="../images/favicon.png" />
-    <link rel="apple-touch-icon" href="../images/apple-touch-icon.png"/>
-    <link rel="apple-touch-icon" sizes="72x72" href="../images/apple-touch-icon-72x72.png"/>
-    <link rel="apple-touch-icon" sizes="114x114" href="../images/apple-touch-icon-114x114.png"/>
+    <link rel="icon" href="../images/favicon-32x32.png" sizes="32x32" />
+    <link rel="icon" href="../images/favicon-192x192.png" sizes="192x192" />
+    <link rel="apple-touch-icon" href="../images/favicon-180x180.png" />
+
     <link rel="stylesheet" href="../css/normalize.css">
-    <link rel="stylesheet" href="../css/base.css?updated=1721907184">
-    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../css/template.css?updated=1721907184">
+    <link rel="stylesheet" href="../css/base.css?updated=1747386860">
+    <link rel="stylesheet" href="../css/template.css?updated=1747386860">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0/css/all.min.css" integrity="sha256-ybRkN9dBjhcS2qrW1z+hfCxq+1aBdwyQM5wlQoQVt/0=" crossorigin="anonymous" />
             <script src="https://cdn.jsdelivr.net/npm/css-vars-ponyfill@2"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0/js/all.min.js" integrity="sha256-0vuk8LXoyrmCjp1f0O300qo1M75ZQyhH9X3J6d+scmk=" crossorigin="anonymous"></script>
@@ -38,14 +37,13 @@
     <header class="phpdocumentor-top-header">
     <section class="phpdocumentor-section">
         <div class="site-branding">
-            <a class="site-logo" href="../index.html"><img width="180" src="../images/logo.svg" alt="WooCommerce" /></a>
+            <a class="site-logo" href="../index.html"><img src="../images/logo.png" alt="WooCommerce" /></a>
         </div>
         <nav class="main-navigation">
             <ul>
                 <li><a href="../hooks/hooks.html">Hooks Reference</a></li>
-                <li><a href="https://docs.woocommerce.com/">Documentation</a></li>
+                <li><a href="https://developer.woocommerce.com/docs/">Documentation</a></li>
                 <li><a href="https://woocommerce.github.io/woocommerce-rest-api-docs/">REST API Docs</a></li>
-                <li><a href="https://woocommerce.com/careers/?utm_source=woocommerce+core+code+reference&utm_medium=devdocs&utm_campaign=woo+careers" target="_blank">We're hiring!</a></li>
             </ul>
         </nav>
     </section>
@@ -53,7 +51,7 @@
 
 <div class="phpdocumentor-header">
     <section class="phpdocumentor-section">
-        <h1 class="phpdocumentor-title">WooCommerce Code Reference</h1>
+        <h1 class="phpdocumentor-title"><a href="../index.html">WooCommerce Code Reference</a></h1>
         <section class="phpdocumentor-search">
     <label class="phpdocumentor-label">
         <span class="visually-hidden">Search (click ESC to close search results)</span>
@@ -74,6 +72,10 @@
                                         <h4 class="phpdocumentor-sidebar__root-namespace"><a href="../namespaces/woocommerce.html"><abbr title="\WooCommerce">WooCommerce</abbr></a></h4>
                 <ul class="phpdocumentor-list">
                                             <li><a href="../namespaces/woocommerce-admin.html"><abbr title="\WooCommerce\Admin">Admin</abbr></a></li>
+                                    </ul>
+                            <h4 class="phpdocumentor-sidebar__root-namespace"><a href="../namespaces/mailpoet.html"><abbr title="\MailPoet">MailPoet</abbr></a></h4>
+                <ul class="phpdocumentor-list">
+                                            <li><a href="../namespaces/mailpoet-emaileditor.html"><abbr title="\MailPoet\EmailEditor">EmailEditor</abbr></a></li>
                                     </ul>
                             <h4 class="phpdocumentor-sidebar__root-namespace"><a href="../namespaces/automattic.html"><abbr title="\Automattic">Automattic</abbr></a></h4>
                 <ul class="phpdocumentor-list">
@@ -119,8 +121,10 @@
                                     <li><a href="../packages/WooCommerce-Widgets.html"><abbr title="\WooCommerce\Widgets">Widgets</abbr></a></li>
                                     <li><a href="../packages/WooCommerce-Uninstaller.html"><abbr title="\WooCommerce\Uninstaller">Uninstaller</abbr></a></li>
                             </ul>
-                                <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/WoocommerceAdmin.html"><abbr title="\WoocommerceAdmin">WoocommerceAdmin</abbr></a></h3>
-                                <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/WoocommerceNavigation.html"><abbr title="\WoocommerceNavigation">WoocommerceNavigation</abbr></a></h3>
+                                <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/MailPoet.html"><abbr title="\MailPoet">MailPoet</abbr></a></h3>
+                        <ul class="phpdocumentor-list">
+                                    <li><a href="../packages/MailPoet-EmailEditor.html"><abbr title="\MailPoet\EmailEditor">EmailEditor</abbr></a></li>
+                            </ul>
                                 <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/Automattic.html"><abbr title="\Automattic">Automattic</abbr></a></h3>
                         <ul class="phpdocumentor-list">
                                     <li><a href="../packages/Automattic-WooCommerce.html"><abbr title="\Automattic\WooCommerce">WooCommerce</abbr></a></li>
@@ -215,83 +219,104 @@ class Init {
 	 * Init REST API.
 	 */
 	public function rest_api_init() {
-		$controllers = array(
-			&#039;Automattic\WooCommerce\Admin\API\Features&#039;,
-			&#039;Automattic\WooCommerce\Admin\API\Notes&#039;,
-			&#039;Automattic\WooCommerce\Admin\API\NoteActions&#039;,
-			&#039;Automattic\WooCommerce\Admin\API\Coupons&#039;,
-			&#039;Automattic\WooCommerce\Admin\API\Data&#039;,
-			&#039;Automattic\WooCommerce\Admin\API\DataCountries&#039;,
-			&#039;Automattic\WooCommerce\Admin\API\DataDownloadIPs&#039;,
-			&#039;Automattic\WooCommerce\Admin\API\Experiments&#039;,
-			&#039;Automattic\WooCommerce\Admin\API\Marketing&#039;,
-			&#039;Automattic\WooCommerce\Admin\API\MarketingOverview&#039;,
-			&#039;Automattic\WooCommerce\Admin\API\MarketingRecommendations&#039;,
-			&#039;Automattic\WooCommerce\Admin\API\MarketingChannels&#039;,
-			&#039;Automattic\WooCommerce\Admin\API\MarketingCampaigns&#039;,
-			&#039;Automattic\WooCommerce\Admin\API\MarketingCampaignTypes&#039;,
-			&#039;Automattic\WooCommerce\Admin\API\Notice&#039;,
-			&#039;Automattic\WooCommerce\Admin\API\Options&#039;,
-			&#039;Automattic\WooCommerce\Admin\API\Orders&#039;,
-			&#039;Automattic\WooCommerce\Admin\API\PaymentGatewaySuggestions&#039;,
-			&#039;Automattic\WooCommerce\Admin\API\Products&#039;,
-			&#039;Automattic\WooCommerce\Admin\API\ProductAttributes&#039;,
-			&#039;Automattic\WooCommerce\Admin\API\ProductAttributeTerms&#039;,
-			&#039;Automattic\WooCommerce\Admin\API\ProductCategories&#039;,
-			&#039;Automattic\WooCommerce\Admin\API\ProductVariations&#039;,
-			&#039;Automattic\WooCommerce\Admin\API\ProductReviews&#039;,
-			&#039;Automattic\WooCommerce\Admin\API\ProductVariations&#039;,
-			&#039;Automattic\WooCommerce\Admin\API\ProductsLowInStock&#039;,
-			&#039;Automattic\WooCommerce\Admin\API\SettingOptions&#039;,
-			&#039;Automattic\WooCommerce\Admin\API\Themes&#039;,
-			&#039;Automattic\WooCommerce\Admin\API\Plugins&#039;,
-			&#039;Automattic\WooCommerce\Admin\API\OnboardingFreeExtensions&#039;,
-			&#039;Automattic\WooCommerce\Admin\API\OnboardingProductTypes&#039;,
-			&#039;Automattic\WooCommerce\Admin\API\OnboardingProfile&#039;,
-			&#039;Automattic\WooCommerce\Admin\API\OnboardingTasks&#039;,
-			&#039;Automattic\WooCommerce\Admin\API\OnboardingThemes&#039;,
-			&#039;Automattic\WooCommerce\Admin\API\OnboardingPlugins&#039;,
-			&#039;Automattic\WooCommerce\Admin\API\OnboardingProducts&#039;,
-			&#039;Automattic\WooCommerce\Admin\API\NavigationFavorites&#039;,
-			&#039;Automattic\WooCommerce\Admin\API\Taxes&#039;,
-			&#039;Automattic\WooCommerce\Admin\API\MobileAppMagicLink&#039;,
-			&#039;Automattic\WooCommerce\Admin\API\ShippingPartnerSuggestions&#039;,
-		);
+		$controllers           = array();
+		$analytics_controllers = array();
+
+		if ( wc_rest_should_load_namespace( &#039;wc-admin&#039; ) ) {
+			// Controllers in the wc-admin namespace.
+			$controllers = array(
+				&#039;Automattic\WooCommerce\Admin\API\Notice&#039;,
+				&#039;Automattic\WooCommerce\Admin\API\Features&#039;,
+				&#039;Automattic\WooCommerce\Admin\API\Experiments&#039;,
+				&#039;Automattic\WooCommerce\Admin\API\Marketing&#039;,
+				&#039;Automattic\WooCommerce\Admin\API\MarketingOverview&#039;,
+				&#039;Automattic\WooCommerce\Admin\API\MarketingRecommendations&#039;,
+				&#039;Automattic\WooCommerce\Admin\API\MarketingChannels&#039;,
+				&#039;Automattic\WooCommerce\Admin\API\MarketingCampaigns&#039;,
+				&#039;Automattic\WooCommerce\Admin\API\MarketingCampaignTypes&#039;,
+				&#039;Automattic\WooCommerce\Admin\API\Options&#039;,
+				&#039;Automattic\WooCommerce\Admin\API\Settings&#039;,
+				&#039;Automattic\WooCommerce\Admin\API\PaymentGatewaySuggestions&#039;,
+				&#039;Automattic\WooCommerce\Admin\API\Themes&#039;,
+				&#039;Automattic\WooCommerce\Admin\API\Plugins&#039;,
+				&#039;Automattic\WooCommerce\Admin\API\OnboardingFreeExtensions&#039;,
+				&#039;Automattic\WooCommerce\Admin\API\OnboardingProductTypes&#039;,
+				&#039;Automattic\WooCommerce\Admin\API\OnboardingProfile&#039;,
+				&#039;Automattic\WooCommerce\Admin\API\OnboardingTasks&#039;,
+				&#039;Automattic\WooCommerce\Admin\API\OnboardingThemes&#039;,
+				&#039;Automattic\WooCommerce\Admin\API\OnboardingPlugins&#039;,
+				&#039;Automattic\WooCommerce\Admin\API\OnboardingProducts&#039;,
+				&#039;Automattic\WooCommerce\Admin\API\MobileAppMagicLink&#039;,
+				&#039;Automattic\WooCommerce\Admin\API\ShippingPartnerSuggestions&#039;,
+				&#039;Automattic\WooCommerce\Admin\API\AI\StoreTitle&#039;,
+				&#039;Automattic\WooCommerce\Admin\API\AI\BusinessDescription&#039;,
+				&#039;Automattic\WooCommerce\Admin\API\AI\StoreInfo&#039;,
+				&#039;Automattic\WooCommerce\Admin\API\AI\Images&#039;,
+				&#039;Automattic\WooCommerce\Admin\API\AI\Patterns&#039;,
+				&#039;Automattic\WooCommerce\Admin\API\AI\Product&#039;,
+			);
+		}
 
 		if ( Features::is_enabled( &#039;launch-your-store&#039; ) ) {
 			$controllers[] = &#039;Automattic\WooCommerce\Admin\API\LaunchYourStore&#039;;
 		}
 
-		if ( Features::is_enabled( &#039;analytics&#039; ) ) {
-			$analytics_controllers = array(
-				&#039;Automattic\WooCommerce\Admin\API\Customers&#039;,
-				&#039;Automattic\WooCommerce\Admin\API\Leaderboards&#039;,
-				&#039;Automattic\WooCommerce\Admin\API\Reports\Controller&#039;,
-				&#039;Automattic\WooCommerce\Admin\API\Reports\Import\Controller&#039;,
-				&#039;Automattic\WooCommerce\Admin\API\Reports\Export\Controller&#039;,
-				&#039;Automattic\WooCommerce\Admin\API\Reports\Products\Controller&#039;,
-				&#039;Automattic\WooCommerce\Admin\API\Reports\Variations\Controller&#039;,
-				&#039;Automattic\WooCommerce\Admin\API\Reports\Products\Stats\Controller&#039;,
-				&#039;Automattic\WooCommerce\Admin\API\Reports\Variations\Stats\Controller&#039;,
-				&#039;Automattic\WooCommerce\Admin\API\Reports\Revenue\Stats\Controller&#039;,
-				&#039;Automattic\WooCommerce\Admin\API\Reports\Orders\Controller&#039;,
-				&#039;Automattic\WooCommerce\Admin\API\Reports\Orders\Stats\Controller&#039;,
-				&#039;Automattic\WooCommerce\Admin\API\Reports\Categories\Controller&#039;,
-				&#039;Automattic\WooCommerce\Admin\API\Reports\Taxes\Controller&#039;,
-				&#039;Automattic\WooCommerce\Admin\API\Reports\Taxes\Stats\Controller&#039;,
-				&#039;Automattic\WooCommerce\Admin\API\Reports\Coupons\Controller&#039;,
-				&#039;Automattic\WooCommerce\Admin\API\Reports\Coupons\Stats\Controller&#039;,
-				&#039;Automattic\WooCommerce\Admin\API\Reports\Stock\Controller&#039;,
-				&#039;Automattic\WooCommerce\Admin\API\Reports\Stock\Stats\Controller&#039;,
-				&#039;Automattic\WooCommerce\Admin\API\Reports\Downloads\Controller&#039;,
-				&#039;Automattic\WooCommerce\Admin\API\Reports\Downloads\Stats\Controller&#039;,
-				&#039;Automattic\WooCommerce\Admin\API\Reports\Customers\Controller&#039;,
-				&#039;Automattic\WooCommerce\Admin\API\Reports\Customers\Stats\Controller&#039;,
+		if ( wc_rest_should_load_namespace( &#039;wc-analytics&#039; ) ) {
+			// Controllers in wc-analytics namespace, but loaded irrespective of analytics feature value.
+			$analytic_mu_controllers = array(
+				&#039;Automattic\WooCommerce\Admin\API\Notes&#039;,
+				&#039;Automattic\WooCommerce\Admin\API\NoteActions&#039;,
+				&#039;Automattic\WooCommerce\Admin\API\Coupons&#039;,
+				&#039;Automattic\WooCommerce\Admin\API\Data&#039;,
+				&#039;Automattic\WooCommerce\Admin\API\DataCountries&#039;,
+				&#039;Automattic\WooCommerce\Admin\API\DataDownloadIPs&#039;,
+				&#039;Automattic\WooCommerce\Admin\API\Orders&#039;,
+				&#039;Automattic\WooCommerce\Admin\API\Products&#039;,
+				&#039;Automattic\WooCommerce\Admin\API\ProductAttributes&#039;,
+				&#039;Automattic\WooCommerce\Admin\API\ProductAttributeTerms&#039;,
+				&#039;Automattic\WooCommerce\Admin\API\ProductCategories&#039;,
+				&#039;Automattic\WooCommerce\Admin\API\ProductVariations&#039;,
+				&#039;Automattic\WooCommerce\Admin\API\ProductReviews&#039;,
+				&#039;Automattic\WooCommerce\Admin\API\ProductVariations&#039;,
+				&#039;Automattic\WooCommerce\Admin\API\ProductsLowInStock&#039;,
+				&#039;Automattic\WooCommerce\Admin\API\SettingOptions&#039;,
+				&#039;Automattic\WooCommerce\Admin\API\Taxes&#039;,
 			);
 
-			// The performance indicators controller must be registered last, after other /stats endpoints have been registered.
-			$analytics_controllers[] = &#039;Automattic\WooCommerce\Admin\API\Reports\PerformanceIndicators\Controller&#039;;
-			$controllers             = array_merge( $controllers, $analytics_controllers );
+			if ( Features::is_enabled( &#039;analytics&#039; ) ) {
+				$analytics_controllers = array(
+					&#039;Automattic\WooCommerce\Admin\API\Customers&#039;,
+					&#039;Automattic\WooCommerce\Admin\API\Leaderboards&#039;,
+					&#039;Automattic\WooCommerce\Admin\API\Reports\Controller&#039;,
+					&#039;Automattic\WooCommerce\Admin\API\Reports\Import\Controller&#039;,
+					&#039;Automattic\WooCommerce\Admin\API\Reports\Export\Controller&#039;,
+					&#039;Automattic\WooCommerce\Admin\API\Reports\Products\Controller&#039;,
+					&#039;Automattic\WooCommerce\Admin\API\Reports\Variations\Controller&#039;,
+					&#039;Automattic\WooCommerce\Admin\API\Reports\Products\Stats\Controller&#039;,
+					&#039;Automattic\WooCommerce\Admin\API\Reports\Variations\Stats\Controller&#039;,
+					&#039;Automattic\WooCommerce\Admin\API\Reports\Revenue\Stats\Controller&#039;,
+					&#039;Automattic\WooCommerce\Admin\API\Reports\Orders\Controller&#039;,
+					&#039;Automattic\WooCommerce\Admin\API\Reports\Orders\Stats\Controller&#039;,
+					&#039;Automattic\WooCommerce\Admin\API\Reports\Categories\Controller&#039;,
+					&#039;Automattic\WooCommerce\Admin\API\Reports\Taxes\Controller&#039;,
+					&#039;Automattic\WooCommerce\Admin\API\Reports\Taxes\Stats\Controller&#039;,
+					&#039;Automattic\WooCommerce\Admin\API\Reports\Coupons\Controller&#039;,
+					&#039;Automattic\WooCommerce\Admin\API\Reports\Coupons\Stats\Controller&#039;,
+					&#039;Automattic\WooCommerce\Admin\API\Reports\Stock\Controller&#039;,
+					&#039;Automattic\WooCommerce\Admin\API\Reports\Stock\Stats\Controller&#039;,
+					&#039;Automattic\WooCommerce\Admin\API\Reports\Downloads\Controller&#039;,
+					&#039;Automattic\WooCommerce\Admin\API\Reports\Downloads\Stats\Controller&#039;,
+					&#039;Automattic\WooCommerce\Admin\API\Reports\Customers\Controller&#039;,
+					&#039;Automattic\WooCommerce\Admin\API\Reports\Customers\Stats\Controller&#039;,
+				);
+
+				// The performance indicators controllerq must be registered last, after other /stats endpoints have been registered.
+				$analytics_controllers[] = &#039;Automattic\WooCommerce\Admin\API\Reports\PerformanceIndicators\Controller&#039;;
+
+				$analytics_controllers = array_merge( $analytics_controllers, $analytic_mu_controllers );
+			}
+
+			$controllers = array_merge( $controllers, $analytics_controllers, $analytic_mu_controllers );
 		}
 
 		/**
@@ -369,7 +394,7 @@ class Init {
 
     <footer class="phpdocumentor phpdocumentor-footer">
     <div class="phpdocumentor-section">
-        <span>WooCommerce Code Reference API documentation generated by <a href="http://www.phpdoc.org/">phpDocumentor</a> on July 25th, 2024 at 11:33 am.</span>
+        <span>WooCommerce Code Reference API documentation generated by <a href="http://www.phpdoc.org/">phpDocumentor</a> on May 16th, 2025 at 09:14 am.</span>
     </div>
 </footer>
 
@@ -381,7 +406,7 @@ class Init {
             'searchIndex': '..\/js\/searchIndex.json'
         };
     </script>
-    <script src="../js/searchIndex.js?updated=1721907184"></script>
-    <script src="../js/search.js?updated=1721907184"></script>
+    <script src="../js/searchIndex.js?updated=1747386860"></script>
+    <script src="../js/search.js?updated=1747386860"></script>
 </body>
 </html>

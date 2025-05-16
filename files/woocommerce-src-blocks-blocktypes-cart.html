@@ -4,14 +4,13 @@
     <meta charset="utf-8">
     <title>WooCommerce Code Reference</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="../images/favicon.png" />
-    <link rel="apple-touch-icon" href="../images/apple-touch-icon.png"/>
-    <link rel="apple-touch-icon" sizes="72x72" href="../images/apple-touch-icon-72x72.png"/>
-    <link rel="apple-touch-icon" sizes="114x114" href="../images/apple-touch-icon-114x114.png"/>
+    <link rel="icon" href="../images/favicon-32x32.png" sizes="32x32" />
+    <link rel="icon" href="../images/favicon-192x192.png" sizes="192x192" />
+    <link rel="apple-touch-icon" href="../images/favicon-180x180.png" />
+
     <link rel="stylesheet" href="../css/normalize.css">
-    <link rel="stylesheet" href="../css/base.css?updated=1721907185">
-    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../css/template.css?updated=1721907185">
+    <link rel="stylesheet" href="../css/base.css?updated=1747386861">
+    <link rel="stylesheet" href="../css/template.css?updated=1747386861">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0/css/all.min.css" integrity="sha256-ybRkN9dBjhcS2qrW1z+hfCxq+1aBdwyQM5wlQoQVt/0=" crossorigin="anonymous" />
             <script src="https://cdn.jsdelivr.net/npm/css-vars-ponyfill@2"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0/js/all.min.js" integrity="sha256-0vuk8LXoyrmCjp1f0O300qo1M75ZQyhH9X3J6d+scmk=" crossorigin="anonymous"></script>
@@ -38,14 +37,13 @@
     <header class="phpdocumentor-top-header">
     <section class="phpdocumentor-section">
         <div class="site-branding">
-            <a class="site-logo" href="../index.html"><img width="180" src="../images/logo.svg" alt="WooCommerce" /></a>
+            <a class="site-logo" href="../index.html"><img src="../images/logo.png" alt="WooCommerce" /></a>
         </div>
         <nav class="main-navigation">
             <ul>
                 <li><a href="../hooks/hooks.html">Hooks Reference</a></li>
-                <li><a href="https://docs.woocommerce.com/">Documentation</a></li>
+                <li><a href="https://developer.woocommerce.com/docs/">Documentation</a></li>
                 <li><a href="https://woocommerce.github.io/woocommerce-rest-api-docs/">REST API Docs</a></li>
-                <li><a href="https://woocommerce.com/careers/?utm_source=woocommerce+core+code+reference&utm_medium=devdocs&utm_campaign=woo+careers" target="_blank">We're hiring!</a></li>
             </ul>
         </nav>
     </section>
@@ -53,7 +51,7 @@
 
 <div class="phpdocumentor-header">
     <section class="phpdocumentor-section">
-        <h1 class="phpdocumentor-title">WooCommerce Code Reference</h1>
+        <h1 class="phpdocumentor-title"><a href="../index.html">WooCommerce Code Reference</a></h1>
         <section class="phpdocumentor-search">
     <label class="phpdocumentor-label">
         <span class="visually-hidden">Search (click ESC to close search results)</span>
@@ -74,6 +72,10 @@
                                         <h4 class="phpdocumentor-sidebar__root-namespace"><a href="../namespaces/woocommerce.html"><abbr title="\WooCommerce">WooCommerce</abbr></a></h4>
                 <ul class="phpdocumentor-list">
                                             <li><a href="../namespaces/woocommerce-admin.html"><abbr title="\WooCommerce\Admin">Admin</abbr></a></li>
+                                    </ul>
+                            <h4 class="phpdocumentor-sidebar__root-namespace"><a href="../namespaces/mailpoet.html"><abbr title="\MailPoet">MailPoet</abbr></a></h4>
+                <ul class="phpdocumentor-list">
+                                            <li><a href="../namespaces/mailpoet-emaileditor.html"><abbr title="\MailPoet\EmailEditor">EmailEditor</abbr></a></li>
                                     </ul>
                             <h4 class="phpdocumentor-sidebar__root-namespace"><a href="../namespaces/automattic.html"><abbr title="\Automattic">Automattic</abbr></a></h4>
                 <ul class="phpdocumentor-list">
@@ -119,8 +121,10 @@
                                     <li><a href="../packages/WooCommerce-Widgets.html"><abbr title="\WooCommerce\Widgets">Widgets</abbr></a></li>
                                     <li><a href="../packages/WooCommerce-Uninstaller.html"><abbr title="\WooCommerce\Uninstaller">Uninstaller</abbr></a></li>
                             </ul>
-                                <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/WoocommerceAdmin.html"><abbr title="\WoocommerceAdmin">WoocommerceAdmin</abbr></a></h3>
-                                <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/WoocommerceNavigation.html"><abbr title="\WoocommerceNavigation">WoocommerceNavigation</abbr></a></h3>
+                                <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/MailPoet.html"><abbr title="\MailPoet">MailPoet</abbr></a></h3>
+                        <ul class="phpdocumentor-list">
+                                    <li><a href="../packages/MailPoet-EmailEditor.html"><abbr title="\MailPoet\EmailEditor">EmailEditor</abbr></a></li>
+                            </ul>
                                 <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/Automattic.html"><abbr title="\Automattic">Automattic</abbr></a></h3>
                         <ul class="phpdocumentor-list">
                                     <li><a href="../packages/Automattic-WooCommerce.html"><abbr title="\Automattic\WooCommerce">WooCommerce</abbr></a></li>
@@ -393,7 +397,6 @@ class Cart extends AbstractBlock {
 		parent::enqueue_data( $attributes );
 
 		$this-&gt;asset_data_registry-&gt;add( &#039;countryData&#039;, CartCheckoutUtils::get_country_data() );
-		$this-&gt;asset_data_registry-&gt;add( &#039;baseLocation&#039;, wc_get_base_location() );
 		$this-&gt;asset_data_registry-&gt;add( &#039;isShippingCalculatorEnabled&#039;, filter_var( get_option( &#039;woocommerce_enable_shipping_calc&#039; ), FILTER_VALIDATE_BOOLEAN ) );
 		$this-&gt;asset_data_registry-&gt;add( &#039;displayItemizedTaxes&#039;, &#039;itemized&#039; === get_option( &#039;woocommerce_tax_total_display&#039; ) );
 		$this-&gt;asset_data_registry-&gt;add( &#039;displayCartPricesIncludingTax&#039;, &#039;incl&#039; === get_option( &#039;woocommerce_tax_display_cart&#039; ) );
@@ -403,9 +406,34 @@ class Cart extends AbstractBlock {
 		$this-&gt;asset_data_registry-&gt;add( &#039;hasDarkEditorStyleSupport&#039;, current_theme_supports( &#039;dark-editor-style&#039; ) );
 		$this-&gt;asset_data_registry-&gt;register_page_id( isset( $attributes[&#039;checkoutPageId&#039;] ) ? $attributes[&#039;checkoutPageId&#039;] : 0 );
 		$this-&gt;asset_data_registry-&gt;add( &#039;isBlockTheme&#039;, wc_current_theme_is_fse_theme() );
-		$this-&gt;asset_data_registry-&gt;add( &#039;activeShippingZones&#039;, CartCheckoutUtils::get_shipping_zones() );
+
 		$pickup_location_settings = LocalPickupUtils::get_local_pickup_settings();
+		$local_pickup_method_ids  = LocalPickupUtils::get_local_pickup_method_ids();
+
 		$this-&gt;asset_data_registry-&gt;add( &#039;localPickupEnabled&#039;, $pickup_location_settings[&#039;enabled&#039;] );
+		$this-&gt;asset_data_registry-&gt;add( &#039;collectableMethodIds&#039;, $local_pickup_method_ids );
+		$this-&gt;asset_data_registry-&gt;add( &#039;shippingMethodsExist&#039;, CartCheckoutUtils::shipping_methods_exist() &gt; 0 );
+
+		$is_block_editor = $this-&gt;is_block_editor();
+
+		if ( $is_block_editor &amp;&amp; ! $this-&gt;asset_data_registry-&gt;exists( &#039;localPickupLocations&#039; ) ) {
+			// Locations are passed to the client in admin to show a realistic preview in the editor.
+			$this-&gt;asset_data_registry-&gt;add(
+				&#039;localPickupLocations&#039;,
+				array_filter(
+					array_map(
+						function ( $location ) {
+							if ( ! $location[&#039;enabled&#039;] ) {
+								return null;
+							}
+							$location[&#039;formatted_address&#039;] = wc()-&gt;countries-&gt;get_formatted_address( $location[&#039;address&#039;], &#039;, &#039; );
+							return $location;
+						},
+						get_option( &#039;pickup_location_pickup_locations&#039;, array() )
+					)
+				)
+			);
+		}
 
 		// Hydrate the following data depending on admin or frontend context.
 		if ( ! is_admin() &amp;&amp; ! WC()-&gt;is_rest_api_request() ) {
@@ -473,7 +501,7 @@ class Cart extends AbstractBlock {
 
     <footer class="phpdocumentor phpdocumentor-footer">
     <div class="phpdocumentor-section">
-        <span>WooCommerce Code Reference API documentation generated by <a href="http://www.phpdoc.org/">phpDocumentor</a> on July 25th, 2024 at 11:33 am.</span>
+        <span>WooCommerce Code Reference API documentation generated by <a href="http://www.phpdoc.org/">phpDocumentor</a> on May 16th, 2025 at 09:14 am.</span>
     </div>
 </footer>
 
@@ -485,7 +513,7 @@ class Cart extends AbstractBlock {
             'searchIndex': '..\/js\/searchIndex.json'
         };
     </script>
-    <script src="../js/searchIndex.js?updated=1721907185"></script>
-    <script src="../js/search.js?updated=1721907185"></script>
+    <script src="../js/searchIndex.js?updated=1747386861"></script>
+    <script src="../js/search.js?updated=1747386861"></script>
 </body>
 </html>

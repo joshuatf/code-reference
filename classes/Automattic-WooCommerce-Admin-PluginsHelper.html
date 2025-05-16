@@ -4,14 +4,13 @@
     <meta charset="utf-8">
     <title>WooCommerce Code Reference</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="../images/favicon.png" />
-    <link rel="apple-touch-icon" href="../images/apple-touch-icon.png"/>
-    <link rel="apple-touch-icon" sizes="72x72" href="../images/apple-touch-icon-72x72.png"/>
-    <link rel="apple-touch-icon" sizes="114x114" href="../images/apple-touch-icon-114x114.png"/>
+    <link rel="icon" href="../images/favicon-32x32.png" sizes="32x32" />
+    <link rel="icon" href="../images/favicon-192x192.png" sizes="192x192" />
+    <link rel="apple-touch-icon" href="../images/favicon-180x180.png" />
+
     <link rel="stylesheet" href="../css/normalize.css">
-    <link rel="stylesheet" href="../css/base.css?updated=1721907204">
-    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../css/template.css?updated=1721907204">
+    <link rel="stylesheet" href="../css/base.css?updated=1747386884">
+    <link rel="stylesheet" href="../css/template.css?updated=1747386884">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0/css/all.min.css" integrity="sha256-ybRkN9dBjhcS2qrW1z+hfCxq+1aBdwyQM5wlQoQVt/0=" crossorigin="anonymous" />
             <script src="https://cdn.jsdelivr.net/npm/css-vars-ponyfill@2"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0/js/all.min.js" integrity="sha256-0vuk8LXoyrmCjp1f0O300qo1M75ZQyhH9X3J6d+scmk=" crossorigin="anonymous"></script>
@@ -27,19 +26,24 @@
 		'content_group' : 'WooCommerce Core Code Reference',
 	});
 </script>
-        </head>
+        <script src="../js/prism.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            window.dispatchEvent(new HashChangeEvent('hashchange'));
+        });
+    </script>
+</head>
 <body id="top">
     <header class="phpdocumentor-top-header">
     <section class="phpdocumentor-section">
         <div class="site-branding">
-            <a class="site-logo" href="../index.html"><img width="180" src="../images/logo.svg" alt="WooCommerce" /></a>
+            <a class="site-logo" href="../index.html"><img src="../images/logo.png" alt="WooCommerce" /></a>
         </div>
         <nav class="main-navigation">
             <ul>
                 <li><a href="../hooks/hooks.html">Hooks Reference</a></li>
-                <li><a href="https://docs.woocommerce.com/">Documentation</a></li>
+                <li><a href="https://developer.woocommerce.com/docs/">Documentation</a></li>
                 <li><a href="https://woocommerce.github.io/woocommerce-rest-api-docs/">REST API Docs</a></li>
-                <li><a href="https://woocommerce.com/careers/?utm_source=woocommerce+core+code+reference&utm_medium=devdocs&utm_campaign=woo+careers" target="_blank">We're hiring!</a></li>
             </ul>
         </nav>
     </section>
@@ -47,7 +51,7 @@
 
 <div class="phpdocumentor-header">
     <section class="phpdocumentor-section">
-        <h1 class="phpdocumentor-title">WooCommerce Code Reference</h1>
+        <h1 class="phpdocumentor-title"><a href="../index.html">WooCommerce Code Reference</a></h1>
         <section class="phpdocumentor-search">
     <label class="phpdocumentor-label">
         <span class="visually-hidden">Search (click ESC to close search results)</span>
@@ -68,6 +72,10 @@
                                         <h4 class="phpdocumentor-sidebar__root-namespace"><a href="../namespaces/woocommerce.html"><abbr title="\WooCommerce">WooCommerce</abbr></a></h4>
                 <ul class="phpdocumentor-list">
                                             <li><a href="../namespaces/woocommerce-admin.html"><abbr title="\WooCommerce\Admin">Admin</abbr></a></li>
+                                    </ul>
+                            <h4 class="phpdocumentor-sidebar__root-namespace"><a href="../namespaces/mailpoet.html"><abbr title="\MailPoet">MailPoet</abbr></a></h4>
+                <ul class="phpdocumentor-list">
+                                            <li><a href="../namespaces/mailpoet-emaileditor.html"><abbr title="\MailPoet\EmailEditor">EmailEditor</abbr></a></li>
                                     </ul>
                             <h4 class="phpdocumentor-sidebar__root-namespace"><a href="../namespaces/automattic.html"><abbr title="\Automattic">Automattic</abbr></a></h4>
                 <ul class="phpdocumentor-list">
@@ -113,8 +121,10 @@
                                     <li><a href="../packages/WooCommerce-Widgets.html"><abbr title="\WooCommerce\Widgets">Widgets</abbr></a></li>
                                     <li><a href="../packages/WooCommerce-Uninstaller.html"><abbr title="\WooCommerce\Uninstaller">Uninstaller</abbr></a></li>
                             </ul>
-                                <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/WoocommerceAdmin.html"><abbr title="\WoocommerceAdmin">WoocommerceAdmin</abbr></a></h3>
-                                <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/WoocommerceNavigation.html"><abbr title="\WoocommerceNavigation">WoocommerceNavigation</abbr></a></h3>
+                                <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/MailPoet.html"><abbr title="\MailPoet">MailPoet</abbr></a></h3>
+                        <ul class="phpdocumentor-list">
+                                    <li><a href="../packages/MailPoet-EmailEditor.html"><abbr title="\MailPoet\EmailEditor">EmailEditor</abbr></a></li>
+                            </ul>
                                 <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/Automattic.html"><abbr title="\Automattic">Automattic</abbr></a></h3>
                         <ul class="phpdocumentor-list">
                                     <li><a href="../packages/Automattic-WooCommerce.html"><abbr title="\Automattic\WooCommerce">WooCommerce</abbr></a></li>
@@ -159,9 +169,9 @@
     </h2>
 
         <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/PluginsHelper.php"><a href="../files/woocommerce-src-admin-pluginshelper.html#source-view.32">src/Admin/PluginsHelper.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/PluginsHelper.php"><a href="../files/woocommerce-src-admin-pluginshelper.html#source-view.33">src/Admin/PluginsHelper.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">32</span>
+    <span class="phpdocumentor-element-found-in__line">33</span>
 </aside>
 
             <p class="phpdocumentor-summary">Class PluginsHelper</p>
@@ -182,6 +192,20 @@
 
 <dl class="phpdocumentor-table-of-contents">
             <dt class="phpdocumentor-table-of-contents__entry -constant -public">
+    <a href="../classes/Automattic-WooCommerce-Admin-PluginsHelper.html#constant_DISMISS_CONNECT_NOTICE">DISMISS_CONNECT_NOTICE</a>
+    <span>
+        &nbsp;= &#039;woo_connect_notice_dismiss&#039;                    </span>
+</dt>
+<dd>Meta key for dismissing connected notice</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -constant -public">
+    <a href="../classes/Automattic-WooCommerce-Admin-PluginsHelper.html#constant_DISMISS_DISCONNECT_NOTICE">DISMISS_DISCONNECT_NOTICE</a>
+    <span>
+        &nbsp;= &#039;woo_disconnect_notice_dismiss&#039;                    </span>
+</dt>
+<dd>Meta key for dismissing disconnected notice</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -constant -public">
     <a href="../classes/Automattic-WooCommerce-Admin-PluginsHelper.html#constant_DISMISS_EXPIRED_SUBS_NOTICE">DISMISS_EXPIRED_SUBS_NOTICE</a>
     <span>
         &nbsp;= &#039;woo_subscription_expired_notice_dismiss&#039;                    </span>
@@ -196,6 +220,27 @@
 <dd>Meta key for dismissing expiring subscription notices</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -constant -public">
+    <a href="../classes/Automattic-WooCommerce-Admin-PluginsHelper.html#constant_DISMISS_MISSING_SUBS_NOTICE">DISMISS_MISSING_SUBS_NOTICE</a>
+    <span>
+        &nbsp;= &#039;woo_subscription_missing_notice_dismiss&#039;                    </span>
+</dt>
+<dd>Meta key for dismissing missing subscription notices</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -constant -public">
+    <a href="../classes/Automattic-WooCommerce-Admin-PluginsHelper.html#constant_WOO_ADD_PAYMENT_METHOD_URL">WOO_ADD_PAYMENT_METHOD_URL</a>
+    <span>
+        &nbsp;= &#039;https://woocommerce.com/my-account/add-payment-method/&#039;                    </span>
+</dt>
+<dd>The URL for the WooCommerce.com add payment method page.</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -constant -public">
+    <a href="../classes/Automattic-WooCommerce-Admin-PluginsHelper.html#constant_WOO_CART_PAGE_URL">WOO_CART_PAGE_URL</a>
+    <span>
+        &nbsp;= &#039;https://woocommerce.com/cart/&#039;                    </span>
+</dt>
+<dd>The URL for the WooCommerce.com cart page.</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -constant -public">
     <a href="../classes/Automattic-WooCommerce-Admin-PluginsHelper.html#constant_WOO_SUBSCRIPTION_PAGE_URL">WOO_SUBSCRIPTION_PAGE_URL</a>
     <span>
         &nbsp;= &#039;https://woocommerce.com/my-account/my-subscriptions/&#039;                    </span>
@@ -203,11 +248,13 @@
 <dd>The URL for the WooCommerce subscription page.</dd>
 
                 <dt class="phpdocumentor-table-of-contents__entry -property -public">
-    <a href="../classes/Automattic-WooCommerce-Admin-PluginsHelper.html#property_can_show_expiring_subs_notice">$can_show_expiring_subs_notice</a>
+    <a href="../classes/Automattic-WooCommerce-Admin-PluginsHelper.html#property_subscription_usage_notices_already_shown">$subscription_usage_notices_already_shown</a>
     <span>
                 &nbsp;: bool            </span>
 </dt>
-<dd>Indicates whether the expiration notice for subscriptions can be displayed.</dd>
+<dd>Subscription notices in Woo screens are shown in clear priority order, first
+expired, and if those don&#039;t exist, expiring, and finally if none of those exist,
+then missing. This keeps track of whether we can show the next set of notices.</dd>
 
                 <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="../classes/Automattic-WooCommerce-Admin-PluginsHelper.html#method_activate_plugins">activate_plugins()</a>
@@ -273,6 +320,20 @@
 <dd>Get an array of installed plugins with their file paths as a key value pair.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a href="../classes/Automattic-WooCommerce-Admin-PluginsHelper.html#method_get_missing_payment_method_notice">get_missing_payment_method_notice()</a>
+    <span>
+                        &nbsp;: array&lt;string|int, mixed&gt;    </span>
+</dt>
+<dd>Get the notice data for missing payment method.</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a href="../classes/Automattic-WooCommerce-Admin-PluginsHelper.html#method_get_missing_subscription_notice">get_missing_subscription_notice()</a>
+    <span>
+                        &nbsp;: array&lt;string|int, mixed&gt;    </span>
+</dt>
+<dd>Get formatted notice information for missing subscription.</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="../classes/Automattic-WooCommerce-Admin-PluginsHelper.html#method_get_plugin_data">get_plugin_data()</a>
     <span>
                         &nbsp;: array&lt;string|int, mixed&gt;|false    </span>
@@ -291,7 +352,21 @@
     <span>
                         &nbsp;: array&lt;string|int, mixed&gt;    </span>
 </dt>
-<dd>Construct the subscritpion notice data based on user subscriptions data.</dd>
+<dd>Construct the subscription notice data based on user subscriptions data.</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a href="../classes/Automattic-WooCommerce-Admin-PluginsHelper.html#method_get_wccom_connected_notice">get_wccom_connected_notice()</a>
+    <span>
+                        &nbsp;: string    </span>
+</dt>
+<dd>Get the connected status notice message.</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a href="../classes/Automattic-WooCommerce-Admin-PluginsHelper.html#method_get_wccom_disconnected_notice">get_wccom_disconnected_notice()</a>
+    <span>
+                        &nbsp;: string    </span>
+</dt>
+<dd>Get notice information when WCCOM connection is disconnected.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="../classes/Automattic-WooCommerce-Admin-PluginsHelper.html#method_init">init()</a>
@@ -305,7 +380,7 @@
     <span>
                         &nbsp;: bool    </span>
 </dt>
-<dd>Callback regsitered by OnboardingPlugins::install_and_activate_async.</dd>
+<dd>Callback registered by OnboardingPlugins::install_and_activate_async.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="../classes/Automattic-WooCommerce-Admin-PluginsHelper.html#method_install_plugins">install_plugins()</a>
@@ -402,15 +477,69 @@
             <a href="#constants" class="headerlink"><i class="fas fa-link"></i></a>
         </h3>
                     <article class="phpdocumentor-element -constant -public ">
+    <h4 class="phpdocumentor-element__name" id="constant_DISMISS_CONNECT_NOTICE">
+        DISMISS_CONNECT_NOTICE
+        <a href="#constant_DISMISS_CONNECT_NOTICE" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/PluginsHelper.php"><a href="../files/woocommerce-src-admin-pluginshelper.html#source-view.82">src/Admin/PluginsHelper.php</a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">82</span>
+</aside>
+
+        <p class="phpdocumentor-summary">Meta key for dismissing connected notice</p>
+
+    <code class="phpdocumentor-signature phpdocumentor-code ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+    <span class="phpdocumentor-signature__type">mixed</span>
+    <span class="phpdocumentor-signature__name">DISMISS_CONNECT_NOTICE</span>
+    = <span class="phpdocumentor-signature__default-value">&#039;woo_connect_notice_dismiss&#039;</span>
+</code>
+
+
+        <section class="phpdocumentor-description"></section>
+
+    
+
+</article>
+                    <article class="phpdocumentor-element -constant -public ">
+    <h4 class="phpdocumentor-element__name" id="constant_DISMISS_DISCONNECT_NOTICE">
+        DISMISS_DISCONNECT_NOTICE
+        <a href="#constant_DISMISS_DISCONNECT_NOTICE" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/PluginsHelper.php"><a href="../files/woocommerce-src-admin-pluginshelper.html#source-view.77">src/Admin/PluginsHelper.php</a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">77</span>
+</aside>
+
+        <p class="phpdocumentor-summary">Meta key for dismissing disconnected notice</p>
+
+    <code class="phpdocumentor-signature phpdocumentor-code ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+    <span class="phpdocumentor-signature__type">mixed</span>
+    <span class="phpdocumentor-signature__name">DISMISS_DISCONNECT_NOTICE</span>
+    = <span class="phpdocumentor-signature__default-value">&#039;woo_disconnect_notice_dismiss&#039;</span>
+</code>
+
+
+        <section class="phpdocumentor-description"></section>
+
+    
+
+</article>
+                    <article class="phpdocumentor-element -constant -public ">
     <h4 class="phpdocumentor-element__name" id="constant_DISMISS_EXPIRED_SUBS_NOTICE">
         DISMISS_EXPIRED_SUBS_NOTICE
         <a href="#constant_DISMISS_EXPIRED_SUBS_NOTICE" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
 
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/PluginsHelper.php"><a href="../files/woocommerce-src-admin-pluginshelper.html#source-view.49">src/Admin/PluginsHelper.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/PluginsHelper.php"><a href="../files/woocommerce-src-admin-pluginshelper.html#source-view.62">src/Admin/PluginsHelper.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">49</span>
+    <span class="phpdocumentor-element-found-in__line">62</span>
 </aside>
 
         <p class="phpdocumentor-summary">Meta key for dismissing expired subscription notices.</p>
@@ -435,9 +564,9 @@
     </h4>
 
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/PluginsHelper.php"><a href="../files/woocommerce-src-admin-pluginshelper.html#source-view.54">src/Admin/PluginsHelper.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/PluginsHelper.php"><a href="../files/woocommerce-src-admin-pluginshelper.html#source-view.67">src/Admin/PluginsHelper.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">54</span>
+    <span class="phpdocumentor-element-found-in__line">67</span>
 </aside>
 
         <p class="phpdocumentor-summary">Meta key for dismissing expiring subscription notices</p>
@@ -456,15 +585,96 @@
 
 </article>
                     <article class="phpdocumentor-element -constant -public ">
+    <h4 class="phpdocumentor-element__name" id="constant_DISMISS_MISSING_SUBS_NOTICE">
+        DISMISS_MISSING_SUBS_NOTICE
+        <a href="#constant_DISMISS_MISSING_SUBS_NOTICE" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/PluginsHelper.php"><a href="../files/woocommerce-src-admin-pluginshelper.html#source-view.72">src/Admin/PluginsHelper.php</a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">72</span>
+</aside>
+
+        <p class="phpdocumentor-summary">Meta key for dismissing missing subscription notices</p>
+
+    <code class="phpdocumentor-signature phpdocumentor-code ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+    <span class="phpdocumentor-signature__type">mixed</span>
+    <span class="phpdocumentor-signature__name">DISMISS_MISSING_SUBS_NOTICE</span>
+    = <span class="phpdocumentor-signature__default-value">&#039;woo_subscription_missing_notice_dismiss&#039;</span>
+</code>
+
+
+        <section class="phpdocumentor-description"></section>
+
+    
+
+</article>
+                    <article class="phpdocumentor-element -constant -public ">
+    <h4 class="phpdocumentor-element__name" id="constant_WOO_ADD_PAYMENT_METHOD_URL">
+        WOO_ADD_PAYMENT_METHOD_URL
+        <a href="#constant_WOO_ADD_PAYMENT_METHOD_URL" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/PluginsHelper.php"><a href="../files/woocommerce-src-admin-pluginshelper.html#source-view.57">src/Admin/PluginsHelper.php</a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">57</span>
+</aside>
+
+        <p class="phpdocumentor-summary">The URL for the WooCommerce.com add payment method page.</p>
+
+    <code class="phpdocumentor-signature phpdocumentor-code ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+    <span class="phpdocumentor-signature__type">mixed</span>
+    <span class="phpdocumentor-signature__name">WOO_ADD_PAYMENT_METHOD_URL</span>
+    = <span class="phpdocumentor-signature__default-value">&#039;https://woocommerce.com/my-account/add-payment-method/&#039;</span>
+</code>
+
+
+        <section class="phpdocumentor-description"></section>
+
+    
+
+</article>
+                    <article class="phpdocumentor-element -constant -public ">
+    <h4 class="phpdocumentor-element__name" id="constant_WOO_CART_PAGE_URL">
+        WOO_CART_PAGE_URL
+        <a href="#constant_WOO_CART_PAGE_URL" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/PluginsHelper.php"><a href="../files/woocommerce-src-admin-pluginshelper.html#source-view.52">src/Admin/PluginsHelper.php</a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">52</span>
+</aside>
+
+        <p class="phpdocumentor-summary">The URL for the WooCommerce.com cart page.</p>
+
+    <code class="phpdocumentor-signature phpdocumentor-code ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+    <span class="phpdocumentor-signature__type">mixed</span>
+    <span class="phpdocumentor-signature__name">WOO_CART_PAGE_URL</span>
+    = <span class="phpdocumentor-signature__default-value">&#039;https://woocommerce.com/cart/&#039;</span>
+</code>
+
+
+        <section class="phpdocumentor-description"></section>
+
+    
+
+</article>
+                    <article class="phpdocumentor-element -constant -public ">
     <h4 class="phpdocumentor-element__name" id="constant_WOO_SUBSCRIPTION_PAGE_URL">
         WOO_SUBSCRIPTION_PAGE_URL
         <a href="#constant_WOO_SUBSCRIPTION_PAGE_URL" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
 
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/PluginsHelper.php"><a href="../files/woocommerce-src-admin-pluginshelper.html#source-view.44">src/Admin/PluginsHelper.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/PluginsHelper.php"><a href="../files/woocommerce-src-admin-pluginshelper.html#source-view.47">src/Admin/PluginsHelper.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">44</span>
+    <span class="phpdocumentor-element-found-in__line">47</span>
 </aside>
 
         <p class="phpdocumentor-summary">The URL for the WooCommerce subscription page.</p>
@@ -497,25 +707,27 @@
             -public
             -static                                            "
 >
-    <h4 class="phpdocumentor-element__name" id="property_can_show_expiring_subs_notice">
-        $can_show_expiring_subs_notice
-        <a href="#property_can_show_expiring_subs_notice" class="headerlink"><i class="fas fa-link"></i></a>
+    <h4 class="phpdocumentor-element__name" id="property_subscription_usage_notices_already_shown">
+        $subscription_usage_notices_already_shown
+        <a href="#property_subscription_usage_notices_already_shown" class="headerlink"><i class="fas fa-link"></i></a>
         <span class="phpdocumentor-element__modifiers">
                                 </span>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/PluginsHelper.php"><a href="../files/woocommerce-src-admin-pluginshelper.html#source-view.39">src/Admin/PluginsHelper.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/PluginsHelper.php"><a href="../files/woocommerce-src-admin-pluginshelper.html#source-view.42">src/Admin/PluginsHelper.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">39</span>
+    <span class="phpdocumentor-element-found-in__line">42</span>
 </aside>
 
-        <p class="phpdocumentor-summary">Indicates whether the expiration notice for subscriptions can be displayed.</p>
+        <p class="phpdocumentor-summary">Subscription notices in Woo screens are shown in clear priority order, first
+expired, and if those don&#039;t exist, expiring, and finally if none of those exist,
+then missing. This keeps track of whether we can show the next set of notices.</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
     <span class="phpdocumentor-signature__static">static</span>    <span class="phpdocumentor-signature__type">bool</span>
-    <span class="phpdocumentor-signature__name">$can_show_expiring_subs_notice</span>
-     = <span class="phpdocumentor-signature__default-value">true</span></code>
+    <span class="phpdocumentor-signature__name">$subscription_usage_notices_already_shown</span>
+     = <span class="phpdocumentor-signature__default-value">false</span></code>
 
         <section class="phpdocumentor-description"></section>
 
@@ -540,9 +752,9 @@
         <a href="#method_activate_plugins" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/PluginsHelper.php"><a href="../files/woocommerce-src-admin-pluginshelper.html#source-view.399">src/Admin/PluginsHelper.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/PluginsHelper.php"><a href="../files/woocommerce-src-admin-pluginshelper.html#source-view.450">src/Admin/PluginsHelper.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">399</span>
+    <span class="phpdocumentor-element-found-in__line">450</span>
 </aside>
 
         <p class="phpdocumentor-summary">Activate the requested plugins.</p>
@@ -593,9 +805,9 @@
         <a href="#method_get_action_data" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/PluginsHelper.php"><a href="../files/woocommerce-src-admin-pluginshelper.html#source-view.530">src/Admin/PluginsHelper.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/PluginsHelper.php"><a href="../files/woocommerce-src-admin-pluginshelper.html#source-view.581">src/Admin/PluginsHelper.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">530</span>
+    <span class="phpdocumentor-element-found-in__line">581</span>
 </aside>
 
         <p class="phpdocumentor-summary">Gets the plugin data for the first action.</p>
@@ -637,9 +849,9 @@
         <a href="#method_get_activation_status" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/PluginsHelper.php"><a href="../files/woocommerce-src-admin-pluginshelper.html#source-view.553">src/Admin/PluginsHelper.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/PluginsHelper.php"><a href="../files/woocommerce-src-admin-pluginshelper.html#source-view.604">src/Admin/PluginsHelper.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">553</span>
+    <span class="phpdocumentor-element-found-in__line">604</span>
 </aside>
 
         <p class="phpdocumentor-summary">Activation status.</p>
@@ -681,9 +893,9 @@
         <a href="#method_get_active_plugin_slugs" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/PluginsHelper.php"><a href="../files/woocommerce-src-admin-pluginshelper.html#source-view.137">src/Admin/PluginsHelper.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/PluginsHelper.php"><a href="../files/woocommerce-src-admin-pluginshelper.html#source-view.164">src/Admin/PluginsHelper.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">137</span>
+    <span class="phpdocumentor-element-found-in__line">164</span>
 </aside>
 
         <p class="phpdocumentor-summary">Get an array of active plugin slugs.</p>
@@ -692,14 +904,15 @@
     <span class="phpdocumentor-signature__visibility">public</span>
             <span class="phpdocumentor-signature__static">static</span>    <span class="phpdocumentor-signature__name">get_active_plugin_slugs</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">array&lt;string|int, mixed&gt;</span></code>
 
-        <section class="phpdocumentor-description"></section>
+        <section class="phpdocumentor-description"><p>The list will include both network active and site active plugins.</p>
+</section>
 
     
     
 
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
     <span class="phpdocumentor-signature__response_type">array&lt;string|int, mixed&gt;</span>
-            &mdash; <span class="phpdocumentor-return-value__description"></span>
+            &mdash; <span class="phpdocumentor-return-value__description">The list of active plugin slugs.</span>
     
 </article>
                     <article
@@ -713,9 +926,9 @@
         <a href="#method_get_expired_subscription_notice" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/PluginsHelper.php"><a href="../files/woocommerce-src-admin-pluginshelper.html#source-view.892">src/Admin/PluginsHelper.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/PluginsHelper.php"><a href="../files/woocommerce-src-admin-pluginshelper.html#source-view.960">src/Admin/PluginsHelper.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">892</span>
+    <span class="phpdocumentor-element-found-in__line">960</span>
 </aside>
 
         <p class="phpdocumentor-summary">Get formatted notice information for expired subscription.</p>
@@ -757,9 +970,9 @@
         <a href="#method_get_expiring_subscription_notice" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/PluginsHelper.php"><a href="../files/woocommerce-src-admin-pluginshelper.html#source-view.795">src/Admin/PluginsHelper.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/PluginsHelper.php"><a href="../files/woocommerce-src-admin-pluginshelper.html#source-view.875">src/Admin/PluginsHelper.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">795</span>
+    <span class="phpdocumentor-element-found-in__line">875</span>
 </aside>
 
         <p class="phpdocumentor-summary">Get formatted notice information for expiring subscription.</p>
@@ -801,9 +1014,9 @@
         <a href="#method_get_installation_status" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/PluginsHelper.php"><a href="../files/woocommerce-src-admin-pluginshelper.html#source-view.510">src/Admin/PluginsHelper.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/PluginsHelper.php"><a href="../files/woocommerce-src-admin-pluginshelper.html#source-view.561">src/Admin/PluginsHelper.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">510</span>
+    <span class="phpdocumentor-element-found-in__line">561</span>
 </aside>
 
         <p class="phpdocumentor-summary">Installation status.</p>
@@ -845,9 +1058,9 @@
         <a href="#method_get_installed_plugin_slugs" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/PluginsHelper.php"><a href="../files/woocommerce-src-admin-pluginshelper.html#source-view.103">src/Admin/PluginsHelper.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/PluginsHelper.php"><a href="../files/woocommerce-src-admin-pluginshelper.html#source-view.128">src/Admin/PluginsHelper.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">103</span>
+    <span class="phpdocumentor-element-found-in__line">128</span>
 </aside>
 
         <p class="phpdocumentor-summary">Get an array of installed plugin slugs.</p>
@@ -877,9 +1090,9 @@
         <a href="#method_get_installed_plugins_paths" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/PluginsHelper.php"><a href="../files/woocommerce-src-admin-pluginshelper.html#source-view.119">src/Admin/PluginsHelper.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/PluginsHelper.php"><a href="../files/woocommerce-src-admin-pluginshelper.html#source-view.144">src/Admin/PluginsHelper.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">119</span>
+    <span class="phpdocumentor-element-found-in__line">144</span>
 </aside>
 
         <p class="phpdocumentor-summary">Get an array of installed plugins with their file paths as a key value pair.</p>
@@ -904,14 +1117,99 @@
             -public
                                     -static                    "
 >
+    <h4 class="phpdocumentor-element__name" id="method_get_missing_payment_method_notice">
+        get_missing_payment_method_notice()
+        <a href="#method_get_missing_payment_method_notice" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/PluginsHelper.php"><a href="../files/woocommerce-src-admin-pluginshelper.html#source-view.1199">src/Admin/PluginsHelper.php</a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">1199</span>
+</aside>
+
+        <p class="phpdocumentor-summary">Get the notice data for missing payment method.</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+            <span class="phpdocumentor-signature__static">static</span>    <span class="phpdocumentor-signature__name">get_missing_payment_method_notice</span><span>(</span><span class="phpdocumentor-signature__argument"><span>[</span><span class="phpdocumentor-signature__argument__return-type">bool&nbsp;</span><span class="phpdocumentor-signature__argument__name">$allowed_link</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">true</span><span> ]</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type">int&nbsp;</span><span class="phpdocumentor-signature__argument__name">$total_expiring_subscriptions</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">1</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">array&lt;string|int, mixed&gt;</span></code>
+
+        <section class="phpdocumentor-description"></section>
+
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$allowed_link</span>
+                : <span class="phpdocumentor-signature__argument__return-type">bool</span>
+                 = <span class="phpdocumentor-signature__argument__default-value">true</span>            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"><p>whether should show link on the notice or not.</p>
+</section>
+
+            </dd>
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$total_expiring_subscriptions</span>
+                : <span class="phpdocumentor-signature__argument__return-type">int</span>
+                 = <span class="phpdocumentor-signature__argument__default-value">1</span>            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"><p>total expiring subscriptions.</p>
+</section>
+
+            </dd>
+            </dl>
+
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">array&lt;string|int, mixed&gt;</span>
+            &mdash; <span class="phpdocumentor-return-value__description">the notices data.</span>
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                    -static                    "
+>
+    <h4 class="phpdocumentor-element__name" id="method_get_missing_subscription_notice">
+        get_missing_subscription_notice()
+        <a href="#method_get_missing_subscription_notice" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/PluginsHelper.php"><a href="../files/woocommerce-src-admin-pluginshelper.html#source-view.1032">src/Admin/PluginsHelper.php</a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">1032</span>
+</aside>
+
+        <p class="phpdocumentor-summary">Get formatted notice information for missing subscription.</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+            <span class="phpdocumentor-signature__static">static</span>    <span class="phpdocumentor-signature__name">get_missing_subscription_notice</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">array&lt;string|int, mixed&gt;</span></code>
+
+        <section class="phpdocumentor-description"></section>
+
+    
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">array&lt;string|int, mixed&gt;</span>
+            &mdash; <span class="phpdocumentor-return-value__description">notice information.</span>
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                    -static                    "
+>
     <h4 class="phpdocumentor-element__name" id="method_get_plugin_data">
         get_plugin_data()
         <a href="#method_get_plugin_data" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/PluginsHelper.php"><a href="../files/woocommerce-src-admin-pluginshelper.html#source-view.181">src/Admin/PluginsHelper.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/PluginsHelper.php"><a href="../files/woocommerce-src-admin-pluginshelper.html#source-view.215">src/Admin/PluginsHelper.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">181</span>
+    <span class="phpdocumentor-element-found-in__line">215</span>
 </aside>
 
         <p class="phpdocumentor-summary">Get plugin data.</p>
@@ -953,9 +1251,9 @@
         <a href="#method_get_plugin_path_from_slug" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/PluginsHelper.php"><a href="../files/woocommerce-src-admin-pluginshelper.html#source-view.80">src/Admin/PluginsHelper.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/PluginsHelper.php"><a href="../files/woocommerce-src-admin-pluginshelper.html#source-view.105">src/Admin/PluginsHelper.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">80</span>
+    <span class="phpdocumentor-element-found-in__line">105</span>
 </aside>
 
         <p class="phpdocumentor-summary">Get the path to the plugin file relative to the plugins directory from the plugin slug.</p>
@@ -984,7 +1282,7 @@
 
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
     <span class="phpdocumentor-signature__response_type">string|false</span>
-            &mdash; <span class="phpdocumentor-return-value__description"></span>
+            &mdash; <span class="phpdocumentor-return-value__description">The plugin path or false if the plugin is not installed.</span>
     
 </article>
                     <article
@@ -998,12 +1296,12 @@
         <a href="#method_get_subscriptions_notice_data" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/PluginsHelper.php"><a href="../files/woocommerce-src-admin-pluginshelper.html#source-view.718">src/Admin/PluginsHelper.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/PluginsHelper.php"><a href="../files/woocommerce-src-admin-pluginshelper.html#source-view.772">src/Admin/PluginsHelper.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">718</span>
+    <span class="phpdocumentor-element-found-in__line">772</span>
 </aside>
 
-        <p class="phpdocumentor-summary">Construct the subscritpion notice data based on user subscriptions data.</p>
+        <p class="phpdocumentor-summary">Construct the subscription notice data based on user subscriptions data.</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
@@ -1073,14 +1371,90 @@
             -public
                                     -static                    "
 >
+    <h4 class="phpdocumentor-element__name" id="method_get_wccom_connected_notice">
+        get_wccom_connected_notice()
+        <a href="#method_get_wccom_connected_notice" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/PluginsHelper.php"><a href="../files/woocommerce-src-admin-pluginshelper.html#source-view.1140">src/Admin/PluginsHelper.php</a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">1140</span>
+</aside>
+
+        <p class="phpdocumentor-summary">Get the connected status notice message.</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+            <span class="phpdocumentor-signature__static">static</span>    <span class="phpdocumentor-signature__name">get_wccom_connected_notice</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$user_email</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">string</span></code>
+
+        <section class="phpdocumentor-description"></section>
+
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$user_email</span>
+                : <span class="phpdocumentor-signature__argument__return-type">string</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"><p>the user email.</p>
+</section>
+
+            </dd>
+            </dl>
+
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">string</span>
+            &mdash; <span class="phpdocumentor-return-value__description">the connected notice message.</span>
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                    -static                    "
+>
+    <h4 class="phpdocumentor-element__name" id="method_get_wccom_disconnected_notice">
+        get_wccom_disconnected_notice()
+        <a href="#method_get_wccom_disconnected_notice" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/PluginsHelper.php"><a href="../files/woocommerce-src-admin-pluginshelper.html#source-view.1112">src/Admin/PluginsHelper.php</a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">1112</span>
+</aside>
+
+        <p class="phpdocumentor-summary">Get notice information when WCCOM connection is disconnected.</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+            <span class="phpdocumentor-signature__static">static</span>    <span class="phpdocumentor-signature__name">get_wccom_disconnected_notice</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">string</span></code>
+
+        <section class="phpdocumentor-description"></section>
+
+    
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">string</span>
+            &mdash; <span class="phpdocumentor-return-value__description">disconnect notice.</span>
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                    -static                    "
+>
     <h4 class="phpdocumentor-element__name" id="method_init">
         init()
         <a href="#method_init" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/PluginsHelper.php"><a href="../files/woocommerce-src-admin-pluginshelper.html#source-view.59">src/Admin/PluginsHelper.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/PluginsHelper.php"><a href="../files/woocommerce-src-admin-pluginshelper.html#source-view.87">src/Admin/PluginsHelper.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">59</span>
+    <span class="phpdocumentor-element-found-in__line">87</span>
 </aside>
 
         <p class="phpdocumentor-summary">Initialize hooks.</p>
@@ -1110,16 +1484,16 @@
         <a href="#method_install_and_activate_plugins_async_callback" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/PluginsHelper.php"><a href="../files/woocommerce-src-admin-pluginshelper.html#source-view.361">src/Admin/PluginsHelper.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/PluginsHelper.php"><a href="../files/woocommerce-src-admin-pluginshelper.html#source-view.412">src/Admin/PluginsHelper.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">361</span>
+    <span class="phpdocumentor-element-found-in__line">412</span>
 </aside>
 
-        <p class="phpdocumentor-summary">Callback regsitered by OnboardingPlugins::install_and_activate_async.</p>
+        <p class="phpdocumentor-summary">Callback registered by OnboardingPlugins::install_and_activate_async.</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-            <span class="phpdocumentor-signature__static">static</span>    <span class="phpdocumentor-signature__name">install_and_activate_plugins_async_callback</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__name">$plugins</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$job_id</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">bool</span></code>
+            <span class="phpdocumentor-signature__static">static</span>    <span class="phpdocumentor-signature__name">install_and_activate_plugins_async_callback</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__name">$plugins</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$job_id</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type">string|null&nbsp;</span><span class="phpdocumentor-signature__argument__name">$source</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">bool</span></code>
 
         <section class="phpdocumentor-description"><p>It is used to call install_plugins and activate_plugins with a custom logger.</p>
 </section>
@@ -1144,6 +1518,15 @@
 </section>
 
             </dd>
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$source</span>
+                : <span class="phpdocumentor-signature__argument__return-type">string|null</span>
+                 = <span class="phpdocumentor-signature__argument__default-value">null</span>            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"><p>The source of the request.</p>
+</section>
+
+            </dd>
             </dl>
 
     
@@ -1164,16 +1547,16 @@
         <a href="#method_install_plugins" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/PluginsHelper.php"><a href="../files/woocommerce-src-admin-pluginshelper.html#source-view.196">src/Admin/PluginsHelper.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/PluginsHelper.php"><a href="../files/woocommerce-src-admin-pluginshelper.html#source-view.231">src/Admin/PluginsHelper.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">196</span>
+    <span class="phpdocumentor-element-found-in__line">231</span>
 </aside>
 
         <p class="phpdocumentor-summary">Install an array of plugins.</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-            <span class="phpdocumentor-signature__static">static</span>    <span class="phpdocumentor-signature__name">install_plugins</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__name">$plugins</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type"><a href="../classes/Automattic-WooCommerce-Admin-PluginsInstallLoggers-PluginsInstallLogger.html"><abbr title="\Automattic\WooCommerce\Admin\PluginsInstallLoggers\PluginsInstallLogger">PluginsInstallLogger</abbr></a>|null&nbsp;</span><span class="phpdocumentor-signature__argument__name">$logger</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">array&lt;string|int, mixed&gt;</span></code>
+            <span class="phpdocumentor-signature__static">static</span>    <span class="phpdocumentor-signature__name">install_plugins</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__name">$plugins</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type"><a href="../classes/Automattic-WooCommerce-Admin-PluginsInstallLoggers-PluginsInstallLogger.html"><abbr title="\Automattic\WooCommerce\Admin\PluginsInstallLoggers\PluginsInstallLogger">PluginsInstallLogger</abbr></a>|null&nbsp;</span><span class="phpdocumentor-signature__argument__name">$logger</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type">string|null&nbsp;</span><span class="phpdocumentor-signature__argument__name">$source</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">array&lt;string|int, mixed&gt;</span></code>
 
         <section class="phpdocumentor-description"></section>
 
@@ -1197,6 +1580,15 @@
 </section>
 
             </dd>
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$source</span>
+                : <span class="phpdocumentor-signature__argument__return-type">string|null</span>
+                 = <span class="phpdocumentor-signature__argument__default-value">null</span>            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"><p>place where the request is coming from.</p>
+</section>
+
+            </dd>
             </dl>
 
     
@@ -1217,9 +1609,9 @@
         <a href="#method_is_plugin_active" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/PluginsHelper.php"><a href="../files/woocommerce-src-admin-pluginshelper.html#source-view.168">src/Admin/PluginsHelper.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/PluginsHelper.php"><a href="../files/woocommerce-src-admin-pluginshelper.html#source-view.202">src/Admin/PluginsHelper.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">168</span>
+    <span class="phpdocumentor-element-found-in__line">202</span>
 </aside>
 
         <p class="phpdocumentor-summary">Checks if a plugin is active.</p>
@@ -1261,9 +1653,9 @@
         <a href="#method_is_plugin_installed" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/PluginsHelper.php"><a href="../files/woocommerce-src-admin-pluginshelper.html#source-view.155">src/Admin/PluginsHelper.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/PluginsHelper.php"><a href="../files/woocommerce-src-admin-pluginshelper.html#source-view.189">src/Admin/PluginsHelper.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">155</span>
+    <span class="phpdocumentor-element-found-in__line">189</span>
 </aside>
 
         <p class="phpdocumentor-summary">Checks if a plugin is installed.</p>
@@ -1305,9 +1697,9 @@
         <a href="#method_maybe_enqueue_scripts_for_connect_notice" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/PluginsHelper.php"><a href="../files/woocommerce-src-admin-pluginshelper.html#source-view.614">src/Admin/PluginsHelper.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/PluginsHelper.php"><a href="../files/woocommerce-src-admin-pluginshelper.html#source-view.667">src/Admin/PluginsHelper.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">614</span>
+    <span class="phpdocumentor-element-found-in__line">667</span>
 </aside>
 
         <p class="phpdocumentor-summary">Enqueue scripts for connect notice in WooCommerce settings page.</p>
@@ -1337,9 +1729,9 @@
         <a href="#method_maybe_enqueue_scripts_for_notices_in_plugins" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/PluginsHelper.php"><a href="../files/woocommerce-src-admin-pluginshelper.html#source-view.634">src/Admin/PluginsHelper.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/PluginsHelper.php"><a href="../files/woocommerce-src-admin-pluginshelper.html#source-view.687">src/Admin/PluginsHelper.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">634</span>
+    <span class="phpdocumentor-element-found-in__line">687</span>
 </aside>
 
         <p class="phpdocumentor-summary">Enqueue scripts for notices in plugin list page.</p>
@@ -1369,9 +1761,9 @@
         <a href="#method_maybe_enqueue_scripts_for_subscription_notice" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/PluginsHelper.php"><a href="../files/woocommerce-src-admin-pluginshelper.html#source-view.699">src/Admin/PluginsHelper.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/PluginsHelper.php"><a href="../files/woocommerce-src-admin-pluginshelper.html#source-view.753">src/Admin/PluginsHelper.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">699</span>
+    <span class="phpdocumentor-element-found-in__line">753</span>
 </aside>
 
         <p class="phpdocumentor-summary">Enqueue scripts for woo subscription notice.</p>
@@ -1401,9 +1793,9 @@
         <a href="#method_maybe_show_connect_notice_in_plugin_list" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/PluginsHelper.php"><a href="../files/woocommerce-src-admin-pluginshelper.html#source-view.571">src/Admin/PluginsHelper.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/PluginsHelper.php"><a href="../files/woocommerce-src-admin-pluginshelper.html#source-view.622">src/Admin/PluginsHelper.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">571</span>
+    <span class="phpdocumentor-element-found-in__line">622</span>
 </aside>
 
         <p class="phpdocumentor-summary">Show notices to connect to woocommerce.com for unconnected store in the plugin list.</p>
@@ -1433,9 +1825,9 @@
         <a href="#method_maybe_show_expired_subscriptions_notice" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/PluginsHelper.php"><a href="../files/woocommerce-src-admin-pluginshelper.html#source-view.652">src/Admin/PluginsHelper.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/PluginsHelper.php"><a href="../files/woocommerce-src-admin-pluginshelper.html#source-view.706">src/Admin/PluginsHelper.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">652</span>
+    <span class="phpdocumentor-element-found-in__line">706</span>
 </aside>
 
         <p class="phpdocumentor-summary">Show notice about to expired subscription on WC settings page.</p>
@@ -1465,9 +1857,9 @@
         <a href="#method_maybe_show_expiring_subscriptions_notice" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/PluginsHelper.php"><a href="../files/woocommerce-src-admin-pluginshelper.html#source-view.676">src/Admin/PluginsHelper.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/PluginsHelper.php"><a href="../files/woocommerce-src-admin-pluginshelper.html#source-view.730">src/Admin/PluginsHelper.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">676</span>
+    <span class="phpdocumentor-element-found-in__line">730</span>
 </aside>
 
         <p class="phpdocumentor-summary">Show notice about to expiring subscription on WC settings page.</p>
@@ -1497,9 +1889,9 @@
         <a href="#method_schedule_activate_plugins" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/PluginsHelper.php"><a href="../files/woocommerce-src-admin-pluginshelper.html#source-view.484">src/Admin/PluginsHelper.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/PluginsHelper.php"><a href="../files/woocommerce-src-admin-pluginshelper.html#source-view.535">src/Admin/PluginsHelper.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">484</span>
+    <span class="phpdocumentor-element-found-in__line">535</span>
 </aside>
 
         <p class="phpdocumentor-summary">Schedule plugin activation.</p>
@@ -1541,9 +1933,9 @@
         <a href="#method_schedule_install_plugins" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/PluginsHelper.php"><a href="../files/woocommerce-src-admin-pluginshelper.html#source-view.376">src/Admin/PluginsHelper.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/PluginsHelper.php"><a href="../files/woocommerce-src-admin-pluginshelper.html#source-view.427">src/Admin/PluginsHelper.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">376</span>
+    <span class="phpdocumentor-element-found-in__line">427</span>
 </aside>
 
         <p class="phpdocumentor-summary">Schedule plugin installation.</p>
@@ -1585,16 +1977,16 @@
         <a href="#method_should_show_notice" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/PluginsHelper.php"><a href="../files/woocommerce-src-admin-pluginshelper.html#source-view.957">src/Admin/PluginsHelper.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/PluginsHelper.php"><a href="../files/woocommerce-src-admin-pluginshelper.html#source-view.1167">src/Admin/PluginsHelper.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">957</span>
+    <span class="phpdocumentor-element-found-in__line">1167</span>
 </aside>
 
         <p class="phpdocumentor-summary">Determine whether a specific notice should be shown to the current user.</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-            <span class="phpdocumentor-signature__static">static</span>    <span class="phpdocumentor-signature__name">should_show_notice</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$dismiss_notice_meta</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">bool</span></code>
+            <span class="phpdocumentor-signature__static">static</span>    <span class="phpdocumentor-signature__name">should_show_notice</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$dismiss_notice_meta</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type">bool&nbsp;</span><span class="phpdocumentor-signature__argument__name">$show_after_one_month</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">true</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">bool</span></code>
 
         <section class="phpdocumentor-description"></section>
 
@@ -1606,6 +1998,15 @@
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
                     <section class="phpdocumentor-description"><p>User meta that includes the timestamp when a store notice was dismissed.</p>
+</section>
+
+            </dd>
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$show_after_one_month</span>
+                : <span class="phpdocumentor-signature__argument__return-type">bool</span>
+                 = <span class="phpdocumentor-signature__argument__default-value">true</span>            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"><p>Show the notices dismissed earlier than one month.</p>
 </section>
 
             </dd>
@@ -1629,7 +2030,7 @@
 
     <footer class="phpdocumentor phpdocumentor-footer">
     <div class="phpdocumentor-section">
-        <span>WooCommerce Code Reference API documentation generated by <a href="http://www.phpdoc.org/">phpDocumentor</a> on July 25th, 2024 at 11:33 am.</span>
+        <span>WooCommerce Code Reference API documentation generated by <a href="http://www.phpdoc.org/">phpDocumentor</a> on May 16th, 2025 at 09:14 am.</span>
     </div>
 </footer>
 
@@ -1641,7 +2042,7 @@
             'searchIndex': '..\/js\/searchIndex.json'
         };
     </script>
-    <script src="../js/searchIndex.js?updated=1721907204"></script>
-    <script src="../js/search.js?updated=1721907204"></script>
+    <script src="../js/searchIndex.js?updated=1747386884"></script>
+    <script src="../js/search.js?updated=1747386884"></script>
 </body>
 </html>

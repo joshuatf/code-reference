@@ -4,14 +4,13 @@
     <meta charset="utf-8">
     <title>WooCommerce Code Reference</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="../images/favicon.png" />
-    <link rel="apple-touch-icon" href="../images/apple-touch-icon.png"/>
-    <link rel="apple-touch-icon" sizes="72x72" href="../images/apple-touch-icon-72x72.png"/>
-    <link rel="apple-touch-icon" sizes="114x114" href="../images/apple-touch-icon-114x114.png"/>
+    <link rel="icon" href="../images/favicon-32x32.png" sizes="32x32" />
+    <link rel="icon" href="../images/favicon-192x192.png" sizes="192x192" />
+    <link rel="apple-touch-icon" href="../images/favicon-180x180.png" />
+
     <link rel="stylesheet" href="../css/normalize.css">
-    <link rel="stylesheet" href="../css/base.css?updated=1721907204">
-    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../css/template.css?updated=1721907204">
+    <link rel="stylesheet" href="../css/base.css?updated=1747386884">
+    <link rel="stylesheet" href="../css/template.css?updated=1747386884">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0/css/all.min.css" integrity="sha256-ybRkN9dBjhcS2qrW1z+hfCxq+1aBdwyQM5wlQoQVt/0=" crossorigin="anonymous" />
             <script src="https://cdn.jsdelivr.net/npm/css-vars-ponyfill@2"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0/js/all.min.js" integrity="sha256-0vuk8LXoyrmCjp1f0O300qo1M75ZQyhH9X3J6d+scmk=" crossorigin="anonymous"></script>
@@ -27,19 +26,24 @@
 		'content_group' : 'WooCommerce Core Code Reference',
 	});
 </script>
-        </head>
+        <script src="../js/prism.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            window.dispatchEvent(new HashChangeEvent('hashchange'));
+        });
+    </script>
+</head>
 <body id="top">
     <header class="phpdocumentor-top-header">
     <section class="phpdocumentor-section">
         <div class="site-branding">
-            <a class="site-logo" href="../index.html"><img width="180" src="../images/logo.svg" alt="WooCommerce" /></a>
+            <a class="site-logo" href="../index.html"><img src="../images/logo.png" alt="WooCommerce" /></a>
         </div>
         <nav class="main-navigation">
             <ul>
                 <li><a href="../hooks/hooks.html">Hooks Reference</a></li>
-                <li><a href="https://docs.woocommerce.com/">Documentation</a></li>
+                <li><a href="https://developer.woocommerce.com/docs/">Documentation</a></li>
                 <li><a href="https://woocommerce.github.io/woocommerce-rest-api-docs/">REST API Docs</a></li>
-                <li><a href="https://woocommerce.com/careers/?utm_source=woocommerce+core+code+reference&utm_medium=devdocs&utm_campaign=woo+careers" target="_blank">We're hiring!</a></li>
             </ul>
         </nav>
     </section>
@@ -47,7 +51,7 @@
 
 <div class="phpdocumentor-header">
     <section class="phpdocumentor-section">
-        <h1 class="phpdocumentor-title">WooCommerce Code Reference</h1>
+        <h1 class="phpdocumentor-title"><a href="../index.html">WooCommerce Code Reference</a></h1>
         <section class="phpdocumentor-search">
     <label class="phpdocumentor-label">
         <span class="visually-hidden">Search (click ESC to close search results)</span>
@@ -68,6 +72,10 @@
                                         <h4 class="phpdocumentor-sidebar__root-namespace"><a href="../namespaces/woocommerce.html"><abbr title="\WooCommerce">WooCommerce</abbr></a></h4>
                 <ul class="phpdocumentor-list">
                                             <li><a href="../namespaces/woocommerce-admin.html"><abbr title="\WooCommerce\Admin">Admin</abbr></a></li>
+                                    </ul>
+                            <h4 class="phpdocumentor-sidebar__root-namespace"><a href="../namespaces/mailpoet.html"><abbr title="\MailPoet">MailPoet</abbr></a></h4>
+                <ul class="phpdocumentor-list">
+                                            <li><a href="../namespaces/mailpoet-emaileditor.html"><abbr title="\MailPoet\EmailEditor">EmailEditor</abbr></a></li>
                                     </ul>
                             <h4 class="phpdocumentor-sidebar__root-namespace"><a href="../namespaces/automattic.html"><abbr title="\Automattic">Automattic</abbr></a></h4>
                 <ul class="phpdocumentor-list">
@@ -113,8 +121,10 @@
                                     <li><a href="../packages/WooCommerce-Widgets.html"><abbr title="\WooCommerce\Widgets">Widgets</abbr></a></li>
                                     <li><a href="../packages/WooCommerce-Uninstaller.html"><abbr title="\WooCommerce\Uninstaller">Uninstaller</abbr></a></li>
                             </ul>
-                                <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/WoocommerceAdmin.html"><abbr title="\WoocommerceAdmin">WoocommerceAdmin</abbr></a></h3>
-                                <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/WoocommerceNavigation.html"><abbr title="\WoocommerceNavigation">WoocommerceNavigation</abbr></a></h3>
+                                <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/MailPoet.html"><abbr title="\MailPoet">MailPoet</abbr></a></h3>
+                        <ul class="phpdocumentor-list">
+                                    <li><a href="../packages/MailPoet-EmailEditor.html"><abbr title="\MailPoet\EmailEditor">EmailEditor</abbr></a></li>
+                            </ul>
                                 <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/Automattic.html"><abbr title="\Automattic">Automattic</abbr></a></h3>
                         <ul class="phpdocumentor-list">
                                     <li><a href="../packages/Automattic-WooCommerce.html"><abbr title="\Automattic\WooCommerce">WooCommerce</abbr></a></li>
@@ -159,9 +169,9 @@
     </h2>
 
         <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/PageController.php"><a href="../files/woocommerce-src-admin-pagecontroller.html#source-view.16">src/Admin/PageController.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/PageController.php"><a href="../files/woocommerce-src-admin-pagecontroller.html#source-view.19">src/Admin/PageController.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">16</span>
+    <span class="phpdocumentor-element-found-in__line">19</span>
 </aside>
 
             <p class="phpdocumentor-summary">PageController</p>
@@ -314,7 +324,14 @@ a &quot;classic&quot; (non JS app) powered admin page (an embedded page).</dd>
     <span>
                         &nbsp;: bool    </span>
 </dt>
-<dd>Returns true if we are on a page registed with this controller.</dd>
+<dd>Returns true if we are on a page registered with this controller.</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a href="../classes/Automattic-WooCommerce-Admin-PageController.html#method_is_settings_page">is_settings_page()</a>
+    <span>
+                        &nbsp;: mixed    </span>
+</dt>
+<dd>Returns true if we are on a settings page.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="../classes/Automattic-WooCommerce-Admin-PageController.html#method_page_wrapper">page_wrapper()</a>
@@ -368,9 +385,9 @@ a &quot;classic&quot; (non JS app) powered admin page (an embedded page).</dd>
     </h4>
 
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/PageController.php"><a href="../files/woocommerce-src-admin-pagecontroller.html#source-view.20">src/Admin/PageController.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/PageController.php"><a href="../files/woocommerce-src-admin-pagecontroller.html#source-view.23">src/Admin/PageController.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">20</span>
+    <span class="phpdocumentor-element-found-in__line">23</span>
 </aside>
 
         <p class="phpdocumentor-summary">App entry point.</p>
@@ -395,9 +412,9 @@ a &quot;classic&quot; (non JS app) powered admin page (an embedded page).</dd>
     </h4>
 
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/PageController.php"><a href="../files/woocommerce-src-admin-pagecontroller.html#source-view.23">src/Admin/PageController.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/PageController.php"><a href="../files/woocommerce-src-admin-pagecontroller.html#source-view.26">src/Admin/PageController.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">23</span>
+    <span class="phpdocumentor-element-found-in__line">26</span>
 </aside>
 
     
@@ -435,9 +452,9 @@ a &quot;classic&quot; (non JS app) powered admin page (an embedded page).</dd>
                                 </span>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/PageController.php"><a href="../files/woocommerce-src-admin-pagecontroller.html#source-view.37">src/Admin/PageController.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/PageController.php"><a href="../files/woocommerce-src-admin-pagecontroller.html#source-view.40">src/Admin/PageController.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">37</span>
+    <span class="phpdocumentor-element-found-in__line">40</span>
 </aside>
 
         <p class="phpdocumentor-summary">Current page ID (or false if not registered with this controller).</p>
@@ -467,9 +484,9 @@ a &quot;classic&quot; (non JS app) powered admin page (an embedded page).</dd>
                                 </span>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/PageController.php"><a href="../files/woocommerce-src-admin-pagecontroller.html#source-view.30">src/Admin/PageController.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/PageController.php"><a href="../files/woocommerce-src-admin-pagecontroller.html#source-view.33">src/Admin/PageController.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">30</span>
+    <span class="phpdocumentor-element-found-in__line">33</span>
 </aside>
 
         <p class="phpdocumentor-summary">Singleton instance of self.</p>
@@ -499,9 +516,9 @@ a &quot;classic&quot; (non JS app) powered admin page (an embedded page).</dd>
                                 </span>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/PageController.php"><a href="../files/woocommerce-src-admin-pagecontroller.html#source-view.45">src/Admin/PageController.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/PageController.php"><a href="../files/woocommerce-src-admin-pagecontroller.html#source-view.48">src/Admin/PageController.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">45</span>
+    <span class="phpdocumentor-element-found-in__line">48</span>
 </aside>
 
         <p class="phpdocumentor-summary">Registered pages
@@ -536,9 +553,9 @@ Contains information (breadcrumbs, menu info) about JS powered pages and classic
         <a href="#method___construct" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/PageController.php"><a href="../files/woocommerce-src-admin-pagecontroller.html#source-view.62">src/Admin/PageController.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/PageController.php"><a href="../files/woocommerce-src-admin-pagecontroller.html#source-view.65">src/Admin/PageController.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">62</span>
+    <span class="phpdocumentor-element-found-in__line">65</span>
 </aside>
 
         <p class="phpdocumentor-summary">Constructor.</p>
@@ -569,9 +586,9 @@ Contains information (breadcrumbs, menu info) about JS powered pages and classic
         <a href="#method_connect_page" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/PageController.php"><a href="../files/woocommerce-src-admin-pagecontroller.html#source-view.86">src/Admin/PageController.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/PageController.php"><a href="../files/woocommerce-src-admin-pagecontroller.html#source-view.89">src/Admin/PageController.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">86</span>
+    <span class="phpdocumentor-element-found-in__line">89</span>
 </aside>
 
         <p class="phpdocumentor-summary">Connect an existing page to wc-admin.</p>
@@ -623,9 +640,9 @@ Array describing the page.</p>
         <a href="#method_determine_current_page" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/PageController.php"><a href="../files/woocommerce-src-admin-pagecontroller.html#source-view.119">src/Admin/PageController.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/PageController.php"><a href="../files/woocommerce-src-admin-pagecontroller.html#source-view.122">src/Admin/PageController.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">119</span>
+    <span class="phpdocumentor-element-found-in__line">122</span>
 </aside>
 
         <p class="phpdocumentor-summary">Determine the current page ID, if it was registered with this controller.</p>
@@ -655,9 +672,9 @@ Array describing the page.</p>
         <a href="#method_get_breadcrumbs" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/PageController.php"><a href="../files/woocommerce-src-admin-pagecontroller.html#source-view.161">src/Admin/PageController.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/PageController.php"><a href="../files/woocommerce-src-admin-pagecontroller.html#source-view.164">src/Admin/PageController.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">161</span>
+    <span class="phpdocumentor-element-found-in__line">164</span>
 </aside>
 
         <p class="phpdocumentor-summary">Get breadcrumbs for WooCommerce Admin Page navigation.</p>
@@ -687,9 +704,9 @@ Array describing the page.</p>
         <a href="#method_get_current_page" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/PageController.php"><a href="../files/woocommerce-src-admin-pagecontroller.html#source-view.221">src/Admin/PageController.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/PageController.php"><a href="../files/woocommerce-src-admin-pagecontroller.html#source-view.224">src/Admin/PageController.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">221</span>
+    <span class="phpdocumentor-element-found-in__line">224</span>
 </aside>
 
         <p class="phpdocumentor-summary">Get the current page.</p>
@@ -719,9 +736,9 @@ Array describing the page.</p>
         <a href="#method_get_current_screen_id" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/PageController.php"><a href="../files/woocommerce-src-admin-pagecontroller.html#source-view.251">src/Admin/PageController.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/PageController.php"><a href="../files/woocommerce-src-admin-pagecontroller.html#source-view.254">src/Admin/PageController.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">251</span>
+    <span class="phpdocumentor-element-found-in__line">254</span>
 </aside>
 
         <p class="phpdocumentor-summary">Returns the current screen ID.</p>
@@ -761,9 +778,9 @@ It also catches some more unique dynamic pages like taxonomy/attribute managemen
         <a href="#method_get_instance" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/PageController.php"><a href="../files/woocommerce-src-admin-pagecontroller.html#source-view.50">src/Admin/PageController.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/PageController.php"><a href="../files/woocommerce-src-admin-pagecontroller.html#source-view.53">src/Admin/PageController.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">50</span>
+    <span class="phpdocumentor-element-found-in__line">53</span>
 </aside>
 
         <p class="phpdocumentor-summary">We want a single instance of this class so we can accurately track registered menus and pages.</p>
@@ -793,9 +810,9 @@ It also catches some more unique dynamic pages like taxonomy/attribute managemen
         <a href="#method_get_pages" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/PageController.php"><a href="../files/woocommerce-src-admin-pagecontroller.html#source-view.495">src/Admin/PageController.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/PageController.php"><a href="../files/woocommerce-src-admin-pagecontroller.html#source-view.500">src/Admin/PageController.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">495</span>
+    <span class="phpdocumentor-element-found-in__line">500</span>
 </aside>
 
         <p class="phpdocumentor-summary">Get registered pages.</p>
@@ -825,9 +842,9 @@ It also catches some more unique dynamic pages like taxonomy/attribute managemen
         <a href="#method_get_path_from_id" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/PageController.php"><a href="../files/woocommerce-src-admin-pagecontroller.html#source-view.358">src/Admin/PageController.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/PageController.php"><a href="../files/woocommerce-src-admin-pagecontroller.html#source-view.363">src/Admin/PageController.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">358</span>
+    <span class="phpdocumentor-element-found-in__line">363</span>
 </aside>
 
         <p class="phpdocumentor-summary">Returns the path from an ID.</p>
@@ -869,9 +886,9 @@ It also catches some more unique dynamic pages like taxonomy/attribute managemen
         <a href="#method_is_admin_or_embed_page" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/PageController.php"><a href="../files/woocommerce-src-admin-pagecontroller.html#source-view.558">src/Admin/PageController.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/PageController.php"><a href="../files/woocommerce-src-admin-pagecontroller.html#source-view.563">src/Admin/PageController.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">558</span>
+    <span class="phpdocumentor-element-found-in__line">563</span>
 </aside>
 
         <p class="phpdocumentor-summary">Returns true if we are on a JS powered admin page or
@@ -902,9 +919,9 @@ a &quot;classic&quot; (non JS app) powered admin page (an embedded page).</p>
         <a href="#method_is_admin_page" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/PageController.php"><a href="../files/woocommerce-src-admin-pagecontroller.html#source-view.565">src/Admin/PageController.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/PageController.php"><a href="../files/woocommerce-src-admin-pagecontroller.html#source-view.570">src/Admin/PageController.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">565</span>
+    <span class="phpdocumentor-element-found-in__line">570</span>
 </aside>
 
         <p class="phpdocumentor-summary">Returns true if we are on a JS powered admin page.</p>
@@ -934,9 +951,9 @@ a &quot;classic&quot; (non JS app) powered admin page (an embedded page).</p>
         <a href="#method_is_connected_page" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/PageController.php"><a href="../files/woocommerce-src-admin-pagecontroller.html#source-view.370">src/Admin/PageController.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/PageController.php"><a href="../files/woocommerce-src-admin-pagecontroller.html#source-view.375">src/Admin/PageController.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">370</span>
+    <span class="phpdocumentor-element-found-in__line">375</span>
 </aside>
 
         <p class="phpdocumentor-summary">Returns true if we are on a page connected to this controller.</p>
@@ -966,9 +983,9 @@ a &quot;classic&quot; (non JS app) powered admin page (an embedded page).</p>
         <a href="#method_is_embed_page" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/PageController.php"><a href="../files/woocommerce-src-admin-pagecontroller.html#source-view.576">src/Admin/PageController.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/PageController.php"><a href="../files/woocommerce-src-admin-pagecontroller.html#source-view.590">src/Admin/PageController.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">576</span>
+    <span class="phpdocumentor-element-found-in__line">590</span>
 </aside>
 
         <p class="phpdocumentor-summary">Returns true if we are on a &quot;classic&quot; (non JS app) powered admin page.</p>
@@ -999,12 +1016,12 @@ a &quot;classic&quot; (non JS app) powered admin page (an embedded page).</p>
         <a href="#method_is_registered_page" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/PageController.php"><a href="../files/woocommerce-src-admin-pagecontroller.html#source-view.401">src/Admin/PageController.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/PageController.php"><a href="../files/woocommerce-src-admin-pagecontroller.html#source-view.406">src/Admin/PageController.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">401</span>
+    <span class="phpdocumentor-element-found-in__line">406</span>
 </aside>
 
-        <p class="phpdocumentor-summary">Returns true if we are on a page registed with this controller.</p>
+        <p class="phpdocumentor-summary">Returns true if we are on a page registered with this controller.</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
@@ -1026,14 +1043,46 @@ a &quot;classic&quot; (non JS app) powered admin page (an embedded page).</p>
             -public
                                     -static                    "
 >
+    <h4 class="phpdocumentor-element__name" id="method_is_settings_page">
+        is_settings_page()
+        <a href="#method_is_settings_page" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/PageController.php"><a href="../files/woocommerce-src-admin-pagecontroller.html#source-view.579">src/Admin/PageController.php</a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">579</span>
+</aside>
+
+        <p class="phpdocumentor-summary">Returns true if we are on a settings page.</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+            <span class="phpdocumentor-signature__static">static</span>    <span class="phpdocumentor-signature__name">is_settings_page</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
+
+        <section class="phpdocumentor-description"></section>
+
+    
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">mixed</span>
+            &mdash; <span class="phpdocumentor-return-value__description"></span>
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                    -static                    "
+>
     <h4 class="phpdocumentor-element__name" id="method_page_wrapper">
         page_wrapper()
         <a href="#method_page_wrapper" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/PageController.php"><a href="../files/woocommerce-src-admin-pagecontroller.html#source-view.502">src/Admin/PageController.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/PageController.php"><a href="../files/woocommerce-src-admin-pagecontroller.html#source-view.507">src/Admin/PageController.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">502</span>
+    <span class="phpdocumentor-element-found-in__line">507</span>
 </aside>
 
         <p class="phpdocumentor-summary">Set up a div for the app to render into.</p>
@@ -1063,9 +1112,9 @@ a &quot;classic&quot; (non JS app) powered admin page (an embedded page).</p>
         <a href="#method_register_page" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/PageController.php"><a href="../files/woocommerce-src-admin-pagecontroller.html#source-view.437">src/Admin/PageController.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/PageController.php"><a href="../files/woocommerce-src-admin-pagecontroller.html#source-view.442">src/Admin/PageController.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">437</span>
+    <span class="phpdocumentor-element-found-in__line">442</span>
 </aside>
 
         <p class="phpdocumentor-summary">Adds a JS powered page to wc-admin.</p>
@@ -1117,9 +1166,9 @@ Array describing the page.</p>
         <a href="#method_register_page_handler" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/PageController.php"><a href="../files/woocommerce-src-admin-pagecontroller.html#source-view.511">src/Admin/PageController.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/PageController.php"><a href="../files/woocommerce-src-admin-pagecontroller.html#source-view.516">src/Admin/PageController.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">511</span>
+    <span class="phpdocumentor-element-found-in__line">516</span>
 </aside>
 
         <p class="phpdocumentor-summary">Connects existing WooCommerce pages.</p>
@@ -1163,9 +1212,9 @@ Array describing the page.</p>
         <a href="#method_register_store_details_page" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/PageController.php"><a href="../files/woocommerce-src-admin-pagecontroller.html#source-view.518">src/Admin/PageController.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/PageController.php"><a href="../files/woocommerce-src-admin-pagecontroller.html#source-view.523">src/Admin/PageController.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">518</span>
+    <span class="phpdocumentor-element-found-in__line">523</span>
 </aside>
 
         <p class="phpdocumentor-summary">Registers the store details (profiler) page.</p>
@@ -1195,9 +1244,9 @@ Array describing the page.</p>
         <a href="#method_remove_app_entry_page_menu_item" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/PageController.php"><a href="../files/woocommerce-src-admin-pagecontroller.html#source-view.531">src/Admin/PageController.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/PageController.php"><a href="../files/woocommerce-src-admin-pagecontroller.html#source-view.536">src/Admin/PageController.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">531</span>
+    <span class="phpdocumentor-element-found-in__line">536</span>
 </aside>
 
         <p class="phpdocumentor-summary">Remove the menu item for the app entry point page.</p>
@@ -1227,7 +1276,7 @@ Array describing the page.</p>
 
     <footer class="phpdocumentor phpdocumentor-footer">
     <div class="phpdocumentor-section">
-        <span>WooCommerce Code Reference API documentation generated by <a href="http://www.phpdoc.org/">phpDocumentor</a> on July 25th, 2024 at 11:33 am.</span>
+        <span>WooCommerce Code Reference API documentation generated by <a href="http://www.phpdoc.org/">phpDocumentor</a> on May 16th, 2025 at 09:14 am.</span>
     </div>
 </footer>
 
@@ -1239,7 +1288,7 @@ Array describing the page.</p>
             'searchIndex': '..\/js\/searchIndex.json'
         };
     </script>
-    <script src="../js/searchIndex.js?updated=1721907204"></script>
-    <script src="../js/search.js?updated=1721907204"></script>
+    <script src="../js/searchIndex.js?updated=1747386884"></script>
+    <script src="../js/search.js?updated=1747386884"></script>
 </body>
 </html>

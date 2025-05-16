@@ -4,14 +4,13 @@
     <meta charset="utf-8">
     <title>WooCommerce Code Reference</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="../images/favicon.png" />
-    <link rel="apple-touch-icon" href="../images/apple-touch-icon.png"/>
-    <link rel="apple-touch-icon" sizes="72x72" href="../images/apple-touch-icon-72x72.png"/>
-    <link rel="apple-touch-icon" sizes="114x114" href="../images/apple-touch-icon-114x114.png"/>
+    <link rel="icon" href="../images/favicon-32x32.png" sizes="32x32" />
+    <link rel="icon" href="../images/favicon-192x192.png" sizes="192x192" />
+    <link rel="apple-touch-icon" href="../images/favicon-180x180.png" />
+
     <link rel="stylesheet" href="../css/normalize.css">
-    <link rel="stylesheet" href="../css/base.css?updated=1721907182">
-    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../css/template.css?updated=1721907182">
+    <link rel="stylesheet" href="../css/base.css?updated=1747386858">
+    <link rel="stylesheet" href="../css/template.css?updated=1747386858">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0/css/all.min.css" integrity="sha256-ybRkN9dBjhcS2qrW1z+hfCxq+1aBdwyQM5wlQoQVt/0=" crossorigin="anonymous" />
             <script src="https://cdn.jsdelivr.net/npm/css-vars-ponyfill@2"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0/js/all.min.js" integrity="sha256-0vuk8LXoyrmCjp1f0O300qo1M75ZQyhH9X3J6d+scmk=" crossorigin="anonymous"></script>
@@ -38,14 +37,13 @@
     <header class="phpdocumentor-top-header">
     <section class="phpdocumentor-section">
         <div class="site-branding">
-            <a class="site-logo" href="../index.html"><img width="180" src="../images/logo.svg" alt="WooCommerce" /></a>
+            <a class="site-logo" href="../index.html"><img src="../images/logo.png" alt="WooCommerce" /></a>
         </div>
         <nav class="main-navigation">
             <ul>
                 <li><a href="../hooks/hooks.html">Hooks Reference</a></li>
-                <li><a href="https://docs.woocommerce.com/">Documentation</a></li>
+                <li><a href="https://developer.woocommerce.com/docs/">Documentation</a></li>
                 <li><a href="https://woocommerce.github.io/woocommerce-rest-api-docs/">REST API Docs</a></li>
-                <li><a href="https://woocommerce.com/careers/?utm_source=woocommerce+core+code+reference&utm_medium=devdocs&utm_campaign=woo+careers" target="_blank">We're hiring!</a></li>
             </ul>
         </nav>
     </section>
@@ -53,7 +51,7 @@
 
 <div class="phpdocumentor-header">
     <section class="phpdocumentor-section">
-        <h1 class="phpdocumentor-title">WooCommerce Code Reference</h1>
+        <h1 class="phpdocumentor-title"><a href="../index.html">WooCommerce Code Reference</a></h1>
         <section class="phpdocumentor-search">
     <label class="phpdocumentor-label">
         <span class="visually-hidden">Search (click ESC to close search results)</span>
@@ -74,6 +72,10 @@
                                         <h4 class="phpdocumentor-sidebar__root-namespace"><a href="../namespaces/woocommerce.html"><abbr title="\WooCommerce">WooCommerce</abbr></a></h4>
                 <ul class="phpdocumentor-list">
                                             <li><a href="../namespaces/woocommerce-admin.html"><abbr title="\WooCommerce\Admin">Admin</abbr></a></li>
+                                    </ul>
+                            <h4 class="phpdocumentor-sidebar__root-namespace"><a href="../namespaces/mailpoet.html"><abbr title="\MailPoet">MailPoet</abbr></a></h4>
+                <ul class="phpdocumentor-list">
+                                            <li><a href="../namespaces/mailpoet-emaileditor.html"><abbr title="\MailPoet\EmailEditor">EmailEditor</abbr></a></li>
                                     </ul>
                             <h4 class="phpdocumentor-sidebar__root-namespace"><a href="../namespaces/automattic.html"><abbr title="\Automattic">Automattic</abbr></a></h4>
                 <ul class="phpdocumentor-list">
@@ -119,8 +121,10 @@
                                     <li><a href="../packages/WooCommerce-Widgets.html"><abbr title="\WooCommerce\Widgets">Widgets</abbr></a></li>
                                     <li><a href="../packages/WooCommerce-Uninstaller.html"><abbr title="\WooCommerce\Uninstaller">Uninstaller</abbr></a></li>
                             </ul>
-                                <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/WoocommerceAdmin.html"><abbr title="\WoocommerceAdmin">WoocommerceAdmin</abbr></a></h3>
-                                <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/WoocommerceNavigation.html"><abbr title="\WoocommerceNavigation">WoocommerceNavigation</abbr></a></h3>
+                                <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/MailPoet.html"><abbr title="\MailPoet">MailPoet</abbr></a></h3>
+                        <ul class="phpdocumentor-list">
+                                    <li><a href="../packages/MailPoet-EmailEditor.html"><abbr title="\MailPoet\EmailEditor">EmailEditor</abbr></a></li>
+                            </ul>
                                 <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/Automattic.html"><abbr title="\Automattic">Automattic</abbr></a></h3>
                         <ul class="phpdocumentor-list">
                                     <li><a href="../packages/Automattic-WooCommerce.html"><abbr title="\Automattic\WooCommerce">WooCommerce</abbr></a></li>
@@ -162,6 +166,9 @@
  *
  * @package WooCommerce\Classes\
  */
+
+use Automattic\WooCommerce\Enums\OrderStatus;
+use Automattic\WooCommerce\Enums\ProductType;
 
 defined( &#039;ABSPATH&#039; ) || exit;
 
@@ -363,8 +370,6 @@ class WC_Form_Handler {
 
 		$customer-&gt;save();
 
-		wc_add_notice( __( &#039;Address changed successfully.&#039;, &#039;woocommerce&#039; ) );
-
 		/**
 		 * Hook: woocommerce_customer_save_address.
 		 *
@@ -373,9 +378,16 @@ class WC_Form_Handler {
 		 * @since 3.6.0
 		 * @param int    $user_id User ID being saved.
 		 * @param string $address_type Type of address; &#039;billing&#039; or &#039;shipping&#039;.
+		 * @param array  $address The address fields. Since 9.8.0.
+		 * @param WC_Customer $customer The customer object being saved. Since 9.8.0.
 		 */
-		do_action( &#039;woocommerce_customer_save_address&#039;, $user_id, $address_type );
+		do_action( &#039;woocommerce_customer_save_address&#039;, $user_id, $address_type, $address, $customer );
 
+		if ( 0 &lt; wc_notice_count( &#039;error&#039; ) ) {
+			return;
+		}
+
+		wc_add_notice( __( &#039;Address changed successfully.&#039;, &#039;woocommerce&#039; ) );
 		wp_safe_redirect( wc_get_endpoint_url( &#039;edit-address&#039;, &#039;&#039;, wc_get_page_permalink( &#039;myaccount&#039; ) ) );
 		exit;
 	}
@@ -492,11 +504,11 @@ class WC_Form_Handler {
 			wp_update_user( $user );
 
 			// Update customer object to keep data in sync.
-			$customer = new WC_Customer( $user-&gt;ID );
+			try {
+				$customer = new WC_Customer( $user-&gt;ID );
 
-			if ( $customer ) {
 				// Keep billing data in sync if data changed.
-				if ( is_email( $user-&gt;user_email ) &amp;&amp; $current_email !== $user-&gt;user_email ) {
+				if ( isset( $user-&gt;user_email ) &amp;&amp; is_email( $user-&gt;user_email ) &amp;&amp; $current_email !== $user-&gt;user_email ) {
 					$customer-&gt;set_billing_email( $user-&gt;user_email );
 				}
 
@@ -509,6 +521,18 @@ class WC_Form_Handler {
 				}
 
 				$customer-&gt;save();
+			} catch ( WC_Data_Exception $e ) {
+				// These error messages are already translated.
+				wc_add_notice( $e-&gt;getMessage(), &#039;error&#039; );
+			} catch ( \Exception $e ) {
+				wc_add_notice(
+					sprintf(
+						/* translators: %s: Error message. */
+						__( &#039;An error occurred while saving account details: %s&#039;, &#039;woocommerce&#039; ),
+						esc_html( $e-&gt;getMessage() )
+					),
+					&#039;error&#039;
+				);
 			}
 
 			/**
@@ -740,7 +764,6 @@ class WC_Form_Handler {
 			wp_safe_redirect( wc_get_account_endpoint_url( &#039;payment-methods&#039; ) );
 			exit();
 		}
-
 	}
 
 	/**
@@ -765,7 +788,6 @@ class WC_Form_Handler {
 			wp_safe_redirect( wc_get_account_endpoint_url( &#039;payment-methods&#039; ) );
 			exit();
 		}
-
 	}
 
 	/**
@@ -811,10 +833,10 @@ class WC_Form_Handler {
 				wc_add_notice( $removed_notice, apply_filters( &#039;woocommerce_cart_item_removed_notice_type&#039;, &#039;success&#039; ) );
 			}
 
-			$referer = wp_get_referer() ? remove_query_arg( array( &#039;remove_item&#039;, &#039;add-to-cart&#039;, &#039;added-to-cart&#039;, &#039;order_again&#039;, &#039;_wpnonce&#039; ), add_query_arg( &#039;removed_item&#039;, &#039;1&#039;, wp_get_referer() ) ) : wc_get_cart_url();
-			wp_safe_redirect( $referer );
-			exit;
-
+			if ( wp_get_referer() ) {
+				wp_safe_redirect( remove_query_arg( array( &#039;remove_item&#039;, &#039;add-to-cart&#039;, &#039;added-to-cart&#039;, &#039;order_again&#039;, &#039;_wpnonce&#039; ), add_query_arg( &#039;removed_item&#039;, &#039;1&#039;, wp_get_referer() ) ) );
+				exit;
+			}
 		} elseif ( ! empty( $_GET[&#039;undo_item&#039;] ) &amp;&amp; isset( $_GET[&#039;_wpnonce&#039;] ) &amp;&amp; wp_verify_nonce( $nonce_value, &#039;woocommerce-cart&#039; ) ) {
 
 			// Undo Cart Item.
@@ -822,10 +844,10 @@ class WC_Form_Handler {
 
 			WC()-&gt;cart-&gt;restore_cart_item( $cart_item_key );
 
-			$referer = wp_get_referer() ? remove_query_arg( array( &#039;undo_item&#039;, &#039;_wpnonce&#039; ), wp_get_referer() ) : wc_get_cart_url();
-			wp_safe_redirect( $referer );
-			exit;
-
+			if ( wp_get_referer() ) {
+				wp_safe_redirect( remove_query_arg( array( &#039;undo_item&#039;, &#039;_wpnonce&#039; ), wp_get_referer() ) );
+				exit;
+			}
 		}
 
 		// Update Cart - checks apply_coupon too because they are in the same form.
@@ -880,9 +902,11 @@ class WC_Form_Handler {
 				exit;
 			} elseif ( $cart_updated ) {
 				wc_add_notice( __( &#039;Cart updated.&#039;, &#039;woocommerce&#039; ), apply_filters( &#039;woocommerce_cart_updated_notice_type&#039;, &#039;success&#039; ) );
-				$referer = remove_query_arg( array( &#039;remove_coupon&#039;, &#039;add-to-cart&#039; ), ( wp_get_referer() ? wp_get_referer() : wc_get_cart_url() ) );
-				wp_safe_redirect( $referer );
-				exit;
+
+				if ( wp_get_referer() ) {
+					wp_safe_redirect( remove_query_arg( array( &#039;remove_coupon&#039;, &#039;add-to-cart&#039; ), wp_get_referer() ) );
+					exit;
+				}
 			}
 		}
 	}
@@ -908,18 +932,27 @@ class WC_Form_Handler {
 		) {
 			wc_nocache_headers();
 
-			$order_key        = wp_unslash( $_GET[&#039;order&#039;] ); // phpcs:ignore WordPress.Security.ValidatedSanitizedInput.InputNotSanitized
-			$order_id         = absint( $_GET[&#039;order_id&#039;] );
-			$order            = wc_get_order( $order_id );
+			$order_key = wp_unslash( $_GET[&#039;order&#039;] ); // phpcs:ignore WordPress.Security.ValidatedSanitizedInput.InputNotSanitized
+			$order_id  = absint( $_GET[&#039;order_id&#039;] );
+			$order     = wc_get_order( $order_id );
+			/**
+			 * Filter valid order statuses for cancel.
+			 *
+			 * @since 3.5.0
+			 *
+			 * @param array    $valid_statuses Array of valid order statuses for cancel.
+			 * @param WC_Order $order          Order object.
+			 */
+			$valid_statuses   = apply_filters( &#039;woocommerce_valid_order_statuses_for_cancel&#039;, array( OrderStatus::PENDING, OrderStatus::FAILED ), $order );
 			$user_can_cancel  = current_user_can( &#039;cancel_order&#039;, $order_id );
-			$order_can_cancel = $order-&gt;has_status( apply_filters( &#039;woocommerce_valid_order_statuses_for_cancel&#039;, array( &#039;pending&#039;, &#039;failed&#039; ), $order ) );
+			$order_can_cancel = $order-&gt;has_status( $valid_statuses );
 			$redirect         = isset( $_GET[&#039;redirect&#039;] ) ? wp_unslash( $_GET[&#039;redirect&#039;] ) : &#039;&#039;; // phpcs:ignore WordPress.Security.ValidatedSanitizedInput.InputNotSanitized
 
 			if ( $user_can_cancel &amp;&amp; $order_can_cancel &amp;&amp; $order-&gt;get_id() === $order_id &amp;&amp; hash_equals( $order-&gt;get_order_key(), $order_key ) ) {
 
 				// Cancel the order + restore stock.
 				WC()-&gt;session-&gt;set( &#039;order_awaiting_payment&#039;, false );
-				$order-&gt;update_status( &#039;cancelled&#039;, __( &#039;Order cancelled by customer.&#039;, &#039;woocommerce&#039; ) );
+				$order-&gt;update_status( OrderStatus::CANCELLED, __( &#039;Order cancelled by customer.&#039;, &#039;woocommerce&#039; ) );
 
 				wc_add_notice( apply_filters( &#039;woocommerce_order_cancelled_notice&#039;, __( &#039;Your order was cancelled.&#039;, &#039;woocommerce&#039; ) ), apply_filters( &#039;woocommerce_order_cancelled_notice_type&#039;, &#039;notice&#039; ) );
 
@@ -962,9 +995,9 @@ class WC_Form_Handler {
 
 		$add_to_cart_handler = apply_filters( &#039;woocommerce_add_to_cart_handler&#039;, $adding_to_cart-&gt;get_type(), $adding_to_cart );
 
-		if ( &#039;variable&#039; === $add_to_cart_handler || &#039;variation&#039; === $add_to_cart_handler ) {
+		if ( ProductType::VARIABLE === $add_to_cart_handler || ProductType::VARIATION === $add_to_cart_handler ) {
 			$was_added_to_cart = self::add_to_cart_handler_variable( $product_id );
-		} elseif ( &#039;grouped&#039; === $add_to_cart_handler ) {
+		} elseif ( ProductType::GROUPED === $add_to_cart_handler ) {
 			$was_added_to_cart = self::add_to_cart_handler_grouped( $product_id );
 		} elseif ( has_action( &#039;woocommerce_add_to_cart_handler_&#039; . $add_to_cart_handler ) ) {
 			do_action( &#039;woocommerce_add_to_cart_handler_&#039; . $add_to_cart_handler, $url ); // Custom handler.
@@ -1084,7 +1117,7 @@ class WC_Form_Handler {
 		}
 
 		// Prevent parent variable product from being added to cart.
-		if ( empty( $variation_id ) &amp;&amp; $product &amp;&amp; $product-&gt;is_type( &#039;variable&#039; ) ) {
+		if ( empty( $variation_id ) &amp;&amp; $product &amp;&amp; $product-&gt;is_type( ProductType::VARIABLE ) ) {
 			/* translators: 1: product link, 2: product name */
 			wc_add_notice( sprintf( __( &#039;Please choose product options by visiting &lt;a href=&quot;%1$s&quot; title=&quot;%2$s&quot;&gt;%2$s&lt;/a&gt;.&#039;, &#039;woocommerce&#039; ), esc_url( get_permalink( $product_id ) ), esc_html( $product-&gt;get_name() ) ), &#039;error&#039; );
 
@@ -1144,7 +1177,7 @@ class WC_Form_Handler {
 					}
 				}
 
-				// Peform the login.
+				// Perform the login.
 				$user = wp_signon( apply_filters( &#039;woocommerce_login_credentials&#039;, $creds ), is_ssl() );
 
 				if ( is_wp_error( $user ) ) {
@@ -1321,7 +1354,7 @@ WC_Form_Handler::init();
 
     <footer class="phpdocumentor phpdocumentor-footer">
     <div class="phpdocumentor-section">
-        <span>WooCommerce Code Reference API documentation generated by <a href="http://www.phpdoc.org/">phpDocumentor</a> on July 25th, 2024 at 11:33 am.</span>
+        <span>WooCommerce Code Reference API documentation generated by <a href="http://www.phpdoc.org/">phpDocumentor</a> on May 16th, 2025 at 09:14 am.</span>
     </div>
 </footer>
 
@@ -1333,7 +1366,7 @@ WC_Form_Handler::init();
             'searchIndex': '..\/js\/searchIndex.json'
         };
     </script>
-    <script src="../js/searchIndex.js?updated=1721907182"></script>
-    <script src="../js/search.js?updated=1721907182"></script>
+    <script src="../js/searchIndex.js?updated=1747386858"></script>
+    <script src="../js/search.js?updated=1747386858"></script>
 </body>
 </html>

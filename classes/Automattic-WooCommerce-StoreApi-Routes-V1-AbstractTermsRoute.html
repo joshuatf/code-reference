@@ -4,14 +4,13 @@
     <meta charset="utf-8">
     <title>WooCommerce Code Reference</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="../images/favicon.png" />
-    <link rel="apple-touch-icon" href="../images/apple-touch-icon.png"/>
-    <link rel="apple-touch-icon" sizes="72x72" href="../images/apple-touch-icon-72x72.png"/>
-    <link rel="apple-touch-icon" sizes="114x114" href="../images/apple-touch-icon-114x114.png"/>
+    <link rel="icon" href="../images/favicon-32x32.png" sizes="32x32" />
+    <link rel="icon" href="../images/favicon-192x192.png" sizes="192x192" />
+    <link rel="apple-touch-icon" href="../images/favicon-180x180.png" />
+
     <link rel="stylesheet" href="../css/normalize.css">
-    <link rel="stylesheet" href="../css/base.css?updated=1721907208">
-    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../css/template.css?updated=1721907208">
+    <link rel="stylesheet" href="../css/base.css?updated=1747386889">
+    <link rel="stylesheet" href="../css/template.css?updated=1747386889">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0/css/all.min.css" integrity="sha256-ybRkN9dBjhcS2qrW1z+hfCxq+1aBdwyQM5wlQoQVt/0=" crossorigin="anonymous" />
             <script src="https://cdn.jsdelivr.net/npm/css-vars-ponyfill@2"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0/js/all.min.js" integrity="sha256-0vuk8LXoyrmCjp1f0O300qo1M75ZQyhH9X3J6d+scmk=" crossorigin="anonymous"></script>
@@ -27,19 +26,24 @@
 		'content_group' : 'WooCommerce Core Code Reference',
 	});
 </script>
-        </head>
+        <script src="../js/prism.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            window.dispatchEvent(new HashChangeEvent('hashchange'));
+        });
+    </script>
+</head>
 <body id="top">
     <header class="phpdocumentor-top-header">
     <section class="phpdocumentor-section">
         <div class="site-branding">
-            <a class="site-logo" href="../index.html"><img width="180" src="../images/logo.svg" alt="WooCommerce" /></a>
+            <a class="site-logo" href="../index.html"><img src="../images/logo.png" alt="WooCommerce" /></a>
         </div>
         <nav class="main-navigation">
             <ul>
                 <li><a href="../hooks/hooks.html">Hooks Reference</a></li>
-                <li><a href="https://docs.woocommerce.com/">Documentation</a></li>
+                <li><a href="https://developer.woocommerce.com/docs/">Documentation</a></li>
                 <li><a href="https://woocommerce.github.io/woocommerce-rest-api-docs/">REST API Docs</a></li>
-                <li><a href="https://woocommerce.com/careers/?utm_source=woocommerce+core+code+reference&utm_medium=devdocs&utm_campaign=woo+careers" target="_blank">We're hiring!</a></li>
             </ul>
         </nav>
     </section>
@@ -47,7 +51,7 @@
 
 <div class="phpdocumentor-header">
     <section class="phpdocumentor-section">
-        <h1 class="phpdocumentor-title">WooCommerce Code Reference</h1>
+        <h1 class="phpdocumentor-title"><a href="../index.html">WooCommerce Code Reference</a></h1>
         <section class="phpdocumentor-search">
     <label class="phpdocumentor-label">
         <span class="visually-hidden">Search (click ESC to close search results)</span>
@@ -68,6 +72,10 @@
                                         <h4 class="phpdocumentor-sidebar__root-namespace"><a href="../namespaces/woocommerce.html"><abbr title="\WooCommerce">WooCommerce</abbr></a></h4>
                 <ul class="phpdocumentor-list">
                                             <li><a href="../namespaces/woocommerce-admin.html"><abbr title="\WooCommerce\Admin">Admin</abbr></a></li>
+                                    </ul>
+                            <h4 class="phpdocumentor-sidebar__root-namespace"><a href="../namespaces/mailpoet.html"><abbr title="\MailPoet">MailPoet</abbr></a></h4>
+                <ul class="phpdocumentor-list">
+                                            <li><a href="../namespaces/mailpoet-emaileditor.html"><abbr title="\MailPoet\EmailEditor">EmailEditor</abbr></a></li>
                                     </ul>
                             <h4 class="phpdocumentor-sidebar__root-namespace"><a href="../namespaces/automattic.html"><abbr title="\Automattic">Automattic</abbr></a></h4>
                 <ul class="phpdocumentor-list">
@@ -113,8 +121,10 @@
                                     <li><a href="../packages/WooCommerce-Widgets.html"><abbr title="\WooCommerce\Widgets">Widgets</abbr></a></li>
                                     <li><a href="../packages/WooCommerce-Uninstaller.html"><abbr title="\WooCommerce\Uninstaller">Uninstaller</abbr></a></li>
                             </ul>
-                                <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/WoocommerceAdmin.html"><abbr title="\WoocommerceAdmin">WoocommerceAdmin</abbr></a></h3>
-                                <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/WoocommerceNavigation.html"><abbr title="\WoocommerceNavigation">WoocommerceNavigation</abbr></a></h3>
+                                <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/MailPoet.html"><abbr title="\MailPoet">MailPoet</abbr></a></h3>
+                        <ul class="phpdocumentor-list">
+                                    <li><a href="../packages/MailPoet-EmailEditor.html"><abbr title="\MailPoet\EmailEditor">EmailEditor</abbr></a></li>
+                            </ul>
                                 <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/Automattic.html"><abbr title="\Automattic">Automattic</abbr></a></h3>
                         <ul class="phpdocumentor-list">
                                     <li><a href="../packages/Automattic-WooCommerce.html"><abbr title="\Automattic\WooCommerce">WooCommerce</abbr></a></li>
@@ -407,9 +417,9 @@ item is not purchasable.</dd>
     </h4>
 
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/StoreApi/Routes/V1/AbstractRoute.php"><a href="../files/woocommerce-src-storeapi-routes-v1-abstractroute.html#source-view.50">src/StoreApi/Routes/V1/AbstractRoute.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/StoreApi/Routes/V1/AbstractRoute.php"><a href="../files/woocommerce-src-storeapi-routes-v1-abstractroute.html#source-view.48">src/StoreApi/Routes/V1/AbstractRoute.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">50</span>
+    <span class="phpdocumentor-element-found-in__line">48</span>
 </aside>
 
         <p class="phpdocumentor-summary">The routes schema version.</p>
@@ -449,9 +459,9 @@ item is not purchasable.</dd>
                                 </span>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/StoreApi/Routes/V1/AbstractRoute.php"><a href="../files/woocommerce-src-storeapi-routes-v1-abstractroute.html#source-view.29">src/StoreApi/Routes/V1/AbstractRoute.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/StoreApi/Routes/V1/AbstractRoute.php"><a href="../files/woocommerce-src-storeapi-routes-v1-abstractroute.html#source-view.27">src/StoreApi/Routes/V1/AbstractRoute.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">29</span>
+    <span class="phpdocumentor-element-found-in__line">27</span>
 </aside>
 
         <p class="phpdocumentor-summary">Route namespace.</p>
@@ -481,9 +491,9 @@ item is not purchasable.</dd>
                                 </span>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/StoreApi/Routes/V1/AbstractRoute.php"><a href="../files/woocommerce-src-storeapi-routes-v1-abstractroute.html#source-view.22">src/StoreApi/Routes/V1/AbstractRoute.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/StoreApi/Routes/V1/AbstractRoute.php"><a href="../files/woocommerce-src-storeapi-routes-v1-abstractroute.html#source-view.20">src/StoreApi/Routes/V1/AbstractRoute.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">22</span>
+    <span class="phpdocumentor-element-found-in__line">20</span>
 </aside>
 
         <p class="phpdocumentor-summary">Schema class instance.</p>
@@ -513,9 +523,9 @@ item is not purchasable.</dd>
                                 </span>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/StoreApi/Routes/V1/AbstractRoute.php"><a href="../files/woocommerce-src-storeapi-routes-v1-abstractroute.html#source-view.36">src/StoreApi/Routes/V1/AbstractRoute.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/StoreApi/Routes/V1/AbstractRoute.php"><a href="../files/woocommerce-src-storeapi-routes-v1-abstractroute.html#source-view.34">src/StoreApi/Routes/V1/AbstractRoute.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">36</span>
+    <span class="phpdocumentor-element-found-in__line">34</span>
 </aside>
 
         <p class="phpdocumentor-summary">Schema Controller instance.</p>
@@ -549,9 +559,9 @@ item is not purchasable.</dd>
         <a href="#method___construct" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/StoreApi/Routes/V1/AbstractRoute.php"><a href="../files/woocommerce-src-storeapi-routes-v1-abstractroute.html#source-view.58">src/StoreApi/Routes/V1/AbstractRoute.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/StoreApi/Routes/V1/AbstractRoute.php"><a href="../files/woocommerce-src-storeapi-routes-v1-abstractroute.html#source-view.56">src/StoreApi/Routes/V1/AbstractRoute.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">58</span>
+    <span class="phpdocumentor-element-found-in__line">56</span>
 </aside>
 
         <p class="phpdocumentor-summary">Constructor.</p>
@@ -634,9 +644,9 @@ item is not purchasable.</dd>
         <a href="#method_get_item_schema" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/StoreApi/Routes/V1/AbstractRoute.php"><a href="../files/woocommerce-src-storeapi-routes-v1-abstractroute.html#source-view.86">src/StoreApi/Routes/V1/AbstractRoute.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/StoreApi/Routes/V1/AbstractRoute.php"><a href="../files/woocommerce-src-storeapi-routes-v1-abstractroute.html#source-view.84">src/StoreApi/Routes/V1/AbstractRoute.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">86</span>
+    <span class="phpdocumentor-element-found-in__line">84</span>
 </aside>
 
         <p class="phpdocumentor-summary">Get item schema properties.</p>
@@ -666,9 +676,9 @@ item is not purchasable.</dd>
         <a href="#method_get_namespace" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/StoreApi/Routes/V1/AbstractRoute.php"><a href="../files/woocommerce-src-storeapi-routes-v1-abstractroute.html#source-view.68">src/StoreApi/Routes/V1/AbstractRoute.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/StoreApi/Routes/V1/AbstractRoute.php"><a href="../files/woocommerce-src-storeapi-routes-v1-abstractroute.html#source-view.66">src/StoreApi/Routes/V1/AbstractRoute.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">68</span>
+    <span class="phpdocumentor-element-found-in__line">66</span>
 </aside>
 
         <p class="phpdocumentor-summary">Get the namespace for this route.</p>
@@ -698,9 +708,9 @@ item is not purchasable.</dd>
         <a href="#method_get_response" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/StoreApi/Routes/V1/AbstractRoute.php"><a href="../files/woocommerce-src-storeapi-routes-v1-abstractroute.html#source-view.96">src/StoreApi/Routes/V1/AbstractRoute.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/StoreApi/Routes/V1/AbstractRoute.php"><a href="../files/woocommerce-src-storeapi-routes-v1-abstractroute.html#source-view.94">src/StoreApi/Routes/V1/AbstractRoute.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">96</span>
+    <span class="phpdocumentor-element-found-in__line">94</span>
 </aside>
 
         <p class="phpdocumentor-summary">Get the route response based on the type of request.</p>
@@ -742,9 +752,9 @@ item is not purchasable.</dd>
         <a href="#method_prepare_item_for_response" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/StoreApi/Routes/V1/AbstractRoute.php"><a href="../files/woocommerce-src-storeapi-routes-v1-abstractroute.html#source-view.248">src/StoreApi/Routes/V1/AbstractRoute.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/StoreApi/Routes/V1/AbstractRoute.php"><a href="../files/woocommerce-src-storeapi-routes-v1-abstractroute.html#source-view.246">src/StoreApi/Routes/V1/AbstractRoute.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">248</span>
+    <span class="phpdocumentor-element-found-in__line">246</span>
 </aside>
 
         <p class="phpdocumentor-summary">Prepare a single item for response.</p>
@@ -795,9 +805,9 @@ item is not purchasable.</dd>
         <a href="#method_set_namespace" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/StoreApi/Routes/V1/AbstractRoute.php"><a href="../files/woocommerce-src-storeapi-routes-v1-abstractroute.html#source-view.77">src/StoreApi/Routes/V1/AbstractRoute.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/StoreApi/Routes/V1/AbstractRoute.php"><a href="../files/woocommerce-src-storeapi-routes-v1-abstractroute.html#source-view.75">src/StoreApi/Routes/V1/AbstractRoute.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">77</span>
+    <span class="phpdocumentor-element-found-in__line">75</span>
 </aside>
 
         <p class="phpdocumentor-summary">Set the namespace for this route.</p>
@@ -839,9 +849,9 @@ item is not purchasable.</dd>
         <a href="#method_error_to_response" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/StoreApi/Routes/V1/AbstractRoute.php"><a href="../files/woocommerce-src-storeapi-routes-v1-abstractroute.html#source-view.137">src/StoreApi/Routes/V1/AbstractRoute.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/StoreApi/Routes/V1/AbstractRoute.php"><a href="../files/woocommerce-src-storeapi-routes-v1-abstractroute.html#source-view.135">src/StoreApi/Routes/V1/AbstractRoute.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">137</span>
+    <span class="phpdocumentor-element-found-in__line">135</span>
 </aside>
 
         <p class="phpdocumentor-summary">Converts an error to a response object. Based on \WP_REST_Server.</p>
@@ -883,9 +893,9 @@ item is not purchasable.</dd>
         <a href="#method_get_context_param" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/StoreApi/Routes/V1/AbstractRoute.php"><a href="../files/woocommerce-src-storeapi-routes-v1-abstractroute.html#source-view.263">src/StoreApi/Routes/V1/AbstractRoute.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/StoreApi/Routes/V1/AbstractRoute.php"><a href="../files/woocommerce-src-storeapi-routes-v1-abstractroute.html#source-view.261">src/StoreApi/Routes/V1/AbstractRoute.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">263</span>
+    <span class="phpdocumentor-element-found-in__line">261</span>
 </aside>
 
         <p class="phpdocumentor-summary">Retrieves the context param.</p>
@@ -928,9 +938,9 @@ item is not purchasable.</dd>
         <a href="#method_get_response_by_request_method" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/StoreApi/Routes/V1/AbstractRoute.php"><a href="../files/woocommerce-src-storeapi-routes-v1-abstractroute.html#source-view.118">src/StoreApi/Routes/V1/AbstractRoute.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/StoreApi/Routes/V1/AbstractRoute.php"><a href="../files/woocommerce-src-storeapi-routes-v1-abstractroute.html#source-view.116">src/StoreApi/Routes/V1/AbstractRoute.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">118</span>
+    <span class="phpdocumentor-element-found-in__line">116</span>
 </aside>
 
         <p class="phpdocumentor-summary">Get the route response based on the type of request.</p>
@@ -972,9 +982,9 @@ item is not purchasable.</dd>
         <a href="#method_get_route_delete_response" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/StoreApi/Routes/V1/AbstractRoute.php"><a href="../files/woocommerce-src-storeapi-routes-v1-abstractroute.html#source-view.209">src/StoreApi/Routes/V1/AbstractRoute.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/StoreApi/Routes/V1/AbstractRoute.php"><a href="../files/woocommerce-src-storeapi-routes-v1-abstractroute.html#source-view.207">src/StoreApi/Routes/V1/AbstractRoute.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">209</span>
+    <span class="phpdocumentor-element-found-in__line">207</span>
 </aside>
 
         <p class="phpdocumentor-summary">Get route response for DELETE requests.</p>
@@ -1032,9 +1042,9 @@ item is not purchasable.</dd>
         <a href="#method_get_route_error_response" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/StoreApi/Routes/V1/AbstractRoute.php"><a href="../files/woocommerce-src-storeapi-routes-v1-abstractroute.html#source-view.222">src/StoreApi/Routes/V1/AbstractRoute.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/StoreApi/Routes/V1/AbstractRoute.php"><a href="../files/woocommerce-src-storeapi-routes-v1-abstractroute.html#source-view.220">src/StoreApi/Routes/V1/AbstractRoute.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">222</span>
+    <span class="phpdocumentor-element-found-in__line">220</span>
 </aside>
 
         <p class="phpdocumentor-summary">Get route response when something went wrong.</p>
@@ -1103,9 +1113,9 @@ item is not purchasable.</dd>
         <a href="#method_get_route_error_response_from_object" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/StoreApi/Routes/V1/AbstractRoute.php"><a href="../files/woocommerce-src-storeapi-routes-v1-abstractroute.html#source-view.236">src/StoreApi/Routes/V1/AbstractRoute.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/StoreApi/Routes/V1/AbstractRoute.php"><a href="../files/woocommerce-src-storeapi-routes-v1-abstractroute.html#source-view.234">src/StoreApi/Routes/V1/AbstractRoute.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">236</span>
+    <span class="phpdocumentor-element-found-in__line">234</span>
 </aside>
 
         <p class="phpdocumentor-summary">Get route response when something went wrong and the supplied error is a WP_Error. This currently only happens
@@ -1167,9 +1177,9 @@ item is not purchasable.</p>
         <a href="#method_get_route_post_response" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/StoreApi/Routes/V1/AbstractRoute.php"><a href="../files/woocommerce-src-storeapi-routes-v1-abstractroute.html#source-view.183">src/StoreApi/Routes/V1/AbstractRoute.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/StoreApi/Routes/V1/AbstractRoute.php"><a href="../files/woocommerce-src-storeapi-routes-v1-abstractroute.html#source-view.181">src/StoreApi/Routes/V1/AbstractRoute.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">183</span>
+    <span class="phpdocumentor-element-found-in__line">181</span>
 </aside>
 
         <p class="phpdocumentor-summary">Get route response for POST requests.</p>
@@ -1227,9 +1237,9 @@ item is not purchasable.</p>
         <a href="#method_get_route_response" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/StoreApi/Routes/V1/AbstractRoute.php"><a href="../files/woocommerce-src-storeapi-routes-v1-abstractroute.html#source-view.170">src/StoreApi/Routes/V1/AbstractRoute.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/StoreApi/Routes/V1/AbstractRoute.php"><a href="../files/woocommerce-src-storeapi-routes-v1-abstractroute.html#source-view.168">src/StoreApi/Routes/V1/AbstractRoute.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">170</span>
+    <span class="phpdocumentor-element-found-in__line">168</span>
 </aside>
 
         <p class="phpdocumentor-summary">Get route response for GET requests.</p>
@@ -1287,9 +1297,9 @@ item is not purchasable.</p>
         <a href="#method_get_route_update_response" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/StoreApi/Routes/V1/AbstractRoute.php"><a href="../files/woocommerce-src-storeapi-routes-v1-abstractroute.html#source-view.196">src/StoreApi/Routes/V1/AbstractRoute.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/StoreApi/Routes/V1/AbstractRoute.php"><a href="../files/woocommerce-src-storeapi-routes-v1-abstractroute.html#source-view.194">src/StoreApi/Routes/V1/AbstractRoute.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">196</span>
+    <span class="phpdocumentor-element-found-in__line">194</span>
 </aside>
 
         <p class="phpdocumentor-summary">Get route response for PUT requests.</p>
@@ -1453,9 +1463,9 @@ item is not purchasable.</p>
         <a href="#method_prepare_links" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/StoreApi/Routes/V1/AbstractRoute.php"><a href="../files/woocommerce-src-storeapi-routes-v1-abstractroute.html#source-view.318">src/StoreApi/Routes/V1/AbstractRoute.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/StoreApi/Routes/V1/AbstractRoute.php"><a href="../files/woocommerce-src-storeapi-routes-v1-abstractroute.html#source-view.316">src/StoreApi/Routes/V1/AbstractRoute.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">318</span>
+    <span class="phpdocumentor-element-found-in__line">316</span>
 </aside>
 
         <p class="phpdocumentor-summary">Prepare links for the request.</p>
@@ -1506,9 +1516,9 @@ item is not purchasable.</p>
         <a href="#method_prepare_response_for_collection" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/StoreApi/Routes/V1/AbstractRoute.php"><a href="../files/woocommerce-src-storeapi-routes-v1-abstractroute.html#source-view.299">src/StoreApi/Routes/V1/AbstractRoute.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/StoreApi/Routes/V1/AbstractRoute.php"><a href="../files/woocommerce-src-storeapi-routes-v1-abstractroute.html#source-view.297">src/StoreApi/Routes/V1/AbstractRoute.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">299</span>
+    <span class="phpdocumentor-element-found-in__line">297</span>
 </aside>
 
         <p class="phpdocumentor-summary">Prepares a response for insertion into a collection.</p>
@@ -1550,7 +1560,7 @@ item is not purchasable.</p>
 
     <footer class="phpdocumentor phpdocumentor-footer">
     <div class="phpdocumentor-section">
-        <span>WooCommerce Code Reference API documentation generated by <a href="http://www.phpdoc.org/">phpDocumentor</a> on July 25th, 2024 at 11:33 am.</span>
+        <span>WooCommerce Code Reference API documentation generated by <a href="http://www.phpdoc.org/">phpDocumentor</a> on May 16th, 2025 at 09:14 am.</span>
     </div>
 </footer>
 
@@ -1562,7 +1572,7 @@ item is not purchasable.</p>
             'searchIndex': '..\/js\/searchIndex.json'
         };
     </script>
-    <script src="../js/searchIndex.js?updated=1721907208"></script>
-    <script src="../js/search.js?updated=1721907208"></script>
+    <script src="../js/searchIndex.js?updated=1747386889"></script>
+    <script src="../js/search.js?updated=1747386889"></script>
 </body>
 </html>

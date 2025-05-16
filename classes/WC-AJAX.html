@@ -4,14 +4,13 @@
     <meta charset="utf-8">
     <title>WooCommerce Code Reference</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="../images/favicon.png" />
-    <link rel="apple-touch-icon" href="../images/apple-touch-icon.png"/>
-    <link rel="apple-touch-icon" sizes="72x72" href="../images/apple-touch-icon-72x72.png"/>
-    <link rel="apple-touch-icon" sizes="114x114" href="../images/apple-touch-icon-114x114.png"/>
+    <link rel="icon" href="../images/favicon-32x32.png" sizes="32x32" />
+    <link rel="icon" href="../images/favicon-192x192.png" sizes="192x192" />
+    <link rel="apple-touch-icon" href="../images/favicon-180x180.png" />
+
     <link rel="stylesheet" href="../css/normalize.css">
-    <link rel="stylesheet" href="../css/base.css?updated=1721907191">
-    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../css/template.css?updated=1721907191">
+    <link rel="stylesheet" href="../css/base.css?updated=1747386868">
+    <link rel="stylesheet" href="../css/template.css?updated=1747386868">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0/css/all.min.css" integrity="sha256-ybRkN9dBjhcS2qrW1z+hfCxq+1aBdwyQM5wlQoQVt/0=" crossorigin="anonymous" />
             <script src="https://cdn.jsdelivr.net/npm/css-vars-ponyfill@2"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0/js/all.min.js" integrity="sha256-0vuk8LXoyrmCjp1f0O300qo1M75ZQyhH9X3J6d+scmk=" crossorigin="anonymous"></script>
@@ -27,19 +26,24 @@
 		'content_group' : 'WooCommerce Core Code Reference',
 	});
 </script>
-        </head>
+        <script src="../js/prism.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            window.dispatchEvent(new HashChangeEvent('hashchange'));
+        });
+    </script>
+</head>
 <body id="top">
     <header class="phpdocumentor-top-header">
     <section class="phpdocumentor-section">
         <div class="site-branding">
-            <a class="site-logo" href="../index.html"><img width="180" src="../images/logo.svg" alt="WooCommerce" /></a>
+            <a class="site-logo" href="../index.html"><img src="../images/logo.png" alt="WooCommerce" /></a>
         </div>
         <nav class="main-navigation">
             <ul>
                 <li><a href="../hooks/hooks.html">Hooks Reference</a></li>
-                <li><a href="https://docs.woocommerce.com/">Documentation</a></li>
+                <li><a href="https://developer.woocommerce.com/docs/">Documentation</a></li>
                 <li><a href="https://woocommerce.github.io/woocommerce-rest-api-docs/">REST API Docs</a></li>
-                <li><a href="https://woocommerce.com/careers/?utm_source=woocommerce+core+code+reference&utm_medium=devdocs&utm_campaign=woo+careers" target="_blank">We're hiring!</a></li>
             </ul>
         </nav>
     </section>
@@ -47,7 +51,7 @@
 
 <div class="phpdocumentor-header">
     <section class="phpdocumentor-section">
-        <h1 class="phpdocumentor-title">WooCommerce Code Reference</h1>
+        <h1 class="phpdocumentor-title"><a href="../index.html">WooCommerce Code Reference</a></h1>
         <section class="phpdocumentor-search">
     <label class="phpdocumentor-label">
         <span class="visually-hidden">Search (click ESC to close search results)</span>
@@ -68,6 +72,10 @@
                                         <h4 class="phpdocumentor-sidebar__root-namespace"><a href="../namespaces/woocommerce.html"><abbr title="\WooCommerce">WooCommerce</abbr></a></h4>
                 <ul class="phpdocumentor-list">
                                             <li><a href="../namespaces/woocommerce-admin.html"><abbr title="\WooCommerce\Admin">Admin</abbr></a></li>
+                                    </ul>
+                            <h4 class="phpdocumentor-sidebar__root-namespace"><a href="../namespaces/mailpoet.html"><abbr title="\MailPoet">MailPoet</abbr></a></h4>
+                <ul class="phpdocumentor-list">
+                                            <li><a href="../namespaces/mailpoet-emaileditor.html"><abbr title="\MailPoet\EmailEditor">EmailEditor</abbr></a></li>
                                     </ul>
                             <h4 class="phpdocumentor-sidebar__root-namespace"><a href="../namespaces/automattic.html"><abbr title="\Automattic">Automattic</abbr></a></h4>
                 <ul class="phpdocumentor-list">
@@ -113,8 +121,10 @@
                                     <li><a href="../packages/WooCommerce-Widgets.html"><abbr title="\WooCommerce\Widgets">Widgets</abbr></a></li>
                                     <li><a href="../packages/WooCommerce-Uninstaller.html"><abbr title="\WooCommerce\Uninstaller">Uninstaller</abbr></a></li>
                             </ul>
-                                <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/WoocommerceAdmin.html"><abbr title="\WoocommerceAdmin">WoocommerceAdmin</abbr></a></h3>
-                                <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/WoocommerceNavigation.html"><abbr title="\WoocommerceNavigation">WoocommerceNavigation</abbr></a></h3>
+                                <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/MailPoet.html"><abbr title="\MailPoet">MailPoet</abbr></a></h3>
+                        <ul class="phpdocumentor-list">
+                                    <li><a href="../packages/MailPoet-EmailEditor.html"><abbr title="\MailPoet\EmailEditor">EmailEditor</abbr></a></li>
+                            </ul>
                                 <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/Automattic.html"><abbr title="\Automattic">Automattic</abbr></a></h3>
                         <ul class="phpdocumentor-list">
                                     <li><a href="../packages/Automattic-WooCommerce.html"><abbr title="\Automattic\WooCommerce">WooCommerce</abbr></a></li>
@@ -157,9 +167,9 @@
     </h2>
 
         <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-ajax.php"><a href="../files/woocommerce-includes-class-wc-ajax.html#source-view.23">includes/class-wc-ajax.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-ajax.php"><a href="../files/woocommerce-includes-class-wc-ajax.html#source-view.27">includes/class-wc-ajax.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">23</span>
+    <span class="phpdocumentor-element-found-in__line">27</span>
 </aside>
 
             <p class="phpdocumentor-summary">WC_Ajax class.</p>
@@ -656,6 +666,13 @@
 <dd>AJAX update shipping method on cart page.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -private">
+    <a href="../classes/WC-AJAX.html#method_base_cost_or_null">base_cost_or_null()</a>
+    <span>
+                        &nbsp;: float|null    </span>
+</dt>
+<dd>Get the Cost of Goods Sold value for a product (0 if it&#039;s null), return null if the Cost of Goods Sold feature is disabled.</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -private">
     <a href="../classes/WC-AJAX.html#method_check_locked_orders">check_locked_orders()</a>
     <span>
                         &nbsp;: array&lt;string|int, mixed&gt;    </span>
@@ -703,6 +720,13 @@
                         &nbsp;: array&lt;string|int, mixed&gt;    </span>
 </dt>
 <dd>Hooked to &#039;heartbeat_received&#039; on the edit order page to refresh the lock on an order being edited by the current user.</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -private">
+    <a href="../classes/WC-AJAX.html#method_render_variation_html">render_variation_html()</a>
+    <span>
+                        &nbsp;: mixed    </span>
+</dt>
+<dd>Render a variation editor.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -private">
     <a href="../classes/WC-AJAX.html#method_update_order_review_expired">update_order_review_expired()</a>
@@ -859,6 +883,13 @@
 <dd>Bulk action - Set Stock Status as Out of Stock.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -private">
+    <a href="../classes/WC-AJAX.html#method_variation_bulk_action_variable_unset_cogs_value">variation_bulk_action_variable_unset_cogs_value()</a>
+    <span>
+                        &nbsp;: mixed    </span>
+</dt>
+<dd>Bulk action - Unset cost values.</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -private">
     <a href="../classes/WC-AJAX.html#method_variation_bulk_action_variable_weight">variation_bulk_action_variable_weight()</a>
     <span>
                         &nbsp;: mixed    </span>
@@ -924,9 +955,9 @@
         <a href="#method_add_ajax_events" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-ajax.php"><a href="../files/woocommerce-includes-class-wc-ajax.html#source-view.105">includes/class-wc-ajax.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-ajax.php"><a href="../files/woocommerce-includes-class-wc-ajax.html#source-view.109">includes/class-wc-ajax.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">105</span>
+    <span class="phpdocumentor-element-found-in__line">109</span>
 </aside>
 
         <p class="phpdocumentor-summary">Hook in methods - uses WordPress ajax handlers (admin-ajax).</p>
@@ -956,9 +987,9 @@
         <a href="#method_add_attribute" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-ajax.php"><a href="../files/woocommerce-includes-class-wc-ajax.html#source-view.617">includes/class-wc-ajax.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-ajax.php"><a href="../files/woocommerce-includes-class-wc-ajax.html#source-view.621">includes/class-wc-ajax.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">617</span>
+    <span class="phpdocumentor-element-found-in__line">621</span>
 </aside>
 
         <p class="phpdocumentor-summary">Add an attribute row.</p>
@@ -988,9 +1019,9 @@
         <a href="#method_add_attributes_and_variations" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-ajax.php"><a href="../files/woocommerce-includes-class-wc-ajax.html#source-view.759">includes/class-wc-ajax.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-ajax.php"><a href="../files/woocommerce-includes-class-wc-ajax.html#source-view.763">includes/class-wc-ajax.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">759</span>
+    <span class="phpdocumentor-element-found-in__line">763</span>
 </aside>
 
         <p class="phpdocumentor-summary">Save attributes and variations via ajax.</p>
@@ -1020,9 +1051,9 @@
         <a href="#method_add_coupon_discount" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-ajax.php"><a href="../files/woocommerce-includes-class-wc-ajax.html#source-view.1266">includes/class-wc-ajax.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-ajax.php"><a href="../files/woocommerce-includes-class-wc-ajax.html#source-view.1268">includes/class-wc-ajax.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1266</span>
+    <span class="phpdocumentor-element-found-in__line">1268</span>
 </aside>
 
         <p class="phpdocumentor-summary">Add order discount via ajax.</p>
@@ -1067,9 +1098,9 @@
         <a href="#method_add_new_attribute" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-ajax.php"><a href="../files/woocommerce-includes-class-wc-ajax.html#source-view.657">includes/class-wc-ajax.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-ajax.php"><a href="../files/woocommerce-includes-class-wc-ajax.html#source-view.661">includes/class-wc-ajax.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">657</span>
+    <span class="phpdocumentor-element-found-in__line">661</span>
 </aside>
 
         <p class="phpdocumentor-summary">Add a new attribute via ajax function.</p>
@@ -1099,9 +1130,9 @@
         <a href="#method_add_order_fee" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-ajax.php"><a href="../files/woocommerce-includes-class-wc-ajax.html#source-view.1113">includes/class-wc-ajax.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-ajax.php"><a href="../files/woocommerce-includes-class-wc-ajax.html#source-view.1115">includes/class-wc-ajax.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1113</span>
+    <span class="phpdocumentor-element-found-in__line">1115</span>
 </aside>
 
         <p class="phpdocumentor-summary">Add order fee via ajax.</p>
@@ -1146,9 +1177,9 @@
         <a href="#method_add_order_item" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-ajax.php"><a href="../files/woocommerce-includes-class-wc-ajax.html#source-view.997">includes/class-wc-ajax.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-ajax.php"><a href="../files/woocommerce-includes-class-wc-ajax.html#source-view.999">includes/class-wc-ajax.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">997</span>
+    <span class="phpdocumentor-element-found-in__line">999</span>
 </aside>
 
         <p class="phpdocumentor-summary">Add order item via ajax. Used on the edit order screen in WP Admin.</p>
@@ -1193,9 +1224,9 @@
         <a href="#method_add_order_note" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-ajax.php"><a href="../files/woocommerce-includes-class-wc-ajax.html#source-view.1551">includes/class-wc-ajax.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-ajax.php"><a href="../files/woocommerce-includes-class-wc-ajax.html#source-view.1553">includes/class-wc-ajax.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1551</span>
+    <span class="phpdocumentor-element-found-in__line">1553</span>
 </aside>
 
         <p class="phpdocumentor-summary">Add order note via ajax.</p>
@@ -1225,9 +1256,9 @@
         <a href="#method_add_order_shipping" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-ajax.php"><a href="../files/woocommerce-includes-class-wc-ajax.html#source-view.1177">includes/class-wc-ajax.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-ajax.php"><a href="../files/woocommerce-includes-class-wc-ajax.html#source-view.1179">includes/class-wc-ajax.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1177</span>
+    <span class="phpdocumentor-element-found-in__line">1179</span>
 </aside>
 
         <p class="phpdocumentor-summary">Add order shipping cost via ajax.</p>
@@ -1272,9 +1303,9 @@
         <a href="#method_add_order_tax" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-ajax.php"><a href="../files/woocommerce-includes-class-wc-ajax.html#source-view.1219">includes/class-wc-ajax.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-ajax.php"><a href="../files/woocommerce-includes-class-wc-ajax.html#source-view.1221">includes/class-wc-ajax.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1219</span>
+    <span class="phpdocumentor-element-found-in__line">1221</span>
 </aside>
 
         <p class="phpdocumentor-summary">Add order tax column via ajax.</p>
@@ -1319,9 +1350,9 @@
         <a href="#method_add_to_cart" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-ajax.php"><a href="../files/woocommerce-includes-class-wc-ajax.html#source-view.454">includes/class-wc-ajax.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-ajax.php"><a href="../files/woocommerce-includes-class-wc-ajax.html#source-view.458">includes/class-wc-ajax.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">454</span>
+    <span class="phpdocumentor-element-found-in__line">458</span>
 </aside>
 
         <p class="phpdocumentor-summary">AJAX add to cart.</p>
@@ -1351,9 +1382,9 @@
         <a href="#method_add_variation" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-ajax.php"><a href="../files/woocommerce-includes-class-wc-ajax.html#source-view.818">includes/class-wc-ajax.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-ajax.php"><a href="../files/woocommerce-includes-class-wc-ajax.html#source-view.822">includes/class-wc-ajax.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">818</span>
+    <span class="phpdocumentor-element-found-in__line">822</span>
 </aside>
 
         <p class="phpdocumentor-summary">Add variation via ajax function.</p>
@@ -1383,9 +1414,9 @@
         <a href="#method_apply_coupon" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-ajax.php"><a href="../files/woocommerce-includes-class-wc-ajax.html#source-view.244">includes/class-wc-ajax.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-ajax.php"><a href="../files/woocommerce-includes-class-wc-ajax.html#source-view.248">includes/class-wc-ajax.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">244</span>
+    <span class="phpdocumentor-element-found-in__line">248</span>
 </aside>
 
         <p class="phpdocumentor-summary">AJAX apply coupon on checkout page.</p>
@@ -1415,9 +1446,9 @@
         <a href="#method_bulk_edit_variations" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-ajax.php"><a href="../files/woocommerce-includes-class-wc-ajax.html#source-view.2874">includes/class-wc-ajax.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-ajax.php"><a href="../files/woocommerce-includes-class-wc-ajax.html#source-view.2901">includes/class-wc-ajax.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">2874</span>
+    <span class="phpdocumentor-element-found-in__line">2901</span>
 </aside>
 
         <p class="phpdocumentor-summary">Bulk edit variations via AJAX.</p>
@@ -1629,9 +1660,9 @@
         <a href="#method_calc_line_taxes" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-ajax.php"><a href="../files/woocommerce-includes-class-wc-ajax.html#source-view.1484">includes/class-wc-ajax.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-ajax.php"><a href="../files/woocommerce-includes-class-wc-ajax.html#source-view.1486">includes/class-wc-ajax.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1484</span>
+    <span class="phpdocumentor-element-found-in__line">1486</span>
 </aside>
 
         <p class="phpdocumentor-summary">Calc line tax.</p>
@@ -1661,9 +1692,9 @@
         <a href="#method_checkout" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-ajax.php"><a href="../files/woocommerce-includes-class-wc-ajax.html#source-view.518">includes/class-wc-ajax.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-ajax.php"><a href="../files/woocommerce-includes-class-wc-ajax.html#source-view.522">includes/class-wc-ajax.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">518</span>
+    <span class="phpdocumentor-element-found-in__line">522</span>
 </aside>
 
         <p class="phpdocumentor-summary">Process ajax checkout form.</p>
@@ -1693,9 +1724,9 @@
         <a href="#method_define_ajax" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-ajax.php"><a href="../files/woocommerce-includes-class-wc-ajax.html#source-view.48">includes/class-wc-ajax.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-ajax.php"><a href="../files/woocommerce-includes-class-wc-ajax.html#source-view.52">includes/class-wc-ajax.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">48</span>
+    <span class="phpdocumentor-element-found-in__line">52</span>
 </aside>
 
         <p class="phpdocumentor-summary">Set WC AJAX constant and headers.</p>
@@ -1725,9 +1756,9 @@
         <a href="#method_delete_order_note" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-ajax.php"><a href="../files/woocommerce-includes-class-wc-ajax.html#source-view.1601">includes/class-wc-ajax.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-ajax.php"><a href="../files/woocommerce-includes-class-wc-ajax.html#source-view.1603">includes/class-wc-ajax.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1601</span>
+    <span class="phpdocumentor-element-found-in__line">1603</span>
 </aside>
 
         <p class="phpdocumentor-summary">Delete order note via ajax.</p>
@@ -1757,9 +1788,9 @@
         <a href="#method_delete_refund" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-ajax.php"><a href="../files/woocommerce-includes-class-wc-ajax.html#source-view.2234">includes/class-wc-ajax.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-ajax.php"><a href="../files/woocommerce-includes-class-wc-ajax.html#source-view.2236">includes/class-wc-ajax.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">2234</span>
+    <span class="phpdocumentor-element-found-in__line">2236</span>
 </aside>
 
         <p class="phpdocumentor-summary">Delete a refund.</p>
@@ -1789,9 +1820,9 @@
         <a href="#method_do_wc_ajax" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-ajax.php"><a href="../files/woocommerce-includes-class-wc-ajax.html#source-view.83">includes/class-wc-ajax.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-ajax.php"><a href="../files/woocommerce-includes-class-wc-ajax.html#source-view.87">includes/class-wc-ajax.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">83</span>
+    <span class="phpdocumentor-element-found-in__line">87</span>
 </aside>
 
         <p class="phpdocumentor-summary">Check for WC Ajax request and fire action.</p>
@@ -1821,9 +1852,9 @@
         <a href="#method_feature_product" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-ajax.php"><a href="../files/woocommerce-includes-class-wc-ajax.html#source-view.559">includes/class-wc-ajax.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-ajax.php"><a href="../files/woocommerce-includes-class-wc-ajax.html#source-view.563">includes/class-wc-ajax.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">559</span>
+    <span class="phpdocumentor-element-found-in__line">563</span>
 </aside>
 
         <p class="phpdocumentor-summary">Toggle Featured status of a product from admin.</p>
@@ -1853,9 +1884,9 @@
         <a href="#method_get_cart_totals" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-ajax.php"><a href="../files/woocommerce-includes-class-wc-ajax.html#source-view.312">includes/class-wc-ajax.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-ajax.php"><a href="../files/woocommerce-includes-class-wc-ajax.html#source-view.316">includes/class-wc-ajax.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">312</span>
+    <span class="phpdocumentor-element-found-in__line">316</span>
 </aside>
 
         <p class="phpdocumentor-summary">AJAX receive updated cart_totals div.</p>
@@ -1885,9 +1916,9 @@
         <a href="#method_get_customer_details" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-ajax.php"><a href="../files/woocommerce-includes-class-wc-ajax.html#source-view.968">includes/class-wc-ajax.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-ajax.php"><a href="../files/woocommerce-includes-class-wc-ajax.html#source-view.970">includes/class-wc-ajax.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">968</span>
+    <span class="phpdocumentor-element-found-in__line">970</span>
 </aside>
 
         <p class="phpdocumentor-summary">Get customer details via ajax.</p>
@@ -1917,9 +1948,9 @@
         <a href="#method_get_customer_location" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-ajax.php"><a href="../files/woocommerce-includes-class-wc-ajax.html#source-view.551">includes/class-wc-ajax.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-ajax.php"><a href="../files/woocommerce-includes-class-wc-ajax.html#source-view.555">includes/class-wc-ajax.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">551</span>
+    <span class="phpdocumentor-element-found-in__line">555</span>
 </aside>
 
         <p class="phpdocumentor-summary">Locate user via AJAX.</p>
@@ -1949,9 +1980,9 @@
         <a href="#method_get_endpoint" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-ajax.php"><a href="../files/woocommerce-includes-class-wc-ajax.html#source-view.41">includes/class-wc-ajax.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-ajax.php"><a href="../files/woocommerce-includes-class-wc-ajax.html#source-view.45">includes/class-wc-ajax.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">41</span>
+    <span class="phpdocumentor-element-found-in__line">45</span>
 </aside>
 
         <p class="phpdocumentor-summary">Get WC Ajax Endpoint.</p>
@@ -1993,9 +2024,9 @@
         <a href="#method_get_order_details" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-ajax.php"><a href="../files/woocommerce-includes-class-wc-ajax.html#source-view.597">includes/class-wc-ajax.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-ajax.php"><a href="../files/woocommerce-includes-class-wc-ajax.html#source-view.601">includes/class-wc-ajax.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">597</span>
+    <span class="phpdocumentor-element-found-in__line">601</span>
 </aside>
 
         <p class="phpdocumentor-summary">Get order details.</p>
@@ -2025,9 +2056,9 @@
         <a href="#method_get_refreshed_fragments" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-ajax.php"><a href="../files/woocommerce-includes-class-wc-ajax.html#source-view.221">includes/class-wc-ajax.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-ajax.php"><a href="../files/woocommerce-includes-class-wc-ajax.html#source-view.225">includes/class-wc-ajax.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">221</span>
+    <span class="phpdocumentor-element-found-in__line">225</span>
 </aside>
 
         <p class="phpdocumentor-summary">Get a refreshed cart fragment, including the mini cart HTML.</p>
@@ -2057,9 +2088,9 @@
         <a href="#method_get_variation" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-ajax.php"><a href="../files/woocommerce-includes-class-wc-ajax.html#source-view.527">includes/class-wc-ajax.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-ajax.php"><a href="../files/woocommerce-includes-class-wc-ajax.html#source-view.531">includes/class-wc-ajax.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">527</span>
+    <span class="phpdocumentor-element-found-in__line">531</span>
 </aside>
 
         <p class="phpdocumentor-summary">Get a matching variation based on posted attributes.</p>
@@ -2089,9 +2120,9 @@
         <a href="#method_grant_access_to_download" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-ajax.php"><a href="../files/woocommerce-includes-class-wc-ajax.html#source-view.892">includes/class-wc-ajax.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-ajax.php"><a href="../files/woocommerce-includes-class-wc-ajax.html#source-view.894">includes/class-wc-ajax.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">892</span>
+    <span class="phpdocumentor-element-found-in__line">894</span>
 </aside>
 
         <p class="phpdocumentor-summary">Grant download permissions via ajax function.</p>
@@ -2121,9 +2152,9 @@
         <a href="#method_init" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-ajax.php"><a href="../files/woocommerce-includes-class-wc-ajax.html#source-view.28">includes/class-wc-ajax.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-ajax.php"><a href="../files/woocommerce-includes-class-wc-ajax.html#source-view.32">includes/class-wc-ajax.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">28</span>
+    <span class="phpdocumentor-element-found-in__line">32</span>
 </aside>
 
         <p class="phpdocumentor-summary">Hook in ajax handlers.</p>
@@ -2153,9 +2184,9 @@
         <a href="#method_json_search_categories" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-ajax.php"><a href="../files/woocommerce-includes-class-wc-ajax.html#source-view.1797">includes/class-wc-ajax.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-ajax.php"><a href="../files/woocommerce-includes-class-wc-ajax.html#source-view.1799">includes/class-wc-ajax.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1797</span>
+    <span class="phpdocumentor-element-found-in__line">1799</span>
 </aside>
 
         <p class="phpdocumentor-summary">Search for categories and return json.</p>
@@ -2185,9 +2216,9 @@
         <a href="#method_json_search_categories_tree" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-ajax.php"><a href="../files/woocommerce-includes-class-wc-ajax.html#source-view.1852">includes/class-wc-ajax.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-ajax.php"><a href="../files/woocommerce-includes-class-wc-ajax.html#source-view.1854">includes/class-wc-ajax.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1852</span>
+    <span class="phpdocumentor-element-found-in__line">1854</span>
 </aside>
 
         <p class="phpdocumentor-summary">Search for categories and return json.</p>
@@ -2217,9 +2248,9 @@
         <a href="#method_json_search_customers" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-ajax.php"><a href="../files/woocommerce-includes-class-wc-ajax.html#source-view.1734">includes/class-wc-ajax.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-ajax.php"><a href="../files/woocommerce-includes-class-wc-ajax.html#source-view.1736">includes/class-wc-ajax.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1734</span>
+    <span class="phpdocumentor-element-found-in__line">1736</span>
 </aside>
 
         <p class="phpdocumentor-summary">Search for customers and return json.</p>
@@ -2249,9 +2280,9 @@
         <a href="#method_json_search_downloadable_products_and_variations" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-ajax.php"><a href="../files/woocommerce-includes-class-wc-ajax.html#source-view.1705">includes/class-wc-ajax.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-ajax.php"><a href="../files/woocommerce-includes-class-wc-ajax.html#source-view.1707">includes/class-wc-ajax.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1705</span>
+    <span class="phpdocumentor-element-found-in__line">1707</span>
 </aside>
 
         <p class="phpdocumentor-summary">Search for downloadable product variations and return json.</p>
@@ -2295,9 +2326,9 @@
         <a href="#method_json_search_pages" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-ajax.php"><a href="../files/woocommerce-includes-class-wc-ajax.html#source-view.2013">includes/class-wc-ajax.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-ajax.php"><a href="../files/woocommerce-includes-class-wc-ajax.html#source-view.2015">includes/class-wc-ajax.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">2013</span>
+    <span class="phpdocumentor-element-found-in__line">2015</span>
 </aside>
 
         <p class="phpdocumentor-summary">Ajax request handling for page searching.</p>
@@ -2327,9 +2358,9 @@
         <a href="#method_json_search_product_attributes" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-ajax.php"><a href="../files/woocommerce-includes-class-wc-ajax.html#source-view.1968">includes/class-wc-ajax.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-ajax.php"><a href="../files/woocommerce-includes-class-wc-ajax.html#source-view.1970">includes/class-wc-ajax.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1968</span>
+    <span class="phpdocumentor-element-found-in__line">1970</span>
 </aside>
 
         <p class="phpdocumentor-summary">Search for product attributes and return json.</p>
@@ -2359,9 +2390,9 @@
         <a href="#method_json_search_products" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-ajax.php"><a href="../files/woocommerce-includes-class-wc-ajax.html#source-view.1622">includes/class-wc-ajax.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-ajax.php"><a href="../files/woocommerce-includes-class-wc-ajax.html#source-view.1624">includes/class-wc-ajax.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1622</span>
+    <span class="phpdocumentor-element-found-in__line">1624</span>
 </aside>
 
         <p class="phpdocumentor-summary">Search for products and echo json.</p>
@@ -2412,9 +2443,9 @@
         <a href="#method_json_search_products_and_variations" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-ajax.php"><a href="../files/woocommerce-includes-class-wc-ajax.html#source-view.1696">includes/class-wc-ajax.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-ajax.php"><a href="../files/woocommerce-includes-class-wc-ajax.html#source-view.1698">includes/class-wc-ajax.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1696</span>
+    <span class="phpdocumentor-element-found-in__line">1698</span>
 </aside>
 
         <p class="phpdocumentor-summary">Search for product variations and return json.</p>
@@ -2458,9 +2489,9 @@
         <a href="#method_json_search_taxonomy_terms" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-ajax.php"><a href="../files/woocommerce-includes-class-wc-ajax.html#source-view.1921">includes/class-wc-ajax.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-ajax.php"><a href="../files/woocommerce-includes-class-wc-ajax.html#source-view.1923">includes/class-wc-ajax.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1921</span>
+    <span class="phpdocumentor-element-found-in__line">1923</span>
 </aside>
 
         <p class="phpdocumentor-summary">Search for taxonomy terms and return json.</p>
@@ -2490,9 +2521,9 @@
         <a href="#method_link_all_variations" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-ajax.php"><a href="../files/woocommerce-includes-class-wc-ajax.html#source-view.844">includes/class-wc-ajax.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-ajax.php"><a href="../files/woocommerce-includes-class-wc-ajax.html#source-view.846">includes/class-wc-ajax.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">844</span>
+    <span class="phpdocumentor-element-found-in__line">846</span>
 </aside>
 
         <p class="phpdocumentor-summary">Link all variations via ajax function.</p>
@@ -2522,9 +2553,9 @@
         <a href="#method_load_order_items" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-ajax.php"><a href="../files/woocommerce-includes-class-wc-ajax.html#source-view.1534">includes/class-wc-ajax.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-ajax.php"><a href="../files/woocommerce-includes-class-wc-ajax.html#source-view.1536">includes/class-wc-ajax.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1534</span>
+    <span class="phpdocumentor-element-found-in__line">1536</span>
 </aside>
 
         <p class="phpdocumentor-summary">Load order items via ajax.</p>
@@ -2554,9 +2585,9 @@
         <a href="#method_load_variations" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-ajax.php"><a href="../files/woocommerce-includes-class-wc-ajax.html#source-view.2376">includes/class-wc-ajax.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-ajax.php"><a href="../files/woocommerce-includes-class-wc-ajax.html#source-view.2378">includes/class-wc-ajax.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">2376</span>
+    <span class="phpdocumentor-element-found-in__line">2378</span>
 </aside>
 
         <p class="phpdocumentor-summary">Load variations via AJAX.</p>
@@ -2586,9 +2617,9 @@
         <a href="#method_mark_order_status" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-ajax.php"><a href="../files/woocommerce-includes-class-wc-ajax.html#source-view.576">includes/class-wc-ajax.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-ajax.php"><a href="../files/woocommerce-includes-class-wc-ajax.html#source-view.580">includes/class-wc-ajax.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">576</span>
+    <span class="phpdocumentor-element-found-in__line">580</span>
 </aside>
 
         <p class="phpdocumentor-summary">Mark an order with a status.</p>
@@ -2618,9 +2649,9 @@
         <a href="#method_product_ordering" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-ajax.php"><a href="../files/woocommerce-includes-class-wc-ajax.html#source-view.2086">includes/class-wc-ajax.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-ajax.php"><a href="../files/woocommerce-includes-class-wc-ajax.html#source-view.2088">includes/class-wc-ajax.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">2086</span>
+    <span class="phpdocumentor-element-found-in__line">2088</span>
 </aside>
 
         <p class="phpdocumentor-summary">Ajax request handling for product ordering.</p>
@@ -2651,9 +2682,9 @@
         <a href="#method_rated" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-ajax.php"><a href="../files/woocommerce-includes-class-wc-ajax.html#source-view.2256">includes/class-wc-ajax.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-ajax.php"><a href="../files/woocommerce-includes-class-wc-ajax.html#source-view.2258">includes/class-wc-ajax.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">2256</span>
+    <span class="phpdocumentor-element-found-in__line">2258</span>
 </aside>
 
         <p class="phpdocumentor-summary">Triggered when clicking the rating footer.</p>
@@ -2683,9 +2714,9 @@
         <a href="#method_refund_line_items" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-ajax.php"><a href="../files/woocommerce-includes-class-wc-ajax.html#source-view.2150">includes/class-wc-ajax.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-ajax.php"><a href="../files/woocommerce-includes-class-wc-ajax.html#source-view.2152">includes/class-wc-ajax.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">2150</span>
+    <span class="phpdocumentor-element-found-in__line">2152</span>
 </aside>
 
         <p class="phpdocumentor-summary">Handle a refund via the edit order screen.</p>
@@ -2730,9 +2761,9 @@
         <a href="#method_remove_coupon" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-ajax.php"><a href="../files/woocommerce-includes-class-wc-ajax.html#source-view.268">includes/class-wc-ajax.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-ajax.php"><a href="../files/woocommerce-includes-class-wc-ajax.html#source-view.272">includes/class-wc-ajax.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">268</span>
+    <span class="phpdocumentor-element-found-in__line">272</span>
 </aside>
 
         <p class="phpdocumentor-summary">AJAX remove coupon on cart and checkout page.</p>
@@ -2762,9 +2793,9 @@
         <a href="#method_remove_from_cart" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-ajax.php"><a href="../files/woocommerce-includes-class-wc-ajax.html#source-view.502">includes/class-wc-ajax.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-ajax.php"><a href="../files/woocommerce-includes-class-wc-ajax.html#source-view.506">includes/class-wc-ajax.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">502</span>
+    <span class="phpdocumentor-element-found-in__line">506</span>
 </aside>
 
         <p class="phpdocumentor-summary">AJAX remove from cart.</p>
@@ -2794,9 +2825,9 @@
         <a href="#method_remove_order_coupon" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-ajax.php"><a href="../files/woocommerce-includes-class-wc-ajax.html#source-view.1275">includes/class-wc-ajax.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-ajax.php"><a href="../files/woocommerce-includes-class-wc-ajax.html#source-view.1277">includes/class-wc-ajax.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1275</span>
+    <span class="phpdocumentor-element-found-in__line">1277</span>
 </aside>
 
         <p class="phpdocumentor-summary">Remove coupon from an order via ajax.</p>
@@ -2841,9 +2872,9 @@
         <a href="#method_remove_order_item" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-ajax.php"><a href="../files/woocommerce-includes-class-wc-ajax.html#source-view.1333">includes/class-wc-ajax.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-ajax.php"><a href="../files/woocommerce-includes-class-wc-ajax.html#source-view.1335">includes/class-wc-ajax.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1333</span>
+    <span class="phpdocumentor-element-found-in__line">1335</span>
 </aside>
 
         <p class="phpdocumentor-summary">Remove an order item.</p>
@@ -2888,9 +2919,9 @@
         <a href="#method_remove_order_tax" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-ajax.php"><a href="../files/woocommerce-includes-class-wc-ajax.html#source-view.1446">includes/class-wc-ajax.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-ajax.php"><a href="../files/woocommerce-includes-class-wc-ajax.html#source-view.1448">includes/class-wc-ajax.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1446</span>
+    <span class="phpdocumentor-element-found-in__line">1448</span>
 </aside>
 
         <p class="phpdocumentor-summary">Remove an order tax.</p>
@@ -2935,9 +2966,9 @@
         <a href="#method_remove_variations" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-ajax.php"><a href="../files/woocommerce-includes-class-wc-ajax.html#source-view.692">includes/class-wc-ajax.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-ajax.php"><a href="../files/woocommerce-includes-class-wc-ajax.html#source-view.696">includes/class-wc-ajax.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">692</span>
+    <span class="phpdocumentor-element-found-in__line">696</span>
 </aside>
 
         <p class="phpdocumentor-summary">Delete variations via ajax function.</p>
@@ -2967,9 +2998,9 @@
         <a href="#method_revoke_access_to_download" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-ajax.php"><a href="../files/woocommerce-includes-class-wc-ajax.html#source-view.871">includes/class-wc-ajax.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-ajax.php"><a href="../files/woocommerce-includes-class-wc-ajax.html#source-view.873">includes/class-wc-ajax.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">871</span>
+    <span class="phpdocumentor-element-found-in__line">873</span>
 </aside>
 
         <p class="phpdocumentor-summary">Delete download permissions via ajax function.</p>
@@ -2999,9 +3030,9 @@
         <a href="#method_save_attributes" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-ajax.php"><a href="../files/woocommerce-includes-class-wc-ajax.html#source-view.712">includes/class-wc-ajax.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-ajax.php"><a href="../files/woocommerce-includes-class-wc-ajax.html#source-view.716">includes/class-wc-ajax.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">712</span>
+    <span class="phpdocumentor-element-found-in__line">716</span>
 </aside>
 
         <p class="phpdocumentor-summary">Save attributes via ajax.</p>
@@ -3031,9 +3062,9 @@
         <a href="#method_save_order_items" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-ajax.php"><a href="../files/woocommerce-includes-class-wc-ajax.html#source-view.1491">includes/class-wc-ajax.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-ajax.php"><a href="../files/woocommerce-includes-class-wc-ajax.html#source-view.1493">includes/class-wc-ajax.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1491</span>
+    <span class="phpdocumentor-element-found-in__line">1493</span>
 </aside>
 
         <p class="phpdocumentor-summary">Save order items via ajax.</p>
@@ -3095,9 +3126,9 @@
         <a href="#method_shipping_classes_save_changes" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-ajax.php"><a href="../files/woocommerce-includes-class-wc-ajax.html#source-view.3434">includes/class-wc-ajax.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-ajax.php"><a href="../files/woocommerce-includes-class-wc-ajax.html#source-view.3461">includes/class-wc-ajax.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">3434</span>
+    <span class="phpdocumentor-element-found-in__line">3461</span>
 </aside>
 
         <p class="phpdocumentor-summary">Handle submissions from assets/js/wc-shipping-classes.js Backbone model.</p>
@@ -3127,9 +3158,9 @@
         <a href="#method_shipping_zone_add_method" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-ajax.php"><a href="../files/woocommerce-includes-class-wc-ajax.html#source-view.3086">includes/class-wc-ajax.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-ajax.php"><a href="../files/woocommerce-includes-class-wc-ajax.html#source-view.3113">includes/class-wc-ajax.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">3086</span>
+    <span class="phpdocumentor-element-found-in__line">3113</span>
 </aside>
 
         <p class="phpdocumentor-summary">Handle submissions from assets/js/wc-shipping-zone-methods.js Backbone model.</p>
@@ -3159,9 +3190,9 @@
         <a href="#method_shipping_zone_methods_save_changes" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-ajax.php"><a href="../files/woocommerce-includes-class-wc-ajax.html#source-view.3213">includes/class-wc-ajax.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-ajax.php"><a href="../files/woocommerce-includes-class-wc-ajax.html#source-view.3240">includes/class-wc-ajax.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">3213</span>
+    <span class="phpdocumentor-element-found-in__line">3240</span>
 </aside>
 
         <p class="phpdocumentor-summary">Handle submissions from assets/js/wc-shipping-zone-methods.js Backbone model.</p>
@@ -3191,9 +3222,9 @@
         <a href="#method_shipping_zone_methods_save_settings" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-ajax.php"><a href="../files/woocommerce-includes-class-wc-ajax.html#source-view.3382">includes/class-wc-ajax.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-ajax.php"><a href="../files/woocommerce-includes-class-wc-ajax.html#source-view.3409">includes/class-wc-ajax.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">3382</span>
+    <span class="phpdocumentor-element-found-in__line">3409</span>
 </aside>
 
         <p class="phpdocumentor-summary">Save method settings</p>
@@ -3223,9 +3254,9 @@
         <a href="#method_shipping_zone_remove_method" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-ajax.php"><a href="../files/woocommerce-includes-class-wc-ajax.html#source-view.3156">includes/class-wc-ajax.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-ajax.php"><a href="../files/woocommerce-includes-class-wc-ajax.html#source-view.3183">includes/class-wc-ajax.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">3156</span>
+    <span class="phpdocumentor-element-found-in__line">3183</span>
 </aside>
 
         <p class="phpdocumentor-summary">Handle submissions from assets/js/wc-shipping-zone-methods.js Backbone model.</p>
@@ -3255,9 +3286,9 @@
         <a href="#method_shipping_zones_save_changes" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-ajax.php"><a href="../files/woocommerce-includes-class-wc-ajax.html#source-view.2998">includes/class-wc-ajax.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-ajax.php"><a href="../files/woocommerce-includes-class-wc-ajax.html#source-view.3025">includes/class-wc-ajax.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">2998</span>
+    <span class="phpdocumentor-element-found-in__line">3025</span>
 </aside>
 
         <p class="phpdocumentor-summary">Handle submissions from assets/js/wc-shipping-zones.js Backbone model.</p>
@@ -3287,9 +3318,9 @@
         <a href="#method_tax_rates_save_changes" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-ajax.php"><a href="../files/woocommerce-includes-class-wc-ajax.html#source-view.2916">includes/class-wc-ajax.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-ajax.php"><a href="../files/woocommerce-includes-class-wc-ajax.html#source-view.2943">includes/class-wc-ajax.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">2916</span>
+    <span class="phpdocumentor-element-found-in__line">2943</span>
 </aside>
 
         <p class="phpdocumentor-summary">Handle submissions from assets/js/settings-views-html-settings-tax.js Backbone model.</p>
@@ -3319,9 +3350,9 @@
         <a href="#method_term_ordering" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-ajax.php"><a href="../files/woocommerce-includes-class-wc-ajax.html#source-view.2054">includes/class-wc-ajax.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-ajax.php"><a href="../files/woocommerce-includes-class-wc-ajax.html#source-view.2056">includes/class-wc-ajax.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">2054</span>
+    <span class="phpdocumentor-element-found-in__line">2056</span>
 </aside>
 
         <p class="phpdocumentor-summary">Ajax request handling for categories ordering.</p>
@@ -3351,9 +3382,9 @@
         <a href="#method_toggle_gateway_enabled" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-ajax.php"><a href="../files/woocommerce-includes-class-wc-ajax.html#source-view.3564">includes/class-wc-ajax.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-ajax.php"><a href="../files/woocommerce-includes-class-wc-ajax.html#source-view.3591">includes/class-wc-ajax.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">3564</span>
+    <span class="phpdocumentor-element-found-in__line">3591</span>
 </aside>
 
         <p class="phpdocumentor-summary">Toggle payment gateway on or off via AJAX.</p>
@@ -3397,9 +3428,9 @@
         <a href="#method_update_api_key" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-ajax.php"><a href="../files/woocommerce-includes-class-wc-ajax.html#source-view.2269">includes/class-wc-ajax.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-ajax.php"><a href="../files/woocommerce-includes-class-wc-ajax.html#source-view.2271">includes/class-wc-ajax.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">2269</span>
+    <span class="phpdocumentor-element-found-in__line">2271</span>
 </aside>
 
         <p class="phpdocumentor-summary">Create/Update API key.</p>
@@ -3444,9 +3475,9 @@
         <a href="#method_update_order_review" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-ajax.php"><a href="../files/woocommerce-includes-class-wc-ajax.html#source-view.343">includes/class-wc-ajax.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-ajax.php"><a href="../files/woocommerce-includes-class-wc-ajax.html#source-view.347">includes/class-wc-ajax.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">343</span>
+    <span class="phpdocumentor-element-found-in__line">347</span>
 </aside>
 
         <p class="phpdocumentor-summary">AJAX update order review on checkout.</p>
@@ -3476,9 +3507,9 @@
         <a href="#method_update_shipping_method" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-ajax.php"><a href="../files/woocommerce-includes-class-wc-ajax.html#source-view.287">includes/class-wc-ajax.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-ajax.php"><a href="../files/woocommerce-includes-class-wc-ajax.html#source-view.291">includes/class-wc-ajax.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">287</span>
+    <span class="phpdocumentor-element-found-in__line">291</span>
 </aside>
 
         <p class="phpdocumentor-summary">AJAX update shipping method on cart page.</p>
@@ -3503,14 +3534,58 @@
             -private
                                     -static                    "
 >
+    <h4 class="phpdocumentor-element__name" id="method_base_cost_or_null">
+        base_cost_or_null()
+        <a href="#method_base_cost_or_null" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-ajax.php"><a href="../files/woocommerce-includes-class-wc-ajax.html#source-view.3705">includes/class-wc-ajax.php</a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">3705</span>
+</aside>
+
+        <p class="phpdocumentor-summary">Get the Cost of Goods Sold value for a product (0 if it&#039;s null), return null if the Cost of Goods Sold feature is disabled.</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">private</span>
+            <span class="phpdocumentor-signature__static">static</span>    <span class="phpdocumentor-signature__name">base_cost_or_null</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type"><a href="../classes/WC-Product.html"><abbr title="\WC_Product">WC_Product</abbr></a>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$product_object</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">float|null</span></code>
+
+        <section class="phpdocumentor-description"></section>
+
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$product_object</span>
+                : <span class="phpdocumentor-signature__argument__return-type"><a href="../classes/WC-Product.html"><abbr title="\WC_Product">WC_Product</abbr></a></span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"><p>Product object.</p>
+</section>
+
+            </dd>
+            </dl>
+
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">float|null</span>
+            &mdash; <span class="phpdocumentor-return-value__description">Cost of the product, or null.</span>
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -private
+                                    -static                    "
+>
     <h4 class="phpdocumentor-element__name" id="method_check_locked_orders">
         check_locked_orders()
         <a href="#method_check_locked_orders" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-ajax.php"><a href="../files/woocommerce-includes-class-wc-ajax.html#source-view.3648">includes/class-wc-ajax.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-ajax.php"><a href="../files/woocommerce-includes-class-wc-ajax.html#source-view.3675">includes/class-wc-ajax.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">3648</span>
+    <span class="phpdocumentor-element-found-in__line">3675</span>
 </aside>
 
         <p class="phpdocumentor-summary">Hooked to &#039;heartbeat_received&#039; on the orders screen to refresh the locked status of orders in the list table.</p>
@@ -3575,9 +3650,9 @@
         <a href="#method_create_all_product_variations" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-ajax.php"><a href="../files/woocommerce-includes-class-wc-ajax.html#source-view.805">includes/class-wc-ajax.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-ajax.php"><a href="../files/woocommerce-includes-class-wc-ajax.html#source-view.809">includes/class-wc-ajax.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">805</span>
+    <span class="phpdocumentor-element-found-in__line">809</span>
 </aside>
 
         <p class="phpdocumentor-summary">Create all product variations from existing attributes.</p>
@@ -3633,9 +3708,9 @@
         <a href="#method_create_product_with_attributes" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-ajax.php"><a href="../files/woocommerce-includes-class-wc-ajax.html#source-view.785">includes/class-wc-ajax.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-ajax.php"><a href="../files/woocommerce-includes-class-wc-ajax.html#source-view.789">includes/class-wc-ajax.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">785</span>
+    <span class="phpdocumentor-element-found-in__line">789</span>
 </aside>
 
         <p class="phpdocumentor-summary">Create product with attributes from POST data.</p>
@@ -3677,9 +3752,9 @@
         <a href="#method_maybe_add_order_item" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-ajax.php"><a href="../files/woocommerce-includes-class-wc-ajax.html#source-view.1032">includes/class-wc-ajax.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-ajax.php"><a href="../files/woocommerce-includes-class-wc-ajax.html#source-view.1034">includes/class-wc-ajax.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1032</span>
+    <span class="phpdocumentor-element-found-in__line">1034</span>
 </aside>
 
         <p class="phpdocumentor-summary">Add order item via AJAX. This is refactored for better unit testing.</p>
@@ -3754,9 +3829,9 @@
         <a href="#method_order_add_meta" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-ajax.php"><a href="../files/woocommerce-includes-class-wc-ajax.html#source-view.3615">includes/class-wc-ajax.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-ajax.php"><a href="../files/woocommerce-includes-class-wc-ajax.html#source-view.3642">includes/class-wc-ajax.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">3615</span>
+    <span class="phpdocumentor-element-found-in__line">3642</span>
 </aside>
 
         <p class="phpdocumentor-summary">Reimplementation of WP core&#039;s `wp_ajax_add_meta` method to support order custom meta updates with custom tables.</p>
@@ -3786,9 +3861,9 @@
         <a href="#method_order_delete_meta" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-ajax.php"><a href="../files/woocommerce-includes-class-wc-ajax.html#source-view.3624">includes/class-wc-ajax.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-ajax.php"><a href="../files/woocommerce-includes-class-wc-ajax.html#source-view.3651">includes/class-wc-ajax.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">3624</span>
+    <span class="phpdocumentor-element-found-in__line">3651</span>
 </aside>
 
         <p class="phpdocumentor-summary">Reimplementation of WP core&#039;s `wp_ajax_delete_meta` method to support order custom meta updates with custom tables.</p>
@@ -3818,9 +3893,9 @@
         <a href="#method_order_refresh_lock" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-ajax.php"><a href="../files/woocommerce-includes-class-wc-ajax.html#source-view.3635">includes/class-wc-ajax.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-ajax.php"><a href="../files/woocommerce-includes-class-wc-ajax.html#source-view.3662">includes/class-wc-ajax.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">3635</span>
+    <span class="phpdocumentor-element-found-in__line">3662</span>
 </aside>
 
         <p class="phpdocumentor-summary">Hooked to &#039;heartbeat_received&#039; on the edit order page to refresh the lock on an order being edited by the current user.</p>
@@ -3866,14 +3941,87 @@
             -private
                                     -static                    "
 >
+    <h4 class="phpdocumentor-element__name" id="method_render_variation_html">
+        render_variation_html()
+        <a href="#method_render_variation_html" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-ajax.php"><a href="../files/woocommerce-includes-class-wc-ajax.html#source-view.3691">includes/class-wc-ajax.php</a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">3691</span>
+</aside>
+
+        <p class="phpdocumentor-summary">Render a variation editor.</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">private</span>
+            <span class="phpdocumentor-signature__static">static</span>    <span class="phpdocumentor-signature__name">render_variation_html</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type"><a href="../classes/WC-Product.html"><abbr title="\WC_Product">WC_Product</abbr></a>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$product_object</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type"><a href="../classes/WC-Product.html"><abbr title="\WC_Product">WC_Product</abbr></a>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$variation_object</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">int&nbsp;</span><span class="phpdocumentor-signature__argument__name">$loop</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">float|null&nbsp;</span><span class="phpdocumentor-signature__argument__name">$base_cost</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
+
+        <section class="phpdocumentor-description"><p>NOTE! Do NOT remove the apparently unused function arguments.
+These are actually used inside the included html-variation-admin template.</p>
+</section>
+
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$product_object</span>
+                : <span class="phpdocumentor-signature__argument__return-type"><a href="../classes/WC-Product.html"><abbr title="\WC_Product">WC_Product</abbr></a></span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"><p>PArent product of the variation being edited.</p>
+</section>
+
+            </dd>
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$variation_object</span>
+                : <span class="phpdocumentor-signature__argument__return-type"><a href="../classes/WC-Product.html"><abbr title="\WC_Product">WC_Product</abbr></a></span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"><p>Variation being edited.</p>
+</section>
+
+            </dd>
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$loop</span>
+                : <span class="phpdocumentor-signature__argument__return-type">int</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"><p>Index of the variation being rendered.</p>
+</section>
+
+            </dd>
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$base_cost</span>
+                : <span class="phpdocumentor-signature__argument__return-type">float|null</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"><p>Default cost for variations, null if the Cost of Goods Sold feature is disabled.</p>
+</section>
+
+            </dd>
+            </dl>
+
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">mixed</span>
+            &mdash; <span class="phpdocumentor-return-value__description"></span>
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -private
+                                    -static                    "
+>
     <h4 class="phpdocumentor-element__name" id="method_update_order_review_expired">
         update_order_review_expired()
         <a href="#method_update_order_review_expired" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-ajax.php"><a href="../files/woocommerce-includes-class-wc-ajax.html#source-view.322">includes/class-wc-ajax.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-ajax.php"><a href="../files/woocommerce-includes-class-wc-ajax.html#source-view.326">includes/class-wc-ajax.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">322</span>
+    <span class="phpdocumentor-element-found-in__line">326</span>
 </aside>
 
         <p class="phpdocumentor-summary">Session has expired.</p>
@@ -5305,6 +5453,73 @@
             -private
                                     -static                    "
 >
+    <h4 class="phpdocumentor-element__name" id="method_variation_bulk_action_variable_unset_cogs_value">
+        variation_bulk_action_variable_unset_cogs_value()
+        <a href="#method_variation_bulk_action_variable_unset_cogs_value" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-ajax.php"><a href="../files/woocommerce-includes-class-wc-ajax.html#source-view.2800">includes/class-wc-ajax.php</a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">2800</span>
+</aside>
+
+        <p class="phpdocumentor-summary">Bulk action - Unset cost values.</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">private</span>
+            <span class="phpdocumentor-signature__static">static</span>    <span class="phpdocumentor-signature__name">variation_bulk_action_variable_unset_cogs_value</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__name">$variations</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__name">$data</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
+
+        <section class="phpdocumentor-description"></section>
+
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$variations</span>
+                : <span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"><p>List of variations.</p>
+</section>
+
+            </dd>
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$data</span>
+                : <span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"><p>Data to set.</p>
+</section>
+
+            </dd>
+            </dl>
+
+    
+    <h5 class="phpdocumentor-tag-list__heading" id="tags">
+        Tags
+        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
+    </h5>
+    <dl class="phpdocumentor-tag-list">
+                                    <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">used-by</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                                                                                        <section class="phpdocumentor-description"><p>bulk_edit_variations</p>
+</section>
+
+                </dd>
+                        </dl>
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">mixed</span>
+            &mdash; <span class="phpdocumentor-return-value__description"></span>
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -private
+                                    -static                    "
+>
     <h4 class="phpdocumentor-element__name" id="method_variation_bulk_action_variable_weight">
         variation_bulk_action_variable_weight()
         <a href="#method_variation_bulk_action_variable_weight" class="headerlink"><i class="fas fa-link"></i></a>
@@ -5444,9 +5659,9 @@
         <a href="#method_variation_bulk_adjust_price" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-ajax.php"><a href="../files/woocommerce-includes-class-wc-ajax.html#source-view.2801">includes/class-wc-ajax.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-ajax.php"><a href="../files/woocommerce-includes-class-wc-ajax.html#source-view.2823">includes/class-wc-ajax.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">2801</span>
+    <span class="phpdocumentor-element-found-in__line">2823</span>
 </aside>
 
         <p class="phpdocumentor-summary">Bulk action - Set Price.</p>
@@ -5531,9 +5746,9 @@
         <a href="#method_variation_bulk_set" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-ajax.php"><a href="../files/woocommerce-includes-class-wc-ajax.html#source-view.2825">includes/class-wc-ajax.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-ajax.php"><a href="../files/woocommerce-includes-class-wc-ajax.html#source-view.2852">includes/class-wc-ajax.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">2825</span>
+    <span class="phpdocumentor-element-found-in__line">2852</span>
 </aside>
 
         <p class="phpdocumentor-summary">Bulk set convenience function.</p>
@@ -5593,9 +5808,9 @@
         <a href="#method_variation_bulk_toggle" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-ajax.php"><a href="../files/woocommerce-includes-class-wc-ajax.html#source-view.2839">includes/class-wc-ajax.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-ajax.php"><a href="../files/woocommerce-includes-class-wc-ajax.html#source-view.2866">includes/class-wc-ajax.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">2839</span>
+    <span class="phpdocumentor-element-found-in__line">2866</span>
 </aside>
 
         <p class="phpdocumentor-summary">Bulk toggle convenience function.</p>
@@ -5646,9 +5861,9 @@
         <a href="#method_wc_ajax_headers" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-ajax.php"><a href="../files/woocommerce-includes-class-wc-ajax.html#source-view.66">includes/class-wc-ajax.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-ajax.php"><a href="../files/woocommerce-includes-class-wc-ajax.html#source-view.70">includes/class-wc-ajax.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">66</span>
+    <span class="phpdocumentor-element-found-in__line">70</span>
 </aside>
 
         <p class="phpdocumentor-summary">Send headers for WC Ajax Requests.</p>
@@ -5692,7 +5907,7 @@
 
     <footer class="phpdocumentor phpdocumentor-footer">
     <div class="phpdocumentor-section">
-        <span>WooCommerce Code Reference API documentation generated by <a href="http://www.phpdoc.org/">phpDocumentor</a> on July 25th, 2024 at 11:33 am.</span>
+        <span>WooCommerce Code Reference API documentation generated by <a href="http://www.phpdoc.org/">phpDocumentor</a> on May 16th, 2025 at 09:14 am.</span>
     </div>
 </footer>
 
@@ -5704,7 +5919,7 @@
             'searchIndex': '..\/js\/searchIndex.json'
         };
     </script>
-    <script src="../js/searchIndex.js?updated=1721907191"></script>
-    <script src="../js/search.js?updated=1721907191"></script>
+    <script src="../js/searchIndex.js?updated=1747386868"></script>
+    <script src="../js/search.js?updated=1747386868"></script>
 </body>
 </html>

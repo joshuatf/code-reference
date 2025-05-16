@@ -4,14 +4,13 @@
     <meta charset="utf-8">
     <title>WooCommerce Code Reference</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="../images/favicon.png" />
-    <link rel="apple-touch-icon" href="../images/apple-touch-icon.png"/>
-    <link rel="apple-touch-icon" sizes="72x72" href="../images/apple-touch-icon-72x72.png"/>
-    <link rel="apple-touch-icon" sizes="114x114" href="../images/apple-touch-icon-114x114.png"/>
+    <link rel="icon" href="../images/favicon-32x32.png" sizes="32x32" />
+    <link rel="icon" href="../images/favicon-192x192.png" sizes="192x192" />
+    <link rel="apple-touch-icon" href="../images/favicon-180x180.png" />
+
     <link rel="stylesheet" href="../css/normalize.css">
-    <link rel="stylesheet" href="../css/base.css?updated=1721907182">
-    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../css/template.css?updated=1721907182">
+    <link rel="stylesheet" href="../css/base.css?updated=1747386858">
+    <link rel="stylesheet" href="../css/template.css?updated=1747386858">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0/css/all.min.css" integrity="sha256-ybRkN9dBjhcS2qrW1z+hfCxq+1aBdwyQM5wlQoQVt/0=" crossorigin="anonymous" />
             <script src="https://cdn.jsdelivr.net/npm/css-vars-ponyfill@2"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0/js/all.min.js" integrity="sha256-0vuk8LXoyrmCjp1f0O300qo1M75ZQyhH9X3J6d+scmk=" crossorigin="anonymous"></script>
@@ -38,14 +37,13 @@
     <header class="phpdocumentor-top-header">
     <section class="phpdocumentor-section">
         <div class="site-branding">
-            <a class="site-logo" href="../index.html"><img width="180" src="../images/logo.svg" alt="WooCommerce" /></a>
+            <a class="site-logo" href="../index.html"><img src="../images/logo.png" alt="WooCommerce" /></a>
         </div>
         <nav class="main-navigation">
             <ul>
                 <li><a href="../hooks/hooks.html">Hooks Reference</a></li>
-                <li><a href="https://docs.woocommerce.com/">Documentation</a></li>
+                <li><a href="https://developer.woocommerce.com/docs/">Documentation</a></li>
                 <li><a href="https://woocommerce.github.io/woocommerce-rest-api-docs/">REST API Docs</a></li>
-                <li><a href="https://woocommerce.com/careers/?utm_source=woocommerce+core+code+reference&utm_medium=devdocs&utm_campaign=woo+careers" target="_blank">We're hiring!</a></li>
             </ul>
         </nav>
     </section>
@@ -53,7 +51,7 @@
 
 <div class="phpdocumentor-header">
     <section class="phpdocumentor-section">
-        <h1 class="phpdocumentor-title">WooCommerce Code Reference</h1>
+        <h1 class="phpdocumentor-title"><a href="../index.html">WooCommerce Code Reference</a></h1>
         <section class="phpdocumentor-search">
     <label class="phpdocumentor-label">
         <span class="visually-hidden">Search (click ESC to close search results)</span>
@@ -74,6 +72,10 @@
                                         <h4 class="phpdocumentor-sidebar__root-namespace"><a href="../namespaces/woocommerce.html"><abbr title="\WooCommerce">WooCommerce</abbr></a></h4>
                 <ul class="phpdocumentor-list">
                                             <li><a href="../namespaces/woocommerce-admin.html"><abbr title="\WooCommerce\Admin">Admin</abbr></a></li>
+                                    </ul>
+                            <h4 class="phpdocumentor-sidebar__root-namespace"><a href="../namespaces/mailpoet.html"><abbr title="\MailPoet">MailPoet</abbr></a></h4>
+                <ul class="phpdocumentor-list">
+                                            <li><a href="../namespaces/mailpoet-emaileditor.html"><abbr title="\MailPoet\EmailEditor">EmailEditor</abbr></a></li>
                                     </ul>
                             <h4 class="phpdocumentor-sidebar__root-namespace"><a href="../namespaces/automattic.html"><abbr title="\Automattic">Automattic</abbr></a></h4>
                 <ul class="phpdocumentor-list">
@@ -119,8 +121,10 @@
                                     <li><a href="../packages/WooCommerce-Widgets.html"><abbr title="\WooCommerce\Widgets">Widgets</abbr></a></li>
                                     <li><a href="../packages/WooCommerce-Uninstaller.html"><abbr title="\WooCommerce\Uninstaller">Uninstaller</abbr></a></li>
                             </ul>
-                                <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/WoocommerceAdmin.html"><abbr title="\WoocommerceAdmin">WoocommerceAdmin</abbr></a></h3>
-                                <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/WoocommerceNavigation.html"><abbr title="\WoocommerceNavigation">WoocommerceNavigation</abbr></a></h3>
+                                <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/MailPoet.html"><abbr title="\MailPoet">MailPoet</abbr></a></h3>
+                        <ul class="phpdocumentor-list">
+                                    <li><a href="../packages/MailPoet-EmailEditor.html"><abbr title="\MailPoet\EmailEditor">EmailEditor</abbr></a></li>
+                            </ul>
                                 <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/Automattic.html"><abbr title="\Automattic">Automattic</abbr></a></h3>
                         <ul class="phpdocumentor-list">
                                     <li><a href="../packages/Automattic-WooCommerce.html"><abbr title="\Automattic\WooCommerce">WooCommerce</abbr></a></li>
@@ -167,8 +171,13 @@ if ( ! defined( &#039;ABSPATH&#039; ) ) {
 	exit;
 }
 
+use Automattic\WooCommerce\Enums\ProductStatus;
+use Automattic\WooCommerce\Enums\ProductStockStatus;
+use Automattic\WooCommerce\Enums\ProductTaxStatus;
+use Automattic\WooCommerce\Enums\ProductType;
+use Automattic\WooCommerce\Enums\CatalogVisibility;
+use Automattic\WooCommerce\Internal\CostOfGoodsSold\CogsAwareTrait;
 use Automattic\WooCommerce\Internal\ProductAttributesLookup\LookupDataStore as ProductAttributesLookupDataStore;
-use Automattic\WooCommerce\Internal\ProductDownloads\ApprovedDirectories\Register as Download_Directories;
 
 /**
  * Legacy product contains all deprecated methods for this class and can be
@@ -185,6 +194,7 @@ require_once WC_ABSPATH . &#039;includes/legacy/abstract-wc-legacy-product.php&#
  * @package WooCommerce\Abstracts
  */
 class WC_Product extends WC_Abstract_Legacy_Product {
+	use CogsAwareTrait;
 
 	/**
 	 * This is the name of this object type.
@@ -219,21 +229,22 @@ class WC_Product extends WC_Abstract_Legacy_Product {
 		&#039;date_modified&#039;      =&gt; null,
 		&#039;status&#039;             =&gt; false,
 		&#039;featured&#039;           =&gt; false,
-		&#039;catalog_visibility&#039; =&gt; &#039;visible&#039;,
+		&#039;catalog_visibility&#039; =&gt; CatalogVisibility::VISIBLE,
 		&#039;description&#039;        =&gt; &#039;&#039;,
 		&#039;short_description&#039;  =&gt; &#039;&#039;,
 		&#039;sku&#039;                =&gt; &#039;&#039;,
+		&#039;global_unique_id&#039;   =&gt; &#039;&#039;,
 		&#039;price&#039;              =&gt; &#039;&#039;,
 		&#039;regular_price&#039;      =&gt; &#039;&#039;,
 		&#039;sale_price&#039;         =&gt; &#039;&#039;,
 		&#039;date_on_sale_from&#039;  =&gt; null,
 		&#039;date_on_sale_to&#039;    =&gt; null,
 		&#039;total_sales&#039;        =&gt; &#039;0&#039;,
-		&#039;tax_status&#039;         =&gt; &#039;taxable&#039;,
+		&#039;tax_status&#039;         =&gt; ProductTaxStatus::TAXABLE,
 		&#039;tax_class&#039;          =&gt; &#039;&#039;,
 		&#039;manage_stock&#039;       =&gt; false,
 		&#039;stock_quantity&#039;     =&gt; null,
-		&#039;stock_status&#039;       =&gt; &#039;instock&#039;,
+		&#039;stock_status&#039;       =&gt; ProductStockStatus::IN_STOCK,
 		&#039;backorders&#039;         =&gt; &#039;no&#039;,
 		&#039;low_stock_amount&#039;   =&gt; &#039;&#039;,
 		&#039;sold_individually&#039;  =&gt; false,
@@ -263,6 +274,7 @@ class WC_Product extends WC_Abstract_Legacy_Product {
 		&#039;rating_counts&#039;      =&gt; array(),
 		&#039;average_rating&#039;     =&gt; 0,
 		&#039;review_count&#039;       =&gt; 0,
+		&#039;cogs_value&#039;         =&gt; null,
 	);
 
 	/**
@@ -306,7 +318,7 @@ class WC_Product extends WC_Abstract_Legacy_Product {
 	 * @return string
 	 */
 	public function get_type() {
-		return isset( $this-&gt;product_type ) ? $this-&gt;product_type : &#039;simple&#039;;
+		return isset( $this-&gt;product_type ) ? $this-&gt;product_type : ProductType::SIMPLE;
 	}
 
 	/**
@@ -409,13 +421,24 @@ class WC_Product extends WC_Abstract_Legacy_Product {
 	}
 
 	/**
-	 * Get SKU (Stock-keeping unit) - product unique ID.
+	 * Get SKU (Stock-keeping unit).
 	 *
 	 * @param  string $context What the value is for. Valid values are view and edit.
 	 * @return string
 	 */
 	public function get_sku( $context = &#039;view&#039; ) {
 		return $this-&gt;get_prop( &#039;sku&#039;, $context );
+	}
+
+	/**
+	 * Get Unique ID.
+	 *
+	 * @since 9.1.0
+	 * @param  string $context What the value is for. Valid values are view and edit.
+	 * @return string
+	 */
+	public function get_global_unique_id( $context = &#039;view&#039; ) {
+		return $this-&gt;get_prop( &#039;global_unique_id&#039;, $context );
 	}
 
 	/**
@@ -994,6 +1017,29 @@ class WC_Product extends WC_Abstract_Legacy_Product {
 	}
 
 	/**
+	 * Set global_unique_id
+	 *
+	 * @since 9.1.0
+	 * @param string $global_unique_id Unique ID.
+	 */
+	public function set_global_unique_id( $global_unique_id ) {
+		$global_unique_id = preg_replace( &#039;/[^0-9\-]/&#039;, &#039;&#039;, (string) $global_unique_id );
+		if ( $this-&gt;get_object_read() &amp;&amp; ! empty( $global_unique_id ) &amp;&amp; ! wc_product_has_global_unique_id( $this-&gt;get_id(), $global_unique_id ) ) {
+			$global_unique_id_found = wc_get_product_id_by_global_unique_id( $global_unique_id );
+
+			$this-&gt;error(
+				&#039;product_invalid_global_unique_id&#039;,
+				__( &#039;Invalid or duplicated GTIN, UPC, EAN or ISBN.&#039;, &#039;woocommerce&#039; ),
+				400,
+				array(
+					&#039;resource_id&#039; =&gt; $global_unique_id_found,
+				)
+			);
+		}
+		$this-&gt;set_prop( &#039;global_unique_id&#039;, $global_unique_id );
+	}
+
+	/**
 	 * Set the product&#039;s active price.
 	 *
 	 * @param string $price Price.
@@ -1061,14 +1107,14 @@ class WC_Product extends WC_Abstract_Legacy_Product {
 	 */
 	public function set_tax_status( $status ) {
 		$options = array(
-			&#039;taxable&#039;,
-			&#039;shipping&#039;,
-			&#039;none&#039;,
+			ProductTaxStatus::TAXABLE,
+			ProductTaxStatus::SHIPPING,
+			ProductTaxStatus::NONE,
 		);
 
 		// Set default if empty.
 		if ( empty( $status ) ) {
-			$status = &#039;taxable&#039;;
+			$status = ProductTaxStatus::TAXABLE;
 		}
 
 		$status = strtolower( $status );
@@ -1132,13 +1178,13 @@ class WC_Product extends WC_Abstract_Legacy_Product {
 	 *
 	 * @param string $status New status.
 	 */
-	public function set_stock_status( $status = &#039;instock&#039; ) {
+	public function set_stock_status( $status = ProductStockStatus::IN_STOCK ) {
 		$valid_statuses = wc_get_product_stock_status_options();
 
 		if ( isset( $valid_statuses[ $status ] ) ) {
 			$this-&gt;set_prop( &#039;stock_status&#039;, $status );
 		} else {
-			$this-&gt;set_prop( &#039;stock_status&#039;, &#039;instock&#039; );
+			$this-&gt;set_prop( &#039;stock_status&#039;, ProductStockStatus::IN_STOCK );
 		}
 	}
 
@@ -1552,11 +1598,11 @@ class WC_Product extends WC_Abstract_Legacy_Product {
 		$backorders_are_allowed                = ( &#039;no&#039; !== $this-&gt;get_backorders() );
 
 		if ( $stock_is_above_notification_threshold ) {
-			$new_stock_status = &#039;instock&#039;;
+			$new_stock_status = ProductStockStatus::IN_STOCK;
 		} elseif ( $backorders_are_allowed ) {
-			$new_stock_status = &#039;onbackorder&#039;;
+			$new_stock_status = ProductStockStatus::ON_BACKORDER;
 		} else {
-			$new_stock_status = &#039;outofstock&#039;;
+			$new_stock_status = ProductStockStatus::OUT_OF_STOCK;
 		}
 
 		$this-&gt;set_stock_status( $new_stock_status );
@@ -1750,18 +1796,18 @@ class WC_Product extends WC_Abstract_Legacy_Product {
 	 * @return bool
 	 */
 	protected function is_visible_core() {
-		$visible = &#039;visible&#039; === $this-&gt;get_catalog_visibility() || ( is_search() &amp;&amp; &#039;search&#039; === $this-&gt;get_catalog_visibility() ) || ( ! is_search() &amp;&amp; &#039;catalog&#039; === $this-&gt;get_catalog_visibility() );
+		$visible = CatalogVisibility::VISIBLE === $this-&gt;get_catalog_visibility() || ( is_search() &amp;&amp; CatalogVisibility::SEARCH === $this-&gt;get_catalog_visibility() ) || ( ! is_search() &amp;&amp; CatalogVisibility::CATALOG === $this-&gt;get_catalog_visibility() );
 
-		if ( &#039;trash&#039; === $this-&gt;get_status() ) {
+		if ( ProductStatus::TRASH === $this-&gt;get_status() ) {
 			$visible = false;
-		} elseif ( &#039;publish&#039; !== $this-&gt;get_status() &amp;&amp; ! current_user_can( &#039;edit_post&#039;, $this-&gt;get_id() ) ) {
+		} elseif ( ProductStatus::PUBLISH !== $this-&gt;get_status() &amp;&amp; ! current_user_can( &#039;edit_post&#039;, $this-&gt;get_id() ) ) {
 			$visible = false;
 		}
 
 		if ( $this-&gt;get_parent_id() ) {
 			$parent_product = wc_get_product( $this-&gt;get_parent_id() );
 
-			if ( $parent_product &amp;&amp; &#039;publish&#039; !== $parent_product-&gt;get_status() &amp;&amp; ! current_user_can( &#039;edit_post&#039;, $parent_product-&gt;get_id() ) ) {
+			if ( $parent_product &amp;&amp; ProductStatus::PUBLISH !== $parent_product-&gt;get_status() &amp;&amp; ! current_user_can( &#039;edit_post&#039;, $parent_product-&gt;get_id() ) ) {
 				$visible = false;
 			}
 		}
@@ -1779,7 +1825,14 @@ class WC_Product extends WC_Abstract_Legacy_Product {
 	 * @return bool
 	 */
 	public function is_purchasable() {
-		return apply_filters( &#039;woocommerce_is_purchasable&#039;, $this-&gt;exists() &amp;&amp; ( &#039;publish&#039; === $this-&gt;get_status() || current_user_can( &#039;edit_post&#039;, $this-&gt;get_id() ) ) &amp;&amp; &#039;&#039; !== $this-&gt;get_price(), $this );
+		/**
+		 * Filters whether a product is purchasable.
+		 *
+		 * @since 2.7.0
+		 * @param bool          $purchasable Whether the product is purchasable.
+		 * @param WC_Product    $product     Product object.
+		 */
+		return apply_filters( &#039;woocommerce_is_purchasable&#039;, $this-&gt;exists() &amp;&amp; ( ProductStatus::PUBLISH === $this-&gt;get_status() || current_user_can( &#039;edit_post&#039;, $this-&gt;get_id() ) ) &amp;&amp; &#039;&#039; !== $this-&gt;get_price(), $this );
 	}
 
 	/**
@@ -1830,7 +1883,14 @@ class WC_Product extends WC_Abstract_Legacy_Product {
 	 * @return bool
 	 */
 	public function is_in_stock() {
-		return apply_filters( &#039;woocommerce_product_is_in_stock&#039;, &#039;outofstock&#039; !== $this-&gt;get_stock_status(), $this );
+		/**
+		 * Filters whether a product is in stock.
+		 *
+		 * @since 2.7.0
+		 * @param bool          $in_stock Whether the product is in stock.
+		 * @param WC_Product    $product  Product object.
+		 */
+		return apply_filters( &#039;woocommerce_product_is_in_stock&#039;, ProductStockStatus::OUT_OF_STOCK !== $this-&gt;get_stock_status(), $this );
 	}
 
 	/**
@@ -1848,7 +1908,14 @@ class WC_Product extends WC_Abstract_Legacy_Product {
 	 * @return bool
 	 */
 	public function is_taxable() {
-		return apply_filters( &#039;woocommerce_product_is_taxable&#039;, $this-&gt;get_tax_status() === &#039;taxable&#039; &amp;&amp; wc_tax_enabled(), $this );
+		/**
+		 * Filters whether a product is taxable.
+		 *
+		 * @since 2.7.0
+		 * @param bool          $taxable Whether the product is taxable.
+		 * @param WC_Product    $product Product object.
+		 */
+		return apply_filters( &#039;woocommerce_product_is_taxable&#039;, $this-&gt;get_tax_status() === ProductTaxStatus::TAXABLE &amp;&amp; wc_tax_enabled(), $this );
 	}
 
 	/**
@@ -1857,7 +1924,7 @@ class WC_Product extends WC_Abstract_Legacy_Product {
 	 * @return bool
 	 */
 	public function is_shipping_taxable() {
-		return $this-&gt;needs_shipping() &amp;&amp; ( $this-&gt;get_tax_status() === &#039;taxable&#039; || $this-&gt;get_tax_status() === &#039;shipping&#039; );
+		return $this-&gt;needs_shipping() &amp;&amp; ( $this-&gt;get_tax_status() === ProductTaxStatus::TAXABLE || $this-&gt;get_tax_status() === ProductTaxStatus::SHIPPING );
 	}
 
 	/**
@@ -1897,7 +1964,7 @@ class WC_Product extends WC_Abstract_Legacy_Product {
 	 * @return bool
 	 */
 	public function is_on_backorder( $qty_in_cart = 0 ) {
-		if ( &#039;onbackorder&#039; === $this-&gt;get_stock_status() ) {
+		if ( ProductStockStatus::ON_BACKORDER === $this-&gt;get_stock_status() ) {
 			return true;
 		}
 
@@ -2043,6 +2110,40 @@ class WC_Product extends WC_Abstract_Legacy_Product {
 	}
 
 	/**
+	 * Returns the Cost of Goods Sold value in html format.
+	 *
+	 * @return string
+	 */
+	public function get_cogs_value_html() {
+		$value = $this-&gt;get_cogs_total_value();
+
+		if ( 0.0 === $value ) {
+			/**
+			 * Filter to customize how an empty Cost of Goods Sold value for a product gets rendered to HTML.
+			 *
+			 * @param string $html The rendered HTML.
+			 * @param WC_Product $product The product for which the cost is rendered.
+			 *
+			 * @since 9.8.0
+			 */
+			$html = apply_filters( &#039;woocommerce_empty_cogs_html&#039;, &#039;&#039;, $this );
+		} else {
+			$html = wc_price( $value ) . $this-&gt;get_price_suffix();
+		}
+
+		/**
+		 * Filter to customize how the Cost of Goods Sold value for a product gets rendered to HTML.
+		 *
+		 * @param string $html The rendered HTML.
+		 * @param float $value The cost value that is being rendered.
+		 * @param WC_Product $product The product for which the cost is rendered.
+		 *
+		 * @since 9.8.0
+		 */
+		return apply_filters( &#039;woocommerce_get_cogs_html&#039;, $html, $value, $this );
+	}
+
+	/**
 	 * Get product name with SKU or ID. Used within admin.
 	 *
 	 * @return string Formatted product name
@@ -2142,7 +2243,14 @@ class WC_Product extends WC_Abstract_Legacy_Product {
 	public function get_image( $size = &#039;woocommerce_thumbnail&#039;, $attr = array(), $placeholder = true ) {
 		$image = &#039;&#039;;
 		if ( $this-&gt;get_image_id() ) {
-			$image = wp_get_attachment_image( $this-&gt;get_image_id(), $size, false, $attr );
+			$image_alt = get_post_meta( $this-&gt;get_image_id(), &#039;_wp_attachment_image_alt&#039;, true );
+			$attr      = wp_parse_args(
+				$attr,
+				array(
+					&#039;alt&#039; =&gt; $image_alt ? $image_alt : $this-&gt;get_name(),
+				)
+			);
+			$image     = wp_get_attachment_image( $this-&gt;get_image_id(), $size, false, $attr );
 		} elseif ( $this-&gt;get_parent_id() ) {
 			$parent_product = wc_get_product( $this-&gt;get_parent_id() );
 			if ( $parent_product ) {
@@ -2257,7 +2365,7 @@ class WC_Product extends WC_Abstract_Legacy_Product {
 		$html = &#039;&#039;;
 
 		$suffix = get_option( &#039;woocommerce_price_display_suffix&#039; );
-		if ( $suffix &amp;&amp; wc_tax_enabled() &amp;&amp; &#039;taxable&#039; === $this-&gt;get_tax_status() ) {
+		if ( $suffix &amp;&amp; wc_tax_enabled() &amp;&amp; ProductTaxStatus::TAXABLE === $this-&gt;get_tax_status() ) {
 			if ( &#039;&#039; === $price ) {
 				$price = $this-&gt;get_price();
 			}
@@ -2321,6 +2429,126 @@ class WC_Product extends WC_Abstract_Legacy_Product {
 		}
 		return apply_filters( &#039;woocommerce_get_availability_class&#039;, $class, $this );
 	}
+
+	/**
+	 * Set the defined value of the Cost of Goods Sold for this product.
+	 *
+	 * In this implementation the defined value is a monetary value, but in the future
+	 * (or in derived classes) it could be something different like e.g. a percent of the price;
+	 * see also get_cogs_effective_value and get_cogs_total_value.
+	 *
+	 * The defined value can be null. By default this is equivalent to a value of zero,
+	 * but again: in the future, or in derived classes, it can mean something different.
+	 * See also adjust_cogs_value_before_set.
+	 *
+	 * WARNING! If the Cost of Goods Sold feature is disabled this method will have no effect.
+	 *
+	 * @param float|null $value The value to set for this product.
+	 */
+	public function set_cogs_value( ?float $value ): void {
+		if ( $this-&gt;cogs_is_enabled( __METHOD__ ) ) {
+			$value = $this-&gt;adjust_cogs_value_before_set( $value );
+			$this-&gt;set_prop( &#039;cogs_value&#039;, $value );
+		}
+	}
+
+	/**
+	 * Adjust the value of the Cost of Goods Sold before actually setting it.
+	 *
+	 * To disable the conversion of zero into null in a derived class,
+	 * override this method with just &quot;return $value;&quot; in the body.
+	 *
+	 * @param float|null $value Cost value passed to the set_cogs_value method.
+	 * @return float|null The actual value that will be set for the cost property.
+	 */
+	protected function adjust_cogs_value_before_set( ?float $value ): ?float {
+		return 0.0 === $value ? null : $value;
+	}
+
+	/**
+	 * Get the defined value of the Cost of Goods Sold for this product.
+	 * See set_cogs_value.
+	 *
+	 * WARNING! If the Cost of Goods Sold feature is disabled this method will always return null.
+	 *
+	 * @return float The current value for this product.
+	 */
+	public function get_cogs_value(): ?float {
+		if ( ! $this-&gt;cogs_is_enabled( __METHOD__ ) ) {
+			return null;
+		}
+
+		$value = $this-&gt;get_prop( &#039;cogs_value&#039; );
+		return is_null( $value ) ? null : (float) $value;
+	}
+
+	/**
+	 * Get the effective value of the Cost of Goods Sold for this product.
+	 *
+	 * The effective value is the defined value once converted to a monetary value;
+	 * in the current implementation both values are always equal, but this could change
+	 * in the future (or in derived classes). See also get_cogs_effective_value_core
+	 * and get_cogs_total_value.
+	 *
+	 * WARNING! If the Cost of Goods Sold feature is disabled this method will always return zero.
+	 *
+	 * @return float The effective value for this product.
+	 */
+	public function get_cogs_effective_value(): float {
+		return $this-&gt;cogs_is_enabled( __METHOD__ ) ? $this-&gt;get_cogs_effective_value_core() : 0;
+	}
+
+	/**
+	 * Core method to get the effective value of the Cost of Goods Sold for this product.
+	 * (the final, actual monetary value).
+	 *
+	 * Derived classes can override this method to provide an alternative way
+	 * of calculating the effective value from the defined value,
+	 * see for example the WC_Product_Variation class.
+	 *
+	 * @return float The effective value for this product.
+	 */
+	protected function get_cogs_effective_value_core(): float {
+		return $this-&gt;get_cogs_value() ?? 0;
+	}
+
+	/**
+	 * Get the effective total value of the Cost of Goods Sold for this product.
+	 * This is the monetary value that will be applied to orders and used for analytics purposes,
+	 * see also get_cogs_total_value_core.
+	 *
+	 * WARNING! If the Cost of Goods Sold feature is disabled this method will always return zero.
+	 *
+	 * @return float The effective total value for this product.
+	 */
+	public function get_cogs_total_value(): float {
+		if ( ! $this-&gt;cogs_is_enabled( __METHOD__ ) ) {
+			return 0;
+		}
+
+		/**
+		 * Filter to customize the total Cost of Goods Sold value that get_cogs_total_value returns for a given product.
+		 *
+		 * @since 9.5.0
+		 *
+		 * @param float $total_value The effective total value of the product.
+		 * @param WC_Product $product The product for which the total value is being retrieved.
+		 */
+		return apply_filters( &#039;woocommerce_get_product_cogs_total_value&#039;, $this-&gt;get_cogs_total_value_core(), $this );
+	}
+
+	/**
+	 * Core function to get the effective total value of the Cost of Goods Sold for this product.
+	 *
+	 * Derived classes can override this method to provide an alternative way
+	 * of calculating the total effective value from the single effective value
+	 * and/or the defined value.
+	 *
+	 * @return float The effective total value for this product.
+	 */
+	protected function get_cogs_total_value_core(): float {
+		return $this-&gt;get_cogs_effective_value();
+	}
 }
 </code></pre>
             </article>
@@ -2332,7 +2560,7 @@ class WC_Product extends WC_Abstract_Legacy_Product {
 
     <footer class="phpdocumentor phpdocumentor-footer">
     <div class="phpdocumentor-section">
-        <span>WooCommerce Code Reference API documentation generated by <a href="http://www.phpdoc.org/">phpDocumentor</a> on July 25th, 2024 at 11:33 am.</span>
+        <span>WooCommerce Code Reference API documentation generated by <a href="http://www.phpdoc.org/">phpDocumentor</a> on May 16th, 2025 at 09:14 am.</span>
     </div>
 </footer>
 
@@ -2344,7 +2572,7 @@ class WC_Product extends WC_Abstract_Legacy_Product {
             'searchIndex': '..\/js\/searchIndex.json'
         };
     </script>
-    <script src="../js/searchIndex.js?updated=1721907182"></script>
-    <script src="../js/search.js?updated=1721907182"></script>
+    <script src="../js/searchIndex.js?updated=1747386858"></script>
+    <script src="../js/search.js?updated=1747386858"></script>
 </body>
 </html>

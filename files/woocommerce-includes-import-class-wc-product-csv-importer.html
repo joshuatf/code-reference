@@ -4,14 +4,13 @@
     <meta charset="utf-8">
     <title>WooCommerce Code Reference</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="../images/favicon.png" />
-    <link rel="apple-touch-icon" href="../images/apple-touch-icon.png"/>
-    <link rel="apple-touch-icon" sizes="72x72" href="../images/apple-touch-icon-72x72.png"/>
-    <link rel="apple-touch-icon" sizes="114x114" href="../images/apple-touch-icon-114x114.png"/>
+    <link rel="icon" href="../images/favicon-32x32.png" sizes="32x32" />
+    <link rel="icon" href="../images/favicon-192x192.png" sizes="192x192" />
+    <link rel="apple-touch-icon" href="../images/favicon-180x180.png" />
+
     <link rel="stylesheet" href="../css/normalize.css">
-    <link rel="stylesheet" href="../css/base.css?updated=1721907183">
-    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../css/template.css?updated=1721907183">
+    <link rel="stylesheet" href="../css/base.css?updated=1747386859">
+    <link rel="stylesheet" href="../css/template.css?updated=1747386859">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0/css/all.min.css" integrity="sha256-ybRkN9dBjhcS2qrW1z+hfCxq+1aBdwyQM5wlQoQVt/0=" crossorigin="anonymous" />
             <script src="https://cdn.jsdelivr.net/npm/css-vars-ponyfill@2"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0/js/all.min.js" integrity="sha256-0vuk8LXoyrmCjp1f0O300qo1M75ZQyhH9X3J6d+scmk=" crossorigin="anonymous"></script>
@@ -38,14 +37,13 @@
     <header class="phpdocumentor-top-header">
     <section class="phpdocumentor-section">
         <div class="site-branding">
-            <a class="site-logo" href="../index.html"><img width="180" src="../images/logo.svg" alt="WooCommerce" /></a>
+            <a class="site-logo" href="../index.html"><img src="../images/logo.png" alt="WooCommerce" /></a>
         </div>
         <nav class="main-navigation">
             <ul>
                 <li><a href="../hooks/hooks.html">Hooks Reference</a></li>
-                <li><a href="https://docs.woocommerce.com/">Documentation</a></li>
+                <li><a href="https://developer.woocommerce.com/docs/">Documentation</a></li>
                 <li><a href="https://woocommerce.github.io/woocommerce-rest-api-docs/">REST API Docs</a></li>
-                <li><a href="https://woocommerce.com/careers/?utm_source=woocommerce+core+code+reference&utm_medium=devdocs&utm_campaign=woo+careers" target="_blank">We're hiring!</a></li>
             </ul>
         </nav>
     </section>
@@ -53,7 +51,7 @@
 
 <div class="phpdocumentor-header">
     <section class="phpdocumentor-section">
-        <h1 class="phpdocumentor-title">WooCommerce Code Reference</h1>
+        <h1 class="phpdocumentor-title"><a href="../index.html">WooCommerce Code Reference</a></h1>
         <section class="phpdocumentor-search">
     <label class="phpdocumentor-label">
         <span class="visually-hidden">Search (click ESC to close search results)</span>
@@ -74,6 +72,10 @@
                                         <h4 class="phpdocumentor-sidebar__root-namespace"><a href="../namespaces/woocommerce.html"><abbr title="\WooCommerce">WooCommerce</abbr></a></h4>
                 <ul class="phpdocumentor-list">
                                             <li><a href="../namespaces/woocommerce-admin.html"><abbr title="\WooCommerce\Admin">Admin</abbr></a></li>
+                                    </ul>
+                            <h4 class="phpdocumentor-sidebar__root-namespace"><a href="../namespaces/mailpoet.html"><abbr title="\MailPoet">MailPoet</abbr></a></h4>
+                <ul class="phpdocumentor-list">
+                                            <li><a href="../namespaces/mailpoet-emaileditor.html"><abbr title="\MailPoet\EmailEditor">EmailEditor</abbr></a></li>
                                     </ul>
                             <h4 class="phpdocumentor-sidebar__root-namespace"><a href="../namespaces/automattic.html"><abbr title="\Automattic">Automattic</abbr></a></h4>
                 <ul class="phpdocumentor-list">
@@ -119,8 +121,10 @@
                                     <li><a href="../packages/WooCommerce-Widgets.html"><abbr title="\WooCommerce\Widgets">Widgets</abbr></a></li>
                                     <li><a href="../packages/WooCommerce-Uninstaller.html"><abbr title="\WooCommerce\Uninstaller">Uninstaller</abbr></a></li>
                             </ul>
-                                <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/WoocommerceAdmin.html"><abbr title="\WoocommerceAdmin">WoocommerceAdmin</abbr></a></h3>
-                                <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/WoocommerceNavigation.html"><abbr title="\WoocommerceNavigation">WoocommerceNavigation</abbr></a></h3>
+                                <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/MailPoet.html"><abbr title="\MailPoet">MailPoet</abbr></a></h3>
+                        <ul class="phpdocumentor-list">
+                                    <li><a href="../packages/MailPoet-EmailEditor.html"><abbr title="\MailPoet\EmailEditor">EmailEditor</abbr></a></li>
+                            </ul>
                                 <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/Automattic.html"><abbr title="\Automattic">Automattic</abbr></a></h3>
                         <ul class="phpdocumentor-list">
                                     <li><a href="../packages/Automattic-WooCommerce.html"><abbr title="\Automattic\WooCommerce">WooCommerce</abbr></a></li>
@@ -164,6 +168,10 @@
  * @version 3.1.0
  */
 
+use Automattic\WooCommerce\Enums\ProductStatus;
+use Automattic\WooCommerce\Enums\ProductStockStatus;
+use Automattic\WooCommerce\Enums\ProductTaxStatus;
+use Automattic\WooCommerce\Enums\ProductType;
 use Automattic\WooCommerce\Utilities\ArrayUtil;
 
 if ( ! defined( &#039;ABSPATH&#039; ) ) {
@@ -356,7 +364,7 @@ class WC_Product_CSV_Importer extends WC_Product_Importer {
 				return absint( $original_id );
 			}
 
-			// See if the given ID maps to a valid product allready.
+			// See if the given ID maps to a valid product already.
 			$existing_id = $wpdb-&gt;get_var( $wpdb-&gt;prepare( &quot;SELECT ID FROM {$wpdb-&gt;posts} WHERE post_type IN ( &#039;product&#039;, &#039;product_variation&#039; ) AND ID = %d;&quot;, $id ) ); // WPCS: db call ok, cache ok.
 
 			if ( $existing_id ) {
@@ -365,7 +373,7 @@ class WC_Product_CSV_Importer extends WC_Product_Importer {
 
 			// If we&#039;re not updating existing posts, we may need a placeholder product to map to.
 			if ( ! $this-&gt;params[&#039;update_existing&#039;] ) {
-				$product = wc_get_product_object( &#039;simple&#039; );
+				$product = wc_get_product_object( ProductType::SIMPLE );
 				$product-&gt;set_name( &#039;Import placeholder for &#039; . $id );
 				$product-&gt;set_status( &#039;importing&#039; );
 				$product-&gt;add_meta_data( &#039;_original_id&#039;, $id, true );
@@ -382,7 +390,7 @@ class WC_Product_CSV_Importer extends WC_Product_Importer {
 		}
 
 		try {
-			$product = wc_get_product_object( &#039;simple&#039; );
+			$product = wc_get_product_object( ProductType::SIMPLE );
 			$product-&gt;set_name( &#039;Import placeholder for &#039; . $value );
 			$product-&gt;set_status( &#039;importing&#039; );
 			$product-&gt;set_sku( $value );
@@ -436,7 +444,7 @@ class WC_Product_CSV_Importer extends WC_Product_Importer {
 				return $id_from_sku;
 			}
 
-			$product = wc_get_product_object( &#039;simple&#039; );
+			$product = wc_get_product_object( ProductType::SIMPLE );
 			$product-&gt;set_name( &#039;Import placeholder for &#039; . $id );
 			$product-&gt;set_status( &#039;importing&#039; );
 			$product-&gt;add_meta_data( &#039;_original_id&#039;, $id, true );
@@ -554,7 +562,7 @@ class WC_Product_CSV_Importer extends WC_Product_Importer {
 		$value = $this-&gt;unescape_data( $value );
 
 		if ( &#039;true&#039; === strtolower( $value ) || &#039;false&#039; === strtolower( $value ) ) {
-			$value = wc_string_to_bool( $value ) ? &#039;taxable&#039; : &#039;none&#039;;
+			$value = wc_string_to_bool( $value ) ? ProductTaxStatus::TAXABLE : ProductTaxStatus::NONE;
 		}
 
 		return wc_clean( $value );
@@ -1024,7 +1032,7 @@ class WC_Product_CSV_Importer extends WC_Product_Importer {
 			$data[&#039;type&#039;] = current( array_diff( $data[&#039;type&#039;], array( &#039;virtual&#039;, &#039;downloadable&#039; ) ) );
 
 			if ( ! $data[&#039;type&#039;] ) {
-				$data[&#039;type&#039;] = &#039;simple&#039;;
+				$data[&#039;type&#039;] = ProductType::SIMPLE;
 			}
 		}
 
@@ -1036,15 +1044,15 @@ class WC_Product_CSV_Importer extends WC_Product_Importer {
 			}
 
 			$statuses       = array(
-				-1 =&gt; &#039;draft&#039;,
-				0  =&gt; &#039;private&#039;,
-				1  =&gt; &#039;publish&#039;,
+				-1 =&gt; ProductStatus::DRAFT,
+				0  =&gt; ProductStatus::PRIVATE,
+				1  =&gt; ProductStatus::PUBLISH,
 			);
-			$data[&#039;status&#039;] = $statuses[ $published ] ?? &#039;draft&#039;;
+			$data[&#039;status&#039;] = $statuses[ $published ] ?? ProductStatus::DRAFT;
 
 			// Fix draft status of variations.
-			if ( &#039;variation&#039; === ( $data[&#039;type&#039;] ?? null ) &amp;&amp; -1 === $published ) {
-				$data[&#039;status&#039;] = &#039;publish&#039;;
+			if ( ProductType::VARIATION === ( $data[&#039;type&#039;] ?? null ) &amp;&amp; -1 === $published ) {
+				$data[&#039;status&#039;] = ProductStatus::PUBLISH;
 			}
 
 			unset( $data[&#039;published&#039;] );
@@ -1062,9 +1070,9 @@ class WC_Product_CSV_Importer extends WC_Product_Importer {
 		// Stock is bool or &#039;backorder&#039;.
 		if ( isset( $data[&#039;stock_status&#039;] ) ) {
 			if ( &#039;backorder&#039; === $data[&#039;stock_status&#039;] ) {
-				$data[&#039;stock_status&#039;] = &#039;onbackorder&#039;;
+				$data[&#039;stock_status&#039;] = ProductStockStatus::ON_BACKORDER;
 			} else {
-				$data[&#039;stock_status&#039;] = $data[&#039;stock_status&#039;] ? &#039;instock&#039; : &#039;outofstock&#039;;
+				$data[&#039;stock_status&#039;] = $data[&#039;stock_status&#039;] ? ProductStockStatus::IN_STOCK : ProductStockStatus::OUT_OF_STOCK;
 			}
 		}
 
@@ -1293,24 +1301,24 @@ class WC_Product_CSV_Importer extends WC_Product_Importer {
 				$sku_exists  = $product &amp;&amp; &#039;importing&#039; !== $product-&gt;get_status();
 			}
 
-			if ( $id_exists &amp;&amp; ! $update_existing ) {
-				$data[&#039;skipped&#039;][] = new WP_Error(
-					&#039;woocommerce_product_importer_error&#039;,
-					esc_html__( &#039;A product with this ID already exists.&#039;, &#039;woocommerce&#039; ),
-					array(
-						&#039;id&#039;  =&gt; $id,
-						&#039;row&#039; =&gt; $this-&gt;get_row_id( $parsed_data ),
-					)
-				);
-				continue;
-			}
-
 			if ( $sku_exists &amp;&amp; ! $update_existing ) {
 				$data[&#039;skipped&#039;][] = new WP_Error(
 					&#039;woocommerce_product_importer_error&#039;,
 					esc_html__( &#039;A product with this SKU already exists.&#039;, &#039;woocommerce&#039; ),
 					array(
 						&#039;sku&#039; =&gt; esc_attr( $sku ),
+						&#039;row&#039; =&gt; $this-&gt;get_row_id( $parsed_data ),
+					)
+				);
+				continue;
+			}
+
+			if ( $id_exists &amp;&amp; ! $update_existing ) {
+				$data[&#039;skipped&#039;][] = new WP_Error(
+					&#039;woocommerce_product_importer_error&#039;,
+					esc_html__( &#039;A product with this ID already exists.&#039;, &#039;woocommerce&#039; ),
+					array(
+						&#039;id&#039;  =&gt; $id,
 						&#039;row&#039; =&gt; $this-&gt;get_row_id( $parsed_data ),
 					)
 				);
@@ -1366,7 +1374,7 @@ class WC_Product_CSV_Importer extends WC_Product_Importer {
 
     <footer class="phpdocumentor phpdocumentor-footer">
     <div class="phpdocumentor-section">
-        <span>WooCommerce Code Reference API documentation generated by <a href="http://www.phpdoc.org/">phpDocumentor</a> on July 25th, 2024 at 11:33 am.</span>
+        <span>WooCommerce Code Reference API documentation generated by <a href="http://www.phpdoc.org/">phpDocumentor</a> on May 16th, 2025 at 09:14 am.</span>
     </div>
 </footer>
 
@@ -1378,7 +1386,7 @@ class WC_Product_CSV_Importer extends WC_Product_Importer {
             'searchIndex': '..\/js\/searchIndex.json'
         };
     </script>
-    <script src="../js/searchIndex.js?updated=1721907183"></script>
-    <script src="../js/search.js?updated=1721907183"></script>
+    <script src="../js/searchIndex.js?updated=1747386859"></script>
+    <script src="../js/search.js?updated=1747386859"></script>
 </body>
 </html>

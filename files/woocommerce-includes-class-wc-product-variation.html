@@ -4,14 +4,13 @@
     <meta charset="utf-8">
     <title>WooCommerce Code Reference</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="../images/favicon.png" />
-    <link rel="apple-touch-icon" href="../images/apple-touch-icon.png"/>
-    <link rel="apple-touch-icon" sizes="72x72" href="../images/apple-touch-icon-72x72.png"/>
-    <link rel="apple-touch-icon" sizes="114x114" href="../images/apple-touch-icon-114x114.png"/>
+    <link rel="icon" href="../images/favicon-32x32.png" sizes="32x32" />
+    <link rel="icon" href="../images/favicon-192x192.png" sizes="192x192" />
+    <link rel="apple-touch-icon" href="../images/favicon-180x180.png" />
+
     <link rel="stylesheet" href="../css/normalize.css">
-    <link rel="stylesheet" href="../css/base.css?updated=1721907182">
-    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../css/template.css?updated=1721907182">
+    <link rel="stylesheet" href="../css/base.css?updated=1747386858">
+    <link rel="stylesheet" href="../css/template.css?updated=1747386858">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0/css/all.min.css" integrity="sha256-ybRkN9dBjhcS2qrW1z+hfCxq+1aBdwyQM5wlQoQVt/0=" crossorigin="anonymous" />
             <script src="https://cdn.jsdelivr.net/npm/css-vars-ponyfill@2"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0/js/all.min.js" integrity="sha256-0vuk8LXoyrmCjp1f0O300qo1M75ZQyhH9X3J6d+scmk=" crossorigin="anonymous"></script>
@@ -38,14 +37,13 @@
     <header class="phpdocumentor-top-header">
     <section class="phpdocumentor-section">
         <div class="site-branding">
-            <a class="site-logo" href="../index.html"><img width="180" src="../images/logo.svg" alt="WooCommerce" /></a>
+            <a class="site-logo" href="../index.html"><img src="../images/logo.png" alt="WooCommerce" /></a>
         </div>
         <nav class="main-navigation">
             <ul>
                 <li><a href="../hooks/hooks.html">Hooks Reference</a></li>
-                <li><a href="https://docs.woocommerce.com/">Documentation</a></li>
+                <li><a href="https://developer.woocommerce.com/docs/">Documentation</a></li>
                 <li><a href="https://woocommerce.github.io/woocommerce-rest-api-docs/">REST API Docs</a></li>
-                <li><a href="https://woocommerce.com/careers/?utm_source=woocommerce+core+code+reference&utm_medium=devdocs&utm_campaign=woo+careers" target="_blank">We're hiring!</a></li>
             </ul>
         </nav>
     </section>
@@ -53,7 +51,7 @@
 
 <div class="phpdocumentor-header">
     <section class="phpdocumentor-section">
-        <h1 class="phpdocumentor-title">WooCommerce Code Reference</h1>
+        <h1 class="phpdocumentor-title"><a href="../index.html">WooCommerce Code Reference</a></h1>
         <section class="phpdocumentor-search">
     <label class="phpdocumentor-label">
         <span class="visually-hidden">Search (click ESC to close search results)</span>
@@ -74,6 +72,10 @@
                                         <h4 class="phpdocumentor-sidebar__root-namespace"><a href="../namespaces/woocommerce.html"><abbr title="\WooCommerce">WooCommerce</abbr></a></h4>
                 <ul class="phpdocumentor-list">
                                             <li><a href="../namespaces/woocommerce-admin.html"><abbr title="\WooCommerce\Admin">Admin</abbr></a></li>
+                                    </ul>
+                            <h4 class="phpdocumentor-sidebar__root-namespace"><a href="../namespaces/mailpoet.html"><abbr title="\MailPoet">MailPoet</abbr></a></h4>
+                <ul class="phpdocumentor-list">
+                                            <li><a href="../namespaces/mailpoet-emaileditor.html"><abbr title="\MailPoet\EmailEditor">EmailEditor</abbr></a></li>
                                     </ul>
                             <h4 class="phpdocumentor-sidebar__root-namespace"><a href="../namespaces/automattic.html"><abbr title="\Automattic">Automattic</abbr></a></h4>
                 <ul class="phpdocumentor-list">
@@ -119,8 +121,10 @@
                                     <li><a href="../packages/WooCommerce-Widgets.html"><abbr title="\WooCommerce\Widgets">Widgets</abbr></a></li>
                                     <li><a href="../packages/WooCommerce-Uninstaller.html"><abbr title="\WooCommerce\Uninstaller">Uninstaller</abbr></a></li>
                             </ul>
-                                <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/WoocommerceAdmin.html"><abbr title="\WoocommerceAdmin">WoocommerceAdmin</abbr></a></h3>
-                                <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/WoocommerceNavigation.html"><abbr title="\WoocommerceNavigation">WoocommerceNavigation</abbr></a></h3>
+                                <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/MailPoet.html"><abbr title="\MailPoet">MailPoet</abbr></a></h3>
+                        <ul class="phpdocumentor-list">
+                                    <li><a href="../packages/MailPoet-EmailEditor.html"><abbr title="\MailPoet\EmailEditor">EmailEditor</abbr></a></li>
+                            </ul>
                                 <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/Automattic.html"><abbr title="\Automattic">Automattic</abbr></a></h3>
                         <ul class="phpdocumentor-list">
                                     <li><a href="../packages/Automattic-WooCommerce.html"><abbr title="\Automattic\WooCommerce">WooCommerce</abbr></a></li>
@@ -166,6 +170,10 @@
  * @version 3.0.0
  */
 
+use Automattic\WooCommerce\Enums\ProductStatus;
+use Automattic\WooCommerce\Enums\ProductType;
+use Automattic\WooCommerce\Enums\CatalogVisibility;
+
 defined( &#039;ABSPATH&#039; ) || exit;
 
 /**
@@ -207,8 +215,9 @@ class WC_Product_Variation extends WC_Product_Simple {
 	 * @param int|WC_Product|object $product Product to init.
 	 */
 	public function __construct( $product = 0 ) {
-		$this-&gt;data[&#039;tax_class&#039;]         = &#039;parent&#039;;
-		$this-&gt;data[&#039;attribute_summary&#039;] = &#039;&#039;;
+		$this-&gt;data[&#039;tax_class&#039;]              = &#039;parent&#039;;
+		$this-&gt;data[&#039;attribute_summary&#039;]      = &#039;&#039;;
+		$this-&gt;data[&#039;cogs_value_is_additive&#039;] = false;
 		parent::__construct( $product );
 	}
 
@@ -228,7 +237,7 @@ class WC_Product_Variation extends WC_Product_Simple {
 	 * @return string
 	 */
 	public function get_type() {
-		return &#039;variation&#039;;
+		return ProductType::VARIATION;
 	}
 
 	/**
@@ -634,7 +643,7 @@ class WC_Product_Variation extends WC_Product_Simple {
 				&#039;shipping_class_id&#039;  =&gt; 0,
 				&#039;image_id&#039;           =&gt; 0,
 				&#039;purchase_note&#039;      =&gt; &#039;&#039;,
-				&#039;catalog_visibility&#039; =&gt; &#039;visible&#039;,
+				&#039;catalog_visibility&#039; =&gt; CatalogVisibility::VISIBLE,
 			)
 		);
 
@@ -705,7 +714,14 @@ class WC_Product_Variation extends WC_Product_Simple {
 	 * @return bool
 	 */
 	public function is_purchasable() {
-		return apply_filters( &#039;woocommerce_variation_is_purchasable&#039;, $this-&gt;variation_is_visible() &amp;&amp; parent::is_purchasable() &amp;&amp; ( &#039;publish&#039; === $this-&gt;parent_data[&#039;status&#039;] || current_user_can( &#039;edit_post&#039;, $this-&gt;get_parent_id() ) ), $this );
+		/**
+		 * Filter to adjust if a variation is purchasable.
+		 *
+		 * @since 3.0.0
+		 * @param bool $purchasable If the variation is purchasable.
+		 * @param object $variation The variation object.
+		 */
+		return apply_filters( &#039;woocommerce_variation_is_purchasable&#039;, $this-&gt;variation_is_visible() &amp;&amp; parent::is_purchasable() &amp;&amp; ( ProductStatus::PUBLISH === $this-&gt;parent_data[&#039;status&#039;] || current_user_can( &#039;edit_post&#039;, $this-&gt;get_parent_id() ) ), $this );
 	}
 
 	/**
@@ -727,7 +743,16 @@ class WC_Product_Variation extends WC_Product_Simple {
 	 * @return bool
 	 */
 	public function variation_is_visible() {
-		return apply_filters( &#039;woocommerce_variation_is_visible&#039;, &#039;publish&#039; === get_post_status( $this-&gt;get_id() ) &amp;&amp; &#039;&#039; !== $this-&gt;get_price(), $this-&gt;get_id(), $this-&gt;get_parent_id(), $this );
+		/**
+		 * Filter to adjust if a variation is visible.
+		 *
+		 * @since 3.0.0
+		 * @param bool $visible If the variation is visible.
+		 * @param int $variation_id The variation ID.
+		 * @param int $product_id The product ID.
+		 * @param object $variation The variation object.
+		 */
+		return apply_filters( &#039;woocommerce_variation_is_visible&#039;, ProductStatus::PUBLISH === get_post_status( $this-&gt;get_id() ) &amp;&amp; &#039;&#039; !== $this-&gt;get_price(), $this-&gt;get_id(), $this-&gt;get_parent_id(), $this );
 	}
 
 	/**
@@ -741,6 +766,72 @@ class WC_Product_Variation extends WC_Product_Simple {
 
 		return $valid_classes;
 	}
+
+	/**
+	 * Get the value of the &quot;Cost of Goods Sold value is additive&quot; flag for this product.
+	 * See get_cogs_effective_value_core.
+	 *
+	 * @return bool The current value of the flag.
+	 */
+	public function get_cogs_value_is_additive(): bool {
+		return (bool) $this-&gt;get_prop( &#039;cogs_value_is_additive&#039; );
+	}
+
+	/**
+	 * Set the value of the &quot;Cost of Goods Sold value is additive&quot; flag for this product.
+	 * See get_cogs_effective_value_core.
+	 *
+	 * WARNING! If the Cost of Goods Sold feature is disabled this value will NOT be persisted when the product is saved.
+	 *
+	 * @param bool $value The value to set for the flag.
+	 */
+	public function set_cogs_value_is_additive( bool $value ): void {
+		$this-&gt;set_prop( &#039;cogs_value_is_additive&#039;, $value );
+	}
+
+	/**
+	 * Replacement of the parent adjust_cogs_value_before_set method
+	 * to disable the conversion of zero to null.
+	 *
+	 * @param float|null $value Cost value passed to the set_cogs_value method.
+	 * @return float|null The actual value that will be set for the cost property.
+	 */
+	protected function adjust_cogs_value_before_set( ?float $value ): ?float {
+		return $value;
+	}
+
+	/**
+	 * Get the effective total value of the Cost of Goods Sold for this product.
+	 * (the monetary value that will be applied to orders and used for analytics purposes).
+	 *
+	 * If &quot;additive&quot; flag is set, the total value is equal to sum of the effective values of the variation and the parent product.
+	 * Otherwise, if the defined value for this variation is null, the effective value is equal to the effective value of the parent product.
+	 * Otherwise, the effective value is equal to the effective value of the variation.
+	 *
+	 * @return float
+	 */
+	protected function get_cogs_total_value_core(): float {
+		if ( $this-&gt;get_cogs_value_is_additive() ) {
+			return $this-&gt;get_parent_cogs_effective_value() + $this-&gt;get_cogs_effective_value();
+		} else {
+			return is_null( $this-&gt;get_cogs_value() ) ? $this-&gt;get_parent_cogs_effective_value() : $this-&gt;get_cogs_effective_value();
+		}
+	}
+
+	/**
+	 * Get the Cost of Goods Sold effective value of the parent product.
+	 *
+	 * @return float Cost of Goods Sold effective value of the parent product.
+	 */
+	public function get_parent_cogs_effective_value(): float {
+		$parent_cogs = $this-&gt;parent_data[&#039;cogs_effective_value&#039;] ?? null;
+		if ( is_null( $parent_cogs ) ) {
+			$parent_product                            = wc_get_product( $this-&gt;get_parent_id() );
+			$parent_cogs                               = $parent_product ? $parent_product-&gt;get_cogs_effective_value() : 0;
+			$this-&gt;parent_data[&#039;cogs_effective_value&#039;] = $parent_cogs;
+		}
+		return $parent_cogs;
+	}
 }
 </code></pre>
             </article>
@@ -752,7 +843,7 @@ class WC_Product_Variation extends WC_Product_Simple {
 
     <footer class="phpdocumentor phpdocumentor-footer">
     <div class="phpdocumentor-section">
-        <span>WooCommerce Code Reference API documentation generated by <a href="http://www.phpdoc.org/">phpDocumentor</a> on July 25th, 2024 at 11:33 am.</span>
+        <span>WooCommerce Code Reference API documentation generated by <a href="http://www.phpdoc.org/">phpDocumentor</a> on May 16th, 2025 at 09:14 am.</span>
     </div>
 </footer>
 
@@ -764,7 +855,7 @@ class WC_Product_Variation extends WC_Product_Simple {
             'searchIndex': '..\/js\/searchIndex.json'
         };
     </script>
-    <script src="../js/searchIndex.js?updated=1721907182"></script>
-    <script src="../js/search.js?updated=1721907182"></script>
+    <script src="../js/searchIndex.js?updated=1747386858"></script>
+    <script src="../js/search.js?updated=1747386858"></script>
 </body>
 </html>

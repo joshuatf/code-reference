@@ -4,14 +4,13 @@
     <meta charset="utf-8">
     <title>WooCommerce Code Reference</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="../images/favicon.png" />
-    <link rel="apple-touch-icon" href="../images/apple-touch-icon.png"/>
-    <link rel="apple-touch-icon" sizes="72x72" href="../images/apple-touch-icon-72x72.png"/>
-    <link rel="apple-touch-icon" sizes="114x114" href="../images/apple-touch-icon-114x114.png"/>
+    <link rel="icon" href="../images/favicon-32x32.png" sizes="32x32" />
+    <link rel="icon" href="../images/favicon-192x192.png" sizes="192x192" />
+    <link rel="apple-touch-icon" href="../images/favicon-180x180.png" />
+
     <link rel="stylesheet" href="../css/normalize.css">
-    <link rel="stylesheet" href="../css/base.css?updated=1721907191">
-    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../css/template.css?updated=1721907191">
+    <link rel="stylesheet" href="../css/base.css?updated=1747386868">
+    <link rel="stylesheet" href="../css/template.css?updated=1747386868">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0/css/all.min.css" integrity="sha256-ybRkN9dBjhcS2qrW1z+hfCxq+1aBdwyQM5wlQoQVt/0=" crossorigin="anonymous" />
             <script src="https://cdn.jsdelivr.net/npm/css-vars-ponyfill@2"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0/js/all.min.js" integrity="sha256-0vuk8LXoyrmCjp1f0O300qo1M75ZQyhH9X3J6d+scmk=" crossorigin="anonymous"></script>
@@ -27,19 +26,24 @@
 		'content_group' : 'WooCommerce Core Code Reference',
 	});
 </script>
-        </head>
+        <script src="../js/prism.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            window.dispatchEvent(new HashChangeEvent('hashchange'));
+        });
+    </script>
+</head>
 <body id="top">
     <header class="phpdocumentor-top-header">
     <section class="phpdocumentor-section">
         <div class="site-branding">
-            <a class="site-logo" href="../index.html"><img width="180" src="../images/logo.svg" alt="WooCommerce" /></a>
+            <a class="site-logo" href="../index.html"><img src="../images/logo.png" alt="WooCommerce" /></a>
         </div>
         <nav class="main-navigation">
             <ul>
                 <li><a href="../hooks/hooks.html">Hooks Reference</a></li>
-                <li><a href="https://docs.woocommerce.com/">Documentation</a></li>
+                <li><a href="https://developer.woocommerce.com/docs/">Documentation</a></li>
                 <li><a href="https://woocommerce.github.io/woocommerce-rest-api-docs/">REST API Docs</a></li>
-                <li><a href="https://woocommerce.com/careers/?utm_source=woocommerce+core+code+reference&utm_medium=devdocs&utm_campaign=woo+careers" target="_blank">We're hiring!</a></li>
             </ul>
         </nav>
     </section>
@@ -47,7 +51,7 @@
 
 <div class="phpdocumentor-header">
     <section class="phpdocumentor-section">
-        <h1 class="phpdocumentor-title">WooCommerce Code Reference</h1>
+        <h1 class="phpdocumentor-title"><a href="../index.html">WooCommerce Code Reference</a></h1>
         <section class="phpdocumentor-search">
     <label class="phpdocumentor-label">
         <span class="visually-hidden">Search (click ESC to close search results)</span>
@@ -68,6 +72,10 @@
                                         <h4 class="phpdocumentor-sidebar__root-namespace"><a href="../namespaces/woocommerce.html"><abbr title="\WooCommerce">WooCommerce</abbr></a></h4>
                 <ul class="phpdocumentor-list">
                                             <li><a href="../namespaces/woocommerce-admin.html"><abbr title="\WooCommerce\Admin">Admin</abbr></a></li>
+                                    </ul>
+                            <h4 class="phpdocumentor-sidebar__root-namespace"><a href="../namespaces/mailpoet.html"><abbr title="\MailPoet">MailPoet</abbr></a></h4>
+                <ul class="phpdocumentor-list">
+                                            <li><a href="../namespaces/mailpoet-emaileditor.html"><abbr title="\MailPoet\EmailEditor">EmailEditor</abbr></a></li>
                                     </ul>
                             <h4 class="phpdocumentor-sidebar__root-namespace"><a href="../namespaces/automattic.html"><abbr title="\Automattic">Automattic</abbr></a></h4>
                 <ul class="phpdocumentor-list">
@@ -113,8 +121,10 @@
                                     <li><a href="../packages/WooCommerce-Widgets.html"><abbr title="\WooCommerce\Widgets">Widgets</abbr></a></li>
                                     <li><a href="../packages/WooCommerce-Uninstaller.html"><abbr title="\WooCommerce\Uninstaller">Uninstaller</abbr></a></li>
                             </ul>
-                                <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/WoocommerceAdmin.html"><abbr title="\WoocommerceAdmin">WoocommerceAdmin</abbr></a></h3>
-                                <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/WoocommerceNavigation.html"><abbr title="\WoocommerceNavigation">WoocommerceNavigation</abbr></a></h3>
+                                <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/MailPoet.html"><abbr title="\MailPoet">MailPoet</abbr></a></h3>
+                        <ul class="phpdocumentor-list">
+                                    <li><a href="../packages/MailPoet-EmailEditor.html"><abbr title="\MailPoet\EmailEditor">EmailEditor</abbr></a></li>
+                            </ul>
                                 <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/Automattic.html"><abbr title="\Automattic">Automattic</abbr></a></h3>
                         <ul class="phpdocumentor-list">
                                     <li><a href="../packages/Automattic-WooCommerce.html"><abbr title="\Automattic\WooCommerce">WooCommerce</abbr></a></li>
@@ -157,9 +167,9 @@
     </h2>
 
         <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-countries.php"><a href="../files/woocommerce-includes-class-wc-countries.html#source-view.14">includes/class-wc-countries.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-countries.php"><a href="../files/woocommerce-includes-class-wc-countries.html#source-view.16">includes/class-wc-countries.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">14</span>
+    <span class="phpdocumentor-element-found-in__line">16</span>
 </aside>
 
             <p class="phpdocumentor-summary">The WooCommerce countries class stores country/state data.</p>
@@ -471,9 +481,9 @@
                                 </span>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-countries.php"><a href="../files/woocommerce-includes-class-wc-countries.html#source-view.28">includes/class-wc-countries.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-countries.php"><a href="../files/woocommerce-includes-class-wc-countries.html#source-view.30">includes/class-wc-countries.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">28</span>
+    <span class="phpdocumentor-element-found-in__line">30</span>
 </aside>
 
         <p class="phpdocumentor-summary">List of address formats for locales.</p>
@@ -503,9 +513,9 @@
                                 </span>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-countries.php"><a href="../files/woocommerce-includes-class-wc-countries.html#source-view.21">includes/class-wc-countries.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-countries.php"><a href="../files/woocommerce-includes-class-wc-countries.html#source-view.23">includes/class-wc-countries.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">21</span>
+    <span class="phpdocumentor-element-found-in__line">23</span>
 </aside>
 
         <p class="phpdocumentor-summary">Locales list.</p>
@@ -535,9 +545,9 @@
                                 </span>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-countries.php"><a href="../files/woocommerce-includes-class-wc-countries.html#source-view.38">includes/class-wc-countries.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-countries.php"><a href="../files/woocommerce-includes-class-wc-countries.html#source-view.40">includes/class-wc-countries.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">38</span>
+    <span class="phpdocumentor-element-found-in__line">40</span>
 </aside>
 
         <p class="phpdocumentor-summary">Cache of geographical regions.</p>
@@ -573,9 +583,9 @@ loaded on demand.</p>
         <a href="#method___get" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-countries.php"><a href="../files/woocommerce-includes-class-wc-countries.html#source-view.46">includes/class-wc-countries.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-countries.php"><a href="../files/woocommerce-includes-class-wc-countries.html#source-view.48">includes/class-wc-countries.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">46</span>
+    <span class="phpdocumentor-element-found-in__line">48</span>
 </aside>
 
         <p class="phpdocumentor-summary">Auto-load in-accessible properties on demand.</p>
@@ -617,9 +627,9 @@ loaded on demand.</p>
         <a href="#method_countries_using_vat" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-countries.php"><a href="../files/woocommerce-includes-class-wc-countries.html#source-view.435">includes/class-wc-countries.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-countries.php"><a href="../files/woocommerce-includes-class-wc-countries.html#source-view.437">includes/class-wc-countries.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">435</span>
+    <span class="phpdocumentor-element-found-in__line">437</span>
 </aside>
 
         <p class="phpdocumentor-summary">Gets an array of Non-EU countries that use VAT as the Local name for their taxes based on this list - https://en.wikipedia.org/wiki/Value-added_tax#Non-European_Union_countries</p>
@@ -671,9 +681,9 @@ loaded on demand.</p>
         <a href="#method_country_dropdown_options" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-countries.php"><a href="../files/woocommerce-includes-class-wc-countries.html#source-view.523">includes/class-wc-countries.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-countries.php"><a href="../files/woocommerce-includes-class-wc-countries.html#source-view.525">includes/class-wc-countries.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">523</span>
+    <span class="phpdocumentor-element-found-in__line">525</span>
 </aside>
 
         <p class="phpdocumentor-summary">Outputs the list of countries and states for use in dropdown boxes.</p>
@@ -733,9 +743,9 @@ loaded on demand.</p>
         <a href="#method_country_exists" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-countries.php"><a href="../files/woocommerce-includes-class-wc-countries.html#source-view.86">includes/class-wc-countries.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-countries.php"><a href="../files/woocommerce-includes-class-wc-countries.html#source-view.88">includes/class-wc-countries.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">86</span>
+    <span class="phpdocumentor-element-found-in__line">88</span>
 </aside>
 
         <p class="phpdocumentor-summary">Check if a given code represents a valid ISO 3166-1 alpha-2 code for a country known to us.</p>
@@ -791,9 +801,9 @@ loaded on demand.</p>
         <a href="#method_estimated_for_prefix" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-countries.php"><a href="../files/woocommerce-includes-class-wc-countries.html#source-view.475">includes/class-wc-countries.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-countries.php"><a href="../files/woocommerce-includes-class-wc-countries.html#source-view.477">includes/class-wc-countries.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">475</span>
+    <span class="phpdocumentor-element-found-in__line">477</span>
 </aside>
 
         <p class="phpdocumentor-summary">Prefix certain countries with &#039;the&#039;.</p>
@@ -835,9 +845,9 @@ loaded on demand.</p>
         <a href="#method_ex_tax_or_vat" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-countries.php"><a href="../files/woocommerce-includes-class-wc-countries.html#source-view.510">includes/class-wc-countries.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-countries.php"><a href="../files/woocommerce-includes-class-wc-countries.html#source-view.512">includes/class-wc-countries.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">510</span>
+    <span class="phpdocumentor-element-found-in__line">512</span>
 </aside>
 
         <p class="phpdocumentor-summary">Include the Ex Tax label.</p>
@@ -867,9 +877,9 @@ loaded on demand.</p>
         <a href="#method_get_address_fields" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-countries.php"><a href="../files/woocommerce-includes-class-wc-countries.html#source-view.1674">includes/class-wc-countries.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-countries.php"><a href="../files/woocommerce-includes-class-wc-countries.html#source-view.1693">includes/class-wc-countries.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1674</span>
+    <span class="phpdocumentor-element-found-in__line">1693</span>
 </aside>
 
         <p class="phpdocumentor-summary">Apply locale and get address fields.</p>
@@ -920,9 +930,9 @@ loaded on demand.</p>
         <a href="#method_get_address_formats" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-countries.php"><a href="../files/woocommerce-includes-class-wc-countries.html#source-view.563">includes/class-wc-countries.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-countries.php"><a href="../files/woocommerce-includes-class-wc-countries.html#source-view.565">includes/class-wc-countries.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">563</span>
+    <span class="phpdocumentor-element-found-in__line">565</span>
 </aside>
 
         <p class="phpdocumentor-summary">Get country address formats.</p>
@@ -953,9 +963,9 @@ loaded on demand.</p>
         <a href="#method_get_allowed_countries" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-countries.php"><a href="../files/woocommerce-includes-class-wc-countries.html#source-view.289">includes/class-wc-countries.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-countries.php"><a href="../files/woocommerce-includes-class-wc-countries.html#source-view.291">includes/class-wc-countries.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">289</span>
+    <span class="phpdocumentor-element-found-in__line">291</span>
 </aside>
 
         <p class="phpdocumentor-summary">Get countries that the store sells to.</p>
@@ -985,9 +995,9 @@ loaded on demand.</p>
         <a href="#method_get_allowed_country_states" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-countries.php"><a href="../files/woocommerce-includes-class-wc-countries.html#source-view.363">includes/class-wc-countries.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-countries.php"><a href="../files/woocommerce-includes-class-wc-countries.html#source-view.365">includes/class-wc-countries.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">363</span>
+    <span class="phpdocumentor-element-found-in__line">365</span>
 </aside>
 
         <p class="phpdocumentor-summary">Get allowed country states.</p>
@@ -1017,9 +1027,9 @@ loaded on demand.</p>
         <a href="#method_get_base_address" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-countries.php"><a href="../files/woocommerce-includes-class-wc-countries.html#source-view.226">includes/class-wc-countries.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-countries.php"><a href="../files/woocommerce-includes-class-wc-countries.html#source-view.228">includes/class-wc-countries.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">226</span>
+    <span class="phpdocumentor-element-found-in__line">228</span>
 </aside>
 
         <p class="phpdocumentor-summary">Get the base address (first line) for the store.</p>
@@ -1063,9 +1073,9 @@ loaded on demand.</p>
         <a href="#method_get_base_address_2" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-countries.php"><a href="../files/woocommerce-includes-class-wc-countries.html#source-view.237">includes/class-wc-countries.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-countries.php"><a href="../files/woocommerce-includes-class-wc-countries.html#source-view.239">includes/class-wc-countries.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">237</span>
+    <span class="phpdocumentor-element-found-in__line">239</span>
 </aside>
 
         <p class="phpdocumentor-summary">Get the base address (second line) for the store.</p>
@@ -1109,9 +1119,9 @@ loaded on demand.</p>
         <a href="#method_get_base_city" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-countries.php"><a href="../files/woocommerce-includes-class-wc-countries.html#source-view.268">includes/class-wc-countries.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-countries.php"><a href="../files/woocommerce-includes-class-wc-countries.html#source-view.270">includes/class-wc-countries.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">268</span>
+    <span class="phpdocumentor-element-found-in__line">270</span>
 </aside>
 
         <p class="phpdocumentor-summary">Get the base city for the store.</p>
@@ -1155,9 +1165,9 @@ loaded on demand.</p>
         <a href="#method_get_base_country" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-countries.php"><a href="../files/woocommerce-includes-class-wc-countries.html#source-view.247">includes/class-wc-countries.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-countries.php"><a href="../files/woocommerce-includes-class-wc-countries.html#source-view.249">includes/class-wc-countries.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">247</span>
+    <span class="phpdocumentor-element-found-in__line">249</span>
 </aside>
 
         <p class="phpdocumentor-summary">Get the base country for the store.</p>
@@ -1187,9 +1197,9 @@ loaded on demand.</p>
         <a href="#method_get_base_postcode" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-countries.php"><a href="../files/woocommerce-includes-class-wc-countries.html#source-view.279">includes/class-wc-countries.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-countries.php"><a href="../files/woocommerce-includes-class-wc-countries.html#source-view.281">includes/class-wc-countries.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">279</span>
+    <span class="phpdocumentor-element-found-in__line">281</span>
 </aside>
 
         <p class="phpdocumentor-summary">Get the base postcode for the store.</p>
@@ -1233,9 +1243,9 @@ loaded on demand.</p>
         <a href="#method_get_base_state" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-countries.php"><a href="../files/woocommerce-includes-class-wc-countries.html#source-view.257">includes/class-wc-countries.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-countries.php"><a href="../files/woocommerce-includes-class-wc-countries.html#source-view.259">includes/class-wc-countries.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">257</span>
+    <span class="phpdocumentor-element-found-in__line">259</span>
 </aside>
 
         <p class="phpdocumentor-summary">Get the base state for the store.</p>
@@ -1265,9 +1275,9 @@ loaded on demand.</p>
         <a href="#method_get_continent_code_for_country" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-countries.php"><a href="../files/woocommerce-includes-class-wc-countries.html#source-view.117">includes/class-wc-countries.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-countries.php"><a href="../files/woocommerce-includes-class-wc-countries.html#source-view.119">includes/class-wc-countries.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">117</span>
+    <span class="phpdocumentor-element-found-in__line">119</span>
 </aside>
 
         <p class="phpdocumentor-summary">Get continent code for a country code.</p>
@@ -1323,9 +1333,9 @@ loaded on demand.</p>
         <a href="#method_get_continents" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-countries.php"><a href="../files/woocommerce-includes-class-wc-countries.html#source-view.95">includes/class-wc-countries.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-countries.php"><a href="../files/woocommerce-includes-class-wc-countries.html#source-view.97">includes/class-wc-countries.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">95</span>
+    <span class="phpdocumentor-element-found-in__line">97</span>
 </aside>
 
         <p class="phpdocumentor-summary">Get all continents.</p>
@@ -1355,9 +1365,9 @@ loaded on demand.</p>
         <a href="#method_get_countries" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-countries.php"><a href="../files/woocommerce-includes-class-wc-countries.html#source-view.61">includes/class-wc-countries.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-countries.php"><a href="../files/woocommerce-includes-class-wc-countries.html#source-view.63">includes/class-wc-countries.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">61</span>
+    <span class="phpdocumentor-element-found-in__line">63</span>
 </aside>
 
         <p class="phpdocumentor-summary">Get all countries.</p>
@@ -1387,9 +1397,9 @@ loaded on demand.</p>
         <a href="#method_get_country_calling_code" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-countries.php"><a href="../files/woocommerce-includes-class-wc-countries.html#source-view.137">includes/class-wc-countries.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-countries.php"><a href="../files/woocommerce-includes-class-wc-countries.html#source-view.139">includes/class-wc-countries.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">137</span>
+    <span class="phpdocumentor-element-found-in__line">139</span>
 </aside>
 
         <p class="phpdocumentor-summary">Get calling code for a country code.</p>
@@ -1445,9 +1455,9 @@ loaded on demand.</p>
         <a href="#method_get_country_locale" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-countries.php"><a href="../files/woocommerce-includes-class-wc-countries.html#source-view.851">includes/class-wc-countries.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-countries.php"><a href="../files/woocommerce-includes-class-wc-countries.html#source-view.853">includes/class-wc-countries.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">851</span>
+    <span class="phpdocumentor-element-found-in__line">853</span>
 </aside>
 
         <p class="phpdocumentor-summary">Get country locale settings.</p>
@@ -1478,9 +1488,9 @@ loaded on demand.</p>
         <a href="#method_get_country_locale_field_selectors" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-countries.php"><a href="../files/woocommerce-includes-class-wc-countries.html#source-view.833">includes/class-wc-countries.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-countries.php"><a href="../files/woocommerce-includes-class-wc-countries.html#source-view.835">includes/class-wc-countries.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">833</span>
+    <span class="phpdocumentor-element-found-in__line">835</span>
 </aside>
 
         <p class="phpdocumentor-summary">Get JS selectors for fields which are shown/hidden depending on the locale.</p>
@@ -1510,9 +1520,9 @@ loaded on demand.</p>
         <a href="#method_get_default_address_fields" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-countries.php"><a href="../files/woocommerce-includes-class-wc-countries.html#source-view.728">includes/class-wc-countries.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-countries.php"><a href="../files/woocommerce-includes-class-wc-countries.html#source-view.730">includes/class-wc-countries.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">728</span>
+    <span class="phpdocumentor-element-found-in__line">730</span>
 </aside>
 
         <p class="phpdocumentor-summary">Returns the fields we show by default. This can be filtered later on.</p>
@@ -1542,9 +1552,9 @@ loaded on demand.</p>
         <a href="#method_get_european_union_countries" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-countries.php"><a href="../files/woocommerce-includes-class-wc-countries.html#source-view.418">includes/class-wc-countries.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-countries.php"><a href="../files/woocommerce-includes-class-wc-countries.html#source-view.420">includes/class-wc-countries.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">418</span>
+    <span class="phpdocumentor-element-found-in__line">420</span>
 </aside>
 
         <p class="phpdocumentor-summary">Gets an array of countries in the EU.</p>
@@ -1586,9 +1596,9 @@ loaded on demand.</p>
         <a href="#method_get_formatted_address" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-countries.php"><a href="../files/woocommerce-includes-class-wc-countries.html#source-view.619">includes/class-wc-countries.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-countries.php"><a href="../files/woocommerce-includes-class-wc-countries.html#source-view.621">includes/class-wc-countries.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">619</span>
+    <span class="phpdocumentor-element-found-in__line">621</span>
 </aside>
 
         <p class="phpdocumentor-summary">Get country address format.</p>
@@ -1639,9 +1649,9 @@ loaded on demand.</p>
         <a href="#method_get_shipping_continents" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-countries.php"><a href="../files/woocommerce-includes-class-wc-countries.html#source-view.160">includes/class-wc-countries.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-countries.php"><a href="../files/woocommerce-includes-class-wc-countries.html#source-view.162">includes/class-wc-countries.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">160</span>
+    <span class="phpdocumentor-element-found-in__line">162</span>
 </aside>
 
         <p class="phpdocumentor-summary">Get continents that the store ships to.</p>
@@ -1685,9 +1695,9 @@ loaded on demand.</p>
         <a href="#method_get_shipping_countries" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-countries.php"><a href="../files/woocommerce-includes-class-wc-countries.html#source-view.326">includes/class-wc-countries.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-countries.php"><a href="../files/woocommerce-includes-class-wc-countries.html#source-view.328">includes/class-wc-countries.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">326</span>
+    <span class="phpdocumentor-element-found-in__line">328</span>
 </aside>
 
         <p class="phpdocumentor-summary">Get countries that the store ships to.</p>
@@ -1717,9 +1727,9 @@ loaded on demand.</p>
         <a href="#method_get_shipping_country_states" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-countries.php"><a href="../files/woocommerce-includes-class-wc-countries.html#source-view.388">includes/class-wc-countries.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-countries.php"><a href="../files/woocommerce-includes-class-wc-countries.html#source-view.390">includes/class-wc-countries.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">388</span>
+    <span class="phpdocumentor-element-found-in__line">390</span>
 </aside>
 
         <p class="phpdocumentor-summary">Get shipping country states.</p>
@@ -1749,9 +1759,9 @@ loaded on demand.</p>
         <a href="#method_get_states" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-countries.php"><a href="../files/woocommerce-includes-class-wc-countries.html#source-view.201">includes/class-wc-countries.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-countries.php"><a href="../files/woocommerce-includes-class-wc-countries.html#source-view.203">includes/class-wc-countries.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">201</span>
+    <span class="phpdocumentor-element-found-in__line">203</span>
 </aside>
 
         <p class="phpdocumentor-summary">Get the states for a country.</p>
@@ -1793,9 +1803,9 @@ loaded on demand.</p>
         <a href="#method_get_vat_countries" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-countries.php"><a href="../files/woocommerce-includes-class-wc-countries.html#source-view.448">includes/class-wc-countries.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-countries.php"><a href="../files/woocommerce-includes-class-wc-countries.html#source-view.450">includes/class-wc-countries.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">448</span>
+    <span class="phpdocumentor-element-found-in__line">450</span>
 </aside>
 
         <p class="phpdocumentor-summary">Gets an array of countries using VAT.</p>
@@ -1839,9 +1849,9 @@ loaded on demand.</p>
         <a href="#method_inc_tax_or_vat" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-countries.php"><a href="../files/woocommerce-includes-class-wc-countries.html#source-view.499">includes/class-wc-countries.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-countries.php"><a href="../files/woocommerce-includes-class-wc-countries.html#source-view.501">includes/class-wc-countries.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">499</span>
+    <span class="phpdocumentor-element-found-in__line">501</span>
 </aside>
 
         <p class="phpdocumentor-summary">Include the Inc Tax label.</p>
@@ -1871,9 +1881,9 @@ loaded on demand.</p>
         <a href="#method_load_country_states" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-countries.php"><a href="../files/woocommerce-includes-class-wc-countries.html#source-view.180">includes/class-wc-countries.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-countries.php"><a href="../files/woocommerce-includes-class-wc-countries.html#source-view.182">includes/class-wc-countries.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">180</span>
+    <span class="phpdocumentor-element-found-in__line">182</span>
 </aside>
 
         <p class="phpdocumentor-summary">Load the states.</p>
@@ -1918,9 +1928,9 @@ loaded on demand.</p>
         <a href="#method_shipping_to_prefix" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-countries.php"><a href="../files/woocommerce-includes-class-wc-countries.html#source-view.461">includes/class-wc-countries.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-countries.php"><a href="../files/woocommerce-includes-class-wc-countries.html#source-view.463">includes/class-wc-countries.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">461</span>
+    <span class="phpdocumentor-element-found-in__line">463</span>
 </aside>
 
         <p class="phpdocumentor-summary">Gets the correct string for shipping - either &#039;to the&#039; or &#039;to&#039;.</p>
@@ -1962,9 +1972,9 @@ loaded on demand.</p>
         <a href="#method_tax_or_vat" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-countries.php"><a href="../files/woocommerce-includes-class-wc-countries.html#source-view.488">includes/class-wc-countries.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-countries.php"><a href="../files/woocommerce-includes-class-wc-countries.html#source-view.490">includes/class-wc-countries.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">488</span>
+    <span class="phpdocumentor-element-found-in__line">490</span>
 </aside>
 
         <p class="phpdocumentor-summary">Correctly name tax in some countries VAT on the frontend.</p>
@@ -1994,9 +2004,9 @@ loaded on demand.</p>
         <a href="#method_trim_formatted_address_line" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-countries.php"><a href="../files/woocommerce-includes-class-wc-countries.html#source-view.719">includes/class-wc-countries.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-countries.php"><a href="../files/woocommerce-includes-class-wc-countries.html#source-view.721">includes/class-wc-countries.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">719</span>
+    <span class="phpdocumentor-element-found-in__line">721</span>
 </aside>
 
         <p class="phpdocumentor-summary">Trim white space and commas off a line.</p>
@@ -2038,7 +2048,7 @@ loaded on demand.</p>
 
     <footer class="phpdocumentor phpdocumentor-footer">
     <div class="phpdocumentor-section">
-        <span>WooCommerce Code Reference API documentation generated by <a href="http://www.phpdoc.org/">phpDocumentor</a> on July 25th, 2024 at 11:33 am.</span>
+        <span>WooCommerce Code Reference API documentation generated by <a href="http://www.phpdoc.org/">phpDocumentor</a> on May 16th, 2025 at 09:14 am.</span>
     </div>
 </footer>
 
@@ -2050,7 +2060,7 @@ loaded on demand.</p>
             'searchIndex': '..\/js\/searchIndex.json'
         };
     </script>
-    <script src="../js/searchIndex.js?updated=1721907191"></script>
-    <script src="../js/search.js?updated=1721907191"></script>
+    <script src="../js/searchIndex.js?updated=1747386868"></script>
+    <script src="../js/search.js?updated=1747386868"></script>
 </body>
 </html>

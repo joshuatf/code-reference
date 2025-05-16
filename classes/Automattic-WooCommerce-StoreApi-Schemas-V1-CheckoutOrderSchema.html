@@ -4,14 +4,13 @@
     <meta charset="utf-8">
     <title>WooCommerce Code Reference</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="../images/favicon.png" />
-    <link rel="apple-touch-icon" href="../images/apple-touch-icon.png"/>
-    <link rel="apple-touch-icon" sizes="72x72" href="../images/apple-touch-icon-72x72.png"/>
-    <link rel="apple-touch-icon" sizes="114x114" href="../images/apple-touch-icon-114x114.png"/>
+    <link rel="icon" href="../images/favicon-32x32.png" sizes="32x32" />
+    <link rel="icon" href="../images/favicon-192x192.png" sizes="192x192" />
+    <link rel="apple-touch-icon" href="../images/favicon-180x180.png" />
+
     <link rel="stylesheet" href="../css/normalize.css">
-    <link rel="stylesheet" href="../css/base.css?updated=1721907209">
-    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../css/template.css?updated=1721907209">
+    <link rel="stylesheet" href="../css/base.css?updated=1747386890">
+    <link rel="stylesheet" href="../css/template.css?updated=1747386890">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0/css/all.min.css" integrity="sha256-ybRkN9dBjhcS2qrW1z+hfCxq+1aBdwyQM5wlQoQVt/0=" crossorigin="anonymous" />
             <script src="https://cdn.jsdelivr.net/npm/css-vars-ponyfill@2"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0/js/all.min.js" integrity="sha256-0vuk8LXoyrmCjp1f0O300qo1M75ZQyhH9X3J6d+scmk=" crossorigin="anonymous"></script>
@@ -27,19 +26,24 @@
 		'content_group' : 'WooCommerce Core Code Reference',
 	});
 </script>
-        </head>
+        <script src="../js/prism.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            window.dispatchEvent(new HashChangeEvent('hashchange'));
+        });
+    </script>
+</head>
 <body id="top">
     <header class="phpdocumentor-top-header">
     <section class="phpdocumentor-section">
         <div class="site-branding">
-            <a class="site-logo" href="../index.html"><img width="180" src="../images/logo.svg" alt="WooCommerce" /></a>
+            <a class="site-logo" href="../index.html"><img src="../images/logo.png" alt="WooCommerce" /></a>
         </div>
         <nav class="main-navigation">
             <ul>
                 <li><a href="../hooks/hooks.html">Hooks Reference</a></li>
-                <li><a href="https://docs.woocommerce.com/">Documentation</a></li>
+                <li><a href="https://developer.woocommerce.com/docs/">Documentation</a></li>
                 <li><a href="https://woocommerce.github.io/woocommerce-rest-api-docs/">REST API Docs</a></li>
-                <li><a href="https://woocommerce.com/careers/?utm_source=woocommerce+core+code+reference&utm_medium=devdocs&utm_campaign=woo+careers" target="_blank">We're hiring!</a></li>
             </ul>
         </nav>
     </section>
@@ -47,7 +51,7 @@
 
 <div class="phpdocumentor-header">
     <section class="phpdocumentor-section">
-        <h1 class="phpdocumentor-title">WooCommerce Code Reference</h1>
+        <h1 class="phpdocumentor-title"><a href="../index.html">WooCommerce Code Reference</a></h1>
         <section class="phpdocumentor-search">
     <label class="phpdocumentor-label">
         <span class="visually-hidden">Search (click ESC to close search results)</span>
@@ -68,6 +72,10 @@
                                         <h4 class="phpdocumentor-sidebar__root-namespace"><a href="../namespaces/woocommerce.html"><abbr title="\WooCommerce">WooCommerce</abbr></a></h4>
                 <ul class="phpdocumentor-list">
                                             <li><a href="../namespaces/woocommerce-admin.html"><abbr title="\WooCommerce\Admin">Admin</abbr></a></li>
+                                    </ul>
+                            <h4 class="phpdocumentor-sidebar__root-namespace"><a href="../namespaces/mailpoet.html"><abbr title="\MailPoet">MailPoet</abbr></a></h4>
+                <ul class="phpdocumentor-list">
+                                            <li><a href="../namespaces/mailpoet-emaileditor.html"><abbr title="\MailPoet\EmailEditor">EmailEditor</abbr></a></li>
                                     </ul>
                             <h4 class="phpdocumentor-sidebar__root-namespace"><a href="../namespaces/automattic.html"><abbr title="\Automattic">Automattic</abbr></a></h4>
                 <ul class="phpdocumentor-list">
@@ -113,8 +121,10 @@
                                     <li><a href="../packages/WooCommerce-Widgets.html"><abbr title="\WooCommerce\Widgets">Widgets</abbr></a></li>
                                     <li><a href="../packages/WooCommerce-Uninstaller.html"><abbr title="\WooCommerce\Uninstaller">Uninstaller</abbr></a></li>
                             </ul>
-                                <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/WoocommerceAdmin.html"><abbr title="\WoocommerceAdmin">WoocommerceAdmin</abbr></a></h3>
-                                <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/WoocommerceNavigation.html"><abbr title="\WoocommerceNavigation">WoocommerceNavigation</abbr></a></h3>
+                                <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/MailPoet.html"><abbr title="\MailPoet">MailPoet</abbr></a></h3>
+                        <ul class="phpdocumentor-list">
+                                    <li><a href="../packages/MailPoet-EmailEditor.html"><abbr title="\MailPoet\EmailEditor">EmailEditor</abbr></a></li>
+                            </ul>
                                 <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/Automattic.html"><abbr title="\Automattic">Automattic</abbr></a></h3>
                         <ul class="phpdocumentor-list">
                                     <li><a href="../packages/Automattic-WooCommerce.html"><abbr title="\Automattic\WooCommerce">WooCommerce</abbr></a></li>
@@ -215,6 +225,13 @@
 <dd>Billing address schema instance.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -property -protected">
+    <a href="../classes/Automattic-WooCommerce-StoreApi-Schemas-V1-CheckoutSchema.html#property_cart_schema">$cart_schema</a>
+    <span>
+                &nbsp;: <a href="../classes/Automattic-WooCommerce-StoreApi-Schemas-V1-CartSchema.html"><abbr title="\Automattic\WooCommerce\StoreApi\Schemas\V1\CartSchema">CartSchema</abbr></a>            </span>
+</dt>
+<dd>Cart schema instance.</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -property -protected">
     <a href="../classes/Automattic-WooCommerce-StoreApi-Schemas-V1-AbstractSchema.html#property_controller">$controller</a>
     <span>
                 &nbsp;: <a href="../classes/Automattic-WooCommerce-StoreApi-SchemaController.html"><abbr title="\Automattic\WooCommerce\StoreApi\SchemaController">SchemaController</abbr></a>            </span>
@@ -303,7 +320,9 @@
     <span>
                         &nbsp;: true|<abbr title="\WP_Error">WP_Error</abbr>    </span>
 </dt>
-<dd>Validate additional fields object.</dd>
+<dd>Validate additional fields object. This does not validate required fields nor customer validation rules because
+this may be a partial request. That will happen later when the full request is processed during POST. This only
+validates against the schema.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -protected">
     <a href="../classes/Automattic-WooCommerce-StoreApi-Schemas-V1-AbstractSchema.html#method_force_schema_readonly">force_schema_readonly()</a>
@@ -519,9 +538,9 @@ schema where it&#039;s an array of objects.</dd>
                                 </span>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/StoreApi/Schemas/V1/CheckoutSchema.php"><a href="../files/woocommerce-src-storeapi-schemas-v1-checkoutschema.html#source-view.55">src/StoreApi/Schemas/V1/CheckoutSchema.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/StoreApi/Schemas/V1/CheckoutSchema.php"><a href="../files/woocommerce-src-storeapi-schemas-v1-checkoutschema.html#source-view.65">src/StoreApi/Schemas/V1/CheckoutSchema.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">55</span>
+    <span class="phpdocumentor-element-found-in__line">65</span>
 </aside>
 
         <p class="phpdocumentor-summary">Additional fields controller.</p>
@@ -551,9 +570,9 @@ schema where it&#039;s an array of objects.</dd>
                                 </span>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/StoreApi/Schemas/V1/CheckoutSchema.php"><a href="../files/woocommerce-src-storeapi-schemas-v1-checkoutschema.html#source-view.34">src/StoreApi/Schemas/V1/CheckoutSchema.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/StoreApi/Schemas/V1/CheckoutSchema.php"><a href="../files/woocommerce-src-storeapi-schemas-v1-checkoutschema.html#source-view.37">src/StoreApi/Schemas/V1/CheckoutSchema.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">34</span>
+    <span class="phpdocumentor-element-found-in__line">37</span>
 </aside>
 
         <p class="phpdocumentor-summary">Billing address schema instance.</p>
@@ -562,6 +581,38 @@ schema where it&#039;s an array of objects.</dd>
     <span class="phpdocumentor-signature__visibility">protected</span>
         <span class="phpdocumentor-signature__type"><a href="../classes/Automattic-WooCommerce-StoreApi-Schemas-V1-BillingAddressSchema.html"><abbr title="\Automattic\WooCommerce\StoreApi\Schemas\V1\BillingAddressSchema">BillingAddressSchema</abbr></a></span>
     <span class="phpdocumentor-signature__name">$billing_address_schema</span>
+    </code>
+
+        <section class="phpdocumentor-description"></section>
+
+    
+
+</article>
+                    <article
+        class="
+            phpdocumentor-element
+            -property
+            -protected
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="property_cart_schema">
+        $cart_schema
+        <a href="#property_cart_schema" class="headerlink"><i class="fas fa-link"></i></a>
+        <span class="phpdocumentor-element__modifiers">
+                                </span>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/StoreApi/Schemas/V1/CheckoutSchema.php"><a href="../files/woocommerce-src-storeapi-schemas-v1-checkoutschema.html#source-view.58">src/StoreApi/Schemas/V1/CheckoutSchema.php</a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">58</span>
+</aside>
+
+        <p class="phpdocumentor-summary">Cart schema instance.</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">protected</span>
+        <span class="phpdocumentor-signature__type"><a href="../classes/Automattic-WooCommerce-StoreApi-Schemas-V1-CartSchema.html"><abbr title="\Automattic\WooCommerce\StoreApi\Schemas\V1\CartSchema">CartSchema</abbr></a></span>
+    <span class="phpdocumentor-signature__name">$cart_schema</span>
     </code>
 
         <section class="phpdocumentor-description"></section>
@@ -647,9 +698,9 @@ schema where it&#039;s an array of objects.</dd>
                                 </span>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/StoreApi/Schemas/V1/CheckoutSchema.php"><a href="../files/woocommerce-src-storeapi-schemas-v1-checkoutschema.html#source-view.48">src/StoreApi/Schemas/V1/CheckoutSchema.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/StoreApi/Schemas/V1/CheckoutSchema.php"><a href="../files/woocommerce-src-storeapi-schemas-v1-checkoutschema.html#source-view.51">src/StoreApi/Schemas/V1/CheckoutSchema.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">48</span>
+    <span class="phpdocumentor-element-found-in__line">51</span>
 </aside>
 
         <p class="phpdocumentor-summary">Image Attachment schema instance.</p>
@@ -679,9 +730,9 @@ schema where it&#039;s an array of objects.</dd>
                                 </span>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/StoreApi/Schemas/V1/CheckoutSchema.php"><a href="../files/woocommerce-src-storeapi-schemas-v1-checkoutschema.html#source-view.41">src/StoreApi/Schemas/V1/CheckoutSchema.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/StoreApi/Schemas/V1/CheckoutSchema.php"><a href="../files/woocommerce-src-storeapi-schemas-v1-checkoutschema.html#source-view.44">src/StoreApi/Schemas/V1/CheckoutSchema.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">41</span>
+    <span class="phpdocumentor-element-found-in__line">44</span>
 </aside>
 
         <p class="phpdocumentor-summary">Shipping address schema instance.</p>
@@ -998,9 +1049,9 @@ schema where it&#039;s an array of objects.</dd>
         <a href="#method_sanitize_additional_fields" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/StoreApi/Schemas/V1/CheckoutSchema.php"><a href="../files/woocommerce-src-storeapi-schemas-v1-checkoutschema.html#source-view.355">src/StoreApi/Schemas/V1/CheckoutSchema.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/StoreApi/Schemas/V1/CheckoutSchema.php"><a href="../files/woocommerce-src-storeapi-schemas-v1-checkoutschema.html#source-view.379">src/StoreApi/Schemas/V1/CheckoutSchema.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">355</span>
+    <span class="phpdocumentor-element-found-in__line">379</span>
 </aside>
 
         <p class="phpdocumentor-summary">Sanitize and format additional fields object.</p>
@@ -1042,12 +1093,14 @@ schema where it&#039;s an array of objects.</dd>
         <a href="#method_validate_additional_fields" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/StoreApi/Schemas/V1/CheckoutSchema.php"><a href="../files/woocommerce-src-storeapi-schemas-v1-checkoutschema.html#source-view.387">src/StoreApi/Schemas/V1/CheckoutSchema.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/StoreApi/Schemas/V1/CheckoutSchema.php"><a href="../files/woocommerce-src-storeapi-schemas-v1-checkoutschema.html#source-view.413">src/StoreApi/Schemas/V1/CheckoutSchema.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">387</span>
+    <span class="phpdocumentor-element-found-in__line">413</span>
 </aside>
 
-        <p class="phpdocumentor-summary">Validate additional fields object.</p>
+        <p class="phpdocumentor-summary">Validate additional fields object. This does not validate required fields nor customer validation rules because
+this may be a partial request. That will happen later when the full request is processed during POST. This only
+validates against the schema.</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
@@ -1153,9 +1206,9 @@ schema where it&#039;s an array of objects.</dd>
         <a href="#method_generate_additional_fields_schema" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/StoreApi/Schemas/V1/CheckoutSchema.php"><a href="../files/woocommerce-src-storeapi-schemas-v1-checkoutschema.html#source-view.304">src/StoreApi/Schemas/V1/CheckoutSchema.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/StoreApi/Schemas/V1/CheckoutSchema.php"><a href="../files/woocommerce-src-storeapi-schemas-v1-checkoutschema.html#source-view.321">src/StoreApi/Schemas/V1/CheckoutSchema.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">304</span>
+    <span class="phpdocumentor-element-found-in__line">321</span>
 </aside>
 
         <p class="phpdocumentor-summary">Generate the schema for additional fields.</p>
@@ -1197,9 +1250,9 @@ schema where it&#039;s an array of objects.</dd>
         <a href="#method_get_additional_fields_response" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/StoreApi/Schemas/V1/CheckoutSchema.php"><a href="../files/woocommerce-src-storeapi-schemas-v1-checkoutschema.html#source-view.263">src/StoreApi/Schemas/V1/CheckoutSchema.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/StoreApi/Schemas/V1/CheckoutSchema.php"><a href="../files/woocommerce-src-storeapi-schemas-v1-checkoutschema.html#source-view.280">src/StoreApi/Schemas/V1/CheckoutSchema.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">263</span>
+    <span class="phpdocumentor-element-found-in__line">280</span>
 </aside>
 
         <p class="phpdocumentor-summary">Get the additional fields response.</p>
@@ -1241,9 +1294,9 @@ schema where it&#039;s an array of objects.</dd>
         <a href="#method_get_additional_fields_schema" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/StoreApi/Schemas/V1/CheckoutSchema.php"><a href="../files/woocommerce-src-storeapi-schemas-v1-checkoutschema.html#source-view.291">src/StoreApi/Schemas/V1/CheckoutSchema.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/StoreApi/Schemas/V1/CheckoutSchema.php"><a href="../files/woocommerce-src-storeapi-schemas-v1-checkoutschema.html#source-view.308">src/StoreApi/Schemas/V1/CheckoutSchema.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">291</span>
+    <span class="phpdocumentor-element-found-in__line">308</span>
 </aside>
 
         <p class="phpdocumentor-summary">Get the schema for additional fields.</p>
@@ -1273,16 +1326,16 @@ schema where it&#039;s an array of objects.</dd>
         <a href="#method_get_checkout_response" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/StoreApi/Schemas/V1/CheckoutSchema.php"><a href="../files/woocommerce-src-storeapi-schemas-v1-checkoutschema.html#source-view.214">src/StoreApi/Schemas/V1/CheckoutSchema.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/StoreApi/Schemas/V1/CheckoutSchema.php"><a href="../files/woocommerce-src-storeapi-schemas-v1-checkoutschema.html#source-view.228">src/StoreApi/Schemas/V1/CheckoutSchema.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">214</span>
+    <span class="phpdocumentor-element-found-in__line">228</span>
 </aside>
 
         <p class="phpdocumentor-summary">Get the checkout response based on the current order and any payments.</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">protected</span>
-                <span class="phpdocumentor-signature__name">get_checkout_response</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type"><a href="../classes/WC-Order.html"><abbr title="\WC_Order">WC_Order</abbr></a>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$order</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type"><a href="../classes/Automattic-WooCommerce-StoreApi-Payments-PaymentResult.html"><abbr title="\Automattic\WooCommerce\StoreApi\Payments\PaymentResult">PaymentResult</abbr></a>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$payment_result</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">array&lt;string|int, mixed&gt;</span></code>
+                <span class="phpdocumentor-signature__name">get_checkout_response</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type"><a href="../classes/WC-Order.html"><abbr title="\WC_Order">WC_Order</abbr></a>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$order</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type"><a href="../classes/Automattic-WooCommerce-StoreApi-Payments-PaymentResult.html"><abbr title="\Automattic\WooCommerce\StoreApi\Payments\PaymentResult">PaymentResult</abbr></a>|null&nbsp;</span><span class="phpdocumentor-signature__argument__name">$payment_result</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type"><a href="../classes/WC-Cart.html"><abbr title="\WC_Cart">WC_Cart</abbr></a>|null&nbsp;</span><span class="phpdocumentor-signature__argument__name">$cart</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">array&lt;string|int, mixed&gt;</span></code>
 
         <section class="phpdocumentor-description"></section>
 
@@ -1299,10 +1352,19 @@ schema where it&#039;s an array of objects.</dd>
             </dd>
                     <dt class="phpdocumentor-argument-list__entry">
                 <span class="phpdocumentor-signature__argument__name">$payment_result</span>
-                : <span class="phpdocumentor-signature__argument__return-type"><a href="../classes/Automattic-WooCommerce-StoreApi-Payments-PaymentResult.html"><abbr title="\Automattic\WooCommerce\StoreApi\Payments\PaymentResult">PaymentResult</abbr></a></span>
+                : <span class="phpdocumentor-signature__argument__return-type"><a href="../classes/Automattic-WooCommerce-StoreApi-Payments-PaymentResult.html"><abbr title="\Automattic\WooCommerce\StoreApi\Payments\PaymentResult">PaymentResult</abbr></a>|null</span>
                  = <span class="phpdocumentor-signature__argument__default-value">null</span>            </dt>
             <dd class="phpdocumentor-argument-list__definition">
                     <section class="phpdocumentor-description"><p>Payment result object.</p>
+</section>
+
+            </dd>
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$cart</span>
+                : <span class="phpdocumentor-signature__argument__return-type"><a href="../classes/WC-Cart.html"><abbr title="\WC_Cart">WC_Cart</abbr></a>|null</span>
+                 = <span class="phpdocumentor-signature__argument__default-value">null</span>            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"><p>Cart object.</p>
 </section>
 
             </dd>
@@ -1800,9 +1862,9 @@ the smallest unit of a currency.</p>
         <a href="#method_prepare_payment_details_for_response" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/StoreApi/Schemas/V1/CheckoutSchema.php"><a href="../files/woocommerce-src-storeapi-schemas-v1-checkoutschema.html#source-view.244">src/StoreApi/Schemas/V1/CheckoutSchema.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/StoreApi/Schemas/V1/CheckoutSchema.php"><a href="../files/woocommerce-src-storeapi-schemas-v1-checkoutschema.html#source-view.261">src/StoreApi/Schemas/V1/CheckoutSchema.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">244</span>
+    <span class="phpdocumentor-element-found-in__line">261</span>
 </aside>
 
         <p class="phpdocumentor-summary">This prepares the payment details for the response so it&#039;s following the
@@ -1890,9 +1952,9 @@ as distinct properties.</span>
         <a href="#method_schema_has_required_property" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/StoreApi/Schemas/V1/CheckoutSchema.php"><a href="../files/woocommerce-src-storeapi-schemas-v1-checkoutschema.html#source-view.339">src/StoreApi/Schemas/V1/CheckoutSchema.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/StoreApi/Schemas/V1/CheckoutSchema.php"><a href="../files/woocommerce-src-storeapi-schemas-v1-checkoutschema.html#source-view.363">src/StoreApi/Schemas/V1/CheckoutSchema.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">339</span>
+    <span class="phpdocumentor-element-found-in__line">363</span>
 </aside>
 
         <p class="phpdocumentor-summary">Check if any additional field is required, so that the parent item is required as well.</p>
@@ -1934,7 +1996,7 @@ as distinct properties.</span>
 
     <footer class="phpdocumentor phpdocumentor-footer">
     <div class="phpdocumentor-section">
-        <span>WooCommerce Code Reference API documentation generated by <a href="http://www.phpdoc.org/">phpDocumentor</a> on July 25th, 2024 at 11:33 am.</span>
+        <span>WooCommerce Code Reference API documentation generated by <a href="http://www.phpdoc.org/">phpDocumentor</a> on May 16th, 2025 at 09:14 am.</span>
     </div>
 </footer>
 
@@ -1946,7 +2008,7 @@ as distinct properties.</span>
             'searchIndex': '..\/js\/searchIndex.json'
         };
     </script>
-    <script src="../js/searchIndex.js?updated=1721907209"></script>
-    <script src="../js/search.js?updated=1721907209"></script>
+    <script src="../js/searchIndex.js?updated=1747386891"></script>
+    <script src="../js/search.js?updated=1747386891"></script>
 </body>
 </html>

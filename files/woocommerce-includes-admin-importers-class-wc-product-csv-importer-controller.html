@@ -4,14 +4,13 @@
     <meta charset="utf-8">
     <title>WooCommerce Code Reference</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="../images/favicon.png" />
-    <link rel="apple-touch-icon" href="../images/apple-touch-icon.png"/>
-    <link rel="apple-touch-icon" sizes="72x72" href="../images/apple-touch-icon-72x72.png"/>
-    <link rel="apple-touch-icon" sizes="114x114" href="../images/apple-touch-icon-114x114.png"/>
+    <link rel="icon" href="../images/favicon-32x32.png" sizes="32x32" />
+    <link rel="icon" href="../images/favicon-192x192.png" sizes="192x192" />
+    <link rel="apple-touch-icon" href="../images/favicon-180x180.png" />
+
     <link rel="stylesheet" href="../css/normalize.css">
-    <link rel="stylesheet" href="../css/base.css?updated=1721907182">
-    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../css/template.css?updated=1721907182">
+    <link rel="stylesheet" href="../css/base.css?updated=1747386858">
+    <link rel="stylesheet" href="../css/template.css?updated=1747386858">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0/css/all.min.css" integrity="sha256-ybRkN9dBjhcS2qrW1z+hfCxq+1aBdwyQM5wlQoQVt/0=" crossorigin="anonymous" />
             <script src="https://cdn.jsdelivr.net/npm/css-vars-ponyfill@2"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0/js/all.min.js" integrity="sha256-0vuk8LXoyrmCjp1f0O300qo1M75ZQyhH9X3J6d+scmk=" crossorigin="anonymous"></script>
@@ -38,14 +37,13 @@
     <header class="phpdocumentor-top-header">
     <section class="phpdocumentor-section">
         <div class="site-branding">
-            <a class="site-logo" href="../index.html"><img width="180" src="../images/logo.svg" alt="WooCommerce" /></a>
+            <a class="site-logo" href="../index.html"><img src="../images/logo.png" alt="WooCommerce" /></a>
         </div>
         <nav class="main-navigation">
             <ul>
                 <li><a href="../hooks/hooks.html">Hooks Reference</a></li>
-                <li><a href="https://docs.woocommerce.com/">Documentation</a></li>
+                <li><a href="https://developer.woocommerce.com/docs/">Documentation</a></li>
                 <li><a href="https://woocommerce.github.io/woocommerce-rest-api-docs/">REST API Docs</a></li>
-                <li><a href="https://woocommerce.com/careers/?utm_source=woocommerce+core+code+reference&utm_medium=devdocs&utm_campaign=woo+careers" target="_blank">We're hiring!</a></li>
             </ul>
         </nav>
     </section>
@@ -53,7 +51,7 @@
 
 <div class="phpdocumentor-header">
     <section class="phpdocumentor-section">
-        <h1 class="phpdocumentor-title">WooCommerce Code Reference</h1>
+        <h1 class="phpdocumentor-title"><a href="../index.html">WooCommerce Code Reference</a></h1>
         <section class="phpdocumentor-search">
     <label class="phpdocumentor-label">
         <span class="visually-hidden">Search (click ESC to close search results)</span>
@@ -74,6 +72,10 @@
                                         <h4 class="phpdocumentor-sidebar__root-namespace"><a href="../namespaces/woocommerce.html"><abbr title="\WooCommerce">WooCommerce</abbr></a></h4>
                 <ul class="phpdocumentor-list">
                                             <li><a href="../namespaces/woocommerce-admin.html"><abbr title="\WooCommerce\Admin">Admin</abbr></a></li>
+                                    </ul>
+                            <h4 class="phpdocumentor-sidebar__root-namespace"><a href="../namespaces/mailpoet.html"><abbr title="\MailPoet">MailPoet</abbr></a></h4>
+                <ul class="phpdocumentor-list">
+                                            <li><a href="../namespaces/mailpoet-emaileditor.html"><abbr title="\MailPoet\EmailEditor">EmailEditor</abbr></a></li>
                                     </ul>
                             <h4 class="phpdocumentor-sidebar__root-namespace"><a href="../namespaces/automattic.html"><abbr title="\Automattic">Automattic</abbr></a></h4>
                 <ul class="phpdocumentor-list">
@@ -119,8 +121,10 @@
                                     <li><a href="../packages/WooCommerce-Widgets.html"><abbr title="\WooCommerce\Widgets">Widgets</abbr></a></li>
                                     <li><a href="../packages/WooCommerce-Uninstaller.html"><abbr title="\WooCommerce\Uninstaller">Uninstaller</abbr></a></li>
                             </ul>
-                                <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/WoocommerceAdmin.html"><abbr title="\WoocommerceAdmin">WoocommerceAdmin</abbr></a></h3>
-                                <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/WoocommerceNavigation.html"><abbr title="\WoocommerceNavigation">WoocommerceNavigation</abbr></a></h3>
+                                <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/MailPoet.html"><abbr title="\MailPoet">MailPoet</abbr></a></h3>
+                        <ul class="phpdocumentor-list">
+                                    <li><a href="../packages/MailPoet-EmailEditor.html"><abbr title="\MailPoet\EmailEditor">EmailEditor</abbr></a></li>
+                            </ul>
                                 <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/Automattic.html"><abbr title="\Automattic">Automattic</abbr></a></h3>
                         <ul class="phpdocumentor-list">
                                     <li><a href="../packages/Automattic-WooCommerce.html"><abbr title="\Automattic\WooCommerce">WooCommerce</abbr></a></li>
@@ -163,6 +167,8 @@
  * @package WooCommerce\Admin\Importers
  */
 
+use Automattic\WooCommerce\Internal\Utilities\FilesystemUtil;
+use Automattic\WooCommerce\Internal\Utilities\URL;
 use Automattic\WooCommerce\Utilities\I18nUtil;
 
 if ( ! defined( &#039;ABSPATH&#039; ) ) {
@@ -259,6 +265,27 @@ class WC_Product_CSV_Importer_Controller {
 	 */
 	public static function is_file_valid_csv( $file, $check_path = true ) {
 		return wc_is_file_valid_csv( $file, $check_path );
+	}
+
+	/**
+	 * Runs before controller actions to check that the file used during the import is valid.
+	 *
+	 * @since 9.3.0
+	 *
+	 * @param string $path Path to test.
+	 *
+	 * @throws \Exception When file validation fails.
+	 */
+	protected static function validate_file_path( string $path ): void {
+		try {
+			FilesystemUtil::validate_upload_file_path( $path );
+		} catch ( \Exception $e ) {
+			throw new \Exception( esc_html__( &#039;File path provided for import is invalid.&#039;, &#039;woocommerce&#039; ) );
+		}
+
+		if ( ! self::is_file_valid_csv( $path ) ) {
+			throw new \Exception( esc_html__( &#039;Invalid file type. The importer supports CSV and TXT file formats.&#039;, &#039;woocommerce&#039; ) );
+		}
 	}
 
 	/**
@@ -421,15 +448,149 @@ class WC_Product_CSV_Importer_Controller {
 	 * Dispatch current step and show correct view.
 	 */
 	public function dispatch() {
-		// phpcs:ignore WordPress.Security.NonceVerification.Missing
-		if ( ! empty( $_POST[&#039;save_step&#039;] ) &amp;&amp; ! empty( $this-&gt;steps[ $this-&gt;step ][&#039;handler&#039;] ) ) {
-			call_user_func( $this-&gt;steps[ $this-&gt;step ][&#039;handler&#039;], $this );
+		$output = &#039;&#039;;
+
+		try {
+			// phpcs:ignore WordPress.Security.NonceVerification.Missing
+			if ( ! empty( $_POST[&#039;save_step&#039;] ) &amp;&amp; ! empty( $this-&gt;steps[ $this-&gt;step ][&#039;handler&#039;] ) ) {
+				if ( is_callable( $this-&gt;steps[ $this-&gt;step ][&#039;handler&#039;] ) ) {
+					call_user_func( $this-&gt;steps[ $this-&gt;step ][&#039;handler&#039;], $this );
+				}
+			}
+
+			ob_start();
+
+			if ( is_callable( $this-&gt;steps[ $this-&gt;step ][&#039;view&#039;] ) ) {
+				call_user_func( $this-&gt;steps[ $this-&gt;step ][&#039;view&#039;], $this );
+			}
+
+			$output = ob_get_clean();
+		} catch ( \Exception $e ) {
+			$this-&gt;add_error( $e-&gt;getMessage() );
 		}
+
 		$this-&gt;output_header();
 		$this-&gt;output_steps();
 		$this-&gt;output_errors();
-		call_user_func( $this-&gt;steps[ $this-&gt;step ][&#039;view&#039;], $this );
+		echo $output; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- output is HTML we&#039;ve generated ourselves.
 		$this-&gt;output_footer();
+	}
+
+	/**
+	 * Processes AJAX requests related to a product CSV import.
+	 *
+	 * @since 9.3.0
+	 */
+	public static function dispatch_ajax() {
+		global $wpdb;
+
+		check_ajax_referer( &#039;wc-product-import&#039;, &#039;security&#039; );
+
+		try {
+			$file = wc_clean( wp_unslash( $_POST[&#039;file&#039;] ?? &#039;&#039; ) ); // PHPCS: input var ok.
+			self::validate_file_path( $file );
+
+			$params = array(
+				&#039;delimiter&#039;          =&gt; ! empty( $_POST[&#039;delimiter&#039;] ) ? wc_clean( wp_unslash( $_POST[&#039;delimiter&#039;] ) ) : &#039;,&#039;, // PHPCS: input var ok.
+				&#039;start_pos&#039;          =&gt; isset( $_POST[&#039;position&#039;] ) ? absint( $_POST[&#039;position&#039;] ) : 0, // PHPCS: input var ok.
+				&#039;mapping&#039;            =&gt; isset( $_POST[&#039;mapping&#039;] ) ? (array) wc_clean( wp_unslash( $_POST[&#039;mapping&#039;] ) ) : array(), // PHPCS: input var ok.
+				&#039;update_existing&#039;    =&gt; isset( $_POST[&#039;update_existing&#039;] ) ? (bool) $_POST[&#039;update_existing&#039;] : false, // PHPCS: input var ok.
+				&#039;character_encoding&#039; =&gt; isset( $_POST[&#039;character_encoding&#039;] ) ? wc_clean( wp_unslash( $_POST[&#039;character_encoding&#039;] ) ) : &#039;&#039;,
+
+				/**
+				 * Batch size for the product import process.
+				 *
+				 * @param int $size Batch size.
+				 *
+				 * @since 3.1.0
+				 */
+				&#039;lines&#039;              =&gt; apply_filters( &#039;woocommerce_product_import_batch_size&#039;, 30 ),
+				&#039;parse&#039;              =&gt; true,
+			);
+
+			// Log failures.
+			if ( 0 !== $params[&#039;start_pos&#039;] ) {
+				$error_log = array_filter( (array) get_user_option( &#039;product_import_error_log&#039; ) );
+			} else {
+				$error_log = array();
+			}
+
+			include_once WC_ABSPATH . &#039;includes/import/class-wc-product-csv-importer.php&#039;;
+
+			$importer         = self::get_importer( $file, $params );
+			$results          = $importer-&gt;import();
+			$percent_complete = $importer-&gt;get_percent_complete();
+			$error_log        = array_merge( $error_log, $results[&#039;failed&#039;], $results[&#039;skipped&#039;] );
+
+			update_user_option( get_current_user_id(), &#039;product_import_error_log&#039;, $error_log );
+
+			if ( 100 === $percent_complete ) {
+				// @codingStandardsIgnoreStart.
+				$wpdb-&gt;delete( $wpdb-&gt;postmeta, array( &#039;meta_key&#039; =&gt; &#039;_original_id&#039; ) );
+				$wpdb-&gt;delete( $wpdb-&gt;posts, array(
+					&#039;post_type&#039;   =&gt; &#039;product&#039;,
+					&#039;post_status&#039; =&gt; &#039;importing&#039;,
+				) );
+				$wpdb-&gt;delete( $wpdb-&gt;posts, array(
+					&#039;post_type&#039;   =&gt; &#039;product_variation&#039;,
+					&#039;post_status&#039; =&gt; &#039;importing&#039;,
+				) );
+				// @codingStandardsIgnoreEnd.
+
+				// Clean up orphaned data.
+				$wpdb-&gt;query(
+					&quot;
+					DELETE {$wpdb-&gt;posts}.* FROM {$wpdb-&gt;posts}
+					LEFT JOIN {$wpdb-&gt;posts} wp ON wp.ID = {$wpdb-&gt;posts}.post_parent
+					WHERE wp.ID IS NULL AND {$wpdb-&gt;posts}.post_type = &#039;product_variation&#039;
+				&quot;
+				);
+				$wpdb-&gt;query(
+					&quot;
+					DELETE {$wpdb-&gt;postmeta}.* FROM {$wpdb-&gt;postmeta}
+					LEFT JOIN {$wpdb-&gt;posts} wp ON wp.ID = {$wpdb-&gt;postmeta}.post_id
+					WHERE wp.ID IS NULL
+				&quot;
+				);
+				// @codingStandardsIgnoreStart.
+				$wpdb-&gt;query( &quot;
+					DELETE tr.* FROM {$wpdb-&gt;term_relationships} tr
+					LEFT JOIN {$wpdb-&gt;posts} wp ON wp.ID = tr.object_id
+					LEFT JOIN {$wpdb-&gt;term_taxonomy} tt ON tr.term_taxonomy_id = tt.term_taxonomy_id
+					WHERE wp.ID IS NULL
+					AND tt.taxonomy IN ( &#039;&quot; . implode( &quot;&#039;,&#039;&quot;, array_map( &#039;esc_sql&#039;, get_object_taxonomies( &#039;product&#039; ) ) ) . &quot;&#039; )
+				&quot; );
+				// @codingStandardsIgnoreEnd.
+
+				// Send success.
+				wp_send_json_success(
+					array(
+						&#039;position&#039;            =&gt; &#039;done&#039;,
+						&#039;percentage&#039;          =&gt; 100,
+						&#039;url&#039;                 =&gt; add_query_arg( array( &#039;_wpnonce&#039; =&gt; wp_create_nonce( &#039;woocommerce-csv-importer&#039; ) ), admin_url( &#039;edit.php?post_type=product&amp;page=product_importer&amp;step=done&#039; ) ),
+						&#039;imported&#039;            =&gt; is_countable( $results[&#039;imported&#039;] ) ? count( $results[&#039;imported&#039;] ) : 0,
+						&#039;imported_variations&#039; =&gt; is_countable( $results[&#039;imported_variations&#039;] ) ? count( $results[&#039;imported_variations&#039;] ) : 0,
+						&#039;failed&#039;              =&gt; is_countable( $results[&#039;failed&#039;] ) ? count( $results[&#039;failed&#039;] ) : 0,
+						&#039;updated&#039;             =&gt; is_countable( $results[&#039;updated&#039;] ) ? count( $results[&#039;updated&#039;] ) : 0,
+						&#039;skipped&#039;             =&gt; is_countable( $results[&#039;skipped&#039;] ) ? count( $results[&#039;skipped&#039;] ) : 0,
+					)
+				);
+			} else {
+				wp_send_json_success(
+					array(
+						&#039;position&#039;            =&gt; $importer-&gt;get_file_position(),
+						&#039;percentage&#039;          =&gt; $percent_complete,
+						&#039;imported&#039;            =&gt; is_countable( $results[&#039;imported&#039;] ) ? count( $results[&#039;imported&#039;] ) : 0,
+						&#039;imported_variations&#039; =&gt; is_countable( $results[&#039;imported_variations&#039;] ) ? count( $results[&#039;imported_variations&#039;] ) : 0,
+						&#039;failed&#039;              =&gt; is_countable( $results[&#039;failed&#039;] ) ? count( $results[&#039;failed&#039;] ) : 0,
+						&#039;updated&#039;             =&gt; is_countable( $results[&#039;updated&#039;] ) ? count( $results[&#039;updated&#039;] ) : 0,
+						&#039;skipped&#039;             =&gt; is_countable( $results[&#039;skipped&#039;] ) ? count( $results[&#039;skipped&#039;] ) : 0,
+					)
+				);
+			}
+		} catch ( \Exception $e ) {
+			wp_send_json_error( array( &#039;message&#039; =&gt; $e-&gt;getMessage() ) );
+		}
 	}
 
 	/**
@@ -472,60 +633,20 @@ class WC_Product_CSV_Importer_Controller {
 		// phpcs:disable WordPress.Security.NonceVerification.Missing -- Nonce already verified in WC_Product_CSV_Importer_Controller::upload_form_handler()
 		$file_url = isset( $_POST[&#039;file_url&#039;] ) ? wc_clean( wp_unslash( $_POST[&#039;file_url&#039;] ) ) : &#039;&#039;;
 
-		if ( empty( $file_url ) ) {
-			if ( ! isset( $_FILES[&#039;import&#039;] ) ) {
-				return new WP_Error( &#039;woocommerce_product_csv_importer_upload_file_empty&#039;, __( &#039;File is empty. Please upload something more substantial. This error could also be caused by uploads being disabled in your php.ini or by post_max_size being defined as smaller than upload_max_filesize in php.ini.&#039;, &#039;woocommerce&#039; ) );
+		try {
+			if ( ! empty( $file_url ) ) {
+				$path = ABSPATH . $file_url;
+				self::validate_file_path( $path );
+			} else {
+				$csv_import_util = wc_get_container()-&gt;get( Automattic\WooCommerce\Internal\Admin\ImportExport\CSVUploadHelper::class );
+				$upload          = $csv_import_util-&gt;handle_csv_upload( &#039;product&#039;, &#039;import&#039;, self::get_valid_csv_filetypes() );
+				$path            = $upload[&#039;file&#039;];
 			}
 
-			// phpcs:ignore WordPress.Security.ValidatedSanitizedInput.InputNotValidated
-			if ( ! self::is_file_valid_csv( wc_clean( wp_unslash( $_FILES[&#039;import&#039;][&#039;name&#039;] ) ), false ) ) {
-				return new WP_Error( &#039;woocommerce_product_csv_importer_upload_file_invalid&#039;, __( &#039;Invalid file type. The importer supports CSV and TXT file formats.&#039;, &#039;woocommerce&#039; ) );
-			}
-
-			$overrides = array(
-				&#039;test_form&#039; =&gt; false,
-				&#039;mimes&#039;     =&gt; self::get_valid_csv_filetypes(),
-			);
-			$import    = $_FILES[&#039;import&#039;]; // phpcs:ignore WordPress.Security.ValidatedSanitizedInput.InputNotSanitized,WordPress.Security.ValidatedSanitizedInput.MissingUnslash
-			$upload    = wp_handle_upload( $import, $overrides );
-
-			if ( isset( $upload[&#039;error&#039;] ) ) {
-				return new WP_Error( &#039;woocommerce_product_csv_importer_upload_error&#039;, $upload[&#039;error&#039;] );
-			}
-
-			// Construct the object array.
-			$object = array(
-				&#039;post_title&#039;     =&gt; basename( $upload[&#039;file&#039;] ),
-				&#039;post_content&#039;   =&gt; $upload[&#039;url&#039;],
-				&#039;post_mime_type&#039; =&gt; $upload[&#039;type&#039;],
-				&#039;guid&#039;           =&gt; $upload[&#039;url&#039;],
-				&#039;context&#039;        =&gt; &#039;import&#039;,
-				&#039;post_status&#039;    =&gt; &#039;private&#039;,
-			);
-
-			// Save the data.
-			$id = wp_insert_attachment( $object, $upload[&#039;file&#039;] );
-
-			/*
-			 * Schedule a cleanup for one day from now in case of failed
-			 * import or missing wp_import_cleanup() call.
-			 */
-			wp_schedule_single_event( time() + DAY_IN_SECONDS, &#039;importer_scheduled_cleanup&#039;, array( $id ) );
-
-			return $upload[&#039;file&#039;];
-		} elseif (
-			( 0 === stripos( realpath( ABSPATH . $file_url ), ABSPATH ) ) &amp;&amp;
-			file_exists( ABSPATH . $file_url )
-		) {
-			if ( ! self::is_file_valid_csv( ABSPATH . $file_url ) ) {
-				return new WP_Error( &#039;woocommerce_product_csv_importer_upload_file_invalid&#039;, __( &#039;Invalid file type. The importer supports CSV and TXT file formats.&#039;, &#039;woocommerce&#039; ) );
-			}
-
-			return ABSPATH . $file_url;
+			return $path;
+		} catch ( \Exception $e ) {
+			return new \WP_Error( &#039;woocommerce_product_csv_importer_upload_invalid_file&#039;, $e-&gt;getMessage() );
 		}
-		// phpcs:enable
-
-		return new WP_Error( &#039;woocommerce_product_csv_importer_upload_invalid_file&#039;, __( &#039;Please upload or provide the link to a valid CSV file.&#039;, &#039;woocommerce&#039; ) );
 	}
 
 	/**
@@ -533,6 +654,8 @@ class WC_Product_CSV_Importer_Controller {
 	 */
 	protected function mapping_form() {
 		check_admin_referer( &#039;woocommerce-csv-importer&#039; );
+		self::validate_file_path( $this-&gt;file );
+
 		$args = array(
 			&#039;lines&#039;              =&gt; 1,
 			&#039;delimiter&#039;          =&gt; $this-&gt;delimiter,
@@ -570,18 +693,7 @@ class WC_Product_CSV_Importer_Controller {
 		// Displaying this page triggers Ajax action to run the import with a valid nonce,
 		// therefore this page needs to be nonce protected as well.
 		check_admin_referer( &#039;woocommerce-csv-importer&#039; );
-
-		if ( ! self::is_file_valid_csv( $this-&gt;file ) ) {
-			$this-&gt;add_error( __( &#039;Invalid file type. The importer supports CSV and TXT file formats.&#039;, &#039;woocommerce&#039; ) );
-			$this-&gt;output_errors();
-			return;
-		}
-
-		if ( ! is_file( $this-&gt;file ) ) {
-			$this-&gt;add_error( __( &#039;The file does not exist, please try again.&#039;, &#039;woocommerce&#039; ) );
-			$this-&gt;output_errors();
-			return;
-		}
+		self::validate_file_path( $this-&gt;file );
 
 		if ( ! empty( $_POST[&#039;map_from&#039;] ) &amp;&amp; ! empty( $_POST[&#039;map_to&#039;] ) ) {
 			$mapping_from = wc_clean( wp_unslash( $_POST[&#039;map_from&#039;] ) );
@@ -833,6 +945,7 @@ class WC_Product_CSV_Importer_Controller {
 			&#039;id&#039;                 =&gt; __( &#039;ID&#039;, &#039;woocommerce&#039; ),
 			&#039;type&#039;               =&gt; __( &#039;Type&#039;, &#039;woocommerce&#039; ),
 			&#039;sku&#039;                =&gt; __( &#039;SKU&#039;, &#039;woocommerce&#039; ),
+			&#039;global_unique_id&#039;   =&gt; __( &#039;GTIN, UPC, EAN, or ISBN&#039;, &#039;woocommerce&#039; ),
 			&#039;name&#039;               =&gt; __( &#039;Name&#039;, &#039;woocommerce&#039; ),
 			&#039;published&#039;          =&gt; __( &#039;Published&#039;, &#039;woocommerce&#039; ),
 			&#039;featured&#039;           =&gt; __( &#039;Is featured?&#039;, &#039;woocommerce&#039; ),
@@ -923,7 +1036,7 @@ class WC_Product_CSV_Importer_Controller {
 
     <footer class="phpdocumentor phpdocumentor-footer">
     <div class="phpdocumentor-section">
-        <span>WooCommerce Code Reference API documentation generated by <a href="http://www.phpdoc.org/">phpDocumentor</a> on July 25th, 2024 at 11:33 am.</span>
+        <span>WooCommerce Code Reference API documentation generated by <a href="http://www.phpdoc.org/">phpDocumentor</a> on May 16th, 2025 at 09:14 am.</span>
     </div>
 </footer>
 
@@ -935,7 +1048,7 @@ class WC_Product_CSV_Importer_Controller {
             'searchIndex': '..\/js\/searchIndex.json'
         };
     </script>
-    <script src="../js/searchIndex.js?updated=1721907182"></script>
-    <script src="../js/search.js?updated=1721907182"></script>
+    <script src="../js/searchIndex.js?updated=1747386858"></script>
+    <script src="../js/search.js?updated=1747386858"></script>
 </body>
 </html>

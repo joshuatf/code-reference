@@ -4,14 +4,13 @@
     <meta charset="utf-8">
     <title>WooCommerce Code Reference</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="../images/favicon.png" />
-    <link rel="apple-touch-icon" href="../images/apple-touch-icon.png"/>
-    <link rel="apple-touch-icon" sizes="72x72" href="../images/apple-touch-icon-72x72.png"/>
-    <link rel="apple-touch-icon" sizes="114x114" href="../images/apple-touch-icon-114x114.png"/>
+    <link rel="icon" href="../images/favicon-32x32.png" sizes="32x32" />
+    <link rel="icon" href="../images/favicon-192x192.png" sizes="192x192" />
+    <link rel="apple-touch-icon" href="../images/favicon-180x180.png" />
+
     <link rel="stylesheet" href="../css/normalize.css">
-    <link rel="stylesheet" href="../css/base.css?updated=1721907182">
-    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../css/template.css?updated=1721907182">
+    <link rel="stylesheet" href="../css/base.css?updated=1747386858">
+    <link rel="stylesheet" href="../css/template.css?updated=1747386858">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0/css/all.min.css" integrity="sha256-ybRkN9dBjhcS2qrW1z+hfCxq+1aBdwyQM5wlQoQVt/0=" crossorigin="anonymous" />
             <script src="https://cdn.jsdelivr.net/npm/css-vars-ponyfill@2"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0/js/all.min.js" integrity="sha256-0vuk8LXoyrmCjp1f0O300qo1M75ZQyhH9X3J6d+scmk=" crossorigin="anonymous"></script>
@@ -38,14 +37,13 @@
     <header class="phpdocumentor-top-header">
     <section class="phpdocumentor-section">
         <div class="site-branding">
-            <a class="site-logo" href="../index.html"><img width="180" src="../images/logo.svg" alt="WooCommerce" /></a>
+            <a class="site-logo" href="../index.html"><img src="../images/logo.png" alt="WooCommerce" /></a>
         </div>
         <nav class="main-navigation">
             <ul>
                 <li><a href="../hooks/hooks.html">Hooks Reference</a></li>
-                <li><a href="https://docs.woocommerce.com/">Documentation</a></li>
+                <li><a href="https://developer.woocommerce.com/docs/">Documentation</a></li>
                 <li><a href="https://woocommerce.github.io/woocommerce-rest-api-docs/">REST API Docs</a></li>
-                <li><a href="https://woocommerce.com/careers/?utm_source=woocommerce+core+code+reference&utm_medium=devdocs&utm_campaign=woo+careers" target="_blank">We're hiring!</a></li>
             </ul>
         </nav>
     </section>
@@ -53,7 +51,7 @@
 
 <div class="phpdocumentor-header">
     <section class="phpdocumentor-section">
-        <h1 class="phpdocumentor-title">WooCommerce Code Reference</h1>
+        <h1 class="phpdocumentor-title"><a href="../index.html">WooCommerce Code Reference</a></h1>
         <section class="phpdocumentor-search">
     <label class="phpdocumentor-label">
         <span class="visually-hidden">Search (click ESC to close search results)</span>
@@ -74,6 +72,10 @@
                                         <h4 class="phpdocumentor-sidebar__root-namespace"><a href="../namespaces/woocommerce.html"><abbr title="\WooCommerce">WooCommerce</abbr></a></h4>
                 <ul class="phpdocumentor-list">
                                             <li><a href="../namespaces/woocommerce-admin.html"><abbr title="\WooCommerce\Admin">Admin</abbr></a></li>
+                                    </ul>
+                            <h4 class="phpdocumentor-sidebar__root-namespace"><a href="../namespaces/mailpoet.html"><abbr title="\MailPoet">MailPoet</abbr></a></h4>
+                <ul class="phpdocumentor-list">
+                                            <li><a href="../namespaces/mailpoet-emaileditor.html"><abbr title="\MailPoet\EmailEditor">EmailEditor</abbr></a></li>
                                     </ul>
                             <h4 class="phpdocumentor-sidebar__root-namespace"><a href="../namespaces/automattic.html"><abbr title="\Automattic">Automattic</abbr></a></h4>
                 <ul class="phpdocumentor-list">
@@ -119,8 +121,10 @@
                                     <li><a href="../packages/WooCommerce-Widgets.html"><abbr title="\WooCommerce\Widgets">Widgets</abbr></a></li>
                                     <li><a href="../packages/WooCommerce-Uninstaller.html"><abbr title="\WooCommerce\Uninstaller">Uninstaller</abbr></a></li>
                             </ul>
-                                <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/WoocommerceAdmin.html"><abbr title="\WoocommerceAdmin">WoocommerceAdmin</abbr></a></h3>
-                                <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/WoocommerceNavigation.html"><abbr title="\WoocommerceNavigation">WoocommerceNavigation</abbr></a></h3>
+                                <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/MailPoet.html"><abbr title="\MailPoet">MailPoet</abbr></a></h3>
+                        <ul class="phpdocumentor-list">
+                                    <li><a href="../packages/MailPoet-EmailEditor.html"><abbr title="\MailPoet\EmailEditor">EmailEditor</abbr></a></li>
+                            </ul>
                                 <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/Automattic.html"><abbr title="\Automattic">Automattic</abbr></a></h3>
                         <ul class="phpdocumentor-list">
                                     <li><a href="../packages/Automattic-WooCommerce.html"><abbr title="\Automattic\WooCommerce">WooCommerce</abbr></a></li>
@@ -169,6 +173,7 @@
 use Automattic\Jetpack\Constants;
 use Automattic\WooCommerce\Blocks\Package;
 use Automattic\WooCommerce\Blocks\Domain\Services\CheckoutFields;
+use Automattic\WooCommerce\Utilities\FeaturesUtil;
 
 defined( &#039;ABSPATH&#039; ) || exit;
 
@@ -257,6 +262,7 @@ class WC_Emails {
 				&#039;woocommerce_order_status_on-hold_to_cancelled&#039;,
 				&#039;woocommerce_order_status_on-hold_to_failed&#039;,
 				&#039;woocommerce_order_status_completed&#039;,
+				&#039;woocommerce_order_status_failed&#039;,
 				&#039;woocommerce_order_fully_refunded&#039;,
 				&#039;woocommerce_order_partially_refunded&#039;,
 				&#039;woocommerce_new_customer_note&#039;,
@@ -312,6 +318,8 @@ class WC_Emails {
 			WC()-&gt;payment_gateways();
 			WC()-&gt;shipping();
 
+			// phpcs:disable WooCommerce.Commenting.CommentHooks.MissingSinceComment
+			/** This action is documented in includes/class-wc-emails.php in the send_transactional_email method. */
 			do_action_ref_array( $filter . &#039;_notification&#039;, $args );
 		}
 	}
@@ -327,6 +335,17 @@ class WC_Emails {
 		try {
 			$args = func_get_args();
 			self::instance(); // Init self so emails exist.
+
+			/**
+			 * Action hook for email template classes to trigger the sending of an email.
+			 *
+			 * The name of the hook is based on the &quot;parent&quot; hook that is currently firing, that this is attached to.
+			 * See the WC_Emails::init_transactional_emails method for a list of hooks.
+			 *
+			 * @since 3.1.0
+			 *
+			 * @param array $args Args from the parent hook, which may differ depending on the hook.
+			 */
 			do_action_ref_array( current_filter() . &#039;_notification&#039;, $args );
 		} catch ( Exception $e ) {
 			$error  = &#039;Transactional email triggered fatal error for callback &#039; . current_filter();
@@ -383,6 +402,7 @@ class WC_Emails {
 		$this-&gt;emails[&#039;WC_Email_New_Order&#039;]                 = include __DIR__ . &#039;/emails/class-wc-email-new-order.php&#039;;
 		$this-&gt;emails[&#039;WC_Email_Cancelled_Order&#039;]           = include __DIR__ . &#039;/emails/class-wc-email-cancelled-order.php&#039;;
 		$this-&gt;emails[&#039;WC_Email_Failed_Order&#039;]              = include __DIR__ . &#039;/emails/class-wc-email-failed-order.php&#039;;
+		$this-&gt;emails[&#039;WC_Email_Customer_Failed_Order&#039;]     = include __DIR__ . &#039;/emails/class-wc-email-customer-failed-order.php&#039;;
 		$this-&gt;emails[&#039;WC_Email_Customer_On_Hold_Order&#039;]    = include __DIR__ . &#039;/emails/class-wc-email-customer-on-hold-order.php&#039;;
 		$this-&gt;emails[&#039;WC_Email_Customer_Processing_Order&#039;] = include __DIR__ . &#039;/emails/class-wc-email-customer-processing-order.php&#039;;
 		$this-&gt;emails[&#039;WC_Email_Customer_Completed_Order&#039;]  = include __DIR__ . &#039;/emails/class-wc-email-customer-completed-order.php&#039;;
@@ -447,6 +467,20 @@ class WC_Emails {
 	 */
 	public function replace_placeholders( $string ) {
 		$domain = wp_parse_url( home_url(), PHP_URL_HOST );
+
+		if ( FeaturesUtil::feature_is_enabled( &#039;email_improvements&#039; ) ) {
+			$string = str_replace(
+				array(
+					&#039;{store_address}&#039;,
+					&#039;{store_email}&#039;,
+				),
+				array(
+					$this-&gt;get_store_address(),
+					$this-&gt;get_from_address(),
+				),
+				$string
+			);
+		}
 
 		return str_replace(
 			array(
@@ -830,6 +864,47 @@ class WC_Emails {
 	}
 
 	/**
+	 * Get store address formatted for emails.
+	 *
+	 * @return string
+	 */
+	private function get_store_address() {
+		add_filter(
+			&#039;woocommerce_formatted_address_force_country_display&#039;,
+			array( $this, &#039;get_store_address_force_country_display&#039; ),
+			5
+		);
+		$result = wp_specialchars_decode(
+			WC()-&gt;countries-&gt;get_formatted_address(
+				array(
+					&#039;address_1&#039; =&gt; WC()-&gt;countries-&gt;get_base_address(),
+					&#039;address_2&#039; =&gt; WC()-&gt;countries-&gt;get_base_address_2(),
+					&#039;city&#039;      =&gt; WC()-&gt;countries-&gt;get_base_city(),
+					&#039;state&#039;     =&gt; WC()-&gt;countries-&gt;get_base_state(),
+					&#039;country&#039;   =&gt; WC()-&gt;countries-&gt;get_base_country(),
+					&#039;postcode&#039;  =&gt; WC()-&gt;countries-&gt;get_base_postcode(),
+				)
+			)
+		);
+		// Replace newlines by commas.
+		$result = preg_replace( &#039;/&lt;br\/?&gt;/i&#039;, &#039;, &#039;, $result );
+		remove_filter(
+			&#039;woocommerce_formatted_address_force_country_display&#039;,
+			array( $this, &#039;get_store_address_force_country_display&#039; )
+		);
+		return $result;
+	}
+
+	/**
+	 * Force country display, used by WC_Emails::get_store address() method
+	 *
+	 * @return bool
+	 */
+	public function get_store_address_force_country_display() {
+		return true;
+	}
+
+	/**
 	 * Low stock notification email.
 	 *
 	 * @param WC_Product $product Product instance.
@@ -967,7 +1042,7 @@ class WC_Emails {
 
     <footer class="phpdocumentor phpdocumentor-footer">
     <div class="phpdocumentor-section">
-        <span>WooCommerce Code Reference API documentation generated by <a href="http://www.phpdoc.org/">phpDocumentor</a> on July 25th, 2024 at 11:33 am.</span>
+        <span>WooCommerce Code Reference API documentation generated by <a href="http://www.phpdoc.org/">phpDocumentor</a> on May 16th, 2025 at 09:14 am.</span>
     </div>
 </footer>
 
@@ -979,7 +1054,7 @@ class WC_Emails {
             'searchIndex': '..\/js\/searchIndex.json'
         };
     </script>
-    <script src="../js/searchIndex.js?updated=1721907182"></script>
-    <script src="../js/search.js?updated=1721907182"></script>
+    <script src="../js/searchIndex.js?updated=1747386858"></script>
+    <script src="../js/search.js?updated=1747386858"></script>
 </body>
 </html>

@@ -4,14 +4,13 @@
     <meta charset="utf-8">
     <title>WooCommerce Code Reference</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="../images/favicon.png" />
-    <link rel="apple-touch-icon" href="../images/apple-touch-icon.png"/>
-    <link rel="apple-touch-icon" sizes="72x72" href="../images/apple-touch-icon-72x72.png"/>
-    <link rel="apple-touch-icon" sizes="114x114" href="../images/apple-touch-icon-114x114.png"/>
+    <link rel="icon" href="../images/favicon-32x32.png" sizes="32x32" />
+    <link rel="icon" href="../images/favicon-192x192.png" sizes="192x192" />
+    <link rel="apple-touch-icon" href="../images/favicon-180x180.png" />
+
     <link rel="stylesheet" href="../css/normalize.css">
-    <link rel="stylesheet" href="../css/base.css?updated=1721907182">
-    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../css/template.css?updated=1721907182">
+    <link rel="stylesheet" href="../css/base.css?updated=1747386858">
+    <link rel="stylesheet" href="../css/template.css?updated=1747386858">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0/css/all.min.css" integrity="sha256-ybRkN9dBjhcS2qrW1z+hfCxq+1aBdwyQM5wlQoQVt/0=" crossorigin="anonymous" />
             <script src="https://cdn.jsdelivr.net/npm/css-vars-ponyfill@2"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0/js/all.min.js" integrity="sha256-0vuk8LXoyrmCjp1f0O300qo1M75ZQyhH9X3J6d+scmk=" crossorigin="anonymous"></script>
@@ -38,14 +37,13 @@
     <header class="phpdocumentor-top-header">
     <section class="phpdocumentor-section">
         <div class="site-branding">
-            <a class="site-logo" href="../index.html"><img width="180" src="../images/logo.svg" alt="WooCommerce" /></a>
+            <a class="site-logo" href="../index.html"><img src="../images/logo.png" alt="WooCommerce" /></a>
         </div>
         <nav class="main-navigation">
             <ul>
                 <li><a href="../hooks/hooks.html">Hooks Reference</a></li>
-                <li><a href="https://docs.woocommerce.com/">Documentation</a></li>
+                <li><a href="https://developer.woocommerce.com/docs/">Documentation</a></li>
                 <li><a href="https://woocommerce.github.io/woocommerce-rest-api-docs/">REST API Docs</a></li>
-                <li><a href="https://woocommerce.com/careers/?utm_source=woocommerce+core+code+reference&utm_medium=devdocs&utm_campaign=woo+careers" target="_blank">We're hiring!</a></li>
             </ul>
         </nav>
     </section>
@@ -53,7 +51,7 @@
 
 <div class="phpdocumentor-header">
     <section class="phpdocumentor-section">
-        <h1 class="phpdocumentor-title">WooCommerce Code Reference</h1>
+        <h1 class="phpdocumentor-title"><a href="../index.html">WooCommerce Code Reference</a></h1>
         <section class="phpdocumentor-search">
     <label class="phpdocumentor-label">
         <span class="visually-hidden">Search (click ESC to close search results)</span>
@@ -74,6 +72,10 @@
                                         <h4 class="phpdocumentor-sidebar__root-namespace"><a href="../namespaces/woocommerce.html"><abbr title="\WooCommerce">WooCommerce</abbr></a></h4>
                 <ul class="phpdocumentor-list">
                                             <li><a href="../namespaces/woocommerce-admin.html"><abbr title="\WooCommerce\Admin">Admin</abbr></a></li>
+                                    </ul>
+                            <h4 class="phpdocumentor-sidebar__root-namespace"><a href="../namespaces/mailpoet.html"><abbr title="\MailPoet">MailPoet</abbr></a></h4>
+                <ul class="phpdocumentor-list">
+                                            <li><a href="../namespaces/mailpoet-emaileditor.html"><abbr title="\MailPoet\EmailEditor">EmailEditor</abbr></a></li>
                                     </ul>
                             <h4 class="phpdocumentor-sidebar__root-namespace"><a href="../namespaces/automattic.html"><abbr title="\Automattic">Automattic</abbr></a></h4>
                 <ul class="phpdocumentor-list">
@@ -119,8 +121,10 @@
                                     <li><a href="../packages/WooCommerce-Widgets.html"><abbr title="\WooCommerce\Widgets">Widgets</abbr></a></li>
                                     <li><a href="../packages/WooCommerce-Uninstaller.html"><abbr title="\WooCommerce\Uninstaller">Uninstaller</abbr></a></li>
                             </ul>
-                                <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/WoocommerceAdmin.html"><abbr title="\WoocommerceAdmin">WoocommerceAdmin</abbr></a></h3>
-                                <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/WoocommerceNavigation.html"><abbr title="\WoocommerceNavigation">WoocommerceNavigation</abbr></a></h3>
+                                <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/MailPoet.html"><abbr title="\MailPoet">MailPoet</abbr></a></h3>
+                        <ul class="phpdocumentor-list">
+                                    <li><a href="../packages/MailPoet-EmailEditor.html"><abbr title="\MailPoet\EmailEditor">EmailEditor</abbr></a></li>
+                            </ul>
                                 <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/Automattic.html"><abbr title="\Automattic">Automattic</abbr></a></h3>
                         <ul class="phpdocumentor-list">
                                     <li><a href="../packages/Automattic-WooCommerce.html"><abbr title="\Automattic\WooCommerce">WooCommerce</abbr></a></li>
@@ -166,6 +170,7 @@
 
 use Automattic\Jetpack\Constants;
 use Automattic\WooCommerce\Admin\Notes\Notes;
+use Automattic\WooCommerce\Enums\ProductType;
 use Automattic\WooCommerce\Internal\TransientFiles\TransientFilesEngine;
 use Automattic\WooCommerce\Internal\DataStores\Orders\{ CustomOrdersTableController, DataSynchronizer, OrdersTableDataStore };
 use Automattic\WooCommerce\Internal\Features\FeaturesController;
@@ -174,8 +179,7 @@ use Automattic\WooCommerce\Internal\ProductDownloads\ApprovedDirectories\Registe
 use Automattic\WooCommerce\Internal\ProductDownloads\ApprovedDirectories\Synchronize as Download_Directories_Sync;
 use Automattic\WooCommerce\Internal\Utilities\DatabaseUtil;
 use Automattic\WooCommerce\Internal\WCCom\ConnectionHelper as WCConnectionHelper;
-use Automattic\WooCommerce\Internal\Traits\AccessiblePrivateMethods;
-use Automattic\WooCommerce\Utilities\OrderUtil;
+use Automattic\WooCommerce\Utilities\{ OrderUtil, PluginUtil };
 use Automattic\WooCommerce\Internal\Utilities\PluginInstaller;
 
 defined( &#039;ABSPATH&#039; ) || exit;
@@ -184,8 +188,6 @@ defined( &#039;ABSPATH&#039; ) || exit;
  * WC_Install Class.
  */
 class WC_Install {
-	use AccessiblePrivateMethods;
-
 	/**
 	 * DB updates and callbacks that need to be run per version.
 	 *
@@ -417,6 +419,29 @@ class WC_Install {
 			&#039;wc_update_910_add_launch_your_store_tour_option&#039;,
 			&#039;wc_update_910_remove_obsolete_user_meta&#039;,
 		),
+		&#039;9.2.0&#039; =&gt; array(
+			&#039;wc_update_920_add_wc_hooked_blocks_version_option&#039;,
+		),
+		&#039;9.3.0&#039; =&gt; array(
+			&#039;wc_update_930_add_woocommerce_coming_soon_option&#039;,
+			&#039;wc_update_930_migrate_user_meta_for_launch_your_store_tour&#039;,
+		),
+		&#039;9.4.0&#039; =&gt; array(
+			&#039;wc_update_940_add_phone_to_order_address_fts_index&#039;,
+			&#039;wc_update_940_remove_help_panel_highlight_shown&#039;,
+		),
+		&#039;9.5.0&#039; =&gt; array(
+			&#039;wc_update_950_tracking_option_autoload&#039;,
+		),
+		&#039;9.6.1&#039; =&gt; array(
+			&#039;wc_update_961_migrate_default_email_base_color&#039;,
+		),
+		&#039;9.8.0&#039; =&gt; array(
+			&#039;wc_update_980_remove_order_attribution_install_banner_dismissed_option&#039;,
+		),
+		&#039;9.8.5&#039; =&gt; array(
+			&#039;wc_update_985_enable_new_payments_settings_page_feature&#039;,
+		),
 	);
 
 	/**
@@ -425,6 +450,13 @@ class WC_Install {
 	 * @var string
 	 */
 	const NEWLY_INSTALLED_OPTION = &#039;woocommerce_newly_installed&#039;;
+
+	/**
+	 * Option name used to track new installation versions of WooCommerce.
+	 *
+	 * @var string
+	 */
+	const INITIAL_INSTALLED_VERSION = &#039;woocommerce_initial_installed_version&#039;;
 
 	/**
 	 * Option name used to uniquely identify installations of WooCommerce.
@@ -440,6 +472,8 @@ class WC_Install {
 		add_action( &#039;init&#039;, array( __CLASS__, &#039;check_version&#039; ), 5 );
 		add_action( &#039;init&#039;, array( __CLASS__, &#039;manual_database_update&#039; ), 20 );
 		add_action( &#039;woocommerce_newly_installed&#039;, array( __CLASS__, &#039;maybe_enable_hpos&#039; ), 20 );
+		add_action( &#039;woocommerce_newly_installed&#039;, array( __CLASS__, &#039;add_coming_soon_option&#039; ), 20 );
+		add_action( &#039;woocommerce_newly_installed&#039;, array( __CLASS__, &#039;enable_email_improvements&#039; ), 20 );
 		add_action( &#039;admin_init&#039;, array( __CLASS__, &#039;wc_admin_db_update_notice&#039; ) );
 		add_action( &#039;admin_init&#039;, array( __CLASS__, &#039;add_admin_note_after_page_created&#039; ) );
 		add_action( &#039;woocommerce_run_update_callback&#039;, array( __CLASS__, &#039;run_update_callback&#039; ) );
@@ -450,16 +484,18 @@ class WC_Install {
 		add_filter( &#039;plugin_row_meta&#039;, array( __CLASS__, &#039;plugin_row_meta&#039; ), 10, 2 );
 		add_filter( &#039;wpmu_drop_tables&#039;, array( __CLASS__, &#039;wpmu_drop_tables&#039; ) );
 		add_filter( &#039;cron_schedules&#039;, array( __CLASS__, &#039;cron_schedules&#039; ) );
-		self::add_action( &#039;admin_init&#039;, array( __CLASS__, &#039;newly_installed&#039; ) );
-		self::add_action( &#039;woocommerce_activate_legacy_rest_api_plugin&#039;, array( __CLASS__, &#039;maybe_install_legacy_api_plugin&#039; ) );
+		add_action( &#039;admin_init&#039;, array( __CLASS__, &#039;newly_installed&#039; ) );
+		add_action( &#039;woocommerce_activate_legacy_rest_api_plugin&#039;, array( __CLASS__, &#039;maybe_install_legacy_api_plugin&#039; ) );
 	}
 
 	/**
 	 * Trigger `woocommerce_newly_installed` action for new installations.
 	 *
 	 * @since 8.0.0
+	 *
+	 * @internal For exclusive usage of WooCommerce core, backwards compatibility not guaranteed.
 	 */
-	private static function newly_installed() {
+	public static function newly_installed() {
 		if ( &#039;yes&#039; === get_option( self::NEWLY_INSTALLED_OPTION, false ) ) {
 			/**
 			 * Run when WooCommerce has been installed for the first time.
@@ -470,6 +506,13 @@ class WC_Install {
 			do_action_deprecated( &#039;woocommerce_admin_newly_installed&#039;, array(), &#039;6.5.0&#039;, &#039;woocommerce_newly_installed&#039; );
 
 			update_option( self::NEWLY_INSTALLED_OPTION, &#039;no&#039; );
+
+			/**
+			 * This option is used to track the initial version of WooCommerce that was installed.
+			 *
+			 * @since 9.2.0
+			 */
+			add_option( self::INITIAL_INSTALLED_VERSION, WC()-&gt;version, &#039;&#039;, false );
 		}
 	}
 
@@ -1128,6 +1171,32 @@ class WC_Install {
 	}
 
 	/**
+	 * Add the coming soon options for new shops.
+	 *
+	 * Ensure that the options are set for all shops for performance even if core profiler is disabled on the host.
+	 *
+	 * @since 9.3.0
+	 */
+	public static function add_coming_soon_option() {
+		add_option( &#039;woocommerce_coming_soon&#039;, &#039;yes&#039; );
+		add_option( &#039;woocommerce_store_pages_only&#039;, &#039;yes&#039; );
+	}
+
+	/**
+	 * Enable email improvements by default for new shops.
+	 *
+	 * @since 9.8.0
+	 */
+	public static function enable_email_improvements() {
+		update_option( &#039;woocommerce_feature_email_improvements_enabled&#039;, &#039;yes&#039; );
+		update_option( &#039;woocommerce_email_improvements_default_enabled&#039;, &#039;yes&#039; );
+		update_option( &#039;woocommerce_email_auto_sync_with_theme&#039;, &#039;yes&#039; );
+		update_option( &#039;woocommerce_email_improvements_first_enabled_at&#039;, gmdate( &#039;Y-m-d H:i:s&#039; ) );
+		update_option( &#039;woocommerce_email_improvements_last_enabled_at&#039;, gmdate( &#039;Y-m-d H:i:s&#039; ) );
+		update_option( &#039;woocommerce_email_improvements_enabled_count&#039;, 1 );
+	}
+
+	/**
 	 * Checks whether HPOS should be enabled for new shops.
 	 *
 	 * @return bool
@@ -1196,6 +1265,7 @@ class WC_Install {
 			&#039;wc-admin-set-up-additional-payment-types&#039;,
 			&#039;wc-admin-deactivate-plugin&#039;,
 			&#039;wc-admin-complete-store-details&#039;,
+			&#039;wc-admin-choosing-a-theme&#039;,
 		);
 
 		/**
@@ -1301,10 +1371,10 @@ class WC_Install {
 	public static function create_terms() {
 		$taxonomies = array(
 			&#039;product_type&#039;       =&gt; array(
-				&#039;simple&#039;,
-				&#039;grouped&#039;,
-				&#039;variable&#039;,
-				&#039;external&#039;,
+				ProductType::SIMPLE,
+				ProductType::GROUPED,
+				ProductType::VARIABLE,
+				ProductType::EXTERNAL,
 			),
 			&#039;product_visibility&#039; =&gt; array(
 				&#039;exclude-from-search&#039;,
@@ -1360,8 +1430,10 @@ class WC_Install {
 	 *
 	 * In multisite setups it could happen that the plugin was installed by an installation process performed in another site.
 	 * In this case we check if the plugin was autoinstalled in such a way, and if so we activate it if the conditions are fulfilled.
+	 *
+	 * @internal For exclusive usage of WooCommerce core, backwards compatibility not guaranteed.
 	 */
-	private static function maybe_install_legacy_api_plugin() {
+	public static function maybe_install_legacy_api_plugin() {
 		if ( self::is_new_install() ) {
 			return;
 		}
@@ -1408,7 +1480,8 @@ class WC_Install {
 				return;
 			}
 
-			if ( in_array( $legacy_api_plugin, wp_get_active_and_valid_plugins(), true ) ) {
+			$active_valid_plugins = wc_get_container()-&gt;get( PluginUtil::class )-&gt;get_all_active_valid_plugins();
+			if ( in_array( $legacy_api_plugin, $active_valid_plugins, true ) ) {
 				return;
 			}
 
@@ -1794,6 +1867,7 @@ CREATE TABLE {$wpdb-&gt;prefix}wc_download_log (
 CREATE TABLE {$wpdb-&gt;prefix}wc_product_meta_lookup (
   `product_id` bigint(20) NOT NULL,
   `sku` varchar(100) NULL default &#039;&#039;,
+  `global_unique_id` varchar(100) NULL default &#039;&#039;,
   `virtual` tinyint(1) NULL default 0,
   `downloadable` tinyint(1) NULL default 0,
   `min_price` decimal(19,4) NULL default NULL,
@@ -2689,9 +2763,9 @@ $hpos_table_schema;
 &lt;/ul&gt;
 &lt;!-- /wp:list --&gt;
 
-&lt;!-- wp:paragraph --&gt;
-&lt;h2&gt;Refunds&lt;/h2&gt;
-&lt;!-- /wp:paragraph --&gt;
+&lt;!-- wp:heading --&gt;
+&lt;h2 class=&quot;wp-block-heading&quot;&gt;Refunds&lt;/h2&gt;
+&lt;!-- /wp:heading --&gt;
 
 &lt;!-- wp:paragraph --&gt;
 &lt;p&gt;Once your return is received and inspected, we will send you an email to notify you that we have received your returned item. We will also notify you of the approval or rejection of your refund.&lt;/p&gt;
@@ -2701,7 +2775,7 @@ $hpos_table_schema;
 &lt;p&gt;If you are approved, then your refund will be processed, and a credit will automatically be applied to your credit card or original method of payment, within a certain amount of days.&lt;/p&gt;
 &lt;!-- /wp:paragraph --&gt;
 
-&lt;!-- wp:heading --&gt;
+&lt;!-- wp:heading {&quot;level&quot;:3} --&gt;
 &lt;h3 class=&quot;wp-block-heading&quot;&gt;Late or missing refunds&lt;/h3&gt;
 &lt;!-- /wp:heading --&gt;
 
@@ -2721,7 +2795,7 @@ $hpos_table_schema;
 &lt;p&gt;If you’ve done all of this and you still have not received your refund yet, please contact us at {email address}.&lt;/p&gt;
 &lt;!-- /wp:paragraph --&gt;
 
-&lt;!-- wp:heading --&gt;
+&lt;!-- wp:heading {&quot;level&quot;:3} --&gt;
 &lt;h3 class=&quot;wp-block-heading&quot;&gt;Sale items&lt;/h3&gt;
 &lt;!-- /wp:heading --&gt;
 
@@ -2729,17 +2803,17 @@ $hpos_table_schema;
 &lt;p&gt;Only regular priced items may be refunded. Sale items cannot be refunded.&lt;/p&gt;
 &lt;!-- /wp:paragraph --&gt;
 
-&lt;!-- wp:paragraph --&gt;
-&lt;h2&gt;Exchanges&lt;/h2&gt;
-&lt;!-- /wp:paragraph --&gt;
+&lt;!-- wp:heading --&gt;
+&lt;h2 class=&quot;wp-block-heading&quot;&gt;Exchanges&lt;/h2&gt;
+&lt;!-- /wp:heading --&gt;
 
 &lt;!-- wp:paragraph --&gt;
 &lt;p&gt;We only replace items if they are defective or damaged. If you need to exchange it for the same item, send us an email at {email address} and send your item to: {physical address}.&lt;/p&gt;
 &lt;!-- /wp:paragraph --&gt;
 
-&lt;!-- wp:paragraph --&gt;
-&lt;h2&gt;Gifts&lt;/h2&gt;
-&lt;!-- /wp:paragraph --&gt;
+&lt;!-- wp:heading --&gt;
+&lt;h2 class=&quot;wp-block-heading&quot;&gt;Gifts&lt;/h2&gt;
+&lt;!-- /wp:heading --&gt;
 
 &lt;!-- wp:paragraph --&gt;
 &lt;p&gt;If the item was marked as a gift when purchased and shipped directly to you, you’ll receive a gift credit for the value of your return. Once the returned item is received, a gift certificate will be mailed to you.&lt;/p&gt;
@@ -2749,9 +2823,9 @@ $hpos_table_schema;
 &lt;p&gt;If the item wasn’t marked as a gift when purchased, or the gift giver had the order shipped to themselves to give to you later, we will send a refund to the gift giver and they will find out about your return.&lt;/p&gt;
 &lt;!-- /wp:paragraph --&gt;
 
-&lt;!-- wp:paragraph --&gt;
-&lt;h2&gt;Shipping returns&lt;/h2&gt;
-&lt;!-- /wp:paragraph --&gt;
+&lt;!-- wp:heading --&gt;
+&lt;h2 class=&quot;wp-block-heading&quot;&gt;Shipping returns&lt;/h2&gt;
+&lt;!-- /wp:heading --&gt;
 
 &lt;!-- wp:paragraph --&gt;
 &lt;p&gt;To return your product, you should mail your product to: {physical address}.&lt;/p&gt;
@@ -2769,9 +2843,9 @@ $hpos_table_schema;
 &lt;p&gt;If you are returning more expensive items, you may consider using a trackable shipping service or purchasing shipping insurance. We don’t guarantee that we will receive your returned item.&lt;/p&gt;
 &lt;!-- /wp:paragraph --&gt;
 
-&lt;!-- wp:paragraph --&gt;
-&lt;h2&gt;Need help?&lt;/h2&gt;
-&lt;!-- /wp:paragraph --&gt;
+&lt;!-- wp:heading --&gt;
+&lt;h2 class=&quot;wp-block-heading&quot;&gt;Need help?&lt;/h2&gt;
+&lt;!-- /wp:heading --&gt;
 
 &lt;!-- wp:paragraph --&gt;
 &lt;p&gt;Contact us at {email} for questions related to refunds and returns.&lt;/p&gt;
@@ -3010,7 +3084,7 @@ WC_Install::init();
 
     <footer class="phpdocumentor phpdocumentor-footer">
     <div class="phpdocumentor-section">
-        <span>WooCommerce Code Reference API documentation generated by <a href="http://www.phpdoc.org/">phpDocumentor</a> on July 25th, 2024 at 11:33 am.</span>
+        <span>WooCommerce Code Reference API documentation generated by <a href="http://www.phpdoc.org/">phpDocumentor</a> on May 16th, 2025 at 09:14 am.</span>
     </div>
 </footer>
 
@@ -3022,7 +3096,7 @@ WC_Install::init();
             'searchIndex': '..\/js\/searchIndex.json'
         };
     </script>
-    <script src="../js/searchIndex.js?updated=1721907182"></script>
-    <script src="../js/search.js?updated=1721907182"></script>
+    <script src="../js/searchIndex.js?updated=1747386858"></script>
+    <script src="../js/search.js?updated=1747386858"></script>
 </body>
 </html>

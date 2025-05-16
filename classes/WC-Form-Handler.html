@@ -4,14 +4,13 @@
     <meta charset="utf-8">
     <title>WooCommerce Code Reference</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="../images/favicon.png" />
-    <link rel="apple-touch-icon" href="../images/apple-touch-icon.png"/>
-    <link rel="apple-touch-icon" sizes="72x72" href="../images/apple-touch-icon-72x72.png"/>
-    <link rel="apple-touch-icon" sizes="114x114" href="../images/apple-touch-icon-114x114.png"/>
+    <link rel="icon" href="../images/favicon-32x32.png" sizes="32x32" />
+    <link rel="icon" href="../images/favicon-192x192.png" sizes="192x192" />
+    <link rel="apple-touch-icon" href="../images/favicon-180x180.png" />
+
     <link rel="stylesheet" href="../css/normalize.css">
-    <link rel="stylesheet" href="../css/base.css?updated=1721907192">
-    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../css/template.css?updated=1721907192">
+    <link rel="stylesheet" href="../css/base.css?updated=1747386869">
+    <link rel="stylesheet" href="../css/template.css?updated=1747386869">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0/css/all.min.css" integrity="sha256-ybRkN9dBjhcS2qrW1z+hfCxq+1aBdwyQM5wlQoQVt/0=" crossorigin="anonymous" />
             <script src="https://cdn.jsdelivr.net/npm/css-vars-ponyfill@2"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0/js/all.min.js" integrity="sha256-0vuk8LXoyrmCjp1f0O300qo1M75ZQyhH9X3J6d+scmk=" crossorigin="anonymous"></script>
@@ -27,19 +26,24 @@
 		'content_group' : 'WooCommerce Core Code Reference',
 	});
 </script>
-        </head>
+        <script src="../js/prism.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            window.dispatchEvent(new HashChangeEvent('hashchange'));
+        });
+    </script>
+</head>
 <body id="top">
     <header class="phpdocumentor-top-header">
     <section class="phpdocumentor-section">
         <div class="site-branding">
-            <a class="site-logo" href="../index.html"><img width="180" src="../images/logo.svg" alt="WooCommerce" /></a>
+            <a class="site-logo" href="../index.html"><img src="../images/logo.png" alt="WooCommerce" /></a>
         </div>
         <nav class="main-navigation">
             <ul>
                 <li><a href="../hooks/hooks.html">Hooks Reference</a></li>
-                <li><a href="https://docs.woocommerce.com/">Documentation</a></li>
+                <li><a href="https://developer.woocommerce.com/docs/">Documentation</a></li>
                 <li><a href="https://woocommerce.github.io/woocommerce-rest-api-docs/">REST API Docs</a></li>
-                <li><a href="https://woocommerce.com/careers/?utm_source=woocommerce+core+code+reference&utm_medium=devdocs&utm_campaign=woo+careers" target="_blank">We're hiring!</a></li>
             </ul>
         </nav>
     </section>
@@ -47,7 +51,7 @@
 
 <div class="phpdocumentor-header">
     <section class="phpdocumentor-section">
-        <h1 class="phpdocumentor-title">WooCommerce Code Reference</h1>
+        <h1 class="phpdocumentor-title"><a href="../index.html">WooCommerce Code Reference</a></h1>
         <section class="phpdocumentor-search">
     <label class="phpdocumentor-label">
         <span class="visually-hidden">Search (click ESC to close search results)</span>
@@ -68,6 +72,10 @@
                                         <h4 class="phpdocumentor-sidebar__root-namespace"><a href="../namespaces/woocommerce.html"><abbr title="\WooCommerce">WooCommerce</abbr></a></h4>
                 <ul class="phpdocumentor-list">
                                             <li><a href="../namespaces/woocommerce-admin.html"><abbr title="\WooCommerce\Admin">Admin</abbr></a></li>
+                                    </ul>
+                            <h4 class="phpdocumentor-sidebar__root-namespace"><a href="../namespaces/mailpoet.html"><abbr title="\MailPoet">MailPoet</abbr></a></h4>
+                <ul class="phpdocumentor-list">
+                                            <li><a href="../namespaces/mailpoet-emaileditor.html"><abbr title="\MailPoet\EmailEditor">EmailEditor</abbr></a></li>
                                     </ul>
                             <h4 class="phpdocumentor-sidebar__root-namespace"><a href="../namespaces/automattic.html"><abbr title="\Automattic">Automattic</abbr></a></h4>
                 <ul class="phpdocumentor-list">
@@ -113,8 +121,10 @@
                                     <li><a href="../packages/WooCommerce-Widgets.html"><abbr title="\WooCommerce\Widgets">Widgets</abbr></a></li>
                                     <li><a href="../packages/WooCommerce-Uninstaller.html"><abbr title="\WooCommerce\Uninstaller">Uninstaller</abbr></a></li>
                             </ul>
-                                <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/WoocommerceAdmin.html"><abbr title="\WoocommerceAdmin">WoocommerceAdmin</abbr></a></h3>
-                                <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/WoocommerceNavigation.html"><abbr title="\WoocommerceNavigation">WoocommerceNavigation</abbr></a></h3>
+                                <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/MailPoet.html"><abbr title="\MailPoet">MailPoet</abbr></a></h3>
+                        <ul class="phpdocumentor-list">
+                                    <li><a href="../packages/MailPoet-EmailEditor.html"><abbr title="\MailPoet\EmailEditor">EmailEditor</abbr></a></li>
+                            </ul>
                                 <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/Automattic.html"><abbr title="\Automattic">Automattic</abbr></a></h3>
                         <ul class="phpdocumentor-list">
                                     <li><a href="../packages/Automattic-WooCommerce.html"><abbr title="\Automattic\WooCommerce">WooCommerce</abbr></a></li>
@@ -157,9 +167,9 @@
     </h2>
 
         <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-form-handler.php"><a href="../files/woocommerce-includes-class-wc-form-handler.html#source-view.13">includes/class-wc-form-handler.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-form-handler.php"><a href="../files/woocommerce-includes-class-wc-form-handler.html#source-view.16">includes/class-wc-form-handler.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">13</span>
+    <span class="phpdocumentor-element-found-in__line">16</span>
 </aside>
 
             <p class="phpdocumentor-summary">WC_Form_Handler class.</p>
@@ -344,9 +354,9 @@ form was submitted through the user account page.</dd>
         <a href="#method_add_payment_method_action" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-form-handler.php"><a href="../files/woocommerce-includes-class-wc-form-handler.html#source-view.488">includes/class-wc-form-handler.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-form-handler.php"><a href="../files/woocommerce-includes-class-wc-form-handler.html#source-view.508">includes/class-wc-form-handler.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">488</span>
+    <span class="phpdocumentor-element-found-in__line">508</span>
 </aside>
 
         <p class="phpdocumentor-summary">Process the add payment method form.</p>
@@ -376,9 +386,9 @@ form was submitted through the user account page.</dd>
         <a href="#method_add_to_cart_action" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-form-handler.php"><a href="../files/woocommerce-includes-class-wc-form-handler.html#source-view.790">includes/class-wc-form-handler.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-form-handler.php"><a href="../files/woocommerce-includes-class-wc-form-handler.html#source-view.819">includes/class-wc-form-handler.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">790</span>
+    <span class="phpdocumentor-element-found-in__line">819</span>
 </aside>
 
         <p class="phpdocumentor-summary">Add to cart action.</p>
@@ -421,9 +431,9 @@ form was submitted through the user account page.</dd>
         <a href="#method_cancel_order" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-form-handler.php"><a href="../files/woocommerce-includes-class-wc-form-handler.html#source-view.744">includes/class-wc-form-handler.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-form-handler.php"><a href="../files/woocommerce-includes-class-wc-form-handler.html#source-view.764">includes/class-wc-form-handler.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">744</span>
+    <span class="phpdocumentor-element-found-in__line">764</span>
 </aside>
 
         <p class="phpdocumentor-summary">Cancel a pending order.</p>
@@ -453,9 +463,9 @@ form was submitted through the user account page.</dd>
         <a href="#method_checkout_action" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-form-handler.php"><a href="../files/woocommerce-includes-class-wc-form-handler.html#source-view.376">includes/class-wc-form-handler.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-form-handler.php"><a href="../files/woocommerce-includes-class-wc-form-handler.html#source-view.396">includes/class-wc-form-handler.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">376</span>
+    <span class="phpdocumentor-element-found-in__line">396</span>
 </aside>
 
         <p class="phpdocumentor-summary">Process the checkout form.</p>
@@ -485,9 +495,9 @@ form was submitted through the user account page.</dd>
         <a href="#method_delete_payment_method_action" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-form-handler.php"><a href="../files/woocommerce-includes-class-wc-form-handler.html#source-view.566">includes/class-wc-form-handler.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-form-handler.php"><a href="../files/woocommerce-includes-class-wc-form-handler.html#source-view.586">includes/class-wc-form-handler.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">566</span>
+    <span class="phpdocumentor-element-found-in__line">586</span>
 </aside>
 
         <p class="phpdocumentor-summary">Process the delete payment method form.</p>
@@ -517,9 +527,9 @@ form was submitted through the user account page.</dd>
         <a href="#method_init" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-form-handler.php"><a href="../files/woocommerce-includes-class-wc-form-handler.html#source-view.18">includes/class-wc-form-handler.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-form-handler.php"><a href="../files/woocommerce-includes-class-wc-form-handler.html#source-view.21">includes/class-wc-form-handler.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">18</span>
+    <span class="phpdocumentor-element-found-in__line">21</span>
 </aside>
 
         <p class="phpdocumentor-summary">Hook in methods.</p>
@@ -549,9 +559,9 @@ form was submitted through the user account page.</dd>
         <a href="#method_order_again" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-form-handler.php"><a href="../files/woocommerce-includes-class-wc-form-handler.html#source-view.737">includes/class-wc-form-handler.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-form-handler.php"><a href="../files/woocommerce-includes-class-wc-form-handler.html#source-view.757">includes/class-wc-form-handler.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">737</span>
+    <span class="phpdocumentor-element-found-in__line">757</span>
 </aside>
 
         <p class="phpdocumentor-summary">Place a previous order again.</p>
@@ -596,9 +606,9 @@ form was submitted through the user account page.</dd>
         <a href="#method_pay_action" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-form-handler.php"><a href="../files/woocommerce-includes-class-wc-form-handler.html#source-view.396">includes/class-wc-form-handler.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-form-handler.php"><a href="../files/woocommerce-includes-class-wc-form-handler.html#source-view.416">includes/class-wc-form-handler.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">396</span>
+    <span class="phpdocumentor-element-found-in__line">416</span>
 </aside>
 
         <p class="phpdocumentor-summary">Process the pay form.</p>
@@ -643,9 +653,9 @@ form was submitted through the user account page.</dd>
         <a href="#method_process_login" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-form-handler.php"><a href="../files/woocommerce-includes-class-wc-form-handler.html#source-view.949">includes/class-wc-form-handler.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-form-handler.php"><a href="../files/woocommerce-includes-class-wc-form-handler.html#source-view.978">includes/class-wc-form-handler.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">949</span>
+    <span class="phpdocumentor-element-found-in__line">978</span>
 </aside>
 
         <p class="phpdocumentor-summary">Process the login form.</p>
@@ -690,9 +700,9 @@ form was submitted through the user account page.</dd>
         <a href="#method_process_lost_password" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-form-handler.php"><a href="../files/woocommerce-includes-class-wc-form-handler.html#source-view.1019">includes/class-wc-form-handler.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-form-handler.php"><a href="../files/woocommerce-includes-class-wc-form-handler.html#source-view.1048">includes/class-wc-form-handler.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1019</span>
+    <span class="phpdocumentor-element-found-in__line">1048</span>
 </aside>
 
         <p class="phpdocumentor-summary">Handle lost password form.</p>
@@ -722,9 +732,9 @@ form was submitted through the user account page.</dd>
         <a href="#method_process_registration" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-form-handler.php"><a href="../files/woocommerce-includes-class-wc-form-handler.html#source-view.1096">includes/class-wc-form-handler.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-form-handler.php"><a href="../files/woocommerce-includes-class-wc-form-handler.html#source-view.1125">includes/class-wc-form-handler.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1096</span>
+    <span class="phpdocumentor-element-found-in__line">1125</span>
 </aside>
 
         <p class="phpdocumentor-summary">Process the registration form.</p>
@@ -769,9 +779,9 @@ form was submitted through the user account page.</dd>
         <a href="#method_process_reset_password" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-form-handler.php"><a href="../files/woocommerce-includes-class-wc-form-handler.html#source-view.1040">includes/class-wc-form-handler.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-form-handler.php"><a href="../files/woocommerce-includes-class-wc-form-handler.html#source-view.1069">includes/class-wc-form-handler.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1040</span>
+    <span class="phpdocumentor-element-found-in__line">1069</span>
 </aside>
 
         <p class="phpdocumentor-summary">Handle reset password form.</p>
@@ -801,9 +811,9 @@ form was submitted through the user account page.</dd>
         <a href="#method_redirect_reset_password_link" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-form-handler.php"><a href="../files/woocommerce-includes-class-wc-form-handler.html#source-view.41">includes/class-wc-form-handler.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-form-handler.php"><a href="../files/woocommerce-includes-class-wc-form-handler.html#source-view.44">includes/class-wc-form-handler.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">41</span>
+    <span class="phpdocumentor-element-found-in__line">44</span>
 </aside>
 
         <p class="phpdocumentor-summary">Remove key and user ID (or user login, as a fallback) from query string, set cookie, and redirect to account page to show the form.</p>
@@ -833,9 +843,9 @@ form was submitted through the user account page.</dd>
         <a href="#method_save_account_details" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-form-handler.php"><a href="../files/woocommerce-includes-class-wc-form-handler.html#source-view.228">includes/class-wc-form-handler.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-form-handler.php"><a href="../files/woocommerce-includes-class-wc-form-handler.html#source-view.236">includes/class-wc-form-handler.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">228</span>
+    <span class="phpdocumentor-element-found-in__line">236</span>
 </aside>
 
         <p class="phpdocumentor-summary">Save the password/account details and redirect back to the my account page.</p>
@@ -865,9 +875,9 @@ form was submitted through the user account page.</dd>
         <a href="#method_save_address" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-form-handler.php"><a href="../files/woocommerce-includes-class-wc-form-handler.html#source-view.79">includes/class-wc-form-handler.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-form-handler.php"><a href="../files/woocommerce-includes-class-wc-form-handler.html#source-view.82">includes/class-wc-form-handler.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">79</span>
+    <span class="phpdocumentor-element-found-in__line">82</span>
 </aside>
 
         <p class="phpdocumentor-summary">Save and and update a billing or shipping address if the
@@ -898,9 +908,9 @@ form was submitted through the user account page.</p>
         <a href="#method_set_default_payment_method_action" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-form-handler.php"><a href="../files/woocommerce-includes-class-wc-form-handler.html#source-view.591">includes/class-wc-form-handler.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-form-handler.php"><a href="../files/woocommerce-includes-class-wc-form-handler.html#source-view.610">includes/class-wc-form-handler.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">591</span>
+    <span class="phpdocumentor-element-found-in__line">610</span>
 </aside>
 
         <p class="phpdocumentor-summary">Process the delete payment method form.</p>
@@ -930,9 +940,9 @@ form was submitted through the user account page.</p>
         <a href="#method_update_cart_action" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-form-handler.php"><a href="../files/woocommerce-includes-class-wc-form-handler.html#source-view.616">includes/class-wc-form-handler.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-form-handler.php"><a href="../files/woocommerce-includes-class-wc-form-handler.html#source-view.634">includes/class-wc-form-handler.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">616</span>
+    <span class="phpdocumentor-element-found-in__line">634</span>
 </aside>
 
         <p class="phpdocumentor-summary">Remove from cart/update.</p>
@@ -962,9 +972,9 @@ form was submitted through the user account page.</p>
         <a href="#method_add_to_cart_handler_grouped" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-form-handler.php"><a href="../files/woocommerce-includes-class-wc-form-handler.html#source-view.856">includes/class-wc-form-handler.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-form-handler.php"><a href="../files/woocommerce-includes-class-wc-form-handler.html#source-view.885">includes/class-wc-form-handler.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">856</span>
+    <span class="phpdocumentor-element-found-in__line">885</span>
 </aside>
 
         <p class="phpdocumentor-summary">Handle adding grouped products to the cart.</p>
@@ -1021,9 +1031,9 @@ form was submitted through the user account page.</p>
         <a href="#method_add_to_cart_handler_simple" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-form-handler.php"><a href="../files/woocommerce-includes-class-wc-form-handler.html#source-view.838">includes/class-wc-form-handler.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-form-handler.php"><a href="../files/woocommerce-includes-class-wc-form-handler.html#source-view.867">includes/class-wc-form-handler.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">838</span>
+    <span class="phpdocumentor-element-found-in__line">867</span>
 </aside>
 
         <p class="phpdocumentor-summary">Handle adding simple products to the cart.</p>
@@ -1080,9 +1090,9 @@ form was submitted through the user account page.</p>
         <a href="#method_add_to_cart_handler_variable" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-form-handler.php"><a href="../files/woocommerce-includes-class-wc-form-handler.html#source-view.907">includes/class-wc-form-handler.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-form-handler.php"><a href="../files/woocommerce-includes-class-wc-form-handler.html#source-view.936">includes/class-wc-form-handler.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">907</span>
+    <span class="phpdocumentor-element-found-in__line">936</span>
 </aside>
 
         <p class="phpdocumentor-summary">Handle adding variable products to the cart.</p>
@@ -1148,7 +1158,7 @@ form was submitted through the user account page.</p>
 
     <footer class="phpdocumentor phpdocumentor-footer">
     <div class="phpdocumentor-section">
-        <span>WooCommerce Code Reference API documentation generated by <a href="http://www.phpdoc.org/">phpDocumentor</a> on July 25th, 2024 at 11:33 am.</span>
+        <span>WooCommerce Code Reference API documentation generated by <a href="http://www.phpdoc.org/">phpDocumentor</a> on May 16th, 2025 at 09:14 am.</span>
     </div>
 </footer>
 
@@ -1160,7 +1170,7 @@ form was submitted through the user account page.</p>
             'searchIndex': '..\/js\/searchIndex.json'
         };
     </script>
-    <script src="../js/searchIndex.js?updated=1721907192"></script>
-    <script src="../js/search.js?updated=1721907192"></script>
+    <script src="../js/searchIndex.js?updated=1747386869"></script>
+    <script src="../js/search.js?updated=1747386869"></script>
 </body>
 </html>

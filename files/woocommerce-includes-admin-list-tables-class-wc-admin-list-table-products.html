@@ -4,14 +4,13 @@
     <meta charset="utf-8">
     <title>WooCommerce Code Reference</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="../images/favicon.png" />
-    <link rel="apple-touch-icon" href="../images/apple-touch-icon.png"/>
-    <link rel="apple-touch-icon" sizes="72x72" href="../images/apple-touch-icon-72x72.png"/>
-    <link rel="apple-touch-icon" sizes="114x114" href="../images/apple-touch-icon-114x114.png"/>
+    <link rel="icon" href="../images/favicon-32x32.png" sizes="32x32" />
+    <link rel="icon" href="../images/favicon-192x192.png" sizes="192x192" />
+    <link rel="apple-touch-icon" href="../images/favicon-180x180.png" />
+
     <link rel="stylesheet" href="../css/normalize.css">
-    <link rel="stylesheet" href="../css/base.css?updated=1721907182">
-    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../css/template.css?updated=1721907182">
+    <link rel="stylesheet" href="../css/base.css?updated=1747386858">
+    <link rel="stylesheet" href="../css/template.css?updated=1747386858">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0/css/all.min.css" integrity="sha256-ybRkN9dBjhcS2qrW1z+hfCxq+1aBdwyQM5wlQoQVt/0=" crossorigin="anonymous" />
             <script src="https://cdn.jsdelivr.net/npm/css-vars-ponyfill@2"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0/js/all.min.js" integrity="sha256-0vuk8LXoyrmCjp1f0O300qo1M75ZQyhH9X3J6d+scmk=" crossorigin="anonymous"></script>
@@ -38,14 +37,13 @@
     <header class="phpdocumentor-top-header">
     <section class="phpdocumentor-section">
         <div class="site-branding">
-            <a class="site-logo" href="../index.html"><img width="180" src="../images/logo.svg" alt="WooCommerce" /></a>
+            <a class="site-logo" href="../index.html"><img src="../images/logo.png" alt="WooCommerce" /></a>
         </div>
         <nav class="main-navigation">
             <ul>
                 <li><a href="../hooks/hooks.html">Hooks Reference</a></li>
-                <li><a href="https://docs.woocommerce.com/">Documentation</a></li>
+                <li><a href="https://developer.woocommerce.com/docs/">Documentation</a></li>
                 <li><a href="https://woocommerce.github.io/woocommerce-rest-api-docs/">REST API Docs</a></li>
-                <li><a href="https://woocommerce.com/careers/?utm_source=woocommerce+core+code+reference&utm_medium=devdocs&utm_campaign=woo+careers" target="_blank">We're hiring!</a></li>
             </ul>
         </nav>
     </section>
@@ -53,7 +51,7 @@
 
 <div class="phpdocumentor-header">
     <section class="phpdocumentor-section">
-        <h1 class="phpdocumentor-title">WooCommerce Code Reference</h1>
+        <h1 class="phpdocumentor-title"><a href="../index.html">WooCommerce Code Reference</a></h1>
         <section class="phpdocumentor-search">
     <label class="phpdocumentor-label">
         <span class="visually-hidden">Search (click ESC to close search results)</span>
@@ -74,6 +72,10 @@
                                         <h4 class="phpdocumentor-sidebar__root-namespace"><a href="../namespaces/woocommerce.html"><abbr title="\WooCommerce">WooCommerce</abbr></a></h4>
                 <ul class="phpdocumentor-list">
                                             <li><a href="../namespaces/woocommerce-admin.html"><abbr title="\WooCommerce\Admin">Admin</abbr></a></li>
+                                    </ul>
+                            <h4 class="phpdocumentor-sidebar__root-namespace"><a href="../namespaces/mailpoet.html"><abbr title="\MailPoet">MailPoet</abbr></a></h4>
+                <ul class="phpdocumentor-list">
+                                            <li><a href="../namespaces/mailpoet-emaileditor.html"><abbr title="\MailPoet\EmailEditor">EmailEditor</abbr></a></li>
                                     </ul>
                             <h4 class="phpdocumentor-sidebar__root-namespace"><a href="../namespaces/automattic.html"><abbr title="\Automattic">Automattic</abbr></a></h4>
                 <ul class="phpdocumentor-list">
@@ -119,8 +121,10 @@
                                     <li><a href="../packages/WooCommerce-Widgets.html"><abbr title="\WooCommerce\Widgets">Widgets</abbr></a></li>
                                     <li><a href="../packages/WooCommerce-Uninstaller.html"><abbr title="\WooCommerce\Uninstaller">Uninstaller</abbr></a></li>
                             </ul>
-                                <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/WoocommerceAdmin.html"><abbr title="\WoocommerceAdmin">WoocommerceAdmin</abbr></a></h3>
-                                <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/WoocommerceNavigation.html"><abbr title="\WoocommerceNavigation">WoocommerceNavigation</abbr></a></h3>
+                                <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/MailPoet.html"><abbr title="\MailPoet">MailPoet</abbr></a></h3>
+                        <ul class="phpdocumentor-list">
+                                    <li><a href="../packages/MailPoet-EmailEditor.html"><abbr title="\MailPoet\EmailEditor">EmailEditor</abbr></a></li>
+                            </ul>
                                 <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/Automattic.html"><abbr title="\Automattic">Automattic</abbr></a></h3>
                         <ul class="phpdocumentor-list">
                                     <li><a href="../packages/Automattic-WooCommerce.html"><abbr title="\Automattic\WooCommerce">WooCommerce</abbr></a></li>
@@ -164,6 +168,9 @@
  * @version  3.3.0
  */
 
+use Automattic\WooCommerce\Enums\ProductType;
+use Automattic\WooCommerce\Internal\CostOfGoodsSold\CostOfGoodsSoldController;
+
 if ( ! defined( &#039;ABSPATH&#039; ) ) {
 	exit;
 }
@@ -189,6 +196,20 @@ class WC_Admin_List_Table_Products extends WC_Admin_List_Table {
 	protected $list_table_type = &#039;product&#039;;
 
 	/**
+	 * Caches the value of the &quot;COGS is enabled&quot; flag.
+	 *
+	 * @var bool
+	 */
+	private bool $cogs_is_enabled;
+
+	/**
+	 * Flag indicating if the COGS value column in the product meta lookup table can be used.
+	 *
+	 * @var bool
+	 */
+	private bool $use_cogs_lookup_column;
+
+	/**
 	 * Constructor.
 	 */
 	public function __construct() {
@@ -199,6 +220,10 @@ class WC_Admin_List_Table_Products extends WC_Admin_List_Table {
 		add_filter( &#039;get_search_query&#039;, array( $this, &#039;search_label&#039; ) );
 		add_filter( &#039;posts_clauses&#039;, array( $this, &#039;posts_clauses&#039; ), 10, 2 );
 		add_action( &#039;manage_product_posts_custom_column&#039;, array( $this, &#039;add_sample_product_badge&#039; ), 9, 2 );
+
+		$cogs_controller              = wc_get_container()-&gt;get( CostOfGoodsSoldController::class );
+		$this-&gt;cogs_is_enabled        = $cogs_controller-&gt;feature_is_enabled();
+		$this-&gt;use_cogs_lookup_column = $this-&gt;cogs_is_enabled &amp;&amp; $cogs_controller-&gt;product_meta_lookup_table_cogs_value_columns_exist();
 	}
 
 	/**
@@ -254,6 +279,11 @@ class WC_Admin_List_Table_Products extends WC_Admin_List_Table {
 			&#039;sku&#039;   =&gt; &#039;sku&#039;,
 			&#039;name&#039;  =&gt; &#039;title&#039;,
 		);
+
+		if ( $this-&gt;use_cogs_lookup_column ) {
+			$custom[&#039;cogs_value&#039;] = &#039;cogs_value&#039;;
+		}
+
 		return wp_parse_args( $custom, $columns );
 	}
 
@@ -283,7 +313,10 @@ class WC_Admin_List_Table_Products extends WC_Admin_List_Table {
 			$show_columns[&#039;is_in_stock&#039;] = __( &#039;Stock&#039;, &#039;woocommerce&#039; );
 		}
 
-		$show_columns[&#039;price&#039;]       = __( &#039;Price&#039;, &#039;woocommerce&#039; );
+		$show_columns[&#039;price&#039;] = __( &#039;Price&#039;, &#039;woocommerce&#039; );
+		if ( $this-&gt;cogs_is_enabled ) {
+			$show_columns[&#039;cogs_value&#039;] = __( &#039;Cost&#039;, &#039;woocommerce&#039; );
+		}
 		$show_columns[&#039;product_cat&#039;] = __( &#039;Categories&#039;, &#039;woocommerce&#039; );
 		$show_columns[&#039;product_tag&#039;] = __( &#039;Tags&#039;, &#039;woocommerce&#039; );
 		$show_columns[&#039;featured&#039;]    = &#039;&lt;span class=&quot;wc-featured parent-tips&quot; data-tip=&quot;&#039; . esc_attr__( &#039;Featured&#039;, &#039;woocommerce&#039; ) . &#039;&quot;&gt;&#039; . __( &#039;Featured&#039;, &#039;woocommerce&#039; ) . &#039;&lt;/span&gt;&#039;;
@@ -334,6 +367,11 @@ class WC_Admin_List_Table_Products extends WC_Admin_List_Table {
 
 		get_inline_data( $post );
 
+		$cogs_value_html = $this-&gt;cogs_is_enabled ?
+				&#039;&lt;div class=&quot;cogs_value&quot;&gt;&#039; . esc_html( $this-&gt;object-&gt;get_cogs_value() ?? &#039;0&#039; ) . &#039;&lt;/div&gt;&#039; :
+				&#039;&#039;;
+
+		// phpcs:disable WordPress.Security.EscapeOutput.OutputNotEscaped -- the COGS value is already escaped.
 		/* Custom inline data for woocommerce. */
 		echo &#039;
 			&lt;div class=&quot;hidden&quot; id=&quot;woocommerce_inline_&#039; . absint( $this-&gt;object-&gt;get_id() ) . &#039;&quot;&gt;
@@ -356,9 +394,10 @@ class WC_Admin_List_Table_Products extends WC_Admin_List_Table {
 				&lt;div class=&quot;tax_status&quot;&gt;&#039; . esc_html( $this-&gt;object-&gt;get_tax_status() ) . &#039;&lt;/div&gt;
 				&lt;div class=&quot;tax_class&quot;&gt;&#039; . esc_html( $this-&gt;object-&gt;get_tax_class() ) . &#039;&lt;/div&gt;
 				&lt;div class=&quot;backorders&quot;&gt;&#039; . esc_html( $this-&gt;object-&gt;get_backorders() ) . &#039;&lt;/div&gt;
-				&lt;div class=&quot;low_stock_amount&quot;&gt;&#039; . esc_html( $this-&gt;object-&gt;get_low_stock_amount() ) . &#039;&lt;/div&gt;
-			&lt;/div&gt;
-		&#039;;
+				&lt;div class=&quot;low_stock_amount&quot;&gt;&#039; . esc_html( $this-&gt;object-&gt;get_low_stock_amount() ) . &#039;&lt;/div&gt;&#039;
+				. $cogs_value_html .
+			&#039;&lt;/div&gt;&#039;;
+		// phpcs:enable WordPress.Security.EscapeOutput.OutputNotEscaped
 	}
 
 	/**
@@ -372,7 +411,16 @@ class WC_Admin_List_Table_Products extends WC_Admin_List_Table {
 	 * Render column: price.
 	 */
 	protected function render_price_column() {
-		echo $this-&gt;object-&gt;get_price_html() ? wp_kses_post( $this-&gt;object-&gt;get_price_html() ) : &#039;&lt;span class=&quot;na&quot;&gt;&amp;ndash;&lt;/span&gt;&#039;;
+		$html = $this-&gt;object-&gt;get_price_html();
+		echo $html ? wp_kses_post( $html ) : &#039;&lt;span class=&quot;na&quot;&gt;&amp;ndash;&lt;/span&gt;&#039;;
+	}
+
+	/**
+	 * Render column: cost.
+	 */
+	protected function render_cogs_value_column() {
+		$html = $this-&gt;object-&gt;get_cogs_value_html();
+		echo $html ? wp_kses_post( $html ) : &#039;&lt;span class=&quot;na&quot;&gt;&amp;ndash;&lt;/span&gt;&#039;;
 	}
 
 	/**
@@ -517,7 +565,7 @@ class WC_Admin_List_Table_Products extends WC_Admin_List_Table {
 			$output .= selected( $value, $current_product_type, false );
 			$output .= &#039;&gt;&#039; . esc_html( $label ) . &#039;&lt;/option&gt;&#039;;
 
-			if ( &#039;simple&#039; === $value ) {
+			if ( ProductType::SIMPLE === $value ) {
 
 				$output .= &#039;&lt;option value=&quot;downloadable&quot; &#039;;
 				$output .= selected( &#039;downloadable&#039;, $current_product_type, false );
@@ -625,6 +673,11 @@ class WC_Admin_List_Table_Products extends WC_Admin_List_Table {
 				$callback = &#039;DESC&#039; === $order ? &#039;order_by_sku_desc_post_clauses&#039; : &#039;order_by_sku_asc_post_clauses&#039;;
 				add_filter( &#039;posts_clauses&#039;, array( $this, $callback ) );
 			}
+
+			if ( &#039;cogs_value&#039; === $orderby &amp;&amp; $this-&gt;use_cogs_lookup_column ) {
+				$callback = &#039;DESC&#039; === $order ? &#039;order_by_cogs_value_desc_post_clauses&#039; : &#039;order_by_cogs_value_asc_post_clauses&#039;;
+				add_filter( &#039;posts_clauses&#039;, array( $this, $callback ) );
+			}
 		}
 
 		// Type filtering.
@@ -691,6 +744,10 @@ class WC_Admin_List_Table_Products extends WC_Admin_List_Table {
 		remove_filter( &#039;posts_clauses&#039;, array( $this, &#039;filter_downloadable_post_clauses&#039; ) );
 		remove_filter( &#039;posts_clauses&#039;, array( $this, &#039;filter_virtual_post_clauses&#039; ) );
 		remove_filter( &#039;posts_clauses&#039;, array( $this, &#039;filter_stock_status_post_clauses&#039; ) );
+		if ( $this-&gt;use_cogs_lookup_column ) {
+			remove_filter( &#039;posts_clauses&#039;, array( $this, &#039;order_by_cogs_value_asc_post_clauses&#039; ) );
+			remove_filter( &#039;posts_clauses&#039;, array( $this, &#039;order_by_cogs_value_desc_post_clauses&#039; ) );
+		}
 		return $posts; // Keeping this here for backward compatibility.
 	}
 
@@ -739,6 +796,30 @@ class WC_Admin_List_Table_Products extends WC_Admin_List_Table {
 	public function order_by_sku_desc_post_clauses( $args ) {
 		$args[&#039;join&#039;]    = $this-&gt;append_product_sorting_table_join( $args[&#039;join&#039;] );
 		$args[&#039;orderby&#039;] = &#039; wc_product_meta_lookup.sku DESC, wc_product_meta_lookup.product_id DESC &#039;;
+		return $args;
+	}
+
+	/**
+	 * Handle COGS value sorting.
+	 *
+	 * @param array $args Query args.
+	 * @return array
+	 */
+	public function order_by_cogs_value_asc_post_clauses( $args ) {
+		$args[&#039;join&#039;]    = $this-&gt;append_product_sorting_table_join( $args[&#039;join&#039;] );
+		$args[&#039;orderby&#039;] = &#039; wc_product_meta_lookup.cogs_total_value ASC, wc_product_meta_lookup.product_id ASC &#039;;
+		return $args;
+	}
+
+	/**
+	 * Handle COGS value sorting.
+	 *
+	 * @param array $args Query args.
+	 * @return array
+	 */
+	public function order_by_cogs_value_desc_post_clauses( $args ) {
+		$args[&#039;join&#039;]    = $this-&gt;append_product_sorting_table_join( $args[&#039;join&#039;] );
+		$args[&#039;orderby&#039;] = &#039; wc_product_meta_lookup.cogs_total_value DESC, wc_product_meta_lookup.product_id DESC &#039;;
 		return $args;
 	}
 
@@ -843,7 +924,7 @@ class WC_Admin_List_Table_Products extends WC_Admin_List_Table {
 
     <footer class="phpdocumentor phpdocumentor-footer">
     <div class="phpdocumentor-section">
-        <span>WooCommerce Code Reference API documentation generated by <a href="http://www.phpdoc.org/">phpDocumentor</a> on July 25th, 2024 at 11:33 am.</span>
+        <span>WooCommerce Code Reference API documentation generated by <a href="http://www.phpdoc.org/">phpDocumentor</a> on May 16th, 2025 at 09:14 am.</span>
     </div>
 </footer>
 
@@ -855,7 +936,7 @@ class WC_Admin_List_Table_Products extends WC_Admin_List_Table {
             'searchIndex': '..\/js\/searchIndex.json'
         };
     </script>
-    <script src="../js/searchIndex.js?updated=1721907182"></script>
-    <script src="../js/search.js?updated=1721907182"></script>
+    <script src="../js/searchIndex.js?updated=1747386858"></script>
+    <script src="../js/search.js?updated=1747386858"></script>
 </body>
 </html>

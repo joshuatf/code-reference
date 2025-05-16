@@ -4,14 +4,13 @@
     <meta charset="utf-8">
     <title>WooCommerce Code Reference</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="../images/favicon.png" />
-    <link rel="apple-touch-icon" href="../images/apple-touch-icon.png"/>
-    <link rel="apple-touch-icon" sizes="72x72" href="../images/apple-touch-icon-72x72.png"/>
-    <link rel="apple-touch-icon" sizes="114x114" href="../images/apple-touch-icon-114x114.png"/>
+    <link rel="icon" href="../images/favicon-32x32.png" sizes="32x32" />
+    <link rel="icon" href="../images/favicon-192x192.png" sizes="192x192" />
+    <link rel="apple-touch-icon" href="../images/favicon-180x180.png" />
+
     <link rel="stylesheet" href="../css/normalize.css">
-    <link rel="stylesheet" href="../css/base.css?updated=1721907184">
-    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../css/template.css?updated=1721907184">
+    <link rel="stylesheet" href="../css/base.css?updated=1747386861">
+    <link rel="stylesheet" href="../css/template.css?updated=1747386861">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0/css/all.min.css" integrity="sha256-ybRkN9dBjhcS2qrW1z+hfCxq+1aBdwyQM5wlQoQVt/0=" crossorigin="anonymous" />
             <script src="https://cdn.jsdelivr.net/npm/css-vars-ponyfill@2"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0/js/all.min.js" integrity="sha256-0vuk8LXoyrmCjp1f0O300qo1M75ZQyhH9X3J6d+scmk=" crossorigin="anonymous"></script>
@@ -38,14 +37,13 @@
     <header class="phpdocumentor-top-header">
     <section class="phpdocumentor-section">
         <div class="site-branding">
-            <a class="site-logo" href="../index.html"><img width="180" src="../images/logo.svg" alt="WooCommerce" /></a>
+            <a class="site-logo" href="../index.html"><img src="../images/logo.png" alt="WooCommerce" /></a>
         </div>
         <nav class="main-navigation">
             <ul>
                 <li><a href="../hooks/hooks.html">Hooks Reference</a></li>
-                <li><a href="https://docs.woocommerce.com/">Documentation</a></li>
+                <li><a href="https://developer.woocommerce.com/docs/">Documentation</a></li>
                 <li><a href="https://woocommerce.github.io/woocommerce-rest-api-docs/">REST API Docs</a></li>
-                <li><a href="https://woocommerce.com/careers/?utm_source=woocommerce+core+code+reference&utm_medium=devdocs&utm_campaign=woo+careers" target="_blank">We're hiring!</a></li>
             </ul>
         </nav>
     </section>
@@ -53,7 +51,7 @@
 
 <div class="phpdocumentor-header">
     <section class="phpdocumentor-section">
-        <h1 class="phpdocumentor-title">WooCommerce Code Reference</h1>
+        <h1 class="phpdocumentor-title"><a href="../index.html">WooCommerce Code Reference</a></h1>
         <section class="phpdocumentor-search">
     <label class="phpdocumentor-label">
         <span class="visually-hidden">Search (click ESC to close search results)</span>
@@ -74,6 +72,10 @@
                                         <h4 class="phpdocumentor-sidebar__root-namespace"><a href="../namespaces/woocommerce.html"><abbr title="\WooCommerce">WooCommerce</abbr></a></h4>
                 <ul class="phpdocumentor-list">
                                             <li><a href="../namespaces/woocommerce-admin.html"><abbr title="\WooCommerce\Admin">Admin</abbr></a></li>
+                                    </ul>
+                            <h4 class="phpdocumentor-sidebar__root-namespace"><a href="../namespaces/mailpoet.html"><abbr title="\MailPoet">MailPoet</abbr></a></h4>
+                <ul class="phpdocumentor-list">
+                                            <li><a href="../namespaces/mailpoet-emaileditor.html"><abbr title="\MailPoet\EmailEditor">EmailEditor</abbr></a></li>
                                     </ul>
                             <h4 class="phpdocumentor-sidebar__root-namespace"><a href="../namespaces/automattic.html"><abbr title="\Automattic">Automattic</abbr></a></h4>
                 <ul class="phpdocumentor-list">
@@ -119,8 +121,10 @@
                                     <li><a href="../packages/WooCommerce-Widgets.html"><abbr title="\WooCommerce\Widgets">Widgets</abbr></a></li>
                                     <li><a href="../packages/WooCommerce-Uninstaller.html"><abbr title="\WooCommerce\Uninstaller">Uninstaller</abbr></a></li>
                             </ul>
-                                <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/WoocommerceAdmin.html"><abbr title="\WoocommerceAdmin">WoocommerceAdmin</abbr></a></h3>
-                                <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/WoocommerceNavigation.html"><abbr title="\WoocommerceNavigation">WoocommerceNavigation</abbr></a></h3>
+                                <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/MailPoet.html"><abbr title="\MailPoet">MailPoet</abbr></a></h3>
+                        <ul class="phpdocumentor-list">
+                                    <li><a href="../packages/MailPoet-EmailEditor.html"><abbr title="\MailPoet\EmailEditor">EmailEditor</abbr></a></li>
+                            </ul>
                                 <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/Automattic.html"><abbr title="\Automattic">Automattic</abbr></a></h3>
                         <ul class="phpdocumentor-list">
                                     <li><a href="../packages/Automattic-WooCommerce.html"><abbr title="\Automattic\WooCommerce">WooCommerce</abbr></a></li>
@@ -156,19 +160,20 @@
                 Source code
                 <a href="#source-code" class="headerlink"><i class="fas fa-link"></i></a>
             </h3>
-            <pre id="source-view" tabindex="-1" class="language-php line-numbers linkable-line-numbers"><code>&lt;?php
+            <pre id="source-view" tabindex="-1" class="language-php line-numbers linkable-line-numbers"><code>&lt;?php declare( strict_types = 1 );
 
 namespace Automattic\WooCommerce\Admin\Features;
 
-use Automattic\WooCommerce\Admin\PageController;
-use Automattic\WooCommerce\Blocks\Utils\BlockTemplateUtils;
+use Automattic\WooCommerce\Admin\PluginsHelper;
 use Automattic\WooCommerce\Admin\WCAdminHelper;
+use Automattic\WooCommerce\Internal\Admin\WCAdminUser;
+
 
 /**
  * Takes care of Launch Your Store related actions.
  */
 class LaunchYourStore {
-	const BANNER_DISMISS_USER_META_KEY = &#039;woocommerce_coming_soon_banner_dismissed&#039;;
+	const BANNER_DISMISS_USER_META_KEY = &#039;coming_soon_banner_dismissed&#039;;
 	/**
 	 * Constructor.
 	 */
@@ -179,6 +184,11 @@ class LaunchYourStore {
 		add_action( &#039;init&#039;, array( $this, &#039;register_launch_your_store_user_meta_fields&#039; ) );
 		add_filter( &#039;woocommerce_tracks_event_properties&#039;, array( $this, &#039;append_coming_soon_global_tracks&#039; ), 10, 2 );
 		add_action( &#039;wp_login&#039;, array( $this, &#039;reset_woocommerce_coming_soon_banner_dismissed&#039; ), 10, 2 );
+		add_filter( &#039;woocommerce_admin_get_user_data_fields&#039;, array( $this, &#039;add_user_data_fields&#039; ) );
+		if ( Features::is_enabled( &#039;coming-soon-newsletter-template&#039; ) ) {
+			add_action( &#039;admin_enqueue_scripts&#039;, array( $this, &#039;load_newsletter_scripts&#039; ) );
+			add_action( &#039;save_post_wp_template&#039;, array( $this, &#039;maybe_track_template_change&#039; ), 10, 3 );
+		}
 	}
 
 	/**
@@ -188,7 +198,9 @@ class LaunchYourStore {
 	 */
 	public function save_site_visibility_options() {
 		$nonce = isset( $_REQUEST[&#039;_wpnonce&#039;] ) ? sanitize_text_field( wp_unslash( $_REQUEST[&#039;_wpnonce&#039;] ) ) : &#039;&#039;;
-		if ( empty( $nonce ) || ! wp_verify_nonce( $nonce, &#039;woocommerce-settings&#039; ) ) {
+		// New Settings API uses wp_rest nonce.
+		$nonce_string = Features::is_enabled( &#039;settings&#039; ) ? &#039;wp_rest&#039; : &#039;woocommerce-settings&#039;;
+		if ( empty( $nonce ) || ! wp_verify_nonce( $nonce, $nonce_string ) ) {
 			return;
 		}
 
@@ -318,7 +330,10 @@ class LaunchYourStore {
 			return false;
 		}
 
-		if ( get_user_meta( $current_user_id, self::BANNER_DISMISS_USER_META_KEY, true ) === &#039;yes&#039; ) {
+		$has_dismissed_banner = WCAdminUser::get_user_data_field( $current_user_id, self::BANNER_DISMISS_USER_META_KEY )
+				// Remove this check in WC 9.4.
+				|| get_user_meta( $current_user_id, &#039;woocommerce_&#039; . self::BANNER_DISMISS_USER_META_KEY, true ) === &#039;yes&#039;;
+		if ( $has_dismissed_banner ) {
 			return false;
 		}
 
@@ -332,7 +347,7 @@ class LaunchYourStore {
 		}
 
 		$store_pages_only = get_option( &#039;woocommerce_store_pages_only&#039; ) === &#039;yes&#039;;
-		if ( $store_pages_only &amp;&amp; ! WCAdminHelper::is_store_page() ) {
+		if ( $store_pages_only &amp;&amp; ! WCAdminHelper::is_current_page_store_page() ) {
 			return false;
 		}
 
@@ -356,6 +371,8 @@ class LaunchYourStore {
 
 	/**
 	 * Register user meta fields for Launch Your Store.
+	 *
+	 * This should be removed in WC 9.4.
 	 */
 	public function register_launch_your_store_user_meta_fields() {
 		if ( ! $this-&gt;is_manager_or_admin() ) {
@@ -375,12 +392,28 @@ class LaunchYourStore {
 
 		register_meta(
 			&#039;user&#039;,
-			self::BANNER_DISMISS_USER_META_KEY,
+			&#039;woocommerce_coming_soon_banner_dismissed&#039;,
 			array(
 				&#039;type&#039;         =&gt; &#039;string&#039;,
 				&#039;description&#039;  =&gt; &#039;Indicate whether the user has dismissed the coming soon notice or not.&#039;,
 				&#039;single&#039;       =&gt; true,
 				&#039;show_in_rest&#039; =&gt; true,
+			)
+		);
+	}
+
+	/**
+	 * Register user meta fields for Launch Your Store.
+	 *
+	 * @param array $user_data_fields user data fields.
+	 * @return array
+	 */
+	public function add_user_data_fields( $user_data_fields ) {
+		return array_merge(
+			$user_data_fields,
+			array(
+				&#039;launch_your_store_tour_hidden&#039;,
+				self::BANNER_DISMISS_USER_META_KEY,
 			)
 		);
 	}
@@ -394,10 +427,96 @@ class LaunchYourStore {
 	 * @param object $user user object.
 	 */
 	public function reset_woocommerce_coming_soon_banner_dismissed( $user_login, $user ) {
-		$existing_meta = get_user_meta( $user-&gt;ID, self::BANNER_DISMISS_USER_META_KEY, true );
+		$existing_meta = WCAdminUser::get_user_data_field( $user-&gt;ID, self::BANNER_DISMISS_USER_META_KEY );
 		if ( &#039;yes&#039; === $existing_meta ) {
-			update_user_meta( $user-&gt;ID, self::BANNER_DISMISS_USER_META_KEY, &#039;no&#039; );
+			WCAdminUser::update_user_data_field( $user-&gt;ID, self::BANNER_DISMISS_USER_META_KEY, &#039;no&#039; );
 		}
+	}
+
+	/**
+	 * Check if the Mailpoet is connected.
+	 *
+	 * @return bool true if Mailpoet is fully connected, meaning the API key is valid and approved.
+	 */
+	private function is_mailpoet_connected() {
+		if ( ! class_exists( &#039;\MailPoet\DI\ContainerWrapper&#039; ) || ! class_exists( &#039;\MailPoet\Settings\SettingsController&#039; ) ) {
+			return false;
+		}
+
+		$container = \MailPoet\DI\ContainerWrapper::getInstance( WP_DEBUG );
+
+		// SettingController retrieves data from wp_mailpoet_settings table.
+		$settings = $container-&gt;get( \MailPoet\Settings\SettingsController::class );
+
+		if ( false === $settings instanceof \MailPoet\Settings\SettingsController ) {
+			return false;
+		}
+
+		$mta       = $settings-&gt;get( &#039;mta&#039; );
+		$api_state = $mta[&#039;mailpoet_api_key_state&#039;] ?? null;
+
+		if ( ! $api_state || ! isset( $api_state[&#039;state&#039;], $api_state[&#039;code&#039;] ) ) {
+			return false;
+		}
+
+		return &#039;valid&#039; === $api_state[&#039;state&#039;] &amp;&amp; 200 === $api_state[&#039;code&#039;];
+	}
+
+	/**
+	 * Track when coming soon template is changed.
+	 *
+	 * @param int     $post_id The post ID.
+	 * @param WP_Post $post The post object.
+	 * @param bool    $update Whether the post is being updated.
+	 */
+	public function maybe_track_template_change( $post_id, $post, $update ) {
+		if ( ! $post instanceof \WP_Post || ! isset( $post-&gt;post_name, $post-&gt;post_title ) ) {
+			return;
+		}
+
+		// Check multiple fields to avoid false matches with non-WooCommerce templates.
+		if ( &#039;coming-soon&#039; === $post-&gt;post_name &amp;&amp; &#039;Page: Coming soon&#039; === $post-&gt;post_title ) {
+			$matches = array();
+			$content = $post-&gt;post_content;
+			preg_match( &#039;/&quot;comingSoonPatternId&quot;:&quot;([^&quot;]+)&quot;/&#039;, $content, $matches );
+
+			if ( isset( $matches[1] ) ) {
+				wc_admin_record_tracks_event(
+					&#039;coming_soon_template_saved&#039;,
+					array(
+						&#039;pattern_id&#039; =&gt; $matches[1],
+						&#039;is_update&#039;  =&gt; $update,
+					)
+				);
+			}
+		}
+	}
+
+	/**
+	 * Load slotfill script and JS variables for the newsletter.
+	 * The comingSoonNewsletter is used in client/wp-admin-scripts/coming-soon-newsletter-panel
+	 *
+	 * @return void
+	 */
+	public function load_newsletter_scripts() {
+		$screen = get_current_screen();
+		if ( ! $screen instanceof \WP_Screen ) {
+			return;
+		}
+
+		if ( &#039;site-editor&#039; !== $screen-&gt;id ) {
+			return;
+		}
+
+		$mailpoet = array(
+			&#039;mailpoet_installed&#039; =&gt; PluginsHelper::is_plugin_installed( &#039;mailpoet&#039; ),
+			&#039;mailpoet_connected&#039; =&gt; $this-&gt;is_mailpoet_connected(),
+		);
+
+		// phpcs:ignore WordPress.WP.EnqueuedResourceParameters.MissingVersion, WordPress.WP.EnqueuedResourceParameters.NotInFooter
+		wp_register_script( &#039;coming-soon-newsletter-mailpoet&#039;, &#039;&#039; );
+		wp_enqueue_script( &#039;coming-soon-newsletter-mailpoet&#039; );
+		wp_add_inline_script( &#039;coming-soon-newsletter-mailpoet&#039;, &#039;var comingSoonNewsletter = &#039; . wp_json_encode( $mailpoet ) . &#039;;&#039; );
 	}
 }
 </code></pre>
@@ -410,7 +529,7 @@ class LaunchYourStore {
 
     <footer class="phpdocumentor phpdocumentor-footer">
     <div class="phpdocumentor-section">
-        <span>WooCommerce Code Reference API documentation generated by <a href="http://www.phpdoc.org/">phpDocumentor</a> on July 25th, 2024 at 11:33 am.</span>
+        <span>WooCommerce Code Reference API documentation generated by <a href="http://www.phpdoc.org/">phpDocumentor</a> on May 16th, 2025 at 09:14 am.</span>
     </div>
 </footer>
 
@@ -422,7 +541,7 @@ class LaunchYourStore {
             'searchIndex': '..\/js\/searchIndex.json'
         };
     </script>
-    <script src="../js/searchIndex.js?updated=1721907184"></script>
-    <script src="../js/search.js?updated=1721907184"></script>
+    <script src="../js/searchIndex.js?updated=1747386861"></script>
+    <script src="../js/search.js?updated=1747386861"></script>
 </body>
 </html>

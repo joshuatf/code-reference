@@ -4,14 +4,13 @@
     <meta charset="utf-8">
     <title>WooCommerce Code Reference</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="../images/favicon.png" />
-    <link rel="apple-touch-icon" href="../images/apple-touch-icon.png"/>
-    <link rel="apple-touch-icon" sizes="72x72" href="../images/apple-touch-icon-72x72.png"/>
-    <link rel="apple-touch-icon" sizes="114x114" href="../images/apple-touch-icon-114x114.png"/>
+    <link rel="icon" href="../images/favicon-32x32.png" sizes="32x32" />
+    <link rel="icon" href="../images/favicon-192x192.png" sizes="192x192" />
+    <link rel="apple-touch-icon" href="../images/favicon-180x180.png" />
+
     <link rel="stylesheet" href="../css/normalize.css">
-    <link rel="stylesheet" href="../css/base.css?updated=1721907209">
-    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../css/template.css?updated=1721907209">
+    <link rel="stylesheet" href="../css/base.css?updated=1747386891">
+    <link rel="stylesheet" href="../css/template.css?updated=1747386891">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0/css/all.min.css" integrity="sha256-ybRkN9dBjhcS2qrW1z+hfCxq+1aBdwyQM5wlQoQVt/0=" crossorigin="anonymous" />
             <script src="https://cdn.jsdelivr.net/npm/css-vars-ponyfill@2"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0/js/all.min.js" integrity="sha256-0vuk8LXoyrmCjp1f0O300qo1M75ZQyhH9X3J6d+scmk=" crossorigin="anonymous"></script>
@@ -27,19 +26,24 @@
 		'content_group' : 'WooCommerce Core Code Reference',
 	});
 </script>
-        </head>
+        <script src="../js/prism.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            window.dispatchEvent(new HashChangeEvent('hashchange'));
+        });
+    </script>
+</head>
 <body id="top">
     <header class="phpdocumentor-top-header">
     <section class="phpdocumentor-section">
         <div class="site-branding">
-            <a class="site-logo" href="../index.html"><img width="180" src="../images/logo.svg" alt="WooCommerce" /></a>
+            <a class="site-logo" href="../index.html"><img src="../images/logo.png" alt="WooCommerce" /></a>
         </div>
         <nav class="main-navigation">
             <ul>
                 <li><a href="../hooks/hooks.html">Hooks Reference</a></li>
-                <li><a href="https://docs.woocommerce.com/">Documentation</a></li>
+                <li><a href="https://developer.woocommerce.com/docs/">Documentation</a></li>
                 <li><a href="https://woocommerce.github.io/woocommerce-rest-api-docs/">REST API Docs</a></li>
-                <li><a href="https://woocommerce.com/careers/?utm_source=woocommerce+core+code+reference&utm_medium=devdocs&utm_campaign=woo+careers" target="_blank">We're hiring!</a></li>
             </ul>
         </nav>
     </section>
@@ -47,7 +51,7 @@
 
 <div class="phpdocumentor-header">
     <section class="phpdocumentor-section">
-        <h1 class="phpdocumentor-title">WooCommerce Code Reference</h1>
+        <h1 class="phpdocumentor-title"><a href="../index.html">WooCommerce Code Reference</a></h1>
         <section class="phpdocumentor-search">
     <label class="phpdocumentor-label">
         <span class="visually-hidden">Search (click ESC to close search results)</span>
@@ -68,6 +72,10 @@
                                         <h4 class="phpdocumentor-sidebar__root-namespace"><a href="../namespaces/woocommerce.html"><abbr title="\WooCommerce">WooCommerce</abbr></a></h4>
                 <ul class="phpdocumentor-list">
                                             <li><a href="../namespaces/woocommerce-admin.html"><abbr title="\WooCommerce\Admin">Admin</abbr></a></li>
+                                    </ul>
+                            <h4 class="phpdocumentor-sidebar__root-namespace"><a href="../namespaces/mailpoet.html"><abbr title="\MailPoet">MailPoet</abbr></a></h4>
+                <ul class="phpdocumentor-list">
+                                            <li><a href="../namespaces/mailpoet-emaileditor.html"><abbr title="\MailPoet\EmailEditor">EmailEditor</abbr></a></li>
                                     </ul>
                             <h4 class="phpdocumentor-sidebar__root-namespace"><a href="../namespaces/automattic.html"><abbr title="\Automattic">Automattic</abbr></a></h4>
                 <ul class="phpdocumentor-list">
@@ -113,8 +121,10 @@
                                     <li><a href="../packages/WooCommerce-Widgets.html"><abbr title="\WooCommerce\Widgets">Widgets</abbr></a></li>
                                     <li><a href="../packages/WooCommerce-Uninstaller.html"><abbr title="\WooCommerce\Uninstaller">Uninstaller</abbr></a></li>
                             </ul>
-                                <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/WoocommerceAdmin.html"><abbr title="\WoocommerceAdmin">WoocommerceAdmin</abbr></a></h3>
-                                <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/WoocommerceNavigation.html"><abbr title="\WoocommerceNavigation">WoocommerceNavigation</abbr></a></h3>
+                                <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/MailPoet.html"><abbr title="\MailPoet">MailPoet</abbr></a></h3>
+                        <ul class="phpdocumentor-list">
+                                    <li><a href="../packages/MailPoet-EmailEditor.html"><abbr title="\MailPoet\EmailEditor">EmailEditor</abbr></a></li>
+                            </ul>
                                 <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/Automattic.html"><abbr title="\Automattic">Automattic</abbr></a></h3>
                         <ul class="phpdocumentor-list">
                                     <li><a href="../packages/Automattic-WooCommerce.html"><abbr title="\Automattic\WooCommerce">WooCommerce</abbr></a></li>
@@ -313,6 +323,13 @@
 <dd>Returns extended schema for a specific endpoint.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -protected">
+    <a href="../classes/Automattic-WooCommerce-StoreApi-Schemas-V1-ProductSchema.html#method_get_grouped_products">get_grouped_products()</a>
+    <span>
+                        &nbsp;: array&lt;string|int, mixed&gt;    </span>
+</dt>
+<dd>Get grouped product IDs.</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -protected">
     <a href="../classes/Automattic-WooCommerce-StoreApi-Schemas-V1-ProductSchema.html#method_get_images">get_images()</a>
     <span>
                         &nbsp;: array&lt;string|int, mixed&gt;    </span>
@@ -497,9 +514,9 @@ the smallest unit of a currency.</dd>
     </h4>
 
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/StoreApi/Schemas/V1/ProductSchema.php"><a href="../files/woocommerce-src-storeapi-schemas-v1-productschema.html#source-view.24">src/StoreApi/Schemas/V1/ProductSchema.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/StoreApi/Schemas/V1/ProductSchema.php"><a href="../files/woocommerce-src-storeapi-schemas-v1-productschema.html#source-view.27">src/StoreApi/Schemas/V1/ProductSchema.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">24</span>
+    <span class="phpdocumentor-element-found-in__line">27</span>
 </aside>
 
         <p class="phpdocumentor-summary">The schema item identifier.</p>
@@ -603,9 +620,9 @@ the smallest unit of a currency.</dd>
                                 </span>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/StoreApi/Schemas/V1/ProductSchema.php"><a href="../files/woocommerce-src-storeapi-schemas-v1-productschema.html#source-view.31">src/StoreApi/Schemas/V1/ProductSchema.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/StoreApi/Schemas/V1/ProductSchema.php"><a href="../files/woocommerce-src-storeapi-schemas-v1-productschema.html#source-view.34">src/StoreApi/Schemas/V1/ProductSchema.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">31</span>
+    <span class="phpdocumentor-element-found-in__line">34</span>
 </aside>
 
         <p class="phpdocumentor-summary">Image attachment schema instance.</p>
@@ -922,9 +939,9 @@ the smallest unit of a currency.</dd>
         <a href="#method_filter_valid_attribute" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/StoreApi/Schemas/V1/ProductSchema.php"><a href="../files/woocommerce-src-storeapi-schemas-v1-productschema.html#source-view.548">src/StoreApi/Schemas/V1/ProductSchema.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/StoreApi/Schemas/V1/ProductSchema.php"><a href="../files/woocommerce-src-storeapi-schemas-v1-productschema.html#source-view.623">src/StoreApi/Schemas/V1/ProductSchema.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">548</span>
+    <span class="phpdocumentor-element-found-in__line">623</span>
 </aside>
 
         <p class="phpdocumentor-summary">Returns true if the given attribute is valid.</p>
@@ -966,9 +983,9 @@ the smallest unit of a currency.</dd>
         <a href="#method_filter_variation_attribute" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/StoreApi/Schemas/V1/ProductSchema.php"><a href="../files/woocommerce-src-storeapi-schemas-v1-productschema.html#source-view.558">src/StoreApi/Schemas/V1/ProductSchema.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/StoreApi/Schemas/V1/ProductSchema.php"><a href="../files/woocommerce-src-storeapi-schemas-v1-productschema.html#source-view.633">src/StoreApi/Schemas/V1/ProductSchema.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">558</span>
+    <span class="phpdocumentor-element-found-in__line">633</span>
 </aside>
 
         <p class="phpdocumentor-summary">Returns true if the given attribute is valid and used for variations.</p>
@@ -1054,9 +1071,9 @@ the smallest unit of a currency.</dd>
         <a href="#method_get_attributes" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/StoreApi/Schemas/V1/ProductSchema.php"><a href="../files/woocommerce-src-storeapi-schemas-v1-productschema.html#source-view.669">src/StoreApi/Schemas/V1/ProductSchema.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/StoreApi/Schemas/V1/ProductSchema.php"><a href="../files/woocommerce-src-storeapi-schemas-v1-productschema.html#source-view.762">src/StoreApi/Schemas/V1/ProductSchema.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">669</span>
+    <span class="phpdocumentor-element-found-in__line">762</span>
 </aside>
 
         <p class="phpdocumentor-summary">Get list of product attributes and attribute terms.</p>
@@ -1199,14 +1216,58 @@ the smallest unit of a currency.</dd>
             -protected
                                                         "
 >
+    <h4 class="phpdocumentor-element__name" id="method_get_grouped_products">
+        get_grouped_products()
+        <a href="#method_get_grouped_products" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/StoreApi/Schemas/V1/ProductSchema.php"><a href="../files/woocommerce-src-storeapi-schemas-v1-productschema.html#source-view.744">src/StoreApi/Schemas/V1/ProductSchema.php</a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">744</span>
+</aside>
+
+        <p class="phpdocumentor-summary">Get grouped product IDs.</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">protected</span>
+                <span class="phpdocumentor-signature__name">get_grouped_products</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type"><a href="../classes/WC-Product.html"><abbr title="\WC_Product">WC_Product</abbr></a>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$product</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">array&lt;string|int, mixed&gt;</span></code>
+
+        <section class="phpdocumentor-description"></section>
+
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$product</span>
+                : <span class="phpdocumentor-signature__argument__return-type"><a href="../classes/WC-Product.html"><abbr title="\WC_Product">WC_Product</abbr></a></span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"><p>Product instance.</p>
+</section>
+
+            </dd>
+            </dl>
+
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">array&lt;string|int, mixed&gt;</span>
+            &mdash; <span class="phpdocumentor-return-value__description"></span>
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -protected
+                                                        "
+>
     <h4 class="phpdocumentor-element__name" id="method_get_images">
         get_images()
         <a href="#method_get_images" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/StoreApi/Schemas/V1/ProductSchema.php"><a href="../files/woocommerce-src-storeapi-schemas-v1-productschema.html#source-view.500">src/StoreApi/Schemas/V1/ProductSchema.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/StoreApi/Schemas/V1/ProductSchema.php"><a href="../files/woocommerce-src-storeapi-schemas-v1-productschema.html#source-view.575">src/StoreApi/Schemas/V1/ProductSchema.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">500</span>
+    <span class="phpdocumentor-element-found-in__line">575</span>
 </aside>
 
         <p class="phpdocumentor-summary">Get list of product images.</p>
@@ -1301,9 +1362,9 @@ the smallest unit of a currency.</dd>
         <a href="#method_get_low_stock_remaining" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/StoreApi/Schemas/V1/ProductSchema.php"><a href="../files/woocommerce-src-storeapi-schemas-v1-productschema.html#source-view.525">src/StoreApi/Schemas/V1/ProductSchema.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/StoreApi/Schemas/V1/ProductSchema.php"><a href="../files/woocommerce-src-storeapi-schemas-v1-productschema.html#source-view.600">src/StoreApi/Schemas/V1/ProductSchema.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">525</span>
+    <span class="phpdocumentor-element-found-in__line">600</span>
 </aside>
 
         <p class="phpdocumentor-summary">If a product has low stock, return the remaining stock amount for display.</p>
@@ -1345,9 +1406,9 @@ the smallest unit of a currency.</dd>
         <a href="#method_get_price_function_from_tax_display_mode" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/StoreApi/Schemas/V1/ProductSchema.php"><a href="../files/woocommerce-src-storeapi-schemas-v1-productschema.html#source-view.775">src/StoreApi/Schemas/V1/ProductSchema.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/StoreApi/Schemas/V1/ProductSchema.php"><a href="../files/woocommerce-src-storeapi-schemas-v1-productschema.html#source-view.868">src/StoreApi/Schemas/V1/ProductSchema.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">775</span>
+    <span class="phpdocumentor-element-found-in__line">868</span>
 </aside>
 
         <p class="phpdocumentor-summary">WooCommerce can return prices including or excluding tax; choose the correct method based on tax display mode.</p>
@@ -1389,9 +1450,9 @@ the smallest unit of a currency.</dd>
         <a href="#method_get_price_range" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/StoreApi/Schemas/V1/ProductSchema.php"><a href="../files/woocommerce-src-storeapi-schemas-v1-productschema.html#source-view.786">src/StoreApi/Schemas/V1/ProductSchema.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/StoreApi/Schemas/V1/ProductSchema.php"><a href="../files/woocommerce-src-storeapi-schemas-v1-productschema.html#source-view.879">src/StoreApi/Schemas/V1/ProductSchema.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">786</span>
+    <span class="phpdocumentor-element-found-in__line">879</span>
 </aside>
 
         <p class="phpdocumentor-summary">Get price range from certain product types.</p>
@@ -1574,9 +1635,9 @@ the smallest unit of a currency.</dd>
         <a href="#method_get_remaining_stock" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/StoreApi/Schemas/V1/ProductSchema.php"><a href="../files/woocommerce-src-storeapi-schemas-v1-productschema.html#source-view.512">src/StoreApi/Schemas/V1/ProductSchema.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/StoreApi/Schemas/V1/ProductSchema.php"><a href="../files/woocommerce-src-storeapi-schemas-v1-productschema.html#source-view.587">src/StoreApi/Schemas/V1/ProductSchema.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">512</span>
+    <span class="phpdocumentor-element-found-in__line">587</span>
 </aside>
 
         <p class="phpdocumentor-summary">Gets remaining stock amount for a product.</p>
@@ -1650,9 +1711,9 @@ the smallest unit of a currency.</dd>
         <a href="#method_get_tax_display_mode" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/StoreApi/Schemas/V1/ProductSchema.php"><a href="../files/woocommerce-src-storeapi-schemas-v1-productschema.html#source-view.765">src/StoreApi/Schemas/V1/ProductSchema.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/StoreApi/Schemas/V1/ProductSchema.php"><a href="../files/woocommerce-src-storeapi-schemas-v1-productschema.html#source-view.858">src/StoreApi/Schemas/V1/ProductSchema.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">765</span>
+    <span class="phpdocumentor-element-found-in__line">858</span>
 </aside>
 
         <p class="phpdocumentor-summary">WooCommerce can return prices including or excluding tax; choose the correct method based on tax display mode.</p>
@@ -1694,9 +1755,9 @@ the smallest unit of a currency.</dd>
         <a href="#method_get_term_list" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/StoreApi/Schemas/V1/ProductSchema.php"><a href="../files/woocommerce-src-storeapi-schemas-v1-productschema.html#source-view.828">src/StoreApi/Schemas/V1/ProductSchema.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/StoreApi/Schemas/V1/ProductSchema.php"><a href="../files/woocommerce-src-storeapi-schemas-v1-productschema.html#source-view.921">src/StoreApi/Schemas/V1/ProductSchema.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">828</span>
+    <span class="phpdocumentor-element-found-in__line">921</span>
 </aside>
 
         <p class="phpdocumentor-summary">Returns a list of terms assigned to the product.</p>
@@ -1747,9 +1808,9 @@ the smallest unit of a currency.</dd>
         <a href="#method_get_variations" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/StoreApi/Schemas/V1/ProductSchema.php"><a href="../files/woocommerce-src-storeapi-schemas-v1-productschema.html#source-view.568">src/StoreApi/Schemas/V1/ProductSchema.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/StoreApi/Schemas/V1/ProductSchema.php"><a href="../files/woocommerce-src-storeapi-schemas-v1-productschema.html#source-view.643">src/StoreApi/Schemas/V1/ProductSchema.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">568</span>
+    <span class="phpdocumentor-element-found-in__line">643</span>
 </aside>
 
         <p class="phpdocumentor-summary">Get variation IDs and attributes from the DB.</p>
@@ -1956,9 +2017,9 @@ the smallest unit of a currency.</p>
         <a href="#method_prepare_product_attribute_taxonomy_value" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/StoreApi/Schemas/V1/ProductSchema.php"><a href="../files/woocommerce-src-storeapi-schemas-v1-productschema.html#source-view.710">src/StoreApi/Schemas/V1/ProductSchema.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/StoreApi/Schemas/V1/ProductSchema.php"><a href="../files/woocommerce-src-storeapi-schemas-v1-productschema.html#source-view.803">src/StoreApi/Schemas/V1/ProductSchema.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">710</span>
+    <span class="phpdocumentor-element-found-in__line">803</span>
 </aside>
 
         <p class="phpdocumentor-summary">Prepare an attribute term for the response.</p>
@@ -2000,9 +2061,9 @@ the smallest unit of a currency.</p>
         <a href="#method_prepare_product_attribute_value" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/StoreApi/Schemas/V1/ProductSchema.php"><a href="../files/woocommerce-src-storeapi-schemas-v1-productschema.html#source-view.722">src/StoreApi/Schemas/V1/ProductSchema.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/StoreApi/Schemas/V1/ProductSchema.php"><a href="../files/woocommerce-src-storeapi-schemas-v1-productschema.html#source-view.815">src/StoreApi/Schemas/V1/ProductSchema.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">722</span>
+    <span class="phpdocumentor-element-found-in__line">815</span>
 </aside>
 
         <p class="phpdocumentor-summary">Prepare an attribute term for the response.</p>
@@ -2062,9 +2123,9 @@ the smallest unit of a currency.</p>
         <a href="#method_prepare_product_price_response" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/StoreApi/Schemas/V1/ProductSchema.php"><a href="../files/woocommerce-src-storeapi-schemas-v1-productschema.html#source-view.737">src/StoreApi/Schemas/V1/ProductSchema.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/StoreApi/Schemas/V1/ProductSchema.php"><a href="../files/woocommerce-src-storeapi-schemas-v1-productschema.html#source-view.830">src/StoreApi/Schemas/V1/ProductSchema.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">737</span>
+    <span class="phpdocumentor-element-found-in__line">830</span>
 </aside>
 
         <p class="phpdocumentor-summary">Get an array of pricing data.</p>
@@ -2159,7 +2220,7 @@ the smallest unit of a currency.</p>
 
     <footer class="phpdocumentor phpdocumentor-footer">
     <div class="phpdocumentor-section">
-        <span>WooCommerce Code Reference API documentation generated by <a href="http://www.phpdoc.org/">phpDocumentor</a> on July 25th, 2024 at 11:33 am.</span>
+        <span>WooCommerce Code Reference API documentation generated by <a href="http://www.phpdoc.org/">phpDocumentor</a> on May 16th, 2025 at 09:14 am.</span>
     </div>
 </footer>
 
@@ -2171,7 +2232,7 @@ the smallest unit of a currency.</p>
             'searchIndex': '..\/js\/searchIndex.json'
         };
     </script>
-    <script src="../js/searchIndex.js?updated=1721907209"></script>
-    <script src="../js/search.js?updated=1721907209"></script>
+    <script src="../js/searchIndex.js?updated=1747386891"></script>
+    <script src="../js/search.js?updated=1747386891"></script>
 </body>
 </html>

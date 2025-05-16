@@ -4,14 +4,13 @@
     <meta charset="utf-8">
     <title>WooCommerce Code Reference</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="../images/favicon.png" />
-    <link rel="apple-touch-icon" href="../images/apple-touch-icon.png"/>
-    <link rel="apple-touch-icon" sizes="72x72" href="../images/apple-touch-icon-72x72.png"/>
-    <link rel="apple-touch-icon" sizes="114x114" href="../images/apple-touch-icon-114x114.png"/>
+    <link rel="icon" href="../images/favicon-32x32.png" sizes="32x32" />
+    <link rel="icon" href="../images/favicon-192x192.png" sizes="192x192" />
+    <link rel="apple-touch-icon" href="../images/favicon-180x180.png" />
+
     <link rel="stylesheet" href="../css/normalize.css">
-    <link rel="stylesheet" href="../css/base.css?updated=1721907183">
-    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../css/template.css?updated=1721907183">
+    <link rel="stylesheet" href="../css/base.css?updated=1747386859">
+    <link rel="stylesheet" href="../css/template.css?updated=1747386859">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0/css/all.min.css" integrity="sha256-ybRkN9dBjhcS2qrW1z+hfCxq+1aBdwyQM5wlQoQVt/0=" crossorigin="anonymous" />
             <script src="https://cdn.jsdelivr.net/npm/css-vars-ponyfill@2"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0/js/all.min.js" integrity="sha256-0vuk8LXoyrmCjp1f0O300qo1M75ZQyhH9X3J6d+scmk=" crossorigin="anonymous"></script>
@@ -38,14 +37,13 @@
     <header class="phpdocumentor-top-header">
     <section class="phpdocumentor-section">
         <div class="site-branding">
-            <a class="site-logo" href="../index.html"><img width="180" src="../images/logo.svg" alt="WooCommerce" /></a>
+            <a class="site-logo" href="../index.html"><img src="../images/logo.png" alt="WooCommerce" /></a>
         </div>
         <nav class="main-navigation">
             <ul>
                 <li><a href="../hooks/hooks.html">Hooks Reference</a></li>
-                <li><a href="https://docs.woocommerce.com/">Documentation</a></li>
+                <li><a href="https://developer.woocommerce.com/docs/">Documentation</a></li>
                 <li><a href="https://woocommerce.github.io/woocommerce-rest-api-docs/">REST API Docs</a></li>
-                <li><a href="https://woocommerce.com/careers/?utm_source=woocommerce+core+code+reference&utm_medium=devdocs&utm_campaign=woo+careers" target="_blank">We're hiring!</a></li>
             </ul>
         </nav>
     </section>
@@ -53,7 +51,7 @@
 
 <div class="phpdocumentor-header">
     <section class="phpdocumentor-section">
-        <h1 class="phpdocumentor-title">WooCommerce Code Reference</h1>
+        <h1 class="phpdocumentor-title"><a href="../index.html">WooCommerce Code Reference</a></h1>
         <section class="phpdocumentor-search">
     <label class="phpdocumentor-label">
         <span class="visually-hidden">Search (click ESC to close search results)</span>
@@ -74,6 +72,10 @@
                                         <h4 class="phpdocumentor-sidebar__root-namespace"><a href="../namespaces/woocommerce.html"><abbr title="\WooCommerce">WooCommerce</abbr></a></h4>
                 <ul class="phpdocumentor-list">
                                             <li><a href="../namespaces/woocommerce-admin.html"><abbr title="\WooCommerce\Admin">Admin</abbr></a></li>
+                                    </ul>
+                            <h4 class="phpdocumentor-sidebar__root-namespace"><a href="../namespaces/mailpoet.html"><abbr title="\MailPoet">MailPoet</abbr></a></h4>
+                <ul class="phpdocumentor-list">
+                                            <li><a href="../namespaces/mailpoet-emaileditor.html"><abbr title="\MailPoet\EmailEditor">EmailEditor</abbr></a></li>
                                     </ul>
                             <h4 class="phpdocumentor-sidebar__root-namespace"><a href="../namespaces/automattic.html"><abbr title="\Automattic">Automattic</abbr></a></h4>
                 <ul class="phpdocumentor-list">
@@ -119,8 +121,10 @@
                                     <li><a href="../packages/WooCommerce-Widgets.html"><abbr title="\WooCommerce\Widgets">Widgets</abbr></a></li>
                                     <li><a href="../packages/WooCommerce-Uninstaller.html"><abbr title="\WooCommerce\Uninstaller">Uninstaller</abbr></a></li>
                             </ul>
-                                <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/WoocommerceAdmin.html"><abbr title="\WoocommerceAdmin">WoocommerceAdmin</abbr></a></h3>
-                                <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/WoocommerceNavigation.html"><abbr title="\WoocommerceNavigation">WoocommerceNavigation</abbr></a></h3>
+                                <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/MailPoet.html"><abbr title="\MailPoet">MailPoet</abbr></a></h3>
+                        <ul class="phpdocumentor-list">
+                                    <li><a href="../packages/MailPoet-EmailEditor.html"><abbr title="\MailPoet\EmailEditor">EmailEditor</abbr></a></li>
+                            </ul>
                                 <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/Automattic.html"><abbr title="\Automattic">Automattic</abbr></a></h3>
                         <ul class="phpdocumentor-list">
                                     <li><a href="../packages/Automattic-WooCommerce.html"><abbr title="\Automattic\WooCommerce">WooCommerce</abbr></a></li>
@@ -166,6 +170,11 @@
  * @since   2.6.0
  */
 
+use Automattic\WooCommerce\Enums\ProductStatus;
+use Automattic\WooCommerce\Enums\ProductStockStatus;
+use Automattic\WooCommerce\Enums\ProductTaxStatus;
+use Automattic\WooCommerce\Enums\ProductType;
+use Automattic\WooCommerce\Enums\CatalogVisibility;
 use Automattic\WooCommerce\Utilities\I18nUtil;
 
 defined( &#039;ABSPATH&#039; ) || exit;
@@ -320,20 +329,9 @@ class WC_REST_Products_V2_Controller extends WC_REST_CRUD_Controller {
 	public function prepare_object_for_response( $object, $request ) {
 		$context       = ! empty( $request[&#039;context&#039;] ) ? $request[&#039;context&#039;] : &#039;view&#039;;
 		$this-&gt;request = $request;
-		$data          = $this-&gt;get_product_data( $object, $context, $request );
 
-		// Add variations to variable products.
-		if ( $object-&gt;is_type( &#039;variable&#039; ) &amp;&amp; $object-&gt;has_child() ) {
-			$data[&#039;variations&#039;] = $object-&gt;get_children();
-		}
+		$data = $this-&gt;prepare_object_for_response_core( $object, $request, $context );
 
-		// Add grouped products data.
-		if ( $object-&gt;is_type( &#039;grouped&#039; ) &amp;&amp; $object-&gt;has_child() ) {
-			$data[&#039;grouped_products&#039;] = $object-&gt;get_children();
-		}
-
-		$data     = $this-&gt;add_additional_fields_to_object( $data, $request );
-		$data     = $this-&gt;filter_response_by_context( $data, $context );
 		$response = rest_ensure_response( $data );
 		$response-&gt;add_links( $this-&gt;prepare_links( $object, $request ) );
 
@@ -348,6 +346,33 @@ class WC_REST_Products_V2_Controller extends WC_REST_CRUD_Controller {
 		 * @param WP_REST_Request  $request  Request object.
 		 */
 		return apply_filters( &quot;woocommerce_rest_prepare_{$this-&gt;post_type}_object&quot;, $response, $object, $request );
+	}
+
+	/**
+	 * Core function to prepare a single product output for response
+	 * (doesn&#039;t fire hooks, ensure_response, or add links).
+	 *
+	 * @param WC_Data         $object_data Object data.
+	 * @param WP_REST_Request $request Request object.
+	 * @param string          $context Request context.
+	 * @return array Product data to be included in the response.
+	 */
+	protected function prepare_object_for_response_core( $object_data, $request, $context ): array {
+		$data = $this-&gt;get_product_data( $object_data, $context, $request );
+
+		// Add variations to variable products.
+		if ( $object_data-&gt;is_type( ProductType::VARIABLE ) &amp;&amp; $object_data-&gt;has_child() ) {
+			$data[&#039;variations&#039;] = $object_data-&gt;get_children();
+		}
+
+		// Add grouped products data.
+		if ( $object_data-&gt;is_type( ProductType::GROUPED ) &amp;&amp; $object_data-&gt;has_child() ) {
+			$data[&#039;grouped_products&#039;] = $object_data-&gt;get_children();
+		}
+
+		$data = $this-&gt;add_additional_fields_to_object( $data, $request );
+		$data = $this-&gt;filter_response_by_context( $data, $context );
+		return $data;
 	}
 
 	/**
@@ -460,7 +485,7 @@ class WC_REST_Products_V2_Controller extends WC_REST_CRUD_Controller {
 				$args,
 				array(
 					&#039;key&#039;   =&gt; &#039;_stock_status&#039;,
-					&#039;value&#039; =&gt; true === $request[&#039;in_stock&#039;] ? &#039;instock&#039; : &#039;outofstock&#039;,
+					&#039;value&#039; =&gt; true === $request[&#039;in_stock&#039;] ? ProductStockStatus::IN_STOCK : ProductStockStatus::OUT_OF_STOCK,
 				)
 			);
 		}
@@ -658,7 +683,7 @@ class WC_REST_Products_V2_Controller extends WC_REST_CRUD_Controller {
 	protected function get_default_attributes( $product ) {
 		$default = array();
 
-		if ( $product-&gt;is_type( &#039;variable&#039; ) ) {
+		if ( $product-&gt;is_type( ProductType::VARIABLE ) ) {
 			foreach ( array_filter( (array) $product-&gt;get_default_attributes(), &#039;strlen&#039; ) as $key =&gt; $value ) {
 				if ( 0 === strpos( $key, &#039;pa_&#039; ) ) {
 					$default[] = array(
@@ -713,7 +738,7 @@ class WC_REST_Products_V2_Controller extends WC_REST_CRUD_Controller {
 	protected function get_attributes( $product ) {
 		$attributes = array();
 
-		if ( $product-&gt;is_type( &#039;variation&#039; ) ) {
+		if ( $product-&gt;is_type( ProductType::VARIATION ) ) {
 			$_product = wc_get_product( $product-&gt;get_parent_id() );
 			foreach ( $product-&gt;get_variation_attributes() as $attribute_name =&gt; $attribute ) {
 				$name = str_replace( &#039;attribute_&#039;, &#039;&#039;, $attribute_name );
@@ -910,10 +935,10 @@ class WC_REST_Products_V2_Controller extends WC_REST_CRUD_Controller {
 					$base_data[&#039;download_expiry&#039;] = $product-&gt;get_download_expiry( $context );
 					break;
 				case &#039;external_url&#039;:
-					$base_data[&#039;external_url&#039;] = $product-&gt;is_type( &#039;external&#039; ) ? $product-&gt;get_product_url( $context ) : &#039;&#039;;
+					$base_data[&#039;external_url&#039;] = $product-&gt;is_type( ProductType::EXTERNAL ) ? $product-&gt;get_product_url( $context ) : &#039;&#039;;
 					break;
 				case &#039;button_text&#039;:
-					$base_data[&#039;button_text&#039;] = $product-&gt;is_type( &#039;external&#039; ) ? $product-&gt;get_button_text( $context ) : &#039;&#039;;
+					$base_data[&#039;button_text&#039;] = $product-&gt;is_type( ProductType::EXTERNAL ) ? $product-&gt;get_button_text( $context ) : &#039;&#039;;
 					break;
 				case &#039;tax_status&#039;:
 					$base_data[&#039;tax_status&#039;] = $product-&gt;get_tax_status( $context );
@@ -1076,7 +1101,7 @@ class WC_REST_Products_V2_Controller extends WC_REST_CRUD_Controller {
 			$product = new WC_Product_Simple();
 		}
 
-		if ( &#039;variation&#039; === $product-&gt;get_type() ) {
+		if ( ProductType::VARIATION === $product-&gt;get_type() ) {
 			return new WP_Error(
 				&quot;woocommerce_rest_invalid_{$this-&gt;post_type}_id&quot;,
 				__( &#039;To manipulate product variations you should use the /products/&amp;lt;product_id&amp;gt;/variations/&amp;lt;id&amp;gt; endpoint.&#039;, &#039;woocommerce&#039; ),
@@ -1103,7 +1128,7 @@ class WC_REST_Products_V2_Controller extends WC_REST_CRUD_Controller {
 
 		// Post status.
 		if ( isset( $request[&#039;status&#039;] ) ) {
-			$product-&gt;set_status( get_post_status_object( $request[&#039;status&#039;] ) ? $request[&#039;status&#039;] : &#039;draft&#039; );
+			$product-&gt;set_status( get_post_status_object( $request[&#039;status&#039;] ) ? $request[&#039;status&#039;] : ProductStatus::DRAFT );
 		}
 
 		// Post slug.
@@ -1226,7 +1251,7 @@ class WC_REST_Products_V2_Controller extends WC_REST_CRUD_Controller {
 		}
 
 		// Sales and prices.
-		if ( in_array( $product-&gt;get_type(), array( &#039;variable&#039;, &#039;grouped&#039; ), true ) ) {
+		if ( in_array( $product-&gt;get_type(), array( ProductType::VARIABLE, ProductType::GROUPED ), true ) ) {
 			$product-&gt;set_regular_price( &#039;&#039; );
 			$product-&gt;set_sale_price( &#039;&#039; );
 			$product-&gt;set_date_on_sale_to( &#039;&#039; );
@@ -1272,7 +1297,7 @@ class WC_REST_Products_V2_Controller extends WC_REST_CRUD_Controller {
 
 		// Stock status.
 		if ( isset( $request[&#039;in_stock&#039;] ) ) {
-			$stock_status = true === $request[&#039;in_stock&#039;] ? &#039;instock&#039; : &#039;outofstock&#039;;
+			$stock_status = true === $request[&#039;in_stock&#039;] ? ProductStockStatus::IN_STOCK : ProductStockStatus::OUT_OF_STOCK;
 		} else {
 			$stock_status = $product-&gt;get_stock_status();
 		}
@@ -1289,19 +1314,19 @@ class WC_REST_Products_V2_Controller extends WC_REST_CRUD_Controller {
 				$product-&gt;set_backorders( $request[&#039;backorders&#039;] );
 			}
 
-			if ( $product-&gt;is_type( &#039;grouped&#039; ) ) {
+			if ( $product-&gt;is_type( ProductType::GROUPED ) ) {
 				$product-&gt;set_manage_stock( &#039;no&#039; );
 				$product-&gt;set_backorders( &#039;no&#039; );
 				$product-&gt;set_stock_quantity( &#039;&#039; );
 				$product-&gt;set_stock_status( $stock_status );
-			} elseif ( $product-&gt;is_type( &#039;external&#039; ) ) {
+			} elseif ( $product-&gt;is_type( ProductType::EXTERNAL ) ) {
 				$product-&gt;set_manage_stock( &#039;no&#039; );
 				$product-&gt;set_backorders( &#039;no&#039; );
 				$product-&gt;set_stock_quantity( &#039;&#039; );
-				$product-&gt;set_stock_status( &#039;instock&#039; );
+				$product-&gt;set_stock_status( ProductStockStatus::IN_STOCK );
 			} elseif ( $product-&gt;get_manage_stock() ) {
 				// Stock status is always determined by children so sync later.
-				if ( ! $product-&gt;is_type( &#039;variable&#039; ) ) {
+				if ( ! $product-&gt;is_type( ProductType::VARIABLE ) ) {
 					$product-&gt;set_stock_status( $stock_status );
 				}
 
@@ -1319,7 +1344,7 @@ class WC_REST_Products_V2_Controller extends WC_REST_CRUD_Controller {
 				$product-&gt;set_stock_quantity( &#039;&#039; );
 				$product-&gt;set_stock_status( $stock_status );
 			}
-		} elseif ( ! $product-&gt;is_type( &#039;variable&#039; ) ) {
+		} elseif ( ! $product-&gt;is_type( ProductType::VARIABLE ) ) {
 			$product-&gt;set_stock_status( $stock_status );
 		}
 
@@ -1390,7 +1415,7 @@ class WC_REST_Products_V2_Controller extends WC_REST_CRUD_Controller {
 		}
 
 		// Product url and button text for external products.
-		if ( $product-&gt;is_type( &#039;external&#039; ) ) {
+		if ( $product-&gt;is_type( ProductType::EXTERNAL ) ) {
 			if ( isset( $request[&#039;external_url&#039;] ) ) {
 				$product-&gt;set_product_url( $request[&#039;external_url&#039;] );
 			}
@@ -1401,12 +1426,12 @@ class WC_REST_Products_V2_Controller extends WC_REST_CRUD_Controller {
 		}
 
 		// Save default attributes for variable products.
-		if ( $product-&gt;is_type( &#039;variable&#039; ) ) {
+		if ( $product-&gt;is_type( ProductType::VARIABLE ) ) {
 			$product = $this-&gt;save_default_attributes( $product, $request );
 		}
 
 		// Set children for a grouped product.
-		if ( $product-&gt;is_type( &#039;grouped&#039; ) &amp;&amp; isset( $request[&#039;grouped_products&#039;] ) ) {
+		if ( $product-&gt;is_type( ProductType::GROUPED ) &amp;&amp; isset( $request[&#039;grouped_products&#039;] ) ) {
 			$product-&gt;set_children( $request[&#039;grouped_products&#039;] );
 		}
 
@@ -1707,7 +1732,7 @@ class WC_REST_Products_V2_Controller extends WC_REST_CRUD_Controller {
 			);
 		}
 
-		if ( &#039;variation&#039; === $object-&gt;get_type() ) {
+		if ( ProductType::VARIATION === $object-&gt;get_type() ) {
 			return new WP_Error(
 				&quot;woocommerce_rest_invalid_{$this-&gt;post_type}_id&quot;,
 				__( &#039;To manipulate product variations you should use the /products/&amp;lt;product_id&amp;gt;/variations/&amp;lt;id&amp;gt; endpoint.&#039;, &#039;woocommerce&#039; ),
@@ -1745,7 +1770,7 @@ class WC_REST_Products_V2_Controller extends WC_REST_CRUD_Controller {
 
 		// If we&#039;re forcing, then delete permanently.
 		if ( $force ) {
-			if ( $object-&gt;is_type( &#039;variable&#039; ) ) {
+			if ( $object-&gt;is_type( ProductType::VARIABLE ) ) {
 				foreach ( $object-&gt;get_children() as $child_id ) {
 					$child = wc_get_product( $child_id );
 					if ( ! empty( $child ) ) {
@@ -1780,7 +1805,7 @@ class WC_REST_Products_V2_Controller extends WC_REST_CRUD_Controller {
 
 			// Otherwise, only trash if we haven&#039;t already.
 			if ( is_callable( array( $object, &#039;get_status&#039; ) ) ) {
-				if ( &#039;trash&#039; === $object-&gt;get_status() ) {
+				if ( ProductStatus::TRASH === $object-&gt;get_status() ) {
 					return new WP_Error(
 						&#039;woocommerce_rest_already_trashed&#039;,
 						/* translators: %s: post type */
@@ -1792,7 +1817,7 @@ class WC_REST_Products_V2_Controller extends WC_REST_CRUD_Controller {
 				}
 
 				$object-&gt;delete();
-				$result = &#039;trash&#039; === $object-&gt;get_status();
+				$result = ProductStatus::TRASH === $object-&gt;get_status();
 			}
 		}
 
@@ -1887,7 +1912,7 @@ class WC_REST_Products_V2_Controller extends WC_REST_CRUD_Controller {
 				&#039;type&#039;                  =&gt; array(
 					&#039;description&#039; =&gt; __( &#039;Product type.&#039;, &#039;woocommerce&#039; ),
 					&#039;type&#039;        =&gt; &#039;string&#039;,
-					&#039;default&#039;     =&gt; &#039;simple&#039;,
+					&#039;default&#039;     =&gt; ProductType::SIMPLE,
 					&#039;enum&#039;        =&gt; array_keys( wc_get_product_types() ),
 					&#039;context&#039;     =&gt; array( &#039;view&#039;, &#039;edit&#039; ),
 				),
@@ -1895,7 +1920,7 @@ class WC_REST_Products_V2_Controller extends WC_REST_CRUD_Controller {
 					&#039;description&#039; =&gt; __( &#039;Product status (post status).&#039;, &#039;woocommerce&#039; ),
 					&#039;type&#039;        =&gt; &#039;string&#039;,
 					&#039;default&#039;     =&gt; &#039;publish&#039;,
-					&#039;enum&#039;        =&gt; array_merge( array_keys( get_post_statuses() ), array( &#039;future&#039; ) ),
+					&#039;enum&#039;        =&gt; array_merge( array_keys( get_post_statuses() ), array( ProductStatus::FUTURE ) ),
 					&#039;context&#039;     =&gt; array( &#039;view&#039;, &#039;edit&#039; ),
 				),
 				&#039;featured&#039;              =&gt; array(
@@ -1907,8 +1932,8 @@ class WC_REST_Products_V2_Controller extends WC_REST_CRUD_Controller {
 				&#039;catalog_visibility&#039;    =&gt; array(
 					&#039;description&#039; =&gt; __( &#039;Catalog visibility.&#039;, &#039;woocommerce&#039; ),
 					&#039;type&#039;        =&gt; &#039;string&#039;,
-					&#039;default&#039;     =&gt; &#039;visible&#039;,
-					&#039;enum&#039;        =&gt; array( &#039;visible&#039;, &#039;catalog&#039;, &#039;search&#039;, &#039;hidden&#039; ),
+					&#039;default&#039;     =&gt; CatalogVisibility::VISIBLE,
+					&#039;enum&#039;        =&gt; array( CatalogVisibility::VISIBLE, CatalogVisibility::CATALOG, CatalogVisibility::SEARCH, CatalogVisibility::HIDDEN ),
 					&#039;context&#039;     =&gt; array( &#039;view&#039;, &#039;edit&#039; ),
 				),
 				&#039;description&#039;           =&gt; array(
@@ -2049,8 +2074,8 @@ class WC_REST_Products_V2_Controller extends WC_REST_CRUD_Controller {
 				&#039;tax_status&#039;            =&gt; array(
 					&#039;description&#039; =&gt; __( &#039;Tax status.&#039;, &#039;woocommerce&#039; ),
 					&#039;type&#039;        =&gt; &#039;string&#039;,
-					&#039;default&#039;     =&gt; &#039;taxable&#039;,
-					&#039;enum&#039;        =&gt; array( &#039;taxable&#039;, &#039;shipping&#039;, &#039;none&#039; ),
+					&#039;default&#039;     =&gt; ProductTaxStatus::TAXABLE,
+					&#039;enum&#039;        =&gt; array( ProductTaxStatus::TAXABLE, ProductTaxStatus::SHIPPING, ProductTaxStatus::NONE ),
 					&#039;context&#039;     =&gt; array( &#039;view&#039;, &#039;edit&#039; ),
 				),
 				&#039;tax_class&#039;             =&gt; array(
@@ -2464,7 +2489,7 @@ class WC_REST_Products_V2_Controller extends WC_REST_CRUD_Controller {
 			&#039;default&#039;           =&gt; &#039;any&#039;,
 			&#039;description&#039;       =&gt; __( &#039;Limit result set to products assigned a specific status.&#039;, &#039;woocommerce&#039; ),
 			&#039;type&#039;              =&gt; &#039;string&#039;,
-			&#039;enum&#039;              =&gt; array_merge( array( &#039;any&#039;, &#039;future&#039;, &#039;trash&#039; ), array_keys( get_post_statuses() ) ),
+			&#039;enum&#039;              =&gt; array_merge( array( &#039;any&#039;, ProductStatus::FUTURE, ProductStatus::TRASH ), array_keys( get_post_statuses() ) ),
 			&#039;sanitize_callback&#039; =&gt; &#039;sanitize_key&#039;,
 			&#039;validate_callback&#039; =&gt; &#039;rest_validate_request_arg&#039;,
 		);
@@ -2584,7 +2609,7 @@ class WC_REST_Products_V2_Controller extends WC_REST_CRUD_Controller {
 
     <footer class="phpdocumentor phpdocumentor-footer">
     <div class="phpdocumentor-section">
-        <span>WooCommerce Code Reference API documentation generated by <a href="http://www.phpdoc.org/">phpDocumentor</a> on July 25th, 2024 at 11:33 am.</span>
+        <span>WooCommerce Code Reference API documentation generated by <a href="http://www.phpdoc.org/">phpDocumentor</a> on May 16th, 2025 at 09:14 am.</span>
     </div>
 </footer>
 
@@ -2596,7 +2621,7 @@ class WC_REST_Products_V2_Controller extends WC_REST_CRUD_Controller {
             'searchIndex': '..\/js\/searchIndex.json'
         };
     </script>
-    <script src="../js/searchIndex.js?updated=1721907183"></script>
-    <script src="../js/search.js?updated=1721907183"></script>
+    <script src="../js/searchIndex.js?updated=1747386859"></script>
+    <script src="../js/search.js?updated=1747386859"></script>
 </body>
 </html>

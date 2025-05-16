@@ -4,14 +4,13 @@
     <meta charset="utf-8">
     <title>WooCommerce Code Reference</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="../images/favicon.png" />
-    <link rel="apple-touch-icon" href="../images/apple-touch-icon.png"/>
-    <link rel="apple-touch-icon" sizes="72x72" href="../images/apple-touch-icon-72x72.png"/>
-    <link rel="apple-touch-icon" sizes="114x114" href="../images/apple-touch-icon-114x114.png"/>
+    <link rel="icon" href="../images/favicon-32x32.png" sizes="32x32" />
+    <link rel="icon" href="../images/favicon-192x192.png" sizes="192x192" />
+    <link rel="apple-touch-icon" href="../images/favicon-180x180.png" />
+
     <link rel="stylesheet" href="../css/normalize.css">
-    <link rel="stylesheet" href="../css/base.css?updated=1721907183">
-    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../css/template.css?updated=1721907183">
+    <link rel="stylesheet" href="../css/base.css?updated=1747386859">
+    <link rel="stylesheet" href="../css/template.css?updated=1747386859">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0/css/all.min.css" integrity="sha256-ybRkN9dBjhcS2qrW1z+hfCxq+1aBdwyQM5wlQoQVt/0=" crossorigin="anonymous" />
             <script src="https://cdn.jsdelivr.net/npm/css-vars-ponyfill@2"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0/js/all.min.js" integrity="sha256-0vuk8LXoyrmCjp1f0O300qo1M75ZQyhH9X3J6d+scmk=" crossorigin="anonymous"></script>
@@ -38,14 +37,13 @@
     <header class="phpdocumentor-top-header">
     <section class="phpdocumentor-section">
         <div class="site-branding">
-            <a class="site-logo" href="../index.html"><img width="180" src="../images/logo.svg" alt="WooCommerce" /></a>
+            <a class="site-logo" href="../index.html"><img src="../images/logo.png" alt="WooCommerce" /></a>
         </div>
         <nav class="main-navigation">
             <ul>
                 <li><a href="../hooks/hooks.html">Hooks Reference</a></li>
-                <li><a href="https://docs.woocommerce.com/">Documentation</a></li>
+                <li><a href="https://developer.woocommerce.com/docs/">Documentation</a></li>
                 <li><a href="https://woocommerce.github.io/woocommerce-rest-api-docs/">REST API Docs</a></li>
-                <li><a href="https://woocommerce.com/careers/?utm_source=woocommerce+core+code+reference&utm_medium=devdocs&utm_campaign=woo+careers" target="_blank">We're hiring!</a></li>
             </ul>
         </nav>
     </section>
@@ -53,7 +51,7 @@
 
 <div class="phpdocumentor-header">
     <section class="phpdocumentor-section">
-        <h1 class="phpdocumentor-title">WooCommerce Code Reference</h1>
+        <h1 class="phpdocumentor-title"><a href="../index.html">WooCommerce Code Reference</a></h1>
         <section class="phpdocumentor-search">
     <label class="phpdocumentor-label">
         <span class="visually-hidden">Search (click ESC to close search results)</span>
@@ -74,6 +72,10 @@
                                         <h4 class="phpdocumentor-sidebar__root-namespace"><a href="../namespaces/woocommerce.html"><abbr title="\WooCommerce">WooCommerce</abbr></a></h4>
                 <ul class="phpdocumentor-list">
                                             <li><a href="../namespaces/woocommerce-admin.html"><abbr title="\WooCommerce\Admin">Admin</abbr></a></li>
+                                    </ul>
+                            <h4 class="phpdocumentor-sidebar__root-namespace"><a href="../namespaces/mailpoet.html"><abbr title="\MailPoet">MailPoet</abbr></a></h4>
+                <ul class="phpdocumentor-list">
+                                            <li><a href="../namespaces/mailpoet-emaileditor.html"><abbr title="\MailPoet\EmailEditor">EmailEditor</abbr></a></li>
                                     </ul>
                             <h4 class="phpdocumentor-sidebar__root-namespace"><a href="../namespaces/automattic.html"><abbr title="\Automattic">Automattic</abbr></a></h4>
                 <ul class="phpdocumentor-list">
@@ -119,8 +121,10 @@
                                     <li><a href="../packages/WooCommerce-Widgets.html"><abbr title="\WooCommerce\Widgets">Widgets</abbr></a></li>
                                     <li><a href="../packages/WooCommerce-Uninstaller.html"><abbr title="\WooCommerce\Uninstaller">Uninstaller</abbr></a></li>
                             </ul>
-                                <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/WoocommerceAdmin.html"><abbr title="\WoocommerceAdmin">WoocommerceAdmin</abbr></a></h3>
-                                <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/WoocommerceNavigation.html"><abbr title="\WoocommerceNavigation">WoocommerceNavigation</abbr></a></h3>
+                                <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/MailPoet.html"><abbr title="\MailPoet">MailPoet</abbr></a></h3>
+                        <ul class="phpdocumentor-list">
+                                    <li><a href="../packages/MailPoet-EmailEditor.html"><abbr title="\MailPoet\EmailEditor">EmailEditor</abbr></a></li>
+                            </ul>
                                 <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/Automattic.html"><abbr title="\Automattic">Automattic</abbr></a></h3>
                         <ul class="phpdocumentor-list">
                                     <li><a href="../packages/Automattic-WooCommerce.html"><abbr title="\Automattic\WooCommerce">WooCommerce</abbr></a></li>
@@ -164,6 +168,7 @@
  */
 
 use Automattic\Jetpack\Constants;
+use Automattic\WooCommerce\Enums\OrderStatus;
 
 if ( ! defined( &#039;ABSPATH&#039; ) ) {
 	exit; // Exit if accessed directly.
@@ -180,6 +185,13 @@ if ( ! defined( &#039;ABSPATH&#039; ) ) {
  * @package     WooCommerce\Classes\Payment
  */
 class WC_Gateway_COD extends WC_Payment_Gateway {
+
+	/**
+	 * Unique ID for this gateway.
+	 *
+	 * @var string
+	 */
+	const ID = &#039;cod&#039;;
 
 	/**
 	 * Gateway instructions that will be added to the thank you page and emails.
@@ -233,10 +245,10 @@ class WC_Gateway_COD extends WC_Payment_Gateway {
 	 * Setup general properties for the gateway.
 	 */
 	protected function setup_properties() {
-		$this-&gt;id                 = &#039;cod&#039;;
+		$this-&gt;id                 = self::ID;
 		$this-&gt;icon               = apply_filters( &#039;woocommerce_cod_icon&#039;, &#039;&#039; );
 		$this-&gt;method_title       = __( &#039;Cash on delivery&#039;, &#039;woocommerce&#039; );
-		$this-&gt;method_description = __( &#039;Have your customers pay with cash (or by other means) upon delivery.&#039;, &#039;woocommerce&#039; );
+		$this-&gt;method_description = __( &#039;Let your shoppers pay upon delivery — by cash or other methods of payment.&#039;, &#039;woocommerce&#039; );
 		$this-&gt;has_fields         = false;
 	}
 
@@ -301,49 +313,46 @@ class WC_Gateway_COD extends WC_Payment_Gateway {
 	 * @return bool
 	 */
 	public function is_available() {
-		$order          = null;
-		$needs_shipping = false;
+		$is_virtual       = true;
+		$shipping_methods = array();
 
-		// Test if shipping is needed first.
-		if ( WC()-&gt;cart &amp;&amp; WC()-&gt;cart-&gt;needs_shipping() ) {
-			$needs_shipping = true;
-		} elseif ( is_page( wc_get_page_id( &#039;checkout&#039; ) ) &amp;&amp; 0 &lt; get_query_var( &#039;order-pay&#039; ) ) {
-			$order_id = absint( get_query_var( &#039;order-pay&#039; ) );
-			$order    = wc_get_order( $order_id );
-
-			// Test if order needs shipping.
-			if ( $order &amp;&amp; 0 &lt; count( $order-&gt;get_items() ) ) {
-				foreach ( $order-&gt;get_items() as $item ) {
-					$_product = $item-&gt;get_product();
-					if ( $_product &amp;&amp; $_product-&gt;needs_shipping() ) {
-						$needs_shipping = true;
-						break;
-					}
-				}
-			}
+		// Get shipping methods from the cart or order.
+		if ( is_wc_endpoint_url( &#039;order-pay&#039; ) ) {
+			$order            = wc_get_order( absint( get_query_var( &#039;order-pay&#039; ) ) );
+			$shipping_methods = $order ? $order-&gt;get_shipping_methods() : array();
+			$is_virtual       = ! count( $shipping_methods );
+		} elseif ( WC()-&gt;cart &amp;&amp; WC()-&gt;cart-&gt;needs_shipping() ) {
+			$shipping_methods = WC()-&gt;cart-&gt;get_shipping_methods();
+			$is_virtual       = false;
 		}
 
-		$needs_shipping = apply_filters( &#039;woocommerce_cart_needs_shipping&#039;, $needs_shipping );
-
-		// Virtual order, with virtual disabled.
-		if ( ! $this-&gt;enable_for_virtual &amp;&amp; ! $needs_shipping ) {
+		// If COD is not enabled for virtual orders and the order does not need shipping, return false.
+		if ( ! $this-&gt;enable_for_virtual &amp;&amp; $is_virtual ) {
 			return false;
 		}
 
-		// Only apply if all packages are being shipped via chosen method, or order is virtual.
-		if ( ! empty( $this-&gt;enable_for_methods ) &amp;&amp; $needs_shipping ) {
-			$order_shipping_items            = is_object( $order ) ? $order-&gt;get_shipping_methods() : false;
-			$chosen_shipping_methods_session = WC()-&gt;session-&gt;get( &#039;chosen_shipping_methods&#039; );
+		// Return early if:
+		// - There are no shipping methods resrictions in place.
+		// - The order is virtual so needs no shipping.
+		// - Shipping methods are not set yet.
+		if ( empty( $this-&gt;enable_for_methods ) || $is_virtual || ! $shipping_methods ) {
+			return parent::is_available();
+		}
 
-			if ( $order_shipping_items ) {
-				$canonical_rate_ids = $this-&gt;get_canonical_order_shipping_item_rate_ids( $order_shipping_items );
-			} else {
-				$canonical_rate_ids = $this-&gt;get_canonical_package_rate_ids( $chosen_shipping_methods_session );
-			}
+		// Get the selected shipping method ids. This works on both WC_Shipping_Rate and WC_Order_Item_Shipping class instances.
+		$canonical_rate_ids = array_unique(
+			array_values(
+				array_map(
+					function ( $shipping_method ) {
+						return $shipping_method &amp;&amp; is_callable( array( $shipping_method, &#039;get_method_id&#039; ) ) &amp;&amp; is_callable( array( $shipping_method, &#039;get_instance_id&#039; ) ) ? $shipping_method-&gt;get_method_id() . &#039;:&#039; . $shipping_method-&gt;get_instance_id() : null;
+					},
+					$shipping_methods
+				)
+			)
+		);
 
-			if ( ! count( $this-&gt;get_matching_rates( $canonical_rate_ids ) ) ) {
-				return false;
-			}
+		if ( ! count( $this-&gt;get_matching_rates( $canonical_rate_ids ) ) ) {
+			return false;
 		}
 
 		return parent::is_available();
@@ -363,7 +372,7 @@ class WC_Gateway_COD extends WC_Payment_Gateway {
 			if ( ! isset( $_REQUEST[&#039;tab&#039;] ) || &#039;checkout&#039; !== $_REQUEST[&#039;tab&#039;] ) {
 				return false;
 			}
-			if ( ! isset( $_REQUEST[&#039;section&#039;] ) || &#039;cod&#039; !== $_REQUEST[&#039;section&#039;] ) {
+			if ( ! isset( $_REQUEST[&#039;section&#039;] ) || self::ID !== $_REQUEST[&#039;section&#039;] ) {
 				return false;
 			}
 			// phpcs:enable WordPress.Security.NonceVerification
@@ -437,50 +446,6 @@ class WC_Gateway_COD extends WC_Payment_Gateway {
 	}
 
 	/**
-	 * Converts the chosen rate IDs generated by Shipping Methods to a canonical &#039;method_id:instance_id&#039; format.
-	 *
-	 * @since  3.4.0
-	 *
-	 * @param  array $order_shipping_items  Array of WC_Order_Item_Shipping objects.
-	 * @return array $canonical_rate_ids    Rate IDs in a canonical format.
-	 */
-	private function get_canonical_order_shipping_item_rate_ids( $order_shipping_items ) {
-
-		$canonical_rate_ids = array();
-
-		foreach ( $order_shipping_items as $order_shipping_item ) {
-			$canonical_rate_ids[] = $order_shipping_item-&gt;get_method_id() . &#039;:&#039; . $order_shipping_item-&gt;get_instance_id();
-		}
-
-		return $canonical_rate_ids;
-	}
-
-	/**
-	 * Converts the chosen rate IDs generated by Shipping Methods to a canonical &#039;method_id:instance_id&#039; format.
-	 *
-	 * @since  3.4.0
-	 *
-	 * @param  array $chosen_package_rate_ids Rate IDs as generated by shipping methods. Can be anything if a shipping method doesn&#039;t honor WC conventions.
-	 * @return array $canonical_rate_ids  Rate IDs in a canonical format.
-	 */
-	private function get_canonical_package_rate_ids( $chosen_package_rate_ids ) {
-
-		$shipping_packages  = WC()-&gt;shipping()-&gt;get_packages();
-		$canonical_rate_ids = array();
-
-		if ( ! empty( $chosen_package_rate_ids ) &amp;&amp; is_array( $chosen_package_rate_ids ) ) {
-			foreach ( $chosen_package_rate_ids as $package_key =&gt; $chosen_package_rate_id ) {
-				if ( ! empty( $shipping_packages[ $package_key ][&#039;rates&#039;][ $chosen_package_rate_id ] ) ) {
-					$chosen_rate          = $shipping_packages[ $package_key ][&#039;rates&#039;][ $chosen_package_rate_id ];
-					$canonical_rate_ids[] = $chosen_rate-&gt;get_method_id() . &#039;:&#039; . $chosen_rate-&gt;get_instance_id();
-				}
-			}
-		}
-
-		return $canonical_rate_ids;
-	}
-
-	/**
 	 * Indicates whether a rate exists in an array of canonically-formatted rate IDs that activates this gateway.
 	 *
 	 * @since  3.4.0
@@ -503,8 +468,16 @@ class WC_Gateway_COD extends WC_Payment_Gateway {
 		$order = wc_get_order( $order_id );
 
 		if ( $order-&gt;get_total() &gt; 0 ) {
+			/**
+			 * Filter the order status for COD orders.
+			 *
+			 * @since 2.6.0
+			 *
+			 * @param string $order_status Default status for COD orders.
+			 */
+			$process_payment_status = apply_filters( &#039;woocommerce_cod_process_payment_order_status&#039;, $order-&gt;has_downloadable_item() ? OrderStatus::ON_HOLD : OrderStatus::PROCESSING, $order );
 			// Mark as processing or on-hold (payment won&#039;t be taken until delivery).
-			$order-&gt;update_status( apply_filters( &#039;woocommerce_cod_process_payment_order_status&#039;, $order-&gt;has_downloadable_item() ? &#039;on-hold&#039; : &#039;processing&#039;, $order ), __( &#039;Payment to be made upon delivery.&#039;, &#039;woocommerce&#039; ) );
+			$order-&gt;update_status( $process_payment_status, __( &#039;Payment to be made upon delivery.&#039;, &#039;woocommerce&#039; ) );
 		} else {
 			$order-&gt;payment_complete();
 		}
@@ -538,8 +511,8 @@ class WC_Gateway_COD extends WC_Payment_Gateway {
 	 * @return string
 	 */
 	public function change_payment_complete_order_status( $status, $order_id = 0, $order = false ) {
-		if ( $order &amp;&amp; &#039;cod&#039; === $order-&gt;get_payment_method() ) {
-			$status = &#039;completed&#039;;
+		if ( $order &amp;&amp; self::ID === $order-&gt;get_payment_method() ) {
+			$status = OrderStatus::COMPLETED;
 		}
 		return $status;
 	}
@@ -567,7 +540,7 @@ class WC_Gateway_COD extends WC_Payment_Gateway {
 
     <footer class="phpdocumentor phpdocumentor-footer">
     <div class="phpdocumentor-section">
-        <span>WooCommerce Code Reference API documentation generated by <a href="http://www.phpdoc.org/">phpDocumentor</a> on July 25th, 2024 at 11:33 am.</span>
+        <span>WooCommerce Code Reference API documentation generated by <a href="http://www.phpdoc.org/">phpDocumentor</a> on May 16th, 2025 at 09:14 am.</span>
     </div>
 </footer>
 
@@ -579,7 +552,7 @@ class WC_Gateway_COD extends WC_Payment_Gateway {
             'searchIndex': '..\/js\/searchIndex.json'
         };
     </script>
-    <script src="../js/searchIndex.js?updated=1721907183"></script>
-    <script src="../js/search.js?updated=1721907183"></script>
+    <script src="../js/searchIndex.js?updated=1747386859"></script>
+    <script src="../js/search.js?updated=1747386859"></script>
 </body>
 </html>

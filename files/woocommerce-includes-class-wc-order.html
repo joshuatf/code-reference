@@ -4,14 +4,13 @@
     <meta charset="utf-8">
     <title>WooCommerce Code Reference</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="../images/favicon.png" />
-    <link rel="apple-touch-icon" href="../images/apple-touch-icon.png"/>
-    <link rel="apple-touch-icon" sizes="72x72" href="../images/apple-touch-icon-72x72.png"/>
-    <link rel="apple-touch-icon" sizes="114x114" href="../images/apple-touch-icon-114x114.png"/>
+    <link rel="icon" href="../images/favicon-32x32.png" sizes="32x32" />
+    <link rel="icon" href="../images/favicon-192x192.png" sizes="192x192" />
+    <link rel="apple-touch-icon" href="../images/favicon-180x180.png" />
+
     <link rel="stylesheet" href="../css/normalize.css">
-    <link rel="stylesheet" href="../css/base.css?updated=1721907182">
-    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../css/template.css?updated=1721907182">
+    <link rel="stylesheet" href="../css/base.css?updated=1747386858">
+    <link rel="stylesheet" href="../css/template.css?updated=1747386858">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0/css/all.min.css" integrity="sha256-ybRkN9dBjhcS2qrW1z+hfCxq+1aBdwyQM5wlQoQVt/0=" crossorigin="anonymous" />
             <script src="https://cdn.jsdelivr.net/npm/css-vars-ponyfill@2"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0/js/all.min.js" integrity="sha256-0vuk8LXoyrmCjp1f0O300qo1M75ZQyhH9X3J6d+scmk=" crossorigin="anonymous"></script>
@@ -38,14 +37,13 @@
     <header class="phpdocumentor-top-header">
     <section class="phpdocumentor-section">
         <div class="site-branding">
-            <a class="site-logo" href="../index.html"><img width="180" src="../images/logo.svg" alt="WooCommerce" /></a>
+            <a class="site-logo" href="../index.html"><img src="../images/logo.png" alt="WooCommerce" /></a>
         </div>
         <nav class="main-navigation">
             <ul>
                 <li><a href="../hooks/hooks.html">Hooks Reference</a></li>
-                <li><a href="https://docs.woocommerce.com/">Documentation</a></li>
+                <li><a href="https://developer.woocommerce.com/docs/">Documentation</a></li>
                 <li><a href="https://woocommerce.github.io/woocommerce-rest-api-docs/">REST API Docs</a></li>
-                <li><a href="https://woocommerce.com/careers/?utm_source=woocommerce+core+code+reference&utm_medium=devdocs&utm_campaign=woo+careers" target="_blank">We're hiring!</a></li>
             </ul>
         </nav>
     </section>
@@ -53,7 +51,7 @@
 
 <div class="phpdocumentor-header">
     <section class="phpdocumentor-section">
-        <h1 class="phpdocumentor-title">WooCommerce Code Reference</h1>
+        <h1 class="phpdocumentor-title"><a href="../index.html">WooCommerce Code Reference</a></h1>
         <section class="phpdocumentor-search">
     <label class="phpdocumentor-label">
         <span class="visually-hidden">Search (click ESC to close search results)</span>
@@ -74,6 +72,10 @@
                                         <h4 class="phpdocumentor-sidebar__root-namespace"><a href="../namespaces/woocommerce.html"><abbr title="\WooCommerce">WooCommerce</abbr></a></h4>
                 <ul class="phpdocumentor-list">
                                             <li><a href="../namespaces/woocommerce-admin.html"><abbr title="\WooCommerce\Admin">Admin</abbr></a></li>
+                                    </ul>
+                            <h4 class="phpdocumentor-sidebar__root-namespace"><a href="../namespaces/mailpoet.html"><abbr title="\MailPoet">MailPoet</abbr></a></h4>
+                <ul class="phpdocumentor-list">
+                                            <li><a href="../namespaces/mailpoet-emaileditor.html"><abbr title="\MailPoet\EmailEditor">EmailEditor</abbr></a></li>
                                     </ul>
                             <h4 class="phpdocumentor-sidebar__root-namespace"><a href="../namespaces/automattic.html"><abbr title="\Automattic">Automattic</abbr></a></h4>
                 <ul class="phpdocumentor-list">
@@ -119,8 +121,10 @@
                                     <li><a href="../packages/WooCommerce-Widgets.html"><abbr title="\WooCommerce\Widgets">Widgets</abbr></a></li>
                                     <li><a href="../packages/WooCommerce-Uninstaller.html"><abbr title="\WooCommerce\Uninstaller">Uninstaller</abbr></a></li>
                             </ul>
-                                <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/WoocommerceAdmin.html"><abbr title="\WoocommerceAdmin">WoocommerceAdmin</abbr></a></h3>
-                                <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/WoocommerceNavigation.html"><abbr title="\WoocommerceNavigation">WoocommerceNavigation</abbr></a></h3>
+                                <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/MailPoet.html"><abbr title="\MailPoet">MailPoet</abbr></a></h3>
+                        <ul class="phpdocumentor-list">
+                                    <li><a href="../packages/MailPoet-EmailEditor.html"><abbr title="\MailPoet\EmailEditor">EmailEditor</abbr></a></li>
+                            </ul>
                                 <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/Automattic.html"><abbr title="\Automattic">Automattic</abbr></a></h3>
                         <ul class="phpdocumentor-list">
                                     <li><a href="../packages/Automattic-WooCommerce.html"><abbr title="\Automattic\WooCommerce">WooCommerce</abbr></a></li>
@@ -163,6 +167,9 @@
  * @package WooCommerce\Classes
  * @version 2.2.0
  */
+
+use Automattic\WooCommerce\Enums\OrderStatus;
+use Automattic\WooCommerce\Utilities\FeaturesUtil;
 
 defined( &#039;ABSPATH&#039; ) || exit;
 
@@ -298,14 +305,30 @@ class WC_Order extends WC_Abstract_Order {
 				WC()-&gt;session-&gt;set( &#039;order_awaiting_payment&#039;, false );
 			}
 
-			if ( $this-&gt;has_status( apply_filters( &#039;woocommerce_valid_order_statuses_for_payment_complete&#039;, array( &#039;on-hold&#039;, &#039;pending&#039;, &#039;failed&#039;, &#039;cancelled&#039; ), $this ) ) ) {
+			/**
+			 * Filters the valid order statuses for payment complete.
+			 *
+			 * @param array    $valid_completed_statuses Array of valid order statuses for payment complete.
+			 * @param WC_Order $this                     Order object.
+			 * @since 2.7.0
+			 */
+			$valid_completed_statuses = apply_filters( &#039;woocommerce_valid_order_statuses_for_payment_complete&#039;, array( OrderStatus::ON_HOLD, OrderStatus::PENDING, OrderStatus::FAILED, OrderStatus::CANCELLED ), $this );
+			if ( $this-&gt;has_status( $valid_completed_statuses ) ) {
 				if ( ! empty( $transaction_id ) ) {
 					$this-&gt;set_transaction_id( $transaction_id );
 				}
 				if ( ! $this-&gt;get_date_paid( &#039;edit&#039; ) ) {
 					$this-&gt;set_date_paid( time() );
 				}
-				$this-&gt;set_status( apply_filters( &#039;woocommerce_payment_complete_order_status&#039;, $this-&gt;needs_processing() ? &#039;processing&#039; : &#039;completed&#039;, $this-&gt;get_id(), $this ) );
+				/**
+				 * Filters the order status to set after payment complete.
+				 *
+				 * @param string   $status        Order status.
+				 * @param int      $order_id      Order ID.
+				 * @param WC_Order $this          Order object.
+				 * @since 2.7.0
+				 */
+				$this-&gt;set_status( apply_filters( &#039;woocommerce_payment_complete_order_status&#039;, $this-&gt;needs_processing() ? OrderStatus::PROCESSING : OrderStatus::COMPLETED, $this-&gt;get_id(), $this ) );
 				$this-&gt;save();
 
 				do_action( &#039;woocommerce_payment_complete&#039;, $this-&gt;get_id(), $transaction_id );
@@ -478,13 +501,21 @@ class WC_Order extends WC_Abstract_Order {
 	public function maybe_set_date_paid() {
 		// This logic only runs if the date_paid prop has not been set yet.
 		if ( ! $this-&gt;get_date_paid( &#039;edit&#039; ) ) {
-			$payment_completed_status = apply_filters( &#039;woocommerce_payment_complete_order_status&#039;, $this-&gt;needs_processing() ? &#039;processing&#039; : &#039;completed&#039;, $this-&gt;get_id(), $this );
+			/**
+			 * Filters the order status to set after payment complete.
+			 *
+			 * @param string   $status        Order status.
+			 * @param int      $order_id      Order ID.
+			 * @param WC_Order $this          Order object.
+			 * @since 2.7.0
+			 */
+			$payment_completed_status = apply_filters( &#039;woocommerce_payment_complete_order_status&#039;, $this-&gt;needs_processing() ? OrderStatus::PROCESSING : OrderStatus::COMPLETED, $this-&gt;get_id(), $this );
 
 			if ( $this-&gt;has_status( $payment_completed_status ) ) {
 				// If payment complete status is reached, set paid now.
 				$this-&gt;set_date_paid( time() );
 
-			} elseif ( &#039;processing&#039; === $payment_completed_status &amp;&amp; $this-&gt;has_status( &#039;completed&#039; ) ) {
+			} elseif ( OrderStatus::PROCESSING === $payment_completed_status &amp;&amp; $this-&gt;has_status( OrderStatus::COMPLETED ) ) {
 				// If payment complete status was processing, but we&#039;ve passed that and still have no date, set it now.
 				$this-&gt;set_date_paid( time() );
 			}
@@ -499,7 +530,7 @@ class WC_Order extends WC_Abstract_Order {
 	 * @since 3.0.0
 	 */
 	protected function maybe_set_date_completed() {
-		if ( $this-&gt;has_status( &#039;completed&#039; ) ) {
+		if ( $this-&gt;has_status( OrderStatus::COMPLETED ) ) {
 			$this-&gt;set_date_completed( time() );
 		}
 	}
@@ -507,7 +538,7 @@ class WC_Order extends WC_Abstract_Order {
 	/**
 	 * Updates status of order immediately.
 	 *
-	 * @uses WC_Order::set_status()
+	 * @uses self::set_status()
 	 * @param string $new_status    Status to change the order to. No internal wc- prefix is required.
 	 * @param string $note          Optional note to add.
 	 * @param bool   $manual        Is this a manual order status change?.
@@ -580,7 +611,14 @@ class WC_Order extends WC_Abstract_Order {
 
 					// Work out if this was for a payment, and trigger a payment_status hook instead.
 					if (
-						in_array( $status_transition[&#039;from&#039;], apply_filters( &#039;woocommerce_valid_order_statuses_for_payment&#039;, array( &#039;pending&#039;, &#039;failed&#039; ), $this ), true )
+						/**
+						 * Filter the valid order statuses for payment.
+						 *
+						 * @param array    $valid_order_statuses Array of valid order statuses for payment.
+						 * @param WC_Order $order                Order object.
+						 * @since 4.0.0
+						 */
+						in_array( $status_transition[&#039;from&#039;], apply_filters( &#039;woocommerce_valid_order_statuses_for_payment&#039;, array( OrderStatus::PENDING, OrderStatus::FAILED ), $this ), true )
 						&amp;&amp; in_array( $status_transition[&#039;to&#039;], wc_get_is_paid_statuses(), true )
 					) {
 						/**
@@ -1057,7 +1095,16 @@ class WC_Order extends WC_Abstract_Order {
 	public function get_date_paid( $context = &#039;view&#039; ) {
 		$date_paid = $this-&gt;get_prop( &#039;date_paid&#039;, $context );
 
-		if ( &#039;view&#039; === $context &amp;&amp; ! $date_paid &amp;&amp; version_compare( $this-&gt;get_version( &#039;edit&#039; ), &#039;3.0&#039;, &#039;&lt;&#039; ) &amp;&amp; $this-&gt;has_status( apply_filters( &#039;woocommerce_payment_complete_order_status&#039;, $this-&gt;needs_processing() ? &#039;processing&#039; : &#039;completed&#039;, $this-&gt;get_id(), $this ) ) ) {
+		if ( &#039;view&#039; === $context &amp;&amp; ! $date_paid &amp;&amp; version_compare( $this-&gt;get_version( &#039;edit&#039; ), &#039;3.0&#039;, &#039;&lt;&#039; )
+			/**
+			 * Filters the order status to set after payment complete.
+			 *
+			 * @param string   $status        Order status.
+			 * @param int      $order_id      Order ID.
+			 * @param WC_Order $this          Order object.
+			 * @since 3.0.0
+			 */
+			&amp;&amp; $this-&gt;has_status( apply_filters( &#039;woocommerce_payment_complete_order_status&#039;, $this-&gt;needs_processing() ? OrderStatus::PROCESSING : OrderStatus::COMPLETED, $this-&gt;get_id(), $this ) ) ) {
 			// In view context, return a date if missing.
 			$date_paid = $this-&gt;get_date_created( &#039;edit&#039; );
 		}
@@ -1759,7 +1806,14 @@ class WC_Order extends WC_Abstract_Order {
 	 * @return bool
 	 */
 	public function is_editable() {
-		return apply_filters( &#039;wc_order_is_editable&#039;, in_array( $this-&gt;get_status(), array( &#039;pending&#039;, &#039;on-hold&#039;, &#039;auto-draft&#039; ), true ), $this );
+		/**
+		 * Filter to check if an order is editable.
+		 *
+		 * @param bool     $is_editable Is the order editable.
+		 * @param WC_Order $this        Order object.
+		 * @since 2.7.0
+		 */
+		return apply_filters( &#039;wc_order_is_editable&#039;, in_array( $this-&gt;get_status(), array( OrderStatus::PENDING, OrderStatus::ON_HOLD, OrderStatus::AUTO_DRAFT ), true ), $this );
 	}
 
 	/**
@@ -1778,7 +1832,14 @@ class WC_Order extends WC_Abstract_Order {
 	 * @return bool
 	 */
 	public function is_download_permitted() {
-		return apply_filters( &#039;woocommerce_order_is_download_permitted&#039;, $this-&gt;has_status( &#039;completed&#039; ) || ( &#039;yes&#039; === get_option( &#039;woocommerce_downloads_grant_access_after_payment&#039; ) &amp;&amp; $this-&gt;has_status( &#039;processing&#039; ) ), $this );
+		/**
+		 * Filter to check if an order is downloadable.
+		 *
+		 * @param bool     $is_download_permitted Is the order downloadable.
+		 * @param WC_Order $this                  Order object.
+		 * @since 2.7.0
+		 */
+		return apply_filters( &#039;woocommerce_order_is_download_permitted&#039;, $this-&gt;has_status( OrderStatus::COMPLETED ) || ( &#039;yes&#039; === get_option( &#039;woocommerce_downloads_grant_access_after_payment&#039; ) &amp;&amp; $this-&gt;has_status( OrderStatus::PROCESSING ) ), $this );
 	}
 
 	/**
@@ -1879,7 +1940,14 @@ class WC_Order extends WC_Abstract_Order {
 	 * @return bool
 	 */
 	public function needs_payment() {
-		$valid_order_statuses = apply_filters( &#039;woocommerce_valid_order_statuses_for_payment&#039;, array( &#039;pending&#039;, &#039;failed&#039; ), $this );
+		/**
+		 * Filter the valid order statuses for payment.
+		 *
+		 * @param array    $valid_order_statuses Array of valid order statuses for payment.
+		 * @param WC_Order $order                Order object.
+		 * @since 2.7.0
+		 */
+		$valid_order_statuses = apply_filters( &#039;woocommerce_valid_order_statuses_for_payment&#039;, array( OrderStatus::PENDING, OrderStatus::FAILED ), $this );
 		return apply_filters( &#039;woocommerce_order_needs_payment&#039;, ( $this-&gt;has_status( $valid_order_statuses ) &amp;&amp; $this-&gt;get_total() &gt; 0 ), $this, $valid_order_statuses );
 	}
 
@@ -2159,7 +2227,7 @@ class WC_Order extends WC_Abstract_Order {
 	 * Add an order note for status transition
 	 *
 	 * @since 3.9.0
-	 * @uses WC_Order::add_order_note()
+	 * @uses self::add_order_note()
 	 * @param string $note          Note to be added giving status transition from and to details.
 	 * @param bool   $transition    Details of the status transition.
 	 * @return int                  Comment ID.
@@ -2443,9 +2511,17 @@ class WC_Order extends WC_Abstract_Order {
 	 */
 	protected function add_order_item_totals_payment_method_row( &amp;$total_rows, $tax_display ) {
 		if ( $this-&gt;get_total() &gt; 0 &amp;&amp; $this-&gt;get_payment_method_title() &amp;&amp; &#039;other&#039; !== $this-&gt;get_payment_method() ) {
+			$value = $this-&gt;get_payment_method_title();
+
+			$card_info = $this-&gt;get_payment_card_info();
+			if ( isset( $card_info[&#039;last4&#039;] ) &amp;&amp; $card_info[&#039;last4&#039;] ) {
+				$value .= &#039; - &#039; . $card_info[&#039;last4&#039;];
+			}
+
 			$total_rows[&#039;payment_method&#039;] = array(
+				&#039;type&#039;  =&gt; &#039;payment_method&#039;,
 				&#039;label&#039; =&gt; __( &#039;Payment method:&#039;, &#039;woocommerce&#039; ),
-				&#039;value&#039; =&gt; $this-&gt;get_payment_method_title(),
+				&#039;value&#039; =&gt; $value,
 			);
 		}
 	}
@@ -2467,6 +2543,7 @@ class WC_Order extends WC_Abstract_Order {
 				}
 
 				$total_rows[ &#039;refund_&#039; . $id ] = array(
+					&#039;type&#039;  =&gt; &#039;refund&#039;,
 					&#039;label&#039; =&gt; __( &#039;Refund&#039;, &#039;woocommerce&#039; ) . &#039;:&#039;,
 					&#039;value&#039; =&gt; wc_price( &#039;-&#039; . $refund-&gt;get_amount(), array( &#039;currency&#039; =&gt; $this-&gt;get_currency() ) ) . $reason,
 				);
@@ -2484,14 +2561,21 @@ class WC_Order extends WC_Abstract_Order {
 		$tax_display = $tax_display ? $tax_display : get_option( &#039;woocommerce_tax_display_cart&#039; );
 		$total_rows  = array();
 
+		$email_improvements_enabled = FeaturesUtil::feature_is_enabled( &#039;email_improvements&#039; );
+
 		$this-&gt;add_order_item_totals_subtotal_row( $total_rows, $tax_display );
 		$this-&gt;add_order_item_totals_discount_row( $total_rows, $tax_display );
 		$this-&gt;add_order_item_totals_shipping_row( $total_rows, $tax_display );
 		$this-&gt;add_order_item_totals_fee_rows( $total_rows, $tax_display );
 		$this-&gt;add_order_item_totals_tax_rows( $total_rows, $tax_display );
-		$this-&gt;add_order_item_totals_payment_method_row( $total_rows, $tax_display );
+		if ( ! $email_improvements_enabled ) {
+			$this-&gt;add_order_item_totals_payment_method_row( $total_rows, $tax_display );
+		}
 		$this-&gt;add_order_item_totals_refund_rows( $total_rows, $tax_display );
 		$this-&gt;add_order_item_totals_total_row( $total_rows, $tax_display );
+		if ( $email_improvements_enabled ) {
+			$this-&gt;add_order_item_totals_payment_method_row( $total_rows, $tax_display );
+		}
 
 		return apply_filters( &#039;woocommerce_get_order_item_totals&#039;, $total_rows, $this, $tax_display );
 	}
@@ -2515,6 +2599,16 @@ class WC_Order extends WC_Abstract_Order {
 	public function untrash(): bool {
 		return (bool) $this-&gt;data_store-&gt;untrash_order( $this );
 	}
+
+	/**
+	 * Indicates that regular orders have an associated Cost of Goods Sold value.
+	 * Note that this is true even if the order has no line items with COGS values (in that case the COGS value for the order will be zero)-
+	 *
+	 * @return bool Always true.
+	 */
+	public function has_cogs() {
+		return true;
+	}
 }
 </code></pre>
             </article>
@@ -2526,7 +2620,7 @@ class WC_Order extends WC_Abstract_Order {
 
     <footer class="phpdocumentor phpdocumentor-footer">
     <div class="phpdocumentor-section">
-        <span>WooCommerce Code Reference API documentation generated by <a href="http://www.phpdoc.org/">phpDocumentor</a> on July 25th, 2024 at 11:33 am.</span>
+        <span>WooCommerce Code Reference API documentation generated by <a href="http://www.phpdoc.org/">phpDocumentor</a> on May 16th, 2025 at 09:14 am.</span>
     </div>
 </footer>
 
@@ -2538,7 +2632,7 @@ class WC_Order extends WC_Abstract_Order {
             'searchIndex': '..\/js\/searchIndex.json'
         };
     </script>
-    <script src="../js/searchIndex.js?updated=1721907182"></script>
-    <script src="../js/search.js?updated=1721907182"></script>
+    <script src="../js/searchIndex.js?updated=1747386858"></script>
+    <script src="../js/search.js?updated=1747386858"></script>
 </body>
 </html>

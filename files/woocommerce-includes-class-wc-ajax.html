@@ -4,14 +4,13 @@
     <meta charset="utf-8">
     <title>WooCommerce Code Reference</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="../images/favicon.png" />
-    <link rel="apple-touch-icon" href="../images/apple-touch-icon.png"/>
-    <link rel="apple-touch-icon" sizes="72x72" href="../images/apple-touch-icon-72x72.png"/>
-    <link rel="apple-touch-icon" sizes="114x114" href="../images/apple-touch-icon-114x114.png"/>
+    <link rel="icon" href="../images/favicon-32x32.png" sizes="32x32" />
+    <link rel="icon" href="../images/favicon-192x192.png" sizes="192x192" />
+    <link rel="apple-touch-icon" href="../images/favicon-180x180.png" />
+
     <link rel="stylesheet" href="../css/normalize.css">
-    <link rel="stylesheet" href="../css/base.css?updated=1721907182">
-    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../css/template.css?updated=1721907182">
+    <link rel="stylesheet" href="../css/base.css?updated=1747386858">
+    <link rel="stylesheet" href="../css/template.css?updated=1747386858">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0/css/all.min.css" integrity="sha256-ybRkN9dBjhcS2qrW1z+hfCxq+1aBdwyQM5wlQoQVt/0=" crossorigin="anonymous" />
             <script src="https://cdn.jsdelivr.net/npm/css-vars-ponyfill@2"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0/js/all.min.js" integrity="sha256-0vuk8LXoyrmCjp1f0O300qo1M75ZQyhH9X3J6d+scmk=" crossorigin="anonymous"></script>
@@ -38,14 +37,13 @@
     <header class="phpdocumentor-top-header">
     <section class="phpdocumentor-section">
         <div class="site-branding">
-            <a class="site-logo" href="../index.html"><img width="180" src="../images/logo.svg" alt="WooCommerce" /></a>
+            <a class="site-logo" href="../index.html"><img src="../images/logo.png" alt="WooCommerce" /></a>
         </div>
         <nav class="main-navigation">
             <ul>
                 <li><a href="../hooks/hooks.html">Hooks Reference</a></li>
-                <li><a href="https://docs.woocommerce.com/">Documentation</a></li>
+                <li><a href="https://developer.woocommerce.com/docs/">Documentation</a></li>
                 <li><a href="https://woocommerce.github.io/woocommerce-rest-api-docs/">REST API Docs</a></li>
-                <li><a href="https://woocommerce.com/careers/?utm_source=woocommerce+core+code+reference&utm_medium=devdocs&utm_campaign=woo+careers" target="_blank">We're hiring!</a></li>
             </ul>
         </nav>
     </section>
@@ -53,7 +51,7 @@
 
 <div class="phpdocumentor-header">
     <section class="phpdocumentor-section">
-        <h1 class="phpdocumentor-title">WooCommerce Code Reference</h1>
+        <h1 class="phpdocumentor-title"><a href="../index.html">WooCommerce Code Reference</a></h1>
         <section class="phpdocumentor-search">
     <label class="phpdocumentor-label">
         <span class="visually-hidden">Search (click ESC to close search results)</span>
@@ -74,6 +72,10 @@
                                         <h4 class="phpdocumentor-sidebar__root-namespace"><a href="../namespaces/woocommerce.html"><abbr title="\WooCommerce">WooCommerce</abbr></a></h4>
                 <ul class="phpdocumentor-list">
                                             <li><a href="../namespaces/woocommerce-admin.html"><abbr title="\WooCommerce\Admin">Admin</abbr></a></li>
+                                    </ul>
+                            <h4 class="phpdocumentor-sidebar__root-namespace"><a href="../namespaces/mailpoet.html"><abbr title="\MailPoet">MailPoet</abbr></a></h4>
+                <ul class="phpdocumentor-list">
+                                            <li><a href="../namespaces/mailpoet-emaileditor.html"><abbr title="\MailPoet\EmailEditor">EmailEditor</abbr></a></li>
                                     </ul>
                             <h4 class="phpdocumentor-sidebar__root-namespace"><a href="../namespaces/automattic.html"><abbr title="\Automattic">Automattic</abbr></a></h4>
                 <ul class="phpdocumentor-list">
@@ -119,8 +121,10 @@
                                     <li><a href="../packages/WooCommerce-Widgets.html"><abbr title="\WooCommerce\Widgets">Widgets</abbr></a></li>
                                     <li><a href="../packages/WooCommerce-Uninstaller.html"><abbr title="\WooCommerce\Uninstaller">Uninstaller</abbr></a></li>
                             </ul>
-                                <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/WoocommerceAdmin.html"><abbr title="\WoocommerceAdmin">WoocommerceAdmin</abbr></a></h3>
-                                <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/WoocommerceNavigation.html"><abbr title="\WoocommerceNavigation">WoocommerceNavigation</abbr></a></h3>
+                                <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/MailPoet.html"><abbr title="\MailPoet">MailPoet</abbr></a></h3>
+                        <ul class="phpdocumentor-list">
+                                    <li><a href="../packages/MailPoet-EmailEditor.html"><abbr title="\MailPoet\EmailEditor">EmailEditor</abbr></a></li>
+                            </ul>
                                 <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/Automattic.html"><abbr title="\Automattic">Automattic</abbr></a></h3>
                         <ul class="phpdocumentor-list">
                                     <li><a href="../packages/Automattic-WooCommerce.html"><abbr title="\Automattic\WooCommerce">WooCommerce</abbr></a></li>
@@ -165,6 +169,10 @@
  */
 
 use Automattic\Jetpack\Constants;
+use Automattic\WooCommerce\Enums\ProductStatus;
+use Automattic\WooCommerce\Enums\ProductStockStatus;
+use Automattic\WooCommerce\Enums\ProductType;
+use Automattic\WooCommerce\Internal\CostOfGoodsSold\CostOfGoodsSoldController;
 use Automattic\WooCommerce\Internal\Orders\CouponsController;
 use Automattic\WooCommerce\Internal\Orders\TaxesController;
 use Automattic\WooCommerce\Internal\Admin\Orders\MetaBoxes\CustomMetaBox;
@@ -625,13 +633,13 @@ class WC_AJAX {
 		$variation_id      = 0;
 		$variation         = array();
 
-		if ( $product &amp;&amp; &#039;variation&#039; === $product-&gt;get_type() ) {
+		if ( $product &amp;&amp; ProductType::VARIATION === $product-&gt;get_type() ) {
 			$variation_id = $product_id;
 			$product_id   = $product-&gt;get_parent_id();
 			$variation    = $product-&gt;get_variation_attributes();
 		}
 
-		if ( $passed_validation &amp;&amp; false !== WC()-&gt;cart-&gt;add_to_cart( $product_id, $quantity, $variation_id, $variation ) &amp;&amp; &#039;publish&#039; === $product_status ) {
+		if ( $passed_validation &amp;&amp; false !== WC()-&gt;cart-&gt;add_to_cart( $product_id, $quantity, $variation_id, $variation ) &amp;&amp; ProductStatus::PUBLISH === $product_status ) {
 
 			do_action( &#039;woocommerce_ajax_added_to_cart&#039;, $product_id );
 
@@ -781,7 +789,7 @@ class WC_AJAX {
 			wp_die( -1 );
 		}
 
-		$product_type = isset( $_POST[&#039;product_type&#039;] ) ? sanitize_text_field( wp_unslash( $_POST[&#039;product_type&#039;] ) ) : &#039;simple&#039;;
+		$product_type = isset( $_POST[&#039;product_type&#039;] ) ? sanitize_text_field( wp_unslash( $_POST[&#039;product_type&#039;] ) ) : ProductType::SIMPLE;
 
 		$i             = absint( $_POST[&#039;i&#039;] );
 		$metabox_class = array();
@@ -794,7 +802,7 @@ class WC_AJAX {
 		$attribute-&gt;set_variation(
 			apply_filters(
 				&#039;woocommerce_attribute_default_is_variation&#039;,
-				&#039;variable&#039; === $product_type ? 1 : 0,
+				ProductType::VARIABLE === $product_type ? 1 : 0,
 				$product_type
 			)
 		);
@@ -947,7 +955,7 @@ class WC_AJAX {
 		}
 		$attributes   = WC_Meta_Box_Product_Data::prepare_attributes( $data );
 		$product_id   = absint( wp_unslash( $_POST[&#039;post_id&#039;] ) );
-		$product_type = ! empty( $_POST[&#039;product_type&#039;] ) ? wc_clean( wp_unslash( $_POST[&#039;product_type&#039;] ) ) : &#039;simple&#039;;
+		$product_type = ! empty( $_POST[&#039;product_type&#039;] ) ? wc_clean( wp_unslash( $_POST[&#039;product_type&#039;] ) ) : ProductType::SIMPLE;
 		$classname    = WC_Product_Factory::get_product_classname( $product_id, $product_type );
 		$product      = new $classname( $product_id );
 		$product-&gt;set_attributes( $attributes );
@@ -985,14 +993,12 @@ class WC_AJAX {
 		$product_id       = intval( $_POST[&#039;post_id&#039;] );
 		$post             = get_post( $product_id ); // phpcs:ignore
 		$loop             = intval( $_POST[&#039;loop&#039;] );
-		$product_object   = wc_get_product_object( &#039;variable&#039;, $product_id ); // Forces type to variable in case product is unsaved.
-		$variation_object = wc_get_product_object( &#039;variation&#039; );
+		$product_object   = wc_get_product_object( ProductType::VARIABLE, $product_id ); // Forces type to variable in case product is unsaved.
+		$variation_object = wc_get_product_object( ProductType::VARIATION );
 		$variation_object-&gt;set_parent_id( $product_id );
 		$variation_object-&gt;set_attributes( array_fill_keys( array_map( &#039;sanitize_title&#039;, array_keys( $product_object-&gt;get_variation_attributes() ) ), &#039;&#039; ) );
-		$variation_id   = $variation_object-&gt;save();
-		$variation      = get_post( $variation_id );
-		$variation_data = array_merge( get_post_custom( $variation_id ), wc_get_product_variation_attributes( $variation_id ) ); // kept for BW compatibility.
-		include __DIR__ . &#039;/admin/meta-boxes/views/html-variation-admin.php&#039;;
+		$variation_object-&gt;save();
+		self::render_variation_html( $product_object, $variation_object, $loop, self::base_cost_or_null( $product_object ) );
 		wp_die();
 	}
 
@@ -1216,7 +1222,7 @@ class WC_AJAX {
 				if ( ! $product ) {
 					throw new Exception( __( &#039;Invalid product ID&#039;, &#039;woocommerce&#039; ) . &#039; &#039; . $product_id );
 				}
-				if ( &#039;variable&#039; === $product-&gt;get_type() ) {
+				if ( ProductType::VARIABLE === $product-&gt;get_type() ) {
 					/* translators: %s product name */
 					throw new Exception( sprintf( __( &#039;%s is a variable product parent and cannot be added.&#039;, &#039;woocommerce&#039; ), $product-&gt;get_name() ) );
 				}
@@ -1810,7 +1816,7 @@ class WC_AJAX {
 				$exclude_type = strtolower( trim( $exclude_type ) );
 			}
 			$exclude_types = array_intersect(
-				array_merge( array( &#039;variation&#039; ), array_keys( wc_get_product_types() ) ),
+				array_merge( array( ProductType::VARIATION ), array_keys( wc_get_product_types() ) ),
 				$exclude_types
 			);
 		}
@@ -2552,7 +2558,7 @@ class WC_AJAX {
 		$variations     = wc_get_products(
 			array(
 				&#039;status&#039;  =&gt; array( &#039;private&#039;, &#039;publish&#039; ),
-				&#039;type&#039;    =&gt; &#039;variation&#039;,
+				&#039;type&#039;    =&gt; ProductType::VARIATION,
 				&#039;parent&#039;  =&gt; $product_id,
 				&#039;limit&#039;   =&gt; $per_page,
 				&#039;page&#039;    =&gt; $page,
@@ -2567,12 +2573,10 @@ class WC_AJAX {
 		if ( $variations ) {
 			wc_render_invalid_variation_notice( $product_object );
 
+			$base_cost = self::base_cost_or_null( $product_object );
 			foreach ( $variations as $variation_object ) {
-				$variation_id   = $variation_object-&gt;get_id();
-				$variation      = get_post( $variation_id );
-				$variation_data = array_merge( get_post_custom( $variation_id ), wc_get_product_variation_attributes( $variation_id ) ); // kept for BW compatibility.
-				include __DIR__ . &#039;/admin/meta-boxes/views/html-variation-admin.php&#039;;
-				$loop++;
+				self::render_variation_html( $product_object, $variation_object, $loop, $base_cost );
+				++$loop;
 			}
 		}
 		wp_die();
@@ -2626,7 +2630,7 @@ class WC_AJAX {
 	private static function variation_bulk_action_toggle_enabled( $variations, $data ) {
 		foreach ( $variations as $variation_id ) {
 			$variation = wc_get_product( $variation_id );
-			$variation-&gt;set_status( &#039;private&#039; === $variation-&gt;get_status( &#039;edit&#039; ) ? &#039;publish&#039; : &#039;private&#039; );
+			$variation-&gt;set_status( ProductStatus::PRIVATE === $variation-&gt;get_status( &#039;edit&#039; ) ? ProductStatus::PUBLISH : ProductStatus::PRIVATE );
 			$variation-&gt;save();
 		}
 	}
@@ -2700,7 +2704,7 @@ class WC_AJAX {
 	 * @used-by bulk_edit_variations
 	 */
 	private static function variation_bulk_action_variable_stock_status_instock( $variations, $data ) {
-		self::variation_bulk_set( $variations, &#039;stock_status&#039;, &#039;instock&#039; );
+		self::variation_bulk_set( $variations, &#039;stock_status&#039;, ProductStockStatus::IN_STOCK );
 	}
 
 	/**
@@ -2712,7 +2716,7 @@ class WC_AJAX {
 	 * @used-by bulk_edit_variations
 	 */
 	private static function variation_bulk_action_variable_stock_status_outofstock( $variations, $data ) {
-		self::variation_bulk_set( $variations, &#039;stock_status&#039;, &#039;outofstock&#039; );
+		self::variation_bulk_set( $variations, &#039;stock_status&#039;, ProductStockStatus::OUT_OF_STOCK );
 	}
 
 	/**
@@ -2724,7 +2728,7 @@ class WC_AJAX {
 	 * @used-by bulk_edit_variations
 	 */
 	private static function variation_bulk_action_variable_stock_status_onbackorder( $variations, $data ) {
-		self::variation_bulk_set( $variations, &#039;stock_status&#039;, &#039;onbackorder&#039; );
+		self::variation_bulk_set( $variations, &#039;stock_status&#039;, ProductStockStatus::ON_BACKORDER );
 	}
 
 	/**
@@ -2946,6 +2950,28 @@ class WC_AJAX {
 		self::variation_bulk_adjust_price( $variations, &#039;sale_price&#039;, &#039;-&#039;, wc_clean( $data[&#039;value&#039;] ) );
 	}
 
+	// phpcs:disable Generic.CodeAnalysis.UnusedFunctionParameter.FoundAfterLastUsed
+	/**
+	 * Bulk action - Unset cost values.
+	 *
+	 * @param array $variations List of variations.
+	 * @param array $data Data to set.
+	 *
+	 * @used-by bulk_edit_variations
+	 */
+	private static function variation_bulk_action_variable_unset_cogs_value( $variations, $data ) {
+		if ( ! wc_get_container()-&gt;get( CostOfGoodsSoldController::class )-&gt;feature_is_enabled() ) {
+			return;
+		}
+
+		foreach ( $variations as $variation_id ) {
+			$variation = wc_get_product( $variation_id );
+			$variation-&gt;set_cogs_value( null );
+			$variation-&gt;save();
+		}
+	}
+	// phpcs:enable Generic.CodeAnalysis.UnusedFunctionParameter.FoundAfterLastUsed
+
 	/**
 	 * Bulk action - Set Price.
 	 *
@@ -2960,6 +2986,11 @@ class WC_AJAX {
 		foreach ( $variations as $variation_id ) {
 			$variation   = wc_get_product( $variation_id );
 			$field_value = $variation-&gt;{&quot;get_$field&quot;}( &#039;edit&#039; );
+
+			// Skip variations without a price set
+			if ( &#039;&#039; === $field_value || null === $field_value ) {
+				continue;
+			}
 
 			if ( &#039;%&#039; === substr( $value, -1 ) ) {
 				$percent      = wc_format_decimal( substr( $value, 0, -1 ) );
@@ -3807,6 +3838,35 @@ class WC_AJAX {
 		return wc_get_container()-&gt;get( Automattic\WooCommerce\Internal\Admin\Orders\EditLock::class )-&gt;check_locked_orders_ajax( $response, $data );
 	}
 
+	// phpcs:disable Generic.CodeAnalysis.UnusedFunctionParameter.FoundAfterLastUsed
+	/**
+	 * Render a variation editor.
+	 *
+	 * NOTE! Do NOT remove the apparently unused function arguments.
+	 * These are actually used inside the included html-variation-admin template.
+	 *
+	 * @param WC_Product $product_object PArent product of the variation being edited.
+	 * @param WC_Product $variation_object Variation being edited.
+	 * @param int        $loop Index of the variation being rendered.
+	 * @param float|null $base_cost Default cost for variations, null if the Cost of Goods Sold feature is disabled.
+	 */
+	private static function render_variation_html( WC_Product $product_object, WC_Product $variation_object, $loop, ?float $base_cost ) {
+		$variation_id   = $variation_object-&gt;get_id();
+		$variation      = get_post( $variation_id );
+		$variation_data = array_merge( get_post_custom( $variation_id ), wc_get_product_variation_attributes( $variation_id ) ); // kept for BW compatibility.
+		include __DIR__ . &#039;/admin/meta-boxes/views/html-variation-admin.php&#039;;
+	}
+	// phpcs:enable Generic.CodeAnalysis.UnusedFunctionParameter.FoundAfterLastUsed
+
+	/**
+	 * Get the Cost of Goods Sold value for a product (0 if it&#039;s null), return null if the Cost of Goods Sold feature is disabled.
+	 *
+	 * @param WC_Product $product_object Product object.
+	 * @return float|null Cost of the product, or null.
+	 */
+	private static function base_cost_or_null( WC_Product $product_object ): ?float {
+		return wc_get_container()-&gt;get( CostOfGoodsSoldController::class )-&gt;feature_is_enabled() ? ( $product_object-&gt;get_cogs_value() ?? 0 ) : null;
+	}
 }
 
 WC_AJAX::init();
@@ -3820,7 +3880,7 @@ WC_AJAX::init();
 
     <footer class="phpdocumentor phpdocumentor-footer">
     <div class="phpdocumentor-section">
-        <span>WooCommerce Code Reference API documentation generated by <a href="http://www.phpdoc.org/">phpDocumentor</a> on July 25th, 2024 at 11:33 am.</span>
+        <span>WooCommerce Code Reference API documentation generated by <a href="http://www.phpdoc.org/">phpDocumentor</a> on May 16th, 2025 at 09:14 am.</span>
     </div>
 </footer>
 
@@ -3832,7 +3892,7 @@ WC_AJAX::init();
             'searchIndex': '..\/js\/searchIndex.json'
         };
     </script>
-    <script src="../js/searchIndex.js?updated=1721907182"></script>
-    <script src="../js/search.js?updated=1721907182"></script>
+    <script src="../js/searchIndex.js?updated=1747386858"></script>
+    <script src="../js/search.js?updated=1747386858"></script>
 </body>
 </html>

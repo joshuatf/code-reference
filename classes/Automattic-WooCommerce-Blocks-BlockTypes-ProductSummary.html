@@ -4,14 +4,13 @@
     <meta charset="utf-8">
     <title>WooCommerce Code Reference</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="../images/favicon.png" />
-    <link rel="apple-touch-icon" href="../images/apple-touch-icon.png"/>
-    <link rel="apple-touch-icon" sizes="72x72" href="../images/apple-touch-icon-72x72.png"/>
-    <link rel="apple-touch-icon" sizes="114x114" href="../images/apple-touch-icon-114x114.png"/>
+    <link rel="icon" href="../images/favicon-32x32.png" sizes="32x32" />
+    <link rel="icon" href="../images/favicon-192x192.png" sizes="192x192" />
+    <link rel="apple-touch-icon" href="../images/favicon-180x180.png" />
+
     <link rel="stylesheet" href="../css/normalize.css">
-    <link rel="stylesheet" href="../css/base.css?updated=1721907207">
-    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../css/template.css?updated=1721907207">
+    <link rel="stylesheet" href="../css/base.css?updated=1747386888">
+    <link rel="stylesheet" href="../css/template.css?updated=1747386888">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0/css/all.min.css" integrity="sha256-ybRkN9dBjhcS2qrW1z+hfCxq+1aBdwyQM5wlQoQVt/0=" crossorigin="anonymous" />
             <script src="https://cdn.jsdelivr.net/npm/css-vars-ponyfill@2"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0/js/all.min.js" integrity="sha256-0vuk8LXoyrmCjp1f0O300qo1M75ZQyhH9X3J6d+scmk=" crossorigin="anonymous"></script>
@@ -27,19 +26,24 @@
 		'content_group' : 'WooCommerce Core Code Reference',
 	});
 </script>
-        </head>
+        <script src="../js/prism.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            window.dispatchEvent(new HashChangeEvent('hashchange'));
+        });
+    </script>
+</head>
 <body id="top">
     <header class="phpdocumentor-top-header">
     <section class="phpdocumentor-section">
         <div class="site-branding">
-            <a class="site-logo" href="../index.html"><img width="180" src="../images/logo.svg" alt="WooCommerce" /></a>
+            <a class="site-logo" href="../index.html"><img src="../images/logo.png" alt="WooCommerce" /></a>
         </div>
         <nav class="main-navigation">
             <ul>
                 <li><a href="../hooks/hooks.html">Hooks Reference</a></li>
-                <li><a href="https://docs.woocommerce.com/">Documentation</a></li>
+                <li><a href="https://developer.woocommerce.com/docs/">Documentation</a></li>
                 <li><a href="https://woocommerce.github.io/woocommerce-rest-api-docs/">REST API Docs</a></li>
-                <li><a href="https://woocommerce.com/careers/?utm_source=woocommerce+core+code+reference&utm_medium=devdocs&utm_campaign=woo+careers" target="_blank">We're hiring!</a></li>
             </ul>
         </nav>
     </section>
@@ -47,7 +51,7 @@
 
 <div class="phpdocumentor-header">
     <section class="phpdocumentor-section">
-        <h1 class="phpdocumentor-title">WooCommerce Code Reference</h1>
+        <h1 class="phpdocumentor-title"><a href="../index.html">WooCommerce Code Reference</a></h1>
         <section class="phpdocumentor-search">
     <label class="phpdocumentor-label">
         <span class="visually-hidden">Search (click ESC to close search results)</span>
@@ -68,6 +72,10 @@
                                         <h4 class="phpdocumentor-sidebar__root-namespace"><a href="../namespaces/woocommerce.html"><abbr title="\WooCommerce">WooCommerce</abbr></a></h4>
                 <ul class="phpdocumentor-list">
                                             <li><a href="../namespaces/woocommerce-admin.html"><abbr title="\WooCommerce\Admin">Admin</abbr></a></li>
+                                    </ul>
+                            <h4 class="phpdocumentor-sidebar__root-namespace"><a href="../namespaces/mailpoet.html"><abbr title="\MailPoet">MailPoet</abbr></a></h4>
+                <ul class="phpdocumentor-list">
+                                            <li><a href="../namespaces/mailpoet-emaileditor.html"><abbr title="\MailPoet\EmailEditor">EmailEditor</abbr></a></li>
                                     </ul>
                             <h4 class="phpdocumentor-sidebar__root-namespace"><a href="../namespaces/automattic.html"><abbr title="\Automattic">Automattic</abbr></a></h4>
                 <ul class="phpdocumentor-list">
@@ -113,8 +121,10 @@
                                     <li><a href="../packages/WooCommerce-Widgets.html"><abbr title="\WooCommerce\Widgets">Widgets</abbr></a></li>
                                     <li><a href="../packages/WooCommerce-Uninstaller.html"><abbr title="\WooCommerce\Uninstaller">Uninstaller</abbr></a></li>
                             </ul>
-                                <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/WoocommerceAdmin.html"><abbr title="\WoocommerceAdmin">WoocommerceAdmin</abbr></a></h3>
-                                <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/WoocommerceNavigation.html"><abbr title="\WoocommerceNavigation">WoocommerceNavigation</abbr></a></h3>
+                                <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/MailPoet.html"><abbr title="\MailPoet">MailPoet</abbr></a></h3>
+                        <ul class="phpdocumentor-list">
+                                    <li><a href="../packages/MailPoet-EmailEditor.html"><abbr title="\MailPoet\EmailEditor">EmailEditor</abbr></a></li>
+                            </ul>
                                 <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/Automattic.html"><abbr title="\Automattic">Automattic</abbr></a></h3>
                         <ul class="phpdocumentor-list">
                                     <li><a href="../packages/Automattic-WooCommerce.html"><abbr title="\Automattic\WooCommerce">WooCommerce</abbr></a></li>
@@ -163,9 +173,9 @@
     </h2>
 
         <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Blocks/BlockTypes/ProductSummary.php"><a href="../files/woocommerce-src-blocks-blocktypes-productsummary.html#source-view.7">src/Blocks/BlockTypes/ProductSummary.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Blocks/BlockTypes/ProductSummary.php"><a href="../files/woocommerce-src-blocks-blocktypes-productsummary.html#source-view.10">src/Blocks/BlockTypes/ProductSummary.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">7</span>
+    <span class="phpdocumentor-element-found-in__line">10</span>
 </aside>
 
             <p class="phpdocumentor-summary">ProductSummary class.</p>
@@ -327,11 +337,11 @@ the block (if applicable).</dd>
 <dd>Get block supports. Shared with the frontend.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -protected">
-    <a href="../classes/Automattic-WooCommerce-Blocks-BlockTypes-AbstractBlock.html#method_get_block_type_uses_context">get_block_type_uses_context()</a>
+    <a href="../classes/Automattic-WooCommerce-Blocks-BlockTypes-ProductSummary.html#method_get_block_type_uses_context">get_block_type_uses_context()</a>
     <span>
                         &nbsp;: array&lt;string|int, mixed&gt;    </span>
 </dt>
-<dd>Get block usesContext.</dd>
+<dd>Register the context.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -protected">
     <a href="../classes/Automattic-WooCommerce-Blocks-BlockTypes-AbstractBlock.html#method_get_chunks_paths">get_chunks_paths()</a>
@@ -362,6 +372,13 @@ the block (if applicable).</dd>
 <dd>Initialize this block type.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -protected">
+    <a href="../classes/Automattic-WooCommerce-Blocks-BlockTypes-AbstractBlock.html#method_is_block_editor">is_block_editor()</a>
+    <span>
+                        &nbsp;: mixed    </span>
+</dt>
+<dd>Are we currently on the admin block editor screen?</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -protected">
     <a href="../classes/Automattic-WooCommerce-Blocks-BlockTypes-AbstractBlock.html#method_parse_render_callback_attributes">parse_render_callback_attributes()</a>
     <span>
                         &nbsp;: array&lt;string|int, mixed&gt;    </span>
@@ -380,7 +397,7 @@ the block (if applicable).</dd>
     <span>
                         &nbsp;: mixed    </span>
 </dt>
-<dd>Register script and style assets for the block type before it is registered.</dd>
+<dd>Overwrite parent method to prevent script registration.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -protected">
     <a href="../classes/Automattic-WooCommerce-Blocks-BlockTypes-AbstractBlock.html#method_register_chunk_translations">register_chunk_translations()</a>
@@ -390,11 +407,54 @@ the block (if applicable).</dd>
 <dd>Injects Chunk Translations into the page so translations work for lazy loaded components.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -protected">
-    <a href="../classes/Automattic-WooCommerce-Blocks-BlockTypes-AbstractBlock.html#method_render">render()</a>
+    <a href="../classes/Automattic-WooCommerce-Blocks-BlockTypes-ProductSummary.html#method_render">render()</a>
     <span>
                         &nbsp;: string    </span>
 </dt>
-<dd>Render the block. Extended by children.</dd>
+<dd>Include and render the block.</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -private">
+    <a href="../classes/Automattic-WooCommerce-Blocks-BlockTypes-ProductSummary.html#method_count_text">count_text()</a>
+    <span>
+                        &nbsp;: int    </span>
+</dt>
+<dd>Count words, characters (excluding spaces), or characters (including spaces).</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -private">
+    <a href="../classes/Automattic-WooCommerce-Blocks-BlockTypes-ProductSummary.html#method_create_anchor">create_anchor()</a>
+    <span>
+                        &nbsp;: string    </span>
+</dt>
+<dd>Create anchor element based on input.</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -private">
+    <a href="../classes/Automattic-WooCommerce-Blocks-BlockTypes-ProductSummary.html#method_generate_summary">generate_summary()</a>
+    <span>
+                        &nbsp;: string    </span>
+</dt>
+<dd>Generates the summary text from a string of text. It&#039;s not ideal
+but allows keeping the editor and frontend consistent.</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -private">
+    <a href="../classes/Automattic-WooCommerce-Blocks-BlockTypes-ProductSummary.html#method_get_first_paragraph">get_first_paragraph()</a>
+    <span>
+                        &nbsp;: string    </span>
+</dt>
+<dd>Get first paragraph from some HTML text, or return the whole string.</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -private">
+    <a href="../classes/Automattic-WooCommerce-Blocks-BlockTypes-ProductSummary.html#method_get_source">get_source()</a>
+    <span>
+                        &nbsp;: string    </span>
+</dt>
+<dd>Get product description depends on config.</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -private">
+    <a href="../classes/Automattic-WooCommerce-Blocks-BlockTypes-ProductSummary.html#method_trim_characters">trim_characters()</a>
+    <span>
+                        &nbsp;: string    </span>
+</dt>
+<dd>Trim characters to a specified length.</dd>
 
         </dl>
 
@@ -422,9 +482,9 @@ the block (if applicable).</dd>
                                 </span>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Blocks/BlockTypes/ProductSummary.php"><a href="../files/woocommerce-src-blocks-blocktypes-productsummary.html#source-view.21">src/Blocks/BlockTypes/ProductSummary.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Blocks/BlockTypes/ProductSummary.php"><a href="../files/woocommerce-src-blocks-blocktypes-productsummary.html#source-view.25">src/Blocks/BlockTypes/ProductSummary.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">21</span>
+    <span class="phpdocumentor-element-found-in__line">25</span>
 </aside>
 
         <p class="phpdocumentor-summary">API version name.</p>
@@ -518,9 +578,9 @@ the block (if applicable).</dd>
                                 </span>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Blocks/BlockTypes/ProductSummary.php"><a href="../files/woocommerce-src-blocks-blocktypes-productsummary.html#source-view.14">src/Blocks/BlockTypes/ProductSummary.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Blocks/BlockTypes/ProductSummary.php"><a href="../files/woocommerce-src-blocks-blocktypes-productsummary.html#source-view.18">src/Blocks/BlockTypes/ProductSummary.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">14</span>
+    <span class="phpdocumentor-element-found-in__line">18</span>
 </aside>
 
         <p class="phpdocumentor-summary">Block name.</p>
@@ -817,9 +877,9 @@ the block (if applicable).</p>
         <a href="#method_enqueue_data" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Blocks/BlockTypes/AbstractBlock.php"><a href="../files/woocommerce-src-blocks-blocktypes-abstractblock.html#source-view.428">src/Blocks/BlockTypes/AbstractBlock.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Blocks/BlockTypes/AbstractBlock.php"><a href="../files/woocommerce-src-blocks-blocktypes-abstractblock.html#source-view.440">src/Blocks/BlockTypes/AbstractBlock.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">428</span>
+    <span class="phpdocumentor-element-found-in__line">440</span>
 </aside>
 
         <p class="phpdocumentor-summary">Data passed through from server to client for block.</p>
@@ -863,9 +923,9 @@ not in the post content on editor load.</p>
         <a href="#method_enqueue_scripts" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Blocks/BlockTypes/AbstractBlock.php"><a href="../files/woocommerce-src-blocks-blocktypes-abstractblock.html#source-view.519">src/Blocks/BlockTypes/AbstractBlock.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Blocks/BlockTypes/AbstractBlock.php"><a href="../files/woocommerce-src-blocks-blocktypes-abstractblock.html#source-view.533">src/Blocks/BlockTypes/AbstractBlock.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">519</span>
+    <span class="phpdocumentor-element-found-in__line">533</span>
 </aside>
 
         <p class="phpdocumentor-summary">Register/enqueue scripts used for this block on the frontend, during render.</p>
@@ -907,9 +967,9 @@ not in the post content on editor load.</p>
         <a href="#method_get_block_type" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Blocks/BlockTypes/AbstractBlock.php"><a href="../files/woocommerce-src-blocks-blocktypes-abstractblock.html#source-view.283">src/Blocks/BlockTypes/AbstractBlock.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Blocks/BlockTypes/AbstractBlock.php"><a href="../files/woocommerce-src-blocks-blocktypes-abstractblock.html#source-view.295">src/Blocks/BlockTypes/AbstractBlock.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">283</span>
+    <span class="phpdocumentor-element-found-in__line">295</span>
 </aside>
 
         <p class="phpdocumentor-summary">Get the block type.</p>
@@ -939,9 +999,9 @@ not in the post content on editor load.</p>
         <a href="#method_get_block_type_attributes" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Blocks/BlockTypes/AbstractBlock.php"><a href="../files/woocommerce-src-blocks-blocktypes-abstractblock.html#source-view.367">src/Blocks/BlockTypes/AbstractBlock.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Blocks/BlockTypes/AbstractBlock.php"><a href="../files/woocommerce-src-blocks-blocktypes-abstractblock.html#source-view.379">src/Blocks/BlockTypes/AbstractBlock.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">367</span>
+    <span class="phpdocumentor-element-found-in__line">379</span>
 </aside>
 
         <p class="phpdocumentor-summary">Get block attributes.</p>
@@ -971,9 +1031,9 @@ not in the post content on editor load.</p>
         <a href="#method_get_block_type_editor_script" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Blocks/BlockTypes/AbstractBlock.php"><a href="../files/woocommerce-src-blocks-blocktypes-abstractblock.html#source-view.306">src/Blocks/BlockTypes/AbstractBlock.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Blocks/BlockTypes/AbstractBlock.php"><a href="../files/woocommerce-src-blocks-blocktypes-abstractblock.html#source-view.318">src/Blocks/BlockTypes/AbstractBlock.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">306</span>
+    <span class="phpdocumentor-element-found-in__line">318</span>
 </aside>
 
         <p class="phpdocumentor-summary">Get the editor script data for this block type.</p>
@@ -1029,9 +1089,9 @@ not in the post content on editor load.</p>
         <a href="#method_get_block_type_editor_style" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Blocks/BlockTypes/AbstractBlock.php"><a href="../files/woocommerce-src-blocks-blocktypes-abstractblock.html#source-view.321">src/Blocks/BlockTypes/AbstractBlock.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Blocks/BlockTypes/AbstractBlock.php"><a href="../files/woocommerce-src-blocks-blocktypes-abstractblock.html#source-view.333">src/Blocks/BlockTypes/AbstractBlock.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">321</span>
+    <span class="phpdocumentor-element-found-in__line">333</span>
 </aside>
 
         <p class="phpdocumentor-summary">Get the editor style handle for this block type.</p>
@@ -1075,9 +1135,9 @@ not in the post content on editor load.</p>
         <a href="#method_get_block_type_render_callback" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Blocks/BlockTypes/AbstractBlock.php"><a href="../files/woocommerce-src-blocks-blocktypes-abstractblock.html#source-view.295">src/Blocks/BlockTypes/AbstractBlock.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Blocks/BlockTypes/AbstractBlock.php"><a href="../files/woocommerce-src-blocks-blocktypes-abstractblock.html#source-view.307">src/Blocks/BlockTypes/AbstractBlock.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">295</span>
+    <span class="phpdocumentor-element-found-in__line">307</span>
 </aside>
 
         <p class="phpdocumentor-summary">Get the render callback for this block type.</p>
@@ -1122,9 +1182,9 @@ not in the post content on editor load.</p>
         <a href="#method_get_block_type_script" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Blocks/BlockTypes/AbstractBlock.php"><a href="../files/woocommerce-src-blocks-blocktypes-abstractblock.html#source-view.332">src/Blocks/BlockTypes/AbstractBlock.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Blocks/BlockTypes/AbstractBlock.php"><a href="../files/woocommerce-src-blocks-blocktypes-abstractblock.html#source-view.344">src/Blocks/BlockTypes/AbstractBlock.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">332</span>
+    <span class="phpdocumentor-element-found-in__line">344</span>
 </aside>
 
         <p class="phpdocumentor-summary">Get the frontend script handle for this block type.</p>
@@ -1180,9 +1240,9 @@ not in the post content on editor load.</p>
         <a href="#method_get_block_type_style" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Blocks/BlockTypes/AbstractBlock.php"><a href="../files/woocommerce-src-blocks-blocktypes-abstractblock.html#source-view.346">src/Blocks/BlockTypes/AbstractBlock.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Blocks/BlockTypes/AbstractBlock.php"><a href="../files/woocommerce-src-blocks-blocktypes-abstractblock.html#source-view.358">src/Blocks/BlockTypes/AbstractBlock.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">346</span>
+    <span class="phpdocumentor-element-found-in__line">358</span>
 </aside>
 
         <p class="phpdocumentor-summary">Get the frontend style handle for this block type.</p>
@@ -1212,9 +1272,9 @@ not in the post content on editor load.</p>
         <a href="#method_get_block_type_supports" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Blocks/BlockTypes/ProductSummary.php"><a href="../files/woocommerce-src-blocks-blocktypes-productsummary.html#source-view.30">src/Blocks/BlockTypes/ProductSummary.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Blocks/BlockTypes/ProductSummary.php"><a href="../files/woocommerce-src-blocks-blocktypes-productsummary.html#source-view.34">src/Blocks/BlockTypes/ProductSummary.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">30</span>
+    <span class="phpdocumentor-element-found-in__line">34</span>
 </aside>
 
         <p class="phpdocumentor-summary">Get block supports. Shared with the frontend.</p>
@@ -1245,12 +1305,12 @@ not in the post content on editor load.</p>
         <a href="#method_get_block_type_uses_context" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Blocks/BlockTypes/AbstractBlock.php"><a href="../files/woocommerce-src-blocks-blocktypes-abstractblock.html#source-view.376">src/Blocks/BlockTypes/AbstractBlock.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Blocks/BlockTypes/ProductSummary.php"><a href="../files/woocommerce-src-blocks-blocktypes-productsummary.html#source-view.63">src/Blocks/BlockTypes/ProductSummary.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">376</span>
+    <span class="phpdocumentor-element-found-in__line">63</span>
 </aside>
 
-        <p class="phpdocumentor-summary">Get block usesContext.</p>
+        <p class="phpdocumentor-summary">Register the context.</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">protected</span>
@@ -1277,9 +1337,9 @@ not in the post content on editor load.</p>
         <a href="#method_get_chunks_paths" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Blocks/BlockTypes/AbstractBlock.php"><a href="../files/woocommerce-src-blocks-blocktypes-abstractblock.html#source-view.192">src/Blocks/BlockTypes/AbstractBlock.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Blocks/BlockTypes/AbstractBlock.php"><a href="../files/woocommerce-src-blocks-blocktypes-abstractblock.html#source-view.204">src/Blocks/BlockTypes/AbstractBlock.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">192</span>
+    <span class="phpdocumentor-element-found-in__line">204</span>
 </aside>
 
         <p class="phpdocumentor-summary">Generate an array of chunks paths for loading translation.</p>
@@ -1353,9 +1413,9 @@ not in the post content on editor load.</p>
         <a href="#method_get_routes_from_namespace" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Blocks/BlockTypes/AbstractBlock.php"><a href="../files/woocommerce-src-blocks-blocktypes-abstractblock.html#source-view.477">src/Blocks/BlockTypes/AbstractBlock.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Blocks/BlockTypes/AbstractBlock.php"><a href="../files/woocommerce-src-blocks-blocktypes-abstractblock.html#source-view.491">src/Blocks/BlockTypes/AbstractBlock.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">477</span>
+    <span class="phpdocumentor-element-found-in__line">491</span>
 </aside>
 
         <p class="phpdocumentor-summary">Get routes from a REST API namespace.</p>
@@ -1397,9 +1457,9 @@ not in the post content on editor load.</p>
         <a href="#method_initialize" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Blocks/BlockTypes/AbstractBlock.php"><a href="../files/woocommerce-src-blocks-blocktypes-abstractblock.html#source-view.119">src/Blocks/BlockTypes/AbstractBlock.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Blocks/BlockTypes/AbstractBlock.php"><a href="../files/woocommerce-src-blocks-blocktypes-abstractblock.html#source-view.132">src/Blocks/BlockTypes/AbstractBlock.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">119</span>
+    <span class="phpdocumentor-element-found-in__line">132</span>
 </aside>
 
         <p class="phpdocumentor-summary">Initialize this block type.</p>
@@ -1428,14 +1488,46 @@ not in the post content on editor load.</p>
             -protected
                                                         "
 >
+    <h4 class="phpdocumentor-element__name" id="method_is_block_editor">
+        is_block_editor()
+        <a href="#method_is_block_editor" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Blocks/BlockTypes/AbstractBlock.php"><a href="../files/woocommerce-src-blocks-blocktypes-abstractblock.html#source-view.117">src/Blocks/BlockTypes/AbstractBlock.php</a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">117</span>
+</aside>
+
+        <p class="phpdocumentor-summary">Are we currently on the admin block editor screen?</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">protected</span>
+                <span class="phpdocumentor-signature__name">is_block_editor</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
+
+        <section class="phpdocumentor-description"></section>
+
+    
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">mixed</span>
+            &mdash; <span class="phpdocumentor-return-value__description"></span>
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -protected
+                                                        "
+>
     <h4 class="phpdocumentor-element__name" id="method_parse_render_callback_attributes">
         parse_render_callback_attributes()
         <a href="#method_parse_render_callback_attributes" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Blocks/BlockTypes/AbstractBlock.php"><a href="../files/woocommerce-src-blocks-blocktypes-abstractblock.html#source-view.386">src/Blocks/BlockTypes/AbstractBlock.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Blocks/BlockTypes/AbstractBlock.php"><a href="../files/woocommerce-src-blocks-blocktypes-abstractblock.html#source-view.398">src/Blocks/BlockTypes/AbstractBlock.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">386</span>
+    <span class="phpdocumentor-element-found-in__line">398</span>
 </aside>
 
         <p class="phpdocumentor-summary">Parses block attributes from the render_callback.</p>
@@ -1477,9 +1569,9 @@ not in the post content on editor load.</p>
         <a href="#method_register_block_type" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Blocks/BlockTypes/AbstractBlock.php"><a href="../files/woocommerce-src-blocks-blocktypes-abstractblock.html#source-view.210">src/Blocks/BlockTypes/AbstractBlock.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Blocks/BlockTypes/AbstractBlock.php"><a href="../files/woocommerce-src-blocks-blocktypes-abstractblock.html#source-view.222">src/Blocks/BlockTypes/AbstractBlock.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">210</span>
+    <span class="phpdocumentor-element-found-in__line">222</span>
 </aside>
 
         <p class="phpdocumentor-summary">Registers the block type with WordPress.</p>
@@ -1509,18 +1601,19 @@ not in the post content on editor load.</p>
         <a href="#method_register_block_type_assets" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Blocks/BlockTypes/ProductSummary.php"><a href="../files/woocommerce-src-blocks-blocktypes-productsummary.html#source-view.51">src/Blocks/BlockTypes/ProductSummary.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Blocks/BlockTypes/ProductSummary.php"><a href="../files/woocommerce-src-blocks-blocktypes-productsummary.html#source-view.56">src/Blocks/BlockTypes/ProductSummary.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">51</span>
+    <span class="phpdocumentor-element-found-in__line">56</span>
 </aside>
 
-        <p class="phpdocumentor-summary">Register script and style assets for the block type before it is registered.</p>
+        <p class="phpdocumentor-summary">Overwrite parent method to prevent script registration.</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">protected</span>
                 <span class="phpdocumentor-signature__name">register_block_type_assets</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
 
-        <section class="phpdocumentor-description"><p>This registers the scripts; it does not enqueue them.</p>
+        <section class="phpdocumentor-description"><p>It is necessary to register and enqueues assets during the render
+phase because we want to load assets only if the block has the content.</p>
 </section>
 
     
@@ -1542,9 +1635,9 @@ not in the post content on editor load.</p>
         <a href="#method_register_chunk_translations" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Blocks/BlockTypes/AbstractBlock.php"><a href="../files/woocommerce-src-blocks-blocktypes-abstractblock.html#source-view.173">src/Blocks/BlockTypes/AbstractBlock.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Blocks/BlockTypes/AbstractBlock.php"><a href="../files/woocommerce-src-blocks-blocktypes-abstractblock.html#source-view.185">src/Blocks/BlockTypes/AbstractBlock.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">173</span>
+    <span class="phpdocumentor-element-found-in__line">185</span>
 </aside>
 
         <p class="phpdocumentor-summary">Injects Chunk Translations into the page so translations work for lazy loaded components.</p>
@@ -1587,16 +1680,16 @@ not in the post content on editor load.</p>
         <a href="#method_render" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Blocks/BlockTypes/AbstractBlock.php"><a href="../files/woocommerce-src-blocks-blocktypes-abstractblock.html#source-view.398">src/Blocks/BlockTypes/AbstractBlock.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Blocks/BlockTypes/ProductSummary.php"><a href="../files/woocommerce-src-blocks-blocktypes-productsummary.html#source-view.217">src/Blocks/BlockTypes/ProductSummary.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">398</span>
+    <span class="phpdocumentor-element-found-in__line">217</span>
 </aside>
 
-        <p class="phpdocumentor-summary">Render the block. Extended by children.</p>
+        <p class="phpdocumentor-summary">Include and render the block.</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">protected</span>
-                <span class="phpdocumentor-signature__name">render</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__name">$attributes</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$content</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type"><abbr title="\WP_Block">WP_Block</abbr>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$block</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">string</span></code>
+                <span class="phpdocumentor-signature__name">render</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__name">$attributes</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$content</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type"><abbr title="\Automattic\WooCommerce\Blocks\BlockTypes\WP_Block">WP_Block</abbr>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$block</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">string</span></code>
 
         <section class="phpdocumentor-description"></section>
 
@@ -1607,7 +1700,7 @@ not in the post content on editor load.</p>
                 : <span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;</span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"><p>Block attributes.</p>
+                    <section class="phpdocumentor-description"><p>Block attributes. Default empty array.</p>
 </section>
 
             </dd>
@@ -1616,13 +1709,13 @@ not in the post content on editor load.</p>
                 : <span class="phpdocumentor-signature__argument__return-type">string</span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"><p>Block content.</p>
+                    <section class="phpdocumentor-description"><p>Block content. Default empty string.</p>
 </section>
 
             </dd>
                     <dt class="phpdocumentor-argument-list__entry">
                 <span class="phpdocumentor-signature__argument__name">$block</span>
-                : <span class="phpdocumentor-signature__argument__return-type"><abbr title="\WP_Block">WP_Block</abbr></span>
+                : <span class="phpdocumentor-signature__argument__return-type"><abbr title="\Automattic\WooCommerce\Blocks\BlockTypes\WP_Block">WP_Block</abbr></span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
                     <section class="phpdocumentor-description"><p>Block instance.</p>
@@ -1638,6 +1731,330 @@ not in the post content on editor load.</p>
             &mdash; <span class="phpdocumentor-return-value__description">Rendered block type output.</span>
     
 </article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -private
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_count_text">
+        count_text()
+        <a href="#method_count_text" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Blocks/BlockTypes/ProductSummary.php"><a href="../files/woocommerce-src-blocks-blocktypes-productsummary.html#source-view.138">src/Blocks/BlockTypes/ProductSummary.php</a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">138</span>
+</aside>
+
+        <p class="phpdocumentor-summary">Count words, characters (excluding spaces), or characters (including spaces).</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">private</span>
+                <span class="phpdocumentor-signature__name">count_text</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$text</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$count_type</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">int</span></code>
+
+        <section class="phpdocumentor-description"></section>
+
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$text</span>
+                : <span class="phpdocumentor-signature__argument__return-type">string</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"><p>Text to count.</p>
+</section>
+
+            </dd>
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$count_type</span>
+                : <span class="phpdocumentor-signature__argument__return-type">string</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"><p>Count type: 'words', 'characters_excluding_spaces', or 'characters_including_spaces'.</p>
+</section>
+
+            </dd>
+            </dl>
+
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">int</span>
+            &mdash; <span class="phpdocumentor-return-value__description">Count of specified type.</span>
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -private
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_create_anchor">
+        create_anchor()
+        <a href="#method_create_anchor" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Blocks/BlockTypes/ProductSummary.php"><a href="../files/woocommerce-src-blocks-blocktypes-productsummary.html#source-view.107">src/Blocks/BlockTypes/ProductSummary.php</a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">107</span>
+</aside>
+
+        <p class="phpdocumentor-summary">Create anchor element based on input.</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">private</span>
+                <span class="phpdocumentor-signature__name">create_anchor</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type"><abbr title="\Automattic\WooCommerce\Blocks\BlockTypes\WC_Product">WC_Product</abbr>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$product</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$link_text</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">string</span></code>
+
+        <section class="phpdocumentor-description"></section>
+
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$product</span>
+                : <span class="phpdocumentor-signature__argument__return-type"><abbr title="\Automattic\WooCommerce\Blocks\BlockTypes\WC_Product">WC_Product</abbr></span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"><p>Product object.</p>
+</section>
+
+            </dd>
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$link_text</span>
+                : <span class="phpdocumentor-signature__argument__return-type">string</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"><p>Link text.</p>
+</section>
+
+            </dd>
+            </dl>
+
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">string</span>
+            &mdash; <span class="phpdocumentor-return-value__description"></span>
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -private
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_generate_summary">
+        generate_summary()
+        <a href="#method_generate_summary" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Blocks/BlockTypes/ProductSummary.php"><a href="../files/woocommerce-src-blocks-blocktypes-productsummary.html#source-view.186">src/Blocks/BlockTypes/ProductSummary.php</a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">186</span>
+</aside>
+
+        <p class="phpdocumentor-summary">Generates the summary text from a string of text. It&#039;s not ideal
+but allows keeping the editor and frontend consistent.</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">private</span>
+                <span class="phpdocumentor-signature__name">generate_summary</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$source</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">int&nbsp;</span><span class="phpdocumentor-signature__argument__name">$max_length</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">string</span></code>
+
+        <section class="phpdocumentor-description"><p>NOTE: If editing, keep it in sync with generateSummary function from
+plugins/woocommerce-blocks/assets/js/base/components/summary/utils.ts!</p>
+<p>Once HTML API allow for HTML manipulation both functions (PHP and JS)
+should be updated to solution fully respecting the word count.
+https://github.com/woocommerce/woocommerce/issues/52835</p>
+</section>
+
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$source</span>
+                : <span class="phpdocumentor-signature__argument__return-type">string</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"><p>Source text.</p>
+</section>
+
+            </dd>
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$max_length</span>
+                : <span class="phpdocumentor-signature__argument__return-type">int</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"><p>Limit number of items returned if text has multiple paragraphs.</p>
+</section>
+
+            </dd>
+            </dl>
+
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">string</span>
+            &mdash; <span class="phpdocumentor-return-value__description">Generated summary.</span>
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -private
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_get_first_paragraph">
+        get_first_paragraph()
+        <a href="#method_get_first_paragraph" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Blocks/BlockTypes/ProductSummary.php"><a href="../files/woocommerce-src-blocks-blocktypes-productsummary.html#source-view.120">src/Blocks/BlockTypes/ProductSummary.php</a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">120</span>
+</aside>
+
+        <p class="phpdocumentor-summary">Get first paragraph from some HTML text, or return the whole string.</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">private</span>
+                <span class="phpdocumentor-signature__name">get_first_paragraph</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$source</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">string</span></code>
+
+        <section class="phpdocumentor-description"></section>
+
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$source</span>
+                : <span class="phpdocumentor-signature__argument__return-type">string</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"><p>Source text.</p>
+</section>
+
+            </dd>
+            </dl>
+
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">string</span>
+            &mdash; <span class="phpdocumentor-return-value__description">First paragraph found in string.</span>
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -private
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_get_source">
+        get_source()
+        <a href="#method_get_source" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Blocks/BlockTypes/ProductSummary.php"><a href="../files/woocommerce-src-blocks-blocktypes-productsummary.html#source-view.74">src/Blocks/BlockTypes/ProductSummary.php</a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">74</span>
+</aside>
+
+        <p class="phpdocumentor-summary">Get product description depends on config.</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">private</span>
+                <span class="phpdocumentor-signature__name">get_source</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type"><abbr title="\Automattic\WooCommerce\Blocks\BlockTypes\WC_Product">WC_Product</abbr>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$product</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">bool&nbsp;</span><span class="phpdocumentor-signature__argument__name">$show_description_if_empty</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">string</span></code>
+
+        <section class="phpdocumentor-description"></section>
+
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$product</span>
+                : <span class="phpdocumentor-signature__argument__return-type"><abbr title="\Automattic\WooCommerce\Blocks\BlockTypes\WC_Product">WC_Product</abbr></span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"><p>Product object.</p>
+</section>
+
+            </dd>
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$show_description_if_empty</span>
+                : <span class="phpdocumentor-signature__argument__return-type">bool</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"><p>Defines if fallback to full description.</p>
+</section>
+
+            </dd>
+            </dl>
+
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">string</span>
+            &mdash; <span class="phpdocumentor-return-value__description"></span>
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -private
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_trim_characters">
+        trim_characters()
+        <a href="#method_trim_characters" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Blocks/BlockTypes/ProductSummary.php"><a href="../files/woocommerce-src-blocks-blocktypes-productsummary.html#source-view.158">src/Blocks/BlockTypes/ProductSummary.php</a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">158</span>
+</aside>
+
+        <p class="phpdocumentor-summary">Trim characters to a specified length.</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">private</span>
+                <span class="phpdocumentor-signature__name">trim_characters</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$text</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">int&nbsp;</span><span class="phpdocumentor-signature__argument__name">$max_length</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$count_type</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">string</span></code>
+
+        <section class="phpdocumentor-description"></section>
+
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$text</span>
+                : <span class="phpdocumentor-signature__argument__return-type">string</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"><p>Text to trim.</p>
+</section>
+
+            </dd>
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$max_length</span>
+                : <span class="phpdocumentor-signature__argument__return-type">int</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"><p>Maximum length of the text.</p>
+</section>
+
+            </dd>
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$count_type</span>
+                : <span class="phpdocumentor-signature__argument__return-type">string</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"><p>What is being counted. One of 'words', 'characters_excluding_spaces', or 'characters_including_spaces'.</p>
+</section>
+
+            </dd>
+            </dl>
+
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">string</span>
+            &mdash; <span class="phpdocumentor-return-value__description">Trimmed text.</span>
+    
+</article>
             </section>
 
     </article>
@@ -1649,7 +2066,7 @@ not in the post content on editor load.</p>
 
     <footer class="phpdocumentor phpdocumentor-footer">
     <div class="phpdocumentor-section">
-        <span>WooCommerce Code Reference API documentation generated by <a href="http://www.phpdoc.org/">phpDocumentor</a> on July 25th, 2024 at 11:33 am.</span>
+        <span>WooCommerce Code Reference API documentation generated by <a href="http://www.phpdoc.org/">phpDocumentor</a> on May 16th, 2025 at 09:14 am.</span>
     </div>
 </footer>
 
@@ -1661,7 +2078,7 @@ not in the post content on editor load.</p>
             'searchIndex': '..\/js\/searchIndex.json'
         };
     </script>
-    <script src="../js/searchIndex.js?updated=1721907207"></script>
-    <script src="../js/search.js?updated=1721907207"></script>
+    <script src="../js/searchIndex.js?updated=1747386888"></script>
+    <script src="../js/search.js?updated=1747386888"></script>
 </body>
 </html>

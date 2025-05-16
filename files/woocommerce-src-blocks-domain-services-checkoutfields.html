@@ -4,14 +4,13 @@
     <meta charset="utf-8">
     <title>WooCommerce Code Reference</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="../images/favicon.png" />
-    <link rel="apple-touch-icon" href="../images/apple-touch-icon.png"/>
-    <link rel="apple-touch-icon" sizes="72x72" href="../images/apple-touch-icon-72x72.png"/>
-    <link rel="apple-touch-icon" sizes="114x114" href="../images/apple-touch-icon-114x114.png"/>
+    <link rel="icon" href="../images/favicon-32x32.png" sizes="32x32" />
+    <link rel="icon" href="../images/favicon-192x192.png" sizes="192x192" />
+    <link rel="apple-touch-icon" href="../images/favicon-180x180.png" />
+
     <link rel="stylesheet" href="../css/normalize.css">
-    <link rel="stylesheet" href="../css/base.css?updated=1721907185">
-    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../css/template.css?updated=1721907185">
+    <link rel="stylesheet" href="../css/base.css?updated=1747386862">
+    <link rel="stylesheet" href="../css/template.css?updated=1747386862">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0/css/all.min.css" integrity="sha256-ybRkN9dBjhcS2qrW1z+hfCxq+1aBdwyQM5wlQoQVt/0=" crossorigin="anonymous" />
             <script src="https://cdn.jsdelivr.net/npm/css-vars-ponyfill@2"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0/js/all.min.js" integrity="sha256-0vuk8LXoyrmCjp1f0O300qo1M75ZQyhH9X3J6d+scmk=" crossorigin="anonymous"></script>
@@ -38,14 +37,13 @@
     <header class="phpdocumentor-top-header">
     <section class="phpdocumentor-section">
         <div class="site-branding">
-            <a class="site-logo" href="../index.html"><img width="180" src="../images/logo.svg" alt="WooCommerce" /></a>
+            <a class="site-logo" href="../index.html"><img src="../images/logo.png" alt="WooCommerce" /></a>
         </div>
         <nav class="main-navigation">
             <ul>
                 <li><a href="../hooks/hooks.html">Hooks Reference</a></li>
-                <li><a href="https://docs.woocommerce.com/">Documentation</a></li>
+                <li><a href="https://developer.woocommerce.com/docs/">Documentation</a></li>
                 <li><a href="https://woocommerce.github.io/woocommerce-rest-api-docs/">REST API Docs</a></li>
-                <li><a href="https://woocommerce.com/careers/?utm_source=woocommerce+core+code+reference&utm_medium=devdocs&utm_campaign=woo+careers" target="_blank">We're hiring!</a></li>
             </ul>
         </nav>
     </section>
@@ -53,7 +51,7 @@
 
 <div class="phpdocumentor-header">
     <section class="phpdocumentor-section">
-        <h1 class="phpdocumentor-title">WooCommerce Code Reference</h1>
+        <h1 class="phpdocumentor-title"><a href="../index.html">WooCommerce Code Reference</a></h1>
         <section class="phpdocumentor-search">
     <label class="phpdocumentor-label">
         <span class="visually-hidden">Search (click ESC to close search results)</span>
@@ -74,6 +72,10 @@
                                         <h4 class="phpdocumentor-sidebar__root-namespace"><a href="../namespaces/woocommerce.html"><abbr title="\WooCommerce">WooCommerce</abbr></a></h4>
                 <ul class="phpdocumentor-list">
                                             <li><a href="../namespaces/woocommerce-admin.html"><abbr title="\WooCommerce\Admin">Admin</abbr></a></li>
+                                    </ul>
+                            <h4 class="phpdocumentor-sidebar__root-namespace"><a href="../namespaces/mailpoet.html"><abbr title="\MailPoet">MailPoet</abbr></a></h4>
+                <ul class="phpdocumentor-list">
+                                            <li><a href="../namespaces/mailpoet-emaileditor.html"><abbr title="\MailPoet\EmailEditor">EmailEditor</abbr></a></li>
                                     </ul>
                             <h4 class="phpdocumentor-sidebar__root-namespace"><a href="../namespaces/automattic.html"><abbr title="\Automattic">Automattic</abbr></a></h4>
                 <ul class="phpdocumentor-list">
@@ -119,8 +121,10 @@
                                     <li><a href="../packages/WooCommerce-Widgets.html"><abbr title="\WooCommerce\Widgets">Widgets</abbr></a></li>
                                     <li><a href="../packages/WooCommerce-Uninstaller.html"><abbr title="\WooCommerce\Uninstaller">Uninstaller</abbr></a></li>
                             </ul>
-                                <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/WoocommerceAdmin.html"><abbr title="\WoocommerceAdmin">WoocommerceAdmin</abbr></a></h3>
-                                <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/WoocommerceNavigation.html"><abbr title="\WoocommerceNavigation">WoocommerceNavigation</abbr></a></h3>
+                                <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/MailPoet.html"><abbr title="\MailPoet">MailPoet</abbr></a></h3>
+                        <ul class="phpdocumentor-list">
+                                    <li><a href="../packages/MailPoet-EmailEditor.html"><abbr title="\MailPoet\EmailEditor">EmailEditor</abbr></a></li>
+                            </ul>
                                 <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/Automattic.html"><abbr title="\Automattic">Automattic</abbr></a></h3>
                         <ul class="phpdocumentor-list">
                                     <li><a href="../packages/Automattic-WooCommerce.html"><abbr title="\Automattic\WooCommerce">WooCommerce</abbr></a></li>
@@ -157,10 +161,16 @@
                 <a href="#source-code" class="headerlink"><i class="fas fa-link"></i></a>
             </h3>
             <pre id="source-view" tabindex="-1" class="language-php line-numbers linkable-line-numbers"><code>&lt;?php
+declare( strict_types = 1);
 
 namespace Automattic\WooCommerce\Blocks\Domain\Services;
 
+use Automattic\WooCommerce\Blocks\Utils\CartCheckoutUtils;
 use Automattic\WooCommerce\Blocks\Assets\AssetDataRegistry;
+use Automattic\WooCommerce\Blocks\Domain\Services\CheckoutFieldsSchema\{
+	DocumentObject, Validation
+};
+use Automattic\WooCommerce\Admin\Features\Features;
 use WC_Customer;
 use WC_Data;
 use WC_Order;
@@ -170,13 +180,6 @@ use WP_Error;
  * Service class managing checkout fields and its related extensibility points.
  */
 class CheckoutFields {
-
-	/**
-	 * Core checkout fields.
-	 *
-	 * @var array
-	 */
-	private $core_fields;
 
 	/**
 	 * Additional checkout fields.
@@ -204,7 +207,7 @@ class CheckoutFields {
 	 *
 	 * @var array
 	 */
-	protected $groups = [ &#039;billing&#039;, &#039;shipping&#039;, &#039;other&#039; ];
+	private $groups = [ &#039;billing&#039;, &#039;shipping&#039;, &#039;other&#039; ];
 
 	/**
 	 * Instance of the asset data registry.
@@ -249,155 +252,19 @@ class CheckoutFields {
 	 */
 	public function __construct( AssetDataRegistry $asset_data_registry ) {
 		$this-&gt;asset_data_registry = $asset_data_registry;
-		$this-&gt;core_fields         = [
-			&#039;email&#039;      =&gt; [
-				&#039;label&#039;          =&gt; __( &#039;Email address&#039;, &#039;woocommerce&#039; ),
-				&#039;optionalLabel&#039;  =&gt; __(
-					&#039;Email address (optional)&#039;,
-					&#039;woocommerce&#039;
-				),
-				&#039;required&#039;       =&gt; true,
-				&#039;hidden&#039;         =&gt; false,
-				&#039;autocomplete&#039;   =&gt; &#039;email&#039;,
-				&#039;autocapitalize&#039; =&gt; &#039;none&#039;,
-				&#039;index&#039;          =&gt; 0,
-			],
-			&#039;country&#039;    =&gt; [
-				&#039;label&#039;         =&gt; __( &#039;Country/Region&#039;, &#039;woocommerce&#039; ),
-				&#039;optionalLabel&#039; =&gt; __(
-					&#039;Country/Region (optional)&#039;,
-					&#039;woocommerce&#039;
-				),
-				&#039;required&#039;      =&gt; true,
-				&#039;hidden&#039;        =&gt; false,
-				&#039;autocomplete&#039;  =&gt; &#039;country&#039;,
-				&#039;index&#039;         =&gt; 1,
-			],
-			&#039;first_name&#039; =&gt; [
-				&#039;label&#039;          =&gt; __( &#039;First name&#039;, &#039;woocommerce&#039; ),
-				&#039;optionalLabel&#039;  =&gt; __(
-					&#039;First name (optional)&#039;,
-					&#039;woocommerce&#039;
-				),
-				&#039;required&#039;       =&gt; true,
-				&#039;hidden&#039;         =&gt; false,
-				&#039;autocomplete&#039;   =&gt; &#039;given-name&#039;,
-				&#039;autocapitalize&#039; =&gt; &#039;sentences&#039;,
-				&#039;index&#039;          =&gt; 10,
-			],
-			&#039;last_name&#039;  =&gt; [
-				&#039;label&#039;          =&gt; __( &#039;Last name&#039;, &#039;woocommerce&#039; ),
-				&#039;optionalLabel&#039;  =&gt; __(
-					&#039;Last name (optional)&#039;,
-					&#039;woocommerce&#039;
-				),
-				&#039;required&#039;       =&gt; true,
-				&#039;hidden&#039;         =&gt; false,
-				&#039;autocomplete&#039;   =&gt; &#039;family-name&#039;,
-				&#039;autocapitalize&#039; =&gt; &#039;sentences&#039;,
-				&#039;index&#039;          =&gt; 20,
-			],
-			&#039;company&#039;    =&gt; [
-				&#039;label&#039;          =&gt; __( &#039;Company&#039;, &#039;woocommerce&#039; ),
-				&#039;optionalLabel&#039;  =&gt; __(
-					&#039;Company (optional)&#039;,
-					&#039;woocommerce&#039;
-				),
-				&#039;required&#039;       =&gt; false,
-				&#039;hidden&#039;         =&gt; false,
-				&#039;autocomplete&#039;   =&gt; &#039;organization&#039;,
-				&#039;autocapitalize&#039; =&gt; &#039;sentences&#039;,
-				&#039;index&#039;          =&gt; 30,
-			],
-			&#039;address_1&#039;  =&gt; [
-				&#039;label&#039;          =&gt; __( &#039;Address&#039;, &#039;woocommerce&#039; ),
-				&#039;optionalLabel&#039;  =&gt; __(
-					&#039;Address (optional)&#039;,
-					&#039;woocommerce&#039;
-				),
-				&#039;required&#039;       =&gt; true,
-				&#039;hidden&#039;         =&gt; false,
-				&#039;autocomplete&#039;   =&gt; &#039;address-line1&#039;,
-				&#039;autocapitalize&#039; =&gt; &#039;sentences&#039;,
-				&#039;index&#039;          =&gt; 40,
-			],
-			&#039;address_2&#039;  =&gt; [
-				&#039;label&#039;          =&gt; __( &#039;Apartment, suite, etc.&#039;, &#039;woocommerce&#039; ),
-				&#039;optionalLabel&#039;  =&gt; __(
-					&#039;Apartment, suite, etc. (optional)&#039;,
-					&#039;woocommerce&#039;
-				),
-				&#039;required&#039;       =&gt; false,
-				&#039;hidden&#039;         =&gt; false,
-				&#039;autocomplete&#039;   =&gt; &#039;address-line2&#039;,
-				&#039;autocapitalize&#039; =&gt; &#039;sentences&#039;,
-				&#039;index&#039;          =&gt; 50,
-			],
-			&#039;city&#039;       =&gt; [
-				&#039;label&#039;          =&gt; __( &#039;City&#039;, &#039;woocommerce&#039; ),
-				&#039;optionalLabel&#039;  =&gt; __(
-					&#039;City (optional)&#039;,
-					&#039;woocommerce&#039;
-				),
-				&#039;required&#039;       =&gt; true,
-				&#039;hidden&#039;         =&gt; false,
-				&#039;autocomplete&#039;   =&gt; &#039;address-level2&#039;,
-				&#039;autocapitalize&#039; =&gt; &#039;sentences&#039;,
-				&#039;index&#039;          =&gt; 70,
-			],
-			&#039;state&#039;      =&gt; [
-				&#039;label&#039;          =&gt; __( &#039;State/County&#039;, &#039;woocommerce&#039; ),
-				&#039;optionalLabel&#039;  =&gt; __(
-					&#039;State/County (optional)&#039;,
-					&#039;woocommerce&#039;
-				),
-				&#039;required&#039;       =&gt; true,
-				&#039;hidden&#039;         =&gt; false,
-				&#039;autocomplete&#039;   =&gt; &#039;address-level1&#039;,
-				&#039;autocapitalize&#039; =&gt; &#039;sentences&#039;,
-				&#039;index&#039;          =&gt; 80,
-			],
-			&#039;postcode&#039;   =&gt; [
-				&#039;label&#039;          =&gt; __( &#039;Postal code&#039;, &#039;woocommerce&#039; ),
-				&#039;optionalLabel&#039;  =&gt; __(
-					&#039;Postal code (optional)&#039;,
-					&#039;woocommerce&#039;
-				),
-				&#039;required&#039;       =&gt; true,
-				&#039;hidden&#039;         =&gt; false,
-				&#039;autocomplete&#039;   =&gt; &#039;postal-code&#039;,
-				&#039;autocapitalize&#039; =&gt; &#039;characters&#039;,
-				&#039;index&#039;          =&gt; 90,
-			],
-			&#039;phone&#039;      =&gt; [
-				&#039;label&#039;          =&gt; __( &#039;Phone&#039;, &#039;woocommerce&#039; ),
-				&#039;optionalLabel&#039;  =&gt; __(
-					&#039;Phone (optional)&#039;,
-					&#039;woocommerce&#039;
-				),
-				&#039;required&#039;       =&gt; false,
-				&#039;hidden&#039;         =&gt; false,
-				&#039;type&#039;           =&gt; &#039;tel&#039;,
-				&#039;autocomplete&#039;   =&gt; &#039;tel&#039;,
-				&#039;autocapitalize&#039; =&gt; &#039;characters&#039;,
-				&#039;index&#039;          =&gt; 100,
-			],
-		];
-
-		$this-&gt;fields_locations = [
+		$this-&gt;fields_locations    = [
 			// omit email from shipping and billing fields.
-			&#039;address&#039; =&gt; array_merge( \array_diff_key( array_keys( $this-&gt;core_fields ), array( &#039;email&#039; ) ) ),
+			&#039;address&#039; =&gt; array_merge( \array_diff_key( $this-&gt;get_core_fields_keys(), array( &#039;email&#039; ) ) ),
 			&#039;contact&#039; =&gt; array( &#039;email&#039; ),
 			&#039;order&#039;   =&gt; [],
 		];
-
-		add_filter( &#039;woocommerce_get_country_locale_default&#039;, array( $this, &#039;update_default_locale_with_fields&#039; ) );
 	}
 
 	/**
 	 * Initialize hooks.
 	 */
 	public function init() {
+		add_filter( &#039;woocommerce_get_country_locale_default&#039;, array( $this, &#039;update_default_locale_with_fields&#039; ) );
 		add_action( &#039;woocommerce_blocks_checkout_enqueue_data&#039;, array( $this, &#039;add_fields_data&#039; ) );
 		add_action( &#039;woocommerce_blocks_cart_enqueue_data&#039;, array( $this, &#039;add_fields_data&#039; ) );
 		add_filter( &#039;woocommerce_customer_allowed_session_meta_keys&#039;, array( $this, &#039;add_session_meta_keys&#039; ) );
@@ -453,7 +320,7 @@ class CheckoutFields {
 	 * @param array $field Field data.
 	 * @return mixed
 	 */
-	public function default_sanitize_callback( $value, $field ) {
+	public function default_sanitize_callback( $value, $field ) { // phpcs:ignore Generic.CodeAnalysis.UnusedFunctionParameter.FoundAfterLastUsed
 		return $value;
 	}
 
@@ -469,7 +336,7 @@ class CheckoutFields {
 			return new WP_Error(
 				&#039;woocommerce_required_checkout_field&#039;,
 				sprintf(
-				// translators: %s is field key.
+					// translators: %s is field key.
 					__( &#039;The field %s is required.&#039;, &#039;woocommerce&#039; ),
 					$field[&#039;id&#039;]
 				)
@@ -496,11 +363,8 @@ class CheckoutFields {
 			[
 				&#039;id&#039;                         =&gt; &#039;&#039;,
 				&#039;label&#039;                      =&gt; &#039;&#039;,
-				&#039;optionalLabel&#039;              =&gt; sprintf(
-					/* translators: %s Field label. */
-					__( &#039;%s (optional)&#039;, &#039;woocommerce&#039; ),
-					$options[&#039;label&#039;]
-				),
+				/* translators: %s Field label. */
+				&#039;optionalLabel&#039;              =&gt; sprintf( __( &#039;%s (optional)&#039;, &#039;woocommerce&#039; ), $options[&#039;label&#039;] ),
 				&#039;location&#039;                   =&gt; &#039;&#039;,
 				&#039;type&#039;                       =&gt; &#039;text&#039;,
 				&#039;hidden&#039;                     =&gt; false,
@@ -509,16 +373,12 @@ class CheckoutFields {
 				&#039;show_in_order_confirmation&#039; =&gt; true,
 				&#039;sanitize_callback&#039;          =&gt; array( $this, &#039;default_sanitize_callback&#039; ),
 				&#039;validate_callback&#039;          =&gt; array( $this, &#039;default_validate_callback&#039; ),
-			]
+				&#039;rules&#039;                      =&gt; [],
+			],
 		);
 
 		$field_data[&#039;attributes&#039;] = $this-&gt;register_field_attributes( $field_data[&#039;id&#039;], $field_data[&#039;attributes&#039;] );
-
-		if ( &#039;checkbox&#039; === $field_data[&#039;type&#039;] ) {
-			$field_data = $this-&gt;process_checkbox_field( $field_data, $options );
-		} elseif ( &#039;select&#039; === $field_data[&#039;type&#039;] ) {
-			$field_data = $this-&gt;process_select_field( $field_data, $options );
-		}
+		$field_data               = $this-&gt;process_field_options( $field_data, $options );
 
 		// $field_data will be false if an error that will prevent the field being registered is encountered.
 		if ( false === $field_data ) {
@@ -528,6 +388,115 @@ class CheckoutFields {
 		// Insert new field into the correct location array.
 		$this-&gt;additional_fields[ $field_data[&#039;id&#039;] ]        = $field_data;
 		$this-&gt;fields_locations[ $field_data[&#039;location&#039;] ][] = $field_data[&#039;id&#039;];
+	}
+
+	/**
+	 * Returns true if the field is required. Takes rules into consideration if a document object is provided.
+	 *
+	 * @param array|string        $field The field array or field key.
+	 * @param DocumentObject|null $document_object The document object.
+	 * @return bool
+	 */
+	public function is_required_field( $field, $document_object = null ) {
+		if ( is_string( $field ) ) {
+			$field = $this-&gt;additional_fields[ $field ] ?? [];
+		}
+
+		if ( empty( $field ) ) {
+			return false;
+		}
+
+		if ( $document_object ) {
+			// Hidden fields cannot be required.
+			if ( $this-&gt;is_hidden_field( $field, $document_object ) ) {
+				return false;
+			}
+			if ( ! empty( $field[&#039;rules&#039;][&#039;required&#039;] ) ) {
+				return true === Validation::validate_document_object( $document_object, $field[&#039;rules&#039;][&#039;required&#039;] );
+			}
+		}
+		return true === $field[&#039;required&#039;];
+	}
+
+	/**
+	 * Returns true if the field is hidden. Takes rules into consideration if a document object is provided.
+	 *
+	 * @param array|string        $field The field array or field key.
+	 * @param DocumentObject|null $document_object The document object.
+	 * @return bool
+	 */
+	public function is_hidden_field( $field, $document_object = null ) {
+		if ( is_string( $field ) ) {
+			$field = $this-&gt;additional_fields[ $field ] ?? [];
+		}
+		if ( $document_object &amp;&amp; ! empty( $field[&#039;rules&#039;][&#039;hidden&#039;] ) ) {
+			return true === Validation::validate_document_object( $document_object, $field[&#039;rules&#039;][&#039;hidden&#039;] );
+		}
+		return false; // `hidden` prop is not supported yet.
+	}
+
+	/**
+	 * Returns true if the field is conditionally required or rendered.
+	 *
+	 * @param array|string $field The field array or field key.
+	 * @return bool
+	 */
+	public function is_conditional_field( $field ) {
+		if ( is_string( $field ) ) {
+			$field = $this-&gt;additional_fields[ $field ] ?? [];
+		}
+		return ! empty( $field[&#039;rules&#039;][&#039;required&#039;] ) || ! empty( $field[&#039;rules&#039;][&#039;hidden&#039;] );
+	}
+
+	/**
+	 * Validates a field against the given document object and context.
+	 *
+	 * @param array               $field The field.
+	 * @param DocumentObject|null $document_object The document object.
+	 * @return bool|\WP_Error True if the field is valid, a WP_Error otherwise.
+	 */
+	public function is_valid_field( $field, $document_object = null ) {
+		if ( $document_object &amp;&amp; ! empty( $field[&#039;rules&#039;][&#039;validation&#039;] ) ) {
+			$field_schema = Validation::get_field_schema_with_context( $field[&#039;id&#039;], $field[&#039;rules&#039;][&#039;validation&#039;], $document_object-&gt;get_context() );
+			return Validation::validate_document_object( $document_object, $field_schema );
+		}
+		return true;
+	}
+
+	/**
+	 * Returns the validate callback for a given field.
+	 *
+	 * @param array               $field The field.
+	 * @param DocumentObject|null $document_object The document object.
+	 * @return callable The validate callback.
+	 */
+	public function get_validate_callback( $field, $document_object = null ) {
+		if ( is_string( $field ) ) {
+			$field = $this-&gt;additional_fields[ $field ] ?? [];
+		}
+		if ( $document_object &amp;&amp; ! empty( $field[&#039;rules&#039;][&#039;validation&#039;] ) ) {
+			return function ( $field_value, $field ) use ( $document_object ) {
+				$errors = new WP_Error();
+
+				// Only validate if we have a field.
+				if ( ! $field ) {
+					return true;
+				}
+
+				// Evaluate custom validation schema rules on the field.
+				$validate_result = $this-&gt;is_valid_field( $field, $document_object );
+
+				if ( is_wp_error( $validate_result ) ) {
+					/* translators: %s: is the field label */
+					$error_message = sprintf( __( &#039;Please provide a valid %s&#039;, &#039;woocommerce&#039; ), $field[&#039;label&#039;] );
+					$error_code    = &#039;woocommerce_invalid_checkout_field&#039;;
+					$errors-&gt;add( $error_code, $error_message );
+				}
+
+				return $errors-&gt;has_errors() ? $errors : true;
+			};
+		}
+		return $field[&#039;validate_callback&#039;] ?? null;
 	}
 
 	/**
@@ -543,6 +512,10 @@ class CheckoutFields {
 		}
 
 		$location = $this-&gt;get_field_location( $field_id );
+
+		if ( ! $location ) {
+			return;
+		}
 
 		// Remove the field from the fields_locations array.
 		$this-&gt;fields_locations[ $location ] = array_diff( $this-&gt;fields_locations[ $location ], array( $field_id ) );
@@ -629,14 +602,50 @@ class CheckoutFields {
 			return false;
 		}
 
-		// Hidden fields are not supported right now. They will be registered with hidden =&gt; false.
 		if ( ! empty( $options[&#039;hidden&#039;] ) &amp;&amp; true === $options[&#039;hidden&#039;] ) {
+			// Hidden fields are not supported right now. They will be registered with hidden =&gt; false.
 			$message = sprintf( &#039;Registering a field with hidden set to true is not supported. The field &quot;%s&quot; will be registered as visible.&#039;, $id );
 			_doing_it_wrong( &#039;woocommerce_register_additional_checkout_field&#039;, esc_html( $message ), &#039;8.6.0&#039; );
 			// Don&#039;t return here unlike the other fields because this is not an issue that will prevent registration.
 		}
 
+		if ( Features::is_enabled( &#039;experimental-blocks&#039; ) &amp;&amp; ! empty( $options[&#039;rules&#039;] ) ) {
+			if ( ! is_array( $options[&#039;rules&#039;] ) ) {
+				$message = sprintf( &#039;Unable to register field with id: &quot;%s&quot;. %s&#039;, $options[&#039;id&#039;], &#039;The rules must be an array.&#039; );
+				_doing_it_wrong( &#039;woocommerce_register_additional_checkout_field&#039;, esc_html( $message ), &#039;8.6.0&#039; );
+				return false;
+			}
+
+			$valid = Validation::is_valid_schema( $options[&#039;rules&#039;] );
+
+			if ( is_wp_error( $valid ) ) {
+				$message = sprintf( &#039;Unable to register field with id: &quot;%s&quot;. %s&#039;, $options[&#039;id&#039;], $valid-&gt;get_error_message() );
+				_doing_it_wrong( &#039;woocommerce_register_additional_checkout_field&#039;, esc_html( $message ), &#039;8.6.0&#039; );
+				return false;
+			}
+		}
+
 		return true;
+	}
+
+	/**
+	 * Processes the options for a field type and returns the new field_options array.
+	 *
+	 * @param array $field_data The field data array to be updated.
+	 * @param array $options    The options supplied during field registration.
+	 * @return array The updated $field_data array.
+	 */
+	private function process_field_options( $field_data, $options ) {
+		if ( &#039;checkbox&#039; === $field_data[&#039;type&#039;] ) {
+			$field_data = $this-&gt;process_checkbox_field( $field_data, $options );
+		} elseif ( &#039;select&#039; === $field_data[&#039;type&#039;] ) {
+			$field_data = $this-&gt;process_select_field( $field_data, $options );
+		}
+		// If the field has conditional rules, we need to set the required property to false so it can be evaluated.
+		if ( Features::is_enabled( &#039;experimental-blocks&#039; ) &amp;&amp; ! empty( $field_data[&#039;rules&#039;][&#039;required&#039;] ) ) {
+			$field_data[&#039;required&#039;] = false;
+		}
+		return $field_data;
 	}
 
 	/**
@@ -685,17 +694,8 @@ class CheckoutFields {
 
 		$field_data[&#039;options&#039;] = $cleaned_options;
 
-		// If the field is not required, inject an empty option at the start.
-		if ( isset( $field_data[&#039;required&#039;] ) &amp;&amp; false === $field_data[&#039;required&#039;] &amp;&amp; ! in_array( &#039;&#039;, $added_values, true ) ) {
-			$field_data[&#039;options&#039;] = array_merge(
-				[
-					[
-						&#039;value&#039; =&gt; &#039;&#039;,
-						&#039;label&#039; =&gt; &#039;&#039;,
-					],
-				],
-				$field_data[&#039;options&#039;]
-			);
+		if ( isset( $field_data[&#039;placeholder&#039;] ) ) {
+			$field_data[&#039;placeholder&#039;] = sanitize_text_field( $field_data[&#039;placeholder&#039;] );
 		}
 
 		return $field_data;
@@ -712,12 +712,30 @@ class CheckoutFields {
 	private function process_checkbox_field( $field_data, $options ) {
 		$id = $options[&#039;id&#039;];
 
-		// Checkbox fields are always optional. Log a warning if it&#039;s set explicitly as true.
-		$field_data[&#039;required&#039;] = false;
+		if ( isset( $options[&#039;required&#039;] ) &amp;&amp; ! is_bool( $options[&#039;required&#039;] ) ) {
+			$message = sprintf( &#039;The required property for field with id: &quot;%s&quot; must be a boolean, you passed %s. The field will not be registered.&#039;, $id, gettype( $options[&#039;required&#039;] ) );
+			_doing_it_wrong( &#039;woocommerce_register_additional_checkout_field&#039;, esc_html( $message ), &#039;9.8.0&#039; );
+			return false;
+		}
 
-		if ( isset( $options[&#039;required&#039;] ) &amp;&amp; true === $options[&#039;required&#039;] ) {
-			$message = sprintf( &#039;Registering checkbox fields as required is not supported. &quot;%s&quot; will be registered as optional.&#039;, $id );
-			_doing_it_wrong( &#039;woocommerce_register_additional_checkout_field&#039;, esc_html( $message ), &#039;8.6.0&#039; );
+		$field_data[&#039;required&#039;] = $options[&#039;required&#039;] ?? false;
+
+		if ( ( ! isset( $field_data[&#039;required&#039;] ) || false === $field_data[&#039;required&#039;] ) &amp;&amp; ! empty( $options[&#039;error_message&#039;] ) ) {
+			$message = sprintf( &#039;Passing an error message to a non-required checkbox &quot;%s&quot; will have no effect. The error message has been removed from the field.&#039;, $id );
+			_doing_it_wrong( &#039;woocommerce_register_additional_checkout_field&#039;, esc_html( $message ), &#039;9.8.0&#039; );
+			unset( $field_data[&#039;error_message&#039;] );
+		}
+
+		if ( isset( $options[&#039;error_message&#039;] ) &amp;&amp; ! is_string( $options[&#039;error_message&#039;] ) ) {
+			$message = sprintf( &#039;The error_message property for field with id: &quot;%s&quot; must be a string, you passed %s. A default message will be shown.&#039;, $id, gettype( $options[&#039;error_message&#039;] ) );
+			_doing_it_wrong( &#039;woocommerce_register_additional_checkout_field&#039;, esc_html( $message ), &#039;9.8.0&#039; );
+			unset( $field_data[&#039;error_message&#039;] );
+		}
+
+		// Get the error message property and set it to errorMessage for use in JS.
+		if ( isset( $field_data[&#039;error_message&#039;] ) ) {
+			$field_data[&#039;errorMessage&#039;] = $field_data[&#039;error_message&#039;];
+			unset( $field_data[&#039;error_message&#039;] );
 		}
 
 		return $field_data;
@@ -779,12 +797,167 @@ class CheckoutFields {
 	}
 
 	/**
+	 * Returns the keys of all core fields.
+	 *
+	 * @return array An array of field keys.
+	 */
+	public function get_core_fields_keys() {
+		return [
+			&#039;email&#039;,
+			&#039;country&#039;,
+			&#039;first_name&#039;,
+			&#039;last_name&#039;,
+			&#039;company&#039;,
+			&#039;address_1&#039;,
+			&#039;address_2&#039;,
+			&#039;city&#039;,
+			&#039;state&#039;,
+			&#039;postcode&#039;,
+			&#039;phone&#039;,
+		];
+	}
+
+	/**
 	 * Returns an array of all core fields.
 	 *
 	 * @return array An array of fields.
 	 */
 	public function get_core_fields() {
-		return $this-&gt;core_fields;
+		return [
+			&#039;email&#039;      =&gt; [
+				&#039;label&#039;          =&gt; __( &#039;Email address&#039;, &#039;woocommerce&#039; ),
+				&#039;optionalLabel&#039;  =&gt; __(
+					&#039;Email address (optional)&#039;,
+					&#039;woocommerce&#039;
+				),
+				&#039;required&#039;       =&gt; true,
+				&#039;hidden&#039;         =&gt; false,
+				&#039;autocomplete&#039;   =&gt; &#039;email&#039;,
+				&#039;autocapitalize&#039; =&gt; &#039;none&#039;,
+				&#039;type&#039;           =&gt; &#039;email&#039;,
+				&#039;index&#039;          =&gt; 0,
+			],
+			&#039;country&#039;    =&gt; [
+				&#039;label&#039;         =&gt; __( &#039;Country/Region&#039;, &#039;woocommerce&#039; ),
+				&#039;optionalLabel&#039; =&gt; __(
+					&#039;Country/Region (optional)&#039;,
+					&#039;woocommerce&#039;
+				),
+				&#039;required&#039;      =&gt; true,
+				&#039;hidden&#039;        =&gt; false,
+				&#039;autocomplete&#039;  =&gt; &#039;country&#039;,
+				&#039;index&#039;         =&gt; 1,
+			],
+			&#039;first_name&#039; =&gt; [
+				&#039;label&#039;          =&gt; __( &#039;First name&#039;, &#039;woocommerce&#039; ),
+				&#039;optionalLabel&#039;  =&gt; __(
+					&#039;First name (optional)&#039;,
+					&#039;woocommerce&#039;
+				),
+				&#039;required&#039;       =&gt; true,
+				&#039;hidden&#039;         =&gt; false,
+				&#039;autocomplete&#039;   =&gt; &#039;given-name&#039;,
+				&#039;autocapitalize&#039; =&gt; &#039;sentences&#039;,
+				&#039;index&#039;          =&gt; 10,
+			],
+			&#039;last_name&#039;  =&gt; [
+				&#039;label&#039;          =&gt; __( &#039;Last name&#039;, &#039;woocommerce&#039; ),
+				&#039;optionalLabel&#039;  =&gt; __(
+					&#039;Last name (optional)&#039;,
+					&#039;woocommerce&#039;
+				),
+				&#039;required&#039;       =&gt; true,
+				&#039;hidden&#039;         =&gt; false,
+				&#039;autocomplete&#039;   =&gt; &#039;family-name&#039;,
+				&#039;autocapitalize&#039; =&gt; &#039;sentences&#039;,
+				&#039;index&#039;          =&gt; 20,
+			],
+			&#039;company&#039;    =&gt; [
+				&#039;label&#039;          =&gt; __( &#039;Company&#039;, &#039;woocommerce&#039; ),
+				&#039;optionalLabel&#039;  =&gt; __(
+					&#039;Company (optional)&#039;,
+					&#039;woocommerce&#039;
+				),
+				&#039;required&#039;       =&gt; &#039;required&#039; === CartCheckoutUtils::get_company_field_visibility(),
+				&#039;hidden&#039;         =&gt; &#039;hidden&#039; === CartCheckoutUtils::get_company_field_visibility(),
+				&#039;autocomplete&#039;   =&gt; &#039;organization&#039;,
+				&#039;autocapitalize&#039; =&gt; &#039;sentences&#039;,
+				&#039;index&#039;          =&gt; 30,
+			],
+			&#039;address_1&#039;  =&gt; [
+				&#039;label&#039;          =&gt; __( &#039;Address&#039;, &#039;woocommerce&#039; ),
+				&#039;optionalLabel&#039;  =&gt; __(
+					&#039;Address (optional)&#039;,
+					&#039;woocommerce&#039;
+				),
+				&#039;required&#039;       =&gt; true,
+				&#039;hidden&#039;         =&gt; false,
+				&#039;autocomplete&#039;   =&gt; &#039;address-line1&#039;,
+				&#039;autocapitalize&#039; =&gt; &#039;sentences&#039;,
+				&#039;index&#039;          =&gt; 40,
+			],
+			&#039;address_2&#039;  =&gt; [
+				&#039;label&#039;          =&gt; __( &#039;Apartment, suite, etc.&#039;, &#039;woocommerce&#039; ),
+				&#039;optionalLabel&#039;  =&gt; __(
+					&#039;Apartment, suite, etc. (optional)&#039;,
+					&#039;woocommerce&#039;
+				),
+				&#039;required&#039;       =&gt; &#039;required&#039; === CartCheckoutUtils::get_address_2_field_visibility(),
+				&#039;hidden&#039;         =&gt; &#039;hidden&#039; === CartCheckoutUtils::get_address_2_field_visibility(),
+				&#039;autocomplete&#039;   =&gt; &#039;address-line2&#039;,
+				&#039;autocapitalize&#039; =&gt; &#039;sentences&#039;,
+				&#039;index&#039;          =&gt; 50,
+			],
+			&#039;city&#039;       =&gt; [
+				&#039;label&#039;          =&gt; __( &#039;City&#039;, &#039;woocommerce&#039; ),
+				&#039;optionalLabel&#039;  =&gt; __(
+					&#039;City (optional)&#039;,
+					&#039;woocommerce&#039;
+				),
+				&#039;required&#039;       =&gt; true,
+				&#039;hidden&#039;         =&gt; false,
+				&#039;autocomplete&#039;   =&gt; &#039;address-level2&#039;,
+				&#039;autocapitalize&#039; =&gt; &#039;sentences&#039;,
+				&#039;index&#039;          =&gt; 70,
+			],
+			&#039;state&#039;      =&gt; [
+				&#039;label&#039;          =&gt; __( &#039;State/County&#039;, &#039;woocommerce&#039; ),
+				&#039;optionalLabel&#039;  =&gt; __(
+					&#039;State/County (optional)&#039;,
+					&#039;woocommerce&#039;
+				),
+				&#039;required&#039;       =&gt; true,
+				&#039;hidden&#039;         =&gt; false,
+				&#039;autocomplete&#039;   =&gt; &#039;address-level1&#039;,
+				&#039;autocapitalize&#039; =&gt; &#039;sentences&#039;,
+				&#039;index&#039;          =&gt; 80,
+			],
+			&#039;postcode&#039;   =&gt; [
+				&#039;label&#039;          =&gt; __( &#039;Postal code&#039;, &#039;woocommerce&#039; ),
+				&#039;optionalLabel&#039;  =&gt; __(
+					&#039;Postal code (optional)&#039;,
+					&#039;woocommerce&#039;
+				),
+				&#039;required&#039;       =&gt; true,
+				&#039;hidden&#039;         =&gt; false,
+				&#039;autocomplete&#039;   =&gt; &#039;postal-code&#039;,
+				&#039;autocapitalize&#039; =&gt; &#039;characters&#039;,
+				&#039;index&#039;          =&gt; 90,
+			],
+			&#039;phone&#039;      =&gt; [
+				&#039;label&#039;          =&gt; __( &#039;Phone&#039;, &#039;woocommerce&#039; ),
+				&#039;optionalLabel&#039;  =&gt; __(
+					&#039;Phone (optional)&#039;,
+					&#039;woocommerce&#039;
+				),
+				&#039;required&#039;       =&gt; &#039;required&#039; === CartCheckoutUtils::get_phone_field_visibility(),
+				&#039;hidden&#039;         =&gt; &#039;hidden&#039; === CartCheckoutUtils::get_phone_field_visibility(),
+				&#039;type&#039;           =&gt; &#039;tel&#039;,
+				&#039;autocomplete&#039;   =&gt; &#039;tel&#039;,
+				&#039;autocapitalize&#039; =&gt; &#039;characters&#039;,
+				&#039;index&#039;          =&gt; 100,
+			],
+		];
 	}
 
 	/**
@@ -803,6 +976,9 @@ class CheckoutFields {
 	 * @return string The location of the field.
 	 */
 	public function get_field_location( $field_key ) {
+		if ( ! $this-&gt;is_field( $field_key ) ) {
+			return &#039;&#039;;
+		}
 		foreach ( $this-&gt;fields_locations as $location =&gt; $fields ) {
 			if ( in_array( $field_key, $fields, true ) ) {
 				return $location;
@@ -866,39 +1042,33 @@ class CheckoutFields {
 	}
 
 	/**
-	 * Validate an additional field against any custom validation rules.
+	 * Validate an additional field.
 	 *
 	 * @since 8.6.0
 	 *
-	 * @param string $field_key    The key of the field.
-	 * @param mixed  $field_value  The value of the field.
+	 * @param array $field        The field.
+	 * @param mixed $field_value  The value of the field.
 	 * @return WP_Error
 	 */
-	public function validate_field( $field_key, $field_value ) {
+	public function validate_field( $field, $field_value ) {
 		$errors = new WP_Error();
 
 		try {
-			$field = $this-&gt;additional_fields[ $field_key ] ?? null;
+			// Only validate if we have a field.
+			if ( ! $field ) {
+				return $errors;
+			}
 
-			if ( $field ) {
-				$validation = call_user_func( $field[&#039;validate_callback&#039;], $field_value, $field );
+			if ( ! empty( $field[&#039;validate_callback&#039;] ) &amp;&amp; is_callable( $field[&#039;validate_callback&#039;] ) ) {
+				$validate_callback_result = call_user_func( $field[&#039;validate_callback&#039;], $field_value, $field );
 
-				if ( is_wp_error( $validation ) ) {
-					$errors-&gt;merge_from( $validation );
+				if ( is_wp_error( $validate_callback_result ) ) {
+					$errors-&gt;merge_from( $validate_callback_result );
 				}
 			}
 
-			/**
-			 * Pass an error object to allow validation of an additional field.
-			 *
-			 * @param WP_Error $errors      A WP_Error object that extensions may add errors to.
-			 * @param string   $field_key   Key of the field being sanitized.
-			 * @param mixed    $field_value The value of the field being validated.
-			 *
-			 * @since 8.6.0
-			 * @deprecated 8.7.0 Use woocommerce_validate_additional_field instead.
-			 */
-			wc_do_deprecated_action( &#039;__experimental_woocommerce_blocks_validate_additional_field&#039;, array( $errors, $field_key, $field_value ), &#039;8.7.0&#039;, &#039;woocommerce_validate_additional_field&#039;, &#039;This action has been graduated, use woocommerce_validate_additional_field instead.&#039; );
+			wc_do_deprecated_action( &#039;__experimental_woocommerce_blocks_validate_additional_field&#039;, array( $errors, $field[&#039;id&#039;], $field_value ), &#039;8.7.0&#039;, &#039;woocommerce_validate_additional_field&#039;, &#039;This action has been graduated, use woocommerce_validate_additional_field instead.&#039; );
+
 			/**
 			 * Pass an error object to allow validation of an additional field.
 			 *
@@ -908,7 +1078,7 @@ class CheckoutFields {
 			 *
 			 * @since 8.7.0
 			 */
-			do_action( &#039;woocommerce_validate_additional_field&#039;, $errors, $field_key, $field_value );
+			do_action( &#039;woocommerce_validate_additional_field&#039;, $errors, $field[&#039;id&#039;], $field_value );
 
 		} catch ( \Throwable $e ) {
 
@@ -934,9 +1104,13 @@ class CheckoutFields {
 	 * @return mixed
 	 */
 	public function update_default_locale_with_fields( $locale ) {
-		foreach ( $this-&gt;fields_locations[&#039;address&#039;] as $field_id =&gt; $additional_field ) {
-			if ( empty( $locale[ $field_id ] ) ) {
-				$locale[ $field_id ] = $additional_field;
+		foreach ( $this-&gt;get_fields_for_location( &#039;address&#039; ) as $field_key =&gt; $field ) {
+			if ( empty( $locale[ $field_key ] ) ) {
+				// If the field has conditional rules, we need to set the required property to false so it can be evaluated.
+				if ( $this-&gt;is_conditional_field( $field_key ) ) {
+					$field[&#039;required&#039;] = false;
+				}
+				$locale[ $field_key ] = $field;
 			}
 		}
 		return $locale;
@@ -987,10 +1161,7 @@ class CheckoutFields {
 	 * @return array An array of fields definitions.
 	 */
 	public function get_fields_for_location( $location ) {
-		if ( &#039;additional&#039; === $location ) {
-			wc_deprecated_argument( &#039;location&#039;, &#039;8.9.0&#039;, &#039;The &quot;additional&quot; location is deprecated. Use &quot;order&quot; instead.&#039; );
-			$location = &#039;order&#039;;
-		}
+		$location = $this-&gt;prepare_location_name( $location );
 
 		if ( in_array( $location, array_keys( $this-&gt;fields_locations ), true ) ) {
 			$order_fields_keys = $this-&gt;fields_locations[ $location ];
@@ -1007,6 +1178,28 @@ class CheckoutFields {
 	}
 
 	/**
+	 * Returns an array of fields for a given location and uses context to evaluate hidden and required fields.
+	 *
+	 * @param string              $location The location to get fields for (address|contact|order).
+	 * @param DocumentObject|null $document_object The document object.
+	 * @return array An array of fields definitions.
+	 */
+	public function get_contextual_fields_for_location( $location, $document_object = null ) {
+		$location_fields = $this-&gt;get_fields_for_location( $location );
+		$fields          = [];
+		foreach ( $location_fields as $key =&gt; $field ) {
+			if ( $this-&gt;is_hidden_field( $key, $document_object ) ) {
+				continue;
+			}
+			$field[&#039;required&#039;]          = $this-&gt;is_required_field( $field, $document_object );
+			$field[&#039;validate_callback&#039;] = $this-&gt;get_validate_callback( $field, $document_object );
+			$fields[ $key ]             = $field;
+		}
+
+		return $fields;
+	}
+
+	/**
 	 * Validates a set of fields for a given location against custom validation rules.
 	 *
 	 * @param array  $fields Array of key value pairs of field values to validate.
@@ -1015,40 +1208,11 @@ class CheckoutFields {
 	 * @return WP_Error
 	 */
 	public function validate_fields_for_location( $fields, $location, $group = &#039;other&#039; ) {
-		$errors = new WP_Error();
-
-		if ( &#039;additional&#039; === $location ) {
-			wc_deprecated_argument( &#039;location&#039;, &#039;8.9.0&#039;, &#039;The &quot;additional&quot; location is deprecated. Use &quot;order&quot; instead.&#039; );
-			$location = &#039;order&#039;;
-		}
-
-		if ( &#039;additional&#039; === $group ) {
-			wc_deprecated_argument( &#039;group&#039;, &#039;8.9.0&#039;, &#039;The &quot;additional&quot; group is deprecated. Use &quot;other&quot; instead.&#039; );
-			$group = &#039;other&#039;;
-		}
+		$errors   = new WP_Error();
+		$location = $this-&gt;prepare_location_name( $location );
+		$group    = $this-&gt;prepare_group_name( $group );
 
 		try {
-			/**
-			 * Pass an error object to allow validation of an additional field.
-			 *
-			 * @param WP_Error $errors  A WP_Error object that extensions may add errors to.
-			 * @param mixed    $fields  List of fields (key value pairs) in this location.
-			 * @param string   $group   The group of this location (shipping|billing|other).
-			 *
-			 * @since 8.6.0
-			 * @deprecated 8.9.0 Use woocommerce_blocks_validate_location_order_fields instead.
-			 */
-			wc_do_deprecated_action( &#039;woocommerce_blocks_validate_location_additional_fields&#039;, array( $errors, $fields, $group ), &#039;8.9.0&#039;, &#039;woocommerce_blocks_validate_location_additional_fields&#039;, &#039;This action has been graduated, use woocommerce_blocks_validate_location_additional_fields instead.&#039; );
-			/**
-			 * Pass an error object to allow validation of an additional field.
-			 *
-			 * @param WP_Error $errors  A WP_Error object that extensions may add errors to.
-			 * @param mixed    $fields  List of fields (key value pairs) in this location.
-			 * @param string   $group   The group of this location (shipping|billing|other).
-			 *
-			 * @since 8.6.0
-			 * @deprecated 8.9.0 Use woocommerce_blocks_validate_location_{location}_fields instead.
-			 */
 			wc_do_deprecated_action( &#039;__experimental_woocommerce_blocks_validate_location_&#039; . $location . &#039;_fields&#039;, array( $errors, $fields, $group ), &#039;8.9.0&#039;, &#039;woocommerce_blocks_validate_location_&#039; . $location . &#039;_fields&#039;, &#039;This action has been graduated, use woocommerce_blocks_validate_location_&#039; . $location . &#039;_fields instead.&#039; );
 
 			/**
@@ -1092,10 +1256,7 @@ class CheckoutFields {
 	 * @return true|WP_Error True if the field is valid, a WP_Error otherwise.
 	 */
 	public function validate_field_for_location( $key, $value, $location ) {
-		if ( &#039;additional&#039; === $location ) {
-			wc_deprecated_argument( &#039;location&#039;, &#039;8.9.0&#039;, &#039;The &quot;additional&quot; location is deprecated. Use &quot;order&quot; instead.&#039; );
-			$location = &#039;order&#039;;
-		}
+		$location = $this-&gt;prepare_location_name( $location );
 
 		if ( ! $this-&gt;is_field( $key ) ) {
 			return new WP_Error(
@@ -1120,18 +1281,6 @@ class CheckoutFields {
 			);
 		}
 
-		$field = $this-&gt;additional_fields[ $key ];
-		if ( ! empty( $field[&#039;required&#039;] ) &amp;&amp; empty( $value ) ) {
-			return new WP_Error(
-				&#039;woocommerce_required_checkout_field&#039;,
-				\sprintf(
-				// translators: %s is field key.
-					__( &#039;The field %s is required.&#039;, &#039;woocommerce&#039; ),
-					$key
-				)
-			);
-		}
-
 		return true;
 	}
 
@@ -1143,14 +1292,10 @@ class CheckoutFields {
 	 * @return string[] Field keys.
 	 */
 	public function get_fields_for_group( $group = &#039;other&#039; ) {
-		if ( &#039;shipping&#039; === $group ) {
+		$group = $this-&gt;prepare_group_name( $group );
+		if ( &#039;shipping&#039; === $group || &#039;billing&#039; === $group ) {
 			return $this-&gt;get_fields_for_location( &#039;address&#039; );
 		}
-
-		if ( &#039;billing&#039; === $group ) {
-			return $this-&gt;get_fields_for_location( &#039;address&#039; );
-		}
-
 		return \array_merge(
 			$this-&gt;get_fields_for_location( &#039;contact&#039; ),
 			$this-&gt;get_fields_for_location( &#039;order&#039; )
@@ -1193,11 +1338,7 @@ class CheckoutFields {
 	 * @return void
 	 */
 	public function persist_field_for_order( string $key, $value, WC_Order $order, string $group = &#039;other&#039;, bool $set_customer = true ) {
-		if ( &#039;additional&#039; === $group ) {
-			wc_deprecated_argument( &#039;group&#039;, &#039;8.9.0&#039;, &#039;The &quot;additional&quot; group is deprecated. Use &quot;other&quot; instead.&#039; );
-			$group = &#039;other&#039;;
-		}
-
+		$group = $this-&gt;prepare_group_name( $group );
 		$this-&gt;set_array_meta( $key, $value, $order, $group );
 		if ( $set_customer &amp;&amp; $order-&gt;get_customer_id() ) {
 			$customer = new WC_Customer( $order-&gt;get_customer_id() );
@@ -1216,11 +1357,7 @@ class CheckoutFields {
 	 * @return void
 	 */
 	public function persist_field_for_customer( string $key, $value, WC_Customer $customer, string $group = &#039;other&#039; ) {
-		if ( &#039;additional&#039; === $group ) {
-			wc_deprecated_argument( &#039;group&#039;, &#039;8.9.0&#039;, &#039;The &quot;additional&quot; group is deprecated. Use &quot;other&quot; instead.&#039; );
-			$group = &#039;other&#039;;
-		}
-
+		$group = $this-&gt;prepare_group_name( $group );
 		$this-&gt;set_array_meta( $key, $value, $customer, $group );
 	}
 
@@ -1252,8 +1389,7 @@ class CheckoutFields {
 		if ( is_bool( $value ) ) {
 			$value = $value ? &#039;1&#039; : &#039;0&#039;;
 		}
-		// Replacing all meta using `add_meta_data`. For some reason `update_meta_data` causes duplicate keys.
-		$wc_object-&gt;add_meta_data( $meta_key, $value, true );
+		$wc_object-&gt;update_meta_data( $meta_key, $value );
 	}
 
 	/**
@@ -1266,16 +1402,11 @@ class CheckoutFields {
 	 * @return mixed The field value.
 	 */
 	public function get_field_from_object( string $key, WC_Data $wc_object, string $group = &#039;other&#039; ) {
-		if ( &#039;additional&#039; === $group ) {
-			wc_deprecated_argument( &#039;group&#039;, &#039;8.9.0&#039;, &#039;The &quot;additional&quot; group is deprecated. Use &quot;other&quot; instead.&#039; );
-			$group = &#039;other&#039;;
-		}
-
+		$group    = $this-&gt;prepare_group_name( $group );
 		$meta_key = self::get_group_key( $group ) . $key;
+		$value    = $wc_object-&gt;get_meta( $meta_key, true );
 
-		$value = $wc_object-&gt;get_meta( $meta_key, true );
-
-		if ( ! $value ) {
+		if ( ! $value &amp;&amp; &#039;0&#039; !== $value ) {
 			/**
 			 * Allow providing a default value for additional fields if no value is already set.
 			 *
@@ -1306,18 +1437,12 @@ class CheckoutFields {
 	 * @param WC_Data $wc_object The object or order to get the fields for.
 	 * @param string  $group The group to get the fields for (shipping|billing|other).
 	 * @param bool    $all Whether to return all fields or only the ones that are still registered. Default false.
-	 *
 	 * @return array An array of fields.
 	 */
 	public function get_all_fields_from_object( WC_Data $wc_object, string $group = &#039;other&#039;, bool $all = false ) {
-		if ( &#039;additional&#039; === $group ) {
-			wc_deprecated_argument( &#039;group&#039;, &#039;8.9.0&#039;, &#039;The &quot;additional&quot; group is deprecated. Use &quot;other&quot; instead.&#039; );
-			$group = &#039;other&#039;;
-		}
-
 		$meta_data = [];
-
-		$prefix = self::get_group_key( $group );
+		$group     = $this-&gt;prepare_group_name( $group );
+		$prefix    = self::get_group_key( $group );
 
 		if ( $wc_object instanceof WC_Data ) {
 			$meta = $wc_object-&gt;get_meta_data();
@@ -1390,6 +1515,7 @@ class CheckoutFields {
 			}
 		}
 	}
+
 	/**
 	 * From a set of fields, returns only the ones for a given location.
 	 *
@@ -1398,15 +1524,12 @@ class CheckoutFields {
 	 * @return array The filtered fields.
 	 */
 	public function filter_fields_for_location( array $fields, string $location ) {
-		if ( &#039;additional&#039; === $location ) {
-			wc_deprecated_argument( &#039;location&#039;, &#039;8.9.0&#039;, &#039;The &quot;additional&quot; location is deprecated. Use &quot;order&quot; instead.&#039; );
-			$location = &#039;order&#039;;
-		}
+		$location = $this-&gt;prepare_location_name( $location );
 
 		return array_filter(
 			$fields,
 			function ( $key ) use ( $location ) {
-				return $this-&gt;is_field( $key ) &amp;&amp; $this-&gt;get_field_location( $key ) === $location;
+				return $this-&gt;get_field_location( $key ) === $location;
 			},
 			ARRAY_FILTER_USE_KEY
 		);
@@ -1446,16 +1569,8 @@ class CheckoutFields {
 			return [];
 		}
 
-		if ( &#039;additional&#039; === $location ) {
-			wc_deprecated_argument( &#039;location&#039;, &#039;8.9.0&#039;, &#039;The &quot;additional&quot; location is deprecated. Use &quot;order&quot; instead.&#039; );
-			$location = &#039;order&#039;;
-		}
-
-		if ( &#039;additional&#039; === $group ) {
-			wc_deprecated_argument( &#039;group&#039;, &#039;8.9.0&#039;, &#039;The &quot;additional&quot; group is deprecated. Use &quot;other&quot; instead.&#039; );
-			$group = &#039;other&#039;;
-		}
-
+		$location           = $this-&gt;prepare_location_name( $location );
+		$group              = $this-&gt;prepare_group_name( $group );
 		$fields             = $this-&gt;get_fields_for_location( $location );
 		$fields_with_values = [];
 
@@ -1498,6 +1613,32 @@ class CheckoutFields {
 	}
 
 	/**
+	 * Prepares a group name for use.
+	 *
+	 * @param string $group The group name to prepare.
+	 * @return string The prepared group name.
+	 */
+	private function prepare_group_name( $group ) {
+		if ( ! in_array( $group, $this-&gt;groups, true ) ) {
+			$group = &#039;other&#039;;
+		}
+		return $group;
+	}
+
+	/**
+	 * Prepares a location name for use.
+	 *
+	 * @param string $location The location name to prepare.
+	 * @return string The prepared location name.
+	 */
+	private function prepare_location_name( $location ) {
+		if ( &#039;additional&#039; === $location ) {
+			$location = &#039;order&#039;;
+		}
+		return $location;
+	}
+
+	/**
 	 * Returns a group meta prefix based on its name.
 	 *
 	 * @param string $group_name The group name (billing|shipping|other).
@@ -1508,7 +1649,6 @@ class CheckoutFields {
 			wc_deprecated_argument( &#039;group_name&#039;, &#039;8.9.0&#039;, &#039;The &quot;additional&quot; group is deprecated. Use &quot;other&quot; instead.&#039; );
 			$group_name = &#039;other&#039;;
 		}
-
 		if ( &#039;billing&#039; === $group_name ) {
 			return self::BILLING_FIELDS_PREFIX;
 		}
@@ -1529,7 +1669,6 @@ class CheckoutFields {
 			wc_deprecated_argument( &#039;group_key&#039;, &#039;8.9.0&#039;, &#039;The &quot;_wc_additional&quot; group key is deprecated. Use &quot;_wc_other&quot; instead.&#039; );
 			$group_key = &#039;_wc_other&#039;;
 		}
-
 		if ( 0 === \strpos( self::BILLING_FIELDS_PREFIX, $group_key ) ) {
 			return &#039;billing&#039;;
 		}
@@ -1549,7 +1688,7 @@ class CheckoutFields {
 
     <footer class="phpdocumentor phpdocumentor-footer">
     <div class="phpdocumentor-section">
-        <span>WooCommerce Code Reference API documentation generated by <a href="http://www.phpdoc.org/">phpDocumentor</a> on July 25th, 2024 at 11:33 am.</span>
+        <span>WooCommerce Code Reference API documentation generated by <a href="http://www.phpdoc.org/">phpDocumentor</a> on May 16th, 2025 at 09:14 am.</span>
     </div>
 </footer>
 
@@ -1561,7 +1700,7 @@ class CheckoutFields {
             'searchIndex': '..\/js\/searchIndex.json'
         };
     </script>
-    <script src="../js/searchIndex.js?updated=1721907185"></script>
-    <script src="../js/search.js?updated=1721907185"></script>
+    <script src="../js/searchIndex.js?updated=1747386862"></script>
+    <script src="../js/search.js?updated=1747386862"></script>
 </body>
 </html>

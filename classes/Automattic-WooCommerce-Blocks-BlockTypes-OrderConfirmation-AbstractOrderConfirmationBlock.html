@@ -4,14 +4,13 @@
     <meta charset="utf-8">
     <title>WooCommerce Code Reference</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="../images/favicon.png" />
-    <link rel="apple-touch-icon" href="../images/apple-touch-icon.png"/>
-    <link rel="apple-touch-icon" sizes="72x72" href="../images/apple-touch-icon-72x72.png"/>
-    <link rel="apple-touch-icon" sizes="114x114" href="../images/apple-touch-icon-114x114.png"/>
+    <link rel="icon" href="../images/favicon-32x32.png" sizes="32x32" />
+    <link rel="icon" href="../images/favicon-192x192.png" sizes="192x192" />
+    <link rel="apple-touch-icon" href="../images/favicon-180x180.png" />
+
     <link rel="stylesheet" href="../css/normalize.css">
-    <link rel="stylesheet" href="../css/base.css?updated=1721907205">
-    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../css/template.css?updated=1721907205">
+    <link rel="stylesheet" href="../css/base.css?updated=1747386886">
+    <link rel="stylesheet" href="../css/template.css?updated=1747386886">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0/css/all.min.css" integrity="sha256-ybRkN9dBjhcS2qrW1z+hfCxq+1aBdwyQM5wlQoQVt/0=" crossorigin="anonymous" />
             <script src="https://cdn.jsdelivr.net/npm/css-vars-ponyfill@2"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0/js/all.min.js" integrity="sha256-0vuk8LXoyrmCjp1f0O300qo1M75ZQyhH9X3J6d+scmk=" crossorigin="anonymous"></script>
@@ -27,19 +26,24 @@
 		'content_group' : 'WooCommerce Core Code Reference',
 	});
 </script>
-        </head>
+        <script src="../js/prism.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            window.dispatchEvent(new HashChangeEvent('hashchange'));
+        });
+    </script>
+</head>
 <body id="top">
     <header class="phpdocumentor-top-header">
     <section class="phpdocumentor-section">
         <div class="site-branding">
-            <a class="site-logo" href="../index.html"><img width="180" src="../images/logo.svg" alt="WooCommerce" /></a>
+            <a class="site-logo" href="../index.html"><img src="../images/logo.png" alt="WooCommerce" /></a>
         </div>
         <nav class="main-navigation">
             <ul>
                 <li><a href="../hooks/hooks.html">Hooks Reference</a></li>
-                <li><a href="https://docs.woocommerce.com/">Documentation</a></li>
+                <li><a href="https://developer.woocommerce.com/docs/">Documentation</a></li>
                 <li><a href="https://woocommerce.github.io/woocommerce-rest-api-docs/">REST API Docs</a></li>
-                <li><a href="https://woocommerce.com/careers/?utm_source=woocommerce+core+code+reference&utm_medium=devdocs&utm_campaign=woo+careers" target="_blank">We're hiring!</a></li>
             </ul>
         </nav>
     </section>
@@ -47,7 +51,7 @@
 
 <div class="phpdocumentor-header">
     <section class="phpdocumentor-section">
-        <h1 class="phpdocumentor-title">WooCommerce Code Reference</h1>
+        <h1 class="phpdocumentor-title"><a href="../index.html">WooCommerce Code Reference</a></h1>
         <section class="phpdocumentor-search">
     <label class="phpdocumentor-label">
         <span class="visually-hidden">Search (click ESC to close search results)</span>
@@ -68,6 +72,10 @@
                                         <h4 class="phpdocumentor-sidebar__root-namespace"><a href="../namespaces/woocommerce.html"><abbr title="\WooCommerce">WooCommerce</abbr></a></h4>
                 <ul class="phpdocumentor-list">
                                             <li><a href="../namespaces/woocommerce-admin.html"><abbr title="\WooCommerce\Admin">Admin</abbr></a></li>
+                                    </ul>
+                            <h4 class="phpdocumentor-sidebar__root-namespace"><a href="../namespaces/mailpoet.html"><abbr title="\MailPoet">MailPoet</abbr></a></h4>
+                <ul class="phpdocumentor-list">
+                                            <li><a href="../namespaces/mailpoet-emaileditor.html"><abbr title="\MailPoet\EmailEditor">EmailEditor</abbr></a></li>
                                     </ul>
                             <h4 class="phpdocumentor-sidebar__root-namespace"><a href="../namespaces/automattic.html"><abbr title="\Automattic">Automattic</abbr></a></h4>
                 <ul class="phpdocumentor-list">
@@ -113,8 +121,10 @@
                                     <li><a href="../packages/WooCommerce-Widgets.html"><abbr title="\WooCommerce\Widgets">Widgets</abbr></a></li>
                                     <li><a href="../packages/WooCommerce-Uninstaller.html"><abbr title="\WooCommerce\Uninstaller">Uninstaller</abbr></a></li>
                             </ul>
-                                <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/WoocommerceAdmin.html"><abbr title="\WoocommerceAdmin">WoocommerceAdmin</abbr></a></h3>
-                                <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/WoocommerceNavigation.html"><abbr title="\WoocommerceNavigation">WoocommerceNavigation</abbr></a></h3>
+                                <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/MailPoet.html"><abbr title="\MailPoet">MailPoet</abbr></a></h3>
+                        <ul class="phpdocumentor-list">
+                                    <li><a href="../packages/MailPoet-EmailEditor.html"><abbr title="\MailPoet\EmailEditor">EmailEditor</abbr></a></li>
+                            </ul>
                                 <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/Automattic.html"><abbr title="\Automattic">Automattic</abbr></a></h3>
                         <ul class="phpdocumentor-list">
                                     <li><a href="../packages/Automattic-WooCommerce.html"><abbr title="\Automattic\WooCommerce">WooCommerce</abbr></a></li>
@@ -241,13 +251,6 @@
                         &nbsp;: mixed    </span>
 </dt>
 <dd>Enqueue assets used for rendering the block in editor context.</dd>
-
-            <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a href="../classes/Automattic-WooCommerce-Blocks-BlockTypes-OrderConfirmation-AbstractOrderConfirmationBlock.html#method_register_patterns">register_patterns()</a>
-    <span>
-                        &nbsp;: mixed    </span>
-</dt>
-<dd>Register block pattern for Order Confirmation to make it translatable.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="../classes/Automattic-WooCommerce-Blocks-BlockTypes-AbstractBlock.html#method_render_callback">render_callback()</a>
@@ -406,11 +409,18 @@ be permitted if the user also provided the correct order key, and guest checkout
 <dd>See if the order key is valid.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -protected">
-    <a href="../classes/Automattic-WooCommerce-Blocks-BlockTypes-OrderConfirmation-AbstractOrderConfirmationBlock.html#method_initialize">initialize()</a>
+    <a href="../classes/Automattic-WooCommerce-Blocks-BlockTypes-AbstractBlock.html#method_initialize">initialize()</a>
     <span>
                         &nbsp;: mixed    </span>
 </dt>
 <dd>Initialize this block type.</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -protected">
+    <a href="../classes/Automattic-WooCommerce-Blocks-BlockTypes-AbstractBlock.html#method_is_block_editor">is_block_editor()</a>
+    <span>
+                        &nbsp;: mixed    </span>
+</dt>
+<dd>Are we currently on the admin block editor screen?</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -protected">
     <a href="../classes/Automattic-WooCommerce-Blocks-BlockTypes-OrderConfirmation-AbstractOrderConfirmationBlock.html#method_is_current_customer_order">is_current_customer_order()</a>
@@ -826,38 +836,6 @@ child classes.</dd>
             -public
                                                         "
 >
-    <h4 class="phpdocumentor-element__name" id="method_register_patterns">
-        register_patterns()
-        <a href="#method_register_patterns" class="headerlink"><i class="fas fa-link"></i></a>
-    </h4>
-    <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Blocks/BlockTypes/OrderConfirmation/AbstractOrderConfirmationBlock.php"><a href="../files/woocommerce-src-blocks-blocktypes-orderconfirmation-abstractorderconfirmationblock.html#source-view.278">src/Blocks/BlockTypes/OrderConfirmation/AbstractOrderConfirmationBlock.php</a></abbr>
-    :
-    <span class="phpdocumentor-element-found-in__line">278</span>
-</aside>
-
-        <p class="phpdocumentor-summary">Register block pattern for Order Confirmation to make it translatable.</p>
-
-    <code class="phpdocumentor-code phpdocumentor-signature ">
-    <span class="phpdocumentor-signature__visibility">public</span>
-                <span class="phpdocumentor-signature__name">register_patterns</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
-
-        <section class="phpdocumentor-description"></section>
-
-    
-    
-
-        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">mixed</span>
-            &mdash; <span class="phpdocumentor-return-value__description"></span>
-    
-</article>
-                    <article
-        class="phpdocumentor-element
-            -method
-            -public
-                                                        "
->
     <h4 class="phpdocumentor-element__name" id="method_render_callback">
         render_callback()
         <a href="#method_render_callback" class="headerlink"><i class="fas fa-link"></i></a>
@@ -926,9 +904,9 @@ the block (if applicable).</p>
         <a href="#method_allow_guest_checkout" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Blocks/BlockTypes/OrderConfirmation/AbstractOrderConfirmationBlock.php"><a href="../files/woocommerce-src-blocks-blocktypes-orderconfirmation-abstractorderconfirmationblock.html#source-view.143">src/Blocks/BlockTypes/OrderConfirmation/AbstractOrderConfirmationBlock.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Blocks/BlockTypes/OrderConfirmation/AbstractOrderConfirmationBlock.php"><a href="../files/woocommerce-src-blocks-blocktypes-orderconfirmation-abstractorderconfirmationblock.html#source-view.128">src/Blocks/BlockTypes/OrderConfirmation/AbstractOrderConfirmationBlock.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">143</span>
+    <span class="phpdocumentor-element-found-in__line">128</span>
 </aside>
 
         <p class="phpdocumentor-summary">See if guest checkout is enabled.</p>
@@ -958,9 +936,9 @@ the block (if applicable).</p>
         <a href="#method_email_verification_permitted" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Blocks/BlockTypes/OrderConfirmation/AbstractOrderConfirmationBlock.php"><a href="../files/woocommerce-src-blocks-blocktypes-orderconfirmation-abstractorderconfirmationblock.html#source-view.154">src/Blocks/BlockTypes/OrderConfirmation/AbstractOrderConfirmationBlock.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Blocks/BlockTypes/OrderConfirmation/AbstractOrderConfirmationBlock.php"><a href="../files/woocommerce-src-blocks-blocktypes-orderconfirmation-abstractorderconfirmationblock.html#source-view.139">src/Blocks/BlockTypes/OrderConfirmation/AbstractOrderConfirmationBlock.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">154</span>
+    <span class="phpdocumentor-element-found-in__line">139</span>
 </aside>
 
         <p class="phpdocumentor-summary">Guest users without an active session can provide their email address to view order details. This however can only
@@ -1003,9 +981,9 @@ be permitted if the user also provided the correct order key, and guest checkout
         <a href="#method_email_verification_required" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Blocks/BlockTypes/OrderConfirmation/AbstractOrderConfirmationBlock.php"><a href="../files/woocommerce-src-blocks-blocktypes-orderconfirmation-abstractorderconfirmationblock.html#source-view.202">src/Blocks/BlockTypes/OrderConfirmation/AbstractOrderConfirmationBlock.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Blocks/BlockTypes/OrderConfirmation/AbstractOrderConfirmationBlock.php"><a href="../files/woocommerce-src-blocks-blocktypes-orderconfirmation-abstractorderconfirmationblock.html#source-view.193">src/Blocks/BlockTypes/OrderConfirmation/AbstractOrderConfirmationBlock.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">202</span>
+    <span class="phpdocumentor-element-found-in__line">193</span>
 </aside>
 
         <p class="phpdocumentor-summary">See if we need to verify the email address before showing the order details.</p>
@@ -1047,9 +1025,9 @@ be permitted if the user also provided the correct order key, and guest checkout
         <a href="#method_enqueue_data" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Blocks/BlockTypes/AbstractBlock.php"><a href="../files/woocommerce-src-blocks-blocktypes-abstractblock.html#source-view.428">src/Blocks/BlockTypes/AbstractBlock.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Blocks/BlockTypes/AbstractBlock.php"><a href="../files/woocommerce-src-blocks-blocktypes-abstractblock.html#source-view.440">src/Blocks/BlockTypes/AbstractBlock.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">428</span>
+    <span class="phpdocumentor-element-found-in__line">440</span>
 </aside>
 
         <p class="phpdocumentor-summary">Data passed through from server to client for block.</p>
@@ -1093,9 +1071,9 @@ not in the post content on editor load.</p>
         <a href="#method_enqueue_scripts" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Blocks/BlockTypes/AbstractBlock.php"><a href="../files/woocommerce-src-blocks-blocktypes-abstractblock.html#source-view.519">src/Blocks/BlockTypes/AbstractBlock.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Blocks/BlockTypes/AbstractBlock.php"><a href="../files/woocommerce-src-blocks-blocktypes-abstractblock.html#source-view.533">src/Blocks/BlockTypes/AbstractBlock.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">519</span>
+    <span class="phpdocumentor-element-found-in__line">533</span>
 </aside>
 
         <p class="phpdocumentor-summary">Register/enqueue scripts used for this block on the frontend, during render.</p>
@@ -1137,9 +1115,9 @@ not in the post content on editor load.</p>
         <a href="#method_get_block_type" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Blocks/BlockTypes/AbstractBlock.php"><a href="../files/woocommerce-src-blocks-blocktypes-abstractblock.html#source-view.283">src/Blocks/BlockTypes/AbstractBlock.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Blocks/BlockTypes/AbstractBlock.php"><a href="../files/woocommerce-src-blocks-blocktypes-abstractblock.html#source-view.295">src/Blocks/BlockTypes/AbstractBlock.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">283</span>
+    <span class="phpdocumentor-element-found-in__line">295</span>
 </aside>
 
         <p class="phpdocumentor-summary">Get the block type.</p>
@@ -1169,9 +1147,9 @@ not in the post content on editor load.</p>
         <a href="#method_get_block_type_attributes" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Blocks/BlockTypes/AbstractBlock.php"><a href="../files/woocommerce-src-blocks-blocktypes-abstractblock.html#source-view.367">src/Blocks/BlockTypes/AbstractBlock.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Blocks/BlockTypes/AbstractBlock.php"><a href="../files/woocommerce-src-blocks-blocktypes-abstractblock.html#source-view.379">src/Blocks/BlockTypes/AbstractBlock.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">367</span>
+    <span class="phpdocumentor-element-found-in__line">379</span>
 </aside>
 
         <p class="phpdocumentor-summary">Get block attributes.</p>
@@ -1201,9 +1179,9 @@ not in the post content on editor load.</p>
         <a href="#method_get_block_type_editor_script" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Blocks/BlockTypes/AbstractBlock.php"><a href="../files/woocommerce-src-blocks-blocktypes-abstractblock.html#source-view.306">src/Blocks/BlockTypes/AbstractBlock.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Blocks/BlockTypes/AbstractBlock.php"><a href="../files/woocommerce-src-blocks-blocktypes-abstractblock.html#source-view.318">src/Blocks/BlockTypes/AbstractBlock.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">306</span>
+    <span class="phpdocumentor-element-found-in__line">318</span>
 </aside>
 
         <p class="phpdocumentor-summary">Get the editor script data for this block type.</p>
@@ -1259,9 +1237,9 @@ not in the post content on editor load.</p>
         <a href="#method_get_block_type_editor_style" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Blocks/BlockTypes/AbstractBlock.php"><a href="../files/woocommerce-src-blocks-blocktypes-abstractblock.html#source-view.321">src/Blocks/BlockTypes/AbstractBlock.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Blocks/BlockTypes/AbstractBlock.php"><a href="../files/woocommerce-src-blocks-blocktypes-abstractblock.html#source-view.333">src/Blocks/BlockTypes/AbstractBlock.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">321</span>
+    <span class="phpdocumentor-element-found-in__line">333</span>
 </aside>
 
         <p class="phpdocumentor-summary">Get the editor style handle for this block type.</p>
@@ -1305,9 +1283,9 @@ not in the post content on editor load.</p>
         <a href="#method_get_block_type_render_callback" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Blocks/BlockTypes/AbstractBlock.php"><a href="../files/woocommerce-src-blocks-blocktypes-abstractblock.html#source-view.295">src/Blocks/BlockTypes/AbstractBlock.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Blocks/BlockTypes/AbstractBlock.php"><a href="../files/woocommerce-src-blocks-blocktypes-abstractblock.html#source-view.307">src/Blocks/BlockTypes/AbstractBlock.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">295</span>
+    <span class="phpdocumentor-element-found-in__line">307</span>
 </aside>
 
         <p class="phpdocumentor-summary">Get the render callback for this block type.</p>
@@ -1352,9 +1330,9 @@ not in the post content on editor load.</p>
         <a href="#method_get_block_type_script" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Blocks/BlockTypes/OrderConfirmation/AbstractOrderConfirmationBlock.php"><a href="../files/woocommerce-src-blocks-blocktypes-orderconfirmation-abstractorderconfirmationblock.html#source-view.271">src/Blocks/BlockTypes/OrderConfirmation/AbstractOrderConfirmationBlock.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Blocks/BlockTypes/OrderConfirmation/AbstractOrderConfirmationBlock.php"><a href="../files/woocommerce-src-blocks-blocktypes-orderconfirmation-abstractorderconfirmationblock.html#source-view.262">src/Blocks/BlockTypes/OrderConfirmation/AbstractOrderConfirmationBlock.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">271</span>
+    <span class="phpdocumentor-element-found-in__line">262</span>
 </aside>
 
         <p class="phpdocumentor-summary">Get the frontend script handle for this block type.</p>
@@ -1396,9 +1374,9 @@ not in the post content on editor load.</p>
         <a href="#method_get_block_type_style" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Blocks/BlockTypes/AbstractBlock.php"><a href="../files/woocommerce-src-blocks-blocktypes-abstractblock.html#source-view.346">src/Blocks/BlockTypes/AbstractBlock.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Blocks/BlockTypes/AbstractBlock.php"><a href="../files/woocommerce-src-blocks-blocktypes-abstractblock.html#source-view.358">src/Blocks/BlockTypes/AbstractBlock.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">346</span>
+    <span class="phpdocumentor-element-found-in__line">358</span>
 </aside>
 
         <p class="phpdocumentor-summary">Get the frontend style handle for this block type.</p>
@@ -1428,9 +1406,9 @@ not in the post content on editor load.</p>
         <a href="#method_get_block_type_supports" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Blocks/BlockTypes/AbstractBlock.php"><a href="../files/woocommerce-src-blocks-blocktypes-abstractblock.html#source-view.358">src/Blocks/BlockTypes/AbstractBlock.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Blocks/BlockTypes/AbstractBlock.php"><a href="../files/woocommerce-src-blocks-blocktypes-abstractblock.html#source-view.370">src/Blocks/BlockTypes/AbstractBlock.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">358</span>
+    <span class="phpdocumentor-element-found-in__line">370</span>
 </aside>
 
         <p class="phpdocumentor-summary">Get the supports array for this block type.</p>
@@ -1474,9 +1452,9 @@ not in the post content on editor load.</p>
         <a href="#method_get_block_type_uses_context" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Blocks/BlockTypes/AbstractBlock.php"><a href="../files/woocommerce-src-blocks-blocktypes-abstractblock.html#source-view.376">src/Blocks/BlockTypes/AbstractBlock.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Blocks/BlockTypes/AbstractBlock.php"><a href="../files/woocommerce-src-blocks-blocktypes-abstractblock.html#source-view.388">src/Blocks/BlockTypes/AbstractBlock.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">376</span>
+    <span class="phpdocumentor-element-found-in__line">388</span>
 </aside>
 
         <p class="phpdocumentor-summary">Get block usesContext.</p>
@@ -1506,9 +1484,9 @@ not in the post content on editor load.</p>
         <a href="#method_get_chunks_paths" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Blocks/BlockTypes/AbstractBlock.php"><a href="../files/woocommerce-src-blocks-blocktypes-abstractblock.html#source-view.192">src/Blocks/BlockTypes/AbstractBlock.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Blocks/BlockTypes/AbstractBlock.php"><a href="../files/woocommerce-src-blocks-blocktypes-abstractblock.html#source-view.204">src/Blocks/BlockTypes/AbstractBlock.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">192</span>
+    <span class="phpdocumentor-element-found-in__line">204</span>
 </aside>
 
         <p class="phpdocumentor-summary">Generate an array of chunks paths for loading translation.</p>
@@ -1582,9 +1560,9 @@ not in the post content on editor load.</p>
         <a href="#method_get_hook_content" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Blocks/BlockTypes/OrderConfirmation/AbstractOrderConfirmationBlock.php"><a href="../files/woocommerce-src-blocks-blocktypes-orderconfirmation-abstractorderconfirmationblock.html#source-view.30">src/Blocks/BlockTypes/OrderConfirmation/AbstractOrderConfirmationBlock.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Blocks/BlockTypes/OrderConfirmation/AbstractOrderConfirmationBlock.php"><a href="../files/woocommerce-src-blocks-blocktypes-orderconfirmation-abstractorderconfirmationblock.html#source-view.19">src/Blocks/BlockTypes/OrderConfirmation/AbstractOrderConfirmationBlock.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">30</span>
+    <span class="phpdocumentor-element-found-in__line">19</span>
 </aside>
 
         <p class="phpdocumentor-summary">Get the content from a hook and return it.</p>
@@ -1635,9 +1613,9 @@ not in the post content on editor load.</p>
         <a href="#method_get_order" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Blocks/BlockTypes/OrderConfirmation/AbstractOrderConfirmationBlock.php"><a href="../files/woocommerce-src-blocks-blocktypes-orderconfirmation-abstractorderconfirmationblock.html#source-view.93">src/Blocks/BlockTypes/OrderConfirmation/AbstractOrderConfirmationBlock.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Blocks/BlockTypes/OrderConfirmation/AbstractOrderConfirmationBlock.php"><a href="../files/woocommerce-src-blocks-blocktypes-orderconfirmation-abstractorderconfirmationblock.html#source-view.78">src/Blocks/BlockTypes/OrderConfirmation/AbstractOrderConfirmationBlock.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">93</span>
+    <span class="phpdocumentor-element-found-in__line">78</span>
 </aside>
 
         <p class="phpdocumentor-summary">Get current order.</p>
@@ -1667,9 +1645,9 @@ not in the post content on editor load.</p>
         <a href="#method_get_routes_from_namespace" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Blocks/BlockTypes/AbstractBlock.php"><a href="../files/woocommerce-src-blocks-blocktypes-abstractblock.html#source-view.477">src/Blocks/BlockTypes/AbstractBlock.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Blocks/BlockTypes/AbstractBlock.php"><a href="../files/woocommerce-src-blocks-blocktypes-abstractblock.html#source-view.491">src/Blocks/BlockTypes/AbstractBlock.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">477</span>
+    <span class="phpdocumentor-element-found-in__line">491</span>
 </aside>
 
         <p class="phpdocumentor-summary">Get routes from a REST API namespace.</p>
@@ -1711,9 +1689,9 @@ not in the post content on editor load.</p>
         <a href="#method_get_view_order_permissions" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Blocks/BlockTypes/OrderConfirmation/AbstractOrderConfirmationBlock.php"><a href="../files/woocommerce-src-blocks-blocktypes-orderconfirmation-abstractorderconfirmationblock.html#source-view.109">src/Blocks/BlockTypes/OrderConfirmation/AbstractOrderConfirmationBlock.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Blocks/BlockTypes/OrderConfirmation/AbstractOrderConfirmationBlock.php"><a href="../files/woocommerce-src-blocks-blocktypes-orderconfirmation-abstractorderconfirmationblock.html#source-view.94">src/Blocks/BlockTypes/OrderConfirmation/AbstractOrderConfirmationBlock.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">109</span>
+    <span class="phpdocumentor-element-found-in__line">94</span>
 </aside>
 
         <p class="phpdocumentor-summary">View mode for order details based on the order, current user, and settings.</p>
@@ -1755,9 +1733,9 @@ not in the post content on editor load.</p>
         <a href="#method_has_valid_order_key" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Blocks/BlockTypes/OrderConfirmation/AbstractOrderConfirmationBlock.php"><a href="../files/woocommerce-src-blocks-blocktypes-orderconfirmation-abstractorderconfirmationblock.html#source-view.239">src/Blocks/BlockTypes/OrderConfirmation/AbstractOrderConfirmationBlock.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Blocks/BlockTypes/OrderConfirmation/AbstractOrderConfirmationBlock.php"><a href="../files/woocommerce-src-blocks-blocktypes-orderconfirmation-abstractorderconfirmationblock.html#source-view.230">src/Blocks/BlockTypes/OrderConfirmation/AbstractOrderConfirmationBlock.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">239</span>
+    <span class="phpdocumentor-element-found-in__line">230</span>
 </aside>
 
         <p class="phpdocumentor-summary">See if the order key is valid.</p>
@@ -1799,9 +1777,9 @@ not in the post content on editor load.</p>
         <a href="#method_initialize" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Blocks/BlockTypes/OrderConfirmation/AbstractOrderConfirmationBlock.php"><a href="../files/woocommerce-src-blocks-blocktypes-orderconfirmation-abstractorderconfirmationblock.html#source-view.18">src/Blocks/BlockTypes/OrderConfirmation/AbstractOrderConfirmationBlock.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Blocks/BlockTypes/AbstractBlock.php"><a href="../files/woocommerce-src-blocks-blocktypes-abstractblock.html#source-view.132">src/Blocks/BlockTypes/AbstractBlock.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">18</span>
+    <span class="phpdocumentor-element-found-in__line">132</span>
 </aside>
 
         <p class="phpdocumentor-summary">Initialize this block type.</p>
@@ -1830,14 +1808,46 @@ not in the post content on editor load.</p>
             -protected
                                                         "
 >
+    <h4 class="phpdocumentor-element__name" id="method_is_block_editor">
+        is_block_editor()
+        <a href="#method_is_block_editor" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Blocks/BlockTypes/AbstractBlock.php"><a href="../files/woocommerce-src-blocks-blocktypes-abstractblock.html#source-view.117">src/Blocks/BlockTypes/AbstractBlock.php</a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">117</span>
+</aside>
+
+        <p class="phpdocumentor-summary">Are we currently on the admin block editor screen?</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">protected</span>
+                <span class="phpdocumentor-signature__name">is_block_editor</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
+
+        <section class="phpdocumentor-description"></section>
+
+    
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">mixed</span>
+            &mdash; <span class="phpdocumentor-return-value__description"></span>
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -protected
+                                                        "
+>
     <h4 class="phpdocumentor-element__name" id="method_is_current_customer_order">
         is_current_customer_order()
         <a href="#method_is_current_customer_order" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Blocks/BlockTypes/OrderConfirmation/AbstractOrderConfirmationBlock.php"><a href="../files/woocommerce-src-blocks-blocktypes-orderconfirmation-abstractorderconfirmationblock.html#source-view.262">src/Blocks/BlockTypes/OrderConfirmation/AbstractOrderConfirmationBlock.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Blocks/BlockTypes/OrderConfirmation/AbstractOrderConfirmationBlock.php"><a href="../files/woocommerce-src-blocks-blocktypes-orderconfirmation-abstractorderconfirmationblock.html#source-view.253">src/Blocks/BlockTypes/OrderConfirmation/AbstractOrderConfirmationBlock.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">262</span>
+    <span class="phpdocumentor-element-found-in__line">253</span>
 </aside>
 
         <p class="phpdocumentor-summary">See if the current logged in user ID matches the given order customer ID.</p>
@@ -1880,9 +1890,9 @@ not in the post content on editor load.</p>
         <a href="#method_is_customer_order" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Blocks/BlockTypes/OrderConfirmation/AbstractOrderConfirmationBlock.php"><a href="../files/woocommerce-src-blocks-blocktypes-orderconfirmation-abstractorderconfirmationblock.html#source-view.250">src/Blocks/BlockTypes/OrderConfirmation/AbstractOrderConfirmationBlock.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Blocks/BlockTypes/OrderConfirmation/AbstractOrderConfirmationBlock.php"><a href="../files/woocommerce-src-blocks-blocktypes-orderconfirmation-abstractorderconfirmationblock.html#source-view.241">src/Blocks/BlockTypes/OrderConfirmation/AbstractOrderConfirmationBlock.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">250</span>
+    <span class="phpdocumentor-element-found-in__line">241</span>
 </aside>
 
         <p class="phpdocumentor-summary">See if the current order came from a guest or a logged in customer.</p>
@@ -1924,9 +1934,9 @@ not in the post content on editor load.</p>
         <a href="#method_is_email_verified" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Blocks/BlockTypes/OrderConfirmation/AbstractOrderConfirmationBlock.php"><a href="../files/woocommerce-src-blocks-blocktypes-orderconfirmation-abstractorderconfirmationblock.html#source-view.187">src/Blocks/BlockTypes/OrderConfirmation/AbstractOrderConfirmationBlock.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Blocks/BlockTypes/OrderConfirmation/AbstractOrderConfirmationBlock.php"><a href="../files/woocommerce-src-blocks-blocktypes-orderconfirmation-abstractorderconfirmationblock.html#source-view.172">src/Blocks/BlockTypes/OrderConfirmation/AbstractOrderConfirmationBlock.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">187</span>
+    <span class="phpdocumentor-element-found-in__line">172</span>
 </aside>
 
         <p class="phpdocumentor-summary">Returns true if the email has been verified (posted email matches given order email).</p>
@@ -1968,9 +1978,9 @@ not in the post content on editor load.</p>
         <a href="#method_is_within_grace_period" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Blocks/BlockTypes/OrderConfirmation/AbstractOrderConfirmationBlock.php"><a href="../files/woocommerce-src-blocks-blocktypes-orderconfirmation-abstractorderconfirmationblock.html#source-view.164">src/Blocks/BlockTypes/OrderConfirmation/AbstractOrderConfirmationBlock.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Blocks/BlockTypes/OrderConfirmation/AbstractOrderConfirmationBlock.php"><a href="../files/woocommerce-src-blocks-blocktypes-orderconfirmation-abstractorderconfirmationblock.html#source-view.149">src/Blocks/BlockTypes/OrderConfirmation/AbstractOrderConfirmationBlock.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">164</span>
+    <span class="phpdocumentor-element-found-in__line">149</span>
 </aside>
 
         <p class="phpdocumentor-summary">See if the order was created within the grace period for viewing details.</p>
@@ -2012,9 +2022,9 @@ not in the post content on editor load.</p>
         <a href="#method_parse_render_callback_attributes" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Blocks/BlockTypes/AbstractBlock.php"><a href="../files/woocommerce-src-blocks-blocktypes-abstractblock.html#source-view.386">src/Blocks/BlockTypes/AbstractBlock.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Blocks/BlockTypes/AbstractBlock.php"><a href="../files/woocommerce-src-blocks-blocktypes-abstractblock.html#source-view.398">src/Blocks/BlockTypes/AbstractBlock.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">386</span>
+    <span class="phpdocumentor-element-found-in__line">398</span>
 </aside>
 
         <p class="phpdocumentor-summary">Parses block attributes from the render_callback.</p>
@@ -2056,9 +2066,9 @@ not in the post content on editor load.</p>
         <a href="#method_register_block_type" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Blocks/BlockTypes/AbstractBlock.php"><a href="../files/woocommerce-src-blocks-blocktypes-abstractblock.html#source-view.210">src/Blocks/BlockTypes/AbstractBlock.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Blocks/BlockTypes/AbstractBlock.php"><a href="../files/woocommerce-src-blocks-blocktypes-abstractblock.html#source-view.222">src/Blocks/BlockTypes/AbstractBlock.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">210</span>
+    <span class="phpdocumentor-element-found-in__line">222</span>
 </aside>
 
         <p class="phpdocumentor-summary">Registers the block type with WordPress.</p>
@@ -2088,9 +2098,9 @@ not in the post content on editor load.</p>
         <a href="#method_register_block_type_assets" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Blocks/BlockTypes/AbstractBlock.php"><a href="../files/woocommerce-src-blocks-blocktypes-abstractblock.html#source-view.135">src/Blocks/BlockTypes/AbstractBlock.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Blocks/BlockTypes/AbstractBlock.php"><a href="../files/woocommerce-src-blocks-blocktypes-abstractblock.html#source-view.147">src/Blocks/BlockTypes/AbstractBlock.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">135</span>
+    <span class="phpdocumentor-element-found-in__line">147</span>
 </aside>
 
         <p class="phpdocumentor-summary">Register script and style assets for the block type before it is registered.</p>
@@ -2121,9 +2131,9 @@ not in the post content on editor load.</p>
         <a href="#method_register_chunk_translations" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Blocks/BlockTypes/AbstractBlock.php"><a href="../files/woocommerce-src-blocks-blocktypes-abstractblock.html#source-view.173">src/Blocks/BlockTypes/AbstractBlock.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Blocks/BlockTypes/AbstractBlock.php"><a href="../files/woocommerce-src-blocks-blocktypes-abstractblock.html#source-view.185">src/Blocks/BlockTypes/AbstractBlock.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">173</span>
+    <span class="phpdocumentor-element-found-in__line">185</span>
 </aside>
 
         <p class="phpdocumentor-summary">Injects Chunk Translations into the page so translations work for lazy loaded components.</p>
@@ -2166,9 +2176,9 @@ not in the post content on editor load.</p>
         <a href="#method_render" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Blocks/BlockTypes/OrderConfirmation/AbstractOrderConfirmationBlock.php"><a href="../files/woocommerce-src-blocks-blocktypes-orderconfirmation-abstractorderconfirmationblock.html#source-view.46">src/Blocks/BlockTypes/OrderConfirmation/AbstractOrderConfirmationBlock.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Blocks/BlockTypes/OrderConfirmation/AbstractOrderConfirmationBlock.php"><a href="../files/woocommerce-src-blocks-blocktypes-orderconfirmation-abstractorderconfirmationblock.html#source-view.35">src/Blocks/BlockTypes/OrderConfirmation/AbstractOrderConfirmationBlock.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">46</span>
+    <span class="phpdocumentor-element-found-in__line">35</span>
 </aside>
 
         <p class="phpdocumentor-summary">Render the block.</p>
@@ -2228,9 +2238,9 @@ not in the post content on editor load.</p>
         <a href="#method_render_additional_field" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Blocks/BlockTypes/OrderConfirmation/AbstractOrderConfirmationBlock.php"><a href="../files/woocommerce-src-blocks-blocktypes-orderconfirmation-abstractorderconfirmationblock.html#source-view.345">src/Blocks/BlockTypes/OrderConfirmation/AbstractOrderConfirmationBlock.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Blocks/BlockTypes/OrderConfirmation/AbstractOrderConfirmationBlock.php"><a href="../files/woocommerce-src-blocks-blocktypes-orderconfirmation-abstractorderconfirmationblock.html#source-view.285">src/Blocks/BlockTypes/OrderConfirmation/AbstractOrderConfirmationBlock.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">345</span>
+    <span class="phpdocumentor-element-found-in__line">285</span>
 </aside>
 
         <p class="phpdocumentor-summary">Render custom field row.</p>
@@ -2272,9 +2282,9 @@ not in the post content on editor load.</p>
         <a href="#method_render_additional_fields" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Blocks/BlockTypes/OrderConfirmation/AbstractOrderConfirmationBlock.php"><a href="../files/woocommerce-src-blocks-blocktypes-orderconfirmation-abstractorderconfirmationblock.html#source-view.332">src/Blocks/BlockTypes/OrderConfirmation/AbstractOrderConfirmationBlock.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Blocks/BlockTypes/OrderConfirmation/AbstractOrderConfirmationBlock.php"><a href="../files/woocommerce-src-blocks-blocktypes-orderconfirmation-abstractorderconfirmationblock.html#source-view.272">src/Blocks/BlockTypes/OrderConfirmation/AbstractOrderConfirmationBlock.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">332</span>
+    <span class="phpdocumentor-element-found-in__line">272</span>
 </aside>
 
         <p class="phpdocumentor-summary">Render custom fields for the order.</p>
@@ -2316,9 +2326,9 @@ not in the post content on editor load.</p>
         <a href="#method_render_content" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Blocks/BlockTypes/OrderConfirmation/AbstractOrderConfirmationBlock.php"><a href="../files/woocommerce-src-blocks-blocktypes-orderconfirmation-abstractorderconfirmationblock.html#source-view.76">src/Blocks/BlockTypes/OrderConfirmation/AbstractOrderConfirmationBlock.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Blocks/BlockTypes/OrderConfirmation/AbstractOrderConfirmationBlock.php"><a href="../files/woocommerce-src-blocks-blocktypes-orderconfirmation-abstractorderconfirmationblock.html#source-view.61">src/Blocks/BlockTypes/OrderConfirmation/AbstractOrderConfirmationBlock.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">76</span>
+    <span class="phpdocumentor-element-found-in__line">61</span>
 </aside>
 
         <p class="phpdocumentor-summary">This renders the content of the block within the wrapper. The permission determines what data can be shown under
@@ -2388,9 +2398,9 @@ the given context.</p>
         <a href="#method_render_content_fallback" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Blocks/BlockTypes/OrderConfirmation/AbstractOrderConfirmationBlock.php"><a href="../files/woocommerce-src-blocks-blocktypes-orderconfirmation-abstractorderconfirmationblock.html#source-view.84">src/Blocks/BlockTypes/OrderConfirmation/AbstractOrderConfirmationBlock.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Blocks/BlockTypes/OrderConfirmation/AbstractOrderConfirmationBlock.php"><a href="../files/woocommerce-src-blocks-blocktypes-orderconfirmation-abstractorderconfirmationblock.html#source-view.69">src/Blocks/BlockTypes/OrderConfirmation/AbstractOrderConfirmationBlock.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">84</span>
+    <span class="phpdocumentor-element-found-in__line">69</span>
 </aside>
 
         <p class="phpdocumentor-summary">This is what gets rendered when the order does not exist. Renders nothing by default, but can be overridden by
@@ -2421,7 +2431,7 @@ child classes.</p>
 
     <footer class="phpdocumentor phpdocumentor-footer">
     <div class="phpdocumentor-section">
-        <span>WooCommerce Code Reference API documentation generated by <a href="http://www.phpdoc.org/">phpDocumentor</a> on July 25th, 2024 at 11:33 am.</span>
+        <span>WooCommerce Code Reference API documentation generated by <a href="http://www.phpdoc.org/">phpDocumentor</a> on May 16th, 2025 at 09:14 am.</span>
     </div>
 </footer>
 
@@ -2433,7 +2443,7 @@ child classes.</p>
             'searchIndex': '..\/js\/searchIndex.json'
         };
     </script>
-    <script src="../js/searchIndex.js?updated=1721907205"></script>
-    <script src="../js/search.js?updated=1721907205"></script>
+    <script src="../js/searchIndex.js?updated=1747386886"></script>
+    <script src="../js/search.js?updated=1747386886"></script>
 </body>
 </html>

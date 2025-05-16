@@ -4,14 +4,13 @@
     <meta charset="utf-8">
     <title>WooCommerce Code Reference</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="../images/favicon.png" />
-    <link rel="apple-touch-icon" href="../images/apple-touch-icon.png"/>
-    <link rel="apple-touch-icon" sizes="72x72" href="../images/apple-touch-icon-72x72.png"/>
-    <link rel="apple-touch-icon" sizes="114x114" href="../images/apple-touch-icon-114x114.png"/>
+    <link rel="icon" href="../images/favicon-32x32.png" sizes="32x32" />
+    <link rel="icon" href="../images/favicon-192x192.png" sizes="192x192" />
+    <link rel="apple-touch-icon" href="../images/favicon-180x180.png" />
+
     <link rel="stylesheet" href="../css/normalize.css">
-    <link rel="stylesheet" href="../css/base.css?updated=1721907185">
-    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../css/template.css?updated=1721907185">
+    <link rel="stylesheet" href="../css/base.css?updated=1747386862">
+    <link rel="stylesheet" href="../css/template.css?updated=1747386862">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0/css/all.min.css" integrity="sha256-ybRkN9dBjhcS2qrW1z+hfCxq+1aBdwyQM5wlQoQVt/0=" crossorigin="anonymous" />
             <script src="https://cdn.jsdelivr.net/npm/css-vars-ponyfill@2"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0/js/all.min.js" integrity="sha256-0vuk8LXoyrmCjp1f0O300qo1M75ZQyhH9X3J6d+scmk=" crossorigin="anonymous"></script>
@@ -38,14 +37,13 @@
     <header class="phpdocumentor-top-header">
     <section class="phpdocumentor-section">
         <div class="site-branding">
-            <a class="site-logo" href="../index.html"><img width="180" src="../images/logo.svg" alt="WooCommerce" /></a>
+            <a class="site-logo" href="../index.html"><img src="../images/logo.png" alt="WooCommerce" /></a>
         </div>
         <nav class="main-navigation">
             <ul>
                 <li><a href="../hooks/hooks.html">Hooks Reference</a></li>
-                <li><a href="https://docs.woocommerce.com/">Documentation</a></li>
+                <li><a href="https://developer.woocommerce.com/docs/">Documentation</a></li>
                 <li><a href="https://woocommerce.github.io/woocommerce-rest-api-docs/">REST API Docs</a></li>
-                <li><a href="https://woocommerce.com/careers/?utm_source=woocommerce+core+code+reference&utm_medium=devdocs&utm_campaign=woo+careers" target="_blank">We're hiring!</a></li>
             </ul>
         </nav>
     </section>
@@ -53,7 +51,7 @@
 
 <div class="phpdocumentor-header">
     <section class="phpdocumentor-section">
-        <h1 class="phpdocumentor-title">WooCommerce Code Reference</h1>
+        <h1 class="phpdocumentor-title"><a href="../index.html">WooCommerce Code Reference</a></h1>
         <section class="phpdocumentor-search">
     <label class="phpdocumentor-label">
         <span class="visually-hidden">Search (click ESC to close search results)</span>
@@ -74,6 +72,10 @@
                                         <h4 class="phpdocumentor-sidebar__root-namespace"><a href="../namespaces/woocommerce.html"><abbr title="\WooCommerce">WooCommerce</abbr></a></h4>
                 <ul class="phpdocumentor-list">
                                             <li><a href="../namespaces/woocommerce-admin.html"><abbr title="\WooCommerce\Admin">Admin</abbr></a></li>
+                                    </ul>
+                            <h4 class="phpdocumentor-sidebar__root-namespace"><a href="../namespaces/mailpoet.html"><abbr title="\MailPoet">MailPoet</abbr></a></h4>
+                <ul class="phpdocumentor-list">
+                                            <li><a href="../namespaces/mailpoet-emaileditor.html"><abbr title="\MailPoet\EmailEditor">EmailEditor</abbr></a></li>
                                     </ul>
                             <h4 class="phpdocumentor-sidebar__root-namespace"><a href="../namespaces/automattic.html"><abbr title="\Automattic">Automattic</abbr></a></h4>
                 <ul class="phpdocumentor-list">
@@ -119,8 +121,10 @@
                                     <li><a href="../packages/WooCommerce-Widgets.html"><abbr title="\WooCommerce\Widgets">Widgets</abbr></a></li>
                                     <li><a href="../packages/WooCommerce-Uninstaller.html"><abbr title="\WooCommerce\Uninstaller">Uninstaller</abbr></a></li>
                             </ul>
-                                <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/WoocommerceAdmin.html"><abbr title="\WoocommerceAdmin">WoocommerceAdmin</abbr></a></h3>
-                                <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/WoocommerceNavigation.html"><abbr title="\WoocommerceNavigation">WoocommerceNavigation</abbr></a></h3>
+                                <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/MailPoet.html"><abbr title="\MailPoet">MailPoet</abbr></a></h3>
+                        <ul class="phpdocumentor-list">
+                                    <li><a href="../packages/MailPoet-EmailEditor.html"><abbr title="\MailPoet\EmailEditor">EmailEditor</abbr></a></li>
+                            </ul>
                                 <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/Automattic.html"><abbr title="\Automattic">Automattic</abbr></a></h3>
                         <ul class="phpdocumentor-list">
                                     <li><a href="../packages/Automattic-WooCommerce.html"><abbr title="\Automattic\WooCommerce">WooCommerce</abbr></a></li>
@@ -159,7 +163,7 @@
             <pre id="source-view" tabindex="-1" class="language-php line-numbers linkable-line-numbers"><code>&lt;?php
 namespace Automattic\WooCommerce\Blocks\BlockTypes;
 
-use Automattic\WooCommerce\Blocks\Utils\ProductCollectionUtils;
+use Automattic\WooCommerce\Blocks\BlockTypes\ProductCollection\Utils as ProductCollectionUtils;
 use Automattic\WooCommerce\Blocks\QueryFilters;
 use Automattic\WooCommerce\Blocks\Package;
 
@@ -187,8 +191,63 @@ final class ProductFilterPrice extends AbstractBlock {
 	protected function initialize() {
 		parent::initialize();
 
-		add_filter( &#039;collection_filter_query_param_keys&#039;, array( $this, &#039;get_filter_query_param_keys&#039; ), 10, 2 );
-		add_filter( &#039;collection_active_filters_data&#039;, array( $this, &#039;register_active_filters_data&#039; ), 10, 2 );
+		add_filter( &#039;woocommerce_blocks_product_filters_param_keys&#039;, array( $this, &#039;get_filter_query_param_keys&#039; ), 10, 2 );
+		add_filter( &#039;woocommerce_blocks_product_filters_selected_items&#039;, array( $this, &#039;prepare_selected_filters&#039; ), 10, 2 );
+	}
+
+	/**
+	 * Prepare the active filter items.
+	 *
+	 * @param array $items  The active filter items.
+	 * @param array $params The query param parsed from the URL.
+	 * @return array Active filters items.
+	 */
+	public function prepare_selected_filters( $items, $params ) {
+		$min_price           = intval( $params[ self::MIN_PRICE_QUERY_VAR ] ?? 0 );
+		$max_price           = intval( $params[ self::MAX_PRICE_QUERY_VAR ] ?? 0 );
+		$formatted_min_price = $min_price ? html_entity_decode( wp_strip_all_tags( wc_price( $min_price, array( &#039;decimals&#039; =&gt; 0 ) ) ) ) : null;
+		$formatted_max_price = $max_price ? html_entity_decode( wp_strip_all_tags( wc_price( $max_price, array( &#039;decimals&#039; =&gt; 0 ) ) ) ) : null;
+
+		if ( ! $formatted_min_price &amp;&amp; ! $formatted_max_price ) {
+			return $items;
+		}
+
+		$item = array(
+			&#039;type&#039;  =&gt; &#039;price&#039;,
+			&#039;value&#039; =&gt; &quot;{$min_price}-{$max_price}&quot;,
+			&#039;price&#039; =&gt; array(),
+		);
+
+		if ( $min_price ) {
+			$item[&#039;price&#039;][&#039;min&#039;] = $min_price;
+		}
+
+		if ( $max_price ) {
+			$item[&#039;price&#039;][&#039;max&#039;] = $max_price;
+		}
+
+		if ( $formatted_min_price &amp;&amp; $formatted_max_price ) {
+			$item[&#039;label&#039;] = sprintf(
+				/* translators: %1$s and %2$s are the formatted minimum and maximum prices respectively. */
+				__( &#039;Price: %1$s - %2$s&#039;, &#039;woocommerce&#039; ),
+				$formatted_min_price,
+				$formatted_max_price
+			);
+		}
+
+		if ( ! $formatted_min_price ) {
+			/* translators: %s is the formatted maximum price. */
+			$item[&#039;label&#039;] = sprintf( __( &#039;Price: Up to %s&#039;, &#039;woocommerce&#039; ), $formatted_max_price );
+		}
+
+		if ( ! $formatted_max_price ) {
+			/* translators: %s is the formatted minimum price. */
+			$item[&#039;label&#039;] = sprintf( __( &#039;Price: From %s&#039;, &#039;woocommerce&#039; ), $formatted_min_price );
+		}
+
+		$items[] = $item;
+
+		return $items;
 	}
 
 	/**
@@ -202,7 +261,7 @@ final class ProductFilterPrice extends AbstractBlock {
 	public function get_filter_query_param_keys( $filter_param_keys, $url_param_keys ) {
 		$price_param_keys = array_filter(
 			$url_param_keys,
-			function( $param ) {
+			function ( $param ) {
 				return self::MIN_PRICE_QUERY_VAR === $param || self::MAX_PRICE_QUERY_VAR === $param;
 			}
 		);
@@ -211,57 +270,6 @@ final class ProductFilterPrice extends AbstractBlock {
 			$filter_param_keys,
 			$price_param_keys
 		);
-	}
-
-	/**
-	 * Register the active filters data.
-	 *
-	 * @param array $data   The active filters data.
-	 * @param array $params The query param parsed from the URL.
-	 * @return array Active filters data.
-	 */
-	public function register_active_filters_data( $data, $params ) {
-		$min_price           = intval( $params[ self::MIN_PRICE_QUERY_VAR ] ?? 0 );
-		$max_price           = intval( $params[ self::MAX_PRICE_QUERY_VAR ] ?? 0 );
-		$formatted_min_price = $min_price ? wp_strip_all_tags( wc_price( $min_price, array( &#039;decimals&#039; =&gt; 0 ) ) ) : null;
-		$formatted_max_price = $max_price ? wp_strip_all_tags( wc_price( $max_price, array( &#039;decimals&#039; =&gt; 0 ) ) ) : null;
-
-		if ( ! $formatted_min_price &amp;&amp; ! $formatted_max_price ) {
-			return $data;
-		}
-
-		if ( $formatted_min_price &amp;&amp; $formatted_max_price ) {
-			$title = sprintf(
-				/* translators: %1$s and %2$s are the formatted minimum and maximum prices respectively. */
-				__( &#039;Between %1$s and %2$s&#039;, &#039;woocommerce&#039; ),
-				$formatted_min_price,
-				$formatted_max_price
-			);
-		}
-
-		if ( ! $formatted_min_price ) {
-			/* translators: %s is the formatted maximum price. */
-			$title = sprintf( __( &#039;Up to %s&#039;, &#039;woocommerce&#039; ), $formatted_max_price );
-		}
-
-		if ( ! $formatted_max_price ) {
-			/* translators: %s is the formatted minimum price. */
-			$title = sprintf( __( &#039;From %s&#039;, &#039;woocommerce&#039; ), $formatted_min_price );
-		}
-
-		$data[&#039;price&#039;] = array(
-			&#039;type&#039;  =&gt; __( &#039;Price&#039;, &#039;woocommerce&#039; ),
-			&#039;items&#039; =&gt; array(
-				array(
-					&#039;title&#039;      =&gt; $title,
-					&#039;attributes&#039; =&gt; array(
-						&#039;data-wc-on--click&#039; =&gt; &quot;{$this-&gt;get_full_block_name()}::actions.reset&quot;,
-					),
-				),
-			),
-		);
-
-		return $data;
 	}
 
 	/**
@@ -278,135 +286,74 @@ final class ProductFilterPrice extends AbstractBlock {
 			return &#039;&#039;;
 		}
 
-		$price_range         = $this-&gt;get_filtered_price( $block );
-		$min_range           = $price_range[&#039;min_price&#039;] ?? 0;
-		$max_range           = $price_range[&#039;max_price&#039;] ?? 0;
-		$min_price           = intval( get_query_var( self::MIN_PRICE_QUERY_VAR, $min_range ) );
-		$max_price           = intval( get_query_var( self::MAX_PRICE_QUERY_VAR, $max_range ) );
-		$formatted_min_price = wc_price( $min_price, array( &#039;decimals&#039; =&gt; 0 ) );
-		$formatted_max_price = wc_price( $max_price, array( &#039;decimals&#039; =&gt; 0 ) );
+		wp_enqueue_script_module( $this-&gt;get_full_block_name() );
 
-		$data = array(
-			&#039;minPrice&#039; =&gt; $min_price,
-			&#039;maxPrice&#039; =&gt; $max_price,
-			&#039;minRange&#039; =&gt; $min_range,
-			&#039;maxRange&#039; =&gt; $max_range,
+		$price_range   = $this-&gt;get_filtered_price( $block );
+		$min_range     = $price_range[&#039;min_price&#039;] ?? 0;
+		$max_range     = $price_range[&#039;max_price&#039;] ?? 0;
+		$filter_params = $block-&gt;context[&#039;filterParams&#039;] ?? array();
+		$min_price     = intval( $filter_params[ self::MIN_PRICE_QUERY_VAR ] ?? $min_range );
+		$max_price     = intval( $filter_params[ self::MAX_PRICE_QUERY_VAR ] ?? $max_range );
+
+		$filter_context = array(
+			&#039;price&#039;  =&gt; array(
+				&#039;minPrice&#039; =&gt; $min_price,
+				&#039;maxPrice&#039; =&gt; $max_price,
+				&#039;minRange&#039; =&gt; $min_range,
+				&#039;maxRange&#039; =&gt; $max_range,
+			),
+			&#039;parent&#039; =&gt; $this-&gt;get_full_block_name(),
 		);
 
-		list (
-			&#039;showInputFields&#039; =&gt; $show_input_fields,
-			&#039;inlineInput&#039; =&gt; $inline_input
-		) = $attributes;
-
 		$wrapper_attributes = array(
-			&#039;data-wc-interactive&#039; =&gt; wp_json_encode( array( &#039;namespace&#039; =&gt; $this-&gt;get_full_block_name() ) ),
-			&#039;data-wc-context&#039;     =&gt; wp_json_encode( $data ),
-			&#039;data-has-filter&#039;     =&gt; &#039;no&#039;,
+			&#039;data-wp-interactive&#039;  =&gt; $this-&gt;get_full_block_name(),
+			&#039;data-wp-context&#039;      =&gt; wp_json_encode(
+				array(
+					&#039;minRange&#039;             =&gt; $min_range,
+					&#039;maxRange&#039;             =&gt; $max_range,
+					&#039;hasFilterOptions&#039;     =&gt; $min_range &lt; $max_range &amp;&amp; $min_price &lt; $max_price,
+					&#039;activeLabelTemplates&#039; =&gt; array(
+						/* translators: {{min}} and {{max}} are the formatted minimum and maximum prices respectively. */
+						&#039;minAndMax&#039; =&gt; __( &#039;Price: {{min}} - {{max}}&#039;, &#039;woocommerce&#039; ),
+						/* translators: {{max}} is the formatted maximum price. */
+						&#039;maxOnly&#039;   =&gt; __( &#039;Price: Up to {{max}}&#039;, &#039;woocommerce&#039; ),
+						/* translators: {{min}} is the formatted minimum price. */
+						&#039;minOnly&#039;   =&gt; __( &#039;Price: From {{min}}&#039;, &#039;woocommerce&#039; ),
+					),
+				),
+				JSON_HEX_TAG | JSON_HEX_APOS | JSON_HEX_QUOT | JSON_HEX_AMP,
+			),
+			&#039;data-wp-key&#039;          =&gt; &#039;product-filter-price-&#039; . md5( wp_json_encode( $attributes ) ),
+			&#039;data-wp-bind--hidden&#039; =&gt; &#039;!context.hasFilterOptions&#039;,
 		);
 
 		if ( $min_range === $max_range || ! $max_range ) {
 			return sprintf(
-				&#039;&lt;div %s&gt;&lt;/div&gt;&#039;,
-				get_block_wrapper_attributes( $wrapper_attributes )
+				&#039;&lt;div %1$s hidden&gt;%2$s&lt;/div&gt;&#039;,
+				get_block_wrapper_attributes( $wrapper_attributes ),
+				array_reduce(
+					$block-&gt;parsed_block[&#039;innerBlocks&#039;],
+					function ( $carry, $parsed_block ) {
+						$carry .= render_block( $parsed_block );
+						return $carry;
+					},
+					&#039;&#039;
+				)
 			);
 		}
 
-		// CSS variables for the range bar style.
-		$__low       = 100 * ( $min_price - $min_range ) / ( $max_range - $min_range );
-		$__high      = 100 * ( $max_price - $min_range ) / ( $max_range - $min_range );
-		$range_style = &quot;--low: $__low%; --high: $__high%&quot;;
-
-		$price_min = $show_input_fields ?
-			sprintf(
-				&#039;&lt;input
-					class=&quot;min&quot;
-					name=&quot;min&quot;
-					type=&quot;text&quot;
-					value=&quot;%s&quot;
-					data-wc-bind--value=&quot;state.formattedMinPrice&quot;
-					data-wc-on--change=&quot;actions.updateProducts&quot;
-					pattern=&quot;&quot;
-				/&gt;&#039;,
-				wp_strip_all_tags( $formatted_min_price )
-			) : sprintf(
-				&#039;&lt;span data-wc-text=&quot;state.formattedMinPrice&quot;&gt;%s&lt;/span&gt;&#039;,
-				// Not escaped, as this is HTML.
-				$formatted_min_price
-			);
-
-		$price_max = $show_input_fields ?
-			sprintf(
-				&#039;&lt;input
-					class=&quot;max&quot;
-					name=&quot;max&quot;
-					type=&quot;text&quot;
-					value=&quot;%s&quot;
-					data-wc-bind--value=&quot;state.formattedMaxPrice&quot;
-					data-wc-on--change=&quot;actions.updateProducts&quot;
-				/&gt;&#039;,
-				wp_strip_all_tags( $formatted_max_price )
-			) : sprintf(
-				&#039;&lt;span data-wc-text=&quot;state.formattedMaxPrice&quot;&gt;%s&lt;/span&gt;&#039;,
-				// Not escaped, as this is HTML.
-				$formatted_max_price
-			);
-
-		$wrapper_attributes[&#039;data-has-filter&#039;] = &#039;yes&#039;;
-
-		$filter_price_content_classes = array(
-			&#039;wp-block-woocommerce-product-filter-price-content&#039;,
-			$show_input_fields &amp;&amp; $inline_input ? &#039;wp-block-woocommerce-product-filter-price-content--inline&#039; : &#039;&#039;,
+		return sprintf(
+			&#039;&lt;div %1$s&gt;%2$s&lt;/div&gt;&#039;,
+			get_block_wrapper_attributes( $wrapper_attributes ),
+			array_reduce(
+				$block-&gt;parsed_block[&#039;innerBlocks&#039;],
+				function ( $carry, $parsed_block ) use ( $filter_context ) {
+					$carry .= ( new \WP_Block( $parsed_block, array( &#039;filterData&#039; =&gt; $filter_context ) ) )-&gt;render();
+					return $carry;
+				},
+				&#039;&#039;
+			)
 		);
-
-		ob_start();
-		?&gt;
-			&lt;div &lt;?php echo get_block_wrapper_attributes( $wrapper_attributes ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?&gt;&gt;
-				&lt;?php echo $content; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?&gt;
-				&lt;div
-					class=&quot;&lt;?php echo esc_attr( implode( &#039; &#039;, $filter_price_content_classes ) ); ?&gt;&quot;
-				&gt;
-					&lt;div class=&quot;wp-block-woocommerce-product-filter-price-content-left-input text&quot;&gt;
-						&lt;?php echo $price_min; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?&gt;
-					&lt;/div&gt;
-					&lt;div
-						class=&quot;wp-block-woocommerce-product-filter-price-content-price-range-slider range&quot;
-						style=&quot;&lt;?php echo esc_attr( $range_style ); ?&gt;&quot;
-						data-wc-bind--style=&quot;state.rangeStyle&quot;
-					&gt;
-						&lt;div class=&quot;range-bar&quot;&gt;&lt;/div&gt;
-						&lt;input
-							type=&quot;range&quot;
-							class=&quot;min&quot;
-							name=&quot;min&quot;
-							min=&quot;&lt;?php echo esc_attr( $min_range ); ?&gt;&quot;
-							max=&quot;&lt;?php echo esc_attr( $max_range ); ?&gt;&quot;
-							value=&quot;&lt;?php echo esc_attr( $min_price ); ?&gt;&quot;
-							data-wc-bind--min=&quot;context.minRange&quot;
-							data-wc-bind--max=&quot;context.maxRange&quot;
-							data-wc-bind--value=&quot;context.minPrice&quot;
-							data-wc-on--change=&quot;actions.updateProducts&quot;
-						&gt;
-						&lt;input
-							type=&quot;range&quot;
-							class=&quot;max&quot;
-							name=&quot;max&quot;
-							min=&quot;&lt;?php echo esc_attr( $min_range ); ?&gt;&quot;
-							max=&quot;&lt;?php echo esc_attr( $max_range ); ?&gt;&quot;
-							value=&quot;&lt;?php echo esc_attr( $max_price ); ?&gt;&quot;
-							data-wc-bind--min=&quot;context.minRange&quot;
-							data-wc-bind--max=&quot;context.maxRange&quot;
-							data-wc-bind--value=&quot;context.maxPrice&quot;
-							data-wc-on--change=&quot;actions.updateProducts&quot;
-						&gt;
-					&lt;/div&gt;
-					&lt;div class=&quot;wp-block-woocommerce-product-filter-price-content-right-input text&quot;&gt;
-						&lt;?php // $price_min and $price_max are escaped in the sprintf() calls above. ?&gt;
-						&lt;?php echo $price_max; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?&gt;
-					&lt;/div&gt;
-				&lt;/div&gt;
-			&lt;/div&gt;
-		&lt;?php
-		return ob_get_clean();
 	}
 
 	/**
@@ -425,12 +372,30 @@ final class ProductFilterPrice extends AbstractBlock {
 			$query_vars[&#039;meta_query&#039;] = ProductCollectionUtils::remove_query_array( $query_vars[&#039;meta_query&#039;], &#039;key&#039;, &#039;_price&#039; );
 		}
 
+		if ( isset( $query_vars[&#039;taxonomy&#039;] ) &amp;&amp; false !== strpos( $query_vars[&#039;taxonomy&#039;], &#039;pa_&#039; ) ) {
+			unset(
+				$query_vars[&#039;taxonomy&#039;],
+				$query_vars[&#039;term&#039;]
+			);
+		}
+
 		$price_results = $filters-&gt;get_filtered_price( $query_vars );
 
 		return array(
 			&#039;min_price&#039; =&gt; intval( floor( $price_results-&gt;min_price ?? 0 ) ),
 			&#039;max_price&#039; =&gt; intval( ceil( $price_results-&gt;max_price ?? 0 ) ),
 		);
+	}
+
+	/**
+	 * Disable the block type script, this uses script modules.
+	 *
+	 * @param string|null $key The key.
+	 *
+	 * @return null
+	 */
+	protected function get_block_type_script( $key = null ) {
+		return null;
 	}
 }
 </code></pre>
@@ -443,7 +408,7 @@ final class ProductFilterPrice extends AbstractBlock {
 
     <footer class="phpdocumentor phpdocumentor-footer">
     <div class="phpdocumentor-section">
-        <span>WooCommerce Code Reference API documentation generated by <a href="http://www.phpdoc.org/">phpDocumentor</a> on July 25th, 2024 at 11:33 am.</span>
+        <span>WooCommerce Code Reference API documentation generated by <a href="http://www.phpdoc.org/">phpDocumentor</a> on May 16th, 2025 at 09:14 am.</span>
     </div>
 </footer>
 
@@ -455,7 +420,7 @@ final class ProductFilterPrice extends AbstractBlock {
             'searchIndex': '..\/js\/searchIndex.json'
         };
     </script>
-    <script src="../js/searchIndex.js?updated=1721907185"></script>
-    <script src="../js/search.js?updated=1721907185"></script>
+    <script src="../js/searchIndex.js?updated=1747386862"></script>
+    <script src="../js/search.js?updated=1747386862"></script>
 </body>
 </html>

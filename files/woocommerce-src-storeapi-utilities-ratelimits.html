@@ -4,14 +4,13 @@
     <meta charset="utf-8">
     <title>WooCommerce Code Reference</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="../images/favicon.png" />
-    <link rel="apple-touch-icon" href="../images/apple-touch-icon.png"/>
-    <link rel="apple-touch-icon" sizes="72x72" href="../images/apple-touch-icon-72x72.png"/>
-    <link rel="apple-touch-icon" sizes="114x114" href="../images/apple-touch-icon-114x114.png"/>
+    <link rel="icon" href="../images/favicon-32x32.png" sizes="32x32" />
+    <link rel="icon" href="../images/favicon-192x192.png" sizes="192x192" />
+    <link rel="apple-touch-icon" href="../images/favicon-180x180.png" />
+
     <link rel="stylesheet" href="../css/normalize.css">
-    <link rel="stylesheet" href="../css/base.css?updated=1721907186">
-    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../css/template.css?updated=1721907186">
+    <link rel="stylesheet" href="../css/base.css?updated=1747386863">
+    <link rel="stylesheet" href="../css/template.css?updated=1747386863">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0/css/all.min.css" integrity="sha256-ybRkN9dBjhcS2qrW1z+hfCxq+1aBdwyQM5wlQoQVt/0=" crossorigin="anonymous" />
             <script src="https://cdn.jsdelivr.net/npm/css-vars-ponyfill@2"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0/js/all.min.js" integrity="sha256-0vuk8LXoyrmCjp1f0O300qo1M75ZQyhH9X3J6d+scmk=" crossorigin="anonymous"></script>
@@ -38,14 +37,13 @@
     <header class="phpdocumentor-top-header">
     <section class="phpdocumentor-section">
         <div class="site-branding">
-            <a class="site-logo" href="../index.html"><img width="180" src="../images/logo.svg" alt="WooCommerce" /></a>
+            <a class="site-logo" href="../index.html"><img src="../images/logo.png" alt="WooCommerce" /></a>
         </div>
         <nav class="main-navigation">
             <ul>
                 <li><a href="../hooks/hooks.html">Hooks Reference</a></li>
-                <li><a href="https://docs.woocommerce.com/">Documentation</a></li>
+                <li><a href="https://developer.woocommerce.com/docs/">Documentation</a></li>
                 <li><a href="https://woocommerce.github.io/woocommerce-rest-api-docs/">REST API Docs</a></li>
-                <li><a href="https://woocommerce.com/careers/?utm_source=woocommerce+core+code+reference&utm_medium=devdocs&utm_campaign=woo+careers" target="_blank">We're hiring!</a></li>
             </ul>
         </nav>
     </section>
@@ -53,7 +51,7 @@
 
 <div class="phpdocumentor-header">
     <section class="phpdocumentor-section">
-        <h1 class="phpdocumentor-title">WooCommerce Code Reference</h1>
+        <h1 class="phpdocumentor-title"><a href="../index.html">WooCommerce Code Reference</a></h1>
         <section class="phpdocumentor-search">
     <label class="phpdocumentor-label">
         <span class="visually-hidden">Search (click ESC to close search results)</span>
@@ -74,6 +72,10 @@
                                         <h4 class="phpdocumentor-sidebar__root-namespace"><a href="../namespaces/woocommerce.html"><abbr title="\WooCommerce">WooCommerce</abbr></a></h4>
                 <ul class="phpdocumentor-list">
                                             <li><a href="../namespaces/woocommerce-admin.html"><abbr title="\WooCommerce\Admin">Admin</abbr></a></li>
+                                    </ul>
+                            <h4 class="phpdocumentor-sidebar__root-namespace"><a href="../namespaces/mailpoet.html"><abbr title="\MailPoet">MailPoet</abbr></a></h4>
+                <ul class="phpdocumentor-list">
+                                            <li><a href="../namespaces/mailpoet-emaileditor.html"><abbr title="\MailPoet\EmailEditor">EmailEditor</abbr></a></li>
                                     </ul>
                             <h4 class="phpdocumentor-sidebar__root-namespace"><a href="../namespaces/automattic.html"><abbr title="\Automattic">Automattic</abbr></a></h4>
                 <ul class="phpdocumentor-list">
@@ -119,8 +121,10 @@
                                     <li><a href="../packages/WooCommerce-Widgets.html"><abbr title="\WooCommerce\Widgets">Widgets</abbr></a></li>
                                     <li><a href="../packages/WooCommerce-Uninstaller.html"><abbr title="\WooCommerce\Uninstaller">Uninstaller</abbr></a></li>
                             </ul>
-                                <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/WoocommerceAdmin.html"><abbr title="\WoocommerceAdmin">WoocommerceAdmin</abbr></a></h3>
-                                <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/WoocommerceNavigation.html"><abbr title="\WoocommerceNavigation">WoocommerceNavigation</abbr></a></h3>
+                                <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/MailPoet.html"><abbr title="\MailPoet">MailPoet</abbr></a></h3>
+                        <ul class="phpdocumentor-list">
+                                    <li><a href="../packages/MailPoet-EmailEditor.html"><abbr title="\MailPoet\EmailEditor">EmailEditor</abbr></a></li>
+                            </ul>
                                 <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/Automattic.html"><abbr title="\Automattic">Automattic</abbr></a></h3>
                         <ul class="phpdocumentor-list">
                                     <li><a href="../packages/Automattic-WooCommerce.html"><abbr title="\Automattic\WooCommerce">WooCommerce</abbr></a></li>
@@ -206,7 +210,7 @@ class RateLimits extends WC_Rate_Limiter {
 	 * @param string $action_id Identifier of the action.
 	 * @return string
 	 */
-	protected static function get_cache_key( $action_id ) {
+	protected static function get_cache_key( $action_id ): string {
 		return WC_Cache_Helper::get_cache_prefix( &#039;store_api_rate_limit&#039; . $action_id );
 	}
 
@@ -215,10 +219,13 @@ class RateLimits extends WC_Rate_Limiter {
 	 * a new rate limit row if none exists.
 	 *
 	 * @param string $action_id Identifier of the action.
+	 *
 	 * @return object Object containing reset and remaining.
 	 */
-	protected static function get_rate_limit_row( $action_id ) {
+	protected static function get_rate_limit_row( string $action_id ): object {
 		global $wpdb;
+
+		$time = time();
 
 		$row = $wpdb-&gt;get_row(
 			$wpdb-&gt;prepare(
@@ -229,7 +236,7 @@ class RateLimits extends WC_Rate_Limiter {
 					AND rate_limit_expiry &gt; %s
 				&quot;,
 				$action_id,
-				time()
+				$time
 			),
 			&#039;OBJECT&#039;
 		);
@@ -238,7 +245,7 @@ class RateLimits extends WC_Rate_Limiter {
 			$options = self::get_options();
 
 			return (object) [
-				&#039;reset&#039;     =&gt; (int) $options-&gt;seconds + time(),
+				&#039;reset&#039;     =&gt; (int) $options-&gt;seconds + $time,
 				&#039;remaining&#039; =&gt; (int) $options-&gt;limit,
 			];
 		}
@@ -253,9 +260,10 @@ class RateLimits extends WC_Rate_Limiter {
 	 * Returns current rate limit values using cache where possible.
 	 *
 	 * @param string $action_id Identifier of the action.
+	 *
 	 * @return object
 	 */
-	public static function get_rate_limit( $action_id ) {
+	public static function get_rate_limit( string $action_id ): object {
 		$current_limit = self::get_cached( $action_id );
 
 		if ( false === $current_limit ) {
@@ -273,12 +281,12 @@ class RateLimits extends WC_Rate_Limiter {
 	 *
 	 * @return bool|int
 	 */
-	public static function is_exceeded_retry_after( $action_id ) {
+	public static function is_exceeded_retry_after( string $action_id ) {
 		$current_limit = self::get_rate_limit( $action_id );
-
+		$time          = time();
 		// Before the next run is allowed, retry forbidden.
-		if ( time() &lt;= $current_limit-&gt;reset &amp;&amp; 0 === $current_limit-&gt;remaining ) {
-			return (int) $current_limit-&gt;reset - time();
+		if ( $time &lt;= (int) $current_limit-&gt;reset &amp;&amp; 0 === (int) $current_limit-&gt;remaining ) {
+			return (int) $current_limit-&gt;reset - $time;
 		}
 
 		// After the next run is allowed, retry allowed.
@@ -289,14 +297,15 @@ class RateLimits extends WC_Rate_Limiter {
 	 * Sets the rate limit delay in seconds for action with identifier $id.
 	 *
 	 * @param string $action_id Identifier of the action.
+	 *
 	 * @return object Current rate limits.
 	 */
-	public static function update_rate_limit( $action_id ) {
+	public static function update_rate_limit( string $action_id ): object {
 		global $wpdb;
 
-		$options = self::get_options();
-
-		$rate_limit_expiry = time() + $options-&gt;seconds;
+		$options           = self::get_options();
+		$time              = time();
+		$rate_limit_expiry = $time + (int) $options-&gt;seconds;
 
 		$wpdb-&gt;query(
 			$wpdb-&gt;prepare(
@@ -310,9 +319,9 @@ class RateLimits extends WC_Rate_Limiter {
 				&quot;,
 				$action_id,
 				$rate_limit_expiry,
-				$options-&gt;limit - 1,
-				time(),
-				time()
+				(int) $options-&gt;limit - 1,
+				$time,
+				$time
 			)
 		);
 
@@ -327,7 +336,7 @@ class RateLimits extends WC_Rate_Limiter {
 	 * Retrieve a cached store api rate limit.
 	 *
 	 * @param string $action_id Identifier of the action.
-	 * @return bool|object
+	 * @return false|object
 	 */
 	protected static function get_cached( $action_id ) {
 		return wp_cache_get( self::get_cache_key( $action_id ), self::CACHE_GROUP );
@@ -340,7 +349,7 @@ class RateLimits extends WC_Rate_Limiter {
 	 * @param object $current_limit Current limit object with expiry and retries remaining.
 	 * @return bool
 	 */
-	protected static function set_cache( $action_id, $current_limit ) {
+	protected static function set_cache( $action_id, $current_limit ): bool {
 		return wp_cache_set( self::get_cache_key( $action_id ), $current_limit, self::CACHE_GROUP );
 	}
 
@@ -349,7 +358,7 @@ class RateLimits extends WC_Rate_Limiter {
 	 *
 	 * @return object Default options.
 	 */
-	public static function get_options() {
+	public static function get_options(): object {
 		$default_options = [
 			/**
 			 * Filters the Store API rate limit check, which is disabled by default.
@@ -413,7 +422,7 @@ class RateLimits extends WC_Rate_Limiter {
 
     <footer class="phpdocumentor phpdocumentor-footer">
     <div class="phpdocumentor-section">
-        <span>WooCommerce Code Reference API documentation generated by <a href="http://www.phpdoc.org/">phpDocumentor</a> on July 25th, 2024 at 11:33 am.</span>
+        <span>WooCommerce Code Reference API documentation generated by <a href="http://www.phpdoc.org/">phpDocumentor</a> on May 16th, 2025 at 09:14 am.</span>
     </div>
 </footer>
 
@@ -425,7 +434,7 @@ class RateLimits extends WC_Rate_Limiter {
             'searchIndex': '..\/js\/searchIndex.json'
         };
     </script>
-    <script src="../js/searchIndex.js?updated=1721907186"></script>
-    <script src="../js/search.js?updated=1721907186"></script>
+    <script src="../js/searchIndex.js?updated=1747386863"></script>
+    <script src="../js/search.js?updated=1747386863"></script>
 </body>
 </html>

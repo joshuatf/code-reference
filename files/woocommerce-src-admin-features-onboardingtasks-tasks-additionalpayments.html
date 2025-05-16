@@ -4,14 +4,13 @@
     <meta charset="utf-8">
     <title>WooCommerce Code Reference</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="../images/favicon.png" />
-    <link rel="apple-touch-icon" href="../images/apple-touch-icon.png"/>
-    <link rel="apple-touch-icon" sizes="72x72" href="../images/apple-touch-icon-72x72.png"/>
-    <link rel="apple-touch-icon" sizes="114x114" href="../images/apple-touch-icon-114x114.png"/>
+    <link rel="icon" href="../images/favicon-32x32.png" sizes="32x32" />
+    <link rel="icon" href="../images/favicon-192x192.png" sizes="192x192" />
+    <link rel="apple-touch-icon" href="../images/favicon-180x180.png" />
+
     <link rel="stylesheet" href="../css/normalize.css">
-    <link rel="stylesheet" href="../css/base.css?updated=1721907184">
-    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../css/template.css?updated=1721907184">
+    <link rel="stylesheet" href="../css/base.css?updated=1747386861">
+    <link rel="stylesheet" href="../css/template.css?updated=1747386861">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0/css/all.min.css" integrity="sha256-ybRkN9dBjhcS2qrW1z+hfCxq+1aBdwyQM5wlQoQVt/0=" crossorigin="anonymous" />
             <script src="https://cdn.jsdelivr.net/npm/css-vars-ponyfill@2"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0/js/all.min.js" integrity="sha256-0vuk8LXoyrmCjp1f0O300qo1M75ZQyhH9X3J6d+scmk=" crossorigin="anonymous"></script>
@@ -38,14 +37,13 @@
     <header class="phpdocumentor-top-header">
     <section class="phpdocumentor-section">
         <div class="site-branding">
-            <a class="site-logo" href="../index.html"><img width="180" src="../images/logo.svg" alt="WooCommerce" /></a>
+            <a class="site-logo" href="../index.html"><img src="../images/logo.png" alt="WooCommerce" /></a>
         </div>
         <nav class="main-navigation">
             <ul>
                 <li><a href="../hooks/hooks.html">Hooks Reference</a></li>
-                <li><a href="https://docs.woocommerce.com/">Documentation</a></li>
+                <li><a href="https://developer.woocommerce.com/docs/">Documentation</a></li>
                 <li><a href="https://woocommerce.github.io/woocommerce-rest-api-docs/">REST API Docs</a></li>
-                <li><a href="https://woocommerce.com/careers/?utm_source=woocommerce+core+code+reference&utm_medium=devdocs&utm_campaign=woo+careers" target="_blank">We're hiring!</a></li>
             </ul>
         </nav>
     </section>
@@ -53,7 +51,7 @@
 
 <div class="phpdocumentor-header">
     <section class="phpdocumentor-section">
-        <h1 class="phpdocumentor-title">WooCommerce Code Reference</h1>
+        <h1 class="phpdocumentor-title"><a href="../index.html">WooCommerce Code Reference</a></h1>
         <section class="phpdocumentor-search">
     <label class="phpdocumentor-label">
         <span class="visually-hidden">Search (click ESC to close search results)</span>
@@ -74,6 +72,10 @@
                                         <h4 class="phpdocumentor-sidebar__root-namespace"><a href="../namespaces/woocommerce.html"><abbr title="\WooCommerce">WooCommerce</abbr></a></h4>
                 <ul class="phpdocumentor-list">
                                             <li><a href="../namespaces/woocommerce-admin.html"><abbr title="\WooCommerce\Admin">Admin</abbr></a></li>
+                                    </ul>
+                            <h4 class="phpdocumentor-sidebar__root-namespace"><a href="../namespaces/mailpoet.html"><abbr title="\MailPoet">MailPoet</abbr></a></h4>
+                <ul class="phpdocumentor-list">
+                                            <li><a href="../namespaces/mailpoet-emaileditor.html"><abbr title="\MailPoet\EmailEditor">EmailEditor</abbr></a></li>
                                     </ul>
                             <h4 class="phpdocumentor-sidebar__root-namespace"><a href="../namespaces/automattic.html"><abbr title="\Automattic">Automattic</abbr></a></h4>
                 <ul class="phpdocumentor-list">
@@ -119,8 +121,10 @@
                                     <li><a href="../packages/WooCommerce-Widgets.html"><abbr title="\WooCommerce\Widgets">Widgets</abbr></a></li>
                                     <li><a href="../packages/WooCommerce-Uninstaller.html"><abbr title="\WooCommerce\Uninstaller">Uninstaller</abbr></a></li>
                             </ul>
-                                <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/WoocommerceAdmin.html"><abbr title="\WoocommerceAdmin">WoocommerceAdmin</abbr></a></h3>
-                                <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/WoocommerceNavigation.html"><abbr title="\WoocommerceNavigation">WoocommerceNavigation</abbr></a></h3>
+                                <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/MailPoet.html"><abbr title="\MailPoet">MailPoet</abbr></a></h3>
+                        <ul class="phpdocumentor-list">
+                                    <li><a href="../packages/MailPoet-EmailEditor.html"><abbr title="\MailPoet\EmailEditor">EmailEditor</abbr></a></li>
+                            </ul>
                                 <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/Automattic.html"><abbr title="\Automattic">Automattic</abbr></a></h3>
                         <ul class="phpdocumentor-list">
                                     <li><a href="../packages/Automattic-WooCommerce.html"><abbr title="\Automattic\WooCommerce">WooCommerce</abbr></a></li>
@@ -162,9 +166,8 @@
 namespace Automattic\WooCommerce\Admin\Features\OnboardingTasks\Tasks;
 
 use Automattic\WooCommerce\Admin\Features\Features;
-use Automattic\WooCommerce\Admin\Features\OnboardingTasks\Tasks\Payments;
-use Automattic\WooCommerce\Admin\Features\OnboardingTasks\Tasks\WooCommercePayments;
 use Automattic\WooCommerce\Admin\Features\PaymentGatewaySuggestions\Init;
+use Automattic\WooCommerce\Utilities\FeaturesUtil;
 
 /**
  * Payments Task
@@ -247,8 +250,12 @@ class AdditionalPayments extends Payments {
 	 * @return bool
 	 */
 	public function can_view() {
-		if ( ! Features::is_enabled( &#039;payment-gateway-suggestions&#039; ) ) {
-			// Hide task if feature not enabled.
+		// Go ahead if either of the features are enabled.
+		// If the payment-gateway-suggestions are disabled,
+		// we are still good to go because we can use the default suggestions.
+		if ( ! FeaturesUtil::feature_is_enabled( &#039;reactify-classic-payments-settings&#039; ) &amp;&amp;
+			! Features::is_enabled( &#039;payment-gateway-suggestions&#039; ) ) {
+			// Hide task if both features are not enabled.
 			return false;
 		}
 
@@ -256,7 +263,16 @@ class AdditionalPayments extends Payments {
 			return $this-&gt;can_view_result;
 		}
 
-		// Show task if woocommerce-payments is connected or if there are any suggested gateways in other category enabled.
+		// Always show task if the React-based Payments settings page is enabled and
+		// there are any gateways enabled (i.e. the Payments task is complete).
+		if ( FeaturesUtil::feature_is_enabled( &#039;reactify-classic-payments-settings&#039; ) &amp;&amp;
+			self::has_gateways() ) {
+			return true;
+		}
+
+		// Show task if WooPayments is connected or if there are any suggested gateways in other category enabled.
+		// Note: For now, we rely on the old Payment Gateways Suggestions lists to determine the visibility of this task.
+		// This will need to be updated to use the new Payment Extension Suggestions/ Payments Providers system.
 		$this-&gt;can_view_result = (
 			WooCommercePayments::is_connected() ||
 			self::has_enabled_other_category_gateways()
@@ -279,6 +295,13 @@ class AdditionalPayments extends Payments {
 	 * @return string
 	 */
 	public function get_action_url() {
+		// If the React-based Payments settings page is enabled, link to the new Payments settings page.
+		if ( FeaturesUtil::feature_is_enabled( &#039;reactify-classic-payments-settings&#039; ) ) {
+			// We auto-expand the &quot;Other&quot; section to show the additional payment methods.
+			return admin_url( &#039;admin.php?page=wc-settings&amp;tab=checkout&amp;other_pes_section=expanded&#039; );
+		}
+
+		// Otherwise, link to the Payments task page.
 		return admin_url( &#039;admin.php?page=wc-admin&amp;task=payments&#039; );
 	}
 
@@ -346,7 +369,7 @@ class AdditionalPayments extends Payments {
 	 */
 	private static function get_suggestion_gateways( $filter_by = &#039;category_additional&#039; ) {
 		$country            = wc_get_base_location()[&#039;country&#039;];
-		$plugin_suggestions = Init::get_suggestions();
+		$plugin_suggestions = Init::get_cached_or_default_suggestions();
 		$plugin_suggestions = array_filter(
 			$plugin_suggestions,
 			function( $plugin ) use ( $country, $filter_by ) {
@@ -369,7 +392,7 @@ class AdditionalPayments extends Payments {
 
     <footer class="phpdocumentor phpdocumentor-footer">
     <div class="phpdocumentor-section">
-        <span>WooCommerce Code Reference API documentation generated by <a href="http://www.phpdoc.org/">phpDocumentor</a> on July 25th, 2024 at 11:33 am.</span>
+        <span>WooCommerce Code Reference API documentation generated by <a href="http://www.phpdoc.org/">phpDocumentor</a> on May 16th, 2025 at 09:14 am.</span>
     </div>
 </footer>
 
@@ -381,7 +404,7 @@ class AdditionalPayments extends Payments {
             'searchIndex': '..\/js\/searchIndex.json'
         };
     </script>
-    <script src="../js/searchIndex.js?updated=1721907184"></script>
-    <script src="../js/search.js?updated=1721907184"></script>
+    <script src="../js/searchIndex.js?updated=1747386861"></script>
+    <script src="../js/search.js?updated=1747386861"></script>
 </body>
 </html>

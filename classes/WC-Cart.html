@@ -4,14 +4,13 @@
     <meta charset="utf-8">
     <title>WooCommerce Code Reference</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="../images/favicon.png" />
-    <link rel="apple-touch-icon" href="../images/apple-touch-icon.png"/>
-    <link rel="apple-touch-icon" sizes="72x72" href="../images/apple-touch-icon-72x72.png"/>
-    <link rel="apple-touch-icon" sizes="114x114" href="../images/apple-touch-icon-114x114.png"/>
+    <link rel="icon" href="../images/favicon-32x32.png" sizes="32x32" />
+    <link rel="icon" href="../images/favicon-192x192.png" sizes="192x192" />
+    <link rel="apple-touch-icon" href="../images/favicon-180x180.png" />
+
     <link rel="stylesheet" href="../css/normalize.css">
-    <link rel="stylesheet" href="../css/base.css?updated=1721907191">
-    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../css/template.css?updated=1721907191">
+    <link rel="stylesheet" href="../css/base.css?updated=1747386868">
+    <link rel="stylesheet" href="../css/template.css?updated=1747386868">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0/css/all.min.css" integrity="sha256-ybRkN9dBjhcS2qrW1z+hfCxq+1aBdwyQM5wlQoQVt/0=" crossorigin="anonymous" />
             <script src="https://cdn.jsdelivr.net/npm/css-vars-ponyfill@2"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0/js/all.min.js" integrity="sha256-0vuk8LXoyrmCjp1f0O300qo1M75ZQyhH9X3J6d+scmk=" crossorigin="anonymous"></script>
@@ -27,19 +26,24 @@
 		'content_group' : 'WooCommerce Core Code Reference',
 	});
 </script>
-        </head>
+        <script src="../js/prism.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            window.dispatchEvent(new HashChangeEvent('hashchange'));
+        });
+    </script>
+</head>
 <body id="top">
     <header class="phpdocumentor-top-header">
     <section class="phpdocumentor-section">
         <div class="site-branding">
-            <a class="site-logo" href="../index.html"><img width="180" src="../images/logo.svg" alt="WooCommerce" /></a>
+            <a class="site-logo" href="../index.html"><img src="../images/logo.png" alt="WooCommerce" /></a>
         </div>
         <nav class="main-navigation">
             <ul>
                 <li><a href="../hooks/hooks.html">Hooks Reference</a></li>
-                <li><a href="https://docs.woocommerce.com/">Documentation</a></li>
+                <li><a href="https://developer.woocommerce.com/docs/">Documentation</a></li>
                 <li><a href="https://woocommerce.github.io/woocommerce-rest-api-docs/">REST API Docs</a></li>
-                <li><a href="https://woocommerce.com/careers/?utm_source=woocommerce+core+code+reference&utm_medium=devdocs&utm_campaign=woo+careers" target="_blank">We're hiring!</a></li>
             </ul>
         </nav>
     </section>
@@ -47,7 +51,7 @@
 
 <div class="phpdocumentor-header">
     <section class="phpdocumentor-section">
-        <h1 class="phpdocumentor-title">WooCommerce Code Reference</h1>
+        <h1 class="phpdocumentor-title"><a href="../index.html">WooCommerce Code Reference</a></h1>
         <section class="phpdocumentor-search">
     <label class="phpdocumentor-label">
         <span class="visually-hidden">Search (click ESC to close search results)</span>
@@ -68,6 +72,10 @@
                                         <h4 class="phpdocumentor-sidebar__root-namespace"><a href="../namespaces/woocommerce.html"><abbr title="\WooCommerce">WooCommerce</abbr></a></h4>
                 <ul class="phpdocumentor-list">
                                             <li><a href="../namespaces/woocommerce-admin.html"><abbr title="\WooCommerce\Admin">Admin</abbr></a></li>
+                                    </ul>
+                            <h4 class="phpdocumentor-sidebar__root-namespace"><a href="../namespaces/mailpoet.html"><abbr title="\MailPoet">MailPoet</abbr></a></h4>
+                <ul class="phpdocumentor-list">
+                                            <li><a href="../namespaces/mailpoet-emaileditor.html"><abbr title="\MailPoet\EmailEditor">EmailEditor</abbr></a></li>
                                     </ul>
                             <h4 class="phpdocumentor-sidebar__root-namespace"><a href="../namespaces/automattic.html"><abbr title="\Automattic">Automattic</abbr></a></h4>
                 <ul class="phpdocumentor-list">
@@ -113,8 +121,10 @@
                                     <li><a href="../packages/WooCommerce-Widgets.html"><abbr title="\WooCommerce\Widgets">Widgets</abbr></a></li>
                                     <li><a href="../packages/WooCommerce-Uninstaller.html"><abbr title="\WooCommerce\Uninstaller">Uninstaller</abbr></a></li>
                             </ul>
-                                <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/WoocommerceAdmin.html"><abbr title="\WoocommerceAdmin">WoocommerceAdmin</abbr></a></h3>
-                                <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/WoocommerceNavigation.html"><abbr title="\WoocommerceNavigation">WoocommerceNavigation</abbr></a></h3>
+                                <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/MailPoet.html"><abbr title="\MailPoet">MailPoet</abbr></a></h3>
+                        <ul class="phpdocumentor-list">
+                                    <li><a href="../packages/MailPoet-EmailEditor.html"><abbr title="\MailPoet\EmailEditor">EmailEditor</abbr></a></li>
+                            </ul>
                                 <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/Automattic.html"><abbr title="\Automattic">Automattic</abbr></a></h3>
                         <ul class="phpdocumentor-list">
                                     <li><a href="../packages/Automattic-WooCommerce.html"><abbr title="\Automattic\WooCommerce">WooCommerce</abbr></a></li>
@@ -160,9 +170,9 @@
     </h2>
 
         <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-cart.php"><a href="../files/woocommerce-includes-class-wc-cart.html#source-view.24">includes/class-wc-cart.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-cart.php"><a href="../files/woocommerce-includes-class-wc-cart.html#source-view.26">includes/class-wc-cart.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">24</span>
+    <span class="phpdocumentor-element-found-in__line">26</span>
 </aside>
 
             <p class="phpdocumentor-summary">WC_Cart class.</p>
@@ -195,6 +205,14 @@
                 &nbsp;: array&lt;string|int, mixed&gt;            </span>
 </dt>
 <dd>Contains an array of cart items.</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -property -public">
+    <a href="../classes/WC-Cart.html#property_cart_context">$cart_context</a>
+    <span>
+                &nbsp;: string            </span>
+</dt>
+<dd>Cart context, used to determine if the cart is being used in a StoreAPI or shortcode context. This should only
+be used internally.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -property -public">
     <a href="../classes/WC-Legacy-Cart.html#property_cart_session_data">$cart_session_data</a>
@@ -230,6 +248,14 @@
                 &nbsp;: <a href="../classes/WC-Cart-Fees.html"><abbr title="\WC_Cart_Fees">WC_Cart_Fees</abbr></a>            </span>
 </dt>
 <dd>Reference to the cart fees API class.</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -property -protected">
+    <a href="../classes/WC-Cart.html#property_has_calculated_shipping">$has_calculated_shipping</a>
+    <span>
+                &nbsp;: bool            </span>
+</dt>
+<dd>Whether the shipping totals have been calculated. This will only return true if shipping was calculated, not if
+shipping is disabled or if there are no cart contents.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -property -protected">
     <a href="../classes/WC-Cart.html#property_session">$session</a>
@@ -751,6 +777,13 @@ displayed, used for things like coupon validation.</dd>
 <dd>Return items removed from the cart.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a href="../classes/WC-Cart.html#method_get_shipping_methods">get_shipping_methods()</a>
+    <span>
+                        &nbsp;: array&lt;string|int, mixed&gt;    </span>
+</dt>
+<dd>Get selected shipping methods after calculation.</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="../classes/WC-Cart.html#method_get_shipping_packages">get_shipping_packages()</a>
     <span>
                         &nbsp;: array&lt;string|int, mixed&gt;    </span>
@@ -875,6 +908,13 @@ displayed, used for things like coupon validation.</dd>
                         &nbsp;: string    </span>
 </dt>
 <dd>Gets the url to re-add an item into the cart.</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a href="../classes/WC-Cart.html#method_has_calculated_shipping">has_calculated_shipping()</a>
+    <span>
+                        &nbsp;: bool    </span>
+</dt>
+<dd>Whether the shipping totals have been calculated.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="../classes/WC-Cart.html#method_has_discount">has_discount()</a>
@@ -1154,7 +1194,7 @@ displayed, used for things like coupon validation.</dd>
     <span>
                         &nbsp;: bool    </span>
 </dt>
-<dd>Sees if the customer has entered enough data to calc the shipping yet.</dd>
+<dd>Sees if the customer has entered enough data to calculate shipping.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -protected">
     <a href="../classes/WC-Cart.html#method_filter_items_needing_shipping">filter_items_needing_shipping()</a>
@@ -1217,9 +1257,9 @@ displayed, used for things like coupon validation.</dd>
                                 </span>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-cart.php"><a href="../files/woocommerce-includes-class-wc-cart.html#source-view.45">includes/class-wc-cart.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-cart.php"><a href="../files/woocommerce-includes-class-wc-cart.html#source-view.55">includes/class-wc-cart.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">45</span>
+    <span class="phpdocumentor-element-found-in__line">55</span>
 </aside>
 
         <p class="phpdocumentor-summary">Contains an array of coupon codes applied to the cart.</p>
@@ -1249,9 +1289,9 @@ displayed, used for things like coupon validation.</dd>
                                 </span>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-cart.php"><a href="../files/woocommerce-includes-class-wc-cart.html#source-view.31">includes/class-wc-cart.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-cart.php"><a href="../files/woocommerce-includes-class-wc-cart.html#source-view.41">includes/class-wc-cart.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">31</span>
+    <span class="phpdocumentor-element-found-in__line">41</span>
 </aside>
 
         <p class="phpdocumentor-summary">Contains an array of cart items.</p>
@@ -1261,6 +1301,39 @@ displayed, used for things like coupon validation.</dd>
         <span class="phpdocumentor-signature__type">array&lt;string|int, mixed&gt;</span>
     <span class="phpdocumentor-signature__name">$cart_contents</span>
      = <span class="phpdocumentor-signature__default-value">array()</span></code>
+
+        <section class="phpdocumentor-description"></section>
+
+    
+
+</article>
+                    <article
+        class="
+            phpdocumentor-element
+            -property
+            -public
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="property_cart_context">
+        $cart_context
+        <a href="#property_cart_context" class="headerlink"><i class="fas fa-link"></i></a>
+        <span class="phpdocumentor-element__modifiers">
+                                </span>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-cart.php"><a href="../files/woocommerce-includes-class-wc-cart.html#source-view.34">includes/class-wc-cart.php</a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">34</span>
+</aside>
+
+        <p class="phpdocumentor-summary">Cart context, used to determine if the cart is being used in a StoreAPI or shortcode context. This should only
+be used internally.</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+        <span class="phpdocumentor-signature__type">string</span>
+    <span class="phpdocumentor-signature__name">$cart_context</span>
+     = <span class="phpdocumentor-signature__default-value">&#039;shortcode&#039;</span></code>
 
         <section class="phpdocumentor-description"></section>
 
@@ -1373,9 +1446,9 @@ displayed, used for things like coupon validation.</dd>
                                 </span>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-cart.php"><a href="../files/woocommerce-includes-class-wc-cart.html#source-view.38">includes/class-wc-cart.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-cart.php"><a href="../files/woocommerce-includes-class-wc-cart.html#source-view.48">includes/class-wc-cart.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">38</span>
+    <span class="phpdocumentor-element-found-in__line">48</span>
 </aside>
 
         <p class="phpdocumentor-summary">Contains an array of removed cart items so we can restore them if needed.</p>
@@ -1405,9 +1478,9 @@ displayed, used for things like coupon validation.</dd>
                                 </span>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-cart.php"><a href="../files/woocommerce-includes-class-wc-cart.html#source-view.59">includes/class-wc-cart.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-cart.php"><a href="../files/woocommerce-includes-class-wc-cart.html#source-view.77">includes/class-wc-cart.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">59</span>
+    <span class="phpdocumentor-element-found-in__line">77</span>
 </aside>
 
         <p class="phpdocumentor-summary">Total defaults used to reset.</p>
@@ -1437,9 +1510,9 @@ displayed, used for things like coupon validation.</dd>
                                 </span>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-cart.php"><a href="../files/woocommerce-includes-class-wc-cart.html#source-view.95">includes/class-wc-cart.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-cart.php"><a href="../files/woocommerce-includes-class-wc-cart.html#source-view.113">includes/class-wc-cart.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">95</span>
+    <span class="phpdocumentor-element-found-in__line">113</span>
 </aside>
 
         <p class="phpdocumentor-summary">Reference to the cart fees API class.</p>
@@ -1462,6 +1535,39 @@ displayed, used for things like coupon validation.</dd>
             -protected
                                                         "
 >
+    <h4 class="phpdocumentor-element__name" id="property_has_calculated_shipping">
+        $has_calculated_shipping
+        <a href="#property_has_calculated_shipping" class="headerlink"><i class="fas fa-link"></i></a>
+        <span class="phpdocumentor-element__modifiers">
+                                </span>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-cart.php"><a href="../files/woocommerce-includes-class-wc-cart.html#source-view.70">includes/class-wc-cart.php</a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">70</span>
+</aside>
+
+        <p class="phpdocumentor-summary">Whether the shipping totals have been calculated. This will only return true if shipping was calculated, not if
+shipping is disabled or if there are no cart contents.</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">protected</span>
+        <span class="phpdocumentor-signature__type">bool</span>
+    <span class="phpdocumentor-signature__name">$has_calculated_shipping</span>
+     = <span class="phpdocumentor-signature__default-value">alse</span></code>
+
+        <section class="phpdocumentor-description"></section>
+
+    
+
+</article>
+                    <article
+        class="
+            phpdocumentor-element
+            -property
+            -protected
+                                                        "
+>
     <h4 class="phpdocumentor-element__name" id="property_session">
         $session
         <a href="#property_session" class="headerlink"><i class="fas fa-link"></i></a>
@@ -1469,9 +1575,9 @@ displayed, used for things like coupon validation.</dd>
                                 </span>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-cart.php"><a href="../files/woocommerce-includes-class-wc-cart.html#source-view.88">includes/class-wc-cart.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-cart.php"><a href="../files/woocommerce-includes-class-wc-cart.html#source-view.106">includes/class-wc-cart.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">88</span>
+    <span class="phpdocumentor-element-found-in__line">106</span>
 </aside>
 
         <p class="phpdocumentor-summary">Reference to the cart session handling class.</p>
@@ -1501,9 +1607,9 @@ displayed, used for things like coupon validation.</dd>
                                 </span>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-cart.php"><a href="../files/woocommerce-includes-class-wc-cart.html#source-view.52">includes/class-wc-cart.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-cart.php"><a href="../files/woocommerce-includes-class-wc-cart.html#source-view.62">includes/class-wc-cart.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">52</span>
+    <span class="phpdocumentor-element-found-in__line">62</span>
 </aside>
 
         <p class="phpdocumentor-summary">This stores the chosen shipping methods for the cart item packages.</p>
@@ -1533,9 +1639,9 @@ displayed, used for things like coupon validation.</dd>
                                 </span>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-cart.php"><a href="../files/woocommerce-includes-class-wc-cart.html#source-view.81">includes/class-wc-cart.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-cart.php"><a href="../files/woocommerce-includes-class-wc-cart.html#source-view.99">includes/class-wc-cart.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">81</span>
+    <span class="phpdocumentor-element-found-in__line">99</span>
 </aside>
 
         <p class="phpdocumentor-summary">Store calculated totals.</p>
@@ -1569,9 +1675,9 @@ displayed, used for things like coupon validation.</dd>
         <a href="#method___clone" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-cart.php"><a href="../files/woocommerce-includes-class-wc-cart.html#source-view.121">includes/class-wc-cart.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-cart.php"><a href="../files/woocommerce-includes-class-wc-cart.html#source-view.140">includes/class-wc-cart.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">121</span>
+    <span class="phpdocumentor-element-found-in__line">140</span>
 </aside>
 
         <p class="phpdocumentor-summary">When cloning, ensure object properties are handled.</p>
@@ -1602,9 +1708,9 @@ displayed, used for things like coupon validation.</dd>
         <a href="#method___construct" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-cart.php"><a href="../files/woocommerce-includes-class-wc-cart.html#source-view.100">includes/class-wc-cart.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-cart.php"><a href="../files/woocommerce-includes-class-wc-cart.html#source-view.118">includes/class-wc-cart.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">100</span>
+    <span class="phpdocumentor-element-found-in__line">118</span>
 </aside>
 
         <p class="phpdocumentor-summary">Constructor for the cart class. Loads options and hooks in the init method.</p>
@@ -1819,9 +1925,9 @@ displayed, used for things like coupon validation.</dd>
         <a href="#method_add_fee" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-cart.php"><a href="../files/woocommerce-includes-class-wc-cart.html#source-view.1931">includes/class-wc-cart.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-cart.php"><a href="../files/woocommerce-includes-class-wc-cart.html#source-view.2012">includes/class-wc-cart.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1931</span>
+    <span class="phpdocumentor-element-found-in__line">2012</span>
 </aside>
 
         <p class="phpdocumentor-summary">Add additional fee to the cart.</p>
@@ -1907,9 +2013,9 @@ persist.</p>
         <a href="#method_add_to_cart" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-cart.php"><a href="../files/woocommerce-includes-class-wc-cart.html#source-view.1025">includes/class-wc-cart.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-cart.php"><a href="../files/woocommerce-includes-class-wc-cart.html#source-view.1046">includes/class-wc-cart.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1025</span>
+    <span class="phpdocumentor-element-found-in__line">1046</span>
 </aside>
 
         <p class="phpdocumentor-summary">Add a product to the cart.</p>
@@ -2068,9 +2174,9 @@ persist.</p>
         <a href="#method_apply_coupon" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-cart.php"><a href="../files/woocommerce-includes-class-wc-cart.html#source-view.1731">includes/class-wc-cart.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-cart.php"><a href="../files/woocommerce-includes-class-wc-cart.html#source-view.1812">includes/class-wc-cart.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1731</span>
+    <span class="phpdocumentor-element-found-in__line">1812</span>
 </aside>
 
         <p class="phpdocumentor-summary">Applies a coupon code passed to the method.</p>
@@ -2180,9 +2286,9 @@ persist.</p>
         <a href="#method_calculate_fees" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-cart.php"><a href="../files/woocommerce-includes-class-wc-cart.html#source-view.1904">includes/class-wc-cart.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-cart.php"><a href="../files/woocommerce-includes-class-wc-cart.html#source-view.1985">includes/class-wc-cart.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1904</span>
+    <span class="phpdocumentor-element-found-in__line">1985</span>
 </aside>
 
         <p class="phpdocumentor-summary">Trigger an action so 3rd parties can add custom fees.</p>
@@ -2226,9 +2332,9 @@ persist.</p>
         <a href="#method_calculate_shipping" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-cart.php"><a href="../files/woocommerce-includes-class-wc-cart.html#source-view.1430">includes/class-wc-cart.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-cart.php"><a href="../files/woocommerce-includes-class-wc-cart.html#source-view.1478">includes/class-wc-cart.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1430</span>
+    <span class="phpdocumentor-element-found-in__line">1478</span>
 </aside>
 
         <p class="phpdocumentor-summary">Uses the shipping class to calculate shipping then gets the totals when its finished.</p>
@@ -2258,9 +2364,9 @@ persist.</p>
         <a href="#method_calculate_totals" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-cart.php"><a href="../files/woocommerce-includes-class-wc-cart.html#source-view.1399">includes/class-wc-cart.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-cart.php"><a href="../files/woocommerce-includes-class-wc-cart.html#source-view.1429">includes/class-wc-cart.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1399</span>
+    <span class="phpdocumentor-element-found-in__line">1429</span>
 </aside>
 
         <p class="phpdocumentor-summary">Calculate totals for the items in the cart.</p>
@@ -2304,9 +2410,9 @@ persist.</p>
         <a href="#method_check_cart_coupons" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-cart.php"><a href="../files/woocommerce-includes-class-wc-cart.html#source-view.724">includes/class-wc-cart.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-cart.php"><a href="../files/woocommerce-includes-class-wc-cart.html#source-view.745">includes/class-wc-cart.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">724</span>
+    <span class="phpdocumentor-element-found-in__line">745</span>
 </aside>
 
         <p class="phpdocumentor-summary">Check cart coupons for errors.</p>
@@ -2336,9 +2442,9 @@ persist.</p>
         <a href="#method_check_cart_item_stock" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-cart.php"><a href="../files/woocommerce-includes-class-wc-cart.html#source-view.760">includes/class-wc-cart.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-cart.php"><a href="../files/woocommerce-includes-class-wc-cart.html#source-view.781">includes/class-wc-cart.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">760</span>
+    <span class="phpdocumentor-element-found-in__line">781</span>
 </aside>
 
         <p class="phpdocumentor-summary">Looks through the cart to check each item is in stock. If not, add an error.</p>
@@ -2368,9 +2474,9 @@ persist.</p>
         <a href="#method_check_cart_item_validity" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-cart.php"><a href="../files/woocommerce-includes-class-wc-cart.html#source-view.740">includes/class-wc-cart.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-cart.php"><a href="../files/woocommerce-includes-class-wc-cart.html#source-view.761">includes/class-wc-cart.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">740</span>
+    <span class="phpdocumentor-element-found-in__line">761</span>
 </aside>
 
         <p class="phpdocumentor-summary">Looks through cart items and checks the posts are not trashed or deleted.</p>
@@ -2400,9 +2506,9 @@ persist.</p>
         <a href="#method_check_cart_items" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-cart.php"><a href="../files/woocommerce-includes-class-wc-cart.html#source-view.701">includes/class-wc-cart.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-cart.php"><a href="../files/woocommerce-includes-class-wc-cart.html#source-view.723">includes/class-wc-cart.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">701</span>
+    <span class="phpdocumentor-element-found-in__line">723</span>
 </aside>
 
         <p class="phpdocumentor-summary">Check all cart items for errors.</p>
@@ -2432,9 +2538,9 @@ persist.</p>
         <a href="#method_check_customer_coupons" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-cart.php"><a href="../files/woocommerce-includes-class-wc-cart.html#source-view.1646">includes/class-wc-cart.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-cart.php"><a href="../files/woocommerce-includes-class-wc-cart.html#source-view.1727">includes/class-wc-cart.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1646</span>
+    <span class="phpdocumentor-element-found-in__line">1727</span>
 </aside>
 
         <p class="phpdocumentor-summary">Check for user coupons (now that we have billing email). If a coupon is invalid, add an error.</p>
@@ -2527,9 +2633,9 @@ persist.</p>
         <a href="#method_display_prices_including_tax" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-cart.php"><a href="../files/woocommerce-includes-class-wc-cart.html#source-view.360">includes/class-wc-cart.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-cart.php"><a href="../files/woocommerce-includes-class-wc-cart.html#source-view.379">includes/class-wc-cart.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">360</span>
+    <span class="phpdocumentor-element-found-in__line">379</span>
 </aside>
 
         <p class="phpdocumentor-summary">Return whether or not the cart is displaying prices including tax, rather than excluding tax.</p>
@@ -2573,9 +2679,9 @@ persist.</p>
         <a href="#method_empty_cart" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-cart.php"><a href="../files/woocommerce-includes-class-wc-cart.html#source-view.634">includes/class-wc-cart.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-cart.php"><a href="../files/woocommerce-includes-class-wc-cart.html#source-view.655">includes/class-wc-cart.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">634</span>
+    <span class="phpdocumentor-element-found-in__line">655</span>
 </aside>
 
         <p class="phpdocumentor-summary">Empties the cart and optionally the persistent cart too.</p>
@@ -2600,6 +2706,21 @@ persist.</p>
             </dl>
 
     
+    <h5 class="phpdocumentor-tag-list__heading" id="tags">
+        Tags
+        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
+    </h5>
+    <dl class="phpdocumentor-tag-list">
+                                    <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">since</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                            <span class="phpdocumentor-tag-link">9.7.0</span>
+                                                                                                        <section class="phpdocumentor-description"><p>Also clears shipping methods and packages since the items they are linked to are cleared.</p>
+</section>
+
+                </dd>
+                        </dl>
 
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
     <span class="phpdocumentor-signature__response_type">mixed</span>
@@ -2617,9 +2738,9 @@ persist.</p>
         <a href="#method_fees_api" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-cart.php"><a href="../files/woocommerce-includes-class-wc-cart.html#source-view.1914">includes/class-wc-cart.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-cart.php"><a href="../files/woocommerce-includes-class-wc-cart.html#source-view.1995">includes/class-wc-cart.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1914</span>
+    <span class="phpdocumentor-element-found-in__line">1995</span>
 </aside>
 
         <p class="phpdocumentor-summary">Return reference to fees API.</p>
@@ -2663,9 +2784,9 @@ persist.</p>
         <a href="#method_find_product_in_cart" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-cart.php"><a href="../files/woocommerce-includes-class-wc-cart.html#source-view.966">includes/class-wc-cart.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-cart.php"><a href="../files/woocommerce-includes-class-wc-cart.html#source-view.987">includes/class-wc-cart.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">966</span>
+    <span class="phpdocumentor-element-found-in__line">987</span>
 </aside>
 
         <p class="phpdocumentor-summary">Check if product is in the cart and return cart item key.</p>
@@ -2708,9 +2829,9 @@ persist.</p>
         <a href="#method_generate_cart_id" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-cart.php"><a href="../files/woocommerce-includes-class-wc-cart.html#source-view.984">includes/class-wc-cart.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-cart.php"><a href="../files/woocommerce-includes-class-wc-cart.html#source-view.1005">includes/class-wc-cart.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">984</span>
+    <span class="phpdocumentor-element-found-in__line">1005</span>
 </aside>
 
         <p class="phpdocumentor-summary">Generate a unique ID for the cart item being added.</p>
@@ -2781,9 +2902,9 @@ persist.</p>
         <a href="#method_get_applied_coupons" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-cart.php"><a href="../files/woocommerce-includes-class-wc-cart.html#source-view.161">includes/class-wc-cart.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-cart.php"><a href="../files/woocommerce-includes-class-wc-cart.html#source-view.180">includes/class-wc-cart.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">161</span>
+    <span class="phpdocumentor-element-found-in__line">180</span>
 </aside>
 
         <p class="phpdocumentor-summary">Gets the array of applied coupon codes.</p>
@@ -2813,9 +2934,9 @@ persist.</p>
         <a href="#method_get_cart" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-cart.php"><a href="../files/woocommerce-includes-class-wc-cart.html#source-view.600">includes/class-wc-cart.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-cart.php"><a href="../files/woocommerce-includes-class-wc-cart.html#source-view.619">includes/class-wc-cart.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">600</span>
+    <span class="phpdocumentor-element-found-in__line">619</span>
 </aside>
 
         <p class="phpdocumentor-summary">Returns the contents of the cart in an array.</p>
@@ -2845,9 +2966,9 @@ persist.</p>
         <a href="#method_get_cart_contents" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-cart.php"><a href="../files/woocommerce-includes-class-wc-cart.html#source-view.142">includes/class-wc-cart.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-cart.php"><a href="../files/woocommerce-includes-class-wc-cart.html#source-view.161">includes/class-wc-cart.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">142</span>
+    <span class="phpdocumentor-element-found-in__line">161</span>
 </aside>
 
         <p class="phpdocumentor-summary">Gets cart contents.</p>
@@ -2891,9 +3012,9 @@ persist.</p>
         <a href="#method_get_cart_contents_count" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-cart.php"><a href="../files/woocommerce-includes-class-wc-cart.html#source-view.660">includes/class-wc-cart.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-cart.php"><a href="../files/woocommerce-includes-class-wc-cart.html#source-view.682">includes/class-wc-cart.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">660</span>
+    <span class="phpdocumentor-element-found-in__line">682</span>
 </aside>
 
         <p class="phpdocumentor-summary">Get number of items in the cart.</p>
@@ -2923,9 +3044,9 @@ persist.</p>
         <a href="#method_get_cart_contents_tax" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-cart.php"><a href="../files/woocommerce-includes-class-wc-cart.html#source-view.281">includes/class-wc-cart.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-cart.php"><a href="../files/woocommerce-includes-class-wc-cart.html#source-view.300">includes/class-wc-cart.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">281</span>
+    <span class="phpdocumentor-element-found-in__line">300</span>
 </aside>
 
         <p class="phpdocumentor-summary">Gets cart tax amount.</p>
@@ -2969,9 +3090,9 @@ persist.</p>
         <a href="#method_get_cart_contents_taxes" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-cart.php"><a href="../files/woocommerce-includes-class-wc-cart.html#source-view.341">includes/class-wc-cart.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-cart.php"><a href="../files/woocommerce-includes-class-wc-cart.html#source-view.360">includes/class-wc-cart.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">341</span>
+    <span class="phpdocumentor-element-found-in__line">360</span>
 </aside>
 
         <p class="phpdocumentor-summary">Get taxes.</p>
@@ -3015,9 +3136,9 @@ persist.</p>
         <a href="#method_get_cart_contents_total" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-cart.php"><a href="../files/woocommerce-includes-class-wc-cart.html#source-view.271">includes/class-wc-cart.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-cart.php"><a href="../files/woocommerce-includes-class-wc-cart.html#source-view.290">includes/class-wc-cart.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">271</span>
+    <span class="phpdocumentor-element-found-in__line">290</span>
 </aside>
 
         <p class="phpdocumentor-summary">Gets cart total. This is the total of items in the cart, but after discounts. Subtotal is before discounts.</p>
@@ -3061,9 +3182,9 @@ persist.</p>
         <a href="#method_get_cart_contents_weight" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-cart.php"><a href="../files/woocommerce-includes-class-wc-cart.html#source-view.670">includes/class-wc-cart.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-cart.php"><a href="../files/woocommerce-includes-class-wc-cart.html#source-view.692">includes/class-wc-cart.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">670</span>
+    <span class="phpdocumentor-element-found-in__line">692</span>
 </aside>
 
         <p class="phpdocumentor-summary">Get weight of items in the cart.</p>
@@ -3233,9 +3354,9 @@ persist.</p>
         <a href="#method_get_cart_hash" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-cart.php"><a href="../files/woocommerce-includes-class-wc-cart.html#source-view.2151">includes/class-wc-cart.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-cart.php"><a href="../files/woocommerce-includes-class-wc-cart.html#source-view.2232">includes/class-wc-cart.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">2151</span>
+    <span class="phpdocumentor-element-found-in__line">2232</span>
 </aside>
 
         <p class="phpdocumentor-summary">Returns the hash based on cart contents.</p>
@@ -3279,9 +3400,9 @@ persist.</p>
         <a href="#method_get_cart_item" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-cart.php"><a href="../files/woocommerce-includes-class-wc-cart.html#source-view.616">includes/class-wc-cart.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-cart.php"><a href="../files/woocommerce-includes-class-wc-cart.html#source-view.635">includes/class-wc-cart.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">616</span>
+    <span class="phpdocumentor-element-found-in__line">635</span>
 </aside>
 
         <p class="phpdocumentor-summary">Returns a specific item in the cart.</p>
@@ -3323,9 +3444,9 @@ persist.</p>
         <a href="#method_get_cart_item_quantities" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-cart.php"><a href="../files/woocommerce-includes-class-wc-cart.html#source-view.687">includes/class-wc-cart.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-cart.php"><a href="../files/woocommerce-includes-class-wc-cart.html#source-view.709">includes/class-wc-cart.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">687</span>
+    <span class="phpdocumentor-element-found-in__line">709</span>
 </aside>
 
         <p class="phpdocumentor-summary">Get cart items quantities - merged so we can do accurate stock checks on items across multiple lines.</p>
@@ -3355,9 +3476,9 @@ persist.</p>
         <a href="#method_get_cart_item_tax_classes" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-cart.php"><a href="../files/woocommerce-includes-class-wc-cart.html#source-view.911">includes/class-wc-cart.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-cart.php"><a href="../files/woocommerce-includes-class-wc-cart.html#source-view.932">includes/class-wc-cart.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">911</span>
+    <span class="phpdocumentor-element-found-in__line">932</span>
 </aside>
 
         <p class="phpdocumentor-summary">Get all tax classes for items in the cart.</p>
@@ -3387,9 +3508,9 @@ persist.</p>
         <a href="#method_get_cart_item_tax_classes_for_shipping" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-cart.php"><a href="../files/woocommerce-includes-class-wc-cart.html#source-view.928">includes/class-wc-cart.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-cart.php"><a href="../files/woocommerce-includes-class-wc-cart.html#source-view.949">includes/class-wc-cart.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">928</span>
+    <span class="phpdocumentor-element-found-in__line">949</span>
 </aside>
 
         <p class="phpdocumentor-summary">Get all tax classes for shipping based on the items in the cart.</p>
@@ -3419,9 +3540,9 @@ persist.</p>
         <a href="#method_get_cart_shipping_total" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-cart.php"><a href="../files/woocommerce-includes-class-wc-cart.html#source-view.1613">includes/class-wc-cart.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-cart.php"><a href="../files/woocommerce-includes-class-wc-cart.html#source-view.1694">includes/class-wc-cart.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1613</span>
+    <span class="phpdocumentor-element-found-in__line">1694</span>
 </aside>
 
         <p class="phpdocumentor-summary">Gets the shipping total (after calculation).</p>
@@ -3451,9 +3572,9 @@ persist.</p>
         <a href="#method_get_cart_subtotal" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-cart.php"><a href="../files/woocommerce-includes-class-wc-cart.html#source-view.1981">includes/class-wc-cart.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-cart.php"><a href="../files/woocommerce-includes-class-wc-cart.html#source-view.2062">includes/class-wc-cart.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1981</span>
+    <span class="phpdocumentor-element-found-in__line">2062</span>
 </aside>
 
         <p class="phpdocumentor-summary">Gets the sub total (after calculation).</p>
@@ -3495,9 +3616,9 @@ persist.</p>
         <a href="#method_get_cart_tax" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-cart.php"><a href="../files/woocommerce-includes-class-wc-cart.html#source-view.2064">includes/class-wc-cart.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-cart.php"><a href="../files/woocommerce-includes-class-wc-cart.html#source-view.2145">includes/class-wc-cart.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">2064</span>
+    <span class="phpdocumentor-element-found-in__line">2145</span>
 </aside>
 
         <p class="phpdocumentor-summary">Gets the cart tax (after calculation).</p>
@@ -3527,9 +3648,9 @@ persist.</p>
         <a href="#method_get_cart_total" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-cart.php"><a href="../files/woocommerce-includes-class-wc-cart.html#source-view.1971">includes/class-wc-cart.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-cart.php"><a href="../files/woocommerce-includes-class-wc-cart.html#source-view.2052">includes/class-wc-cart.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1971</span>
+    <span class="phpdocumentor-element-found-in__line">2052</span>
 </aside>
 
         <p class="phpdocumentor-summary">Gets the cart contents total (after calculation).</p>
@@ -3653,9 +3774,9 @@ persist.</p>
         <a href="#method_get_coupon_discount_amount" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-cart.php"><a href="../files/woocommerce-includes-class-wc-cart.html#source-view.1844">includes/class-wc-cart.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-cart.php"><a href="../files/woocommerce-includes-class-wc-cart.html#source-view.1925">includes/class-wc-cart.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1844</span>
+    <span class="phpdocumentor-element-found-in__line">1925</span>
 </aside>
 
         <p class="phpdocumentor-summary">Get the discount amount for a used coupon.</p>
@@ -3706,9 +3827,9 @@ persist.</p>
         <a href="#method_get_coupon_discount_tax_amount" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-cart.php"><a href="../files/woocommerce-includes-class-wc-cart.html#source-view.1861">includes/class-wc-cart.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-cart.php"><a href="../files/woocommerce-includes-class-wc-cart.html#source-view.1942">includes/class-wc-cart.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1861</span>
+    <span class="phpdocumentor-element-found-in__line">1942</span>
 </aside>
 
         <p class="phpdocumentor-summary">Get the discount tax amount for a used coupon (for tax inclusive prices).</p>
@@ -3750,9 +3871,9 @@ persist.</p>
         <a href="#method_get_coupon_discount_tax_totals" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-cart.php"><a href="../files/woocommerce-includes-class-wc-cart.html#source-view.180">includes/class-wc-cart.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-cart.php"><a href="../files/woocommerce-includes-class-wc-cart.html#source-view.199">includes/class-wc-cart.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">180</span>
+    <span class="phpdocumentor-element-found-in__line">199</span>
 </aside>
 
         <p class="phpdocumentor-summary">Return all calculated coupon tax totals.</p>
@@ -3796,9 +3917,9 @@ persist.</p>
         <a href="#method_get_coupon_discount_totals" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-cart.php"><a href="../files/woocommerce-includes-class-wc-cart.html#source-view.171">includes/class-wc-cart.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-cart.php"><a href="../files/woocommerce-includes-class-wc-cart.html#source-view.190">includes/class-wc-cart.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">171</span>
+    <span class="phpdocumentor-element-found-in__line">190</span>
 </aside>
 
         <p class="phpdocumentor-summary">Return all calculated coupon totals.</p>
@@ -3842,9 +3963,9 @@ persist.</p>
         <a href="#method_get_coupons" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-cart.php"><a href="../files/woocommerce-includes-class-wc-cart.html#source-view.1822">includes/class-wc-cart.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-cart.php"><a href="../files/woocommerce-includes-class-wc-cart.html#source-view.1903">includes/class-wc-cart.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1822</span>
+    <span class="phpdocumentor-element-found-in__line">1903</span>
 </aside>
 
         <p class="phpdocumentor-summary">Get array of applied coupon objects and codes.</p>
@@ -3886,9 +4007,9 @@ persist.</p>
         <a href="#method_get_cross_sells" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-cart.php"><a href="../files/woocommerce-includes-class-wc-cart.html#source-view.820">includes/class-wc-cart.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-cart.php"><a href="../files/woocommerce-includes-class-wc-cart.html#source-view.841">includes/class-wc-cart.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">820</span>
+    <span class="phpdocumentor-element-found-in__line">841</span>
 </aside>
 
         <p class="phpdocumentor-summary">Gets cross sells based on the items in the cart.</p>
@@ -3918,9 +4039,9 @@ persist.</p>
         <a href="#method_get_customer" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-cart.php"><a href="../files/woocommerce-includes-class-wc-cart.html#source-view.1390">includes/class-wc-cart.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-cart.php"><a href="../files/woocommerce-includes-class-wc-cart.html#source-view.1420">includes/class-wc-cart.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1390</span>
+    <span class="phpdocumentor-element-found-in__line">1420</span>
 </aside>
 
         <p class="phpdocumentor-summary">Get cart&#039;s owner.</p>
@@ -3964,9 +4085,9 @@ persist.</p>
         <a href="#method_get_discount_tax" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-cart.php"><a href="../files/woocommerce-includes-class-wc-cart.html#source-view.241">includes/class-wc-cart.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-cart.php"><a href="../files/woocommerce-includes-class-wc-cart.html#source-view.260">includes/class-wc-cart.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">241</span>
+    <span class="phpdocumentor-element-found-in__line">260</span>
 </aside>
 
         <p class="phpdocumentor-summary">Get discount_tax.</p>
@@ -4010,9 +4131,9 @@ persist.</p>
         <a href="#method_get_discount_total" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-cart.php"><a href="../files/woocommerce-includes-class-wc-cart.html#source-view.231">includes/class-wc-cart.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-cart.php"><a href="../files/woocommerce-includes-class-wc-cart.html#source-view.250">includes/class-wc-cart.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">231</span>
+    <span class="phpdocumentor-element-found-in__line">250</span>
 </aside>
 
         <p class="phpdocumentor-summary">Get discount_total.</p>
@@ -4227,9 +4348,9 @@ persist.</p>
         <a href="#method_get_displayed_subtotal" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-cart.php"><a href="../files/woocommerce-includes-class-wc-cart.html#source-view.954">includes/class-wc-cart.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-cart.php"><a href="../files/woocommerce-includes-class-wc-cart.html#source-view.975">includes/class-wc-cart.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">954</span>
+    <span class="phpdocumentor-element-found-in__line">975</span>
 </aside>
 
         <p class="phpdocumentor-summary">Determines the value that the customer spent and the subtotal
@@ -4279,9 +4400,9 @@ If cart totals are shown excluding tax, use the subtotal ex tax
         <a href="#method_get_fee_tax" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-cart.php"><a href="../files/woocommerce-includes-class-wc-cart.html#source-view.323">includes/class-wc-cart.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-cart.php"><a href="../files/woocommerce-includes-class-wc-cart.html#source-view.342">includes/class-wc-cart.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">323</span>
+    <span class="phpdocumentor-element-found-in__line">342</span>
 </aside>
 
         <p class="phpdocumentor-summary">Get total fee tax amount.</p>
@@ -4325,9 +4446,9 @@ If cart totals are shown excluding tax, use the subtotal ex tax
         <a href="#method_get_fee_taxes" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-cart.php"><a href="../files/woocommerce-includes-class-wc-cart.html#source-view.350">includes/class-wc-cart.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-cart.php"><a href="../files/woocommerce-includes-class-wc-cart.html#source-view.369">includes/class-wc-cart.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">350</span>
+    <span class="phpdocumentor-element-found-in__line">369</span>
 </aside>
 
         <p class="phpdocumentor-summary">Get taxes.</p>
@@ -4371,9 +4492,9 @@ If cart totals are shown excluding tax, use the subtotal ex tax
         <a href="#method_get_fee_total" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-cart.php"><a href="../files/woocommerce-includes-class-wc-cart.html#source-view.313">includes/class-wc-cart.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-cart.php"><a href="../files/woocommerce-includes-class-wc-cart.html#source-view.332">includes/class-wc-cart.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">313</span>
+    <span class="phpdocumentor-element-found-in__line">332</span>
 </aside>
 
         <p class="phpdocumentor-summary">Get total fee amount.</p>
@@ -4417,9 +4538,9 @@ If cart totals are shown excluding tax, use the subtotal ex tax
         <a href="#method_get_fees" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-cart.php"><a href="../files/woocommerce-includes-class-wc-cart.html#source-view.1948">includes/class-wc-cart.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-cart.php"><a href="../files/woocommerce-includes-class-wc-cart.html#source-view.2029">includes/class-wc-cart.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1948</span>
+    <span class="phpdocumentor-element-found-in__line">2029</span>
 </aside>
 
         <p class="phpdocumentor-summary">Return all added fees from the Fees API.</p>
@@ -4463,9 +4584,9 @@ If cart totals are shown excluding tax, use the subtotal ex tax
         <a href="#method_get_item_data" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-cart.php"><a href="../files/woocommerce-includes-class-wc-cart.html#source-view.809">includes/class-wc-cart.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-cart.php"><a href="../files/woocommerce-includes-class-wc-cart.html#source-view.830">includes/class-wc-cart.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">809</span>
+    <span class="phpdocumentor-element-found-in__line">830</span>
 </aside>
 
         <p class="phpdocumentor-summary">Gets and formats a list of cart item data + variations for display on the frontend.</p>
@@ -4563,9 +4684,9 @@ If cart totals are shown excluding tax, use the subtotal ex tax
         <a href="#method_get_product_price" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-cart.php"><a href="../files/woocommerce-includes-class-wc-cart.html#source-view.2011">includes/class-wc-cart.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-cart.php"><a href="../files/woocommerce-includes-class-wc-cart.html#source-view.2092">includes/class-wc-cart.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">2011</span>
+    <span class="phpdocumentor-element-found-in__line">2092</span>
 </aside>
 
         <p class="phpdocumentor-summary">Get the product row price per item.</p>
@@ -4607,9 +4728,9 @@ If cart totals are shown excluding tax, use the subtotal ex tax
         <a href="#method_get_product_subtotal" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-cart.php"><a href="../files/woocommerce-includes-class-wc-cart.html#source-view.2031">includes/class-wc-cart.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-cart.php"><a href="../files/woocommerce-includes-class-wc-cart.html#source-view.2112">includes/class-wc-cart.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">2031</span>
+    <span class="phpdocumentor-element-found-in__line">2112</span>
 </aside>
 
         <p class="phpdocumentor-summary">Get the product row subtotal.</p>
@@ -4662,9 +4783,9 @@ If cart totals are shown excluding tax, use the subtotal ex tax
         <a href="#method_get_remove_url" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-cart.php"><a href="../files/woocommerce-includes-class-wc-cart.html#source-view.846">includes/class-wc-cart.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-cart.php"><a href="../files/woocommerce-includes-class-wc-cart.html#source-view.867">includes/class-wc-cart.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">846</span>
+    <span class="phpdocumentor-element-found-in__line">867</span>
 </aside>
 
         <p class="phpdocumentor-summary">Gets the url to remove an item from the cart.</p>
@@ -4706,9 +4827,9 @@ If cart totals are shown excluding tax, use the subtotal ex tax
         <a href="#method_get_removed_cart_contents" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-cart.php"><a href="../files/woocommerce-includes-class-wc-cart.html#source-view.152">includes/class-wc-cart.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-cart.php"><a href="../files/woocommerce-includes-class-wc-cart.html#source-view.171">includes/class-wc-cart.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">152</span>
+    <span class="phpdocumentor-element-found-in__line">171</span>
 </aside>
 
         <p class="phpdocumentor-summary">Return items removed from the cart.</p>
@@ -4747,14 +4868,46 @@ If cart totals are shown excluding tax, use the subtotal ex tax
             -public
                                                         "
 >
+    <h4 class="phpdocumentor-element__name" id="method_get_shipping_methods">
+        get_shipping_methods()
+        <a href="#method_get_shipping_methods" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-cart.php"><a href="../files/woocommerce-includes-class-wc-cart.html#source-view.1462">includes/class-wc-cart.php</a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">1462</span>
+</aside>
+
+        <p class="phpdocumentor-summary">Get selected shipping methods after calculation.</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                <span class="phpdocumentor-signature__name">get_shipping_methods</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">array&lt;string|int, mixed&gt;</span></code>
+
+        <section class="phpdocumentor-description"></section>
+
+    
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">array&lt;string|int, mixed&gt;</span>
+            &mdash; <span class="phpdocumentor-return-value__description"></span>
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                                        "
+>
     <h4 class="phpdocumentor-element__name" id="method_get_shipping_packages">
         get_shipping_packages()
         <a href="#method_get_shipping_packages" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-cart.php"><a href="../files/woocommerce-includes-class-wc-cart.html#source-view.1505">includes/class-wc-cart.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-cart.php"><a href="../files/woocommerce-includes-class-wc-cart.html#source-view.1563">includes/class-wc-cart.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1505</span>
+    <span class="phpdocumentor-element-found-in__line">1563</span>
 </aside>
 
         <p class="phpdocumentor-summary">Get packages to calculate shipping for.</p>
@@ -4802,9 +4955,9 @@ through the filter and break it up.</p>
         <a href="#method_get_shipping_tax" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-cart.php"><a href="../files/woocommerce-includes-class-wc-cart.html#source-view.261">includes/class-wc-cart.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-cart.php"><a href="../files/woocommerce-includes-class-wc-cart.html#source-view.280">includes/class-wc-cart.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">261</span>
+    <span class="phpdocumentor-element-found-in__line">280</span>
 </aside>
 
         <p class="phpdocumentor-summary">Get shipping_tax.</p>
@@ -4848,9 +5001,9 @@ through the filter and break it up.</p>
         <a href="#method_get_shipping_tax_amount" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-cart.php"><a href="../files/woocommerce-includes-class-wc-cart.html#source-view.2087">includes/class-wc-cart.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-cart.php"><a href="../files/woocommerce-includes-class-wc-cart.html#source-view.2168">includes/class-wc-cart.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">2087</span>
+    <span class="phpdocumentor-element-found-in__line">2168</span>
 </aside>
 
         <p class="phpdocumentor-summary">Get a tax amount.</p>
@@ -4892,9 +5045,9 @@ through the filter and break it up.</p>
         <a href="#method_get_shipping_taxes" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-cart.php"><a href="../files/woocommerce-includes-class-wc-cart.html#source-view.332">includes/class-wc-cart.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-cart.php"><a href="../files/woocommerce-includes-class-wc-cart.html#source-view.351">includes/class-wc-cart.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">332</span>
+    <span class="phpdocumentor-element-found-in__line">351</span>
 </aside>
 
         <p class="phpdocumentor-summary">Get taxes.</p>
@@ -4938,9 +5091,9 @@ through the filter and break it up.</p>
         <a href="#method_get_shipping_total" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-cart.php"><a href="../files/woocommerce-includes-class-wc-cart.html#source-view.251">includes/class-wc-cart.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-cart.php"><a href="../files/woocommerce-includes-class-wc-cart.html#source-view.270">includes/class-wc-cart.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">251</span>
+    <span class="phpdocumentor-element-found-in__line">270</span>
 </aside>
 
         <p class="phpdocumentor-summary">Get shipping_total.</p>
@@ -4984,9 +5137,9 @@ through the filter and break it up.</p>
         <a href="#method_get_subtotal" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-cart.php"><a href="../files/woocommerce-includes-class-wc-cart.html#source-view.211">includes/class-wc-cart.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-cart.php"><a href="../files/woocommerce-includes-class-wc-cart.html#source-view.230">includes/class-wc-cart.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">211</span>
+    <span class="phpdocumentor-element-found-in__line">230</span>
 </aside>
 
         <p class="phpdocumentor-summary">Get subtotal.</p>
@@ -5030,9 +5183,9 @@ through the filter and break it up.</p>
         <a href="#method_get_subtotal_tax" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-cart.php"><a href="../files/woocommerce-includes-class-wc-cart.html#source-view.221">includes/class-wc-cart.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-cart.php"><a href="../files/woocommerce-includes-class-wc-cart.html#source-view.240">includes/class-wc-cart.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">221</span>
+    <span class="phpdocumentor-element-found-in__line">240</span>
 </aside>
 
         <p class="phpdocumentor-summary">Get subtotal_tax.</p>
@@ -5076,9 +5229,9 @@ through the filter and break it up.</p>
         <a href="#method_get_tax_amount" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-cart.php"><a href="../files/woocommerce-includes-class-wc-cart.html#source-view.2076">includes/class-wc-cart.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-cart.php"><a href="../files/woocommerce-includes-class-wc-cart.html#source-view.2157">includes/class-wc-cart.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">2076</span>
+    <span class="phpdocumentor-element-found-in__line">2157</span>
 </aside>
 
         <p class="phpdocumentor-summary">Get a tax amount.</p>
@@ -5120,9 +5273,9 @@ through the filter and break it up.</p>
         <a href="#method_get_tax_price_display_mode" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-cart.php"><a href="../files/woocommerce-includes-class-wc-cart.html#source-view.2137">includes/class-wc-cart.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-cart.php"><a href="../files/woocommerce-includes-class-wc-cart.html#source-view.2218">includes/class-wc-cart.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">2137</span>
+    <span class="phpdocumentor-element-found-in__line">2218</span>
 </aside>
 
         <p class="phpdocumentor-summary">Returns &#039;incl&#039; if tax should be included in cart, otherwise returns &#039;excl&#039;.</p>
@@ -5152,9 +5305,9 @@ through the filter and break it up.</p>
         <a href="#method_get_tax_totals" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-cart.php"><a href="../files/woocommerce-includes-class-wc-cart.html#source-view.869">includes/class-wc-cart.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-cart.php"><a href="../files/woocommerce-includes-class-wc-cart.html#source-view.890">includes/class-wc-cart.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">869</span>
+    <span class="phpdocumentor-element-found-in__line">890</span>
 </aside>
 
         <p class="phpdocumentor-summary">Get taxes, merged by code, formatted ready for output.</p>
@@ -5184,9 +5337,9 @@ through the filter and break it up.</p>
         <a href="#method_get_taxes" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-cart.php"><a href="../files/woocommerce-includes-class-wc-cart.html#source-view.591">includes/class-wc-cart.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-cart.php"><a href="../files/woocommerce-includes-class-wc-cart.html#source-view.610">includes/class-wc-cart.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">591</span>
+    <span class="phpdocumentor-element-found-in__line">610</span>
 </aside>
 
         <p class="phpdocumentor-summary">Returns the cart and shipping taxes, merged.</p>
@@ -5216,9 +5369,9 @@ through the filter and break it up.</p>
         <a href="#method_get_taxes_total" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-cart.php"><a href="../files/woocommerce-includes-class-wc-cart.html#source-view.2099">includes/class-wc-cart.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-cart.php"><a href="../files/woocommerce-includes-class-wc-cart.html#source-view.2180">includes/class-wc-cart.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">2099</span>
+    <span class="phpdocumentor-element-found-in__line">2180</span>
 </aside>
 
         <p class="phpdocumentor-summary">Get tax row amounts with or without compound taxes includes.</p>
@@ -5269,9 +5422,9 @@ through the filter and break it up.</p>
         <a href="#method_get_total" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-cart.php"><a href="../files/woocommerce-includes-class-wc-cart.html#source-view.292">includes/class-wc-cart.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-cart.php"><a href="../files/woocommerce-includes-class-wc-cart.html#source-view.311">includes/class-wc-cart.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">292</span>
+    <span class="phpdocumentor-element-found-in__line">311</span>
 </aside>
 
         <p class="phpdocumentor-summary">Gets cart total after calculation.</p>
@@ -5327,9 +5480,9 @@ through the filter and break it up.</p>
         <a href="#method_get_total_discount" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-cart.php"><a href="../files/woocommerce-includes-class-wc-cart.html#source-view.2119">includes/class-wc-cart.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-cart.php"><a href="../files/woocommerce-includes-class-wc-cart.html#source-view.2200">includes/class-wc-cart.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">2119</span>
+    <span class="phpdocumentor-element-found-in__line">2200</span>
 </aside>
 
         <p class="phpdocumentor-summary">Gets the total discount amount.</p>
@@ -5359,9 +5512,9 @@ through the filter and break it up.</p>
         <a href="#method_get_total_ex_tax" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-cart.php"><a href="../files/woocommerce-includes-class-wc-cart.html#source-view.1962">includes/class-wc-cart.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-cart.php"><a href="../files/woocommerce-includes-class-wc-cart.html#source-view.2043">includes/class-wc-cart.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1962</span>
+    <span class="phpdocumentor-element-found-in__line">2043</span>
 </aside>
 
         <p class="phpdocumentor-summary">Gets the total excluding taxes.</p>
@@ -5391,9 +5544,9 @@ through the filter and break it up.</p>
         <a href="#method_get_total_tax" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-cart.php"><a href="../files/woocommerce-includes-class-wc-cart.html#source-view.303">includes/class-wc-cart.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-cart.php"><a href="../files/woocommerce-includes-class-wc-cart.html#source-view.322">includes/class-wc-cart.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">303</span>
+    <span class="phpdocumentor-element-found-in__line">322</span>
 </aside>
 
         <p class="phpdocumentor-summary">Get total tax amount.</p>
@@ -5437,9 +5590,9 @@ through the filter and break it up.</p>
         <a href="#method_get_totals" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-cart.php"><a href="../files/woocommerce-includes-class-wc-cart.html#source-view.190">includes/class-wc-cart.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-cart.php"><a href="../files/woocommerce-includes-class-wc-cart.html#source-view.209">includes/class-wc-cart.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">190</span>
+    <span class="phpdocumentor-element-found-in__line">209</span>
 </aside>
 
         <p class="phpdocumentor-summary">Return all calculated totals.</p>
@@ -5483,9 +5636,9 @@ through the filter and break it up.</p>
         <a href="#method_get_undo_url" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-cart.php"><a href="../files/woocommerce-includes-class-wc-cart.html#source-view.858">includes/class-wc-cart.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-cart.php"><a href="../files/woocommerce-includes-class-wc-cart.html#source-view.879">includes/class-wc-cart.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">858</span>
+    <span class="phpdocumentor-element-found-in__line">879</span>
 </aside>
 
         <p class="phpdocumentor-summary">Gets the url to re-add an item into the cart.</p>
@@ -5522,14 +5675,46 @@ through the filter and break it up.</p>
             -public
                                                         "
 >
+    <h4 class="phpdocumentor-element__name" id="method_has_calculated_shipping">
+        has_calculated_shipping()
+        <a href="#method_has_calculated_shipping" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-cart.php"><a href="../files/woocommerce-includes-class-wc-cart.html#source-view.1471">includes/class-wc-cart.php</a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">1471</span>
+</aside>
+
+        <p class="phpdocumentor-summary">Whether the shipping totals have been calculated.</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                <span class="phpdocumentor-signature__name">has_calculated_shipping</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">bool</span></code>
+
+        <section class="phpdocumentor-description"></section>
+
+    
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">bool</span>
+            &mdash; <span class="phpdocumentor-return-value__description"></span>
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                                        "
+>
     <h4 class="phpdocumentor-element__name" id="method_has_discount">
         has_discount()
         <a href="#method_has_discount" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-cart.php"><a href="../files/woocommerce-includes-class-wc-cart.html#source-view.1721">includes/class-wc-cart.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-cart.php"><a href="../files/woocommerce-includes-class-wc-cart.html#source-view.1802">includes/class-wc-cart.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1721</span>
+    <span class="phpdocumentor-element-found-in__line">1802</span>
 </aside>
 
         <p class="phpdocumentor-summary">Returns whether or not a discount has been applied.</p>
@@ -5618,9 +5803,9 @@ through the filter and break it up.</p>
         <a href="#method_is_coupon_emails_allowed" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-cart.php"><a href="../files/woocommerce-includes-class-wc-cart.html#source-view.1704">includes/class-wc-cart.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-cart.php"><a href="../files/woocommerce-includes-class-wc-cart.html#source-view.1785">includes/class-wc-cart.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1704</span>
+    <span class="phpdocumentor-element-found-in__line">1785</span>
 </aside>
 
         <p class="phpdocumentor-summary">Checks if the given email address(es) matches the ones specified on the coupon.</p>
@@ -5686,9 +5871,9 @@ through the filter and break it up.</p>
         <a href="#method_is_empty" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-cart.php"><a href="../files/woocommerce-includes-class-wc-cart.html#source-view.625">includes/class-wc-cart.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-cart.php"><a href="../files/woocommerce-includes-class-wc-cart.html#source-view.644">includes/class-wc-cart.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">625</span>
+    <span class="phpdocumentor-element-found-in__line">644</span>
 </aside>
 
         <p class="phpdocumentor-summary">Checks if the cart is empty.</p>
@@ -5748,9 +5933,9 @@ through the filter and break it up.</p>
         <a href="#method_needs_payment" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-cart.php"><a href="../files/woocommerce-includes-class-wc-cart.html#source-view.1419">includes/class-wc-cart.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-cart.php"><a href="../files/woocommerce-includes-class-wc-cart.html#source-view.1449">includes/class-wc-cart.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1419</span>
+    <span class="phpdocumentor-element-found-in__line">1449</span>
 </aside>
 
         <p class="phpdocumentor-summary">Looks at the totals to see if payment is actually required.</p>
@@ -5780,9 +5965,9 @@ through the filter and break it up.</p>
         <a href="#method_needs_shipping" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-cart.php"><a href="../files/woocommerce-includes-class-wc-cart.html#source-view.1536">includes/class-wc-cart.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-cart.php"><a href="../files/woocommerce-includes-class-wc-cart.html#source-view.1594">includes/class-wc-cart.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1536</span>
+    <span class="phpdocumentor-element-found-in__line">1594</span>
 </aside>
 
         <p class="phpdocumentor-summary">Looks through the cart to see if shipping is actually required.</p>
@@ -5812,9 +5997,9 @@ through the filter and break it up.</p>
         <a href="#method_needs_shipping_address" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-cart.php"><a href="../files/woocommerce-includes-class-wc-cart.html#source-view.1557">includes/class-wc-cart.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-cart.php"><a href="../files/woocommerce-includes-class-wc-cart.html#source-view.1616">includes/class-wc-cart.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1557</span>
+    <span class="phpdocumentor-element-found-in__line">1616</span>
 </aside>
 
         <p class="phpdocumentor-summary">Should the shipping address form be shown.</p>
@@ -5904,9 +6089,9 @@ through the filter and break it up.</p>
         <a href="#method_remove_cart_item" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-cart.php"><a href="../files/woocommerce-includes-class-wc-cart.html#source-view.1306">includes/class-wc-cart.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-cart.php"><a href="../files/woocommerce-includes-class-wc-cart.html#source-view.1336">includes/class-wc-cart.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1306</span>
+    <span class="phpdocumentor-element-found-in__line">1336</span>
 </aside>
 
         <p class="phpdocumentor-summary">Remove a cart item.</p>
@@ -5962,9 +6147,9 @@ through the filter and break it up.</p>
         <a href="#method_remove_coupon" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-cart.php"><a href="../files/woocommerce-includes-class-wc-cart.html#source-view.1884">includes/class-wc-cart.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-cart.php"><a href="../files/woocommerce-includes-class-wc-cart.html#source-view.1965">includes/class-wc-cart.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1884</span>
+    <span class="phpdocumentor-element-found-in__line">1965</span>
 </aside>
 
         <p class="phpdocumentor-summary">Remove a single coupon by code.</p>
@@ -6006,9 +6191,9 @@ through the filter and break it up.</p>
         <a href="#method_remove_coupons" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-cart.php"><a href="../files/woocommerce-includes-class-wc-cart.html#source-view.1871">includes/class-wc-cart.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-cart.php"><a href="../files/woocommerce-includes-class-wc-cart.html#source-view.1952">includes/class-wc-cart.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1871</span>
+    <span class="phpdocumentor-element-found-in__line">1952</span>
 </aside>
 
         <p class="phpdocumentor-summary">Remove coupons from the cart of a defined type. Type 1 is before tax, type 2 is after tax.</p>
@@ -6097,9 +6282,9 @@ through the filter and break it up.</p>
         <a href="#method_restore_cart_item" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-cart.php"><a href="../files/woocommerce-includes-class-wc-cart.html#source-view.1329">includes/class-wc-cart.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-cart.php"><a href="../files/woocommerce-includes-class-wc-cart.html#source-view.1359">includes/class-wc-cart.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1329</span>
+    <span class="phpdocumentor-element-found-in__line">1359</span>
 </aside>
 
         <p class="phpdocumentor-summary">Restore a cart item.</p>
@@ -6141,9 +6326,9 @@ through the filter and break it up.</p>
         <a href="#method_set_applied_coupons" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-cart.php"><a href="../files/woocommerce-includes-class-wc-cart.html#source-view.396">includes/class-wc-cart.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-cart.php"><a href="../files/woocommerce-includes-class-wc-cart.html#source-view.415">includes/class-wc-cart.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">396</span>
+    <span class="phpdocumentor-element-found-in__line">415</span>
 </aside>
 
         <p class="phpdocumentor-summary">Sets the array of applied coupon codes.</p>
@@ -6185,9 +6370,9 @@ through the filter and break it up.</p>
         <a href="#method_set_cart_contents" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-cart.php"><a href="../files/woocommerce-includes-class-wc-cart.html#source-view.377">includes/class-wc-cart.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-cart.php"><a href="../files/woocommerce-includes-class-wc-cart.html#source-view.396">includes/class-wc-cart.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">377</span>
+    <span class="phpdocumentor-element-found-in__line">396</span>
 </aside>
 
         <p class="phpdocumentor-summary">Sets the contents of the cart.</p>
@@ -6229,9 +6414,9 @@ through the filter and break it up.</p>
         <a href="#method_set_cart_contents_tax" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-cart.php"><a href="../files/woocommerce-includes-class-wc-cart.html#source-view.505">includes/class-wc-cart.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-cart.php"><a href="../files/woocommerce-includes-class-wc-cart.html#source-view.524">includes/class-wc-cart.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">505</span>
+    <span class="phpdocumentor-element-found-in__line">524</span>
 </aside>
 
         <p class="phpdocumentor-summary">Set cart tax amount.</p>
@@ -6287,9 +6472,9 @@ through the filter and break it up.</p>
         <a href="#method_set_cart_contents_taxes" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-cart.php"><a href="../files/woocommerce-includes-class-wc-cart.html#source-view.566">includes/class-wc-cart.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-cart.php"><a href="../files/woocommerce-includes-class-wc-cart.html#source-view.585">includes/class-wc-cart.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">566</span>
+    <span class="phpdocumentor-element-found-in__line">585</span>
 </aside>
 
         <p class="phpdocumentor-summary">Set taxes.</p>
@@ -6345,9 +6530,9 @@ through the filter and break it up.</p>
         <a href="#method_set_cart_contents_total" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-cart.php"><a href="../files/woocommerce-includes-class-wc-cart.html#source-view.495">includes/class-wc-cart.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-cart.php"><a href="../files/woocommerce-includes-class-wc-cart.html#source-view.514">includes/class-wc-cart.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">495</span>
+    <span class="phpdocumentor-element-found-in__line">514</span>
 </aside>
 
         <p class="phpdocumentor-summary">Set cart_contents_total.</p>
@@ -6403,9 +6588,9 @@ through the filter and break it up.</p>
         <a href="#method_set_coupon_discount_tax_totals" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-cart.php"><a href="../files/woocommerce-includes-class-wc-cart.html#source-view.415">includes/class-wc-cart.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-cart.php"><a href="../files/woocommerce-includes-class-wc-cart.html#source-view.434">includes/class-wc-cart.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">415</span>
+    <span class="phpdocumentor-element-found-in__line">434</span>
 </aside>
 
         <p class="phpdocumentor-summary">Sets the array of calculated coupon tax totals.</p>
@@ -6461,9 +6646,9 @@ through the filter and break it up.</p>
         <a href="#method_set_coupon_discount_totals" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-cart.php"><a href="../files/woocommerce-includes-class-wc-cart.html#source-view.406">includes/class-wc-cart.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-cart.php"><a href="../files/woocommerce-includes-class-wc-cart.html#source-view.425">includes/class-wc-cart.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">406</span>
+    <span class="phpdocumentor-element-found-in__line">425</span>
 </aside>
 
         <p class="phpdocumentor-summary">Sets the array of calculated coupon totals.</p>
@@ -6519,9 +6704,9 @@ through the filter and break it up.</p>
         <a href="#method_set_discount_tax" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-cart.php"><a href="../files/woocommerce-includes-class-wc-cart.html#source-view.465">includes/class-wc-cart.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-cart.php"><a href="../files/woocommerce-includes-class-wc-cart.html#source-view.484">includes/class-wc-cart.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">465</span>
+    <span class="phpdocumentor-element-found-in__line">484</span>
 </aside>
 
         <p class="phpdocumentor-summary">Set discount_tax.</p>
@@ -6577,9 +6762,9 @@ through the filter and break it up.</p>
         <a href="#method_set_discount_total" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-cart.php"><a href="../files/woocommerce-includes-class-wc-cart.html#source-view.455">includes/class-wc-cart.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-cart.php"><a href="../files/woocommerce-includes-class-wc-cart.html#source-view.474">includes/class-wc-cart.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">455</span>
+    <span class="phpdocumentor-element-found-in__line">474</span>
 </aside>
 
         <p class="phpdocumentor-summary">Set discount_total.</p>
@@ -6635,9 +6820,9 @@ through the filter and break it up.</p>
         <a href="#method_set_fee_tax" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-cart.php"><a href="../files/woocommerce-includes-class-wc-cart.html#source-view.546">includes/class-wc-cart.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-cart.php"><a href="../files/woocommerce-includes-class-wc-cart.html#source-view.565">includes/class-wc-cart.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">546</span>
+    <span class="phpdocumentor-element-found-in__line">565</span>
 </aside>
 
         <p class="phpdocumentor-summary">Set fee tax.</p>
@@ -6693,9 +6878,9 @@ through the filter and break it up.</p>
         <a href="#method_set_fee_taxes" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-cart.php"><a href="../files/woocommerce-includes-class-wc-cart.html#source-view.576">includes/class-wc-cart.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-cart.php"><a href="../files/woocommerce-includes-class-wc-cart.html#source-view.595">includes/class-wc-cart.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">576</span>
+    <span class="phpdocumentor-element-found-in__line">595</span>
 </aside>
 
         <p class="phpdocumentor-summary">Set taxes.</p>
@@ -6751,9 +6936,9 @@ through the filter and break it up.</p>
         <a href="#method_set_fee_total" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-cart.php"><a href="../files/woocommerce-includes-class-wc-cart.html#source-view.536">includes/class-wc-cart.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-cart.php"><a href="../files/woocommerce-includes-class-wc-cart.html#source-view.555">includes/class-wc-cart.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">536</span>
+    <span class="phpdocumentor-element-found-in__line">555</span>
 </aside>
 
         <p class="phpdocumentor-summary">Set fee amount.</p>
@@ -6809,9 +6994,9 @@ through the filter and break it up.</p>
         <a href="#method_set_quantity" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-cart.php"><a href="../files/woocommerce-includes-class-wc-cart.html#source-view.1354">includes/class-wc-cart.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-cart.php"><a href="../files/woocommerce-includes-class-wc-cart.html#source-view.1384">includes/class-wc-cart.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1354</span>
+    <span class="phpdocumentor-element-found-in__line">1384</span>
 </aside>
 
         <p class="phpdocumentor-summary">Set the quantity for an item in the cart using it&#039;s key.</p>
@@ -6871,9 +7056,9 @@ through the filter and break it up.</p>
         <a href="#method_set_removed_cart_contents" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-cart.php"><a href="../files/woocommerce-includes-class-wc-cart.html#source-view.387">includes/class-wc-cart.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-cart.php"><a href="../files/woocommerce-includes-class-wc-cart.html#source-view.406">includes/class-wc-cart.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">387</span>
+    <span class="phpdocumentor-element-found-in__line">406</span>
 </aside>
 
         <p class="phpdocumentor-summary">Set items removed from the cart.</p>
@@ -6959,9 +7144,9 @@ through the filter and break it up.</p>
         <a href="#method_set_shipping_tax" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-cart.php"><a href="../files/woocommerce-includes-class-wc-cart.html#source-view.485">includes/class-wc-cart.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-cart.php"><a href="../files/woocommerce-includes-class-wc-cart.html#source-view.504">includes/class-wc-cart.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">485</span>
+    <span class="phpdocumentor-element-found-in__line">504</span>
 </aside>
 
         <p class="phpdocumentor-summary">Set shipping_tax.</p>
@@ -7017,9 +7202,9 @@ through the filter and break it up.</p>
         <a href="#method_set_shipping_taxes" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-cart.php"><a href="../files/woocommerce-includes-class-wc-cart.html#source-view.556">includes/class-wc-cart.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-cart.php"><a href="../files/woocommerce-includes-class-wc-cart.html#source-view.575">includes/class-wc-cart.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">556</span>
+    <span class="phpdocumentor-element-found-in__line">575</span>
 </aside>
 
         <p class="phpdocumentor-summary">Set taxes.</p>
@@ -7075,9 +7260,9 @@ through the filter and break it up.</p>
         <a href="#method_set_shipping_total" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-cart.php"><a href="../files/woocommerce-includes-class-wc-cart.html#source-view.475">includes/class-wc-cart.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-cart.php"><a href="../files/woocommerce-includes-class-wc-cart.html#source-view.494">includes/class-wc-cart.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">475</span>
+    <span class="phpdocumentor-element-found-in__line">494</span>
 </aside>
 
         <p class="phpdocumentor-summary">Set shipping_total.</p>
@@ -7133,9 +7318,9 @@ through the filter and break it up.</p>
         <a href="#method_set_subtotal" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-cart.php"><a href="../files/woocommerce-includes-class-wc-cart.html#source-view.435">includes/class-wc-cart.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-cart.php"><a href="../files/woocommerce-includes-class-wc-cart.html#source-view.454">includes/class-wc-cart.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">435</span>
+    <span class="phpdocumentor-element-found-in__line">454</span>
 </aside>
 
         <p class="phpdocumentor-summary">Set subtotal.</p>
@@ -7191,9 +7376,9 @@ through the filter and break it up.</p>
         <a href="#method_set_subtotal_tax" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-cart.php"><a href="../files/woocommerce-includes-class-wc-cart.html#source-view.445">includes/class-wc-cart.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-cart.php"><a href="../files/woocommerce-includes-class-wc-cart.html#source-view.464">includes/class-wc-cart.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">445</span>
+    <span class="phpdocumentor-element-found-in__line">464</span>
 </aside>
 
         <p class="phpdocumentor-summary">Set subtotal.</p>
@@ -7249,9 +7434,9 @@ through the filter and break it up.</p>
         <a href="#method_set_total" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-cart.php"><a href="../files/woocommerce-includes-class-wc-cart.html#source-view.515">includes/class-wc-cart.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-cart.php"><a href="../files/woocommerce-includes-class-wc-cart.html#source-view.534">includes/class-wc-cart.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">515</span>
+    <span class="phpdocumentor-element-found-in__line">534</span>
 </aside>
 
         <p class="phpdocumentor-summary">Set cart total.</p>
@@ -7307,9 +7492,9 @@ through the filter and break it up.</p>
         <a href="#method_set_total_tax" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-cart.php"><a href="../files/woocommerce-includes-class-wc-cart.html#source-view.525">includes/class-wc-cart.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-cart.php"><a href="../files/woocommerce-includes-class-wc-cart.html#source-view.544">includes/class-wc-cart.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">525</span>
+    <span class="phpdocumentor-element-found-in__line">544</span>
 </aside>
 
         <p class="phpdocumentor-summary">Set total tax amount.</p>
@@ -7365,9 +7550,9 @@ through the filter and break it up.</p>
         <a href="#method_set_totals" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-cart.php"><a href="../files/woocommerce-includes-class-wc-cart.html#source-view.425">includes/class-wc-cart.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-cart.php"><a href="../files/woocommerce-includes-class-wc-cart.html#source-view.444">includes/class-wc-cart.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">425</span>
+    <span class="phpdocumentor-element-found-in__line">444</span>
 </aside>
 
         <p class="phpdocumentor-summary">Set all calculated totals.</p>
@@ -7470,12 +7655,12 @@ through the filter and break it up.</p>
         <a href="#method_show_shipping" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-cart.php"><a href="../files/woocommerce-includes-class-wc-cart.html#source-view.1566">includes/class-wc-cart.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-cart.php"><a href="../files/woocommerce-includes-class-wc-cart.html#source-view.1625">includes/class-wc-cart.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1566</span>
+    <span class="phpdocumentor-element-found-in__line">1625</span>
 </aside>
 
-        <p class="phpdocumentor-summary">Sees if the customer has entered enough data to calc the shipping yet.</p>
+        <p class="phpdocumentor-summary">Sees if the customer has entered enough data to calculate shipping.</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
@@ -7502,9 +7687,9 @@ through the filter and break it up.</p>
         <a href="#method_filter_items_needing_shipping" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-cart.php"><a href="../files/woocommerce-includes-class-wc-cart.html#source-view.1477">includes/class-wc-cart.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-cart.php"><a href="../files/woocommerce-includes-class-wc-cart.html#source-view.1535">includes/class-wc-cart.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1477</span>
+    <span class="phpdocumentor-element-found-in__line">1535</span>
 </aside>
 
         <p class="phpdocumentor-summary">Filter items needing shipping callback.</p>
@@ -7560,9 +7745,9 @@ through the filter and break it up.</p>
         <a href="#method_get_chosen_shipping_methods" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-cart.php"><a href="../files/woocommerce-includes-class-wc-cart.html#source-view.1458">includes/class-wc-cart.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-cart.php"><a href="../files/woocommerce-includes-class-wc-cart.html#source-view.1516">includes/class-wc-cart.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1458</span>
+    <span class="phpdocumentor-element-found-in__line">1516</span>
 </aside>
 
         <p class="phpdocumentor-summary">Given a set of packages with rates, get the chosen ones only.</p>
@@ -7618,9 +7803,9 @@ through the filter and break it up.</p>
         <a href="#method_get_items_needing_shipping" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-cart.php"><a href="../files/woocommerce-includes-class-wc-cart.html#source-view.1488">includes/class-wc-cart.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-cart.php"><a href="../files/woocommerce-includes-class-wc-cart.html#source-view.1546">includes/class-wc-cart.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1488</span>
+    <span class="phpdocumentor-element-found-in__line">1546</span>
 </aside>
 
         <p class="phpdocumentor-summary">Get only items that need shipping.</p>
@@ -7664,9 +7849,9 @@ through the filter and break it up.</p>
         <a href="#method_get_totals_var" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-cart.php"><a href="../files/woocommerce-includes-class-wc-cart.html#source-view.201">includes/class-wc-cart.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-cart.php"><a href="../files/woocommerce-includes-class-wc-cart.html#source-view.220">includes/class-wc-cart.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">201</span>
+    <span class="phpdocumentor-element-found-in__line">220</span>
 </aside>
 
         <p class="phpdocumentor-summary">Get a total.</p>
@@ -7722,9 +7907,9 @@ through the filter and break it up.</p>
         <a href="#method_reset_totals" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-cart.php"><a href="../files/woocommerce-includes-class-wc-cart.html#source-view.2126">includes/class-wc-cart.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-cart.php"><a href="../files/woocommerce-includes-class-wc-cart.html#source-view.2207">includes/class-wc-cart.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">2126</span>
+    <span class="phpdocumentor-element-found-in__line">2207</span>
 </aside>
 
         <p class="phpdocumentor-summary">Reset cart totals to the defaults. Useful before running calculations.</p>
@@ -7754,7 +7939,7 @@ through the filter and break it up.</p>
 
     <footer class="phpdocumentor phpdocumentor-footer">
     <div class="phpdocumentor-section">
-        <span>WooCommerce Code Reference API documentation generated by <a href="http://www.phpdoc.org/">phpDocumentor</a> on July 25th, 2024 at 11:33 am.</span>
+        <span>WooCommerce Code Reference API documentation generated by <a href="http://www.phpdoc.org/">phpDocumentor</a> on May 16th, 2025 at 09:14 am.</span>
     </div>
 </footer>
 
@@ -7766,7 +7951,7 @@ through the filter and break it up.</p>
             'searchIndex': '..\/js\/searchIndex.json'
         };
     </script>
-    <script src="../js/searchIndex.js?updated=1721907191"></script>
-    <script src="../js/search.js?updated=1721907191"></script>
+    <script src="../js/searchIndex.js?updated=1747386868"></script>
+    <script src="../js/search.js?updated=1747386868"></script>
 </body>
 </html>

@@ -4,14 +4,13 @@
     <meta charset="utf-8">
     <title>WooCommerce Code Reference</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="../images/favicon.png" />
-    <link rel="apple-touch-icon" href="../images/apple-touch-icon.png"/>
-    <link rel="apple-touch-icon" sizes="72x72" href="../images/apple-touch-icon-72x72.png"/>
-    <link rel="apple-touch-icon" sizes="114x114" href="../images/apple-touch-icon-114x114.png"/>
+    <link rel="icon" href="../images/favicon-32x32.png" sizes="32x32" />
+    <link rel="icon" href="../images/favicon-192x192.png" sizes="192x192" />
+    <link rel="apple-touch-icon" href="../images/favicon-180x180.png" />
+
     <link rel="stylesheet" href="../css/normalize.css">
-    <link rel="stylesheet" href="../css/base.css?updated=1721907192">
-    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../css/template.css?updated=1721907192">
+    <link rel="stylesheet" href="../css/base.css?updated=1747386869">
+    <link rel="stylesheet" href="../css/template.css?updated=1747386869">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0/css/all.min.css" integrity="sha256-ybRkN9dBjhcS2qrW1z+hfCxq+1aBdwyQM5wlQoQVt/0=" crossorigin="anonymous" />
             <script src="https://cdn.jsdelivr.net/npm/css-vars-ponyfill@2"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0/js/all.min.js" integrity="sha256-0vuk8LXoyrmCjp1f0O300qo1M75ZQyhH9X3J6d+scmk=" crossorigin="anonymous"></script>
@@ -27,19 +26,24 @@
 		'content_group' : 'WooCommerce Core Code Reference',
 	});
 </script>
-        </head>
+        <script src="../js/prism.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            window.dispatchEvent(new HashChangeEvent('hashchange'));
+        });
+    </script>
+</head>
 <body id="top">
     <header class="phpdocumentor-top-header">
     <section class="phpdocumentor-section">
         <div class="site-branding">
-            <a class="site-logo" href="../index.html"><img width="180" src="../images/logo.svg" alt="WooCommerce" /></a>
+            <a class="site-logo" href="../index.html"><img src="../images/logo.png" alt="WooCommerce" /></a>
         </div>
         <nav class="main-navigation">
             <ul>
                 <li><a href="../hooks/hooks.html">Hooks Reference</a></li>
-                <li><a href="https://docs.woocommerce.com/">Documentation</a></li>
+                <li><a href="https://developer.woocommerce.com/docs/">Documentation</a></li>
                 <li><a href="https://woocommerce.github.io/woocommerce-rest-api-docs/">REST API Docs</a></li>
-                <li><a href="https://woocommerce.com/careers/?utm_source=woocommerce+core+code+reference&utm_medium=devdocs&utm_campaign=woo+careers" target="_blank">We're hiring!</a></li>
             </ul>
         </nav>
     </section>
@@ -47,7 +51,7 @@
 
 <div class="phpdocumentor-header">
     <section class="phpdocumentor-section">
-        <h1 class="phpdocumentor-title">WooCommerce Code Reference</h1>
+        <h1 class="phpdocumentor-title"><a href="../index.html">WooCommerce Code Reference</a></h1>
         <section class="phpdocumentor-search">
     <label class="phpdocumentor-label">
         <span class="visually-hidden">Search (click ESC to close search results)</span>
@@ -68,6 +72,10 @@
                                         <h4 class="phpdocumentor-sidebar__root-namespace"><a href="../namespaces/woocommerce.html"><abbr title="\WooCommerce">WooCommerce</abbr></a></h4>
                 <ul class="phpdocumentor-list">
                                             <li><a href="../namespaces/woocommerce-admin.html"><abbr title="\WooCommerce\Admin">Admin</abbr></a></li>
+                                    </ul>
+                            <h4 class="phpdocumentor-sidebar__root-namespace"><a href="../namespaces/mailpoet.html"><abbr title="\MailPoet">MailPoet</abbr></a></h4>
+                <ul class="phpdocumentor-list">
+                                            <li><a href="../namespaces/mailpoet-emaileditor.html"><abbr title="\MailPoet\EmailEditor">EmailEditor</abbr></a></li>
                                     </ul>
                             <h4 class="phpdocumentor-sidebar__root-namespace"><a href="../namespaces/automattic.html"><abbr title="\Automattic">Automattic</abbr></a></h4>
                 <ul class="phpdocumentor-list">
@@ -113,8 +121,10 @@
                                     <li><a href="../packages/WooCommerce-Widgets.html"><abbr title="\WooCommerce\Widgets">Widgets</abbr></a></li>
                                     <li><a href="../packages/WooCommerce-Uninstaller.html"><abbr title="\WooCommerce\Uninstaller">Uninstaller</abbr></a></li>
                             </ul>
-                                <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/WoocommerceAdmin.html"><abbr title="\WoocommerceAdmin">WoocommerceAdmin</abbr></a></h3>
-                                <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/WoocommerceNavigation.html"><abbr title="\WoocommerceNavigation">WoocommerceNavigation</abbr></a></h3>
+                                <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/MailPoet.html"><abbr title="\MailPoet">MailPoet</abbr></a></h3>
+                        <ul class="phpdocumentor-list">
+                                    <li><a href="../packages/MailPoet-EmailEditor.html"><abbr title="\MailPoet\EmailEditor">EmailEditor</abbr></a></li>
+                            </ul>
                                 <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/Automattic.html"><abbr title="\Automattic">Automattic</abbr></a></h3>
                         <ul class="phpdocumentor-list">
                                     <li><a href="../packages/Automattic-WooCommerce.html"><abbr title="\Automattic\WooCommerce">WooCommerce</abbr></a></li>
@@ -179,6 +189,13 @@
 </h3>
 
 <dl class="phpdocumentor-table-of-contents">
+            <dt class="phpdocumentor-table-of-contents__entry -constant -public">
+    <a href="../classes/WC-Download-Handler.html#constant_TRACK_DOWNLOAD_CALLBACK">TRACK_DOWNLOAD_CALLBACK</a>
+    <span>
+        &nbsp;= &#039;track_partial_download&#039;                    </span>
+</dt>
+<dd>The hook used for deferred tracking of partial download attempts.</dd>
+
                     <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="../classes/WC-Download-Handler.html#method_count_download">count_download()</a>
     <span>
@@ -331,6 +348,39 @@
 
 
         
+    <section class="phpdocumentor-constants">
+        <h3 class="phpdocumentor-elements__header" id="constants">
+            Constants
+            <a href="#constants" class="headerlink"><i class="fas fa-link"></i></a>
+        </h3>
+                    <article class="phpdocumentor-element -constant -public ">
+    <h4 class="phpdocumentor-element__name" id="constant_TRACK_DOWNLOAD_CALLBACK">
+        TRACK_DOWNLOAD_CALLBACK
+        <a href="#constant_TRACK_DOWNLOAD_CALLBACK" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-download-handler.php"><a href="../files/woocommerce-includes-class-wc-download-handler.html#source-view.20">includes/class-wc-download-handler.php</a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">20</span>
+</aside>
+
+        <p class="phpdocumentor-summary">The hook used for deferred tracking of partial download attempts.</p>
+
+    <code class="phpdocumentor-signature phpdocumentor-code ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+    <span class="phpdocumentor-signature__type">mixed</span>
+    <span class="phpdocumentor-signature__name">TRACK_DOWNLOAD_CALLBACK</span>
+    = <span class="phpdocumentor-signature__default-value">&#039;track_partial_download&#039;</span>
+</code>
+
+
+        <section class="phpdocumentor-description"></section>
+
+    
+
+</article>
+            </section>
 
         
 
@@ -350,9 +400,9 @@
         <a href="#method_count_download" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-download-handler.php"><a href="../files/woocommerce-includes-class-wc-download-handler.html#source-view.208">includes/class-wc-download-handler.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-download-handler.php"><a href="../files/woocommerce-includes-class-wc-download-handler.html#source-view.217">includes/class-wc-download-handler.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">208</span>
+    <span class="phpdocumentor-element-found-in__line">217</span>
 </aside>
 
         <p class="phpdocumentor-summary">Count download.</p>
@@ -408,9 +458,9 @@
         <a href="#method_download" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-download-handler.php"><a href="../files/woocommerce-includes-class-wc-download-handler.html#source-view.218">includes/class-wc-download-handler.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-download-handler.php"><a href="../files/woocommerce-includes-class-wc-download-handler.html#source-view.227">includes/class-wc-download-handler.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">218</span>
+    <span class="phpdocumentor-element-found-in__line">227</span>
 </aside>
 
         <p class="phpdocumentor-summary">Download a file - hook into init function.</p>
@@ -461,9 +511,9 @@
         <a href="#method_download_file_force" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-download-handler.php"><a href="../files/woocommerce-includes-class-wc-download-handler.html#source-view.463">includes/class-wc-download-handler.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-download-handler.php"><a href="../files/woocommerce-includes-class-wc-download-handler.html#source-view.472">includes/class-wc-download-handler.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">463</span>
+    <span class="phpdocumentor-element-found-in__line">472</span>
 </aside>
 
         <p class="phpdocumentor-summary">Force download - this is the default method.</p>
@@ -514,9 +564,9 @@
         <a href="#method_download_file_redirect" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-download-handler.php"><a href="../files/woocommerce-includes-class-wc-download-handler.html#source-view.254">includes/class-wc-download-handler.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-download-handler.php"><a href="../files/woocommerce-includes-class-wc-download-handler.html#source-view.263">includes/class-wc-download-handler.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">254</span>
+    <span class="phpdocumentor-element-found-in__line">263</span>
 </aside>
 
         <p class="phpdocumentor-summary">Redirect to a file to start the download.</p>
@@ -567,9 +617,9 @@
         <a href="#method_download_file_xsendfile" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-download-handler.php"><a href="../files/woocommerce-includes-class-wc-download-handler.html#source-view.338">includes/class-wc-download-handler.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-download-handler.php"><a href="../files/woocommerce-includes-class-wc-download-handler.html#source-view.347">includes/class-wc-download-handler.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">338</span>
+    <span class="phpdocumentor-element-found-in__line">347</span>
 </aside>
 
         <p class="phpdocumentor-summary">Download a file using X-Sendfile, X-Lighttpd-Sendfile, or X-Accel-Redirect if available.</p>
@@ -620,9 +670,9 @@
         <a href="#method_download_product" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-download-handler.php"><a href="../files/woocommerce-includes-class-wc-download-handler.html#source-view.33">includes/class-wc-download-handler.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-download-handler.php"><a href="../files/woocommerce-includes-class-wc-download-handler.html#source-view.38">includes/class-wc-download-handler.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">33</span>
+    <span class="phpdocumentor-element-found-in__line">38</span>
 </aside>
 
         <p class="phpdocumentor-summary">Check if we need to download a file and check validity.</p>
@@ -652,9 +702,9 @@
         <a href="#method_ie_nocache_headers_fix" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-download-handler.php"><a href="../files/woocommerce-includes-class-wc-download-handler.html#source-view.664">includes/class-wc-download-handler.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-download-handler.php"><a href="../files/woocommerce-includes-class-wc-download-handler.html#source-view.673">includes/class-wc-download-handler.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">664</span>
+    <span class="phpdocumentor-element-found-in__line">673</span>
 </aside>
 
         <p class="phpdocumentor-summary">Filter headers for IE to fix issues over SSL.</p>
@@ -697,9 +747,9 @@
         <a href="#method_init" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-download-handler.php"><a href="../files/woocommerce-includes-class-wc-download-handler.html#source-view.21">includes/class-wc-download-handler.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-download-handler.php"><a href="../files/woocommerce-includes-class-wc-download-handler.html#source-view.25">includes/class-wc-download-handler.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">21</span>
+    <span class="phpdocumentor-element-found-in__line">25</span>
 </aside>
 
         <p class="phpdocumentor-summary">Hook in methods.</p>
@@ -729,9 +779,9 @@
         <a href="#method_parse_file_path" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-download-handler.php"><a href="../files/woocommerce-includes-class-wc-download-handler.html#source-view.265">includes/class-wc-download-handler.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-download-handler.php"><a href="../files/woocommerce-includes-class-wc-download-handler.html#source-view.274">includes/class-wc-download-handler.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">265</span>
+    <span class="phpdocumentor-element-found-in__line">274</span>
 </aside>
 
         <p class="phpdocumentor-summary">Parse file path and see if its remote or local.</p>
@@ -773,9 +823,9 @@
         <a href="#method_readfile_chunked" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-download-handler.php"><a href="../files/woocommerce-includes-class-wc-download-handler.html#source-view.607">includes/class-wc-download-handler.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-download-handler.php"><a href="../files/woocommerce-includes-class-wc-download-handler.html#source-view.616">includes/class-wc-download-handler.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">607</span>
+    <span class="phpdocumentor-element-found-in__line">616</span>
 </aside>
 
         <p class="phpdocumentor-summary">Read file chunked.</p>
@@ -836,9 +886,9 @@
         <a href="#method_get_download_range" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-download-handler.php"><a href="../files/woocommerce-includes-class-wc-download-handler.html#source-view.395">includes/class-wc-download-handler.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-download-handler.php"><a href="../files/woocommerce-includes-class-wc-download-handler.html#source-view.404">includes/class-wc-download-handler.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">395</span>
+    <span class="phpdocumentor-element-found-in__line">404</span>
 </aside>
 
         <p class="phpdocumentor-summary">Parse the HTTP_RANGE request from iOS devices.</p>
@@ -889,9 +939,9 @@
         <a href="#method_check_download_expiry" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-download-handler.php"><a href="../files/woocommerce-includes-class-wc-download-handler.html#source-view.176">includes/class-wc-download-handler.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-download-handler.php"><a href="../files/woocommerce-includes-class-wc-download-handler.html#source-view.185">includes/class-wc-download-handler.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">176</span>
+    <span class="phpdocumentor-element-found-in__line">185</span>
 </aside>
 
         <p class="phpdocumentor-summary">Check if the download has expired.</p>
@@ -933,9 +983,9 @@
         <a href="#method_check_download_login_required" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-download-handler.php"><a href="../files/woocommerce-includes-class-wc-download-handler.html#source-view.187">includes/class-wc-download-handler.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-download-handler.php"><a href="../files/woocommerce-includes-class-wc-download-handler.html#source-view.196">includes/class-wc-download-handler.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">187</span>
+    <span class="phpdocumentor-element-found-in__line">196</span>
 </aside>
 
         <p class="phpdocumentor-summary">Check if a download requires the user to login first.</p>
@@ -977,9 +1027,9 @@
         <a href="#method_check_downloads_remaining" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-download-handler.php"><a href="../files/woocommerce-includes-class-wc-download-handler.html#source-view.165">includes/class-wc-download-handler.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-download-handler.php"><a href="../files/woocommerce-includes-class-wc-download-handler.html#source-view.174">includes/class-wc-download-handler.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">165</span>
+    <span class="phpdocumentor-element-found-in__line">174</span>
 </aside>
 
         <p class="phpdocumentor-summary">Check if there are downloads remaining.</p>
@@ -1021,9 +1071,9 @@
         <a href="#method_check_order_is_valid" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-download-handler.php"><a href="../files/woocommerce-includes-class-wc-download-handler.html#source-view.150">includes/class-wc-download-handler.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-download-handler.php"><a href="../files/woocommerce-includes-class-wc-download-handler.html#source-view.159">includes/class-wc-download-handler.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">150</span>
+    <span class="phpdocumentor-element-found-in__line">159</span>
 </aside>
 
         <p class="phpdocumentor-summary">Check if an order is valid for downloading from.</p>
@@ -1065,9 +1115,9 @@
         <a href="#method_check_server_config" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-download-handler.php"><a href="../files/woocommerce-includes-class-wc-download-handler.html#source-view.556">includes/class-wc-download-handler.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-download-handler.php"><a href="../files/woocommerce-includes-class-wc-download-handler.html#source-view.565">includes/class-wc-download-handler.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">556</span>
+    <span class="phpdocumentor-element-found-in__line">565</span>
 </aside>
 
         <p class="phpdocumentor-summary">Check and set certain server config variables to ensure downloads work as intended.</p>
@@ -1097,9 +1147,9 @@
         <a href="#method_clean_buffers" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-download-handler.php"><a href="../files/woocommerce-includes-class-wc-download-handler.html#source-view.570">includes/class-wc-download-handler.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-download-handler.php"><a href="../files/woocommerce-includes-class-wc-download-handler.html#source-view.579">includes/class-wc-download-handler.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">570</span>
+    <span class="phpdocumentor-element-found-in__line">579</span>
 </aside>
 
         <p class="phpdocumentor-summary">Clean all output buffers.</p>
@@ -1130,9 +1180,9 @@
         <a href="#method_download_error" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-download-handler.php"><a href="../files/woocommerce-includes-class-wc-download-handler.html#source-view.679">includes/class-wc-download-handler.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-download-handler.php"><a href="../files/woocommerce-includes-class-wc-download-handler.html#source-view.688">includes/class-wc-download-handler.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">679</span>
+    <span class="phpdocumentor-element-found-in__line">688</span>
 </aside>
 
         <p class="phpdocumentor-summary">Die with an error message if the download fails.</p>
@@ -1192,9 +1242,9 @@
         <a href="#method_download_headers" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-download-handler.php"><a href="../files/woocommerce-includes-class-wc-download-handler.html#source-view.517">includes/class-wc-download-handler.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-download-handler.php"><a href="../files/woocommerce-includes-class-wc-download-handler.html#source-view.526">includes/class-wc-download-handler.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">517</span>
+    <span class="phpdocumentor-element-found-in__line">526</span>
 </aside>
 
         <p class="phpdocumentor-summary">Set headers for the download.</p>
@@ -1254,9 +1304,9 @@
         <a href="#method_get_content_disposition" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-download-handler.php"><a href="../files/woocommerce-includes-class-wc-download-handler.html#source-view.589">includes/class-wc-download-handler.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-download-handler.php"><a href="../files/woocommerce-includes-class-wc-download-handler.html#source-view.598">includes/class-wc-download-handler.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">589</span>
+    <span class="phpdocumentor-element-found-in__line">598</span>
 </aside>
 
         <p class="phpdocumentor-summary">Get selected content disposition</p>
@@ -1287,9 +1337,9 @@
         <a href="#method_get_download_content_type" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-download-handler.php"><a href="../files/woocommerce-includes-class-wc-download-handler.html#source-view.495">includes/class-wc-download-handler.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-download-handler.php"><a href="../files/woocommerce-includes-class-wc-download-handler.html#source-view.504">includes/class-wc-download-handler.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">495</span>
+    <span class="phpdocumentor-element-found-in__line">504</span>
 </aside>
 
         <p class="phpdocumentor-summary">Get content type of a download.</p>
@@ -1331,7 +1381,7 @@
 
     <footer class="phpdocumentor phpdocumentor-footer">
     <div class="phpdocumentor-section">
-        <span>WooCommerce Code Reference API documentation generated by <a href="http://www.phpdoc.org/">phpDocumentor</a> on July 25th, 2024 at 11:33 am.</span>
+        <span>WooCommerce Code Reference API documentation generated by <a href="http://www.phpdoc.org/">phpDocumentor</a> on May 16th, 2025 at 09:14 am.</span>
     </div>
 </footer>
 
@@ -1343,7 +1393,7 @@
             'searchIndex': '..\/js\/searchIndex.json'
         };
     </script>
-    <script src="../js/searchIndex.js?updated=1721907192"></script>
-    <script src="../js/search.js?updated=1721907192"></script>
+    <script src="../js/searchIndex.js?updated=1747386869"></script>
+    <script src="../js/search.js?updated=1747386869"></script>
 </body>
 </html>

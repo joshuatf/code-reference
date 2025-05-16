@@ -4,14 +4,13 @@
     <meta charset="utf-8">
     <title>WooCommerce Code Reference</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="../images/favicon.png" />
-    <link rel="apple-touch-icon" href="../images/apple-touch-icon.png"/>
-    <link rel="apple-touch-icon" sizes="72x72" href="../images/apple-touch-icon-72x72.png"/>
-    <link rel="apple-touch-icon" sizes="114x114" href="../images/apple-touch-icon-114x114.png"/>
+    <link rel="icon" href="../images/favicon-32x32.png" sizes="32x32" />
+    <link rel="icon" href="../images/favicon-192x192.png" sizes="192x192" />
+    <link rel="apple-touch-icon" href="../images/favicon-180x180.png" />
+
     <link rel="stylesheet" href="../css/normalize.css">
-    <link rel="stylesheet" href="../css/base.css?updated=1721907184">
-    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../css/template.css?updated=1721907184">
+    <link rel="stylesheet" href="../css/base.css?updated=1747386861">
+    <link rel="stylesheet" href="../css/template.css?updated=1747386861">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0/css/all.min.css" integrity="sha256-ybRkN9dBjhcS2qrW1z+hfCxq+1aBdwyQM5wlQoQVt/0=" crossorigin="anonymous" />
             <script src="https://cdn.jsdelivr.net/npm/css-vars-ponyfill@2"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0/js/all.min.js" integrity="sha256-0vuk8LXoyrmCjp1f0O300qo1M75ZQyhH9X3J6d+scmk=" crossorigin="anonymous"></script>
@@ -38,14 +37,13 @@
     <header class="phpdocumentor-top-header">
     <section class="phpdocumentor-section">
         <div class="site-branding">
-            <a class="site-logo" href="../index.html"><img width="180" src="../images/logo.svg" alt="WooCommerce" /></a>
+            <a class="site-logo" href="../index.html"><img src="../images/logo.png" alt="WooCommerce" /></a>
         </div>
         <nav class="main-navigation">
             <ul>
                 <li><a href="../hooks/hooks.html">Hooks Reference</a></li>
-                <li><a href="https://docs.woocommerce.com/">Documentation</a></li>
+                <li><a href="https://developer.woocommerce.com/docs/">Documentation</a></li>
                 <li><a href="https://woocommerce.github.io/woocommerce-rest-api-docs/">REST API Docs</a></li>
-                <li><a href="https://woocommerce.com/careers/?utm_source=woocommerce+core+code+reference&utm_medium=devdocs&utm_campaign=woo+careers" target="_blank">We're hiring!</a></li>
             </ul>
         </nav>
     </section>
@@ -53,7 +51,7 @@
 
 <div class="phpdocumentor-header">
     <section class="phpdocumentor-section">
-        <h1 class="phpdocumentor-title">WooCommerce Code Reference</h1>
+        <h1 class="phpdocumentor-title"><a href="../index.html">WooCommerce Code Reference</a></h1>
         <section class="phpdocumentor-search">
     <label class="phpdocumentor-label">
         <span class="visually-hidden">Search (click ESC to close search results)</span>
@@ -74,6 +72,10 @@
                                         <h4 class="phpdocumentor-sidebar__root-namespace"><a href="../namespaces/woocommerce.html"><abbr title="\WooCommerce">WooCommerce</abbr></a></h4>
                 <ul class="phpdocumentor-list">
                                             <li><a href="../namespaces/woocommerce-admin.html"><abbr title="\WooCommerce\Admin">Admin</abbr></a></li>
+                                    </ul>
+                            <h4 class="phpdocumentor-sidebar__root-namespace"><a href="../namespaces/mailpoet.html"><abbr title="\MailPoet">MailPoet</abbr></a></h4>
+                <ul class="phpdocumentor-list">
+                                            <li><a href="../namespaces/mailpoet-emaileditor.html"><abbr title="\MailPoet\EmailEditor">EmailEditor</abbr></a></li>
                                     </ul>
                             <h4 class="phpdocumentor-sidebar__root-namespace"><a href="../namespaces/automattic.html"><abbr title="\Automattic">Automattic</abbr></a></h4>
                 <ul class="phpdocumentor-list">
@@ -119,8 +121,10 @@
                                     <li><a href="../packages/WooCommerce-Widgets.html"><abbr title="\WooCommerce\Widgets">Widgets</abbr></a></li>
                                     <li><a href="../packages/WooCommerce-Uninstaller.html"><abbr title="\WooCommerce\Uninstaller">Uninstaller</abbr></a></li>
                             </ul>
-                                <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/WoocommerceAdmin.html"><abbr title="\WoocommerceAdmin">WoocommerceAdmin</abbr></a></h3>
-                                <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/WoocommerceNavigation.html"><abbr title="\WoocommerceNavigation">WoocommerceNavigation</abbr></a></h3>
+                                <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/MailPoet.html"><abbr title="\MailPoet">MailPoet</abbr></a></h3>
+                        <ul class="phpdocumentor-list">
+                                    <li><a href="../packages/MailPoet-EmailEditor.html"><abbr title="\MailPoet\EmailEditor">EmailEditor</abbr></a></li>
+                            </ul>
                                 <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/Automattic.html"><abbr title="\Automattic">Automattic</abbr></a></h3>
                         <ul class="phpdocumentor-list">
                                     <li><a href="../packages/Automattic-WooCommerce.html"><abbr title="\Automattic\WooCommerce">WooCommerce</abbr></a></li>
@@ -172,17 +176,42 @@ use Automattic\WooCommerce\Admin\RemoteSpecs\RuleProcessors\RuleEvaluator;
  */
 class EvaluateSuggestion {
 	/**
+	 * Stores memoized results of evaluate_specs.
+	 *
+	 * @var array
+	 */
+	protected static $memo = array();
+
+	/**
 	 * Evaluates the spec and returns the suggestion.
 	 *
-	 * @param object|array $spec The suggestion to evaluate.
+	 * @param object|array $spec        The suggestion to evaluate.
+	 * @param array        $logger_args Optional. Arguments for the rule evaluator logger.
+	 *
 	 * @return object The evaluated suggestion.
 	 */
-	public static function evaluate( $spec ) {
+	public static function evaluate( $spec, $logger_args = array() ) {
 		$rule_evaluator = new RuleEvaluator();
 		$suggestion     = is_array( $spec ) ? (object) $spec : clone $spec;
 
 		if ( isset( $suggestion-&gt;is_visible ) ) {
-			$is_visible             = $rule_evaluator-&gt;evaluate( $suggestion-&gt;is_visible );
+			// Determine the suggestion&#039;s logger slug.
+			$logger_slug = ! empty( $suggestion-&gt;id ) ? $suggestion-&gt;id : &#039;&#039;;
+			// If the suggestion has no ID, use the title to generate a slug.
+			if ( empty( $logger_slug ) ) {
+				$logger_slug = ! empty( $suggestion-&gt;title ) ? sanitize_title_with_dashes( trim( $suggestion-&gt;title ) ) : &#039;anonymous-suggestion&#039;;
+			}
+
+			// Evaluate the visibility of the suggestion.
+			$is_visible = $rule_evaluator-&gt;evaluate(
+				$suggestion-&gt;is_visible,
+				null,
+				array(
+					&#039;slug&#039;   =&gt; $logger_slug,
+					&#039;source&#039; =&gt; $logger_args[&#039;source&#039;] ?? &#039;wc-payment-gateway-suggestions&#039;,
+				)
+			);
+
 			$suggestion-&gt;is_visible = $is_visible;
 		}
 
@@ -193,15 +222,23 @@ class EvaluateSuggestion {
 	 * Evaluates the specs and returns the visible suggestions.
 	 *
 	 * @param array $specs payment suggestion spec array.
+	 * @param array $logger_args Optional. Arguments for the rule evaluator logger.
+	 *
 	 * @return array The visible suggestions and errors.
 	 */
-	public static function evaluate_specs( $specs ) {
+	public static function evaluate_specs( $specs, $logger_args = array() ) {
+		$specs_key = self::get_memo_key( $specs );
+
+		if ( isset( self::$memo[ $specs_key ] ) ) {
+			return self::$memo[ $specs_key ];
+		}
+
 		$suggestions = array();
 		$errors      = array();
 
 		foreach ( $specs as $spec ) {
 			try {
-				$suggestion = self::evaluate( $spec );
+				$suggestion = self::evaluate( $spec, $logger_args );
 				if ( ! property_exists( $suggestion, &#039;is_visible&#039; ) || $suggestion-&gt;is_visible ) {
 					$suggestions[] = $suggestion;
 				}
@@ -210,10 +247,44 @@ class EvaluateSuggestion {
 			}
 		}
 
-		return array(
+		$result = array(
 			&#039;suggestions&#039; =&gt; $suggestions,
 			&#039;errors&#039;      =&gt; $errors,
 		);
+
+		// Memoize results, with a fail safe to prevent unbounded memory growth.
+		// This limit is unlikely to be reached under normal circumstances.
+		if ( count( self::$memo ) &gt; 50 ) {
+			self::reset_memo();
+		}
+		self::$memo[ $specs_key ] = $result;
+
+		return $result;
+	}
+
+	/**
+	 * Resets the memoized results. Useful for testing.
+	 */
+	public static function reset_memo() {
+		self::$memo = array();
+	}
+
+	/**
+	 * Returns a memoization key for the given specs.
+	 *
+	 * @param array $specs The specs to generate a key for.
+	 *
+	 * @return string The memoization key.
+	 */
+	private static function get_memo_key( $specs ) {
+		$data = wp_json_encode( $specs );
+
+		if ( function_exists( &#039;hash&#039; ) &amp;&amp; in_array( &#039;xxh3&#039;, hash_algos(), true ) ) {
+			// Use xxHash (xxh3) if available.
+			return hash( &#039;xxh3&#039;, $data );
+		}
+		// Fall back to CRC32.
+		return (string) crc32( $data );
 	}
 }
 </code></pre>
@@ -226,7 +297,7 @@ class EvaluateSuggestion {
 
     <footer class="phpdocumentor phpdocumentor-footer">
     <div class="phpdocumentor-section">
-        <span>WooCommerce Code Reference API documentation generated by <a href="http://www.phpdoc.org/">phpDocumentor</a> on July 25th, 2024 at 11:33 am.</span>
+        <span>WooCommerce Code Reference API documentation generated by <a href="http://www.phpdoc.org/">phpDocumentor</a> on May 16th, 2025 at 09:14 am.</span>
     </div>
 </footer>
 
@@ -238,7 +309,7 @@ class EvaluateSuggestion {
             'searchIndex': '..\/js\/searchIndex.json'
         };
     </script>
-    <script src="../js/searchIndex.js?updated=1721907184"></script>
-    <script src="../js/search.js?updated=1721907184"></script>
+    <script src="../js/searchIndex.js?updated=1747386861"></script>
+    <script src="../js/search.js?updated=1747386861"></script>
 </body>
 </html>

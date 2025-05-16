@@ -4,14 +4,13 @@
     <meta charset="utf-8">
     <title>WooCommerce Code Reference</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="../images/favicon.png" />
-    <link rel="apple-touch-icon" href="../images/apple-touch-icon.png"/>
-    <link rel="apple-touch-icon" sizes="72x72" href="../images/apple-touch-icon-72x72.png"/>
-    <link rel="apple-touch-icon" sizes="114x114" href="../images/apple-touch-icon-114x114.png"/>
+    <link rel="icon" href="../images/favicon-32x32.png" sizes="32x32" />
+    <link rel="icon" href="../images/favicon-192x192.png" sizes="192x192" />
+    <link rel="apple-touch-icon" href="../images/favicon-180x180.png" />
+
     <link rel="stylesheet" href="../css/normalize.css">
-    <link rel="stylesheet" href="../css/base.css?updated=1721907185">
-    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../css/template.css?updated=1721907185">
+    <link rel="stylesheet" href="../css/base.css?updated=1747386862">
+    <link rel="stylesheet" href="../css/template.css?updated=1747386862">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0/css/all.min.css" integrity="sha256-ybRkN9dBjhcS2qrW1z+hfCxq+1aBdwyQM5wlQoQVt/0=" crossorigin="anonymous" />
             <script src="https://cdn.jsdelivr.net/npm/css-vars-ponyfill@2"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0/js/all.min.js" integrity="sha256-0vuk8LXoyrmCjp1f0O300qo1M75ZQyhH9X3J6d+scmk=" crossorigin="anonymous"></script>
@@ -38,14 +37,13 @@
     <header class="phpdocumentor-top-header">
     <section class="phpdocumentor-section">
         <div class="site-branding">
-            <a class="site-logo" href="../index.html"><img width="180" src="../images/logo.svg" alt="WooCommerce" /></a>
+            <a class="site-logo" href="../index.html"><img src="../images/logo.png" alt="WooCommerce" /></a>
         </div>
         <nav class="main-navigation">
             <ul>
                 <li><a href="../hooks/hooks.html">Hooks Reference</a></li>
-                <li><a href="https://docs.woocommerce.com/">Documentation</a></li>
+                <li><a href="https://developer.woocommerce.com/docs/">Documentation</a></li>
                 <li><a href="https://woocommerce.github.io/woocommerce-rest-api-docs/">REST API Docs</a></li>
-                <li><a href="https://woocommerce.com/careers/?utm_source=woocommerce+core+code+reference&utm_medium=devdocs&utm_campaign=woo+careers" target="_blank">We're hiring!</a></li>
             </ul>
         </nav>
     </section>
@@ -53,7 +51,7 @@
 
 <div class="phpdocumentor-header">
     <section class="phpdocumentor-section">
-        <h1 class="phpdocumentor-title">WooCommerce Code Reference</h1>
+        <h1 class="phpdocumentor-title"><a href="../index.html">WooCommerce Code Reference</a></h1>
         <section class="phpdocumentor-search">
     <label class="phpdocumentor-label">
         <span class="visually-hidden">Search (click ESC to close search results)</span>
@@ -74,6 +72,10 @@
                                         <h4 class="phpdocumentor-sidebar__root-namespace"><a href="../namespaces/woocommerce.html"><abbr title="\WooCommerce">WooCommerce</abbr></a></h4>
                 <ul class="phpdocumentor-list">
                                             <li><a href="../namespaces/woocommerce-admin.html"><abbr title="\WooCommerce\Admin">Admin</abbr></a></li>
+                                    </ul>
+                            <h4 class="phpdocumentor-sidebar__root-namespace"><a href="../namespaces/mailpoet.html"><abbr title="\MailPoet">MailPoet</abbr></a></h4>
+                <ul class="phpdocumentor-list">
+                                            <li><a href="../namespaces/mailpoet-emaileditor.html"><abbr title="\MailPoet\EmailEditor">EmailEditor</abbr></a></li>
                                     </ul>
                             <h4 class="phpdocumentor-sidebar__root-namespace"><a href="../namespaces/automattic.html"><abbr title="\Automattic">Automattic</abbr></a></h4>
                 <ul class="phpdocumentor-list">
@@ -119,8 +121,10 @@
                                     <li><a href="../packages/WooCommerce-Widgets.html"><abbr title="\WooCommerce\Widgets">Widgets</abbr></a></li>
                                     <li><a href="../packages/WooCommerce-Uninstaller.html"><abbr title="\WooCommerce\Uninstaller">Uninstaller</abbr></a></li>
                             </ul>
-                                <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/WoocommerceAdmin.html"><abbr title="\WoocommerceAdmin">WoocommerceAdmin</abbr></a></h3>
-                                <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/WoocommerceNavigation.html"><abbr title="\WoocommerceNavigation">WoocommerceNavigation</abbr></a></h3>
+                                <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/MailPoet.html"><abbr title="\MailPoet">MailPoet</abbr></a></h3>
+                        <ul class="phpdocumentor-list">
+                                    <li><a href="../packages/MailPoet-EmailEditor.html"><abbr title="\MailPoet\EmailEditor">EmailEditor</abbr></a></li>
+                            </ul>
                                 <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/Automattic.html"><abbr title="\Automattic">Automattic</abbr></a></h3>
                         <ul class="phpdocumentor-list">
                                     <li><a href="../packages/Automattic-WooCommerce.html"><abbr title="\Automattic\WooCommerce">WooCommerce</abbr></a></li>
@@ -169,9 +173,10 @@ use Automattic\WooCommerce\Blocks\Utils\BlockHooksTrait;
 class CustomerAccount extends AbstractBlock {
 	use BlockHooksTrait;
 
-	const TEXT_ONLY   = &#039;text_only&#039;;
-	const ICON_ONLY   = &#039;icon_only&#039;;
-	const DISPLAY_ALT = &#039;alt&#039;;
+	const TEXT_ONLY    = &#039;text_only&#039;;
+	const ICON_ONLY    = &#039;icon_only&#039;;
+	const DISPLAY_ALT  = &#039;alt&#039;;
+	const DISPLAY_LINE = &#039;line&#039;;
 
 	/**
 	 * Block name.
@@ -191,6 +196,7 @@ class CustomerAccount extends AbstractBlock {
 			&#039;anchor&#039;   =&gt; &#039;core/navigation&#039;,
 			&#039;area&#039;     =&gt; &#039;header&#039;,
 			&#039;callback&#039; =&gt; &#039;should_unhook_block&#039;,
+			&#039;version&#039;  =&gt; &#039;8.4.0&#039;,
 		),
 	);
 
@@ -223,12 +229,19 @@ class CustomerAccount extends AbstractBlock {
 	 */
 	public function modify_hooked_block_attributes( $parsed_hooked_block, $hooked_block_type, $relative_position, $parsed_anchor_block, $context ) {
 		$parsed_hooked_block[&#039;attrs&#039;][&#039;displayStyle&#039;] = &#039;icon_only&#039;;
+		$parsed_hooked_block[&#039;attrs&#039;][&#039;iconStyle&#039;]    = &#039;line&#039;;
+		$parsed_hooked_block[&#039;attrs&#039;][&#039;iconClass&#039;]    = &#039;wc-block-customer-account__account-icon&#039;;
 
-		/*
-		* The Mini Cart block (which is hooked into the header) has a margin of 0.5em on the left side.
-		* We want to match that margin for the Customer Account block so it looks consistent.
-		*/
-		$parsed_hooked_block[&#039;attrs&#039;][&#039;style&#039;][&#039;spacing&#039;][&#039;margin&#039;][&#039;left&#039;] = &#039;0.5em&#039;;
+		$customer_account_block_font_size = wp_get_global_styles( array( &#039;blocks&#039;, &#039;woocommerce/customer-account&#039;, &#039;typography&#039;, &#039;fontSize&#039; ) );
+
+		if ( ! is_string( $customer_account_block_font_size ) ) {
+			$navigation_block_font_size = wp_get_global_styles( array( &#039;blocks&#039;, &#039;core/navigation&#039;, &#039;typography&#039;, &#039;fontSize&#039; ) );
+
+			if ( is_string( $navigation_block_font_size ) ) {
+				$parsed_hooked_block[&#039;attrs&#039;][&#039;style&#039;][&#039;typography&#039;][&#039;fontSize&#039;] = $navigation_block_font_size;
+			}
+		}
+
 		return $parsed_hooked_block;
 	}
 
@@ -274,16 +287,26 @@ class CustomerAccount extends AbstractBlock {
 		$account_link = get_option( &#039;woocommerce_myaccount_page_id&#039; ) ? wc_get_account_endpoint_url( &#039;dashboard&#039; ) : wp_login_url();
 
 		$allowed_svg = array(
-			&#039;svg&#039;  =&gt; array(
+			&#039;svg&#039;    =&gt; array(
 				&#039;class&#039;   =&gt; true,
 				&#039;xmlns&#039;   =&gt; true,
 				&#039;width&#039;   =&gt; true,
 				&#039;height&#039;  =&gt; true,
 				&#039;viewbox&#039; =&gt; true,
 			),
-			&#039;path&#039; =&gt; array(
-				&#039;d&#039;    =&gt; true,
-				&#039;fill&#039; =&gt; true,
+			&#039;path&#039;   =&gt; array(
+				&#039;d&#039;         =&gt; true,
+				&#039;fill&#039;      =&gt; true,
+				&#039;fill-rule&#039; =&gt; true,
+				&#039;clip-rule&#039; =&gt; true,
+			),
+			&#039;circle&#039; =&gt; array(
+				&#039;cx&#039;           =&gt; true,
+				&#039;cy&#039;           =&gt; true,
+				&#039;r&#039;            =&gt; true,
+				&#039;stroke&#039;       =&gt; true,
+				&#039;stroke-width&#039; =&gt; true,
+				&#039;fill&#039;         =&gt; true,
 			),
 		);
 
@@ -311,25 +334,39 @@ class CustomerAccount extends AbstractBlock {
 			return &#039;&#039;;
 		}
 
-		if ( self::DISPLAY_ALT === $attributes[&#039;iconStyle&#039;] ) {
-			return &#039;&lt;svg class=&quot;&#039; . $attributes[&#039;iconClass&#039;] . &#039;&quot; xmlns=&quot;http://www.w3.org/2000/svg&quot; viewBox=&quot;0 0 18 18&quot; width=&quot;18&quot; height=&quot;18&quot;&gt;
+		if ( self::DISPLAY_LINE === $attributes[&#039;iconStyle&#039;] ) {
+			return &#039;&lt;svg class=&quot;&#039; . $attributes[&#039;iconClass&#039;] . &#039;&quot; viewBox=&quot;1 1 29 29&quot; fill=&quot;none&quot; xmlns=&quot;http://www.w3.org/2000/svg&quot;&gt;
+				&lt;circle
+					cx=&quot;16&quot;
+					cy=&quot;10.5&quot;
+					r=&quot;3.5&quot;
+					stroke=&quot;currentColor&quot;
+					stroke-width=&quot;2&quot;
+					fill=&quot;none&quot;
+				/&gt;
 				&lt;path
-					d=&quot;M9 0C4.03579 0 0 4.03579 0 9C0 13.9642 4.03579 18 9 18C13.9642 18 18 13.9642 18 9C18 4.03579 13.9642 0 9
-					 	0ZM9 4.32C10.5347 4.32 11.7664 5.57056 11.7664 7.08638C11.7664 8.62109 10.5158 9.85277 9 9.85277C7.4653
-					 	9.85277 6.23362 8.60221 6.23362 7.08638C6.23362 5.57056 7.46526 4.32 9 4.32ZM9 10.7242C11.1221 10.7242
-					  	12.96 12.2021 13.7937 14.4189C12.5242 15.5559 10.8379 16.238 9 16.238C7.16207 16.238 5.49474 15.5369
-					   	4.20632 14.4189C5.05891 12.2021 6.87793 10.7242 9 10.7242Z&quot;
+					fill-rule=&quot;evenodd&quot;
+					clip-rule=&quot;evenodd&quot;
+					d=&quot;M11.5 18.5H20.5C21.8807 18.5 23 19.6193 23 21V25.5H25V21C25 18.5147 22.9853 16.5 20.5 16.5H11.5C9.01472 16.5 7 18.5147 7 21V25.5H9V21C9 19.6193 10.1193 18.5 11.5 18.5Z&quot;
 					fill=&quot;currentColor&quot;
 				/&gt;
 			&lt;/svg&gt;&#039;;
 		}
 
-		return &#039;&lt;svg class=&quot;&#039; . $attributes[&#039;iconClass&#039;] . &#039;&quot; xmlns=&quot;http://www.w3.org/2000/svg&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot; height=&quot;16&quot;&gt;
+		if ( self::DISPLAY_ALT === $attributes[&#039;iconStyle&#039;] ) {
+			return &#039;&lt;svg class=&quot;&#039; . $attributes[&#039;iconClass&#039;] . &#039;&quot; xmlns=&quot;http://www.w3.org/2000/svg&quot; viewBox=&quot;-4 -4 25 25&quot;&gt;
+				&lt;path
+					d=&quot;M9 0C4.03579 0 0 4.03579 0 9C0 13.9642 4.03579 18 9 18C13.9642 18 18 13.9642 18 9C18 4.03579 13.9642 0 9 0ZM9 4.32C10.5347 4.32 11.7664 5.57056 11.7664 7.08638C11.7664 8.62109 10.5158 9.85277 9 9.85277C7.4653 9.85277 6.23362 8.60221 6.23362 7.08638C6.23362 5.57056 7.46526 4.32 9 4.32ZM9 10.7242C11.1221 10.7242 12.96 12.2021 13.7937 14.4189C12.5242 15.5559 10.8379 16.238 9 16.238C7.16207 16.238 5.49474 15.5369 4.20632 14.4189C5.05891 12.2021 6.87793 10.7242 9 10.7242Z&quot;
+					fill=&quot;currentColor&quot;
+				/&gt;
+			&lt;/svg&gt;&#039;;
+		}
+
+		return &#039;&lt;svg class=&quot;&#039; . $attributes[&#039;iconClass&#039;] . &#039;&quot; xmlns=&quot;http://www.w3.org/2000/svg&quot; viewBox=&quot;-5 -5 25 25&quot;&gt;
 			&lt;path
-				d=&quot;M8.00009 8.34785C10.3096 8.34785 12.1819 6.47909 12.1819 4.17393C12.1819 1.86876 10.3096 0 8.00009 0C5.69055
-				 	0 3.81824 1.86876 3.81824 4.17393C3.81824 6.47909 5.69055 8.34785 8.00009 8.34785ZM0.333496 15.6522C0.333496
-				  	15.8444 0.489412 16 0.681933 16H15.3184C15.5109 16 15.6668 15.8444 15.6668 15.6522V14.9565C15.6668 12.1428
-				   	13.7821 9.73911 10.0912 9.73911H5.90931C2.21828 9.73911 0.333645 12.1428 0.333645 14.9565L0.333496 15.6522Z&quot;
+				fill-rule=&quot;evenodd&quot;
+				clip-rule=&quot;evenodd&quot;
+				d=&quot;M8.00009 8.34785C10.3096 8.34785 12.1819 6.47909 12.1819 4.17393C12.1819 1.86876 10.3096 0 8.00009 0C5.69055 0 3.81824 1.86876 3.81824 4.17393C3.81824 6.47909 5.69055 8.34785 8.00009 8.34785ZM0.333496 15.6522C0.333496 15.8444 0.489412 16 0.681933 16H15.3184C15.5109 16 15.6668 15.8444 15.6668 15.6522V14.9565C15.6668 12.1428 13.7821 9.73911 10.0912 9.73911H5.90931C2.21828 9.73911 0.333645 12.1428 0.333645 14.9565L0.333496 15.6522Z&quot;
 				fill=&quot;currentColor&quot;
 			/&gt;
 		&lt;/svg&gt;&#039;;
@@ -367,7 +404,7 @@ class CustomerAccount extends AbstractBlock {
 
     <footer class="phpdocumentor phpdocumentor-footer">
     <div class="phpdocumentor-section">
-        <span>WooCommerce Code Reference API documentation generated by <a href="http://www.phpdoc.org/">phpDocumentor</a> on July 25th, 2024 at 11:33 am.</span>
+        <span>WooCommerce Code Reference API documentation generated by <a href="http://www.phpdoc.org/">phpDocumentor</a> on May 16th, 2025 at 09:14 am.</span>
     </div>
 </footer>
 
@@ -379,7 +416,7 @@ class CustomerAccount extends AbstractBlock {
             'searchIndex': '..\/js\/searchIndex.json'
         };
     </script>
-    <script src="../js/searchIndex.js?updated=1721907185"></script>
-    <script src="../js/search.js?updated=1721907185"></script>
+    <script src="../js/searchIndex.js?updated=1747386862"></script>
+    <script src="../js/search.js?updated=1747386862"></script>
 </body>
 </html>

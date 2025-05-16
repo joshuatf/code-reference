@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>WooCommerce Code Reference</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="../images/favicon-32x32.png" sizes="32x32" />
+    <link rel="icon" href="../images/favicon-192x192.png" sizes="192x192" />
+    <link rel="apple-touch-icon" href="../images/favicon-180x180.png" />
+
+    <link rel="stylesheet" href="../css/normalize.css">
+    <link rel="stylesheet" href="../css/base.css?updated=1747386861">
+    <link rel="stylesheet" href="../css/template.css?updated=1747386861">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0/css/all.min.css" integrity="sha256-ybRkN9dBjhcS2qrW1z+hfCxq+1aBdwyQM5wlQoQVt/0=" crossorigin="anonymous" />
+            <script src="https://cdn.jsdelivr.net/npm/css-vars-ponyfill@2"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0/js/all.min.js" integrity="sha256-0vuk8LXoyrmCjp1f0O300qo1M75ZQyhH9X3J6d+scmk=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tarekraafat/autocomplete.js@7.2.0/dist/js/autoComplete.min.js"></script>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-8KCYZ2CYMS"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-8KCYZ2CYMS', {
+		'content_group' : 'WooCommerce Core Code Reference',
+	});
+</script>
+        <script src="../js/prism.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            window.dispatchEvent(new HashChangeEvent('hashchange'));
+        });
+    </script>
+</head>
+<body id="top">
+    <header class="phpdocumentor-top-header">
+    <section class="phpdocumentor-section">
+        <div class="site-branding">
+            <a class="site-logo" href="../index.html"><img src="../images/logo.png" alt="WooCommerce" /></a>
+        </div>
+        <nav class="main-navigation">
+            <ul>
+                <li><a href="../hooks/hooks.html">Hooks Reference</a></li>
+                <li><a href="https://developer.woocommerce.com/docs/">Documentation</a></li>
+                <li><a href="https://woocommerce.github.io/woocommerce-rest-api-docs/">REST API Docs</a></li>
+            </ul>
+        </nav>
+    </section>
+</header>
+
+<div class="phpdocumentor-header">
+    <section class="phpdocumentor-section">
+        <h1 class="phpdocumentor-title"><a href="../index.html">WooCommerce Code Reference</a></h1>
+        <section class="phpdocumentor-search">
+    <label class="phpdocumentor-label">
+        <span class="visually-hidden">Search (click ESC to close search results)</span>
+        <input id="autoComplete" tabindex="1" type="search" class="phpdocumentor-field phpdocumentor-search__field" placeholder="Loading..." disabled />
+    </label>
+</section>
+
+    </section>
+</div>
+
+    <main class="phpdocumentor">
+        <div class="phpdocumentor-section">
+            <aside class="phpdocumentor-column -four phpdocumentor-sidebar">
+    
+    <section class="phpdocumentor-sidebar__category">
+        <h2 class="phpdocumentor-sidebar__category-header">Namespaces</h2>
+                                <h3 class="phpdocumentor-sidebar__root-namespace"><a href="../namespaces/default.html"><abbr title="\">Global</abbr></a></h3>
+                                        <h4 class="phpdocumentor-sidebar__root-namespace"><a href="../namespaces/woocommerce.html"><abbr title="\WooCommerce">WooCommerce</abbr></a></h4>
+                <ul class="phpdocumentor-list">
+                                            <li><a href="../namespaces/woocommerce-admin.html"><abbr title="\WooCommerce\Admin">Admin</abbr></a></li>
+                                    </ul>
+                            <h4 class="phpdocumentor-sidebar__root-namespace"><a href="../namespaces/mailpoet.html"><abbr title="\MailPoet">MailPoet</abbr></a></h4>
+                <ul class="phpdocumentor-list">
+                                            <li><a href="../namespaces/mailpoet-emaileditor.html"><abbr title="\MailPoet\EmailEditor">EmailEditor</abbr></a></li>
+                                    </ul>
+                            <h4 class="phpdocumentor-sidebar__root-namespace"><a href="../namespaces/automattic.html"><abbr title="\Automattic">Automattic</abbr></a></h4>
+                <ul class="phpdocumentor-list">
+                                            <li><a href="../namespaces/automattic-woocommerce.html"><abbr title="\Automattic\WooCommerce">WooCommerce</abbr></a></li>
+                                    </ul>
+                        </section>
+
+        <section class="phpdocumentor-sidebar__category">
+        <h2 class="phpdocumentor-sidebar__category-header">Packages</h2>
+                    <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/WooCommerce.html"><abbr title="\WooCommerce">WooCommerce</abbr></a></h3>
+                        <ul class="phpdocumentor-list">
+                                    <li><a href="../packages/WooCommerce-Classes.html"><abbr title="\WooCommerce\Classes">Classes</abbr></a></li>
+                                    <li><a href="../packages/WooCommerce-Abstracts.html"><abbr title="\WooCommerce\Abstracts">Abstracts</abbr></a></li>
+                                    <li><a href="../packages/WooCommerce-Admin.html"><abbr title="\WooCommerce\Admin">Admin</abbr></a></li>
+                                    <li><a href="../packages/WooCommerce-Helper.html"><abbr title="\WooCommerce\Helper">Helper</abbr></a></li>
+                                    <li><a href="../packages/WooCommerce-Views.html"><abbr title="\WooCommerce\Views">Views</abbr></a></li>
+                                    <li><a href="../packages/WooCommerce-Templates.html"><abbr title="\WooCommerce\Templates">Templates</abbr></a></li>
+                                    <li><a href="../packages/WooCommerce-Reports.html"><abbr title="\WooCommerce\Reports">Reports</abbr></a></li>
+                                    <li><a href="../packages/WooCommerce-Blocks.html"><abbr title="\WooCommerce\Blocks">Blocks</abbr></a></li>
+                                    <li><a href="../packages/WooCommerce-RestApi.html"><abbr title="\WooCommerce\RestApi">RestApi</abbr></a></li>
+                                    <li><a href="../packages/WooCommerce-CLI.html"><abbr title="\WooCommerce\CLI">CLI</abbr></a></li>
+                                    <li><a href="../packages/WooCommerce-l10n.html"><abbr title="\WooCommerce\l10n">l10n</abbr></a></li>
+                                    <li><a href="../packages/WooCommerce-Webhooks.html"><abbr title="\WooCommerce\Webhooks">Webhooks</abbr></a></li>
+                                    <li><a href="../packages/WooCommerce-DataStores.html"><abbr title="\WooCommerce\DataStores">DataStores</abbr></a></li>
+                                    <li><a href="../packages/WooCommerce-Emails.html"><abbr title="\WooCommerce\Emails">Emails</abbr></a></li>
+                                    <li><a href="../packages/WooCommerce-Export.html"><abbr title="\WooCommerce\Export">Export</abbr></a></li>
+                                    <li><a href="../packages/WooCommerce-Gateways.html"><abbr title="\WooCommerce\Gateways">Gateways</abbr></a></li>
+                                    <li><a href="../packages/WooCommerce-PayPal.html"><abbr title="\WooCommerce\PayPal">PayPal</abbr></a></li>
+                                    <li><a href="../packages/WooCommerce-Import.html"><abbr title="\WooCommerce\Import">Import</abbr></a></li>
+                                    <li><a href="../packages/WooCommerce-Integrations.html"><abbr title="\WooCommerce\Integrations">Integrations</abbr></a></li>
+                                    <li><a href="../packages/WooCommerce-Interfaces.html"><abbr title="\WooCommerce\Interfaces">Interfaces</abbr></a></li>
+                                    <li><a href="../packages/WooCommerce-Interface.html"><abbr title="\WooCommerce\Interface">Interface</abbr></a></li>
+                                    <li><a href="../packages/WooCommerce-LogHandlers.html"><abbr title="\WooCommerce\LogHandlers">LogHandlers</abbr></a></li>
+                                    <li><a href="../packages/WooCommerce-PaymentTokens.html"><abbr title="\WooCommerce\PaymentTokens">PaymentTokens</abbr></a></li>
+                                    <li><a href="../packages/WooCommerce-Utilities.html"><abbr title="\WooCommerce\Utilities">Utilities</abbr></a></li>
+                                    <li><a href="../packages/WooCommerce-Shipping.html"><abbr title="\WooCommerce\Shipping">Shipping</abbr></a></li>
+                                    <li><a href="../packages/WooCommerce-Shortcodes.html"><abbr title="\WooCommerce\Shortcodes">Shortcodes</abbr></a></li>
+                                    <li><a href="../packages/WooCommerce-Tracks.html"><abbr title="\WooCommerce\Tracks">Tracks</abbr></a></li>
+                                    <li><a href="../packages/WooCommerce-Traits.html"><abbr title="\WooCommerce\Traits">Traits</abbr></a></li>
+                                    <li><a href="../packages/WooCommerce-Functions.html"><abbr title="\WooCommerce\Functions">Functions</abbr></a></li>
+                                    <li><a href="../packages/WooCommerce-WCCom.html"><abbr title="\WooCommerce\WCCom">WCCom</abbr></a></li>
+                                    <li><a href="../packages/WooCommerce-WCCOM.html"><abbr title="\WooCommerce\WCCOM">WCCOM</abbr></a></li>
+                                    <li><a href="../packages/WooCommerce-Widgets.html"><abbr title="\WooCommerce\Widgets">Widgets</abbr></a></li>
+                                    <li><a href="../packages/WooCommerce-Uninstaller.html"><abbr title="\WooCommerce\Uninstaller">Uninstaller</abbr></a></li>
+                            </ul>
+                                <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/MailPoet.html"><abbr title="\MailPoet">MailPoet</abbr></a></h3>
+                        <ul class="phpdocumentor-list">
+                                    <li><a href="../packages/MailPoet-EmailEditor.html"><abbr title="\MailPoet\EmailEditor">EmailEditor</abbr></a></li>
+                            </ul>
+                                <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/Automattic.html"><abbr title="\Automattic">Automattic</abbr></a></h3>
+                        <ul class="phpdocumentor-list">
+                                    <li><a href="../packages/Automattic-WooCommerce.html"><abbr title="\Automattic\WooCommerce">WooCommerce</abbr></a></li>
+                            </ul>
+                                <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/WooCommerceBlocks.html"><abbr title="\WooCommerceBlocks">WooCommerceBlocks</abbr></a></h3>
+                        </section>
+    
+    <section class="phpdocumentor-sidebar__category">
+        <h2 class="phpdocumentor-sidebar__category-header">Reports</h2>
+                <h3 class="phpdocumentor-sidebar__root-package"><a href="../reports/deprecated.html">Deprecated</a></h3>
+        <h3 class="phpdocumentor-sidebar__root-package"><a href="../reports/errors.html">Errors</a></h3>
+        <h3 class="phpdocumentor-sidebar__root-package"><a href="../reports/markers.html">Markers</a></h3>
+    </section>
+
+    <section class="phpdocumentor-sidebar__category">
+        <h2 class="phpdocumentor-sidebar__category-header">Indices</h2>
+        <h3 class="phpdocumentor-sidebar__root-package"><a href="../indices/files.html">Files</a></h3>
+        <h3 class="phpdocumentor-sidebar__root-package"><a href="../hooks/hooks.html">Hooks Reference</a></h3>
+    </section>
+</aside>
+
+            <div class="phpdocumentor-column -eight phpdocumentor-content">
+                    <ul class="phpdocumentor-breadcrumbs">
+    </ul>
+
+    <article class="phpdocumentor-element -file">
+        <h2 class="phpdocumentor-content__title">AddToCartWithOptionsVariationSelector.php</h2>
+
+                
+
+        
+                    <h3 class="phpdocumentor-elements__header" id="source-code">
+                Source code
+                <a href="#source-code" class="headerlink"><i class="fas fa-link"></i></a>
+            </h3>
+            <pre id="source-view" tabindex="-1" class="language-php line-numbers linkable-line-numbers"><code>&lt;?php
+declare(strict_types=1);
+
+namespace Automattic\WooCommerce\Blocks\BlockTypes;
+
+use Automattic\WooCommerce\Admin\Features\Features;
+use Automattic\WooCommerce\Blocks\Utils\StyleAttributesUtils;
+
+/**
+ * Block type for variation selector in add to cart with options.
+ */
+class AddToCartWithOptionsVariationSelector extends AbstractBlock {
+	/**
+	 * Block name.
+	 *
+	 * @var string
+	 */
+	protected $block_name = &#039;add-to-cart-with-options-variation-selector&#039;;
+
+	/**
+	 * Render variation label.
+	 *
+	 * @param string $attribute_name Name of the attribute.
+	 * @return string Rendered label HTML.
+	 */
+	protected function render_variation_label( $attribute_name ): string {
+		$label_id   = esc_attr( &#039;attribute_&#039; . sanitize_title( $attribute_name ) );
+		$label_text = wc_attribute_label( $attribute_name );
+
+		$html = sprintf(
+			&#039;&lt;label class=&quot;wc-block-product-add-to-cart-attribute-label&quot; for=&quot;%s&quot;&gt;%s&lt;/label&gt;&#039;,
+			$label_id,
+			esc_html( $label_text )
+		);
+		return $html;
+	}
+
+	/**
+	 * Render variation selector dropdown.
+	 *
+	 * @param WC_Product $product The product object.
+	 * @param string     $attribute_name Name of the attribute.
+	 * @param array      $options Available options for this attribute.
+	 * @return string Rendered dropdown HTML.
+	 */
+	protected function render_variation_selector( $product, $attribute_name, $options ): string {
+		$selected  = $this-&gt;get_selected_attribute_value( $product, $attribute_name );
+		$select_id = esc_attr( &#039;attribute_&#039; . sanitize_title( $attribute_name ) );
+
+		$html = sprintf(
+			&#039;&lt;select id=&quot;%1$s&quot;
+				class=&quot;wc-block-product-add-to-cart-attribute-select&quot;
+				name=&quot;%1$s&quot;
+				data-attribute_name=&quot;attribute_%2$s&quot;&gt;&#039;,
+			$select_id,
+			esc_attr( sanitize_title( $attribute_name ) )
+		);
+
+		$html .= &#039;&lt;option value=&quot;&quot;&gt;&#039; . esc_html__( &#039;Choose an option&#039;, &#039;woocommerce&#039; ) . &#039;&lt;/option&gt;&#039;;
+		$html .= $this-&gt;get_variation_options_html( $product, $attribute_name, $options, $selected, taxonomy_exists( $attribute_name ) );
+		$html .= &#039;&lt;/select&gt;&#039;;
+
+		return $html;
+	}
+
+	/**
+	 * Get selected attribute value.
+	 *
+	 * @param WC_Product $product The product object.
+	 * @param string     $attribute_name Name of the attribute.
+	 * @return string Selected value
+	 */
+	private function get_selected_attribute_value( $product, $attribute_name ): string {
+		return $product-&gt;get_variation_default_attribute( $attribute_name );
+	}
+
+	/**
+	 * Get HTML for variation options.
+	 *
+	 * @param WC_Product $product The product object.
+	 * @param string     $attribute_name Name of the attribute.
+	 * @param array      $options Available options.
+	 * @param string     $selected Selected value.
+	 * @param bool       $is_taxonomy Whether this is a taxonomy-based attribute.
+	 * @return string Options HTML
+	 */
+	private function get_variation_options_html( $product, $attribute_name, $options, $selected, $is_taxonomy ): string {
+		if ( empty( $options ) ) {
+			return &#039;&#039;;
+		}
+
+		$html  = &#039;&#039;;
+		$items = $is_taxonomy
+			? wc_get_product_terms( $product-&gt;get_id(), $attribute_name, array( &#039;fields&#039; =&gt; &#039;all&#039; ) )
+			: $options;
+
+		foreach ( $items as $item ) {
+			$option_value = $is_taxonomy ? $item-&gt;slug : $item;
+			$option_label = $is_taxonomy ? $item-&gt;name : $item;
+
+			if ( ! $is_taxonomy || in_array( $option_value, $options, true ) ) {
+				$selected_attr = $is_taxonomy
+					? selected( sanitize_title( $selected ), $option_value, false )
+					: selected( $selected, $option_value, false );
+
+				/**
+				 * Filter the variation option name.
+				 *
+				 * @since 9.7.0
+				 *
+				 * @param string     $option_label    The option label.
+				 * @param WP_Term|string|null $item   Term object for taxonomies, option string for custom attributes.
+				 * @param string     $attribute_name  Name of the attribute.
+				 * @param WC_Product $product         Product object.
+				 */
+				$filtered_label = apply_filters(
+					&#039;woocommerce_variation_option_name&#039;,
+					$option_label,
+					$is_taxonomy ? $item : null,
+					$attribute_name,
+					$product
+				);
+
+				$html .= sprintf(
+					&#039;&lt;option value=&quot;%s&quot; %s&gt;%s&lt;/option&gt;&#039;,
+					esc_attr( $option_value ),
+					$selected_attr,
+					esc_html( $filtered_label )
+				);
+			}
+		}
+
+		return $html;
+	}
+
+	/**
+	 * Render variation form.
+	 *
+	 * @param WC_Product $product Product instance.
+	 * @param array      $attributes Block attributes.
+	 * @return string Rendered form HTML
+	 */
+	private function render_variation_form( $product, $attributes ): string {
+		$variation_attributes = $product-&gt;get_variation_attributes();
+		if ( empty( $variation_attributes ) ) {
+			return &#039;&#039;;
+		}
+
+		$variations = $this-&gt;get_variations_data( $product );
+		if ( empty( $variations ) ) {
+			return &#039;&#039;;
+		}
+
+		wp_enqueue_script( &#039;wc-add-to-cart-variation&#039; );
+
+		return $this-&gt;get_form_html( $product, $variations, $variation_attributes );
+	}
+
+	/**
+	 * Get variations data.
+	 *
+	 * @param WC_Product $product Product instance.
+	 * @return array|false
+	 */
+	private function get_variations_data( $product ) {
+		/**
+		 * Filter the number of variations threshold.
+		 *
+		 * @since 9.7.0
+		 *
+		 * @param int        $threshold Maximum number of variations to load upfront.
+		 * @param WC_Product $product   Product object.
+		 */
+		$get_variations = count( $product-&gt;get_children() ) &lt;= apply_filters( &#039;woocommerce_ajax_variation_threshold&#039;, 30, $product );
+		return $get_variations ? $product-&gt;get_available_variations() : false;
+	}
+
+	/**
+	 * Get form HTML.
+	 *
+	 * @param WC_Product $product Product instance.
+	 * @param array      $variations Variations data.
+	 * @param array      $variation_attributes Variation attributes.
+	 * @return string Form HTML
+	 */
+	private function get_form_html( $product, $variations, $variation_attributes ): string {
+		$variations_json = wp_json_encode( $variations );
+		$variations_attr = function_exists( &#039;wc_esc_json&#039; ) ? wc_esc_json( $variations_json ) : _wp_specialchars( $variations_json, ENT_QUOTES, &#039;UTF-8&#039;, true );
+
+		$form  = $this-&gt;get_form_opening( $product, $variations_attr );
+		$form .= $this-&gt;get_variations_table( $product, $variation_attributes );
+		$form .= &#039;&lt;/form&gt;&#039;;
+
+		return $form;
+	}
+
+	/**
+	 * Get form opening HTML.
+	 *
+	 * @param WC_Product $product Product instance.
+	 * @param string     $variations_attr Variations JSON.
+	 * @return string Form opening HTML
+	 */
+	private function get_form_opening( $product, $variations_attr ): string {
+		return sprintf(
+			&#039;&lt;form class=&quot;variations_form cart&quot; data-product_id=&quot;%d&quot; data-product_variations=&quot;%s&quot;&gt;&#039;,
+			absint( $product-&gt;get_id() ),
+			$variations_attr
+		);
+	}
+
+	/**
+	 * Get variations table HTML.
+	 *
+	 * @param WC_Product $product Product instance.
+	 * @param array      $variation_attributes Variation attributes.
+	 * @return string Table HTML
+	 */
+	private function get_variations_table( $product, $variation_attributes ): string {
+		ob_start();
+
+		/**
+		 * Action hook to add content before the variations table.
+		 *
+		 * @since 9.7.0
+		 */
+		do_action( &#039;woocommerce_before_variations_table&#039; );
+		$before_table = ob_get_clean();
+
+		$table = &#039;&lt;table class=&quot;variations&quot; cellspacing=&quot;0&quot; role=&quot;presentation&quot;&gt;&lt;tbody&gt;&#039;;
+
+		foreach ( $variation_attributes as $attribute_name =&gt; $options ) {
+			$table .= $this-&gt;get_variation_row( $product, $attribute_name, $options );
+		}
+
+		$table .= &#039;&lt;/tbody&gt;&lt;/table&gt;&#039;;
+
+		ob_start();
+
+		/**
+		 * Action hook to add content after the variations table.
+		 *
+		 * @since 9.7.0
+		 */
+		do_action( &#039;woocommerce_after_variations_table&#039; );
+		$after_table = ob_get_clean();
+
+		return $before_table . $table . $after_table;
+	}
+
+	/**
+	 * Get variation row HTML.
+	 *
+	 * @param WC_Product $product Product instance.
+	 * @param string     $attribute_name Attribute name.
+	 * @param array      $options Attribute options.
+	 * @return string Row HTML
+	 */
+	private function get_variation_row( $product, $attribute_name, $options ): string {
+		$html  = &#039;&lt;tr&gt;&#039;;
+		$html .= &#039;&lt;th class=&quot;label&quot;&gt;&#039; . $this-&gt;render_variation_label( $attribute_name ) . &#039;&lt;/th&gt;&#039;;
+		$html .= &#039;&lt;td class=&quot;value&quot;&gt;&#039;;
+		$html .= $this-&gt;render_variation_selector( $product, $attribute_name, $options );
+		$html .= &#039;&lt;/td&gt;&#039;;
+		$html .= &#039;&lt;/tr&gt;&#039;;
+
+		$variation_attributes = $product-&gt;get_variation_attributes();
+		$attribute_keys       = array_keys( $variation_attributes );
+		if ( end( $attribute_keys ) === $attribute_name ) {
+			$html .= $this-&gt;get_reset_button_row();
+		}
+
+		return $html;
+	}
+
+	/**
+	 * Get reset button row HTML.
+	 *
+	 * @return string Row HTML
+	 */
+	private function get_reset_button_row(): string {
+		return sprintf(
+			&#039;&lt;tr&gt;&lt;td colspan=&quot;2&quot;&gt;%s&lt;/td&gt;&lt;/tr&gt;&#039;,
+			wp_kses_post(
+				/**
+				 * Filter the reset variation button.
+				 *
+				 * @since 9.7.0
+				 */
+				apply_filters(
+					&#039;woocommerce_reset_variations_link&#039;,
+					sprintf(
+						&#039;&lt;button class=&quot;reset_variations&quot; aria-label=&quot;%1$s&quot;&gt;%2$s&lt;/button&gt;&#039;,
+						esc_html__( &#039;Clear options&#039;, &#039;woocommerce&#039; ),
+						esc_html__( &#039;Clear&#039;, &#039;woocommerce&#039; )
+					)
+				)
+			)
+		);
+	}
+
+	/**
+	 * Render the block.
+	 *
+	 * @param array    $attributes Block attributes.
+	 * @param string   $content Block content.
+	 * @param WP_Block $block Block instance.
+	 * @return string Rendered block output.
+	 */
+	protected function render( $attributes, $content, $block ): string {
+		global $product;
+
+		if ( $product instanceof \WC_Product &amp;&amp; $product-&gt;is_type( &#039;variable&#039; ) ) {
+			return $this-&gt;render_variation_form( $product, $attributes );
+		}
+
+		return &#039;&#039;;
+	}
+}
+</code></pre>
+            </article>
+            </div>
+        </div>
+        <a href="#top" class="phpdocumentor-back-to-top"><i class="fas fa-chevron-circle-up"></i></a>
+
+    </main>
+
+    <footer class="phpdocumentor phpdocumentor-footer">
+    <div class="phpdocumentor-section">
+        <span>WooCommerce Code Reference API documentation generated by <a href="http://www.phpdoc.org/">phpDocumentor</a> on May 16th, 2025 at 09:14 am.</span>
+    </div>
+</footer>
+
+    <script>
+        cssVars({});
+    </script>
+    <script>
+        var searchParams = {
+            'searchIndex': '..\/js\/searchIndex.json'
+        };
+    </script>
+    <script src="../js/searchIndex.js?updated=1747386861"></script>
+    <script src="../js/search.js?updated=1747386861"></script>
+</body>
+</html>

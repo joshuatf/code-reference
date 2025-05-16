@@ -4,14 +4,13 @@
     <meta charset="utf-8">
     <title>WooCommerce Code Reference</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="../images/favicon.png" />
-    <link rel="apple-touch-icon" href="../images/apple-touch-icon.png"/>
-    <link rel="apple-touch-icon" sizes="72x72" href="../images/apple-touch-icon-72x72.png"/>
-    <link rel="apple-touch-icon" sizes="114x114" href="../images/apple-touch-icon-114x114.png"/>
+    <link rel="icon" href="../images/favicon-32x32.png" sizes="32x32" />
+    <link rel="icon" href="../images/favicon-192x192.png" sizes="192x192" />
+    <link rel="apple-touch-icon" href="../images/favicon-180x180.png" />
+
     <link rel="stylesheet" href="../css/normalize.css">
-    <link rel="stylesheet" href="../css/base.css?updated=1721907194">
-    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../css/template.css?updated=1721907194">
+    <link rel="stylesheet" href="../css/base.css?updated=1747386871">
+    <link rel="stylesheet" href="../css/template.css?updated=1747386871">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0/css/all.min.css" integrity="sha256-ybRkN9dBjhcS2qrW1z+hfCxq+1aBdwyQM5wlQoQVt/0=" crossorigin="anonymous" />
             <script src="https://cdn.jsdelivr.net/npm/css-vars-ponyfill@2"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0/js/all.min.js" integrity="sha256-0vuk8LXoyrmCjp1f0O300qo1M75ZQyhH9X3J6d+scmk=" crossorigin="anonymous"></script>
@@ -27,19 +26,24 @@
 		'content_group' : 'WooCommerce Core Code Reference',
 	});
 </script>
-        </head>
+        <script src="../js/prism.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            window.dispatchEvent(new HashChangeEvent('hashchange'));
+        });
+    </script>
+</head>
 <body id="top">
     <header class="phpdocumentor-top-header">
     <section class="phpdocumentor-section">
         <div class="site-branding">
-            <a class="site-logo" href="../index.html"><img width="180" src="../images/logo.svg" alt="WooCommerce" /></a>
+            <a class="site-logo" href="../index.html"><img src="../images/logo.png" alt="WooCommerce" /></a>
         </div>
         <nav class="main-navigation">
             <ul>
                 <li><a href="../hooks/hooks.html">Hooks Reference</a></li>
-                <li><a href="https://docs.woocommerce.com/">Documentation</a></li>
+                <li><a href="https://developer.woocommerce.com/docs/">Documentation</a></li>
                 <li><a href="https://woocommerce.github.io/woocommerce-rest-api-docs/">REST API Docs</a></li>
-                <li><a href="https://woocommerce.com/careers/?utm_source=woocommerce+core+code+reference&utm_medium=devdocs&utm_campaign=woo+careers" target="_blank">We're hiring!</a></li>
             </ul>
         </nav>
     </section>
@@ -47,7 +51,7 @@
 
 <div class="phpdocumentor-header">
     <section class="phpdocumentor-section">
-        <h1 class="phpdocumentor-title">WooCommerce Code Reference</h1>
+        <h1 class="phpdocumentor-title"><a href="../index.html">WooCommerce Code Reference</a></h1>
         <section class="phpdocumentor-search">
     <label class="phpdocumentor-label">
         <span class="visually-hidden">Search (click ESC to close search results)</span>
@@ -68,6 +72,10 @@
                                         <h4 class="phpdocumentor-sidebar__root-namespace"><a href="../namespaces/woocommerce.html"><abbr title="\WooCommerce">WooCommerce</abbr></a></h4>
                 <ul class="phpdocumentor-list">
                                             <li><a href="../namespaces/woocommerce-admin.html"><abbr title="\WooCommerce\Admin">Admin</abbr></a></li>
+                                    </ul>
+                            <h4 class="phpdocumentor-sidebar__root-namespace"><a href="../namespaces/mailpoet.html"><abbr title="\MailPoet">MailPoet</abbr></a></h4>
+                <ul class="phpdocumentor-list">
+                                            <li><a href="../namespaces/mailpoet-emaileditor.html"><abbr title="\MailPoet\EmailEditor">EmailEditor</abbr></a></li>
                                     </ul>
                             <h4 class="phpdocumentor-sidebar__root-namespace"><a href="../namespaces/automattic.html"><abbr title="\Automattic">Automattic</abbr></a></h4>
                 <ul class="phpdocumentor-list">
@@ -113,8 +121,10 @@
                                     <li><a href="../packages/WooCommerce-Widgets.html"><abbr title="\WooCommerce\Widgets">Widgets</abbr></a></li>
                                     <li><a href="../packages/WooCommerce-Uninstaller.html"><abbr title="\WooCommerce\Uninstaller">Uninstaller</abbr></a></li>
                             </ul>
-                                <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/WoocommerceAdmin.html"><abbr title="\WoocommerceAdmin">WoocommerceAdmin</abbr></a></h3>
-                                <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/WoocommerceNavigation.html"><abbr title="\WoocommerceNavigation">WoocommerceNavigation</abbr></a></h3>
+                                <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/MailPoet.html"><abbr title="\MailPoet">MailPoet</abbr></a></h3>
+                        <ul class="phpdocumentor-list">
+                                    <li><a href="../packages/MailPoet-EmailEditor.html"><abbr title="\MailPoet\EmailEditor">EmailEditor</abbr></a></li>
+                            </ul>
                                 <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/Automattic.html"><abbr title="\Automattic">Automattic</abbr></a></h3>
                         <ul class="phpdocumentor-list">
                                     <li><a href="../packages/Automattic-WooCommerce.html"><abbr title="\Automattic\WooCommerce">WooCommerce</abbr></a></li>
@@ -285,6 +295,13 @@
 <dd>Get a list of all active shipping methods.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -private">
+    <a href="../classes/WC-Tracker.html#method_get_additional_order_data">get_additional_order_data()</a>
+    <span>
+                        &nbsp;: array&lt;string|int, mixed&gt;    </span>
+</dt>
+<dd>Fetch additional data for a specific set of orders.</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -private">
     <a href="../classes/WC-Tracker.html#method_get_all_plugins">get_all_plugins()</a>
     <span>
                         &nbsp;: array&lt;string|int, mixed&gt;    </span>
@@ -306,11 +323,46 @@
 <dd>Get all options starting with woocommerce_ prefix.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -private">
+    <a href="../classes/WC-Tracker.html#method_get_brands_counts">get_brands_counts()</a>
+    <span>
+                        &nbsp;: int    </span>
+</dt>
+<dd>Get the number of product brands.</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -private">
     <a href="../classes/WC-Tracker.html#method_get_category_counts">get_category_counts()</a>
     <span>
                         &nbsp;: int    </span>
 </dt>
 <dd>Get the number of product categories.</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -private">
+    <a href="../classes/WC-Tracker.html#method_get_core_email_overrides">get_core_email_overrides()</a>
+    <span>
+                        &nbsp;: bool    </span>
+</dt>
+<dd>Check if any core emails are being overridden by a template override.</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -private">
+    <a href="../classes/WC-Tracker.html#method_get_core_email_status_counts">get_core_email_status_counts()</a>
+    <span>
+                        &nbsp;: array&lt;string|int, mixed&gt;    </span>
+</dt>
+<dd>Get counts of enabled and disabled core emails.</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -private">
+    <a href="../classes/WC-Tracker.html#method_get_core_emails">get_core_emails()</a>
+    <span>
+                        &nbsp;: array&lt;string|int, mixed&gt;    </span>
+</dt>
+<dd>Get all core emails.</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -private">
+    <a href="../classes/WC-Tracker.html#method_get_email_improvements_info">get_email_improvements_info()</a>
+    <span>
+                        &nbsp;: array&lt;string|int, mixed&gt;    </span>
+</dt>
+<dd>Get email improvements tracking data.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -private">
     <a href="../classes/WC-Tracker.html#method_get_enabled_features">get_enabled_features()</a>
@@ -348,11 +400,25 @@
 <dd>Get order counts.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -private">
+    <a href="../classes/WC-Tracker.html#method_get_order_data">get_order_data()</a>
+    <span>
+                        &nbsp;: array&lt;string|int, mixed&gt;    </span>
+</dt>
+<dd>Fetch main order data.</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -private">
     <a href="../classes/WC-Tracker.html#method_get_order_dates">get_order_dates()</a>
     <span>
                         &nbsp;: string    </span>
 </dt>
 <dd>Get last order date.</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -private">
+    <a href="../classes/WC-Tracker.html#method_get_order_snapshot">get_order_snapshot()</a>
+    <span>
+                        &nbsp;: array&lt;string|int, mixed&gt;    </span>
+</dt>
+<dd>Get a snapshot of the first 20 orders and the last 20 orders.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -private">
     <a href="../classes/WC-Tracker.html#method_get_order_totals">get_order_totals()</a>
@@ -381,6 +447,13 @@
                         &nbsp;: array&lt;string|int, mixed&gt;    </span>
 </dt>
 <dd>Get orders origin details.</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -private">
+    <a href="../classes/WC-Tracker.html#method_get_refund_order_data">get_refund_order_data()</a>
+    <span>
+                        &nbsp;: array&lt;string|int, mixed&gt;    </span>
+</dt>
+<dd>Fetch refund data for a specific set of orders.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -private">
     <a href="../classes/WC-Tracker.html#method_get_review_counts">get_review_counts()</a>
@@ -423,6 +496,13 @@
                         &nbsp;: bool    </span>
 </dt>
 <dd>Test whether this site is a staging site according to the Jetpack criteria.</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -private">
+    <a href="../classes/WC-Tracker.html#method_map_legacy_meta_key_name">map_legacy_meta_key_name()</a>
+    <span>
+                        &nbsp;: string    </span>
+</dt>
+<dd>Map legacy order meta keys to a column name.</dd>
 
         </dl>
 
@@ -486,9 +566,9 @@
         <a href="#method_get_block_tracker_data" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-tracker.php"><a href="../files/woocommerce-includes-class-wc-tracker.html#source-view.1051">includes/class-wc-tracker.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-tracker.php"><a href="../files/woocommerce-includes-class-wc-tracker.html#source-view.1093">includes/class-wc-tracker.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1051</span>
+    <span class="phpdocumentor-element-found-in__line">1093</span>
 </aside>
 
         <p class="phpdocumentor-summary">Get tracker data for a specific block type on a woocommerce page.</p>
@@ -541,9 +621,9 @@
         <a href="#method_get_cart_checkout_info" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-tracker.php"><a href="../files/woocommerce-includes-class-wc-tracker.html#source-view.1112">includes/class-wc-tracker.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-tracker.php"><a href="../files/woocommerce-includes-class-wc-tracker.html#source-view.1154">includes/class-wc-tracker.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1112</span>
+    <span class="phpdocumentor-element-found-in__line">1154</span>
 </aside>
 
         <p class="phpdocumentor-summary">Get info about the cart &amp; checkout pages.</p>
@@ -573,9 +653,9 @@
         <a href="#method_get_checkout_additional_fields_data" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-tracker.php"><a href="../files/woocommerce-includes-class-wc-tracker.html#source-view.1099">includes/class-wc-tracker.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-tracker.php"><a href="../files/woocommerce-includes-class-wc-tracker.html#source-view.1141">includes/class-wc-tracker.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1099</span>
+    <span class="phpdocumentor-element-found-in__line">1141</span>
 </aside>
 
         <p class="phpdocumentor-summary">Get tracker data for additional fields on the checkout page.</p>
@@ -605,9 +685,9 @@
         <a href="#method_get_pickup_location_data" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-tracker.php"><a href="../files/woocommerce-includes-class-wc-tracker.html#source-view.1075">includes/class-wc-tracker.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-tracker.php"><a href="../files/woocommerce-includes-class-wc-tracker.html#source-view.1117">includes/class-wc-tracker.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1075</span>
+    <span class="phpdocumentor-element-found-in__line">1117</span>
 </aside>
 
         <p class="phpdocumentor-summary">Get tracker data for a pickup location method.</p>
@@ -639,9 +719,9 @@
         <a href="#method_get_product_counts" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-tracker.php"><a href="../files/woocommerce-includes-class-wc-tracker.html#source-view.406">includes/class-wc-tracker.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-tracker.php"><a href="../files/woocommerce-includes-class-wc-tracker.html#source-view.432">includes/class-wc-tracker.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">406</span>
+    <span class="phpdocumentor-element-found-in__line">432</span>
 </aside>
 
         <p class="phpdocumentor-summary">Get product totals based on product type.</p>
@@ -671,9 +751,9 @@
         <a href="#method_get_theme_info" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-tracker.php"><a href="../files/woocommerce-includes-class-wc-tracker.html#source-view.225">includes/class-wc-tracker.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-tracker.php"><a href="../files/woocommerce-includes-class-wc-tracker.html#source-view.251">includes/class-wc-tracker.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">225</span>
+    <span class="phpdocumentor-element-found-in__line">251</span>
 </aside>
 
         <p class="phpdocumentor-summary">Get the current theme info, theme name and version.</p>
@@ -703,9 +783,9 @@
         <a href="#method_get_tracking_data" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-tracker.php"><a href="../files/woocommerce-includes-class-wc-tracker.html#source-view.134">includes/class-wc-tracker.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-tracker.php"><a href="../files/woocommerce-includes-class-wc-tracker.html#source-view.141">includes/class-wc-tracker.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">134</span>
+    <span class="phpdocumentor-element-found-in__line">141</span>
 </aside>
 
         <p class="phpdocumentor-summary">Get all the tracking data.</p>
@@ -735,9 +815,9 @@
         <a href="#method_get_woocommerce_mobile_usage" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-tracker.php"><a href="../files/woocommerce-includes-class-wc-tracker.html#source-view.1161">includes/class-wc-tracker.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-tracker.php"><a href="../files/woocommerce-includes-class-wc-tracker.html#source-view.1203">includes/class-wc-tracker.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1161</span>
+    <span class="phpdocumentor-element-found-in__line">1203</span>
 </aside>
 
         <p class="phpdocumentor-summary">Get info about WooCommerce Mobile App usage</p>
@@ -799,9 +879,9 @@
         <a href="#method_post_contains_text" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-tracker.php"><a href="../files/woocommerce-includes-class-wc-tracker.html#source-view.1021">includes/class-wc-tracker.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-tracker.php"><a href="../files/woocommerce-includes-class-wc-tracker.html#source-view.1063">includes/class-wc-tracker.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1021</span>
+    <span class="phpdocumentor-element-found-in__line">1063</span>
 </aside>
 
         <p class="phpdocumentor-summary">Search a specific post for text content.</p>
@@ -896,9 +976,9 @@
         <a href="#method_extract_group_key" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-tracker.php"><a href="../files/woocommerce-includes-class-wc-tracker.html#source-view.606">includes/class-wc-tracker.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-tracker.php"><a href="../files/woocommerce-includes-class-wc-tracker.html#source-view.634">includes/class-wc-tracker.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">606</span>
+    <span class="phpdocumentor-element-found-in__line">634</span>
 </aside>
 
         <p class="phpdocumentor-summary">Extract the group key for an associative array of objects which have unique ids in the key.</p>
@@ -952,9 +1032,9 @@ both have a group_key of 'WooDataPay **' after this function call.</p>
         <a href="#method_get_active_payment_gateways" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-tracker.php"><a href="../files/woocommerce-includes-class-wc-tracker.html#source-view.883">includes/class-wc-tracker.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-tracker.php"><a href="../files/woocommerce-includes-class-wc-tracker.html#source-view.923">includes/class-wc-tracker.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">883</span>
+    <span class="phpdocumentor-element-found-in__line">923</span>
 </aside>
 
         <p class="phpdocumentor-summary">Get a list of all active payment gateways.</p>
@@ -984,9 +1064,9 @@ both have a group_key of 'WooDataPay **' after this function call.</p>
         <a href="#method_get_active_shipping_methods" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-tracker.php"><a href="../files/woocommerce-includes-class-wc-tracker.html#source-view.904">includes/class-wc-tracker.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-tracker.php"><a href="../files/woocommerce-includes-class-wc-tracker.html#source-view.944">includes/class-wc-tracker.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">904</span>
+    <span class="phpdocumentor-element-found-in__line">944</span>
 </aside>
 
         <p class="phpdocumentor-summary">Get a list of all active shipping methods.</p>
@@ -1011,14 +1091,58 @@ both have a group_key of 'WooDataPay **' after this function call.</p>
             -private
                                     -static                    "
 >
+    <h4 class="phpdocumentor-element__name" id="method_get_additional_order_data">
+        get_additional_order_data()
+        <a href="#method_get_additional_order_data" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-tracker.php"><a href="../files/woocommerce-includes-class-wc-tracker.html#source-view.1293">includes/class-wc-tracker.php</a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">1293</span>
+</aside>
+
+        <p class="phpdocumentor-summary">Fetch additional data for a specific set of orders.</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">private</span>
+            <span class="phpdocumentor-signature__static">static</span>    <span class="phpdocumentor-signature__name">get_additional_order_data</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__name">$order_ids</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">array&lt;string|int, mixed&gt;</span></code>
+
+        <section class="phpdocumentor-description"></section>
+
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$order_ids</span>
+                : <span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"><p>List of order ID's to fetch data for.</p>
+</section>
+
+            </dd>
+            </dl>
+
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">array&lt;string|int, mixed&gt;</span>
+            &mdash; <span class="phpdocumentor-return-value__description">Additional data, indexed by order ID.</span>
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -private
+                                    -static                    "
+>
     <h4 class="phpdocumentor-element__name" id="method_get_all_plugins">
         get_all_plugins()
         <a href="#method_get_all_plugins" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-tracker.php"><a href="../files/woocommerce-includes-class-wc-tracker.html#source-view.314">includes/class-wc-tracker.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-tracker.php"><a href="../files/woocommerce-includes-class-wc-tracker.html#source-view.340">includes/class-wc-tracker.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">314</span>
+    <span class="phpdocumentor-element-found-in__line">340</span>
 </aside>
 
         <p class="phpdocumentor-summary">Get all plugins grouped into activated or not.</p>
@@ -1048,9 +1172,9 @@ both have a group_key of 'WooDataPay **' after this function call.</p>
         <a href="#method_get_all_template_overrides" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-tracker.php"><a href="../files/woocommerce-includes-class-wc-tracker.html#source-view.976">includes/class-wc-tracker.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-tracker.php"><a href="../files/woocommerce-includes-class-wc-tracker.html#source-view.1018">includes/class-wc-tracker.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">976</span>
+    <span class="phpdocumentor-element-found-in__line">1018</span>
 </aside>
 
         <p class="phpdocumentor-summary">Look for any template override and return filenames.</p>
@@ -1080,9 +1204,9 @@ both have a group_key of 'WooDataPay **' after this function call.</p>
         <a href="#method_get_all_woocommerce_options_values" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-tracker.php"><a href="../files/woocommerce-includes-class-wc-tracker.html#source-view.941">includes/class-wc-tracker.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-tracker.php"><a href="../files/woocommerce-includes-class-wc-tracker.html#source-view.981">includes/class-wc-tracker.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">941</span>
+    <span class="phpdocumentor-element-found-in__line">981</span>
 </aside>
 
         <p class="phpdocumentor-summary">Get all options starting with woocommerce_ prefix.</p>
@@ -1107,14 +1231,46 @@ both have a group_key of 'WooDataPay **' after this function call.</p>
             -private
                                     -static                    "
 >
+    <h4 class="phpdocumentor-element__name" id="method_get_brands_counts">
+        get_brands_counts()
+        <a href="#method_get_brands_counts" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-tracker.php"><a href="../files/woocommerce-includes-class-wc-tracker.html#source-view.911">includes/class-wc-tracker.php</a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">911</span>
+</aside>
+
+        <p class="phpdocumentor-summary">Get the number of product brands.</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">private</span>
+            <span class="phpdocumentor-signature__static">static</span>    <span class="phpdocumentor-signature__name">get_brands_counts</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">int</span></code>
+
+        <section class="phpdocumentor-description"></section>
+
+    
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">int</span>
+            &mdash; <span class="phpdocumentor-return-value__description"></span>
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -private
+                                    -static                    "
+>
     <h4 class="phpdocumentor-element__name" id="method_get_category_counts">
         get_category_counts()
         <a href="#method_get_category_counts" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-tracker.php"><a href="../files/woocommerce-includes-class-wc-tracker.html#source-view.874">includes/class-wc-tracker.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-tracker.php"><a href="../files/woocommerce-includes-class-wc-tracker.html#source-view.902">includes/class-wc-tracker.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">874</span>
+    <span class="phpdocumentor-element-found-in__line">902</span>
 </aside>
 
         <p class="phpdocumentor-summary">Get the number of product categories.</p>
@@ -1139,14 +1295,166 @@ both have a group_key of 'WooDataPay **' after this function call.</p>
             -private
                                     -static                    "
 >
+    <h4 class="phpdocumentor-element__name" id="method_get_core_email_overrides">
+        get_core_email_overrides()
+        <a href="#method_get_core_email_overrides" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-tracker.php"><a href="../files/woocommerce-includes-class-wc-tracker.html#source-view.1499">includes/class-wc-tracker.php</a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">1499</span>
+</aside>
+
+        <p class="phpdocumentor-summary">Check if any core emails are being overridden by a template override.</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">private</span>
+            <span class="phpdocumentor-signature__static">static</span>    <span class="phpdocumentor-signature__name">get_core_email_overrides</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__name">$template_overrides</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">bool</span></code>
+
+        <section class="phpdocumentor-description"></section>
+
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$template_overrides</span>
+                : <span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"><p>Template overrides.</p>
+</section>
+
+            </dd>
+            </dl>
+
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">bool</span>
+            &mdash; <span class="phpdocumentor-return-value__description">True if core emails are being overridden, false otherwise.</span>
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -private
+                                    -static                    "
+>
+    <h4 class="phpdocumentor-element__name" id="method_get_core_email_status_counts">
+        get_core_email_status_counts()
+        <a href="#method_get_core_email_status_counts" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-tracker.php"><a href="../files/woocommerce-includes-class-wc-tracker.html#source-view.1474">includes/class-wc-tracker.php</a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">1474</span>
+</aside>
+
+        <p class="phpdocumentor-summary">Get counts of enabled and disabled core emails.</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">private</span>
+            <span class="phpdocumentor-signature__static">static</span>    <span class="phpdocumentor-signature__name">get_core_email_status_counts</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">array&lt;string|int, mixed&gt;</span></code>
+
+        <section class="phpdocumentor-description"></section>
+
+    
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">array&lt;string|int, mixed&gt;</span>
+            &mdash; <span class="phpdocumentor-return-value__description">Array with counts of enabled and disabled emails.</span>
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -private
+                                    -static                    "
+>
+    <h4 class="phpdocumentor-element__name" id="method_get_core_emails">
+        get_core_emails()
+        <a href="#method_get_core_emails" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-tracker.php"><a href="../files/woocommerce-includes-class-wc-tracker.html#source-view.1519">includes/class-wc-tracker.php</a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">1519</span>
+</aside>
+
+        <p class="phpdocumentor-summary">Get all core emails.</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">private</span>
+            <span class="phpdocumentor-signature__static">static</span>    <span class="phpdocumentor-signature__name">get_core_emails</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">array&lt;string|int, mixed&gt;</span></code>
+
+        <section class="phpdocumentor-description"></section>
+
+    
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">array&lt;string|int, mixed&gt;</span>
+            &mdash; <span class="phpdocumentor-return-value__description">Core emails.</span>
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -private
+                                    -static                    "
+>
+    <h4 class="phpdocumentor-element__name" id="method_get_email_improvements_info">
+        get_email_improvements_info()
+        <a href="#method_get_email_improvements_info" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-tracker.php"><a href="../files/woocommerce-includes-class-wc-tracker.html#source-view.1448">includes/class-wc-tracker.php</a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">1448</span>
+</aside>
+
+        <p class="phpdocumentor-summary">Get email improvements tracking data.</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">private</span>
+            <span class="phpdocumentor-signature__static">static</span>    <span class="phpdocumentor-signature__name">get_email_improvements_info</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__name">$template_overrides</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">array&lt;string|int, mixed&gt;</span></code>
+
+        <section class="phpdocumentor-description"></section>
+
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$template_overrides</span>
+                : <span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"><p>Template overrides.</p>
+</section>
+
+            </dd>
+            </dl>
+
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">array&lt;string|int, mixed&gt;</span>
+            &mdash; <span class="phpdocumentor-return-value__description">Email improvements tracking data.</span>
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -private
+                                    -static                    "
+>
     <h4 class="phpdocumentor-element__name" id="method_get_enabled_features">
         get_enabled_features()
         <a href="#method_get_enabled_features" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-tracker.php"><a href="../files/woocommerce-includes-class-wc-tracker.html#source-view.924">includes/class-wc-tracker.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-tracker.php"><a href="../files/woocommerce-includes-class-wc-tracker.html#source-view.964">includes/class-wc-tracker.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">924</span>
+    <span class="phpdocumentor-element-found-in__line">964</span>
 </aside>
 
         <p class="phpdocumentor-summary">Get an array of slugs for WC features that are enabled on the site.</p>
@@ -1176,9 +1484,9 @@ both have a group_key of 'WooDataPay **' after this function call.</p>
         <a href="#method_get_helper_connected" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-tracker.php"><a href="../files/woocommerce-includes-class-wc-tracker.html#source-view.373">includes/class-wc-tracker.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-tracker.php"><a href="../files/woocommerce-includes-class-wc-tracker.html#source-view.399">includes/class-wc-tracker.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">373</span>
+    <span class="phpdocumentor-element-found-in__line">399</span>
 </aside>
 
         <p class="phpdocumentor-summary">Check to see if the helper is connected to WooCommerce.com</p>
@@ -1240,9 +1548,9 @@ both have a group_key of 'WooDataPay **' after this function call.</p>
         <a href="#method_get_mini_cart_info" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-tracker.php"><a href="../files/woocommerce-includes-class-wc-tracker.html#source-view.1147">includes/class-wc-tracker.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-tracker.php"><a href="../files/woocommerce-includes-class-wc-tracker.html#source-view.1189">includes/class-wc-tracker.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1147</span>
+    <span class="phpdocumentor-element-found-in__line">1189</span>
 </aside>
 
         <p class="phpdocumentor-summary">Get info about the Mini Cart Block.</p>
@@ -1272,9 +1580,9 @@ both have a group_key of 'WooDataPay **' after this function call.</p>
         <a href="#method_get_order_counts" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-tracker.php"><a href="../files/woocommerce-includes-class-wc-tracker.html#source-view.424">includes/class-wc-tracker.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-tracker.php"><a href="../files/woocommerce-includes-class-wc-tracker.html#source-view.450">includes/class-wc-tracker.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">424</span>
+    <span class="phpdocumentor-element-found-in__line">450</span>
 </aside>
 
         <p class="phpdocumentor-summary">Get order counts.</p>
@@ -1299,14 +1607,67 @@ both have a group_key of 'WooDataPay **' after this function call.</p>
             -private
                                     -static                    "
 >
+    <h4 class="phpdocumentor-element__name" id="method_get_order_data">
+        get_order_data()
+        <a href="#method_get_order_data" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-tracker.php"><a href="../files/woocommerce-includes-class-wc-tracker.html#source-view.1239">includes/class-wc-tracker.php</a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">1239</span>
+</aside>
+
+        <p class="phpdocumentor-summary">Fetch main order data.</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">private</span>
+            <span class="phpdocumentor-signature__static">static</span>    <span class="phpdocumentor-signature__name">get_order_data</span><span>(</span><span class="phpdocumentor-signature__argument"><span>[</span><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$sort_order</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">&#039;ASC&#039;</span><span> ]</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type">int&nbsp;</span><span class="phpdocumentor-signature__argument__name">$limit</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">20</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">array&lt;string|int, mixed&gt;</span></code>
+
+        <section class="phpdocumentor-description"></section>
+
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$sort_order</span>
+                : <span class="phpdocumentor-signature__argument__return-type">string</span>
+                 = <span class="phpdocumentor-signature__argument__default-value">&#039;ASC&#039;</span>            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"><p>Date sort order (ASC or DESC).</p>
+</section>
+
+            </dd>
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$limit</span>
+                : <span class="phpdocumentor-signature__argument__return-type">int</span>
+                 = <span class="phpdocumentor-signature__argument__default-value">20</span>            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"><p>Limit the amount of orders to return (default 20).</p>
+</section>
+
+            </dd>
+            </dl>
+
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">array&lt;string|int, mixed&gt;</span>
+            &mdash; <span class="phpdocumentor-return-value__description">Found orders indexed by ID.</span>
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -private
+                                    -static                    "
+>
     <h4 class="phpdocumentor-element__name" id="method_get_order_dates">
         get_order_dates()
         <a href="#method_get_order_dates" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-tracker.php"><a href="../files/woocommerce-includes-class-wc-tracker.html#source-view.525">includes/class-wc-tracker.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-tracker.php"><a href="../files/woocommerce-includes-class-wc-tracker.html#source-view.553">includes/class-wc-tracker.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">525</span>
+    <span class="phpdocumentor-element-found-in__line">553</span>
 </aside>
 
         <p class="phpdocumentor-summary">Get last order date.</p>
@@ -1331,14 +1692,46 @@ both have a group_key of 'WooDataPay **' after this function call.</p>
             -private
                                     -static                    "
 >
+    <h4 class="phpdocumentor-element__name" id="method_get_order_snapshot">
+        get_order_snapshot()
+        <a href="#method_get_order_snapshot" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-tracker.php"><a href="../files/woocommerce-includes-class-wc-tracker.html#source-view.1413">includes/class-wc-tracker.php</a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">1413</span>
+</aside>
+
+        <p class="phpdocumentor-summary">Get a snapshot of the first 20 orders and the last 20 orders.</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">private</span>
+            <span class="phpdocumentor-signature__static">static</span>    <span class="phpdocumentor-signature__name">get_order_snapshot</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">array&lt;string|int, mixed&gt;</span></code>
+
+        <section class="phpdocumentor-description"></section>
+
+    
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">array&lt;string|int, mixed&gt;</span>
+            &mdash; <span class="phpdocumentor-return-value__description"></span>
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -private
+                                    -static                    "
+>
     <h4 class="phpdocumentor-element__name" id="method_get_order_totals">
         get_order_totals()
         <a href="#method_get_order_totals" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-tracker.php"><a href="../files/woocommerce-includes-class-wc-tracker.html#source-view.453">includes/class-wc-tracker.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-tracker.php"><a href="../files/woocommerce-includes-class-wc-tracker.html#source-view.481">includes/class-wc-tracker.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">453</span>
+    <span class="phpdocumentor-element-found-in__line">481</span>
 </aside>
 
         <p class="phpdocumentor-summary">Get order totals.</p>
@@ -1347,7 +1740,8 @@ both have a group_key of 'WooDataPay **' after this function call.</p>
     <span class="phpdocumentor-signature__visibility">private</span>
             <span class="phpdocumentor-signature__static">static</span>    <span class="phpdocumentor-signature__name">get_order_totals</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">array&lt;string|int, mixed&gt;</span></code>
 
-        <section class="phpdocumentor-description"></section>
+        <section class="phpdocumentor-description"><p>Keeping the internal statuses names as strings to avoid regression issues (not referencing Automattic\WooCommerce\Enums\OrderInternalStatus class).</p>
+</section>
 
     
     
@@ -1382,9 +1776,9 @@ both have a group_key of 'WooDataPay **' after this function call.</p>
         <a href="#method_get_orders" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-tracker.php"><a href="../files/woocommerce-includes-class-wc-tracker.html#source-view.437">includes/class-wc-tracker.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-tracker.php"><a href="../files/woocommerce-includes-class-wc-tracker.html#source-view.463">includes/class-wc-tracker.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">437</span>
+    <span class="phpdocumentor-element-found-in__line">463</span>
 </aside>
 
         <p class="phpdocumentor-summary">Combine all order data.</p>
@@ -1414,9 +1808,9 @@ both have a group_key of 'WooDataPay **' after this function call.</p>
         <a href="#method_get_orders_by_gateway" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-tracker.php"><a href="../files/woocommerce-includes-class-wc-tracker.html#source-view.664">includes/class-wc-tracker.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-tracker.php"><a href="../files/woocommerce-includes-class-wc-tracker.html#source-view.692">includes/class-wc-tracker.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">664</span>
+    <span class="phpdocumentor-element-found-in__line">692</span>
 </aside>
 
         <p class="phpdocumentor-summary">Get order details by gateway.</p>
@@ -1446,9 +1840,9 @@ both have a group_key of 'WooDataPay **' after this function call.</p>
         <a href="#method_get_orders_origins" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-tracker.php"><a href="../files/woocommerce-includes-class-wc-tracker.html#source-view.765">includes/class-wc-tracker.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-tracker.php"><a href="../files/woocommerce-includes-class-wc-tracker.html#source-view.793">includes/class-wc-tracker.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">765</span>
+    <span class="phpdocumentor-element-found-in__line">793</span>
 </aside>
 
         <p class="phpdocumentor-summary">Get orders origin details.</p>
@@ -1473,14 +1867,58 @@ both have a group_key of 'WooDataPay **' after this function call.</p>
             -private
                                     -static                    "
 >
+    <h4 class="phpdocumentor-element__name" id="method_get_refund_order_data">
+        get_refund_order_data()
+        <a href="#method_get_refund_order_data" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-tracker.php"><a href="../files/woocommerce-includes-class-wc-tracker.html#source-view.1355">includes/class-wc-tracker.php</a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">1355</span>
+</aside>
+
+        <p class="phpdocumentor-summary">Fetch refund data for a specific set of orders.</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">private</span>
+            <span class="phpdocumentor-signature__static">static</span>    <span class="phpdocumentor-signature__name">get_refund_order_data</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__name">$order_ids</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">array&lt;string|int, mixed&gt;</span></code>
+
+        <section class="phpdocumentor-description"></section>
+
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$order_ids</span>
+                : <span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"><p>List of order ID's to fetch data for.</p>
+</section>
+
+            </dd>
+            </dl>
+
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">array&lt;string|int, mixed&gt;</span>
+            &mdash; <span class="phpdocumentor-return-value__description">Refund data, indexed by order ID.</span>
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -private
+                                    -static                    "
+>
     <h4 class="phpdocumentor-element__name" id="method_get_review_counts">
         get_review_counts()
         <a href="#method_get_review_counts" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-tracker.php"><a href="../files/woocommerce-includes-class-wc-tracker.html#source-view.835">includes/class-wc-tracker.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-tracker.php"><a href="../files/woocommerce-includes-class-wc-tracker.html#source-view.863">includes/class-wc-tracker.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">835</span>
+    <span class="phpdocumentor-element-found-in__line">863</span>
 </aside>
 
         <p class="phpdocumentor-summary">Get review counts for different statuses.</p>
@@ -1510,9 +1948,9 @@ both have a group_key of 'WooDataPay **' after this function call.</p>
         <a href="#method_get_server_info" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-tracker.php"><a href="../files/woocommerce-includes-class-wc-tracker.html#source-view.279">includes/class-wc-tracker.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-tracker.php"><a href="../files/woocommerce-includes-class-wc-tracker.html#source-view.305">includes/class-wc-tracker.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">279</span>
+    <span class="phpdocumentor-element-found-in__line">305</span>
 </aside>
 
         <p class="phpdocumentor-summary">Get server related info.</p>
@@ -1542,9 +1980,9 @@ both have a group_key of 'WooDataPay **' after this function call.</p>
         <a href="#method_get_user_counts" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-tracker.php"><a href="../files/woocommerce-includes-class-wc-tracker.html#source-view.388">includes/class-wc-tracker.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-tracker.php"><a href="../files/woocommerce-includes-class-wc-tracker.html#source-view.414">includes/class-wc-tracker.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">388</span>
+    <span class="phpdocumentor-element-found-in__line">414</span>
 </aside>
 
         <p class="phpdocumentor-summary">Get user totals based on user role.</p>
@@ -1574,9 +2012,9 @@ both have a group_key of 'WooDataPay **' after this function call.</p>
         <a href="#method_get_wcpay_settings" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-tracker.php"><a href="../files/woocommerce-includes-class-wc-tracker.html#source-view.364">includes/class-wc-tracker.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-tracker.php"><a href="../files/woocommerce-includes-class-wc-tracker.html#source-view.390">includes/class-wc-tracker.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">364</span>
+    <span class="phpdocumentor-element-found-in__line">390</span>
 </aside>
 
         <p class="phpdocumentor-summary">Get the settings of WooCommerce Payments plugin</p>
@@ -1606,9 +2044,9 @@ both have a group_key of 'WooDataPay **' after this function call.</p>
         <a href="#method_get_wordpress_info" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-tracker.php"><a href="../files/woocommerce-includes-class-wc-tracker.html#source-view.245">includes/class-wc-tracker.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-tracker.php"><a href="../files/woocommerce-includes-class-wc-tracker.html#source-view.271">includes/class-wc-tracker.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">245</span>
+    <span class="phpdocumentor-element-found-in__line">271</span>
 </aside>
 
         <p class="phpdocumentor-summary">Get WordPress related data.</p>
@@ -1638,9 +2076,9 @@ both have a group_key of 'WooDataPay **' after this function call.</p>
         <a href="#method_is_jetpack_staging_site" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-tracker.php"><a href="../files/woocommerce-includes-class-wc-tracker.html#source-view.117">includes/class-wc-tracker.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-tracker.php"><a href="../files/woocommerce-includes-class-wc-tracker.html#source-view.120">includes/class-wc-tracker.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">117</span>
+    <span class="phpdocumentor-element-found-in__line">120</span>
 </aside>
 
         <p class="phpdocumentor-summary">Test whether this site is a staging site according to the Jetpack criteria.</p>
@@ -1653,6 +2091,8 @@ both have a group_key of 'WooDataPay **' after this function call.</p>
 \Automattic\Jetpack\Status::is_staging_site is the replacement.
 However, there are version of JP where \Automattic\Jetpack\Status exists, but does <em>not</em> contain is_staging_site method,
 so with those, code still needs to use the previous check as a fallback.</p>
+<p>After upgrading Jetpack Status to v3.3.2 is_staging_site is also deprecated and in_safe_mode is the new replacement.
+So we check this first of all.</p>
 </section>
 
     
@@ -1661,6 +2101,50 @@ so with those, code still needs to use the previous check as a fallback.</p>
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
     <span class="phpdocumentor-signature__response_type">bool</span>
             &mdash; <span class="phpdocumentor-return-value__description"></span>
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -private
+                                    -static                    "
+>
+    <h4 class="phpdocumentor-element__name" id="method_map_legacy_meta_key_name">
+        map_legacy_meta_key_name()
+        <a href="#method_map_legacy_meta_key_name" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/class-wc-tracker.php"><a href="../files/woocommerce-includes-class-wc-tracker.html#source-view.1213">includes/class-wc-tracker.php</a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">1213</span>
+</aside>
+
+        <p class="phpdocumentor-summary">Map legacy order meta keys to a column name.</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">private</span>
+            <span class="phpdocumentor-signature__static">static</span>    <span class="phpdocumentor-signature__name">map_legacy_meta_key_name</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$meta_key</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">string</span></code>
+
+        <section class="phpdocumentor-description"></section>
+
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$meta_key</span>
+                : <span class="phpdocumentor-signature__argument__return-type">string</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"><p>Legacy meta key name.</p>
+</section>
+
+            </dd>
+            </dl>
+
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">string</span>
+            &mdash; <span class="phpdocumentor-return-value__description">Mapped column name.</span>
     
 </article>
             </section>
@@ -1674,7 +2158,7 @@ so with those, code still needs to use the previous check as a fallback.</p>
 
     <footer class="phpdocumentor phpdocumentor-footer">
     <div class="phpdocumentor-section">
-        <span>WooCommerce Code Reference API documentation generated by <a href="http://www.phpdoc.org/">phpDocumentor</a> on July 25th, 2024 at 11:33 am.</span>
+        <span>WooCommerce Code Reference API documentation generated by <a href="http://www.phpdoc.org/">phpDocumentor</a> on May 16th, 2025 at 09:14 am.</span>
     </div>
 </footer>
 
@@ -1686,7 +2170,7 @@ so with those, code still needs to use the previous check as a fallback.</p>
             'searchIndex': '..\/js\/searchIndex.json'
         };
     </script>
-    <script src="../js/searchIndex.js?updated=1721907194"></script>
-    <script src="../js/search.js?updated=1721907194"></script>
+    <script src="../js/searchIndex.js?updated=1747386871"></script>
+    <script src="../js/search.js?updated=1747386871"></script>
 </body>
 </html>

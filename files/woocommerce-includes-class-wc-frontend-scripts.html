@@ -4,14 +4,13 @@
     <meta charset="utf-8">
     <title>WooCommerce Code Reference</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="../images/favicon.png" />
-    <link rel="apple-touch-icon" href="../images/apple-touch-icon.png"/>
-    <link rel="apple-touch-icon" sizes="72x72" href="../images/apple-touch-icon-72x72.png"/>
-    <link rel="apple-touch-icon" sizes="114x114" href="../images/apple-touch-icon-114x114.png"/>
+    <link rel="icon" href="../images/favicon-32x32.png" sizes="32x32" />
+    <link rel="icon" href="../images/favicon-192x192.png" sizes="192x192" />
+    <link rel="apple-touch-icon" href="../images/favicon-180x180.png" />
+
     <link rel="stylesheet" href="../css/normalize.css">
-    <link rel="stylesheet" href="../css/base.css?updated=1721907182">
-    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../css/template.css?updated=1721907182">
+    <link rel="stylesheet" href="../css/base.css?updated=1747386858">
+    <link rel="stylesheet" href="../css/template.css?updated=1747386858">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0/css/all.min.css" integrity="sha256-ybRkN9dBjhcS2qrW1z+hfCxq+1aBdwyQM5wlQoQVt/0=" crossorigin="anonymous" />
             <script src="https://cdn.jsdelivr.net/npm/css-vars-ponyfill@2"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0/js/all.min.js" integrity="sha256-0vuk8LXoyrmCjp1f0O300qo1M75ZQyhH9X3J6d+scmk=" crossorigin="anonymous"></script>
@@ -38,14 +37,13 @@
     <header class="phpdocumentor-top-header">
     <section class="phpdocumentor-section">
         <div class="site-branding">
-            <a class="site-logo" href="../index.html"><img width="180" src="../images/logo.svg" alt="WooCommerce" /></a>
+            <a class="site-logo" href="../index.html"><img src="../images/logo.png" alt="WooCommerce" /></a>
         </div>
         <nav class="main-navigation">
             <ul>
                 <li><a href="../hooks/hooks.html">Hooks Reference</a></li>
-                <li><a href="https://docs.woocommerce.com/">Documentation</a></li>
+                <li><a href="https://developer.woocommerce.com/docs/">Documentation</a></li>
                 <li><a href="https://woocommerce.github.io/woocommerce-rest-api-docs/">REST API Docs</a></li>
-                <li><a href="https://woocommerce.com/careers/?utm_source=woocommerce+core+code+reference&utm_medium=devdocs&utm_campaign=woo+careers" target="_blank">We're hiring!</a></li>
             </ul>
         </nav>
     </section>
@@ -53,7 +51,7 @@
 
 <div class="phpdocumentor-header">
     <section class="phpdocumentor-section">
-        <h1 class="phpdocumentor-title">WooCommerce Code Reference</h1>
+        <h1 class="phpdocumentor-title"><a href="../index.html">WooCommerce Code Reference</a></h1>
         <section class="phpdocumentor-search">
     <label class="phpdocumentor-label">
         <span class="visually-hidden">Search (click ESC to close search results)</span>
@@ -74,6 +72,10 @@
                                         <h4 class="phpdocumentor-sidebar__root-namespace"><a href="../namespaces/woocommerce.html"><abbr title="\WooCommerce">WooCommerce</abbr></a></h4>
                 <ul class="phpdocumentor-list">
                                             <li><a href="../namespaces/woocommerce-admin.html"><abbr title="\WooCommerce\Admin">Admin</abbr></a></li>
+                                    </ul>
+                            <h4 class="phpdocumentor-sidebar__root-namespace"><a href="../namespaces/mailpoet.html"><abbr title="\MailPoet">MailPoet</abbr></a></h4>
+                <ul class="phpdocumentor-list">
+                                            <li><a href="../namespaces/mailpoet-emaileditor.html"><abbr title="\MailPoet\EmailEditor">EmailEditor</abbr></a></li>
                                     </ul>
                             <h4 class="phpdocumentor-sidebar__root-namespace"><a href="../namespaces/automattic.html"><abbr title="\Automattic">Automattic</abbr></a></h4>
                 <ul class="phpdocumentor-list">
@@ -119,8 +121,10 @@
                                     <li><a href="../packages/WooCommerce-Widgets.html"><abbr title="\WooCommerce\Widgets">Widgets</abbr></a></li>
                                     <li><a href="../packages/WooCommerce-Uninstaller.html"><abbr title="\WooCommerce\Uninstaller">Uninstaller</abbr></a></li>
                             </ul>
-                                <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/WoocommerceAdmin.html"><abbr title="\WoocommerceAdmin">WoocommerceAdmin</abbr></a></h3>
-                                <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/WoocommerceNavigation.html"><abbr title="\WoocommerceNavigation">WoocommerceNavigation</abbr></a></h3>
+                                <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/MailPoet.html"><abbr title="\MailPoet">MailPoet</abbr></a></h3>
+                        <ul class="phpdocumentor-list">
+                                    <li><a href="../packages/MailPoet-EmailEditor.html"><abbr title="\MailPoet\EmailEditor">EmailEditor</abbr></a></li>
+                            </ul>
                                 <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/Automattic.html"><abbr title="\Automattic">Automattic</abbr></a></h3>
                         <ul class="phpdocumentor-list">
                                     <li><a href="../packages/Automattic-WooCommerce.html"><abbr title="\Automattic\WooCommerce">WooCommerce</abbr></a></li>
@@ -161,7 +165,8 @@
  * Handle frontend scripts
  *
  * @package WooCommerce\Classes
- * @version 2.3.0
+ * @version 3.9.0
+ * @since 2.3.0
  */
 
  // phpcs:disable WooCommerce.Commenting.CommentHooks.MissingHookComment
@@ -652,8 +657,10 @@ class WC_Frontend_Scripts {
 		switch ( $handle ) {
 			case &#039;woocommerce&#039;:
 				$params = array(
-					&#039;ajax_url&#039;    =&gt; WC()-&gt;ajax_url(),
-					&#039;wc_ajax_url&#039; =&gt; WC_AJAX::get_endpoint( &#039;%%endpoint%%&#039; ),
+					&#039;ajax_url&#039;           =&gt; WC()-&gt;ajax_url(),
+					&#039;wc_ajax_url&#039;        =&gt; WC_AJAX::get_endpoint( &#039;%%endpoint%%&#039; ),
+					&#039;i18n_password_show&#039; =&gt; esc_attr__( &#039;Show password&#039;, &#039;woocommerce&#039; ),
+					&#039;i18n_password_hide&#039; =&gt; esc_attr__( &#039;Hide password&#039;, &#039;woocommerce&#039; ),
 				);
 				break;
 			case &#039;wc-geolocation&#039;:
@@ -664,9 +671,17 @@ class WC_Frontend_Scripts {
 				break;
 			case &#039;wc-single-product&#039;:
 				$params = array(
-					&#039;i18n_required_rating_text&#039; =&gt; esc_attr__( &#039;Please select a rating&#039;, &#039;woocommerce&#039; ),
-					&#039;review_rating_required&#039;    =&gt; wc_review_ratings_required() ? &#039;yes&#039; : &#039;no&#039;,
-					&#039;flexslider&#039;                =&gt; apply_filters(
+					&#039;i18n_required_rating_text&#039;         =&gt; esc_attr__( &#039;Please select a rating&#039;, &#039;woocommerce&#039; ),
+					&#039;i18n_rating_options&#039;               =&gt; array(
+						esc_attr__( &#039;1 of 5 stars&#039;, &#039;woocommerce&#039; ),
+						esc_attr__( &#039;2 of 5 stars&#039;, &#039;woocommerce&#039; ),
+						esc_attr__( &#039;3 of 5 stars&#039;, &#039;woocommerce&#039; ),
+						esc_attr__( &#039;4 of 5 stars&#039;, &#039;woocommerce&#039; ),
+						esc_attr__( &#039;5 of 5 stars&#039;, &#039;woocommerce&#039; ),
+					),
+					&#039;i18n_product_gallery_trigger_text&#039; =&gt; esc_attr__( &#039;View full-screen image gallery&#039;, &#039;woocommerce&#039; ),
+					&#039;review_rating_required&#039;            =&gt; wc_review_ratings_required() ? &#039;yes&#039; : &#039;no&#039;,
+					&#039;flexslider&#039;                        =&gt; apply_filters(
 						&#039;woocommerce_single_product_carousel_options&#039;,
 						array(
 							&#039;rtl&#039;            =&gt; is_rtl(),
@@ -680,10 +695,10 @@ class WC_Frontend_Scripts {
 							&#039;allowOneSlide&#039;  =&gt; false,
 						)
 					),
-					&#039;zoom_enabled&#039;              =&gt; apply_filters( &#039;woocommerce_single_product_zoom_enabled&#039;, get_theme_support( &#039;wc-product-gallery-zoom&#039; ) ),
-					&#039;zoom_options&#039;              =&gt; apply_filters( &#039;woocommerce_single_product_zoom_options&#039;, array() ),
-					&#039;photoswipe_enabled&#039;        =&gt; apply_filters( &#039;woocommerce_single_product_photoswipe_enabled&#039;, get_theme_support( &#039;wc-product-gallery-lightbox&#039; ) ),
-					&#039;photoswipe_options&#039;        =&gt; apply_filters(
+					&#039;zoom_enabled&#039;                      =&gt; apply_filters( &#039;woocommerce_single_product_zoom_enabled&#039;, get_theme_support( &#039;wc-product-gallery-zoom&#039; ) ),
+					&#039;zoom_options&#039;                      =&gt; apply_filters( &#039;woocommerce_single_product_zoom_options&#039;, array() ),
+					&#039;photoswipe_enabled&#039;                =&gt; apply_filters( &#039;woocommerce_single_product_photoswipe_enabled&#039;, get_theme_support( &#039;wc-product-gallery-lightbox&#039; ) ),
+					&#039;photoswipe_options&#039;                =&gt; apply_filters(
 						&#039;woocommerce_single_product_photoswipe_options&#039;,
 						array(
 							&#039;shareEl&#039;               =&gt; false,
@@ -693,7 +708,7 @@ class WC_Frontend_Scripts {
 							&#039;showAnimationDuration&#039; =&gt; 0,
 						)
 					),
-					&#039;flexslider_enabled&#039;        =&gt; apply_filters( &#039;woocommerce_single_product_flexslider_enabled&#039;, get_theme_support( &#039;wc-product-gallery-slider&#039; ) ),
+					&#039;flexslider_enabled&#039;                =&gt; apply_filters( &#039;woocommerce_single_product_flexslider_enabled&#039;, get_theme_support( &#039;wc-product-gallery-slider&#039; ) ),
 				);
 				break;
 			case &#039;wc-checkout&#039;:
@@ -757,6 +772,7 @@ class WC_Frontend_Scripts {
 					&#039;i18n_no_matching_variations_text&#039; =&gt; esc_attr__( &#039;Sorry, no products matched your selection. Please choose a different combination.&#039;, &#039;woocommerce&#039; ),
 					&#039;i18n_make_a_selection_text&#039;       =&gt; esc_attr__( &#039;Please select some product options before adding this product to your cart.&#039;, &#039;woocommerce&#039; ),
 					&#039;i18n_unavailable_text&#039;            =&gt; esc_attr__( &#039;Sorry, this product is unavailable. Please choose a different combination.&#039;, &#039;woocommerce&#039; ),
+					&#039;i18n_reset_alert_text&#039;            =&gt; esc_attr__( &#039;Your selection has been reset. Please select some product options before adding this product to your cart.&#039;, &#039;woocommerce&#039; ),
 				);
 				break;
 			case &#039;wc-country-select&#039;:
@@ -813,7 +829,7 @@ WC_Frontend_Scripts::init();
 
     <footer class="phpdocumentor phpdocumentor-footer">
     <div class="phpdocumentor-section">
-        <span>WooCommerce Code Reference API documentation generated by <a href="http://www.phpdoc.org/">phpDocumentor</a> on July 25th, 2024 at 11:33 am.</span>
+        <span>WooCommerce Code Reference API documentation generated by <a href="http://www.phpdoc.org/">phpDocumentor</a> on May 16th, 2025 at 09:14 am.</span>
     </div>
 </footer>
 
@@ -825,7 +841,7 @@ WC_Frontend_Scripts::init();
             'searchIndex': '..\/js\/searchIndex.json'
         };
     </script>
-    <script src="../js/searchIndex.js?updated=1721907182"></script>
-    <script src="../js/search.js?updated=1721907182"></script>
+    <script src="../js/searchIndex.js?updated=1747386858"></script>
+    <script src="../js/search.js?updated=1747386858"></script>
 </body>
 </html>

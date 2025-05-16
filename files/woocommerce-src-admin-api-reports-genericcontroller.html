@@ -4,14 +4,13 @@
     <meta charset="utf-8">
     <title>WooCommerce Code Reference</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="../images/favicon.png" />
-    <link rel="apple-touch-icon" href="../images/apple-touch-icon.png"/>
-    <link rel="apple-touch-icon" sizes="72x72" href="../images/apple-touch-icon-72x72.png"/>
-    <link rel="apple-touch-icon" sizes="114x114" href="../images/apple-touch-icon-114x114.png"/>
+    <link rel="icon" href="../images/favicon-32x32.png" sizes="32x32" />
+    <link rel="icon" href="../images/favicon-192x192.png" sizes="192x192" />
+    <link rel="apple-touch-icon" href="../images/favicon-180x180.png" />
+
     <link rel="stylesheet" href="../css/normalize.css">
-    <link rel="stylesheet" href="../css/base.css?updated=1721907184">
-    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../css/template.css?updated=1721907184">
+    <link rel="stylesheet" href="../css/base.css?updated=1747386861">
+    <link rel="stylesheet" href="../css/template.css?updated=1747386861">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0/css/all.min.css" integrity="sha256-ybRkN9dBjhcS2qrW1z+hfCxq+1aBdwyQM5wlQoQVt/0=" crossorigin="anonymous" />
             <script src="https://cdn.jsdelivr.net/npm/css-vars-ponyfill@2"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0/js/all.min.js" integrity="sha256-0vuk8LXoyrmCjp1f0O300qo1M75ZQyhH9X3J6d+scmk=" crossorigin="anonymous"></script>
@@ -38,14 +37,13 @@
     <header class="phpdocumentor-top-header">
     <section class="phpdocumentor-section">
         <div class="site-branding">
-            <a class="site-logo" href="../index.html"><img width="180" src="../images/logo.svg" alt="WooCommerce" /></a>
+            <a class="site-logo" href="../index.html"><img src="../images/logo.png" alt="WooCommerce" /></a>
         </div>
         <nav class="main-navigation">
             <ul>
                 <li><a href="../hooks/hooks.html">Hooks Reference</a></li>
-                <li><a href="https://docs.woocommerce.com/">Documentation</a></li>
+                <li><a href="https://developer.woocommerce.com/docs/">Documentation</a></li>
                 <li><a href="https://woocommerce.github.io/woocommerce-rest-api-docs/">REST API Docs</a></li>
-                <li><a href="https://woocommerce.com/careers/?utm_source=woocommerce+core+code+reference&utm_medium=devdocs&utm_campaign=woo+careers" target="_blank">We're hiring!</a></li>
             </ul>
         </nav>
     </section>
@@ -53,7 +51,7 @@
 
 <div class="phpdocumentor-header">
     <section class="phpdocumentor-section">
-        <h1 class="phpdocumentor-title">WooCommerce Code Reference</h1>
+        <h1 class="phpdocumentor-title"><a href="../index.html">WooCommerce Code Reference</a></h1>
         <section class="phpdocumentor-search">
     <label class="phpdocumentor-label">
         <span class="visually-hidden">Search (click ESC to close search results)</span>
@@ -74,6 +72,10 @@
                                         <h4 class="phpdocumentor-sidebar__root-namespace"><a href="../namespaces/woocommerce.html"><abbr title="\WooCommerce">WooCommerce</abbr></a></h4>
                 <ul class="phpdocumentor-list">
                                             <li><a href="../namespaces/woocommerce-admin.html"><abbr title="\WooCommerce\Admin">Admin</abbr></a></li>
+                                    </ul>
+                            <h4 class="phpdocumentor-sidebar__root-namespace"><a href="../namespaces/mailpoet.html"><abbr title="\MailPoet">MailPoet</abbr></a></h4>
+                <ul class="phpdocumentor-list">
+                                            <li><a href="../namespaces/mailpoet-emaileditor.html"><abbr title="\MailPoet\EmailEditor">EmailEditor</abbr></a></li>
                                     </ul>
                             <h4 class="phpdocumentor-sidebar__root-namespace"><a href="../namespaces/automattic.html"><abbr title="\Automattic">Automattic</abbr></a></h4>
                 <ul class="phpdocumentor-list">
@@ -119,8 +121,10 @@
                                     <li><a href="../packages/WooCommerce-Widgets.html"><abbr title="\WooCommerce\Widgets">Widgets</abbr></a></li>
                                     <li><a href="../packages/WooCommerce-Uninstaller.html"><abbr title="\WooCommerce\Uninstaller">Uninstaller</abbr></a></li>
                             </ul>
-                                <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/WoocommerceAdmin.html"><abbr title="\WoocommerceAdmin">WoocommerceAdmin</abbr></a></h3>
-                                <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/WoocommerceNavigation.html"><abbr title="\WoocommerceNavigation">WoocommerceNavigation</abbr></a></h3>
+                                <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/MailPoet.html"><abbr title="\MailPoet">MailPoet</abbr></a></h3>
+                        <ul class="phpdocumentor-list">
+                                    <li><a href="../packages/MailPoet-EmailEditor.html"><abbr title="\MailPoet\EmailEditor">EmailEditor</abbr></a></li>
+                            </ul>
                                 <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/Automattic.html"><abbr title="\Automattic">Automattic</abbr></a></h3>
                         <ul class="phpdocumentor-list">
                                     <li><a href="../packages/Automattic-WooCommerce.html"><abbr title="\Automattic\WooCommerce">WooCommerce</abbr></a></li>
@@ -165,10 +169,45 @@ use WP_REST_Request;
 use WP_REST_Response;
 
 /**
- * WC REST API Reports controller extended
- * to be shared as a generic base for all Analytics controllers.
+ * {@see WC_REST_Reports_Controller WC REST API Reports Controller} extended to be shared as a generic base for all Analytics reports controllers.
  *
- * @internal
+ * Handles pagination HTTP headers and links, basic, conventional params.
+ * Does all the REST API plumbing as `WC_REST_Controller`.
+ *
+ *
+ * Minimalistic example:
+ * &lt;pre&gt;&lt;code class=&quot;language-php&quot;&gt;class MyController extends GenericController {
+ *     /** Route of your new REST endpoint. &amp;ast;/
+ *     protected $rest_base = &#039;reports/my-thing&#039;;
+ *     /**
+ *      * Provide JSON schema for the response item.
+ *      * @override WC_REST_Reports_Controller::get_item_schema()
+ *      &amp;ast;/
+ *     public function get_item_schema() {
+ *         $schema = array(
+ *             &#039;$schema&#039;    =&gt; &#039;http://json-schema.org/draft-04/schema#&#039;,
+ *             &#039;title&#039;      =&gt; &#039;report_my_thing&#039;,
+ *             &#039;type&#039;       =&gt; &#039;object&#039;,
+ *             &#039;properties&#039; =&gt; array(
+ *                 &#039;product_id&#039; =&gt; array(
+ *                     &#039;type&#039;        =&gt; &#039;integer&#039;,
+ *                     &#039;readonly&#039;    =&gt; true,
+ *                     &#039;context&#039;     =&gt; array( &#039;view&#039;, &#039;edit&#039; ),
+ *                 &#039;description&#039; =&gt; __( &#039;Product ID.&#039;, &#039;my_extension&#039; ),
+ *                 ),
+ *             ),
+ *         );
+ *         // Add additional fields from `get_additional_fields` method and apply `woocommerce_rest_&#039; . $schema[&#039;title&#039;] . &#039;_schema` filter.
+ *         return $this-&gt;add_additional_fields_schema( $schema );
+ *     }
+ * }
+ * &lt;/code&gt;&lt;/pre&gt;
+ *
+ * The above Controller will get the data from a {@see DataStore data store} registered as `$rest_base` (`reports/my-thing`).
+ * (To change this behavior, override the `get_datastore_data()` method).
+ *
+ * To use the controller, please register it with the filter `woocommerce_admin_rest_controllers` filter.
+ *
  * @extends WC_REST_Reports_Controller
  */
 abstract class GenericController extends \WC_REST_Reports_Controller {
@@ -184,12 +223,12 @@ abstract class GenericController extends \WC_REST_Reports_Controller {
 	/**
 	 * Add pagination headers and links.
 	 *
-	 * @param WP_REST_Request        $request   Request data.
-	 * @param WP_REST_Response|array $response  Response data.
-	 * @param int                    $total     Total results.
-	 * @param int                    $page      Current page.
-	 * @param int                    $max_pages Total amount of pages.
-	 * @return WP_REST_Response
+	 * @param \WP_REST_Request        $request   Request data.
+	 * @param \WP_REST_Response|array $response  Response data.
+	 * @param int                     $total     Total results.
+	 * @param int                     $page      Current page.
+	 * @param int                     $max_pages Total amount of pages.
+	 * @return \WP_REST_Response
 	 */
 	public function add_pagination_headers( $request, $response, int $total, int $page, int $max_pages ) {
 		$response = rest_ensure_response( $response );
@@ -220,7 +259,19 @@ abstract class GenericController extends \WC_REST_Reports_Controller {
 	}
 
 	/**
-	 * Get the query params for collections.
+	 * Get data from `{$this-&gt;rest_base}` store, based on the given query vars.
+	 *
+	 * @throws Exception When the data store is not found {@see WC_Data_Store WC_Data_Store}.
+	 * @param array $query_args Query arguments.
+	 * @return mixed Results from the data store.
+	 */
+	protected function get_datastore_data( $query_args = array() ) {
+		$data_store = \WC_Data_Store::load( $this-&gt;rest_base );
+		return $data_store-&gt;get_data( $query_args );
+	}
+
+	/**
+	 * Get the query params definition for collections.
 	 *
 	 * @return array
 	 */
@@ -282,15 +333,62 @@ abstract class GenericController extends \WC_REST_Reports_Controller {
 		return $params;
 	}
 
+
 	/**
-	 * Prepare a report object for serialization.
+	 * Get the report data.
 	 *
-	 * @param array           $report  Report data.
-	 * @param WP_REST_Request $request Request object.
+	 * Prepares query params, fetches the report data from the data store,
+	 * prepares it for the response, and packs it into the convention-conforming response object.
+	 *
+	 * @throws \WP_Error When the queried data is invalid.
+	 * @param \WP_REST_Request $request Request data.
+	 * @return \WP_Error|\WP_REST_Response
+	 */
+	public function get_items( $request ) {
+		$query_args  = $this-&gt;prepare_reports_query( $request );
+		$report_data = $this-&gt;get_datastore_data( $query_args );
+
+		if ( is_wp_error( $report_data ) ) {
+			return $report_data;
+		}
+
+		if ( ! isset( $report_data-&gt;data ) || ! isset( $report_data-&gt;page_no ) || ! isset( $report_data-&gt;pages ) ) {
+			return new \WP_Error( &#039;woocommerce_rest_reports_invalid_response&#039;, __( &#039;Invalid response from data store.&#039;, &#039;woocommerce&#039; ), array( &#039;status&#039; =&gt; 500 ) );
+		}
+
+		$out_data = array();
+
+		foreach ( $report_data-&gt;data as $datum ) {
+			$item       = $this-&gt;prepare_item_for_response( $datum, $request );
+			$out_data[] = $this-&gt;prepare_response_for_collection( $item );
+		}
+
+		return $this-&gt;add_pagination_headers(
+			$request,
+			$out_data,
+			(int) $report_data-&gt;total,
+			(int) $report_data-&gt;page_no,
+			(int) $report_data-&gt;pages
+		);
+	}
+
+	/**
+	 * Prepare a report data item for serialization.
+	 *
+	 * This method is called by `get_items` to prepare a single report data item for serialization.
+	 * Calls `add_additional_fields_to_object` and `filter_response_by_context`,
+	 * then wpraps the data with `rest_ensure_response`.
+	 *
+	 * You can extend it to add or filter some fields.
+	 *
+	 * @override WP_REST_Posts_Controller::prepare_item_for_response()
+	 *
+	 * @param mixed           $report_item Report data item as returned from Data Store.
+	 * @param WP_REST_Request $request     Request object.
 	 * @return WP_REST_Response
 	 */
-	public function prepare_item_for_response( $report, $request ) {
-		$data = $report;
+	public function prepare_item_for_response( $report_item, $request ) {
+		$data = $report_item;
 
 		$context = ! empty( $request[&#039;context&#039;] ) ? $request[&#039;context&#039;] : &#039;view&#039;;
 		$data    = $this-&gt;add_additional_fields_to_object( $data, $request );
@@ -298,6 +396,55 @@ abstract class GenericController extends \WC_REST_Reports_Controller {
 
 		// Wrap the data in a response object.
 		return rest_ensure_response( $data );
+	}
+
+	/**
+	 * Maps query arguments from the REST request, to be used to query the datastore.
+	 *
+	 * `WP_REST_Request` does not expose a method to return all params covering defaults,
+	 * as it does for `$request[&#039;param&#039;]` accessor.
+	 * Therefore, we re-implement defaults resolution.
+	 *
+	 * @param \WP_REST_Request $request Full request object.
+	 * @return array Simplified array of params.
+	 */
+	protected function prepare_reports_query( $request ) {
+		$args = wp_parse_args(
+			array_intersect_key(
+				$request-&gt;get_query_params(),
+				$this-&gt;get_collection_params()
+			),
+			$request-&gt;get_default_params()
+		);
+
+		return $args;
+	}
+
+	/**
+	 * Apply a filter for custom orderby enum.
+	 *
+	 * @param array $orderby_enum An array of orderby enum options.
+	 *
+	 * @return array An array of filtered orderby enum options.
+	 *
+	 * @since 9.4.0
+	 */
+	protected function apply_custom_orderby_filters( $orderby_enum ) {
+		/**
+		 * Filter orderby query parameter enum.
+		 *
+		 * There was an initial concern about potential SQL injection with the custom orderby.
+		 * However, testing shows it is safely blocked by validation in the controller,
+		 * which results in an &quot;Invalid parameter(s): orderby&quot; error.
+		 *
+		 * Additionally, it&#039;s the responsibility of the merchant/developer to ensure the custom orderby is valid,
+		 * or a WordPress database error will occur for unknown columns.
+		 *
+		 * @since 9.4.0
+		 *
+		 * @param array $orderby_enum The orderby query parameter enum.
+		 */
+		return apply_filters( &quot;woocommerce_analytics_orderby_enum_{$this-&gt;rest_base}&quot;, $orderby_enum );
 	}
 }
 </code></pre>
@@ -310,7 +457,7 @@ abstract class GenericController extends \WC_REST_Reports_Controller {
 
     <footer class="phpdocumentor phpdocumentor-footer">
     <div class="phpdocumentor-section">
-        <span>WooCommerce Code Reference API documentation generated by <a href="http://www.phpdoc.org/">phpDocumentor</a> on July 25th, 2024 at 11:33 am.</span>
+        <span>WooCommerce Code Reference API documentation generated by <a href="http://www.phpdoc.org/">phpDocumentor</a> on May 16th, 2025 at 09:14 am.</span>
     </div>
 </footer>
 
@@ -322,7 +469,7 @@ abstract class GenericController extends \WC_REST_Reports_Controller {
             'searchIndex': '..\/js\/searchIndex.json'
         };
     </script>
-    <script src="../js/searchIndex.js?updated=1721907184"></script>
-    <script src="../js/search.js?updated=1721907184"></script>
+    <script src="../js/searchIndex.js?updated=1747386861"></script>
+    <script src="../js/search.js?updated=1747386861"></script>
 </body>
 </html>

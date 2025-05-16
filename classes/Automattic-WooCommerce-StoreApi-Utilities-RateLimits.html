@@ -4,14 +4,13 @@
     <meta charset="utf-8">
     <title>WooCommerce Code Reference</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="../images/favicon.png" />
-    <link rel="apple-touch-icon" href="../images/apple-touch-icon.png"/>
-    <link rel="apple-touch-icon" sizes="72x72" href="../images/apple-touch-icon-72x72.png"/>
-    <link rel="apple-touch-icon" sizes="114x114" href="../images/apple-touch-icon-114x114.png"/>
+    <link rel="icon" href="../images/favicon-32x32.png" sizes="32x32" />
+    <link rel="icon" href="../images/favicon-192x192.png" sizes="192x192" />
+    <link rel="apple-touch-icon" href="../images/favicon-180x180.png" />
+
     <link rel="stylesheet" href="../css/normalize.css">
-    <link rel="stylesheet" href="../css/base.css?updated=1721907209">
-    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../css/template.css?updated=1721907209">
+    <link rel="stylesheet" href="../css/base.css?updated=1747386891">
+    <link rel="stylesheet" href="../css/template.css?updated=1747386891">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0/css/all.min.css" integrity="sha256-ybRkN9dBjhcS2qrW1z+hfCxq+1aBdwyQM5wlQoQVt/0=" crossorigin="anonymous" />
             <script src="https://cdn.jsdelivr.net/npm/css-vars-ponyfill@2"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0/js/all.min.js" integrity="sha256-0vuk8LXoyrmCjp1f0O300qo1M75ZQyhH9X3J6d+scmk=" crossorigin="anonymous"></script>
@@ -27,19 +26,24 @@
 		'content_group' : 'WooCommerce Core Code Reference',
 	});
 </script>
-        </head>
+        <script src="../js/prism.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            window.dispatchEvent(new HashChangeEvent('hashchange'));
+        });
+    </script>
+</head>
 <body id="top">
     <header class="phpdocumentor-top-header">
     <section class="phpdocumentor-section">
         <div class="site-branding">
-            <a class="site-logo" href="../index.html"><img width="180" src="../images/logo.svg" alt="WooCommerce" /></a>
+            <a class="site-logo" href="../index.html"><img src="../images/logo.png" alt="WooCommerce" /></a>
         </div>
         <nav class="main-navigation">
             <ul>
                 <li><a href="../hooks/hooks.html">Hooks Reference</a></li>
-                <li><a href="https://docs.woocommerce.com/">Documentation</a></li>
+                <li><a href="https://developer.woocommerce.com/docs/">Documentation</a></li>
                 <li><a href="https://woocommerce.github.io/woocommerce-rest-api-docs/">REST API Docs</a></li>
-                <li><a href="https://woocommerce.com/careers/?utm_source=woocommerce+core+code+reference&utm_medium=devdocs&utm_campaign=woo+careers" target="_blank">We're hiring!</a></li>
             </ul>
         </nav>
     </section>
@@ -47,7 +51,7 @@
 
 <div class="phpdocumentor-header">
     <section class="phpdocumentor-section">
-        <h1 class="phpdocumentor-title">WooCommerce Code Reference</h1>
+        <h1 class="phpdocumentor-title"><a href="../index.html">WooCommerce Code Reference</a></h1>
         <section class="phpdocumentor-search">
     <label class="phpdocumentor-label">
         <span class="visually-hidden">Search (click ESC to close search results)</span>
@@ -68,6 +72,10 @@
                                         <h4 class="phpdocumentor-sidebar__root-namespace"><a href="../namespaces/woocommerce.html"><abbr title="\WooCommerce">WooCommerce</abbr></a></h4>
                 <ul class="phpdocumentor-list">
                                             <li><a href="../namespaces/woocommerce-admin.html"><abbr title="\WooCommerce\Admin">Admin</abbr></a></li>
+                                    </ul>
+                            <h4 class="phpdocumentor-sidebar__root-namespace"><a href="../namespaces/mailpoet.html"><abbr title="\MailPoet">MailPoet</abbr></a></h4>
+                <ul class="phpdocumentor-list">
+                                            <li><a href="../namespaces/mailpoet-emaileditor.html"><abbr title="\MailPoet\EmailEditor">EmailEditor</abbr></a></li>
                                     </ul>
                             <h4 class="phpdocumentor-sidebar__root-namespace"><a href="../namespaces/automattic.html"><abbr title="\Automattic">Automattic</abbr></a></h4>
                 <ul class="phpdocumentor-list">
@@ -113,8 +121,10 @@
                                     <li><a href="../packages/WooCommerce-Widgets.html"><abbr title="\WooCommerce\Widgets">Widgets</abbr></a></li>
                                     <li><a href="../packages/WooCommerce-Uninstaller.html"><abbr title="\WooCommerce\Uninstaller">Uninstaller</abbr></a></li>
                             </ul>
-                                <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/WoocommerceAdmin.html"><abbr title="\WoocommerceAdmin">WoocommerceAdmin</abbr></a></h3>
-                                <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/WoocommerceNavigation.html"><abbr title="\WoocommerceNavigation">WoocommerceNavigation</abbr></a></h3>
+                                <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/MailPoet.html"><abbr title="\MailPoet">MailPoet</abbr></a></h3>
+                        <ul class="phpdocumentor-list">
+                                    <li><a href="../packages/MailPoet-EmailEditor.html"><abbr title="\MailPoet\EmailEditor">EmailEditor</abbr></a></li>
+                            </ul>
                                 <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/Automattic.html"><abbr title="\Automattic">Automattic</abbr></a></h3>
                         <ul class="phpdocumentor-list">
                                     <li><a href="../packages/Automattic-WooCommerce.html"><abbr title="\Automattic\WooCommerce">WooCommerce</abbr></a></li>
@@ -300,7 +310,7 @@
             <dt class="phpdocumentor-table-of-contents__entry -method -protected">
     <a href="../classes/Automattic-WooCommerce-StoreApi-Utilities-RateLimits.html#method_get_cached">get_cached()</a>
     <span>
-                        &nbsp;: bool|object    </span>
+                        &nbsp;: false|object    </span>
 </dt>
 <dd>Retrieve a cached store api rate limit.</dd>
 
@@ -516,9 +526,9 @@ a new rate limit row if none exists.</dd>
         <a href="#method_get_option" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/StoreApi/Utilities/RateLimits.php"><a href="../files/woocommerce-src-storeapi-utilities-ratelimits.html#source-view.239">src/StoreApi/Utilities/RateLimits.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/StoreApi/Utilities/RateLimits.php"><a href="../files/woocommerce-src-storeapi-utilities-ratelimits.html#source-view.244">src/StoreApi/Utilities/RateLimits.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">239</span>
+    <span class="phpdocumentor-element-found-in__line">244</span>
 </aside>
 
         <p class="phpdocumentor-summary">Gets a single option through provided name.</p>
@@ -560,9 +570,9 @@ a new rate limit row if none exists.</dd>
         <a href="#method_get_options" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/StoreApi/Utilities/RateLimits.php"><a href="../files/woocommerce-src-storeapi-utilities-ratelimits.html#source-view.194">src/StoreApi/Utilities/RateLimits.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/StoreApi/Utilities/RateLimits.php"><a href="../files/woocommerce-src-storeapi-utilities-ratelimits.html#source-view.199">src/StoreApi/Utilities/RateLimits.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">194</span>
+    <span class="phpdocumentor-element-found-in__line">199</span>
 </aside>
 
         <p class="phpdocumentor-summary">Return options for Rate Limits, to be returned by the &quot;woocommerce_store_api_rate_limit_options&quot; filter.</p>
@@ -592,9 +602,9 @@ a new rate limit row if none exists.</dd>
         <a href="#method_get_rate_limit" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/StoreApi/Utilities/RateLimits.php"><a href="../files/woocommerce-src-storeapi-utilities-ratelimits.html#source-view.100">src/StoreApi/Utilities/RateLimits.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/StoreApi/Utilities/RateLimits.php"><a href="../files/woocommerce-src-storeapi-utilities-ratelimits.html#source-view.104">src/StoreApi/Utilities/RateLimits.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">100</span>
+    <span class="phpdocumentor-element-found-in__line">104</span>
 </aside>
 
         <p class="phpdocumentor-summary">Returns current rate limit values using cache where possible.</p>
@@ -668,9 +678,9 @@ a new rate limit row if none exists.</dd>
         <a href="#method_is_exceeded_retry_after" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/StoreApi/Utilities/RateLimits.php"><a href="../files/woocommerce-src-storeapi-utilities-ratelimits.html#source-view.118">src/StoreApi/Utilities/RateLimits.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/StoreApi/Utilities/RateLimits.php"><a href="../files/woocommerce-src-storeapi-utilities-ratelimits.html#source-view.122">src/StoreApi/Utilities/RateLimits.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">118</span>
+    <span class="phpdocumentor-element-found-in__line">122</span>
 </aside>
 
         <p class="phpdocumentor-summary">If exceeded, seconds until reset.</p>
@@ -854,9 +864,9 @@ a new rate limit row if none exists.</dd>
         <a href="#method_update_rate_limit" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/StoreApi/Utilities/RateLimits.php"><a href="../files/woocommerce-src-storeapi-utilities-ratelimits.html#source-view.136">src/StoreApi/Utilities/RateLimits.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/StoreApi/Utilities/RateLimits.php"><a href="../files/woocommerce-src-storeapi-utilities-ratelimits.html#source-view.141">src/StoreApi/Utilities/RateLimits.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">136</span>
+    <span class="phpdocumentor-element-found-in__line">141</span>
 </aside>
 
         <p class="phpdocumentor-summary">Sets the rate limit delay in seconds for action with identifier $id.</p>
@@ -942,16 +952,16 @@ a new rate limit row if none exists.</dd>
         <a href="#method_get_cached" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/StoreApi/Utilities/RateLimits.php"><a href="../files/woocommerce-src-storeapi-utilities-ratelimits.html#source-view.174">src/StoreApi/Utilities/RateLimits.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/StoreApi/Utilities/RateLimits.php"><a href="../files/woocommerce-src-storeapi-utilities-ratelimits.html#source-view.179">src/StoreApi/Utilities/RateLimits.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">174</span>
+    <span class="phpdocumentor-element-found-in__line">179</span>
 </aside>
 
         <p class="phpdocumentor-summary">Retrieve a cached store api rate limit.</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">protected</span>
-            <span class="phpdocumentor-signature__static">static</span>    <span class="phpdocumentor-signature__name">get_cached</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$action_id</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">bool|object</span></code>
+            <span class="phpdocumentor-signature__static">static</span>    <span class="phpdocumentor-signature__name">get_cached</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$action_id</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">false|object</span></code>
 
         <section class="phpdocumentor-description"></section>
 
@@ -971,7 +981,7 @@ a new rate limit row if none exists.</dd>
     
 
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">bool|object</span>
+    <span class="phpdocumentor-signature__response_type">false|object</span>
             &mdash; <span class="phpdocumentor-return-value__description"></span>
     
 </article>
@@ -986,9 +996,9 @@ a new rate limit row if none exists.</dd>
         <a href="#method_get_rate_limit_row" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/StoreApi/Utilities/RateLimits.php"><a href="../files/woocommerce-src-storeapi-utilities-ratelimits.html#source-view.62">src/StoreApi/Utilities/RateLimits.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/StoreApi/Utilities/RateLimits.php"><a href="../files/woocommerce-src-storeapi-utilities-ratelimits.html#source-view.63">src/StoreApi/Utilities/RateLimits.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">62</span>
+    <span class="phpdocumentor-element-found-in__line">63</span>
 </aside>
 
         <p class="phpdocumentor-summary">Get current rate limit row from DB and normalize types. This query is not cached, and returns
@@ -1031,9 +1041,9 @@ a new rate limit row if none exists.</p>
         <a href="#method_set_cache" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/StoreApi/Utilities/RateLimits.php"><a href="../files/woocommerce-src-storeapi-utilities-ratelimits.html#source-view.185">src/StoreApi/Utilities/RateLimits.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/StoreApi/Utilities/RateLimits.php"><a href="../files/woocommerce-src-storeapi-utilities-ratelimits.html#source-view.190">src/StoreApi/Utilities/RateLimits.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">185</span>
+    <span class="phpdocumentor-element-found-in__line">190</span>
 </aside>
 
         <p class="phpdocumentor-summary">Cache a rate limit.</p>
@@ -1084,7 +1094,7 @@ a new rate limit row if none exists.</p>
 
     <footer class="phpdocumentor phpdocumentor-footer">
     <div class="phpdocumentor-section">
-        <span>WooCommerce Code Reference API documentation generated by <a href="http://www.phpdoc.org/">phpDocumentor</a> on July 25th, 2024 at 11:33 am.</span>
+        <span>WooCommerce Code Reference API documentation generated by <a href="http://www.phpdoc.org/">phpDocumentor</a> on May 16th, 2025 at 09:14 am.</span>
     </div>
 </footer>
 
@@ -1096,7 +1106,7 @@ a new rate limit row if none exists.</p>
             'searchIndex': '..\/js\/searchIndex.json'
         };
     </script>
-    <script src="../js/searchIndex.js?updated=1721907209"></script>
-    <script src="../js/search.js?updated=1721907209"></script>
+    <script src="../js/searchIndex.js?updated=1747386891"></script>
+    <script src="../js/search.js?updated=1747386891"></script>
 </body>
 </html>

@@ -4,14 +4,13 @@
     <meta charset="utf-8">
     <title>WooCommerce Code Reference</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="../images/favicon.png" />
-    <link rel="apple-touch-icon" href="../images/apple-touch-icon.png"/>
-    <link rel="apple-touch-icon" sizes="72x72" href="../images/apple-touch-icon-72x72.png"/>
-    <link rel="apple-touch-icon" sizes="114x114" href="../images/apple-touch-icon-114x114.png"/>
+    <link rel="icon" href="../images/favicon-32x32.png" sizes="32x32" />
+    <link rel="icon" href="../images/favicon-192x192.png" sizes="192x192" />
+    <link rel="apple-touch-icon" href="../images/favicon-180x180.png" />
+
     <link rel="stylesheet" href="../css/normalize.css">
-    <link rel="stylesheet" href="../css/base.css?updated=1721907186">
-    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../css/template.css?updated=1721907186">
+    <link rel="stylesheet" href="../css/base.css?updated=1747386863">
+    <link rel="stylesheet" href="../css/template.css?updated=1747386863">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0/css/all.min.css" integrity="sha256-ybRkN9dBjhcS2qrW1z+hfCxq+1aBdwyQM5wlQoQVt/0=" crossorigin="anonymous" />
             <script src="https://cdn.jsdelivr.net/npm/css-vars-ponyfill@2"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0/js/all.min.js" integrity="sha256-0vuk8LXoyrmCjp1f0O300qo1M75ZQyhH9X3J6d+scmk=" crossorigin="anonymous"></script>
@@ -38,14 +37,13 @@
     <header class="phpdocumentor-top-header">
     <section class="phpdocumentor-section">
         <div class="site-branding">
-            <a class="site-logo" href="../index.html"><img width="180" src="../images/logo.svg" alt="WooCommerce" /></a>
+            <a class="site-logo" href="../index.html"><img src="../images/logo.png" alt="WooCommerce" /></a>
         </div>
         <nav class="main-navigation">
             <ul>
                 <li><a href="../hooks/hooks.html">Hooks Reference</a></li>
-                <li><a href="https://docs.woocommerce.com/">Documentation</a></li>
+                <li><a href="https://developer.woocommerce.com/docs/">Documentation</a></li>
                 <li><a href="https://woocommerce.github.io/woocommerce-rest-api-docs/">REST API Docs</a></li>
-                <li><a href="https://woocommerce.com/careers/?utm_source=woocommerce+core+code+reference&utm_medium=devdocs&utm_campaign=woo+careers" target="_blank">We're hiring!</a></li>
             </ul>
         </nav>
     </section>
@@ -53,7 +51,7 @@
 
 <div class="phpdocumentor-header">
     <section class="phpdocumentor-section">
-        <h1 class="phpdocumentor-title">WooCommerce Code Reference</h1>
+        <h1 class="phpdocumentor-title"><a href="../index.html">WooCommerce Code Reference</a></h1>
         <section class="phpdocumentor-search">
     <label class="phpdocumentor-label">
         <span class="visually-hidden">Search (click ESC to close search results)</span>
@@ -74,6 +72,10 @@
                                         <h4 class="phpdocumentor-sidebar__root-namespace"><a href="../namespaces/woocommerce.html"><abbr title="\WooCommerce">WooCommerce</abbr></a></h4>
                 <ul class="phpdocumentor-list">
                                             <li><a href="../namespaces/woocommerce-admin.html"><abbr title="\WooCommerce\Admin">Admin</abbr></a></li>
+                                    </ul>
+                            <h4 class="phpdocumentor-sidebar__root-namespace"><a href="../namespaces/mailpoet.html"><abbr title="\MailPoet">MailPoet</abbr></a></h4>
+                <ul class="phpdocumentor-list">
+                                            <li><a href="../namespaces/mailpoet-emaileditor.html"><abbr title="\MailPoet\EmailEditor">EmailEditor</abbr></a></li>
                                     </ul>
                             <h4 class="phpdocumentor-sidebar__root-namespace"><a href="../namespaces/automattic.html"><abbr title="\Automattic">Automattic</abbr></a></h4>
                 <ul class="phpdocumentor-list">
@@ -119,8 +121,10 @@
                                     <li><a href="../packages/WooCommerce-Widgets.html"><abbr title="\WooCommerce\Widgets">Widgets</abbr></a></li>
                                     <li><a href="../packages/WooCommerce-Uninstaller.html"><abbr title="\WooCommerce\Uninstaller">Uninstaller</abbr></a></li>
                             </ul>
-                                <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/WoocommerceAdmin.html"><abbr title="\WoocommerceAdmin">WoocommerceAdmin</abbr></a></h3>
-                                <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/WoocommerceNavigation.html"><abbr title="\WoocommerceNavigation">WoocommerceNavigation</abbr></a></h3>
+                                <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/MailPoet.html"><abbr title="\MailPoet">MailPoet</abbr></a></h3>
+                        <ul class="phpdocumentor-list">
+                                    <li><a href="../packages/MailPoet-EmailEditor.html"><abbr title="\MailPoet\EmailEditor">EmailEditor</abbr></a></li>
+                            </ul>
                                 <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/Automattic.html"><abbr title="\Automattic">Automattic</abbr></a></h3>
                         <ul class="phpdocumentor-list">
                                     <li><a href="../packages/Automattic-WooCommerce.html"><abbr title="\Automattic\WooCommerce">WooCommerce</abbr></a></li>
@@ -159,9 +163,12 @@
             <pre id="source-view" tabindex="-1" class="language-php line-numbers linkable-line-numbers"><code>&lt;?php
 namespace Automattic\WooCommerce\StoreApi\Schemas\V1;
 
+use Automattic\WooCommerce\Enums\ProductType;
 use Automattic\WooCommerce\StoreApi\SchemaController;
 use Automattic\WooCommerce\StoreApi\Schemas\ExtendSchema;
 use Automattic\WooCommerce\StoreApi\Utilities\QuantityLimits;
+use Automattic\WooCommerce\Blocks\Utils\ProductAvailabilityUtils;
+use Automattic\WooCommerce\Enums\ProductStockStatus;
 
 /**
  * ProductSchema class.
@@ -403,7 +410,41 @@ class ProductSchema extends AbstractSchema {
 							&#039;readonly&#039;    =&gt; true,
 						],
 						&#039;link&#039; =&gt; [
-							&#039;description&#039; =&gt; __( &#039;Tag link&#039;, &#039;woocommerce&#039; ),
+							&#039;description&#039; =&gt; __( &#039;Tag link.&#039;, &#039;woocommerce&#039; ),
+							&#039;type&#039;        =&gt; &#039;string&#039;,
+							&#039;context&#039;     =&gt; [ &#039;view&#039;, &#039;edit&#039; ],
+							&#039;readonly&#039;    =&gt; true,
+						],
+					],
+				],
+			],
+			&#039;brands&#039;              =&gt; [
+				&#039;description&#039; =&gt; __( &#039;List of brands, if applicable.&#039;, &#039;woocommerce&#039; ),
+				&#039;type&#039;        =&gt; &#039;array&#039;,
+				&#039;context&#039;     =&gt; [ &#039;view&#039;, &#039;edit&#039; ],
+				&#039;items&#039;       =&gt; [
+					&#039;type&#039;       =&gt; &#039;object&#039;,
+					&#039;properties&#039; =&gt; [
+						&#039;id&#039;   =&gt; [
+							&#039;description&#039; =&gt; __( &#039;Brand ID&#039;, &#039;woocommerce&#039; ),
+							&#039;type&#039;        =&gt; &#039;number&#039;,
+							&#039;context&#039;     =&gt; [ &#039;view&#039;, &#039;edit&#039; ],
+							&#039;readonly&#039;    =&gt; true,
+						],
+						&#039;name&#039; =&gt; [
+							&#039;description&#039; =&gt; __( &#039;Brand name&#039;, &#039;woocommerce&#039; ),
+							&#039;type&#039;        =&gt; &#039;string&#039;,
+							&#039;context&#039;     =&gt; [ &#039;view&#039;, &#039;edit&#039; ],
+							&#039;readonly&#039;    =&gt; true,
+						],
+						&#039;slug&#039; =&gt; [
+							&#039;description&#039; =&gt; __( &#039;Brand slug&#039;, &#039;woocommerce&#039; ),
+							&#039;type&#039;        =&gt; &#039;string&#039;,
+							&#039;context&#039;     =&gt; [ &#039;view&#039;, &#039;edit&#039; ],
+							&#039;readonly&#039;    =&gt; true,
+						],
+						&#039;link&#039; =&gt; [
+							&#039;description&#039; =&gt; __( &#039;Brand link&#039;, &#039;woocommerce&#039; ),
 							&#039;type&#039;        =&gt; &#039;string&#039;,
 							&#039;context&#039;     =&gt; [ &#039;view&#039;, &#039;edit&#039; ],
 							&#039;readonly&#039;    =&gt; true,
@@ -517,6 +558,17 @@ class ProductSchema extends AbstractSchema {
 					],
 				],
 			],
+			&#039;grouped_products&#039;    =&gt; [
+				&#039;description&#039; =&gt; __( &#039;List of grouped product IDs, if applicable.&#039;, &#039;woocommerce&#039; ),
+				&#039;type&#039;        =&gt; &#039;array&#039;,
+				&#039;context&#039;     =&gt; [ &#039;view&#039;, &#039;edit&#039; ],
+				&#039;items&#039;       =&gt; [
+					&#039;description&#039; =&gt; __( &#039;List of grouped product ids.&#039;, &#039;woocommerce&#039; ),
+					&#039;type&#039;        =&gt; &#039;integer&#039;,
+					&#039;context&#039;     =&gt; [ &#039;view&#039;, &#039;edit&#039; ],
+					&#039;readonly&#039;    =&gt; true,
+				],
+			],
 			&#039;has_options&#039;         =&gt; [
 				&#039;description&#039; =&gt; __( &#039;Does the product have additional options before it can be added to the cart?&#039;, &#039;woocommerce&#039; ),
 				&#039;type&#039;        =&gt; &#039;boolean&#039;,
@@ -540,6 +592,26 @@ class ProductSchema extends AbstractSchema {
 				&#039;type&#039;        =&gt; &#039;boolean&#039;,
 				&#039;context&#039;     =&gt; [ &#039;view&#039;, &#039;edit&#039; ],
 				&#039;readonly&#039;    =&gt; true,
+			],
+			&#039;stock_availability&#039;  =&gt; [
+				&#039;description&#039; =&gt; __( &#039;Information about the product\&#039;s availability.&#039;, &#039;woocommerce&#039; ),
+				&#039;type&#039;        =&gt; &#039;object&#039;,
+				&#039;context&#039;     =&gt; [ &#039;view&#039;, &#039;edit&#039; ],
+				&#039;readonly&#039;    =&gt; true,
+				&#039;properties&#039;  =&gt; [
+					&#039;text&#039;  =&gt; [
+						&#039;description&#039; =&gt; __( &#039;Stock availability text.&#039;, &#039;woocommerce&#039; ),
+						&#039;type&#039;        =&gt; &#039;string&#039;,
+						&#039;context&#039;     =&gt; [ &#039;view&#039;, &#039;edit&#039; ],
+						&#039;readonly&#039;    =&gt; true,
+					],
+					&#039;class&#039; =&gt; [
+						&#039;description&#039; =&gt; __( &#039;Stock availability class.&#039;, &#039;woocommerce&#039; ),
+						&#039;type&#039;        =&gt; &#039;string&#039;,
+						&#039;context&#039;     =&gt; [ &#039;view&#039;, &#039;edit&#039; ],
+						&#039;readonly&#039;    =&gt; true,
+					],
+				],
 			],
 			&#039;low_stock_remaining&#039; =&gt; [
 				&#039;description&#039; =&gt; __( &#039;Quantity left in stock if stock is low, or null if not applicable.&#039;, &#039;woocommerce&#039; ),
@@ -609,13 +681,14 @@ class ProductSchema extends AbstractSchema {
 	 * @return array
 	 */
 	public function get_item_response( $product ) {
+		$availability = ProductAvailabilityUtils::get_product_availability( $product );
 		return [
 			&#039;id&#039;                  =&gt; $product-&gt;get_id(),
 			&#039;name&#039;                =&gt; $this-&gt;prepare_html_response( $product-&gt;get_title() ),
 			&#039;slug&#039;                =&gt; $product-&gt;get_slug(),
 			&#039;parent&#039;              =&gt; $product-&gt;get_parent_id(),
 			&#039;type&#039;                =&gt; $product-&gt;get_type(),
-			&#039;variation&#039;           =&gt; $this-&gt;prepare_html_response( $product-&gt;is_type( &#039;variation&#039; ) ? wc_get_formatted_variation( $product, true, true, false ) : &#039;&#039; ),
+			&#039;variation&#039;           =&gt; $this-&gt;prepare_html_response( $product-&gt;is_type( ProductType::VARIATION ) ? wc_get_formatted_variation( $product, true, true, false ) : &#039;&#039; ),
 			&#039;permalink&#039;           =&gt; $product-&gt;get_permalink(),
 			&#039;sku&#039;                 =&gt; $this-&gt;prepare_html_response( $product-&gt;get_sku() ),
 			&#039;short_description&#039;   =&gt; $this-&gt;prepare_html_response( wc_format_content( wp_kses_post( $product-&gt;get_short_description() ) ) ),
@@ -628,13 +701,19 @@ class ProductSchema extends AbstractSchema {
 			&#039;images&#039;              =&gt; $this-&gt;get_images( $product ),
 			&#039;categories&#039;          =&gt; $this-&gt;get_term_list( $product, &#039;product_cat&#039; ),
 			&#039;tags&#039;                =&gt; $this-&gt;get_term_list( $product, &#039;product_tag&#039; ),
+			&#039;brands&#039;              =&gt; $this-&gt;get_term_list( $product, &#039;product_brand&#039; ),
 			&#039;attributes&#039;          =&gt; $this-&gt;get_attributes( $product ),
 			&#039;variations&#039;          =&gt; $this-&gt;get_variations( $product ),
+			&#039;grouped_products&#039;    =&gt; $this-&gt;get_grouped_products( $product ),
 			&#039;has_options&#039;         =&gt; $product-&gt;has_options(),
 			&#039;is_purchasable&#039;      =&gt; $product-&gt;is_purchasable(),
 			&#039;is_in_stock&#039;         =&gt; $product-&gt;is_in_stock(),
-			&#039;is_on_backorder&#039;     =&gt; &#039;onbackorder&#039; === $product-&gt;get_stock_status(),
+			&#039;is_on_backorder&#039;     =&gt; ProductStockStatus::ON_BACKORDER === $product-&gt;get_stock_status(),
 			&#039;low_stock_remaining&#039; =&gt; $this-&gt;get_low_stock_remaining( $product ),
+			&#039;stock_availability&#039;  =&gt; (object) array(
+				&#039;text&#039;  =&gt; $availability[&#039;availability&#039;] ?? &#039;&#039;,
+				&#039;class&#039; =&gt; $availability[&#039;class&#039;] ?? &#039;&#039;,
+			),
 			&#039;sold_individually&#039;   =&gt; $product-&gt;is_sold_individually(),
 			&#039;add_to_cart&#039;         =&gt; (object) array_merge(
 				[
@@ -724,7 +803,7 @@ class ProductSchema extends AbstractSchema {
 	 * @returns array
 	 */
 	protected function get_variations( \WC_Product $product ) {
-		$variation_ids = $product-&gt;is_type( &#039;variable&#039; ) ? $product-&gt;get_visible_children() : [];
+		$variation_ids = $product-&gt;is_type( ProductType::VARIABLE ) ? $product-&gt;get_visible_children() : [];
 
 		if ( ! count( $variation_ids ) ) {
 			return [];
@@ -736,7 +815,7 @@ class ProductSchema extends AbstractSchema {
 		$attributes                  = array_filter( $product-&gt;get_attributes(), [ $this, &#039;filter_variation_attribute&#039; ] );
 		$default_variation_meta_data = array_reduce(
 			$attributes,
-			function( $defaults, $attribute ) use ( $product ) {
+			function ( $defaults, $attribute ) use ( $product ) {
 				$meta_key              = wc_variation_attribute_name( $attribute-&gt;get_name() );
 				$defaults[ $meta_key ] = [
 					&#039;name&#039;  =&gt; wc_attribute_label( $attribute-&gt;get_name(), $product ),
@@ -785,7 +864,7 @@ class ProductSchema extends AbstractSchema {
 		 */
 		$attributes_by_variation = array_reduce(
 			$variation_meta_data,
-			function( $values, $data ) use ( $default_variation_meta_keys ) {
+			function ( $values, $data ) use ( $default_variation_meta_keys ) {
 				// The query above only includes the keys of $default_variation_meta_data so we know all of the attributes
 				// being processed here apply to this product. However, we need an additional check here because the
 				// cache may have been primed elsewhere and include keys from other products.
@@ -816,6 +895,24 @@ class ProductSchema extends AbstractSchema {
 		}
 
 		return $variations;
+	}
+
+	/**
+	 * Get grouped product IDs.
+	 *
+	 * @param \WC_Product $product Product instance.
+	 * @return array
+	 */
+	protected function get_grouped_products( \WC_Product $product ) {
+		if ( $product-&gt;is_type( ProductType::GROUPED ) ) {
+			return array_map(
+				function ( $child ) {
+					return $child-&gt;get_id();
+				},
+				$product-&gt;get_visible_children(),
+			);
+		}
+		return [];
 	}
 
 	/**
@@ -898,7 +995,7 @@ class ProductSchema extends AbstractSchema {
 		$price_function   = $this-&gt;get_price_function_from_tax_display_mode( $tax_display_mode );
 
 		// If we have a variable product, get the price from the variations (this will use the min value).
-		if ( $product-&gt;is_type( &#039;variable&#039; ) ) {
+		if ( $product-&gt;is_type( ProductType::VARIABLE ) ) {
 			$regular_price = $product-&gt;get_variation_regular_price();
 			$sale_price    = $product-&gt;get_variation_sale_price();
 		} else {
@@ -944,7 +1041,7 @@ class ProductSchema extends AbstractSchema {
 	protected function get_price_range( \WC_Product $product, $tax_display_mode = &#039;&#039; ) {
 		$tax_display_mode = $this-&gt;get_tax_display_mode( $tax_display_mode );
 
-		if ( $product-&gt;is_type( &#039;variable&#039; ) ) {
+		if ( $product-&gt;is_type( ProductType::VARIABLE ) ) {
 			$prices = $product-&gt;get_variation_prices( true );
 
 			if ( ! empty( $prices[&#039;price&#039;] ) &amp;&amp; ( min( $prices[&#039;price&#039;] ) !== max( $prices[&#039;price&#039;] ) ) ) {
@@ -955,8 +1052,8 @@ class ProductSchema extends AbstractSchema {
 			}
 		}
 
-		if ( $product-&gt;is_type( &#039;grouped&#039; ) ) {
-			$children       = array_filter( array_map( &#039;wc_get_product&#039;, $product-&gt;get_children() ), &#039;wc_products_array_filter_visible_grouped&#039; );
+		if ( $product-&gt;is_type( ProductType::GROUPED ) ) {
+			$children       = $product-&gt;get_visible_children();
 			$price_function = &#039;incl&#039; === $tax_display_mode ? &#039;wc_get_price_including_tax&#039; : &#039;wc_get_price_excluding_tax&#039;;
 
 			foreach ( $children as $child ) {
@@ -1029,7 +1126,7 @@ class ProductSchema extends AbstractSchema {
 
     <footer class="phpdocumentor phpdocumentor-footer">
     <div class="phpdocumentor-section">
-        <span>WooCommerce Code Reference API documentation generated by <a href="http://www.phpdoc.org/">phpDocumentor</a> on July 25th, 2024 at 11:33 am.</span>
+        <span>WooCommerce Code Reference API documentation generated by <a href="http://www.phpdoc.org/">phpDocumentor</a> on May 16th, 2025 at 09:14 am.</span>
     </div>
 </footer>
 
@@ -1041,7 +1138,7 @@ class ProductSchema extends AbstractSchema {
             'searchIndex': '..\/js\/searchIndex.json'
         };
     </script>
-    <script src="../js/searchIndex.js?updated=1721907186"></script>
-    <script src="../js/search.js?updated=1721907186"></script>
+    <script src="../js/searchIndex.js?updated=1747386863"></script>
+    <script src="../js/search.js?updated=1747386863"></script>
 </body>
 </html>

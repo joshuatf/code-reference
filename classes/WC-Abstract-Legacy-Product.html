@@ -4,14 +4,13 @@
     <meta charset="utf-8">
     <title>WooCommerce Code Reference</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="../images/favicon.png" />
-    <link rel="apple-touch-icon" href="../images/apple-touch-icon.png"/>
-    <link rel="apple-touch-icon" sizes="72x72" href="../images/apple-touch-icon-72x72.png"/>
-    <link rel="apple-touch-icon" sizes="114x114" href="../images/apple-touch-icon-114x114.png"/>
+    <link rel="icon" href="../images/favicon-32x32.png" sizes="32x32" />
+    <link rel="icon" href="../images/favicon-192x192.png" sizes="192x192" />
+    <link rel="apple-touch-icon" href="../images/favicon-180x180.png" />
+
     <link rel="stylesheet" href="../css/normalize.css">
-    <link rel="stylesheet" href="../css/base.css?updated=1721907196">
-    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../css/template.css?updated=1721907196">
+    <link rel="stylesheet" href="../css/base.css?updated=1747386874">
+    <link rel="stylesheet" href="../css/template.css?updated=1747386874">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0/css/all.min.css" integrity="sha256-ybRkN9dBjhcS2qrW1z+hfCxq+1aBdwyQM5wlQoQVt/0=" crossorigin="anonymous" />
             <script src="https://cdn.jsdelivr.net/npm/css-vars-ponyfill@2"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0/js/all.min.js" integrity="sha256-0vuk8LXoyrmCjp1f0O300qo1M75ZQyhH9X3J6d+scmk=" crossorigin="anonymous"></script>
@@ -27,19 +26,24 @@
 		'content_group' : 'WooCommerce Core Code Reference',
 	});
 </script>
-        </head>
+        <script src="../js/prism.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            window.dispatchEvent(new HashChangeEvent('hashchange'));
+        });
+    </script>
+</head>
 <body id="top">
     <header class="phpdocumentor-top-header">
     <section class="phpdocumentor-section">
         <div class="site-branding">
-            <a class="site-logo" href="../index.html"><img width="180" src="../images/logo.svg" alt="WooCommerce" /></a>
+            <a class="site-logo" href="../index.html"><img src="../images/logo.png" alt="WooCommerce" /></a>
         </div>
         <nav class="main-navigation">
             <ul>
                 <li><a href="../hooks/hooks.html">Hooks Reference</a></li>
-                <li><a href="https://docs.woocommerce.com/">Documentation</a></li>
+                <li><a href="https://developer.woocommerce.com/docs/">Documentation</a></li>
                 <li><a href="https://woocommerce.github.io/woocommerce-rest-api-docs/">REST API Docs</a></li>
-                <li><a href="https://woocommerce.com/careers/?utm_source=woocommerce+core+code+reference&utm_medium=devdocs&utm_campaign=woo+careers" target="_blank">We're hiring!</a></li>
             </ul>
         </nav>
     </section>
@@ -47,7 +51,7 @@
 
 <div class="phpdocumentor-header">
     <section class="phpdocumentor-section">
-        <h1 class="phpdocumentor-title">WooCommerce Code Reference</h1>
+        <h1 class="phpdocumentor-title"><a href="../index.html">WooCommerce Code Reference</a></h1>
         <section class="phpdocumentor-search">
     <label class="phpdocumentor-label">
         <span class="visually-hidden">Search (click ESC to close search results)</span>
@@ -68,6 +72,10 @@
                                         <h4 class="phpdocumentor-sidebar__root-namespace"><a href="../namespaces/woocommerce.html"><abbr title="\WooCommerce">WooCommerce</abbr></a></h4>
                 <ul class="phpdocumentor-list">
                                             <li><a href="../namespaces/woocommerce-admin.html"><abbr title="\WooCommerce\Admin">Admin</abbr></a></li>
+                                    </ul>
+                            <h4 class="phpdocumentor-sidebar__root-namespace"><a href="../namespaces/mailpoet.html"><abbr title="\MailPoet">MailPoet</abbr></a></h4>
+                <ul class="phpdocumentor-list">
+                                            <li><a href="../namespaces/mailpoet-emaileditor.html"><abbr title="\MailPoet\EmailEditor">EmailEditor</abbr></a></li>
                                     </ul>
                             <h4 class="phpdocumentor-sidebar__root-namespace"><a href="../namespaces/automattic.html"><abbr title="\Automattic">Automattic</abbr></a></h4>
                 <ul class="phpdocumentor-list">
@@ -113,8 +121,10 @@
                                     <li><a href="../packages/WooCommerce-Widgets.html"><abbr title="\WooCommerce\Widgets">Widgets</abbr></a></li>
                                     <li><a href="../packages/WooCommerce-Uninstaller.html"><abbr title="\WooCommerce\Uninstaller">Uninstaller</abbr></a></li>
                             </ul>
-                                <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/WoocommerceAdmin.html"><abbr title="\WoocommerceAdmin">WoocommerceAdmin</abbr></a></h3>
-                                <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/WoocommerceNavigation.html"><abbr title="\WoocommerceNavigation">WoocommerceNavigation</abbr></a></h3>
+                                <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/MailPoet.html"><abbr title="\MailPoet">MailPoet</abbr></a></h3>
+                        <ul class="phpdocumentor-list">
+                                    <li><a href="../packages/MailPoet-EmailEditor.html"><abbr title="\MailPoet\EmailEditor">EmailEditor</abbr></a></li>
+                            </ul>
                                 <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/Automattic.html"><abbr title="\Automattic">Automattic</abbr></a></h3>
                         <ul class="phpdocumentor-list">
                                     <li><a href="../packages/Automattic-WooCommerce.html"><abbr title="\Automattic\WooCommerce">WooCommerce</abbr></a></li>
@@ -160,9 +170,9 @@
     </h2>
 
         <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/legacy/abstract-wc-legacy-product.php"><a href="../files/woocommerce-includes-legacy-abstract-wc-legacy-product.html#source-view.18">includes/legacy/abstract-wc-legacy-product.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/legacy/abstract-wc-legacy-product.php"><a href="../files/woocommerce-includes-legacy-abstract-wc-legacy-product.html#source-view.21">includes/legacy/abstract-wc-legacy-product.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">18</span>
+    <span class="phpdocumentor-element-found-in__line">21</span>
 </aside>
 
             <p class="phpdocumentor-summary">Legacy Abstract Product</p>
@@ -1491,9 +1501,9 @@ ull</span></code>
         <a href="#method___get" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/legacy/abstract-wc-legacy-product.php"><a href="../files/woocommerce-includes-legacy-abstract-wc-legacy-product.html#source-view.66">includes/legacy/abstract-wc-legacy-product.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/legacy/abstract-wc-legacy-product.php"><a href="../files/woocommerce-includes-legacy-abstract-wc-legacy-product.html#source-view.69">includes/legacy/abstract-wc-legacy-product.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">66</span>
+    <span class="phpdocumentor-element-found-in__line">69</span>
 </aside>
 
         <p class="phpdocumentor-summary">Magic __get method for backwards compatibility. Maps legacy vars to new getters.</p>
@@ -1535,9 +1545,9 @@ ull</span></code>
         <a href="#method___isset" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/legacy/abstract-wc-legacy-product.php"><a href="../files/woocommerce-includes-legacy-abstract-wc-legacy-product.html#source-view.26">includes/legacy/abstract-wc-legacy-product.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/legacy/abstract-wc-legacy-product.php"><a href="../files/woocommerce-includes-legacy-abstract-wc-legacy-product.html#source-view.29">includes/legacy/abstract-wc-legacy-product.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">26</span>
+    <span class="phpdocumentor-element-found-in__line">29</span>
 </aside>
 
         <p class="phpdocumentor-summary">Magic __isset method for backwards compatibility. Legacy properties which could be accessed directly in the past.</p>
@@ -1766,9 +1776,9 @@ ull</span></code>
         <a href="#method_adjust_price" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/legacy/abstract-wc-legacy-product.php"><a href="../files/woocommerce-includes-legacy-abstract-wc-legacy-product.html#source-view.358">includes/legacy/abstract-wc-legacy-product.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/legacy/abstract-wc-legacy-product.php"><a href="../files/woocommerce-includes-legacy-abstract-wc-legacy-product.html#source-view.361">includes/legacy/abstract-wc-legacy-product.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">358</span>
+    <span class="phpdocumentor-element-found-in__line">361</span>
 </aside>
 
         <p class="phpdocumentor-summary">Adjust a products price dynamically.</p>
@@ -1823,9 +1833,9 @@ ull</span></code>
         <a href="#method_apply_changes" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-data.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-data.html#source-view.851">includes/abstracts/abstract-wc-data.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-data.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-data.html#source-view.849">includes/abstracts/abstract-wc-data.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">851</span>
+    <span class="phpdocumentor-element-found-in__line">849</span>
 </aside>
 
         <p class="phpdocumentor-summary">Merge changes with data and clear.</p>
@@ -1869,9 +1879,9 @@ ull</span></code>
         <a href="#method_check_stock_status" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/legacy/abstract-wc-legacy-product.php"><a href="../files/woocommerce-includes-legacy-abstract-wc-legacy-product.html#source-view.223">includes/legacy/abstract-wc-legacy-product.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/legacy/abstract-wc-legacy-product.php"><a href="../files/woocommerce-includes-legacy-abstract-wc-legacy-product.html#source-view.226">includes/legacy/abstract-wc-legacy-product.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">223</span>
+    <span class="phpdocumentor-element-found-in__line">226</span>
 </aside>
 
         <p class="phpdocumentor-summary">Check if the stock status needs changing.</p>
@@ -2157,9 +2167,9 @@ ull</span></code>
         <a href="#method_enable_dimensions_display" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/legacy/abstract-wc-legacy-product.php"><a href="../files/woocommerce-includes-legacy-abstract-wc-legacy-product.html#source-view.631">includes/legacy/abstract-wc-legacy-product.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/legacy/abstract-wc-legacy-product.php"><a href="../files/woocommerce-includes-legacy-abstract-wc-legacy-product.html#source-view.634">includes/legacy/abstract-wc-legacy-product.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">631</span>
+    <span class="phpdocumentor-element-found-in__line">634</span>
 </aside>
 
         <p class="phpdocumentor-summary">Returns whether or not we are showing dimensions on the product page.</p>
@@ -2271,9 +2281,9 @@ ull</span></code>
         <a href="#method_get_categories" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/legacy/abstract-wc-legacy-product.php"><a href="../files/woocommerce-includes-legacy-abstract-wc-legacy-product.html#source-view.372">includes/legacy/abstract-wc-legacy-product.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/legacy/abstract-wc-legacy-product.php"><a href="../files/woocommerce-includes-legacy-abstract-wc-legacy-product.html#source-view.375">includes/legacy/abstract-wc-legacy-product.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">372</span>
+    <span class="phpdocumentor-element-found-in__line">375</span>
 </aside>
 
         <p class="phpdocumentor-summary">Returns the product categories.</p>
@@ -2347,9 +2357,9 @@ ull</span></code>
         <a href="#method_get_changes" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-data.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-data.html#source-view.842">includes/abstracts/abstract-wc-data.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-data.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-data.html#source-view.840">includes/abstracts/abstract-wc-data.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">842</span>
+    <span class="phpdocumentor-element-found-in__line">840</span>
 </aside>
 
         <p class="phpdocumentor-summary">Return data changes only.</p>
@@ -2393,9 +2403,9 @@ ull</span></code>
         <a href="#method_get_child" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/legacy/abstract-wc-legacy-product.php"><a href="../files/woocommerce-includes-legacy-abstract-wc-legacy-product.html#source-view.274">includes/legacy/abstract-wc-legacy-product.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/legacy/abstract-wc-legacy-product.php"><a href="../files/woocommerce-includes-legacy-abstract-wc-legacy-product.html#source-view.277">includes/legacy/abstract-wc-legacy-product.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">274</span>
+    <span class="phpdocumentor-element-found-in__line">277</span>
 </aside>
 
         <p class="phpdocumentor-summary">Returns the child product.</p>
@@ -2451,9 +2461,9 @@ ull</span></code>
         <a href="#method_get_cross_sells" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/legacy/abstract-wc-legacy-product.php"><a href="../files/woocommerce-includes-legacy-abstract-wc-legacy-product.html#source-view.438">includes/legacy/abstract-wc-legacy-product.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/legacy/abstract-wc-legacy-product.php"><a href="../files/woocommerce-includes-legacy-abstract-wc-legacy-product.html#source-view.441">includes/legacy/abstract-wc-legacy-product.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">438</span>
+    <span class="phpdocumentor-element-found-in__line">441</span>
 </aside>
 
         <p class="phpdocumentor-summary">Returns the cross sell product ids.</p>
@@ -2635,9 +2645,9 @@ ull</span></code>
         <a href="#method_get_display_price" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/legacy/abstract-wc-legacy-product.php"><a href="../files/woocommerce-includes-legacy-abstract-wc-legacy-product.html#source-view.333">includes/legacy/abstract-wc-legacy-product.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/legacy/abstract-wc-legacy-product.php"><a href="../files/woocommerce-includes-legacy-abstract-wc-legacy-product.html#source-view.336">includes/legacy/abstract-wc-legacy-product.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">333</span>
+    <span class="phpdocumentor-element-found-in__line">336</span>
 </aside>
 
         <p class="phpdocumentor-summary">Returns the price including or excluding tax, based on the &#039;woocommerce_tax_display_shop&#039; setting.</p>
@@ -2749,9 +2759,9 @@ ull</span></code>
         <a href="#method_get_files" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/legacy/abstract-wc-legacy-product.php"><a href="../files/woocommerce-includes-legacy-abstract-wc-legacy-product.html#source-view.681">includes/legacy/abstract-wc-legacy-product.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/legacy/abstract-wc-legacy-product.php"><a href="../files/woocommerce-includes-legacy-abstract-wc-legacy-product.html#source-view.684">includes/legacy/abstract-wc-legacy-product.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">681</span>
+    <span class="phpdocumentor-element-found-in__line">684</span>
 </aside>
 
         <p class="phpdocumentor-summary">Same as get_downloads in CRUD.</p>
@@ -2795,9 +2805,9 @@ ull</span></code>
         <a href="#method_get_formatted_variation_attributes" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/legacy/abstract-wc-legacy-product.php"><a href="../files/woocommerce-includes-legacy-abstract-wc-legacy-product.html#source-view.542">includes/legacy/abstract-wc-legacy-product.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/legacy/abstract-wc-legacy-product.php"><a href="../files/woocommerce-includes-legacy-abstract-wc-legacy-product.html#source-view.545">includes/legacy/abstract-wc-legacy-product.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">542</span>
+    <span class="phpdocumentor-element-found-in__line">545</span>
 </aside>
 
         <p class="phpdocumentor-summary">Get formatted variation data with WC &lt; 2.4 back compat and proper formatting of text-based attribute names.</p>
@@ -2852,9 +2862,9 @@ ull</span></code>
         <a href="#method_get_gallery_attachment_ids" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/legacy/abstract-wc-legacy-product.php"><a href="../files/woocommerce-includes-legacy-abstract-wc-legacy-product.html#source-view.174">includes/legacy/abstract-wc-legacy-product.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/legacy/abstract-wc-legacy-product.php"><a href="../files/woocommerce-includes-legacy-abstract-wc-legacy-product.html#source-view.177">includes/legacy/abstract-wc-legacy-product.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">174</span>
+    <span class="phpdocumentor-element-found-in__line">177</span>
 </aside>
 
         <p class="phpdocumentor-summary">Returns the gallery attachment ids.</p>
@@ -2944,9 +2954,9 @@ ull</span></code>
         <a href="#method_get_matching_variation" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/legacy/abstract-wc-legacy-product.php"><a href="../files/woocommerce-includes-legacy-abstract-wc-legacy-product.html#source-view.620">includes/legacy/abstract-wc-legacy-product.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/legacy/abstract-wc-legacy-product.php"><a href="../files/woocommerce-includes-legacy-abstract-wc-legacy-product.html#source-view.623">includes/legacy/abstract-wc-legacy-product.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">620</span>
+    <span class="phpdocumentor-element-found-in__line">623</span>
 </aside>
 
         <p class="phpdocumentor-summary">Match a variation to a given set of attributes using a WP_Query.</p>
@@ -3170,9 +3180,9 @@ ull</span></code>
         <a href="#method_get_object_read" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-data.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-data.html#source-view.772">includes/abstracts/abstract-wc-data.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-data.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-data.html#source-view.770">includes/abstracts/abstract-wc-data.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">772</span>
+    <span class="phpdocumentor-element-found-in__line">770</span>
 </aside>
 
         <p class="phpdocumentor-summary">Get object read property.</p>
@@ -3216,9 +3226,9 @@ ull</span></code>
         <a href="#method_get_parent" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/legacy/abstract-wc-legacy-product.php"><a href="../files/woocommerce-includes-legacy-abstract-wc-legacy-product.html#source-view.416">includes/legacy/abstract-wc-legacy-product.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/legacy/abstract-wc-legacy-product.php"><a href="../files/woocommerce-includes-legacy-abstract-wc-legacy-product.html#source-view.419">includes/legacy/abstract-wc-legacy-product.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">416</span>
+    <span class="phpdocumentor-element-found-in__line">419</span>
 </aside>
 
         <p class="phpdocumentor-summary">Get the parent of the post.</p>
@@ -3262,9 +3272,9 @@ ull</span></code>
         <a href="#method_get_post_data" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/legacy/abstract-wc-legacy-product.php"><a href="../files/woocommerce-includes-legacy-abstract-wc-legacy-product.html#source-view.397">includes/legacy/abstract-wc-legacy-product.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/legacy/abstract-wc-legacy-product.php"><a href="../files/woocommerce-includes-legacy-abstract-wc-legacy-product.html#source-view.400">includes/legacy/abstract-wc-legacy-product.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">397</span>
+    <span class="phpdocumentor-element-found-in__line">400</span>
 </aside>
 
         <p class="phpdocumentor-summary">Get the product&#039;s post data.</p>
@@ -3308,9 +3318,9 @@ ull</span></code>
         <a href="#method_get_price_excluding_tax" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/legacy/abstract-wc-legacy-product.php"><a href="../files/woocommerce-includes-legacy-abstract-wc-legacy-product.html#source-view.347">includes/legacy/abstract-wc-legacy-product.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/legacy/abstract-wc-legacy-product.php"><a href="../files/woocommerce-includes-legacy-abstract-wc-legacy-product.html#source-view.350">includes/legacy/abstract-wc-legacy-product.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">347</span>
+    <span class="phpdocumentor-element-found-in__line">350</span>
 </aside>
 
         <p class="phpdocumentor-summary">Returns the price (excluding tax) - ignores tax_class filters since the price may *include* tax and thus needs subtracting.</p>
@@ -3376,9 +3386,9 @@ ull</span></code>
         <a href="#method_get_price_html_from_text" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/legacy/abstract-wc-legacy-product.php"><a href="../files/woocommerce-includes-legacy-abstract-wc-legacy-product.html#source-view.285">includes/legacy/abstract-wc-legacy-product.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/legacy/abstract-wc-legacy-product.php"><a href="../files/woocommerce-includes-legacy-abstract-wc-legacy-product.html#source-view.288">includes/legacy/abstract-wc-legacy-product.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">285</span>
+    <span class="phpdocumentor-element-found-in__line">288</span>
 </aside>
 
         <p class="phpdocumentor-summary">Functions for getting parts of a price, in html, used by get_price_html.</p>
@@ -3422,9 +3432,9 @@ ull</span></code>
         <a href="#method_get_price_html_from_to" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/legacy/abstract-wc-legacy-product.php"><a href="../files/woocommerce-includes-legacy-abstract-wc-legacy-product.html#source-view.298">includes/legacy/abstract-wc-legacy-product.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/legacy/abstract-wc-legacy-product.php"><a href="../files/woocommerce-includes-legacy-abstract-wc-legacy-product.html#source-view.301">includes/legacy/abstract-wc-legacy-product.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">298</span>
+    <span class="phpdocumentor-element-found-in__line">301</span>
 </aside>
 
         <p class="phpdocumentor-summary">Functions for getting parts of a price, in html, used by get_price_html.</p>
@@ -3490,9 +3500,9 @@ ull</span></code>
         <a href="#method_get_price_including_tax" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/legacy/abstract-wc-legacy-product.php"><a href="../files/woocommerce-includes-legacy-abstract-wc-legacy-product.html#source-view.320">includes/legacy/abstract-wc-legacy-product.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/legacy/abstract-wc-legacy-product.php"><a href="../files/woocommerce-includes-legacy-abstract-wc-legacy-product.html#source-view.323">includes/legacy/abstract-wc-legacy-product.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">320</span>
+    <span class="phpdocumentor-element-found-in__line">323</span>
 </aside>
 
         <p class="phpdocumentor-summary">Returns the price (including tax). Uses customer tax rates. Can work for a specific $qty for more accurate taxes.</p>
@@ -3557,9 +3567,9 @@ ull</span></code>
         <a href="#method_get_rating_html" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/legacy/abstract-wc-legacy-product.php"><a href="../files/woocommerce-includes-legacy-abstract-wc-legacy-product.html#source-view.643">includes/legacy/abstract-wc-legacy-product.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/legacy/abstract-wc-legacy-product.php"><a href="../files/woocommerce-includes-legacy-abstract-wc-legacy-product.html#source-view.646">includes/legacy/abstract-wc-legacy-product.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">643</span>
+    <span class="phpdocumentor-element-found-in__line">646</span>
 </aside>
 
         <p class="phpdocumentor-summary">Returns the product rating in html format.</p>
@@ -3615,9 +3625,9 @@ ull</span></code>
         <a href="#method_get_related" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/legacy/abstract-wc-legacy-product.php"><a href="../files/woocommerce-includes-legacy-abstract-wc-legacy-product.html#source-view.235">includes/legacy/abstract-wc-legacy-product.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/legacy/abstract-wc-legacy-product.php"><a href="../files/woocommerce-includes-legacy-abstract-wc-legacy-product.html#source-view.238">includes/legacy/abstract-wc-legacy-product.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">235</span>
+    <span class="phpdocumentor-element-found-in__line">238</span>
 </aside>
 
         <p class="phpdocumentor-summary">Get and return related products.</p>
@@ -3673,9 +3683,9 @@ ull</span></code>
         <a href="#method_get_tags" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/legacy/abstract-wc-legacy-product.php"><a href="../files/woocommerce-includes-legacy-abstract-wc-legacy-product.html#source-view.386">includes/legacy/abstract-wc-legacy-product.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/legacy/abstract-wc-legacy-product.php"><a href="../files/woocommerce-includes-legacy-abstract-wc-legacy-product.html#source-view.389">includes/legacy/abstract-wc-legacy-product.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">386</span>
+    <span class="phpdocumentor-element-found-in__line">389</span>
 </aside>
 
         <p class="phpdocumentor-summary">Returns the product tags.</p>
@@ -3749,9 +3759,9 @@ ull</span></code>
         <a href="#method_get_total_stock" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/legacy/abstract-wc-legacy-product.php"><a href="../files/woocommerce-includes-legacy-abstract-wc-legacy-product.html#source-view.516">includes/legacy/abstract-wc-legacy-product.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/legacy/abstract-wc-legacy-product.php"><a href="../files/woocommerce-includes-legacy-abstract-wc-legacy-product.html#source-view.519">includes/legacy/abstract-wc-legacy-product.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">516</span>
+    <span class="phpdocumentor-element-found-in__line">519</span>
 </aside>
 
         <p class="phpdocumentor-summary">Get total stock - This is the stock of parent and children combined.</p>
@@ -3795,9 +3805,9 @@ ull</span></code>
         <a href="#method_get_upsells" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/legacy/abstract-wc-legacy-product.php"><a href="../files/woocommerce-includes-legacy-abstract-wc-legacy-product.html#source-view.427">includes/legacy/abstract-wc-legacy-product.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/legacy/abstract-wc-legacy-product.php"><a href="../files/woocommerce-includes-legacy-abstract-wc-legacy-product.html#source-view.430">includes/legacy/abstract-wc-legacy-product.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">427</span>
+    <span class="phpdocumentor-element-found-in__line">430</span>
 </aside>
 
         <p class="phpdocumentor-summary">Returns the upsell product ids.</p>
@@ -3841,9 +3851,9 @@ ull</span></code>
         <a href="#method_get_variation_default_attributes" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/legacy/abstract-wc-legacy-product.php"><a href="../files/woocommerce-includes-legacy-abstract-wc-legacy-product.html#source-view.163">includes/legacy/abstract-wc-legacy-product.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/legacy/abstract-wc-legacy-product.php"><a href="../files/woocommerce-includes-legacy-abstract-wc-legacy-product.html#source-view.166">includes/legacy/abstract-wc-legacy-product.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">163</span>
+    <span class="phpdocumentor-element-found-in__line">166</span>
 </aside>
 
         <p class="phpdocumentor-summary">If set, get the default attributes for a variable product.</p>
@@ -3887,9 +3897,9 @@ ull</span></code>
         <a href="#method_get_variation_description" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/legacy/abstract-wc-legacy-product.php"><a href="../files/woocommerce-includes-legacy-abstract-wc-legacy-product.html#source-view.474">includes/legacy/abstract-wc-legacy-product.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/legacy/abstract-wc-legacy-product.php"><a href="../files/woocommerce-includes-legacy-abstract-wc-legacy-product.html#source-view.477">includes/legacy/abstract-wc-legacy-product.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">474</span>
+    <span class="phpdocumentor-element-found-in__line">477</span>
 </aside>
 
         <p class="phpdocumentor-summary">Get product variation description.</p>
@@ -3933,9 +3943,9 @@ ull</span></code>
         <a href="#method_get_variation_id" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/legacy/abstract-wc-legacy-product.php"><a href="../files/woocommerce-includes-legacy-abstract-wc-legacy-product.html#source-view.463">includes/legacy/abstract-wc-legacy-product.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/legacy/abstract-wc-legacy-product.php"><a href="../files/woocommerce-includes-legacy-abstract-wc-legacy-product.html#source-view.466">includes/legacy/abstract-wc-legacy-product.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">463</span>
+    <span class="phpdocumentor-element-found-in__line">466</span>
 </aside>
 
         <p class="phpdocumentor-summary">Get variation ID.</p>
@@ -3979,9 +3989,9 @@ ull</span></code>
         <a href="#method_grouped_product_sync" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/legacy/abstract-wc-legacy-product.php"><a href="../files/woocommerce-includes-legacy-abstract-wc-legacy-product.html#source-view.689">includes/legacy/abstract-wc-legacy-product.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/legacy/abstract-wc-legacy-product.php"><a href="../files/woocommerce-includes-legacy-abstract-wc-legacy-product.html#source-view.692">includes/legacy/abstract-wc-legacy-product.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">689</span>
+    <span class="phpdocumentor-element-found-in__line">692</span>
 </aside>
 
     
@@ -4025,9 +4035,9 @@ ull</span></code>
         <a href="#method_has_all_attributes_set" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/legacy/abstract-wc-legacy-product.php"><a href="../files/woocommerce-includes-legacy-abstract-wc-legacy-product.html#source-view.485">includes/legacy/abstract-wc-legacy-product.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/legacy/abstract-wc-legacy-product.php"><a href="../files/woocommerce-includes-legacy-abstract-wc-legacy-product.html#source-view.488">includes/legacy/abstract-wc-legacy-product.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">485</span>
+    <span class="phpdocumentor-element-found-in__line">488</span>
 </aside>
 
         <p class="phpdocumentor-summary">Check if all variation&#039;s attributes are set.</p>
@@ -4071,9 +4081,9 @@ ull</span></code>
         <a href="#method_has_default_attributes" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/legacy/abstract-wc-legacy-product.php"><a href="../files/woocommerce-includes-legacy-abstract-wc-legacy-product.html#source-view.449">includes/legacy/abstract-wc-legacy-product.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/legacy/abstract-wc-legacy-product.php"><a href="../files/woocommerce-includes-legacy-abstract-wc-legacy-product.html#source-view.452">includes/legacy/abstract-wc-legacy-product.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">449</span>
+    <span class="phpdocumentor-element-found-in__line">452</span>
 </aside>
 
         <p class="phpdocumentor-summary">Check if variable product has default attributes set.</p>
@@ -4117,9 +4127,9 @@ ull</span></code>
         <a href="#method_increase_stock" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/legacy/abstract-wc-legacy-product.php"><a href="../files/woocommerce-includes-legacy-abstract-wc-legacy-product.html#source-view.213">includes/legacy/abstract-wc-legacy-product.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/legacy/abstract-wc-legacy-product.php"><a href="../files/woocommerce-includes-legacy-abstract-wc-legacy-product.html#source-view.216">includes/legacy/abstract-wc-legacy-product.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">213</span>
+    <span class="phpdocumentor-element-found-in__line">216</span>
 </aside>
 
         <p class="phpdocumentor-summary">Increase stock level of the product.</p>
@@ -4219,9 +4229,9 @@ ull</span></code>
         <a href="#method_list_attributes" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/legacy/abstract-wc-legacy-product.php"><a href="../files/woocommerce-includes-legacy-abstract-wc-legacy-product.html#source-view.307">includes/legacy/abstract-wc-legacy-product.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/legacy/abstract-wc-legacy-product.php"><a href="../files/woocommerce-includes-legacy-abstract-wc-legacy-product.html#source-view.310">includes/legacy/abstract-wc-legacy-product.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">307</span>
+    <span class="phpdocumentor-element-found-in__line">310</span>
 </aside>
 
         <p class="phpdocumentor-summary">Lists a table of attributes for the product page.</p>
@@ -4324,9 +4334,9 @@ ull</span></code>
         <a href="#method_parent_is_visible" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/legacy/abstract-wc-legacy-product.php"><a href="../files/woocommerce-includes-legacy-abstract-wc-legacy-product.html#source-view.505">includes/legacy/abstract-wc-legacy-product.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/legacy/abstract-wc-legacy-product.php"><a href="../files/woocommerce-includes-legacy-abstract-wc-legacy-product.html#source-view.508">includes/legacy/abstract-wc-legacy-product.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">505</span>
+    <span class="phpdocumentor-element-found-in__line">508</span>
 </aside>
 
         <p class="phpdocumentor-summary">Returns whether or not the variations parent is visible.</p>
@@ -4496,9 +4506,9 @@ ull</span></code>
         <a href="#method_reduce_stock" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/legacy/abstract-wc-legacy-product.php"><a href="../files/woocommerce-includes-legacy-abstract-wc-legacy-product.html#source-view.201">includes/legacy/abstract-wc-legacy-product.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/legacy/abstract-wc-legacy-product.php"><a href="../files/woocommerce-includes-legacy-abstract-wc-legacy-product.html#source-view.204">includes/legacy/abstract-wc-legacy-product.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">201</span>
+    <span class="phpdocumentor-element-found-in__line">204</span>
 </aside>
 
         <p class="phpdocumentor-summary">Reduce stock level of the product.</p>
@@ -4646,9 +4656,9 @@ ull</span></code>
         <a href="#method_set_defaults" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-data.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-data.html#source-view.750">includes/abstracts/abstract-wc-data.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-data.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-data.html#source-view.748">includes/abstracts/abstract-wc-data.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">750</span>
+    <span class="phpdocumentor-element-found-in__line">748</span>
 </aside>
 
         <p class="phpdocumentor-summary">Set all props to default values.</p>
@@ -4692,9 +4702,9 @@ ull</span></code>
         <a href="#method_set_id" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-data.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-data.html#source-view.741">includes/abstracts/abstract-wc-data.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-data.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-data.html#source-view.739">includes/abstracts/abstract-wc-data.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">741</span>
+    <span class="phpdocumentor-element-found-in__line">739</span>
 </aside>
 
         <p class="phpdocumentor-summary">Set ID.</p>
@@ -4808,9 +4818,9 @@ ull</span></code>
         <a href="#method_set_object_read" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-data.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-data.html#source-view.762">includes/abstracts/abstract-wc-data.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-data.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-data.html#source-view.760">includes/abstracts/abstract-wc-data.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">762</span>
+    <span class="phpdocumentor-element-found-in__line">760</span>
 </aside>
 
         <p class="phpdocumentor-summary">Set object read property.</p>
@@ -4866,9 +4876,9 @@ ull</span></code>
         <a href="#method_set_props" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-data.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-data.html#source-view.787">includes/abstracts/abstract-wc-data.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-data.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-data.html#source-view.785">includes/abstracts/abstract-wc-data.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">787</span>
+    <span class="phpdocumentor-element-found-in__line">785</span>
 </aside>
 
         <p class="phpdocumentor-summary">Set a collection of props in one go, collect any errors, and return the result.</p>
@@ -4934,9 +4944,9 @@ ull</span></code>
         <a href="#method_set_stock" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/legacy/abstract-wc-legacy-product.php"><a href="../files/woocommerce-includes-legacy-abstract-wc-legacy-product.html#source-view.189">includes/legacy/abstract-wc-legacy-product.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/legacy/abstract-wc-legacy-product.php"><a href="../files/woocommerce-includes-legacy-abstract-wc-legacy-product.html#source-view.192">includes/legacy/abstract-wc-legacy-product.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">189</span>
+    <span class="phpdocumentor-element-found-in__line">192</span>
 </aside>
 
         <p class="phpdocumentor-summary">Set stock level of the product.</p>
@@ -4999,9 +5009,9 @@ ull</span></code>
         <a href="#method_sync_attributes" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/legacy/abstract-wc-legacy-product.php"><a href="../files/woocommerce-includes-legacy-abstract-wc-legacy-product.html#source-view.572">includes/legacy/abstract-wc-legacy-product.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/legacy/abstract-wc-legacy-product.php"><a href="../files/woocommerce-includes-legacy-abstract-wc-legacy-product.html#source-view.575">includes/legacy/abstract-wc-legacy-product.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">572</span>
+    <span class="phpdocumentor-element-found-in__line">575</span>
 </aside>
 
         <p class="phpdocumentor-summary">Sync the variable product&#039;s attributes with the variations.</p>
@@ -5050,9 +5060,9 @@ ull</span></code>
         <a href="#method_sync_average_rating" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/legacy/abstract-wc-legacy-product.php"><a href="../files/woocommerce-includes-legacy-abstract-wc-legacy-product.html#source-view.654">includes/legacy/abstract-wc-legacy-product.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/legacy/abstract-wc-legacy-product.php"><a href="../files/woocommerce-includes-legacy-abstract-wc-legacy-product.html#source-view.657">includes/legacy/abstract-wc-legacy-product.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">654</span>
+    <span class="phpdocumentor-element-found-in__line">657</span>
 </aside>
 
         <p class="phpdocumentor-summary">Sync product rating. Can be called statically.</p>
@@ -5107,9 +5117,9 @@ ull</span></code>
         <a href="#method_sync_rating_count" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/legacy/abstract-wc-legacy-product.php"><a href="../files/woocommerce-includes-legacy-abstract-wc-legacy-product.html#source-view.669">includes/legacy/abstract-wc-legacy-product.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/legacy/abstract-wc-legacy-product.php"><a href="../files/woocommerce-includes-legacy-abstract-wc-legacy-product.html#source-view.672">includes/legacy/abstract-wc-legacy-product.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">669</span>
+    <span class="phpdocumentor-element-found-in__line">672</span>
 </aside>
 
         <p class="phpdocumentor-summary">Sync product rating count. Can be called statically.</p>
@@ -5240,9 +5250,9 @@ ull</span></code>
         <a href="#method_variable_product_sync" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/legacy/abstract-wc-legacy-product.php"><a href="../files/woocommerce-includes-legacy-abstract-wc-legacy-product.html#source-view.554">includes/legacy/abstract-wc-legacy-product.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/legacy/abstract-wc-legacy-product.php"><a href="../files/woocommerce-includes-legacy-abstract-wc-legacy-product.html#source-view.557">includes/legacy/abstract-wc-legacy-product.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">554</span>
+    <span class="phpdocumentor-element-found-in__line">557</span>
 </aside>
 
         <p class="phpdocumentor-summary">Sync variable product prices with the children lowest/highest prices.</p>
@@ -5298,9 +5308,9 @@ ull</span></code>
         <a href="#method_build_related_query" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/legacy/abstract-wc-legacy-product.php"><a href="../files/woocommerce-includes-legacy-abstract-wc-legacy-product.html#source-view.262">includes/legacy/abstract-wc-legacy-product.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/legacy/abstract-wc-legacy-product.php"><a href="../files/woocommerce-includes-legacy-abstract-wc-legacy-product.html#source-view.265">includes/legacy/abstract-wc-legacy-product.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">262</span>
+    <span class="phpdocumentor-element-found-in__line">265</span>
 </aside>
 
         <p class="phpdocumentor-summary">Builds the related posts query.</p>
@@ -5380,9 +5390,9 @@ ull</span></code>
         <a href="#method_error" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-data.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-data.html#source-view.942">includes/abstracts/abstract-wc-data.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-data.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-data.html#source-view.940">includes/abstracts/abstract-wc-data.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">942</span>
+    <span class="phpdocumentor-element-found-in__line">940</span>
 </aside>
 
         <p class="phpdocumentor-summary">When invalid data is found, throw an exception unless reading from the DB.</p>
@@ -5532,9 +5542,9 @@ ull</span></code>
         <a href="#method_get_hook_prefix" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-data.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-data.html#source-view.862">includes/abstracts/abstract-wc-data.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-data.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-data.html#source-view.860">includes/abstracts/abstract-wc-data.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">862</span>
+    <span class="phpdocumentor-element-found-in__line">860</span>
 </aside>
 
         <p class="phpdocumentor-summary">Prefix for action and filter hooks on data.</p>
@@ -5578,9 +5588,9 @@ ull</span></code>
         <a href="#method_get_prop" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-data.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-data.html#source-view.877">includes/abstracts/abstract-wc-data.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-data.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-data.html#source-view.875">includes/abstracts/abstract-wc-data.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">877</span>
+    <span class="phpdocumentor-element-found-in__line">875</span>
 </aside>
 
         <p class="phpdocumentor-summary">Gets a prop for a getter method.</p>
@@ -5647,9 +5657,9 @@ Context controls what happens to the value before it's returned.</p>
         <a href="#method_get_related_terms" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/legacy/abstract-wc-legacy-product.php"><a href="../files/woocommerce-includes-legacy-abstract-wc-legacy-product.html#source-view.248">includes/legacy/abstract-wc-legacy-product.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/legacy/abstract-wc-legacy-product.php"><a href="../files/woocommerce-includes-legacy-abstract-wc-legacy-product.html#source-view.251">includes/legacy/abstract-wc-legacy-product.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">248</span>
+    <span class="phpdocumentor-element-found-in__line">251</span>
 </aside>
 
         <p class="phpdocumentor-summary">Retrieves related product terms.</p>
@@ -5809,9 +5819,9 @@ Context controls what happens to the value before it's returned.</p>
         <a href="#method_set_date_prop" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-data.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-data.html#source-view.898">includes/abstracts/abstract-wc-data.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-data.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-data.html#source-view.896">includes/abstracts/abstract-wc-data.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">898</span>
+    <span class="phpdocumentor-element-found-in__line">896</span>
 </aside>
 
         <p class="phpdocumentor-summary">Sets a date prop whilst handling formatting and datetime objects.</p>
@@ -5876,9 +5886,9 @@ Context controls what happens to the value before it's returned.</p>
         <a href="#method_set_prop" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-data.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-data.html#source-view.824">includes/abstracts/abstract-wc-data.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/abstracts/abstract-wc-data.php"><a href="../files/woocommerce-includes-abstracts-abstract-wc-data.html#source-view.822">includes/abstracts/abstract-wc-data.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">824</span>
+    <span class="phpdocumentor-element-found-in__line">822</span>
 </aside>
 
         <p class="phpdocumentor-summary">Sets a prop for a setter method.</p>
@@ -5945,7 +5955,7 @@ the DB later.</p>
 
     <footer class="phpdocumentor phpdocumentor-footer">
     <div class="phpdocumentor-section">
-        <span>WooCommerce Code Reference API documentation generated by <a href="http://www.phpdoc.org/">phpDocumentor</a> on July 25th, 2024 at 11:33 am.</span>
+        <span>WooCommerce Code Reference API documentation generated by <a href="http://www.phpdoc.org/">phpDocumentor</a> on May 16th, 2025 at 09:14 am.</span>
     </div>
 </footer>
 
@@ -5957,7 +5967,7 @@ the DB later.</p>
             'searchIndex': '..\/js\/searchIndex.json'
         };
     </script>
-    <script src="../js/searchIndex.js?updated=1721907196"></script>
-    <script src="../js/search.js?updated=1721907196"></script>
+    <script src="../js/searchIndex.js?updated=1747386874"></script>
+    <script src="../js/search.js?updated=1747386874"></script>
 </body>
 </html>

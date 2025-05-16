@@ -4,14 +4,13 @@
     <meta charset="utf-8">
     <title>WooCommerce Code Reference</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="../images/favicon.png" />
-    <link rel="apple-touch-icon" href="../images/apple-touch-icon.png"/>
-    <link rel="apple-touch-icon" sizes="72x72" href="../images/apple-touch-icon-72x72.png"/>
-    <link rel="apple-touch-icon" sizes="114x114" href="../images/apple-touch-icon-114x114.png"/>
+    <link rel="icon" href="../images/favicon-32x32.png" sizes="32x32" />
+    <link rel="icon" href="../images/favicon-192x192.png" sizes="192x192" />
+    <link rel="apple-touch-icon" href="../images/favicon-180x180.png" />
+
     <link rel="stylesheet" href="../css/normalize.css">
-    <link rel="stylesheet" href="../css/base.css?updated=1721907183">
-    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../css/template.css?updated=1721907183">
+    <link rel="stylesheet" href="../css/base.css?updated=1747386859">
+    <link rel="stylesheet" href="../css/template.css?updated=1747386859">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0/css/all.min.css" integrity="sha256-ybRkN9dBjhcS2qrW1z+hfCxq+1aBdwyQM5wlQoQVt/0=" crossorigin="anonymous" />
             <script src="https://cdn.jsdelivr.net/npm/css-vars-ponyfill@2"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0/js/all.min.js" integrity="sha256-0vuk8LXoyrmCjp1f0O300qo1M75ZQyhH9X3J6d+scmk=" crossorigin="anonymous"></script>
@@ -38,14 +37,13 @@
     <header class="phpdocumentor-top-header">
     <section class="phpdocumentor-section">
         <div class="site-branding">
-            <a class="site-logo" href="../index.html"><img width="180" src="../images/logo.svg" alt="WooCommerce" /></a>
+            <a class="site-logo" href="../index.html"><img src="../images/logo.png" alt="WooCommerce" /></a>
         </div>
         <nav class="main-navigation">
             <ul>
                 <li><a href="../hooks/hooks.html">Hooks Reference</a></li>
-                <li><a href="https://docs.woocommerce.com/">Documentation</a></li>
+                <li><a href="https://developer.woocommerce.com/docs/">Documentation</a></li>
                 <li><a href="https://woocommerce.github.io/woocommerce-rest-api-docs/">REST API Docs</a></li>
-                <li><a href="https://woocommerce.com/careers/?utm_source=woocommerce+core+code+reference&utm_medium=devdocs&utm_campaign=woo+careers" target="_blank">We're hiring!</a></li>
             </ul>
         </nav>
     </section>
@@ -53,7 +51,7 @@
 
 <div class="phpdocumentor-header">
     <section class="phpdocumentor-section">
-        <h1 class="phpdocumentor-title">WooCommerce Code Reference</h1>
+        <h1 class="phpdocumentor-title"><a href="../index.html">WooCommerce Code Reference</a></h1>
         <section class="phpdocumentor-search">
     <label class="phpdocumentor-label">
         <span class="visually-hidden">Search (click ESC to close search results)</span>
@@ -74,6 +72,10 @@
                                         <h4 class="phpdocumentor-sidebar__root-namespace"><a href="../namespaces/woocommerce.html"><abbr title="\WooCommerce">WooCommerce</abbr></a></h4>
                 <ul class="phpdocumentor-list">
                                             <li><a href="../namespaces/woocommerce-admin.html"><abbr title="\WooCommerce\Admin">Admin</abbr></a></li>
+                                    </ul>
+                            <h4 class="phpdocumentor-sidebar__root-namespace"><a href="../namespaces/mailpoet.html"><abbr title="\MailPoet">MailPoet</abbr></a></h4>
+                <ul class="phpdocumentor-list">
+                                            <li><a href="../namespaces/mailpoet-emaileditor.html"><abbr title="\MailPoet\EmailEditor">EmailEditor</abbr></a></li>
                                     </ul>
                             <h4 class="phpdocumentor-sidebar__root-namespace"><a href="../namespaces/automattic.html"><abbr title="\Automattic">Automattic</abbr></a></h4>
                 <ul class="phpdocumentor-list">
@@ -119,8 +121,10 @@
                                     <li><a href="../packages/WooCommerce-Widgets.html"><abbr title="\WooCommerce\Widgets">Widgets</abbr></a></li>
                                     <li><a href="../packages/WooCommerce-Uninstaller.html"><abbr title="\WooCommerce\Uninstaller">Uninstaller</abbr></a></li>
                             </ul>
-                                <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/WoocommerceAdmin.html"><abbr title="\WoocommerceAdmin">WoocommerceAdmin</abbr></a></h3>
-                                <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/WoocommerceNavigation.html"><abbr title="\WoocommerceNavigation">WoocommerceNavigation</abbr></a></h3>
+                                <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/MailPoet.html"><abbr title="\MailPoet">MailPoet</abbr></a></h3>
+                        <ul class="phpdocumentor-list">
+                                    <li><a href="../packages/MailPoet-EmailEditor.html"><abbr title="\MailPoet\EmailEditor">EmailEditor</abbr></a></li>
+                            </ul>
                                 <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/Automattic.html"><abbr title="\Automattic">Automattic</abbr></a></h3>
                         <ul class="phpdocumentor-list">
                                     <li><a href="../packages/Automattic-WooCommerce.html"><abbr title="\Automattic\WooCommerce">WooCommerce</abbr></a></li>
@@ -168,6 +172,8 @@
 
 defined( &#039;ABSPATH&#039; ) || exit;
 
+use Automattic\WooCommerce\Enums\OrderStatus;
+use Automattic\WooCommerce\Enums\ProductType;
 use Automattic\WooCommerce\Utilities\ArrayUtil;
 use Automattic\WooCommerce\Utilities\OrderUtil;
 use Automattic\WooCommerce\Utilities\StringUtil;
@@ -434,11 +440,11 @@ class WC_REST_Orders_V2_Controller extends WC_REST_CRUD_Controller {
 			$order_item_name   = $data[&#039;name&#039;];
 			$data[&#039;meta_data&#039;] = array_filter(
 				$data[&#039;meta_data&#039;],
-				function( $meta ) use ( $product, $order_item_name ) {
+				function ( $meta ) use ( $product, $order_item_name ) {
 					$display_value = wp_kses_post( rawurldecode( (string) $meta-&gt;value ) );
 
 					// Skip items with values already in the product details area of the product name.
-					if ( $product &amp;&amp; $product-&gt;is_type( &#039;variation&#039; ) &amp;&amp; wc_is_attribute_in_product_name( $display_value, $order_item_name ) ) {
+					if ( $product &amp;&amp; $product-&gt;is_type( ProductType::VARIATION ) &amp;&amp; wc_is_attribute_in_product_name( $display_value, $order_item_name ) ) {
 						return false;
 					}
 
@@ -626,7 +632,7 @@ class WC_REST_Orders_V2_Controller extends WC_REST_CRUD_Controller {
 		}
 
 		// Format the order status.
-		$data[&#039;status&#039;] = &#039;wc-&#039; === substr( $data[&#039;status&#039;], 0, 3 ) ? substr( $data[&#039;status&#039;], 3 ) : $data[&#039;status&#039;];
+		$data[&#039;status&#039;] = OrderUtil::remove_status_prefix( $data[&#039;status&#039;] );
 
 		// Format line items.
 		foreach ( $format_line_items as $key ) {
@@ -695,13 +701,8 @@ class WC_REST_Orders_V2_Controller extends WC_REST_CRUD_Controller {
 	 * @return WP_REST_Response
 	 */
 	public function prepare_object_for_response( $object, $request ) {
-		$this-&gt;request       = $request;
-		$this-&gt;request[&#039;dp&#039;] = is_null( $this-&gt;request[&#039;dp&#039;] ) ? wc_get_price_decimals() : absint( $this-&gt;request[&#039;dp&#039;] );
-		$request[&#039;context&#039;]  = ! empty( $request[&#039;context&#039;] ) ? $request[&#039;context&#039;] : &#039;view&#039;;
-		$data                = $this-&gt;get_formatted_item_data( $object );
-		$data                = $this-&gt;add_additional_fields_to_object( $data, $request );
-		$data                = $this-&gt;filter_response_by_context( $data, $request[&#039;context&#039;] );
-		$response            = rest_ensure_response( $data );
+		$data     = $this-&gt;prepare_object_for_response_core( $object, $request );
+		$response = rest_ensure_response( $data );
 		$response-&gt;add_links( $this-&gt;prepare_links( $object, $request ) );
 
 		/**
@@ -720,6 +721,26 @@ class WC_REST_Orders_V2_Controller extends WC_REST_CRUD_Controller {
 	}
 
 	/**
+	 * Core method to prepare a single order object for response
+	 * (doesn&#039;t fire hooks, execute rest_ensure_response, or add links).
+	 *
+	 * @param  WC_Data         $order  Object data.
+	 * @param  WP_REST_Request $request Request object.
+	 * @return array Prepared response data.
+	 * @since  9.5.0
+	 */
+	protected function prepare_object_for_response_core( $order, $request ): array {
+		$this-&gt;request       = $request;
+		$this-&gt;request[&#039;dp&#039;] = is_null( $this-&gt;request[&#039;dp&#039;] ) ? wc_get_price_decimals() : absint( $this-&gt;request[&#039;dp&#039;] );
+		$request[&#039;context&#039;]  = ! empty( $request[&#039;context&#039;] ) ? $request[&#039;context&#039;] : &#039;view&#039;;
+		$data                = $this-&gt;get_formatted_item_data( $order );
+		$data                = $this-&gt;add_additional_fields_to_object( $data, $request );
+		$data                = $this-&gt;filter_response_by_context( $data, $request[&#039;context&#039;] );
+
+		return $data;
+	}
+
+	/**
 	 * Prepare links for the request.
 	 *
 	 * @param WC_Data         $object  Object data.
@@ -728,11 +749,15 @@ class WC_REST_Orders_V2_Controller extends WC_REST_CRUD_Controller {
 	 */
 	protected function prepare_links( $object, $request ) {
 		$links = array(
-			&#039;self&#039;       =&gt; array(
+			&#039;self&#039;            =&gt; array(
 				&#039;href&#039; =&gt; rest_url( sprintf( &#039;/%s/%s/%d&#039;, $this-&gt;namespace, $this-&gt;rest_base, $object-&gt;get_id() ) ),
 			),
-			&#039;collection&#039; =&gt; array(
+			&#039;collection&#039;      =&gt; array(
 				&#039;href&#039; =&gt; rest_url( sprintf( &#039;/%s/%s&#039;, $this-&gt;namespace, $this-&gt;rest_base ) ),
+			),
+			&#039;email_templates&#039; =&gt; array(
+				&#039;href&#039;       =&gt; rest_url( sprintf( &#039;/%s/%s/%d/actions/email_templates&#039;, $this-&gt;namespace, $this-&gt;rest_base, $object-&gt;get_id() ) ),
+				&#039;embeddable&#039; =&gt; true,
 			),
 		);
 
@@ -1088,11 +1113,6 @@ class WC_REST_Orders_V2_Controller extends WC_REST_CRUD_Controller {
 		$this-&gt;maybe_set_item_props( $item, array( &#039;name&#039;, &#039;quantity&#039;, &#039;total&#039;, &#039;subtotal&#039;, &#039;tax_class&#039; ), $posted );
 		$this-&gt;maybe_set_item_meta_data( $item, $posted );
 
-		if ( &#039;update&#039; === $action ) {
-			require_once WC_ABSPATH . &#039;includes/admin/wc-admin-functions.php&#039;;
-			wc_maybe_adjust_line_item_product_stock( $item );
-		}
-
 		return $item;
 	}
 
@@ -1204,7 +1224,7 @@ class WC_REST_Orders_V2_Controller extends WC_REST_CRUD_Controller {
 		$item = $this-&gt;$method( $posted, $action, $item );
 
 		/**
-		 * Allow extensions be notified before the item before is saved.
+		 * Allow extensions be notified before the item is saved.
 		 *
 		 * @param WC_Order_Item $item The item object.
 		 * @param array         $posted The item data.
@@ -1218,6 +1238,31 @@ class WC_REST_Orders_V2_Controller extends WC_REST_CRUD_Controller {
 			$order-&gt;add_item( $item );
 		} else {
 			$item-&gt;save();
+		}
+
+		// Maybe update product stock quantity.
+		if (
+			&#039;line_items&#039; === $item_type
+			&amp;&amp; in_array( $order-&gt;get_status(), array( OrderStatus::PROCESSING, OrderStatus::COMPLETED, OrderStatus::ON_HOLD ), true )
+		) {
+			require_once WC_ABSPATH . &#039;includes/admin/wc-admin-functions.php&#039;;
+			$changed_stock = wc_maybe_adjust_line_item_product_stock( $item );
+			if ( $changed_stock &amp;&amp; ! is_wp_error( $changed_stock ) ) {
+				$order-&gt;add_order_note(
+					sprintf(
+						// translators: %s item name.
+						__( &#039;Adjusted stock: %s&#039;, &#039;woocommerce&#039; ),
+						sprintf(
+							&#039;%1$s (%2$s&amp;rarr;%3$s)&#039;,
+							$item-&gt;get_name(),
+							$changed_stock[&#039;from&#039;],
+							$changed_stock[&#039;to&#039;]
+						)
+					),
+					false,
+					true
+				);
+			}
 		}
 	}
 
@@ -1246,7 +1291,7 @@ class WC_REST_Orders_V2_Controller extends WC_REST_CRUD_Controller {
 	 * @return array
 	 */
 	protected function get_order_statuses() {
-		$order_statuses = array( &#039;auto-draft&#039; );
+		$order_statuses = array( OrderStatus::AUTO_DRAFT );
 
 		foreach ( array_keys( wc_get_order_statuses() ) as $status ) {
 			$order_statuses[] = str_replace( &#039;wc-&#039;, &#039;&#039;, $status );
@@ -1304,7 +1349,7 @@ class WC_REST_Orders_V2_Controller extends WC_REST_CRUD_Controller {
 				&#039;status&#039;               =&gt; array(
 					&#039;description&#039; =&gt; __( &#039;Order status.&#039;, &#039;woocommerce&#039; ),
 					&#039;type&#039;        =&gt; &#039;string&#039;,
-					&#039;default&#039;     =&gt; &#039;pending&#039;,
+					&#039;default&#039;     =&gt; OrderStatus::PENDING,
 					&#039;enum&#039;        =&gt; $this-&gt;get_order_statuses(),
 					&#039;context&#039;     =&gt; array( &#039;view&#039;, &#039;edit&#039; ),
 				),
@@ -2181,7 +2226,7 @@ class WC_REST_Orders_V2_Controller extends WC_REST_CRUD_Controller {
 			&#039;default&#039;           =&gt; &#039;any&#039;,
 			&#039;description&#039;       =&gt; __( &#039;Limit result set to orders assigned a specific status.&#039;, &#039;woocommerce&#039; ),
 			&#039;type&#039;              =&gt; &#039;string&#039;,
-			&#039;enum&#039;              =&gt; array_merge( array( &#039;any&#039;, &#039;trash&#039; ), $this-&gt;get_order_statuses() ),
+			&#039;enum&#039;              =&gt; array_merge( array( &#039;any&#039;, OrderStatus::TRASH ), $this-&gt;get_order_statuses() ),
 			&#039;sanitize_callback&#039; =&gt; &#039;sanitize_key&#039;,
 			&#039;validate_callback&#039; =&gt; &#039;rest_validate_request_arg&#039;,
 		);
@@ -2272,7 +2317,7 @@ class WC_REST_Orders_V2_Controller extends WC_REST_CRUD_Controller {
 
     <footer class="phpdocumentor phpdocumentor-footer">
     <div class="phpdocumentor-section">
-        <span>WooCommerce Code Reference API documentation generated by <a href="http://www.phpdoc.org/">phpDocumentor</a> on July 25th, 2024 at 11:33 am.</span>
+        <span>WooCommerce Code Reference API documentation generated by <a href="http://www.phpdoc.org/">phpDocumentor</a> on May 16th, 2025 at 09:14 am.</span>
     </div>
 </footer>
 
@@ -2284,7 +2329,7 @@ class WC_REST_Orders_V2_Controller extends WC_REST_CRUD_Controller {
             'searchIndex': '..\/js\/searchIndex.json'
         };
     </script>
-    <script src="../js/searchIndex.js?updated=1721907183"></script>
-    <script src="../js/search.js?updated=1721907183"></script>
+    <script src="../js/searchIndex.js?updated=1747386859"></script>
+    <script src="../js/search.js?updated=1747386859"></script>
 </body>
 </html>

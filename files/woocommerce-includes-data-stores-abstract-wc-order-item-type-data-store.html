@@ -4,14 +4,13 @@
     <meta charset="utf-8">
     <title>WooCommerce Code Reference</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="../images/favicon.png" />
-    <link rel="apple-touch-icon" href="../images/apple-touch-icon.png"/>
-    <link rel="apple-touch-icon" sizes="72x72" href="../images/apple-touch-icon-72x72.png"/>
-    <link rel="apple-touch-icon" sizes="114x114" href="../images/apple-touch-icon-114x114.png"/>
+    <link rel="icon" href="../images/favicon-32x32.png" sizes="32x32" />
+    <link rel="icon" href="../images/favicon-192x192.png" sizes="192x192" />
+    <link rel="apple-touch-icon" href="../images/favicon-180x180.png" />
+
     <link rel="stylesheet" href="../css/normalize.css">
-    <link rel="stylesheet" href="../css/base.css?updated=1721907183">
-    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../css/template.css?updated=1721907183">
+    <link rel="stylesheet" href="../css/base.css?updated=1747386858">
+    <link rel="stylesheet" href="../css/template.css?updated=1747386858">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0/css/all.min.css" integrity="sha256-ybRkN9dBjhcS2qrW1z+hfCxq+1aBdwyQM5wlQoQVt/0=" crossorigin="anonymous" />
             <script src="https://cdn.jsdelivr.net/npm/css-vars-ponyfill@2"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0/js/all.min.js" integrity="sha256-0vuk8LXoyrmCjp1f0O300qo1M75ZQyhH9X3J6d+scmk=" crossorigin="anonymous"></script>
@@ -38,14 +37,13 @@
     <header class="phpdocumentor-top-header">
     <section class="phpdocumentor-section">
         <div class="site-branding">
-            <a class="site-logo" href="../index.html"><img width="180" src="../images/logo.svg" alt="WooCommerce" /></a>
+            <a class="site-logo" href="../index.html"><img src="../images/logo.png" alt="WooCommerce" /></a>
         </div>
         <nav class="main-navigation">
             <ul>
                 <li><a href="../hooks/hooks.html">Hooks Reference</a></li>
-                <li><a href="https://docs.woocommerce.com/">Documentation</a></li>
+                <li><a href="https://developer.woocommerce.com/docs/">Documentation</a></li>
                 <li><a href="https://woocommerce.github.io/woocommerce-rest-api-docs/">REST API Docs</a></li>
-                <li><a href="https://woocommerce.com/careers/?utm_source=woocommerce+core+code+reference&utm_medium=devdocs&utm_campaign=woo+careers" target="_blank">We're hiring!</a></li>
             </ul>
         </nav>
     </section>
@@ -53,7 +51,7 @@
 
 <div class="phpdocumentor-header">
     <section class="phpdocumentor-section">
-        <h1 class="phpdocumentor-title">WooCommerce Code Reference</h1>
+        <h1 class="phpdocumentor-title"><a href="../index.html">WooCommerce Code Reference</a></h1>
         <section class="phpdocumentor-search">
     <label class="phpdocumentor-label">
         <span class="visually-hidden">Search (click ESC to close search results)</span>
@@ -74,6 +72,10 @@
                                         <h4 class="phpdocumentor-sidebar__root-namespace"><a href="../namespaces/woocommerce.html"><abbr title="\WooCommerce">WooCommerce</abbr></a></h4>
                 <ul class="phpdocumentor-list">
                                             <li><a href="../namespaces/woocommerce-admin.html"><abbr title="\WooCommerce\Admin">Admin</abbr></a></li>
+                                    </ul>
+                            <h4 class="phpdocumentor-sidebar__root-namespace"><a href="../namespaces/mailpoet.html"><abbr title="\MailPoet">MailPoet</abbr></a></h4>
+                <ul class="phpdocumentor-list">
+                                            <li><a href="../namespaces/mailpoet-emaileditor.html"><abbr title="\MailPoet\EmailEditor">EmailEditor</abbr></a></li>
                                     </ul>
                             <h4 class="phpdocumentor-sidebar__root-namespace"><a href="../namespaces/automattic.html"><abbr title="\Automattic">Automattic</abbr></a></h4>
                 <ul class="phpdocumentor-list">
@@ -119,8 +121,10 @@
                                     <li><a href="../packages/WooCommerce-Widgets.html"><abbr title="\WooCommerce\Widgets">Widgets</abbr></a></li>
                                     <li><a href="../packages/WooCommerce-Uninstaller.html"><abbr title="\WooCommerce\Uninstaller">Uninstaller</abbr></a></li>
                             </ul>
-                                <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/WoocommerceAdmin.html"><abbr title="\WoocommerceAdmin">WoocommerceAdmin</abbr></a></h3>
-                                <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/WoocommerceNavigation.html"><abbr title="\WoocommerceNavigation">WoocommerceNavigation</abbr></a></h3>
+                                <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/MailPoet.html"><abbr title="\MailPoet">MailPoet</abbr></a></h3>
+                        <ul class="phpdocumentor-list">
+                                    <li><a href="../packages/MailPoet-EmailEditor.html"><abbr title="\MailPoet\EmailEditor">EmailEditor</abbr></a></li>
+                            </ul>
                                 <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/Automattic.html"><abbr title="\Automattic">Automattic</abbr></a></h3>
                         <ul class="phpdocumentor-list">
                                     <li><a href="../packages/Automattic-WooCommerce.html"><abbr title="\Automattic\WooCommerce">WooCommerce</abbr></a></li>
@@ -163,6 +167,8 @@
  * @package WooCommerce\DataStores
  */
 
+use Automattic\WooCommerce\Internal\CostOfGoodsSold\CogsAwareTrait;
+
 if ( ! defined( &#039;ABSPATH&#039; ) ) {
 	exit;
 }
@@ -173,6 +179,8 @@ if ( ! defined( &#039;ABSPATH&#039; ) ) {
  * @version  3.0.0
  */
 abstract class Abstract_WC_Order_Item_Type_Data_Store extends WC_Data_Store_WP implements WC_Object_Data_Store_Interface {
+
+	use CogsAwareTrait;
 
 	/**
 	 * Meta type. This should match up with
@@ -193,10 +201,34 @@ abstract class Abstract_WC_Order_Item_Type_Data_Store extends WC_Data_Store_WP i
 	protected $object_id_field_for_meta = &#039;order_item_id&#039;;
 
 	/**
+	 * Indicates if the Cost of Goods Sold feature is enabled.
+	 *
+	 * @var bool
+	 */
+	private bool $cogs_is_enabled;
+
+	/**
+	 * The instance of WC_Order_Item_Data_Store to use for COGS related operations.
+	 *
+	 * @var WC_Order_Item_Data_Store
+	 */
+	private WC_Data_Store $order_item_data_store;
+
+	/**
+	 * Class constructor.
+	 */
+	public function __construct() {
+		$this-&gt;cogs_is_enabled = $this-&gt;cogs_is_enabled();
+		if ( $this-&gt;cogs_is_enabled ) {
+			$this-&gt;order_item_data_store = WC_Data_Store::load( &#039;order-item&#039; );
+		}
+	}
+
+	/**
 	 * Create a new order item in the database.
 	 *
-	 * @since 3.0.0
 	 * @param WC_Order_Item $item Order item object.
+	 * @since 3.0.0
 	 */
 	public function create( &amp;$item ) {
 		global $wpdb;
@@ -212,6 +244,11 @@ abstract class Abstract_WC_Order_Item_Type_Data_Store extends WC_Data_Store_WP i
 		$item-&gt;set_id( $wpdb-&gt;insert_id );
 		$this-&gt;save_item_data( $item );
 		$item-&gt;save_meta_data();
+
+		if ( $this-&gt;cogs_is_enabled &amp;&amp; $item-&gt;has_cogs() ) {
+			$this-&gt;save_cogs_data( $item );
+		}
+
 		$item-&gt;apply_changes();
 		$this-&gt;clear_cache( $item );
 
@@ -221,8 +258,8 @@ abstract class Abstract_WC_Order_Item_Type_Data_Store extends WC_Data_Store_WP i
 	/**
 	 * Update a order item in the database.
 	 *
-	 * @since 3.0.0
 	 * @param WC_Order_Item $item Order item object.
+	 * @since 3.0.0
 	 */
 	public function update( &amp;$item ) {
 		global $wpdb;
@@ -243,6 +280,9 @@ abstract class Abstract_WC_Order_Item_Type_Data_Store extends WC_Data_Store_WP i
 
 		$this-&gt;save_item_data( $item );
 		$item-&gt;save_meta_data();
+		if ( $this-&gt;cogs_is_enabled &amp;&amp; $item-&gt;has_cogs() ) {
+			$this-&gt;save_cogs_data( $item );
+		}
 		$item-&gt;apply_changes();
 		$this-&gt;clear_cache( $item );
 
@@ -252,9 +292,9 @@ abstract class Abstract_WC_Order_Item_Type_Data_Store extends WC_Data_Store_WP i
 	/**
 	 * Remove an order item from the database.
 	 *
-	 * @since 3.0.0
 	 * @param WC_Order_Item $item Order item object.
 	 * @param array         $args Array of args to pass to the delete method.
+	 * @since 3.0.0
 	 */
 	public function delete( &amp;$item, $args = array() ) {
 		if ( $item-&gt;get_id() ) {
@@ -270,11 +310,10 @@ abstract class Abstract_WC_Order_Item_Type_Data_Store extends WC_Data_Store_WP i
 	/**
 	 * Read a order item from the database.
 	 *
-	 * @since 3.0.0
-	 *
 	 * @param WC_Order_Item $item Order item object.
 	 *
 	 * @throws Exception If invalid order item.
+	 * @since 3.0.0
 	 */
 	public function read( &amp;$item ) {
 		global $wpdb;
@@ -300,16 +339,33 @@ abstract class Abstract_WC_Order_Item_Type_Data_Store extends WC_Data_Store_WP i
 			)
 		);
 		$item-&gt;read_meta_data();
+
+		if ( $this-&gt;cogs_is_enabled &amp;&amp; $item-&gt;has_cogs() ) {
+			$cogs_value = (float) $this-&gt;order_item_data_store-&gt;get_metadata( $item-&gt;get_id(), &#039;_cogs_value&#039;, true );
+
+			/**
+			 * Filter to customize the Cost of Goods Sold value that gets loaded for a given order item.
+			 *
+			 * @since 9.5.0
+			 *
+			 * @param float $cogs_value The value as read from the database.
+			 * @param WC_Order_Item $product The order item for which the value is being loaded.
+			 */
+			$cogs_value = apply_filters( &#039;woocommerce_load_order_item_cogs_value&#039;, $cogs_value, $item );
+
+			$item-&gt;set_cogs_value( (float) $cogs_value );
+		}
 	}
 
 	/**
 	 * Saves an item&#039;s data to the database / item meta.
 	 * Ran after both create and update, so $item-&gt;get_id() will be set.
 	 *
-	 * @since 3.0.0
 	 * @param WC_Order_Item $item Order item object.
+	 * @since 3.0.0
 	 */
-	public function save_item_data( &amp;$item ) {}
+	public function save_item_data( &amp;$item ) {
+	}
 
 	/**
 	 * Clear meta cache.
@@ -320,6 +376,36 @@ abstract class Abstract_WC_Order_Item_Type_Data_Store extends WC_Data_Store_WP i
 		wp_cache_delete( &#039;item-&#039; . $item-&gt;get_id(), &#039;order-items&#039; );
 		wp_cache_delete( &#039;order-items-&#039; . $item-&gt;get_order_id(), &#039;orders&#039; );
 		wp_cache_delete( $item-&gt;get_id(), $this-&gt;meta_type . &#039;_meta&#039; );
+	}
+
+	/**
+	 * Persist the Cost of Goods Sold related data to the database.
+	 *
+	 * @param WC_Order_Item $item The order item for which the data will be persisted.
+	 */
+	private function save_cogs_data( WC_Order_Item $item ) {
+		$cogs_value = $item-&gt;get_cogs_value();
+
+		/**
+		 * Filter to customize the Cost of Goods Sold value that gets saved for a given order item,
+		 * or to suppress the saving of the value (so that custom storage can be used).
+		 *
+		 * @since 9.5.0
+		 *
+		 * @param float|null $cogs_value The value to be written to the database. If returned as null, nothing will be written.
+		 * @param WC_Order_Item $item The order item for which the value is being saved.
+		 */
+		$cogs_value = apply_filters( &#039;woocommerce_save_order_item_cogs_value&#039;, $cogs_value, $item );
+		if ( is_null( $cogs_value ) ) {
+			return;
+		}
+
+		$cogs_value = (float) $cogs_value;
+		if ( 0.0 === $cogs_value ) {
+			$this-&gt;order_item_data_store-&gt;delete_metadata( $item-&gt;get_id(), &#039;_cogs_value&#039;, &#039;&#039;, true );
+		} else {
+			$this-&gt;order_item_data_store-&gt;update_metadata( $item-&gt;get_id(), &#039;_cogs_value&#039;, $cogs_value );
+		}
 	}
 }
 </code></pre>
@@ -332,7 +418,7 @@ abstract class Abstract_WC_Order_Item_Type_Data_Store extends WC_Data_Store_WP i
 
     <footer class="phpdocumentor phpdocumentor-footer">
     <div class="phpdocumentor-section">
-        <span>WooCommerce Code Reference API documentation generated by <a href="http://www.phpdoc.org/">phpDocumentor</a> on July 25th, 2024 at 11:33 am.</span>
+        <span>WooCommerce Code Reference API documentation generated by <a href="http://www.phpdoc.org/">phpDocumentor</a> on May 16th, 2025 at 09:14 am.</span>
     </div>
 </footer>
 
@@ -344,7 +430,7 @@ abstract class Abstract_WC_Order_Item_Type_Data_Store extends WC_Data_Store_WP i
             'searchIndex': '..\/js\/searchIndex.json'
         };
     </script>
-    <script src="../js/searchIndex.js?updated=1721907183"></script>
-    <script src="../js/search.js?updated=1721907183"></script>
+    <script src="../js/searchIndex.js?updated=1747386858"></script>
+    <script src="../js/search.js?updated=1747386858"></script>
 </body>
 </html>

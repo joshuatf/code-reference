@@ -4,14 +4,13 @@
     <meta charset="utf-8">
     <title>WooCommerce Code Reference</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="../images/favicon.png" />
-    <link rel="apple-touch-icon" href="../images/apple-touch-icon.png"/>
-    <link rel="apple-touch-icon" sizes="72x72" href="../images/apple-touch-icon-72x72.png"/>
-    <link rel="apple-touch-icon" sizes="114x114" href="../images/apple-touch-icon-114x114.png"/>
+    <link rel="icon" href="../images/favicon-32x32.png" sizes="32x32" />
+    <link rel="icon" href="../images/favicon-192x192.png" sizes="192x192" />
+    <link rel="apple-touch-icon" href="../images/favicon-180x180.png" />
+
     <link rel="stylesheet" href="../css/normalize.css">
-    <link rel="stylesheet" href="../css/base.css?updated=1721907185">
-    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../css/template.css?updated=1721907185">
+    <link rel="stylesheet" href="../css/base.css?updated=1747386862">
+    <link rel="stylesheet" href="../css/template.css?updated=1747386862">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0/css/all.min.css" integrity="sha256-ybRkN9dBjhcS2qrW1z+hfCxq+1aBdwyQM5wlQoQVt/0=" crossorigin="anonymous" />
             <script src="https://cdn.jsdelivr.net/npm/css-vars-ponyfill@2"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0/js/all.min.js" integrity="sha256-0vuk8LXoyrmCjp1f0O300qo1M75ZQyhH9X3J6d+scmk=" crossorigin="anonymous"></script>
@@ -38,14 +37,13 @@
     <header class="phpdocumentor-top-header">
     <section class="phpdocumentor-section">
         <div class="site-branding">
-            <a class="site-logo" href="../index.html"><img width="180" src="../images/logo.svg" alt="WooCommerce" /></a>
+            <a class="site-logo" href="../index.html"><img src="../images/logo.png" alt="WooCommerce" /></a>
         </div>
         <nav class="main-navigation">
             <ul>
                 <li><a href="../hooks/hooks.html">Hooks Reference</a></li>
-                <li><a href="https://docs.woocommerce.com/">Documentation</a></li>
+                <li><a href="https://developer.woocommerce.com/docs/">Documentation</a></li>
                 <li><a href="https://woocommerce.github.io/woocommerce-rest-api-docs/">REST API Docs</a></li>
-                <li><a href="https://woocommerce.com/careers/?utm_source=woocommerce+core+code+reference&utm_medium=devdocs&utm_campaign=woo+careers" target="_blank">We're hiring!</a></li>
             </ul>
         </nav>
     </section>
@@ -53,7 +51,7 @@
 
 <div class="phpdocumentor-header">
     <section class="phpdocumentor-section">
-        <h1 class="phpdocumentor-title">WooCommerce Code Reference</h1>
+        <h1 class="phpdocumentor-title"><a href="../index.html">WooCommerce Code Reference</a></h1>
         <section class="phpdocumentor-search">
     <label class="phpdocumentor-label">
         <span class="visually-hidden">Search (click ESC to close search results)</span>
@@ -74,6 +72,10 @@
                                         <h4 class="phpdocumentor-sidebar__root-namespace"><a href="../namespaces/woocommerce.html"><abbr title="\WooCommerce">WooCommerce</abbr></a></h4>
                 <ul class="phpdocumentor-list">
                                             <li><a href="../namespaces/woocommerce-admin.html"><abbr title="\WooCommerce\Admin">Admin</abbr></a></li>
+                                    </ul>
+                            <h4 class="phpdocumentor-sidebar__root-namespace"><a href="../namespaces/mailpoet.html"><abbr title="\MailPoet">MailPoet</abbr></a></h4>
+                <ul class="phpdocumentor-list">
+                                            <li><a href="../namespaces/mailpoet-emaileditor.html"><abbr title="\MailPoet\EmailEditor">EmailEditor</abbr></a></li>
                                     </ul>
                             <h4 class="phpdocumentor-sidebar__root-namespace"><a href="../namespaces/automattic.html"><abbr title="\Automattic">Automattic</abbr></a></h4>
                 <ul class="phpdocumentor-list">
@@ -119,8 +121,10 @@
                                     <li><a href="../packages/WooCommerce-Widgets.html"><abbr title="\WooCommerce\Widgets">Widgets</abbr></a></li>
                                     <li><a href="../packages/WooCommerce-Uninstaller.html"><abbr title="\WooCommerce\Uninstaller">Uninstaller</abbr></a></li>
                             </ul>
-                                <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/WoocommerceAdmin.html"><abbr title="\WoocommerceAdmin">WoocommerceAdmin</abbr></a></h3>
-                                <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/WoocommerceNavigation.html"><abbr title="\WoocommerceNavigation">WoocommerceNavigation</abbr></a></h3>
+                                <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/MailPoet.html"><abbr title="\MailPoet">MailPoet</abbr></a></h3>
+                        <ul class="phpdocumentor-list">
+                                    <li><a href="../packages/MailPoet-EmailEditor.html"><abbr title="\MailPoet\EmailEditor">EmailEditor</abbr></a></li>
+                            </ul>
                                 <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/Automattic.html"><abbr title="\Automattic">Automattic</abbr></a></h3>
                         <ul class="phpdocumentor-list">
                                     <li><a href="../packages/Automattic-WooCommerce.html"><abbr title="\Automattic\WooCommerce">WooCommerce</abbr></a></li>
@@ -223,6 +227,7 @@ class MiniCart extends AbstractBlock {
 			&#039;position&#039; =&gt; &#039;after&#039;,
 			&#039;anchor&#039;   =&gt; &#039;core/navigation&#039;,
 			&#039;area&#039;     =&gt; &#039;header&#039;,
+			&#039;version&#039;  =&gt; &#039;8.4.0&#039;,
 		),
 	);
 
@@ -247,7 +252,33 @@ class MiniCart extends AbstractBlock {
 		parent::initialize();
 		add_action( &#039;wp_loaded&#039;, array( $this, &#039;register_empty_cart_message_block_pattern&#039; ) );
 		add_action( &#039;wp_print_footer_scripts&#039;, array( $this, &#039;print_lazy_load_scripts&#039; ), 2 );
-		add_filter( &#039;hooked_block_types&#039;, array( $this, &#039;register_hooked_block&#039; ), 10, 4 );
+		add_filter( &#039;hooked_block_woocommerce/mini-cart&#039;, array( $this, &#039;modify_hooked_block_attributes&#039; ), 10, 5 );
+		add_filter( &#039;hooked_block_types&#039;, array( $this, &#039;register_hooked_block&#039; ), 9, 4 );
+	}
+
+	/**
+	 * Callback for the Block Hooks API to modify the attributes of the hooked block.
+	 *
+	 * @param array|null                      $parsed_hooked_block The parsed block array for the given hooked block type, or null to suppress the block.
+	 * @param string                          $hooked_block_type   The hooked block type name.
+	 * @param string                          $relative_position   The relative position of the hooked block.
+	 * @param array                           $parsed_anchor_block The anchor block, in parsed block array format.
+	 * @param WP_Block_Template|WP_Post|array $context             The block template, template part, `wp_navigation` post type,
+	 *                                                             or pattern that the anchor block belongs to.
+	 * @return array|null
+	 */
+	public function modify_hooked_block_attributes( $parsed_hooked_block, $hooked_block_type, $relative_position, $parsed_anchor_block, $context ) {
+		$mini_cart_block_font_size = wp_get_global_styles( array( &#039;blocks&#039;, &#039;woocommerce/mini-cart&#039;, &#039;typography&#039;, &#039;fontSize&#039; ) );
+
+		if ( ! is_string( $mini_cart_block_font_size ) ) {
+			$navigation_block_font_size = wp_get_global_styles( array( &#039;blocks&#039;, &#039;core/navigation&#039;, &#039;typography&#039;, &#039;fontSize&#039; ) );
+
+			if ( is_string( $navigation_block_font_size ) ) {
+				$parsed_hooked_block[&#039;attrs&#039;][&#039;style&#039;][&#039;typography&#039;][&#039;fontSize&#039;] = $navigation_block_font_size;
+			}
+		}
+
+		return $parsed_hooked_block;
 	}
 
 	/**
@@ -571,44 +602,22 @@ class MiniCart extends AbstractBlock {
 			return &#039;&#039;;
 		}
 
-		$classes_styles  = StyleAttributesUtils::get_classes_and_styles_by_attributes( $attributes, array( &#039;text_color&#039;, &#039;background_color&#039;, &#039;font_size&#039;, &#039;font_weight&#039;, &#039;font_family&#039; ) );
+		$classes_styles  = StyleAttributesUtils::get_classes_and_styles_by_attributes( $attributes, array( &#039;text_color&#039;, &#039;background_color&#039;, &#039;font_size&#039;, &#039;font_weight&#039;, &#039;font_family&#039;, &#039;extra_classes&#039; ) );
 		$wrapper_classes = sprintf( &#039;wc-block-mini-cart wp-block-woocommerce-mini-cart %s&#039;, $classes_styles[&#039;classes&#039;] );
-		if ( ! empty( $attributes[&#039;className&#039;] ) ) {
-			$wrapper_classes .= &#039; &#039; . $attributes[&#039;className&#039;];
-		}
-		$wrapper_styles = $classes_styles[&#039;styles&#039;];
+		$wrapper_styles  = $classes_styles[&#039;styles&#039;];
 
 		$icon_color          = array_key_exists( &#039;iconColor&#039;, $attributes ) ? esc_attr( $attributes[&#039;iconColor&#039;][&#039;color&#039;] ) : &#039;currentColor&#039;;
 		$product_count_color = array_key_exists( &#039;productCountColor&#039;, $attributes ) ? esc_attr( $attributes[&#039;productCountColor&#039;][&#039;color&#039;] ) : &#039;&#039;;
+		$styles              = $product_count_color ? &#039;background:&#039; . $product_count_color : &#039;&#039;;
+		$icon                = MiniCartUtils::get_svg_icon( $attributes[&#039;miniCartIcon&#039;] ?? &#039;&#039;, $icon_color );
 
-		// Default &quot;Cart&quot; icon.
-		$icon = &#039;&lt;svg class=&quot;wc-block-mini-cart__icon&quot; width=&quot;32&quot; height=&quot;32&quot; viewBox=&quot;0 0 32 32&quot; fill=&quot;&#039; . $icon_color . &#039;&quot; xmlns=&quot;http://www.w3.org/2000/svg&quot;&gt;
-					&lt;circle cx=&quot;12.6667&quot; cy=&quot;24.6667&quot; r=&quot;2&quot; fill=&quot;&#039; . $icon_color . &#039;&quot;/&gt;
-					&lt;circle cx=&quot;23.3333&quot; cy=&quot;24.6667&quot; r=&quot;2&quot; fill=&quot;&#039; . $icon_color . &#039;&quot;/&gt;
-					&lt;path fill-rule=&quot;evenodd&quot; clip-rule=&quot;evenodd&quot; d=&quot;M9.28491 10.0356C9.47481 9.80216 9.75971 9.66667 10.0606 9.66667H25.3333C25.6232 9.66667 25.8989 9.79247 26.0888 10.0115C26.2787 10.2305 26.3643 10.5211 26.3233 10.8081L24.99 20.1414C24.9196 20.6341 24.4977 21 24 21H12C11.5261 21 11.1173 20.6674 11.0209 20.2034L9.08153 10.8701C9.02031 10.5755 9.09501 10.269 9.28491 10.0356ZM11.2898 11.6667L12.8136 19H23.1327L24.1803 11.6667H11.2898Z&quot; fill=&quot;&#039; . $icon_color . &#039;&quot;/&gt;
-					&lt;path fill-rule=&quot;evenodd&quot; clip-rule=&quot;evenodd&quot; d=&quot;M5.66669 6.66667C5.66669 6.11438 6.1144 5.66667 6.66669 5.66667H9.33335C9.81664 5.66667 10.2308 6.01229 10.3172 6.48778L11.0445 10.4878C11.1433 11.0312 10.7829 11.5517 10.2395 11.6505C9.69614 11.7493 9.17555 11.3889 9.07676 10.8456L8.49878 7.66667H6.66669C6.1144 7.66667 5.66669 7.21895 5.66669 6.66667Z&quot; fill=&quot;&#039; . $icon_color . &#039;&quot;/&gt;
-				&lt;/svg&gt;&#039;;
+		$product_count_visibility = isset( $attributes[&#039;productCountVisibility&#039;] ) ? $attributes[&#039;productCountVisibility&#039;] : &#039;greater_than_zero&#039;;
 
-		if ( isset( $attributes[&#039;miniCartIcon&#039;] ) ) {
-			if ( &#039;bag&#039; === $attributes[&#039;miniCartIcon&#039;] ) {
-				$icon = &#039;&lt;svg class=&quot;wc-block-mini-cart__icon&quot; width=&quot;32&quot; height=&quot;32&quot; viewBox=&quot;0 0 32 32&quot; fill=&quot;none&quot; xmlns=&quot;http://www.w3.org/2000/svg&quot;&gt;
-							&lt;path fill-rule=&quot;evenodd&quot; clip-rule=&quot;evenodd&quot; d=&quot;M12.4444 14.2222C12.9354 14.2222 13.3333 14.6202 13.3333 15.1111C13.3333 15.8183 13.6143 16.4966 14.1144 16.9967C14.6145 17.4968 15.2927 17.7778 16 17.7778C16.7072 17.7778 17.3855 17.4968 17.8856 16.9967C18.3857 16.4966 18.6667 15.8183 18.6667 15.1111C18.6667 14.6202 19.0646 14.2222 19.5555 14.2222C20.0465 14.2222 20.4444 14.6202 20.4444 15.1111C20.4444 16.2898 19.9762 17.4203 19.1427 18.2538C18.3092 19.0873 17.1787 19.5555 16 19.5555C14.8212 19.5555 13.6908 19.0873 12.8573 18.2538C12.0238 17.4203 11.5555 16.2898 11.5555 15.1111C11.5555 14.6202 11.9535 14.2222 12.4444 14.2222Z&quot; fill=&quot;&#039; . $icon_color . &#039;&quot;/&gt;
-							&lt;path fill-rule=&quot;evenodd&quot; clip-rule=&quot;evenodd&quot; d=&quot;M11.2408 6.68254C11.4307 6.46089 11.7081 6.33333 12 6.33333H20C20.2919 6.33333 20.5693 6.46089 20.7593 6.68254L24.7593 11.3492C25.0134 11.6457 25.0717 12.0631 24.9085 12.4179C24.7453 12.7727 24.3905 13 24 13H8.00001C7.60948 13 7.25469 12.7727 7.0915 12.4179C6.92832 12.0631 6.9866 11.6457 7.24076 11.3492L11.2408 6.68254ZM12.4599 8.33333L10.1742 11H21.8258L19.5401 8.33333H12.4599Z&quot; fill=&quot;&#039; . $icon_color . &#039;&quot;/&gt;
-							&lt;path fill-rule=&quot;evenodd&quot; clip-rule=&quot;evenodd&quot; d=&quot;M7 12C7 11.4477 7.44772 11 8 11H24C24.5523 11 25 11.4477 25 12V25.3333C25 25.8856 24.5523 26.3333 24 26.3333H8C7.44772 26.3333 7 25.8856 7 25.3333V12ZM9 13V24.3333H23V13H9Z&quot; fill=&quot;&#039; . $icon_color . &#039;&quot;/&gt;
-						&lt;/svg&gt;&#039;;
-			} elseif ( &#039;bag-alt&#039; === $attributes[&#039;miniCartIcon&#039;] ) {
-				$icon = &#039;&lt;svg class=&quot;wc-block-mini-cart__icon&quot; width=&quot;32&quot; height=&quot;32&quot; viewBox=&quot;0 0 32 32&quot; fill=&quot;none&quot; xmlns=&quot;http://www.w3.org/2000/svg&quot;&gt;
-							&lt;path fill-rule=&quot;evenodd&quot; clip-rule=&quot;evenodd&quot; d=&quot;M19.5556 12.3333C19.0646 12.3333 18.6667 11.9354 18.6667 11.4444C18.6667 10.7372 18.3857 8.05893 17.8856 7.55883C17.3855 7.05873 16.7073 6.77778 16 6.77778C15.2928 6.77778 14.6145 7.05873 14.1144 7.55883C13.6143 8.05893 13.3333 10.7372 13.3333 11.4444C13.3333 11.9354 12.9354 12.3333 12.4445 12.3333C11.9535 12.3333 11.5556 11.9354 11.5556 11.4444C11.5556 10.2657 12.0238 7.13524 12.8573 6.30175C13.6908 5.46825 14.8213 5 16 5C17.1788 5 18.3092 5.46825 19.1427 6.30175C19.9762 7.13524 20.4445 10.2657 20.4445 11.4444C20.4445 11.9354 20.0465 12.3333 19.5556 12.3333Z&quot; fill=&quot;&#039; . $icon_color . &#039;&quot;/&gt;
-							&lt;path fill-rule=&quot;evenodd&quot; clip-rule=&quot;evenodd&quot; d=&quot;M7.5 12C7.5 11.4477 7.94772 11 8.5 11H23.5C24.0523 11 24.5 11.4477 24.5 12V25.3333C24.5 25.8856 24.0523 26.3333 23.5 26.3333H8.5C7.94772 26.3333 7.5 25.8856 7.5 25.3333V12ZM9.5 13V24.3333H22.5V13H9.5Z&quot; fill=&quot;&#039; . $icon_color . &#039;&quot; /&gt;
-						&lt;/svg&gt;&#039;;
-			}
-		}
-
-		$button_html = $this-&gt;get_cart_price_markup( $attributes ) . &#039;
-		&lt;span class=&quot;wc-block-mini-cart__quantity-badge&quot;&gt;
+		$button_html = &#039;&lt;span class=&quot;wc-block-mini-cart__quantity-badge&quot;&gt;
 			&#039; . $icon . &#039;
-			&lt;span class=&quot;wc-block-mini-cart__badge&quot; style=&quot;background:&#039; . $product_count_color . &#039;&quot;&gt;&lt;/span&gt;
-		&lt;/span&gt;&#039;;
+			&#039; . ( &#039;never&#039; !== $product_count_visibility ? &#039;&lt;span class=&quot;wc-block-mini-cart__badge&quot; style=&quot;&#039; . esc_attr( $styles ) . &#039;&quot;&gt;&lt;/span&gt;&#039; : &#039;&#039; ) . &#039;
+		&lt;/span&gt;
+		&#039; . $this-&gt;get_cart_price_markup( $attributes );
 
 		if ( is_cart() || is_checkout() ) {
 			if ( $this-&gt;should_not_render_mini_cart( $attributes ) ) {
@@ -617,7 +626,7 @@ class MiniCart extends AbstractBlock {
 
 			// It is not necessary to load the Mini-Cart Block on Cart and Checkout page.
 			return &#039;&lt;div class=&quot;&#039; . esc_attr( $wrapper_classes ) . &#039;&quot; style=&quot;visibility:hidden&quot; aria-hidden=&quot;true&quot;&gt;
-				&lt;button class=&quot;wc-block-mini-cart__button&quot; disabled&gt;&#039; . $button_html . &#039;&lt;/button&gt;
+				&lt;button class=&quot;wc-block-mini-cart__button&quot; disabled aria-label=&quot;&#039; . __( &#039;Cart&#039;, &#039;woocommerce&#039; ) . &#039;&quot;&gt;&#039; . $button_html . &#039;&lt;/button&gt;
 			&lt;/div&gt;&#039;;
 		}
 
@@ -645,7 +654,7 @@ class MiniCart extends AbstractBlock {
 		}
 
 		return &#039;&lt;div class=&quot;&#039; . esc_attr( $wrapper_classes ) . &#039;&quot; style=&quot;&#039; . esc_attr( $wrapper_styles ) . &#039;&quot;&gt;
-			&lt;button class=&quot;wc-block-mini-cart__button&quot;&gt;&#039; . $button_html . &#039;&lt;/button&gt;
+			&lt;button class=&quot;wc-block-mini-cart__button&quot; aria-label=&quot;&#039; . __( &#039;Cart&#039;, &#039;woocommerce&#039; ) . &#039;&quot;&gt;&#039; . $button_html . &#039;&lt;/button&gt;
 			&lt;div class=&quot;is-loading wc-block-components-drawer__screen-overlay wc-block-components-drawer__screen-overlay--is-hidden&quot; aria-hidden=&quot;true&quot;&gt;
 				&lt;div class=&quot;wc-block-mini-cart__drawer wc-block-components-drawer&quot;&gt;
 					&lt;div class=&quot;wc-block-components-drawer__content&quot;&gt;
@@ -704,7 +713,7 @@ class MiniCart extends AbstractBlock {
 				&#039;tax_label&#039;                         =&gt; $tax_label,
 				&#039;display_cart_prices_including_tax&#039; =&gt; false,
 			);
-		};
+		}
 
 		return array(
 			&#039;tax_label&#039;                         =&gt; &#039;&#039;,
@@ -770,7 +779,7 @@ class MiniCart extends AbstractBlock {
 
     <footer class="phpdocumentor phpdocumentor-footer">
     <div class="phpdocumentor-section">
-        <span>WooCommerce Code Reference API documentation generated by <a href="http://www.phpdoc.org/">phpDocumentor</a> on July 25th, 2024 at 11:33 am.</span>
+        <span>WooCommerce Code Reference API documentation generated by <a href="http://www.phpdoc.org/">phpDocumentor</a> on May 16th, 2025 at 09:14 am.</span>
     </div>
 </footer>
 
@@ -782,7 +791,7 @@ class MiniCart extends AbstractBlock {
             'searchIndex': '..\/js\/searchIndex.json'
         };
     </script>
-    <script src="../js/searchIndex.js?updated=1721907185"></script>
-    <script src="../js/search.js?updated=1721907185"></script>
+    <script src="../js/searchIndex.js?updated=1747386862"></script>
+    <script src="../js/search.js?updated=1747386862"></script>
 </body>
 </html>

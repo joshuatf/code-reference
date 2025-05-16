@@ -4,14 +4,13 @@
     <meta charset="utf-8">
     <title>WooCommerce Code Reference</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="../images/favicon.png" />
-    <link rel="apple-touch-icon" href="../images/apple-touch-icon.png"/>
-    <link rel="apple-touch-icon" sizes="72x72" href="../images/apple-touch-icon-72x72.png"/>
-    <link rel="apple-touch-icon" sizes="114x114" href="../images/apple-touch-icon-114x114.png"/>
+    <link rel="icon" href="../images/favicon-32x32.png" sizes="32x32" />
+    <link rel="icon" href="../images/favicon-192x192.png" sizes="192x192" />
+    <link rel="apple-touch-icon" href="../images/favicon-180x180.png" />
+
     <link rel="stylesheet" href="../css/normalize.css">
-    <link rel="stylesheet" href="../css/base.css?updated=1721907200">
-    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../css/template.css?updated=1721907200">
+    <link rel="stylesheet" href="../css/base.css?updated=1747386879">
+    <link rel="stylesheet" href="../css/template.css?updated=1747386879">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0/css/all.min.css" integrity="sha256-ybRkN9dBjhcS2qrW1z+hfCxq+1aBdwyQM5wlQoQVt/0=" crossorigin="anonymous" />
             <script src="https://cdn.jsdelivr.net/npm/css-vars-ponyfill@2"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0/js/all.min.js" integrity="sha256-0vuk8LXoyrmCjp1f0O300qo1M75ZQyhH9X3J6d+scmk=" crossorigin="anonymous"></script>
@@ -27,19 +26,24 @@
 		'content_group' : 'WooCommerce Core Code Reference',
 	});
 </script>
-        </head>
+        <script src="../js/prism.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            window.dispatchEvent(new HashChangeEvent('hashchange'));
+        });
+    </script>
+</head>
 <body id="top">
     <header class="phpdocumentor-top-header">
     <section class="phpdocumentor-section">
         <div class="site-branding">
-            <a class="site-logo" href="../index.html"><img width="180" src="../images/logo.svg" alt="WooCommerce" /></a>
+            <a class="site-logo" href="../index.html"><img src="../images/logo.png" alt="WooCommerce" /></a>
         </div>
         <nav class="main-navigation">
             <ul>
                 <li><a href="../hooks/hooks.html">Hooks Reference</a></li>
-                <li><a href="https://docs.woocommerce.com/">Documentation</a></li>
+                <li><a href="https://developer.woocommerce.com/docs/">Documentation</a></li>
                 <li><a href="https://woocommerce.github.io/woocommerce-rest-api-docs/">REST API Docs</a></li>
-                <li><a href="https://woocommerce.com/careers/?utm_source=woocommerce+core+code+reference&utm_medium=devdocs&utm_campaign=woo+careers" target="_blank">We're hiring!</a></li>
             </ul>
         </nav>
     </section>
@@ -47,7 +51,7 @@
 
 <div class="phpdocumentor-header">
     <section class="phpdocumentor-section">
-        <h1 class="phpdocumentor-title">WooCommerce Code Reference</h1>
+        <h1 class="phpdocumentor-title"><a href="../index.html">WooCommerce Code Reference</a></h1>
         <section class="phpdocumentor-search">
     <label class="phpdocumentor-label">
         <span class="visually-hidden">Search (click ESC to close search results)</span>
@@ -68,6 +72,10 @@
                                         <h4 class="phpdocumentor-sidebar__root-namespace"><a href="../namespaces/woocommerce.html"><abbr title="\WooCommerce">WooCommerce</abbr></a></h4>
                 <ul class="phpdocumentor-list">
                                             <li><a href="../namespaces/woocommerce-admin.html"><abbr title="\WooCommerce\Admin">Admin</abbr></a></li>
+                                    </ul>
+                            <h4 class="phpdocumentor-sidebar__root-namespace"><a href="../namespaces/mailpoet.html"><abbr title="\MailPoet">MailPoet</abbr></a></h4>
+                <ul class="phpdocumentor-list">
+                                            <li><a href="../namespaces/mailpoet-emaileditor.html"><abbr title="\MailPoet\EmailEditor">EmailEditor</abbr></a></li>
                                     </ul>
                             <h4 class="phpdocumentor-sidebar__root-namespace"><a href="../namespaces/automattic.html"><abbr title="\Automattic">Automattic</abbr></a></h4>
                 <ul class="phpdocumentor-list">
@@ -113,8 +121,10 @@
                                     <li><a href="../packages/WooCommerce-Widgets.html"><abbr title="\WooCommerce\Widgets">Widgets</abbr></a></li>
                                     <li><a href="../packages/WooCommerce-Uninstaller.html"><abbr title="\WooCommerce\Uninstaller">Uninstaller</abbr></a></li>
                             </ul>
-                                <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/WoocommerceAdmin.html"><abbr title="\WoocommerceAdmin">WoocommerceAdmin</abbr></a></h3>
-                                <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/WoocommerceNavigation.html"><abbr title="\WoocommerceNavigation">WoocommerceNavigation</abbr></a></h3>
+                                <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/MailPoet.html"><abbr title="\MailPoet">MailPoet</abbr></a></h3>
+                        <ul class="phpdocumentor-list">
+                                    <li><a href="../packages/MailPoet-EmailEditor.html"><abbr title="\MailPoet\EmailEditor">EmailEditor</abbr></a></li>
+                            </ul>
                                 <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/Automattic.html"><abbr title="\Automattic">Automattic</abbr></a></h3>
                         <ul class="phpdocumentor-list">
                                     <li><a href="../packages/Automattic-WooCommerce.html"><abbr title="\Automattic\WooCommerce">WooCommerce</abbr></a></li>
@@ -265,6 +275,13 @@
 </dt>
 <dd>My account page.</dd>
 
+            <dt class="phpdocumentor-table-of-contents__entry -method -private">
+    <a href="../classes/WC-Shortcode-My-Account.html#method_my_account_add_notices">my_account_add_notices()</a>
+    <span>
+                        &nbsp;: mixed    </span>
+</dt>
+<dd>Add notices to the my account page.</dd>
+
         </dl>
 
 
@@ -289,9 +306,9 @@
         <a href="#method_add_payment_method" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/shortcodes/class-wc-shortcode-my-account.php"><a href="../files/woocommerce-includes-shortcodes-class-wc-shortcode-my-account.html#source-view.405">includes/shortcodes/class-wc-shortcode-my-account.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/shortcodes/class-wc-shortcode-my-account.php"><a href="../files/woocommerce-includes-shortcodes-class-wc-shortcode-my-account.html#source-view.413">includes/shortcodes/class-wc-shortcode-my-account.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">405</span>
+    <span class="phpdocumentor-element-found-in__line">413</span>
 </aside>
 
         <p class="phpdocumentor-summary">Show the add payment method page.</p>
@@ -321,9 +338,9 @@
         <a href="#method_check_password_reset_key" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/shortcodes/class-wc-shortcode-my-account.php"><a href="../files/woocommerce-includes-shortcodes-class-wc-shortcode-my-account.html#source-view.356">includes/shortcodes/class-wc-shortcode-my-account.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/shortcodes/class-wc-shortcode-my-account.php"><a href="../files/woocommerce-includes-shortcodes-class-wc-shortcode-my-account.html#source-view.358">includes/shortcodes/class-wc-shortcode-my-account.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">356</span>
+    <span class="phpdocumentor-element-found-in__line">358</span>
 </aside>
 
         <p class="phpdocumentor-summary">Retrieves a user row based on password reset key and login.</p>
@@ -388,9 +405,9 @@
         <a href="#method_edit_account" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/shortcodes/class-wc-shortcode-my-account.php"><a href="../files/woocommerce-includes-shortcodes-class-wc-shortcode-my-account.html#source-view.161">includes/shortcodes/class-wc-shortcode-my-account.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/shortcodes/class-wc-shortcode-my-account.php"><a href="../files/woocommerce-includes-shortcodes-class-wc-shortcode-my-account.html#source-view.163">includes/shortcodes/class-wc-shortcode-my-account.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">161</span>
+    <span class="phpdocumentor-element-found-in__line">163</span>
 </aside>
 
         <p class="phpdocumentor-summary">Edit account details page.</p>
@@ -420,9 +437,9 @@
         <a href="#method_edit_address" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/shortcodes/class-wc-shortcode-my-account.php"><a href="../files/woocommerce-includes-shortcodes-class-wc-shortcode-my-account.html#source-view.170">includes/shortcodes/class-wc-shortcode-my-account.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/shortcodes/class-wc-shortcode-my-account.php"><a href="../files/woocommerce-includes-shortcodes-class-wc-shortcode-my-account.html#source-view.172">includes/shortcodes/class-wc-shortcode-my-account.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">170</span>
+    <span class="phpdocumentor-element-found-in__line">172</span>
 </aside>
 
         <p class="phpdocumentor-summary">Edit address page.</p>
@@ -508,9 +525,9 @@
         <a href="#method_lost_password" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/shortcodes/class-wc-shortcode-my-account.php"><a href="../files/woocommerce-includes-shortcodes-class-wc-shortcode-my-account.html#source-view.230">includes/shortcodes/class-wc-shortcode-my-account.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/shortcodes/class-wc-shortcode-my-account.php"><a href="../files/woocommerce-includes-shortcodes-class-wc-shortcode-my-account.html#source-view.232">includes/shortcodes/class-wc-shortcode-my-account.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">230</span>
+    <span class="phpdocumentor-element-found-in__line">232</span>
 </aside>
 
         <p class="phpdocumentor-summary">Lost password page handling.</p>
@@ -584,9 +601,9 @@
         <a href="#method_reset_password" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/shortcodes/class-wc-shortcode-my-account.php"><a href="../files/woocommerce-includes-shortcodes-class-wc-shortcode-my-account.html#source-view.375">includes/shortcodes/class-wc-shortcode-my-account.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/shortcodes/class-wc-shortcode-my-account.php"><a href="../files/woocommerce-includes-shortcodes-class-wc-shortcode-my-account.html#source-view.379">includes/shortcodes/class-wc-shortcode-my-account.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">375</span>
+    <span class="phpdocumentor-element-found-in__line">379</span>
 </aside>
 
         <p class="phpdocumentor-summary">Handles resetting the user&#039;s password.</p>
@@ -620,6 +637,21 @@
             </dl>
 
     
+    <h5 class="phpdocumentor-tag-list__heading" id="tags">
+        Tags
+        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
+    </h5>
+    <dl class="phpdocumentor-tag-list">
+                                    <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">since</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                            <span class="phpdocumentor-tag-link">9.4.0</span>
+                                                                                                        <section class="phpdocumentor-description"><p>This will log the user in after resetting the password/session.</p>
+</section>
+
+                </dd>
+                        </dl>
 
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
     <span class="phpdocumentor-signature__response_type">mixed</span>
@@ -637,9 +669,9 @@
         <a href="#method_retrieve_password" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/shortcodes/class-wc-shortcode-my-account.php"><a href="../files/woocommerce-includes-shortcodes-class-wc-shortcode-my-account.html#source-view.277">includes/shortcodes/class-wc-shortcode-my-account.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/shortcodes/class-wc-shortcode-my-account.php"><a href="../files/woocommerce-includes-shortcodes-class-wc-shortcode-my-account.html#source-view.279">includes/shortcodes/class-wc-shortcode-my-account.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">277</span>
+    <span class="phpdocumentor-element-found-in__line">279</span>
 </aside>
 
         <p class="phpdocumentor-summary">Handles sending password retrieval email to customer.</p>
@@ -684,9 +716,9 @@
         <a href="#method_set_reset_password_cookie" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/shortcodes/class-wc-shortcode-my-account.php"><a href="../files/woocommerce-includes-shortcodes-class-wc-shortcode-my-account.html#source-view.391">includes/shortcodes/class-wc-shortcode-my-account.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/shortcodes/class-wc-shortcode-my-account.php"><a href="../files/woocommerce-includes-shortcodes-class-wc-shortcode-my-account.html#source-view.399">includes/shortcodes/class-wc-shortcode-my-account.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">391</span>
+    <span class="phpdocumentor-element-found-in__line">399</span>
 </aside>
 
         <p class="phpdocumentor-summary">Set or unset the cookie.</p>
@@ -728,9 +760,9 @@
         <a href="#method_view_order" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/shortcodes/class-wc-shortcode-my-account.php"><a href="../files/woocommerce-includes-shortcodes-class-wc-shortcode-my-account.html#source-view.133">includes/shortcodes/class-wc-shortcode-my-account.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/shortcodes/class-wc-shortcode-my-account.php"><a href="../files/woocommerce-includes-shortcodes-class-wc-shortcode-my-account.html#source-view.135">includes/shortcodes/class-wc-shortcode-my-account.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">133</span>
+    <span class="phpdocumentor-element-found-in__line">135</span>
 </aside>
 
         <p class="phpdocumentor-summary">View order page.</p>
@@ -772,9 +804,9 @@
         <a href="#method_my_account" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/shortcodes/class-wc-shortcode-my-account.php"><a href="../files/woocommerce-includes-shortcodes-class-wc-shortcode-my-account.html#source-view.110">includes/shortcodes/class-wc-shortcode-my-account.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/shortcodes/class-wc-shortcode-my-account.php"><a href="../files/woocommerce-includes-shortcodes-class-wc-shortcode-my-account.html#source-view.112">includes/shortcodes/class-wc-shortcode-my-account.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">110</span>
+    <span class="phpdocumentor-element-found-in__line">112</span>
 </aside>
 
         <p class="phpdocumentor-summary">My account page.</p>
@@ -805,6 +837,40 @@
             &mdash; <span class="phpdocumentor-return-value__description"></span>
     
 </article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -private
+                                    -static                    "
+>
+    <h4 class="phpdocumentor-element__name" id="method_my_account_add_notices">
+        my_account_add_notices()
+        <a href="#method_my_account_add_notices" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/includes/shortcodes/class-wc-shortcode-my-account.php"><a href="../files/woocommerce-includes-shortcodes-class-wc-shortcode-my-account.html#source-view.66">includes/shortcodes/class-wc-shortcode-my-account.php</a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">66</span>
+</aside>
+
+        <p class="phpdocumentor-summary">Add notices to the my account page.</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">private</span>
+            <span class="phpdocumentor-signature__static">static</span>    <span class="phpdocumentor-signature__name">my_account_add_notices</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
+
+        <section class="phpdocumentor-description"><p>Historically a filter has existed to render a message above the my account page content while the user is
+logged out. See <code class="prettyprint">woocommerce_my_account_message</code>.</p>
+</section>
+
+    
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">mixed</span>
+            &mdash; <span class="phpdocumentor-return-value__description"></span>
+    
+</article>
             </section>
 
     </article>
@@ -816,7 +882,7 @@
 
     <footer class="phpdocumentor phpdocumentor-footer">
     <div class="phpdocumentor-section">
-        <span>WooCommerce Code Reference API documentation generated by <a href="http://www.phpdoc.org/">phpDocumentor</a> on July 25th, 2024 at 11:33 am.</span>
+        <span>WooCommerce Code Reference API documentation generated by <a href="http://www.phpdoc.org/">phpDocumentor</a> on May 16th, 2025 at 09:14 am.</span>
     </div>
 </footer>
 
@@ -828,7 +894,7 @@
             'searchIndex': '..\/js\/searchIndex.json'
         };
     </script>
-    <script src="../js/searchIndex.js?updated=1721907200"></script>
-    <script src="../js/search.js?updated=1721907200"></script>
+    <script src="../js/searchIndex.js?updated=1747386879"></script>
+    <script src="../js/search.js?updated=1747386879"></script>
 </body>
 </html>

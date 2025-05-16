@@ -4,14 +4,13 @@
     <meta charset="utf-8">
     <title>WooCommerce Code Reference</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="../images/favicon.png" />
-    <link rel="apple-touch-icon" href="../images/apple-touch-icon.png"/>
-    <link rel="apple-touch-icon" sizes="72x72" href="../images/apple-touch-icon-72x72.png"/>
-    <link rel="apple-touch-icon" sizes="114x114" href="../images/apple-touch-icon-114x114.png"/>
+    <link rel="icon" href="../images/favicon-32x32.png" sizes="32x32" />
+    <link rel="icon" href="../images/favicon-192x192.png" sizes="192x192" />
+    <link rel="apple-touch-icon" href="../images/favicon-180x180.png" />
+
     <link rel="stylesheet" href="../css/normalize.css">
-    <link rel="stylesheet" href="../css/base.css?updated=1721907183">
-    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../css/template.css?updated=1721907183">
+    <link rel="stylesheet" href="../css/base.css?updated=1747386858">
+    <link rel="stylesheet" href="../css/template.css?updated=1747386858">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0/css/all.min.css" integrity="sha256-ybRkN9dBjhcS2qrW1z+hfCxq+1aBdwyQM5wlQoQVt/0=" crossorigin="anonymous" />
             <script src="https://cdn.jsdelivr.net/npm/css-vars-ponyfill@2"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0/js/all.min.js" integrity="sha256-0vuk8LXoyrmCjp1f0O300qo1M75ZQyhH9X3J6d+scmk=" crossorigin="anonymous"></script>
@@ -38,14 +37,13 @@
     <header class="phpdocumentor-top-header">
     <section class="phpdocumentor-section">
         <div class="site-branding">
-            <a class="site-logo" href="../index.html"><img width="180" src="../images/logo.svg" alt="WooCommerce" /></a>
+            <a class="site-logo" href="../index.html"><img src="../images/logo.png" alt="WooCommerce" /></a>
         </div>
         <nav class="main-navigation">
             <ul>
                 <li><a href="../hooks/hooks.html">Hooks Reference</a></li>
-                <li><a href="https://docs.woocommerce.com/">Documentation</a></li>
+                <li><a href="https://developer.woocommerce.com/docs/">Documentation</a></li>
                 <li><a href="https://woocommerce.github.io/woocommerce-rest-api-docs/">REST API Docs</a></li>
-                <li><a href="https://woocommerce.com/careers/?utm_source=woocommerce+core+code+reference&utm_medium=devdocs&utm_campaign=woo+careers" target="_blank">We're hiring!</a></li>
             </ul>
         </nav>
     </section>
@@ -53,7 +51,7 @@
 
 <div class="phpdocumentor-header">
     <section class="phpdocumentor-section">
-        <h1 class="phpdocumentor-title">WooCommerce Code Reference</h1>
+        <h1 class="phpdocumentor-title"><a href="../index.html">WooCommerce Code Reference</a></h1>
         <section class="phpdocumentor-search">
     <label class="phpdocumentor-label">
         <span class="visually-hidden">Search (click ESC to close search results)</span>
@@ -74,6 +72,10 @@
                                         <h4 class="phpdocumentor-sidebar__root-namespace"><a href="../namespaces/woocommerce.html"><abbr title="\WooCommerce">WooCommerce</abbr></a></h4>
                 <ul class="phpdocumentor-list">
                                             <li><a href="../namespaces/woocommerce-admin.html"><abbr title="\WooCommerce\Admin">Admin</abbr></a></li>
+                                    </ul>
+                            <h4 class="phpdocumentor-sidebar__root-namespace"><a href="../namespaces/mailpoet.html"><abbr title="\MailPoet">MailPoet</abbr></a></h4>
+                <ul class="phpdocumentor-list">
+                                            <li><a href="../namespaces/mailpoet-emaileditor.html"><abbr title="\MailPoet\EmailEditor">EmailEditor</abbr></a></li>
                                     </ul>
                             <h4 class="phpdocumentor-sidebar__root-namespace"><a href="../namespaces/automattic.html"><abbr title="\Automattic">Automattic</abbr></a></h4>
                 <ul class="phpdocumentor-list">
@@ -119,8 +121,10 @@
                                     <li><a href="../packages/WooCommerce-Widgets.html"><abbr title="\WooCommerce\Widgets">Widgets</abbr></a></li>
                                     <li><a href="../packages/WooCommerce-Uninstaller.html"><abbr title="\WooCommerce\Uninstaller">Uninstaller</abbr></a></li>
                             </ul>
-                                <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/WoocommerceAdmin.html"><abbr title="\WoocommerceAdmin">WoocommerceAdmin</abbr></a></h3>
-                                <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/WoocommerceNavigation.html"><abbr title="\WoocommerceNavigation">WoocommerceNavigation</abbr></a></h3>
+                                <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/MailPoet.html"><abbr title="\MailPoet">MailPoet</abbr></a></h3>
+                        <ul class="phpdocumentor-list">
+                                    <li><a href="../packages/MailPoet-EmailEditor.html"><abbr title="\MailPoet\EmailEditor">EmailEditor</abbr></a></li>
+                            </ul>
                                 <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/Automattic.html"><abbr title="\Automattic">Automattic</abbr></a></h3>
                         <ul class="phpdocumentor-list">
                                     <li><a href="../packages/Automattic-WooCommerce.html"><abbr title="\Automattic\WooCommerce">WooCommerce</abbr></a></li>
@@ -164,6 +168,9 @@
  */
 
 use Automattic\Jetpack\Constants;
+use Automattic\WooCommerce\Enums\ProductStatus;
+use Automattic\WooCommerce\Enums\CatalogVisibility;
+use Automattic\WooCommerce\Enums\ProductStockStatus;
 
 if ( ! defined( &#039;ABSPATH&#039; ) ) {
 	exit;
@@ -183,7 +190,10 @@ class WC_Product_Variation_Data_Store_CPT extends WC_Product_Data_Store_CPT impl
 	 * @return bool false if excluded.
 	 */
 	protected function exclude_internal_meta_keys( $meta ) {
-		return ! in_array( $meta-&gt;meta_key, $this-&gt;internal_meta_keys, true ) &amp;&amp; 0 !== stripos( $meta-&gt;meta_key, &#039;attribute_&#039; ) &amp;&amp; 0 !== stripos( $meta-&gt;meta_key, &#039;wp_&#039; );
+		$internal_meta_keys   = $this-&gt;internal_meta_keys;
+		$internal_meta_keys[] = &#039;_cogs_value_is_additive&#039;;
+
+		return ! in_array( $meta-&gt;meta_key, $internal_meta_keys, true ) &amp;&amp; 0 !== stripos( $meta-&gt;meta_key, &#039;attribute_&#039; ) &amp;&amp; 0 !== stripos( $meta-&gt;meta_key, &#039;wp_&#039; );
 	}
 
 	/*
@@ -302,7 +312,7 @@ class WC_Product_Variation_Data_Store_CPT extends WC_Product_Data_Store_CPT impl
 				&#039;woocommerce_new_product_variation_data&#039;,
 				array(
 					&#039;post_type&#039;      =&gt; &#039;product_variation&#039;,
-					&#039;post_status&#039;    =&gt; $product-&gt;get_status() ? $product-&gt;get_status() : &#039;publish&#039;,
+					&#039;post_status&#039;    =&gt; $product-&gt;get_status() ? $product-&gt;get_status() : ProductStatus::PUBLISH,
 					&#039;post_author&#039;    =&gt; get_current_user_id(),
 					&#039;post_title&#039;     =&gt; $product-&gt;get_name( &#039;edit&#039; ),
 					&#039;post_excerpt&#039;   =&gt; $product-&gt;get_attribute_summary( &#039;edit&#039; ),
@@ -377,7 +387,7 @@ class WC_Product_Variation_Data_Store_CPT extends WC_Product_Data_Store_CPT impl
 				&#039;post_excerpt&#039;      =&gt; $product-&gt;get_attribute_summary( &#039;edit&#039; ),
 				&#039;post_parent&#039;       =&gt; $product-&gt;get_parent_id( &#039;edit&#039; ),
 				&#039;comment_status&#039;    =&gt; &#039;closed&#039;,
-				&#039;post_status&#039;       =&gt; $product-&gt;get_status( &#039;edit&#039; ) ? $product-&gt;get_status( &#039;edit&#039; ) : &#039;publish&#039;,
+				&#039;post_status&#039;       =&gt; $product-&gt;get_status( &#039;edit&#039; ) ? $product-&gt;get_status( &#039;edit&#039; ) : ProductStatus::PUBLISH,
 				&#039;menu_order&#039;        =&gt; $product-&gt;get_menu_order( &#039;edit&#039; ),
 				&#039;post_date&#039;         =&gt; gmdate( &#039;Y-m-d H:i:s&#039;, $product-&gt;get_date_created( &#039;edit&#039; )-&gt;getOffsetTimestamp() ),
 				&#039;post_date_gmt&#039;     =&gt; gmdate( &#039;Y-m-d H:i:s&#039;, $product-&gt;get_date_created( &#039;edit&#039; )-&gt;getTimestamp() ),
@@ -525,6 +535,7 @@ class WC_Product_Variation_Data_Store_CPT extends WC_Product_Data_Store_CPT impl
 				&#039;image_id&#039;          =&gt; get_post_thumbnail_id( $id ),
 				&#039;backorders&#039;        =&gt; get_post_meta( $id, &#039;_backorders&#039;, true ),
 				&#039;sku&#039;               =&gt; get_post_meta( $id, &#039;_sku&#039;, true ),
+				&#039;global_unique_id&#039;  =&gt; get_post_meta( $id, &#039;_global_unique_id&#039;, true ),
 				&#039;stock_quantity&#039;    =&gt; get_post_meta( $id, &#039;_stock&#039;, true ),
 				&#039;weight&#039;            =&gt; get_post_meta( $id, &#039;_weight&#039;, true ),
 				&#039;length&#039;            =&gt; get_post_meta( $id, &#039;_length&#039;, true ),
@@ -533,6 +544,17 @@ class WC_Product_Variation_Data_Store_CPT extends WC_Product_Data_Store_CPT impl
 				&#039;tax_class&#039;         =&gt; ! metadata_exists( &#039;post&#039;, $id, &#039;_tax_class&#039; ) ? &#039;parent&#039; : get_post_meta( $id, &#039;_tax_class&#039;, true ),
 			)
 		);
+
+		if ( $this-&gt;cogs_feature_is_enabled() ) {
+			$cogs_value = get_post_meta( $id, &#039;_cogs_total_value&#039;, true );
+			$cogs_value = &#039;&#039; === $cogs_value ? null : (float) $cogs_value;
+			$product-&gt;set_props(
+				array(
+					&#039;cogs_value&#039;             =&gt; $cogs_value,
+					&#039;cogs_value_is_additive&#039; =&gt; &#039;yes&#039; === get_post_meta( $id, &#039;_cogs_value_is_additive&#039;, true ),
+				)
+			);
+		}
 
 		if ( $product-&gt;is_on_sale( &#039;edit&#039; ) ) {
 			$product-&gt;set_price( $product-&gt;get_sale_price( &#039;edit&#039; ) );
@@ -547,13 +569,13 @@ class WC_Product_Variation_Data_Store_CPT extends WC_Product_Data_Store_CPT impl
 		$exclude_catalog = in_array( &#039;exclude-from-catalog&#039;, $term_names, true );
 
 		if ( $exclude_search &amp;&amp; $exclude_catalog ) {
-			$catalog_visibility = &#039;hidden&#039;;
+			$catalog_visibility = CatalogVisibility::HIDDEN;
 		} elseif ( $exclude_search ) {
-			$catalog_visibility = &#039;catalog&#039;;
+			$catalog_visibility = CatalogVisibility::CATALOG;
 		} elseif ( $exclude_catalog ) {
-			$catalog_visibility = &#039;search&#039;;
+			$catalog_visibility = CatalogVisibility::SEARCH;
 		} else {
-			$catalog_visibility = &#039;visible&#039;;
+			$catalog_visibility = CatalogVisibility::VISIBLE;
 		}
 
 		$product-&gt;set_parent_data(
@@ -561,6 +583,7 @@ class WC_Product_Variation_Data_Store_CPT extends WC_Product_Data_Store_CPT impl
 				&#039;title&#039;              =&gt; $parent_object ? $parent_object-&gt;post_title : &#039;&#039;,
 				&#039;status&#039;             =&gt; $parent_object ? $parent_object-&gt;post_status : &#039;&#039;,
 				&#039;sku&#039;                =&gt; get_post_meta( $product-&gt;get_parent_id(), &#039;_sku&#039;, true ),
+				&#039;global_unique_id&#039;   =&gt; get_post_meta( $product-&gt;get_parent_id(), &#039;_global_unique_id&#039;, true ),
 				&#039;manage_stock&#039;       =&gt; get_post_meta( $product-&gt;get_parent_id(), &#039;_manage_stock&#039;, true ),
 				&#039;backorders&#039;         =&gt; get_post_meta( $product-&gt;get_parent_id(), &#039;_backorders&#039;, true ),
 				&#039;stock_quantity&#039;     =&gt; wc_stock_amount( get_post_meta( $product-&gt;get_parent_id(), &#039;_stock&#039;, true ) ),
@@ -580,6 +603,37 @@ class WC_Product_Variation_Data_Store_CPT extends WC_Product_Data_Store_CPT impl
 		$product-&gt;set_sold_individually( get_post_meta( $product-&gt;get_parent_id(), &#039;_sold_individually&#039;, true ) );
 		$product-&gt;set_tax_status( get_post_meta( $product-&gt;get_parent_id(), &#039;_tax_status&#039;, true ) );
 		$product-&gt;set_cross_sell_ids( get_post_meta( $product-&gt;get_parent_id(), &#039;_crosssell_ids&#039;, true ) );
+
+		if ( $this-&gt;cogs_feature_is_enabled() ) {
+			$this-&gt;load_cogs_data( $product );
+		}
+	}
+
+	/**
+	 * Load the Cost of Goods Sold related data for a given product.
+	 *
+	 * @param WC_Product $product The product to apply the loaded data to.
+	 */
+	protected function load_cogs_data( $product ) {
+		parent::load_cogs_data( $product );
+
+		$cogs_value_is_additive = &#039;yes&#039; === get_post_meta( $product-&gt;get_id(), &#039;_cogs_value_is_additive&#039;, true );
+
+		/**
+		 * Filter to customize the &quot;Cost of Goods Sold value is additive&quot; flag that gets loaded for a given variable product.
+		 *
+		 * @since 9.7.0
+		 *
+		 * @param bool $cogs_value_is_additive The flag as read from the database.
+		 * @param WC_Product $product The product for which the flag is being loaded.
+		 */
+		$cogs_value_is_additive = apply_filters( &#039;woocommerce_load_product_cogs_is_additive_flag&#039;, $cogs_value_is_additive, $product );
+
+		$product-&gt;set_props(
+			array(
+				&#039;cogs_value_is_additive&#039; =&gt; $cogs_value_is_additive,
+			)
+		);
 	}
 
 	/**
@@ -611,8 +665,8 @@ class WC_Product_Variation_Data_Store_CPT extends WC_Product_Data_Store_CPT impl
 		if ( $force || array_intersect( array( &#039;stock_status&#039; ), array_keys( $changes ) ) ) {
 			$terms = array();
 
-			if ( &#039;outofstock&#039; === $product-&gt;get_stock_status() ) {
-				$terms[] = &#039;outofstock&#039;;
+			if ( ProductStockStatus::OUT_OF_STOCK === $product-&gt;get_stock_status() ) {
+				$terms[] = ProductStockStatus::OUT_OF_STOCK;
 			}
 
 			wp_set_post_terms( $product-&gt;get_id(), $terms, &#039;product_visibility&#039;, false );
@@ -657,7 +711,7 @@ class WC_Product_Variation_Data_Store_CPT extends WC_Product_Data_Store_CPT impl
 	}
 
 	/**
-	 * Helper method that updates all the post meta for a product based on it&#039;s settings in the WC_Product class.
+	 * Helper method that updates all the post meta for a product based on its settings in the WC_Product class.
 	 *
 	 * @since 3.0.0
 	 * @param WC_Product $product Product object.
@@ -675,6 +729,29 @@ class WC_Product_Variation_Data_Store_CPT extends WC_Product_Data_Store_CPT impl
 			$updated = update_post_meta( $product-&gt;get_id(), $meta_key, $value );
 			if ( $updated ) {
 				$this-&gt;updated_props[] = $prop;
+			}
+		}
+
+		if ( $this-&gt;cogs_feature_is_enabled() ) {
+			$cogs_value_is_additive = $product-&gt;get_cogs_value_is_additive();
+
+			/**
+			 * Filter to customize the &quot;Cost of Goods Sold value is additive&quot; flag that gets saved for a given variable product,
+			 * or to suppress the saving of the flag (so that custom storage can be used) if null is returned.
+			 * Note that returning null will suppress any database access (for either saving the flag or deleting it).
+			 *
+			 * @since 9.7.0
+			 *
+			 * @param bool|null $cogs_value_is_additive The flag to be written to the database. If null is returned nothing will be written or deleted.
+			 * @param WC_Product $product The product for which the flag is being saved.
+			 */
+			$cogs_value_is_additive = apply_filters( &#039;woocommerce_save_product_cogs_is_additive_flag&#039;, $cogs_value_is_additive, $product );
+
+			if ( ! is_null( $cogs_value_is_additive ) ) {
+				$updated = $this-&gt;update_or_delete_post_meta( $product, &#039;_cogs_value_is_additive&#039;, $cogs_value_is_additive ? &#039;yes&#039; : &#039;&#039; );
+				if ( $updated ) {
+					$this-&gt;updated_props[] = &#039;cogs_value_is_additive&#039;;
+				}
 			}
 		}
 
@@ -713,7 +790,7 @@ class WC_Product_Variation_Data_Store_CPT extends WC_Product_Data_Store_CPT impl
 
     <footer class="phpdocumentor phpdocumentor-footer">
     <div class="phpdocumentor-section">
-        <span>WooCommerce Code Reference API documentation generated by <a href="http://www.phpdoc.org/">phpDocumentor</a> on July 25th, 2024 at 11:33 am.</span>
+        <span>WooCommerce Code Reference API documentation generated by <a href="http://www.phpdoc.org/">phpDocumentor</a> on May 16th, 2025 at 09:14 am.</span>
     </div>
 </footer>
 
@@ -725,7 +802,7 @@ class WC_Product_Variation_Data_Store_CPT extends WC_Product_Data_Store_CPT impl
             'searchIndex': '..\/js\/searchIndex.json'
         };
     </script>
-    <script src="../js/searchIndex.js?updated=1721907183"></script>
-    <script src="../js/search.js?updated=1721907183"></script>
+    <script src="../js/searchIndex.js?updated=1747386858"></script>
+    <script src="../js/search.js?updated=1747386858"></script>
 </body>
 </html>

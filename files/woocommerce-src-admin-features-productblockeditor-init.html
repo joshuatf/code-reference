@@ -4,14 +4,13 @@
     <meta charset="utf-8">
     <title>WooCommerce Code Reference</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="../images/favicon.png" />
-    <link rel="apple-touch-icon" href="../images/apple-touch-icon.png"/>
-    <link rel="apple-touch-icon" sizes="72x72" href="../images/apple-touch-icon-72x72.png"/>
-    <link rel="apple-touch-icon" sizes="114x114" href="../images/apple-touch-icon-114x114.png"/>
+    <link rel="icon" href="../images/favicon-32x32.png" sizes="32x32" />
+    <link rel="icon" href="../images/favicon-192x192.png" sizes="192x192" />
+    <link rel="apple-touch-icon" href="../images/favicon-180x180.png" />
+
     <link rel="stylesheet" href="../css/normalize.css">
-    <link rel="stylesheet" href="../css/base.css?updated=1721907184">
-    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../css/template.css?updated=1721907184">
+    <link rel="stylesheet" href="../css/base.css?updated=1747386861">
+    <link rel="stylesheet" href="../css/template.css?updated=1747386861">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0/css/all.min.css" integrity="sha256-ybRkN9dBjhcS2qrW1z+hfCxq+1aBdwyQM5wlQoQVt/0=" crossorigin="anonymous" />
             <script src="https://cdn.jsdelivr.net/npm/css-vars-ponyfill@2"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0/js/all.min.js" integrity="sha256-0vuk8LXoyrmCjp1f0O300qo1M75ZQyhH9X3J6d+scmk=" crossorigin="anonymous"></script>
@@ -38,14 +37,13 @@
     <header class="phpdocumentor-top-header">
     <section class="phpdocumentor-section">
         <div class="site-branding">
-            <a class="site-logo" href="../index.html"><img width="180" src="../images/logo.svg" alt="WooCommerce" /></a>
+            <a class="site-logo" href="../index.html"><img src="../images/logo.png" alt="WooCommerce" /></a>
         </div>
         <nav class="main-navigation">
             <ul>
                 <li><a href="../hooks/hooks.html">Hooks Reference</a></li>
-                <li><a href="https://docs.woocommerce.com/">Documentation</a></li>
+                <li><a href="https://developer.woocommerce.com/docs/">Documentation</a></li>
                 <li><a href="https://woocommerce.github.io/woocommerce-rest-api-docs/">REST API Docs</a></li>
-                <li><a href="https://woocommerce.com/careers/?utm_source=woocommerce+core+code+reference&utm_medium=devdocs&utm_campaign=woo+careers" target="_blank">We're hiring!</a></li>
             </ul>
         </nav>
     </section>
@@ -53,7 +51,7 @@
 
 <div class="phpdocumentor-header">
     <section class="phpdocumentor-section">
-        <h1 class="phpdocumentor-title">WooCommerce Code Reference</h1>
+        <h1 class="phpdocumentor-title"><a href="../index.html">WooCommerce Code Reference</a></h1>
         <section class="phpdocumentor-search">
     <label class="phpdocumentor-label">
         <span class="visually-hidden">Search (click ESC to close search results)</span>
@@ -74,6 +72,10 @@
                                         <h4 class="phpdocumentor-sidebar__root-namespace"><a href="../namespaces/woocommerce.html"><abbr title="\WooCommerce">WooCommerce</abbr></a></h4>
                 <ul class="phpdocumentor-list">
                                             <li><a href="../namespaces/woocommerce-admin.html"><abbr title="\WooCommerce\Admin">Admin</abbr></a></li>
+                                    </ul>
+                            <h4 class="phpdocumentor-sidebar__root-namespace"><a href="../namespaces/mailpoet.html"><abbr title="\MailPoet">MailPoet</abbr></a></h4>
+                <ul class="phpdocumentor-list">
+                                            <li><a href="../namespaces/mailpoet-emaileditor.html"><abbr title="\MailPoet\EmailEditor">EmailEditor</abbr></a></li>
                                     </ul>
                             <h4 class="phpdocumentor-sidebar__root-namespace"><a href="../namespaces/automattic.html"><abbr title="\Automattic">Automattic</abbr></a></h4>
                 <ul class="phpdocumentor-list">
@@ -119,8 +121,10 @@
                                     <li><a href="../packages/WooCommerce-Widgets.html"><abbr title="\WooCommerce\Widgets">Widgets</abbr></a></li>
                                     <li><a href="../packages/WooCommerce-Uninstaller.html"><abbr title="\WooCommerce\Uninstaller">Uninstaller</abbr></a></li>
                             </ul>
-                                <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/WoocommerceAdmin.html"><abbr title="\WoocommerceAdmin">WoocommerceAdmin</abbr></a></h3>
-                                <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/WoocommerceNavigation.html"><abbr title="\WoocommerceNavigation">WoocommerceNavigation</abbr></a></h3>
+                                <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/MailPoet.html"><abbr title="\MailPoet">MailPoet</abbr></a></h3>
+                        <ul class="phpdocumentor-list">
+                                    <li><a href="../packages/MailPoet-EmailEditor.html"><abbr title="\MailPoet\EmailEditor">EmailEditor</abbr></a></li>
+                            </ul>
                                 <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/Automattic.html"><abbr title="\Automattic">Automattic</abbr></a></h3>
                         <ul class="phpdocumentor-list">
                                     <li><a href="../packages/Automattic-WooCommerce.html"><abbr title="\Automattic\WooCommerce">WooCommerce</abbr></a></li>
@@ -161,11 +165,14 @@
  * WooCommerce Product Block Editor
  */
 
+declare(strict_types = 1);
+
 namespace Automattic\WooCommerce\Admin\Features\ProductBlockEditor;
 
 use Automattic\WooCommerce\Admin\Features\Features;
 use Automattic\WooCommerce\Admin\Features\ProductBlockEditor\ProductTemplate;
 use Automattic\WooCommerce\Admin\PageController;
+use Automattic\WooCommerce\Enums\ProductType;
 use Automattic\WooCommerce\LayoutTemplates\LayoutTemplateRegistry;
 
 use Automattic\WooCommerce\Internal\Features\ProductBlockEditor\ProductTemplates\SimpleProductTemplate;
@@ -187,7 +194,7 @@ class Init {
 	 *
 	 * @var array
 	 */
-	private $supported_product_types = array( &#039;simple&#039; );
+	private $supported_product_types = array( ProductType::SIMPLE );
 
 	/**
 	 * Registered product templates.
@@ -207,9 +214,13 @@ class Init {
 	 * Constructor
 	 */
 	public function __construct() {
-		array_push( $this-&gt;supported_product_types, &#039;variable&#039; );
-		array_push( $this-&gt;supported_product_types, &#039;external&#039; );
-		array_push( $this-&gt;supported_product_types, &#039;grouped&#039; );
+		if ( ! is_admin() &amp;&amp; ! WC()-&gt;is_rest_api_request() ) {
+			return;
+		}
+
+		array_push( $this-&gt;supported_product_types, ProductType::VARIABLE );
+		array_push( $this-&gt;supported_product_types, ProductType::EXTERNAL );
+		array_push( $this-&gt;supported_product_types, ProductType::GROUPED );
 
 		$this-&gt;redirection_controller = new RedirectionController();
 
@@ -285,7 +296,7 @@ class Init {
 		$editor_settings = $this-&gt;get_product_editor_settings();
 
 		$script_handle = &#039;wc-admin-edit-product&#039;;
-		wp_register_script( $script_handle, &#039;&#039;, array(), &#039;0.1.0&#039;, true );
+		wp_register_script( $script_handle, &#039;&#039;, array( &#039;wp-blocks&#039; ), &#039;0.1.0&#039;, true );
 		wp_enqueue_script( $script_handle );
 		wp_add_inline_script(
 			$script_handle,
@@ -308,10 +319,11 @@ class Init {
 	 * Enqueue styles needed for the rich text editor.
 	 */
 	public function enqueue_styles() {
-		if ( ! PageController::is_admin_or_embed_page() ) {
+		if ( ! PageController::is_admin_page() ) {
 			return;
 		}
-		wp_enqueue_style( &#039;wp-edit-blocks&#039; );
+		wp_enqueue_style( &#039;wc-product-editor&#039; );
+		wp_enqueue_style( &#039;wp-editor&#039; );
 		wp_enqueue_style( &#039;wp-format-library&#039; );
 		wp_enqueue_editor();
 		/**
@@ -326,10 +338,10 @@ class Init {
 	 * Dequeue conflicting styles.
 	 */
 	public function dequeue_conflicting_styles() {
-		if ( ! PageController::is_admin_or_embed_page() ) {
+		if ( ! PageController::is_admin_page() ) {
 			return;
 		}
-		// Dequeing this to avoid conflicts, until we remove the &#039;woocommerce-page&#039; class.
+		// Dequeuing this to avoid conflicts, until we remove the &#039;woocommerce-page&#039; class.
 		wp_dequeue_style( &#039;woocommerce-blocktheme&#039; );
 	}
 
@@ -347,7 +359,7 @@ class Init {
 			return $link;
 		}
 
-		if ( $product-&gt;get_type() === &#039;simple&#039; ) {
+		if ( $product-&gt;get_type() === ProductType::SIMPLE ) {
 			return admin_url( &#039;admin.php?page=wc-admin&amp;path=/product/&#039; . $product-&gt;get_id() );
 		}
 
@@ -437,7 +449,7 @@ class Init {
 				&#039;icon&#039;               =&gt; &#039;shipping&#039;,
 				&#039;layout_template_id&#039; =&gt; &#039;simple-product&#039;,
 				&#039;product_data&#039;       =&gt; array(
-					&#039;type&#039; =&gt; &#039;simple&#039;,
+					&#039;type&#039; =&gt; ProductType::SIMPLE,
 				),
 			)
 		);
@@ -450,7 +462,7 @@ class Init {
 				&#039;icon&#039;               =&gt; &#039;group&#039;,
 				&#039;layout_template_id&#039; =&gt; &#039;simple-product&#039;,
 				&#039;product_data&#039;       =&gt; array(
-					&#039;type&#039; =&gt; &#039;grouped&#039;,
+					&#039;type&#039; =&gt; ProductType::GROUPED,
 				),
 			)
 		);
@@ -463,7 +475,7 @@ class Init {
 				&#039;icon&#039;               =&gt; &#039;link&#039;,
 				&#039;layout_template_id&#039; =&gt; &#039;simple-product&#039;,
 				&#039;product_data&#039;       =&gt; array(
-					&#039;type&#039; =&gt; &#039;external&#039;,
+					&#039;type&#039; =&gt; ProductType::EXTERNAL,
 				),
 			)
 		);
@@ -665,7 +677,7 @@ class Init {
 
     <footer class="phpdocumentor phpdocumentor-footer">
     <div class="phpdocumentor-section">
-        <span>WooCommerce Code Reference API documentation generated by <a href="http://www.phpdoc.org/">phpDocumentor</a> on July 25th, 2024 at 11:33 am.</span>
+        <span>WooCommerce Code Reference API documentation generated by <a href="http://www.phpdoc.org/">phpDocumentor</a> on May 16th, 2025 at 09:14 am.</span>
     </div>
 </footer>
 
@@ -677,7 +689,7 @@ class Init {
             'searchIndex': '..\/js\/searchIndex.json'
         };
     </script>
-    <script src="../js/searchIndex.js?updated=1721907184"></script>
-    <script src="../js/search.js?updated=1721907184"></script>
+    <script src="../js/searchIndex.js?updated=1747386861"></script>
+    <script src="../js/search.js?updated=1747386861"></script>
 </body>
 </html>

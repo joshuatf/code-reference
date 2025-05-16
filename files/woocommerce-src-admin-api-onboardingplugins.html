@@ -4,14 +4,13 @@
     <meta charset="utf-8">
     <title>WooCommerce Code Reference</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="../images/favicon.png" />
-    <link rel="apple-touch-icon" href="../images/apple-touch-icon.png"/>
-    <link rel="apple-touch-icon" sizes="72x72" href="../images/apple-touch-icon-72x72.png"/>
-    <link rel="apple-touch-icon" sizes="114x114" href="../images/apple-touch-icon-114x114.png"/>
+    <link rel="icon" href="../images/favicon-32x32.png" sizes="32x32" />
+    <link rel="icon" href="../images/favicon-192x192.png" sizes="192x192" />
+    <link rel="apple-touch-icon" href="../images/favicon-180x180.png" />
+
     <link rel="stylesheet" href="../css/normalize.css">
-    <link rel="stylesheet" href="../css/base.css?updated=1721907184">
-    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../css/template.css?updated=1721907184">
+    <link rel="stylesheet" href="../css/base.css?updated=1747386860">
+    <link rel="stylesheet" href="../css/template.css?updated=1747386860">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0/css/all.min.css" integrity="sha256-ybRkN9dBjhcS2qrW1z+hfCxq+1aBdwyQM5wlQoQVt/0=" crossorigin="anonymous" />
             <script src="https://cdn.jsdelivr.net/npm/css-vars-ponyfill@2"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0/js/all.min.js" integrity="sha256-0vuk8LXoyrmCjp1f0O300qo1M75ZQyhH9X3J6d+scmk=" crossorigin="anonymous"></script>
@@ -38,14 +37,13 @@
     <header class="phpdocumentor-top-header">
     <section class="phpdocumentor-section">
         <div class="site-branding">
-            <a class="site-logo" href="../index.html"><img width="180" src="../images/logo.svg" alt="WooCommerce" /></a>
+            <a class="site-logo" href="../index.html"><img src="../images/logo.png" alt="WooCommerce" /></a>
         </div>
         <nav class="main-navigation">
             <ul>
                 <li><a href="../hooks/hooks.html">Hooks Reference</a></li>
-                <li><a href="https://docs.woocommerce.com/">Documentation</a></li>
+                <li><a href="https://developer.woocommerce.com/docs/">Documentation</a></li>
                 <li><a href="https://woocommerce.github.io/woocommerce-rest-api-docs/">REST API Docs</a></li>
-                <li><a href="https://woocommerce.com/careers/?utm_source=woocommerce+core+code+reference&utm_medium=devdocs&utm_campaign=woo+careers" target="_blank">We're hiring!</a></li>
             </ul>
         </nav>
     </section>
@@ -53,7 +51,7 @@
 
 <div class="phpdocumentor-header">
     <section class="phpdocumentor-section">
-        <h1 class="phpdocumentor-title">WooCommerce Code Reference</h1>
+        <h1 class="phpdocumentor-title"><a href="../index.html">WooCommerce Code Reference</a></h1>
         <section class="phpdocumentor-search">
     <label class="phpdocumentor-label">
         <span class="visually-hidden">Search (click ESC to close search results)</span>
@@ -74,6 +72,10 @@
                                         <h4 class="phpdocumentor-sidebar__root-namespace"><a href="../namespaces/woocommerce.html"><abbr title="\WooCommerce">WooCommerce</abbr></a></h4>
                 <ul class="phpdocumentor-list">
                                             <li><a href="../namespaces/woocommerce-admin.html"><abbr title="\WooCommerce\Admin">Admin</abbr></a></li>
+                                    </ul>
+                            <h4 class="phpdocumentor-sidebar__root-namespace"><a href="../namespaces/mailpoet.html"><abbr title="\MailPoet">MailPoet</abbr></a></h4>
+                <ul class="phpdocumentor-list">
+                                            <li><a href="../namespaces/mailpoet-emaileditor.html"><abbr title="\MailPoet\EmailEditor">EmailEditor</abbr></a></li>
                                     </ul>
                             <h4 class="phpdocumentor-sidebar__root-namespace"><a href="../namespaces/automattic.html"><abbr title="\Automattic">Automattic</abbr></a></h4>
                 <ul class="phpdocumentor-list">
@@ -119,8 +121,10 @@
                                     <li><a href="../packages/WooCommerce-Widgets.html"><abbr title="\WooCommerce\Widgets">Widgets</abbr></a></li>
                                     <li><a href="../packages/WooCommerce-Uninstaller.html"><abbr title="\WooCommerce\Uninstaller">Uninstaller</abbr></a></li>
                             </ul>
-                                <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/WoocommerceAdmin.html"><abbr title="\WoocommerceAdmin">WoocommerceAdmin</abbr></a></h3>
-                                <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/WoocommerceNavigation.html"><abbr title="\WoocommerceNavigation">WoocommerceNavigation</abbr></a></h3>
+                                <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/MailPoet.html"><abbr title="\MailPoet">MailPoet</abbr></a></h3>
+                        <ul class="phpdocumentor-list">
+                                    <li><a href="../packages/MailPoet-EmailEditor.html"><abbr title="\MailPoet\EmailEditor">EmailEditor</abbr></a></li>
+                            </ul>
                                 <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/Automattic.html"><abbr title="\Automattic">Automattic</abbr></a></h3>
                         <ul class="phpdocumentor-list">
                                     <li><a href="../packages/Automattic-WooCommerce.html"><abbr title="\Automattic\WooCommerce">WooCommerce</abbr></a></li>
@@ -169,6 +173,7 @@ defined( &#039;ABSPATH&#039; ) || exit;
 
 use ActionScheduler;
 use Automattic\Jetpack\Connection\Manager;
+use Automattic\WooCommerce\Admin\Features\Features;
 use Automattic\WooCommerce\Admin\PluginsHelper;
 use Automattic\WooCommerce\Admin\PluginsInstallLoggers\AsynPluginsInstallLogger;
 use WC_REST_Data_Controller;
@@ -223,6 +228,12 @@ class OnboardingPlugins extends WC_REST_Data_Controller {
 								);
 							},
 							&#039;required&#039;          =&gt; true,
+						),
+						&#039;source&#039;  =&gt; array(
+							&#039;description&#039;       =&gt; &#039;The source of the request&#039;,
+							&#039;type&#039;              =&gt; &#039;string&#039;,
+							&#039;sanitize_callback&#039; =&gt; &#039;sanitize_text_field&#039;,
+							&#039;required&#039;          =&gt; false,
 						),
 					),
 				),
@@ -310,9 +321,10 @@ class OnboardingPlugins extends WC_REST_Data_Controller {
 	 */
 	public function install_and_activate_async( WP_REST_Request $request ) {
 		$plugins = $request-&gt;get_param( &#039;plugins&#039; );
+		$source  = $request-&gt;get_param( &#039;source&#039; );
 		$job_id  = uniqid();
 
-		WC()-&gt;queue()-&gt;add( &#039;woocommerce_plugins_install_and_activate_async_callback&#039;, array( $plugins, $job_id ) );
+		WC()-&gt;queue()-&gt;add( &#039;woocommerce_plugins_install_and_activate_async_callback&#039;, array( $plugins, $job_id, $source ) );
 
 		$plugin_status = array();
 		foreach ( $plugins as $plugin ) {
@@ -350,7 +362,7 @@ class OnboardingPlugins extends WC_REST_Data_Controller {
 
 		$actions = array_filter(
 			PluginsHelper::get_action_data( $actions ),
-			function( $action ) use ( $job_id ) {
+			function ( $action ) use ( $job_id ) {
 				return $action[&#039;job_id&#039;] === $job_id;
 			}
 		);
@@ -394,19 +406,70 @@ class OnboardingPlugins extends WC_REST_Data_Controller {
 		}
 
 		$redirect_url = $request-&gt;get_param( &#039;redirect_url&#039; );
-		$calypso_env  = defined( &#039;WOOCOMMERCE_CALYPSO_ENVIRONMENT&#039; ) &amp;&amp; in_array( WOOCOMMERCE_CALYPSO_ENVIRONMENT, [ &#039;development&#039;, &#039;wpcalypso&#039;, &#039;horizon&#039;, &#039;stage&#039; ], true ) ? WOOCOMMERCE_CALYPSO_ENVIRONMENT : &#039;production&#039;;
+		$calypso_env  = defined( &#039;WOOCOMMERCE_CALYPSO_ENVIRONMENT&#039; ) &amp;&amp; in_array( WOOCOMMERCE_CALYPSO_ENVIRONMENT, array( &#039;development&#039;, &#039;wpcalypso&#039;, &#039;horizon&#039;, &#039;stage&#039; ), true ) ? WOOCOMMERCE_CALYPSO_ENVIRONMENT : &#039;production&#039;;
 
-		return [
-			&#039;success&#039; =&gt; ! $errors-&gt;has_errors(),
-			&#039;errors&#039;  =&gt; $errors-&gt;get_error_messages(),
-			&#039;url&#039;     =&gt; add_query_arg(
-				[
+		$authorization_url = $manager-&gt;get_authorization_url( null, $redirect_url );
+		$authorization_url = add_query_arg( &#039;locale&#039;, $this-&gt;get_wpcom_locale(), $authorization_url );
+
+		if ( Features::is_enabled( &#039;use-wp-horizon&#039; ) ) {
+			$calypso_env = &#039;horizon&#039;;
+		}
+
+		$color_scheme = get_user_option( &#039;admin_color&#039;, get_current_user_id() );
+		if ( ! $color_scheme ) {
+			$color_scheme = &#039;default&#039;;
+		}
+
+		return array(
+			&#039;success&#039;      =&gt; ! $errors-&gt;has_errors(),
+			&#039;errors&#039;       =&gt; $errors-&gt;get_error_messages(),
+			&#039;color_scheme&#039; =&gt; &#039;fresh&#039; === $color_scheme ? &#039;default&#039; : $color_scheme,
+			&#039;url&#039;          =&gt; add_query_arg(
+				array(
 					&#039;from&#039;        =&gt; $request-&gt;get_param( &#039;from&#039; ),
 					&#039;calypso_env&#039; =&gt; $calypso_env,
-				],
-				$manager-&gt;get_authorization_url( null, $redirect_url )
+				),
+				$authorization_url,
 			),
-		];
+		);
+	}
+
+	/**
+	 * Return a locale string for wpcom.
+	 *
+	 * @return string
+	 */
+	private function get_wpcom_locale() {
+		// List of locales that should be used with region code.
+		$locale_to_lang = array(
+			&#039;bre&#039;   =&gt; &#039;br&#039;,
+			&#039;de_AT&#039; =&gt; &#039;de-at&#039;,
+			&#039;de_CH&#039; =&gt; &#039;de-ch&#039;,
+			&#039;de&#039;    =&gt; &#039;de_formal&#039;,
+			&#039;el&#039;    =&gt; &#039;el-po&#039;,
+			&#039;en_GB&#039; =&gt; &#039;en-gb&#039;,
+			&#039;es_CL&#039; =&gt; &#039;es-cl&#039;,
+			&#039;es_MX&#039; =&gt; &#039;es-mx&#039;,
+			&#039;fr_BE&#039; =&gt; &#039;fr-be&#039;,
+			&#039;fr_CA&#039; =&gt; &#039;fr-ca&#039;,
+			&#039;nl_BE&#039; =&gt; &#039;nl-be&#039;,
+			&#039;nl&#039;    =&gt; &#039;nl_formal&#039;,
+			&#039;pt_BR&#039; =&gt; &#039;pt-br&#039;,
+			&#039;sr&#039;    =&gt; &#039;sr_latin&#039;,
+			&#039;zh_CN&#039; =&gt; &#039;zh-cn&#039;,
+			&#039;zh_HK&#039; =&gt; &#039;zh-hk&#039;,
+			&#039;zh_SG&#039; =&gt; &#039;zh-sg&#039;,
+			&#039;zh_TW&#039; =&gt; &#039;zh-tw&#039;,
+		);
+
+		$system_locale = get_locale();
+		if ( isset( $locale_to_lang[ $system_locale ] ) ) {
+			// Return the locale with region code if it&#039;s in the list.
+			return $locale_to_lang[ $system_locale ];
+		}
+
+		// If the locale is not in the list, return the language code only.
+		return explode( &#039;_&#039;, $system_locale )[0];
 	}
 
 	/**
@@ -558,7 +621,7 @@ class OnboardingPlugins extends WC_REST_Data_Controller {
 				),
 				$slug
 			),
-			&#039;type&#039;				    =&gt; &#039;plugin_info_api_error&#039;,
+			&#039;type&#039;                  =&gt; &#039;plugin_info_api_error&#039;,
 			&#039;slug&#039;                  =&gt; $slug,
 			&#039;api_version&#039;           =&gt; $api-&gt;version,
 			&#039;api_download_link&#039;     =&gt; $api-&gt;download_link,
@@ -595,7 +658,7 @@ class OnboardingPlugins extends WC_REST_Data_Controller {
 
     <footer class="phpdocumentor phpdocumentor-footer">
     <div class="phpdocumentor-section">
-        <span>WooCommerce Code Reference API documentation generated by <a href="http://www.phpdoc.org/">phpDocumentor</a> on July 25th, 2024 at 11:33 am.</span>
+        <span>WooCommerce Code Reference API documentation generated by <a href="http://www.phpdoc.org/">phpDocumentor</a> on May 16th, 2025 at 09:14 am.</span>
     </div>
 </footer>
 
@@ -607,7 +670,7 @@ class OnboardingPlugins extends WC_REST_Data_Controller {
             'searchIndex': '..\/js\/searchIndex.json'
         };
     </script>
-    <script src="../js/searchIndex.js?updated=1721907184"></script>
-    <script src="../js/search.js?updated=1721907184"></script>
+    <script src="../js/searchIndex.js?updated=1747386860"></script>
+    <script src="../js/search.js?updated=1747386860"></script>
 </body>
 </html>

@@ -4,14 +4,13 @@
     <meta charset="utf-8">
     <title>WooCommerce Code Reference</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="../images/favicon.png" />
-    <link rel="apple-touch-icon" href="../images/apple-touch-icon.png"/>
-    <link rel="apple-touch-icon" sizes="72x72" href="../images/apple-touch-icon-72x72.png"/>
-    <link rel="apple-touch-icon" sizes="114x114" href="../images/apple-touch-icon-114x114.png"/>
+    <link rel="icon" href="../images/favicon-32x32.png" sizes="32x32" />
+    <link rel="icon" href="../images/favicon-192x192.png" sizes="192x192" />
+    <link rel="apple-touch-icon" href="../images/favicon-180x180.png" />
+
     <link rel="stylesheet" href="../css/normalize.css">
-    <link rel="stylesheet" href="../css/base.css?updated=1721907182">
-    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../css/template.css?updated=1721907182">
+    <link rel="stylesheet" href="../css/base.css?updated=1747386858">
+    <link rel="stylesheet" href="../css/template.css?updated=1747386858">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0/css/all.min.css" integrity="sha256-ybRkN9dBjhcS2qrW1z+hfCxq+1aBdwyQM5wlQoQVt/0=" crossorigin="anonymous" />
             <script src="https://cdn.jsdelivr.net/npm/css-vars-ponyfill@2"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0/js/all.min.js" integrity="sha256-0vuk8LXoyrmCjp1f0O300qo1M75ZQyhH9X3J6d+scmk=" crossorigin="anonymous"></script>
@@ -38,14 +37,13 @@
     <header class="phpdocumentor-top-header">
     <section class="phpdocumentor-section">
         <div class="site-branding">
-            <a class="site-logo" href="../index.html"><img width="180" src="../images/logo.svg" alt="WooCommerce" /></a>
+            <a class="site-logo" href="../index.html"><img src="../images/logo.png" alt="WooCommerce" /></a>
         </div>
         <nav class="main-navigation">
             <ul>
                 <li><a href="../hooks/hooks.html">Hooks Reference</a></li>
-                <li><a href="https://docs.woocommerce.com/">Documentation</a></li>
+                <li><a href="https://developer.woocommerce.com/docs/">Documentation</a></li>
                 <li><a href="https://woocommerce.github.io/woocommerce-rest-api-docs/">REST API Docs</a></li>
-                <li><a href="https://woocommerce.com/careers/?utm_source=woocommerce+core+code+reference&utm_medium=devdocs&utm_campaign=woo+careers" target="_blank">We're hiring!</a></li>
             </ul>
         </nav>
     </section>
@@ -53,7 +51,7 @@
 
 <div class="phpdocumentor-header">
     <section class="phpdocumentor-section">
-        <h1 class="phpdocumentor-title">WooCommerce Code Reference</h1>
+        <h1 class="phpdocumentor-title"><a href="../index.html">WooCommerce Code Reference</a></h1>
         <section class="phpdocumentor-search">
     <label class="phpdocumentor-label">
         <span class="visually-hidden">Search (click ESC to close search results)</span>
@@ -74,6 +72,10 @@
                                         <h4 class="phpdocumentor-sidebar__root-namespace"><a href="../namespaces/woocommerce.html"><abbr title="\WooCommerce">WooCommerce</abbr></a></h4>
                 <ul class="phpdocumentor-list">
                                             <li><a href="../namespaces/woocommerce-admin.html"><abbr title="\WooCommerce\Admin">Admin</abbr></a></li>
+                                    </ul>
+                            <h4 class="phpdocumentor-sidebar__root-namespace"><a href="../namespaces/mailpoet.html"><abbr title="\MailPoet">MailPoet</abbr></a></h4>
+                <ul class="phpdocumentor-list">
+                                            <li><a href="../namespaces/mailpoet-emaileditor.html"><abbr title="\MailPoet\EmailEditor">EmailEditor</abbr></a></li>
                                     </ul>
                             <h4 class="phpdocumentor-sidebar__root-namespace"><a href="../namespaces/automattic.html"><abbr title="\Automattic">Automattic</abbr></a></h4>
                 <ul class="phpdocumentor-list">
@@ -119,8 +121,10 @@
                                     <li><a href="../packages/WooCommerce-Widgets.html"><abbr title="\WooCommerce\Widgets">Widgets</abbr></a></li>
                                     <li><a href="../packages/WooCommerce-Uninstaller.html"><abbr title="\WooCommerce\Uninstaller">Uninstaller</abbr></a></li>
                             </ul>
-                                <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/WoocommerceAdmin.html"><abbr title="\WoocommerceAdmin">WoocommerceAdmin</abbr></a></h3>
-                                <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/WoocommerceNavigation.html"><abbr title="\WoocommerceNavigation">WoocommerceNavigation</abbr></a></h3>
+                                <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/MailPoet.html"><abbr title="\MailPoet">MailPoet</abbr></a></h3>
+                        <ul class="phpdocumentor-list">
+                                    <li><a href="../packages/MailPoet-EmailEditor.html"><abbr title="\MailPoet\EmailEditor">EmailEditor</abbr></a></li>
+                            </ul>
                                 <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/Automattic.html"><abbr title="\Automattic">Automattic</abbr></a></h3>
                         <ul class="phpdocumentor-list">
                                     <li><a href="../packages/Automattic-WooCommerce.html"><abbr title="\Automattic\WooCommerce">WooCommerce</abbr></a></li>
@@ -228,27 +232,44 @@ defined( &#039;ABSPATH&#039; ) || exit;
 	&lt;/h3&gt;
 	&lt;div class=&quot;woocommerce_variable_attributes wc-metabox-content&quot; style=&quot;display: none;&quot;&gt;
 		&lt;div class=&quot;data&quot;&gt;
-			&lt;p class=&quot;form-row form-row-first upload_image&quot;&gt;
-				&lt;a href=&quot;#&quot; class=&quot;upload_image_button tips &lt;?php echo $variation_object-&gt;get_image_id( &#039;edit&#039; ) ? &#039;remove&#039; : &#039;&#039;; ?&gt;&quot; data-tip=&quot;&lt;?php echo $variation_object-&gt;get_image_id( &#039;edit&#039; ) ? esc_attr__( &#039;Remove this image&#039;, &#039;woocommerce&#039; ) : esc_attr__( &#039;Upload an image&#039;, &#039;woocommerce&#039; ); ?&gt;&quot; rel=&quot;&lt;?php echo esc_attr( $variation_id ); ?&gt;&quot;&gt;
-					&lt;img src=&quot;&lt;?php echo $variation_object-&gt;get_image_id( &#039;edit&#039; ) ? esc_url( wp_get_attachment_thumb_url( $variation_object-&gt;get_image_id( &#039;edit&#039; ) ) ) : esc_url( wc_placeholder_img_src() ); ?&gt;&quot; /&gt;&lt;input type=&quot;hidden&quot; name=&quot;upload_image_id[&lt;?php echo esc_attr( $loop ); ?&gt;]&quot; class=&quot;upload_image_id&quot; value=&quot;&lt;?php echo esc_attr( $variation_object-&gt;get_image_id( &#039;edit&#039; ) ); ?&gt;&quot; /&gt;
-				&lt;/a&gt;
-			&lt;/p&gt;
-			&lt;?php
-			if ( wc_product_sku_enabled() ) {
+			&lt;div class=&quot;form-flex-box&quot;&gt;
+				&lt;p class=&quot;form-row upload_image&quot;&gt;
+					&lt;a href=&quot;#&quot; class=&quot;upload_image_button tips &lt;?php echo $variation_object-&gt;get_image_id( &#039;edit&#039; ) ? &#039;remove&#039; : &#039;&#039;; ?&gt;&quot; data-tip=&quot;&lt;?php echo $variation_object-&gt;get_image_id( &#039;edit&#039; ) ? esc_attr__( &#039;Remove this image&#039;, &#039;woocommerce&#039; ) : esc_attr__( &#039;Upload an image&#039;, &#039;woocommerce&#039; ); ?&gt;&quot; rel=&quot;&lt;?php echo esc_attr( $variation_id ); ?&gt;&quot;&gt;
+						&lt;img src=&quot;&lt;?php echo $variation_object-&gt;get_image_id( &#039;edit&#039; ) ? esc_url( wp_get_attachment_thumb_url( $variation_object-&gt;get_image_id( &#039;edit&#039; ) ) ) : esc_url( wc_placeholder_img_src() ); ?&gt;&quot; /&gt;&lt;input type=&quot;hidden&quot; name=&quot;upload_image_id[&lt;?php echo esc_attr( $loop ); ?&gt;]&quot; class=&quot;upload_image_id&quot; value=&quot;&lt;?php echo esc_attr( $variation_object-&gt;get_image_id( &#039;edit&#039; ) ); ?&gt;&quot; /&gt;
+					&lt;/a&gt;
+				&lt;/p&gt;
+				&lt;div class=&quot;form-row form-row-last&quot;&gt;
+				&lt;?php
+				if ( wc_product_sku_enabled() ) {
+					woocommerce_wp_text_input(
+						array(
+							&#039;id&#039;            =&gt; &quot;variable_sku{$loop}&quot;,
+							&#039;name&#039;          =&gt; &quot;variable_sku[{$loop}]&quot;,
+							&#039;value&#039;         =&gt; $variation_object-&gt;get_sku( &#039;edit&#039; ),
+							&#039;placeholder&#039;   =&gt; $variation_object-&gt;get_sku(),
+							&#039;label&#039;         =&gt; &#039;&lt;abbr title=&quot;&#039; . esc_attr__( &#039;Stock Keeping Unit&#039;, &#039;woocommerce&#039; ) . &#039;&quot;&gt;&#039; . esc_html__( &#039;SKU&#039;, &#039;woocommerce&#039; ) . &#039;&lt;/abbr&gt;&#039;,
+							&#039;desc_tip&#039;      =&gt; true,
+							&#039;description&#039;   =&gt; __( &#039;SKU refers to a Stock-keeping unit, a unique identifier for each distinct product and service that can be purchased.&#039;, &#039;woocommerce&#039; ),
+							&#039;wrapper_class&#039; =&gt; &#039;form-row&#039;,
+						)
+					);
+				}
 				woocommerce_wp_text_input(
 					array(
-						&#039;id&#039;            =&gt; &quot;variable_sku{$loop}&quot;,
-						&#039;name&#039;          =&gt; &quot;variable_sku[{$loop}]&quot;,
-						&#039;value&#039;         =&gt; $variation_object-&gt;get_sku( &#039;edit&#039; ),
-						&#039;placeholder&#039;   =&gt; $variation_object-&gt;get_sku(),
-						&#039;label&#039;         =&gt; &#039;&lt;abbr title=&quot;&#039; . esc_attr__( &#039;Stock Keeping Unit&#039;, &#039;woocommerce&#039; ) . &#039;&quot;&gt;&#039; . esc_html__( &#039;SKU&#039;, &#039;woocommerce&#039; ) . &#039;&lt;/abbr&gt;&#039;,
+						&#039;id&#039;            =&gt; &quot;variable_global_unique_id{$loop}&quot;,
+						&#039;name&#039;          =&gt; &quot;variable_global_unique_id[{$loop}]&quot;,
+						&#039;value&#039;         =&gt; $variation_object-&gt;get_global_unique_id( &#039;edit&#039; ),
+						&#039;placeholder&#039;   =&gt; $variation_object-&gt;get_global_unique_id(),
+						// translators: %1$s GTIN %2$s UPC %3$s EAN %4$s ISBN.
+						&#039;label&#039;         =&gt; sprintf( __( &#039;%1$s, %2$s, %3$s, or %4$s&#039;, &#039;woocommerce&#039; ), &#039;&lt;abbr title=&quot;&#039; . esc_attr__( &#039;Global Trade Item Number&#039;, &#039;woocommerce&#039; ) . &#039;&quot;&gt;&#039; . esc_html__( &#039;GTIN&#039;, &#039;woocommerce&#039; ) . &#039;&lt;/abbr&gt;&#039;, &#039;&lt;abbr title=&quot;&#039; . esc_attr__( &#039;Universal Product Code&#039;, &#039;woocommerce&#039; ) . &#039;&quot;&gt;&#039; . esc_html__( &#039;UPC&#039;, &#039;woocommerce&#039; ) . &#039;&lt;/abbr&gt;&#039;, &#039;&lt;abbr title=&quot;&#039; . esc_attr__( &#039;European Article Number&#039;, &#039;woocommerce&#039; ) . &#039;&quot;&gt;&#039; . esc_html__( &#039;EAN&#039;, &#039;woocommerce&#039; ) . &#039;&lt;/abbr&gt;&#039;, &#039;&lt;abbr title=&quot;&#039; . esc_attr__( &#039;International Standard Book Number&#039;, &#039;woocommerce&#039; ) . &#039;&quot;&gt;&#039; . esc_html__( &#039;ISBN&#039;, &#039;woocommerce&#039; ) . &#039;&lt;/abbr&gt;&#039; ),
 						&#039;desc_tip&#039;      =&gt; true,
-						&#039;description&#039;   =&gt; __( &#039;SKU refers to a Stock-keeping unit, a unique identifier for each distinct product and service that can be purchased.&#039;, &#039;woocommerce&#039; ),
-						&#039;wrapper_class&#039; =&gt; &#039;form-row form-row-last&#039;,
+						&#039;description&#039;   =&gt; __( &#039;Enter a barcode or any other identifier unique to this product. It can help you list this product on other channels or marketplaces.&#039;, &#039;woocommerce&#039; ),
+						&#039;wrapper_class&#039; =&gt; &#039;form-row&#039;,
 					)
 				);
-			}
-			?&gt;
+				?&gt;
+				&lt;/div&gt;
+			&lt;/div&gt;
 			&lt;p class=&quot;form-row form-row-full options&quot;&gt;
 				&lt;label&gt;
 					&lt;?php esc_html_e( &#039;Enabled&#039;, &#039;woocommerce&#039; ); ?&gt;
@@ -343,6 +364,35 @@ defined( &#039;ABSPATH&#039; ) || exit;
 				do_action( &#039;woocommerce_variation_options_pricing&#039;, $loop, $variation_data, $variation );
 				?&gt;
 			&lt;/div&gt;
+
+			&lt;?php if ( ! is_null( $base_cost ) ) : ?&gt;
+				&lt;div class=&quot;variable_pricing&quot;&gt;
+					&lt;?php
+					$label = sprintf(
+						/* translators: %s: currency symbol */
+						__( &#039;Cost (%s)&#039;, &#039;woocommerce&#039; ),
+						get_woocommerce_currency_symbol()
+					);
+
+					$variation_cogs = $variation_object-&gt;get_cogs_value();
+					woocommerce_wp_text_input(
+						array(
+							&#039;id&#039;            =&gt; &quot;variable_cost_value_{$loop}&quot;,
+							&#039;name&#039;          =&gt; &quot;variable_cost_value[{$loop}]&quot;,
+							&#039;value&#039;         =&gt; is_null( $variation_cogs ) ? &#039;&#039; : wc_format_localized_price( $variation_cogs ),
+							&#039;label&#039;         =&gt; $label,
+							&#039;data_type&#039;     =&gt; &#039;price&#039;,
+							&#039;wrapper_class&#039; =&gt; &#039;form-row form-row-first&#039;,
+							&#039;desc_tip&#039;      =&gt; true,
+							&#039;description&#039;   =&gt; __( &#039;Add the amount it costs you to buy or make this product. Leave blank to use the default value from &quot;General&quot;.&#039;, &#039;woocommerce&#039; ),
+							&#039;placeholder&#039;   =&gt;
+								/* Translators: %s = cost of the item (monetary value) */
+								sprintf( __( &#039;%s (default)&#039;, &#039;woocommerce&#039; ), wc_format_localized_price( $base_cost ) ),
+						)
+					);
+					?&gt;
+				&lt;/div&gt;
+			&lt;?php endif; ?&gt;
 
 			&lt;?php if ( &#039;yes&#039; === get_option( &#039;woocommerce_manage_stock&#039; ) ) : ?&gt;
 				&lt;div class=&quot;show_if_variation_manage_stock&quot; style=&quot;display: none;&quot;&gt;
@@ -685,7 +735,7 @@ defined( &#039;ABSPATH&#039; ) || exit;
 
     <footer class="phpdocumentor phpdocumentor-footer">
     <div class="phpdocumentor-section">
-        <span>WooCommerce Code Reference API documentation generated by <a href="http://www.phpdoc.org/">phpDocumentor</a> on July 25th, 2024 at 11:33 am.</span>
+        <span>WooCommerce Code Reference API documentation generated by <a href="http://www.phpdoc.org/">phpDocumentor</a> on May 16th, 2025 at 09:14 am.</span>
     </div>
 </footer>
 
@@ -697,7 +747,7 @@ defined( &#039;ABSPATH&#039; ) || exit;
             'searchIndex': '..\/js\/searchIndex.json'
         };
     </script>
-    <script src="../js/searchIndex.js?updated=1721907182"></script>
-    <script src="../js/search.js?updated=1721907182"></script>
+    <script src="../js/searchIndex.js?updated=1747386858"></script>
+    <script src="../js/search.js?updated=1747386858"></script>
 </body>
 </html>

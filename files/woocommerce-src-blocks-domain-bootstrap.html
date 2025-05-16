@@ -4,14 +4,13 @@
     <meta charset="utf-8">
     <title>WooCommerce Code Reference</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="../images/favicon.png" />
-    <link rel="apple-touch-icon" href="../images/apple-touch-icon.png"/>
-    <link rel="apple-touch-icon" sizes="72x72" href="../images/apple-touch-icon-72x72.png"/>
-    <link rel="apple-touch-icon" sizes="114x114" href="../images/apple-touch-icon-114x114.png"/>
+    <link rel="icon" href="../images/favicon-32x32.png" sizes="32x32" />
+    <link rel="icon" href="../images/favicon-192x192.png" sizes="192x192" />
+    <link rel="apple-touch-icon" href="../images/favicon-180x180.png" />
+
     <link rel="stylesheet" href="../css/normalize.css">
-    <link rel="stylesheet" href="../css/base.css?updated=1721907185">
-    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../css/template.css?updated=1721907185">
+    <link rel="stylesheet" href="../css/base.css?updated=1747386862">
+    <link rel="stylesheet" href="../css/template.css?updated=1747386862">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0/css/all.min.css" integrity="sha256-ybRkN9dBjhcS2qrW1z+hfCxq+1aBdwyQM5wlQoQVt/0=" crossorigin="anonymous" />
             <script src="https://cdn.jsdelivr.net/npm/css-vars-ponyfill@2"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0/js/all.min.js" integrity="sha256-0vuk8LXoyrmCjp1f0O300qo1M75ZQyhH9X3J6d+scmk=" crossorigin="anonymous"></script>
@@ -38,14 +37,13 @@
     <header class="phpdocumentor-top-header">
     <section class="phpdocumentor-section">
         <div class="site-branding">
-            <a class="site-logo" href="../index.html"><img width="180" src="../images/logo.svg" alt="WooCommerce" /></a>
+            <a class="site-logo" href="../index.html"><img src="../images/logo.png" alt="WooCommerce" /></a>
         </div>
         <nav class="main-navigation">
             <ul>
                 <li><a href="../hooks/hooks.html">Hooks Reference</a></li>
-                <li><a href="https://docs.woocommerce.com/">Documentation</a></li>
+                <li><a href="https://developer.woocommerce.com/docs/">Documentation</a></li>
                 <li><a href="https://woocommerce.github.io/woocommerce-rest-api-docs/">REST API Docs</a></li>
-                <li><a href="https://woocommerce.com/careers/?utm_source=woocommerce+core+code+reference&utm_medium=devdocs&utm_campaign=woo+careers" target="_blank">We're hiring!</a></li>
             </ul>
         </nav>
     </section>
@@ -53,7 +51,7 @@
 
 <div class="phpdocumentor-header">
     <section class="phpdocumentor-section">
-        <h1 class="phpdocumentor-title">WooCommerce Code Reference</h1>
+        <h1 class="phpdocumentor-title"><a href="../index.html">WooCommerce Code Reference</a></h1>
         <section class="phpdocumentor-search">
     <label class="phpdocumentor-label">
         <span class="visually-hidden">Search (click ESC to close search results)</span>
@@ -74,6 +72,10 @@
                                         <h4 class="phpdocumentor-sidebar__root-namespace"><a href="../namespaces/woocommerce.html"><abbr title="\WooCommerce">WooCommerce</abbr></a></h4>
                 <ul class="phpdocumentor-list">
                                             <li><a href="../namespaces/woocommerce-admin.html"><abbr title="\WooCommerce\Admin">Admin</abbr></a></li>
+                                    </ul>
+                            <h4 class="phpdocumentor-sidebar__root-namespace"><a href="../namespaces/mailpoet.html"><abbr title="\MailPoet">MailPoet</abbr></a></h4>
+                <ul class="phpdocumentor-list">
+                                            <li><a href="../namespaces/mailpoet-emaileditor.html"><abbr title="\MailPoet\EmailEditor">EmailEditor</abbr></a></li>
                                     </ul>
                             <h4 class="phpdocumentor-sidebar__root-namespace"><a href="../namespaces/automattic.html"><abbr title="\Automattic">Automattic</abbr></a></h4>
                 <ul class="phpdocumentor-list">
@@ -119,8 +121,10 @@
                                     <li><a href="../packages/WooCommerce-Widgets.html"><abbr title="\WooCommerce\Widgets">Widgets</abbr></a></li>
                                     <li><a href="../packages/WooCommerce-Uninstaller.html"><abbr title="\WooCommerce\Uninstaller">Uninstaller</abbr></a></li>
                             </ul>
-                                <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/WoocommerceAdmin.html"><abbr title="\WoocommerceAdmin">WoocommerceAdmin</abbr></a></h3>
-                                <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/WoocommerceNavigation.html"><abbr title="\WoocommerceNavigation">WoocommerceNavigation</abbr></a></h3>
+                                <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/MailPoet.html"><abbr title="\MailPoet">MailPoet</abbr></a></h3>
+                        <ul class="phpdocumentor-list">
+                                    <li><a href="../packages/MailPoet-EmailEditor.html"><abbr title="\MailPoet\EmailEditor">EmailEditor</abbr></a></li>
+                            </ul>
                                 <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/Automattic.html"><abbr title="\Automattic">Automattic</abbr></a></h3>
                         <ul class="phpdocumentor-list">
                                     <li><a href="../packages/Automattic-WooCommerce.html"><abbr title="\Automattic\WooCommerce">WooCommerce</abbr></a></li>
@@ -175,7 +179,6 @@ use Automattic\WooCommerce\Blocks\QueryFilters;
 use Automattic\WooCommerce\Blocks\Domain\Services\CreateAccount;
 use Automattic\WooCommerce\Blocks\Domain\Services\Notices;
 use Automattic\WooCommerce\Blocks\Domain\Services\DraftOrders;
-use Automattic\WooCommerce\Blocks\Domain\Services\FeatureGating;
 use Automattic\WooCommerce\Blocks\Domain\Services\GoogleAnalytics;
 use Automattic\WooCommerce\Blocks\Domain\Services\Hydration;
 use Automattic\WooCommerce\Blocks\Domain\Services\CheckoutFields;
@@ -196,9 +199,8 @@ use Automattic\WooCommerce\StoreApi\RoutesController;
 use Automattic\WooCommerce\StoreApi\SchemaController;
 use Automattic\WooCommerce\StoreApi\StoreApi;
 use Automattic\WooCommerce\Blocks\Shipping\ShippingController;
-use Automattic\WooCommerce\Blocks\Templates\SingleProductTemplateCompatibility;
-use Automattic\WooCommerce\Blocks\Templates\ArchiveProductTemplatesCompatibility;
-use Automattic\WooCommerce\Blocks\Domain\Services\OnboardingTasks\TasksController;
+use Automattic\WooCommerce\Blocks\TemplateOptions;
+
 
 /**
  * Takes care of bootstrapping the plugin.
@@ -280,17 +282,34 @@ class Bootstrap {
 			0
 		);
 
-		$is_rest = wc()-&gt;is_rest_api_request();
-		// phpcs:disable WordPress.Security.ValidatedSanitizedInput.MissingUnslash, WordPress.Security.ValidatedSanitizedInput.InputNotSanitized
-		$is_store_api_request = $is_rest &amp;&amp; ! empty( $_SERVER[&#039;REQUEST_URI&#039;] ) &amp;&amp; ( false !== strpos( $_SERVER[&#039;REQUEST_URI&#039;], trailingslashit( rest_get_url_prefix() ) . &#039;wc/store/&#039; ) );
+		// We need to initialize BlockTemplatesController and BlockTemplatesRegistry at the end of `after_setup_theme`
+		// so themes had the opportunity to declare support for template parts.
+		add_action(
+			&#039;after_setup_theme&#039;,
+			function () {
+				$is_store_api_request = wc()-&gt;is_store_api_request();
+
+				if ( ! $is_store_api_request &amp;&amp; ( wc_current_theme_is_fse_theme() || current_theme_supports( &#039;block-template-parts&#039; ) ) ) {
+					$this-&gt;container-&gt;get( BlockTemplatesRegistry::class )-&gt;init();
+					$this-&gt;container-&gt;get( BlockTemplatesController::class )-&gt;init();
+				}
+			},
+			999
+		);
+
+		$is_rest              = wc()-&gt;is_rest_api_request();
+		$is_store_api_request = wc()-&gt;is_store_api_request();
+
+		// Initialize Store API in non-admin context.
+		if ( ! is_admin() ) {
+			$this-&gt;container-&gt;get( StoreApi::class )-&gt;init();
+		}
 
 		// Load and init assets.
-		$this-&gt;container-&gt;get( StoreApi::class )-&gt;init();
 		$this-&gt;container-&gt;get( PaymentsApi::class )-&gt;init();
 		$this-&gt;container-&gt;get( DraftOrders::class )-&gt;init();
 		$this-&gt;container-&gt;get( CreateAccount::class )-&gt;init();
 		$this-&gt;container-&gt;get( ShippingController::class )-&gt;init();
-		$this-&gt;container-&gt;get( TasksController::class )-&gt;init();
 		$this-&gt;container-&gt;get( CheckoutFields::class )-&gt;init();
 
 		// Load assets in admin and on the frontend.
@@ -310,13 +329,10 @@ class Bootstrap {
 			$this-&gt;container-&gt;get( AIPatterns::class );
 			$this-&gt;container-&gt;get( BlockPatterns::class );
 			$this-&gt;container-&gt;get( BlockTypesController::class );
-			$this-&gt;container-&gt;get( BlockTemplatesRegistry::class )-&gt;init();
-			$this-&gt;container-&gt;get( BlockTemplatesController::class )-&gt;init();
 			$this-&gt;container-&gt;get( ClassicTemplatesCompatibility::class );
-			$this-&gt;container-&gt;get( ArchiveProductTemplatesCompatibility::class )-&gt;init();
-			$this-&gt;container-&gt;get( SingleProductTemplateCompatibility::class )-&gt;init();
 			$this-&gt;container-&gt;get( Notices::class )-&gt;init();
 			$this-&gt;container-&gt;get( PTKPatternsStore::class );
+			$this-&gt;container-&gt;get( TemplateOptions::class )-&gt;init();
 		}
 
 		$this-&gt;container-&gt;get( QueryFilters::class )-&gt;init();
@@ -369,12 +385,6 @@ class Bootstrap {
 	 */
 	protected function register_dependencies() {
 		$this-&gt;container-&gt;register(
-			FeatureGating::class,
-			function () {
-				return new FeatureGating();
-			}
-		);
-		$this-&gt;container-&gt;register(
 			AssetApi::class,
 			function ( Container $container ) {
 				return new AssetApi( $container-&gt;get( Package::class ) );
@@ -413,34 +423,10 @@ class Bootstrap {
 			}
 		);
 		$this-&gt;container-&gt;register(
-			BlockTemplatesRegistry::class,
-			function () {
-				return new BlockTemplatesRegistry();
-			}
-		);
-		$this-&gt;container-&gt;register(
-			BlockTemplatesController::class,
-			function () {
-				return new BlockTemplatesController();
-			}
-		);
-		$this-&gt;container-&gt;register(
 			ClassicTemplatesCompatibility::class,
 			function ( Container $container ) {
 				$asset_data_registry = $container-&gt;get( AssetDataRegistry::class );
 				return new ClassicTemplatesCompatibility( $asset_data_registry );
-			}
-		);
-		$this-&gt;container-&gt;register(
-			ArchiveProductTemplatesCompatibility::class,
-			function () {
-				return new ArchiveProductTemplatesCompatibility();
-			}
-		);
-		$this-&gt;container-&gt;register(
-			SingleProductTemplateCompatibility::class,
-			function () {
-				return new SingleProductTemplateCompatibility();
 			}
 		);
 		$this-&gt;container-&gt;register(
@@ -506,6 +492,12 @@ class Bootstrap {
 			StoreApi::class,
 			function () {
 				return new StoreApi();
+			}
+		);
+		$this-&gt;container-&gt;register(
+			TemplateOptions::class,
+			function () {
+				return new TemplateOptions();
 			}
 		);
 		// Maintains backwards compatibility with previous Store API namespace.
@@ -574,15 +566,21 @@ class Bootstrap {
 			}
 		);
 		$this-&gt;container-&gt;register(
-			TasksController::class,
-			function () {
-				return new TasksController();
-			}
-		);
-		$this-&gt;container-&gt;register(
 			QueryFilters::class,
 			function () {
 				return new QueryFilters();
+			}
+		);
+		$this-&gt;container-&gt;register(
+			BlockTemplatesRegistry::class,
+			function () {
+				return new BlockTemplatesRegistry();
+			}
+		);
+		$this-&gt;container-&gt;register(
+			BlockTemplatesController::class,
+			function () {
+				return new BlockTemplatesController();
 			}
 		);
 	}
@@ -694,7 +692,7 @@ class Bootstrap {
 
     <footer class="phpdocumentor phpdocumentor-footer">
     <div class="phpdocumentor-section">
-        <span>WooCommerce Code Reference API documentation generated by <a href="http://www.phpdoc.org/">phpDocumentor</a> on July 25th, 2024 at 11:33 am.</span>
+        <span>WooCommerce Code Reference API documentation generated by <a href="http://www.phpdoc.org/">phpDocumentor</a> on May 16th, 2025 at 09:14 am.</span>
     </div>
 </footer>
 
@@ -706,7 +704,7 @@ class Bootstrap {
             'searchIndex': '..\/js\/searchIndex.json'
         };
     </script>
-    <script src="../js/searchIndex.js?updated=1721907185"></script>
-    <script src="../js/search.js?updated=1721907185"></script>
+    <script src="../js/searchIndex.js?updated=1747386862"></script>
+    <script src="../js/search.js?updated=1747386862"></script>
 </body>
 </html>

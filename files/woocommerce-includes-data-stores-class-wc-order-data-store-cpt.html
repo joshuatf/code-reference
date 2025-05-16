@@ -4,14 +4,13 @@
     <meta charset="utf-8">
     <title>WooCommerce Code Reference</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="../images/favicon.png" />
-    <link rel="apple-touch-icon" href="../images/apple-touch-icon.png"/>
-    <link rel="apple-touch-icon" sizes="72x72" href="../images/apple-touch-icon-72x72.png"/>
-    <link rel="apple-touch-icon" sizes="114x114" href="../images/apple-touch-icon-114x114.png"/>
+    <link rel="icon" href="../images/favicon-32x32.png" sizes="32x32" />
+    <link rel="icon" href="../images/favicon-192x192.png" sizes="192x192" />
+    <link rel="apple-touch-icon" href="../images/favicon-180x180.png" />
+
     <link rel="stylesheet" href="../css/normalize.css">
-    <link rel="stylesheet" href="../css/base.css?updated=1721907183">
-    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../css/template.css?updated=1721907183">
+    <link rel="stylesheet" href="../css/base.css?updated=1747386858">
+    <link rel="stylesheet" href="../css/template.css?updated=1747386858">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0/css/all.min.css" integrity="sha256-ybRkN9dBjhcS2qrW1z+hfCxq+1aBdwyQM5wlQoQVt/0=" crossorigin="anonymous" />
             <script src="https://cdn.jsdelivr.net/npm/css-vars-ponyfill@2"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0/js/all.min.js" integrity="sha256-0vuk8LXoyrmCjp1f0O300qo1M75ZQyhH9X3J6d+scmk=" crossorigin="anonymous"></script>
@@ -38,14 +37,13 @@
     <header class="phpdocumentor-top-header">
     <section class="phpdocumentor-section">
         <div class="site-branding">
-            <a class="site-logo" href="../index.html"><img width="180" src="../images/logo.svg" alt="WooCommerce" /></a>
+            <a class="site-logo" href="../index.html"><img src="../images/logo.png" alt="WooCommerce" /></a>
         </div>
         <nav class="main-navigation">
             <ul>
                 <li><a href="../hooks/hooks.html">Hooks Reference</a></li>
-                <li><a href="https://docs.woocommerce.com/">Documentation</a></li>
+                <li><a href="https://developer.woocommerce.com/docs/">Documentation</a></li>
                 <li><a href="https://woocommerce.github.io/woocommerce-rest-api-docs/">REST API Docs</a></li>
-                <li><a href="https://woocommerce.com/careers/?utm_source=woocommerce+core+code+reference&utm_medium=devdocs&utm_campaign=woo+careers" target="_blank">We're hiring!</a></li>
             </ul>
         </nav>
     </section>
@@ -53,7 +51,7 @@
 
 <div class="phpdocumentor-header">
     <section class="phpdocumentor-section">
-        <h1 class="phpdocumentor-title">WooCommerce Code Reference</h1>
+        <h1 class="phpdocumentor-title"><a href="../index.html">WooCommerce Code Reference</a></h1>
         <section class="phpdocumentor-search">
     <label class="phpdocumentor-label">
         <span class="visually-hidden">Search (click ESC to close search results)</span>
@@ -74,6 +72,10 @@
                                         <h4 class="phpdocumentor-sidebar__root-namespace"><a href="../namespaces/woocommerce.html"><abbr title="\WooCommerce">WooCommerce</abbr></a></h4>
                 <ul class="phpdocumentor-list">
                                             <li><a href="../namespaces/woocommerce-admin.html"><abbr title="\WooCommerce\Admin">Admin</abbr></a></li>
+                                    </ul>
+                            <h4 class="phpdocumentor-sidebar__root-namespace"><a href="../namespaces/mailpoet.html"><abbr title="\MailPoet">MailPoet</abbr></a></h4>
+                <ul class="phpdocumentor-list">
+                                            <li><a href="../namespaces/mailpoet-emaileditor.html"><abbr title="\MailPoet\EmailEditor">EmailEditor</abbr></a></li>
                                     </ul>
                             <h4 class="phpdocumentor-sidebar__root-namespace"><a href="../namespaces/automattic.html"><abbr title="\Automattic">Automattic</abbr></a></h4>
                 <ul class="phpdocumentor-list">
@@ -119,8 +121,10 @@
                                     <li><a href="../packages/WooCommerce-Widgets.html"><abbr title="\WooCommerce\Widgets">Widgets</abbr></a></li>
                                     <li><a href="../packages/WooCommerce-Uninstaller.html"><abbr title="\WooCommerce\Uninstaller">Uninstaller</abbr></a></li>
                             </ul>
-                                <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/WoocommerceAdmin.html"><abbr title="\WoocommerceAdmin">WoocommerceAdmin</abbr></a></h3>
-                                <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/WoocommerceNavigation.html"><abbr title="\WoocommerceNavigation">WoocommerceNavigation</abbr></a></h3>
+                                <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/MailPoet.html"><abbr title="\MailPoet">MailPoet</abbr></a></h3>
+                        <ul class="phpdocumentor-list">
+                                    <li><a href="../packages/MailPoet-EmailEditor.html"><abbr title="\MailPoet\EmailEditor">EmailEditor</abbr></a></li>
+                            </ul>
                                 <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/Automattic.html"><abbr title="\Automattic">Automattic</abbr></a></h3>
                         <ul class="phpdocumentor-list">
                                     <li><a href="../packages/Automattic-WooCommerce.html"><abbr title="\Automattic\WooCommerce">WooCommerce</abbr></a></li>
@@ -162,6 +166,10 @@
  *
  * @package WooCommerce\Classes
  */
+
+use Automattic\WooCommerce\Enums\OrderStatus;
+use Automattic\WooCommerce\Enums\OrderInternalStatus;
+use Automattic\WooCommerce\Utilities\OrderUtil;
 
 if ( ! defined( &#039;ABSPATH&#039; ) ) {
 	exit;
@@ -258,6 +266,12 @@ class WC_Order_Data_Store_CPT extends Abstract_WC_Order_Data_Store_CPT implement
 			$order-&gt;set_order_key( wc_generate_order_key() );
 		}
 		parent::create( $order );
+
+		// Do not fire &#039;woocommerce_new_order&#039; for draft statuses.
+		if ( in_array( $order-&gt;get_status( &#039;edit&#039; ), array( OrderStatus::AUTO_DRAFT, OrderStatus::DRAFT, &#039;checkout-draft&#039; ), true ) ) {
+			return;
+		}
+
 		do_action( &#039;woocommerce_new_order&#039;, $order-&gt;get_id(), $order );
 	}
 
@@ -335,28 +349,54 @@ class WC_Order_Data_Store_CPT extends Abstract_WC_Order_Data_Store_CPT implement
 	 */
 	public function update( &amp;$order ) {
 		// Before updating, ensure date paid is set if missing.
-		if ( ! $order-&gt;get_date_paid( &#039;edit&#039; ) &amp;&amp; version_compare( $order-&gt;get_version( &#039;edit&#039; ), &#039;3.0&#039;, &#039;&lt;&#039; ) &amp;&amp; $order-&gt;has_status( apply_filters( &#039;woocommerce_payment_complete_order_status&#039;, $order-&gt;needs_processing() ? &#039;processing&#039; : &#039;completed&#039;, $order-&gt;get_id(), $order ) ) ) {
-			$order-&gt;set_date_paid( $order-&gt;get_date_created( &#039;edit&#039; ) );
+		if ( ! $order-&gt;get_date_paid( &#039;edit&#039; ) &amp;&amp; version_compare( $order-&gt;get_version( &#039;edit&#039; ), &#039;3.0&#039;, &#039;&lt;&#039; ) ) {
+			/**
+			 * Filter the order status to use when payment is complete.
+			 *
+			 * @since 3.0.0
+			 *
+			 * @param string   $payment_complete_status Default status to use when payment is complete.
+			 * @param int      $order_id               Order ID.
+			 */
+			$payment_complete_status = apply_filters( &#039;woocommerce_payment_complete_order_status&#039;, $order-&gt;needs_processing() ? OrderStatus::PROCESSING : OrderStatus::COMPLETED, $order-&gt;get_id(), $order );
+			if ( $order-&gt;has_status( $payment_complete_status ) ) {
+				$order-&gt;set_date_paid( $order-&gt;get_date_created( &#039;edit&#039; ) );
+			}
 		}
 
 		// Also grab the current status so we can compare.
 		$previous_status = get_post_status( $order-&gt;get_id() );
+		// If the order doesn&#039;t exist in the DB, we will consider it as new.
+		if ( ! $previous_status &amp;&amp; $order-&gt;get_id() === 0 ) {
+			$previous_status = &#039;new&#039;;
+		}
 
 		// Update the order.
 		parent::update( $order );
 
-		// Fire a hook depending on the status - this should be considered a creation if it was previously draft status.
-		$new_status = $order-&gt;get_status( &#039;edit&#039; );
+		$current_status = $order-&gt;get_status( &#039;edit&#039; );
 
-		if ( $new_status !== $previous_status &amp;&amp; in_array( $previous_status, array( &#039;new&#039;, &#039;auto-draft&#039;, &#039;draft&#039; ), true ) ) {
-			do_action( &#039;woocommerce_new_order&#039;, $order-&gt;get_id(), $order );
-		} else {
-			do_action( &#039;woocommerce_update_order&#039;, $order-&gt;get_id(), $order );
+		// We need to remove the wc- prefix from the status for comparison and proper evaluation of new vs updated orders.
+		$previous_status = OrderUtil::remove_status_prefix( $previous_status );
+		$current_status  = OrderUtil::remove_status_prefix( $current_status );
+
+		$draft_statuses = array( &#039;new&#039;, OrderStatus::AUTO_DRAFT, OrderStatus::DRAFT, &#039;checkout-draft&#039; );
+
+		// This hook should be fired only if the new status is not one of draft statuses and the previous status was one of the draft statuses.
+		if (
+			$current_status !== $previous_status
+			&amp;&amp; ! in_array( $current_status, $draft_statuses, true )
+			&amp;&amp; in_array( $previous_status, $draft_statuses, true )
+		) {
+			do_action( &#039;woocommerce_new_order&#039;, $order-&gt;get_id(), $order );  // phpcs:ignore WooCommerce.Commenting.CommentHooks.MissingHookComment
+			return;
 		}
+
+		do_action( &#039;woocommerce_update_order&#039;, $order-&gt;get_id(), $order );  // phpcs:ignore WooCommerce.Commenting.CommentHooks.MissingHookComment
 	}
 
 	/**
-	 * Helper method that updates all the post meta for an order based on it&#039;s settings in the WC_Order class.
+	 * Helper method that updates all the post meta for an order based on its settings in the WC_Order class.
 	 *
 	 * @param WC_Order $order Order object.
 	 * @since 3.0.0
@@ -606,6 +646,9 @@ class WC_Order_Data_Store_CPT extends Abstract_WC_Order_Data_Store_CPT implement
 	 */
 	public function get_order_id_by_order_key( $order_key ) {
 		global $wpdb;
+		if ( empty( $order_key ) ) {
+			return 0;
+		}
 		return $wpdb-&gt;get_var( $wpdb-&gt;prepare( &quot;SELECT post_id FROM {$wpdb-&gt;prefix}postmeta WHERE meta_key = &#039;_order_key&#039; AND meta_value = %s&quot;, $order_key ) );
 	}
 
@@ -700,7 +743,7 @@ class WC_Order_Data_Store_CPT extends Abstract_WC_Order_Data_Store_CPT implement
 				&quot;SELECT posts.ID
 				FROM {$wpdb-&gt;posts} AS posts
 				WHERE   posts.post_type   IN (&#039;&quot; . implode( &quot;&#039;,&#039;&quot;, wc_get_order_types() ) . &quot;&#039;)
-				AND     posts.post_status = &#039;wc-pending&#039;
+				AND     posts.post_status = &#039;&quot; . OrderInternalStatus::PENDING . &quot;&#039;
 				AND     posts.post_modified &lt; %s&quot;,
 				// @codingStandardsIgnoreEnd
 				gmdate( &#039;Y-m-d H:i:s&#039;, absint( $date ) )
@@ -1155,6 +1198,40 @@ class WC_Order_Data_Store_CPT extends Abstract_WC_Order_Data_Store_CPT implement
 	 * @return array|object
 	 */
 	public function query( $query_vars ) {
+		/**
+		 * Allows 3rd parties to filter query args that will trigger an unsupported notice.
+		 *
+		 * @since 9.2.0
+		 *
+		 * @param array $unsupported_args Array of query arg names.
+		 */
+		$unsupported_args = (array) apply_filters(
+			&#039;woocommerce_order_data_store_cpt_query_unsupported_args&#039;,
+			array( &#039;meta_query&#039;, &#039;field_query&#039; )
+		);
+
+		// Trigger doing_it_wrong() for query vars only supported in HPOS.
+		$unsupported_args_in_query = array_keys( array_filter( array_intersect_key( $query_vars, array_flip( $unsupported_args ) ) ) );
+
+		if ( $unsupported_args_in_query &amp;&amp; __CLASS__ === get_class( $this ) ) {
+			wc_doing_it_wrong(
+				__METHOD__,
+				esc_html(
+					sprintf(
+						// translators: %s is a comma separated list of query arguments.
+						_n(
+							&#039;Order query argument (%s) is not supported on the current order datastore.&#039;,
+							&#039;Order query arguments (%s) are not supported on the current order datastore.&#039;,
+							count( $unsupported_args_in_query ),
+							&#039;woocommerce&#039;
+						),
+						implode( &#039;, &#039;, $unsupported_args_in_query )
+					)
+				),
+				&#039;9.2.0&#039;
+			);
+		}
+
 		$args = $this-&gt;get_wp_query_args( $query_vars );
 
 		if ( ! empty( $args[&#039;errors&#039;] ) ) {
@@ -1366,7 +1443,7 @@ class WC_Order_Data_Store_CPT extends Abstract_WC_Order_Data_Store_CPT implement
 
     <footer class="phpdocumentor phpdocumentor-footer">
     <div class="phpdocumentor-section">
-        <span>WooCommerce Code Reference API documentation generated by <a href="http://www.phpdoc.org/">phpDocumentor</a> on July 25th, 2024 at 11:33 am.</span>
+        <span>WooCommerce Code Reference API documentation generated by <a href="http://www.phpdoc.org/">phpDocumentor</a> on May 16th, 2025 at 09:14 am.</span>
     </div>
 </footer>
 
@@ -1378,7 +1455,7 @@ class WC_Order_Data_Store_CPT extends Abstract_WC_Order_Data_Store_CPT implement
             'searchIndex': '..\/js\/searchIndex.json'
         };
     </script>
-    <script src="../js/searchIndex.js?updated=1721907183"></script>
-    <script src="../js/search.js?updated=1721907183"></script>
+    <script src="../js/searchIndex.js?updated=1747386858"></script>
+    <script src="../js/search.js?updated=1747386858"></script>
 </body>
 </html>

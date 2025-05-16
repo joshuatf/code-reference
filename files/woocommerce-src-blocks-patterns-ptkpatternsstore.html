@@ -4,14 +4,13 @@
     <meta charset="utf-8">
     <title>WooCommerce Code Reference</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="../images/favicon.png" />
-    <link rel="apple-touch-icon" href="../images/apple-touch-icon.png"/>
-    <link rel="apple-touch-icon" sizes="72x72" href="../images/apple-touch-icon-72x72.png"/>
-    <link rel="apple-touch-icon" sizes="114x114" href="../images/apple-touch-icon-114x114.png"/>
+    <link rel="icon" href="../images/favicon-32x32.png" sizes="32x32" />
+    <link rel="icon" href="../images/favicon-192x192.png" sizes="192x192" />
+    <link rel="apple-touch-icon" href="../images/favicon-180x180.png" />
+
     <link rel="stylesheet" href="../css/normalize.css">
-    <link rel="stylesheet" href="../css/base.css?updated=1721907186">
-    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../css/template.css?updated=1721907186">
+    <link rel="stylesheet" href="../css/base.css?updated=1747386862">
+    <link rel="stylesheet" href="../css/template.css?updated=1747386862">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0/css/all.min.css" integrity="sha256-ybRkN9dBjhcS2qrW1z+hfCxq+1aBdwyQM5wlQoQVt/0=" crossorigin="anonymous" />
             <script src="https://cdn.jsdelivr.net/npm/css-vars-ponyfill@2"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0/js/all.min.js" integrity="sha256-0vuk8LXoyrmCjp1f0O300qo1M75ZQyhH9X3J6d+scmk=" crossorigin="anonymous"></script>
@@ -38,14 +37,13 @@
     <header class="phpdocumentor-top-header">
     <section class="phpdocumentor-section">
         <div class="site-branding">
-            <a class="site-logo" href="../index.html"><img width="180" src="../images/logo.svg" alt="WooCommerce" /></a>
+            <a class="site-logo" href="../index.html"><img src="../images/logo.png" alt="WooCommerce" /></a>
         </div>
         <nav class="main-navigation">
             <ul>
                 <li><a href="../hooks/hooks.html">Hooks Reference</a></li>
-                <li><a href="https://docs.woocommerce.com/">Documentation</a></li>
+                <li><a href="https://developer.woocommerce.com/docs/">Documentation</a></li>
                 <li><a href="https://woocommerce.github.io/woocommerce-rest-api-docs/">REST API Docs</a></li>
-                <li><a href="https://woocommerce.com/careers/?utm_source=woocommerce+core+code+reference&utm_medium=devdocs&utm_campaign=woo+careers" target="_blank">We're hiring!</a></li>
             </ul>
         </nav>
     </section>
@@ -53,7 +51,7 @@
 
 <div class="phpdocumentor-header">
     <section class="phpdocumentor-section">
-        <h1 class="phpdocumentor-title">WooCommerce Code Reference</h1>
+        <h1 class="phpdocumentor-title"><a href="../index.html">WooCommerce Code Reference</a></h1>
         <section class="phpdocumentor-search">
     <label class="phpdocumentor-label">
         <span class="visually-hidden">Search (click ESC to close search results)</span>
@@ -74,6 +72,10 @@
                                         <h4 class="phpdocumentor-sidebar__root-namespace"><a href="../namespaces/woocommerce.html"><abbr title="\WooCommerce">WooCommerce</abbr></a></h4>
                 <ul class="phpdocumentor-list">
                                             <li><a href="../namespaces/woocommerce-admin.html"><abbr title="\WooCommerce\Admin">Admin</abbr></a></li>
+                                    </ul>
+                            <h4 class="phpdocumentor-sidebar__root-namespace"><a href="../namespaces/mailpoet.html"><abbr title="\MailPoet">MailPoet</abbr></a></h4>
+                <ul class="phpdocumentor-list">
+                                            <li><a href="../namespaces/mailpoet-emaileditor.html"><abbr title="\MailPoet\EmailEditor">EmailEditor</abbr></a></li>
                                     </ul>
                             <h4 class="phpdocumentor-sidebar__root-namespace"><a href="../namespaces/automattic.html"><abbr title="\Automattic">Automattic</abbr></a></h4>
                 <ul class="phpdocumentor-list">
@@ -119,8 +121,10 @@
                                     <li><a href="../packages/WooCommerce-Widgets.html"><abbr title="\WooCommerce\Widgets">Widgets</abbr></a></li>
                                     <li><a href="../packages/WooCommerce-Uninstaller.html"><abbr title="\WooCommerce\Uninstaller">Uninstaller</abbr></a></li>
                             </ul>
-                                <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/WoocommerceAdmin.html"><abbr title="\WoocommerceAdmin">WoocommerceAdmin</abbr></a></h3>
-                                <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/WoocommerceNavigation.html"><abbr title="\WoocommerceNavigation">WoocommerceNavigation</abbr></a></h3>
+                                <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/MailPoet.html"><abbr title="\MailPoet">MailPoet</abbr></a></h3>
+                        <ul class="phpdocumentor-list">
+                                    <li><a href="../packages/MailPoet-EmailEditor.html"><abbr title="\MailPoet\EmailEditor">EmailEditor</abbr></a></li>
+                            </ul>
                                 <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/Automattic.html"><abbr title="\Automattic">Automattic</abbr></a></h3>
                         <ul class="phpdocumentor-list">
                                     <li><a href="../packages/Automattic-WooCommerce.html"><abbr title="\Automattic\WooCommerce">WooCommerce</abbr></a></li>
@@ -165,14 +169,15 @@ use WP_Upgrader;
 
 /**
  * PTKPatterns class.
+ *
+ * @internal
  */
 class PTKPatternsStore {
 	const TRANSIENT_NAME = &#039;ptk_patterns&#039;;
 
-	// Some patterns need to be excluded because they have dependencies which
-	// are not installed by default (like Jetpack). Otherwise, the user
-	// would see an error when trying to insert them in the editor.
-	const EXCLUDED_PATTERNS = array( &#039;13923&#039;, &#039;14781&#039;, &#039;14779&#039;, &#039;13666&#039;, &#039;13664&#039;, &#039;13660&#039;, &#039;13588&#039;, &#039;14922&#039;, &#039;14880&#039;, &#039;13596&#039;, &#039;13967&#039;, &#039;13958&#039;, &#039;15050&#039;, &#039;15027&#039; );
+	const CATEGORY_MAPPING = array(
+		&#039;testimonials&#039; =&gt; &#039;reviews&#039;,
+	);
 
 	/**
 	 * PatternsToolkit instance.
@@ -250,11 +255,17 @@ class PTKPatternsStore {
 	 * @return void
 	 */
 	private function schedule_action_if_not_pending( $action ) {
-		if ( as_has_scheduled_action( $action ) ) {
+		$last_request = get_transient( &#039;last_fetch_patterns_request&#039; );
+		// The most efficient way to check for an existing action is to use `as_has_scheduled_action`, but in unusual
+		// cases where another plugin has loaded a very old version of Action Scheduler, it may not be available to us.
+
+		$has_scheduled_action = function_exists( &#039;as_has_scheduled_action&#039; ) ? &#039;as_has_scheduled_action&#039; : &#039;as_next_scheduled_action&#039;;
+		if ( call_user_func( $has_scheduled_action, $action ) || false !== $last_request ) {
 			return;
 		}
 
 		as_schedule_single_action( time(), $action );
+		set_transient( &#039;last_fetch_patterns_request&#039;, time(), HOUR_IN_SECONDS );
 	}
 
 	/**
@@ -275,26 +286,31 @@ class PTKPatternsStore {
 	}
 
 	/**
-	 * Filter patterns to exclude those with the given IDs.
+	 * Filter the patterns that have external dependencies.
 	 *
 	 * @param array $patterns The patterns to filter.
-	 * @param array $pattern_ids The pattern IDs to exclude.
 	 * @return array
 	 */
-	private function filter_patterns( array $patterns, array $pattern_ids ) {
-		return array_filter(
-			$patterns,
-			function ( $pattern ) use ( $pattern_ids ) {
-				if ( ! isset( $pattern[&#039;ID&#039;] ) ) {
+	private function filter_patterns( array $patterns ) {
+		return array_values(
+			array_filter(
+				$patterns,
+				function ( $pattern ) {
+					if ( ! isset( $pattern[&#039;ID&#039;] ) ) {
+						return true;
+					}
+
+					if ( isset( $pattern[&#039;post_type&#039;] ) &amp;&amp; &#039;wp_block&#039; !== $pattern[&#039;post_type&#039;] ) {
+						return false;
+					}
+
+					if ( $this-&gt;has_external_dependencies( $pattern ) ) {
+						return false;
+					}
+
 					return true;
 				}
-
-				if ( isset( $pattern[&#039;post_type&#039;] ) &amp;&amp; &#039;wp_block&#039; !== $pattern[&#039;post_type&#039;] ) {
-					return false;
-				}
-
-				return ! in_array( (string) $pattern[&#039;ID&#039;], $pattern_ids, true );
-			}
+			)
 		);
 	}
 
@@ -339,22 +355,35 @@ class PTKPatternsStore {
 
 		$patterns = $this-&gt;ptk_client-&gt;fetch_patterns(
 			array(
-				&#039;categories&#039; =&gt; array( &#039;intro&#039;, &#039;about&#039;, &#039;services&#039;, &#039;testimonials&#039; ),
+				// This is the site where the patterns are stored. Despite the &#039;wpcomstaging.com&#039; domain suggesting a staging environment, this URL points to the production environment where stable versions of the patterns are maintained.
+				&#039;site&#039;       =&gt; &#039;wooblockpatterns.wpcomstaging.com&#039;,
+				&#039;categories&#039; =&gt; array(
+					&#039;_woo_intro&#039;,
+					&#039;_woo_featured_selling&#039;,
+					&#039;_woo_about&#039;,
+					&#039;_woo_reviews&#039;,
+					&#039;_woo_social_media&#039;,
+					&#039;_woo_woocommerce&#039;,
+					&#039;_dotcom_imported_intro&#039;,
+					&#039;_dotcom_imported_about&#039;,
+					&#039;_dotcom_imported_services&#039;,
+					&#039;_dotcom_imported_reviews&#039;,
+				),
 			)
 		);
-
 		if ( is_wp_error( $patterns ) ) {
 			wc_get_logger()-&gt;warning(
 				sprintf(
 				// translators: %s is a generated error message.
-					__( &#039;Failed to get the patterns from the PTK: &quot;%s&quot;&#039;, &#039;woocommerce&#039; ),
+					__( &#039;Failed to get WooCommerce patterns from the PTK: &quot;%s&quot;&#039;, &#039;woocommerce&#039; ),
 					$patterns-&gt;get_error_message()
 				),
 			);
 			return;
 		}
 
-		$patterns = $this-&gt;filter_patterns( $patterns, self::EXCLUDED_PATTERNS );
+		$patterns = $this-&gt;filter_patterns( $patterns );
+		$patterns = $this-&gt;map_categories( $patterns );
 
 		set_transient( self::TRANSIENT_NAME, $patterns );
 	}
@@ -367,6 +396,53 @@ class PTKPatternsStore {
 	private function allowed_tracking_is_enabled(): bool {
 		return &#039;yes&#039; === get_option( &#039;woocommerce_allow_tracking&#039; );
 	}
+
+	/**
+	 * Change the categories of the patterns to match the ones used in the CYS flow
+	 *
+	 * @param array $patterns The patterns to map categories for.
+	 * @return array The patterns with the categories mapped.
+	 */
+	private function map_categories( array $patterns ) {
+		return array_map(
+			function ( $pattern ) {
+				if ( isset( $pattern[&#039;categories&#039;] ) ) {
+					foreach ( $pattern[&#039;categories&#039;] as $key =&gt; $category ) {
+						if ( isset( $category[&#039;slug&#039;] ) &amp;&amp; isset( self::CATEGORY_MAPPING[ $key ] ) ) {
+							$new_category = self::CATEGORY_MAPPING[ $key ];
+							unset( $pattern[&#039;categories&#039;][ $key ] );
+							$pattern[&#039;categories&#039;][ $new_category ][&#039;slug&#039;]  = $new_category;
+							$pattern[&#039;categories&#039;][ $new_category ][&#039;title&#039;] = ucfirst( $new_category );
+						}
+					}
+				}
+
+				return $pattern;
+			},
+			$patterns
+		);
+	}
+
+	/**
+	 * Check if the pattern has external dependencies.
+	 *
+	 * @param array $pattern The pattern to check.
+	 *
+	 * @return bool
+	 */
+	private function has_external_dependencies( $pattern ) {
+		if ( ! isset( $pattern[&#039;dependencies&#039;] ) || ! is_array( $pattern[&#039;dependencies&#039;] ) ) {
+			return false;
+		}
+
+		foreach ( $pattern[&#039;dependencies&#039;] as $dependency ) {
+			if ( &#039;woocommerce&#039; !== $dependency ) {
+				return true;
+			}
+		}
+
+		return false;
+	}
 }
 </code></pre>
             </article>
@@ -378,7 +454,7 @@ class PTKPatternsStore {
 
     <footer class="phpdocumentor phpdocumentor-footer">
     <div class="phpdocumentor-section">
-        <span>WooCommerce Code Reference API documentation generated by <a href="http://www.phpdoc.org/">phpDocumentor</a> on July 25th, 2024 at 11:33 am.</span>
+        <span>WooCommerce Code Reference API documentation generated by <a href="http://www.phpdoc.org/">phpDocumentor</a> on May 16th, 2025 at 09:14 am.</span>
     </div>
 </footer>
 
@@ -390,7 +466,7 @@ class PTKPatternsStore {
             'searchIndex': '..\/js\/searchIndex.json'
         };
     </script>
-    <script src="../js/searchIndex.js?updated=1721907186"></script>
-    <script src="../js/search.js?updated=1721907186"></script>
+    <script src="../js/searchIndex.js?updated=1747386862"></script>
+    <script src="../js/search.js?updated=1747386862"></script>
 </body>
 </html>

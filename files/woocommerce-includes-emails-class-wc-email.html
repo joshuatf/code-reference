@@ -4,14 +4,13 @@
     <meta charset="utf-8">
     <title>WooCommerce Code Reference</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="../images/favicon.png" />
-    <link rel="apple-touch-icon" href="../images/apple-touch-icon.png"/>
-    <link rel="apple-touch-icon" sizes="72x72" href="../images/apple-touch-icon-72x72.png"/>
-    <link rel="apple-touch-icon" sizes="114x114" href="../images/apple-touch-icon-114x114.png"/>
+    <link rel="icon" href="../images/favicon-32x32.png" sizes="32x32" />
+    <link rel="icon" href="../images/favicon-192x192.png" sizes="192x192" />
+    <link rel="apple-touch-icon" href="../images/favicon-180x180.png" />
+
     <link rel="stylesheet" href="../css/normalize.css">
-    <link rel="stylesheet" href="../css/base.css?updated=1721907183">
-    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../css/template.css?updated=1721907183">
+    <link rel="stylesheet" href="../css/base.css?updated=1747386859">
+    <link rel="stylesheet" href="../css/template.css?updated=1747386859">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0/css/all.min.css" integrity="sha256-ybRkN9dBjhcS2qrW1z+hfCxq+1aBdwyQM5wlQoQVt/0=" crossorigin="anonymous" />
             <script src="https://cdn.jsdelivr.net/npm/css-vars-ponyfill@2"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0/js/all.min.js" integrity="sha256-0vuk8LXoyrmCjp1f0O300qo1M75ZQyhH9X3J6d+scmk=" crossorigin="anonymous"></script>
@@ -38,14 +37,13 @@
     <header class="phpdocumentor-top-header">
     <section class="phpdocumentor-section">
         <div class="site-branding">
-            <a class="site-logo" href="../index.html"><img width="180" src="../images/logo.svg" alt="WooCommerce" /></a>
+            <a class="site-logo" href="../index.html"><img src="../images/logo.png" alt="WooCommerce" /></a>
         </div>
         <nav class="main-navigation">
             <ul>
                 <li><a href="../hooks/hooks.html">Hooks Reference</a></li>
-                <li><a href="https://docs.woocommerce.com/">Documentation</a></li>
+                <li><a href="https://developer.woocommerce.com/docs/">Documentation</a></li>
                 <li><a href="https://woocommerce.github.io/woocommerce-rest-api-docs/">REST API Docs</a></li>
-                <li><a href="https://woocommerce.com/careers/?utm_source=woocommerce+core+code+reference&utm_medium=devdocs&utm_campaign=woo+careers" target="_blank">We're hiring!</a></li>
             </ul>
         </nav>
     </section>
@@ -53,7 +51,7 @@
 
 <div class="phpdocumentor-header">
     <section class="phpdocumentor-section">
-        <h1 class="phpdocumentor-title">WooCommerce Code Reference</h1>
+        <h1 class="phpdocumentor-title"><a href="../index.html">WooCommerce Code Reference</a></h1>
         <section class="phpdocumentor-search">
     <label class="phpdocumentor-label">
         <span class="visually-hidden">Search (click ESC to close search results)</span>
@@ -74,6 +72,10 @@
                                         <h4 class="phpdocumentor-sidebar__root-namespace"><a href="../namespaces/woocommerce.html"><abbr title="\WooCommerce">WooCommerce</abbr></a></h4>
                 <ul class="phpdocumentor-list">
                                             <li><a href="../namespaces/woocommerce-admin.html"><abbr title="\WooCommerce\Admin">Admin</abbr></a></li>
+                                    </ul>
+                            <h4 class="phpdocumentor-sidebar__root-namespace"><a href="../namespaces/mailpoet.html"><abbr title="\MailPoet">MailPoet</abbr></a></h4>
+                <ul class="phpdocumentor-list">
+                                            <li><a href="../namespaces/mailpoet-emaileditor.html"><abbr title="\MailPoet\EmailEditor">EmailEditor</abbr></a></li>
                                     </ul>
                             <h4 class="phpdocumentor-sidebar__root-namespace"><a href="../namespaces/automattic.html"><abbr title="\Automattic">Automattic</abbr></a></h4>
                 <ul class="phpdocumentor-list">
@@ -119,8 +121,10 @@
                                     <li><a href="../packages/WooCommerce-Widgets.html"><abbr title="\WooCommerce\Widgets">Widgets</abbr></a></li>
                                     <li><a href="../packages/WooCommerce-Uninstaller.html"><abbr title="\WooCommerce\Uninstaller">Uninstaller</abbr></a></li>
                             </ul>
-                                <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/WoocommerceAdmin.html"><abbr title="\WoocommerceAdmin">WoocommerceAdmin</abbr></a></h3>
-                                <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/WoocommerceNavigation.html"><abbr title="\WoocommerceNavigation">WoocommerceNavigation</abbr></a></h3>
+                                <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/MailPoet.html"><abbr title="\MailPoet">MailPoet</abbr></a></h3>
+                        <ul class="phpdocumentor-list">
+                                    <li><a href="../packages/MailPoet-EmailEditor.html"><abbr title="\MailPoet\EmailEditor">EmailEditor</abbr></a></li>
+                            </ul>
                                 <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/Automattic.html"><abbr title="\Automattic">Automattic</abbr></a></h3>
                         <ul class="phpdocumentor-list">
                                     <li><a href="../packages/Automattic-WooCommerce.html"><abbr title="\Automattic\WooCommerce">WooCommerce</abbr></a></li>
@@ -163,6 +167,7 @@
  * @package WooCommerce\Emails
  */
 
+use Automattic\WooCommerce\Utilities\FeaturesUtil;
 use Pelago\Emogrifier\CssInliner;
 use Pelago\Emogrifier\HtmlProcessor\CssToAttributeConverter;
 use Pelago\Emogrifier\HtmlProcessor\HtmlPruner;
@@ -262,6 +267,20 @@ class WC_Email extends WC_Settings_API {
 	 * @var string
 	 */
 	public $recipient;
+
+	/**
+	 * Cc recipients for the email.
+	 *
+	 * @var string
+	 */
+	public $cc;
+
+	/**
+	 * Bcc recipients for the email.
+	 *
+	 * @var string
+	 */
+	public $bcc;
 
 	/**
 	 * Object this email is for, for example a customer, product, or email.
@@ -368,7 +387,7 @@ class WC_Email extends WC_Settings_API {
 	 *
 	 * @var array
 	 */
-	protected $placeholders = array();
+	public $placeholders = array();
 
 	/**
 	 * Strings to find in subjects/headings.
@@ -394,15 +413,25 @@ class WC_Email extends WC_Settings_API {
 	public $email_type;
 
 	/**
+	 * Whether email improvements feature is enabled.
+	 *
+	 * @var bool
+	 */
+	public $email_improvements_enabled;
+
+	/**
 	 * Constructor.
 	 */
 	public function __construct() {
+		$this-&gt;email_improvements_enabled = FeaturesUtil::feature_is_enabled( &#039;email_improvements&#039; );
+
 		// Find/replace.
 		$this-&gt;placeholders = array_merge(
 			array(
 				&#039;{site_title}&#039;   =&gt; $this-&gt;get_blogname(),
 				&#039;{site_address}&#039; =&gt; wp_parse_url( home_url(), PHP_URL_HOST ),
 				&#039;{site_url}&#039;     =&gt; wp_parse_url( home_url(), PHP_URL_HOST ),
+				&#039;{store_email}&#039;  =&gt; $this-&gt;get_from_address(),
 			),
 			$this-&gt;placeholders
 		);
@@ -418,6 +447,10 @@ class WC_Email extends WC_Settings_API {
 
 		$this-&gt;email_type = $this-&gt;get_option( &#039;email_type&#039; );
 		$this-&gt;enabled    = $this-&gt;get_option( &#039;enabled&#039; );
+		if ( FeaturesUtil::feature_is_enabled( &#039;email_improvements&#039; ) ) {
+			$this-&gt;cc  = $this-&gt;get_option( &#039;cc&#039; );
+			$this-&gt;bcc = $this-&gt;get_option( &#039;bcc&#039; );
+		}
 
 		add_action( &#039;phpmailer_init&#039;, array( $this, &#039;handle_multipart&#039; ) );
 		add_action( &#039;woocommerce_update_options_email_&#039; . $this-&gt;id, array( $this, &#039;process_admin_options&#039; ) );
@@ -574,7 +607,7 @@ class WC_Email extends WC_Settings_API {
 		 * @param object|bool $object             The object (ie, product or order) this email relates to, if any.
 		 * @param WC_Email    $email              WC_Email instance managing the email.
 		 */
-		return apply_filters( &#039;woocommerce_email_additional_content_&#039; . $this-&gt;id, $this-&gt;format_string( $this-&gt;get_option( &#039;additional_content&#039; ) ), $this-&gt;object, $this );
+		return apply_filters( &#039;woocommerce_email_additional_content_&#039; . $this-&gt;id, $this-&gt;format_string( $this-&gt;get_option_or_transient( &#039;additional_content&#039; ) ), $this-&gt;object, $this );
 	}
 
 	/**
@@ -583,7 +616,16 @@ class WC_Email extends WC_Settings_API {
 	 * @return string
 	 */
 	public function get_subject() {
-		return apply_filters( &#039;woocommerce_email_subject_&#039; . $this-&gt;id, $this-&gt;format_string( $this-&gt;get_option( &#039;subject&#039;, $this-&gt;get_default_subject() ) ), $this-&gt;object, $this );
+		/**
+		 * Provides an opportunity to inspect and modify subject for the email.
+		 *
+		 * @since 2.0.0
+		 *
+		 * @param string      $subject Subject of the email.
+		 * @param object|bool $object  The object (ie, product or order) this email relates to, if any.
+		 * @param WC_Email    $email   WC_Email instance managing the email.
+		 */
+		return apply_filters( &#039;woocommerce_email_subject_&#039; . $this-&gt;id, $this-&gt;format_string( $this-&gt;get_option_or_transient( &#039;subject&#039;, $this-&gt;get_default_subject() ) ), $this-&gt;object, $this );
 	}
 
 	/**
@@ -592,7 +634,16 @@ class WC_Email extends WC_Settings_API {
 	 * @return string
 	 */
 	public function get_heading() {
-		return apply_filters( &#039;woocommerce_email_heading_&#039; . $this-&gt;id, $this-&gt;format_string( $this-&gt;get_option( &#039;heading&#039;, $this-&gt;get_default_heading() ) ), $this-&gt;object, $this );
+		/**
+		 * Provides an opportunity to inspect and modify heading for the email.
+		 *
+		 * @since 2.0.0
+		 *
+		 * @param string      $heading Heading to be added to the email.
+		 * @param object|bool $object  The object (ie, product or order) this email relates to, if any.
+		 * @param WC_Email    $email   WC_Email instance managing the email.
+		 */
+		return apply_filters( &#039;woocommerce_email_heading_&#039; . $this-&gt;id, $this-&gt;format_string( $this-&gt;get_option_or_transient( &#039;heading&#039;, $this-&gt;get_default_heading() ) ), $this-&gt;object, $this );
 	}
 
 	/**
@@ -601,10 +652,63 @@ class WC_Email extends WC_Settings_API {
 	 * @return string
 	 */
 	public function get_recipient() {
+		/**
+		 * Filter the recipient for the email.
+		 *
+		 * @since 2.0.0
+		 * @since 3.7.0 Added $email parameter.
+		 * @param string   $recipient Recipient.
+		 * @param object   $object    The object (ie, product or order) this email relates to, if any.
+		 * @param WC_Email $email     WC_Email instance managing the email.
+		 */
 		$recipient  = apply_filters( &#039;woocommerce_email_recipient_&#039; . $this-&gt;id, $this-&gt;recipient, $this-&gt;object, $this );
 		$recipients = array_map( &#039;trim&#039;, explode( &#039;,&#039;, $recipient ) );
 		$recipients = array_filter( $recipients, &#039;is_email&#039; );
 		return implode( &#039;, &#039;, $recipients );
+	}
+
+	/**
+	 * Get valid Cc recipients.
+	 *
+	 * @return string
+	 */
+	public function get_cc_recipient() {
+		$cc = $this-&gt;cc;
+		/**
+		 * Filter the Cc recipient for the email.
+		 *
+		 * @since 9.8.0
+		 * @param string   $cc     Cc recipient.
+		 * @param object   $object The object (ie, product or order) this email relates to, if any.
+		 * @param WC_Email $email  WC_Email instance managing the email.
+		 */
+		$cc  = apply_filters( &#039;woocommerce_email_cc_recipient_&#039; . $this-&gt;id, $cc, $this-&gt;object, $this );
+		$ccs = array_map( &#039;trim&#039;, explode( &#039;,&#039;, $cc ) );
+		$ccs = array_filter( $ccs, &#039;is_email&#039; );
+		$ccs = array_map( &#039;sanitize_email&#039;, $ccs );
+		return implode( &#039;, &#039;, $ccs );
+	}
+
+	/**
+	 * Get valid Bcc recipients.
+	 *
+	 * @return string
+	 */
+	public function get_bcc_recipient() {
+		$bcc = $this-&gt;bcc;
+		/**
+		 * Filter the Bcc recipient for the email.
+		 *
+		 * @since 9.8.0
+		 * @param string   $bcc    CC recipient.
+		 * @param object   $object The object (ie, product or order) this email relates to, if any.
+		 * @param WC_Email $email  WC_Email instance managing the email.
+		 */
+		$bcc  = apply_filters( &#039;woocommerce_email_bcc_recipient_&#039; . $this-&gt;id, $bcc, $this-&gt;object, $this );
+		$bccs = array_map( &#039;trim&#039;, explode( &#039;,&#039;, $bcc ) );
+		$bccs = array_filter( $bccs, &#039;is_email&#039; );
+		$bccs = array_map( &#039;sanitize_email&#039;, $bccs );
+		return implode( &#039;, &#039;, $bccs );
 	}
 
 	/**
@@ -621,6 +725,18 @@ class WC_Email extends WC_Settings_API {
 			}
 		} elseif ( $this-&gt;get_from_address() &amp;&amp; $this-&gt;get_from_name() ) {
 			$header .= &#039;Reply-to: &#039; . $this-&gt;get_from_name() . &#039; &lt;&#039; . $this-&gt;get_from_address() . &quot;&gt;\r\n&quot;;
+		}
+
+		if ( FeaturesUtil::feature_is_enabled( &#039;email_improvements&#039; ) ) {
+			$cc = $this-&gt;get_cc_recipient();
+			if ( ! empty( $cc ) ) {
+				$header .= &#039;Cc: &#039; . sanitize_text_field( $cc ) . &quot;\r\n&quot;;
+			}
+
+			$bcc = $this-&gt;get_bcc_recipient();
+			if ( ! empty( $bcc ) ) {
+				$header .= &#039;Bcc: &#039; . sanitize_text_field( $bcc ) . &quot;\r\n&quot;;
+			}
 		}
 
 		return apply_filters( &#039;woocommerce_email_headers&#039;, $header, $this-&gt;id, $this-&gt;object, $this );
@@ -641,7 +757,20 @@ class WC_Email extends WC_Settings_API {
 	 * @return string
 	 */
 	public function get_email_type() {
-		return $this-&gt;email_type &amp;&amp; class_exists( &#039;DOMDocument&#039; ) ? $this-&gt;email_type : &#039;plain&#039;;
+		$email_type = $this-&gt;email_type;
+		/**
+		 * This filter is documented in templates/emails/email-styles.php
+		 *
+		 * @since 9.6.0
+		 * @param bool $is_email_preview Whether the email is being previewed.
+		 */
+		$is_email_preview = apply_filters( &#039;woocommerce_is_email_preview&#039;, false );
+		// Transient is used for live email preview without saving the settings.
+		if ( $is_email_preview ) {
+			$transient  = get_transient( &quot;woocommerce_{$this-&gt;id}_email_type&quot; );
+			$email_type = $transient ? $transient : $email_type;
+		}
+		return $email_type &amp;&amp; class_exists( &#039;DOMDocument&#039; ) ? $email_type : &#039;plain&#039;;
 	}
 
 	/**
@@ -879,6 +1008,16 @@ class WC_Email extends WC_Settings_API {
 	}
 
 	/**
+	 * Set the object for the outgoing email.
+	 *
+	 * @param object $object Object this email is for, e.g. customer, or product.
+	 * @return void
+	 */
+	public function set_object( $object ) { // phpcs:ignore Universal.NamingConventions.NoReservedKeywordParameterNames.objectFound
+		$this-&gt;object = $object;
+	}
+
+	/**
 	 * Send an email.
 	 *
 	 * @param string $to Email to.
@@ -965,6 +1104,44 @@ class WC_Email extends WC_Settings_API {
 				&#039;options&#039;     =&gt; $this-&gt;get_email_type_options(),
 				&#039;desc_tip&#039;    =&gt; true,
 			),
+		);
+		if ( FeaturesUtil::feature_is_enabled( &#039;email_improvements&#039; ) ) {
+			$this-&gt;form_fields[&#039;cc&#039;]  = $this-&gt;get_cc_field();
+			$this-&gt;form_fields[&#039;bcc&#039;] = $this-&gt;get_bcc_field();
+		}
+	}
+
+	/**
+	 * Get the cc field definition.
+	 *
+	 * @return array
+	 */
+	protected function get_cc_field() {
+		return array(
+			&#039;title&#039;       =&gt; __( &#039;Cc(s)&#039;, &#039;woocommerce&#039; ),
+			&#039;type&#039;        =&gt; &#039;text&#039;,
+			/* translators: %s: admin email */
+			&#039;description&#039; =&gt; __( &#039;Enter Cc recipients (comma-separated) for this email.&#039;, &#039;woocommerce&#039; ),
+			&#039;placeholder&#039; =&gt; &#039;&#039;,
+			&#039;default&#039;     =&gt; &#039;&#039;,
+			&#039;desc_tip&#039;    =&gt; true,
+		);
+	}
+
+	/**
+	 * Get the bcc field definition.
+	 *
+	 * @return array
+	 */
+	protected function get_bcc_field() {
+		return array(
+			&#039;title&#039;       =&gt; __( &#039;Bcc(s)&#039;, &#039;woocommerce&#039; ),
+			&#039;type&#039;        =&gt; &#039;text&#039;,
+			/* translators: %s: admin email */
+			&#039;description&#039; =&gt; __( &#039;Enter Bcc recipients (comma-separated) for this email.&#039;, &#039;woocommerce&#039; ),
+			&#039;placeholder&#039; =&gt; &#039;&#039;,
+			&#039;default&#039;     =&gt; &#039;&#039;,
+			&#039;desc_tip&#039;    =&gt; true,
 		);
 	}
 
@@ -1169,7 +1346,7 @@ class WC_Email extends WC_Settings_API {
 		// Do admin actions.
 		$this-&gt;admin_actions();
 		?&gt;
-		&lt;h2&gt;&lt;?php echo esc_html( $this-&gt;get_title() ); ?&gt; &lt;?php wc_back_link( __( &#039;Return to emails&#039;, &#039;woocommerce&#039; ), admin_url( &#039;admin.php?page=wc-settings&amp;tab=email&#039; ) ); ?&gt;&lt;/h2&gt;
+		&lt;?php wc_back_header( $this-&gt;get_title(), __( &#039;Return to emails&#039;, &#039;woocommerce&#039; ), admin_url( &#039;admin.php?page=wc-settings&amp;tab=email&#039; ) ); ?&gt;
 
 		&lt;?php echo wpautop( wp_kses_post( $this-&gt;get_description() ) ); // phpcs:ignore WordPress.XSS.EscapeOutput.OutputNotEscaped ?&gt;
 
@@ -1347,6 +1524,33 @@ class WC_Email extends WC_Settings_API {
 			$phpmailer-&gt;AltBody = &#039;&#039;; // phpcs:ignore WordPress.NamingConventions.ValidVariableName.UsedPropertyNotSnakeCase
 		}
 	}
+
+	/**
+	 * Get an option or transient for email preview.
+	 *
+	 * @param string $key Option key.
+	 * @param mixed  $empty_value Value to use when option is empty.
+	 */
+	protected function get_option_or_transient( string $key, $empty_value = null ) {
+		$option = $this-&gt;get_option( $key, $empty_value );
+
+		/**
+		 * This filter is documented in templates/emails/email-styles.php
+		 *
+		 * @since 9.6.0
+		 * @param bool $is_email_preview Whether the email is being previewed.
+		 */
+		$is_email_preview = apply_filters( &#039;woocommerce_is_email_preview&#039;, false );
+		if ( $is_email_preview ) {
+			$email_id  = $this-&gt;id;
+			$transient = get_transient( &quot;woocommerce_{$email_id}_{$key}&quot; );
+			if ( false !== $transient ) {
+				$option = $transient ? $transient : $empty_value;
+			}
+		}
+
+		return $option;
+	}
 }
 </code></pre>
             </article>
@@ -1358,7 +1562,7 @@ class WC_Email extends WC_Settings_API {
 
     <footer class="phpdocumentor phpdocumentor-footer">
     <div class="phpdocumentor-section">
-        <span>WooCommerce Code Reference API documentation generated by <a href="http://www.phpdoc.org/">phpDocumentor</a> on July 25th, 2024 at 11:33 am.</span>
+        <span>WooCommerce Code Reference API documentation generated by <a href="http://www.phpdoc.org/">phpDocumentor</a> on May 16th, 2025 at 09:14 am.</span>
     </div>
 </footer>
 
@@ -1370,7 +1574,7 @@ class WC_Email extends WC_Settings_API {
             'searchIndex': '..\/js\/searchIndex.json'
         };
     </script>
-    <script src="../js/searchIndex.js?updated=1721907183"></script>
-    <script src="../js/search.js?updated=1721907183"></script>
+    <script src="../js/searchIndex.js?updated=1747386859"></script>
+    <script src="../js/search.js?updated=1747386859"></script>
 </body>
 </html>

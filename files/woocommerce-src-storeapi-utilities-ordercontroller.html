@@ -4,14 +4,13 @@
     <meta charset="utf-8">
     <title>WooCommerce Code Reference</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="../images/favicon.png" />
-    <link rel="apple-touch-icon" href="../images/apple-touch-icon.png"/>
-    <link rel="apple-touch-icon" sizes="72x72" href="../images/apple-touch-icon-72x72.png"/>
-    <link rel="apple-touch-icon" sizes="114x114" href="../images/apple-touch-icon-114x114.png"/>
+    <link rel="icon" href="../images/favicon-32x32.png" sizes="32x32" />
+    <link rel="icon" href="../images/favicon-192x192.png" sizes="192x192" />
+    <link rel="apple-touch-icon" href="../images/favicon-180x180.png" />
+
     <link rel="stylesheet" href="../css/normalize.css">
-    <link rel="stylesheet" href="../css/base.css?updated=1721907186">
-    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../css/template.css?updated=1721907186">
+    <link rel="stylesheet" href="../css/base.css?updated=1747386863">
+    <link rel="stylesheet" href="../css/template.css?updated=1747386863">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0/css/all.min.css" integrity="sha256-ybRkN9dBjhcS2qrW1z+hfCxq+1aBdwyQM5wlQoQVt/0=" crossorigin="anonymous" />
             <script src="https://cdn.jsdelivr.net/npm/css-vars-ponyfill@2"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0/js/all.min.js" integrity="sha256-0vuk8LXoyrmCjp1f0O300qo1M75ZQyhH9X3J6d+scmk=" crossorigin="anonymous"></script>
@@ -38,14 +37,13 @@
     <header class="phpdocumentor-top-header">
     <section class="phpdocumentor-section">
         <div class="site-branding">
-            <a class="site-logo" href="../index.html"><img width="180" src="../images/logo.svg" alt="WooCommerce" /></a>
+            <a class="site-logo" href="../index.html"><img src="../images/logo.png" alt="WooCommerce" /></a>
         </div>
         <nav class="main-navigation">
             <ul>
                 <li><a href="../hooks/hooks.html">Hooks Reference</a></li>
-                <li><a href="https://docs.woocommerce.com/">Documentation</a></li>
+                <li><a href="https://developer.woocommerce.com/docs/">Documentation</a></li>
                 <li><a href="https://woocommerce.github.io/woocommerce-rest-api-docs/">REST API Docs</a></li>
-                <li><a href="https://woocommerce.com/careers/?utm_source=woocommerce+core+code+reference&utm_medium=devdocs&utm_campaign=woo+careers" target="_blank">We're hiring!</a></li>
             </ul>
         </nav>
     </section>
@@ -53,7 +51,7 @@
 
 <div class="phpdocumentor-header">
     <section class="phpdocumentor-section">
-        <h1 class="phpdocumentor-title">WooCommerce Code Reference</h1>
+        <h1 class="phpdocumentor-title"><a href="../index.html">WooCommerce Code Reference</a></h1>
         <section class="phpdocumentor-search">
     <label class="phpdocumentor-label">
         <span class="visually-hidden">Search (click ESC to close search results)</span>
@@ -74,6 +72,10 @@
                                         <h4 class="phpdocumentor-sidebar__root-namespace"><a href="../namespaces/woocommerce.html"><abbr title="\WooCommerce">WooCommerce</abbr></a></h4>
                 <ul class="phpdocumentor-list">
                                             <li><a href="../namespaces/woocommerce-admin.html"><abbr title="\WooCommerce\Admin">Admin</abbr></a></li>
+                                    </ul>
+                            <h4 class="phpdocumentor-sidebar__root-namespace"><a href="../namespaces/mailpoet.html"><abbr title="\MailPoet">MailPoet</abbr></a></h4>
+                <ul class="phpdocumentor-list">
+                                            <li><a href="../namespaces/mailpoet-emaileditor.html"><abbr title="\MailPoet\EmailEditor">EmailEditor</abbr></a></li>
                                     </ul>
                             <h4 class="phpdocumentor-sidebar__root-namespace"><a href="../namespaces/automattic.html"><abbr title="\Automattic">Automattic</abbr></a></h4>
                 <ul class="phpdocumentor-list">
@@ -119,8 +121,10 @@
                                     <li><a href="../packages/WooCommerce-Widgets.html"><abbr title="\WooCommerce\Widgets">Widgets</abbr></a></li>
                                     <li><a href="../packages/WooCommerce-Uninstaller.html"><abbr title="\WooCommerce\Uninstaller">Uninstaller</abbr></a></li>
                             </ul>
-                                <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/WoocommerceAdmin.html"><abbr title="\WoocommerceAdmin">WoocommerceAdmin</abbr></a></h3>
-                                <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/WoocommerceNavigation.html"><abbr title="\WoocommerceNavigation">WoocommerceNavigation</abbr></a></h3>
+                                <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/MailPoet.html"><abbr title="\MailPoet">MailPoet</abbr></a></h3>
+                        <ul class="phpdocumentor-list">
+                                    <li><a href="../packages/MailPoet-EmailEditor.html"><abbr title="\MailPoet\EmailEditor">EmailEditor</abbr></a></li>
+                            </ul>
                                 <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/Automattic.html"><abbr title="\Automattic">Automattic</abbr></a></h3>
                         <ul class="phpdocumentor-list">
                                     <li><a href="../packages/Automattic-WooCommerce.html"><abbr title="\Automattic\WooCommerce">WooCommerce</abbr></a></li>
@@ -164,7 +168,7 @@ use Automattic\WooCommerce\StoreApi\Exceptions\RouteException;
 use Automattic\WooCommerce\Blocks\Domain\Services\CheckoutFields;
 use Automattic\WooCommerce\Blocks\Package;
 use Automattic\WooCommerce\Utilities\DiscountsUtil;
-
+use Automattic\WooCommerce\StoreApi\Utilities\PaymentUtils;
 /**
  * OrderController class.
  * Helper class which creates and syncs orders with the cart.
@@ -258,7 +262,6 @@ class OrderController {
 
 		// Ensure cart is current.
 		if ( $update_totals ) {
-			wc()-&gt;cart-&gt;calculate_shipping();
 			wc()-&gt;cart-&gt;calculate_totals();
 		}
 
@@ -272,6 +275,7 @@ class OrderController {
 		$order-&gt;set_customer_user_agent( wc_get_user_agent() );
 		$order-&gt;update_meta_data( &#039;is_vat_exempt&#039;, wc()-&gt;cart-&gt;get_customer()-&gt;get_is_vat_exempt() ? &#039;yes&#039; : &#039;no&#039; );
 		$order-&gt;calculate_totals();
+		$order-&gt;set_payment_method( PaymentUtils::get_default_payment_method() );
 	}
 
 	/**
@@ -538,33 +542,31 @@ class OrderController {
 	protected function validate_address_fields( \WC_Order $order, $address_type, \WP_Error $errors ) {
 		$all_locales    = wc()-&gt;countries-&gt;get_country_locale();
 		$address        = $order-&gt;get_address( $address_type );
-		$current_locale = isset( $all_locales[ $address[&#039;country&#039;] ] ) ? $all_locales[ $address[&#039;country&#039;] ] : array();
+		$current_locale = $all_locales[ $address[&#039;country&#039;] ] ?? [];
+
+		foreach ( $all_locales[&#039;default&#039;] as $key =&gt; $value ) {
+			// If $current_locale[ $key ] is not empty, merge it with locale default, otherwise just use default locale.
+			$current_locale[ $key ] = ! empty( $current_locale[ $key ] )
+				? wp_parse_args( $current_locale[ $key ], $value )
+				: $value;
+		}
 
 		$additional_fields = $this-&gt;additional_fields_controller-&gt;get_all_fields_from_object( $order, $address_type );
 
 		$address = array_merge( $address, $additional_fields );
 
-		$fields              = $this-&gt;additional_fields_controller-&gt;get_additional_fields();
-		$address_fields_keys = $this-&gt;additional_fields_controller-&gt;get_address_fields_keys();
-		$address_fields      = array_filter(
-			$fields,
-			function ( $key ) use ( $address_fields_keys ) {
-				return in_array( $key, $address_fields_keys, true );
-			},
-			ARRAY_FILTER_USE_KEY
-		);
-
-		if ( $current_locale ) {
-			foreach ( $current_locale as $key =&gt; $field ) {
-				if ( isset( $address_fields[ $key ] ) ) {
-					$address_fields[ $key ][&#039;label&#039;]    = isset( $field[&#039;label&#039;] ) ? $field[&#039;label&#039;] : $address_fields[ $key ][&#039;label&#039;];
-					$address_fields[ $key ][&#039;required&#039;] = isset( $field[&#039;required&#039;] ) ? $field[&#039;required&#039;] : $address_fields[ $key ][&#039;required&#039;];
-				}
+		foreach ( $current_locale as $address_field_key =&gt; $address_field ) {
+			// Skip validation if field is not required.
+			if ( ! $address_field[&#039;required&#039;] ) {
+				continue;
 			}
-		}
 
-		foreach ( $address_fields as $address_field_key =&gt; $address_field ) {
-			if ( empty( $address[ $address_field_key ] ) &amp;&amp; $address_field[&#039;required&#039;] ) {
+			// Check if field is not set, is an empty string, or is an empty array.
+			$is_empty = ! isset( $address[ $address_field_key ] ) ||
+				( is_string( $address[ $address_field_key ] ) &amp;&amp; &#039;&#039; === trim( $address[ $address_field_key ] ) ) ||
+				( is_array( $address[ $address_field_key ] ) &amp;&amp; 0 === count( $address[ $address_field_key ] ) );
+
+			if ( $is_empty ) {
 				/* translators: %s Field label. */
 				$errors-&gt;add( $address_type, sprintf( __( &#039;%s is required&#039;, &#039;woocommerce&#039; ), $address_field[&#039;label&#039;] ), $address_field_key );
 			}
@@ -590,8 +592,11 @@ class OrderController {
 	 */
 	protected function validate_coupon_email_restriction( \WC_Coupon $coupon, \WC_Order $order ) {
 		$restrictions = $coupon-&gt;get_email_restrictions();
+		// Email is forced lowercase like in validate_coupon_allowed_emails.
+		$billing_email = strtolower( $order-&gt;get_billing_email() );
 
-		if ( ! empty( $restrictions ) &amp;&amp; $order-&gt;get_billing_email() &amp;&amp; ! DiscountsUtil::is_coupon_emails_allowed( array( $order-&gt;get_billing_email() ), $restrictions ) ) {
+		if ( ! empty( $restrictions ) &amp;&amp; $billing_email &amp;&amp; ! DiscountsUtil::is_coupon_emails_allowed( array( $billing_email ), $restrictions ) ) {
+			// phpcs:ignore WordPress.Security.EscapeOutput.ExceptionNotEscaped
 			throw new Exception( $coupon-&gt;get_coupon_error( \WC_Coupon::E_WC_COUPON_NOT_YOURS_REMOVED ) );
 		}
 	}
@@ -929,7 +934,7 @@ class OrderController {
 
     <footer class="phpdocumentor phpdocumentor-footer">
     <div class="phpdocumentor-section">
-        <span>WooCommerce Code Reference API documentation generated by <a href="http://www.phpdoc.org/">phpDocumentor</a> on July 25th, 2024 at 11:33 am.</span>
+        <span>WooCommerce Code Reference API documentation generated by <a href="http://www.phpdoc.org/">phpDocumentor</a> on May 16th, 2025 at 09:14 am.</span>
     </div>
 </footer>
 
@@ -941,7 +946,7 @@ class OrderController {
             'searchIndex': '..\/js\/searchIndex.json'
         };
     </script>
-    <script src="../js/searchIndex.js?updated=1721907186"></script>
-    <script src="../js/search.js?updated=1721907186"></script>
+    <script src="../js/searchIndex.js?updated=1747386863"></script>
+    <script src="../js/search.js?updated=1747386863"></script>
 </body>
 </html>

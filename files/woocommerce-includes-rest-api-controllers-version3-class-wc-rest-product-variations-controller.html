@@ -4,14 +4,13 @@
     <meta charset="utf-8">
     <title>WooCommerce Code Reference</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="../images/favicon.png" />
-    <link rel="apple-touch-icon" href="../images/apple-touch-icon.png"/>
-    <link rel="apple-touch-icon" sizes="72x72" href="../images/apple-touch-icon-72x72.png"/>
-    <link rel="apple-touch-icon" sizes="114x114" href="../images/apple-touch-icon-114x114.png"/>
+    <link rel="icon" href="../images/favicon-32x32.png" sizes="32x32" />
+    <link rel="icon" href="../images/favicon-192x192.png" sizes="192x192" />
+    <link rel="apple-touch-icon" href="../images/favicon-180x180.png" />
+
     <link rel="stylesheet" href="../css/normalize.css">
-    <link rel="stylesheet" href="../css/base.css?updated=1721907183">
-    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../css/template.css?updated=1721907183">
+    <link rel="stylesheet" href="../css/base.css?updated=1747386859">
+    <link rel="stylesheet" href="../css/template.css?updated=1747386859">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0/css/all.min.css" integrity="sha256-ybRkN9dBjhcS2qrW1z+hfCxq+1aBdwyQM5wlQoQVt/0=" crossorigin="anonymous" />
             <script src="https://cdn.jsdelivr.net/npm/css-vars-ponyfill@2"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0/js/all.min.js" integrity="sha256-0vuk8LXoyrmCjp1f0O300qo1M75ZQyhH9X3J6d+scmk=" crossorigin="anonymous"></script>
@@ -38,14 +37,13 @@
     <header class="phpdocumentor-top-header">
     <section class="phpdocumentor-section">
         <div class="site-branding">
-            <a class="site-logo" href="../index.html"><img width="180" src="../images/logo.svg" alt="WooCommerce" /></a>
+            <a class="site-logo" href="../index.html"><img src="../images/logo.png" alt="WooCommerce" /></a>
         </div>
         <nav class="main-navigation">
             <ul>
                 <li><a href="../hooks/hooks.html">Hooks Reference</a></li>
-                <li><a href="https://docs.woocommerce.com/">Documentation</a></li>
+                <li><a href="https://developer.woocommerce.com/docs/">Documentation</a></li>
                 <li><a href="https://woocommerce.github.io/woocommerce-rest-api-docs/">REST API Docs</a></li>
-                <li><a href="https://woocommerce.com/careers/?utm_source=woocommerce+core+code+reference&utm_medium=devdocs&utm_campaign=woo+careers" target="_blank">We're hiring!</a></li>
             </ul>
         </nav>
     </section>
@@ -53,7 +51,7 @@
 
 <div class="phpdocumentor-header">
     <section class="phpdocumentor-section">
-        <h1 class="phpdocumentor-title">WooCommerce Code Reference</h1>
+        <h1 class="phpdocumentor-title"><a href="../index.html">WooCommerce Code Reference</a></h1>
         <section class="phpdocumentor-search">
     <label class="phpdocumentor-label">
         <span class="visually-hidden">Search (click ESC to close search results)</span>
@@ -74,6 +72,10 @@
                                         <h4 class="phpdocumentor-sidebar__root-namespace"><a href="../namespaces/woocommerce.html"><abbr title="\WooCommerce">WooCommerce</abbr></a></h4>
                 <ul class="phpdocumentor-list">
                                             <li><a href="../namespaces/woocommerce-admin.html"><abbr title="\WooCommerce\Admin">Admin</abbr></a></li>
+                                    </ul>
+                            <h4 class="phpdocumentor-sidebar__root-namespace"><a href="../namespaces/mailpoet.html"><abbr title="\MailPoet">MailPoet</abbr></a></h4>
+                <ul class="phpdocumentor-list">
+                                            <li><a href="../namespaces/mailpoet-emaileditor.html"><abbr title="\MailPoet\EmailEditor">EmailEditor</abbr></a></li>
                                     </ul>
                             <h4 class="phpdocumentor-sidebar__root-namespace"><a href="../namespaces/automattic.html"><abbr title="\Automattic">Automattic</abbr></a></h4>
                 <ul class="phpdocumentor-list">
@@ -119,8 +121,10 @@
                                     <li><a href="../packages/WooCommerce-Widgets.html"><abbr title="\WooCommerce\Widgets">Widgets</abbr></a></li>
                                     <li><a href="../packages/WooCommerce-Uninstaller.html"><abbr title="\WooCommerce\Uninstaller">Uninstaller</abbr></a></li>
                             </ul>
-                                <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/WoocommerceAdmin.html"><abbr title="\WoocommerceAdmin">WoocommerceAdmin</abbr></a></h3>
-                                <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/WoocommerceNavigation.html"><abbr title="\WoocommerceNavigation">WoocommerceNavigation</abbr></a></h3>
+                                <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/MailPoet.html"><abbr title="\MailPoet">MailPoet</abbr></a></h3>
+                        <ul class="phpdocumentor-list">
+                                    <li><a href="../packages/MailPoet-EmailEditor.html"><abbr title="\MailPoet\EmailEditor">EmailEditor</abbr></a></li>
+                            </ul>
                                 <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/Automattic.html"><abbr title="\Automattic">Automattic</abbr></a></h3>
                         <ul class="phpdocumentor-list">
                                     <li><a href="../packages/Automattic-WooCommerce.html"><abbr title="\Automattic\WooCommerce">WooCommerce</abbr></a></li>
@@ -166,6 +170,10 @@
  * @since   3.0.0
  */
 
+use Automattic\WooCommerce\Enums\ProductTaxStatus;
+use Automattic\WooCommerce\Enums\ProductStatus;
+use Automattic\WooCommerce\Enums\ProductStockStatus;
+use Automattic\WooCommerce\Internal\CostOfGoodsSold\CogsAwareRestControllerTrait;
 use Automattic\WooCommerce\Utilities\I18nUtil;
 
 defined( &#039;ABSPATH&#039; ) || exit;
@@ -179,6 +187,7 @@ use Automattic\Jetpack\Constants;
  * @extends WC_REST_Product_Variations_V2_Controller
  */
 class WC_REST_Product_Variations_Controller extends WC_REST_Product_Variations_V2_Controller {
+	use CogsAwareRestControllerTrait;
 
 	/**
 	 * Endpoint namespace.
@@ -186,6 +195,13 @@ class WC_REST_Product_Variations_Controller extends WC_REST_Product_Variations_V
 	 * @var string
 	 */
 	protected $namespace = &#039;wc/v3&#039;;
+
+	/**
+	 * Product statuses to exclude from the query.
+	 *
+	 * @var array
+	 */
+	private $exclude_status = array();
 
 	/**
 	 * Register the routes for products.
@@ -266,6 +282,7 @@ class WC_REST_Product_Variations_Controller extends WC_REST_Product_Variations_V
 			&#039;description&#039;           =&gt; wc_format_content( $object-&gt;get_description() ),
 			&#039;permalink&#039;             =&gt; $object-&gt;get_permalink(),
 			&#039;sku&#039;                   =&gt; $object-&gt;get_sku(),
+			&#039;global_unique_id&#039;      =&gt; $object-&gt;get_global_unique_id(),
 			&#039;price&#039;                 =&gt; $object-&gt;get_price(),
 			&#039;regular_price&#039;         =&gt; $object-&gt;get_regular_price(),
 			&#039;sale_price&#039;            =&gt; $object-&gt;get_sale_price(),
@@ -306,8 +323,13 @@ class WC_REST_Product_Variations_Controller extends WC_REST_Product_Variations_V
 			&#039;parent_id&#039;             =&gt; $object-&gt;get_parent_id(),
 		);
 
-		$data     = $this-&gt;add_additional_fields_to_object( $data, $request );
-		$data     = $this-&gt;filter_response_by_context( $data, $context );
+		$data = $this-&gt;add_additional_fields_to_object( $data, $request );
+		$data = $this-&gt;filter_response_by_context( $data, $context );
+
+		if ( $this-&gt;cogs_is_enabled() ) {
+			$this-&gt;add_cogs_info_to_returned_product_data( $data, $object );
+		}
+
 		$response = rest_ensure_response( $data );
 		$response-&gt;add_links( $this-&gt;prepare_links( $object, $request ) );
 
@@ -343,12 +365,17 @@ class WC_REST_Product_Variations_Controller extends WC_REST_Product_Variations_V
 
 		// Status.
 		if ( isset( $request[&#039;status&#039;] ) ) {
-			$variation-&gt;set_status( get_post_status_object( $request[&#039;status&#039;] ) ? $request[&#039;status&#039;] : &#039;draft&#039; );
+			$variation-&gt;set_status( get_post_status_object( $request[&#039;status&#039;] ) ? $request[&#039;status&#039;] : ProductStatus::DRAFT );
 		}
 
 		// SKU.
 		if ( isset( $request[&#039;sku&#039;] ) ) {
 			$variation-&gt;set_sku( wc_clean( $request[&#039;sku&#039;] ) );
+		}
+
+		// Unique ID.
+		if ( isset( $request[&#039;global_unique_id&#039;] ) ) {
+			$variation-&gt;set_global_unique_id( wc_clean( $request[&#039;global_unique_id&#039;] ) );
 		}
 
 		// Thumbnail.
@@ -530,6 +557,10 @@ class WC_REST_Product_Variations_Controller extends WC_REST_Product_Variations_V
 			}
 		}
 
+		if ( $this-&gt;cogs_is_enabled() ) {
+			$this-&gt;set_cogs_info_in_product_object( $request, $variation );
+		}
+
 		/**
 		 * Filters an object before it is inserted via the REST API.
 		 *
@@ -598,7 +629,7 @@ class WC_REST_Product_Variations_Controller extends WC_REST_Product_Variations_V
 
 				if ( is_wp_error( $upload ) ) {
 					/**
-					 * Filter to check if it should supress the image upload error, false by default.
+					 * Filter to check if it should suppress the image upload error, false by default.
 					 *
 					 * @since 4.5.0
 					 * @param bool false   If it should suppress.
@@ -693,7 +724,12 @@ class WC_REST_Product_Variations_Controller extends WC_REST_Product_Variations_V
 					&#039;readonly&#039;    =&gt; true,
 				),
 				&#039;sku&#039;                   =&gt; array(
-					&#039;description&#039; =&gt; __( &#039;Unique identifier.&#039;, &#039;woocommerce&#039; ),
+					&#039;description&#039; =&gt; __( &#039;Stock Keeping Unit.&#039;, &#039;woocommerce&#039; ),
+					&#039;type&#039;        =&gt; &#039;string&#039;,
+					&#039;context&#039;     =&gt; array( &#039;view&#039;, &#039;edit&#039; ),
+				),
+				&#039;global_unique_id&#039;      =&gt; array(
+					&#039;description&#039; =&gt; __( &#039;GTIN, UPC, EAN or ISBN.&#039;, &#039;woocommerce&#039; ),
 					&#039;type&#039;        =&gt; &#039;string&#039;,
 					&#039;context&#039;     =&gt; array( &#039;view&#039;, &#039;edit&#039; ),
 				),
@@ -742,6 +778,8 @@ class WC_REST_Product_Variations_Controller extends WC_REST_Product_Variations_V
 				&#039;status&#039;                =&gt; array(
 					&#039;description&#039; =&gt; __( &#039;Variation status.&#039;, &#039;woocommerce&#039; ),
 					&#039;type&#039;        =&gt; &#039;string&#039;,
+					// Not using ProductStatus constants here due the class not being loaded upon installation.
+					// See: https://github.com/woocommerce/woocommerce/issues/37464.
 					&#039;default&#039;     =&gt; &#039;publish&#039;,
 					&#039;enum&#039;        =&gt; array_keys( get_post_statuses() ),
 					&#039;context&#039;     =&gt; array( &#039;view&#039;, &#039;edit&#039; ),
@@ -804,8 +842,8 @@ class WC_REST_Product_Variations_Controller extends WC_REST_Product_Variations_V
 				&#039;tax_status&#039;            =&gt; array(
 					&#039;description&#039; =&gt; __( &#039;Tax status.&#039;, &#039;woocommerce&#039; ),
 					&#039;type&#039;        =&gt; &#039;string&#039;,
-					&#039;default&#039;     =&gt; &#039;taxable&#039;,
-					&#039;enum&#039;        =&gt; array( &#039;taxable&#039;, &#039;shipping&#039;, &#039;none&#039; ),
+					&#039;default&#039;     =&gt; ProductTaxStatus::TAXABLE,
+					&#039;enum&#039;        =&gt; array( ProductTaxStatus::TAXABLE, ProductTaxStatus::SHIPPING, ProductTaxStatus::NONE ),
 					&#039;context&#039;     =&gt; array( &#039;view&#039;, &#039;edit&#039; ),
 				),
 				&#039;tax_class&#039;             =&gt; array(
@@ -827,7 +865,7 @@ class WC_REST_Product_Variations_Controller extends WC_REST_Product_Variations_V
 				&#039;stock_status&#039;          =&gt; array(
 					&#039;description&#039; =&gt; __( &#039;Controls the stock status of the product.&#039;, &#039;woocommerce&#039; ),
 					&#039;type&#039;        =&gt; &#039;string&#039;,
-					&#039;default&#039;     =&gt; &#039;instock&#039;,
+					&#039;default&#039;     =&gt; ProductStockStatus::IN_STOCK,
 					&#039;enum&#039;        =&gt; array_keys( wc_get_product_stock_status_options() ),
 					&#039;context&#039;     =&gt; array( &#039;view&#039;, &#039;edit&#039; ),
 				),
@@ -1007,6 +1045,11 @@ class WC_REST_Product_Variations_Controller extends WC_REST_Product_Variations_V
 				),
 			),
 		);
+
+		if ( $this-&gt;cogs_is_enabled() ) {
+			$schema = $this-&gt;add_cogs_related_product_schema( $schema, true );
+		}
+
 		return $this-&gt;add_additional_fields_schema( $schema );
 	}
 
@@ -1022,6 +1065,28 @@ class WC_REST_Product_Variations_Controller extends WC_REST_Product_Variations_V
 
 		// Set post_status.
 		$args[&#039;post_status&#039;] = $request[&#039;status&#039;];
+
+		// Filter by a list of product variation statuses.
+		if ( ! empty( $request[&#039;include_status&#039;] ) ) {
+			$args[&#039;post_status&#039;] = $request[&#039;include_status&#039;];
+		}
+
+		if ( ! empty( $request[&#039;exclude_status&#039;] ) ) {
+			$this-&gt;exclude_status = $request[&#039;exclude_status&#039;];
+		} else {
+			$this-&gt;exclude_status = array();
+		}
+
+		// Filter downloadable product variations.
+		if ( isset( $request[&#039;downloadable&#039;] ) ) {
+			$args[&#039;meta_query&#039;] = $this-&gt;add_meta_query( // phpcs:ignore WordPress.DB.SlowDBQuery.slow_db_query_meta_query
+				$args,
+				array(
+					&#039;key&#039;   =&gt; &#039;_downloadable&#039;,
+					&#039;value&#039; =&gt; wc_bool_to_string( $request[&#039;downloadable&#039;] ),
+				)
+			);
+		}
 
 		/**
 		 * @deprecated 8.1.0 replaced by attributes.
@@ -1082,6 +1147,19 @@ class WC_REST_Product_Variations_Controller extends WC_REST_Product_Variations_V
 				array(
 					&#039;key&#039;     =&gt; &#039;_sku&#039;,
 					&#039;value&#039;   =&gt; $skus,
+					&#039;compare&#039; =&gt; &#039;IN&#039;,
+				)
+			);
+		}
+
+		// Filter by global_unique_id.
+		if ( ! empty( $request[&#039;global_unique_id&#039;] ) ) {
+			$global_unique_ids  = array_map( &#039;trim&#039;, explode( &#039;,&#039;, $request[&#039;global_unique_id&#039;] ) );
+			$args[&#039;meta_query&#039;] = $this-&gt;add_meta_query( // phpcs:ignore WordPress.DB.SlowDBQuery.slow_db_query_meta_query
+				$args,
+				array(
+					&#039;key&#039;     =&gt; &#039;_global_unique_id&#039;,
+					&#039;value&#039;   =&gt; $global_unique_ids,
 					&#039;compare&#039; =&gt; &#039;IN&#039;,
 				)
 			);
@@ -1163,15 +1241,50 @@ class WC_REST_Product_Variations_Controller extends WC_REST_Product_Variations_V
 		}
 
 		// Force the post_type argument, since it&#039;s not a user input variable.
-		if ( ! empty( $request[&#039;sku&#039;] ) ) {
+		if ( ! empty( $request[&#039;sku&#039;] ) || ! empty( $request[&#039;global_unique_id&#039;] ) ) {
 			$args[&#039;post_type&#039;] = array( &#039;product&#039;, &#039;product_variation&#039; );
 		} else {
 			$args[&#039;post_type&#039;] = $this-&gt;post_type;
 		}
 
+		// Filter virtual product variations.
+		if ( isset( $request[&#039;virtual&#039;] ) ) {
+			$args[&#039;meta_query&#039;] = $this-&gt;add_meta_query( // phpcs:ignore WordPress.DB.SlowDBQuery.slow_db_query_meta_query
+				$args,
+				array(
+					&#039;key&#039;   =&gt; &#039;_virtual&#039;,
+					&#039;value&#039; =&gt; wc_bool_to_string( $request[&#039;virtual&#039;] ),
+				)
+			);
+		}
+
 		$args[&#039;post_parent&#039;] = $request[&#039;product_id&#039;];
 
 		return $args;
+	}
+
+	/**
+	 * Get objects.
+	 *
+	 * @param array $query_args Query args.
+	 * @return array
+	 */
+	protected function get_objects( $query_args ) {
+		// Add filters for excluding product variation statuses.
+		if ( ! empty( $this-&gt;exclude_status ) ) {
+			add_filter( &#039;posts_where&#039;, array( $this, &#039;exclude_product_variation_statuses&#039; ) );
+		}
+
+		$result = parent::get_objects( $query_args );
+
+		// Remove filters for excluding product variation statuses.
+		if ( ! empty( $this-&gt;exclude_status ) ) {
+			remove_filter( &#039;posts_where&#039;, array( $this, &#039;exclude_product_variation_statuses&#039; ) );
+
+			$this-&gt;exclude_status = array();
+		}
+
+		return $result;
 	}
 
 	/**
@@ -1228,6 +1341,42 @@ class WC_REST_Product_Variations_Controller extends WC_REST_Product_Variations_V
 					),
 				),
 			),
+		);
+
+		$params[&#039;virtual&#039;] = array(
+			&#039;description&#039;       =&gt; __( &#039;Limit result set to virtual product variations.&#039;, &#039;woocommerce&#039; ),
+			&#039;type&#039;              =&gt; &#039;boolean&#039;,
+			&#039;sanitize_callback&#039; =&gt; &#039;rest_sanitize_boolean&#039;,
+			&#039;validate_callback&#039; =&gt; &#039;rest_validate_request_arg&#039;,
+		);
+
+		$params[&#039;downloadable&#039;] = array(
+			&#039;description&#039;       =&gt; __( &#039;Limit result set to downloadable product variations.&#039;, &#039;woocommerce&#039; ),
+			&#039;type&#039;              =&gt; &#039;boolean&#039;,
+			&#039;sanitize_callback&#039; =&gt; &#039;rest_sanitize_boolean&#039;,
+			&#039;validate_callback&#039; =&gt; &#039;rest_validate_request_arg&#039;,
+		);
+
+		$params[&#039;include_status&#039;] = array(
+			&#039;description&#039;       =&gt; __( &#039;Limit result set to product variations with any of the statuses.&#039;, &#039;woocommerce&#039; ),
+			&#039;type&#039;              =&gt; &#039;array&#039;,
+			&#039;items&#039;             =&gt; array(
+				&#039;type&#039; =&gt; &#039;string&#039;,
+				&#039;enum&#039; =&gt; array_merge( array( &#039;any&#039;, &#039;future&#039;, &#039;trash&#039; ), array_keys( get_post_statuses() ) ),
+			),
+			&#039;sanitize_callback&#039; =&gt; &#039;wp_parse_list&#039;,
+			&#039;validate_callback&#039; =&gt; &#039;rest_validate_request_arg&#039;,
+		);
+
+		$params[&#039;exclude_status&#039;] = array(
+			&#039;description&#039;       =&gt; __( &#039;Exclude product variations with any of the statuses from result set.&#039;, &#039;woocommerce&#039; ),
+			&#039;type&#039;              =&gt; &#039;array&#039;,
+			&#039;items&#039;             =&gt; array(
+				&#039;type&#039; =&gt; &#039;string&#039;,
+				&#039;enum&#039; =&gt; array_merge( array( &#039;future&#039;, &#039;trash&#039; ), array_keys( get_post_statuses() ) ),
+			),
+			&#039;sanitize_callback&#039; =&gt; &#039;wp_parse_list&#039;,
+			&#039;validate_callback&#039; =&gt; &#039;rest_validate_request_arg&#039;,
 		);
 
 		return $params;
@@ -1299,6 +1448,28 @@ class WC_REST_Product_Variations_Controller extends WC_REST_Product_Variations_V
 
 		return rest_ensure_response( $response );
 	}
+
+	/**
+	 * Exclude product variation statuses from the query.
+	 *
+	 * @param string $where Where clause used to search posts.
+	 * @return string
+	 */
+	public function exclude_product_variation_statuses( $where ) {
+		if ( ! empty( $this-&gt;exclude_status ) &amp;&amp; is_array( $this-&gt;exclude_status ) ) {
+			global $wpdb;
+
+			$not_in = array();
+			foreach ( $this-&gt;exclude_status as $status_to_exclude ) {
+				$not_in[] = $wpdb-&gt;prepare( &#039;%s&#039;, $status_to_exclude );
+			}
+
+			$not_in = join( &#039;, &#039;, $not_in );
+			return $where . &quot; AND $wpdb-&gt;posts.post_status NOT IN ( $not_in )&quot;;
+		}
+
+		return $where;
+	}
 }
 </code></pre>
             </article>
@@ -1310,7 +1481,7 @@ class WC_REST_Product_Variations_Controller extends WC_REST_Product_Variations_V
 
     <footer class="phpdocumentor phpdocumentor-footer">
     <div class="phpdocumentor-section">
-        <span>WooCommerce Code Reference API documentation generated by <a href="http://www.phpdoc.org/">phpDocumentor</a> on July 25th, 2024 at 11:33 am.</span>
+        <span>WooCommerce Code Reference API documentation generated by <a href="http://www.phpdoc.org/">phpDocumentor</a> on May 16th, 2025 at 09:14 am.</span>
     </div>
 </footer>
 
@@ -1322,7 +1493,7 @@ class WC_REST_Product_Variations_Controller extends WC_REST_Product_Variations_V
             'searchIndex': '..\/js\/searchIndex.json'
         };
     </script>
-    <script src="../js/searchIndex.js?updated=1721907183"></script>
-    <script src="../js/search.js?updated=1721907183"></script>
+    <script src="../js/searchIndex.js?updated=1747386859"></script>
+    <script src="../js/search.js?updated=1747386859"></script>
 </body>
 </html>

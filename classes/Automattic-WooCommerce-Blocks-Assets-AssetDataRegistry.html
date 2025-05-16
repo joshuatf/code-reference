@@ -4,14 +4,13 @@
     <meta charset="utf-8">
     <title>WooCommerce Code Reference</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="../images/favicon.png" />
-    <link rel="apple-touch-icon" href="../images/apple-touch-icon.png"/>
-    <link rel="apple-touch-icon" sizes="72x72" href="../images/apple-touch-icon-72x72.png"/>
-    <link rel="apple-touch-icon" sizes="114x114" href="../images/apple-touch-icon-114x114.png"/>
+    <link rel="icon" href="../images/favicon-32x32.png" sizes="32x32" />
+    <link rel="icon" href="../images/favicon-192x192.png" sizes="192x192" />
+    <link rel="apple-touch-icon" href="../images/favicon-180x180.png" />
+
     <link rel="stylesheet" href="../css/normalize.css">
-    <link rel="stylesheet" href="../css/base.css?updated=1721907204">
-    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../css/template.css?updated=1721907204">
+    <link rel="stylesheet" href="../css/base.css?updated=1747386884">
+    <link rel="stylesheet" href="../css/template.css?updated=1747386884">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0/css/all.min.css" integrity="sha256-ybRkN9dBjhcS2qrW1z+hfCxq+1aBdwyQM5wlQoQVt/0=" crossorigin="anonymous" />
             <script src="https://cdn.jsdelivr.net/npm/css-vars-ponyfill@2"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0/js/all.min.js" integrity="sha256-0vuk8LXoyrmCjp1f0O300qo1M75ZQyhH9X3J6d+scmk=" crossorigin="anonymous"></script>
@@ -27,19 +26,24 @@
 		'content_group' : 'WooCommerce Core Code Reference',
 	});
 </script>
-        </head>
+        <script src="../js/prism.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            window.dispatchEvent(new HashChangeEvent('hashchange'));
+        });
+    </script>
+</head>
 <body id="top">
     <header class="phpdocumentor-top-header">
     <section class="phpdocumentor-section">
         <div class="site-branding">
-            <a class="site-logo" href="../index.html"><img width="180" src="../images/logo.svg" alt="WooCommerce" /></a>
+            <a class="site-logo" href="../index.html"><img src="../images/logo.png" alt="WooCommerce" /></a>
         </div>
         <nav class="main-navigation">
             <ul>
                 <li><a href="../hooks/hooks.html">Hooks Reference</a></li>
-                <li><a href="https://docs.woocommerce.com/">Documentation</a></li>
+                <li><a href="https://developer.woocommerce.com/docs/">Documentation</a></li>
                 <li><a href="https://woocommerce.github.io/woocommerce-rest-api-docs/">REST API Docs</a></li>
-                <li><a href="https://woocommerce.com/careers/?utm_source=woocommerce+core+code+reference&utm_medium=devdocs&utm_campaign=woo+careers" target="_blank">We're hiring!</a></li>
             </ul>
         </nav>
     </section>
@@ -47,7 +51,7 @@
 
 <div class="phpdocumentor-header">
     <section class="phpdocumentor-section">
-        <h1 class="phpdocumentor-title">WooCommerce Code Reference</h1>
+        <h1 class="phpdocumentor-title"><a href="../index.html">WooCommerce Code Reference</a></h1>
         <section class="phpdocumentor-search">
     <label class="phpdocumentor-label">
         <span class="visually-hidden">Search (click ESC to close search results)</span>
@@ -68,6 +72,10 @@
                                         <h4 class="phpdocumentor-sidebar__root-namespace"><a href="../namespaces/woocommerce.html"><abbr title="\WooCommerce">WooCommerce</abbr></a></h4>
                 <ul class="phpdocumentor-list">
                                             <li><a href="../namespaces/woocommerce-admin.html"><abbr title="\WooCommerce\Admin">Admin</abbr></a></li>
+                                    </ul>
+                            <h4 class="phpdocumentor-sidebar__root-namespace"><a href="../namespaces/mailpoet.html"><abbr title="\MailPoet">MailPoet</abbr></a></h4>
+                <ul class="phpdocumentor-list">
+                                            <li><a href="../namespaces/mailpoet-emaileditor.html"><abbr title="\MailPoet\EmailEditor">EmailEditor</abbr></a></li>
                                     </ul>
                             <h4 class="phpdocumentor-sidebar__root-namespace"><a href="../namespaces/automattic.html"><abbr title="\Automattic">Automattic</abbr></a></h4>
                 <ul class="phpdocumentor-list">
@@ -113,8 +121,10 @@
                                     <li><a href="../packages/WooCommerce-Widgets.html"><abbr title="\WooCommerce\Widgets">Widgets</abbr></a></li>
                                     <li><a href="../packages/WooCommerce-Uninstaller.html"><abbr title="\WooCommerce\Uninstaller">Uninstaller</abbr></a></li>
                             </ul>
-                                <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/WoocommerceAdmin.html"><abbr title="\WoocommerceAdmin">WoocommerceAdmin</abbr></a></h3>
-                                <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/WoocommerceNavigation.html"><abbr title="\WoocommerceNavigation">WoocommerceNavigation</abbr></a></h3>
+                                <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/MailPoet.html"><abbr title="\MailPoet">MailPoet</abbr></a></h3>
+                        <ul class="phpdocumentor-list">
+                                    <li><a href="../packages/MailPoet-EmailEditor.html"><abbr title="\MailPoet\EmailEditor">EmailEditor</abbr></a></li>
+                            </ul>
                                 <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/Automattic.html"><abbr title="\Automattic">Automattic</abbr></a></h3>
                         <ul class="phpdocumentor-list">
                                     <li><a href="../packages/Automattic-WooCommerce.html"><abbr title="\Automattic\WooCommerce">WooCommerce</abbr></a></li>
@@ -160,9 +170,9 @@
     </h2>
 
         <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Blocks/Assets/AssetDataRegistry.php"><a href="../files/woocommerce-src-blocks-assets-assetdataregistry.html#source-view.18">src/Blocks/Assets/AssetDataRegistry.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Blocks/Assets/AssetDataRegistry.php"><a href="../files/woocommerce-src-blocks-assets-assetdataregistry.html#source-view.19">src/Blocks/Assets/AssetDataRegistry.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">18</span>
+    <span class="phpdocumentor-element-found-in__line">19</span>
 </aside>
 
             <p class="phpdocumentor-summary">Class instance for registering data used on the current view session by
@@ -410,9 +420,9 @@ the internal data registry.</dd>
                                 </span>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Blocks/Assets/AssetDataRegistry.php"><a href="../files/woocommerce-src-blocks-assets-assetdataregistry.html#source-view.53">src/Blocks/Assets/AssetDataRegistry.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Blocks/Assets/AssetDataRegistry.php"><a href="../files/woocommerce-src-blocks-assets-assetdataregistry.html#source-view.54">src/Blocks/Assets/AssetDataRegistry.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">53</span>
+    <span class="phpdocumentor-element-found-in__line">54</span>
 </aside>
 
         <p class="phpdocumentor-summary">Asset API interface for various asset registration.</p>
@@ -442,9 +452,9 @@ the internal data registry.</dd>
                                 </span>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Blocks/Assets/AssetDataRegistry.php"><a href="../files/woocommerce-src-blocks-assets-assetdataregistry.html#source-view.24">src/Blocks/Assets/AssetDataRegistry.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Blocks/Assets/AssetDataRegistry.php"><a href="../files/woocommerce-src-blocks-assets-assetdataregistry.html#source-view.25">src/Blocks/Assets/AssetDataRegistry.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">24</span>
+    <span class="phpdocumentor-element-found-in__line">25</span>
 </aside>
 
         <p class="phpdocumentor-summary">Contains registered data.</p>
@@ -474,9 +484,9 @@ the internal data registry.</dd>
                                 </span>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Blocks/Assets/AssetDataRegistry.php"><a href="../files/woocommerce-src-blocks-assets-assetdataregistry.html#source-view.46">src/Blocks/Assets/AssetDataRegistry.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Blocks/Assets/AssetDataRegistry.php"><a href="../files/woocommerce-src-blocks-assets-assetdataregistry.html#source-view.47">src/Blocks/Assets/AssetDataRegistry.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">46</span>
+    <span class="phpdocumentor-element-found-in__line">47</span>
 </aside>
 
         <p class="phpdocumentor-summary">Asset handle for registered data.</p>
@@ -506,9 +516,9 @@ the internal data registry.</dd>
                                 </span>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Blocks/Assets/AssetDataRegistry.php"><a href="../files/woocommerce-src-blocks-assets-assetdataregistry.html#source-view.39">src/Blocks/Assets/AssetDataRegistry.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Blocks/Assets/AssetDataRegistry.php"><a href="../files/woocommerce-src-blocks-assets-assetdataregistry.html#source-view.40">src/Blocks/Assets/AssetDataRegistry.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">39</span>
+    <span class="phpdocumentor-element-found-in__line">40</span>
 </aside>
 
         <p class="phpdocumentor-summary">Lazy data is an array of closures that will be invoked just before
@@ -539,9 +549,9 @@ asset data is generated for the enqueued script.</p>
                                 </span>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Blocks/Assets/AssetDataRegistry.php"><a href="../files/woocommerce-src-blocks-assets-assetdataregistry.html#source-view.31">src/Blocks/Assets/AssetDataRegistry.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Blocks/Assets/AssetDataRegistry.php"><a href="../files/woocommerce-src-blocks-assets-assetdataregistry.html#source-view.32">src/Blocks/Assets/AssetDataRegistry.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">31</span>
+    <span class="phpdocumentor-element-found-in__line">32</span>
 </aside>
 
         <p class="phpdocumentor-summary">Contains preloaded API data.</p>
@@ -575,9 +585,9 @@ asset data is generated for the enqueued script.</p>
         <a href="#method___construct" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Blocks/Assets/AssetDataRegistry.php"><a href="../files/woocommerce-src-blocks-assets-assetdataregistry.html#source-view.60">src/Blocks/Assets/AssetDataRegistry.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Blocks/Assets/AssetDataRegistry.php"><a href="../files/woocommerce-src-blocks-assets-assetdataregistry.html#source-view.61">src/Blocks/Assets/AssetDataRegistry.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">60</span>
+    <span class="phpdocumentor-element-found-in__line">61</span>
 </aside>
 
         <p class="phpdocumentor-summary">Constructor</p>
@@ -619,9 +629,9 @@ asset data is generated for the enqueued script.</p>
         <a href="#method_add" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Blocks/Assets/AssetDataRegistry.php"><a href="../files/woocommerce-src-blocks-assets-assetdataregistry.html#source-view.304">src/Blocks/Assets/AssetDataRegistry.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Blocks/Assets/AssetDataRegistry.php"><a href="../files/woocommerce-src-blocks-assets-assetdataregistry.html#source-view.306">src/Blocks/Assets/AssetDataRegistry.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">304</span>
+    <span class="phpdocumentor-element-found-in__line">306</span>
 </aside>
 
         <p class="phpdocumentor-summary">Interface for adding data to the registry.</p>
@@ -685,9 +695,9 @@ If false, duplicate data will cause an exception.</p>
         <a href="#method_enqueue_asset_data" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Blocks/Assets/AssetDataRegistry.php"><a href="../files/woocommerce-src-blocks-assets-assetdataregistry.html#source-view.382">src/Blocks/Assets/AssetDataRegistry.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Blocks/Assets/AssetDataRegistry.php"><a href="../files/woocommerce-src-blocks-assets-assetdataregistry.html#source-view.384">src/Blocks/Assets/AssetDataRegistry.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">382</span>
+    <span class="phpdocumentor-element-found-in__line">384</span>
 </aside>
 
         <p class="phpdocumentor-summary">Callback for enqueuing asset data via the WP api.</p>
@@ -721,9 +731,9 @@ happen for routes that need it.</p>
         <a href="#method_exists" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Blocks/Assets/AssetDataRegistry.php"><a href="../files/woocommerce-src-blocks-assets-assetdataregistry.html#source-view.288">src/Blocks/Assets/AssetDataRegistry.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Blocks/Assets/AssetDataRegistry.php"><a href="../files/woocommerce-src-blocks-assets-assetdataregistry.html#source-view.290">src/Blocks/Assets/AssetDataRegistry.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">288</span>
+    <span class="phpdocumentor-element-found-in__line">290</span>
 </aside>
 
         <p class="phpdocumentor-summary">Allows checking whether a key exists.</p>
@@ -765,9 +775,9 @@ happen for routes that need it.</p>
         <a href="#method_hydrate_api_request" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Blocks/Assets/AssetDataRegistry.php"><a href="../files/woocommerce-src-blocks-assets-assetdataregistry.html#source-view.317">src/Blocks/Assets/AssetDataRegistry.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Blocks/Assets/AssetDataRegistry.php"><a href="../files/woocommerce-src-blocks-assets-assetdataregistry.html#source-view.319">src/Blocks/Assets/AssetDataRegistry.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">317</span>
+    <span class="phpdocumentor-element-found-in__line">319</span>
 </aside>
 
         <p class="phpdocumentor-summary">Hydrate from the API.</p>
@@ -809,9 +819,9 @@ happen for routes that need it.</p>
         <a href="#method_hydrate_data_from_api_request" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Blocks/Assets/AssetDataRegistry.php"><a href="../files/woocommerce-src-blocks-assets-assetdataregistry.html#source-view.333">src/Blocks/Assets/AssetDataRegistry.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Blocks/Assets/AssetDataRegistry.php"><a href="../files/woocommerce-src-blocks-assets-assetdataregistry.html#source-view.335">src/Blocks/Assets/AssetDataRegistry.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">333</span>
+    <span class="phpdocumentor-element-found-in__line">335</span>
 </aside>
 
         <p class="phpdocumentor-summary">Hydrate some data from the API.</p>
@@ -887,9 +897,9 @@ If false, duplicate data will cause an exception.</p>
         <a href="#method_register_data_script" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Blocks/Assets/AssetDataRegistry.php"><a href="../files/woocommerce-src-blocks-assets-assetdataregistry.html#source-view.365">src/Blocks/Assets/AssetDataRegistry.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Blocks/Assets/AssetDataRegistry.php"><a href="../files/woocommerce-src-blocks-assets-assetdataregistry.html#source-view.367">src/Blocks/Assets/AssetDataRegistry.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">365</span>
+    <span class="phpdocumentor-element-found-in__line">367</span>
 </aside>
 
         <p class="phpdocumentor-summary">Callback for registering the data script via WordPress API.</p>
@@ -919,9 +929,9 @@ If false, duplicate data will cause an exception.</p>
         <a href="#method_register_page_id" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Blocks/Assets/AssetDataRegistry.php"><a href="../files/woocommerce-src-blocks-assets-assetdataregistry.html#source-view.352">src/Blocks/Assets/AssetDataRegistry.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Blocks/Assets/AssetDataRegistry.php"><a href="../files/woocommerce-src-blocks-assets-assetdataregistry.html#source-view.354">src/Blocks/Assets/AssetDataRegistry.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">352</span>
+    <span class="phpdocumentor-element-found-in__line">354</span>
 </aside>
 
         <p class="phpdocumentor-summary">Adds a page permalink to the data registry.</p>
@@ -963,9 +973,9 @@ If false, duplicate data will cause an exception.</p>
         <a href="#method_add_data" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Blocks/Assets/AssetDataRegistry.php"><a href="../files/woocommerce-src-blocks-assets-assetdataregistry.html#source-view.410">src/Blocks/Assets/AssetDataRegistry.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Blocks/Assets/AssetDataRegistry.php"><a href="../files/woocommerce-src-blocks-assets-assetdataregistry.html#source-view.412">src/Blocks/Assets/AssetDataRegistry.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">410</span>
+    <span class="phpdocumentor-element-found-in__line">412</span>
 </aside>
 
         <p class="phpdocumentor-summary">See self::add() for docs.</p>
@@ -1016,9 +1026,9 @@ If false, duplicate data will cause an exception.</p>
         <a href="#method_debug" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Blocks/Assets/AssetDataRegistry.php"><a href="../files/woocommerce-src-blocks-assets-assetdataregistry.html#source-view.436">src/Blocks/Assets/AssetDataRegistry.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Blocks/Assets/AssetDataRegistry.php"><a href="../files/woocommerce-src-blocks-assets-assetdataregistry.html#source-view.438">src/Blocks/Assets/AssetDataRegistry.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">436</span>
+    <span class="phpdocumentor-element-found-in__line">438</span>
 </aside>
 
         <p class="phpdocumentor-summary">Exposes whether the current site is in debug mode or not.</p>
@@ -1048,9 +1058,9 @@ If false, duplicate data will cause an exception.</p>
         <a href="#method_execute_lazy_data" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Blocks/Assets/AssetDataRegistry.php"><a href="../files/woocommerce-src-blocks-assets-assetdataregistry.html#source-view.267">src/Blocks/Assets/AssetDataRegistry.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Blocks/Assets/AssetDataRegistry.php"><a href="../files/woocommerce-src-blocks-assets-assetdataregistry.html#source-view.269">src/Blocks/Assets/AssetDataRegistry.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">267</span>
+    <span class="phpdocumentor-element-found-in__line">269</span>
 </aside>
 
         <p class="phpdocumentor-summary">Loops through each registered lazy data callback and adds the returned
@@ -1083,9 +1093,9 @@ the rendered screen.</p>
         <a href="#method_format_page_resource" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Blocks/Assets/AssetDataRegistry.php"><a href="../files/woocommerce-src-blocks-assets-assetdataregistry.html#source-view.183">src/Blocks/Assets/AssetDataRegistry.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Blocks/Assets/AssetDataRegistry.php"><a href="../files/woocommerce-src-blocks-assets-assetdataregistry.html#source-view.185">src/Blocks/Assets/AssetDataRegistry.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">183</span>
+    <span class="phpdocumentor-element-found-in__line">185</span>
 </aside>
 
         <p class="phpdocumentor-summary">Format a page object into a standard array of data.</p>
@@ -1127,9 +1137,9 @@ the rendered screen.</p>
         <a href="#method_get" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Blocks/Assets/AssetDataRegistry.php"><a href="../files/woocommerce-src-blocks-assets-assetdataregistry.html#source-view.278">src/Blocks/Assets/AssetDataRegistry.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Blocks/Assets/AssetDataRegistry.php"><a href="../files/woocommerce-src-blocks-assets-assetdataregistry.html#source-view.280">src/Blocks/Assets/AssetDataRegistry.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">278</span>
+    <span class="phpdocumentor-element-found-in__line">280</span>
 </aside>
 
         <p class="phpdocumentor-summary">Exposes private registered data to child classes.</p>
@@ -1159,9 +1169,9 @@ the rendered screen.</p>
         <a href="#method_get_core_data" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Blocks/Assets/AssetDataRegistry.php"><a href="../files/woocommerce-src-blocks-assets-assetdataregistry.html#source-view.81">src/Blocks/Assets/AssetDataRegistry.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Blocks/Assets/AssetDataRegistry.php"><a href="../files/woocommerce-src-blocks-assets-assetdataregistry.html#source-view.82">src/Blocks/Assets/AssetDataRegistry.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">81</span>
+    <span class="phpdocumentor-element-found-in__line">82</span>
 </aside>
 
         <p class="phpdocumentor-summary">Exposes core data via the wcSettings global. This data is shared throughout the client.</p>
@@ -1193,9 +1203,9 @@ global so be sure not to add anything heavy if possible.</p>
         <a href="#method_get_currency_data" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Blocks/Assets/AssetDataRegistry.php"><a href="../files/woocommerce-src-blocks-assets-assetdataregistry.html#source-view.110">src/Blocks/Assets/AssetDataRegistry.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Blocks/Assets/AssetDataRegistry.php"><a href="../files/woocommerce-src-blocks-assets-assetdataregistry.html#source-view.112">src/Blocks/Assets/AssetDataRegistry.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">110</span>
+    <span class="phpdocumentor-element-found-in__line">112</span>
 </aside>
 
         <p class="phpdocumentor-summary">Get currency data to include in settings.</p>
@@ -1225,9 +1235,9 @@ global so be sure not to add anything heavy if possible.</p>
         <a href="#method_get_locale_data" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Blocks/Assets/AssetDataRegistry.php"><a href="../files/woocommerce-src-blocks-assets-assetdataregistry.html#source-view.129">src/Blocks/Assets/AssetDataRegistry.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Blocks/Assets/AssetDataRegistry.php"><a href="../files/woocommerce-src-blocks-assets-assetdataregistry.html#source-view.131">src/Blocks/Assets/AssetDataRegistry.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">129</span>
+    <span class="phpdocumentor-element-found-in__line">131</span>
 </aside>
 
         <p class="phpdocumentor-summary">Get locale data to include in settings.</p>
@@ -1257,9 +1267,9 @@ global so be sure not to add anything heavy if possible.</p>
         <a href="#method_get_order_statuses" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Blocks/Assets/AssetDataRegistry.php"><a href="../files/woocommerce-src-blocks-assets-assetdataregistry.html#source-view.207">src/Blocks/Assets/AssetDataRegistry.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Blocks/Assets/AssetDataRegistry.php"><a href="../files/woocommerce-src-blocks-assets-assetdataregistry.html#source-view.209">src/Blocks/Assets/AssetDataRegistry.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">207</span>
+    <span class="phpdocumentor-element-found-in__line">209</span>
 </aside>
 
         <p class="phpdocumentor-summary">Returns block-related data for enqueued wc-settings script.</p>
@@ -1290,9 +1300,9 @@ global so be sure not to add anything heavy if possible.</p>
         <a href="#method_get_products_settings" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Blocks/Assets/AssetDataRegistry.php"><a href="../files/woocommerce-src-blocks-assets-assetdataregistry.html#source-view.171">src/Blocks/Assets/AssetDataRegistry.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Blocks/Assets/AssetDataRegistry.php"><a href="../files/woocommerce-src-blocks-assets-assetdataregistry.html#source-view.173">src/Blocks/Assets/AssetDataRegistry.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">171</span>
+    <span class="phpdocumentor-element-found-in__line">173</span>
 </aside>
 
         <p class="phpdocumentor-summary">Get product related settings.</p>
@@ -1323,9 +1333,9 @@ global so be sure not to add anything heavy if possible.</p>
         <a href="#method_get_store_pages" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Blocks/Assets/AssetDataRegistry.php"><a href="../files/woocommerce-src-blocks-assets-assetdataregistry.html#source-view.144">src/Blocks/Assets/AssetDataRegistry.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Blocks/Assets/AssetDataRegistry.php"><a href="../files/woocommerce-src-blocks-assets-assetdataregistry.html#source-view.146">src/Blocks/Assets/AssetDataRegistry.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">144</span>
+    <span class="phpdocumentor-element-found-in__line">146</span>
 </aside>
 
         <p class="phpdocumentor-summary">Get store pages to include in settings.</p>
@@ -1355,9 +1365,9 @@ global so be sure not to add anything heavy if possible.</p>
         <a href="#method_init" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Blocks/Assets/AssetDataRegistry.php"><a href="../files/woocommerce-src-blocks-assets-assetdataregistry.html#source-view.68">src/Blocks/Assets/AssetDataRegistry.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Blocks/Assets/AssetDataRegistry.php"><a href="../files/woocommerce-src-blocks-assets-assetdataregistry.html#source-view.69">src/Blocks/Assets/AssetDataRegistry.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">68</span>
+    <span class="phpdocumentor-element-found-in__line">69</span>
 </aside>
 
         <p class="phpdocumentor-summary">Hook into WP asset registration for enqueueing asset data.</p>
@@ -1387,9 +1397,9 @@ global so be sure not to add anything heavy if possible.</p>
         <a href="#method_initialize_core_data" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Blocks/Assets/AssetDataRegistry.php"><a href="../files/woocommerce-src-blocks-assets-assetdataregistry.html#source-view.222">src/Blocks/Assets/AssetDataRegistry.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Blocks/Assets/AssetDataRegistry.php"><a href="../files/woocommerce-src-blocks-assets-assetdataregistry.html#source-view.224">src/Blocks/Assets/AssetDataRegistry.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">222</span>
+    <span class="phpdocumentor-element-found-in__line">224</span>
 </aside>
 
         <p class="phpdocumentor-summary">Used for on demand initialization of asset data and registering it with
@@ -1421,7 +1431,7 @@ the internal data registry.</p>
 
     <footer class="phpdocumentor phpdocumentor-footer">
     <div class="phpdocumentor-section">
-        <span>WooCommerce Code Reference API documentation generated by <a href="http://www.phpdoc.org/">phpDocumentor</a> on July 25th, 2024 at 11:33 am.</span>
+        <span>WooCommerce Code Reference API documentation generated by <a href="http://www.phpdoc.org/">phpDocumentor</a> on May 16th, 2025 at 09:14 am.</span>
     </div>
 </footer>
 
@@ -1433,7 +1443,7 @@ the internal data registry.</p>
             'searchIndex': '..\/js\/searchIndex.json'
         };
     </script>
-    <script src="../js/searchIndex.js?updated=1721907204"></script>
-    <script src="../js/search.js?updated=1721907204"></script>
+    <script src="../js/searchIndex.js?updated=1747386884"></script>
+    <script src="../js/search.js?updated=1747386884"></script>
 </body>
 </html>

@@ -4,14 +4,13 @@
     <meta charset="utf-8">
     <title>WooCommerce Code Reference</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="../images/favicon.png" />
-    <link rel="apple-touch-icon" href="../images/apple-touch-icon.png"/>
-    <link rel="apple-touch-icon" sizes="72x72" href="../images/apple-touch-icon-72x72.png"/>
-    <link rel="apple-touch-icon" sizes="114x114" href="../images/apple-touch-icon-114x114.png"/>
+    <link rel="icon" href="../images/favicon-32x32.png" sizes="32x32" />
+    <link rel="icon" href="../images/favicon-192x192.png" sizes="192x192" />
+    <link rel="apple-touch-icon" href="../images/favicon-180x180.png" />
+
     <link rel="stylesheet" href="../css/normalize.css">
-    <link rel="stylesheet" href="../css/base.css?updated=1721907183">
-    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../css/template.css?updated=1721907183">
+    <link rel="stylesheet" href="../css/base.css?updated=1747386859">
+    <link rel="stylesheet" href="../css/template.css?updated=1747386859">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0/css/all.min.css" integrity="sha256-ybRkN9dBjhcS2qrW1z+hfCxq+1aBdwyQM5wlQoQVt/0=" crossorigin="anonymous" />
             <script src="https://cdn.jsdelivr.net/npm/css-vars-ponyfill@2"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0/js/all.min.js" integrity="sha256-0vuk8LXoyrmCjp1f0O300qo1M75ZQyhH9X3J6d+scmk=" crossorigin="anonymous"></script>
@@ -38,14 +37,13 @@
     <header class="phpdocumentor-top-header">
     <section class="phpdocumentor-section">
         <div class="site-branding">
-            <a class="site-logo" href="../index.html"><img width="180" src="../images/logo.svg" alt="WooCommerce" /></a>
+            <a class="site-logo" href="../index.html"><img src="../images/logo.png" alt="WooCommerce" /></a>
         </div>
         <nav class="main-navigation">
             <ul>
                 <li><a href="../hooks/hooks.html">Hooks Reference</a></li>
-                <li><a href="https://docs.woocommerce.com/">Documentation</a></li>
+                <li><a href="https://developer.woocommerce.com/docs/">Documentation</a></li>
                 <li><a href="https://woocommerce.github.io/woocommerce-rest-api-docs/">REST API Docs</a></li>
-                <li><a href="https://woocommerce.com/careers/?utm_source=woocommerce+core+code+reference&utm_medium=devdocs&utm_campaign=woo+careers" target="_blank">We're hiring!</a></li>
             </ul>
         </nav>
     </section>
@@ -53,7 +51,7 @@
 
 <div class="phpdocumentor-header">
     <section class="phpdocumentor-section">
-        <h1 class="phpdocumentor-title">WooCommerce Code Reference</h1>
+        <h1 class="phpdocumentor-title"><a href="../index.html">WooCommerce Code Reference</a></h1>
         <section class="phpdocumentor-search">
     <label class="phpdocumentor-label">
         <span class="visually-hidden">Search (click ESC to close search results)</span>
@@ -74,6 +72,10 @@
                                         <h4 class="phpdocumentor-sidebar__root-namespace"><a href="../namespaces/woocommerce.html"><abbr title="\WooCommerce">WooCommerce</abbr></a></h4>
                 <ul class="phpdocumentor-list">
                                             <li><a href="../namespaces/woocommerce-admin.html"><abbr title="\WooCommerce\Admin">Admin</abbr></a></li>
+                                    </ul>
+                            <h4 class="phpdocumentor-sidebar__root-namespace"><a href="../namespaces/mailpoet.html"><abbr title="\MailPoet">MailPoet</abbr></a></h4>
+                <ul class="phpdocumentor-list">
+                                            <li><a href="../namespaces/mailpoet-emaileditor.html"><abbr title="\MailPoet\EmailEditor">EmailEditor</abbr></a></li>
                                     </ul>
                             <h4 class="phpdocumentor-sidebar__root-namespace"><a href="../namespaces/automattic.html"><abbr title="\Automattic">Automattic</abbr></a></h4>
                 <ul class="phpdocumentor-list">
@@ -119,8 +121,10 @@
                                     <li><a href="../packages/WooCommerce-Widgets.html"><abbr title="\WooCommerce\Widgets">Widgets</abbr></a></li>
                                     <li><a href="../packages/WooCommerce-Uninstaller.html"><abbr title="\WooCommerce\Uninstaller">Uninstaller</abbr></a></li>
                             </ul>
-                                <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/WoocommerceAdmin.html"><abbr title="\WoocommerceAdmin">WoocommerceAdmin</abbr></a></h3>
-                                <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/WoocommerceNavigation.html"><abbr title="\WoocommerceNavigation">WoocommerceNavigation</abbr></a></h3>
+                                <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/MailPoet.html"><abbr title="\MailPoet">MailPoet</abbr></a></h3>
+                        <ul class="phpdocumentor-list">
+                                    <li><a href="../packages/MailPoet-EmailEditor.html"><abbr title="\MailPoet\EmailEditor">EmailEditor</abbr></a></li>
+                            </ul>
                                 <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/Automattic.html"><abbr title="\Automattic">Automattic</abbr></a></h3>
                         <ul class="phpdocumentor-list">
                                     <li><a href="../packages/Automattic-WooCommerce.html"><abbr title="\Automattic\WooCommerce">WooCommerce</abbr></a></li>
@@ -163,6 +167,8 @@
  * @package WooCommerce\PayPal
  * @version 3.3.0
  */
+
+use Automattic\WooCommerce\Enums\OrderStatus;
 
 if ( ! defined( &#039;ABSPATH&#039; ) ) {
 	exit;
@@ -298,7 +304,7 @@ class WC_Gateway_Paypal_IPN_Handler extends WC_Gateway_Paypal_Response {
 			WC_Gateway_Paypal::log( &#039;Payment error: Currencies do not match (sent &quot;&#039; . $order-&gt;get_currency() . &#039;&quot; | returned &quot;&#039; . $currency . &#039;&quot;)&#039; );
 
 			/* translators: %s: currency code. */
-			$order-&gt;update_status( &#039;on-hold&#039;, sprintf( __( &#039;Validation error: PayPal currencies do not match (code %s).&#039;, &#039;woocommerce&#039; ), $currency ) );
+			$order-&gt;update_status( OrderStatus::ON_HOLD, sprintf( __( &#039;Validation error: PayPal currencies do not match (code %s).&#039;, &#039;woocommerce&#039; ), $currency ) );
 			exit;
 		}
 	}
@@ -314,7 +320,7 @@ class WC_Gateway_Paypal_IPN_Handler extends WC_Gateway_Paypal_Response {
 			WC_Gateway_Paypal::log( &#039;Payment error: Amounts do not match (gross &#039; . $amount . &#039;)&#039; );
 
 			/* translators: %s: Amount. */
-			$order-&gt;update_status( &#039;on-hold&#039;, sprintf( __( &#039;Validation error: PayPal amounts do not match (gross %s).&#039;, &#039;woocommerce&#039; ), $amount ) );
+			$order-&gt;update_status( OrderStatus::ON_HOLD, sprintf( __( &#039;Validation error: PayPal amounts do not match (gross %s).&#039;, &#039;woocommerce&#039; ), $amount ) );
 			exit;
 		}
 	}
@@ -331,7 +337,7 @@ class WC_Gateway_Paypal_IPN_Handler extends WC_Gateway_Paypal_Response {
 			WC_Gateway_Paypal::log( &quot;IPN Response is for another account: {$receiver_email}. Your email is {$this-&gt;receiver_email}&quot; );
 
 			/* translators: %s: email address . */
-			$order-&gt;update_status( &#039;on-hold&#039;, sprintf( __( &#039;Validation error: PayPal IPN response from a different email address (%s).&#039;, &#039;woocommerce&#039; ), $receiver_email ) );
+			$order-&gt;update_status( OrderStatus::ON_HOLD, sprintf( __( &#039;Validation error: PayPal IPN response from a different email address (%s).&#039;, &#039;woocommerce&#039; ), $receiver_email ) );
 			exit;
 		}
 	}
@@ -354,8 +360,8 @@ class WC_Gateway_Paypal_IPN_Handler extends WC_Gateway_Paypal_Response {
 		$this-&gt;validate_receiver_email( $order, $posted[&#039;receiver_email&#039;] );
 		$this-&gt;save_paypal_meta_data( $order, $posted );
 
-		if ( &#039;completed&#039; === $posted[&#039;payment_status&#039;] ) {
-			if ( $order-&gt;has_status( &#039;cancelled&#039; ) ) {
+		if ( OrderStatus::COMPLETED === $posted[&#039;payment_status&#039;] ) {
+			if ( $order-&gt;has_status( OrderStatus::CANCELLED ) ) {
 				$this-&gt;payment_status_paid_cancelled_order( $order, $posted );
 			}
 
@@ -392,7 +398,7 @@ class WC_Gateway_Paypal_IPN_Handler extends WC_Gateway_Paypal_Response {
 	 */
 	protected function payment_status_failed( $order, $posted ) {
 		/* translators: %s: payment status. */
-		$order-&gt;update_status( &#039;failed&#039;, sprintf( __( &#039;Payment %s via IPN.&#039;, &#039;woocommerce&#039; ), wc_clean( $posted[&#039;payment_status&#039;] ) ) );
+		$order-&gt;update_status( OrderStatus::FAILED, sprintf( __( &#039;Payment %s via IPN.&#039;, &#039;woocommerce&#039; ), wc_clean( $posted[&#039;payment_status&#039;] ) ) );
 	}
 
 	/**
@@ -451,7 +457,7 @@ class WC_Gateway_Paypal_IPN_Handler extends WC_Gateway_Paypal_Response {
 		if ( $order-&gt;get_total() === wc_format_decimal( $posted[&#039;mc_gross&#039;] * -1, wc_get_price_decimals() ) ) {
 
 			/* translators: %s: payment status. */
-			$order-&gt;update_status( &#039;refunded&#039;, sprintf( __( &#039;Payment %s via IPN.&#039;, &#039;woocommerce&#039; ), strtolower( $posted[&#039;payment_status&#039;] ) ) );
+			$order-&gt;update_status( OrderStatus::REFUNDED, sprintf( __( &#039;Payment %s via IPN.&#039;, &#039;woocommerce&#039; ), strtolower( $posted[&#039;payment_status&#039;] ) ) );
 
 			$this-&gt;send_ipn_email_notification(
 				/* translators: %s: order link. */
@@ -470,7 +476,7 @@ class WC_Gateway_Paypal_IPN_Handler extends WC_Gateway_Paypal_Response {
 	 */
 	protected function payment_status_reversed( $order, $posted ) {
 		/* translators: %s: payment status. */
-		$order-&gt;update_status( &#039;on-hold&#039;, sprintf( __( &#039;Payment %s via IPN.&#039;, &#039;woocommerce&#039; ), wc_clean( $posted[&#039;payment_status&#039;] ) ) );
+		$order-&gt;update_status( OrderStatus::ON_HOLD, sprintf( __( &#039;Payment %s via IPN.&#039;, &#039;woocommerce&#039; ), wc_clean( $posted[&#039;payment_status&#039;] ) ) );
 
 		$this-&gt;send_ipn_email_notification(
 			/* translators: %s: order link. */
@@ -543,7 +549,7 @@ class WC_Gateway_Paypal_IPN_Handler extends WC_Gateway_Paypal_Response {
 
     <footer class="phpdocumentor phpdocumentor-footer">
     <div class="phpdocumentor-section">
-        <span>WooCommerce Code Reference API documentation generated by <a href="http://www.phpdoc.org/">phpDocumentor</a> on July 25th, 2024 at 11:33 am.</span>
+        <span>WooCommerce Code Reference API documentation generated by <a href="http://www.phpdoc.org/">phpDocumentor</a> on May 16th, 2025 at 09:14 am.</span>
     </div>
 </footer>
 
@@ -555,7 +561,7 @@ class WC_Gateway_Paypal_IPN_Handler extends WC_Gateway_Paypal_Response {
             'searchIndex': '..\/js\/searchIndex.json'
         };
     </script>
-    <script src="../js/searchIndex.js?updated=1721907183"></script>
-    <script src="../js/search.js?updated=1721907183"></script>
+    <script src="../js/searchIndex.js?updated=1747386859"></script>
+    <script src="../js/search.js?updated=1747386859"></script>
 </body>
 </html>

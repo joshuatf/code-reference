@@ -4,14 +4,13 @@
     <meta charset="utf-8">
     <title>WooCommerce Code Reference</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="../images/favicon.png" />
-    <link rel="apple-touch-icon" href="../images/apple-touch-icon.png"/>
-    <link rel="apple-touch-icon" sizes="72x72" href="../images/apple-touch-icon-72x72.png"/>
-    <link rel="apple-touch-icon" sizes="114x114" href="../images/apple-touch-icon-114x114.png"/>
+    <link rel="icon" href="../images/favicon-32x32.png" sizes="32x32" />
+    <link rel="icon" href="../images/favicon-192x192.png" sizes="192x192" />
+    <link rel="apple-touch-icon" href="../images/favicon-180x180.png" />
+
     <link rel="stylesheet" href="../css/normalize.css">
-    <link rel="stylesheet" href="../css/base.css?updated=1721907184">
-    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../css/template.css?updated=1721907184">
+    <link rel="stylesheet" href="../css/base.css?updated=1747386861">
+    <link rel="stylesheet" href="../css/template.css?updated=1747386861">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0/css/all.min.css" integrity="sha256-ybRkN9dBjhcS2qrW1z+hfCxq+1aBdwyQM5wlQoQVt/0=" crossorigin="anonymous" />
             <script src="https://cdn.jsdelivr.net/npm/css-vars-ponyfill@2"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0/js/all.min.js" integrity="sha256-0vuk8LXoyrmCjp1f0O300qo1M75ZQyhH9X3J6d+scmk=" crossorigin="anonymous"></script>
@@ -38,14 +37,13 @@
     <header class="phpdocumentor-top-header">
     <section class="phpdocumentor-section">
         <div class="site-branding">
-            <a class="site-logo" href="../index.html"><img width="180" src="../images/logo.svg" alt="WooCommerce" /></a>
+            <a class="site-logo" href="../index.html"><img src="../images/logo.png" alt="WooCommerce" /></a>
         </div>
         <nav class="main-navigation">
             <ul>
                 <li><a href="../hooks/hooks.html">Hooks Reference</a></li>
-                <li><a href="https://docs.woocommerce.com/">Documentation</a></li>
+                <li><a href="https://developer.woocommerce.com/docs/">Documentation</a></li>
                 <li><a href="https://woocommerce.github.io/woocommerce-rest-api-docs/">REST API Docs</a></li>
-                <li><a href="https://woocommerce.com/careers/?utm_source=woocommerce+core+code+reference&utm_medium=devdocs&utm_campaign=woo+careers" target="_blank">We're hiring!</a></li>
             </ul>
         </nav>
     </section>
@@ -53,7 +51,7 @@
 
 <div class="phpdocumentor-header">
     <section class="phpdocumentor-section">
-        <h1 class="phpdocumentor-title">WooCommerce Code Reference</h1>
+        <h1 class="phpdocumentor-title"><a href="../index.html">WooCommerce Code Reference</a></h1>
         <section class="phpdocumentor-search">
     <label class="phpdocumentor-label">
         <span class="visually-hidden">Search (click ESC to close search results)</span>
@@ -74,6 +72,10 @@
                                         <h4 class="phpdocumentor-sidebar__root-namespace"><a href="../namespaces/woocommerce.html"><abbr title="\WooCommerce">WooCommerce</abbr></a></h4>
                 <ul class="phpdocumentor-list">
                                             <li><a href="../namespaces/woocommerce-admin.html"><abbr title="\WooCommerce\Admin">Admin</abbr></a></li>
+                                    </ul>
+                            <h4 class="phpdocumentor-sidebar__root-namespace"><a href="../namespaces/mailpoet.html"><abbr title="\MailPoet">MailPoet</abbr></a></h4>
+                <ul class="phpdocumentor-list">
+                                            <li><a href="../namespaces/mailpoet-emaileditor.html"><abbr title="\MailPoet\EmailEditor">EmailEditor</abbr></a></li>
                                     </ul>
                             <h4 class="phpdocumentor-sidebar__root-namespace"><a href="../namespaces/automattic.html"><abbr title="\Automattic">Automattic</abbr></a></h4>
                 <ul class="phpdocumentor-list">
@@ -119,8 +121,10 @@
                                     <li><a href="../packages/WooCommerce-Widgets.html"><abbr title="\WooCommerce\Widgets">Widgets</abbr></a></li>
                                     <li><a href="../packages/WooCommerce-Uninstaller.html"><abbr title="\WooCommerce\Uninstaller">Uninstaller</abbr></a></li>
                             </ul>
-                                <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/WoocommerceAdmin.html"><abbr title="\WoocommerceAdmin">WoocommerceAdmin</abbr></a></h3>
-                                <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/WoocommerceNavigation.html"><abbr title="\WoocommerceNavigation">WoocommerceNavigation</abbr></a></h3>
+                                <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/MailPoet.html"><abbr title="\MailPoet">MailPoet</abbr></a></h3>
+                        <ul class="phpdocumentor-list">
+                                    <li><a href="../packages/MailPoet-EmailEditor.html"><abbr title="\MailPoet\EmailEditor">EmailEditor</abbr></a></li>
+                            </ul>
                                 <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/Automattic.html"><abbr title="\Automattic">Automattic</abbr></a></h3>
                         <ul class="phpdocumentor-list">
                                     <li><a href="../packages/Automattic-WooCommerce.html"><abbr title="\Automattic\WooCommerce">WooCommerce</abbr></a></li>
@@ -167,15 +171,19 @@ namespace Automattic\WooCommerce\Admin\API\Reports\Orders\Stats;
 
 defined( &#039;ABSPATH&#039; ) || exit;
 
-use Automattic\WooCommerce\Admin\API\Reports\ParameterException;
+use Automattic\WooCommerce\Admin\API\Reports\GenericStatsController;
+use Automattic\WooCommerce\Admin\API\Reports\OrderAwareControllerTrait;
+use Automattic\WooCommerce\Admin\API\Reports\Orders\Stats\Query;
 
 /**
  * REST API Reports orders stats controller class.
  *
  * @internal
- * @extends \Automattic\WooCommerce\Admin\API\Reports\Controller
+ * @extends \Automattic\WooCommerce\Admin\API\Reports\GenericStatsController
  */
-class Controller extends \Automattic\WooCommerce\Admin\API\Reports\Controller {
+class Controller extends GenericStatsController {
+
+	use OrderAwareControllerTrait;
 
 	/**
 	 * Route base.
@@ -183,6 +191,19 @@ class Controller extends \Automattic\WooCommerce\Admin\API\Reports\Controller {
 	 * @var string
 	 */
 	protected $rest_base = &#039;reports/orders/stats&#039;;
+
+	/**
+	 * Get data from Orders\Stats\Query.
+	 *
+	 * @override GenericController::get_datastore_data()
+	 *
+	 * @param array $query_args Query arguments.
+	 * @return mixed Results from the data store.
+	 */
+	protected function get_datastore_data( $query_args = array() ) {
+		$query = new Query( $query_args );
+		return $query-&gt;get_data();
+	}
 
 	/**
 	 * Maps query arguments from the REST request.
@@ -228,55 +249,15 @@ class Controller extends \Automattic\WooCommerce\Admin\API\Reports\Controller {
 	}
 
 	/**
-	 * Get all reports.
+	 * Prepare a report data item for serialization.
 	 *
-	 * @param WP_REST_Request $request Request data.
-	 * @return array|WP_Error
-	 */
-	public function get_items( $request ) {
-		$query_args   = $this-&gt;prepare_reports_query( $request );
-		$orders_query = new Query( $query_args );
-		try {
-			$report_data = $orders_query-&gt;get_data();
-		} catch ( ParameterException $e ) {
-			return new \WP_Error( $e-&gt;getErrorCode(), $e-&gt;getMessage(), array( &#039;status&#039; =&gt; $e-&gt;getCode() ) );
-		}
-
-		$out_data = array(
-			&#039;totals&#039;    =&gt; get_object_vars( $report_data-&gt;totals ),
-			&#039;intervals&#039; =&gt; array(),
-		);
-
-		foreach ( $report_data-&gt;intervals as $interval_data ) {
-			$item                    = $this-&gt;prepare_item_for_response( $interval_data, $request );
-			$out_data[&#039;intervals&#039;][] = $this-&gt;prepare_response_for_collection( $item );
-		}
-
-		return $this-&gt;add_pagination_headers(
-			$request,
-			$out_data,
-			(int) $report_data-&gt;total,
-			(int) $report_data-&gt;page_no,
-			(int) $report_data-&gt;pages
-		);
-	}
-
-	/**
-	 * Prepare a report object for serialization.
-	 *
-	 * @param Array           $report  Report data.
+	 * @param Array           $report  Report data item as returned from Data Store.
 	 * @param WP_REST_Request $request Request object.
 	 * @return WP_REST_Response
 	 */
 	public function prepare_item_for_response( $report, $request ) {
-		$data = $report;
-
-		$context = ! empty( $request[&#039;context&#039;] ) ? $request[&#039;context&#039;] : &#039;view&#039;;
-		$data    = $this-&gt;add_additional_fields_to_object( $data, $request );
-		$data    = $this-&gt;filter_response_by_context( $data, $context );
-
 		// Wrap the data in a response object.
-		$response = rest_ensure_response( $data );
+		$response = parent::prepare_item_for_response( $report, $request );
 
 		/**
 		 * Filter a report returned from the API.
@@ -290,13 +271,15 @@ class Controller extends \Automattic\WooCommerce\Admin\API\Reports\Controller {
 		return apply_filters( &#039;woocommerce_rest_prepare_report_orders_stats&#039;, $response, $report, $request );
 	}
 
+
 	/**
-	 * Get the Report&#039;s schema, conforming to JSON Schema.
+	 * Get the Report&#039;s item properties schema.
+	 * Will be used by `get_item_schema` as `totals` and `subtotals`.
 	 *
 	 * @return array
 	 */
-	public function get_item_schema() {
-		$data_values = array(
+	protected function get_item_properties_schema() {
+		return array(
 			&#039;net_revenue&#039;         =&gt; array(
 				&#039;description&#039; =&gt; __( &#039;Net sales.&#039;, &#039;woocommerce&#039; ),
 				&#039;type&#039;        =&gt; &#039;number&#039;,
@@ -357,104 +340,19 @@ class Controller extends \Automattic\WooCommerce\Admin\API\Reports\Controller {
 				&#039;readonly&#039;    =&gt; true,
 			),
 		);
+	}
 
-		$segments = array(
-			&#039;segments&#039; =&gt; array(
-				&#039;description&#039; =&gt; __( &#039;Reports data grouped by segment condition.&#039;, &#039;woocommerce&#039; ),
-				&#039;type&#039;        =&gt; &#039;array&#039;,
-				&#039;context&#039;     =&gt; array( &#039;view&#039;, &#039;edit&#039; ),
-				&#039;readonly&#039;    =&gt; true,
-				&#039;items&#039;       =&gt; array(
-					&#039;type&#039;       =&gt; &#039;object&#039;,
-					&#039;properties&#039; =&gt; array(
-						&#039;segment_id&#039; =&gt; array(
-							&#039;description&#039; =&gt; __( &#039;Segment identificator.&#039;, &#039;woocommerce&#039; ),
-							&#039;type&#039;        =&gt; &#039;integer&#039;,
-							&#039;context&#039;     =&gt; array( &#039;view&#039;, &#039;edit&#039; ),
-							&#039;readonly&#039;    =&gt; true,
-						),
-						&#039;subtotals&#039;  =&gt; array(
-							&#039;description&#039; =&gt; __( &#039;Interval subtotals.&#039;, &#039;woocommerce&#039; ),
-							&#039;type&#039;        =&gt; &#039;object&#039;,
-							&#039;context&#039;     =&gt; array( &#039;view&#039;, &#039;edit&#039; ),
-							&#039;readonly&#039;    =&gt; true,
-							&#039;properties&#039;  =&gt; $data_values,
-						),
-					),
-				),
-			),
-		);
-
-		$totals = array_merge( $data_values, $segments );
+	/**
+	 * Get the Report&#039;s schema, conforming to JSON Schema.
+	 *
+	 * @return array
+	 */
+	public function get_item_schema() {
+		$schema          = parent::get_item_schema();
+		$schema[&#039;title&#039;] = &#039;report_orders_stats&#039;;
 
 		// Products is not shown in intervals.
-		unset( $data_values[&#039;products&#039;] );
-
-		$intervals = array_merge( $data_values, $segments );
-
-		$schema = array(
-			&#039;$schema&#039;    =&gt; &#039;http://json-schema.org/draft-04/schema#&#039;,
-			&#039;title&#039;      =&gt; &#039;report_orders_stats&#039;,
-			&#039;type&#039;       =&gt; &#039;object&#039;,
-			&#039;properties&#039; =&gt; array(
-				&#039;totals&#039;    =&gt; array(
-					&#039;description&#039; =&gt; __( &#039;Totals data.&#039;, &#039;woocommerce&#039; ),
-					&#039;type&#039;        =&gt; &#039;object&#039;,
-					&#039;context&#039;     =&gt; array( &#039;view&#039;, &#039;edit&#039; ),
-					&#039;readonly&#039;    =&gt; true,
-					&#039;properties&#039;  =&gt; $totals,
-				),
-				&#039;intervals&#039; =&gt; array(
-					&#039;description&#039; =&gt; __( &#039;Reports data grouped by intervals.&#039;, &#039;woocommerce&#039; ),
-					&#039;type&#039;        =&gt; &#039;array&#039;,
-					&#039;context&#039;     =&gt; array( &#039;view&#039;, &#039;edit&#039; ),
-					&#039;readonly&#039;    =&gt; true,
-					&#039;items&#039;       =&gt; array(
-						&#039;type&#039;       =&gt; &#039;object&#039;,
-						&#039;properties&#039; =&gt; array(
-							&#039;interval&#039;       =&gt; array(
-								&#039;description&#039; =&gt; __( &#039;Type of interval.&#039;, &#039;woocommerce&#039; ),
-								&#039;type&#039;        =&gt; &#039;string&#039;,
-								&#039;context&#039;     =&gt; array( &#039;view&#039;, &#039;edit&#039; ),
-								&#039;readonly&#039;    =&gt; true,
-								&#039;enum&#039;        =&gt; array( &#039;day&#039;, &#039;week&#039;, &#039;month&#039;, &#039;year&#039; ),
-							),
-							&#039;date_start&#039;     =&gt; array(
-								&#039;description&#039; =&gt; __( &quot;The date the report start, in the site&#039;s timezone.&quot;, &#039;woocommerce&#039; ),
-								&#039;type&#039;        =&gt; &#039;date-time&#039;,
-								&#039;context&#039;     =&gt; array( &#039;view&#039;, &#039;edit&#039; ),
-								&#039;readonly&#039;    =&gt; true,
-							),
-							&#039;date_start_gmt&#039; =&gt; array(
-								&#039;description&#039; =&gt; __( &#039;The date the report start, as GMT.&#039;, &#039;woocommerce&#039; ),
-								&#039;type&#039;        =&gt; &#039;date-time&#039;,
-								&#039;context&#039;     =&gt; array( &#039;view&#039;, &#039;edit&#039; ),
-								&#039;readonly&#039;    =&gt; true,
-							),
-							&#039;date_end&#039;       =&gt; array(
-								&#039;description&#039; =&gt; __( &quot;The date the report end, in the site&#039;s timezone.&quot;, &#039;woocommerce&#039; ),
-								&#039;type&#039;        =&gt; &#039;date-time&#039;,
-								&#039;context&#039;     =&gt; array( &#039;view&#039;, &#039;edit&#039; ),
-								&#039;readonly&#039;    =&gt; true,
-							),
-							&#039;date_end_gmt&#039;   =&gt; array(
-								&#039;description&#039; =&gt; __( &#039;The date the report end, as GMT.&#039;, &#039;woocommerce&#039; ),
-								&#039;type&#039;        =&gt; &#039;date-time&#039;,
-								&#039;context&#039;     =&gt; array( &#039;view&#039;, &#039;edit&#039; ),
-								&#039;readonly&#039;    =&gt; true,
-							),
-							&#039;subtotals&#039;      =&gt; array(
-								&#039;description&#039; =&gt; __( &#039;Interval subtotals.&#039;, &#039;woocommerce&#039; ),
-								&#039;type&#039;        =&gt; &#039;object&#039;,
-								&#039;context&#039;     =&gt; array( &#039;view&#039;, &#039;edit&#039; ),
-								&#039;readonly&#039;    =&gt; true,
-								&#039;properties&#039;  =&gt; $intervals,
-							),
-						),
-					),
-				),
-			),
-		);
+		unset( $schema[&#039;properties&#039;][&#039;intervals&#039;][&#039;items&#039;][&#039;properties&#039;][&#039;subtotals&#039;][&#039;properties&#039;][&#039;products&#039;] );
 
 		return $this-&gt;add_additional_fields_schema( $schema );
 	}
@@ -465,69 +363,14 @@ class Controller extends \Automattic\WooCommerce\Admin\API\Reports\Controller {
 	 * @return array
 	 */
 	public function get_collection_params() {
-		$params                     = array();
-		$params[&#039;context&#039;]          = $this-&gt;get_context_param( array( &#039;default&#039; =&gt; &#039;view&#039; ) );
-		$params[&#039;page&#039;]             = array(
-			&#039;description&#039;       =&gt; __( &#039;Current page of the collection.&#039;, &#039;woocommerce&#039; ),
-			&#039;type&#039;              =&gt; &#039;integer&#039;,
-			&#039;default&#039;           =&gt; 1,
-			&#039;sanitize_callback&#039; =&gt; &#039;absint&#039;,
-			&#039;validate_callback&#039; =&gt; &#039;rest_validate_request_arg&#039;,
-			&#039;minimum&#039;           =&gt; 1,
-		);
-		$params[&#039;per_page&#039;]         = array(
-			&#039;description&#039;       =&gt; __( &#039;Maximum number of items to be returned in result set.&#039;, &#039;woocommerce&#039; ),
-			&#039;type&#039;              =&gt; &#039;integer&#039;,
-			&#039;default&#039;           =&gt; 10,
-			&#039;minimum&#039;           =&gt; 1,
-			&#039;maximum&#039;           =&gt; 100,
-			&#039;sanitize_callback&#039; =&gt; &#039;absint&#039;,
-			&#039;validate_callback&#039; =&gt; &#039;rest_validate_request_arg&#039;,
-		);
-		$params[&#039;after&#039;]            = array(
-			&#039;description&#039;       =&gt; __( &#039;Limit response to resources published after a given ISO8601 compliant date.&#039;, &#039;woocommerce&#039; ),
-			&#039;type&#039;              =&gt; &#039;string&#039;,
-			&#039;format&#039;            =&gt; &#039;date-time&#039;,
-			&#039;validate_callback&#039; =&gt; &#039;rest_validate_request_arg&#039;,
-		);
-		$params[&#039;before&#039;]           = array(
-			&#039;description&#039;       =&gt; __( &#039;Limit response to resources published before a given ISO8601 compliant date.&#039;, &#039;woocommerce&#039; ),
-			&#039;type&#039;              =&gt; &#039;string&#039;,
-			&#039;format&#039;            =&gt; &#039;date-time&#039;,
-			&#039;validate_callback&#039; =&gt; &#039;rest_validate_request_arg&#039;,
-		);
-		$params[&#039;order&#039;]            = array(
-			&#039;description&#039;       =&gt; __( &#039;Order sort attribute ascending or descending.&#039;, &#039;woocommerce&#039; ),
-			&#039;type&#039;              =&gt; &#039;string&#039;,
-			&#039;default&#039;           =&gt; &#039;desc&#039;,
-			&#039;enum&#039;              =&gt; array( &#039;asc&#039;, &#039;desc&#039; ),
-			&#039;validate_callback&#039; =&gt; &#039;rest_validate_request_arg&#039;,
-		);
-		$params[&#039;orderby&#039;]          = array(
-			&#039;description&#039;       =&gt; __( &#039;Sort collection by object attribute.&#039;, &#039;woocommerce&#039; ),
-			&#039;type&#039;              =&gt; &#039;string&#039;,
-			&#039;default&#039;           =&gt; &#039;date&#039;,
-			&#039;enum&#039;              =&gt; array(
+		$params                     = parent::get_collection_params();
+		$params[&#039;orderby&#039;][&#039;enum&#039;]  = $this-&gt;apply_custom_orderby_filters(
+			array(
 				&#039;date&#039;,
 				&#039;net_revenue&#039;,
 				&#039;orders_count&#039;,
 				&#039;avg_order_value&#039;,
-			),
-			&#039;validate_callback&#039; =&gt; &#039;rest_validate_request_arg&#039;,
-		);
-		$params[&#039;interval&#039;]         = array(
-			&#039;description&#039;       =&gt; __( &#039;Time interval to use for buckets in the returned data.&#039;, &#039;woocommerce&#039; ),
-			&#039;type&#039;              =&gt; &#039;string&#039;,
-			&#039;default&#039;           =&gt; &#039;week&#039;,
-			&#039;enum&#039;              =&gt; array(
-				&#039;hour&#039;,
-				&#039;day&#039;,
-				&#039;week&#039;,
-				&#039;month&#039;,
-				&#039;quarter&#039;,
-				&#039;year&#039;,
-			),
-			&#039;validate_callback&#039; =&gt; &#039;rest_validate_request_arg&#039;,
+			)
 		);
 		$params[&#039;match&#039;]            = array(
 			&#039;description&#039;       =&gt; __( &#039;Indicates whether all the conditions should be true for the resulting set, or if any one of them is sufficient. Match affects the following parameters: status_is, status_is_not, product_includes, product_excludes, coupon_includes, coupon_excludes, customer, categories&#039;, &#039;woocommerce&#039; ),
@@ -570,7 +413,7 @@ class Controller extends \Automattic\WooCommerce\Admin\API\Reports\Controller {
 			&#039;sanitize_callback&#039; =&gt; &#039;wp_parse_id_list&#039;,
 
 		);
-		$params[&#039;product_excludes&#039;]    = array(
+		$params[&#039;product_excludes&#039;] = array(
 			&#039;description&#039;       =&gt; __( &#039;Limit result set to items that don\&#039;t have the specified product(s) assigned.&#039;, &#039;woocommerce&#039; ),
 			&#039;type&#039;              =&gt; &#039;array&#039;,
 			&#039;items&#039;             =&gt; array(
@@ -579,7 +422,8 @@ class Controller extends \Automattic\WooCommerce\Admin\API\Reports\Controller {
 			&#039;default&#039;           =&gt; array(),
 			&#039;sanitize_callback&#039; =&gt; &#039;wp_parse_id_list&#039;,
 		);
-		$params[&#039;variation_includes&#039;]  = array(
+		// Split assignments for PHPCS complaining on aligned.
+		$params[&#039;variation_includes&#039;] = array(
 			&#039;description&#039;       =&gt; __( &#039;Limit result set to items that have the specified variation(s) assigned.&#039;, &#039;woocommerce&#039; ),
 			&#039;type&#039;              =&gt; &#039;array&#039;,
 			&#039;items&#039;             =&gt; array(
@@ -589,7 +433,7 @@ class Controller extends \Automattic\WooCommerce\Admin\API\Reports\Controller {
 			&#039;sanitize_callback&#039; =&gt; &#039;wp_parse_id_list&#039;,
 			&#039;validate_callback&#039; =&gt; &#039;rest_validate_request_arg&#039;,
 		);
-		$params[&#039;variation_excludes&#039;]  = array(
+		$params[&#039;variation_excludes&#039;] = array(
 			&#039;description&#039;       =&gt; __( &#039;Limit result set to items that don\&#039;t have the specified variation(s) assigned.&#039;, &#039;woocommerce&#039; ),
 			&#039;type&#039;              =&gt; &#039;array&#039;,
 			&#039;items&#039;             =&gt; array(
@@ -599,7 +443,7 @@ class Controller extends \Automattic\WooCommerce\Admin\API\Reports\Controller {
 			&#039;validate_callback&#039; =&gt; &#039;rest_validate_request_arg&#039;,
 			&#039;sanitize_callback&#039; =&gt; &#039;wp_parse_id_list&#039;,
 		);
-		$params[&#039;coupon_includes&#039;]     = array(
+		$params[&#039;coupon_includes&#039;]    = array(
 			&#039;description&#039;       =&gt; __( &#039;Limit result set to items that have the specified coupon(s) assigned.&#039;, &#039;woocommerce&#039; ),
 			&#039;type&#039;              =&gt; &#039;array&#039;,
 			&#039;items&#039;             =&gt; array(
@@ -608,7 +452,7 @@ class Controller extends \Automattic\WooCommerce\Admin\API\Reports\Controller {
 			&#039;default&#039;           =&gt; array(),
 			&#039;sanitize_callback&#039; =&gt; &#039;wp_parse_id_list&#039;,
 		);
-		$params[&#039;coupon_excludes&#039;]     = array(
+		$params[&#039;coupon_excludes&#039;]    = array(
 			&#039;description&#039;       =&gt; __( &#039;Limit result set to items that don\&#039;t have the specified coupon(s) assigned.&#039;, &#039;woocommerce&#039; ),
 			&#039;type&#039;              =&gt; &#039;array&#039;,
 			&#039;items&#039;             =&gt; array(
@@ -617,7 +461,7 @@ class Controller extends \Automattic\WooCommerce\Admin\API\Reports\Controller {
 			&#039;default&#039;           =&gt; array(),
 			&#039;sanitize_callback&#039; =&gt; &#039;wp_parse_id_list&#039;,
 		);
-		$params[&#039;tax_rate_includes&#039;]   = array(
+		$params[&#039;tax_rate_includes&#039;]  = array(
 			&#039;description&#039;       =&gt; __( &#039;Limit result set to items that have the specified tax rate(s) assigned.&#039;, &#039;woocommerce&#039; ),
 			&#039;type&#039;              =&gt; &#039;array&#039;,
 			&#039;items&#039;             =&gt; array(
@@ -627,7 +471,7 @@ class Controller extends \Automattic\WooCommerce\Admin\API\Reports\Controller {
 			&#039;sanitize_callback&#039; =&gt; &#039;wp_parse_id_list&#039;,
 			&#039;validate_callback&#039; =&gt; &#039;rest_validate_request_arg&#039;,
 		);
-		$params[&#039;tax_rate_excludes&#039;]   = array(
+		$params[&#039;tax_rate_excludes&#039;]  = array(
 			&#039;description&#039;       =&gt; __( &#039;Limit result set to items that don\&#039;t have the specified tax rate(s) assigned.&#039;, &#039;woocommerce&#039; ),
 			&#039;type&#039;              =&gt; &#039;array&#039;,
 			&#039;items&#039;             =&gt; array(
@@ -637,7 +481,7 @@ class Controller extends \Automattic\WooCommerce\Admin\API\Reports\Controller {
 			&#039;validate_callback&#039; =&gt; &#039;rest_validate_request_arg&#039;,
 			&#039;sanitize_callback&#039; =&gt; &#039;wp_parse_id_list&#039;,
 		);
-		$params[&#039;customer&#039;]            = array(
+		$params[&#039;customer&#039;]           = array(
 			&#039;description&#039;       =&gt; __( &#039;Alias for customer_type (deprecated).&#039;, &#039;woocommerce&#039; ),
 			&#039;type&#039;              =&gt; &#039;string&#039;,
 			&#039;enum&#039;              =&gt; array(
@@ -646,7 +490,7 @@ class Controller extends \Automattic\WooCommerce\Admin\API\Reports\Controller {
 			),
 			&#039;validate_callback&#039; =&gt; &#039;rest_validate_request_arg&#039;,
 		);
-		$params[&#039;customer_type&#039;]       = array(
+		$params[&#039;customer_type&#039;]      = array(
 			&#039;description&#039;       =&gt; __( &#039;Limit result set to orders that have the specified customer_type&#039;, &#039;woocommerce&#039; ),
 			&#039;type&#039;              =&gt; &#039;string&#039;,
 			&#039;enum&#039;              =&gt; array(
@@ -655,7 +499,7 @@ class Controller extends \Automattic\WooCommerce\Admin\API\Reports\Controller {
 			),
 			&#039;validate_callback&#039; =&gt; &#039;rest_validate_request_arg&#039;,
 		);
-		$params[&#039;refunds&#039;]             = array(
+		$params[&#039;refunds&#039;]            = array(
 			&#039;description&#039;       =&gt; __( &#039;Limit result set to specific types of refunds.&#039;, &#039;woocommerce&#039; ),
 			&#039;type&#039;              =&gt; &#039;string&#039;,
 			&#039;default&#039;           =&gt; &#039;&#039;,
@@ -668,7 +512,7 @@ class Controller extends \Automattic\WooCommerce\Admin\API\Reports\Controller {
 			),
 			&#039;validate_callback&#039; =&gt; &#039;rest_validate_request_arg&#039;,
 		);
-		$params[&#039;attribute_is&#039;]        = array(
+		$params[&#039;attribute_is&#039;]       = array(
 			&#039;description&#039;       =&gt; __( &#039;Limit result set to orders that include products with the specified attributes.&#039;, &#039;woocommerce&#039; ),
 			&#039;type&#039;              =&gt; &#039;array&#039;,
 			&#039;items&#039;             =&gt; array(
@@ -677,7 +521,7 @@ class Controller extends \Automattic\WooCommerce\Admin\API\Reports\Controller {
 			&#039;default&#039;           =&gt; array(),
 			&#039;validate_callback&#039; =&gt; &#039;rest_validate_request_arg&#039;,
 		);
-		$params[&#039;attribute_is_not&#039;]    = array(
+		$params[&#039;attribute_is_not&#039;]   = array(
 			&#039;description&#039;       =&gt; __( &#039;Limit result set to orders that don\&#039;t include products with the specified attributes.&#039;, &#039;woocommerce&#039; ),
 			&#039;type&#039;              =&gt; &#039;array&#039;,
 			&#039;items&#039;             =&gt; array(
@@ -686,7 +530,7 @@ class Controller extends \Automattic\WooCommerce\Admin\API\Reports\Controller {
 			&#039;default&#039;           =&gt; array(),
 			&#039;validate_callback&#039; =&gt; &#039;rest_validate_request_arg&#039;,
 		);
-		$params[&#039;segmentby&#039;]           = array(
+		$params[&#039;segmentby&#039;]          = array(
 			&#039;description&#039;       =&gt; __( &#039;Segment the response by additional constraint.&#039;, &#039;woocommerce&#039; ),
 			&#039;type&#039;              =&gt; &#039;string&#039;,
 			&#039;enum&#039;              =&gt; array(
@@ -698,21 +542,8 @@ class Controller extends \Automattic\WooCommerce\Admin\API\Reports\Controller {
 			),
 			&#039;validate_callback&#039; =&gt; &#039;rest_validate_request_arg&#039;,
 		);
-		$params[&#039;fields&#039;]              = array(
-			&#039;description&#039;       =&gt; __( &#039;Limit stats fields to the specified items.&#039;, &#039;woocommerce&#039; ),
-			&#039;type&#039;              =&gt; &#039;array&#039;,
-			&#039;sanitize_callback&#039; =&gt; &#039;wp_parse_slug_list&#039;,
-			&#039;validate_callback&#039; =&gt; &#039;rest_validate_request_arg&#039;,
-			&#039;items&#039;             =&gt; array(
-				&#039;type&#039; =&gt; &#039;string&#039;,
-			),
-		);
-		$params[&#039;force_cache_refresh&#039;] = array(
-			&#039;description&#039;       =&gt; __( &#039;Force retrieval of fresh data instead of from the cache.&#039;, &#039;woocommerce&#039; ),
-			&#039;type&#039;              =&gt; &#039;boolean&#039;,
-			&#039;sanitize_callback&#039; =&gt; &#039;wp_validate_boolean&#039;,
-			&#039;validate_callback&#039; =&gt; &#039;rest_validate_request_arg&#039;,
-		);
+		unset( $params[&#039;intervals&#039;] );
+		unset( $params[&#039;fields&#039;] );
 
 		return $params;
 	}
@@ -727,7 +558,7 @@ class Controller extends \Automattic\WooCommerce\Admin\API\Reports\Controller {
 
     <footer class="phpdocumentor phpdocumentor-footer">
     <div class="phpdocumentor-section">
-        <span>WooCommerce Code Reference API documentation generated by <a href="http://www.phpdoc.org/">phpDocumentor</a> on July 25th, 2024 at 11:33 am.</span>
+        <span>WooCommerce Code Reference API documentation generated by <a href="http://www.phpdoc.org/">phpDocumentor</a> on May 16th, 2025 at 09:14 am.</span>
     </div>
 </footer>
 
@@ -739,7 +570,7 @@ class Controller extends \Automattic\WooCommerce\Admin\API\Reports\Controller {
             'searchIndex': '..\/js\/searchIndex.json'
         };
     </script>
-    <script src="../js/searchIndex.js?updated=1721907184"></script>
-    <script src="../js/search.js?updated=1721907184"></script>
+    <script src="../js/searchIndex.js?updated=1747386861"></script>
+    <script src="../js/search.js?updated=1747386861"></script>
 </body>
 </html>

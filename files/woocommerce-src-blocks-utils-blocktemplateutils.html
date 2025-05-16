@@ -4,14 +4,13 @@
     <meta charset="utf-8">
     <title>WooCommerce Code Reference</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="../images/favicon.png" />
-    <link rel="apple-touch-icon" href="../images/apple-touch-icon.png"/>
-    <link rel="apple-touch-icon" sizes="72x72" href="../images/apple-touch-icon-72x72.png"/>
-    <link rel="apple-touch-icon" sizes="114x114" href="../images/apple-touch-icon-114x114.png"/>
+    <link rel="icon" href="../images/favicon-32x32.png" sizes="32x32" />
+    <link rel="icon" href="../images/favicon-192x192.png" sizes="192x192" />
+    <link rel="apple-touch-icon" href="../images/favicon-180x180.png" />
+
     <link rel="stylesheet" href="../css/normalize.css">
-    <link rel="stylesheet" href="../css/base.css?updated=1721907186">
-    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../css/template.css?updated=1721907186">
+    <link rel="stylesheet" href="../css/base.css?updated=1747386862">
+    <link rel="stylesheet" href="../css/template.css?updated=1747386862">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0/css/all.min.css" integrity="sha256-ybRkN9dBjhcS2qrW1z+hfCxq+1aBdwyQM5wlQoQVt/0=" crossorigin="anonymous" />
             <script src="https://cdn.jsdelivr.net/npm/css-vars-ponyfill@2"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0/js/all.min.js" integrity="sha256-0vuk8LXoyrmCjp1f0O300qo1M75ZQyhH9X3J6d+scmk=" crossorigin="anonymous"></script>
@@ -38,14 +37,13 @@
     <header class="phpdocumentor-top-header">
     <section class="phpdocumentor-section">
         <div class="site-branding">
-            <a class="site-logo" href="../index.html"><img width="180" src="../images/logo.svg" alt="WooCommerce" /></a>
+            <a class="site-logo" href="../index.html"><img src="../images/logo.png" alt="WooCommerce" /></a>
         </div>
         <nav class="main-navigation">
             <ul>
                 <li><a href="../hooks/hooks.html">Hooks Reference</a></li>
-                <li><a href="https://docs.woocommerce.com/">Documentation</a></li>
+                <li><a href="https://developer.woocommerce.com/docs/">Documentation</a></li>
                 <li><a href="https://woocommerce.github.io/woocommerce-rest-api-docs/">REST API Docs</a></li>
-                <li><a href="https://woocommerce.com/careers/?utm_source=woocommerce+core+code+reference&utm_medium=devdocs&utm_campaign=woo+careers" target="_blank">We're hiring!</a></li>
             </ul>
         </nav>
     </section>
@@ -53,7 +51,7 @@
 
 <div class="phpdocumentor-header">
     <section class="phpdocumentor-section">
-        <h1 class="phpdocumentor-title">WooCommerce Code Reference</h1>
+        <h1 class="phpdocumentor-title"><a href="../index.html">WooCommerce Code Reference</a></h1>
         <section class="phpdocumentor-search">
     <label class="phpdocumentor-label">
         <span class="visually-hidden">Search (click ESC to close search results)</span>
@@ -74,6 +72,10 @@
                                         <h4 class="phpdocumentor-sidebar__root-namespace"><a href="../namespaces/woocommerce.html"><abbr title="\WooCommerce">WooCommerce</abbr></a></h4>
                 <ul class="phpdocumentor-list">
                                             <li><a href="../namespaces/woocommerce-admin.html"><abbr title="\WooCommerce\Admin">Admin</abbr></a></li>
+                                    </ul>
+                            <h4 class="phpdocumentor-sidebar__root-namespace"><a href="../namespaces/mailpoet.html"><abbr title="\MailPoet">MailPoet</abbr></a></h4>
+                <ul class="phpdocumentor-list">
+                                            <li><a href="../namespaces/mailpoet-emaileditor.html"><abbr title="\MailPoet\EmailEditor">EmailEditor</abbr></a></li>
                                     </ul>
                             <h4 class="phpdocumentor-sidebar__root-namespace"><a href="../namespaces/automattic.html"><abbr title="\Automattic">Automattic</abbr></a></h4>
                 <ul class="phpdocumentor-list">
@@ -119,8 +121,10 @@
                                     <li><a href="../packages/WooCommerce-Widgets.html"><abbr title="\WooCommerce\Widgets">Widgets</abbr></a></li>
                                     <li><a href="../packages/WooCommerce-Uninstaller.html"><abbr title="\WooCommerce\Uninstaller">Uninstaller</abbr></a></li>
                             </ul>
-                                <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/WoocommerceAdmin.html"><abbr title="\WoocommerceAdmin">WoocommerceAdmin</abbr></a></h3>
-                                <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/WoocommerceNavigation.html"><abbr title="\WoocommerceNavigation">WoocommerceNavigation</abbr></a></h3>
+                                <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/MailPoet.html"><abbr title="\MailPoet">MailPoet</abbr></a></h3>
+                        <ul class="phpdocumentor-list">
+                                    <li><a href="../packages/MailPoet-EmailEditor.html"><abbr title="\MailPoet\EmailEditor">EmailEditor</abbr></a></li>
+                            </ul>
                                 <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/Automattic.html"><abbr title="\Automattic">Automattic</abbr></a></h3>
                         <ul class="phpdocumentor-list">
                                     <li><a href="../packages/Automattic-WooCommerce.html"><abbr title="\Automattic\WooCommerce">WooCommerce</abbr></a></li>
@@ -159,6 +163,7 @@
             <pre id="source-view" tabindex="-1" class="language-php line-numbers linkable-line-numbers"><code>&lt;?php
 namespace Automattic\WooCommerce\Blocks\Utils;
 
+use WP_Block_Patterns_Registry;
 use Automattic\WooCommerce\Admin\Features\Features;
 use Automattic\WooCommerce\Blocks\Options;
 use Automattic\WooCommerce\Blocks\Package;
@@ -473,8 +478,12 @@ class BlockTemplateUtils {
 
 		$wp_template_part_filenames = array(
 			&#039;checkout-header.html&#039;,
+			&#039;coming-soon-social-links.html&#039;,
 			&#039;mini-cart.html&#039;,
-			&#039;product-filters-overlay.html&#039;,
+			&#039;simple-product-add-to-cart-with-options.html&#039;,
+			&#039;external-product-add-to-cart-with-options.html&#039;,
+			&#039;variable-product-add-to-cart-with-options.html&#039;,
+			&#039;grouped-product-add-to-cart-with-options.html&#039;,
 		);
 
 		/*
@@ -634,7 +643,7 @@ class BlockTemplateUtils {
 	 * @return boolean
 	 */
 	public static function theme_has_template( $template_name ) {
-		return ! ! self::get_theme_template_path( $template_name, &#039;wp_template&#039; );
+		return (bool) self::get_theme_template_path( $template_name, &#039;wp_template&#039; );
 	}
 
 	/**
@@ -644,7 +653,7 @@ class BlockTemplateUtils {
 	 * @return boolean
 	 */
 	public static function theme_has_template_part( $template_name ) {
-		return ! ! self::get_theme_template_path( $template_name, &#039;wp_template_part&#039; );
+		return (bool) self::get_theme_template_path( $template_name, &#039;wp_template_part&#039; );
 	}
 
 	/**
@@ -664,43 +673,27 @@ class BlockTemplateUtils {
 	}
 
 	/**
-	 * Checks if we can fall back to the `archive-product` template for a given slug.
-	 *
-	 * `taxonomy-product_cat`, `taxonomy-product_tag`, `taxonomy-product_attribute` templates can
-	 *  generally use the `archive-product` as a fallback if there are no specific overrides.
-	 *
-	 * @param string $template_slug Slug to check for fallbacks.
-	 * @return boolean
-	 */
-	public static function template_is_eligible_for_product_archive_fallback( $template_slug ) {
-		$registered_template = self::get_template( $template_slug );
-		if ( $registered_template &amp;&amp; isset( $registered_template-&gt;fallback_template ) ) {
-			return ProductCatalogTemplate::SLUG === $registered_template-&gt;fallback_template;
-		}
-		return false;
-	}
-
-	/**
 	 * Checks if we can fall back to an `archive-product` template stored on the db for a given slug.
 	 *
 	 * @param string $template_slug Slug to check for fallbacks.
 	 * @param array  $db_templates Templates that have already been found on the db.
 	 * @return boolean
 	 */
-	public static function template_is_eligible_for_product_archive_fallback_from_db( $template_slug, $db_templates ) {
-		$eligible_for_fallback = self::template_is_eligible_for_product_archive_fallback( $template_slug );
-		if ( ! $eligible_for_fallback ) {
-			return false;
+	public static function template_is_eligible_for_fallback_from_db( $template_slug, $db_templates ) {
+		$registered_template = self::get_template( $template_slug );
+
+		if ( $registered_template &amp;&amp; isset( $registered_template-&gt;fallback_template ) ) {
+			$array_filter = array_filter(
+				$db_templates,
+				function ( $template ) use ( $registered_template ) {
+					return isset( $registered_template-&gt;fallback_template ) &amp;&amp; $registered_template-&gt;fallback_template === $template-&gt;slug;
+				}
+			);
+
+			return count( $array_filter ) &gt; 0;
 		}
 
-		$array_filter = array_filter(
-			$db_templates,
-			function ( $template ) use ( $template_slug ) {
-				return ProductCatalogTemplate::SLUG === $template-&gt;slug;
-			}
-		);
-
-		return count( $array_filter ) &gt; 0;
+		return false;
 	}
 
 	/**
@@ -711,14 +704,13 @@ class BlockTemplateUtils {
 	 * @return boolean|object
 	 */
 	public static function get_fallback_template_from_db( $template_slug, $db_templates ) {
-		$eligible_for_fallback = self::template_is_eligible_for_product_archive_fallback( $template_slug );
-		if ( ! $eligible_for_fallback ) {
-			return false;
-		}
+		$registered_template = self::get_template( $template_slug );
 
-		foreach ( $db_templates as $template ) {
-			if ( ProductCatalogTemplate::SLUG === $template-&gt;slug ) {
-				return $template;
+		if ( $registered_template &amp;&amp; isset( $registered_template-&gt;fallback_template ) ) {
+			foreach ( $db_templates as $template ) {
+				if ( $registered_template-&gt;fallback_template === $template-&gt;slug ) {
+					return $template;
+				}
 			}
 		}
 
@@ -734,10 +726,12 @@ class BlockTemplateUtils {
 	 * @param string $template_slug Slug to check for fallbacks.
 	 * @return boolean
 	 */
-	public static function template_is_eligible_for_product_archive_fallback_from_theme( $template_slug ) {
-		return self::template_is_eligible_for_product_archive_fallback( $template_slug )
+	public static function template_is_eligible_for_fallback_from_theme( $template_slug ) {
+		$registered_template = self::get_template( $template_slug );
+
+		return $registered_template &amp;&amp; isset( $registered_template-&gt;fallback_template )
 			&amp;&amp; ! self::theme_has_template( $template_slug )
-			&amp;&amp; self::theme_has_template( ProductCatalogTemplate::SLUG );
+			&amp;&amp; self::theme_has_template( $registered_template-&gt;fallback_template );
 	}
 
 	/**
@@ -763,7 +757,7 @@ class BlockTemplateUtils {
 				$query_result_template-&gt;slug === $template-&gt;slug
 				&amp;&amp; $query_result_template-&gt;theme === $template-&gt;theme
 			) {
-				if ( self::template_is_eligible_for_product_archive_fallback_from_theme( $template-&gt;slug ) ) {
+				if ( self::template_is_eligible_for_fallback_from_theme( $template-&gt;slug ) ) {
 					$query_result_template-&gt;has_theme_file = true;
 				}
 
@@ -866,13 +860,51 @@ class BlockTemplateUtils {
 	}
 
 	/**
+	 * Determines whether the provided $blocks contains any of the $block_names,
+	 * or if they contain a pattern that contains any of the $block_names.
+	 *
+	 * @param string[]   $block_names Full block types to look for.
+	 * @param WP_Block[] $blocks      Array of block objects.
+	 * @return bool Whether the content contains the specified block.
+	 */
+	public static function has_block_including_patterns( $block_names, $blocks ) {
+		$flattened_blocks = self::flatten_blocks( $blocks );
+
+		foreach ( $flattened_blocks as &amp;$block ) {
+			if ( isset( $block[&#039;blockName&#039;] ) &amp;&amp; in_array( $block[&#039;blockName&#039;], $block_names, true ) ) {
+				return true;
+			}
+			if (
+				&#039;core/pattern&#039; === $block[&#039;blockName&#039;] &amp;&amp;
+				isset( $block[&#039;attrs&#039;][&#039;slug&#039;] )
+			) {
+				$registry       = WP_Block_Patterns_Registry::get_instance();
+				$pattern        = $registry-&gt;get_registered( $block[&#039;attrs&#039;][&#039;slug&#039;] );
+				$pattern_blocks = parse_blocks( $pattern[&#039;content&#039;] );
+
+				if ( self::has_block_including_patterns( $block_names, $pattern_blocks ) ) {
+					return true;
+				}
+			}
+		}
+
+		return false;
+	}
+
+	/**
 	 * Returns whether the passed `$template` has the legacy template block.
 	 *
 	 * @param object $template The template object.
 	 * @return boolean
 	 */
 	public static function template_has_legacy_template_block( $template ) {
-		return has_block( &#039;woocommerce/legacy-template&#039;, $template-&gt;content );
+		if ( has_block( &#039;woocommerce/legacy-template&#039;, $template-&gt;content ) ) {
+			return true;
+		}
+
+		$blocks = parse_blocks( $template-&gt;content );
+
+		return self::has_block_including_patterns( array( &#039;woocommerce/legacy-template&#039; ), $blocks );
 	}
 
 	/**
@@ -977,7 +1009,7 @@ class BlockTemplateUtils {
 
     <footer class="phpdocumentor phpdocumentor-footer">
     <div class="phpdocumentor-section">
-        <span>WooCommerce Code Reference API documentation generated by <a href="http://www.phpdoc.org/">phpDocumentor</a> on July 25th, 2024 at 11:33 am.</span>
+        <span>WooCommerce Code Reference API documentation generated by <a href="http://www.phpdoc.org/">phpDocumentor</a> on May 16th, 2025 at 09:14 am.</span>
     </div>
 </footer>
 
@@ -989,7 +1021,7 @@ class BlockTemplateUtils {
             'searchIndex': '..\/js\/searchIndex.json'
         };
     </script>
-    <script src="../js/searchIndex.js?updated=1721907186"></script>
-    <script src="../js/search.js?updated=1721907186"></script>
+    <script src="../js/searchIndex.js?updated=1747386862"></script>
+    <script src="../js/search.js?updated=1747386862"></script>
 </body>
 </html>

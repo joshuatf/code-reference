@@ -4,14 +4,13 @@
     <meta charset="utf-8">
     <title>WooCommerce Code Reference</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="../images/favicon.png" />
-    <link rel="apple-touch-icon" href="../images/apple-touch-icon.png"/>
-    <link rel="apple-touch-icon" sizes="72x72" href="../images/apple-touch-icon-72x72.png"/>
-    <link rel="apple-touch-icon" sizes="114x114" href="../images/apple-touch-icon-114x114.png"/>
+    <link rel="icon" href="../images/favicon-32x32.png" sizes="32x32" />
+    <link rel="icon" href="../images/favicon-192x192.png" sizes="192x192" />
+    <link rel="apple-touch-icon" href="../images/favicon-180x180.png" />
+
     <link rel="stylesheet" href="../css/normalize.css">
-    <link rel="stylesheet" href="../css/base.css?updated=1721907182">
-    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../css/template.css?updated=1721907182">
+    <link rel="stylesheet" href="../css/base.css?updated=1747386858">
+    <link rel="stylesheet" href="../css/template.css?updated=1747386858">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0/css/all.min.css" integrity="sha256-ybRkN9dBjhcS2qrW1z+hfCxq+1aBdwyQM5wlQoQVt/0=" crossorigin="anonymous" />
             <script src="https://cdn.jsdelivr.net/npm/css-vars-ponyfill@2"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0/js/all.min.js" integrity="sha256-0vuk8LXoyrmCjp1f0O300qo1M75ZQyhH9X3J6d+scmk=" crossorigin="anonymous"></script>
@@ -38,14 +37,13 @@
     <header class="phpdocumentor-top-header">
     <section class="phpdocumentor-section">
         <div class="site-branding">
-            <a class="site-logo" href="../index.html"><img width="180" src="../images/logo.svg" alt="WooCommerce" /></a>
+            <a class="site-logo" href="../index.html"><img src="../images/logo.png" alt="WooCommerce" /></a>
         </div>
         <nav class="main-navigation">
             <ul>
                 <li><a href="../hooks/hooks.html">Hooks Reference</a></li>
-                <li><a href="https://docs.woocommerce.com/">Documentation</a></li>
+                <li><a href="https://developer.woocommerce.com/docs/">Documentation</a></li>
                 <li><a href="https://woocommerce.github.io/woocommerce-rest-api-docs/">REST API Docs</a></li>
-                <li><a href="https://woocommerce.com/careers/?utm_source=woocommerce+core+code+reference&utm_medium=devdocs&utm_campaign=woo+careers" target="_blank">We're hiring!</a></li>
             </ul>
         </nav>
     </section>
@@ -53,7 +51,7 @@
 
 <div class="phpdocumentor-header">
     <section class="phpdocumentor-section">
-        <h1 class="phpdocumentor-title">WooCommerce Code Reference</h1>
+        <h1 class="phpdocumentor-title"><a href="../index.html">WooCommerce Code Reference</a></h1>
         <section class="phpdocumentor-search">
     <label class="phpdocumentor-label">
         <span class="visually-hidden">Search (click ESC to close search results)</span>
@@ -74,6 +72,10 @@
                                         <h4 class="phpdocumentor-sidebar__root-namespace"><a href="../namespaces/woocommerce.html"><abbr title="\WooCommerce">WooCommerce</abbr></a></h4>
                 <ul class="phpdocumentor-list">
                                             <li><a href="../namespaces/woocommerce-admin.html"><abbr title="\WooCommerce\Admin">Admin</abbr></a></li>
+                                    </ul>
+                            <h4 class="phpdocumentor-sidebar__root-namespace"><a href="../namespaces/mailpoet.html"><abbr title="\MailPoet">MailPoet</abbr></a></h4>
+                <ul class="phpdocumentor-list">
+                                            <li><a href="../namespaces/mailpoet-emaileditor.html"><abbr title="\MailPoet\EmailEditor">EmailEditor</abbr></a></li>
                                     </ul>
                             <h4 class="phpdocumentor-sidebar__root-namespace"><a href="../namespaces/automattic.html"><abbr title="\Automattic">Automattic</abbr></a></h4>
                 <ul class="phpdocumentor-list">
@@ -119,8 +121,10 @@
                                     <li><a href="../packages/WooCommerce-Widgets.html"><abbr title="\WooCommerce\Widgets">Widgets</abbr></a></li>
                                     <li><a href="../packages/WooCommerce-Uninstaller.html"><abbr title="\WooCommerce\Uninstaller">Uninstaller</abbr></a></li>
                             </ul>
-                                <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/WoocommerceAdmin.html"><abbr title="\WoocommerceAdmin">WoocommerceAdmin</abbr></a></h3>
-                                <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/WoocommerceNavigation.html"><abbr title="\WoocommerceNavigation">WoocommerceNavigation</abbr></a></h3>
+                                <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/MailPoet.html"><abbr title="\MailPoet">MailPoet</abbr></a></h3>
+                        <ul class="phpdocumentor-list">
+                                    <li><a href="../packages/MailPoet-EmailEditor.html"><abbr title="\MailPoet\EmailEditor">EmailEditor</abbr></a></li>
+                            </ul>
                                 <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/Automattic.html"><abbr title="\Automattic">Automattic</abbr></a></h3>
                         <ul class="phpdocumentor-list">
                                     <li><a href="../packages/Automattic-WooCommerce.html"><abbr title="\Automattic\WooCommerce">WooCommerce</abbr></a></li>
@@ -166,7 +170,7 @@
 
 defined( &#039;ABSPATH&#039; ) || exit;
 
-require_once dirname( __FILE__ ) . &#039;/legacy/class-wc-legacy-customer.php&#039;;
+require_once __DIR__ . &#039;/legacy/class-wc-legacy-customer.php&#039;;
 
 /**
  * Customer class.
@@ -426,8 +430,57 @@ class WC_Customer extends WC_Legacy_Customer {
 				return true;
 			}
 		}
-
 		return false;
+	}
+
+	/**
+	 * Checks whether the address is &quot;full&quot; in the sense that it contains all required fields to calculate shipping rates.
+	 * This method uses the current country&#039;s locale to determine if a field is required, or falls back to the default
+	 * locale if there&#039;s no country-specific setting for that field.
+	 *
+	 * This method is only used internally by StoreAPI, and not by the classic/shortcode checkout.
+	 *
+	 * @since 9.8.0
+	 * @return bool Whether the customer has a full shipping address (city, state, postcode, country).
+	 * Only required fields are checked based on the country locale.
+	 */
+	public function has_full_shipping_address() {
+		// These are the important fields required to get the shipping rates. Note that while we&#039;re respecting the filters
+		// for the shipping calculator below (city, postcode, state), we&#039;re not respecting the filter for the country field.
+		// The country field is always required as a bare minimum for shipping.
+		$shipping_address = array(
+			&#039;country&#039;  =&gt; $this-&gt;get_shipping_country(),
+			&#039;city&#039;     =&gt; $this-&gt;get_shipping_city(),
+			&#039;state&#039;    =&gt; $this-&gt;get_shipping_state(),
+			&#039;postcode&#039; =&gt; $this-&gt;get_shipping_postcode(),
+		);
+
+		$address_fields = WC()-&gt;countries-&gt;get_country_locale();
+		$locale_key     = ! empty( $shipping_address[&#039;country&#039;] ) &amp;&amp; array_key_exists( $shipping_address[&#039;country&#039;], $address_fields ) ? $shipping_address[&#039;country&#039;] : &#039;default&#039;;
+		$default_locale = $address_fields[&#039;default&#039;];
+		$country_locale = $address_fields[ $locale_key ] ?? array();
+
+		/**
+		 * Checks all shipping address fields against the country&#039;s locale settings.
+		 *
+		 * If there&#039;s a `required` setting for the field in the country-specific locale, that setting is used, otherwise
+		 * the default locale&#039;s setting is used. If the default locale doesn&#039;t have a setting either, the field is
+		 * considered optional and therefore valid, even if empty.
+		 */
+		foreach ( $shipping_address as $key =&gt; $value ) {
+			// Skip further checks if the field has a value. From this point on $value is empty.
+			if ( ! empty( $value ) ) {
+				continue;
+			}
+
+			$locale_to_check = isset( $country_locale[ $key ][&#039;required&#039;] ) ? $country_locale : $default_locale;
+
+			// If the locale requires the field return false.
+			if ( isset( $locale_to_check[ $key ][&#039;required&#039;] ) &amp;&amp; true === wc_string_to_bool( $locale_to_check[ $key ][&#039;required&#039;] ) ) {
+				return false;
+			}
+		}
+		return true;
 	}
 
 	/**
@@ -1334,7 +1387,7 @@ class WC_Customer extends WC_Legacy_Customer {
 
     <footer class="phpdocumentor phpdocumentor-footer">
     <div class="phpdocumentor-section">
-        <span>WooCommerce Code Reference API documentation generated by <a href="http://www.phpdoc.org/">phpDocumentor</a> on July 25th, 2024 at 11:33 am.</span>
+        <span>WooCommerce Code Reference API documentation generated by <a href="http://www.phpdoc.org/">phpDocumentor</a> on May 16th, 2025 at 09:14 am.</span>
     </div>
 </footer>
 
@@ -1346,7 +1399,7 @@ class WC_Customer extends WC_Legacy_Customer {
             'searchIndex': '..\/js\/searchIndex.json'
         };
     </script>
-    <script src="../js/searchIndex.js?updated=1721907182"></script>
-    <script src="../js/search.js?updated=1721907182"></script>
+    <script src="../js/searchIndex.js?updated=1747386858"></script>
+    <script src="../js/search.js?updated=1747386858"></script>
 </body>
 </html>

@@ -4,14 +4,13 @@
     <meta charset="utf-8">
     <title>WooCommerce Code Reference</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="../images/favicon.png" />
-    <link rel="apple-touch-icon" href="../images/apple-touch-icon.png"/>
-    <link rel="apple-touch-icon" sizes="72x72" href="../images/apple-touch-icon-72x72.png"/>
-    <link rel="apple-touch-icon" sizes="114x114" href="../images/apple-touch-icon-114x114.png"/>
+    <link rel="icon" href="../images/favicon-32x32.png" sizes="32x32" />
+    <link rel="icon" href="../images/favicon-192x192.png" sizes="192x192" />
+    <link rel="apple-touch-icon" href="../images/favicon-180x180.png" />
+
     <link rel="stylesheet" href="../css/normalize.css">
-    <link rel="stylesheet" href="../css/base.css?updated=1721907202">
-    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../css/template.css?updated=1721907202">
+    <link rel="stylesheet" href="../css/base.css?updated=1747386882">
+    <link rel="stylesheet" href="../css/template.css?updated=1747386882">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0/css/all.min.css" integrity="sha256-ybRkN9dBjhcS2qrW1z+hfCxq+1aBdwyQM5wlQoQVt/0=" crossorigin="anonymous" />
             <script src="https://cdn.jsdelivr.net/npm/css-vars-ponyfill@2"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0/js/all.min.js" integrity="sha256-0vuk8LXoyrmCjp1f0O300qo1M75ZQyhH9X3J6d+scmk=" crossorigin="anonymous"></script>
@@ -27,19 +26,24 @@
 		'content_group' : 'WooCommerce Core Code Reference',
 	});
 </script>
-        </head>
+        <script src="../js/prism.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            window.dispatchEvent(new HashChangeEvent('hashchange'));
+        });
+    </script>
+</head>
 <body id="top">
     <header class="phpdocumentor-top-header">
     <section class="phpdocumentor-section">
         <div class="site-branding">
-            <a class="site-logo" href="../index.html"><img width="180" src="../images/logo.svg" alt="WooCommerce" /></a>
+            <a class="site-logo" href="../index.html"><img src="../images/logo.png" alt="WooCommerce" /></a>
         </div>
         <nav class="main-navigation">
             <ul>
                 <li><a href="../hooks/hooks.html">Hooks Reference</a></li>
-                <li><a href="https://docs.woocommerce.com/">Documentation</a></li>
+                <li><a href="https://developer.woocommerce.com/docs/">Documentation</a></li>
                 <li><a href="https://woocommerce.github.io/woocommerce-rest-api-docs/">REST API Docs</a></li>
-                <li><a href="https://woocommerce.com/careers/?utm_source=woocommerce+core+code+reference&utm_medium=devdocs&utm_campaign=woo+careers" target="_blank">We're hiring!</a></li>
             </ul>
         </nav>
     </section>
@@ -47,7 +51,7 @@
 
 <div class="phpdocumentor-header">
     <section class="phpdocumentor-section">
-        <h1 class="phpdocumentor-title">WooCommerce Code Reference</h1>
+        <h1 class="phpdocumentor-title"><a href="../index.html">WooCommerce Code Reference</a></h1>
         <section class="phpdocumentor-search">
     <label class="phpdocumentor-label">
         <span class="visually-hidden">Search (click ESC to close search results)</span>
@@ -68,6 +72,10 @@
                                         <h4 class="phpdocumentor-sidebar__root-namespace"><a href="../namespaces/woocommerce.html"><abbr title="\WooCommerce">WooCommerce</abbr></a></h4>
                 <ul class="phpdocumentor-list">
                                             <li><a href="../namespaces/woocommerce-admin.html"><abbr title="\WooCommerce\Admin">Admin</abbr></a></li>
+                                    </ul>
+                            <h4 class="phpdocumentor-sidebar__root-namespace"><a href="../namespaces/mailpoet.html"><abbr title="\MailPoet">MailPoet</abbr></a></h4>
+                <ul class="phpdocumentor-list">
+                                            <li><a href="../namespaces/mailpoet-emaileditor.html"><abbr title="\MailPoet\EmailEditor">EmailEditor</abbr></a></li>
                                     </ul>
                             <h4 class="phpdocumentor-sidebar__root-namespace"><a href="../namespaces/automattic.html"><abbr title="\Automattic">Automattic</abbr></a></h4>
                 <ul class="phpdocumentor-list">
@@ -113,8 +121,10 @@
                                     <li><a href="../packages/WooCommerce-Widgets.html"><abbr title="\WooCommerce\Widgets">Widgets</abbr></a></li>
                                     <li><a href="../packages/WooCommerce-Uninstaller.html"><abbr title="\WooCommerce\Uninstaller">Uninstaller</abbr></a></li>
                             </ul>
-                                <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/WoocommerceAdmin.html"><abbr title="\WoocommerceAdmin">WoocommerceAdmin</abbr></a></h3>
-                                <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/WoocommerceNavigation.html"><abbr title="\WoocommerceNavigation">WoocommerceNavigation</abbr></a></h3>
+                                <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/MailPoet.html"><abbr title="\MailPoet">MailPoet</abbr></a></h3>
+                        <ul class="phpdocumentor-list">
+                                    <li><a href="../packages/MailPoet-EmailEditor.html"><abbr title="\MailPoet\EmailEditor">EmailEditor</abbr></a></li>
+                            </ul>
                                 <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/Automattic.html"><abbr title="\Automattic">Automattic</abbr></a></h3>
                         <ul class="phpdocumentor-list">
                                     <li><a href="../packages/Automattic-WooCommerce.html"><abbr title="\Automattic\WooCommerce">WooCommerce</abbr></a></li>
@@ -226,6 +236,13 @@
 <dd>Add task to a given task list.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a href="../classes/Automattic-WooCommerce-Admin-Features-OnboardingTasks-TaskLists.html#method_all_hidden">all_hidden()</a>
+    <span>
+                        &nbsp;: bool    </span>
+</dt>
+<dd>Check if all task lists are hidden.</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="../classes/Automattic-WooCommerce-Admin-Features-OnboardingTasks-TaskLists.html#method_clear_lists">clear_lists()</a>
     <span>
                         &nbsp;: mixed    </span>
@@ -333,7 +350,7 @@
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="../classes/Automattic-WooCommerce-Admin-Features-OnboardingTasks-TaskLists.html#method_setup_tasks_remaining">setup_tasks_remaining()</a>
     <span>
-                        &nbsp;: <abbr title="\Automattic\WooCommerce\Admin\Features\OnboardingTasks\number">number</abbr>    </span>
+                        &nbsp;: int|null    </span>
 </dt>
 <dd>Return number of setup tasks remaining</dd>
 
@@ -506,9 +523,9 @@ that are added for each task list.</p>
         <a href="#method_add_list" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/Features/OnboardingTasks/TaskLists.php"><a href="../files/woocommerce-src-admin-features-onboardingtasks-tasklists.html#source-view.252">src/Admin/Features/OnboardingTasks/TaskLists.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/Features/OnboardingTasks/TaskLists.php"><a href="../files/woocommerce-src-admin-features-onboardingtasks-tasklists.html#source-view.259">src/Admin/Features/OnboardingTasks/TaskLists.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">252</span>
+    <span class="phpdocumentor-element-found-in__line">259</span>
 </aside>
 
         <p class="phpdocumentor-summary">Add a task list.</p>
@@ -550,9 +567,9 @@ that are added for each task list.</p>
         <a href="#method_add_task" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/Features/OnboardingTasks/TaskLists.php"><a href="../files/woocommerce-src-admin-features-onboardingtasks-tasklists.html#source-view.272">src/Admin/Features/OnboardingTasks/TaskLists.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/Features/OnboardingTasks/TaskLists.php"><a href="../files/woocommerce-src-admin-features-onboardingtasks-tasklists.html#source-view.279">src/Admin/Features/OnboardingTasks/TaskLists.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">272</span>
+    <span class="phpdocumentor-element-found-in__line">279</span>
 </aside>
 
         <p class="phpdocumentor-summary">Add task to a given task list.</p>
@@ -598,14 +615,46 @@ that are added for each task list.</p>
             -public
                                     -static                    "
 >
+    <h4 class="phpdocumentor-element__name" id="method_all_hidden">
+        all_hidden()
+        <a href="#method_all_hidden" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/Features/OnboardingTasks/TaskLists.php"><a href="../files/woocommerce-src-admin-features-onboardingtasks-tasklists.html#source-view.479">src/Admin/Features/OnboardingTasks/TaskLists.php</a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">479</span>
+</aside>
+
+        <p class="phpdocumentor-summary">Check if all task lists are hidden.</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+            <span class="phpdocumentor-signature__static">static</span>    <span class="phpdocumentor-signature__name">all_hidden</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">bool</span></code>
+
+        <section class="phpdocumentor-description"></section>
+
+    
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">bool</span>
+            &mdash; <span class="phpdocumentor-return-value__description"></span>
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                    -static                    "
+>
     <h4 class="phpdocumentor-element__name" id="method_clear_lists">
         clear_lists()
         <a href="#method_clear_lists" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/Features/OnboardingTasks/TaskLists.php"><a href="../files/woocommerce-src-admin-features-onboardingtasks-tasklists.html#source-view.339">src/Admin/Features/OnboardingTasks/TaskLists.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/Features/OnboardingTasks/TaskLists.php"><a href="../files/woocommerce-src-admin-features-onboardingtasks-tasklists.html#source-view.345">src/Admin/Features/OnboardingTasks/TaskLists.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">339</span>
+    <span class="phpdocumentor-element-found-in__line">345</span>
 </aside>
 
         <p class="phpdocumentor-summary">Clear all task lists.</p>
@@ -635,9 +684,9 @@ that are added for each task list.</p>
         <a href="#method_get_list" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/Features/OnboardingTasks/TaskLists.php"><a href="../files/woocommerce-src-admin-features-onboardingtasks-tasklists.html#source-view.364">src/Admin/Features/OnboardingTasks/TaskLists.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/Features/OnboardingTasks/TaskLists.php"><a href="../files/woocommerce-src-admin-features-onboardingtasks-tasklists.html#source-view.370">src/Admin/Features/OnboardingTasks/TaskLists.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">364</span>
+    <span class="phpdocumentor-element-found-in__line">370</span>
 </aside>
 
         <p class="phpdocumentor-summary">Retrieve a task list by ID.</p>
@@ -679,9 +728,9 @@ that are added for each task list.</p>
         <a href="#method_get_list_ids" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/Features/OnboardingTasks/TaskLists.php"><a href="../files/woocommerce-src-admin-features-onboardingtasks-tasklists.html#source-view.332">src/Admin/Features/OnboardingTasks/TaskLists.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/Features/OnboardingTasks/TaskLists.php"><a href="../files/woocommerce-src-admin-features-onboardingtasks-tasklists.html#source-view.338">src/Admin/Features/OnboardingTasks/TaskLists.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">332</span>
+    <span class="phpdocumentor-element-found-in__line">338</span>
 </aside>
 
         <p class="phpdocumentor-summary">Get all task list ids.</p>
@@ -711,9 +760,9 @@ that are added for each task list.</p>
         <a href="#method_get_lists" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/Features/OnboardingTasks/TaskLists.php"><a href="../files/woocommerce-src-admin-features-onboardingtasks-tasklists.html#source-view.308">src/Admin/Features/OnboardingTasks/TaskLists.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/Features/OnboardingTasks/TaskLists.php"><a href="../files/woocommerce-src-admin-features-onboardingtasks-tasklists.html#source-view.314">src/Admin/Features/OnboardingTasks/TaskLists.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">308</span>
+    <span class="phpdocumentor-element-found-in__line">314</span>
 </aside>
 
         <p class="phpdocumentor-summary">Get all task lists.</p>
@@ -743,9 +792,9 @@ that are added for each task list.</p>
         <a href="#method_get_lists_by_ids" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/Features/OnboardingTasks/TaskLists.php"><a href="../files/woocommerce-src-admin-features-onboardingtasks-tasklists.html#source-view.318">src/Admin/Features/OnboardingTasks/TaskLists.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/Features/OnboardingTasks/TaskLists.php"><a href="../files/woocommerce-src-admin-features-onboardingtasks-tasklists.html#source-view.324">src/Admin/Features/OnboardingTasks/TaskLists.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">318</span>
+    <span class="phpdocumentor-element-found-in__line">324</span>
 </aside>
 
         <p class="phpdocumentor-summary">Get all task lists.</p>
@@ -787,9 +836,9 @@ that are added for each task list.</p>
         <a href="#method_get_task" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/Features/OnboardingTasks/TaskLists.php"><a href="../files/woocommerce-src-admin-features-onboardingtasks-tasklists.html#source-view.380">src/Admin/Features/OnboardingTasks/TaskLists.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/Features/OnboardingTasks/TaskLists.php"><a href="../files/woocommerce-src-admin-features-onboardingtasks-tasklists.html#source-view.386">src/Admin/Features/OnboardingTasks/TaskLists.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">380</span>
+    <span class="phpdocumentor-element-found-in__line">386</span>
 </aside>
 
         <p class="phpdocumentor-summary">Retrieve single task.</p>
@@ -840,9 +889,9 @@ that are added for each task list.</p>
         <a href="#method_get_visible" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/Features/OnboardingTasks/TaskLists.php"><a href="../files/woocommerce-src-admin-features-onboardingtasks-tasklists.html#source-view.347">src/Admin/Features/OnboardingTasks/TaskLists.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/Features/OnboardingTasks/TaskLists.php"><a href="../files/woocommerce-src-admin-features-onboardingtasks-tasklists.html#source-view.353">src/Admin/Features/OnboardingTasks/TaskLists.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">347</span>
+    <span class="phpdocumentor-element-found-in__line">353</span>
 </aside>
 
         <p class="phpdocumentor-summary">Get visible task lists.</p>
@@ -936,9 +985,9 @@ that are added for each task list.</p>
         <a href="#method_init_tasks" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/Features/OnboardingTasks/TaskLists.php"><a href="../files/woocommerce-src-admin-features-onboardingtasks-tasklists.html#source-view.212">src/Admin/Features/OnboardingTasks/TaskLists.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/Features/OnboardingTasks/TaskLists.php"><a href="../files/woocommerce-src-admin-features-onboardingtasks-tasklists.html#source-view.219">src/Admin/Features/OnboardingTasks/TaskLists.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">212</span>
+    <span class="phpdocumentor-element-found-in__line">219</span>
 </aside>
 
         <p class="phpdocumentor-summary">Initialize tasks.</p>
@@ -1044,9 +1093,9 @@ that are added for each task list.</p>
         <a href="#method_maybe_add_extended_tasks" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/Features/OnboardingTasks/TaskLists.php"><a href="../files/woocommerce-src-admin-features-onboardingtasks-tasklists.html#source-view.288">src/Admin/Features/OnboardingTasks/TaskLists.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/Features/OnboardingTasks/TaskLists.php"><a href="../files/woocommerce-src-admin-features-onboardingtasks-tasklists.html#source-view.295">src/Admin/Features/OnboardingTasks/TaskLists.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">288</span>
+    <span class="phpdocumentor-element-found-in__line">295</span>
 </aside>
 
         <p class="phpdocumentor-summary">Add default extended task lists.</p>
@@ -1088,9 +1137,9 @@ that are added for each task list.</p>
         <a href="#method_menu_task_count" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/Features/OnboardingTasks/TaskLists.php"><a href="../files/woocommerce-src-admin-features-onboardingtasks-tasklists.html#source-view.431">src/Admin/Features/OnboardingTasks/TaskLists.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/Features/OnboardingTasks/TaskLists.php"><a href="../files/woocommerce-src-admin-features-onboardingtasks-tasklists.html#source-view.443">src/Admin/Features/OnboardingTasks/TaskLists.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">431</span>
+    <span class="phpdocumentor-element-found-in__line">443</span>
 </aside>
 
         <p class="phpdocumentor-summary">Add badge to homescreen menu item for remaining tasks</p>
@@ -1120,9 +1169,9 @@ that are added for each task list.</p>
         <a href="#method_set_active_task" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/Features/OnboardingTasks/TaskLists.php"><a href="../files/woocommerce-src-admin-features-onboardingtasks-tasklists.html#source-view.226">src/Admin/Features/OnboardingTasks/TaskLists.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/Features/OnboardingTasks/TaskLists.php"><a href="../files/woocommerce-src-admin-features-onboardingtasks-tasklists.html#source-view.233">src/Admin/Features/OnboardingTasks/TaskLists.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">226</span>
+    <span class="phpdocumentor-element-found-in__line">233</span>
 </aside>
 
         <p class="phpdocumentor-summary">Temporarily store the active task to persist across page loads when necessary.</p>
@@ -1153,24 +1202,25 @@ that are added for each task list.</p>
         <a href="#method_setup_tasks_remaining" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/Features/OnboardingTasks/TaskLists.php"><a href="../files/woocommerce-src-admin-features-onboardingtasks-tasklists.html#source-view.409">src/Admin/Features/OnboardingTasks/TaskLists.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/Features/OnboardingTasks/TaskLists.php"><a href="../files/woocommerce-src-admin-features-onboardingtasks-tasklists.html#source-view.417">src/Admin/Features/OnboardingTasks/TaskLists.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">409</span>
+    <span class="phpdocumentor-element-found-in__line">417</span>
 </aside>
 
         <p class="phpdocumentor-summary">Return number of setup tasks remaining</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-            <span class="phpdocumentor-signature__static">static</span>    <span class="phpdocumentor-signature__name">setup_tasks_remaining</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><abbr title="\Automattic\WooCommerce\Admin\Features\OnboardingTasks\number">number</abbr></span></code>
+            <span class="phpdocumentor-signature__static">static</span>    <span class="phpdocumentor-signature__name">setup_tasks_remaining</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">int|null</span></code>
 
-        <section class="phpdocumentor-description"></section>
+        <section class="phpdocumentor-description"><p>This is not updated immediately when a task is completed, but rather when task is marked as complete in the database to reduce performance impact.</p>
+</section>
 
     
     
 
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type"><abbr title="\Automattic\WooCommerce\Admin\Features\OnboardingTasks\number">number</abbr></span>
+    <span class="phpdocumentor-signature__response_type">int|null</span>
             &mdash; <span class="phpdocumentor-return-value__description"></span>
     
 </article>
@@ -1185,9 +1235,9 @@ that are added for each task list.</p>
         <a href="#method_task_list_preloaded_settings" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/Features/OnboardingTasks/TaskLists.php"><a href="../files/woocommerce-src-admin-features-onboardingtasks-tasklists.html#source-view.456">src/Admin/Features/OnboardingTasks/TaskLists.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/Features/OnboardingTasks/TaskLists.php"><a href="../files/woocommerce-src-admin-features-onboardingtasks-tasklists.html#source-view.467">src/Admin/Features/OnboardingTasks/TaskLists.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">456</span>
+    <span class="phpdocumentor-element-found-in__line">467</span>
 </aside>
 
         <p class="phpdocumentor-summary">Add visible list ids to component settings.</p>
@@ -1229,7 +1279,7 @@ that are added for each task list.</p>
 
     <footer class="phpdocumentor phpdocumentor-footer">
     <div class="phpdocumentor-section">
-        <span>WooCommerce Code Reference API documentation generated by <a href="http://www.phpdoc.org/">phpDocumentor</a> on July 25th, 2024 at 11:33 am.</span>
+        <span>WooCommerce Code Reference API documentation generated by <a href="http://www.phpdoc.org/">phpDocumentor</a> on May 16th, 2025 at 09:14 am.</span>
     </div>
 </footer>
 
@@ -1241,7 +1291,7 @@ that are added for each task list.</p>
             'searchIndex': '..\/js\/searchIndex.json'
         };
     </script>
-    <script src="../js/searchIndex.js?updated=1721907202"></script>
-    <script src="../js/search.js?updated=1721907202"></script>
+    <script src="../js/searchIndex.js?updated=1747386882"></script>
+    <script src="../js/search.js?updated=1747386882"></script>
 </body>
 </html>

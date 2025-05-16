@@ -4,14 +4,13 @@
     <meta charset="utf-8">
     <title>WooCommerce Code Reference</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="../images/favicon.png" />
-    <link rel="apple-touch-icon" href="../images/apple-touch-icon.png"/>
-    <link rel="apple-touch-icon" sizes="72x72" href="../images/apple-touch-icon-72x72.png"/>
-    <link rel="apple-touch-icon" sizes="114x114" href="../images/apple-touch-icon-114x114.png"/>
+    <link rel="icon" href="../images/favicon-32x32.png" sizes="32x32" />
+    <link rel="icon" href="../images/favicon-192x192.png" sizes="192x192" />
+    <link rel="apple-touch-icon" href="../images/favicon-180x180.png" />
+
     <link rel="stylesheet" href="../css/normalize.css">
-    <link rel="stylesheet" href="../css/base.css?updated=1721907207">
-    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../css/template.css?updated=1721907207">
+    <link rel="stylesheet" href="../css/base.css?updated=1747386888">
+    <link rel="stylesheet" href="../css/template.css?updated=1747386888">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0/css/all.min.css" integrity="sha256-ybRkN9dBjhcS2qrW1z+hfCxq+1aBdwyQM5wlQoQVt/0=" crossorigin="anonymous" />
             <script src="https://cdn.jsdelivr.net/npm/css-vars-ponyfill@2"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0/js/all.min.js" integrity="sha256-0vuk8LXoyrmCjp1f0O300qo1M75ZQyhH9X3J6d+scmk=" crossorigin="anonymous"></script>
@@ -27,19 +26,24 @@
 		'content_group' : 'WooCommerce Core Code Reference',
 	});
 </script>
-        </head>
+        <script src="../js/prism.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            window.dispatchEvent(new HashChangeEvent('hashchange'));
+        });
+    </script>
+</head>
 <body id="top">
     <header class="phpdocumentor-top-header">
     <section class="phpdocumentor-section">
         <div class="site-branding">
-            <a class="site-logo" href="../index.html"><img width="180" src="../images/logo.svg" alt="WooCommerce" /></a>
+            <a class="site-logo" href="../index.html"><img src="../images/logo.png" alt="WooCommerce" /></a>
         </div>
         <nav class="main-navigation">
             <ul>
                 <li><a href="../hooks/hooks.html">Hooks Reference</a></li>
-                <li><a href="https://docs.woocommerce.com/">Documentation</a></li>
+                <li><a href="https://developer.woocommerce.com/docs/">Documentation</a></li>
                 <li><a href="https://woocommerce.github.io/woocommerce-rest-api-docs/">REST API Docs</a></li>
-                <li><a href="https://woocommerce.com/careers/?utm_source=woocommerce+core+code+reference&utm_medium=devdocs&utm_campaign=woo+careers" target="_blank">We're hiring!</a></li>
             </ul>
         </nav>
     </section>
@@ -47,7 +51,7 @@
 
 <div class="phpdocumentor-header">
     <section class="phpdocumentor-section">
-        <h1 class="phpdocumentor-title">WooCommerce Code Reference</h1>
+        <h1 class="phpdocumentor-title"><a href="../index.html">WooCommerce Code Reference</a></h1>
         <section class="phpdocumentor-search">
     <label class="phpdocumentor-label">
         <span class="visually-hidden">Search (click ESC to close search results)</span>
@@ -68,6 +72,10 @@
                                         <h4 class="phpdocumentor-sidebar__root-namespace"><a href="../namespaces/woocommerce.html"><abbr title="\WooCommerce">WooCommerce</abbr></a></h4>
                 <ul class="phpdocumentor-list">
                                             <li><a href="../namespaces/woocommerce-admin.html"><abbr title="\WooCommerce\Admin">Admin</abbr></a></li>
+                                    </ul>
+                            <h4 class="phpdocumentor-sidebar__root-namespace"><a href="../namespaces/mailpoet.html"><abbr title="\MailPoet">MailPoet</abbr></a></h4>
+                <ul class="phpdocumentor-list">
+                                            <li><a href="../namespaces/mailpoet-emaileditor.html"><abbr title="\MailPoet\EmailEditor">EmailEditor</abbr></a></li>
                                     </ul>
                             <h4 class="phpdocumentor-sidebar__root-namespace"><a href="../namespaces/automattic.html"><abbr title="\Automattic">Automattic</abbr></a></h4>
                 <ul class="phpdocumentor-list">
@@ -113,8 +121,10 @@
                                     <li><a href="../packages/WooCommerce-Widgets.html"><abbr title="\WooCommerce\Widgets">Widgets</abbr></a></li>
                                     <li><a href="../packages/WooCommerce-Uninstaller.html"><abbr title="\WooCommerce\Uninstaller">Uninstaller</abbr></a></li>
                             </ul>
-                                <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/WoocommerceAdmin.html"><abbr title="\WoocommerceAdmin">WoocommerceAdmin</abbr></a></h3>
-                                <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/WoocommerceNavigation.html"><abbr title="\WoocommerceNavigation">WoocommerceNavigation</abbr></a></h3>
+                                <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/MailPoet.html"><abbr title="\MailPoet">MailPoet</abbr></a></h3>
+                        <ul class="phpdocumentor-list">
+                                    <li><a href="../packages/MailPoet-EmailEditor.html"><abbr title="\MailPoet\EmailEditor">EmailEditor</abbr></a></li>
+                            </ul>
                                 <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/Automattic.html"><abbr title="\Automattic">Automattic</abbr></a></h3>
                         <ul class="phpdocumentor-list">
                                     <li><a href="../packages/Automattic-WooCommerce.html"><abbr title="\Automattic\WooCommerce">WooCommerce</abbr></a></li>
@@ -161,9 +171,9 @@
     </h2>
 
         <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Blocks/Domain/Services/CheckoutFieldsFrontend.php"><a href="../files/woocommerce-src-blocks-domain-services-checkoutfieldsfrontend.html#source-view.11">src/Blocks/Domain/Services/CheckoutFieldsFrontend.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Blocks/Domain/Services/CheckoutFieldsFrontend.php"><a href="../files/woocommerce-src-blocks-domain-services-checkoutfieldsfrontend.html#source-view.13">src/Blocks/Domain/Services/CheckoutFieldsFrontend.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">11</span>
+    <span class="phpdocumentor-element-found-in__line">13</span>
 </aside>
 
             <p class="phpdocumentor-summary">Service class managing checkout fields and its related extensibility points on the frontend.</p>
@@ -203,13 +213,6 @@
                         &nbsp;: mixed    </span>
 </dt>
 <dd>Adds additional contact fields to the My Account edit account form.</dd>
-
-            <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a href="../classes/Automattic-WooCommerce-Blocks-Domain-Services-CheckoutFieldsFrontend.html#method_edit_account_form_required_fields">edit_account_form_required_fields()</a>
-    <span>
-                        &nbsp;: array&lt;string|int, mixed&gt;    </span>
-</dt>
-<dd>Register required additional contact fields.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="../classes/Automattic-WooCommerce-Blocks-Domain-Services-CheckoutFieldsFrontend.html#method_edit_address_fields">edit_address_fields()</a>
@@ -262,6 +265,13 @@
 extensibility hooks are consistent across the codebase.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -protected">
+    <a href="../classes/Automattic-WooCommerce-Blocks-Domain-Services-CheckoutFieldsFrontend.html#method_get_posted_additional_field_values">get_posted_additional_field_values()</a>
+    <span>
+                        &nbsp;: array&lt;string|int, mixed&gt;    </span>
+</dt>
+<dd>Get posted additional field values.</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -protected">
     <a href="../classes/Automattic-WooCommerce-Blocks-Domain-Services-CheckoutFieldsFrontend.html#method_render_additional_field">render_additional_field()</a>
     <span>
                         &nbsp;: string    </span>
@@ -274,6 +284,13 @@ extensibility hooks are consistent across the codebase.</dd>
                         &nbsp;: string    </span>
 </dt>
 <dd>Render custom fields.</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -protected">
+    <a href="../classes/Automattic-WooCommerce-Blocks-Domain-Services-CheckoutFieldsFrontend.html#method_update_additional_fields_for_customer">update_additional_fields_for_customer()</a>
+    <span>
+                        &nbsp;: true|<abbr title="\WP_Error">WP_Error</abbr>    </span>
+</dt>
+<dd>Validate and save additional fields for a given customer.</dd>
 
         </dl>
 
@@ -301,9 +318,9 @@ extensibility hooks are consistent across the codebase.</dd>
                                 </span>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Blocks/Domain/Services/CheckoutFieldsFrontend.php"><a href="../files/woocommerce-src-blocks-domain-services-checkoutfieldsfrontend.html#source-view.18">src/Blocks/Domain/Services/CheckoutFieldsFrontend.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Blocks/Domain/Services/CheckoutFieldsFrontend.php"><a href="../files/woocommerce-src-blocks-domain-services-checkoutfieldsfrontend.html#source-view.20">src/Blocks/Domain/Services/CheckoutFieldsFrontend.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">18</span>
+    <span class="phpdocumentor-element-found-in__line">20</span>
 </aside>
 
         <p class="phpdocumentor-summary">Checkout field controller.</p>
@@ -337,9 +354,9 @@ extensibility hooks are consistent across the codebase.</dd>
         <a href="#method___construct" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Blocks/Domain/Services/CheckoutFieldsFrontend.php"><a href="../files/woocommerce-src-blocks-domain-services-checkoutfieldsfrontend.html#source-view.25">src/Blocks/Domain/Services/CheckoutFieldsFrontend.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Blocks/Domain/Services/CheckoutFieldsFrontend.php"><a href="../files/woocommerce-src-blocks-domain-services-checkoutfieldsfrontend.html#source-view.27">src/Blocks/Domain/Services/CheckoutFieldsFrontend.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">25</span>
+    <span class="phpdocumentor-element-found-in__line">27</span>
 </aside>
 
         <p class="phpdocumentor-summary">Sets up core fields.</p>
@@ -381,9 +398,9 @@ extensibility hooks are consistent across the codebase.</dd>
         <a href="#method_edit_account_form_fields" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Blocks/Domain/Services/CheckoutFieldsFrontend.php"><a href="../files/woocommerce-src-blocks-domain-services-checkoutfieldsfrontend.html#source-view.158">src/Blocks/Domain/Services/CheckoutFieldsFrontend.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Blocks/Domain/Services/CheckoutFieldsFrontend.php"><a href="../files/woocommerce-src-blocks-domain-services-checkoutfieldsfrontend.html#source-view.149">src/Blocks/Domain/Services/CheckoutFieldsFrontend.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">158</span>
+    <span class="phpdocumentor-element-found-in__line">149</span>
 </aside>
 
         <p class="phpdocumentor-summary">Adds additional contact fields to the My Account edit account form.</p>
@@ -408,58 +425,14 @@ extensibility hooks are consistent across the codebase.</dd>
             -public
                                                         "
 >
-    <h4 class="phpdocumentor-element__name" id="method_edit_account_form_required_fields">
-        edit_account_form_required_fields()
-        <a href="#method_edit_account_form_required_fields" class="headerlink"><i class="fas fa-link"></i></a>
-    </h4>
-    <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Blocks/Domain/Services/CheckoutFieldsFrontend.php"><a href="../files/woocommerce-src-blocks-domain-services-checkoutfieldsfrontend.html#source-view.143">src/Blocks/Domain/Services/CheckoutFieldsFrontend.php</a></abbr>
-    :
-    <span class="phpdocumentor-element-found-in__line">143</span>
-</aside>
-
-        <p class="phpdocumentor-summary">Register required additional contact fields.</p>
-
-    <code class="phpdocumentor-code phpdocumentor-signature ">
-    <span class="phpdocumentor-signature__visibility">public</span>
-                <span class="phpdocumentor-signature__name">edit_account_form_required_fields</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__name">$fields</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">array&lt;string|int, mixed&gt;</span></code>
-
-        <section class="phpdocumentor-description"></section>
-
-        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
-    <dl class="phpdocumentor-argument-list">
-                    <dt class="phpdocumentor-argument-list__entry">
-                <span class="phpdocumentor-signature__argument__name">$fields</span>
-                : <span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;</span>
-                            </dt>
-            <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"><p>Required fields.</p>
-</section>
-
-            </dd>
-            </dl>
-
-    
-
-        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">array&lt;string|int, mixed&gt;</span>
-            &mdash; <span class="phpdocumentor-return-value__description"></span>
-    
-</article>
-                    <article
-        class="phpdocumentor-element
-            -method
-            -public
-                                                        "
->
     <h4 class="phpdocumentor-element__name" id="method_edit_address_fields">
         edit_address_fields()
         <a href="#method_edit_address_fields" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Blocks/Domain/Services/CheckoutFieldsFrontend.php"><a href="../files/woocommerce-src-blocks-domain-services-checkoutfieldsfrontend.html#source-view.234">src/Blocks/Domain/Services/CheckoutFieldsFrontend.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Blocks/Domain/Services/CheckoutFieldsFrontend.php"><a href="../files/woocommerce-src-blocks-domain-services-checkoutfieldsfrontend.html#source-view.187">src/Blocks/Domain/Services/CheckoutFieldsFrontend.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">234</span>
+    <span class="phpdocumentor-element-found-in__line">187</span>
 </aside>
 
         <p class="phpdocumentor-summary">Adds additional address fields to the My Account edit address form.</p>
@@ -510,9 +483,9 @@ extensibility hooks are consistent across the codebase.</dd>
         <a href="#method_init" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Blocks/Domain/Services/CheckoutFieldsFrontend.php"><a href="../files/woocommerce-src-blocks-domain-services-checkoutfieldsfrontend.html#source-view.32">src/Blocks/Domain/Services/CheckoutFieldsFrontend.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Blocks/Domain/Services/CheckoutFieldsFrontend.php"><a href="../files/woocommerce-src-blocks-domain-services-checkoutfieldsfrontend.html#source-view.34">src/Blocks/Domain/Services/CheckoutFieldsFrontend.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">32</span>
+    <span class="phpdocumentor-element-found-in__line">34</span>
 </aside>
 
         <p class="phpdocumentor-summary">Initialize hooks. This is not run Store API requests.</p>
@@ -542,9 +515,9 @@ extensibility hooks are consistent across the codebase.</dd>
         <a href="#method_render_address_fields" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Blocks/Domain/Services/CheckoutFieldsFrontend.php"><a href="../files/woocommerce-src-blocks-domain-services-checkoutfieldsfrontend.html#source-view.111">src/Blocks/Domain/Services/CheckoutFieldsFrontend.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Blocks/Domain/Services/CheckoutFieldsFrontend.php"><a href="../files/woocommerce-src-blocks-domain-services-checkoutfieldsfrontend.html#source-view.112">src/Blocks/Domain/Services/CheckoutFieldsFrontend.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">111</span>
+    <span class="phpdocumentor-element-found-in__line">112</span>
 </aside>
 
         <p class="phpdocumentor-summary">Renders address fields on the account page.</p>
@@ -586,9 +559,9 @@ extensibility hooks are consistent across the codebase.</dd>
         <a href="#method_render_order_address_fields" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Blocks/Domain/Services/CheckoutFieldsFrontend.php"><a href="../files/woocommerce-src-blocks-domain-services-checkoutfieldsfrontend.html#source-view.80">src/Blocks/Domain/Services/CheckoutFieldsFrontend.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Blocks/Domain/Services/CheckoutFieldsFrontend.php"><a href="../files/woocommerce-src-blocks-domain-services-checkoutfieldsfrontend.html#source-view.81">src/Blocks/Domain/Services/CheckoutFieldsFrontend.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">80</span>
+    <span class="phpdocumentor-element-found-in__line">81</span>
 </aside>
 
         <p class="phpdocumentor-summary">Renders address fields on the order details page.</p>
@@ -639,9 +612,9 @@ extensibility hooks are consistent across the codebase.</dd>
         <a href="#method_render_order_other_fields" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Blocks/Domain/Services/CheckoutFieldsFrontend.php"><a href="../files/woocommerce-src-blocks-domain-services-checkoutfieldsfrontend.html#source-view.90">src/Blocks/Domain/Services/CheckoutFieldsFrontend.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Blocks/Domain/Services/CheckoutFieldsFrontend.php"><a href="../files/woocommerce-src-blocks-domain-services-checkoutfieldsfrontend.html#source-view.91">src/Blocks/Domain/Services/CheckoutFieldsFrontend.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">90</span>
+    <span class="phpdocumentor-element-found-in__line">91</span>
 </aside>
 
         <p class="phpdocumentor-summary">Renders additional fields on the order details page.</p>
@@ -683,9 +656,9 @@ extensibility hooks are consistent across the codebase.</dd>
         <a href="#method_save_account_form_fields" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Blocks/Domain/Services/CheckoutFieldsFrontend.php"><a href="../files/woocommerce-src-blocks-domain-services-checkoutfieldsfrontend.html#source-view.188">src/Blocks/Domain/Services/CheckoutFieldsFrontend.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Blocks/Domain/Services/CheckoutFieldsFrontend.php"><a href="../files/woocommerce-src-blocks-domain-services-checkoutfieldsfrontend.html#source-view.232">src/Blocks/Domain/Services/CheckoutFieldsFrontend.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">188</span>
+    <span class="phpdocumentor-element-found-in__line">232</span>
 </aside>
 
         <p class="phpdocumentor-summary">Validates and saves additional address fields to the customer object on the My Account page.</p>
@@ -738,7 +711,7 @@ extensibility hooks are consistent across the codebase.</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                <span class="phpdocumentor-signature__name">save_address_fields</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">int&nbsp;</span><span class="phpdocumentor-signature__argument__name">$user_id</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$address_type</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__name">$address</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type"><a href="../classes/WC-Customer.html"><abbr title="\WC_Customer">WC_Customer</abbr></a>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$customer</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
+                <span class="phpdocumentor-signature__name">save_address_fields</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">int&nbsp;</span><span class="phpdocumentor-signature__argument__name">$user_id</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$address_type</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__name">$address</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">[]</span><span> ]</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type"><a href="../classes/WC-Customer.html"><abbr title="\WC_Customer">WC_Customer</abbr></a>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$customer</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
 
         <section class="phpdocumentor-description"><p>The caller saves the customer object if there are no errors. Nonces are checked before this method executes.</p>
 </section>
@@ -766,7 +739,7 @@ extensibility hooks are consistent across the codebase.</p>
                     <dt class="phpdocumentor-argument-list__entry">
                 <span class="phpdocumentor-signature__argument__name">$address</span>
                 : <span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;</span>
-                            </dt>
+                 = <span class="phpdocumentor-signature__argument__default-value">[]</span>            </dt>
             <dd class="phpdocumentor-argument-list__definition">
                     <section class="phpdocumentor-description"><p>Address fields.</p>
 </section>
@@ -775,7 +748,7 @@ extensibility hooks are consistent across the codebase.</p>
                     <dt class="phpdocumentor-argument-list__entry">
                 <span class="phpdocumentor-signature__argument__name">$customer</span>
                 : <span class="phpdocumentor-signature__argument__return-type"><a href="../classes/WC-Customer.html"><abbr title="\WC_Customer">WC_Customer</abbr></a></span>
-                            </dt>
+                 = <span class="phpdocumentor-signature__argument__default-value">null</span>            </dt>
             <dd class="phpdocumentor-argument-list__definition">
                     <section class="phpdocumentor-description"><p>Customer object.</p>
 </section>
@@ -796,14 +769,76 @@ extensibility hooks are consistent across the codebase.</p>
             -protected
                                                         "
 >
+    <h4 class="phpdocumentor-element__name" id="method_get_posted_additional_field_values">
+        get_posted_additional_field_values()
+        <a href="#method_get_posted_additional_field_values" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Blocks/Domain/Services/CheckoutFieldsFrontend.php"><a href="../files/woocommerce-src-blocks-domain-services-checkoutfieldsfrontend.html#source-view.299">src/Blocks/Domain/Services/CheckoutFieldsFrontend.php</a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">299</span>
+</aside>
+
+        <p class="phpdocumentor-summary">Get posted additional field values.</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">protected</span>
+                <span class="phpdocumentor-signature__name">get_posted_additional_field_values</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$location</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$group</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type">bool&nbsp;</span><span class="phpdocumentor-signature__argument__name">$sanitize</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">true</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">array&lt;string|int, mixed&gt;</span></code>
+
+        <section class="phpdocumentor-description"></section>
+
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$location</span>
+                : <span class="phpdocumentor-signature__argument__return-type">string</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"><p>The location to get fields for.</p>
+</section>
+
+            </dd>
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$group</span>
+                : <span class="phpdocumentor-signature__argument__return-type">string</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"><p>The group to get fields for.</p>
+</section>
+
+            </dd>
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$sanitize</span>
+                : <span class="phpdocumentor-signature__argument__return-type">bool</span>
+                 = <span class="phpdocumentor-signature__argument__default-value">true</span>            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"><p>Whether to sanitize the field values.</p>
+</section>
+
+            </dd>
+            </dl>
+
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">array&lt;string|int, mixed&gt;</span>
+            &mdash; <span class="phpdocumentor-return-value__description">The posted field values and sanitized field values.</span>
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -protected
+                                                        "
+>
     <h4 class="phpdocumentor-element__name" id="method_render_additional_field">
         render_additional_field()
         <a href="#method_render_additional_field" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Blocks/Domain/Services/CheckoutFieldsFrontend.php"><a href="../files/woocommerce-src-blocks-domain-services-checkoutfieldsfrontend.html#source-view.66">src/Blocks/Domain/Services/CheckoutFieldsFrontend.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Blocks/Domain/Services/CheckoutFieldsFrontend.php"><a href="../files/woocommerce-src-blocks-domain-services-checkoutfieldsfrontend.html#source-view.67">src/Blocks/Domain/Services/CheckoutFieldsFrontend.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">66</span>
+    <span class="phpdocumentor-element-found-in__line">67</span>
 </aside>
 
         <p class="phpdocumentor-summary">Render custom field.</p>
@@ -845,9 +880,9 @@ extensibility hooks are consistent across the codebase.</p>
         <a href="#method_render_additional_fields" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Blocks/Domain/Services/CheckoutFieldsFrontend.php"><a href="../files/woocommerce-src-blocks-domain-services-checkoutfieldsfrontend.html#source-view.56">src/Blocks/Domain/Services/CheckoutFieldsFrontend.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Blocks/Domain/Services/CheckoutFieldsFrontend.php"><a href="../files/woocommerce-src-blocks-domain-services-checkoutfieldsfrontend.html#source-view.57">src/Blocks/Domain/Services/CheckoutFieldsFrontend.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">56</span>
+    <span class="phpdocumentor-element-found-in__line">57</span>
 </aside>
 
         <p class="phpdocumentor-summary">Render custom fields.</p>
@@ -878,6 +913,68 @@ extensibility hooks are consistent across the codebase.</p>
             &mdash; <span class="phpdocumentor-return-value__description"></span>
     
 </article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -protected
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_update_additional_fields_for_customer">
+        update_additional_fields_for_customer()
+        <a href="#method_update_additional_fields_for_customer" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Blocks/Domain/Services/CheckoutFieldsFrontend.php"><a href="../files/woocommerce-src-blocks-domain-services-checkoutfieldsfrontend.html#source-view.324">src/Blocks/Domain/Services/CheckoutFieldsFrontend.php</a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">324</span>
+</aside>
+
+        <p class="phpdocumentor-summary">Validate and save additional fields for a given customer.</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">protected</span>
+                <span class="phpdocumentor-signature__name">update_additional_fields_for_customer</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type"><a href="../classes/WC-Customer.html"><abbr title="\WC_Customer">WC_Customer</abbr></a>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$customer</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$location</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$group</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">true|<abbr title="\WP_Error">WP_Error</abbr></span></code>
+
+        <section class="phpdocumentor-description"></section>
+
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$customer</span>
+                : <span class="phpdocumentor-signature__argument__return-type"><a href="../classes/WC-Customer.html"><abbr title="\WC_Customer">WC_Customer</abbr></a></span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"><p>Customer object.</p>
+</section>
+
+            </dd>
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$location</span>
+                : <span class="phpdocumentor-signature__argument__return-type">string</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"><p>Location to save fields for.</p>
+</section>
+
+            </dd>
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$group</span>
+                : <span class="phpdocumentor-signature__argument__return-type">string</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"><p>Group to save fields for.</p>
+</section>
+
+            </dd>
+            </dl>
+
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">true|<abbr title="\WP_Error">WP_Error</abbr></span>
+            &mdash; <span class="phpdocumentor-return-value__description">True if successful, \WP_Error if there are errors.</span>
+    
+</article>
             </section>
 
     </article>
@@ -889,7 +986,7 @@ extensibility hooks are consistent across the codebase.</p>
 
     <footer class="phpdocumentor phpdocumentor-footer">
     <div class="phpdocumentor-section">
-        <span>WooCommerce Code Reference API documentation generated by <a href="http://www.phpdoc.org/">phpDocumentor</a> on July 25th, 2024 at 11:33 am.</span>
+        <span>WooCommerce Code Reference API documentation generated by <a href="http://www.phpdoc.org/">phpDocumentor</a> on May 16th, 2025 at 09:14 am.</span>
     </div>
 </footer>
 
@@ -901,7 +998,7 @@ extensibility hooks are consistent across the codebase.</p>
             'searchIndex': '..\/js\/searchIndex.json'
         };
     </script>
-    <script src="../js/searchIndex.js?updated=1721907207"></script>
-    <script src="../js/search.js?updated=1721907207"></script>
+    <script src="../js/searchIndex.js?updated=1747386888"></script>
+    <script src="../js/search.js?updated=1747386888"></script>
 </body>
 </html>

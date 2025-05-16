@@ -4,14 +4,13 @@
     <meta charset="utf-8">
     <title>WooCommerce Code Reference</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="../images/favicon.png" />
-    <link rel="apple-touch-icon" href="../images/apple-touch-icon.png"/>
-    <link rel="apple-touch-icon" sizes="72x72" href="../images/apple-touch-icon-72x72.png"/>
-    <link rel="apple-touch-icon" sizes="114x114" href="../images/apple-touch-icon-114x114.png"/>
+    <link rel="icon" href="../images/favicon-32x32.png" sizes="32x32" />
+    <link rel="icon" href="../images/favicon-192x192.png" sizes="192x192" />
+    <link rel="apple-touch-icon" href="../images/favicon-180x180.png" />
+
     <link rel="stylesheet" href="../css/normalize.css">
-    <link rel="stylesheet" href="../css/base.css?updated=1721907183">
-    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../css/template.css?updated=1721907183">
+    <link rel="stylesheet" href="../css/base.css?updated=1747386859">
+    <link rel="stylesheet" href="../css/template.css?updated=1747386859">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0/css/all.min.css" integrity="sha256-ybRkN9dBjhcS2qrW1z+hfCxq+1aBdwyQM5wlQoQVt/0=" crossorigin="anonymous" />
             <script src="https://cdn.jsdelivr.net/npm/css-vars-ponyfill@2"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0/js/all.min.js" integrity="sha256-0vuk8LXoyrmCjp1f0O300qo1M75ZQyhH9X3J6d+scmk=" crossorigin="anonymous"></script>
@@ -38,14 +37,13 @@
     <header class="phpdocumentor-top-header">
     <section class="phpdocumentor-section">
         <div class="site-branding">
-            <a class="site-logo" href="../index.html"><img width="180" src="../images/logo.svg" alt="WooCommerce" /></a>
+            <a class="site-logo" href="../index.html"><img src="../images/logo.png" alt="WooCommerce" /></a>
         </div>
         <nav class="main-navigation">
             <ul>
                 <li><a href="../hooks/hooks.html">Hooks Reference</a></li>
-                <li><a href="https://docs.woocommerce.com/">Documentation</a></li>
+                <li><a href="https://developer.woocommerce.com/docs/">Documentation</a></li>
                 <li><a href="https://woocommerce.github.io/woocommerce-rest-api-docs/">REST API Docs</a></li>
-                <li><a href="https://woocommerce.com/careers/?utm_source=woocommerce+core+code+reference&utm_medium=devdocs&utm_campaign=woo+careers" target="_blank">We're hiring!</a></li>
             </ul>
         </nav>
     </section>
@@ -53,7 +51,7 @@
 
 <div class="phpdocumentor-header">
     <section class="phpdocumentor-section">
-        <h1 class="phpdocumentor-title">WooCommerce Code Reference</h1>
+        <h1 class="phpdocumentor-title"><a href="../index.html">WooCommerce Code Reference</a></h1>
         <section class="phpdocumentor-search">
     <label class="phpdocumentor-label">
         <span class="visually-hidden">Search (click ESC to close search results)</span>
@@ -74,6 +72,10 @@
                                         <h4 class="phpdocumentor-sidebar__root-namespace"><a href="../namespaces/woocommerce.html"><abbr title="\WooCommerce">WooCommerce</abbr></a></h4>
                 <ul class="phpdocumentor-list">
                                             <li><a href="../namespaces/woocommerce-admin.html"><abbr title="\WooCommerce\Admin">Admin</abbr></a></li>
+                                    </ul>
+                            <h4 class="phpdocumentor-sidebar__root-namespace"><a href="../namespaces/mailpoet.html"><abbr title="\MailPoet">MailPoet</abbr></a></h4>
+                <ul class="phpdocumentor-list">
+                                            <li><a href="../namespaces/mailpoet-emaileditor.html"><abbr title="\MailPoet\EmailEditor">EmailEditor</abbr></a></li>
                                     </ul>
                             <h4 class="phpdocumentor-sidebar__root-namespace"><a href="../namespaces/automattic.html"><abbr title="\Automattic">Automattic</abbr></a></h4>
                 <ul class="phpdocumentor-list">
@@ -119,8 +121,10 @@
                                     <li><a href="../packages/WooCommerce-Widgets.html"><abbr title="\WooCommerce\Widgets">Widgets</abbr></a></li>
                                     <li><a href="../packages/WooCommerce-Uninstaller.html"><abbr title="\WooCommerce\Uninstaller">Uninstaller</abbr></a></li>
                             </ul>
-                                <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/WoocommerceAdmin.html"><abbr title="\WoocommerceAdmin">WoocommerceAdmin</abbr></a></h3>
-                                <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/WoocommerceNavigation.html"><abbr title="\WoocommerceNavigation">WoocommerceNavigation</abbr></a></h3>
+                                <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/MailPoet.html"><abbr title="\MailPoet">MailPoet</abbr></a></h3>
+                        <ul class="phpdocumentor-list">
+                                    <li><a href="../packages/MailPoet-EmailEditor.html"><abbr title="\MailPoet\EmailEditor">EmailEditor</abbr></a></li>
+                            </ul>
                                 <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/Automattic.html"><abbr title="\Automattic">Automattic</abbr></a></h3>
                         <ul class="phpdocumentor-list">
                                     <li><a href="../packages/Automattic-WooCommerce.html"><abbr title="\Automattic\WooCommerce">WooCommerce</abbr></a></li>
@@ -171,7 +175,8 @@ defined( &#039;ABSPATH&#039; ) || exit;
 use Automattic\WooCommerce\Internal\WCCom\ConnectionHelper;
 use Automattic\WooCommerce\Internal\ProductDownloads\ApprovedDirectories\Register as Download_Directories;
 use Automattic\WooCommerce\Internal\DataStores\Orders\DataSynchronizer as Order_DataSynchronizer;
-use Automattic\WooCommerce\Utilities\{ LoggingUtil, OrderUtil };
+use Automattic\WooCommerce\Utilities\{ LoggingUtil, OrderUtil, PluginUtil };
+use Automattic\WooCommerce\Blocks\Utils\CartCheckoutUtils;
 
 /**
  * System status controller class.
@@ -209,7 +214,7 @@ class WC_REST_System_Status_V2_Controller extends WC_REST_Controller {
 		add_action( &#039;deactivate_plugin&#039;, array( __CLASS__, &#039;clean_plugin_cache&#039; ) );
 		add_action(
 			&#039;upgrader_process_complete&#039;,
-			function( $upgrader, $extra ) {
+			function ( $upgrader, $extra ) {
 				if ( ! $extra || ! $extra[&#039;type&#039;] ) {
 					return;
 				}
@@ -531,7 +536,41 @@ class WC_REST_System_Status_V2_Controller extends WC_REST_Controller {
 					&#039;context&#039;     =&gt; array( &#039;view&#039; ),
 					&#039;readonly&#039;    =&gt; true,
 					&#039;items&#039;       =&gt; array(
-						&#039;type&#039; =&gt; &#039;string&#039;,
+						&#039;type&#039;       =&gt; &#039;object&#039;,
+						&#039;properties&#039; =&gt; array(
+							&#039;plugin&#039;            =&gt; array(
+								&#039;description&#039; =&gt; __( &#039;Plugin basename. The path to the main plugin file relative to the plugins directory.&#039;, &#039;woocommerce&#039; ),
+								&#039;type&#039;        =&gt; &#039;string&#039;,
+							),
+							&#039;name&#039;              =&gt; array(
+								&#039;description&#039; =&gt; __( &#039;Name of the plugin.&#039;, &#039;woocommerce&#039; ),
+								&#039;type&#039;        =&gt; &#039;string&#039;,
+							),
+							&#039;version&#039;           =&gt; array(
+								&#039;description&#039; =&gt; __( &#039;Current plugin version.&#039;, &#039;woocommerce&#039; ),
+								&#039;type&#039;        =&gt; &#039;string&#039;,
+							),
+							&#039;version_latest&#039;    =&gt; array(
+								&#039;description&#039; =&gt; __( &#039;Latest available plugin version.&#039;, &#039;woocommerce&#039; ),
+								&#039;type&#039;        =&gt; &#039;string&#039;,
+							),
+							&#039;url&#039;               =&gt; array(
+								&#039;description&#039; =&gt; __( &#039;Plugin URL.&#039;, &#039;woocommerce&#039; ),
+								&#039;type&#039;        =&gt; &#039;string&#039;,
+							),
+							&#039;author_name&#039;       =&gt; array(
+								&#039;description&#039; =&gt; __( &#039;Plugin author name.&#039;, &#039;woocommerce&#039; ),
+								&#039;type&#039;        =&gt; &#039;string&#039;,
+							),
+							&#039;author_url&#039;        =&gt; array(
+								&#039;description&#039; =&gt; __( &#039;Plugin author URL.&#039;, &#039;woocommerce&#039; ),
+								&#039;type&#039;        =&gt; &#039;string&#039;,
+							),
+							&#039;network_activated&#039; =&gt; array(
+								&#039;description&#039; =&gt; __( &#039;Whether the plugin can only be activated network-wide.&#039;, &#039;woocommerce&#039; ),
+								&#039;type&#039;        =&gt; &#039;boolean&#039;,
+							),
+						),
 					),
 				),
 				&#039;inactive_plugins&#039;   =&gt; array(
@@ -540,7 +579,41 @@ class WC_REST_System_Status_V2_Controller extends WC_REST_Controller {
 					&#039;context&#039;     =&gt; array( &#039;view&#039; ),
 					&#039;readonly&#039;    =&gt; true,
 					&#039;items&#039;       =&gt; array(
-						&#039;type&#039; =&gt; &#039;string&#039;,
+						&#039;type&#039;       =&gt; &#039;object&#039;,
+						&#039;properties&#039; =&gt; array(
+							&#039;plugin&#039;            =&gt; array(
+								&#039;description&#039; =&gt; __( &#039;Plugin basename. The path to the main plugin file relative to the plugins directory.&#039;, &#039;woocommerce&#039; ),
+								&#039;type&#039;        =&gt; &#039;string&#039;,
+							),
+							&#039;name&#039;              =&gt; array(
+								&#039;description&#039; =&gt; __( &#039;Name of the plugin.&#039;, &#039;woocommerce&#039; ),
+								&#039;type&#039;        =&gt; &#039;string&#039;,
+							),
+							&#039;version&#039;           =&gt; array(
+								&#039;description&#039; =&gt; __( &#039;Current plugin version.&#039;, &#039;woocommerce&#039; ),
+								&#039;type&#039;        =&gt; &#039;string&#039;,
+							),
+							&#039;version_latest&#039;    =&gt; array(
+								&#039;description&#039; =&gt; __( &#039;Latest available plugin version.&#039;, &#039;woocommerce&#039; ),
+								&#039;type&#039;        =&gt; &#039;string&#039;,
+							),
+							&#039;url&#039;               =&gt; array(
+								&#039;description&#039; =&gt; __( &#039;Plugin URL.&#039;, &#039;woocommerce&#039; ),
+								&#039;type&#039;        =&gt; &#039;string&#039;,
+							),
+							&#039;author_name&#039;       =&gt; array(
+								&#039;description&#039; =&gt; __( &#039;Plugin author name.&#039;, &#039;woocommerce&#039; ),
+								&#039;type&#039;        =&gt; &#039;string&#039;,
+							),
+							&#039;author_url&#039;        =&gt; array(
+								&#039;description&#039; =&gt; __( &#039;Plugin author URL.&#039;, &#039;woocommerce&#039; ),
+								&#039;type&#039;        =&gt; &#039;string&#039;,
+							),
+							&#039;network_activated&#039; =&gt; array(
+								&#039;description&#039; =&gt; __( &#039;Whether the plugin can only be activated network-wide.&#039;, &#039;woocommerce&#039; ),
+								&#039;type&#039;        =&gt; &#039;boolean&#039;,
+							),
+						),
 					),
 				),
 				&#039;dropins_mu_plugins&#039; =&gt; array(
@@ -585,6 +658,12 @@ class WC_REST_System_Status_V2_Controller extends WC_REST_Controller {
 						),
 						&#039;is_child_theme&#039;          =&gt; array(
 							&#039;description&#039; =&gt; __( &#039;Is this theme a child theme?&#039;, &#039;woocommerce&#039; ),
+							&#039;type&#039;        =&gt; &#039;boolean&#039;,
+							&#039;context&#039;     =&gt; array( &#039;view&#039; ),
+							&#039;readonly&#039;    =&gt; true,
+						),
+						&#039;is_block_theme&#039;          =&gt; array(
+							&#039;description&#039; =&gt; __( &#039;Is this theme a block theme?&#039;, &#039;woocommerce&#039; ),
 							&#039;type&#039;        =&gt; &#039;boolean&#039;,
 							&#039;context&#039;     =&gt; array( &#039;view&#039; ),
 							&#039;readonly&#039;    =&gt; true,
@@ -644,7 +723,7 @@ class WC_REST_System_Status_V2_Controller extends WC_REST_Controller {
 					&#039;readonly&#039;    =&gt; true,
 					&#039;properties&#039;  =&gt; array(
 						&#039;api_enabled&#039;                    =&gt; array(
-							&#039;description&#039; =&gt; __( &#039;REST API enabled?&#039;, &#039;woocommerce&#039; ),
+							&#039;description&#039; =&gt; __( &#039;Legacy REST API enabled?&#039;, &#039;woocommerce&#039; ),
 							&#039;type&#039;        =&gt; &#039;boolean&#039;,
 							&#039;context&#039;     =&gt; array( &#039;view&#039; ),
 							&#039;readonly&#039;    =&gt; true,
@@ -773,7 +852,42 @@ class WC_REST_System_Status_V2_Controller extends WC_REST_Controller {
 					&#039;context&#039;     =&gt; array( &#039;view&#039; ),
 					&#039;readonly&#039;    =&gt; true,
 					&#039;items&#039;       =&gt; array(
-						&#039;type&#039; =&gt; &#039;string&#039;,
+						&#039;type&#039;       =&gt; &#039;object&#039;,
+						&#039;properties&#039; =&gt; array(
+							&#039;page_name&#039;          =&gt; array(
+								&#039;type&#039; =&gt; &#039;string&#039;,
+							),
+							&#039;page_id&#039;            =&gt; array(
+								&#039;type&#039; =&gt; &#039;string&#039;,
+							),
+							&#039;page_set&#039;           =&gt; array(
+								&#039;type&#039; =&gt; &#039;boolean&#039;,
+							),
+							&#039;page_exists&#039;        =&gt; array(
+								&#039;type&#039; =&gt; &#039;boolean&#039;,
+							),
+							&#039;page_visible&#039;       =&gt; array(
+								&#039;type&#039; =&gt; &#039;boolean&#039;,
+							),
+							&#039;shortcode&#039;          =&gt; array(
+								&#039;type&#039; =&gt; &#039;string&#039;,
+							),
+							&#039;block&#039;              =&gt; array(
+								&#039;type&#039; =&gt; &#039;string&#039;,
+							),
+							&#039;shortcode_required&#039; =&gt; array(
+								&#039;type&#039; =&gt; &#039;boolean&#039;,
+							),
+							&#039;shortcode_present&#039;  =&gt; array(
+								&#039;type&#039; =&gt; &#039;boolean&#039;,
+							),
+							&#039;block_present&#039;      =&gt; array(
+								&#039;type&#039; =&gt; &#039;boolean&#039;,
+							),
+							&#039;block_required&#039;     =&gt; array(
+								&#039;type&#039; =&gt; &#039;boolean&#039;,
+							),
+						),
 					),
 				),
 				&#039;post_type_counts&#039;   =&gt; array(
@@ -1022,7 +1136,7 @@ class WC_REST_System_Status_V2_Controller extends WC_REST_Controller {
 		}
 
 		$database_version = wc_get_server_database_version();
-		$log_directory    = LoggingUtil::get_log_directory();
+		$log_directory    = LoggingUtil::get_log_directory( false );
 
 		// Return all environment info. Described by JSON Schema.
 		return array(
@@ -1202,15 +1316,10 @@ class WC_REST_System_Status_V2_Controller extends WC_REST_Controller {
 				return array();
 			}
 
-			$active_plugins = (array) get_option( &#039;active_plugins&#039;, array() );
-			if ( is_multisite() ) {
-				$network_activated_plugins = array_keys( get_site_option( &#039;active_sitewide_plugins&#039;, array() ) );
-				$active_plugins            = array_merge( $active_plugins, $network_activated_plugins );
-			}
+			$active_valid_plugins = wc_get_container()-&gt;get( PluginUtil::class )-&gt;get_all_active_valid_plugins();
+			$active_plugins_data  = array();
 
-			$active_plugins_data = array();
-
-			foreach ( $active_plugins as $plugin ) {
+			foreach ( $active_valid_plugins as $plugin ) {
 				$data                  = get_plugin_data( WP_PLUGIN_DIR . &#039;/&#039; . $plugin );
 				$active_plugins_data[] = $this-&gt;format_plugin_data( $plugin, $data );
 			}
@@ -1428,6 +1537,7 @@ class WC_REST_System_Status_V2_Controller extends WC_REST_Controller {
 				&#039;version_latest&#039;          =&gt; WC_Admin_Status::get_latest_theme_version( $active_theme ),
 				&#039;author_url&#039;              =&gt; esc_url_raw( $active_theme-&gt;{&#039;Author URI&#039;} ),
 				&#039;is_child_theme&#039;          =&gt; is_child_theme(),
+				&#039;is_block_theme&#039;          =&gt; wc_current_theme_is_fse_theme(),
 				&#039;has_woocommerce_support&#039; =&gt; current_theme_supports( &#039;woocommerce&#039; ),
 				&#039;has_woocommerce_file&#039;    =&gt; ( file_exists( get_stylesheet_directory() . &#039;/woocommerce.php&#039; ) || file_exists( get_template_directory() . &#039;/woocommerce.php&#039; ) ),
 				&#039;has_outdated_templates&#039;  =&gt; $outdated_templates,
@@ -1529,29 +1639,64 @@ class WC_REST_System_Status_V2_Controller extends WC_REST_Controller {
 		// WC pages to check against.
 		$check_pages = array(
 			_x( &#039;Shop base&#039;, &#039;Page setting&#039;, &#039;woocommerce&#039; ) =&gt; array(
-				&#039;option&#039;    =&gt; &#039;woocommerce_shop_page_id&#039;,
-				&#039;shortcode&#039; =&gt; &#039;&#039;,
-				&#039;block&#039;     =&gt; &#039;&#039;,
+				&#039;option&#039; =&gt; &#039;woocommerce_shop_page_id&#039;,
 			),
 			_x( &#039;Cart&#039;, &#039;Page setting&#039;, &#039;woocommerce&#039; ) =&gt; array(
-				&#039;option&#039;    =&gt; &#039;woocommerce_cart_page_id&#039;,
-				&#039;shortcode&#039; =&gt; &#039;[&#039; . apply_filters_deprecated( &#039;woocommerce_cart_shortcode_tag&#039;, array( &#039;woocommerce_cart&#039; ), &#039;8.3.0&#039;, &#039;woocommerce_create_pages&#039; ) . &#039;]&#039;,
-				&#039;block&#039;     =&gt; &#039;woocommerce/cart&#039;,
+				&#039;option&#039;             =&gt; &#039;woocommerce_cart_page_id&#039;,
+				&#039;shortcode&#039;          =&gt; &#039;[&#039; . apply_filters_deprecated( &#039;woocommerce_cart_shortcode_tag&#039;, array( &#039;woocommerce_cart&#039; ), &#039;8.3.0&#039;, &#039;woocommerce_create_pages&#039; ) . &#039;]&#039;,
+				&#039;block&#039;              =&gt; &#039;woocommerce/cart&#039;,
+				&#039;shortcode_callback&#039; =&gt; function ( $page ) {
+					if ( $page ) {
+						$shortcode = apply_filters_deprecated( &#039;woocommerce_cart_shortcode_tag&#039;, array( &#039;woocommerce_cart&#039; ), &#039;8.3.0&#039;, &#039;woocommerce_create_pages&#039; );
+						if ( has_shortcode( $page-&gt;post_content, $shortcode ) ) {
+							return $shortcode;
+						}
+					}
+					return &#039;&#039;;
+				},
+				&#039;block_callback&#039;     =&gt; function ( $page ) {
+					if ( $page ) {
+						if ( has_block( &#039;woocommerce/cart&#039;, $page-&gt;post_content ) ) {
+							return &#039;woocommerce/cart&#039;;
+						}
+						if ( CartCheckoutUtils::has_block_variation( &#039;woocommerce/classic-shortcode&#039;, &#039;shortcode&#039;, &#039;cart&#039;, $page-&gt;post_content ) ) {
+							return &#039;woocommerce/classic-shortcode&#039;;
+						}
+					}
+					return &#039;&#039;;
+				},
 			),
 			_x( &#039;Checkout&#039;, &#039;Page setting&#039;, &#039;woocommerce&#039; ) =&gt; array(
-				&#039;option&#039;    =&gt; &#039;woocommerce_checkout_page_id&#039;,
-				&#039;shortcode&#039; =&gt; &#039;[&#039; . apply_filters_deprecated( &#039;woocommerce_checkout_shortcode_tag&#039;, array( &#039;woocommerce_checkout&#039; ), &#039;8.3.0&#039;, &#039;woocommerce_create_pages&#039; ) . &#039;]&#039;,
-				&#039;block&#039;     =&gt; &#039;woocommerce/checkout&#039;,
+				&#039;option&#039;             =&gt; &#039;woocommerce_checkout_page_id&#039;,
+				&#039;shortcode&#039;          =&gt; &#039;[&#039; . apply_filters_deprecated( &#039;woocommerce_checkout_shortcode_tag&#039;, array( &#039;woocommerce_checkout&#039; ), &#039;8.3.0&#039;, &#039;woocommerce_create_pages&#039; ) . &#039;]&#039;,
+				&#039;block&#039;              =&gt; &#039;woocommerce/checkout&#039;,
+				&#039;shortcode_callback&#039; =&gt; function ( $page ) {
+					if ( $page ) {
+						$shortcode = apply_filters_deprecated( &#039;woocommerce_checkout_shortcode_tag&#039;, array( &#039;woocommerce_checkout&#039; ), &#039;8.3.0&#039;, &#039;woocommerce_create_pages&#039; );
+						if ( has_shortcode( $page-&gt;post_content, $shortcode ) ) {
+							return $shortcode;
+						}
+					}
+					return &#039;&#039;;
+				},
+				&#039;block_callback&#039;     =&gt; function ( $page ) {
+					if ( $page ) {
+						if ( has_block( &#039;woocommerce/checkout&#039;, $page-&gt;post_content ) ) {
+							return &#039;woocommerce/checkout&#039;;
+						}
+						if ( CartCheckoutUtils::has_block_variation( &#039;woocommerce/classic-shortcode&#039;, &#039;shortcode&#039;, &#039;checkout&#039;, $page-&gt;post_content ) ) {
+							return &#039;woocommerce/classic-shortcode&#039;;
+						}
+					}
+					return &#039;&#039;;
+				},
 			),
 			_x( &#039;My account&#039;, &#039;Page setting&#039;, &#039;woocommerce&#039; ) =&gt; array(
 				&#039;option&#039;    =&gt; &#039;woocommerce_myaccount_page_id&#039;,
 				&#039;shortcode&#039; =&gt; &#039;[&#039; . apply_filters( &#039;woocommerce_my_account_shortcode_tag&#039;, &#039;woocommerce_my_account&#039; ) . &#039;]&#039;,
-				&#039;block&#039;     =&gt; &#039;&#039;,
 			),
 			_x( &#039;Terms and conditions&#039;, &#039;Page setting&#039;, &#039;woocommerce&#039; ) =&gt; array(
-				&#039;option&#039;    =&gt; &#039;woocommerce_terms_page_id&#039;,
-				&#039;shortcode&#039; =&gt; &#039;&#039;,
-				&#039;block&#039;     =&gt; &#039;&#039;,
+				&#039;option&#039; =&gt; &#039;woocommerce_terms_page_id&#039;,
 			),
 		);
 
@@ -1566,6 +1711,8 @@ class WC_REST_System_Status_V2_Controller extends WC_REST_Controller {
 			$block_present      = false;
 			$block_required     = false;
 			$page               = false;
+			$block              = &#039;&#039;;
+			$shortcode          = &#039;&#039;;
 
 			// Page checks.
 			if ( $page_id ) {
@@ -1582,22 +1729,27 @@ class WC_REST_System_Status_V2_Controller extends WC_REST_Controller {
 			}
 
 			// Shortcode checks.
-			if ( $values[&#039;shortcode&#039;] &amp;&amp; $page ) {
+			if ( $page &amp;&amp; isset( $values[&#039;shortcode_callback&#039;], $values[&#039;shortcode&#039;] ) ) {
 				$shortcode_required = true;
-				if ( has_shortcode( $page-&gt;post_content, trim( $values[&#039;shortcode&#039;], &#039;[]&#039; ) ) ) {
-					$shortcode_present = true;
-				}
-
-				// Compatibility with the classic shortcode block which can be used instead of shortcodes.
-				if ( ! $shortcode_present &amp;&amp; ( &#039;woocommerce/checkout&#039; === $values[&#039;block&#039;] || &#039;woocommerce/cart&#039; === $values[&#039;block&#039;] ) ) {
-					$shortcode_present = has_block( &#039;woocommerce/classic-shortcode&#039;, $page-&gt;post_content );
-				}
+				$result             = $values[&#039;shortcode_callback&#039;]( $page );
+				$shortcode          = $result ? $result : $values[&#039;shortcode&#039;];
+				$shortcode_present  = (bool) $result;
+			} elseif ( $page &amp;&amp; isset( $values[&#039;shortcode&#039;] ) ) {
+				$shortcode          = $values[&#039;shortcode&#039;];
+				$shortcode_required = true;
+				$shortcode_present  = has_shortcode( $page-&gt;post_content, trim( $shortcode, &#039;[]&#039; ) );
 			}
 
 			// Block checks.
-			if ( $values[&#039;block&#039;] &amp;&amp; $page ) {
+			if ( $page &amp;&amp; isset( $values[&#039;block_callback&#039;], $values[&#039;block&#039;] ) ) {
 				$block_required = true;
-				$block_present  = has_block( $values[&#039;block&#039;], $page-&gt;post_content );
+				$result         = $values[&#039;block_callback&#039;]( $page );
+				$block          = $result ? $result : $values[&#039;block&#039;];
+				$block_present  = (bool) $result;
+			} elseif ( $page &amp;&amp; isset( $values[&#039;block&#039;] ) ) {
+				$block          = $values[&#039;block&#039;];
+				$block_required = true;
+				$block_present  = has_block( $block, $page-&gt;post_content );
 			}
 
 			// Wrap up our findings into an output array.
@@ -1607,8 +1759,8 @@ class WC_REST_System_Status_V2_Controller extends WC_REST_Controller {
 				&#039;page_set&#039;           =&gt; $page_set,
 				&#039;page_exists&#039;        =&gt; $page_exists,
 				&#039;page_visible&#039;       =&gt; $page_visible,
-				&#039;shortcode&#039;          =&gt; $values[&#039;shortcode&#039;],
-				&#039;block&#039;              =&gt; $values[&#039;block&#039;],
+				&#039;shortcode&#039;          =&gt; $shortcode,
+				&#039;block&#039;              =&gt; $block,
 				&#039;shortcode_required&#039; =&gt; $shortcode_required,
 				&#039;shortcode_present&#039;  =&gt; $shortcode_present,
 				&#039;block_present&#039;      =&gt; $block_present,
@@ -1678,7 +1830,7 @@ class WC_REST_System_Status_V2_Controller extends WC_REST_Controller {
 
     <footer class="phpdocumentor phpdocumentor-footer">
     <div class="phpdocumentor-section">
-        <span>WooCommerce Code Reference API documentation generated by <a href="http://www.phpdoc.org/">phpDocumentor</a> on July 25th, 2024 at 11:33 am.</span>
+        <span>WooCommerce Code Reference API documentation generated by <a href="http://www.phpdoc.org/">phpDocumentor</a> on May 16th, 2025 at 09:14 am.</span>
     </div>
 </footer>
 
@@ -1690,7 +1842,7 @@ class WC_REST_System_Status_V2_Controller extends WC_REST_Controller {
             'searchIndex': '..\/js\/searchIndex.json'
         };
     </script>
-    <script src="../js/searchIndex.js?updated=1721907183"></script>
-    <script src="../js/search.js?updated=1721907183"></script>
+    <script src="../js/searchIndex.js?updated=1747386859"></script>
+    <script src="../js/search.js?updated=1747386859"></script>
 </body>
 </html>

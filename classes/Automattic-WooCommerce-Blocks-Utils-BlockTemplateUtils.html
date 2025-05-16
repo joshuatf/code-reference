@@ -4,14 +4,13 @@
     <meta charset="utf-8">
     <title>WooCommerce Code Reference</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="../images/favicon.png" />
-    <link rel="apple-touch-icon" href="../images/apple-touch-icon.png"/>
-    <link rel="apple-touch-icon" sizes="72x72" href="../images/apple-touch-icon-72x72.png"/>
-    <link rel="apple-touch-icon" sizes="114x114" href="../images/apple-touch-icon-114x114.png"/>
+    <link rel="icon" href="../images/favicon-32x32.png" sizes="32x32" />
+    <link rel="icon" href="../images/favicon-192x192.png" sizes="192x192" />
+    <link rel="apple-touch-icon" href="../images/favicon-180x180.png" />
+
     <link rel="stylesheet" href="../css/normalize.css">
-    <link rel="stylesheet" href="../css/base.css?updated=1721907207">
-    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../css/template.css?updated=1721907207">
+    <link rel="stylesheet" href="../css/base.css?updated=1747386889">
+    <link rel="stylesheet" href="../css/template.css?updated=1747386889">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0/css/all.min.css" integrity="sha256-ybRkN9dBjhcS2qrW1z+hfCxq+1aBdwyQM5wlQoQVt/0=" crossorigin="anonymous" />
             <script src="https://cdn.jsdelivr.net/npm/css-vars-ponyfill@2"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0/js/all.min.js" integrity="sha256-0vuk8LXoyrmCjp1f0O300qo1M75ZQyhH9X3J6d+scmk=" crossorigin="anonymous"></script>
@@ -27,19 +26,24 @@
 		'content_group' : 'WooCommerce Core Code Reference',
 	});
 </script>
-        </head>
+        <script src="../js/prism.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            window.dispatchEvent(new HashChangeEvent('hashchange'));
+        });
+    </script>
+</head>
 <body id="top">
     <header class="phpdocumentor-top-header">
     <section class="phpdocumentor-section">
         <div class="site-branding">
-            <a class="site-logo" href="../index.html"><img width="180" src="../images/logo.svg" alt="WooCommerce" /></a>
+            <a class="site-logo" href="../index.html"><img src="../images/logo.png" alt="WooCommerce" /></a>
         </div>
         <nav class="main-navigation">
             <ul>
                 <li><a href="../hooks/hooks.html">Hooks Reference</a></li>
-                <li><a href="https://docs.woocommerce.com/">Documentation</a></li>
+                <li><a href="https://developer.woocommerce.com/docs/">Documentation</a></li>
                 <li><a href="https://woocommerce.github.io/woocommerce-rest-api-docs/">REST API Docs</a></li>
-                <li><a href="https://woocommerce.com/careers/?utm_source=woocommerce+core+code+reference&utm_medium=devdocs&utm_campaign=woo+careers" target="_blank">We're hiring!</a></li>
             </ul>
         </nav>
     </section>
@@ -47,7 +51,7 @@
 
 <div class="phpdocumentor-header">
     <section class="phpdocumentor-section">
-        <h1 class="phpdocumentor-title">WooCommerce Code Reference</h1>
+        <h1 class="phpdocumentor-title"><a href="../index.html">WooCommerce Code Reference</a></h1>
         <section class="phpdocumentor-search">
     <label class="phpdocumentor-label">
         <span class="visually-hidden">Search (click ESC to close search results)</span>
@@ -68,6 +72,10 @@
                                         <h4 class="phpdocumentor-sidebar__root-namespace"><a href="../namespaces/woocommerce.html"><abbr title="\WooCommerce">WooCommerce</abbr></a></h4>
                 <ul class="phpdocumentor-list">
                                             <li><a href="../namespaces/woocommerce-admin.html"><abbr title="\WooCommerce\Admin">Admin</abbr></a></li>
+                                    </ul>
+                            <h4 class="phpdocumentor-sidebar__root-namespace"><a href="../namespaces/mailpoet.html"><abbr title="\MailPoet">MailPoet</abbr></a></h4>
+                <ul class="phpdocumentor-list">
+                                            <li><a href="../namespaces/mailpoet-emaileditor.html"><abbr title="\MailPoet\EmailEditor">EmailEditor</abbr></a></li>
                                     </ul>
                             <h4 class="phpdocumentor-sidebar__root-namespace"><a href="../namespaces/automattic.html"><abbr title="\Automattic">Automattic</abbr></a></h4>
                 <ul class="phpdocumentor-list">
@@ -113,8 +121,10 @@
                                     <li><a href="../packages/WooCommerce-Widgets.html"><abbr title="\WooCommerce\Widgets">Widgets</abbr></a></li>
                                     <li><a href="../packages/WooCommerce-Uninstaller.html"><abbr title="\WooCommerce\Uninstaller">Uninstaller</abbr></a></li>
                             </ul>
-                                <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/WoocommerceAdmin.html"><abbr title="\WoocommerceAdmin">WoocommerceAdmin</abbr></a></h3>
-                                <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/WoocommerceNavigation.html"><abbr title="\WoocommerceNavigation">WoocommerceNavigation</abbr></a></h3>
+                                <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/MailPoet.html"><abbr title="\MailPoet">MailPoet</abbr></a></h3>
+                        <ul class="phpdocumentor-list">
+                                    <li><a href="../packages/MailPoet-EmailEditor.html"><abbr title="\MailPoet\EmailEditor">EmailEditor</abbr></a></li>
+                            </ul>
                                 <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/Automattic.html"><abbr title="\Automattic">Automattic</abbr></a></h3>
                         <ul class="phpdocumentor-list">
                                     <li><a href="../packages/Automattic-WooCommerce.html"><abbr title="\Automattic\WooCommerce">WooCommerce</abbr></a></li>
@@ -160,9 +170,9 @@
     </h2>
 
         <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Blocks/Utils/BlockTemplateUtils.php"><a href="../files/woocommerce-src-blocks-utils-blocktemplateutils.html#source-view.14">src/Blocks/Utils/BlockTemplateUtils.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Blocks/Utils/BlockTemplateUtils.php"><a href="../files/woocommerce-src-blocks-utils-blocktemplateutils.html#source-view.15">src/Blocks/Utils/BlockTemplateUtils.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">14</span>
+    <span class="phpdocumentor-element-found-in__line">15</span>
 </aside>
 
             <p class="phpdocumentor-summary">Utility methods used for serving block templates from WooCommerce Blocks.</p>
@@ -310,6 +320,14 @@ the passed blocks and their inner blocks.</dd>
 <dd>Gets the first matching template part within themes directories</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a href="../classes/Automattic-WooCommerce-Blocks-Utils-BlockTemplateUtils.html#method_has_block_including_patterns">has_block_including_patterns()</a>
+    <span>
+                        &nbsp;: bool    </span>
+</dt>
+<dd>Determines whether the provided $blocks contains any of the $block_names,
+or if they contain a pattern that contains any of the $block_names.</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="../classes/Automattic-WooCommerce-Blocks-Utils-BlockTemplateUtils.html#method_inject_theme_attribute_in_content">inject_theme_attribute_in_content()</a>
     <span>
                         &nbsp;: string    </span>
@@ -361,21 +379,14 @@ WooCommerce default template when there is a customized template based on the th
 <dd>Returns whether the passed `$template` has the legacy template block.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a href="../classes/Automattic-WooCommerce-Blocks-Utils-BlockTemplateUtils.html#method_template_is_eligible_for_product_archive_fallback">template_is_eligible_for_product_archive_fallback()</a>
-    <span>
-                        &nbsp;: bool    </span>
-</dt>
-<dd>Checks if we can fall back to the `archive-product` template for a given slug.</dd>
-
-            <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a href="../classes/Automattic-WooCommerce-Blocks-Utils-BlockTemplateUtils.html#method_template_is_eligible_for_product_archive_fallback_from_db">template_is_eligible_for_product_archive_fallback_from_db()</a>
+    <a href="../classes/Automattic-WooCommerce-Blocks-Utils-BlockTemplateUtils.html#method_template_is_eligible_for_fallback_from_db">template_is_eligible_for_fallback_from_db()</a>
     <span>
                         &nbsp;: bool    </span>
 </dt>
 <dd>Checks if we can fall back to an `archive-product` template stored on the db for a given slug.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a href="../classes/Automattic-WooCommerce-Blocks-Utils-BlockTemplateUtils.html#method_template_is_eligible_for_product_archive_fallback_from_theme">template_is_eligible_for_product_archive_fallback_from_theme()</a>
+    <a href="../classes/Automattic-WooCommerce-Blocks-Utils-BlockTemplateUtils.html#method_template_is_eligible_for_fallback_from_theme">template_is_eligible_for_fallback_from_theme()</a>
     <span>
                         &nbsp;: bool    </span>
 </dt>
@@ -419,9 +430,9 @@ WooCommerce default template when there is a customized template based on the th
     </h4>
 
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Blocks/Utils/BlockTemplateUtils.php"><a href="../files/woocommerce-src-blocks-utils-blocktemplateutils.html#source-view.55">src/Blocks/Utils/BlockTemplateUtils.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Blocks/Utils/BlockTemplateUtils.php"><a href="../files/woocommerce-src-blocks-utils-blocktemplateutils.html#source-view.56">src/Blocks/Utils/BlockTemplateUtils.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">55</span>
+    <span class="phpdocumentor-element-found-in__line">56</span>
 </aside>
 
         <p class="phpdocumentor-summary">Deprecated WooCommerce plugin slug</p>
@@ -448,9 +459,9 @@ More context found here: https://github.com/woocommerce/woocommerce-gutenberg-pr
     </h4>
 
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Blocks/Utils/BlockTemplateUtils.php"><a href="../files/woocommerce-src-blocks-utils-blocktemplateutils.html#source-view.29">src/Blocks/Utils/BlockTemplateUtils.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Blocks/Utils/BlockTemplateUtils.php"><a href="../files/woocommerce-src-blocks-utils-blocktemplateutils.html#source-view.30">src/Blocks/Utils/BlockTemplateUtils.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">29</span>
+    <span class="phpdocumentor-element-found-in__line">30</span>
 </aside>
 
         <p class="phpdocumentor-summary">Directory names for block templates</p>
@@ -478,9 +489,9 @@ with <code class="prettyprint">DEPRECATED_</code>.</p>
     </h4>
 
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Blocks/Utils/BlockTemplateUtils.php"><a href="../files/woocommerce-src-blocks-utils-blocktemplateutils.html#source-view.45">src/Blocks/Utils/BlockTemplateUtils.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Blocks/Utils/BlockTemplateUtils.php"><a href="../files/woocommerce-src-blocks-utils-blocktemplateutils.html#source-view.46">src/Blocks/Utils/BlockTemplateUtils.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">45</span>
+    <span class="phpdocumentor-element-found-in__line">46</span>
 </aside>
 
         <p class="phpdocumentor-summary">WooCommerce plugin slug</p>
@@ -506,9 +517,9 @@ with <code class="prettyprint">DEPRECATED_</code>.</p>
     </h4>
 
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Blocks/Utils/BlockTemplateUtils.php"><a href="../files/woocommerce-src-blocks-utils-blocktemplateutils.html#source-view.36">src/Blocks/Utils/BlockTemplateUtils.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Blocks/Utils/BlockTemplateUtils.php"><a href="../files/woocommerce-src-blocks-utils-blocktemplateutils.html#source-view.37">src/Blocks/Utils/BlockTemplateUtils.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">36</span>
+    <span class="phpdocumentor-element-found-in__line">37</span>
 </aside>
 
     
@@ -544,9 +555,9 @@ with <code class="prettyprint">DEPRECATED_</code>.</p>
         <a href="#method_build_template_result_from_post" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Blocks/Utils/BlockTemplateUtils.php"><a href="../files/woocommerce-src-blocks-utils-blocktemplateutils.html#source-view.145">src/Blocks/Utils/BlockTemplateUtils.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Blocks/Utils/BlockTemplateUtils.php"><a href="../files/woocommerce-src-blocks-utils-blocktemplateutils.html#source-view.146">src/Blocks/Utils/BlockTemplateUtils.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">145</span>
+    <span class="phpdocumentor-element-found-in__line">146</span>
 </aside>
 
         <p class="phpdocumentor-summary">Build a unified template object based a post Object.</p>
@@ -589,9 +600,9 @@ with <code class="prettyprint">DEPRECATED_</code>.</p>
         <a href="#method_create_new_block_template_object" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Blocks/Utils/BlockTemplateUtils.php"><a href="../files/woocommerce-src-blocks-utils-blocktemplateutils.html#source-view.274">src/Blocks/Utils/BlockTemplateUtils.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Blocks/Utils/BlockTemplateUtils.php"><a href="../files/woocommerce-src-blocks-utils-blocktemplateutils.html#source-view.275">src/Blocks/Utils/BlockTemplateUtils.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">274</span>
+    <span class="phpdocumentor-element-found-in__line">275</span>
 </aside>
 
         <p class="phpdocumentor-summary">Build a new template object so that we can make Woo Blocks default templates available in the current theme should they not have any.</p>
@@ -660,9 +671,9 @@ with <code class="prettyprint">DEPRECATED_</code>.</p>
         <a href="#method_flatten_blocks" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Blocks/Utils/BlockTemplateUtils.php"><a href="../files/woocommerce-src-blocks-utils-blocktemplateutils.html#source-view.77">src/Blocks/Utils/BlockTemplateUtils.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Blocks/Utils/BlockTemplateUtils.php"><a href="../files/woocommerce-src-blocks-utils-blocktemplateutils.html#source-view.78">src/Blocks/Utils/BlockTemplateUtils.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">77</span>
+    <span class="phpdocumentor-element-found-in__line">78</span>
 </aside>
 
         <p class="phpdocumentor-summary">Returns an array containing the references of
@@ -705,9 +716,9 @@ the passed blocks and their inner blocks.</p>
         <a href="#method_generate_template_slug_from_path" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Blocks/Utils/BlockTemplateUtils.php"><a href="../files/woocommerce-src-blocks-utils-blocktemplateutils.html#source-view.415">src/Blocks/Utils/BlockTemplateUtils.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Blocks/Utils/BlockTemplateUtils.php"><a href="../files/woocommerce-src-blocks-utils-blocktemplateutils.html#source-view.420">src/Blocks/Utils/BlockTemplateUtils.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">415</span>
+    <span class="phpdocumentor-element-found-in__line">420</span>
 </aside>
 
         <p class="phpdocumentor-summary">Converts template paths into a slug</p>
@@ -749,9 +760,9 @@ the passed blocks and their inner blocks.</p>
         <a href="#method_get_block_template_area" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Blocks/Utils/BlockTemplateUtils.php"><a href="../files/woocommerce-src-blocks-utils-blocktemplateutils.html#source-view.399">src/Blocks/Utils/BlockTemplateUtils.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Blocks/Utils/BlockTemplateUtils.php"><a href="../files/woocommerce-src-blocks-utils-blocktemplateutils.html#source-view.404">src/Blocks/Utils/BlockTemplateUtils.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">399</span>
+    <span class="phpdocumentor-element-found-in__line">404</span>
 </aside>
 
         <p class="phpdocumentor-summary">Returns area for template parts.</p>
@@ -802,9 +813,9 @@ the passed blocks and their inner blocks.</p>
         <a href="#method_get_block_template_description" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Blocks/Utils/BlockTemplateUtils.php"><a href="../files/woocommerce-src-blocks-utils-blocktemplateutils.html#source-view.384">src/Blocks/Utils/BlockTemplateUtils.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Blocks/Utils/BlockTemplateUtils.php"><a href="../files/woocommerce-src-blocks-utils-blocktemplateutils.html#source-view.389">src/Blocks/Utils/BlockTemplateUtils.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">384</span>
+    <span class="phpdocumentor-element-found-in__line">389</span>
 </aside>
 
         <p class="phpdocumentor-summary">Returns template description.</p>
@@ -846,9 +857,9 @@ the passed blocks and their inner blocks.</p>
         <a href="#method_get_block_template_title" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Blocks/Utils/BlockTemplateUtils.php"><a href="../files/woocommerce-src-blocks-utils-blocktemplateutils.html#source-view.368">src/Blocks/Utils/BlockTemplateUtils.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Blocks/Utils/BlockTemplateUtils.php"><a href="../files/woocommerce-src-blocks-utils-blocktemplateutils.html#source-view.373">src/Blocks/Utils/BlockTemplateUtils.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">368</span>
+    <span class="phpdocumentor-element-found-in__line">373</span>
 </aside>
 
         <p class="phpdocumentor-summary">Returns template title.</p>
@@ -890,9 +901,9 @@ the passed blocks and their inner blocks.</p>
         <a href="#method_get_block_templates_from_db" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Blocks/Utils/BlockTemplateUtils.php"><a href="../files/woocommerce-src-blocks-utils-blocktemplateutils.html#source-view.759">src/Blocks/Utils/BlockTemplateUtils.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Blocks/Utils/BlockTemplateUtils.php"><a href="../files/woocommerce-src-blocks-utils-blocktemplateutils.html#source-view.787">src/Blocks/Utils/BlockTemplateUtils.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">759</span>
+    <span class="phpdocumentor-element-found-in__line">787</span>
 </aside>
 
         <p class="phpdocumentor-summary">Gets the templates saved in the database.</p>
@@ -943,9 +954,9 @@ the passed blocks and their inner blocks.</p>
         <a href="#method_get_fallback_template_from_db" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Blocks/Utils/BlockTemplateUtils.php"><a href="../files/woocommerce-src-blocks-utils-blocktemplateutils.html#source-view.555">src/Blocks/Utils/BlockTemplateUtils.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Blocks/Utils/BlockTemplateUtils.php"><a href="../files/woocommerce-src-blocks-utils-blocktemplateutils.html#source-view.544">src/Blocks/Utils/BlockTemplateUtils.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">555</span>
+    <span class="phpdocumentor-element-found-in__line">544</span>
 </aside>
 
         <p class="phpdocumentor-summary">Gets the `archive-product` fallback template stored on the db for a given slug.</p>
@@ -996,9 +1007,9 @@ the passed blocks and their inner blocks.</p>
         <a href="#method_get_template" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Blocks/Utils/BlockTemplateUtils.php"><a href="../files/woocommerce-src-blocks-utils-blocktemplateutils.html#source-view.64">src/Blocks/Utils/BlockTemplateUtils.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Blocks/Utils/BlockTemplateUtils.php"><a href="../files/woocommerce-src-blocks-utils-blocktemplateutils.html#source-view.65">src/Blocks/Utils/BlockTemplateUtils.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">64</span>
+    <span class="phpdocumentor-element-found-in__line">65</span>
 </aside>
 
         <p class="phpdocumentor-summary">Returns the template matching the slug</p>
@@ -1040,9 +1051,9 @@ the passed blocks and their inner blocks.</p>
         <a href="#method_get_template_part" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Blocks/Utils/BlockTemplateUtils.php"><a href="../files/woocommerce-src-blocks-utils-blocktemplateutils.html#source-view.795">src/Blocks/Utils/BlockTemplateUtils.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Blocks/Utils/BlockTemplateUtils.php"><a href="../files/woocommerce-src-blocks-utils-blocktemplateutils.html#source-view.823">src/Blocks/Utils/BlockTemplateUtils.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">795</span>
+    <span class="phpdocumentor-element-found-in__line">823</span>
 </aside>
 
         <p class="phpdocumentor-summary">Gets the template part by slug</p>
@@ -1084,9 +1095,9 @@ the passed blocks and their inner blocks.</p>
         <a href="#method_get_template_paths" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Blocks/Utils/BlockTemplateUtils.php"><a href="../files/woocommerce-src-blocks-utils-blocktemplateutils.html#source-view.299">src/Blocks/Utils/BlockTemplateUtils.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Blocks/Utils/BlockTemplateUtils.php"><a href="../files/woocommerce-src-blocks-utils-blocktemplateutils.html#source-view.300">src/Blocks/Utils/BlockTemplateUtils.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">299</span>
+    <span class="phpdocumentor-element-found-in__line">300</span>
 </aside>
 
         <p class="phpdocumentor-summary">Finds all nested template part file paths in a theme&#039;s directory.</p>
@@ -1128,9 +1139,9 @@ the passed blocks and their inner blocks.</p>
         <a href="#method_get_templates_directory" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Blocks/Utils/BlockTemplateUtils.php"><a href="../files/woocommerce-src-blocks-utils-blocktemplateutils.html#source-view.346">src/Blocks/Utils/BlockTemplateUtils.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Blocks/Utils/BlockTemplateUtils.php"><a href="../files/woocommerce-src-blocks-utils-blocktemplateutils.html#source-view.351">src/Blocks/Utils/BlockTemplateUtils.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">346</span>
+    <span class="phpdocumentor-element-found-in__line">351</span>
 </aside>
 
         <p class="phpdocumentor-summary">Gets the directory where templates of a specific template type can be found.</p>
@@ -1172,9 +1183,9 @@ the passed blocks and their inner blocks.</p>
         <a href="#method_get_theme_template_path" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Blocks/Utils/BlockTemplateUtils.php"><a href="../files/woocommerce-src-blocks-utils-blocktemplateutils.html#source-view.437">src/Blocks/Utils/BlockTemplateUtils.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Blocks/Utils/BlockTemplateUtils.php"><a href="../files/woocommerce-src-blocks-utils-blocktemplateutils.html#source-view.442">src/Blocks/Utils/BlockTemplateUtils.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">437</span>
+    <span class="phpdocumentor-element-found-in__line">442</span>
 </aside>
 
         <p class="phpdocumentor-summary">Gets the first matching template part within themes directories</p>
@@ -1226,14 +1237,68 @@ over the deprecated one, but maintaining that one for backwards compatibility.</
             -public
                                     -static                    "
 >
+    <h4 class="phpdocumentor-element__name" id="method_has_block_including_patterns">
+        has_block_including_patterns()
+        <a href="#method_has_block_including_patterns" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Blocks/Utils/BlockTemplateUtils.php"><a href="../files/woocommerce-src-blocks-utils-blocktemplateutils.html#source-view.708">src/Blocks/Utils/BlockTemplateUtils.php</a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">708</span>
+</aside>
+
+        <p class="phpdocumentor-summary">Determines whether the provided $blocks contains any of the $block_names,
+or if they contain a pattern that contains any of the $block_names.</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+            <span class="phpdocumentor-signature__static">static</span>    <span class="phpdocumentor-signature__name">has_block_including_patterns</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, string&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__name">$block_names</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, <abbr title="\Automattic\WooCommerce\Blocks\Utils\WP_Block">WP_Block</abbr>&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__name">$blocks</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">bool</span></code>
+
+        <section class="phpdocumentor-description"></section>
+
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$block_names</span>
+                : <span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, string&gt;</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"><p>Full block types to look for.</p>
+</section>
+
+            </dd>
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$blocks</span>
+                : <span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, <abbr title="\Automattic\WooCommerce\Blocks\Utils\WP_Block">WP_Block</abbr>&gt;</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"><p>Array of block objects.</p>
+</section>
+
+            </dd>
+            </dl>
+
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">bool</span>
+            &mdash; <span class="phpdocumentor-return-value__description">Whether the content contains the specified block.</span>
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                    -static                    "
+>
     <h4 class="phpdocumentor-element__name" id="method_inject_theme_attribute_in_content">
         inject_theme_attribute_in_content()
         <a href="#method_inject_theme_attribute_in_content" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Blocks/Utils/BlockTemplateUtils.php"><a href="../files/woocommerce-src-blocks-utils-blocktemplateutils.html#source-view.110">src/Blocks/Utils/BlockTemplateUtils.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Blocks/Utils/BlockTemplateUtils.php"><a href="../files/woocommerce-src-blocks-utils-blocktemplateutils.html#source-view.111">src/Blocks/Utils/BlockTemplateUtils.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">110</span>
+    <span class="phpdocumentor-element-found-in__line">111</span>
 </aside>
 
         <p class="phpdocumentor-summary">Parses wp_template content and injects the current theme&#039;s
@@ -1276,9 +1341,9 @@ stylesheet as a theme attribute into each wp_template_part</p>
         <a href="#method_remove_duplicate_customized_templates" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Blocks/Utils/BlockTemplateUtils.php"><a href="../files/woocommerce-src-blocks-utils-blocktemplateutils.html#source-view.668">src/Blocks/Utils/BlockTemplateUtils.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Blocks/Utils/BlockTemplateUtils.php"><a href="../files/woocommerce-src-blocks-utils-blocktemplateutils.html#source-view.658">src/Blocks/Utils/BlockTemplateUtils.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">668</span>
+    <span class="phpdocumentor-element-found-in__line">658</span>
 </aside>
 
         <p class="phpdocumentor-summary">Removes customized templates that shouldn&#039;t be available. That means customized templates based on the
@@ -1330,9 +1395,9 @@ WooCommerce default template when there is a customized template based on the th
         <a href="#method_remove_theme_templates_with_custom_alternative" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Blocks/Utils/BlockTemplateUtils.php"><a href="../files/woocommerce-src-blocks-utils-blocktemplateutils.html#source-view.626">src/Blocks/Utils/BlockTemplateUtils.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Blocks/Utils/BlockTemplateUtils.php"><a href="../files/woocommerce-src-blocks-utils-blocktemplateutils.html#source-view.616">src/Blocks/Utils/BlockTemplateUtils.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">626</span>
+    <span class="phpdocumentor-element-found-in__line">616</span>
 </aside>
 
         <p class="phpdocumentor-summary">Removes templates that were added to a theme&#039;s block-templates directory, but already had a customised version saved in the database.</p>
@@ -1374,9 +1439,9 @@ WooCommerce default template when there is a customized template based on the th
         <a href="#method_set_has_theme_file_if_fallback_is_available" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Blocks/Utils/BlockTemplateUtils.php"><a href="../files/woocommerce-src-blocks-utils-blocktemplateutils.html#source-view.602">src/Blocks/Utils/BlockTemplateUtils.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Blocks/Utils/BlockTemplateUtils.php"><a href="../files/woocommerce-src-blocks-utils-blocktemplateutils.html#source-view.592">src/Blocks/Utils/BlockTemplateUtils.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">602</span>
+    <span class="phpdocumentor-element-found-in__line">592</span>
 </aside>
 
         <p class="phpdocumentor-summary">Sets the `has_theme_file` to `true` for templates with fallbacks</p>
@@ -1433,9 +1498,9 @@ have a theme file (i.e. the fallback one).</p>
         <a href="#method_should_use_blockified_product_grid_templates" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Blocks/Utils/BlockTemplateUtils.php"><a href="../files/woocommerce-src-blocks-utils-blocktemplateutils.html#source-view.700">src/Blocks/Utils/BlockTemplateUtils.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Blocks/Utils/BlockTemplateUtils.php"><a href="../files/woocommerce-src-blocks-utils-blocktemplateutils.html#source-view.690">src/Blocks/Utils/BlockTemplateUtils.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">700</span>
+    <span class="phpdocumentor-element-found-in__line">690</span>
 </aside>
 
         <p class="phpdocumentor-summary">Returns whether the blockified templates should be used or not.</p>
@@ -1466,9 +1531,9 @@ have a theme file (i.e. the fallback one).</p>
         <a href="#method_supports_block_templates" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Blocks/Utils/BlockTemplateUtils.php"><a href="../files/woocommerce-src-blocks-utils-blocktemplateutils.html#source-view.499">src/Blocks/Utils/BlockTemplateUtils.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Blocks/Utils/BlockTemplateUtils.php"><a href="../files/woocommerce-src-blocks-utils-blocktemplateutils.html#source-view.504">src/Blocks/Utils/BlockTemplateUtils.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">499</span>
+    <span class="phpdocumentor-element-found-in__line">504</span>
 </aside>
 
         <p class="phpdocumentor-summary">Checks to see if they are using a compatible version of WP, or if not they have a compatible version of the Gutenberg plugin installed.</p>
@@ -1511,9 +1576,9 @@ Default <code class="prettyprint">wp_template</code>.</p>
         <a href="#method_template_has_legacy_template_block" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Blocks/Utils/BlockTemplateUtils.php"><a href="../files/woocommerce-src-blocks-utils-blocktemplateutils.html#source-view.716">src/Blocks/Utils/BlockTemplateUtils.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Blocks/Utils/BlockTemplateUtils.php"><a href="../files/woocommerce-src-blocks-utils-blocktemplateutils.html#source-view.738">src/Blocks/Utils/BlockTemplateUtils.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">716</span>
+    <span class="phpdocumentor-element-found-in__line">738</span>
 </aside>
 
         <p class="phpdocumentor-summary">Returns whether the passed `$template` has the legacy template block.</p>
@@ -1550,67 +1615,21 @@ Default <code class="prettyprint">wp_template</code>.</p>
             -public
                                     -static                    "
 >
-    <h4 class="phpdocumentor-element__name" id="method_template_is_eligible_for_product_archive_fallback">
-        template_is_eligible_for_product_archive_fallback()
-        <a href="#method_template_is_eligible_for_product_archive_fallback" class="headerlink"><i class="fas fa-link"></i></a>
+    <h4 class="phpdocumentor-element__name" id="method_template_is_eligible_for_fallback_from_db">
+        template_is_eligible_for_fallback_from_db()
+        <a href="#method_template_is_eligible_for_fallback_from_db" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Blocks/Utils/BlockTemplateUtils.php"><a href="../files/woocommerce-src-blocks-utils-blocktemplateutils.html#source-view.517">src/Blocks/Utils/BlockTemplateUtils.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Blocks/Utils/BlockTemplateUtils.php"><a href="../files/woocommerce-src-blocks-utils-blocktemplateutils.html#source-view.520">src/Blocks/Utils/BlockTemplateUtils.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">517</span>
-</aside>
-
-        <p class="phpdocumentor-summary">Checks if we can fall back to the `archive-product` template for a given slug.</p>
-
-    <code class="phpdocumentor-code phpdocumentor-signature ">
-    <span class="phpdocumentor-signature__visibility">public</span>
-            <span class="phpdocumentor-signature__static">static</span>    <span class="phpdocumentor-signature__name">template_is_eligible_for_product_archive_fallback</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$template_slug</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">bool</span></code>
-
-        <section class="phpdocumentor-description"><p><code class="prettyprint">taxonomy-product_cat</code>, <code class="prettyprint">taxonomy-product_tag</code>, <code class="prettyprint">taxonomy-product_attribute</code> templates can
-generally use the <code class="prettyprint">archive-product</code> as a fallback if there are no specific overrides.</p>
-</section>
-
-        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
-    <dl class="phpdocumentor-argument-list">
-                    <dt class="phpdocumentor-argument-list__entry">
-                <span class="phpdocumentor-signature__argument__name">$template_slug</span>
-                : <span class="phpdocumentor-signature__argument__return-type">string</span>
-                            </dt>
-            <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"><p>Slug to check for fallbacks.</p>
-</section>
-
-            </dd>
-            </dl>
-
-    
-
-        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">bool</span>
-            &mdash; <span class="phpdocumentor-return-value__description"></span>
-    
-</article>
-                    <article
-        class="phpdocumentor-element
-            -method
-            -public
-                                    -static                    "
->
-    <h4 class="phpdocumentor-element__name" id="method_template_is_eligible_for_product_archive_fallback_from_db">
-        template_is_eligible_for_product_archive_fallback_from_db()
-        <a href="#method_template_is_eligible_for_product_archive_fallback_from_db" class="headerlink"><i class="fas fa-link"></i></a>
-    </h4>
-    <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Blocks/Utils/BlockTemplateUtils.php"><a href="../files/woocommerce-src-blocks-utils-blocktemplateutils.html#source-view.532">src/Blocks/Utils/BlockTemplateUtils.php</a></abbr>
-    :
-    <span class="phpdocumentor-element-found-in__line">532</span>
+    <span class="phpdocumentor-element-found-in__line">520</span>
 </aside>
 
         <p class="phpdocumentor-summary">Checks if we can fall back to an `archive-product` template stored on the db for a given slug.</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-            <span class="phpdocumentor-signature__static">static</span>    <span class="phpdocumentor-signature__name">template_is_eligible_for_product_archive_fallback_from_db</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$template_slug</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__name">$db_templates</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">bool</span></code>
+            <span class="phpdocumentor-signature__static">static</span>    <span class="phpdocumentor-signature__name">template_is_eligible_for_fallback_from_db</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$template_slug</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__name">$db_templates</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">bool</span></code>
 
         <section class="phpdocumentor-description"></section>
 
@@ -1649,21 +1668,21 @@ generally use the <code class="prettyprint">archive-product</code> as a fallback
             -public
                                     -static                    "
 >
-    <h4 class="phpdocumentor-element__name" id="method_template_is_eligible_for_product_archive_fallback_from_theme">
-        template_is_eligible_for_product_archive_fallback_from_theme()
-        <a href="#method_template_is_eligible_for_product_archive_fallback_from_theme" class="headerlink"><i class="fas fa-link"></i></a>
+    <h4 class="phpdocumentor-element__name" id="method_template_is_eligible_for_fallback_from_theme">
+        template_is_eligible_for_fallback_from_theme()
+        <a href="#method_template_is_eligible_for_fallback_from_theme" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Blocks/Utils/BlockTemplateUtils.php"><a href="../files/woocommerce-src-blocks-utils-blocktemplateutils.html#source-view.579">src/Blocks/Utils/BlockTemplateUtils.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Blocks/Utils/BlockTemplateUtils.php"><a href="../files/woocommerce-src-blocks-utils-blocktemplateutils.html#source-view.567">src/Blocks/Utils/BlockTemplateUtils.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">579</span>
+    <span class="phpdocumentor-element-found-in__line">567</span>
 </aside>
 
         <p class="phpdocumentor-summary">Checks if we can fall back to the `archive-product` file template for a given slug in the current theme.</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-            <span class="phpdocumentor-signature__static">static</span>    <span class="phpdocumentor-signature__name">template_is_eligible_for_product_archive_fallback_from_theme</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$template_slug</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">bool</span></code>
+            <span class="phpdocumentor-signature__static">static</span>    <span class="phpdocumentor-signature__name">template_is_eligible_for_fallback_from_theme</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$template_slug</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">bool</span></code>
 
         <section class="phpdocumentor-description"><p><code class="prettyprint">taxonomy-product_cat</code>, <code class="prettyprint">taxonomy-product_tag</code>, <code class="prettyprint">taxonomy-attribute</code> templates can
 generally use the <code class="prettyprint">archive-product</code> as a fallback if there are no specific overrides.</p>
@@ -1700,9 +1719,9 @@ generally use the <code class="prettyprint">archive-product</code> as a fallback
         <a href="#method_theme_has_template" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Blocks/Utils/BlockTemplateUtils.php"><a href="../files/woocommerce-src-blocks-utils-blocktemplateutils.html#source-view.478">src/Blocks/Utils/BlockTemplateUtils.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Blocks/Utils/BlockTemplateUtils.php"><a href="../files/woocommerce-src-blocks-utils-blocktemplateutils.html#source-view.483">src/Blocks/Utils/BlockTemplateUtils.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">478</span>
+    <span class="phpdocumentor-element-found-in__line">483</span>
 </aside>
 
         <p class="phpdocumentor-summary">Check if the theme has a template. So we know if to load our own in or not.</p>
@@ -1744,9 +1763,9 @@ generally use the <code class="prettyprint">archive-product</code> as a fallback
         <a href="#method_theme_has_template_part" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Blocks/Utils/BlockTemplateUtils.php"><a href="../files/woocommerce-src-blocks-utils-blocktemplateutils.html#source-view.488">src/Blocks/Utils/BlockTemplateUtils.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Blocks/Utils/BlockTemplateUtils.php"><a href="../files/woocommerce-src-blocks-utils-blocktemplateutils.html#source-view.493">src/Blocks/Utils/BlockTemplateUtils.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">488</span>
+    <span class="phpdocumentor-element-found-in__line">493</span>
 </aside>
 
         <p class="phpdocumentor-summary">Check if the theme has a template. So we know if to load our own in or not.</p>
@@ -1788,9 +1807,9 @@ generally use the <code class="prettyprint">archive-product</code> as a fallback
         <a href="#method_update_template_data" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Blocks/Utils/BlockTemplateUtils.php"><a href="../files/woocommerce-src-blocks-utils-blocktemplateutils.html#source-view.734">src/Blocks/Utils/BlockTemplateUtils.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Blocks/Utils/BlockTemplateUtils.php"><a href="../files/woocommerce-src-blocks-utils-blocktemplateutils.html#source-view.762">src/Blocks/Utils/BlockTemplateUtils.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">734</span>
+    <span class="phpdocumentor-element-found-in__line">762</span>
 </aside>
 
         <p class="phpdocumentor-summary">Updates the title, description and area of a template to the correct values and to make them more user-friendly.</p>
@@ -1851,7 +1870,7 @@ we display:</li>
 
     <footer class="phpdocumentor phpdocumentor-footer">
     <div class="phpdocumentor-section">
-        <span>WooCommerce Code Reference API documentation generated by <a href="http://www.phpdoc.org/">phpDocumentor</a> on July 25th, 2024 at 11:33 am.</span>
+        <span>WooCommerce Code Reference API documentation generated by <a href="http://www.phpdoc.org/">phpDocumentor</a> on May 16th, 2025 at 09:14 am.</span>
     </div>
 </footer>
 
@@ -1863,7 +1882,7 @@ we display:</li>
             'searchIndex': '..\/js\/searchIndex.json'
         };
     </script>
-    <script src="../js/searchIndex.js?updated=1721907207"></script>
-    <script src="../js/search.js?updated=1721907207"></script>
+    <script src="../js/searchIndex.js?updated=1747386889"></script>
+    <script src="../js/search.js?updated=1747386889"></script>
 </body>
 </html>

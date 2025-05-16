@@ -4,14 +4,13 @@
     <meta charset="utf-8">
     <title>WooCommerce Code Reference</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="../images/favicon.png" />
-    <link rel="apple-touch-icon" href="../images/apple-touch-icon.png"/>
-    <link rel="apple-touch-icon" sizes="72x72" href="../images/apple-touch-icon-72x72.png"/>
-    <link rel="apple-touch-icon" sizes="114x114" href="../images/apple-touch-icon-114x114.png"/>
+    <link rel="icon" href="../images/favicon-32x32.png" sizes="32x32" />
+    <link rel="icon" href="../images/favicon-192x192.png" sizes="192x192" />
+    <link rel="apple-touch-icon" href="../images/favicon-180x180.png" />
+
     <link rel="stylesheet" href="../css/normalize.css">
-    <link rel="stylesheet" href="../css/base.css?updated=1721907203">
-    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../css/template.css?updated=1721907203">
+    <link rel="stylesheet" href="../css/base.css?updated=1747386883">
+    <link rel="stylesheet" href="../css/template.css?updated=1747386883">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0/css/all.min.css" integrity="sha256-ybRkN9dBjhcS2qrW1z+hfCxq+1aBdwyQM5wlQoQVt/0=" crossorigin="anonymous" />
             <script src="https://cdn.jsdelivr.net/npm/css-vars-ponyfill@2"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0/js/all.min.js" integrity="sha256-0vuk8LXoyrmCjp1f0O300qo1M75ZQyhH9X3J6d+scmk=" crossorigin="anonymous"></script>
@@ -27,19 +26,24 @@
 		'content_group' : 'WooCommerce Core Code Reference',
 	});
 </script>
-        </head>
+        <script src="../js/prism.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            window.dispatchEvent(new HashChangeEvent('hashchange'));
+        });
+    </script>
+</head>
 <body id="top">
     <header class="phpdocumentor-top-header">
     <section class="phpdocumentor-section">
         <div class="site-branding">
-            <a class="site-logo" href="../index.html"><img width="180" src="../images/logo.svg" alt="WooCommerce" /></a>
+            <a class="site-logo" href="../index.html"><img src="../images/logo.png" alt="WooCommerce" /></a>
         </div>
         <nav class="main-navigation">
             <ul>
                 <li><a href="../hooks/hooks.html">Hooks Reference</a></li>
-                <li><a href="https://docs.woocommerce.com/">Documentation</a></li>
+                <li><a href="https://developer.woocommerce.com/docs/">Documentation</a></li>
                 <li><a href="https://woocommerce.github.io/woocommerce-rest-api-docs/">REST API Docs</a></li>
-                <li><a href="https://woocommerce.com/careers/?utm_source=woocommerce+core+code+reference&utm_medium=devdocs&utm_campaign=woo+careers" target="_blank">We're hiring!</a></li>
             </ul>
         </nav>
     </section>
@@ -47,7 +51,7 @@
 
 <div class="phpdocumentor-header">
     <section class="phpdocumentor-section">
-        <h1 class="phpdocumentor-title">WooCommerce Code Reference</h1>
+        <h1 class="phpdocumentor-title"><a href="../index.html">WooCommerce Code Reference</a></h1>
         <section class="phpdocumentor-search">
     <label class="phpdocumentor-label">
         <span class="visually-hidden">Search (click ESC to close search results)</span>
@@ -68,6 +72,10 @@
                                         <h4 class="phpdocumentor-sidebar__root-namespace"><a href="../namespaces/woocommerce.html"><abbr title="\WooCommerce">WooCommerce</abbr></a></h4>
                 <ul class="phpdocumentor-list">
                                             <li><a href="../namespaces/woocommerce-admin.html"><abbr title="\WooCommerce\Admin">Admin</abbr></a></li>
+                                    </ul>
+                            <h4 class="phpdocumentor-sidebar__root-namespace"><a href="../namespaces/mailpoet.html"><abbr title="\MailPoet">MailPoet</abbr></a></h4>
+                <ul class="phpdocumentor-list">
+                                            <li><a href="../namespaces/mailpoet-emaileditor.html"><abbr title="\MailPoet\EmailEditor">EmailEditor</abbr></a></li>
                                     </ul>
                             <h4 class="phpdocumentor-sidebar__root-namespace"><a href="../namespaces/automattic.html"><abbr title="\Automattic">Automattic</abbr></a></h4>
                 <ul class="phpdocumentor-list">
@@ -113,8 +121,10 @@
                                     <li><a href="../packages/WooCommerce-Widgets.html"><abbr title="\WooCommerce\Widgets">Widgets</abbr></a></li>
                                     <li><a href="../packages/WooCommerce-Uninstaller.html"><abbr title="\WooCommerce\Uninstaller">Uninstaller</abbr></a></li>
                             </ul>
-                                <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/WoocommerceAdmin.html"><abbr title="\WoocommerceAdmin">WoocommerceAdmin</abbr></a></h3>
-                                <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/WoocommerceNavigation.html"><abbr title="\WoocommerceNavigation">WoocommerceNavigation</abbr></a></h3>
+                                <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/MailPoet.html"><abbr title="\MailPoet">MailPoet</abbr></a></h3>
+                        <ul class="phpdocumentor-list">
+                                    <li><a href="../packages/MailPoet-EmailEditor.html"><abbr title="\MailPoet\EmailEditor">EmailEditor</abbr></a></li>
+                            </ul>
                                 <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/Automattic.html"><abbr title="\Automattic">Automattic</abbr></a></h3>
                         <ul class="phpdocumentor-list">
                                     <li><a href="../packages/Automattic-WooCommerce.html"><abbr title="\Automattic\WooCommerce">WooCommerce</abbr></a></li>
@@ -161,9 +171,9 @@
     </h2>
 
         <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/Features/ProductBlockEditor/BlockRegistry.php"><a href="../files/woocommerce-src-admin-features-productblockeditor-blockregistry.html#source-view.13">src/Admin/Features/ProductBlockEditor/BlockRegistry.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/Features/ProductBlockEditor/BlockRegistry.php"><a href="../files/woocommerce-src-admin-features-productblockeditor-blockregistry.html#source-view.14">src/Admin/Features/ProductBlockEditor/BlockRegistry.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">13</span>
+    <span class="phpdocumentor-element-found-in__line">14</span>
 </aside>
 
             <p class="phpdocumentor-summary">Product block registration and style registration functionality.</p>
@@ -186,7 +196,7 @@
             <dt class="phpdocumentor-table-of-contents__entry -constant -public">
     <a href="../classes/Automattic-WooCommerce-Admin-Features-ProductBlockEditor-BlockRegistry.html#constant_GENERIC_BLOCKS">GENERIC_BLOCKS</a>
     <span>
-        &nbsp;= array(&#039;woocommerce/conditional&#039;, &#039;woocommerce/product-checkbox-field&#039;, &#039;woocommerce/product-collapsible&#039;, &#039;woocommerce/product-radio-field&#039;, &#039;woocommerce/product-pricing-field&#039;, &#039;woocommerce/product-section&#039;, &#039;woocommerce/product-section-description&#039;, &#039;woocommerce/product-subsection&#039;, &#039;woocommerce/product-subsection-description&#039;, &#039;woocommerce/product-details-section-description&#039;, &#039;woocommerce/product-tab&#039;, &#039;woocommerce/product-toggle-field&#039;, &#039;woocommerce/product-taxonomy-field&#039;, &#039;woocommerce/product-text-field&#039;, &#039;woocommerce/product-text-area-field&#039;, &#039;woocommerce/product-number-field&#039;, &#039;woocommerce/product-linked-list-field&#039;, &#039;woocommerce/product-select-field&#039;)                    </span>
+        &nbsp;= array(&#039;woocommerce/conditional&#039;, &#039;woocommerce/product-checkbox-field&#039;, &#039;woocommerce/product-collapsible&#039;, &#039;woocommerce/product-radio-field&#039;, &#039;woocommerce/product-pricing-field&#039;, &#039;woocommerce/product-section&#039;, &#039;woocommerce/product-section-description&#039;, &#039;woocommerce/product-subsection&#039;, &#039;woocommerce/product-subsection-description&#039;, &#039;woocommerce/product-details-section-description&#039;, &#039;woocommerce/product-tab&#039;, &#039;woocommerce/product-toggle-field&#039;, &#039;woocommerce/product-taxonomy-field&#039;, &#039;woocommerce/product-text-field&#039;, &#039;woocommerce/product-text-area-field&#039;, &#039;woocommerce/product-number-field&#039;, &#039;woocommerce/product-linked-list-field&#039;, &#039;woocommerce/product-select-field&#039;, &#039;woocommerce/product-notice-field&#039;)                    </span>
 </dt>
 <dd>Array of all available generic blocks.</dd>
 
@@ -282,6 +292,13 @@
 <dd>Get a file path for a given block file.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -private">
+    <a href="../classes/Automattic-WooCommerce-Admin-Features-ProductBlockEditor-BlockRegistry.html#method_has_role_support">has_role_support()</a>
+    <span>
+                        &nbsp;: mixed    </span>
+</dt>
+<dd>Checks for block attribute role support.</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -private">
     <a href="../classes/Automattic-WooCommerce-Admin-Features-ProductBlockEditor-BlockRegistry.html#method_register_block">register_block()</a>
     <span>
                         &nbsp;: <abbr title="\Automattic\WooCommerce\Admin\Features\ProductBlockEditor\WP_Block_Type">WP_Block_Type</abbr>|false    </span>
@@ -319,9 +336,9 @@
     </h4>
 
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/Features/ProductBlockEditor/BlockRegistry.php"><a href="../files/woocommerce-src-admin-features-productblockeditor-blockregistry.html#source-view.26">src/Admin/Features/ProductBlockEditor/BlockRegistry.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/Features/ProductBlockEditor/BlockRegistry.php"><a href="../files/woocommerce-src-admin-features-productblockeditor-blockregistry.html#source-view.27">src/Admin/Features/ProductBlockEditor/BlockRegistry.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">26</span>
+    <span class="phpdocumentor-element-found-in__line">27</span>
 </aside>
 
         <p class="phpdocumentor-summary">Array of all available generic blocks.</p>
@@ -330,7 +347,7 @@
     <span class="phpdocumentor-signature__visibility">public</span>
     <span class="phpdocumentor-signature__type">mixed</span>
     <span class="phpdocumentor-signature__name">GENERIC_BLOCKS</span>
-    = <span class="phpdocumentor-signature__default-value">array(&#039;woocommerce/conditional&#039;, &#039;woocommerce/product-checkbox-field&#039;, &#039;woocommerce/product-collapsible&#039;, &#039;woocommerce/product-radio-field&#039;, &#039;woocommerce/product-pricing-field&#039;, &#039;woocommerce/product-section&#039;, &#039;woocommerce/product-section-description&#039;, &#039;woocommerce/product-subsection&#039;, &#039;woocommerce/product-subsection-description&#039;, &#039;woocommerce/product-details-section-description&#039;, &#039;woocommerce/product-tab&#039;, &#039;woocommerce/product-toggle-field&#039;, &#039;woocommerce/product-taxonomy-field&#039;, &#039;woocommerce/product-text-field&#039;, &#039;woocommerce/product-text-area-field&#039;, &#039;woocommerce/product-number-field&#039;, &#039;woocommerce/product-linked-list-field&#039;, &#039;woocommerce/product-select-field&#039;)</span>
+    = <span class="phpdocumentor-signature__default-value">array(&#039;woocommerce/conditional&#039;, &#039;woocommerce/product-checkbox-field&#039;, &#039;woocommerce/product-collapsible&#039;, &#039;woocommerce/product-radio-field&#039;, &#039;woocommerce/product-pricing-field&#039;, &#039;woocommerce/product-section&#039;, &#039;woocommerce/product-section-description&#039;, &#039;woocommerce/product-subsection&#039;, &#039;woocommerce/product-subsection-description&#039;, &#039;woocommerce/product-details-section-description&#039;, &#039;woocommerce/product-tab&#039;, &#039;woocommerce/product-toggle-field&#039;, &#039;woocommerce/product-taxonomy-field&#039;, &#039;woocommerce/product-text-field&#039;, &#039;woocommerce/product-text-area-field&#039;, &#039;woocommerce/product-number-field&#039;, &#039;woocommerce/product-linked-list-field&#039;, &#039;woocommerce/product-select-field&#039;, &#039;woocommerce/product-notice-field&#039;)</span>
 </code>
 
 
@@ -346,9 +363,9 @@
     </h4>
 
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/Features/ProductBlockEditor/BlockRegistry.php"><a href="../files/woocommerce-src-admin-features-productblockeditor-blockregistry.html#source-view.18">src/Admin/Features/ProductBlockEditor/BlockRegistry.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/Features/ProductBlockEditor/BlockRegistry.php"><a href="../files/woocommerce-src-admin-features-productblockeditor-blockregistry.html#source-view.19">src/Admin/Features/ProductBlockEditor/BlockRegistry.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">18</span>
+    <span class="phpdocumentor-element-found-in__line">19</span>
 </aside>
 
         <p class="phpdocumentor-summary">Generic blocks directory.</p>
@@ -373,9 +390,9 @@
     </h4>
 
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/Features/ProductBlockEditor/BlockRegistry.php"><a href="../files/woocommerce-src-admin-features-productblockeditor-blockregistry.html#source-view.50">src/Admin/Features/ProductBlockEditor/BlockRegistry.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/Features/ProductBlockEditor/BlockRegistry.php"><a href="../files/woocommerce-src-admin-features-productblockeditor-blockregistry.html#source-view.52">src/Admin/Features/ProductBlockEditor/BlockRegistry.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">50</span>
+    <span class="phpdocumentor-element-found-in__line">52</span>
 </aside>
 
         <p class="phpdocumentor-summary">Array of all available product fields blocks.</p>
@@ -400,9 +417,9 @@
     </h4>
 
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/Features/ProductBlockEditor/BlockRegistry.php"><a href="../files/woocommerce-src-admin-features-productblockeditor-blockregistry.html#source-view.22">src/Admin/Features/ProductBlockEditor/BlockRegistry.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/Features/ProductBlockEditor/BlockRegistry.php"><a href="../files/woocommerce-src-admin-features-productblockeditor-blockregistry.html#source-view.23">src/Admin/Features/ProductBlockEditor/BlockRegistry.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">22</span>
+    <span class="phpdocumentor-element-found-in__line">23</span>
 </aside>
 
         <p class="phpdocumentor-summary">Product fields blocks directory.</p>
@@ -442,9 +459,9 @@
                                 </span>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/Features/ProductBlockEditor/BlockRegistry.php"><a href="../files/woocommerce-src-admin-features-productblockeditor-blockregistry.html#source-view.80">src/Admin/Features/ProductBlockEditor/BlockRegistry.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/Features/ProductBlockEditor/BlockRegistry.php"><a href="../files/woocommerce-src-admin-features-productblockeditor-blockregistry.html#source-view.82">src/Admin/Features/ProductBlockEditor/BlockRegistry.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">80</span>
+    <span class="phpdocumentor-element-found-in__line">82</span>
 </aside>
 
         <p class="phpdocumentor-summary">Singleton instance.</p>
@@ -478,9 +495,9 @@
         <a href="#method_get_instance" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/Features/ProductBlockEditor/BlockRegistry.php"><a href="../files/woocommerce-src-admin-features-productblockeditor-blockregistry.html#source-view.85">src/Admin/Features/ProductBlockEditor/BlockRegistry.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/Features/ProductBlockEditor/BlockRegistry.php"><a href="../files/woocommerce-src-admin-features-productblockeditor-blockregistry.html#source-view.87">src/Admin/Features/ProductBlockEditor/BlockRegistry.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">85</span>
+    <span class="phpdocumentor-element-found-in__line">87</span>
 </aside>
 
         <p class="phpdocumentor-summary">Get the singleton instance.</p>
@@ -510,9 +527,9 @@
         <a href="#method_is_registered" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/Features/ProductBlockEditor/BlockRegistry.php"><a href="../files/woocommerce-src-admin-features-productblockeditor-blockregistry.html#source-view.227">src/Admin/Features/ProductBlockEditor/BlockRegistry.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/Features/ProductBlockEditor/BlockRegistry.php"><a href="../files/woocommerce-src-admin-features-productblockeditor-blockregistry.html#source-view.266">src/Admin/Features/ProductBlockEditor/BlockRegistry.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">227</span>
+    <span class="phpdocumentor-element-found-in__line">266</span>
 </aside>
 
         <p class="phpdocumentor-summary">Check if a block is registered.</p>
@@ -554,9 +571,9 @@
         <a href="#method_register_block_type_from_metadata" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/Features/ProductBlockEditor/BlockRegistry.php"><a href="../files/woocommerce-src-admin-features-productblockeditor-blockregistry.html#source-view.254">src/Admin/Features/ProductBlockEditor/BlockRegistry.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/Features/ProductBlockEditor/BlockRegistry.php"><a href="../files/woocommerce-src-admin-features-productblockeditor-blockregistry.html#source-view.293">src/Admin/Features/ProductBlockEditor/BlockRegistry.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">254</span>
+    <span class="phpdocumentor-element-found-in__line">293</span>
 </aside>
 
         <p class="phpdocumentor-summary">Register a block type from metadata stored in the block.json file.</p>
@@ -599,9 +616,9 @@ path to the folder where the <code class="prettyprint">block.json</code> file is
         <a href="#method_register_categories" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/Features/ProductBlockEditor/BlockRegistry.php"><a href="../files/woocommerce-src-admin-features-productblockeditor-blockregistry.html#source-view.129">src/Admin/Features/ProductBlockEditor/BlockRegistry.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/Features/ProductBlockEditor/BlockRegistry.php"><a href="../files/woocommerce-src-admin-features-productblockeditor-blockregistry.html#source-view.131">src/Admin/Features/ProductBlockEditor/BlockRegistry.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">129</span>
+    <span class="phpdocumentor-element-found-in__line">131</span>
 </aside>
 
         <p class="phpdocumentor-summary">Register product related block categories.</p>
@@ -652,9 +669,9 @@ path to the folder where the <code class="prettyprint">block.json</code> file is
         <a href="#method_unregister" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/Features/ProductBlockEditor/BlockRegistry.php"><a href="../files/woocommerce-src-admin-features-productblockeditor-blockregistry.html#source-view.238">src/Admin/Features/ProductBlockEditor/BlockRegistry.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/Features/ProductBlockEditor/BlockRegistry.php"><a href="../files/woocommerce-src-admin-features-productblockeditor-blockregistry.html#source-view.277">src/Admin/Features/ProductBlockEditor/BlockRegistry.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">238</span>
+    <span class="phpdocumentor-element-found-in__line">277</span>
 </aside>
 
         <p class="phpdocumentor-summary">Unregister a block.</p>
@@ -696,9 +713,9 @@ path to the folder where the <code class="prettyprint">block.json</code> file is
         <a href="#method___construct" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/Features/ProductBlockEditor/BlockRegistry.php"><a href="../files/woocommerce-src-admin-features-productblockeditor-blockregistry.html#source-view.96">src/Admin/Features/ProductBlockEditor/BlockRegistry.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/Features/ProductBlockEditor/BlockRegistry.php"><a href="../files/woocommerce-src-admin-features-productblockeditor-blockregistry.html#source-view.98">src/Admin/Features/ProductBlockEditor/BlockRegistry.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">96</span>
+    <span class="phpdocumentor-element-found-in__line">98</span>
 </aside>
 
         <p class="phpdocumentor-summary">Constructor</p>
@@ -728,9 +745,9 @@ path to the folder where the <code class="prettyprint">block.json</code> file is
         <a href="#method_augment_attributes" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/Features/ProductBlockEditor/BlockRegistry.php"><a href="../files/woocommerce-src-admin-features-productblockeditor-blockregistry.html#source-view.161">src/Admin/Features/ProductBlockEditor/BlockRegistry.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/Features/ProductBlockEditor/BlockRegistry.php"><a href="../files/woocommerce-src-admin-features-productblockeditor-blockregistry.html#source-view.163">src/Admin/Features/ProductBlockEditor/BlockRegistry.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">161</span>
+    <span class="phpdocumentor-element-found-in__line">163</span>
 </aside>
 
         <p class="phpdocumentor-summary">Augment the attributes of a block by adding attributes that are used by the product editor.</p>
@@ -772,9 +789,9 @@ path to the folder where the <code class="prettyprint">block.json</code> file is
         <a href="#method_augment_uses_context" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/Features/ProductBlockEditor/BlockRegistry.php"><a href="../files/woocommerce-src-admin-features-productblockeditor-blockregistry.html#source-view.196">src/Admin/Features/ProductBlockEditor/BlockRegistry.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/Features/ProductBlockEditor/BlockRegistry.php"><a href="../files/woocommerce-src-admin-features-productblockeditor-blockregistry.html#source-view.235">src/Admin/Features/ProductBlockEditor/BlockRegistry.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">196</span>
+    <span class="phpdocumentor-element-found-in__line">235</span>
 </aside>
 
         <p class="phpdocumentor-summary">Augment the uses_context of a block by adding attributes that are used by the product editor.</p>
@@ -816,9 +833,9 @@ path to the folder where the <code class="prettyprint">block.json</code> file is
         <a href="#method_get_file_path" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/Features/ProductBlockEditor/BlockRegistry.php"><a href="../files/woocommerce-src-admin-features-productblockeditor-blockregistry.html#source-view.107">src/Admin/Features/ProductBlockEditor/BlockRegistry.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/Features/ProductBlockEditor/BlockRegistry.php"><a href="../files/woocommerce-src-admin-features-productblockeditor-blockregistry.html#source-view.109">src/Admin/Features/ProductBlockEditor/BlockRegistry.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">107</span>
+    <span class="phpdocumentor-element-found-in__line">109</span>
 </aside>
 
         <p class="phpdocumentor-summary">Get a file path for a given block file.</p>
@@ -864,14 +881,46 @@ path to the folder where the <code class="prettyprint">block.json</code> file is
             -private
                                                         "
 >
+    <h4 class="phpdocumentor-element__name" id="method_has_role_support">
+        has_role_support()
+        <a href="#method_has_role_support" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/Features/ProductBlockEditor/BlockRegistry.php"><a href="../files/woocommerce-src-admin-features-productblockeditor-blockregistry.html#source-view.205">src/Admin/Features/ProductBlockEditor/BlockRegistry.php</a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">205</span>
+</aside>
+
+        <p class="phpdocumentor-summary">Checks for block attribute role support.</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">private</span>
+                <span class="phpdocumentor-signature__name">has_role_support</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
+
+        <section class="phpdocumentor-description"></section>
+
+    
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">mixed</span>
+            &mdash; <span class="phpdocumentor-return-value__description"></span>
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -private
+                                                        "
+>
     <h4 class="phpdocumentor-element__name" id="method_register_block">
         register_block()
         <a href="#method_register_block" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/Features/ProductBlockEditor/BlockRegistry.php"><a href="../files/woocommerce-src-admin-features-productblockeditor-blockregistry.html#source-view.215">src/Admin/Features/ProductBlockEditor/BlockRegistry.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/Features/ProductBlockEditor/BlockRegistry.php"><a href="../files/woocommerce-src-admin-features-productblockeditor-blockregistry.html#source-view.254">src/Admin/Features/ProductBlockEditor/BlockRegistry.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">215</span>
+    <span class="phpdocumentor-element-found-in__line">254</span>
 </aside>
 
         <p class="phpdocumentor-summary">Register a single block.</p>
@@ -922,9 +971,9 @@ path to the folder where the <code class="prettyprint">block.json</code> file is
         <a href="#method_register_product_blocks" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/Features/ProductBlockEditor/BlockRegistry.php"><a href="../files/woocommerce-src-admin-features-productblockeditor-blockregistry.html#source-view.114">src/Admin/Features/ProductBlockEditor/BlockRegistry.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/Features/ProductBlockEditor/BlockRegistry.php"><a href="../files/woocommerce-src-admin-features-productblockeditor-blockregistry.html#source-view.116">src/Admin/Features/ProductBlockEditor/BlockRegistry.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">114</span>
+    <span class="phpdocumentor-element-found-in__line">116</span>
 </aside>
 
         <p class="phpdocumentor-summary">Register all the product blocks.</p>
@@ -954,9 +1003,9 @@ path to the folder where the <code class="prettyprint">block.json</code> file is
         <a href="#method_remove_block_prefix" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/Features/ProductBlockEditor/BlockRegistry.php"><a href="../files/woocommerce-src-admin-features-productblockeditor-blockregistry.html#source-view.148">src/Admin/Features/ProductBlockEditor/BlockRegistry.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/Admin/Features/ProductBlockEditor/BlockRegistry.php"><a href="../files/woocommerce-src-admin-features-productblockeditor-blockregistry.html#source-view.150">src/Admin/Features/ProductBlockEditor/BlockRegistry.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">148</span>
+    <span class="phpdocumentor-element-found-in__line">150</span>
 </aside>
 
         <p class="phpdocumentor-summary">Get the block name without the &quot;woocommerce/&quot; prefix.</p>
@@ -998,7 +1047,7 @@ path to the folder where the <code class="prettyprint">block.json</code> file is
 
     <footer class="phpdocumentor phpdocumentor-footer">
     <div class="phpdocumentor-section">
-        <span>WooCommerce Code Reference API documentation generated by <a href="http://www.phpdoc.org/">phpDocumentor</a> on July 25th, 2024 at 11:33 am.</span>
+        <span>WooCommerce Code Reference API documentation generated by <a href="http://www.phpdoc.org/">phpDocumentor</a> on May 16th, 2025 at 09:14 am.</span>
     </div>
 </footer>
 
@@ -1010,7 +1059,7 @@ path to the folder where the <code class="prettyprint">block.json</code> file is
             'searchIndex': '..\/js\/searchIndex.json'
         };
     </script>
-    <script src="../js/searchIndex.js?updated=1721907203"></script>
-    <script src="../js/search.js?updated=1721907203"></script>
+    <script src="../js/searchIndex.js?updated=1747386883"></script>
+    <script src="../js/search.js?updated=1747386883"></script>
 </body>
 </html>

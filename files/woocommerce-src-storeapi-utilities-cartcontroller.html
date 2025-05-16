@@ -4,14 +4,13 @@
     <meta charset="utf-8">
     <title>WooCommerce Code Reference</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="../images/favicon.png" />
-    <link rel="apple-touch-icon" href="../images/apple-touch-icon.png"/>
-    <link rel="apple-touch-icon" sizes="72x72" href="../images/apple-touch-icon-72x72.png"/>
-    <link rel="apple-touch-icon" sizes="114x114" href="../images/apple-touch-icon-114x114.png"/>
+    <link rel="icon" href="../images/favicon-32x32.png" sizes="32x32" />
+    <link rel="icon" href="../images/favicon-192x192.png" sizes="192x192" />
+    <link rel="apple-touch-icon" href="../images/favicon-180x180.png" />
+
     <link rel="stylesheet" href="../css/normalize.css">
-    <link rel="stylesheet" href="../css/base.css?updated=1721907186">
-    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../css/template.css?updated=1721907186">
+    <link rel="stylesheet" href="../css/base.css?updated=1747386863">
+    <link rel="stylesheet" href="../css/template.css?updated=1747386863">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0/css/all.min.css" integrity="sha256-ybRkN9dBjhcS2qrW1z+hfCxq+1aBdwyQM5wlQoQVt/0=" crossorigin="anonymous" />
             <script src="https://cdn.jsdelivr.net/npm/css-vars-ponyfill@2"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0/js/all.min.js" integrity="sha256-0vuk8LXoyrmCjp1f0O300qo1M75ZQyhH9X3J6d+scmk=" crossorigin="anonymous"></script>
@@ -38,14 +37,13 @@
     <header class="phpdocumentor-top-header">
     <section class="phpdocumentor-section">
         <div class="site-branding">
-            <a class="site-logo" href="../index.html"><img width="180" src="../images/logo.svg" alt="WooCommerce" /></a>
+            <a class="site-logo" href="../index.html"><img src="../images/logo.png" alt="WooCommerce" /></a>
         </div>
         <nav class="main-navigation">
             <ul>
                 <li><a href="../hooks/hooks.html">Hooks Reference</a></li>
-                <li><a href="https://docs.woocommerce.com/">Documentation</a></li>
+                <li><a href="https://developer.woocommerce.com/docs/">Documentation</a></li>
                 <li><a href="https://woocommerce.github.io/woocommerce-rest-api-docs/">REST API Docs</a></li>
-                <li><a href="https://woocommerce.com/careers/?utm_source=woocommerce+core+code+reference&utm_medium=devdocs&utm_campaign=woo+careers" target="_blank">We're hiring!</a></li>
             </ul>
         </nav>
     </section>
@@ -53,7 +51,7 @@
 
 <div class="phpdocumentor-header">
     <section class="phpdocumentor-section">
-        <h1 class="phpdocumentor-title">WooCommerce Code Reference</h1>
+        <h1 class="phpdocumentor-title"><a href="../index.html">WooCommerce Code Reference</a></h1>
         <section class="phpdocumentor-search">
     <label class="phpdocumentor-label">
         <span class="visually-hidden">Search (click ESC to close search results)</span>
@@ -74,6 +72,10 @@
                                         <h4 class="phpdocumentor-sidebar__root-namespace"><a href="../namespaces/woocommerce.html"><abbr title="\WooCommerce">WooCommerce</abbr></a></h4>
                 <ul class="phpdocumentor-list">
                                             <li><a href="../namespaces/woocommerce-admin.html"><abbr title="\WooCommerce\Admin">Admin</abbr></a></li>
+                                    </ul>
+                            <h4 class="phpdocumentor-sidebar__root-namespace"><a href="../namespaces/mailpoet.html"><abbr title="\MailPoet">MailPoet</abbr></a></h4>
+                <ul class="phpdocumentor-list">
+                                            <li><a href="../namespaces/mailpoet-emaileditor.html"><abbr title="\MailPoet\EmailEditor">EmailEditor</abbr></a></li>
                                     </ul>
                             <h4 class="phpdocumentor-sidebar__root-namespace"><a href="../namespaces/automattic.html"><abbr title="\Automattic">Automattic</abbr></a></h4>
                 <ul class="phpdocumentor-list">
@@ -119,8 +121,10 @@
                                     <li><a href="../packages/WooCommerce-Widgets.html"><abbr title="\WooCommerce\Widgets">Widgets</abbr></a></li>
                                     <li><a href="../packages/WooCommerce-Uninstaller.html"><abbr title="\WooCommerce\Uninstaller">Uninstaller</abbr></a></li>
                             </ul>
-                                <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/WoocommerceAdmin.html"><abbr title="\WoocommerceAdmin">WoocommerceAdmin</abbr></a></h3>
-                                <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/WoocommerceNavigation.html"><abbr title="\WoocommerceNavigation">WoocommerceNavigation</abbr></a></h3>
+                                <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/MailPoet.html"><abbr title="\MailPoet">MailPoet</abbr></a></h3>
+                        <ul class="phpdocumentor-list">
+                                    <li><a href="../packages/MailPoet-EmailEditor.html"><abbr title="\MailPoet\EmailEditor">EmailEditor</abbr></a></li>
+                            </ul>
                                 <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/Automattic.html"><abbr title="\Automattic">Automattic</abbr></a></h3>
                         <ul class="phpdocumentor-list">
                                     <li><a href="../packages/Automattic-WooCommerce.html"><abbr title="\Automattic\WooCommerce">WooCommerce</abbr></a></li>
@@ -160,6 +164,8 @@
 namespace Automattic\WooCommerce\StoreApi\Utilities;
 
 use Automattic\WooCommerce\Checkout\Helpers\ReserveStock;
+use Automattic\WooCommerce\Enums\ProductStatus;
+use Automattic\WooCommerce\Enums\ProductType;
 use Automattic\WooCommerce\StoreApi\Exceptions\InvalidCartException;
 use Automattic\WooCommerce\StoreApi\Exceptions\NotPurchasableException;
 use Automattic\WooCommerce\StoreApi\Exceptions\OutOfStockException;
@@ -170,7 +176,6 @@ use Automattic\WooCommerce\StoreApi\Utilities\ArrayUtils;
 use Automattic\WooCommerce\StoreApi\Utilities\DraftOrderTrait;
 use Automattic\WooCommerce\StoreApi\Utilities\NoticeHandler;
 use Automattic\WooCommerce\StoreApi\Utilities\QuantityLimits;
-use Automattic\WooCommerce\Blocks\Package;
 use WP_Error;
 
 /**
@@ -185,20 +190,57 @@ class CartController {
 	 * Makes the cart and sessions available to a route by loading them from core.
 	 */
 	public function load_cart() {
-		if ( ! did_action( &#039;woocommerce_load_cart_from_session&#039; ) &amp;&amp; function_exists( &#039;wc_load_cart&#039; ) ) {
-			wc_load_cart();
+		if ( did_action( &#039;woocommerce_load_cart_from_session&#039; ) ) {
+			return;
+		}
+
+		// Initialize the cart.
+		wc_load_cart();
+
+		// Load cart from session.
+		$cart               = $this-&gt;get_cart_instance();
+		$cart-&gt;cart_context = &#039;store-api&#039;;
+		$cart-&gt;get_cart();
+	}
+
+	/**
+	 * Normalizes the cart by fixing any quantity violations.
+	 */
+	public function normalize_cart() {
+		$quantity_limits = new QuantityLimits();
+		$cart_items      = $this-&gt;get_cart_items();
+
+		foreach ( $cart_items as $cart_item ) {
+			$normalized_qty = $quantity_limits-&gt;normalize_cart_item_quantity( $cart_item[&#039;quantity&#039;], $cart_item );
+
+			if ( $normalized_qty !== $cart_item[&#039;quantity&#039;] ) {
+				$this-&gt;set_cart_item_quantity( $cart_item[&#039;key&#039;], $normalized_qty );
+			}
 		}
 	}
 
 	/**
-	 * Recalculates the cart totals.
+	 * Gets the latest cart instance, and ensures totals have been calculated before returning.
+	 *
+	 * @return \WC_Cart
+	 */
+	public function get_cart_for_response() {
+		return did_action( &#039;woocommerce_after_calculate_totals&#039; ) ? $this-&gt;get_cart_instance() : $this-&gt;calculate_totals();
+	}
+
+	/**
+	 * Recalculates the cart totals and returns the updated cart instance.
+	 *
+	 * @since 9.2.0 Calculate shipping was removed here because it&#039;s called already by calculate_totals.
+	 *
+	 * @return \WC_Cart
 	 */
 	public function calculate_totals() {
 		$cart = $this-&gt;get_cart_instance();
 		$cart-&gt;get_cart();
 		$cart-&gt;calculate_fees();
-		$cart-&gt;calculate_shipping();
 		$cart-&gt;calculate_totals();
+		return $cart;
 	}
 
 	/**
@@ -346,19 +388,19 @@ class CartController {
 		$cart_item = $this-&gt;get_cart_item( $item_id );
 
 		if ( empty( $cart_item ) ) {
-			throw new RouteException( &#039;woocommerce_rest_cart_invalid_key&#039;, __( &#039;Cart item does not exist.&#039;, &#039;woocommerce&#039; ), 409 );
+			throw new RouteException( &#039;woocommerce_rest_cart_invalid_key&#039;, esc_html__( &#039;Cart item does not exist.&#039;, &#039;woocommerce&#039; ), 409 );
 		}
 
-		$product = $cart_item[&#039;data&#039;];
+		$product = $cart_item[&#039;data&#039;] ?? false;
 
 		if ( ! $product instanceof \WC_Product ) {
-			throw new RouteException( &#039;woocommerce_rest_cart_invalid_product&#039;, __( &#039;Cart item is invalid.&#039;, &#039;woocommerce&#039; ), 404 );
+			throw new RouteException( &#039;woocommerce_rest_cart_invalid_product&#039;, esc_html__( &#039;Cart item is invalid.&#039;, &#039;woocommerce&#039; ), 404 );
 		}
 
 		$quantity_validation = ( new QuantityLimits() )-&gt;validate_cart_item_quantity( $quantity, $cart_item );
 
 		if ( is_wp_error( $quantity_validation ) ) {
-			throw new RouteException( $quantity_validation-&gt;get_error_code(), $quantity_validation-&gt;get_error_message(), 400 );
+			throw new RouteException( $quantity_validation-&gt;get_error_code(), $quantity_validation-&gt;get_error_message(), 400 ); // phpcs:ignore WordPress.Security.EscapeOutput.ExceptionNotEscaped
 		}
 
 		$cart = $this-&gt;get_cart_instance();
@@ -431,7 +473,8 @@ class CartController {
 			$this-&gt;get_product_id( $product ),
 			$request[&#039;quantity&#039;],
 			$this-&gt;get_variation_id( $product ),
-			$request[&#039;variation&#039;]
+			$request[&#039;variation&#039;],
+			$request[&#039;cart_item_data&#039;]
 		);
 
 		if ( ! $passed_validation ) {
@@ -600,6 +643,9 @@ class CartController {
 		remove_action( &#039;woocommerce_check_cart_items&#039;, array( $cart, &#039;check_cart_items&#039; ), 1 );
 		remove_action( &#039;woocommerce_check_cart_items&#039;, array( $cart, &#039;check_cart_coupons&#039; ), 1 );
 
+		// Before running actions, store notices.
+		$previous_notices = WC()-&gt;session-&gt;get( &#039;wc_notices&#039;, array() );
+
 		/**
 		 * Fires when cart items are being validated.
 		 *
@@ -616,6 +662,9 @@ class CartController {
 
 		$cart_errors = NoticeHandler::convert_notices_to_wp_errors( &#039;woocommerce_rest_cart_item_error&#039; );
 
+		// Restore notices.
+		WC()-&gt;session-&gt;set( &#039;wc_notices&#039;, $previous_notices );
+
 		if ( $cart_errors-&gt;has_errors() ) {
 			throw new InvalidCartException(
 				&#039;woocommerce_cart_error&#039;,
@@ -626,12 +675,29 @@ class CartController {
 	}
 
 	/**
+	 * When placing an order, validate that the cart is not empty.
+	 *
+	 * @throws InvalidCartException Exception if the cart is empty.
+	 */
+	public function validate_cart_not_empty() {
+		$cart_items = $this-&gt;get_cart_items();
+
+		if ( empty( $cart_items ) ) {
+			throw new InvalidCartException(
+				&#039;woocommerce_cart_error&#039;,
+				// phpcs:ignore WordPress.Security.EscapeOutput.ExceptionNotEscaped -- Errors are converted to response objects later.
+				new WP_Error( &#039;woocommerce_rest_cart_empty&#039;, __( &#039;Cannot place an order, your cart is empty.&#039;, &#039;woocommerce&#039; ), 400 ),
+				400
+			);
+		}
+	}
+
+	/**
 	 * Validate all items in the cart and check for errors.
 	 *
 	 * @throws InvalidCartException Exception if invalid data is detected due to insufficient stock levels.
 	 */
 	public function validate_cart_items() {
-		$cart       = $this-&gt;get_cart_instance();
 		$cart_items = $this-&gt;get_cart_items();
 
 		$errors                        = [];
@@ -640,7 +706,7 @@ class CartController {
 		$partial_out_of_stock_products = [];
 		$not_purchasable_products      = [];
 
-		foreach ( $cart_items as $cart_item_key =&gt; $cart_item ) {
+		foreach ( $cart_items as $cart_item ) {
 			try {
 				$this-&gt;validate_cart_item( $cart_item );
 			} catch ( RouteException $error ) {
@@ -749,7 +815,7 @@ class CartController {
 	 * @param array $cart_item Cart item array.
 	 */
 	public function validate_cart_item( $cart_item ) {
-		$product = $cart_item[&#039;data&#039;];
+		$product = $cart_item[&#039;data&#039;] ?? false;
 
 		if ( ! $product instanceof \WC_Product ) {
 			return;
@@ -883,7 +949,7 @@ class CartController {
 		$cart = wc()-&gt;cart;
 
 		if ( ! $cart || ! $cart instanceof \WC_Cart ) {
-			throw new RouteException( &#039;woocommerce_rest_cart_error&#039;, __( &#039;Unable to retrieve cart.&#039;, &#039;woocommerce&#039; ), 500 );
+			throw new RouteException( &#039;woocommerce_rest_cart_error&#039;, esc_html__( &#039;Unable to retrieve cart.&#039;, &#039;woocommerce&#039; ), 500 );
 		}
 
 		return $cart;
@@ -982,7 +1048,7 @@ class CartController {
 
 		// Add extra package data to array.
 		$packages = array_map(
-			function( $key, $package, $index ) {
+			function ( $key, $package, $index ) {
 				$package[&#039;package_id&#039;]   = isset( $package[&#039;package_id&#039;] ) ? $package[&#039;package_id&#039;] : $key;
 				$package[&#039;package_name&#039;] = isset( $package[&#039;package_name&#039;] ) ? $package[&#039;package_name&#039;] : $this-&gt;get_package_name( $package, $index );
 				return $package;
@@ -1067,7 +1133,7 @@ class CartController {
 				&#039;woocommerce_rest_cart_coupon_error&#039;,
 				sprintf(
 					/* translators: %s coupon code */
-					__( &#039;&quot;%s&quot; is an invalid coupon code.&#039;, &#039;woocommerce&#039; ),
+					esc_html__( &#039;&quot;%s&quot; is an invalid coupon code.&#039;, &#039;woocommerce&#039; ),
 					esc_html( $coupon_code )
 				),
 				400
@@ -1079,7 +1145,7 @@ class CartController {
 				&#039;woocommerce_rest_cart_coupon_error&#039;,
 				sprintf(
 					/* translators: %s coupon code */
-					__( &#039;Coupon code &quot;%s&quot; has already been applied.&#039;, &#039;woocommerce&#039; ),
+					esc_html__( &#039;Coupon code &quot;%s&quot; has already been applied.&#039;, &#039;woocommerce&#039; ),
 					esc_html( $coupon_code )
 				),
 				400
@@ -1100,7 +1166,7 @@ class CartController {
 
 		// Prevents new coupons being added if individual use coupons are already in the cart.
 		$individual_use_coupons = $this-&gt;get_cart_coupons(
-			function( $code ) {
+			function ( $code ) {
 				$coupon = new \WC_Coupon( $code );
 				return $coupon-&gt;get_individual_use();
 			}
@@ -1127,8 +1193,8 @@ class CartController {
 					&#039;woocommerce_rest_cart_coupon_error&#039;,
 					sprintf(
 						/* translators: %s: coupon code */
-						__( &#039;&quot;%s&quot; has already been applied and cannot be used in conjunction with other coupons.&#039;, &#039;woocommerce&#039; ),
-						$code
+						esc_html__( &#039;&quot;%s&quot; has already been applied and cannot be used in conjunction with other coupons.&#039;, &#039;woocommerce&#039; ),
+						esc_html( $code )
 					),
 					400
 				);
@@ -1235,7 +1301,7 @@ class CartController {
 	protected function get_product_for_cart( $request ) {
 		$product = wc_get_product( $request[&#039;id&#039;] );
 
-		if ( ! $product || &#039;trash&#039; === $product-&gt;get_status() ) {
+		if ( ! $product || ProductStatus::TRASH === $product-&gt;get_status() ) {
 			throw new RouteException(
 				&#039;woocommerce_rest_cart_invalid_product&#039;,
 				__( &#039;This product cannot be added to the cart.&#039;, &#039;woocommerce&#039; ),
@@ -1253,7 +1319,7 @@ class CartController {
 	 * @return int
 	 */
 	protected function get_product_id( \WC_Product $product ) {
-		return $product-&gt;is_type( &#039;variation&#039; ) ? $product-&gt;get_parent_id() : $product-&gt;get_id();
+		return $product-&gt;is_type( ProductType::VARIATION ) ? $product-&gt;get_parent_id() : $product-&gt;get_id();
 	}
 
 	/**
@@ -1263,7 +1329,7 @@ class CartController {
 	 * @return int
 	 */
 	protected function get_variation_id( \WC_Product $product ) {
-		return $product-&gt;is_type( &#039;variation&#039; ) ? $product-&gt;get_id() : 0;
+		return $product-&gt;is_type( ProductType::VARIATION ) ? $product-&gt;get_id() : 0;
 	}
 
 	/**
@@ -1296,7 +1362,7 @@ class CartController {
 		$variation_id = 0;
 		$product      = wc_get_product( $product_id );
 
-		if ( $product-&gt;is_type( &#039;variation&#039; ) ) {
+		if ( $product-&gt;is_type( ProductType::VARIATION ) ) {
 			$product_id   = $product-&gt;get_parent_id();
 			$variation_id = $product-&gt;get_id();
 		}
@@ -1355,7 +1421,7 @@ class CartController {
 		$product = $this-&gt;get_product_for_cart( $request );
 
 		// Remove variation request if not needed.
-		if ( ! $product-&gt;is_type( array( &#039;variation&#039;, &#039;variable&#039; ) ) ) {
+		if ( ! $product-&gt;is_type( array( ProductType::VARIATION, ProductType::VARIABLE ) ) ) {
 			$request[&#039;variation&#039;] = [];
 			return $request;
 		}
@@ -1365,7 +1431,7 @@ class CartController {
 		$request[&#039;variation&#039;]        = $this-&gt;sanitize_variation_data( wp_list_pluck( $request[&#039;variation&#039;], &#039;value&#039;, &#039;attribute&#039; ), $variable_product_attributes );
 
 		// If we have a parent product, find the variation ID.
-		if ( $product-&gt;is_type( &#039;variable&#039; ) ) {
+		if ( $product-&gt;is_type( ProductType::VARIABLE ) ) {
 			$request[&#039;id&#039;] = $this-&gt;get_variation_id_from_variation_data( $request, $product );
 		}
 
@@ -1470,11 +1536,31 @@ class CartController {
 			if ( ! $attribute[&#039;is_variation&#039;] ) {
 				continue;
 			}
-			$attribute_label          = wc_attribute_label( $attribute[&#039;name&#039;] );
+
+			// Sanitized attribute (same as the product page) e.g. attribute_size.
 			$variation_attribute_name = wc_variation_attribute_name( $attribute[&#039;name&#039;] );
+			if ( isset( $variation_data[ $variation_attribute_name ] ) ) {
+				$return[ $variation_attribute_name ] =
+					$attribute[&#039;is_taxonomy&#039;]
+						?
+						sanitize_title( $variation_data[ $variation_attribute_name ] )
+						:
+						html_entity_decode(
+							wc_clean( $variation_data[ $variation_attribute_name ] ),
+							ENT_QUOTES,
+							get_bloginfo( &#039;charset&#039; )
+						);
+				continue;
+			}
 
 			// Attribute labels e.g. Size.
-			if ( isset( $variation_data[ $attribute_label ] ) ) {
+			$attribute_label           = wc_attribute_label( $attribute[&#039;name&#039;] );
+			$lowercase_attribute_label = strtolower( $attribute_label );
+			if ( isset( $variation_data[ $attribute_label ] ) || isset( $variation_data[ $lowercase_attribute_label ] ) ) {
+
+				// Check both the original and lowercase attribute label.
+				$attribute_label = isset( $variation_data[ $attribute_label ] ) ? $attribute_label : $lowercase_attribute_label;
+
 				$return[ $variation_attribute_name ] =
 					$attribute[&#039;is_taxonomy&#039;]
 						?
@@ -1514,11 +1600,11 @@ class CartController {
 	 * @return array
 	 */
 	protected function get_variable_product_attributes( $product ) {
-		if ( $product-&gt;is_type( &#039;variation&#039; ) ) {
+		if ( $product-&gt;is_type( ProductType::VARIATION ) ) {
 			$product = wc_get_product( $product-&gt;get_parent_id() );
 		}
 
-		if ( ! $product || &#039;trash&#039; === $product-&gt;get_status() ) {
+		if ( ! $product || ProductStatus::TRASH === $product-&gt;get_status() ) {
 			throw new RouteException(
 				&#039;woocommerce_rest_cart_invalid_parent_product&#039;,
 				__( &#039;This product cannot be added to the cart.&#039;, &#039;woocommerce&#039; ),
@@ -1539,7 +1625,7 @@ class CartController {
 
     <footer class="phpdocumentor phpdocumentor-footer">
     <div class="phpdocumentor-section">
-        <span>WooCommerce Code Reference API documentation generated by <a href="http://www.phpdoc.org/">phpDocumentor</a> on July 25th, 2024 at 11:33 am.</span>
+        <span>WooCommerce Code Reference API documentation generated by <a href="http://www.phpdoc.org/">phpDocumentor</a> on May 16th, 2025 at 09:14 am.</span>
     </div>
 </footer>
 
@@ -1551,7 +1637,7 @@ class CartController {
             'searchIndex': '..\/js\/searchIndex.json'
         };
     </script>
-    <script src="../js/searchIndex.js?updated=1721907186"></script>
-    <script src="../js/search.js?updated=1721907186"></script>
+    <script src="../js/searchIndex.js?updated=1747386863"></script>
+    <script src="../js/search.js?updated=1747386863"></script>
 </body>
 </html>

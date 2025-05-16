@@ -4,14 +4,13 @@
     <meta charset="utf-8">
     <title>WooCommerce Code Reference</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="../images/favicon.png" />
-    <link rel="apple-touch-icon" href="../images/apple-touch-icon.png"/>
-    <link rel="apple-touch-icon" sizes="72x72" href="../images/apple-touch-icon-72x72.png"/>
-    <link rel="apple-touch-icon" sizes="114x114" href="../images/apple-touch-icon-114x114.png"/>
+    <link rel="icon" href="../images/favicon-32x32.png" sizes="32x32" />
+    <link rel="icon" href="../images/favicon-192x192.png" sizes="192x192" />
+    <link rel="apple-touch-icon" href="../images/favicon-180x180.png" />
+
     <link rel="stylesheet" href="../css/normalize.css">
-    <link rel="stylesheet" href="../css/base.css?updated=1721907183">
-    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../css/template.css?updated=1721907183">
+    <link rel="stylesheet" href="../css/base.css?updated=1747386858">
+    <link rel="stylesheet" href="../css/template.css?updated=1747386858">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0/css/all.min.css" integrity="sha256-ybRkN9dBjhcS2qrW1z+hfCxq+1aBdwyQM5wlQoQVt/0=" crossorigin="anonymous" />
             <script src="https://cdn.jsdelivr.net/npm/css-vars-ponyfill@2"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0/js/all.min.js" integrity="sha256-0vuk8LXoyrmCjp1f0O300qo1M75ZQyhH9X3J6d+scmk=" crossorigin="anonymous"></script>
@@ -38,14 +37,13 @@
     <header class="phpdocumentor-top-header">
     <section class="phpdocumentor-section">
         <div class="site-branding">
-            <a class="site-logo" href="../index.html"><img width="180" src="../images/logo.svg" alt="WooCommerce" /></a>
+            <a class="site-logo" href="../index.html"><img src="../images/logo.png" alt="WooCommerce" /></a>
         </div>
         <nav class="main-navigation">
             <ul>
                 <li><a href="../hooks/hooks.html">Hooks Reference</a></li>
-                <li><a href="https://docs.woocommerce.com/">Documentation</a></li>
+                <li><a href="https://developer.woocommerce.com/docs/">Documentation</a></li>
                 <li><a href="https://woocommerce.github.io/woocommerce-rest-api-docs/">REST API Docs</a></li>
-                <li><a href="https://woocommerce.com/careers/?utm_source=woocommerce+core+code+reference&utm_medium=devdocs&utm_campaign=woo+careers" target="_blank">We're hiring!</a></li>
             </ul>
         </nav>
     </section>
@@ -53,7 +51,7 @@
 
 <div class="phpdocumentor-header">
     <section class="phpdocumentor-section">
-        <h1 class="phpdocumentor-title">WooCommerce Code Reference</h1>
+        <h1 class="phpdocumentor-title"><a href="../index.html">WooCommerce Code Reference</a></h1>
         <section class="phpdocumentor-search">
     <label class="phpdocumentor-label">
         <span class="visually-hidden">Search (click ESC to close search results)</span>
@@ -74,6 +72,10 @@
                                         <h4 class="phpdocumentor-sidebar__root-namespace"><a href="../namespaces/woocommerce.html"><abbr title="\WooCommerce">WooCommerce</abbr></a></h4>
                 <ul class="phpdocumentor-list">
                                             <li><a href="../namespaces/woocommerce-admin.html"><abbr title="\WooCommerce\Admin">Admin</abbr></a></li>
+                                    </ul>
+                            <h4 class="phpdocumentor-sidebar__root-namespace"><a href="../namespaces/mailpoet.html"><abbr title="\MailPoet">MailPoet</abbr></a></h4>
+                <ul class="phpdocumentor-list">
+                                            <li><a href="../namespaces/mailpoet-emaileditor.html"><abbr title="\MailPoet\EmailEditor">EmailEditor</abbr></a></li>
                                     </ul>
                             <h4 class="phpdocumentor-sidebar__root-namespace"><a href="../namespaces/automattic.html"><abbr title="\Automattic">Automattic</abbr></a></h4>
                 <ul class="phpdocumentor-list">
@@ -119,8 +121,10 @@
                                     <li><a href="../packages/WooCommerce-Widgets.html"><abbr title="\WooCommerce\Widgets">Widgets</abbr></a></li>
                                     <li><a href="../packages/WooCommerce-Uninstaller.html"><abbr title="\WooCommerce\Uninstaller">Uninstaller</abbr></a></li>
                             </ul>
-                                <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/WoocommerceAdmin.html"><abbr title="\WoocommerceAdmin">WoocommerceAdmin</abbr></a></h3>
-                                <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/WoocommerceNavigation.html"><abbr title="\WoocommerceNavigation">WoocommerceNavigation</abbr></a></h3>
+                                <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/MailPoet.html"><abbr title="\MailPoet">MailPoet</abbr></a></h3>
+                        <ul class="phpdocumentor-list">
+                                    <li><a href="../packages/MailPoet-EmailEditor.html"><abbr title="\MailPoet\EmailEditor">EmailEditor</abbr></a></li>
+                            </ul>
                                 <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/Automattic.html"><abbr title="\Automattic">Automattic</abbr></a></h3>
                         <ul class="phpdocumentor-list">
                                     <li><a href="../packages/Automattic-WooCommerce.html"><abbr title="\Automattic\WooCommerce">WooCommerce</abbr></a></li>
@@ -168,6 +172,7 @@ defined( &#039;ABSPATH&#039; ) || exit;
 
 use Automattic\WooCommerce\Internal\AssignDefaultCategory;
 use Automattic\WooCommerce\Internal\BatchProcessing\BatchProcessingController;
+use Automattic\WooCommerce\Internal\ComingSoon\ComingSoonAdminBarBadge;
 use Automattic\WooCommerce\Internal\ComingSoon\ComingSoonCacheInvalidator;
 use Automattic\WooCommerce\Internal\ComingSoon\ComingSoonRequestHandler;
 use Automattic\WooCommerce\Internal\DataStores\Orders\CustomOrdersTableController;
@@ -180,14 +185,12 @@ use Automattic\WooCommerce\Internal\ProductImage\MatchImageBySKU;
 use Automattic\WooCommerce\Internal\RegisterHooksInterface;
 use Automattic\WooCommerce\Internal\RestockRefundedItemsAdjuster;
 use Automattic\WooCommerce\Internal\Settings\OptionSanitizer;
-use Automattic\WooCommerce\Internal\Traits\AccessiblePrivateMethods;
 use Automattic\WooCommerce\Internal\Utilities\LegacyRestApiStub;
 use Automattic\WooCommerce\Internal\Utilities\WebhookUtil;
 use Automattic\WooCommerce\Internal\Admin\Marketplace;
 use Automattic\WooCommerce\Proxies\LegacyProxy;
-use Automattic\WooCommerce\Utilities\{ LoggingUtil, TimeUtil };
-use Automattic\WooCommerce\Admin\WCAdminHelper;
-use Automattic\WooCommerce\Admin\Features\Features;
+use Automattic\WooCommerce\Utilities\{LoggingUtil, RestApiUtil, TimeUtil};
+use Automattic\WooCommerce\Internal\Logging\RemoteLogger;
 
 /**
  * Main WooCommerce Class.
@@ -196,14 +199,12 @@ use Automattic\WooCommerce\Admin\Features\Features;
  */
 final class WooCommerce {
 
-	use AccessiblePrivateMethods;
-
 	/**
 	 * WooCommerce version.
 	 *
 	 * @var string
 	 */
-	public $version = &#039;9.1.2&#039;;
+	public $version = &#039;9.8.5&#039;;
 
 	/**
 	 * WooCommerce Schema version.
@@ -212,7 +213,7 @@ final class WooCommerce {
 	 *
 	 * @var string
 	 */
-	public $db_version = &#039;430&#039;;
+	public $db_version = &#039;920&#039;;
 
 	/**
 	 * The single instance of the class.
@@ -239,11 +240,11 @@ final class WooCommerce {
 	/**
 	 * API instance
 	 *
-	 * @deprecated 9.0.0 The Legacy REST API has been removed from WooCommerce core. This property will be null unless the WooCommerce Legacy REST API plugin is installed.
+	 * @deprecated 9.0.0 The Legacy REST API has been removed from WooCommerce core. Now this property points to a RestApiUtil instance, unless the Legacy REST API plugin is installed.
 	 *
 	 * @var WC_API
 	 */
-	public $api;
+	private $api;
 
 	/**
 	 * Product factory instance.
@@ -337,15 +338,55 @@ final class WooCommerce {
 	}
 
 	/**
-	 * Auto-load in-accessible properties on demand.
+	 * Autoload inaccessible or non-existing properties on demand.
 	 *
 	 * @param mixed $key Key name.
 	 * @return mixed
 	 */
 	public function __get( $key ) {
+		if ( &#039;api&#039; === $key ) {
+			// The Legacy REST API was removed from WooCommerce core as of version 9.0 (moved to a dedicated plugin),
+			// but some plugins are still using wc()-&gt;api-&gt;get_endpoint_data. This method now lives in the RestApiUtil class,
+			// but we expose it through LegacyRestApiStub to limit the scope of what can be done via WC()-&gt;api.
+			//
+			// On the other hand, if the dedicated plugin is installed it will set the $api property by itself
+			// to an instance of the old WC_API class, which of course still has the get_endpoint_data method.
+			if ( is_null( $this-&gt;api ) &amp;&amp; ! $this-&gt;legacy_rest_api_is_available() ) {
+				$this-&gt;api = wc_get_container()-&gt;get( LegacyRestApiStub::class );
+			}
+
+			return $this-&gt;api;
+		}
+
 		if ( in_array( $key, array( &#039;payment_gateways&#039;, &#039;shipping&#039;, &#039;mailer&#039;, &#039;checkout&#039; ), true ) ) {
 			return $this-&gt;$key();
 		}
+	}
+
+	/**
+	 * Set the value of an inaccessible or non-existing property.
+	 *
+	 * @param string $key Property name.
+	 * @param mixed  $value Property value.
+	 * @throws Exception Attempt to access a property that&#039;s private or protected.
+	 */
+	public function __set( string $key, $value ) {
+		if ( &#039;api&#039; === $key ) {
+			$this-&gt;api = $value;
+		} elseif ( property_exists( $this, $key ) ) {
+			throw new Exception( &#039;Cannot access private property &#039; . __CLASS__ . &#039;::$&#039; . esc_html( $key ) );
+		} else {
+			$this-&gt;$key = $value;
+		}
+	}
+
+	/**
+	 * Check if the Legacy REST API plugin is active (and thus the Legacy REST API is available).
+	 *
+	 * @return bool
+	 */
+	public function legacy_rest_api_is_available() {
+		return class_exists( &#039;WC_Legacy_REST_API_Plugin&#039;, false );
 	}
 
 	/**
@@ -377,7 +418,7 @@ final class WooCommerce {
 	}
 
 	/**
-	 * Initiali Jetpack Connection Config.
+	 * Initialize Jetpack Connection Config.
 	 *
 	 * @return void
 	 */
@@ -387,7 +428,9 @@ final class WooCommerce {
 			&#039;connection&#039;,
 			array(
 				&#039;slug&#039; =&gt; &#039;woocommerce&#039;,
-				&#039;name&#039; =&gt; __( &#039;WooCommerce&#039;, &#039;woocommerce&#039; ),
+				// Cannot use __() here because it would cause translations to be loaded too early.
+				// See https://github.com/woocommerce/woocommerce/pull/47113.
+				&#039;name&#039; =&gt; &#039;WooCommerce&#039;,
 			)
 		);
 	}
@@ -420,11 +463,15 @@ final class WooCommerce {
 		add_action( &#039;deactivated_plugin&#039;, array( $this, &#039;deactivated_plugin&#039; ) );
 		add_action( &#039;woocommerce_installed&#039;, array( $this, &#039;add_woocommerce_inbox_variant&#039; ) );
 		add_action( &#039;woocommerce_updated&#039;, array( $this, &#039;add_woocommerce_inbox_variant&#039; ) );
-		self::add_action( &#039;rest_api_init&#039;, array( $this, &#039;register_wp_admin_settings&#039; ) );
+		add_action( &#039;rest_api_init&#039;, array( $this, &#039;register_wp_admin_settings&#039; ) );
 		add_action( &#039;woocommerce_installed&#039;, array( $this, &#039;add_woocommerce_remote_variant&#039; ) );
 		add_action( &#039;woocommerce_updated&#039;, array( $this, &#039;add_woocommerce_remote_variant&#039; ) );
+		add_action( &#039;woocommerce_newly_installed&#039;, &#039;wc_set_hooked_blocks_version&#039;, 10 );
+		add_action( &#039;update_option_woocommerce_allow_tracking&#039;, array( $this, &#039;get_tracking_history&#039; ), 10, 2 );
 
+		add_filter( &#039;robots_txt&#039;, array( $this, &#039;robots_txt&#039; ) );
 		add_filter( &#039;wp_plugin_dependencies_slug&#039;, array( $this, &#039;convert_woocommerce_slug&#039; ) );
+		add_filter( &#039;woocommerce_register_log_handlers&#039;, array( $this, &#039;register_remote_log_handler&#039; ) );
 
 		// These classes set up hooks on instantiation.
 		$container = wc_get_container();
@@ -442,18 +489,29 @@ final class WooCommerce {
 		$container-&gt;get( WebhookUtil::class );
 		$container-&gt;get( Marketplace::class );
 		$container-&gt;get( TimeUtil::class );
+		$container-&gt;get( ComingSoonAdminBarBadge::class );
 		$container-&gt;get( ComingSoonCacheInvalidator::class );
 		$container-&gt;get( ComingSoonRequestHandler::class );
 
 		/**
 		 * These classes have a register method for attaching hooks.
-		 *
-		 * @var RegisterHooksInterface[] $hook_register_classes
 		 */
-		$hook_register_classes = $container-&gt;get( RegisterHooksInterface::class );
-		foreach ( $hook_register_classes as $hook_register_class ) {
-			$hook_register_class-&gt;register();
-		}
+		$container-&gt;get( Automattic\WooCommerce\Internal\Utilities\PluginInstaller::class )-&gt;register();
+		$container-&gt;get( Automattic\WooCommerce\Internal\TransientFiles\TransientFilesEngine::class )-&gt;register();
+		$container-&gt;get( Automattic\WooCommerce\Internal\Orders\OrderAttributionController::class )-&gt;register();
+		$container-&gt;get( Automattic\WooCommerce\Internal\Orders\OrderAttributionBlocksController::class )-&gt;register();
+		$container-&gt;get( Automattic\WooCommerce\Internal\CostOfGoodsSold\CostOfGoodsSoldController::class )-&gt;register();
+		$container-&gt;get( Automattic\WooCommerce\Internal\Admin\Settings\PaymentsController::class )-&gt;register();
+		$container-&gt;get( Automattic\WooCommerce\Internal\Utilities\LegacyRestApiStub::class )-&gt;register();
+		$container-&gt;get( Automattic\WooCommerce\Internal\Email\EmailStyleSync::class )-&gt;register();
+		Automattic\WooCommerce\Internal\Admin\WcPayWelcomePage::instance()-&gt;register();
+
+		// Classes inheriting from RestApiControllerBase.
+		$container-&gt;get( Automattic\WooCommerce\Internal\ReceiptRendering\ReceiptRenderingRestController::class )-&gt;register();
+		$container-&gt;get( Automattic\WooCommerce\Internal\Orders\OrderActionsRestController::class )-&gt;register();
+		$container-&gt;get( Automattic\WooCommerce\Internal\Orders\OrderStatusRestController::class )-&gt;register();
+		$container-&gt;get( Automattic\WooCommerce\Internal\Admin\Settings\PaymentsRestController::class )-&gt;register();
+		$container-&gt;get( Automattic\WooCommerce\Internal\Admin\EmailPreview\EmailPreviewRestController::class )-&gt;register();
 	}
 
 	/**
@@ -495,8 +553,10 @@ final class WooCommerce {
 			unset( $error_copy[&#039;message&#039;] );
 
 			$context = array(
-				&#039;source&#039; =&gt; &#039;fatal-errors&#039;,
-				&#039;error&#039;  =&gt; $error_copy,
+				&#039;source&#039;         =&gt; &#039;fatal-errors&#039;,
+				&#039;error&#039;          =&gt; $error_copy,
+				// Indicate that this error should be logged remotely if remote logging is enabled.
+				&#039;remote-logging&#039; =&gt; true,
 			);
 
 			if ( false !== strpos( $message, &#039;Stack trace:&#039; ) ) {
@@ -531,8 +591,6 @@ final class WooCommerce {
 	 * Define WC Constants.
 	 */
 	private function define_constants() {
-		$upload_dir = wp_upload_dir( null, false );
-
 		$this-&gt;define( &#039;WC_ABSPATH&#039;, dirname( WC_PLUGIN_FILE ) . &#039;/&#039; );
 		$this-&gt;define( &#039;WC_PLUGIN_BASENAME&#039;, plugin_basename( WC_PLUGIN_FILE ) );
 		$this-&gt;define( &#039;WC_VERSION&#039;, $this-&gt;version );
@@ -551,8 +609,9 @@ final class WooCommerce {
 		 */
 		if ( defined( &#039;WC_LOG_DIR&#039; ) ) {
 			$this-&gt;define( &#039;WC_LOG_DIR_CUSTOM&#039;, true );
+		} else {
+			$this-&gt;define( &#039;WC_LOG_DIR&#039;, LoggingUtil::get_log_directory( false ) );
 		}
-		$this-&gt;define( &#039;WC_LOG_DIR&#039;, LoggingUtil::get_log_directory() );
 
 		// These three are kept defined for compatibility, but are no longer used.
 		$this-&gt;define( &#039;WC_NOTICE_MIN_PHP_VERSION&#039;, &#039;7.2&#039; );
@@ -819,6 +878,11 @@ final class WooCommerce {
 		include_once WC_ABSPATH . &#039;includes/wccom-site/class-wc-wccom-site.php&#039;;
 
 		/**
+		 * Product Usage
+		 */
+		include_once WC_ABSPATH . &#039;includes/product-usage/class-wc-product-usage.php&#039;;
+
+		/**
 		 * Libraries and packages.
 		 */
 		include_once WC_ABSPATH . &#039;packages/action-scheduler/action-scheduler.php&#039;;
@@ -829,6 +893,9 @@ final class WooCommerce {
 
 		if ( $this-&gt;is_request( &#039;admin&#039; ) ) {
 			include_once WC_ABSPATH . &#039;includes/admin/class-wc-admin.php&#039;;
+			// Simulate loading plugin for the legacy reports.
+			// This will be removed after moving the legacy reports to a separate plugin.
+			include_once WC_ABSPATH . &#039;includes/admin/woocommerce-legacy-reports.php&#039;;
 		}
 
 		// We load frontend includes in the post editor, because they may be invoked via pre-loading of blocks.
@@ -845,8 +912,6 @@ final class WooCommerce {
 
 		$this-&gt;theme_support_includes();
 		$this-&gt;query = new WC_Query();
-
-		LegacyRestApiStub::setup();
 	}
 
 	/**
@@ -929,6 +994,9 @@ final class WooCommerce {
 	 * Init WooCommerce when WordPress Initialises.
 	 */
 	public function init() {
+		// See the comment inside FeaturesController::__construct.
+		wc_get_container()-&gt;get( FeaturesController::class )-&gt;register_additional_features();
+
 		/**
 		 * Action triggered before WooCommerce initialization begins.
 		 */
@@ -969,16 +1037,21 @@ final class WooCommerce {
 	 *      - WP_LANG_DIR/plugins/woocommerce-LOCALE.mo
 	 */
 	public function load_plugin_textdomain() {
-		$locale = determine_locale();
-
 		/**
 		 * Filter to adjust the WooCommerce locale to use for translations.
 		 */
-		$locale = apply_filters( &#039;plugin_locale&#039;, $locale, &#039;woocommerce&#039; ); // phpcs:ignore WooCommerce.Commenting.CommentHooks.MissingSinceComment
+		$locale                  = apply_filters( &#039;plugin_locale&#039;, determine_locale(), &#039;woocommerce&#039; ); // phpcs:ignore WooCommerce.Commenting.CommentHooks.MissingSinceComment
+		$custom_translation_path = WP_LANG_DIR . &#039;/woocommerce/woocommerce-&#039; . $locale . &#039;.mo&#039;;
+		$plugin_translation_path = WP_LANG_DIR . &#039;/plugins/woocommerce-&#039; . $locale . &#039;.mo&#039;;
 
-		unload_textdomain( &#039;woocommerce&#039; );
-		load_textdomain( &#039;woocommerce&#039;, WP_LANG_DIR . &#039;/woocommerce/woocommerce-&#039; . $locale . &#039;.mo&#039; );
-		load_plugin_textdomain( &#039;woocommerce&#039;, false, plugin_basename( dirname( WC_PLUGIN_FILE ) ) . &#039;/i18n/languages&#039; );
+		// If a custom translation exists (by default it will not, as it is not a standard WordPress convention)
+		// we unload the existing translation, then essentially layer the custom translation on top of the canonical
+		// translation. Otherwise, we simply step back and let WP manage things.
+		if ( is_readable( $custom_translation_path ) ) {
+			unload_textdomain( &#039;woocommerce&#039; );
+			load_textdomain( &#039;woocommerce&#039;, $custom_translation_path );
+			load_textdomain( &#039;woocommerce&#039;, $plugin_translation_path );
+		}
 	}
 
 	/**
@@ -1154,6 +1227,45 @@ final class WooCommerce {
 			$this-&gt;session = new $session_class();
 			$this-&gt;session-&gt;init();
 		}
+	}
+
+	/**
+	 * Tell bots not to index some WooCommerce-created directories.
+	 *
+	 * We try to detect the default &quot;User-agent: *&quot; added by WordPress and add our rules to that group, because
+	 * it&#039;s possible that some bots will only interpret the first group of rules if there are multiple groups with
+	 * the same user agent.
+	 *
+	 * @param string $output The contents that WordPress will output in a robots.txt file.
+	 *
+	 * @return string
+	 *
+	 * @internal For exclusive usage of WooCommerce core, backwards compatibility not guaranteed.
+	 */
+	public function robots_txt( $output ) {
+		$path = ( ! empty( $site_url[&#039;path&#039;] ) ) ? $site_url[&#039;path&#039;] : &#039;&#039;;
+
+		$lines       = preg_split( &#039;/\r\n|\r|\n/&#039;, $output );
+		$agent_index = array_search( &#039;User-agent: *&#039;, $lines, true );
+
+		if ( false !== $agent_index ) {
+			$above = array_slice( $lines, 0, $agent_index + 1 );
+			$below = array_slice( $lines, $agent_index + 1 );
+		} else {
+			$above = $lines;
+			$below = array();
+
+			$above[] = &#039;&#039;;
+			$above[] = &#039;User-agent: *&#039;;
+		}
+
+		$above[] = &quot;Disallow: $path/wp-content/uploads/wc-logs/&quot;;
+		$above[] = &quot;Disallow: $path/wp-content/uploads/woocommerce_transient_files/&quot;;
+		$above[] = &quot;Disallow: $path/wp-content/uploads/woocommerce_uploads/&quot;;
+
+		$lines = array_merge( $above, $below );
+
+		return implode( PHP_EOL, $lines );
 	}
 
 	/**
@@ -1357,8 +1469,10 @@ final class WooCommerce {
 	 * This method used to be part of the now removed Legacy REST API.
 	 *
 	 * @since 9.0.0
+	 *
+	 * @internal For exclusive usage of WooCommerce core, backwards compatibility not guaranteed.
 	 */
-	private function register_wp_admin_settings() {
+	public function register_wp_admin_settings() {
 		$pages = WC_Admin_Settings::get_settings_pages();
 		foreach ( $pages as $page ) {
 			new WC_Register_WP_Admin_Settings( $page, &#039;page&#039; );
@@ -1385,6 +1499,41 @@ final class WooCommerce {
 		}
 		return $slug;
 	}
+
+	/**
+	 * Register the remote log handler.
+	 *
+	 * @param \WC_Log_Handler[] $handlers The handlers to register.
+	 *
+	 * @return \WC_Log_Handler[]
+	 *
+	 * @internal For exclusive usage of WooCommerce core, backwards compatibility not guaranteed.
+	 */
+	public function register_remote_log_handler( $handlers ) {
+		$handlers[] = wc_get_container()-&gt;get( RemoteLogger::class );
+		return $handlers;
+	}
+
+	/**
+	 * Tracks the history WooCommerce Allow Tracking option.
+	 * - When the field was first set to allow tracking
+	 * - Last time the option was changed
+	 *
+	 * @param string $old_value The old value for the woocommerce_allow_tracking option.
+	 * @param string $value The current value for the woocommerce_allow_tracking option.
+	 * @since x.x.x
+	 *
+	 * @return void
+	 */
+	public function get_tracking_history( $old_value, $value ) {
+		// If woocommerce_allow_tracking_first_optin is not set. It means is the first time it gets set.
+		if ( ! get_option( &#039;woocommerce_allow_tracking_first_optin&#039; ) &amp;&amp; &#039;yes&#039; === $value ) {
+			update_option( &#039;woocommerce_allow_tracking_first_optin&#039;, time() );
+		}
+
+		// Always update the last change.
+		update_option( &#039;woocommerce_allow_tracking_last_modified&#039;, time() );
+	}
 }
 </code></pre>
             </article>
@@ -1396,7 +1545,7 @@ final class WooCommerce {
 
     <footer class="phpdocumentor phpdocumentor-footer">
     <div class="phpdocumentor-section">
-        <span>WooCommerce Code Reference API documentation generated by <a href="http://www.phpdoc.org/">phpDocumentor</a> on July 25th, 2024 at 11:33 am.</span>
+        <span>WooCommerce Code Reference API documentation generated by <a href="http://www.phpdoc.org/">phpDocumentor</a> on May 16th, 2025 at 09:14 am.</span>
     </div>
 </footer>
 
@@ -1408,7 +1557,7 @@ final class WooCommerce {
             'searchIndex': '..\/js\/searchIndex.json'
         };
     </script>
-    <script src="../js/searchIndex.js?updated=1721907183"></script>
-    <script src="../js/search.js?updated=1721907183"></script>
+    <script src="../js/searchIndex.js?updated=1747386858"></script>
+    <script src="../js/search.js?updated=1747386858"></script>
 </body>
 </html>

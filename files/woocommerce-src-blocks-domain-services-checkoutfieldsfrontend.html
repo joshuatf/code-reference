@@ -4,14 +4,13 @@
     <meta charset="utf-8">
     <title>WooCommerce Code Reference</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="../images/favicon.png" />
-    <link rel="apple-touch-icon" href="../images/apple-touch-icon.png"/>
-    <link rel="apple-touch-icon" sizes="72x72" href="../images/apple-touch-icon-72x72.png"/>
-    <link rel="apple-touch-icon" sizes="114x114" href="../images/apple-touch-icon-114x114.png"/>
+    <link rel="icon" href="../images/favicon-32x32.png" sizes="32x32" />
+    <link rel="icon" href="../images/favicon-192x192.png" sizes="192x192" />
+    <link rel="apple-touch-icon" href="../images/favicon-180x180.png" />
+
     <link rel="stylesheet" href="../css/normalize.css">
-    <link rel="stylesheet" href="../css/base.css?updated=1721907185">
-    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../css/template.css?updated=1721907185">
+    <link rel="stylesheet" href="../css/base.css?updated=1747386862">
+    <link rel="stylesheet" href="../css/template.css?updated=1747386862">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0/css/all.min.css" integrity="sha256-ybRkN9dBjhcS2qrW1z+hfCxq+1aBdwyQM5wlQoQVt/0=" crossorigin="anonymous" />
             <script src="https://cdn.jsdelivr.net/npm/css-vars-ponyfill@2"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0/js/all.min.js" integrity="sha256-0vuk8LXoyrmCjp1f0O300qo1M75ZQyhH9X3J6d+scmk=" crossorigin="anonymous"></script>
@@ -38,14 +37,13 @@
     <header class="phpdocumentor-top-header">
     <section class="phpdocumentor-section">
         <div class="site-branding">
-            <a class="site-logo" href="../index.html"><img width="180" src="../images/logo.svg" alt="WooCommerce" /></a>
+            <a class="site-logo" href="../index.html"><img src="../images/logo.png" alt="WooCommerce" /></a>
         </div>
         <nav class="main-navigation">
             <ul>
                 <li><a href="../hooks/hooks.html">Hooks Reference</a></li>
-                <li><a href="https://docs.woocommerce.com/">Documentation</a></li>
+                <li><a href="https://developer.woocommerce.com/docs/">Documentation</a></li>
                 <li><a href="https://woocommerce.github.io/woocommerce-rest-api-docs/">REST API Docs</a></li>
-                <li><a href="https://woocommerce.com/careers/?utm_source=woocommerce+core+code+reference&utm_medium=devdocs&utm_campaign=woo+careers" target="_blank">We're hiring!</a></li>
             </ul>
         </nav>
     </section>
@@ -53,7 +51,7 @@
 
 <div class="phpdocumentor-header">
     <section class="phpdocumentor-section">
-        <h1 class="phpdocumentor-title">WooCommerce Code Reference</h1>
+        <h1 class="phpdocumentor-title"><a href="../index.html">WooCommerce Code Reference</a></h1>
         <section class="phpdocumentor-search">
     <label class="phpdocumentor-label">
         <span class="visually-hidden">Search (click ESC to close search results)</span>
@@ -74,6 +72,10 @@
                                         <h4 class="phpdocumentor-sidebar__root-namespace"><a href="../namespaces/woocommerce.html"><abbr title="\WooCommerce">WooCommerce</abbr></a></h4>
                 <ul class="phpdocumentor-list">
                                             <li><a href="../namespaces/woocommerce-admin.html"><abbr title="\WooCommerce\Admin">Admin</abbr></a></li>
+                                    </ul>
+                            <h4 class="phpdocumentor-sidebar__root-namespace"><a href="../namespaces/mailpoet.html"><abbr title="\MailPoet">MailPoet</abbr></a></h4>
+                <ul class="phpdocumentor-list">
+                                            <li><a href="../namespaces/mailpoet-emaileditor.html"><abbr title="\MailPoet\EmailEditor">EmailEditor</abbr></a></li>
                                     </ul>
                             <h4 class="phpdocumentor-sidebar__root-namespace"><a href="../namespaces/automattic.html"><abbr title="\Automattic">Automattic</abbr></a></h4>
                 <ul class="phpdocumentor-list">
@@ -119,8 +121,10 @@
                                     <li><a href="../packages/WooCommerce-Widgets.html"><abbr title="\WooCommerce\Widgets">Widgets</abbr></a></li>
                                     <li><a href="../packages/WooCommerce-Uninstaller.html"><abbr title="\WooCommerce\Uninstaller">Uninstaller</abbr></a></li>
                             </ul>
-                                <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/WoocommerceAdmin.html"><abbr title="\WoocommerceAdmin">WoocommerceAdmin</abbr></a></h3>
-                                <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/WoocommerceNavigation.html"><abbr title="\WoocommerceNavigation">WoocommerceNavigation</abbr></a></h3>
+                                <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/MailPoet.html"><abbr title="\MailPoet">MailPoet</abbr></a></h3>
+                        <ul class="phpdocumentor-list">
+                                    <li><a href="../packages/MailPoet-EmailEditor.html"><abbr title="\MailPoet\EmailEditor">EmailEditor</abbr></a></li>
+                            </ul>
                                 <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/Automattic.html"><abbr title="\Automattic">Automattic</abbr></a></h3>
                         <ul class="phpdocumentor-list">
                                     <li><a href="../packages/Automattic-WooCommerce.html"><abbr title="\Automattic\WooCommerce">WooCommerce</abbr></a></li>
@@ -160,6 +164,8 @@
 
 namespace Automattic\WooCommerce\Blocks\Domain\Services;
 
+use Automattic\WooCommerce\Blocks\Domain\Services\CheckoutFieldsSchema\DocumentObject;
+use Automattic\WooCommerce\Admin\Features\Features;
 use WC_Customer;
 use WC_Order;
 
@@ -196,13 +202,12 @@ class CheckoutFieldsFrontend {
 		add_action( &#039;woocommerce_my_account_after_my_address&#039;, array( $this, &#039;render_address_fields&#039; ), 10, 1 );
 
 		// Edit account form under my account (for contact details).
-		add_filter( &#039;woocommerce_save_account_details_required_fields&#039;, array( $this, &#039;edit_account_form_required_fields&#039; ), 10, 1 );
 		add_filter( &#039;woocommerce_edit_account_form_fields&#039;, array( $this, &#039;edit_account_form_fields&#039; ), 10, 1 );
 		add_action( &#039;woocommerce_save_account_details&#039;, array( $this, &#039;save_account_form_fields&#039; ), 10, 1 );
 
 		// Edit address form under my account.
 		add_filter( &#039;woocommerce_address_to_edit&#039;, array( $this, &#039;edit_address_fields&#039; ), 10, 2 );
-		add_action( &#039;woocommerce_after_save_address_validation&#039;, array( $this, &#039;save_address_fields&#039; ), 10, 4 );
+		add_action( &#039;woocommerce_customer_save_address&#039;, array( $this, &#039;save_address_fields&#039; ), 10, 4 );
 	}
 
 	/**
@@ -272,7 +277,15 @@ class CheckoutFieldsFrontend {
 		}
 
 		$customer = new WC_Customer( get_current_user_id() );
-		$fields   = $this-&gt;checkout_fields_controller-&gt;get_fields_for_location( &#039;address&#039; );
+
+		if ( Features::is_enabled( &#039;experimental-blocks&#039; ) ) {
+			$document_object = new DocumentObject();
+			$document_object-&gt;set_customer( $customer );
+			$document_object-&gt;set_context( $address_type . &#039;_address&#039; );
+			$fields = $this-&gt;checkout_fields_controller-&gt;get_contextual_fields_for_location( &#039;address&#039;, $document_object );
+		} else {
+			$fields = $this-&gt;checkout_fields_controller-&gt;get_fields_for_location( &#039;address&#039; );
+		}
 
 		if ( ! $fields || ! $customer ) {
 			return;
@@ -293,29 +306,19 @@ class CheckoutFieldsFrontend {
 	}
 
 	/**
-	 * Register required additional contact fields.
-	 *
-	 * @param array $fields Required fields.
-	 * @return array
-	 */
-	public function edit_account_form_required_fields( $fields ) {
-		$additional_fields = $this-&gt;checkout_fields_controller-&gt;get_fields_for_location( &#039;contact&#039; );
-
-		foreach ( $additional_fields as $key =&gt; $field ) {
-			if ( ! empty( $field[&#039;required&#039;] ) ) {
-				$fields[ $key ] = $field[&#039;label&#039;];
-			}
-		}
-
-		return $fields;
-	}
-
-	/**
 	 * Adds additional contact fields to the My Account edit account form.
 	 */
 	public function edit_account_form_fields() {
 		$customer = new WC_Customer( get_current_user_id() );
-		$fields   = $this-&gt;checkout_fields_controller-&gt;get_fields_for_location( &#039;contact&#039; );
+
+		if ( Features::is_enabled( &#039;experimental-blocks&#039; ) ) {
+			$document_object = new DocumentObject();
+			$document_object-&gt;set_customer( $customer );
+			$document_object-&gt;set_context( &#039;contact&#039; );
+			$fields = $this-&gt;checkout_fields_controller-&gt;get_contextual_fields_for_location( &#039;contact&#039;, $document_object );
+		} else {
+			$fields = $this-&gt;checkout_fields_controller-&gt;get_fields_for_location( &#039;contact&#039; );
+		}
 
 		foreach ( $fields as $key =&gt; $field ) {
 			$field_key           = CheckoutFields::get_group_key( &#039;other&#039; ) . $key;
@@ -332,54 +335,8 @@ class CheckoutFieldsFrontend {
 				$form_field[&#039;unchecked_value&#039;] = &#039;0&#039;;
 			}
 
-			woocommerce_form_field( $key, $form_field, wc_get_post_data_by_key( $key, $form_field[&#039;value&#039;] ) );
+			woocommerce_form_field( $field_key, $form_field, wc_get_post_data_by_key( $key, $form_field[&#039;value&#039;] ) );
 		}
-	}
-
-	/**
-	 * Validates and saves additional address fields to the customer object on the My Account page.
-	 *
-	 * Customer is not provided by this hook so we handle save here.
-	 *
-	 * @param integer $user_id User ID.
-	 */
-	public function save_account_form_fields( $user_id ) {
-		// phpcs:disable WordPress.Security.NonceVerification.Missing
-		$customer          = new WC_Customer( $user_id );
-		$additional_fields = $this-&gt;checkout_fields_controller-&gt;get_fields_for_location( &#039;contact&#039; );
-		$field_values      = array();
-
-		foreach ( array_keys( $additional_fields ) as $key ) {
-			$post_key = CheckoutFields::get_group_key( &#039;other&#039; ) . $key;
-			if ( ! isset( $_POST[ $post_key ] ) ) {
-				continue;
-			}
-
-			$field_value = $this-&gt;checkout_fields_controller-&gt;sanitize_field( $key, wc_clean( wp_unslash( $_POST[ $post_key ] ) ) );
-			$validation  = $this-&gt;checkout_fields_controller-&gt;validate_field( $key, $field_value );
-
-			if ( is_wp_error( $validation ) &amp;&amp; $validation-&gt;has_errors() ) {
-				wc_add_notice( $validation-&gt;get_error_message(), &#039;error&#039; );
-				continue;
-			}
-
-			$field_values[ $key ] = $field_value;
-		}
-
-		// Persist individual additional fields to customer.
-		foreach ( $field_values as $key =&gt; $value ) {
-			$this-&gt;checkout_fields_controller-&gt;persist_field_for_customer( $key, $value, $customer, &#039;other&#039; );
-		}
-
-		// Validate all fields for this location.
-		$location_validation = $this-&gt;checkout_fields_controller-&gt;validate_fields_for_location( $field_values, &#039;contact&#039;, &#039;other&#039; );
-
-		if ( is_wp_error( $location_validation ) &amp;&amp; $location_validation-&gt;has_errors() ) {
-			wc_add_notice( $location_validation-&gt;get_error_message(), &#039;error&#039; );
-		}
-
-		// phpcs:enable WordPress.Security.NonceVerification.Missing
-		$customer-&gt;save();
 	}
 
 	/**
@@ -391,7 +348,15 @@ class CheckoutFieldsFrontend {
 	 */
 	public function edit_address_fields( $address, $address_type ) {
 		$customer = new WC_Customer( get_current_user_id() );
-		$fields   = $this-&gt;checkout_fields_controller-&gt;get_fields_for_location( &#039;address&#039; );
+
+		if ( Features::is_enabled( &#039;experimental-blocks&#039; ) ) {
+			$document_object = new DocumentObject();
+			$document_object-&gt;set_customer( $customer );
+			$document_object-&gt;set_context( $address_type . &#039;_address&#039; );
+			$fields = $this-&gt;checkout_fields_controller-&gt;get_contextual_fields_for_location( &#039;address&#039;, $document_object );
+		} else {
+			$fields = $this-&gt;checkout_fields_controller-&gt;get_fields_for_location( &#039;address&#039; );
+		}
 
 		foreach ( $fields as $key =&gt; $field ) {
 			$field_key                      = CheckoutFields::get_group_key( $address_type ) . $key;
@@ -400,6 +365,14 @@ class CheckoutFieldsFrontend {
 
 			if ( &#039;select&#039; === $field[&#039;type&#039;] ) {
 				$address[ $field_key ][&#039;options&#039;] = array_column( $field[&#039;options&#039;], &#039;label&#039;, &#039;value&#039; );
+
+				// If a placeholder is set, add a placeholder option if it doesn&#039;t exist already.
+				if (
+					! empty( $address[ $field_key ][&#039;placeholder&#039;] )
+					&amp;&amp; ! array_key_exists( &#039;&#039;, $address[ $field_key ][&#039;options&#039;] )
+				) {
+					$address[ $field_key ][&#039;options&#039;] = array( &#039;&#039; =&gt; $address[ $field_key ][&#039;placeholder&#039;] ) + $address[ $field_key ][&#039;options&#039;];
+				}
 			}
 
 			if ( &#039;checkbox&#039; === $field[&#039;type&#039;] ) {
@@ -409,6 +382,37 @@ class CheckoutFieldsFrontend {
 		}
 
 		return $address;
+	}
+
+	/**
+	 * Validates and saves additional address fields to the customer object on the My Account page.
+	 *
+	 * Customer is not provided by this hook so we handle save here.
+	 *
+	 * @param integer $user_id User ID.
+	 */
+	public function save_account_form_fields( $user_id ) {
+		try {
+			$customer = new WC_Customer( $user_id );
+			$result   = $this-&gt;update_additional_fields_for_customer( $customer, &#039;contact&#039;, &#039;other&#039; );
+
+			if ( is_wp_error( $result ) ) {
+				foreach ( $result-&gt;get_error_messages() as $error_message ) {
+					wc_add_notice( $error_message, &#039;error&#039; );
+				}
+			}
+
+			$customer-&gt;save();
+		} catch ( \Exception $e ) {
+			wc_add_notice(
+				sprintf(
+					/* translators: %s: Error message. */
+					__( &#039;An error occurred while saving account details: %s&#039;, &#039;woocommerce&#039; ),
+					esc_html( $e-&gt;getMessage() )
+				),
+				&#039;error&#039;
+			);
+		}
 	}
 
 	/**
@@ -422,41 +426,129 @@ class CheckoutFieldsFrontend {
 	 * @param array       $address Address fields.
 	 * @param WC_Customer $customer Customer object.
 	 */
-	public function save_address_fields( $user_id, $address_type, $address, $customer ) {
+	public function save_address_fields( $user_id, $address_type, $address = [], $customer = null ) {
+		try {
+			$customer = $customer ?? new WC_Customer( $user_id );
+			$result   = $this-&gt;update_additional_fields_for_customer( $customer, &#039;address&#039;, $address_type );
+
+			if ( is_wp_error( $result ) ) {
+				foreach ( $result-&gt;get_error_messages() as $error_message ) {
+					wc_add_notice( $error_message, &#039;error&#039; );
+				}
+			}
+
+			$customer-&gt;save();
+		} catch ( \Exception $e ) {
+			wc_add_notice(
+				sprintf(
+					/* translators: %s: Error message. */
+					__( &#039;An error occurred while saving address details: %s&#039;, &#039;woocommerce&#039; ),
+					esc_html( $e-&gt;getMessage() )
+				),
+				&#039;error&#039;
+			);
+		}
+	}
+
+	/**
+	 * Get posted additional field values.
+	 *
+	 * @param string  $location The location to get fields for.
+	 * @param string  $group The group to get fields for.
+	 * @param boolean $sanitize Whether to sanitize the field values.
+	 * @return array The posted field values and sanitized field values.
+	 */
+	protected function get_posted_additional_field_values( $location, $group, $sanitize = true ) {
+		$additional_fields = $this-&gt;checkout_fields_controller-&gt;get_fields_for_location( $location );
+		$field_values      = [];
+
 		// phpcs:disable WordPress.Security.NonceVerification.Missing
-		$additional_fields = $this-&gt;checkout_fields_controller-&gt;get_fields_for_location( &#039;address&#039; );
-		$field_values      = array();
+		foreach ( $additional_fields as $field_key =&gt; $field_data ) {
+			$post_key                   = CheckoutFields::get_group_key( $group ) . $field_key;
+			$field_values[ $field_key ] = wc_clean( wp_unslash( $_POST[ $post_key ] ?? &#039;&#039; ) );
 
-		foreach ( array_keys( $additional_fields ) as $key ) {
-			$post_key = CheckoutFields::get_group_key( $address_type ) . $key;
-
-			if ( ! isset( $_POST[ $post_key ] ) ) {
-				continue;
+			if ( $sanitize ) {
+				$field_values[ $field_key ] = $this-&gt;checkout_fields_controller-&gt;sanitize_field( $field_key, $field_values[ $field_key ] );
 			}
-
-			$field_value = $this-&gt;checkout_fields_controller-&gt;sanitize_field( $key, wc_clean( wp_unslash( $_POST[ $post_key ] ) ) );
-			$validation  = $this-&gt;checkout_fields_controller-&gt;validate_field( $key, $field_value );
-
-			if ( is_wp_error( $validation ) &amp;&amp; $validation-&gt;has_errors() ) {
-				wc_add_notice( $validation-&gt;get_error_message(), &#039;error&#039; );
-				continue;
-			}
-
-			$field_values[ $key ] = $field_value;
-		}
-
-		// Persist individual additional fields to customer.
-		foreach ( $field_values as $key =&gt; $value ) {
-			$this-&gt;checkout_fields_controller-&gt;persist_field_for_customer( $key, $value, $customer, $address_type );
-		}
-
-		// Validate all fields for this location.
-		$location_validation = $this-&gt;checkout_fields_controller-&gt;validate_fields_for_location( array_merge( $address, $field_values ), &#039;address&#039;, $address_type );
-
-		if ( is_wp_error( $location_validation ) &amp;&amp; $location_validation-&gt;has_errors() ) {
-			wc_add_notice( $location_validation-&gt;get_error_message(), &#039;error&#039; );
 		}
 		// phpcs:enable WordPress.Security.NonceVerification.Missing
+		return $field_values;
+	}
+
+	/**
+	 * Validate and save additional fields for a given customer.
+	 *
+	 * @param WC_Customer $customer Customer object.
+	 * @param string      $location Location to save fields for.
+	 * @param string      $group Group to save fields for.
+	 * @return true|\WP_Error True if successful, \WP_Error if there are errors.
+	 */
+	protected function update_additional_fields_for_customer( $customer, $location, $group ) {
+		// Get all values from the POST request before validating.
+		$field_values           = $this-&gt;get_posted_additional_field_values( $location, $group, false ); // These values are used to see if required fields have values.
+		$sanitized_field_values = $this-&gt;get_posted_additional_field_values( $location, $group ); // These values are used to validate custom rules, generate the document object, and save fields to the account.
+
+		if ( Features::is_enabled( &#039;experimental-blocks&#039; ) ) {
+			$document_object = new DocumentObject(
+				[
+					&#039;customer&#039; =&gt; [
+						( &#039;address&#039; === $location ? $group . &#039;_address&#039; : &#039;additional_fields&#039; ) =&gt; $sanitized_field_values,
+					],
+				]
+			);
+			$document_object-&gt;set_customer( $customer );
+			$document_object-&gt;set_context( &#039;address&#039; === $location ? $group . &#039;_address&#039; : $location );
+			$fields = $this-&gt;checkout_fields_controller-&gt;get_contextual_fields_for_location( $location, $document_object );
+		} else {
+			$fields = $this-&gt;checkout_fields_controller-&gt;get_fields_for_location( $location );
+		}
+
+		// Holds values to be persisted to the customer object.
+		$persist_fields = [];
+		$errors         = new \WP_Error();
+
+		// Validate individual fields agains the document object. Errors are added to the $errors object, and each field is validated regardless of other field errors.
+		foreach ( $fields as $field_key =&gt; $field ) {
+			$field_value = $field_values[ $field_key ];
+
+			if ( empty( $field_value ) ) {
+				if ( ! empty( $field[&#039;required&#039;] ) ) {
+					$errors-&gt;add(
+						&#039;required_field&#039;,
+						/* translators: %s: is the field label */
+						sprintf( __( &#039;%s is required&#039;, &#039;woocommerce&#039; ), &#039;&lt;strong&gt;&#039; . $field[&#039;label&#039;] . &#039;&lt;/strong&gt;&#039; )
+					);
+					continue;
+				}
+				$persist_fields[ $field_key ] = &#039;&#039;;
+				continue;
+			}
+
+			$sanitized_field_value = $sanitized_field_values[ $field_key ];
+			$valid_check           = $this-&gt;checkout_fields_controller-&gt;validate_field( $field, $sanitized_field_value );
+
+			if ( is_wp_error( $valid_check ) &amp;&amp; $valid_check-&gt;has_errors() ) {
+				// Get one error message from the WP_Error object per field to avoid overlapping error messages.
+				$errors-&gt;add( $valid_check-&gt;get_error_code(), $valid_check-&gt;get_error_message() );
+				continue;
+			}
+
+			$persist_fields[ $field_key ] = $sanitized_field_value;
+		}
+
+		// Validate all fields for this location (this runs custom validation callbacks). If an error is found, no values will be persisted to the customer object.
+		$location_validation = $this-&gt;checkout_fields_controller-&gt;validate_fields_for_location( $sanitized_field_values, $location, $group );
+
+		if ( is_wp_error( $location_validation ) &amp;&amp; $location_validation-&gt;has_errors() ) {
+			$errors-&gt;merge_from( $location_validation );
+			return $errors;
+		}
+
+		foreach ( $persist_fields as $field_key =&gt; $field_value ) {
+			$this-&gt;checkout_fields_controller-&gt;persist_field_for_customer( $field_key, $field_value, $customer, $group );
+		}
+
+		return $errors-&gt;has_errors() ? $errors : true;
 	}
 }
 </code></pre>
@@ -469,7 +561,7 @@ class CheckoutFieldsFrontend {
 
     <footer class="phpdocumentor phpdocumentor-footer">
     <div class="phpdocumentor-section">
-        <span>WooCommerce Code Reference API documentation generated by <a href="http://www.phpdoc.org/">phpDocumentor</a> on July 25th, 2024 at 11:33 am.</span>
+        <span>WooCommerce Code Reference API documentation generated by <a href="http://www.phpdoc.org/">phpDocumentor</a> on May 16th, 2025 at 09:14 am.</span>
     </div>
 </footer>
 
@@ -481,7 +573,7 @@ class CheckoutFieldsFrontend {
             'searchIndex': '..\/js\/searchIndex.json'
         };
     </script>
-    <script src="../js/searchIndex.js?updated=1721907185"></script>
-    <script src="../js/search.js?updated=1721907185"></script>
+    <script src="../js/searchIndex.js?updated=1747386862"></script>
+    <script src="../js/search.js?updated=1747386862"></script>
 </body>
 </html>

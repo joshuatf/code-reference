@@ -4,14 +4,13 @@
     <meta charset="utf-8">
     <title>WooCommerce Code Reference</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="../images/favicon.png" />
-    <link rel="apple-touch-icon" href="../images/apple-touch-icon.png"/>
-    <link rel="apple-touch-icon" sizes="72x72" href="../images/apple-touch-icon-72x72.png"/>
-    <link rel="apple-touch-icon" sizes="114x114" href="../images/apple-touch-icon-114x114.png"/>
+    <link rel="icon" href="../images/favicon-32x32.png" sizes="32x32" />
+    <link rel="icon" href="../images/favicon-192x192.png" sizes="192x192" />
+    <link rel="apple-touch-icon" href="../images/favicon-180x180.png" />
+
     <link rel="stylesheet" href="../css/normalize.css">
-    <link rel="stylesheet" href="../css/base.css?updated=1721907182">
-    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../css/template.css?updated=1721907182">
+    <link rel="stylesheet" href="../css/base.css?updated=1747386858">
+    <link rel="stylesheet" href="../css/template.css?updated=1747386858">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0/css/all.min.css" integrity="sha256-ybRkN9dBjhcS2qrW1z+hfCxq+1aBdwyQM5wlQoQVt/0=" crossorigin="anonymous" />
             <script src="https://cdn.jsdelivr.net/npm/css-vars-ponyfill@2"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0/js/all.min.js" integrity="sha256-0vuk8LXoyrmCjp1f0O300qo1M75ZQyhH9X3J6d+scmk=" crossorigin="anonymous"></script>
@@ -38,14 +37,13 @@
     <header class="phpdocumentor-top-header">
     <section class="phpdocumentor-section">
         <div class="site-branding">
-            <a class="site-logo" href="../index.html"><img width="180" src="../images/logo.svg" alt="WooCommerce" /></a>
+            <a class="site-logo" href="../index.html"><img src="../images/logo.png" alt="WooCommerce" /></a>
         </div>
         <nav class="main-navigation">
             <ul>
                 <li><a href="../hooks/hooks.html">Hooks Reference</a></li>
-                <li><a href="https://docs.woocommerce.com/">Documentation</a></li>
+                <li><a href="https://developer.woocommerce.com/docs/">Documentation</a></li>
                 <li><a href="https://woocommerce.github.io/woocommerce-rest-api-docs/">REST API Docs</a></li>
-                <li><a href="https://woocommerce.com/careers/?utm_source=woocommerce+core+code+reference&utm_medium=devdocs&utm_campaign=woo+careers" target="_blank">We're hiring!</a></li>
             </ul>
         </nav>
     </section>
@@ -53,7 +51,7 @@
 
 <div class="phpdocumentor-header">
     <section class="phpdocumentor-section">
-        <h1 class="phpdocumentor-title">WooCommerce Code Reference</h1>
+        <h1 class="phpdocumentor-title"><a href="../index.html">WooCommerce Code Reference</a></h1>
         <section class="phpdocumentor-search">
     <label class="phpdocumentor-label">
         <span class="visually-hidden">Search (click ESC to close search results)</span>
@@ -74,6 +72,10 @@
                                         <h4 class="phpdocumentor-sidebar__root-namespace"><a href="../namespaces/woocommerce.html"><abbr title="\WooCommerce">WooCommerce</abbr></a></h4>
                 <ul class="phpdocumentor-list">
                                             <li><a href="../namespaces/woocommerce-admin.html"><abbr title="\WooCommerce\Admin">Admin</abbr></a></li>
+                                    </ul>
+                            <h4 class="phpdocumentor-sidebar__root-namespace"><a href="../namespaces/mailpoet.html"><abbr title="\MailPoet">MailPoet</abbr></a></h4>
+                <ul class="phpdocumentor-list">
+                                            <li><a href="../namespaces/mailpoet-emaileditor.html"><abbr title="\MailPoet\EmailEditor">EmailEditor</abbr></a></li>
                                     </ul>
                             <h4 class="phpdocumentor-sidebar__root-namespace"><a href="../namespaces/automattic.html"><abbr title="\Automattic">Automattic</abbr></a></h4>
                 <ul class="phpdocumentor-list">
@@ -119,8 +121,10 @@
                                     <li><a href="../packages/WooCommerce-Widgets.html"><abbr title="\WooCommerce\Widgets">Widgets</abbr></a></li>
                                     <li><a href="../packages/WooCommerce-Uninstaller.html"><abbr title="\WooCommerce\Uninstaller">Uninstaller</abbr></a></li>
                             </ul>
-                                <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/WoocommerceAdmin.html"><abbr title="\WoocommerceAdmin">WoocommerceAdmin</abbr></a></h3>
-                                <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/WoocommerceNavigation.html"><abbr title="\WoocommerceNavigation">WoocommerceNavigation</abbr></a></h3>
+                                <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/MailPoet.html"><abbr title="\MailPoet">MailPoet</abbr></a></h3>
+                        <ul class="phpdocumentor-list">
+                                    <li><a href="../packages/MailPoet-EmailEditor.html"><abbr title="\MailPoet\EmailEditor">EmailEditor</abbr></a></li>
+                            </ul>
                                 <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/Automattic.html"><abbr title="\Automattic">Automattic</abbr></a></h3>
                         <ul class="phpdocumentor-list">
                                     <li><a href="../packages/Automattic-WooCommerce.html"><abbr title="\Automattic\WooCommerce">WooCommerce</abbr></a></li>
@@ -166,12 +170,17 @@
  * @version 3.4.0
  */
 
+use Automattic\WooCommerce\Enums\OrderStatus;
+use Automattic\WooCommerce\Enums\ProductType;
+use Automattic\WooCommerce\Internal\CostOfGoodsSold\CogsAwareTrait;
+
 defined( &#039;ABSPATH&#039; ) || exit;
 
 /**
  * Checkout class.
  */
 class WC_Checkout {
+	use CogsAwareTrait;
 
 	/**
 	 * The single instance of the class.
@@ -378,16 +387,9 @@ class WC_Checkout {
 	}
 
 	/**
-	 * Get an array of checkout fields.
-	 *
-	 * @param  string $fieldset to get.
-	 * @return array
+	 * Initialize the checkout fields.
 	 */
-	public function get_checkout_fields( $fieldset = &#039;&#039; ) {
-		if ( ! is_null( $this-&gt;fields ) ) {
-			return $fieldset ? $this-&gt;fields[ $fieldset ] : $this-&gt;fields;
-		}
-
+	protected function initialize_checkout_fields() {
 		// Fields are based on billing/shipping country. Grab those values but ensure they are valid for the store before using.
 		$billing_country   = $this-&gt;get_value( &#039;billing_country&#039; );
 		$billing_country   = empty( $billing_country ) ? WC()-&gt;countries-&gt;get_base_country() : $billing_country;
@@ -469,8 +471,25 @@ class WC_Checkout {
 				}
 			}
 		}
+	}
 
-		return $fieldset ? $this-&gt;fields[ $fieldset ] : $this-&gt;fields;
+	/**
+	 * Get an array of checkout fields.
+	 *
+	 * @param  string $fieldset to get.
+	 * @return array
+	 */
+	public function get_checkout_fields( $fieldset = &#039;&#039; ) {
+		if ( is_null( $this-&gt;fields ) ) {
+			$this-&gt;initialize_checkout_fields();
+		}
+
+		// If a fieldset is specified, return only the fields for that fieldset, or array if the field set does not exist.
+		if ( $fieldset ) {
+			return $this-&gt;fields[ $fieldset ] ?? array();
+		}
+
+		return $this-&gt;fields;
 	}
 
 	/**
@@ -541,7 +560,7 @@ class WC_Checkout {
 			 * different items or cost, create a new order. We use a hash to
 			 * detect changes which is based on cart items + order total.
 			 */
-			if ( $order &amp;&amp; $order-&gt;has_cart_hash( $cart_hash ) &amp;&amp; $order-&gt;has_status( array( &#039;pending&#039;, &#039;failed&#039; ) ) ) {
+			if ( $order &amp;&amp; $order-&gt;has_cart_hash( $cart_hash ) &amp;&amp; $order-&gt;has_status( array( OrderStatus::PENDING, OrderStatus::FAILED ) ) ) {
 				/**
 				 * Indicates that we are resuming checkout for an existing order (which is pending payment, and which
 				 * has not changed since it was added to the current shopping session).
@@ -571,7 +590,7 @@ class WC_Checkout {
 			foreach ( $data as $key =&gt; $value ) {
 				if ( is_callable( array( $order, &quot;set_{$key}&quot; ) ) ) {
 					$order-&gt;{&quot;set_{$key}&quot;}( $value );
-					// Store custom fields prefixed with wither shipping_ or billing_. This is for backwards compatibility with 2.6.x.
+					// Store custom fields prefixed with either shipping_ or billing_. This is for backwards compatibility with 2.6.x.
 				} elseif ( isset( $fields_prefix[ current( explode( &#039;_&#039;, $key ) ) ] ) ) {
 					if ( ! isset( $shipping_fields[ $key ] ) ) {
 						$order-&gt;update_meta_data( &#039;_&#039; . $key, $value );
@@ -598,6 +617,10 @@ class WC_Checkout {
 			$order-&gt;set_customer_note( isset( $data[&#039;order_comments&#039;] ) ? $data[&#039;order_comments&#039;] : &#039;&#039; );
 			$order-&gt;set_payment_method( isset( $available_gateways[ $data[&#039;payment_method&#039;] ] ) ? $available_gateways[ $data[&#039;payment_method&#039;] ] : $data[&#039;payment_method&#039;] );
 			$this-&gt;set_data_from_cart( $order );
+
+			if ( $this-&gt;cogs_is_enabled() ) {
+				$order-&gt;calculate_cogs_total_value();
+			}
 
 			/**
 			 * Action hook to adjust order before save.
@@ -626,7 +649,7 @@ class WC_Checkout {
 			return $order_id;
 		} catch ( Exception $e ) {
 			if ( $order &amp;&amp; $order instanceof WC_Order ) {
-				$order-&gt;get_data_store()-&gt;release_held_coupons( $order );
+				wc_release_coupons_for_order( $order );
 				/**
 				 * Action hook fired when an order is discarded due to Exception.
 				 *
@@ -694,8 +717,8 @@ class WC_Checkout {
 					array(
 						&#039;name&#039;         =&gt; $product-&gt;get_name(),
 						&#039;tax_class&#039;    =&gt; $product-&gt;get_tax_class(),
-						&#039;product_id&#039;   =&gt; $product-&gt;is_type( &#039;variation&#039; ) ? $product-&gt;get_parent_id() : $product-&gt;get_id(),
-						&#039;variation_id&#039; =&gt; $product-&gt;is_type( &#039;variation&#039; ) ? $product-&gt;get_id() : 0,
+						&#039;product_id&#039;   =&gt; $product-&gt;is_type( ProductType::VARIATION ) ? $product-&gt;get_parent_id() : $product-&gt;get_id(),
+						&#039;variation_id&#039; =&gt; $product-&gt;is_type( ProductType::VARIATION ) ? $product-&gt;get_id() : 0,
 					)
 				);
 			}
@@ -772,6 +795,7 @@ class WC_Checkout {
 						&#039;taxes&#039;        =&gt; array(
 							&#039;total&#039; =&gt; $shipping_rate-&gt;taxes,
 						),
+						&#039;tax_status&#039;   =&gt; $shipping_rate-&gt;tax_status,
 					)
 				);
 
@@ -1024,6 +1048,8 @@ class WC_Checkout {
 				}
 
 				if ( in_array( &#039;phone&#039;, $format, true ) ) {
+					$data[ $key ] = wc_sanitize_phone_number( $data[ $key ] );
+
 					if ( $validate_fieldset &amp;&amp; &#039;&#039; !== $data[ $key ] &amp;&amp; ! WC_Validation::is_phone( $data[ $key ] ) ) {
 						/* translators: %s: phone number */
 						$errors-&gt;add( $key . &#039;_validation&#039;, sprintf( __( &#039;%s is not a valid phone number.&#039;, &#039;woocommerce&#039; ), &#039;&lt;strong&gt;&#039; . esc_html( $field_label ) . &#039;&lt;/strong&gt;&#039; ), array( &#039;id&#039; =&gt; $key ) );
@@ -1082,7 +1108,7 @@ class WC_Checkout {
 
 		// phpcs:ignore WordPress.Security.NonceVerification.Missing
 		if ( empty( $data[&#039;woocommerce_checkout_update_totals&#039;] ) &amp;&amp; empty( $data[&#039;terms&#039;] ) &amp;&amp; ! empty( $data[&#039;terms-field&#039;] ) ) {
-			$errors-&gt;add( &#039;terms&#039;, __( &#039;Please read and accept the terms and conditions to proceed with your order.&#039;, &#039;woocommerce&#039; ) );
+			$errors-&gt;add( &#039;terms&#039;, __( &#039;Please read and accept the terms and conditions to proceed with your order.&#039;, &#039;woocommerce&#039; ), array( &#039;id&#039; =&gt; &#039;terms&#039; ) );
 		}
 
 		if ( WC()-&gt;cart-&gt;needs_shipping() ) {
@@ -1093,7 +1119,7 @@ class WC_Checkout {
 			} elseif ( ! in_array( $shipping_country, array_keys( WC()-&gt;countries-&gt;get_shipping_countries() ), true ) ) {
 				if ( WC()-&gt;countries-&gt;country_exists( $shipping_country ) ) {
 					/* translators: %s: shipping location (prefix e.g. &#039;to&#039; + ISO 3166-1 alpha-2 country code) */
-					$errors-&gt;add( &#039;shipping&#039;, sprintf( __( &#039;Unfortunately &lt;strong&gt;we do not ship %s&lt;/strong&gt;. Please enter an alternative shipping address.&#039;, &#039;woocommerce&#039; ), WC()-&gt;countries-&gt;shipping_to_prefix() . &#039; &#039; . $shipping_country ) );
+					$errors-&gt;add( &#039;shipping&#039;, sprintf( __( &#039;Unfortunately &lt;strong&gt;we do not ship %s&lt;/strong&gt;. Please enter an alternative shipping address.&#039;, &#039;woocommerce&#039; ), WC()-&gt;countries-&gt;shipping_to_prefix( $shipping_country ) . &#039; &#039; . $shipping_country ) );
 				}
 			} else {
 				$chosen_shipping_methods = WC()-&gt;session-&gt;get( &#039;chosen_shipping_methods&#039; );
@@ -1290,7 +1316,17 @@ class WC_Checkout {
 			);
 
 			if ( is_wp_error( $customer_id ) ) {
-				throw new Exception( $customer_id-&gt;get_error_message() );
+				if ( &#039;registration-error-email-exists&#039; === $customer_id-&gt;get_error_code() ) {
+					/**
+					 * Filter the notice shown when a customer tries to register with an existing email address.
+					 *
+					 * @since 3.3.0
+					 * @param string $message The notice.
+					 * @param string $email   The email address.
+					 */
+					throw new Exception( apply_filters( &#039;woocommerce_registration_error_email_exists&#039;, __( &#039;An account is already registered with your email address. &lt;a href=&quot;#&quot; class=&quot;showlogin&quot;&gt;Please log in.&lt;/a&gt;&#039;, &#039;woocommerce&#039; ), $data[&#039;billing_email&#039;] ) ); // phpcs:ignore WordPress.Security.EscapeOutput.ExceptionNotEscaped
+				}
+				throw new Exception( $customer_id-&gt;get_error_message() ); // phpcs:ignore WordPress.Security.EscapeOutput.ExceptionNotEscaped
 			}
 
 			wc_set_customer_auth_cookie( $customer_id );
@@ -1329,7 +1365,7 @@ class WC_Checkout {
 				if ( is_callable( array( $customer, &quot;set_{$key}&quot; ) ) ) {
 					$customer-&gt;{&quot;set_{$key}&quot;}( $value );
 
-					// Store custom fields prefixed with wither shipping_ or billing_.
+					// Store custom fields prefixed with either shipping_ or billing_.
 				} elseif ( 0 === stripos( $key, &#039;billing_&#039; ) || 0 === stripos( $key, &#039;shipping_&#039; ) ) {
 					$customer-&gt;update_meta_data( $key, $value );
 				}
@@ -1515,7 +1551,7 @@ class WC_Checkout {
 
 		if ( is_callable( array( $customer_object, &quot;get_$input&quot; ) ) ) {
 			$value = $customer_object-&gt;{&quot;get_$input&quot;}();
-		} elseif ( $customer_object-&gt;meta_exists( $input ) ) {
+		} elseif ( is_callable( array( $customer_object, &#039;meta_exists&#039; ) ) &amp;&amp; $customer_object-&gt;meta_exists( $input ) ) {
 			$value = $customer_object-&gt;get_meta( $input, true );
 		}
 
@@ -1536,7 +1572,7 @@ class WC_Checkout {
 
     <footer class="phpdocumentor phpdocumentor-footer">
     <div class="phpdocumentor-section">
-        <span>WooCommerce Code Reference API documentation generated by <a href="http://www.phpdoc.org/">phpDocumentor</a> on July 25th, 2024 at 11:33 am.</span>
+        <span>WooCommerce Code Reference API documentation generated by <a href="http://www.phpdoc.org/">phpDocumentor</a> on May 16th, 2025 at 09:14 am.</span>
     </div>
 </footer>
 
@@ -1548,7 +1584,7 @@ class WC_Checkout {
             'searchIndex': '..\/js\/searchIndex.json'
         };
     </script>
-    <script src="../js/searchIndex.js?updated=1721907182"></script>
-    <script src="../js/search.js?updated=1721907182"></script>
+    <script src="../js/searchIndex.js?updated=1747386858"></script>
+    <script src="../js/search.js?updated=1747386858"></script>
 </body>
 </html>

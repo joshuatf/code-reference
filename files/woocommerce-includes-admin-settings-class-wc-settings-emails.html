@@ -4,14 +4,13 @@
     <meta charset="utf-8">
     <title>WooCommerce Code Reference</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="../images/favicon.png" />
-    <link rel="apple-touch-icon" href="../images/apple-touch-icon.png"/>
-    <link rel="apple-touch-icon" sizes="72x72" href="../images/apple-touch-icon-72x72.png"/>
-    <link rel="apple-touch-icon" sizes="114x114" href="../images/apple-touch-icon-114x114.png"/>
+    <link rel="icon" href="../images/favicon-32x32.png" sizes="32x32" />
+    <link rel="icon" href="../images/favicon-192x192.png" sizes="192x192" />
+    <link rel="apple-touch-icon" href="../images/favicon-180x180.png" />
+
     <link rel="stylesheet" href="../css/normalize.css">
-    <link rel="stylesheet" href="../css/base.css?updated=1721907182">
-    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../css/template.css?updated=1721907182">
+    <link rel="stylesheet" href="../css/base.css?updated=1747386858">
+    <link rel="stylesheet" href="../css/template.css?updated=1747386858">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0/css/all.min.css" integrity="sha256-ybRkN9dBjhcS2qrW1z+hfCxq+1aBdwyQM5wlQoQVt/0=" crossorigin="anonymous" />
             <script src="https://cdn.jsdelivr.net/npm/css-vars-ponyfill@2"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0/js/all.min.js" integrity="sha256-0vuk8LXoyrmCjp1f0O300qo1M75ZQyhH9X3J6d+scmk=" crossorigin="anonymous"></script>
@@ -38,14 +37,13 @@
     <header class="phpdocumentor-top-header">
     <section class="phpdocumentor-section">
         <div class="site-branding">
-            <a class="site-logo" href="../index.html"><img width="180" src="../images/logo.svg" alt="WooCommerce" /></a>
+            <a class="site-logo" href="../index.html"><img src="../images/logo.png" alt="WooCommerce" /></a>
         </div>
         <nav class="main-navigation">
             <ul>
                 <li><a href="../hooks/hooks.html">Hooks Reference</a></li>
-                <li><a href="https://docs.woocommerce.com/">Documentation</a></li>
+                <li><a href="https://developer.woocommerce.com/docs/">Documentation</a></li>
                 <li><a href="https://woocommerce.github.io/woocommerce-rest-api-docs/">REST API Docs</a></li>
-                <li><a href="https://woocommerce.com/careers/?utm_source=woocommerce+core+code+reference&utm_medium=devdocs&utm_campaign=woo+careers" target="_blank">We're hiring!</a></li>
             </ul>
         </nav>
     </section>
@@ -53,7 +51,7 @@
 
 <div class="phpdocumentor-header">
     <section class="phpdocumentor-section">
-        <h1 class="phpdocumentor-title">WooCommerce Code Reference</h1>
+        <h1 class="phpdocumentor-title"><a href="../index.html">WooCommerce Code Reference</a></h1>
         <section class="phpdocumentor-search">
     <label class="phpdocumentor-label">
         <span class="visually-hidden">Search (click ESC to close search results)</span>
@@ -74,6 +72,10 @@
                                         <h4 class="phpdocumentor-sidebar__root-namespace"><a href="../namespaces/woocommerce.html"><abbr title="\WooCommerce">WooCommerce</abbr></a></h4>
                 <ul class="phpdocumentor-list">
                                             <li><a href="../namespaces/woocommerce-admin.html"><abbr title="\WooCommerce\Admin">Admin</abbr></a></li>
+                                    </ul>
+                            <h4 class="phpdocumentor-sidebar__root-namespace"><a href="../namespaces/mailpoet.html"><abbr title="\MailPoet">MailPoet</abbr></a></h4>
+                <ul class="phpdocumentor-list">
+                                            <li><a href="../namespaces/mailpoet-emaileditor.html"><abbr title="\MailPoet\EmailEditor">EmailEditor</abbr></a></li>
                                     </ul>
                             <h4 class="phpdocumentor-sidebar__root-namespace"><a href="../namespaces/automattic.html"><abbr title="\Automattic">Automattic</abbr></a></h4>
                 <ul class="phpdocumentor-list">
@@ -119,8 +121,10 @@
                                     <li><a href="../packages/WooCommerce-Widgets.html"><abbr title="\WooCommerce\Widgets">Widgets</abbr></a></li>
                                     <li><a href="../packages/WooCommerce-Uninstaller.html"><abbr title="\WooCommerce\Uninstaller">Uninstaller</abbr></a></li>
                             </ul>
-                                <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/WoocommerceAdmin.html"><abbr title="\WoocommerceAdmin">WoocommerceAdmin</abbr></a></h3>
-                                <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/WoocommerceNavigation.html"><abbr title="\WoocommerceNavigation">WoocommerceNavigation</abbr></a></h3>
+                                <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/MailPoet.html"><abbr title="\MailPoet">MailPoet</abbr></a></h3>
+                        <ul class="phpdocumentor-list">
+                                    <li><a href="../packages/MailPoet-EmailEditor.html"><abbr title="\MailPoet\EmailEditor">EmailEditor</abbr></a></li>
+                            </ul>
                                 <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/Automattic.html"><abbr title="\Automattic">Automattic</abbr></a></h3>
                         <ul class="phpdocumentor-list">
                                     <li><a href="../packages/Automattic-WooCommerce.html"><abbr title="\Automattic\WooCommerce">WooCommerce</abbr></a></li>
@@ -164,6 +168,13 @@
  * @version 2.1.0
  */
 
+use Automattic\WooCommerce\Internal\Admin\EmailPreview\EmailPreview;
+use Automattic\WooCommerce\Internal\Email\EmailColors;
+use Automattic\WooCommerce\Internal\Email\EmailFont;
+use Automattic\WooCommerce\Internal\Email\EmailStyleSync;
+use Automattic\WooCommerce\Internal\Features\FeaturesController;
+use Automattic\WooCommerce\Utilities\FeaturesUtil;
+
 defined( &#039;ABSPATH&#039; ) || exit;
 
 if ( class_exists( &#039;WC_Settings_Emails&#039;, false ) ) {
@@ -183,8 +194,25 @@ class WC_Settings_Emails extends WC_Settings_Page {
 		$this-&gt;label = __( &#039;Emails&#039;, &#039;woocommerce&#039; );
 
 		add_action( &#039;woocommerce_admin_field_email_notification&#039;, array( $this, &#039;email_notification_setting&#039; ) );
+		add_action( &#039;woocommerce_admin_field_email_preview&#039;, array( $this, &#039;email_preview&#039; ) );
+		add_action( &#039;woocommerce_admin_field_email_image_url&#039;, array( $this, &#039;email_image_url&#039; ) );
+		add_action( &#039;woocommerce_admin_field_email_font_family&#039;, array( $this, &#039;email_font_family&#039; ) );
+		add_action( &#039;woocommerce_admin_field_email_color_palette&#039;, array( $this, &#039;email_color_palette&#039; ) );
+		add_action( &#039;woocommerce_email_settings_after&#039;, array( $this, &#039;email_preview_single&#039; ) );
+		if ( FeaturesUtil::feature_is_enabled( &#039;email_improvements&#039; ) ) {
+			add_filter( &#039;woocommerce_admin_settings_sanitize_option_woocommerce_email_header_image&#039;, array( $this, &#039;sanitize_email_header_image&#039; ), 10, 3 );
+		}
+		add_filter( &#039;woocommerce_tracks_event_properties&#039;, array( $this, &#039;append_feature_email_improvements_to_tracks&#039; ) );
+		add_action( FeaturesController::FEATURE_ENABLED_CHANGED_ACTION, array( $this, &#039;track_email_improvements_feature_change&#039; ), 10, 2 );
 		parent::__construct();
 	}
+
+	/**
+	 * Setting page icon.
+	 *
+	 * @var string
+	 */
+	public $icon = &#039;atSymbol&#039;;
 
 	/**
 	 * Get own sections.
@@ -209,6 +237,208 @@ class WC_Settings_Emails extends WC_Settings_Page {
 			&#039;https://wordpress.org/plugins/wp-mail-logging/&#039;,
 			&#039;https://woocommerce.com/document/email-faq&#039;
 		);
+
+		/* translators: %s: Nonced email preview link */
+		$email_template_description = sprintf( __( &#039;This section lets you customize the WooCommerce emails. &lt;a href=&quot;%s&quot; target=&quot;_blank&quot;&gt;Click here to preview your email template&lt;/a&gt;.&#039;, &#039;woocommerce&#039; ), wp_nonce_url( admin_url( &#039;?preview_woocommerce_mail=true&#039; ), &#039;preview-mail&#039; ) );
+		$logo_image                 = array(
+			&#039;title&#039;       =&gt; __( &#039;Header image&#039;, &#039;woocommerce&#039; ),
+			&#039;desc&#039;        =&gt; __( &#039;Paste the URL of an image you want to show in the email header. Upload images using the media uploader (Media &gt; Add New).&#039;, &#039;woocommerce&#039; ),
+			&#039;id&#039;          =&gt; &#039;woocommerce_email_header_image&#039;,
+			&#039;type&#039;        =&gt; &#039;text&#039;,
+			&#039;css&#039;         =&gt; &#039;min-width:400px;&#039;,
+			&#039;placeholder&#039; =&gt; __( &#039;N/A&#039;, &#039;woocommerce&#039; ),
+			&#039;default&#039;     =&gt; &#039;&#039;,
+			&#039;autoload&#039;    =&gt; false,
+			&#039;desc_tip&#039;    =&gt; true,
+		);
+		$logo_image_width           = null;
+		$header_alignment           = null;
+		$font_family                = null;
+
+		/* translators: %s: Available placeholders for use */
+		$footer_text_description = __( &#039;The text to appear in the footer of all WooCommerce emails.&#039;, &#039;woocommerce&#039; ) . &#039; &#039; . sprintf( __( &#039;Available placeholders: %s&#039;, &#039;woocommerce&#039; ), &#039;{site_title} {site_url}&#039; );
+		$footer_text_default     = &#039;{site_title} &amp;mdash; Built with {WooCommerce}&#039;;
+
+		// These defaults should be chosen by the same logic as the other color option properties.
+		list(
+			&#039;base_color_default&#039; =&gt; $base_color_default,
+			&#039;bg_color_default&#039; =&gt; $bg_color_default,
+			&#039;body_bg_color_default&#039; =&gt; $body_bg_color_default,
+			&#039;body_text_color_default&#039; =&gt; $body_text_color_default,
+			&#039;footer_text_color_default&#039; =&gt; $footer_text_color_default,
+		) = EmailColors::get_default_colors();
+
+		$base_color_title = __( &#039;Base color&#039;, &#039;woocommerce&#039; );
+		/* translators: %s: default color */
+		$base_color_desc = sprintf( __( &#039;The base color for WooCommerce email templates. Default %s.&#039;, &#039;woocommerce&#039; ), &#039;&lt;code&gt;&#039; . $base_color_default . &#039;&lt;/code&gt;&#039; );
+
+		$bg_color_title = __( &#039;Background color&#039;, &#039;woocommerce&#039; );
+		/* translators: %s: default color */
+		$bg_color_desc = sprintf( __( &#039;The background color for WooCommerce email templates. Default %s.&#039;, &#039;woocommerce&#039; ), &#039;&lt;code&gt;&#039; . $bg_color_default . &#039;&lt;/code&gt;&#039; );
+
+		$body_bg_color_title = __( &#039;Body background color&#039;, &#039;woocommerce&#039; );
+		/* translators: %s: default color */
+		$body_bg_color_desc = sprintf( __( &#039;The main body background color. Default %s.&#039;, &#039;woocommerce&#039; ), &#039;&lt;code&gt;&#039; . $body_bg_color_default . &#039;&lt;/code&gt;&#039; );
+
+		$body_text_color_title = __( &#039;Body text color&#039;, &#039;woocommerce&#039; );
+		/* translators: %s: default color */
+		$body_text_color_desc = sprintf( __( &#039;The main body text color. Default %s.&#039;, &#039;woocommerce&#039; ), &#039;&lt;code&gt;&#039; . $body_text_color_default . &#039;&lt;/code&gt;&#039; );
+
+		$footer_text_color_title = __( &#039;Footer text color&#039;, &#039;woocommerce&#039; );
+		/* translators: %s: footer default color */
+		$footer_text_color_desc = sprintf( __( &#039;The footer text color. Default %s.&#039;, &#039;woocommerce&#039; ), &#039;&lt;code&gt;&#039; . $footer_text_color_default . &#039;&lt;/code&gt;&#039; );
+
+		$color_palette_section_header = null;
+		$color_palette_section_end    = null;
+
+		if ( FeaturesUtil::feature_is_enabled( &#039;email_improvements&#039; ) ) {
+			$email_template_description = __( &#039;Customize your WooCommerce email template and preview it below.&#039;, &#039;woocommerce&#039; );
+			$logo_image                 = array(
+				&#039;title&#039;       =&gt; __( &#039;Logo&#039;, &#039;woocommerce&#039; ),
+				&#039;desc&#039;        =&gt; __( &#039;Add your logo to each of your WooCommerce emails. If no logo is uploaded, your site title will be used instead.&#039;, &#039;woocommerce&#039; ),
+				&#039;id&#039;          =&gt; &#039;woocommerce_email_header_image&#039;,
+				&#039;type&#039;        =&gt; &#039;email_image_url&#039;,
+				&#039;css&#039;         =&gt; &#039;min-width:400px;&#039;,
+				&#039;placeholder&#039; =&gt; __( &#039;N/A&#039;, &#039;woocommerce&#039; ),
+				&#039;default&#039;     =&gt; &#039;&#039;,
+				&#039;autoload&#039;    =&gt; false,
+				&#039;desc_tip&#039;    =&gt; true,
+			);
+			$logo_image_width           = array(
+				&#039;title&#039;    =&gt; __( &#039;Logo width (px)&#039;, &#039;woocommerce&#039; ),
+				&#039;id&#039;       =&gt; &#039;woocommerce_email_header_image_width&#039;,
+				&#039;desc_tip&#039; =&gt; &#039;&#039;,
+				&#039;default&#039;  =&gt; 120,
+				&#039;type&#039;     =&gt; &#039;number&#039;,
+			);
+			$header_alignment           = array(
+				&#039;title&#039;    =&gt; __( &#039;Header alignment&#039;, &#039;woocommerce&#039; ),
+				&#039;id&#039;       =&gt; &#039;woocommerce_email_header_alignment&#039;,
+				&#039;desc_tip&#039; =&gt; &#039;&#039;,
+				&#039;default&#039;  =&gt; &#039;left&#039;,
+				&#039;type&#039;     =&gt; &#039;select&#039;,
+				&#039;class&#039;    =&gt; &#039;wc-enhanced-select&#039;,
+				&#039;options&#039;  =&gt; array(
+					&#039;left&#039;   =&gt; __( &#039;Left&#039;, &#039;woocommerce&#039; ),
+					&#039;center&#039; =&gt; __( &#039;Center&#039;, &#039;woocommerce&#039; ),
+					&#039;right&#039;  =&gt; __( &#039;Right&#039;, &#039;woocommerce&#039; ),
+				),
+			);
+
+			$font_family = array(
+				&#039;title&#039;   =&gt; __( &#039;Font family&#039;, &#039;woocommerce&#039; ),
+				&#039;id&#039;      =&gt; &#039;woocommerce_email_font_family&#039;,
+				&#039;default&#039; =&gt; &#039;Helvetica&#039;,
+				&#039;type&#039;    =&gt; &#039;email_font_family&#039;,
+			);
+
+			/* translators: %s: Available placeholders for use */
+			$footer_text_description = __( &#039;This text will appear in the footer of all of your WooCommerce emails.&#039;, &#039;woocommerce&#039; ) . &#039; &#039; . sprintf( __( &#039;Available placeholders: %s&#039;, &#039;woocommerce&#039; ), &#039;{site_title} {site_url} {store_address} {store_email}&#039; );
+			$footer_text_default     = &#039;{site_title}&lt;br /&gt;{store_address}&#039;;
+
+			$base_color_title = __( &#039;Accent&#039;, &#039;woocommerce&#039; );
+			/* translators: %s: default color */
+			$base_color_desc = sprintf( __( &#039;Customize the color of your buttons and links. Default %s.&#039;, &#039;woocommerce&#039; ), &#039;&lt;code&gt;&#039; . $base_color_default . &#039;&lt;/code&gt;&#039; );
+
+			$bg_color_title = __( &#039;Email background&#039;, &#039;woocommerce&#039; );
+			/* translators: %s: default color */
+			$bg_color_desc = sprintf( __( &#039;Select a color for the background of your emails. Default %s.&#039;, &#039;woocommerce&#039; ), &#039;&lt;code&gt;&#039; . $bg_color_default . &#039;&lt;/code&gt;&#039; );
+
+			$body_bg_color_title = __( &#039;Content background&#039;, &#039;woocommerce&#039; );
+			/* translators: %s: default color */
+			$body_bg_color_desc = sprintf( __( &#039;Choose a background color for the content area of your emails. Default %s.&#039;, &#039;woocommerce&#039; ), &#039;&lt;code&gt;&#039; . $body_bg_color_default . &#039;&lt;/code&gt;&#039; );
+
+			$body_text_color_title = __( &#039;Heading &amp; text&#039;, &#039;woocommerce&#039; );
+			/* translators: %s: default color */
+			$body_text_color_desc = sprintf( __( &#039;Set the color of your headings and text. Default %s.&#039;, &#039;woocommerce&#039; ), &#039;&lt;code&gt;&#039; . $body_text_color_default . &#039;&lt;/code&gt;&#039; );
+
+			$footer_text_color_title = __( &#039;Secondary text&#039;, &#039;woocommerce&#039; );
+			/* translators: %s: footer default color */
+			$footer_text_color_desc = sprintf( __( &#039;Choose a color for your secondary text, such as your footer content. Default %s.&#039;, &#039;woocommerce&#039; ), &#039;&lt;code&gt;&#039; . $footer_text_color_default . &#039;&lt;/code&gt;&#039; );
+
+			$color_palette_section_header = array(
+				&#039;title&#039; =&gt; __( &#039;Color palette&#039;, &#039;woocommerce&#039; ),
+				&#039;type&#039;  =&gt; &#039;email_color_palette&#039;,
+				&#039;id&#039;    =&gt; &#039;email_color_palette&#039;,
+			);
+
+			$color_palette_section_end = array(
+				&#039;type&#039; =&gt; &#039;sectionend&#039;,
+				&#039;id&#039;   =&gt; &#039;email_template_options&#039;,
+			);
+		}
+
+		// Reorder email color settings based on the email_improvements feature flag.
+
+		$base_color_setting = array(
+			&#039;title&#039;    =&gt; $base_color_title,
+			&#039;desc&#039;     =&gt; $base_color_desc,
+			&#039;id&#039;       =&gt; &#039;woocommerce_email_base_color&#039;,
+			&#039;type&#039;     =&gt; &#039;color&#039;,
+			&#039;css&#039;      =&gt; &#039;width:6em;&#039;,
+			&#039;default&#039;  =&gt; $base_color_default,
+			&#039;autoload&#039; =&gt; false,
+			&#039;desc_tip&#039; =&gt; true,
+		);
+
+		$bg_color_setting = array(
+			&#039;title&#039;    =&gt; $bg_color_title,
+			&#039;desc&#039;     =&gt; $bg_color_desc,
+			&#039;id&#039;       =&gt; &#039;woocommerce_email_background_color&#039;,
+			&#039;type&#039;     =&gt; &#039;color&#039;,
+			&#039;css&#039;      =&gt; &#039;width:6em;&#039;,
+			&#039;default&#039;  =&gt; $bg_color_default,
+			&#039;autoload&#039; =&gt; false,
+			&#039;desc_tip&#039; =&gt; true,
+		);
+
+		$body_bg_color_setting = array(
+			&#039;title&#039;    =&gt; $body_bg_color_title,
+			&#039;desc&#039;     =&gt; $body_bg_color_desc,
+			&#039;id&#039;       =&gt; &#039;woocommerce_email_body_background_color&#039;,
+			&#039;type&#039;     =&gt; &#039;color&#039;,
+			&#039;css&#039;      =&gt; &#039;width:6em;&#039;,
+			&#039;default&#039;  =&gt; $body_bg_color_default,
+			&#039;autoload&#039; =&gt; false,
+			&#039;desc_tip&#039; =&gt; true,
+		);
+
+		$body_text_color_setting = array(
+			&#039;title&#039;    =&gt; $body_text_color_title,
+			&#039;desc&#039;     =&gt; $body_text_color_desc,
+			&#039;id&#039;       =&gt; &#039;woocommerce_email_text_color&#039;,
+			&#039;type&#039;     =&gt; &#039;color&#039;,
+			&#039;css&#039;      =&gt; &#039;width:6em;&#039;,
+			&#039;default&#039;  =&gt; $body_text_color_default,
+			&#039;autoload&#039; =&gt; false,
+			&#039;desc_tip&#039; =&gt; true,
+		);
+
+		$footer_text_color_setting = array(
+			&#039;title&#039;    =&gt; $footer_text_color_title,
+			&#039;desc&#039;     =&gt; $footer_text_color_desc,
+			&#039;id&#039;       =&gt; &#039;woocommerce_email_footer_text_color&#039;,
+			&#039;type&#039;     =&gt; &#039;color&#039;,
+			&#039;css&#039;      =&gt; &#039;width:6em;&#039;,
+			&#039;default&#039;  =&gt; $footer_text_color_default,
+			&#039;autoload&#039; =&gt; false,
+			&#039;desc_tip&#039; =&gt; true,
+		);
+
+		$reorder_colors = FeaturesUtil::feature_is_enabled( &#039;email_improvements&#039; );
+
+		$base_color_setting_in_template_opts        = $reorder_colors ? null : $base_color_setting;
+		$bg_color_setting_in_template_opts          = $reorder_colors ? null : $bg_color_setting;
+		$body_bg_color_setting_in_template_opts     = $reorder_colors ? null : $body_bg_color_setting;
+		$body_text_color_setting_in_template_opts   = $reorder_colors ? null : $body_text_color_setting;
+		$footer_text_color_setting_in_template_opts = $reorder_colors ? null : $footer_text_color_setting;
+
+		$base_color_setting_in_palette        = $reorder_colors ? $base_color_setting : null;
+		$bg_color_setting_in_palette          = $reorder_colors ? $bg_color_setting : null;
+		$body_bg_color_setting_in_palette     = $reorder_colors ? $body_bg_color_setting : null;
+		$body_text_color_setting_in_palette   = $reorder_colors ? $body_text_color_setting : null;
+		$footer_text_color_setting_in_palette = $reorder_colors ? $footer_text_color_setting : null;
+
 		$settings =
 			array(
 				array(
@@ -234,13 +464,13 @@ class WC_Settings_Emails extends WC_Settings_Page {
 				array(
 					&#039;title&#039; =&gt; __( &#039;Email sender options&#039;, &#039;woocommerce&#039; ),
 					&#039;type&#039;  =&gt; &#039;title&#039;,
-					&#039;desc&#039;  =&gt; &#039;&#039;,
+					&#039;desc&#039;  =&gt; __( &quot;Set the name and email address you&#039;d like your outgoing emails to use.&quot;, &#039;woocommerce&#039; ),
 					&#039;id&#039;    =&gt; &#039;email_options&#039;,
 				),
 
 				array(
 					&#039;title&#039;    =&gt; __( &#039;&quot;From&quot; name&#039;, &#039;woocommerce&#039; ),
-					&#039;desc&#039;     =&gt; __( &#039;How the sender name appears in outgoing WooCommerce emails.&#039;, &#039;woocommerce&#039; ),
+					&#039;desc&#039;     =&gt; &#039;&#039;,
 					&#039;id&#039;       =&gt; &#039;woocommerce_email_from_name&#039;,
 					&#039;type&#039;     =&gt; &#039;text&#039;,
 					&#039;css&#039;      =&gt; &#039;min-width:400px;&#039;,
@@ -251,7 +481,7 @@ class WC_Settings_Emails extends WC_Settings_Page {
 
 				array(
 					&#039;title&#039;             =&gt; __( &#039;&quot;From&quot; address&#039;, &#039;woocommerce&#039; ),
-					&#039;desc&#039;              =&gt; __( &#039;How the sender email appears in outgoing WooCommerce emails.&#039;, &#039;woocommerce&#039; ),
+					&#039;desc&#039;              =&gt; &#039;&#039;,
 					&#039;id&#039;                =&gt; &#039;woocommerce_email_from_address&#039;,
 					&#039;type&#039;              =&gt; &#039;email&#039;,
 					&#039;custom_attributes&#039; =&gt; array(
@@ -271,88 +501,69 @@ class WC_Settings_Emails extends WC_Settings_Page {
 				array(
 					&#039;title&#039; =&gt; __( &#039;Email template&#039;, &#039;woocommerce&#039; ),
 					&#039;type&#039;  =&gt; &#039;title&#039;,
-					/* translators: %s: Nonced email preview link */
-					&#039;desc&#039;  =&gt; sprintf( __( &#039;This section lets you customize the WooCommerce emails. &lt;a href=&quot;%s&quot; target=&quot;_blank&quot;&gt;Click here to preview your email template&lt;/a&gt;.&#039;, &#039;woocommerce&#039; ), wp_nonce_url( admin_url( &#039;?preview_woocommerce_mail=true&#039; ), &#039;preview-mail&#039; ) ),
+					&#039;desc&#039;  =&gt; $email_template_description,
 					&#039;id&#039;    =&gt; &#039;email_template_options&#039;,
 				),
 
-				array(
-					&#039;title&#039;       =&gt; __( &#039;Header image&#039;, &#039;woocommerce&#039; ),
-					&#039;desc&#039;        =&gt; __( &#039;Paste the URL of an image you want to show in the email header. Upload images using the media uploader (Media &gt; Add New).&#039;, &#039;woocommerce&#039; ),
-					&#039;id&#039;          =&gt; &#039;woocommerce_email_header_image&#039;,
-					&#039;type&#039;        =&gt; &#039;text&#039;,
-					&#039;css&#039;         =&gt; &#039;min-width:400px;&#039;,
-					&#039;placeholder&#039; =&gt; __( &#039;N/A&#039;, &#039;woocommerce&#039; ),
-					&#039;default&#039;     =&gt; &#039;&#039;,
-					&#039;autoload&#039;    =&gt; false,
-					&#039;desc_tip&#039;    =&gt; true,
-				),
+				$logo_image,
+
+				$logo_image_width,
+
+				$header_alignment,
+
+				$font_family,
+
+				$base_color_setting_in_template_opts,
+
+				$bg_color_setting_in_template_opts,
+
+				$body_bg_color_setting_in_template_opts,
+
+				$body_text_color_setting_in_template_opts,
 
 				array(
 					&#039;title&#039;       =&gt; __( &#039;Footer text&#039;, &#039;woocommerce&#039; ),
-					/* translators: %s: Available placeholders for use */
-					&#039;desc&#039;        =&gt; __( &#039;The text to appear in the footer of all WooCommerce emails.&#039;, &#039;woocommerce&#039; ) . &#039; &#039; . sprintf( __( &#039;Available placeholders: %s&#039;, &#039;woocommerce&#039; ), &#039;{site_title} {site_url}&#039; ),
+					&#039;desc&#039;        =&gt; $footer_text_description,
 					&#039;id&#039;          =&gt; &#039;woocommerce_email_footer_text&#039;,
 					&#039;css&#039;         =&gt; &#039;width:400px; height: 75px;&#039;,
 					&#039;placeholder&#039; =&gt; __( &#039;N/A&#039;, &#039;woocommerce&#039; ),
 					&#039;type&#039;        =&gt; &#039;textarea&#039;,
-					&#039;default&#039;     =&gt; &#039;{site_title} &amp;mdash; Built with {WooCommerce}&#039;,
+					&#039;default&#039;     =&gt; $footer_text_default,
 					&#039;autoload&#039;    =&gt; false,
 					&#039;desc_tip&#039;    =&gt; true,
 				),
 
-				array(
-					&#039;title&#039;    =&gt; __( &#039;Base color&#039;, &#039;woocommerce&#039; ),
-					/* translators: %s: default color */
-					&#039;desc&#039;     =&gt; sprintf( __( &#039;The base color for WooCommerce email templates. Default %s.&#039;, &#039;woocommerce&#039; ), &#039;&lt;code&gt;#7f54b3&lt;/code&gt;&#039; ),
-					&#039;id&#039;       =&gt; &#039;woocommerce_email_base_color&#039;,
-					&#039;type&#039;     =&gt; &#039;color&#039;,
-					&#039;css&#039;      =&gt; &#039;width:6em;&#039;,
-					&#039;default&#039;  =&gt; &#039;#7f54b3&#039;,
-					&#039;autoload&#039; =&gt; false,
-					&#039;desc_tip&#039; =&gt; true,
-				),
-
-				array(
-					&#039;title&#039;    =&gt; __( &#039;Background color&#039;, &#039;woocommerce&#039; ),
-					/* translators: %s: default color */
-					&#039;desc&#039;     =&gt; sprintf( __( &#039;The background color for WooCommerce email templates. Default %s.&#039;, &#039;woocommerce&#039; ), &#039;&lt;code&gt;#f7f7f7&lt;/code&gt;&#039; ),
-					&#039;id&#039;       =&gt; &#039;woocommerce_email_background_color&#039;,
-					&#039;type&#039;     =&gt; &#039;color&#039;,
-					&#039;css&#039;      =&gt; &#039;width:6em;&#039;,
-					&#039;default&#039;  =&gt; &#039;#f7f7f7&#039;,
-					&#039;autoload&#039; =&gt; false,
-					&#039;desc_tip&#039; =&gt; true,
-				),
-
-				array(
-					&#039;title&#039;    =&gt; __( &#039;Body background color&#039;, &#039;woocommerce&#039; ),
-					/* translators: %s: default color */
-					&#039;desc&#039;     =&gt; sprintf( __( &#039;The main body background color. Default %s.&#039;, &#039;woocommerce&#039; ), &#039;&lt;code&gt;#ffffff&lt;/code&gt;&#039; ),
-					&#039;id&#039;       =&gt; &#039;woocommerce_email_body_background_color&#039;,
-					&#039;type&#039;     =&gt; &#039;color&#039;,
-					&#039;css&#039;      =&gt; &#039;width:6em;&#039;,
-					&#039;default&#039;  =&gt; &#039;#ffffff&#039;,
-					&#039;autoload&#039; =&gt; false,
-					&#039;desc_tip&#039; =&gt; true,
-				),
-
-				array(
-					&#039;title&#039;    =&gt; __( &#039;Body text color&#039;, &#039;woocommerce&#039; ),
-					/* translators: %s: default color */
-					&#039;desc&#039;     =&gt; sprintf( __( &#039;The main body text color. Default %s.&#039;, &#039;woocommerce&#039; ), &#039;&lt;code&gt;#3c3c3c&lt;/code&gt;&#039; ),
-					&#039;id&#039;       =&gt; &#039;woocommerce_email_text_color&#039;,
-					&#039;type&#039;     =&gt; &#039;color&#039;,
-					&#039;css&#039;      =&gt; &#039;width:6em;&#039;,
-					&#039;default&#039;  =&gt; &#039;#3c3c3c&#039;,
-					&#039;autoload&#039; =&gt; false,
-					&#039;desc_tip&#039; =&gt; true,
-				),
+				$footer_text_color_setting_in_template_opts,
 
 				array(
 					&#039;type&#039; =&gt; &#039;sectionend&#039;,
 					&#039;id&#039;   =&gt; &#039;email_template_options&#039;,
 				),
+
+				$color_palette_section_header,
+
+				$base_color_setting_in_palette,
+
+				$bg_color_setting_in_palette,
+
+				$body_bg_color_setting_in_palette,
+
+				$body_text_color_setting_in_palette,
+
+				$footer_text_color_setting_in_palette,
+
+				array(
+					&#039;title&#039;    =&gt; __( &#039;Auto-sync with theme&#039;, &#039;woocommerce&#039; ),
+					&#039;desc&#039;     =&gt; __( &#039;Automatically update email styles when theme styles change&#039;, &#039;woocommerce&#039; ),
+					&#039;id&#039;       =&gt; &#039;woocommerce_email_auto_sync_with_theme&#039;,
+					&#039;type&#039;     =&gt; &#039;hidden&#039;,
+					&#039;default&#039;  =&gt; &#039;no&#039;,
+					&#039;autoload&#039; =&gt; false,
+				),
+
+				$color_palette_section_end,
+
+				array( &#039;type&#039; =&gt; &#039;email_preview&#039; ),
 
 				array(
 					&#039;title&#039; =&gt; __( &#039;Store management insights&#039;, &#039;woocommerce&#039; ),
@@ -376,7 +587,30 @@ class WC_Settings_Emails extends WC_Settings_Page {
 				),
 			);
 
+		// Remove empty elements that depend on the email_improvements feature flag.
+		$settings = array_filter( $settings );
+
 		return apply_filters( &#039;woocommerce_email_settings&#039;, $settings );
+	}
+
+	/**
+	 * Get custom fonts for emails.
+	 */
+	public function get_custom_fonts() {
+		$custom_fonts = array();
+		if ( wc_current_theme_is_fse_theme() &amp;&amp; class_exists( &#039;WP_Font_Face_Resolver&#039; ) ) {
+			$theme_fonts = WP_Font_Face_Resolver::get_fonts_from_theme_json();
+			if ( count( $theme_fonts ) &gt; 0 ) {
+				foreach ( $theme_fonts as $font ) {
+					if ( ! empty( $font[0][&#039;font-family&#039;] ) ) {
+						$custom_fonts[ $font[0][&#039;font-family&#039;] ] = $font[0][&#039;font-family&#039;];
+					}
+				}
+			}
+		}
+		ksort( $custom_fonts );
+
+		return $custom_fonts;
 	}
 
 	/**
@@ -479,12 +713,35 @@ class WC_Settings_Emails extends WC_Settings_Page {
 										echo &#039;&lt;td class=&quot;wc-email-settings-table-&#039; . esc_attr( $key ) . &#039;&quot;&gt;
 										&lt;a href=&quot;&#039; . esc_url( admin_url( &#039;admin.php?page=wc-settings&amp;tab=email&amp;section=&#039; . strtolower( $email_key ) ) ) . &#039;&quot;&gt;&#039; . esc_html( $email-&gt;get_title() ) . &#039;&lt;/a&gt;
 										&#039; . wc_help_tip( $email-&gt;get_description() ) . &#039;
-									&lt;/td&gt;&#039;;
+										&lt;/td&gt;&#039;;
 										break;
 									case &#039;recipient&#039;:
-										echo &#039;&lt;td class=&quot;wc-email-settings-table-&#039; . esc_attr( $key ) . &#039;&quot;&gt;
-										&#039; . esc_html( $email-&gt;is_customer_email() ? __( &#039;Customer&#039;, &#039;woocommerce&#039; ) : $email-&gt;get_recipient() ) . &#039;
-									&lt;/td&gt;&#039;;
+										$to  = $email-&gt;is_customer_email() ? __( &#039;Customer&#039;, &#039;woocommerce&#039; ) : $email-&gt;get_recipient();
+										$cc  = false;
+										$bcc = false;
+										if ( FeaturesUtil::feature_is_enabled( &#039;email_improvements&#039; ) ) {
+											$ccs  = $email-&gt;get_cc_recipient();
+											$bccs = $email-&gt;get_bcc_recipient();
+											// Translators: %s: comma-separated email addresses to which the email is cc-ed.
+											$cc = $ccs ? sprintf( __( &#039;&lt;b&gt;Cc&lt;/b&gt;: %s&#039;, &#039;woocommerce&#039; ), $ccs ) : false;
+											// Translators: %s: comma-separated email addresses to which the email is bcc-ed.
+											$bcc = $bccs ? sprintf( __( &#039;&lt;b&gt;Bcc&lt;/b&gt;: %s&#039;, &#039;woocommerce&#039; ), $bccs ) : false;
+											if ( $cc || $bcc ) {
+												// Translators: %s: comma-separated email addresses to which the email is sent.
+												$to = sprintf( __( &#039;&lt;b&gt;To&lt;/b&gt;: %s&#039;, &#039;woocommerce&#039; ), $to );
+											}
+										}
+										$allowed_tags = array( &#039;b&#039; =&gt; array() );
+
+										echo &#039;&lt;td class=&quot;wc-email-settings-table-&#039; . esc_attr( $key ) . &#039;&quot;&gt;&#039;;
+										echo wp_kses( $to, $allowed_tags );
+										if ( $cc ) {
+											echo &#039;&lt;br&gt;&#039; . wp_kses( $cc, $allowed_tags );
+										}
+										if ( $bcc ) {
+											echo &#039;&lt;br&gt;&#039; . wp_kses( $bcc, $allowed_tags );
+										}
+										echo &#039;&lt;/td&gt;&#039;;
 										break;
 									case &#039;status&#039;:
 										echo &#039;&lt;td class=&quot;wc-email-settings-table-&#039; . esc_attr( $key ) . &#039;&quot;&gt;&#039;;
@@ -502,12 +759,12 @@ class WC_Settings_Emails extends WC_Settings_Page {
 									case &#039;email_type&#039;:
 										echo &#039;&lt;td class=&quot;wc-email-settings-table-&#039; . esc_attr( $key ) . &#039;&quot;&gt;
 										&#039; . esc_html( $email-&gt;get_content_type() ) . &#039;
-									&lt;/td&gt;&#039;;
+										&lt;/td&gt;&#039;;
 										break;
 									case &#039;actions&#039;:
 										echo &#039;&lt;td class=&quot;wc-email-settings-table-&#039; . esc_attr( $key ) . &#039;&quot;&gt;
 										&lt;a class=&quot;button alignright&quot; href=&quot;&#039; . esc_url( admin_url( &#039;admin.php?page=wc-settings&amp;tab=email&amp;section=&#039; . strtolower( $email_key ) ) ) . &#039;&quot;&gt;&#039; . esc_html__( &#039;Manage&#039;, &#039;woocommerce&#039; ) . &#039;&lt;/a&gt;
-									&lt;/td&gt;&#039;;
+										&lt;/td&gt;&#039;;
 										break;
 									default:
 										do_action( &#039;woocommerce_email_setting_column_&#039; . $key, $email );
@@ -524,6 +781,255 @@ class WC_Settings_Emails extends WC_Settings_Page {
 		&lt;/tr&gt;
 		&lt;?php
 	}
+
+	/**
+	 * Creates the React mount point for the email preview.
+	 */
+	public function email_preview() {
+		$this-&gt;delete_transient_email_settings();
+		$emails      = WC()-&gt;mailer()-&gt;get_emails();
+		$email_types = array();
+		foreach ( $emails as $email ) {
+			$email_types[] = array(
+				&#039;label&#039; =&gt; $email-&gt;get_title(),
+				&#039;value&#039; =&gt; get_class( $email ),
+			);
+		}
+		?&gt;
+		&lt;div
+			id=&quot;wc_settings_email_preview_slotfill&quot;
+			data-preview-url=&quot;&lt;?php echo esc_url( wp_nonce_url( admin_url( &#039;?preview_woocommerce_mail=true&#039; ), &#039;preview-mail&#039; ) ); ?&gt;&quot;
+			data-email-types=&quot;&lt;?php echo esc_attr( wp_json_encode( $email_types ) ); ?&gt;&quot;
+			data-email-setting-ids=&quot;&lt;?php echo esc_attr( wp_json_encode( EmailPreview::get_email_style_setting_ids() ) ); ?&gt;&quot;
+		&gt;&lt;/div&gt;
+		&lt;?php
+	}
+
+	/**
+	 * Creates the React mount point for the single email preview.
+	 *
+	 * @param object $email The email object to run the method on.
+	 */
+	public function email_preview_single( $email ) {
+		$this-&gt;delete_transient_email_settings();
+		// Email types array should have a single entry for current email.
+		$email_types = array(
+			array(
+				&#039;label&#039; =&gt; $email-&gt;get_title(),
+				&#039;value&#039; =&gt; get_class( $email ),
+			),
+		);
+		?&gt;
+		&lt;h2&gt;&lt;?php echo esc_html( __( &#039;Email preview&#039;, &#039;woocommerce&#039; ) ); ?&gt;&lt;/h2&gt;
+
+		&lt;p&gt;&lt;?php echo esc_html( __( &#039;Preview your email template. You can also test on different devices and send yourself a test email.&#039;, &#039;woocommerce&#039; ) ); ?&gt;&lt;/p&gt;
+		&lt;div&gt;
+			&lt;div
+				id=&quot;wc_settings_email_preview_slotfill&quot;
+				data-preview-url=&quot;&lt;?php echo esc_url( wp_nonce_url( admin_url( &#039;?preview_woocommerce_mail=true&#039; ), &#039;preview-mail&#039; ) ); ?&gt;&quot;
+				data-email-types=&quot;&lt;?php echo esc_attr( wp_json_encode( $email_types ) ); ?&gt;&quot;
+				data-email-setting-ids=&quot;&lt;?php echo esc_attr( wp_json_encode( EmailPreview::get_email_content_setting_ids( $email-&gt;id ) ) ); ?&gt;&quot;
+			&gt;&lt;/div&gt;
+			&lt;input type=&quot;hidden&quot; id=&quot;woocommerce_email_from_name&quot; value=&quot;&lt;?php echo esc_attr( get_option( &#039;woocommerce_email_from_name&#039; ) ); ?&gt;&quot; /&gt;
+			&lt;input type=&quot;hidden&quot; id=&quot;woocommerce_email_from_address&quot; value=&quot;&lt;?php echo esc_attr( get_option( &#039;woocommerce_email_from_address&#039; ) ); ?&gt;&quot; /&gt;
+		&lt;/div&gt;
+		&lt;?php
+	}
+
+	/**
+	 * Deletes transient with email settings used for live preview. This is to
+	 * prevent conflicts where the preview would show values from previous session.
+	 */
+	private function delete_transient_email_settings() {
+		$setting_ids = EmailPreview::get_all_email_setting_ids();
+		foreach ( $setting_ids as $id ) {
+			delete_transient( $id );
+		}
+	}
+
+	/**
+	 * Creates the React mount point for the email image url.
+	 *
+	 * @param array $value Field value array.
+	 */
+	public function email_image_url( $value ) {
+		$option_value = $value[&#039;value&#039;];
+		if ( ! isset( $value[&#039;field_name&#039;] ) ) {
+			$value[&#039;field_name&#039;] = $value[&#039;id&#039;];
+		}
+		?&gt;
+		&lt;tr class=&quot;&lt;?php echo esc_attr( $value[&#039;row_class&#039;] ); ?&gt;&quot;&gt;
+			&lt;th scope=&quot;row&quot; class=&quot;titledesc&quot;&gt;
+				&lt;label for=&quot;&lt;?php echo esc_attr( $value[&#039;id&#039;] ); ?&gt;&quot;&gt;&lt;?php echo esc_html( $value[&#039;title&#039;] ); ?&gt; &lt;?php echo wc_help_tip( $value[&#039;desc&#039;] ); // WPCS: XSS ok. ?&gt;&lt;/label&gt;
+			&lt;/th&gt;
+			&lt;td class=&quot;forminp forminp-&lt;?php echo esc_attr( sanitize_title( $value[&#039;type&#039;] ) ); ?&gt;&quot;&gt;
+				&lt;input
+					name=&quot;&lt;?php echo esc_attr( $value[&#039;field_name&#039;] ); ?&gt;&quot;
+					id=&quot;&lt;?php echo esc_attr( $value[&#039;id&#039;] ); ?&gt;&quot;
+					type=&quot;hidden&quot;
+					value=&quot;&lt;?php echo esc_attr( $option_value ); ?&gt;&quot;
+				/&gt;
+				&lt;div
+					id=&quot;wc_settings_email_image_url_slotfill&quot;
+					data-id=&quot;&lt;?php echo esc_attr( $value[&#039;id&#039;] ); ?&gt;&quot;
+					data-image-url=&quot;&lt;?php echo esc_attr( $option_value ); ?&gt;&quot;
+				&gt;&lt;/div&gt;
+			&lt;/td&gt;
+		&lt;/tr&gt;
+		&lt;?php
+	}
+
+	/**
+	 * Sanitize email image URL.
+	 *
+	 * @param  string $value     Option value.
+	 * @param  array  $option    Option name.
+	 * @param  string $raw_value Raw value.
+	 * @return string
+	 */
+	public function sanitize_email_header_image( $value, $option, $raw_value ) {
+		return sanitize_url( $raw_value );
+	}
+
+	/**
+	 * Creates the email font family field with custom font family applied to each option.
+	 *
+	 * @param array $value Field value array.
+	 */
+	public function email_font_family( $value ) {
+		$option_value = $value[&#039;value&#039;];
+		// This is a temporary fix to prevent using custom fonts without fallback.
+		$custom_fonts = null;
+
+		?&gt;
+		&lt;tr class=&quot;&lt;?php echo esc_attr( $value[&#039;row_class&#039;] ); ?&gt;&quot;&gt;
+			&lt;th scope=&quot;row&quot; class=&quot;titledesc&quot;&gt;
+				&lt;label for=&quot;&lt;?php echo esc_attr( $value[&#039;id&#039;] ); ?&gt;&quot;&gt;&lt;?php echo esc_html( $value[&#039;title&#039;] ); ?&gt;&lt;/label&gt;
+			&lt;/th&gt;
+			&lt;td class=&quot;forminp forminp-&lt;?php echo esc_attr( sanitize_title( $value[&#039;type&#039;] ) ); ?&gt;&quot;&gt;
+			&lt;script type=&quot;text/javascript&quot;&gt;
+				function renderWithFont( node ) {
+					if ( ! node.element || ! node.element.value ) return node.text;
+					var $wrapper = jQuery( &#039;&lt;span&gt;&lt;/span&gt;&#039; );
+					$wrapper.css( {&#039;font-family&#039;: node.element.dataset[&#039;font-family&#039;] || node.element.value} );
+					$wrapper.text( node.text );
+					return $wrapper;
+				}
+				function fontsSelect( selector ) {
+					jQuery( selector ).selectWoo( {
+						minimumResultsForSearch: Infinity,
+						templateResult: renderWithFont
+					} );
+				}
+				jQuery( document.body )
+					.on( &#039;wc-enhanced-select-init&#039;, function() {
+						fontsSelect( &#039;#&lt;?php echo esc_js( $value[&#039;id&#039;] ); ?&gt;&#039; );
+					} );
+				&lt;/script&gt;
+				&lt;select
+					name=&quot;&lt;?php echo esc_attr( $value[&#039;field_name&#039;] ); ?&gt;&quot;
+					id=&quot;&lt;?php echo esc_attr( $value[&#039;id&#039;] ); ?&gt;&quot;
+					&gt;
+					&lt;optgroup label=&quot;&lt;?php echo esc_attr__( &#039;Standard fonts&#039;, &#039;woocommerce&#039; ); ?&gt;&quot;&gt;
+						&lt;?php
+						foreach ( EmailFont::$font as $key =&gt; $font_family ) {
+							?&gt;
+							&lt;option
+								value=&quot;&lt;?php echo esc_attr( $key ); ?&gt;&quot;
+								data-font-family=&quot;&lt;?php echo esc_attr( $font_family ); ?&gt;&quot;
+								&lt;?php selected( $option_value, (string) $key ); ?&gt;
+							&gt;&lt;?php echo esc_html( $key ); ?&gt;&lt;/option&gt;
+							&lt;?php
+						}
+						?&gt;
+					&lt;/optgroup&gt;
+					&lt;?php if ( $custom_fonts ) : ?&gt;
+						&lt;optgroup label=&quot;&lt;?php echo esc_attr__( &#039;Custom fonts&#039;, &#039;woocommerce&#039; ); ?&gt;&quot;&gt;
+							&lt;?php
+							foreach ( $custom_fonts as $key =&gt; $val ) {
+								?&gt;
+							&lt;option
+								value=&quot;&lt;?php echo esc_attr( $key ); ?&gt;&quot;
+								&lt;?php selected( $option_value, (string) $key ); ?&gt;
+							&gt;&lt;?php echo esc_html( $val ); ?&gt;&lt;/option&gt;
+								&lt;?php
+							}
+							?&gt;
+						&lt;/optgroup&gt;
+					&lt;?php endif; ?&gt;
+				&lt;/select&gt;
+			&lt;/td&gt;
+		&lt;/tr&gt;
+		&lt;?php
+	}
+
+	/**
+	 * Creates the React mount point for the email color palette title.
+	 *
+	 * @param array $value Field value array.
+	 */
+	public function email_color_palette( $value ) {
+		$default_colors = EmailColors::get_default_colors();
+		$auto_sync = get_option( EmailStyleSync::AUTO_SYNC_OPTION, &#039;no&#039; );
+
+		?&gt;
+		&lt;hr class=&quot;wc-settings-email-color-palette-separator&quot; /&gt;
+		&lt;div class=&quot;wc-settings-email-color-palette-header&quot;&gt;
+			&lt;h2 class=&quot;wc-settings-email-color-palette-title&quot;&gt;&lt;?php echo esc_html( $value[&#039;title&#039;] ); ?&gt;&lt;/h2&gt;
+			&lt;div
+				class=&quot;wc-settings-email-color-palette-buttons&quot;
+				id=&quot;wc_settings_email_color_palette_slotfill&quot;
+				data-default-colors=&quot;&lt;?php echo esc_attr( wp_json_encode( $default_colors ) ); ?&gt;&quot;
+				&lt;?php echo wp_theme_has_theme_json() ? &#039;data-has-theme-json&#039; : &#039;&#039;; ?&gt;
+			&gt;&lt;/div&gt;
+			&lt;input
+				type=&quot;hidden&quot;
+				name=&quot;woocommerce_email_auto_sync_with_theme&quot;
+				id=&quot;woocommerce_email_auto_sync_with_theme&quot;
+				value=&quot;&lt;?php echo esc_attr( $auto_sync ); ?&gt;&quot;
+			/&gt;
+		&lt;/div&gt;
+		&lt;table class=&quot;form-table&quot;&gt;
+		&lt;?php
+	}
+
+	/**
+	 * Append email improvements prop to Tracks globally.
+	 *
+	 * @param array $event_properties Event properties array.
+	 *
+	 * @return array
+	 */
+	public function append_feature_email_improvements_to_tracks( $event_properties ) {
+		if ( is_array( $event_properties ) ) {
+			$is_email_improvements_enabled                  = FeaturesUtil::feature_is_enabled( &#039;email_improvements&#039; );
+			$event_properties[&#039;feature_email_improvements&#039;] = $is_email_improvements_enabled ? &#039;enabled&#039; : &#039;disabled&#039;;
+		}
+		return $event_properties;
+	}
+
+	/**
+	 * Track email improvements feature change.
+	 *
+	 * @param string $feature_id The feature ID.
+	 * @param bool   $enabled True if the feature is enabled, false if it is disabled.
+	 */
+	public function track_email_improvements_feature_change( $feature_id, $enabled ) {
+		if ( &#039;email_improvements&#039; === $feature_id ) {
+			$current_date = gmdate( &#039;Y-m-d H:i:s&#039; );
+			if ( $enabled ) {
+				$enabled_count = get_option( &#039;woocommerce_email_improvements_enabled_count&#039;, 0 );
+				update_option( &#039;woocommerce_email_improvements_enabled_count&#039;, $enabled_count + 1 );
+				add_option( &#039;woocommerce_email_improvements_first_enabled_at&#039;, $current_date );
+				update_option( &#039;woocommerce_email_improvements_last_enabled_at&#039;, $current_date );
+			} else {
+				$disabled_count = get_option( &#039;woocommerce_email_improvements_disabled_count&#039;, 0 );
+				update_option( &#039;woocommerce_email_improvements_disabled_count&#039;, $disabled_count + 1 );
+				add_option( &#039;woocommerce_email_improvements_first_disabled_at&#039;, $current_date );
+				update_option( &#039;woocommerce_email_improvements_last_disabled_at&#039;, $current_date );
+			}
+		}
+	}
 }
 
 return new WC_Settings_Emails();
@@ -537,7 +1043,7 @@ return new WC_Settings_Emails();
 
     <footer class="phpdocumentor phpdocumentor-footer">
     <div class="phpdocumentor-section">
-        <span>WooCommerce Code Reference API documentation generated by <a href="http://www.phpdoc.org/">phpDocumentor</a> on July 25th, 2024 at 11:33 am.</span>
+        <span>WooCommerce Code Reference API documentation generated by <a href="http://www.phpdoc.org/">phpDocumentor</a> on May 16th, 2025 at 09:14 am.</span>
     </div>
 </footer>
 
@@ -549,7 +1055,7 @@ return new WC_Settings_Emails();
             'searchIndex': '..\/js\/searchIndex.json'
         };
     </script>
-    <script src="../js/searchIndex.js?updated=1721907182"></script>
-    <script src="../js/search.js?updated=1721907182"></script>
+    <script src="../js/searchIndex.js?updated=1747386858"></script>
+    <script src="../js/search.js?updated=1747386858"></script>
 </body>
 </html>

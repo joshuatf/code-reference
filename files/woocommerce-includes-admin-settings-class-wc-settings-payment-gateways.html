@@ -4,14 +4,13 @@
     <meta charset="utf-8">
     <title>WooCommerce Code Reference</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="../images/favicon.png" />
-    <link rel="apple-touch-icon" href="../images/apple-touch-icon.png"/>
-    <link rel="apple-touch-icon" sizes="72x72" href="../images/apple-touch-icon-72x72.png"/>
-    <link rel="apple-touch-icon" sizes="114x114" href="../images/apple-touch-icon-114x114.png"/>
+    <link rel="icon" href="../images/favicon-32x32.png" sizes="32x32" />
+    <link rel="icon" href="../images/favicon-192x192.png" sizes="192x192" />
+    <link rel="apple-touch-icon" href="../images/favicon-180x180.png" />
+
     <link rel="stylesheet" href="../css/normalize.css">
-    <link rel="stylesheet" href="../css/base.css?updated=1721907182">
-    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../css/template.css?updated=1721907182">
+    <link rel="stylesheet" href="../css/base.css?updated=1747386858">
+    <link rel="stylesheet" href="../css/template.css?updated=1747386858">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0/css/all.min.css" integrity="sha256-ybRkN9dBjhcS2qrW1z+hfCxq+1aBdwyQM5wlQoQVt/0=" crossorigin="anonymous" />
             <script src="https://cdn.jsdelivr.net/npm/css-vars-ponyfill@2"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0/js/all.min.js" integrity="sha256-0vuk8LXoyrmCjp1f0O300qo1M75ZQyhH9X3J6d+scmk=" crossorigin="anonymous"></script>
@@ -38,14 +37,13 @@
     <header class="phpdocumentor-top-header">
     <section class="phpdocumentor-section">
         <div class="site-branding">
-            <a class="site-logo" href="../index.html"><img width="180" src="../images/logo.svg" alt="WooCommerce" /></a>
+            <a class="site-logo" href="../index.html"><img src="../images/logo.png" alt="WooCommerce" /></a>
         </div>
         <nav class="main-navigation">
             <ul>
                 <li><a href="../hooks/hooks.html">Hooks Reference</a></li>
-                <li><a href="https://docs.woocommerce.com/">Documentation</a></li>
+                <li><a href="https://developer.woocommerce.com/docs/">Documentation</a></li>
                 <li><a href="https://woocommerce.github.io/woocommerce-rest-api-docs/">REST API Docs</a></li>
-                <li><a href="https://woocommerce.com/careers/?utm_source=woocommerce+core+code+reference&utm_medium=devdocs&utm_campaign=woo+careers" target="_blank">We're hiring!</a></li>
             </ul>
         </nav>
     </section>
@@ -53,7 +51,7 @@
 
 <div class="phpdocumentor-header">
     <section class="phpdocumentor-section">
-        <h1 class="phpdocumentor-title">WooCommerce Code Reference</h1>
+        <h1 class="phpdocumentor-title"><a href="../index.html">WooCommerce Code Reference</a></h1>
         <section class="phpdocumentor-search">
     <label class="phpdocumentor-label">
         <span class="visually-hidden">Search (click ESC to close search results)</span>
@@ -74,6 +72,10 @@
                                         <h4 class="phpdocumentor-sidebar__root-namespace"><a href="../namespaces/woocommerce.html"><abbr title="\WooCommerce">WooCommerce</abbr></a></h4>
                 <ul class="phpdocumentor-list">
                                             <li><a href="../namespaces/woocommerce-admin.html"><abbr title="\WooCommerce\Admin">Admin</abbr></a></li>
+                                    </ul>
+                            <h4 class="phpdocumentor-sidebar__root-namespace"><a href="../namespaces/mailpoet.html"><abbr title="\MailPoet">MailPoet</abbr></a></h4>
+                <ul class="phpdocumentor-list">
+                                            <li><a href="../namespaces/mailpoet-emaileditor.html"><abbr title="\MailPoet\EmailEditor">EmailEditor</abbr></a></li>
                                     </ul>
                             <h4 class="phpdocumentor-sidebar__root-namespace"><a href="../namespaces/automattic.html"><abbr title="\Automattic">Automattic</abbr></a></h4>
                 <ul class="phpdocumentor-list">
@@ -119,8 +121,10 @@
                                     <li><a href="../packages/WooCommerce-Widgets.html"><abbr title="\WooCommerce\Widgets">Widgets</abbr></a></li>
                                     <li><a href="../packages/WooCommerce-Uninstaller.html"><abbr title="\WooCommerce\Uninstaller">Uninstaller</abbr></a></li>
                             </ul>
-                                <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/WoocommerceAdmin.html"><abbr title="\WoocommerceAdmin">WoocommerceAdmin</abbr></a></h3>
-                                <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/WoocommerceNavigation.html"><abbr title="\WoocommerceNavigation">WoocommerceNavigation</abbr></a></h3>
+                                <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/MailPoet.html"><abbr title="\MailPoet">MailPoet</abbr></a></h3>
+                        <ul class="phpdocumentor-list">
+                                    <li><a href="../packages/MailPoet-EmailEditor.html"><abbr title="\MailPoet\EmailEditor">EmailEditor</abbr></a></li>
+                            </ul>
                                 <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/Automattic.html"><abbr title="\Automattic">Automattic</abbr></a></h3>
                         <ul class="phpdocumentor-list">
                                     <li><a href="../packages/Automattic-WooCommerce.html"><abbr title="\Automattic\WooCommerce">WooCommerce</abbr></a></li>
@@ -189,6 +193,13 @@ class WC_Settings_Payment_Gateways extends WC_Settings_Page {
 		add_action( &#039;woocommerce_admin_field_payment_gateways&#039;, array( $this, &#039;payment_gateways_setting&#039; ) );
 		parent::__construct();
 	}
+
+	/**
+	 * Setting page icon.
+	 *
+	 * @var string
+	 */
+	public $icon = &#039;payment&#039;;
 
 	/**
 	 * Get own sections.
@@ -347,17 +358,20 @@ class WC_Settings_Payment_Gateways extends WC_Settings_Page {
 										break;
 									case &#039;action&#039;:
 										$setup_url = admin_url( &#039;admin.php?page=wc-settings&amp;tab=checkout&amp;section=&#039; . strtolower( $gateway-&gt;id ) );
-										// Override the behaviour for WooPayments plugin.
+										// Override the behaviour for the WooPayments plugin.
 										if (
 											// Keep old brand name for backwards compatibility.
 											( &#039;WooCommerce Payments&#039; === $method_title || &#039;WooPayments&#039; === $method_title ) &amp;&amp;
 											class_exists( &#039;WC_Payments_Account&#039; )
 										) {
 											if ( ! WooCommercePayments::is_connected() || WooCommercePayments::is_account_partially_onboarded() ) {
-												// The CTA text and label is &quot;Finish set up&quot; if the account is not connected or not completely onboarded.
-												$setup_url = WC_Payments_Account::get_connect_url(); // Plugin will handle the redirection to the connect page or directly to the provider (e.g. Stripe).
+												// The CTA text and label is &quot;Finish setup&quot; if the account is not connected or not completely onboarded.
+												// Plugin will handle the redirection to the connect page or directly to the provider (e.g. Stripe).
+												$setup_url = WC_Payments_Account::get_connect_url();
+												// Add the `from` parameter to the URL, so we know where the user came from.
+												$setup_url = add_query_arg( &#039;from&#039;, &#039;WCADMIN_PAYMENT_SETTINGS&#039;, $setup_url );
 												/* Translators: %s Payment gateway name. */
-												echo &#039;&lt;a class=&quot;button alignright&quot; aria-label=&quot;&#039; . esc_attr( sprintf( __( &#039;Set up the &quot;%s&quot; payment method&#039;, &#039;woocommerce&#039; ), $method_title ) ) . &#039;&quot; href=&quot;&#039; . esc_url( $setup_url ) . &#039;&quot;&gt;&#039; . esc_html__( &#039;Finish set up&#039;, &#039;woocommerce&#039; ) . &#039;&lt;/a&gt;&#039;;
+												echo &#039;&lt;a class=&quot;button alignright&quot; aria-label=&quot;&#039; . esc_attr( sprintf( __( &#039;Set up the &quot;%s&quot; payment method&#039;, &#039;woocommerce&#039; ), $method_title ) ) . &#039;&quot; href=&quot;&#039; . esc_url( $setup_url ) . &#039;&quot;&gt;&#039; . esc_html__( &#039;Finish setup&#039;, &#039;woocommerce&#039; ) . &#039;&lt;/a&gt;&#039;;
 											} else {
 												// If the account is fully onboarded, the CTA text and label is &quot;Manage&quot; regardless gateway is enabled or not.
 												/* Translators: %s Payment gateway name. */
@@ -368,7 +382,7 @@ class WC_Settings_Payment_Gateways extends WC_Settings_Page {
 											echo &#039;&lt;a class=&quot;button alignright&quot; aria-label=&quot;&#039; . esc_attr( sprintf( __( &#039;Manage the &quot;%s&quot; payment method&#039;, &#039;woocommerce&#039; ), $method_title ) ) . &#039;&quot; href=&quot;&#039; . esc_url( $setup_url ) . &#039;&quot;&gt;&#039; . esc_html__( &#039;Manage&#039;, &#039;woocommerce&#039; ) . &#039;&lt;/a&gt;&#039;;
 										} else {
 											/* Translators: %s Payment gateway name. */
-											echo &#039;&lt;a class=&quot;button alignright&quot; aria-label=&quot;&#039; . esc_attr( sprintf( __( &#039;Set up the &quot;%s&quot; payment method&#039;, &#039;woocommerce&#039; ), $method_title ) ) . &#039;&quot; href=&quot;&#039; . esc_url( $setup_url ) . &#039;&quot;&gt;&#039; . esc_html__( &#039;Finish set up&#039;, &#039;woocommerce&#039; ) . &#039;&lt;/a&gt;&#039;;
+											echo &#039;&lt;a class=&quot;button alignright&quot; aria-label=&quot;&#039; . esc_attr( sprintf( __( &#039;Set up the &quot;%s&quot; payment method&#039;, &#039;woocommerce&#039; ), $method_title ) ) . &#039;&quot; href=&quot;&#039; . esc_url( $setup_url ) . &#039;&quot;&gt;&#039; . esc_html__( &#039;Finish setup&#039;, &#039;woocommerce&#039; ) . &#039;&lt;/a&gt;&#039;;
 										}
 										break;
 									case &#039;status&#039;:
@@ -401,12 +415,27 @@ class WC_Settings_Payment_Gateways extends WC_Settings_Page {
 							$active_plugins     = PluginsHelper::get_active_plugin_slugs();
 
 							if ( $wcpay_setup ) {
-								$link_text = __( &#039;Discover additional payment providers&#039;, &#039;woocommerce&#039; );
 								$filter_by = &#039;category_additional&#039;;
 							} else {
-								$link_text = __( &#039;Discover other payment providers&#039;, &#039;woocommerce&#039; );
 								$filter_by = &#039;category_other&#039;;
 							}
+
+							$marketplace_cta_allowed_html = array(
+								&#039;a&#039; =&gt; array(
+									&#039;href&#039;  =&gt; array(),
+									&#039;id&#039;    =&gt; array(),
+									&#039;style&#039; =&gt; array(),
+								),
+							);
+
+							$marketplace_cta = sprintf(
+								wp_kses(
+									/* translators: %s: URL to WooCommerce marketplace */
+									__( &#039;Visit the &lt;a href=&quot;%s&quot; id=&quot;settings-other-payment-methods&quot; style=&quot;text-decoration: underline;&quot;&gt;Official WooCommerce Marketplace&lt;/a&gt; to find additional payment providers.&#039;, &#039;woocommerce&#039; ),
+									$marketplace_cta_allowed_html
+								),
+								esc_url( admin_url( &#039;admin.php?page=wc-admin&amp;tab=extensions&amp;path=/extensions&amp;category=payment-gateways&#039; ) )
+							);
 
 							$plugin_suggestions = array_filter(
 								$plugin_suggestions,
@@ -420,16 +449,12 @@ class WC_Settings_Payment_Gateways extends WC_Settings_Page {
 
 							$columns_count = count( $columns );
 
-							$external_link_icon = &#039;&lt;svg style=&quot;margin-left: 4px&quot; class=&quot;gridicon gridicons-external needs-offset&quot; height=&quot;18&quot; width=&quot;18&quot; xmlns=&quot;http://www.w3.org/2000/svg&quot; viewBox=&quot;0 0 24 24&quot;&gt;&lt;g&gt;&lt;path d=&quot;M19 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V7a2 2 0 012-2h6v2H5v12h12v-6h2zM13 3v2h4.586l-7.793 7.793 1.414 1.414L19 6.414V11h2V3h-8z&quot;&gt;&lt;/path&gt;&lt;/g&gt;&lt;/svg&gt;&#039;;
 							echo &#039;&lt;tr&gt;&#039;;
 							// phpcs:ignore -- ignoring the error since the value is harded.
-							echo &quot;&lt;td style=&#039;border-top: 1px solid #c3c4c7; background-color: #fff&#039; colspan=&#039;{$columns_count}&#039;&gt;&quot;;
-							echo &quot;&lt;a id=&#039;settings-other-payment-methods&#039; href=&#039;https://woocommerce.com/product-category/woocommerce-extensions/payment-gateways/?utm_source=payments_recommendations&#039; target=&#039;_blank&#039; class=&#039;components-button is-tertiary&#039;&gt;&quot;;
-							// phpcs:ignore
-							echo $link_text;
-							// phpcs:ignore
-							echo $external_link_icon;
-							echo &#039;&lt;/a&gt;&#039;;
+							echo &quot;&lt;td style=&#039;font-size: 13px; border-top: 1px solid #c3c4c7; background-color: #fff&#039; colspan=&#039;{$columns_count}&#039;&gt;&quot;;
+							echo &#039;&lt;span style=&quot;margin-right: 10px;&quot;&gt;&#039;;
+							echo wp_kses( $marketplace_cta, $marketplace_cta_allowed_html );
+							echo &#039;&lt;/span&gt;&#039;;
 							if ( count( $plugin_suggestions ) ) {
 								foreach ( $plugin_suggestions as $plugin_suggestion ) {
 									$alt = str_replace( &#039;.png&#039;, &#039;&#039;, basename( $plugin_suggestion-&gt;image_72x72 ) );
@@ -488,7 +513,7 @@ return new WC_Settings_Payment_Gateways();
 
     <footer class="phpdocumentor phpdocumentor-footer">
     <div class="phpdocumentor-section">
-        <span>WooCommerce Code Reference API documentation generated by <a href="http://www.phpdoc.org/">phpDocumentor</a> on July 25th, 2024 at 11:33 am.</span>
+        <span>WooCommerce Code Reference API documentation generated by <a href="http://www.phpdoc.org/">phpDocumentor</a> on May 16th, 2025 at 09:14 am.</span>
     </div>
 </footer>
 
@@ -500,7 +525,7 @@ return new WC_Settings_Payment_Gateways();
             'searchIndex': '..\/js\/searchIndex.json'
         };
     </script>
-    <script src="../js/searchIndex.js?updated=1721907182"></script>
-    <script src="../js/search.js?updated=1721907182"></script>
+    <script src="../js/searchIndex.js?updated=1747386858"></script>
+    <script src="../js/search.js?updated=1747386858"></script>
 </body>
 </html>

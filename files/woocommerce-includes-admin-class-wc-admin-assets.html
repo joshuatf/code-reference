@@ -4,14 +4,13 @@
     <meta charset="utf-8">
     <title>WooCommerce Code Reference</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="../images/favicon.png" />
-    <link rel="apple-touch-icon" href="../images/apple-touch-icon.png"/>
-    <link rel="apple-touch-icon" sizes="72x72" href="../images/apple-touch-icon-72x72.png"/>
-    <link rel="apple-touch-icon" sizes="114x114" href="../images/apple-touch-icon-114x114.png"/>
+    <link rel="icon" href="../images/favicon-32x32.png" sizes="32x32" />
+    <link rel="icon" href="../images/favicon-192x192.png" sizes="192x192" />
+    <link rel="apple-touch-icon" href="../images/favicon-180x180.png" />
+
     <link rel="stylesheet" href="../css/normalize.css">
-    <link rel="stylesheet" href="../css/base.css?updated=1721907182">
-    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../css/template.css?updated=1721907182">
+    <link rel="stylesheet" href="../css/base.css?updated=1747386858">
+    <link rel="stylesheet" href="../css/template.css?updated=1747386858">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0/css/all.min.css" integrity="sha256-ybRkN9dBjhcS2qrW1z+hfCxq+1aBdwyQM5wlQoQVt/0=" crossorigin="anonymous" />
             <script src="https://cdn.jsdelivr.net/npm/css-vars-ponyfill@2"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0/js/all.min.js" integrity="sha256-0vuk8LXoyrmCjp1f0O300qo1M75ZQyhH9X3J6d+scmk=" crossorigin="anonymous"></script>
@@ -38,14 +37,13 @@
     <header class="phpdocumentor-top-header">
     <section class="phpdocumentor-section">
         <div class="site-branding">
-            <a class="site-logo" href="../index.html"><img width="180" src="../images/logo.svg" alt="WooCommerce" /></a>
+            <a class="site-logo" href="../index.html"><img src="../images/logo.png" alt="WooCommerce" /></a>
         </div>
         <nav class="main-navigation">
             <ul>
                 <li><a href="../hooks/hooks.html">Hooks Reference</a></li>
-                <li><a href="https://docs.woocommerce.com/">Documentation</a></li>
+                <li><a href="https://developer.woocommerce.com/docs/">Documentation</a></li>
                 <li><a href="https://woocommerce.github.io/woocommerce-rest-api-docs/">REST API Docs</a></li>
-                <li><a href="https://woocommerce.com/careers/?utm_source=woocommerce+core+code+reference&utm_medium=devdocs&utm_campaign=woo+careers" target="_blank">We're hiring!</a></li>
             </ul>
         </nav>
     </section>
@@ -53,7 +51,7 @@
 
 <div class="phpdocumentor-header">
     <section class="phpdocumentor-section">
-        <h1 class="phpdocumentor-title">WooCommerce Code Reference</h1>
+        <h1 class="phpdocumentor-title"><a href="../index.html">WooCommerce Code Reference</a></h1>
         <section class="phpdocumentor-search">
     <label class="phpdocumentor-label">
         <span class="visually-hidden">Search (click ESC to close search results)</span>
@@ -74,6 +72,10 @@
                                         <h4 class="phpdocumentor-sidebar__root-namespace"><a href="../namespaces/woocommerce.html"><abbr title="\WooCommerce">WooCommerce</abbr></a></h4>
                 <ul class="phpdocumentor-list">
                                             <li><a href="../namespaces/woocommerce-admin.html"><abbr title="\WooCommerce\Admin">Admin</abbr></a></li>
+                                    </ul>
+                            <h4 class="phpdocumentor-sidebar__root-namespace"><a href="../namespaces/mailpoet.html"><abbr title="\MailPoet">MailPoet</abbr></a></h4>
+                <ul class="phpdocumentor-list">
+                                            <li><a href="../namespaces/mailpoet-emaileditor.html"><abbr title="\MailPoet\EmailEditor">EmailEditor</abbr></a></li>
                                     </ul>
                             <h4 class="phpdocumentor-sidebar__root-namespace"><a href="../namespaces/automattic.html"><abbr title="\Automattic">Automattic</abbr></a></h4>
                 <ul class="phpdocumentor-list">
@@ -119,8 +121,10 @@
                                     <li><a href="../packages/WooCommerce-Widgets.html"><abbr title="\WooCommerce\Widgets">Widgets</abbr></a></li>
                                     <li><a href="../packages/WooCommerce-Uninstaller.html"><abbr title="\WooCommerce\Uninstaller">Uninstaller</abbr></a></li>
                             </ul>
-                                <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/WoocommerceAdmin.html"><abbr title="\WoocommerceAdmin">WoocommerceAdmin</abbr></a></h3>
-                                <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/WoocommerceNavigation.html"><abbr title="\WoocommerceNavigation">WoocommerceNavigation</abbr></a></h3>
+                                <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/MailPoet.html"><abbr title="\MailPoet">MailPoet</abbr></a></h3>
+                        <ul class="phpdocumentor-list">
+                                    <li><a href="../packages/MailPoet-EmailEditor.html"><abbr title="\MailPoet\EmailEditor">EmailEditor</abbr></a></li>
+                            </ul>
                                 <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/Automattic.html"><abbr title="\Automattic">Automattic</abbr></a></h3>
                         <ul class="phpdocumentor-list">
                                     <li><a href="../packages/Automattic-WooCommerce.html"><abbr title="\Automattic\WooCommerce">WooCommerce</abbr></a></li>
@@ -166,6 +170,8 @@
 
 use Automattic\Jetpack\Constants;
 use Automattic\WooCommerce\Admin\Features\Features;
+use Automattic\WooCommerce\Enums\OrderStatus;
+use Automattic\WooCommerce\Enums\ProductType;
 use Automattic\WooCommerce\Internal\Admin\Analytics;
 use Automattic\WooCommerce\Internal\Admin\WCAdminAssets;
 
@@ -307,7 +313,7 @@ if ( ! class_exists( &#039;WC_Admin_Assets&#039;, false ) ) :
 			wp_register_script( &#039;wc-shipping-zone-methods&#039;, WC()-&gt;plugin_url() . &#039;/assets/js/admin/wc-shipping-zone-methods&#039; . $suffix . &#039;.js&#039;, array( &#039;jquery&#039;, &#039;wp-util&#039;, &#039;underscore&#039;, &#039;backbone&#039;, &#039;jquery-ui-sortable&#039;, &#039;wc-backbone-modal&#039; ), $version );
 			wp_register_script( &#039;wc-shipping-classes&#039;, WC()-&gt;plugin_url() . &#039;/assets/js/admin/wc-shipping-classes&#039; . $suffix . &#039;.js&#039;, array( &#039;jquery&#039;, &#039;wp-util&#039;, &#039;underscore&#039;, &#039;backbone&#039;, &#039;wc-backbone-modal&#039; ), $version, array( &#039;in_footer&#039; =&gt; false ) );
 			wp_register_script( &#039;wc-clipboard&#039;, WC()-&gt;plugin_url() . &#039;/assets/js/admin/wc-clipboard&#039; . $suffix . &#039;.js&#039;, array( &#039;jquery&#039; ), $version );
-			wp_register_script( &#039;select2&#039;, WC()-&gt;plugin_url() . &#039;/assets/js/select2/select2.full&#039; . $suffix . &#039;.js&#039;, array( &#039;jquery&#039; ), &#039;4.0.3&#039; );
+			wp_register_script( &#039;select2&#039;, WC()-&gt;plugin_url() . &#039;/assets/js/select2/select2.full&#039; . $suffix . &#039;.js&#039;, array( &#039;jquery&#039; ), &#039;4.0.3&#039;, array( &#039;in_footer&#039; =&gt; false ) );
 			wp_register_script( &#039;selectWoo&#039;, WC()-&gt;plugin_url() . &#039;/assets/js/selectWoo/selectWoo.full&#039; . $suffix . &#039;.js&#039;, array( &#039;jquery&#039; ), &#039;1.0.6&#039; );
 			wp_register_script( &#039;wc-enhanced-select&#039;, WC()-&gt;plugin_url() . &#039;/assets/js/admin/wc-enhanced-select&#039; . $suffix . &#039;.js&#039;, array( &#039;jquery&#039;, &#039;selectWoo&#039; ), $version );
 			wp_register_script( &#039;js-cookie&#039;, WC()-&gt;plugin_url() . &#039;/assets/js/js-cookie/js.cookie&#039; . $suffix . &#039;.js&#039;, array(), &#039;2.1.4&#039;, true );
@@ -378,6 +384,7 @@ if ( ! class_exists( &#039;WC_Admin_Assets&#039;, false ) ) :
 					&#039;i18n_delete_product_notice&#039;        =&gt; __( &#039;This product has produced sales and may be linked to existing orders. Are you sure you want to delete it?&#039;, &#039;woocommerce&#039; ),
 					&#039;i18n_remove_personal_data_notice&#039;  =&gt; __( &#039;This action cannot be reversed. Are you sure you wish to erase personal data from the selected orders?&#039;, &#039;woocommerce&#039; ),
 					&#039;i18n_confirm_delete&#039;               =&gt; __( &#039;Are you sure you wish to delete this item?&#039;, &#039;woocommerce&#039; ),
+					&#039;i18n_global_unique_id_error&#039;       =&gt; __( &#039;Please enter only numbers and hyphens (-).&#039;, &#039;woocommerce&#039; ),
 					&#039;decimal_point&#039;                     =&gt; $decimal,
 					&#039;mon_decimal_point&#039;                 =&gt; wc_get_price_decimal_separator(),
 					&#039;ajax_url&#039;                          =&gt; admin_url( &#039;admin-ajax.php&#039; ),
@@ -434,7 +441,7 @@ if ( ! class_exists( &#039;WC_Admin_Assets&#039;, false ) ) :
 			if ( in_array( $screen_id, array( &#039;product&#039;, &#039;edit-product&#039; ) ) ) {
 				wp_enqueue_media();
 				wp_register_script( &#039;wc-admin-product-meta-boxes&#039;, WC()-&gt;plugin_url() . &#039;/assets/js/admin/meta-boxes-product&#039; . $suffix . &#039;.js&#039;, array( &#039;wc-admin-meta-boxes&#039;, &#039;media-models&#039; ), $version );
-				wp_register_script( &#039;wc-admin-variation-meta-boxes&#039;, WC()-&gt;plugin_url() . &#039;/assets/js/admin/meta-boxes-product-variation&#039; . $suffix . &#039;.js&#039;, array( &#039;wc-admin-meta-boxes&#039;, &#039;serializejson&#039;, &#039;media-models&#039;, &#039;backbone&#039;, &#039;jquery-ui-sortable&#039;, &#039;wc-backbone-modal&#039; ), $version );
+				wp_register_script( &#039;wc-admin-variation-meta-boxes&#039;, WC()-&gt;plugin_url() . &#039;/assets/js/admin/meta-boxes-product-variation&#039; . $suffix . &#039;.js&#039;, array( &#039;wc-admin-meta-boxes&#039;, &#039;serializejson&#039;, &#039;media-models&#039;, &#039;backbone&#039;, &#039;jquery-ui-sortable&#039;, &#039;wc-backbone-modal&#039;, &#039;wp-data&#039;, &#039;wp-notices&#039; ), $version );
 
 				wp_enqueue_script( &#039;wc-admin-product-meta-boxes&#039; );
 				wp_enqueue_script( &#039;wc-admin-variation-meta-boxes&#039; );
@@ -455,6 +462,7 @@ if ( ! class_exists( &#039;WC_Admin_Assets&#039;, false ) ) :
 					&#039;i18n_enter_a_value&#039;                  =&gt; esc_js( __( &#039;Enter a value&#039;, &#039;woocommerce&#039; ) ),
 					&#039;i18n_enter_menu_order&#039;               =&gt; esc_js( __( &#039;Variation menu order (determines position in the list of variations)&#039;, &#039;woocommerce&#039; ) ),
 					&#039;i18n_enter_a_value_fixed_or_percent&#039; =&gt; esc_js( __( &#039;Enter a value (fixed or %)&#039;, &#039;woocommerce&#039; ) ),
+					&#039;i18n_sale_price_warning&#039;            =&gt; esc_js( __( &#039;Warning: Sale prices will be removed if they are not lower than regular prices.&#039;, &#039;woocommerce&#039; ) ),
 					&#039;i18n_delete_all_variations&#039;          =&gt; esc_js( __( &#039;Are you sure you want to delete all variations? This cannot be undone.&#039;, &#039;woocommerce&#039; ) ),
 					&#039;i18n_last_warning&#039;                   =&gt; esc_js( __( &#039;Last warning, are you sure?&#039;, &#039;woocommerce&#039; ) ),
 					&#039;i18n_choose_image&#039;                   =&gt; esc_js( __( &#039;Choose an image&#039;, &#039;woocommerce&#039; ) ),
@@ -467,6 +475,7 @@ if ( ! class_exists( &#039;WC_Admin_Assets&#039;, false ) ) :
 					&#039;i18n_edited_variations&#039;              =&gt; esc_js( __( &#039;Save changes before changing page?&#039;, &#039;woocommerce&#039; ) ),
 					&#039;i18n_variation_count_single&#039;         =&gt; esc_js( __( &#039;1 variation&#039;, &#039;woocommerce&#039; ) ),
 					&#039;i18n_variation_count_plural&#039;         =&gt; esc_js( __( &#039;%qty% variations&#039;, &#039;woocommerce&#039; ) ),
+					&#039;i18n_variation_cost_remove_warning&#039;  =&gt; esc_js( __( &#039;The custom cost of goods sold values will revert back to their defaults for all the variations. Would you like to continue?&#039;, &#039;woocommerce&#039; ) ),
 					&#039;variations_per_page&#039;                 =&gt; absint( apply_filters( &#039;woocommerce_admin_meta_boxes_variations_per_page&#039;, 15 ) ),
 				);
 
@@ -521,7 +530,7 @@ if ( ! class_exists( &#039;WC_Admin_Assets&#039;, false ) ) :
 					if ( $order_or_post_object ) {
 						$currency = $order_or_post_object-&gt;get_currency();
 
-						if ( ! $order_or_post_object-&gt;has_status( array( &#039;pending&#039;, &#039;failed&#039;, &#039;cancelled&#039; ) ) ) {
+						if ( ! $order_or_post_object-&gt;has_status( array( OrderStatus::PENDING, OrderStatus::FAILED, OrderStatus::CANCELLED ) ) ) {
 							$remove_item_notice = $remove_item_notice . &#039; &#039; . __( &quot;You may need to manually restore the item&#039;s stock.&quot;, &#039;woocommerce&#039; );
 						}
 					}
@@ -576,7 +585,7 @@ if ( ! class_exists( &#039;WC_Admin_Assets&#039;, false ) ) :
 					&#039;currency_format&#039;                                 =&gt; esc_attr( str_replace( array( &#039;%1$s&#039;, &#039;%2$s&#039; ), array( &#039;%s&#039;, &#039;%v&#039; ), get_woocommerce_price_format() ) ), // For accounting JS.
 					&#039;rounding_precision&#039;                              =&gt; wc_get_rounding_precision(),
 					&#039;tax_rounding_mode&#039;                               =&gt; wc_get_tax_rounding_mode(),
-					&#039;product_types&#039;                                   =&gt; array_unique( array_merge( array( &#039;simple&#039;, &#039;grouped&#039;, &#039;variable&#039;, &#039;external&#039; ), array_keys( wc_get_product_types() ) ) ),
+					&#039;product_types&#039;                                   =&gt; array_unique( array_merge( array( ProductType::SIMPLE, ProductType::GROUPED, ProductType::VARIABLE, ProductType::EXTERNAL ), array_keys( wc_get_product_types() ) ) ),
 					&#039;i18n_download_permission_fail&#039;                   =&gt; __( &#039;Could not grant access - the user may already have permission for this file or billing email is not set. Ensure the billing email is set, and the order has been saved.&#039;, &#039;woocommerce&#039; ),
 					&#039;i18n_permission_revoke&#039;                          =&gt; __( &#039;Are you sure you want to revoke access to this download?&#039;, &#039;woocommerce&#039; ),
 					&#039;i18n_tax_rate_already_exists&#039;                    =&gt; __( &#039;You cannot add the same tax rate twice!&#039;, &#039;woocommerce&#039; ),
@@ -629,7 +638,7 @@ if ( ! class_exists( &#039;WC_Admin_Assets&#039;, false ) ) :
 
 			// Reports Pages.
 			/* phpcs:disable WooCommerce.Commenting.CommentHooks.MissingHookComment */
-			if ( in_array( $screen_id, apply_filters( &#039;woocommerce_reports_screen_ids&#039;, array( $wc_screen_id . &#039;_page_wc-reports&#039;, &#039;toplevel_page_wc-reports&#039;, &#039;dashboard&#039; ) ) ) ) {
+			if ( in_array( $screen_id, apply_filters( &#039;woocommerce_reports_screen_ids&#039;, array( $wc_screen_id . &#039;_page_wc-reports&#039;, &#039;toplevel_page_wc-reports&#039; ) ) ) ) {
 				wp_register_script( &#039;wc-reports&#039;, WC()-&gt;plugin_url() . &#039;/assets/js/admin/reports&#039; . $suffix . &#039;.js&#039;, array( &#039;jquery&#039;, &#039;jquery-ui-datepicker&#039; ), $version );
 
 				wp_enqueue_script( &#039;wc-reports&#039; );
@@ -654,6 +663,11 @@ if ( ! class_exists( &#039;WC_Admin_Assets&#039;, false ) ) :
 						&#039;clipboard_failed&#039; =&gt; esc_html__( &#039;Copying to clipboard failed. Please press Ctrl/Cmd+C to copy.&#039;, &#039;woocommerce&#039; ),
 					)
 				);
+			}
+
+			// Email settings.
+			if ( $wc_screen_id . &#039;_page_wc-settings&#039; === $screen_id &amp;&amp; isset( $_GET[&#039;tab&#039;] ) &amp;&amp; &#039;email&#039; === $_GET[&#039;tab&#039;] ) {
+				wp_enqueue_media();
 			}
 
 			// System status.
@@ -714,7 +728,7 @@ if ( ! class_exists( &#039;WC_Admin_Assets&#039;, false ) ) :
 			}
 
 			// Marketplace promotions.
-			if ( in_array( $screen_id, array( &#039;woocommerce_page_wc-admin&#039; ), true ) ) {
+			if ( in_array( $screen_id, array( &#039;edit-shop_coupon&#039;, &#039;woocommerce_page_wc-admin&#039; ), true ) ) {
 
 				$promotions = WC_Admin_Marketplace_Promotions::get_active_promotions();
 
@@ -851,7 +865,7 @@ return new WC_Admin_Assets();
 
     <footer class="phpdocumentor phpdocumentor-footer">
     <div class="phpdocumentor-section">
-        <span>WooCommerce Code Reference API documentation generated by <a href="http://www.phpdoc.org/">phpDocumentor</a> on July 25th, 2024 at 11:33 am.</span>
+        <span>WooCommerce Code Reference API documentation generated by <a href="http://www.phpdoc.org/">phpDocumentor</a> on May 16th, 2025 at 09:14 am.</span>
     </div>
 </footer>
 
@@ -863,7 +877,7 @@ return new WC_Admin_Assets();
             'searchIndex': '..\/js\/searchIndex.json'
         };
     </script>
-    <script src="../js/searchIndex.js?updated=1721907182"></script>
-    <script src="../js/search.js?updated=1721907182"></script>
+    <script src="../js/searchIndex.js?updated=1747386858"></script>
+    <script src="../js/search.js?updated=1747386858"></script>
 </body>
 </html>

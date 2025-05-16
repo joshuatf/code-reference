@@ -4,14 +4,13 @@
     <meta charset="utf-8">
     <title>WooCommerce Code Reference</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="../images/favicon.png" />
-    <link rel="apple-touch-icon" href="../images/apple-touch-icon.png"/>
-    <link rel="apple-touch-icon" sizes="72x72" href="../images/apple-touch-icon-72x72.png"/>
-    <link rel="apple-touch-icon" sizes="114x114" href="../images/apple-touch-icon-114x114.png"/>
+    <link rel="icon" href="../images/favicon-32x32.png" sizes="32x32" />
+    <link rel="icon" href="../images/favicon-192x192.png" sizes="192x192" />
+    <link rel="apple-touch-icon" href="../images/favicon-180x180.png" />
+
     <link rel="stylesheet" href="../css/normalize.css">
-    <link rel="stylesheet" href="../css/base.css?updated=1721907182">
-    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../css/template.css?updated=1721907182">
+    <link rel="stylesheet" href="../css/base.css?updated=1747386858">
+    <link rel="stylesheet" href="../css/template.css?updated=1747386858">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0/css/all.min.css" integrity="sha256-ybRkN9dBjhcS2qrW1z+hfCxq+1aBdwyQM5wlQoQVt/0=" crossorigin="anonymous" />
             <script src="https://cdn.jsdelivr.net/npm/css-vars-ponyfill@2"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0/js/all.min.js" integrity="sha256-0vuk8LXoyrmCjp1f0O300qo1M75ZQyhH9X3J6d+scmk=" crossorigin="anonymous"></script>
@@ -38,14 +37,13 @@
     <header class="phpdocumentor-top-header">
     <section class="phpdocumentor-section">
         <div class="site-branding">
-            <a class="site-logo" href="../index.html"><img width="180" src="../images/logo.svg" alt="WooCommerce" /></a>
+            <a class="site-logo" href="../index.html"><img src="../images/logo.png" alt="WooCommerce" /></a>
         </div>
         <nav class="main-navigation">
             <ul>
                 <li><a href="../hooks/hooks.html">Hooks Reference</a></li>
-                <li><a href="https://docs.woocommerce.com/">Documentation</a></li>
+                <li><a href="https://developer.woocommerce.com/docs/">Documentation</a></li>
                 <li><a href="https://woocommerce.github.io/woocommerce-rest-api-docs/">REST API Docs</a></li>
-                <li><a href="https://woocommerce.com/careers/?utm_source=woocommerce+core+code+reference&utm_medium=devdocs&utm_campaign=woo+careers" target="_blank">We're hiring!</a></li>
             </ul>
         </nav>
     </section>
@@ -53,7 +51,7 @@
 
 <div class="phpdocumentor-header">
     <section class="phpdocumentor-section">
-        <h1 class="phpdocumentor-title">WooCommerce Code Reference</h1>
+        <h1 class="phpdocumentor-title"><a href="../index.html">WooCommerce Code Reference</a></h1>
         <section class="phpdocumentor-search">
     <label class="phpdocumentor-label">
         <span class="visually-hidden">Search (click ESC to close search results)</span>
@@ -74,6 +72,10 @@
                                         <h4 class="phpdocumentor-sidebar__root-namespace"><a href="../namespaces/woocommerce.html"><abbr title="\WooCommerce">WooCommerce</abbr></a></h4>
                 <ul class="phpdocumentor-list">
                                             <li><a href="../namespaces/woocommerce-admin.html"><abbr title="\WooCommerce\Admin">Admin</abbr></a></li>
+                                    </ul>
+                            <h4 class="phpdocumentor-sidebar__root-namespace"><a href="../namespaces/mailpoet.html"><abbr title="\MailPoet">MailPoet</abbr></a></h4>
+                <ul class="phpdocumentor-list">
+                                            <li><a href="../namespaces/mailpoet-emaileditor.html"><abbr title="\MailPoet\EmailEditor">EmailEditor</abbr></a></li>
                                     </ul>
                             <h4 class="phpdocumentor-sidebar__root-namespace"><a href="../namespaces/automattic.html"><abbr title="\Automattic">Automattic</abbr></a></h4>
                 <ul class="phpdocumentor-list">
@@ -119,8 +121,10 @@
                                     <li><a href="../packages/WooCommerce-Widgets.html"><abbr title="\WooCommerce\Widgets">Widgets</abbr></a></li>
                                     <li><a href="../packages/WooCommerce-Uninstaller.html"><abbr title="\WooCommerce\Uninstaller">Uninstaller</abbr></a></li>
                             </ul>
-                                <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/WoocommerceAdmin.html"><abbr title="\WoocommerceAdmin">WoocommerceAdmin</abbr></a></h3>
-                                <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/WoocommerceNavigation.html"><abbr title="\WoocommerceNavigation">WoocommerceNavigation</abbr></a></h3>
+                                <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/MailPoet.html"><abbr title="\MailPoet">MailPoet</abbr></a></h3>
+                        <ul class="phpdocumentor-list">
+                                    <li><a href="../packages/MailPoet-EmailEditor.html"><abbr title="\MailPoet\EmailEditor">EmailEditor</abbr></a></li>
+                            </ul>
                                 <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/Automattic.html"><abbr title="\Automattic">Automattic</abbr></a></h3>
                         <ul class="phpdocumentor-list">
                                     <li><a href="../packages/Automattic-WooCommerce.html"><abbr title="\Automattic\WooCommerce">WooCommerce</abbr></a></li>
@@ -165,7 +169,7 @@
  */
 
 use Automattic\WooCommerce\Internal\ProductAttributesLookup\Filterer;
-use Automattic\WooCommerce\Internal\Traits\AccessiblePrivateMethods;
+use Automattic\WooCommerce\Enums\ProductStockStatus;
 
 defined( &#039;ABSPATH&#039; ) || exit;
 
@@ -173,8 +177,6 @@ defined( &#039;ABSPATH&#039; ) || exit;
  * WC_Query Class.
  */
 class WC_Query {
-
-	use AccessiblePrivateMethods;
 
 	/**
 	 * Query vars to add to wp.
@@ -458,7 +460,7 @@ class WC_Query {
 	private function filter_out_valid_front_page_query_vars( $query ) {
 		return array_filter(
 			$query,
-			function( $key ) {
+			function ( $key ) {
 				return ! $this-&gt;is_query_var_valid_on_front_page( $key );
 			},
 			ARRAY_FILTER_USE_KEY
@@ -514,7 +516,7 @@ class WC_Query {
 					$q-&gt;is_home = false;
 
 					// WP supporting themes show post type archive.
-					if ( current_theme_supports( &#039;woocommerce&#039; ) ) {
+					if ( wc_current_theme_supports_woocommerce_or_fse() ) {
 						$q-&gt;set( &#039;post_type&#039;, &#039;product&#039; );
 					} else {
 						$q-&gt;is_singular = true;
@@ -534,7 +536,7 @@ class WC_Query {
 		}
 
 		// Special check for shops with the PRODUCT POST TYPE ARCHIVE on front.
-		if ( current_theme_supports( &#039;woocommerce&#039; ) &amp;&amp; $q-&gt;is_page() &amp;&amp; &#039;page&#039; === get_option( &#039;show_on_front&#039; ) &amp;&amp; absint( $q-&gt;get( &#039;page_id&#039; ) ) === wc_get_page_id( &#039;shop&#039; ) ) {
+		if ( wc_current_theme_supports_woocommerce_or_fse() &amp;&amp; $q-&gt;is_page() &amp;&amp; &#039;page&#039; === get_option( &#039;show_on_front&#039; ) &amp;&amp; absint( $q-&gt;get( &#039;page_id&#039; ) ) === wc_get_page_id( &#039;shop&#039; ) ) {
 			// This is a front-page shop.
 			$q-&gt;set( &#039;post_type&#039;, &#039;product&#039; );
 			$q-&gt;set( &#039;page_id&#039;, &#039;&#039; );
@@ -697,7 +699,7 @@ class WC_Query {
 		self::$product_query = $q;
 
 		// Additional hooks to change WP Query.
-		self::add_filter( &#039;posts_clauses&#039;, array( $this, &#039;product_query_post_clauses&#039; ), 10, 2 );
+		add_filter( &#039;posts_clauses&#039;, array( $this, &#039;product_query_post_clauses&#039; ), 10, 2 );
 		add_filter( &#039;the_posts&#039;, array( $this, &#039;handle_get_posts&#039; ), 10, 2 );
 
 		do_action( &#039;woocommerce_product_query&#039;, $q, $this );
@@ -709,8 +711,10 @@ class WC_Query {
 	 * @param array    $args Product query clauses.
 	 * @param WP_Query $wp_query The current product query.
 	 * @return array The updated product query clauses array.
+	 *
+	 * @internal For exclusive usage of WooCommerce core, backwards compatibility not guaranteed.
 	 */
-	private function product_query_post_clauses( $args, $wp_query ) {
+	public function product_query_post_clauses( $args, $wp_query ) {
 		$args = $this-&gt;price_filter_post_clauses( $args, $wp_query );
 		$args = $this-&gt;filterer-&gt;filter_by_attribute_post_clauses( $args, $wp_query, self::get_layered_nav_chosen_attributes() );
 
@@ -745,7 +749,15 @@ class WC_Query {
 		// Get ordering from query string unless defined.
 		if ( ! $orderby ) {
 			// phpcs:ignore WordPress.Security.NonceVerification.Recommended
-			$orderby_value = isset( $_GET[&#039;orderby&#039;] ) ? wc_clean( (string) wp_unslash( $_GET[&#039;orderby&#039;] ) ) : wc_clean( get_query_var( &#039;orderby&#039; ) );
+			if ( isset( $_GET[&#039;orderby&#039;] ) ) {
+				// phpcs:ignore WordPress.Security.NonceVerification.Recommended
+				$orderby_value = wc_clean( wp_unslash( $_GET[&#039;orderby&#039;] ) );
+				if ( is_array( $orderby_value ) ) {
+					$orderby_value = $orderby_value[0];
+				}
+			} else {
+				$orderby_value = wc_clean( get_query_var( &#039;orderby&#039; ) );
+			}
 
 			if ( ! $orderby_value ) {
 				if ( is_search() ) {
@@ -964,7 +976,7 @@ class WC_Query {
 
 		// Hide out of stock products.
 		if ( &#039;yes&#039; === get_option( &#039;woocommerce_hide_out_of_stock_items&#039; ) ) {
-			$product_visibility_not_in[] = $product_visibility_terms[&#039;outofstock&#039;];
+			$product_visibility_not_in[] = $product_visibility_terms[ ProductStockStatus::OUT_OF_STOCK ];
 		}
 
 		// phpcs:disable WordPress.Security.NonceVerification.Recommended
@@ -973,7 +985,7 @@ class WC_Query {
 			// phpcs:ignore WordPress.Security.ValidatedSanitizedInput.InputNotSanitized
 			$rating_filter = array_filter( array_map( &#039;absint&#039;, explode( &#039;,&#039;, wp_unslash( $_GET[&#039;rating_filter&#039;] ) ) ) );
 			$rating_terms  = array();
-			for ( $i = 1; $i &lt;= 5; $i ++ ) {
+			for ( $i = 1; $i &lt;= 5; $i++ ) {
 				if ( in_array( $i, $rating_filter, true ) &amp;&amp; isset( $product_visibility_terms[ &#039;rated-&#039; . $i ] ) ) {
 					$rating_terms[] = $product_visibility_terms[ &#039;rated-&#039; . $i ];
 				}
@@ -1139,7 +1151,7 @@ class WC_Query {
 	 * @param string $status (default: &#039;instock&#039;).
 	 * @return array
 	 */
-	public function stock_status_meta_query( $status = &#039;instock&#039; ) {
+	public function stock_status_meta_query( $status = ProductStockStatus::IN_STOCK ) { // phpcs:ignore Generic.CodeAnalysis.UnusedFunctionParameter.Found
 		return array();
 	}
 
@@ -1203,7 +1215,7 @@ class WC_Query {
 
     <footer class="phpdocumentor phpdocumentor-footer">
     <div class="phpdocumentor-section">
-        <span>WooCommerce Code Reference API documentation generated by <a href="http://www.phpdoc.org/">phpDocumentor</a> on July 25th, 2024 at 11:33 am.</span>
+        <span>WooCommerce Code Reference API documentation generated by <a href="http://www.phpdoc.org/">phpDocumentor</a> on May 16th, 2025 at 09:14 am.</span>
     </div>
 </footer>
 
@@ -1215,7 +1227,7 @@ class WC_Query {
             'searchIndex': '..\/js\/searchIndex.json'
         };
     </script>
-    <script src="../js/searchIndex.js?updated=1721907182"></script>
-    <script src="../js/search.js?updated=1721907182"></script>
+    <script src="../js/searchIndex.js?updated=1747386858"></script>
+    <script src="../js/search.js?updated=1747386858"></script>
 </body>
 </html>

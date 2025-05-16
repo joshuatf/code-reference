@@ -4,14 +4,13 @@
     <meta charset="utf-8">
     <title>WooCommerce Code Reference</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="../images/favicon.png" />
-    <link rel="apple-touch-icon" href="../images/apple-touch-icon.png"/>
-    <link rel="apple-touch-icon" sizes="72x72" href="../images/apple-touch-icon-72x72.png"/>
-    <link rel="apple-touch-icon" sizes="114x114" href="../images/apple-touch-icon-114x114.png"/>
+    <link rel="icon" href="../images/favicon-32x32.png" sizes="32x32" />
+    <link rel="icon" href="../images/favicon-192x192.png" sizes="192x192" />
+    <link rel="apple-touch-icon" href="../images/favicon-180x180.png" />
+
     <link rel="stylesheet" href="../css/normalize.css">
-    <link rel="stylesheet" href="../css/base.css?updated=1721907183">
-    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../css/template.css?updated=1721907183">
+    <link rel="stylesheet" href="../css/base.css?updated=1747386859">
+    <link rel="stylesheet" href="../css/template.css?updated=1747386859">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0/css/all.min.css" integrity="sha256-ybRkN9dBjhcS2qrW1z+hfCxq+1aBdwyQM5wlQoQVt/0=" crossorigin="anonymous" />
             <script src="https://cdn.jsdelivr.net/npm/css-vars-ponyfill@2"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0/js/all.min.js" integrity="sha256-0vuk8LXoyrmCjp1f0O300qo1M75ZQyhH9X3J6d+scmk=" crossorigin="anonymous"></script>
@@ -38,14 +37,13 @@
     <header class="phpdocumentor-top-header">
     <section class="phpdocumentor-section">
         <div class="site-branding">
-            <a class="site-logo" href="../index.html"><img width="180" src="../images/logo.svg" alt="WooCommerce" /></a>
+            <a class="site-logo" href="../index.html"><img src="../images/logo.png" alt="WooCommerce" /></a>
         </div>
         <nav class="main-navigation">
             <ul>
                 <li><a href="../hooks/hooks.html">Hooks Reference</a></li>
-                <li><a href="https://docs.woocommerce.com/">Documentation</a></li>
+                <li><a href="https://developer.woocommerce.com/docs/">Documentation</a></li>
                 <li><a href="https://woocommerce.github.io/woocommerce-rest-api-docs/">REST API Docs</a></li>
-                <li><a href="https://woocommerce.com/careers/?utm_source=woocommerce+core+code+reference&utm_medium=devdocs&utm_campaign=woo+careers" target="_blank">We're hiring!</a></li>
             </ul>
         </nav>
     </section>
@@ -53,7 +51,7 @@
 
 <div class="phpdocumentor-header">
     <section class="phpdocumentor-section">
-        <h1 class="phpdocumentor-title">WooCommerce Code Reference</h1>
+        <h1 class="phpdocumentor-title"><a href="../index.html">WooCommerce Code Reference</a></h1>
         <section class="phpdocumentor-search">
     <label class="phpdocumentor-label">
         <span class="visually-hidden">Search (click ESC to close search results)</span>
@@ -74,6 +72,10 @@
                                         <h4 class="phpdocumentor-sidebar__root-namespace"><a href="../namespaces/woocommerce.html"><abbr title="\WooCommerce">WooCommerce</abbr></a></h4>
                 <ul class="phpdocumentor-list">
                                             <li><a href="../namespaces/woocommerce-admin.html"><abbr title="\WooCommerce\Admin">Admin</abbr></a></li>
+                                    </ul>
+                            <h4 class="phpdocumentor-sidebar__root-namespace"><a href="../namespaces/mailpoet.html"><abbr title="\MailPoet">MailPoet</abbr></a></h4>
+                <ul class="phpdocumentor-list">
+                                            <li><a href="../namespaces/mailpoet-emaileditor.html"><abbr title="\MailPoet\EmailEditor">EmailEditor</abbr></a></li>
                                     </ul>
                             <h4 class="phpdocumentor-sidebar__root-namespace"><a href="../namespaces/automattic.html"><abbr title="\Automattic">Automattic</abbr></a></h4>
                 <ul class="phpdocumentor-list">
@@ -119,8 +121,10 @@
                                     <li><a href="../packages/WooCommerce-Widgets.html"><abbr title="\WooCommerce\Widgets">Widgets</abbr></a></li>
                                     <li><a href="../packages/WooCommerce-Uninstaller.html"><abbr title="\WooCommerce\Uninstaller">Uninstaller</abbr></a></li>
                             </ul>
-                                <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/WoocommerceAdmin.html"><abbr title="\WoocommerceAdmin">WoocommerceAdmin</abbr></a></h3>
-                                <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/WoocommerceNavigation.html"><abbr title="\WoocommerceNavigation">WoocommerceNavigation</abbr></a></h3>
+                                <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/MailPoet.html"><abbr title="\MailPoet">MailPoet</abbr></a></h3>
+                        <ul class="phpdocumentor-list">
+                                    <li><a href="../packages/MailPoet-EmailEditor.html"><abbr title="\MailPoet\EmailEditor">EmailEditor</abbr></a></li>
+                            </ul>
                                 <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/Automattic.html"><abbr title="\Automattic">Automattic</abbr></a></h3>
                         <ul class="phpdocumentor-list">
                                     <li><a href="../packages/Automattic-WooCommerce.html"><abbr title="\Automattic\WooCommerce">WooCommerce</abbr></a></li>
@@ -165,6 +169,9 @@
  * @package WooCommerce\RestApi
  * @since   3.0.0
  */
+
+use Automattic\WooCommerce\Internal\DataStores\Orders\CustomOrdersTableController;
+use Automattic\WooCommerce\Internal\Utilities\DatabaseUtil;
 
 defined( &#039;ABSPATH&#039; ) || exit;
 
@@ -281,42 +288,42 @@ class WC_REST_System_Status_Tools_V2_Controller extends WC_REST_Controller {
 	 */
 	public function get_tools() {
 		$tools = array(
-			&#039;clear_transients&#039;                   =&gt; array(
+			&#039;clear_transients&#039;                     =&gt; array(
 				&#039;name&#039;   =&gt; __( &#039;WooCommerce transients&#039;, &#039;woocommerce&#039; ),
 				&#039;button&#039; =&gt; __( &#039;Clear transients&#039;, &#039;woocommerce&#039; ),
 				&#039;desc&#039;   =&gt; __( &#039;This tool will clear the product/shop transients cache.&#039;, &#039;woocommerce&#039; ),
 			),
-			&#039;clear_expired_transients&#039;           =&gt; array(
+			&#039;clear_expired_transients&#039;             =&gt; array(
 				&#039;name&#039;   =&gt; __( &#039;Expired transients&#039;, &#039;woocommerce&#039; ),
 				&#039;button&#039; =&gt; __( &#039;Clear transients&#039;, &#039;woocommerce&#039; ),
 				&#039;desc&#039;   =&gt; __( &#039;This tool will clear ALL expired transients from WordPress.&#039;, &#039;woocommerce&#039; ),
 			),
-			&#039;delete_orphaned_variations&#039;         =&gt; array(
+			&#039;delete_orphaned_variations&#039;           =&gt; array(
 				&#039;name&#039;   =&gt; __( &#039;Orphaned variations&#039;, &#039;woocommerce&#039; ),
 				&#039;button&#039; =&gt; __( &#039;Delete orphaned variations&#039;, &#039;woocommerce&#039; ),
 				&#039;desc&#039;   =&gt; __( &#039;This tool will delete all variations which have no parent.&#039;, &#039;woocommerce&#039; ),
 			),
-			&#039;clear_expired_download_permissions&#039; =&gt; array(
+			&#039;clear_expired_download_permissions&#039;   =&gt; array(
 				&#039;name&#039;   =&gt; __( &#039;Used-up download permissions&#039;, &#039;woocommerce&#039; ),
 				&#039;button&#039; =&gt; __( &#039;Clean up download permissions&#039;, &#039;woocommerce&#039; ),
 				&#039;desc&#039;   =&gt; __( &#039;This tool will delete expired download permissions and permissions with 0 remaining downloads.&#039;, &#039;woocommerce&#039; ),
 			),
-			&#039;regenerate_product_lookup_tables&#039;   =&gt; array(
+			&#039;regenerate_product_lookup_tables&#039;     =&gt; array(
 				&#039;name&#039;   =&gt; __( &#039;Product lookup tables&#039;, &#039;woocommerce&#039; ),
 				&#039;button&#039; =&gt; __( &#039;Regenerate&#039;, &#039;woocommerce&#039; ),
 				&#039;desc&#039;   =&gt; __( &#039;This tool will regenerate product lookup table data. This process may take a while.&#039;, &#039;woocommerce&#039; ),
 			),
-			&#039;recount_terms&#039;                      =&gt; array(
+			&#039;recount_terms&#039;                        =&gt; array(
 				&#039;name&#039;   =&gt; __( &#039;Term counts&#039;, &#039;woocommerce&#039; ),
 				&#039;button&#039; =&gt; __( &#039;Recount terms&#039;, &#039;woocommerce&#039; ),
 				&#039;desc&#039;   =&gt; __( &#039;This tool will recount product terms - useful when changing your settings in a way which hides products from the catalog.&#039;, &#039;woocommerce&#039; ),
 			),
-			&#039;reset_roles&#039;                        =&gt; array(
+			&#039;reset_roles&#039;                          =&gt; array(
 				&#039;name&#039;   =&gt; __( &#039;Capabilities&#039;, &#039;woocommerce&#039; ),
 				&#039;button&#039; =&gt; __( &#039;Reset capabilities&#039;, &#039;woocommerce&#039; ),
 				&#039;desc&#039;   =&gt; __( &#039;This tool will reset the admin, customer and shop_manager roles to default. Use this if your users cannot access all of the WooCommerce admin pages.&#039;, &#039;woocommerce&#039; ),
 			),
-			&#039;clear_sessions&#039;                     =&gt; array(
+			&#039;clear_sessions&#039;                       =&gt; array(
 				&#039;name&#039;   =&gt; __( &#039;Clear customer sessions&#039;, &#039;woocommerce&#039; ),
 				&#039;button&#039; =&gt; __( &#039;Clear&#039;, &#039;woocommerce&#039; ),
 				&#039;desc&#039;   =&gt; sprintf(
@@ -325,7 +332,7 @@ class WC_REST_System_Status_Tools_V2_Controller extends WC_REST_Controller {
 					__( &#039;This tool will delete all customer session data from the database, including current carts and saved carts in the database.&#039;, &#039;woocommerce&#039; )
 				),
 			),
-			&#039;clear_template_cache&#039;               =&gt; array(
+			&#039;clear_template_cache&#039;                 =&gt; array(
 				&#039;name&#039;   =&gt; __( &#039;Clear template cache&#039;, &#039;woocommerce&#039; ),
 				&#039;button&#039; =&gt; __( &#039;Clear&#039;, &#039;woocommerce&#039; ),
 				&#039;desc&#039;   =&gt; sprintf(
@@ -334,7 +341,16 @@ class WC_REST_System_Status_Tools_V2_Controller extends WC_REST_Controller {
 					__( &#039;This tool will empty the template cache.&#039;, &#039;woocommerce&#039; )
 				),
 			),
-			&#039;install_pages&#039;                      =&gt; array(
+			&#039;clear_system_status_theme_info_cache&#039; =&gt; array(
+				&#039;name&#039;   =&gt; __( &#039;Clear system status theme info cache&#039;, &#039;woocommerce&#039; ),
+				&#039;button&#039; =&gt; __( &#039;Clear&#039;, &#039;woocommerce&#039; ),
+				&#039;desc&#039;   =&gt; sprintf(
+					&#039;&lt;strong class=&quot;red&quot;&gt;%1$s&lt;/strong&gt; %2$s&#039;,
+					__( &#039;Note:&#039;, &#039;woocommerce&#039; ),
+					__( &#039;This tool will empty the system status theme info cache.&#039;, &#039;woocommerce&#039; )
+				),
+			),
+			&#039;install_pages&#039;                        =&gt; array(
 				&#039;name&#039;   =&gt; __( &#039;Create default WooCommerce pages&#039;, &#039;woocommerce&#039; ),
 				&#039;button&#039; =&gt; __( &#039;Create pages&#039;, &#039;woocommerce&#039; ),
 				&#039;desc&#039;   =&gt; sprintf(
@@ -343,7 +359,7 @@ class WC_REST_System_Status_Tools_V2_Controller extends WC_REST_Controller {
 					__( &#039;This tool will install all the missing WooCommerce pages. Pages already defined and set up will not be replaced.&#039;, &#039;woocommerce&#039; )
 				),
 			),
-			&#039;delete_taxes&#039;                       =&gt; array(
+			&#039;delete_taxes&#039;                         =&gt; array(
 				&#039;name&#039;   =&gt; __( &#039;Delete WooCommerce tax rates&#039;, &#039;woocommerce&#039; ),
 				&#039;button&#039; =&gt; __( &#039;Delete tax rates&#039;, &#039;woocommerce&#039; ),
 				&#039;desc&#039;   =&gt; sprintf(
@@ -352,12 +368,12 @@ class WC_REST_System_Status_Tools_V2_Controller extends WC_REST_Controller {
 					__( &#039;This option will delete ALL of your tax rates, use with caution. This action cannot be reversed.&#039;, &#039;woocommerce&#039; )
 				),
 			),
-			&#039;regenerate_thumbnails&#039;              =&gt; array(
+			&#039;regenerate_thumbnails&#039;                =&gt; array(
 				&#039;name&#039;   =&gt; __( &#039;Regenerate shop thumbnails&#039;, &#039;woocommerce&#039; ),
 				&#039;button&#039; =&gt; __( &#039;Regenerate&#039;, &#039;woocommerce&#039; ),
 				&#039;desc&#039;   =&gt; __( &#039;This will regenerate all shop thumbnails to match your theme and/or image settings.&#039;, &#039;woocommerce&#039; ),
 			),
-			&#039;db_update_routine&#039;                  =&gt; array(
+			&#039;db_update_routine&#039;                    =&gt; array(
 				&#039;name&#039;   =&gt; __( &#039;Update database&#039;, &#039;woocommerce&#039; ),
 				&#039;button&#039; =&gt; __( &#039;Update database&#039;, &#039;woocommerce&#039; ),
 				&#039;desc&#039;   =&gt; sprintf(
@@ -365,6 +381,11 @@ class WC_REST_System_Status_Tools_V2_Controller extends WC_REST_Controller {
 					__( &#039;Note:&#039;, &#039;woocommerce&#039; ),
 					__( &#039;This tool will update your WooCommerce database to the latest version. Please ensure you make sufficient backups before proceeding.&#039;, &#039;woocommerce&#039; )
 				),
+			),
+			&#039;recreate_order_address_fts_index&#039;     =&gt; array(
+				&#039;name&#039;   =&gt; __( &#039;Re-create Order Address FTS index&#039;, &#039;woocommerce&#039; ),
+				&#039;button&#039; =&gt; __( &#039;Recreate index&#039;, &#039;woocommerce&#039; ),
+				&#039;desc&#039;   =&gt; __( &#039;This tool will recreate the full text search index for order addresses. If the index does not exist, it will try to create it.&#039;, &#039;woocommerce&#039; ),
 			),
 		);
 		if ( method_exists( &#039;WC_Install&#039;, &#039;verify_base_tables&#039; ) ) {
@@ -691,8 +712,8 @@ class WC_REST_System_Status_Tools_V2_Controller extends WC_REST_Controller {
 				break;
 
 			case &#039;delete_taxes&#039;:
-				$wpdb-&gt;query( &quot;TRUNCATE TABLE {$wpdb-&gt;prefix}woocommerce_tax_rates;&quot; );
-				$wpdb-&gt;query( &quot;TRUNCATE TABLE {$wpdb-&gt;prefix}woocommerce_tax_rate_locations;&quot; );
+				$wpdb-&gt;query( &quot;DELETE FROM {$wpdb-&gt;prefix}woocommerce_tax_rates;&quot; );
+				$wpdb-&gt;query( &quot;DELETE FROM {$wpdb-&gt;prefix}woocommerce_tax_rate_locations;&quot; );
 
 				if ( method_exists( &#039;WC_Cache_Helper&#039;, &#039;invalidate_cache_group&#039; ) ) {
 					WC_Cache_Helper::invalidate_cache_group( &#039;taxes&#039; );
@@ -725,6 +746,11 @@ class WC_REST_System_Status_Tools_V2_Controller extends WC_REST_Controller {
 				}
 				break;
 
+			case &#039;clear_system_status_theme_info_cache&#039;:
+				wc_clear_system_status_theme_info_cache();
+				$message = __( &#039;System status theme info cache cleared.&#039;, &#039;woocommerce&#039; );
+				break;
+
 			case &#039;verify_db_tables&#039;:
 				if ( ! method_exists( &#039;WC_Install&#039;, &#039;verify_base_tables&#039; ) ) {
 					$message = __( &#039;You need WooCommerce 4.2 or newer to run this tool.&#039;, &#039;woocommerce&#039; );
@@ -740,6 +766,13 @@ class WC_REST_System_Status_Tools_V2_Controller extends WC_REST_Controller {
 					$message .= implode( &#039;, &#039;, $missing_tables );
 					$ran      = false;
 				}
+				break;
+
+			case &#039;recreate_order_address_fts_index&#039;:
+				$hpos_controller = wc_get_container()-&gt;get( CustomOrdersTableController::class );
+				$results         = $hpos_controller-&gt;recreate_order_address_fts_index();
+				$ran             = $results[&#039;status&#039;];
+				$message         = $results[&#039;message&#039;];
 				break;
 
 			default:
@@ -822,7 +855,7 @@ class WC_REST_System_Status_Tools_V2_Controller extends WC_REST_Controller {
 
     <footer class="phpdocumentor phpdocumentor-footer">
     <div class="phpdocumentor-section">
-        <span>WooCommerce Code Reference API documentation generated by <a href="http://www.phpdoc.org/">phpDocumentor</a> on July 25th, 2024 at 11:33 am.</span>
+        <span>WooCommerce Code Reference API documentation generated by <a href="http://www.phpdoc.org/">phpDocumentor</a> on May 16th, 2025 at 09:14 am.</span>
     </div>
 </footer>
 
@@ -834,7 +867,7 @@ class WC_REST_System_Status_Tools_V2_Controller extends WC_REST_Controller {
             'searchIndex': '..\/js\/searchIndex.json'
         };
     </script>
-    <script src="../js/searchIndex.js?updated=1721907183"></script>
-    <script src="../js/search.js?updated=1721907183"></script>
+    <script src="../js/searchIndex.js?updated=1747386859"></script>
+    <script src="../js/search.js?updated=1747386859"></script>
 </body>
 </html>

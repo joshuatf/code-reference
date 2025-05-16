@@ -4,14 +4,13 @@
     <meta charset="utf-8">
     <title>WooCommerce Code Reference</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="../images/favicon.png" />
-    <link rel="apple-touch-icon" href="../images/apple-touch-icon.png"/>
-    <link rel="apple-touch-icon" sizes="72x72" href="../images/apple-touch-icon-72x72.png"/>
-    <link rel="apple-touch-icon" sizes="114x114" href="../images/apple-touch-icon-114x114.png"/>
+    <link rel="icon" href="../images/favicon-32x32.png" sizes="32x32" />
+    <link rel="icon" href="../images/favicon-192x192.png" sizes="192x192" />
+    <link rel="apple-touch-icon" href="../images/favicon-180x180.png" />
+
     <link rel="stylesheet" href="../css/normalize.css">
-    <link rel="stylesheet" href="../css/base.css?updated=1721907186">
-    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../css/template.css?updated=1721907186">
+    <link rel="stylesheet" href="../css/base.css?updated=1747386862">
+    <link rel="stylesheet" href="../css/template.css?updated=1747386862">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0/css/all.min.css" integrity="sha256-ybRkN9dBjhcS2qrW1z+hfCxq+1aBdwyQM5wlQoQVt/0=" crossorigin="anonymous" />
             <script src="https://cdn.jsdelivr.net/npm/css-vars-ponyfill@2"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0/js/all.min.js" integrity="sha256-0vuk8LXoyrmCjp1f0O300qo1M75ZQyhH9X3J6d+scmk=" crossorigin="anonymous"></script>
@@ -38,14 +37,13 @@
     <header class="phpdocumentor-top-header">
     <section class="phpdocumentor-section">
         <div class="site-branding">
-            <a class="site-logo" href="../index.html"><img width="180" src="../images/logo.svg" alt="WooCommerce" /></a>
+            <a class="site-logo" href="../index.html"><img src="../images/logo.png" alt="WooCommerce" /></a>
         </div>
         <nav class="main-navigation">
             <ul>
                 <li><a href="../hooks/hooks.html">Hooks Reference</a></li>
-                <li><a href="https://docs.woocommerce.com/">Documentation</a></li>
+                <li><a href="https://developer.woocommerce.com/docs/">Documentation</a></li>
                 <li><a href="https://woocommerce.github.io/woocommerce-rest-api-docs/">REST API Docs</a></li>
-                <li><a href="https://woocommerce.com/careers/?utm_source=woocommerce+core+code+reference&utm_medium=devdocs&utm_campaign=woo+careers" target="_blank">We're hiring!</a></li>
             </ul>
         </nav>
     </section>
@@ -53,7 +51,7 @@
 
 <div class="phpdocumentor-header">
     <section class="phpdocumentor-section">
-        <h1 class="phpdocumentor-title">WooCommerce Code Reference</h1>
+        <h1 class="phpdocumentor-title"><a href="../index.html">WooCommerce Code Reference</a></h1>
         <section class="phpdocumentor-search">
     <label class="phpdocumentor-label">
         <span class="visually-hidden">Search (click ESC to close search results)</span>
@@ -74,6 +72,10 @@
                                         <h4 class="phpdocumentor-sidebar__root-namespace"><a href="../namespaces/woocommerce.html"><abbr title="\WooCommerce">WooCommerce</abbr></a></h4>
                 <ul class="phpdocumentor-list">
                                             <li><a href="../namespaces/woocommerce-admin.html"><abbr title="\WooCommerce\Admin">Admin</abbr></a></li>
+                                    </ul>
+                            <h4 class="phpdocumentor-sidebar__root-namespace"><a href="../namespaces/mailpoet.html"><abbr title="\MailPoet">MailPoet</abbr></a></h4>
+                <ul class="phpdocumentor-list">
+                                            <li><a href="../namespaces/mailpoet-emaileditor.html"><abbr title="\MailPoet\EmailEditor">EmailEditor</abbr></a></li>
                                     </ul>
                             <h4 class="phpdocumentor-sidebar__root-namespace"><a href="../namespaces/automattic.html"><abbr title="\Automattic">Automattic</abbr></a></h4>
                 <ul class="phpdocumentor-list">
@@ -119,8 +121,10 @@
                                     <li><a href="../packages/WooCommerce-Widgets.html"><abbr title="\WooCommerce\Widgets">Widgets</abbr></a></li>
                                     <li><a href="../packages/WooCommerce-Uninstaller.html"><abbr title="\WooCommerce\Uninstaller">Uninstaller</abbr></a></li>
                             </ul>
-                                <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/WoocommerceAdmin.html"><abbr title="\WoocommerceAdmin">WoocommerceAdmin</abbr></a></h3>
-                                <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/WoocommerceNavigation.html"><abbr title="\WoocommerceNavigation">WoocommerceNavigation</abbr></a></h3>
+                                <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/MailPoet.html"><abbr title="\MailPoet">MailPoet</abbr></a></h3>
+                        <ul class="phpdocumentor-list">
+                                    <li><a href="../packages/MailPoet-EmailEditor.html"><abbr title="\MailPoet\EmailEditor">EmailEditor</abbr></a></li>
+                            </ul>
                                 <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/Automattic.html"><abbr title="\Automattic">Automattic</abbr></a></h3>
                         <ul class="phpdocumentor-list">
                                     <li><a href="../packages/Automattic-WooCommerce.html"><abbr title="\Automattic\WooCommerce">WooCommerce</abbr></a></li>
@@ -158,13 +162,14 @@
             </h3>
             <pre id="source-view" tabindex="-1" class="language-php line-numbers linkable-line-numbers"><code>&lt;?php
 
-namespace Automattic\WooCommerce\DataBase\Migrations\CustomOrderTable;
+namespace Automattic\WooCommerce\Database\Migrations\CustomOrderTable;
 
 use Automattic\WooCommerce\Internal\DataStores\Orders\CustomOrdersTableController;
 use Automattic\WooCommerce\Internal\DataStores\Orders\DataSynchronizer;
 use Automattic\WooCommerce\Internal\DataStores\Orders\LegacyDataHandler;
 use Automattic\WooCommerce\Internal\DataStores\Orders\OrdersTableDataStore;
 use Automattic\WooCommerce\Internal\Features\FeaturesController;
+use Automattic\WooCommerce\Utilities\PluginUtil;
 use WP_CLI;
 
 /**
@@ -234,6 +239,7 @@ class CLIRunner {
 		WP_CLI::add_command( &#039;wc hpos status&#039;, array( $this, &#039;status&#039; ) );
 		WP_CLI::add_command( &#039;wc hpos diff&#039;, array( $this, &#039;diff&#039; ) );
 		WP_CLI::add_command( &#039;wc hpos backfill&#039;, array( $this, &#039;backfill&#039; ) );
+		WP_CLI::add_command( &#039;wc hpos compatibility-info&#039;, array( $this, &#039;compatibility_info&#039; ) );
 		WP_CLI::add_command( &#039;wc hpos compatibility-mode enable&#039;, array( $this, &#039;enable_compat_mode&#039; ) );
 		WP_CLI::add_command( &#039;wc hpos compatibility-mode disable&#039;, array( $this, &#039;disable_compat_mode&#039; ) );
 
@@ -486,7 +492,7 @@ class CLIRunner {
 	 * ---
 	 *
 	 * [--order-types]
-	 * : Comma seperated list of order types that needs to be verified. For example, --order-types=shop_order,shop_order_refund
+	 * : Comma-separated list of order types that needs to be verified. For example, --order-types=shop_order,shop_order_refund
 	 * ---
 	 * default: Output of function `wc_get_order_types( &#039;cot-migration&#039; )`
 	 *
@@ -541,7 +547,7 @@ class CLIRunner {
 		if ( 0 === count( $order_types ) ) {
 			return WP_CLI::error(
 				sprintf(
-				/* Translators: %s is the comma seperated list of order types. */
+				/* Translators: %s is the comma-separated list of order types. */
 					__( &#039;Passed order type does not match any registered order types. Following order types are registered: %s&#039;, &#039;woocommerce&#039; ),
 					implode( &#039;,&#039;, wc_get_order_types( &#039;cot-migration&#039; ) )
 				)
@@ -894,6 +900,9 @@ ORDER BY $meta_table.order_id ASC, $meta_table.meta_key ASC;
 	 * default: false
 	 * ---
 	 *
+	 * [--ignore-plugin-compatibility]
+	 * : Enable even if there are active plugins that are incompatible with HPOS.
+	 *
 	 * ### EXAMPLES
 	 *
 	 *      # Enable HPOS on new shops.
@@ -908,8 +917,9 @@ ORDER BY $meta_table.order_id ASC, $meta_table.meta_key ASC;
 		$assoc_args = wp_parse_args(
 			$assoc_args,
 			array(
-				&#039;for-new-shop&#039; =&gt; false,
-				&#039;with-sync&#039;    =&gt; false,
+				&#039;for-new-shop&#039;                =&gt; false,
+				&#039;with-sync&#039;                   =&gt; false,
+				&#039;ignore-plugin-compatibility&#039; =&gt; false,
 			)
 		);
 
@@ -921,12 +931,18 @@ ORDER BY $meta_table.order_id ASC, $meta_table.meta_key ASC;
 			WP_CLI::error( __( &#039;[Failed] This is not a new shop, but --for-new-shop flag was passed.&#039;, &#039;woocommerce&#039; ) );
 		}
 
+		$container = wc_get_container();
 		/** Feature controller instance @var FeaturesController $feature_controller */
-		$feature_controller = wc_get_container()-&gt;get( FeaturesController::class );
-		$plugin_info        = $feature_controller-&gt;get_compatible_plugins_for_feature( &#039;custom_order_tables&#039;, true );
-		if ( count( array_merge( $plugin_info[&#039;uncertain&#039;], $plugin_info[&#039;incompatible&#039;] ) ) &gt; 0 ) {
-			WP_CLI::warning( __( &#039;[Failed] Some installed plugins are incompatible. Please review the plugins by going to WooCommerce &gt; Settings &gt; Advanced &gt; Features and see the &quot;Order data storage&quot; section.&#039;, &#039;woocommerce&#039; ) );
-			$enable_hpos = false;
+		$feature_controller = $container-&gt;get( FeaturesController::class );
+		if ( ! $assoc_args[&#039;ignore-plugin-compatibility&#039;] ) {
+			$compatibility_info = $feature_controller-&gt;get_compatible_plugins_for_feature( &#039;custom_order_tables&#039;, true );
+			/** Plugin util instance @var PluginUtil $plugin_util */
+			$plugin_util   = $container-&gt;get( PluginUtil::class );
+			$incompatibles = $plugin_util-&gt;get_items_considered_incompatible( &#039;custom_order_tables&#039;, $compatibility_info );
+			if ( count( $incompatibles ) &gt; 0 ) {
+				WP_CLI::warning( __( &#039;[Failed] Some installed plugins are incompatible. Please review the plugins by going to WooCommerce &gt; Settings &gt; Advanced &gt; Features and see the &quot;Order data storage&quot; section.&#039;, &#039;woocommerce&#039; ) );
+				$enable_hpos = false;
+			}
 		}
 
 		/** DataSynchronizer instance @var DataSynchronizer $data_synchronizer */
@@ -1073,7 +1089,7 @@ ORDER BY $meta_table.order_id ASC, $meta_table.meta_key ASC;
 	 *    # Cleanup post data for order 314.
 	 *    $ wp wc hpos cleanup 314
 	 *
-	 *    # Cleanup postmeta for orders with IDs betweeen 10 and 100 and order 314.
+	 *    # Cleanup postmeta for orders with IDs between 10 and 100 and order 314.
 	 *    $ wp wc hpos cleanup 10-100 314
 	 *
 	 *    # Cleanup postmeta for all orders.
@@ -1307,10 +1323,10 @@ ORDER BY $meta_table.order_id ASC, $meta_table.meta_key ASC;
 	 * ---
 	 *
 	 * [--meta_keys=&lt;meta_keys&gt;]
-	 * : Comma separated list of meta keys to backfill.
+	 * : Comma-separated list of meta keys to backfill.
 	 *
 	 * [--props=&lt;props&gt;]
-	 * : Comma separated list of order properties to backfill.
+	 * : Comma-separated list of order properties to backfill.
 	 *
 	 * @since 8.6.0
 	 *
@@ -1372,6 +1388,104 @@ ORDER BY $meta_table.order_id ASC, $meta_table.meta_key ASC;
 	}
 
 	/**
+	 * Show the list of WooCommerce-aware plugins known to be compatible, incompatible or without compatibility declaration for HPOS. Note that inactive plugins will always be listed in the &quot;uncertain&quot; list.
+	 *
+	 * [--include-inactive]
+	 * : Include inactive plugins in the list.
+	 *
+	 * [--display-filenames]
+	 * : Print plugin file names instead of plugin names.
+	 *
+	 * @since 9.1.0
+	 *
+	 * @param array $args       Positional arguments passed to the command.
+	 * @param array $assoc_args Associative arguments (options) passed to the command.
+	 */
+	public function compatibility_info( array $args = array(), array $assoc_args = array() ): void {
+		$container          = wc_get_container();
+		$feature_controller = $container-&gt;get( FeaturesController::class );
+		$plugin_info        = $feature_controller-&gt;get_compatible_plugins_for_feature( &#039;custom_order_tables&#039;, ! ( (bool) ( $assoc_args[&#039;include-inactive&#039;] ?? null ) ) );
+		$display_filenames  = (bool) ( $assoc_args[&#039;display-filenames&#039;] ?? null );
+
+		$compatibles       = $this-&gt;get_printable_plugin_names( $plugin_info[&#039;compatible&#039;], $display_filenames );
+		$compatibles_count = count( $compatibles );
+		$this-&gt;log(
+			sprintf(
+				// translators: $1$d = plugins count, %2$s = colon (if list follows) or empty.
+				_n( &quot;\n%%C%1\$d%%n compatible plugin found%2\$s&quot;, &quot;\n%%C%1\$d%%n compatible plugins found%2\$s&quot;, $compatibles_count, &#039;woocommerce&#039; ),
+				$compatibles_count,
+				$compatibles_count &gt; 0 ? &quot;:\n&quot; : &#039;&#039;
+			)
+		);
+		$this-&gt;print_plugin_names( $compatibles );
+
+		$incompatibles       = $this-&gt;get_printable_plugin_names( $plugin_info[&#039;incompatible&#039;], $display_filenames );
+		$incompatibles_count = count( $incompatibles );
+		$this-&gt;log(
+			sprintf(
+				// translators: $1$d = plugins count, %2$s = colon (if list follows) or empty.
+				_n( &quot;\n%%C%1\$d%%n incompatible plugin found%2\$s&quot;, &quot;\n%%C%1\$d%%n incompatible plugins found%2\$s&quot;, $incompatibles_count, &#039;woocommerce&#039; ),
+				$incompatibles_count,
+				$incompatibles_count &gt; 0 ? &quot;:\n&quot; : &#039;&#039;
+			)
+		);
+		$this-&gt;print_plugin_names( $incompatibles );
+
+		$uncertain       = $this-&gt;get_printable_plugin_names( $plugin_info[&#039;uncertain&#039;], $display_filenames );
+		$uncertain_count = count( $uncertain );
+		$this-&gt;log(
+			sprintf(
+				// translators: $1$d = plugins count, %2$s = colon (if list follows) or empty.
+				_n( &quot;\n%%C%1\$d%%n uncertain plugin found%2\$s&quot;, &quot;\n%%C%1\$d%%n uncertain plugins found%2\$s&quot;, $uncertain_count, &#039;woocommerce&#039; ),
+				$uncertain_count,
+				$uncertain_count &gt; 0 ? &quot;:\n&quot; : &#039;&#039;
+			)
+		);
+		$this-&gt;print_plugin_names( $uncertain );
+	}
+
+	/**
+	 * Get the printable names for a set of plugins given their file names.
+	 *
+	 * @param array $plugins The plugin file names.
+	 * @param bool  $display_filenames True to simply return the sorted list of plugin file names.
+	 * @return array A sorted array of plugin names or file names.
+	 */
+	private function get_printable_plugin_names( array $plugins, bool $display_filenames ): array {
+		if ( $display_filenames ) {
+			sort( $plugins );
+			return $plugins;
+		}
+
+		$plugin_names = array_map(
+			fn( $plugin_file ) =&gt; get_plugin_data( WP_PLUGIN_DIR . DIRECTORY_SEPARATOR . $plugin_file, false )[&#039;Name&#039;] ?? $plugin_file,
+			$plugins
+		);
+		sort( $plugin_names );
+		return $plugin_names;
+	}
+
+	/**
+	 * Print a list of plugin names.
+	 *
+	 * @param array $plugins The names to print.
+	 */
+	private function print_plugin_names( array $plugins ): void {
+		foreach ( $plugins as $plugin_file ) {
+			$this-&gt;log( &#039;  &#039; . $plugin_file );
+		}
+	}
+
+	/**
+	 * Show a log message using the WP_CLI text colorization feature.
+	 *
+	 * @param string $text Text to show.
+	 */
+	private function log( string $text ) {
+		WP_CLI::log( WP_CLI::colorize( $text ) );
+	}
+
+	/**
 	 * Enables compatibility mode, which keeps the HPOS and posts datastore in sync.
 	 *
 	 * @since 9.1.0
@@ -1398,7 +1512,11 @@ ORDER BY $meta_table.order_id ASC, $meta_table.meta_key ASC;
 	 */
 	private function toggle_compat_mode( bool $enabled ): void {
 		if ( ! $this-&gt;synchronizer-&gt;check_orders_table_exists() ) {
-			WP_CLI::error( __( &#039;HPOS tables do not exist.&#039;, &#039;woocommerce&#039; ) );
+			if ( $enabled ) {
+				$this-&gt;synchronizer-&gt;create_database_tables();
+			} else {
+				WP_CLI::error( __( &#039;HPOS tables do not exist.&#039;, &#039;woocommerce&#039; ) );
+			}
 		}
 
 		$currently_enabled = $this-&gt;synchronizer-&gt;data_sync_is_enabled();
@@ -1432,7 +1550,7 @@ ORDER BY $meta_table.order_id ASC, $meta_table.meta_key ASC;
 
     <footer class="phpdocumentor phpdocumentor-footer">
     <div class="phpdocumentor-section">
-        <span>WooCommerce Code Reference API documentation generated by <a href="http://www.phpdoc.org/">phpDocumentor</a> on July 25th, 2024 at 11:33 am.</span>
+        <span>WooCommerce Code Reference API documentation generated by <a href="http://www.phpdoc.org/">phpDocumentor</a> on May 16th, 2025 at 09:14 am.</span>
     </div>
 </footer>
 
@@ -1444,7 +1562,7 @@ ORDER BY $meta_table.order_id ASC, $meta_table.meta_key ASC;
             'searchIndex': '..\/js\/searchIndex.json'
         };
     </script>
-    <script src="../js/searchIndex.js?updated=1721907186"></script>
-    <script src="../js/search.js?updated=1721907186"></script>
+    <script src="../js/searchIndex.js?updated=1747386862"></script>
+    <script src="../js/search.js?updated=1747386862"></script>
 </body>
 </html>

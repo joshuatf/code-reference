@@ -4,14 +4,13 @@
     <meta charset="utf-8">
     <title>WooCommerce Code Reference</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="../images/favicon.png" />
-    <link rel="apple-touch-icon" href="../images/apple-touch-icon.png"/>
-    <link rel="apple-touch-icon" sizes="72x72" href="../images/apple-touch-icon-72x72.png"/>
-    <link rel="apple-touch-icon" sizes="114x114" href="../images/apple-touch-icon-114x114.png"/>
+    <link rel="icon" href="../images/favicon-32x32.png" sizes="32x32" />
+    <link rel="icon" href="../images/favicon-192x192.png" sizes="192x192" />
+    <link rel="apple-touch-icon" href="../images/favicon-180x180.png" />
+
     <link rel="stylesheet" href="../css/normalize.css">
-    <link rel="stylesheet" href="../css/base.css?updated=1721907185">
-    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../css/template.css?updated=1721907185">
+    <link rel="stylesheet" href="../css/base.css?updated=1747386862">
+    <link rel="stylesheet" href="../css/template.css?updated=1747386862">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0/css/all.min.css" integrity="sha256-ybRkN9dBjhcS2qrW1z+hfCxq+1aBdwyQM5wlQoQVt/0=" crossorigin="anonymous" />
             <script src="https://cdn.jsdelivr.net/npm/css-vars-ponyfill@2"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0/js/all.min.js" integrity="sha256-0vuk8LXoyrmCjp1f0O300qo1M75ZQyhH9X3J6d+scmk=" crossorigin="anonymous"></script>
@@ -38,14 +37,13 @@
     <header class="phpdocumentor-top-header">
     <section class="phpdocumentor-section">
         <div class="site-branding">
-            <a class="site-logo" href="../index.html"><img width="180" src="../images/logo.svg" alt="WooCommerce" /></a>
+            <a class="site-logo" href="../index.html"><img src="../images/logo.png" alt="WooCommerce" /></a>
         </div>
         <nav class="main-navigation">
             <ul>
                 <li><a href="../hooks/hooks.html">Hooks Reference</a></li>
-                <li><a href="https://docs.woocommerce.com/">Documentation</a></li>
+                <li><a href="https://developer.woocommerce.com/docs/">Documentation</a></li>
                 <li><a href="https://woocommerce.github.io/woocommerce-rest-api-docs/">REST API Docs</a></li>
-                <li><a href="https://woocommerce.com/careers/?utm_source=woocommerce+core+code+reference&utm_medium=devdocs&utm_campaign=woo+careers" target="_blank">We're hiring!</a></li>
             </ul>
         </nav>
     </section>
@@ -53,7 +51,7 @@
 
 <div class="phpdocumentor-header">
     <section class="phpdocumentor-section">
-        <h1 class="phpdocumentor-title">WooCommerce Code Reference</h1>
+        <h1 class="phpdocumentor-title"><a href="../index.html">WooCommerce Code Reference</a></h1>
         <section class="phpdocumentor-search">
     <label class="phpdocumentor-label">
         <span class="visually-hidden">Search (click ESC to close search results)</span>
@@ -74,6 +72,10 @@
                                         <h4 class="phpdocumentor-sidebar__root-namespace"><a href="../namespaces/woocommerce.html"><abbr title="\WooCommerce">WooCommerce</abbr></a></h4>
                 <ul class="phpdocumentor-list">
                                             <li><a href="../namespaces/woocommerce-admin.html"><abbr title="\WooCommerce\Admin">Admin</abbr></a></li>
+                                    </ul>
+                            <h4 class="phpdocumentor-sidebar__root-namespace"><a href="../namespaces/mailpoet.html"><abbr title="\MailPoet">MailPoet</abbr></a></h4>
+                <ul class="phpdocumentor-list">
+                                            <li><a href="../namespaces/mailpoet-emaileditor.html"><abbr title="\MailPoet\EmailEditor">EmailEditor</abbr></a></li>
                                     </ul>
                             <h4 class="phpdocumentor-sidebar__root-namespace"><a href="../namespaces/automattic.html"><abbr title="\Automattic">Automattic</abbr></a></h4>
                 <ul class="phpdocumentor-list">
@@ -119,8 +121,10 @@
                                     <li><a href="../packages/WooCommerce-Widgets.html"><abbr title="\WooCommerce\Widgets">Widgets</abbr></a></li>
                                     <li><a href="../packages/WooCommerce-Uninstaller.html"><abbr title="\WooCommerce\Uninstaller">Uninstaller</abbr></a></li>
                             </ul>
-                                <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/WoocommerceAdmin.html"><abbr title="\WoocommerceAdmin">WoocommerceAdmin</abbr></a></h3>
-                                <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/WoocommerceNavigation.html"><abbr title="\WoocommerceNavigation">WoocommerceNavigation</abbr></a></h3>
+                                <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/MailPoet.html"><abbr title="\MailPoet">MailPoet</abbr></a></h3>
+                        <ul class="phpdocumentor-list">
+                                    <li><a href="../packages/MailPoet-EmailEditor.html"><abbr title="\MailPoet\EmailEditor">EmailEditor</abbr></a></li>
+                            </ul>
                                 <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/Automattic.html"><abbr title="\Automattic">Automattic</abbr></a></h3>
                         <ul class="phpdocumentor-list">
                                     <li><a href="../packages/Automattic-WooCommerce.html"><abbr title="\Automattic\WooCommerce">WooCommerce</abbr></a></li>
@@ -159,23 +163,23 @@
             <pre id="source-view" tabindex="-1" class="language-php line-numbers linkable-line-numbers"><code>&lt;?php
 namespace Automattic\WooCommerce\Blocks\Domain\Services;
 
+use Automattic\WooCommerce\Admin\DeprecatedClassFacade;
+
 /**
  * Service class that used to handle feature flags. That functionality
  * is removed now and it is only used to determine &quot;environment&quot;.
  *
  * @internal
+ *
+ * @deprecated since 9.6.0, use wp_get_environment_type() instead.
  */
-class FeatureGating {
+class FeatureGating extends DeprecatedClassFacade {
 	/**
-	 * Current environment
+	 * The version that this class was deprecated in.
 	 *
 	 * @var string
 	 */
-	private $environment;
-
-	const PRODUCTION_ENVIRONMENT  = &#039;production&#039;;
-	const DEVELOPMENT_ENVIRONMENT = &#039;development&#039;;
-	const TEST_ENVIRONMENT        = &#039;test&#039;;
+	protected static $deprecated_in_version = &#039;9.6.0&#039;;
 
 	/**
 	 * Constructor
@@ -183,59 +187,6 @@ class FeatureGating {
 	 * @param string $environment Hardcoded environment value. Useful for tests.
 	 */
 	public function __construct( $environment = &#039;unset&#039; ) {
-		$this-&gt;environment = $environment;
-		$this-&gt;load_environment();
-	}
-
-	/**
-	 * Set correct environment.
-	 */
-	public function load_environment() {
-		if ( &#039;unset&#039; === $this-&gt;environment ) {
-			if ( file_exists( __DIR__ . &#039;/../../../../blocks.ini&#039; ) ) {
-				$allowed_environments = [ self::PRODUCTION_ENVIRONMENT, self::DEVELOPMENT_ENVIRONMENT, self::TEST_ENVIRONMENT ];
-				$woo_options          = parse_ini_file( __DIR__ . &#039;/../../../../blocks.ini&#039; );
-				$this-&gt;environment    = is_array( $woo_options ) &amp;&amp; in_array( $woo_options[&#039;woocommerce_blocks_env&#039;], $allowed_environments, true ) ? $woo_options[&#039;woocommerce_blocks_env&#039;] : self::PRODUCTION_ENVIRONMENT;
-			} else {
-				$this-&gt;environment = self::PRODUCTION_ENVIRONMENT;
-			}
-		}
-	}
-
-	/**
-	 * Returns the current environment value.
-	 *
-	 * @return string
-	 */
-	public function get_environment() {
-		return $this-&gt;environment;
-	}
-
-	/**
-	 * Checks if we&#039;re executing the code in an development environment.
-	 *
-	 * @return boolean
-	 */
-	public function is_development_environment() {
-		return self::DEVELOPMENT_ENVIRONMENT === $this-&gt;environment;
-	}
-
-	/**
-	 * Checks if we&#039;re executing the code in a production environment.
-	 *
-	 * @return boolean
-	 */
-	public function is_production_environment() {
-		return self::PRODUCTION_ENVIRONMENT === $this-&gt;environment;
-	}
-
-	/**
-	 * Checks if we&#039;re executing the code in a test environment.
-	 *
-	 * @return boolean
-	 */
-	public function is_test_environment() {
-		return self::TEST_ENVIRONMENT === $this-&gt;environment;
 	}
 }
 </code></pre>
@@ -248,7 +199,7 @@ class FeatureGating {
 
     <footer class="phpdocumentor phpdocumentor-footer">
     <div class="phpdocumentor-section">
-        <span>WooCommerce Code Reference API documentation generated by <a href="http://www.phpdoc.org/">phpDocumentor</a> on July 25th, 2024 at 11:33 am.</span>
+        <span>WooCommerce Code Reference API documentation generated by <a href="http://www.phpdoc.org/">phpDocumentor</a> on May 16th, 2025 at 09:14 am.</span>
     </div>
 </footer>
 
@@ -260,7 +211,7 @@ class FeatureGating {
             'searchIndex': '..\/js\/searchIndex.json'
         };
     </script>
-    <script src="../js/searchIndex.js?updated=1721907185"></script>
-    <script src="../js/search.js?updated=1721907185"></script>
+    <script src="../js/searchIndex.js?updated=1747386862"></script>
+    <script src="../js/search.js?updated=1747386862"></script>
 </body>
 </html>

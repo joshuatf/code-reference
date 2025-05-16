@@ -4,14 +4,13 @@
     <meta charset="utf-8">
     <title>WooCommerce Code Reference</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="../images/favicon.png" />
-    <link rel="apple-touch-icon" href="../images/apple-touch-icon.png"/>
-    <link rel="apple-touch-icon" sizes="72x72" href="../images/apple-touch-icon-72x72.png"/>
-    <link rel="apple-touch-icon" sizes="114x114" href="../images/apple-touch-icon-114x114.png"/>
+    <link rel="icon" href="../images/favicon-32x32.png" sizes="32x32" />
+    <link rel="icon" href="../images/favicon-192x192.png" sizes="192x192" />
+    <link rel="apple-touch-icon" href="../images/favicon-180x180.png" />
+
     <link rel="stylesheet" href="../css/normalize.css">
-    <link rel="stylesheet" href="../css/base.css?updated=1721907208">
-    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../css/template.css?updated=1721907208">
+    <link rel="stylesheet" href="../css/base.css?updated=1747386890">
+    <link rel="stylesheet" href="../css/template.css?updated=1747386890">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0/css/all.min.css" integrity="sha256-ybRkN9dBjhcS2qrW1z+hfCxq+1aBdwyQM5wlQoQVt/0=" crossorigin="anonymous" />
             <script src="https://cdn.jsdelivr.net/npm/css-vars-ponyfill@2"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0/js/all.min.js" integrity="sha256-0vuk8LXoyrmCjp1f0O300qo1M75ZQyhH9X3J6d+scmk=" crossorigin="anonymous"></script>
@@ -27,19 +26,24 @@
 		'content_group' : 'WooCommerce Core Code Reference',
 	});
 </script>
-        </head>
+        <script src="../js/prism.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            window.dispatchEvent(new HashChangeEvent('hashchange'));
+        });
+    </script>
+</head>
 <body id="top">
     <header class="phpdocumentor-top-header">
     <section class="phpdocumentor-section">
         <div class="site-branding">
-            <a class="site-logo" href="../index.html"><img width="180" src="../images/logo.svg" alt="WooCommerce" /></a>
+            <a class="site-logo" href="../index.html"><img src="../images/logo.png" alt="WooCommerce" /></a>
         </div>
         <nav class="main-navigation">
             <ul>
                 <li><a href="../hooks/hooks.html">Hooks Reference</a></li>
-                <li><a href="https://docs.woocommerce.com/">Documentation</a></li>
+                <li><a href="https://developer.woocommerce.com/docs/">Documentation</a></li>
                 <li><a href="https://woocommerce.github.io/woocommerce-rest-api-docs/">REST API Docs</a></li>
-                <li><a href="https://woocommerce.com/careers/?utm_source=woocommerce+core+code+reference&utm_medium=devdocs&utm_campaign=woo+careers" target="_blank">We're hiring!</a></li>
             </ul>
         </nav>
     </section>
@@ -47,7 +51,7 @@
 
 <div class="phpdocumentor-header">
     <section class="phpdocumentor-section">
-        <h1 class="phpdocumentor-title">WooCommerce Code Reference</h1>
+        <h1 class="phpdocumentor-title"><a href="../index.html">WooCommerce Code Reference</a></h1>
         <section class="phpdocumentor-search">
     <label class="phpdocumentor-label">
         <span class="visually-hidden">Search (click ESC to close search results)</span>
@@ -68,6 +72,10 @@
                                         <h4 class="phpdocumentor-sidebar__root-namespace"><a href="../namespaces/woocommerce.html"><abbr title="\WooCommerce">WooCommerce</abbr></a></h4>
                 <ul class="phpdocumentor-list">
                                             <li><a href="../namespaces/woocommerce-admin.html"><abbr title="\WooCommerce\Admin">Admin</abbr></a></li>
+                                    </ul>
+                            <h4 class="phpdocumentor-sidebar__root-namespace"><a href="../namespaces/mailpoet.html"><abbr title="\MailPoet">MailPoet</abbr></a></h4>
+                <ul class="phpdocumentor-list">
+                                            <li><a href="../namespaces/mailpoet-emaileditor.html"><abbr title="\MailPoet\EmailEditor">EmailEditor</abbr></a></li>
                                     </ul>
                             <h4 class="phpdocumentor-sidebar__root-namespace"><a href="../namespaces/automattic.html"><abbr title="\Automattic">Automattic</abbr></a></h4>
                 <ul class="phpdocumentor-list">
@@ -113,8 +121,10 @@
                                     <li><a href="../packages/WooCommerce-Widgets.html"><abbr title="\WooCommerce\Widgets">Widgets</abbr></a></li>
                                     <li><a href="../packages/WooCommerce-Uninstaller.html"><abbr title="\WooCommerce\Uninstaller">Uninstaller</abbr></a></li>
                             </ul>
-                                <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/WoocommerceAdmin.html"><abbr title="\WoocommerceAdmin">WoocommerceAdmin</abbr></a></h3>
-                                <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/WoocommerceNavigation.html"><abbr title="\WoocommerceNavigation">WoocommerceNavigation</abbr></a></h3>
+                                <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/MailPoet.html"><abbr title="\MailPoet">MailPoet</abbr></a></h3>
+                        <ul class="phpdocumentor-list">
+                                    <li><a href="../packages/MailPoet-EmailEditor.html"><abbr title="\MailPoet\EmailEditor">EmailEditor</abbr></a></li>
+                            </ul>
                                 <h3 class="phpdocumentor-sidebar__root-package"><a href="../packages/Automattic.html"><abbr title="\Automattic">Automattic</abbr></a></h3>
                         <ul class="phpdocumentor-list">
                                     <li><a href="../packages/Automattic-WooCommerce.html"><abbr title="\Automattic\WooCommerce">WooCommerce</abbr></a></li>
@@ -239,6 +249,13 @@
 <dd>Schema class for the cart.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -property -protected">
+    <a href="../classes/Automattic-WooCommerce-StoreApi-Routes-V1-AbstractCartRoute.html#property_has_cart_token">$has_cart_token</a>
+    <span>
+                &nbsp;: bool|null            </span>
+</dt>
+<dd>True when this route has been requested with a valid cart token.</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -property -protected">
     <a href="../classes/Automattic-WooCommerce-StoreApi-Routes-V1-AbstractRoute.html#property_namespace">$namespace</a>
     <span>
                 &nbsp;: string            </span>
@@ -295,6 +312,13 @@
 <dd>Retrieves the query params for the collections.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a href="../classes/Automattic-WooCommerce-StoreApi-Utilities-CheckoutTrait.html#method_get_document_object_from_rest_request">get_document_object_from_rest_request()</a>
+    <span>
+                        &nbsp;: <a href="../classes/Automattic-WooCommerce-Blocks-Domain-Services-CheckoutFieldsSchema-DocumentObject.html"><abbr title="\Automattic\WooCommerce\Blocks\Domain\Services\CheckoutFieldsSchema\DocumentObject">DocumentObject</abbr></a>    </span>
+</dt>
+<dd>Returns a document object from a REST request.</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="../classes/Automattic-WooCommerce-StoreApi-Routes-V1-AbstractRoute.html#method_get_item_schema">get_item_schema()</a>
     <span>
                         &nbsp;: array&lt;string|int, mixed&gt;    </span>
@@ -342,6 +366,13 @@
                         &nbsp;: mixed    </span>
 </dt>
 <dd>Set the namespace for this route.</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a href="../classes/Automattic-WooCommerce-StoreApi-Routes-V1-Checkout.html#method_validate_callback">validate_callback()</a>
+    <span>
+                        &nbsp;: true|<abbr title="\WP_Error">WP_Error</abbr>    </span>
+</dt>
+<dd>Validation callback for the checkout route.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -protected">
     <a href="../classes/Automattic-WooCommerce-StoreApi-Routes-V1-AbstractCartRoute.html#method_add_response_headers">add_response_headers()</a>
@@ -445,7 +476,7 @@ keep all data in sync.</dd>
             <dt class="phpdocumentor-table-of-contents__entry -method -protected">
     <a href="../classes/Automattic-WooCommerce-StoreApi-Routes-V1-Checkout.html#method_get_route_post_response">get_route_post_response()</a>
     <span>
-                        &nbsp;: <abbr title="\WP_REST_Response">WP_REST_Response</abbr>    </span>
+                        &nbsp;: <abbr title="\WP_REST_Response">WP_REST_Response</abbr>|<abbr title="\WP_Error">WP_Error</abbr>    </span>
 </dt>
 <dd>Process an order.</dd>
 
@@ -457,11 +488,18 @@ keep all data in sync.</dd>
 <dd>Convert the cart into a new draft order, or update an existing draft order, and return an updated cart response.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -protected">
-    <a href="../classes/Automattic-WooCommerce-StoreApi-Routes-V1-AbstractRoute.html#method_get_route_update_response">get_route_update_response()</a>
+    <a href="../classes/Automattic-WooCommerce-StoreApi-Routes-V1-Checkout.html#method_get_route_update_response">get_route_update_response()</a>
     <span>
-                        &nbsp;: <abbr title="\WP_REST_Response">WP_REST_Response</abbr>    </span>
+                        &nbsp;: <abbr title="\WP_REST_Response">WP_REST_Response</abbr>|<abbr title="\WP_Error">WP_Error</abbr>    </span>
 </dt>
 <dd>Get route response for PUT requests.</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -protected">
+    <a href="../classes/Automattic-WooCommerce-StoreApi-Routes-V1-AbstractCartRoute.html#method_has_cart_token">has_cart_token()</a>
+    <span>
+                        &nbsp;: bool    </span>
+</dt>
+<dd>Checks if the request has a valid cart token.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -protected">
     <a href="../classes/Automattic-WooCommerce-StoreApi-Routes-V1-AbstractCartRoute.html#method_is_update_request">is_update_request()</a>
@@ -521,13 +559,6 @@ pending/failed and the cart hasn&#039;t changed.</dd>
 <dd>Adds additional data to the \WP_Error object.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -private">
-    <a href="../classes/Automattic-WooCommerce-StoreApi-Routes-V1-Checkout.html#method_create_customer_account">create_customer_account()</a>
-    <span>
-                        &nbsp;: int    </span>
-</dt>
-<dd>Create a new account for a customer.</dd>
-
-            <dt class="phpdocumentor-table-of-contents__entry -method -private">
     <a href="../classes/Automattic-WooCommerce-StoreApi-Routes-V1-Checkout.html#method_create_or_update_draft_order">create_or_update_draft_order()</a>
     <span>
                         &nbsp;: mixed    </span>
@@ -561,13 +592,6 @@ pending/failed and the cart hasn&#039;t changed.</dd>
                         &nbsp;: string    </span>
 </dt>
 <dd>Gets the chosen payment method title from the request.</dd>
-
-            <dt class="phpdocumentor-table-of-contents__entry -method -private">
-    <a href="../classes/Automattic-WooCommerce-StoreApi-Routes-V1-Checkout.html#method_map_create_account_error">map_create_account_error()</a>
-    <span>
-                        &nbsp;: <abbr title="\Exception">Exception</abbr>    </span>
-</dt>
-<dd>Convert an account creation error to an exception.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -private">
     <a href="../classes/Automattic-WooCommerce-StoreApi-Utilities-CheckoutTrait.html#method_persist_additional_fields_for_order">persist_additional_fields_for_order()</a>
@@ -606,6 +630,13 @@ pending/failed and the cart hasn&#039;t changed.</dd>
 processing.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -private">
+    <a href="../classes/Automattic-WooCommerce-StoreApi-Routes-V1-Checkout.html#method_update_customer_address_field">update_customer_address_field()</a>
+    <span>
+                        &nbsp;: mixed    </span>
+</dt>
+<dd>Updates a customer address field.</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -private">
     <a href="../classes/Automattic-WooCommerce-StoreApi-Routes-V1-Checkout.html#method_update_customer_from_request">update_customer_from_request()</a>
     <span>
                         &nbsp;: mixed    </span>
@@ -618,6 +649,14 @@ processing.</dd>
                         &nbsp;: mixed    </span>
 </dt>
 <dd>Update the current order using the posted values from the request.</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -private">
+    <a href="../classes/Automattic-WooCommerce-StoreApi-Routes-V1-Checkout.html#method_validate_user_can_place_order">validate_user_can_place_order()</a>
+    <span>
+                        &nbsp;: mixed    </span>
+</dt>
+<dd>This validates if the order can be placed regarding settings in WooCommerce &gt; Settings &gt; Accounts &amp; Privacy
+If registration during checkout is disabled, guest checkout is disabled and the user is not logged in, prevent checkout.</dd>
 
         </dl>
 
@@ -690,9 +729,9 @@ processing.</dd>
     </h4>
 
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/StoreApi/Routes/V1/AbstractRoute.php"><a href="../files/woocommerce-src-storeapi-routes-v1-abstractroute.html#source-view.50">src/StoreApi/Routes/V1/AbstractRoute.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/StoreApi/Routes/V1/AbstractRoute.php"><a href="../files/woocommerce-src-storeapi-routes-v1-abstractroute.html#source-view.48">src/StoreApi/Routes/V1/AbstractRoute.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">50</span>
+    <span class="phpdocumentor-element-found-in__line">48</span>
 </aside>
 
         <p class="phpdocumentor-summary">The routes schema version.</p>
@@ -853,6 +892,38 @@ processing.</dd>
             -protected
                                                         "
 >
+    <h4 class="phpdocumentor-element__name" id="property_has_cart_token">
+        $has_cart_token
+        <a href="#property_has_cart_token" class="headerlink"><i class="fas fa-link"></i></a>
+        <span class="phpdocumentor-element__modifiers">
+                                </span>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/StoreApi/Routes/V1/AbstractCartRoute.php"><a href="../files/woocommerce-src-storeapi-routes-v1-abstractcartroute.html#source-view.78">src/StoreApi/Routes/V1/AbstractCartRoute.php</a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">78</span>
+</aside>
+
+        <p class="phpdocumentor-summary">True when this route has been requested with a valid cart token.</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">protected</span>
+        <span class="phpdocumentor-signature__type">bool|null</span>
+    <span class="phpdocumentor-signature__name">$has_cart_token</span>
+     = <span class="phpdocumentor-signature__default-value">null</span></code>
+
+        <section class="phpdocumentor-description"></section>
+
+    
+
+</article>
+                    <article
+        class="
+            phpdocumentor-element
+            -property
+            -protected
+                                                        "
+>
     <h4 class="phpdocumentor-element__name" id="property_namespace">
         $namespace
         <a href="#property_namespace" class="headerlink"><i class="fas fa-link"></i></a>
@@ -860,9 +931,9 @@ processing.</dd>
                                 </span>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/StoreApi/Routes/V1/AbstractRoute.php"><a href="../files/woocommerce-src-storeapi-routes-v1-abstractroute.html#source-view.29">src/StoreApi/Routes/V1/AbstractRoute.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/StoreApi/Routes/V1/AbstractRoute.php"><a href="../files/woocommerce-src-storeapi-routes-v1-abstractroute.html#source-view.27">src/StoreApi/Routes/V1/AbstractRoute.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">29</span>
+    <span class="phpdocumentor-element-found-in__line">27</span>
 </aside>
 
         <p class="phpdocumentor-summary">Route namespace.</p>
@@ -924,9 +995,9 @@ processing.</dd>
                                 </span>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/StoreApi/Routes/V1/AbstractRoute.php"><a href="../files/woocommerce-src-storeapi-routes-v1-abstractroute.html#source-view.22">src/StoreApi/Routes/V1/AbstractRoute.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/StoreApi/Routes/V1/AbstractRoute.php"><a href="../files/woocommerce-src-storeapi-routes-v1-abstractroute.html#source-view.20">src/StoreApi/Routes/V1/AbstractRoute.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">22</span>
+    <span class="phpdocumentor-element-found-in__line">20</span>
 </aside>
 
         <p class="phpdocumentor-summary">Schema class instance.</p>
@@ -956,9 +1027,9 @@ processing.</dd>
                                 </span>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/StoreApi/Routes/V1/AbstractRoute.php"><a href="../files/woocommerce-src-storeapi-routes-v1-abstractroute.html#source-view.36">src/StoreApi/Routes/V1/AbstractRoute.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/StoreApi/Routes/V1/AbstractRoute.php"><a href="../files/woocommerce-src-storeapi-routes-v1-abstractroute.html#source-view.34">src/StoreApi/Routes/V1/AbstractRoute.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">36</span>
+    <span class="phpdocumentor-element-found-in__line">34</span>
 </aside>
 
         <p class="phpdocumentor-summary">Schema Controller instance.</p>
@@ -1024,9 +1095,9 @@ processing.</dd>
         <a href="#method___construct" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/StoreApi/Routes/V1/AbstractRoute.php"><a href="../files/woocommerce-src-storeapi-routes-v1-abstractroute.html#source-view.58">src/StoreApi/Routes/V1/AbstractRoute.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/StoreApi/Routes/V1/AbstractRoute.php"><a href="../files/woocommerce-src-storeapi-routes-v1-abstractroute.html#source-view.56">src/StoreApi/Routes/V1/AbstractRoute.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">58</span>
+    <span class="phpdocumentor-element-found-in__line">56</span>
 </aside>
 
         <p class="phpdocumentor-summary">Constructor.</p>
@@ -1109,9 +1180,9 @@ processing.</dd>
         <a href="#method_get_collection_params" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/StoreApi/Routes/V1/AbstractRoute.php"><a href="../files/woocommerce-src-storeapi-routes-v1-abstractroute.html#source-view.327">src/StoreApi/Routes/V1/AbstractRoute.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/StoreApi/Routes/V1/AbstractRoute.php"><a href="../files/woocommerce-src-storeapi-routes-v1-abstractroute.html#source-view.325">src/StoreApi/Routes/V1/AbstractRoute.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">327</span>
+    <span class="phpdocumentor-element-found-in__line">325</span>
 </aside>
 
         <p class="phpdocumentor-summary">Retrieves the query params for the collections.</p>
@@ -1136,14 +1207,58 @@ processing.</dd>
             -public
                                                         "
 >
+    <h4 class="phpdocumentor-element__name" id="method_get_document_object_from_rest_request">
+        get_document_object_from_rest_request()
+        <a href="#method_get_document_object_from_rest_request" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/StoreApi/Utilities/CheckoutTrait.php"><a href="../files/woocommerce-src-storeapi-utilities-checkouttrait.html#source-view.251">src/StoreApi/Utilities/CheckoutTrait.php</a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">251</span>
+</aside>
+
+        <p class="phpdocumentor-summary">Returns a document object from a REST request.</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                <span class="phpdocumentor-signature__name">get_document_object_from_rest_request</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type"><abbr title="\WP_REST_Request">WP_REST_Request</abbr>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$request</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><a href="../classes/Automattic-WooCommerce-Blocks-Domain-Services-CheckoutFieldsSchema-DocumentObject.html"><abbr title="\Automattic\WooCommerce\Blocks\Domain\Services\CheckoutFieldsSchema\DocumentObject">DocumentObject</abbr></a></span></code>
+
+        <section class="phpdocumentor-description"></section>
+
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$request</span>
+                : <span class="phpdocumentor-signature__argument__return-type"><abbr title="\WP_REST_Request">WP_REST_Request</abbr></span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"><p>The REST request.</p>
+</section>
+
+            </dd>
+            </dl>
+
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type"><a href="../classes/Automattic-WooCommerce-Blocks-Domain-Services-CheckoutFieldsSchema-DocumentObject.html"><abbr title="\Automattic\WooCommerce\Blocks\Domain\Services\CheckoutFieldsSchema\DocumentObject">DocumentObject</abbr></a></span>
+            &mdash; <span class="phpdocumentor-return-value__description">The document object or null if experimental blocks are not enabled.</span>
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                                        "
+>
     <h4 class="phpdocumentor-element__name" id="method_get_item_schema">
         get_item_schema()
         <a href="#method_get_item_schema" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/StoreApi/Routes/V1/AbstractRoute.php"><a href="../files/woocommerce-src-storeapi-routes-v1-abstractroute.html#source-view.86">src/StoreApi/Routes/V1/AbstractRoute.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/StoreApi/Routes/V1/AbstractRoute.php"><a href="../files/woocommerce-src-storeapi-routes-v1-abstractroute.html#source-view.84">src/StoreApi/Routes/V1/AbstractRoute.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">86</span>
+    <span class="phpdocumentor-element-found-in__line">84</span>
 </aside>
 
         <p class="phpdocumentor-summary">Get item schema properties.</p>
@@ -1173,9 +1288,9 @@ processing.</dd>
         <a href="#method_get_namespace" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/StoreApi/Routes/V1/AbstractRoute.php"><a href="../files/woocommerce-src-storeapi-routes-v1-abstractroute.html#source-view.68">src/StoreApi/Routes/V1/AbstractRoute.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/StoreApi/Routes/V1/AbstractRoute.php"><a href="../files/woocommerce-src-storeapi-routes-v1-abstractroute.html#source-view.66">src/StoreApi/Routes/V1/AbstractRoute.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">68</span>
+    <span class="phpdocumentor-element-found-in__line">66</span>
 </aside>
 
         <p class="phpdocumentor-summary">Get the namespace for this route.</p>
@@ -1269,9 +1384,9 @@ processing.</dd>
         <a href="#method_get_response" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/StoreApi/Routes/V1/Checkout.php"><a href="../files/woocommerce-src-storeapi-routes-v1-checkout.html#source-view.122">src/StoreApi/Routes/V1/Checkout.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/StoreApi/Routes/V1/Checkout.php"><a href="../files/woocommerce-src-storeapi-routes-v1-checkout.html#source-view.148">src/StoreApi/Routes/V1/Checkout.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">122</span>
+    <span class="phpdocumentor-element-found-in__line">148</span>
 </aside>
 
         <p class="phpdocumentor-summary">Get the route response based on the type of request.</p>
@@ -1313,9 +1428,9 @@ processing.</dd>
         <a href="#method_prepare_item_for_response" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/StoreApi/Routes/V1/AbstractRoute.php"><a href="../files/woocommerce-src-storeapi-routes-v1-abstractroute.html#source-view.248">src/StoreApi/Routes/V1/AbstractRoute.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/StoreApi/Routes/V1/AbstractRoute.php"><a href="../files/woocommerce-src-storeapi-routes-v1-abstractroute.html#source-view.246">src/StoreApi/Routes/V1/AbstractRoute.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">248</span>
+    <span class="phpdocumentor-element-found-in__line">246</span>
 </aside>
 
         <p class="phpdocumentor-summary">Prepare a single item for response.</p>
@@ -1366,9 +1481,9 @@ processing.</dd>
         <a href="#method_set_namespace" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/StoreApi/Routes/V1/AbstractRoute.php"><a href="../files/woocommerce-src-storeapi-routes-v1-abstractroute.html#source-view.77">src/StoreApi/Routes/V1/AbstractRoute.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/StoreApi/Routes/V1/AbstractRoute.php"><a href="../files/woocommerce-src-storeapi-routes-v1-abstractroute.html#source-view.75">src/StoreApi/Routes/V1/AbstractRoute.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">77</span>
+    <span class="phpdocumentor-element-found-in__line">75</span>
 </aside>
 
         <p class="phpdocumentor-summary">Set the namespace for this route.</p>
@@ -1402,6 +1517,51 @@ processing.</dd>
                     <article
         class="phpdocumentor-element
             -method
+            -public
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_validate_callback">
+        validate_callback()
+        <a href="#method_validate_callback" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/StoreApi/Routes/V1/Checkout.php"><a href="../files/woocommerce-src-storeapi-routes-v1-checkout.html#source-view.209">src/StoreApi/Routes/V1/Checkout.php</a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">209</span>
+</aside>
+
+        <p class="phpdocumentor-summary">Validation callback for the checkout route.</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                <span class="phpdocumentor-signature__name">validate_callback</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type"><abbr title="\WP_REST_Request">WP_REST_Request</abbr>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$request</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">true|<abbr title="\WP_Error">WP_Error</abbr></span></code>
+
+        <section class="phpdocumentor-description"><p>This runs after individual field validation_callbacks have been called.</p>
+</section>
+
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$request</span>
+                : <span class="phpdocumentor-signature__argument__return-type"><abbr title="\WP_REST_Request">WP_REST_Request</abbr></span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"><p>Request object.</p>
+</section>
+
+            </dd>
+            </dl>
+
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">true|<abbr title="\WP_Error">WP_Error</abbr></span>
+            &mdash; <span class="phpdocumentor-return-value__description"></span>
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
             -protected
                                                         "
 >
@@ -1410,9 +1570,9 @@ processing.</dd>
         <a href="#method_add_response_headers" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/StoreApi/Routes/V1/AbstractCartRoute.php"><a href="../files/woocommerce-src-storeapi-routes-v1-abstractcartroute.html#source-view.147">src/StoreApi/Routes/V1/AbstractCartRoute.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/StoreApi/Routes/V1/AbstractCartRoute.php"><a href="../files/woocommerce-src-storeapi-routes-v1-abstractcartroute.html#source-view.153">src/StoreApi/Routes/V1/AbstractCartRoute.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">147</span>
+    <span class="phpdocumentor-element-found-in__line">153</span>
 </aside>
 
         <p class="phpdocumentor-summary">Add nonce headers to a response object.</p>
@@ -1454,9 +1614,9 @@ processing.</dd>
         <a href="#method_cart_updated" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/StoreApi/Routes/V1/AbstractCartRoute.php"><a href="../files/woocommerce-src-storeapi-routes-v1-abstractcartroute.html#source-view.243">src/StoreApi/Routes/V1/AbstractCartRoute.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/StoreApi/Routes/V1/AbstractCartRoute.php"><a href="../files/woocommerce-src-storeapi-routes-v1-abstractcartroute.html#source-view.265">src/StoreApi/Routes/V1/AbstractCartRoute.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">243</span>
+    <span class="phpdocumentor-element-found-in__line">265</span>
 </aside>
 
         <p class="phpdocumentor-summary">Triggered after an update to cart data. Re-calculates totals and updates draft orders (if they already exist) to
@@ -1499,9 +1659,9 @@ keep all data in sync.</p>
         <a href="#method_check_nonce" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/StoreApi/Routes/V1/AbstractCartRoute.php"><a href="../files/woocommerce-src-storeapi-routes-v1-abstractcartroute.html#source-view.285">src/StoreApi/Routes/V1/AbstractCartRoute.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/StoreApi/Routes/V1/AbstractCartRoute.php"><a href="../files/woocommerce-src-storeapi-routes-v1-abstractcartroute.html#source-view.307">src/StoreApi/Routes/V1/AbstractCartRoute.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">285</span>
+    <span class="phpdocumentor-element-found-in__line">307</span>
 </aside>
 
         <p class="phpdocumentor-summary">For non-GET endpoints, require and validate a nonce to prevent CSRF attacks.</p>
@@ -1545,9 +1705,9 @@ to match the logged in cookie in your browser.</p>
         <a href="#method_error_to_response" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/StoreApi/Routes/V1/AbstractRoute.php"><a href="../files/woocommerce-src-storeapi-routes-v1-abstractroute.html#source-view.137">src/StoreApi/Routes/V1/AbstractRoute.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/StoreApi/Routes/V1/AbstractRoute.php"><a href="../files/woocommerce-src-storeapi-routes-v1-abstractroute.html#source-view.135">src/StoreApi/Routes/V1/AbstractRoute.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">137</span>
+    <span class="phpdocumentor-element-found-in__line">135</span>
 </aside>
 
         <p class="phpdocumentor-summary">Converts an error to a response object. Based on \WP_REST_Server.</p>
@@ -1589,9 +1749,9 @@ to match the logged in cookie in your browser.</p>
         <a href="#method_get_cart_token" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/StoreApi/Routes/V1/AbstractCartRoute.php"><a href="../files/woocommerce-src-storeapi-routes-v1-abstractcartroute.html#source-view.190">src/StoreApi/Routes/V1/AbstractCartRoute.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/StoreApi/Routes/V1/AbstractCartRoute.php"><a href="../files/woocommerce-src-storeapi-routes-v1-abstractcartroute.html#source-view.192">src/StoreApi/Routes/V1/AbstractCartRoute.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">190</span>
+    <span class="phpdocumentor-element-found-in__line">192</span>
 </aside>
 
         <p class="phpdocumentor-summary">Generates a cart token for the response headers.</p>
@@ -1623,9 +1783,9 @@ to match the logged in cookie in your browser.</p>
         <a href="#method_get_cart_token_expiration" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/StoreApi/Routes/V1/AbstractCartRoute.php"><a href="../files/woocommerce-src-storeapi-routes-v1-abstractcartroute.html#source-view.215">src/StoreApi/Routes/V1/AbstractCartRoute.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/StoreApi/Routes/V1/AbstractCartRoute.php"><a href="../files/woocommerce-src-storeapi-routes-v1-abstractcartroute.html#source-view.224">src/StoreApi/Routes/V1/AbstractCartRoute.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">215</span>
+    <span class="phpdocumentor-element-found-in__line">224</span>
 </aside>
 
         <p class="phpdocumentor-summary">Gets the expiration of the cart token. Defaults to 48h.</p>
@@ -1655,9 +1815,9 @@ to match the logged in cookie in your browser.</p>
         <a href="#method_get_cart_token_secret" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/StoreApi/Routes/V1/AbstractCartRoute.php"><a href="../files/woocommerce-src-storeapi-routes-v1-abstractcartroute.html#source-view.206">src/StoreApi/Routes/V1/AbstractCartRoute.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/StoreApi/Routes/V1/AbstractCartRoute.php"><a href="../files/woocommerce-src-storeapi-routes-v1-abstractcartroute.html#source-view.215">src/StoreApi/Routes/V1/AbstractCartRoute.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">206</span>
+    <span class="phpdocumentor-element-found-in__line">215</span>
 </aside>
 
         <p class="phpdocumentor-summary">Gets the secret for the cart token using wp_salt.</p>
@@ -1687,9 +1847,9 @@ to match the logged in cookie in your browser.</p>
         <a href="#method_get_context_param" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/StoreApi/Routes/V1/AbstractRoute.php"><a href="../files/woocommerce-src-storeapi-routes-v1-abstractroute.html#source-view.263">src/StoreApi/Routes/V1/AbstractRoute.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/StoreApi/Routes/V1/AbstractRoute.php"><a href="../files/woocommerce-src-storeapi-routes-v1-abstractroute.html#source-view.261">src/StoreApi/Routes/V1/AbstractRoute.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">263</span>
+    <span class="phpdocumentor-element-found-in__line">261</span>
 </aside>
 
         <p class="phpdocumentor-summary">Retrieves the context param.</p>
@@ -1796,9 +1956,9 @@ to match the logged in cookie in your browser.</p>
         <a href="#method_get_response_by_request_method" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/StoreApi/Routes/V1/AbstractRoute.php"><a href="../files/woocommerce-src-storeapi-routes-v1-abstractroute.html#source-view.118">src/StoreApi/Routes/V1/AbstractRoute.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/StoreApi/Routes/V1/AbstractRoute.php"><a href="../files/woocommerce-src-storeapi-routes-v1-abstractroute.html#source-view.116">src/StoreApi/Routes/V1/AbstractRoute.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">118</span>
+    <span class="phpdocumentor-element-found-in__line">116</span>
 </aside>
 
         <p class="phpdocumentor-summary">Get the route response based on the type of request.</p>
@@ -1840,9 +2000,9 @@ to match the logged in cookie in your browser.</p>
         <a href="#method_get_route_delete_response" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/StoreApi/Routes/V1/AbstractRoute.php"><a href="../files/woocommerce-src-storeapi-routes-v1-abstractroute.html#source-view.209">src/StoreApi/Routes/V1/AbstractRoute.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/StoreApi/Routes/V1/AbstractRoute.php"><a href="../files/woocommerce-src-storeapi-routes-v1-abstractroute.html#source-view.207">src/StoreApi/Routes/V1/AbstractRoute.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">209</span>
+    <span class="phpdocumentor-element-found-in__line">207</span>
 </aside>
 
         <p class="phpdocumentor-summary">Get route response for DELETE requests.</p>
@@ -1900,9 +2060,9 @@ to match the logged in cookie in your browser.</p>
         <a href="#method_get_route_error_response" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/StoreApi/Routes/V1/Checkout.php"><a href="../files/woocommerce-src-storeapi-routes-v1-checkout.html#source-view.285">src/StoreApi/Routes/V1/Checkout.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/StoreApi/Routes/V1/Checkout.php"><a href="../files/woocommerce-src-storeapi-routes-v1-checkout.html#source-view.557">src/StoreApi/Routes/V1/Checkout.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">285</span>
+    <span class="phpdocumentor-element-found-in__line">557</span>
 </aside>
 
         <p class="phpdocumentor-summary">Get route response when something went wrong.</p>
@@ -1971,9 +2131,9 @@ to match the logged in cookie in your browser.</p>
         <a href="#method_get_route_error_response_from_object" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/StoreApi/Routes/V1/Checkout.php"><a href="../files/woocommerce-src-storeapi-routes-v1-checkout.html#source-view.305">src/StoreApi/Routes/V1/Checkout.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/StoreApi/Routes/V1/Checkout.php"><a href="../files/woocommerce-src-storeapi-routes-v1-checkout.html#source-view.577">src/StoreApi/Routes/V1/Checkout.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">305</span>
+    <span class="phpdocumentor-element-found-in__line">577</span>
 </aside>
 
         <p class="phpdocumentor-summary">Get route response when something went wrong.</p>
@@ -2033,16 +2193,16 @@ to match the logged in cookie in your browser.</p>
         <a href="#method_get_route_post_response" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/StoreApi/Routes/V1/Checkout.php"><a href="../files/woocommerce-src-storeapi-routes-v1-checkout.html#source-view.187">src/StoreApi/Routes/V1/Checkout.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/StoreApi/Routes/V1/Checkout.php"><a href="../files/woocommerce-src-storeapi-routes-v1-checkout.html#source-view.401">src/StoreApi/Routes/V1/Checkout.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">187</span>
+    <span class="phpdocumentor-element-found-in__line">401</span>
 </aside>
 
         <p class="phpdocumentor-summary">Process an order.</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">protected</span>
-                <span class="phpdocumentor-signature__name">get_route_post_response</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type"><abbr title="\WP_REST_Request">WP_REST_Request</abbr>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$request</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><abbr title="\WP_REST_Response">WP_REST_Response</abbr></span></code>
+                <span class="phpdocumentor-signature__name">get_route_post_response</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type"><abbr title="\WP_REST_Request">WP_REST_Request</abbr>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$request</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><abbr title="\WP_REST_Response">WP_REST_Response</abbr>|<abbr title="\WP_Error">WP_Error</abbr></span></code>
 
         <section class="phpdocumentor-description"><ol>
 <li>Obtain Draft Order</li>
@@ -2081,19 +2241,10 @@ to match the logged in cookie in your browser.</p>
 </section>
 
                 </dd>
-                            <dt class="phpdocumentor-tag-list__entry">
-                    <span class="phpdocumentor-tag__name">throws</span>
-                </dt>
-                <dd class="phpdocumentor-tag-list__definition">
-                                                                <span class="phpdocumentor-tag-link"><a href="../classes/Automattic-WooCommerce-StoreApi-Exceptions-InvalidStockLevelsInCartException.html"><abbr title="\Automattic\WooCommerce\StoreApi\Exceptions\InvalidStockLevelsInCartException">InvalidStockLevelsInCartException</abbr></a></span>
-                                                                                    <section class="phpdocumentor-description"><p>On error.</p>
-</section>
-
-                </dd>
                         </dl>
 
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type"><abbr title="\WP_REST_Response">WP_REST_Response</abbr></span>
+    <span class="phpdocumentor-signature__response_type"><abbr title="\WP_REST_Response">WP_REST_Response</abbr>|<abbr title="\WP_Error">WP_Error</abbr></span>
             &mdash; <span class="phpdocumentor-return-value__description"></span>
     
 </article>
@@ -2108,9 +2259,9 @@ to match the logged in cookie in your browser.</p>
         <a href="#method_get_route_response" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/StoreApi/Routes/V1/Checkout.php"><a href="../files/woocommerce-src-storeapi-routes-v1-checkout.html#source-view.159">src/StoreApi/Routes/V1/Checkout.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/StoreApi/Routes/V1/Checkout.php"><a href="../files/woocommerce-src-storeapi-routes-v1-checkout.html#source-view.190">src/StoreApi/Routes/V1/Checkout.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">159</span>
+    <span class="phpdocumentor-element-found-in__line">190</span>
 </aside>
 
         <p class="phpdocumentor-summary">Convert the cart into a new draft order, or update an existing draft order, and return an updated cart response.</p>
@@ -2167,19 +2318,18 @@ to match the logged in cookie in your browser.</p>
         <a href="#method_get_route_update_response" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/StoreApi/Routes/V1/AbstractRoute.php"><a href="../files/woocommerce-src-storeapi-routes-v1-abstractroute.html#source-view.196">src/StoreApi/Routes/V1/AbstractRoute.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/StoreApi/Routes/V1/Checkout.php"><a href="../files/woocommerce-src-storeapi-routes-v1-checkout.html#source-view.341">src/StoreApi/Routes/V1/Checkout.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">196</span>
+    <span class="phpdocumentor-element-found-in__line">341</span>
 </aside>
 
         <p class="phpdocumentor-summary">Get route response for PUT requests.</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">protected</span>
-                <span class="phpdocumentor-signature__name">get_route_update_response</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type"><abbr title="\WP_REST_Request">WP_REST_Request</abbr>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$request</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><abbr title="\WP_REST_Response">WP_REST_Response</abbr></span></code>
+                <span class="phpdocumentor-signature__name">get_route_update_response</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type"><abbr title="\WP_REST_Request">WP_REST_Request</abbr>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$request</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><abbr title="\WP_REST_Response">WP_REST_Response</abbr>|<abbr title="\WP_Error">WP_Error</abbr></span></code>
 
-        <section class="phpdocumentor-description"><p>When implemented, should return a \WP_REST_Response.</p>
-</section>
+        <section class="phpdocumentor-description"></section>
 
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
     <dl class="phpdocumentor-argument-list">
@@ -2212,7 +2362,51 @@ to match the logged in cookie in your browser.</p>
                         </dl>
 
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type"><abbr title="\WP_REST_Response">WP_REST_Response</abbr></span>
+    <span class="phpdocumentor-signature__response_type"><abbr title="\WP_REST_Response">WP_REST_Response</abbr>|<abbr title="\WP_Error">WP_Error</abbr></span>
+            &mdash; <span class="phpdocumentor-return-value__description"></span>
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -protected
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_has_cart_token">
+        has_cart_token()
+        <a href="#method_has_cart_token" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/StoreApi/Routes/V1/AbstractCartRoute.php"><a href="../files/woocommerce-src-storeapi-routes-v1-abstractcartroute.html#source-view.241">src/StoreApi/Routes/V1/AbstractCartRoute.php</a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">241</span>
+</aside>
+
+        <p class="phpdocumentor-summary">Checks if the request has a valid cart token.</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">protected</span>
+                <span class="phpdocumentor-signature__name">has_cart_token</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type"><abbr title="\WP_REST_Request">WP_REST_Request</abbr>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$request</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">bool</span></code>
+
+        <section class="phpdocumentor-description"></section>
+
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$request</span>
+                : <span class="phpdocumentor-signature__argument__return-type"><abbr title="\WP_REST_Request">WP_REST_Request</abbr></span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"><p>Request object.</p>
+</section>
+
+            </dd>
+            </dl>
+
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">bool</span>
             &mdash; <span class="phpdocumentor-return-value__description"></span>
     
 </article>
@@ -2227,9 +2421,9 @@ to match the logged in cookie in your browser.</p>
         <a href="#method_is_update_request" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/StoreApi/Routes/V1/AbstractCartRoute.php"><a href="../files/woocommerce-src-storeapi-routes-v1-abstractcartroute.html#source-view.95">src/StoreApi/Routes/V1/AbstractCartRoute.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/StoreApi/Routes/V1/AbstractCartRoute.php"><a href="../files/woocommerce-src-storeapi-routes-v1-abstractcartroute.html#source-view.102">src/StoreApi/Routes/V1/AbstractCartRoute.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">95</span>
+    <span class="phpdocumentor-element-found-in__line">102</span>
 </aside>
 
         <p class="phpdocumentor-summary">Are we updating data or getting data?</p>
@@ -2316,9 +2510,9 @@ pending/failed and the cart hasn&#039;t changed.</p>
         <a href="#method_load_cart_session" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/StoreApi/Routes/V1/AbstractCartRoute.php"><a href="../files/woocommerce-src-storeapi-routes-v1-abstractcartroute.html#source-view.166">src/StoreApi/Routes/V1/AbstractCartRoute.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/StoreApi/Routes/V1/AbstractCartRoute.php"><a href="../files/woocommerce-src-storeapi-routes-v1-abstractcartroute.html#source-view.170">src/StoreApi/Routes/V1/AbstractCartRoute.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">166</span>
+    <span class="phpdocumentor-element-found-in__line">170</span>
 </aside>
 
         <p class="phpdocumentor-summary">Load the cart session before handling responses.</p>
@@ -2360,9 +2554,9 @@ pending/failed and the cart hasn&#039;t changed.</p>
         <a href="#method_prepare_links" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/StoreApi/Routes/V1/AbstractRoute.php"><a href="../files/woocommerce-src-storeapi-routes-v1-abstractroute.html#source-view.318">src/StoreApi/Routes/V1/AbstractRoute.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/StoreApi/Routes/V1/AbstractRoute.php"><a href="../files/woocommerce-src-storeapi-routes-v1-abstractroute.html#source-view.316">src/StoreApi/Routes/V1/AbstractRoute.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">318</span>
+    <span class="phpdocumentor-element-found-in__line">316</span>
 </aside>
 
         <p class="phpdocumentor-summary">Prepare links for the request.</p>
@@ -2413,9 +2607,9 @@ pending/failed and the cart hasn&#039;t changed.</p>
         <a href="#method_prepare_response_for_collection" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/StoreApi/Routes/V1/AbstractRoute.php"><a href="../files/woocommerce-src-storeapi-routes-v1-abstractroute.html#source-view.299">src/StoreApi/Routes/V1/AbstractRoute.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/StoreApi/Routes/V1/AbstractRoute.php"><a href="../files/woocommerce-src-storeapi-routes-v1-abstractroute.html#source-view.297">src/StoreApi/Routes/V1/AbstractRoute.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">299</span>
+    <span class="phpdocumentor-element-found-in__line">297</span>
 </aside>
 
         <p class="phpdocumentor-summary">Prepares a response for insertion into a collection.</p>
@@ -2545,9 +2739,9 @@ pending/failed and the cart hasn&#039;t changed.</p>
         <a href="#method_add_data_to_error_object" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/StoreApi/Routes/V1/Checkout.php"><a href="../files/woocommerce-src-storeapi-routes-v1-checkout.html#source-view.322">src/StoreApi/Routes/V1/Checkout.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/StoreApi/Routes/V1/Checkout.php"><a href="../files/woocommerce-src-storeapi-routes-v1-checkout.html#source-view.594">src/StoreApi/Routes/V1/Checkout.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">322</span>
+    <span class="phpdocumentor-element-found-in__line">594</span>
 </aside>
 
         <p class="phpdocumentor-summary">Adds additional data to the \WP_Error object.</p>
@@ -2625,95 +2819,14 @@ pending/failed and the cart hasn&#039;t changed.</p>
             -private
                                                         "
 >
-    <h4 class="phpdocumentor-element__name" id="method_create_customer_account">
-        create_customer_account()
-        <a href="#method_create_customer_account" class="headerlink"><i class="fas fa-link"></i></a>
-    </h4>
-    <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/StoreApi/Routes/V1/Checkout.php"><a href="../files/woocommerce-src-storeapi-routes-v1-checkout.html#source-view.614">src/StoreApi/Routes/V1/Checkout.php</a></abbr>
-    :
-    <span class="phpdocumentor-element-found-in__line">614</span>
-</aside>
-
-        <p class="phpdocumentor-summary">Create a new account for a customer.</p>
-
-    <code class="phpdocumentor-code phpdocumentor-signature ">
-    <span class="phpdocumentor-signature__visibility">private</span>
-                <span class="phpdocumentor-signature__name">create_customer_account</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$user_email</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$first_name</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$last_name</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">int</span></code>
-
-        <section class="phpdocumentor-description"><p>The account is created with a generated username. The customer is sent
-an email notifying them about the account and containing a link to set
-their (initial) password.</p>
-<p>Intended as a replacement for wc_create_new_customer in WC core.</p>
-</section>
-
-        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
-    <dl class="phpdocumentor-argument-list">
-                    <dt class="phpdocumentor-argument-list__entry">
-                <span class="phpdocumentor-signature__argument__name">$user_email</span>
-                : <span class="phpdocumentor-signature__argument__return-type">string</span>
-                            </dt>
-            <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"><p>The email address to use for the new account.</p>
-</section>
-
-            </dd>
-                    <dt class="phpdocumentor-argument-list__entry">
-                <span class="phpdocumentor-signature__argument__name">$first_name</span>
-                : <span class="phpdocumentor-signature__argument__return-type">string</span>
-                            </dt>
-            <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"><p>The first name to use for the new account.</p>
-</section>
-
-            </dd>
-                    <dt class="phpdocumentor-argument-list__entry">
-                <span class="phpdocumentor-signature__argument__name">$last_name</span>
-                : <span class="phpdocumentor-signature__argument__return-type">string</span>
-                            </dt>
-            <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"><p>The last name to use for the new account.</p>
-</section>
-
-            </dd>
-            </dl>
-
-    
-    <h5 class="phpdocumentor-tag-list__heading" id="tags">
-        Tags
-        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
-    </h5>
-    <dl class="phpdocumentor-tag-list">
-                                    <dt class="phpdocumentor-tag-list__entry">
-                    <span class="phpdocumentor-tag__name">throws</span>
-                </dt>
-                <dd class="phpdocumentor-tag-list__definition">
-                                                                <span class="phpdocumentor-tag-link"><abbr title="\Exception">Exception</abbr></span>
-                                                                                    <section class="phpdocumentor-description"><p>If an error is encountered when creating the user account.</p>
-</section>
-
-                </dd>
-                        </dl>
-
-        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">int</span>
-            &mdash; <span class="phpdocumentor-return-value__description">User id if successful</span>
-    
-</article>
-                    <article
-        class="phpdocumentor-element
-            -method
-            -private
-                                                        "
->
     <h4 class="phpdocumentor-element__name" id="method_create_or_update_draft_order">
         create_or_update_draft_order()
         <a href="#method_create_or_update_draft_order" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/StoreApi/Routes/V1/Checkout.php"><a href="../files/woocommerce-src-storeapi-routes-v1-checkout.html#source-view.337">src/StoreApi/Routes/V1/Checkout.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/StoreApi/Routes/V1/Checkout.php"><a href="../files/woocommerce-src-storeapi-routes-v1-checkout.html#source-view.609">src/StoreApi/Routes/V1/Checkout.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">337</span>
+    <span class="phpdocumentor-element-found-in__line">609</span>
 </aside>
 
         <p class="phpdocumentor-summary">Create or update a draft order based on the cart.</p>
@@ -2770,9 +2883,9 @@ their (initial) password.</p>
         <a href="#method_get_request_payment_data" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/StoreApi/Utilities/CheckoutTrait.php"><a href="../files/woocommerce-src-storeapi-utilities-checkouttrait.html#source-view.125">src/StoreApi/Utilities/CheckoutTrait.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/StoreApi/Utilities/CheckoutTrait.php"><a href="../files/woocommerce-src-storeapi-utilities-checkouttrait.html#source-view.129">src/StoreApi/Utilities/CheckoutTrait.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">125</span>
+    <span class="phpdocumentor-element-found-in__line">129</span>
 </aside>
 
         <p class="phpdocumentor-summary">Gets and formats payment request data.</p>
@@ -2814,9 +2927,9 @@ their (initial) password.</p>
         <a href="#method_get_request_payment_method" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/StoreApi/Routes/V1/Checkout.php"><a href="../files/woocommerce-src-storeapi-routes-v1-checkout.html#source-view.479">src/StoreApi/Routes/V1/Checkout.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/StoreApi/Routes/V1/Checkout.php"><a href="../files/woocommerce-src-storeapi-routes-v1-checkout.html#source-view.770">src/StoreApi/Routes/V1/Checkout.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">479</span>
+    <span class="phpdocumentor-element-found-in__line">770</span>
 </aside>
 
         <p class="phpdocumentor-summary">Gets the chosen payment method from the request.</p>
@@ -2873,9 +2986,9 @@ their (initial) password.</p>
         <a href="#method_get_request_payment_method_id" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/StoreApi/Utilities/CheckoutTrait.php"><a href="../files/woocommerce-src-storeapi-utilities-checkouttrait.html#source-view.114">src/StoreApi/Utilities/CheckoutTrait.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/StoreApi/Utilities/CheckoutTrait.php"><a href="../files/woocommerce-src-storeapi-utilities-checkouttrait.html#source-view.118">src/StoreApi/Utilities/CheckoutTrait.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">114</span>
+    <span class="phpdocumentor-element-found-in__line">118</span>
 </aside>
 
         <p class="phpdocumentor-summary">Gets the chosen payment method ID from the request.</p>
@@ -2932,9 +3045,9 @@ their (initial) password.</p>
         <a href="#method_get_request_payment_method_title" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/StoreApi/Utilities/CheckoutTrait.php"><a href="../files/woocommerce-src-storeapi-utilities-checkouttrait.html#source-view.195">src/StoreApi/Utilities/CheckoutTrait.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/StoreApi/Utilities/CheckoutTrait.php"><a href="../files/woocommerce-src-storeapi-utilities-checkouttrait.html#source-view.203">src/StoreApi/Utilities/CheckoutTrait.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">195</span>
+    <span class="phpdocumentor-element-found-in__line">203</span>
 </aside>
 
         <p class="phpdocumentor-summary">Gets the chosen payment method title from the request.</p>
@@ -2986,58 +3099,14 @@ their (initial) password.</p>
             -private
                                                         "
 >
-    <h4 class="phpdocumentor-element__name" id="method_map_create_account_error">
-        map_create_account_error()
-        <a href="#method_map_create_account_error" class="headerlink"><i class="fas fa-link"></i></a>
-    </h4>
-    <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/StoreApi/Routes/V1/Checkout.php"><a href="../files/woocommerce-src-storeapi-routes-v1-checkout.html#source-view.728">src/StoreApi/Routes/V1/Checkout.php</a></abbr>
-    :
-    <span class="phpdocumentor-element-found-in__line">728</span>
-</aside>
-
-        <p class="phpdocumentor-summary">Convert an account creation error to an exception.</p>
-
-    <code class="phpdocumentor-code phpdocumentor-signature ">
-    <span class="phpdocumentor-signature__visibility">private</span>
-                <span class="phpdocumentor-signature__name">map_create_account_error</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type"><abbr title="\WP_Error">WP_Error</abbr>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$error</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><abbr title="\Exception">Exception</abbr></span></code>
-
-        <section class="phpdocumentor-description"></section>
-
-        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
-    <dl class="phpdocumentor-argument-list">
-                    <dt class="phpdocumentor-argument-list__entry">
-                <span class="phpdocumentor-signature__argument__name">$error</span>
-                : <span class="phpdocumentor-signature__argument__return-type"><abbr title="\WP_Error">WP_Error</abbr></span>
-                            </dt>
-            <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"><p>An error object.</p>
-</section>
-
-            </dd>
-            </dl>
-
-    
-
-        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type"><abbr title="\Exception">Exception</abbr></span>
-            &mdash; <span class="phpdocumentor-return-value__description"></span>
-    
-</article>
-                    <article
-        class="phpdocumentor-element
-            -method
-            -private
-                                                        "
->
     <h4 class="phpdocumentor-element__name" id="method_persist_additional_fields_for_order">
         persist_additional_fields_for_order()
         <a href="#method_persist_additional_fields_for_order" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/StoreApi/Utilities/CheckoutTrait.php"><a href="../files/woocommerce-src-storeapi-utilities-checkouttrait.html#source-view.207">src/StoreApi/Utilities/CheckoutTrait.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/StoreApi/Utilities/CheckoutTrait.php"><a href="../files/woocommerce-src-storeapi-utilities-checkouttrait.html#source-view.213">src/StoreApi/Utilities/CheckoutTrait.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">207</span>
+    <span class="phpdocumentor-element-found-in__line">213</span>
 </aside>
 
         <p class="phpdocumentor-summary">Persist additional fields for the order after validating them.</p>
@@ -3062,21 +3131,6 @@ their (initial) password.</p>
             </dl>
 
     
-    <h5 class="phpdocumentor-tag-list__heading" id="tags">
-        Tags
-        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
-    </h5>
-    <dl class="phpdocumentor-tag-list">
-                                    <dt class="phpdocumentor-tag-list__entry">
-                    <span class="phpdocumentor-tag__name">throws</span>
-                </dt>
-                <dd class="phpdocumentor-tag-list__definition">
-                                                                <span class="phpdocumentor-tag-link"><a href="../classes/Automattic-WooCommerce-StoreApi-Exceptions-RouteException.html"><abbr title="\Automattic\WooCommerce\StoreApi\Exceptions\RouteException">RouteException</abbr></a></span>
-                                                                                    <section class="phpdocumentor-description"><p>On error.</p>
-</section>
-
-                </dd>
-                        </dl>
 
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
     <span class="phpdocumentor-signature__response_type">mixed</span>
@@ -3094,9 +3148,9 @@ their (initial) password.</p>
         <a href="#method_process_customer" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/StoreApi/Routes/V1/Checkout.php"><a href="../files/woocommerce-src-storeapi-routes-v1-checkout.html#source-view.521">src/StoreApi/Routes/V1/Checkout.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/StoreApi/Routes/V1/Checkout.php"><a href="../files/woocommerce-src-storeapi-routes-v1-checkout.html#source-view.813">src/StoreApi/Routes/V1/Checkout.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">521</span>
+    <span class="phpdocumentor-element-found-in__line">813</span>
 </aside>
 
         <p class="phpdocumentor-summary">Order processing relating to customer account.</p>
@@ -3155,9 +3209,9 @@ Updates the order with user details (e.g. address).</p>
         <a href="#method_process_payment" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/StoreApi/Utilities/CheckoutTrait.php"><a href="../files/woocommerce-src-storeapi-utilities-checkouttrait.html#source-view.62">src/StoreApi/Utilities/CheckoutTrait.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/StoreApi/Utilities/CheckoutTrait.php"><a href="../files/woocommerce-src-storeapi-utilities-checkouttrait.html#source-view.66">src/StoreApi/Utilities/CheckoutTrait.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">62</span>
+    <span class="phpdocumentor-element-found-in__line">66</span>
 </aside>
 
         <p class="phpdocumentor-summary">Fires an action hook instructing active payment gateways to process the payment for an order and provide a result.</p>
@@ -3223,9 +3277,9 @@ Updates the order with user details (e.g. address).</p>
         <a href="#method_process_without_payment" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/StoreApi/Utilities/CheckoutTrait.php"><a href="../files/woocommerce-src-storeapi-utilities-checkouttrait.html#source-view.44">src/StoreApi/Utilities/CheckoutTrait.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/StoreApi/Utilities/CheckoutTrait.php"><a href="../files/woocommerce-src-storeapi-utilities-checkouttrait.html#source-view.48">src/StoreApi/Utilities/CheckoutTrait.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">44</span>
+    <span class="phpdocumentor-element-found-in__line">48</span>
 </aside>
 
         <p class="phpdocumentor-summary">For orders which do not require payment, just update status.</p>
@@ -3276,9 +3330,9 @@ Updates the order with user details (e.g. address).</p>
         <a href="#method_should_create_customer_account" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/StoreApi/Routes/V1/Checkout.php"><a href="../files/woocommerce-src-storeapi-routes-v1-checkout.html#source-view.573">src/StoreApi/Routes/V1/Checkout.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/StoreApi/Routes/V1/Checkout.php"><a href="../files/woocommerce-src-storeapi-routes-v1-checkout.html#source-view.853">src/StoreApi/Routes/V1/Checkout.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">573</span>
+    <span class="phpdocumentor-element-found-in__line">853</span>
 </aside>
 
         <p class="phpdocumentor-summary">Check request options and store (shop) config to determine if a user account should be created as part of order
@@ -3316,14 +3370,85 @@ processing.</p>
             -private
                                                         "
 >
+    <h4 class="phpdocumentor-element__name" id="method_update_customer_address_field">
+        update_customer_address_field()
+        <a href="#method_update_customer_address_field" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/StoreApi/Routes/V1/Checkout.php"><a href="../files/woocommerce-src-storeapi-routes-v1-checkout.html#source-view.678">src/StoreApi/Routes/V1/Checkout.php</a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">678</span>
+</aside>
+
+        <p class="phpdocumentor-summary">Updates a customer address field.</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">private</span>
+                <span class="phpdocumentor-signature__name">update_customer_address_field</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type"><a href="../classes/WC-Customer.html"><abbr title="\WC_Customer">WC_Customer</abbr></a>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$customer</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$key</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">mixed&nbsp;</span><span class="phpdocumentor-signature__argument__name">$value</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$address_type</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
+
+        <section class="phpdocumentor-description"></section>
+
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$customer</span>
+                : <span class="phpdocumentor-signature__argument__return-type"><a href="../classes/WC-Customer.html"><abbr title="\WC_Customer">WC_Customer</abbr></a></span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"><p>The customer to update.</p>
+</section>
+
+            </dd>
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$key</span>
+                : <span class="phpdocumentor-signature__argument__return-type">string</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"><p>The key of the field to update.</p>
+</section>
+
+            </dd>
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$value</span>
+                : <span class="phpdocumentor-signature__argument__return-type">mixed</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"><p>The value to update the field to.</p>
+</section>
+
+            </dd>
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$address_type</span>
+                : <span class="phpdocumentor-signature__argument__return-type">string</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"><p>The type of address to update (billing|shipping).</p>
+</section>
+
+            </dd>
+            </dl>
+
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">mixed</span>
+            &mdash; <span class="phpdocumentor-return-value__description"></span>
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -private
+                                                        "
+>
     <h4 class="phpdocumentor-element__name" id="method_update_customer_from_request">
         update_customer_from_request()
         <a href="#method_update_customer_from_request" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/StoreApi/Routes/V1/Checkout.php"><a href="../files/woocommerce-src-storeapi-routes-v1-checkout.html#source-view.423">src/StoreApi/Routes/V1/Checkout.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/StoreApi/Routes/V1/Checkout.php"><a href="../files/woocommerce-src-storeapi-routes-v1-checkout.html#source-view.698">src/StoreApi/Routes/V1/Checkout.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">423</span>
+    <span class="phpdocumentor-element-found-in__line">698</span>
 </aside>
 
         <p class="phpdocumentor-summary">Updates the current customer session using data from the request (e.g. address data).</p>
@@ -3366,9 +3491,9 @@ processing.</p>
         <a href="#method_update_order_from_request" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/StoreApi/Utilities/CheckoutTrait.php"><a href="../files/woocommerce-src-storeapi-utilities-checkouttrait.html#source-view.144">src/StoreApi/Utilities/CheckoutTrait.php</a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/StoreApi/Utilities/CheckoutTrait.php"><a href="../files/woocommerce-src-storeapi-utilities-checkouttrait.html#source-view.148">src/StoreApi/Utilities/CheckoutTrait.php</a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">144</span>
+    <span class="phpdocumentor-element-found-in__line">148</span>
 </aside>
 
         <p class="phpdocumentor-summary">Update the current order using the posted values from the request.</p>
@@ -3399,6 +3524,54 @@ processing.</p>
             &mdash; <span class="phpdocumentor-return-value__description"></span>
     
 </article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -private
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_validate_user_can_place_order">
+        validate_user_can_place_order()
+        <a href="#method_validate_user_can_place_order" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="woocommerce/src/StoreApi/Routes/V1/Checkout.php"><a href="../files/woocommerce-src-storeapi-routes-v1-checkout.html#source-view.883">src/StoreApi/Routes/V1/Checkout.php</a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">883</span>
+</aside>
+
+        <p class="phpdocumentor-summary">This validates if the order can be placed regarding settings in WooCommerce &gt; Settings &gt; Accounts &amp; Privacy
+If registration during checkout is disabled, guest checkout is disabled and the user is not logged in, prevent checkout.</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">private</span>
+                <span class="phpdocumentor-signature__name">validate_user_can_place_order</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
+
+        <section class="phpdocumentor-description"></section>
+
+    
+    
+    <h5 class="phpdocumentor-tag-list__heading" id="tags">
+        Tags
+        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
+    </h5>
+    <dl class="phpdocumentor-tag-list">
+                                    <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">throws</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                                                <span class="phpdocumentor-tag-link"><a href="../classes/Automattic-WooCommerce-StoreApi-Exceptions-RouteException.html"><abbr title="\Automattic\WooCommerce\StoreApi\Exceptions\RouteException">RouteException</abbr></a></span>
+                                                                                    <section class="phpdocumentor-description"><p>If user cannot place order.</p>
+</section>
+
+                </dd>
+                        </dl>
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">mixed</span>
+            &mdash; <span class="phpdocumentor-return-value__description"></span>
+    
+</article>
             </section>
 
     </article>
@@ -3410,7 +3583,7 @@ processing.</p>
 
     <footer class="phpdocumentor phpdocumentor-footer">
     <div class="phpdocumentor-section">
-        <span>WooCommerce Code Reference API documentation generated by <a href="http://www.phpdoc.org/">phpDocumentor</a> on July 25th, 2024 at 11:33 am.</span>
+        <span>WooCommerce Code Reference API documentation generated by <a href="http://www.phpdoc.org/">phpDocumentor</a> on May 16th, 2025 at 09:14 am.</span>
     </div>
 </footer>
 
@@ -3422,7 +3595,7 @@ processing.</p>
             'searchIndex': '..\/js\/searchIndex.json'
         };
     </script>
-    <script src="../js/searchIndex.js?updated=1721907208"></script>
-    <script src="../js/search.js?updated=1721907208"></script>
+    <script src="../js/searchIndex.js?updated=1747386890"></script>
+    <script src="../js/search.js?updated=1747386890"></script>
 </body>
 </html>
